@@ -47,12 +47,13 @@ export function enhanceNavigation(files, locales, matrix) {
     const l=m&&localeByCode[m[1]],isChecklist=p.includes('/checklist/');
     const h=l?navHead(l,isChecklist):publicHeader,f=l?footer(l):publicFooter;
     let html=raw.replace(/<header class="header">[\s\S]*?<\/header>/,h).replace(/<footer class="footer">[\s\S]*?<\/footer>/,f);
+
+    if(!html.includes('data-nav-version="2"'))html=html.replace(/(<body><a class="skip"[^>]*>[^<]*<\/a>)/,'$1'+h);
+    if(!html.includes('data-footer-version="2"'))html=html.replace(/<\/body>/,f+'</body>');
     const labels={vi:["Giới thiệu","Liên hệ"],en:["About","Contact"],de:["Über uns","Kontakt"],fr:["À propos","Contact"],es:["Acerca de","Contacto"],nl:["Over ons","Contact"],zh:["关于我们","联系我们"],pt:["Sobre","Contacto"],ko:["소개","문의"],ja:["サイトについて","お問い合わせ"]};
     const [aboutLabel,contactLabel]=labels[l?.code||"en"];
     html=html.replace('<div class="nav2-legal">','<div class="nav2-legal"><a href="/about/">'+esc(aboutLabel)+'</a><a href="/contact/">'+esc(contactLabel)+'</a>');
 
-    if(!html.includes('data-nav-version="2"'))html=html.replace(/(<body><a class="skip"[^>]*>[^<]*<\/a>)/,'$1'+h);
-    if(!html.includes('data-footer-version="2"'))html=html.replace(/<\/body>/,f+'</body>');
     if(!html.includes('/assets/navigation.css'))html=html.replace('<link rel="stylesheet" href="/assets/styles.css">','<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">');
     if(p==='index.html')html=html.replace('<div class="language-grid">','<div class="language-grid" id="languages">');
     files[p]=html;
