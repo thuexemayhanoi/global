@@ -56,7 +56,7 @@ export function verifyPacket(packet,writer,matrix,board,locales){
  if(packet?.serp_intent_checked!==false)errors.push("Writer must leave SERP review false for coordinator");
  const checked=checkArticle(packet,matrix,locales,{minimumWords:1000});
  if(checked.words>5000)errors.push("Over 5,000 words; remove repetitive sections");
- if((String(packet?.body_markdown||"").match(/^##\\s+\\S/gm)||[]).length<4)errors.push("Minimum four meaningful H2 sections required");
+ if((String(packet?.body_markdown||"").match(/^##\s+\S/gm)||[]).length<4)errors.push("Minimum four meaningful H2 sections required");
  const reserved=new Set(["Human editorial fact review is required","SERP search-intent confirmation is required"]);
  errors.push(...checked.errors.filter(x=>!reserved.has(x)));
  return {passed:errors.length===0,writer,id:packet?.matrix_id,words:checked.words,errors,warnings:checked.warnings,hash:hash(packet?.body_markdown),title:norm(packet?.title)};

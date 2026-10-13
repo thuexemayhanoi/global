@@ -8,7 +8,7 @@ const locales=JSON.parse(fs.readFileSync("content/locales.json","utf8"));
 const W=["W1","W2","W3"];
 test("all Matrix topics have exactly one immutable owner",()=>{
  assert.deepEqual(validateBoard(matrix,board),[]);
- assert.equal(board.entries.length,matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&/\\/(topics|guides)\\//.test(r.url)).length);
+ assert.equal(board.entries.length,matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&(r.url.includes("/topics/")||r.url.includes("/guides/"))).length);
  assert.ok(Math.max(...W.map(w=>board.entries.filter(r=>r.writer===w).length))-Math.min(...W.map(w=>board.entries.filter(r=>r.writer===w).length))<=1);
  assert.equal(new Set(board.entries.map(r=>r.id)).size,board.entries.length);
  assert.equal(new Set(board.entries.map(r=>r.url)).size,board.entries.length);
