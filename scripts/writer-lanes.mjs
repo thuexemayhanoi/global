@@ -54,7 +54,9 @@ export function verifyPacket(packet,writer,matrix,board,locales){
  if(!r||!["IDEA","RESEARCHED"].includes(r.status))errors.push("Topic already reserved or published");
  if(packet?.facts_reviewed_by_human!==false)errors.push("Writer must leave human fact review false");
  if(packet?.serp_intent_checked!==false)errors.push("Writer must leave SERP review false for coordinator");
- const checked=checkArticle(packet,matrix,locales);
+ const checked=checkArticle(packet,matrix,locales,{minimumWords:1000});
+ if(checked.words>5000)errors.push("Over 5,000 words; remove repetitive sections");
+ if((String(packet?.body_markdown||"").match(/^##\\s+\\S/gm)||[]).length<4)errors.push("Minimum four meaningful H2 sections required");
  const reserved=new Set(["Human editorial fact review is required","SERP search-intent confirmation is required"]);
  errors.push(...checked.errors.filter(x=>!reserved.has(x)));
  return {passed:errors.length===0,writer,id:packet?.matrix_id,words:checked.words,errors,warnings:checked.warnings,hash:hash(packet?.body_markdown),title:norm(packet?.title)};
@@ -81,19 +83,19 @@ export function main(argv=process.argv.slice(2)){
   const status={mode:control.mode,ai_api_calls:0,auto_publish:false};
   for(const w of W){
    const assigned=board.entries.filter(e=>e.writer===w),remaining=assigned.map(e=>matrix.rows.find(r=>r.id===e.id));
-   status[w]={assigned:assigned.length,published:remaining.filter(r=>r.status==="PUBLISHED").length,inbox:assigned.filter(e=>taken.has(e.id)).length,ready:pack(matrix,board,w,taken,5).length,blocked_by_parent:remaining.filter(r=>r.status!=="PUBLISHED"&&!taken.has(r.id)&&r.parent_id&&matrix.rows.find(p=>p.id===r.parent_id)?.status!=="PUBLISHED").length};
+   status[w]={assigned:assigned.length,published:remaining.filter(r=>r.status==="PUBLISHED").length,inbox:assigned.filter(e=>taken.has(e.id)).length,next_batch_eligible:pack(matrix,board,w,taken,5).length,blocked_by_parent:remaining.filter(r=>r.status!=="PUBLISHED"&&!taken.has(r.id)&&r.parent_id&&matrix.rows.find(p=>p.id===r.parent_id)?.status!=="PUBLISHED").length};
   }
   console.log(JSON.stringify(status,null,2));return;
  }
  if(cmd==="pack"){
   if(!W.includes(opt.writer))throw Error("Supply --writer W1|W2|W3");
   const rows=pack(matrix,board,opt.writer,taken,Number(opt.count||2),opt.locale||null);
-  const brief={repo:"thuexemayhanoi/global",writer:opt.writer,mode:"EXTERNAL_MANUAL_NO_API",max_batch:5,safety:"No automatic publishing; writer claims no human approval",rules:["Read AGENTS.md and factory/external-writers/README.md","Work only in own inbox; do not edit Matrix or generated HTML","Use researched original writing, minimum 550 words and 3 substantive H2 sections","At least two genuinely consulted source URLs; never invent legal/price details","Keep facts_reviewed_by_human=false and serp_intent_checked=false; editor will check","Open PR from writer branch; no merge; run writer-lanes verify"],items:rows.map(r=>({id:r.id,locale:r.locale,role:r.role,cluster:r.cluster,primary_query_hypothesis:r.primary_query,title:r.working_title,search_intent:r.search_intent,parent_id:r.parent_id,url:r.url,exact_output:INBOX+"/"+opt.writer+"/"+r.id+".json",related_published:matrix.rows.filter(x=>x.locale===r.locale&&x.status==="PUBLISHED"&&(x.role==="PILLAR"||x.id.endsWith("-CHECKLIST"))).map(x=>({url:x.url,title:x.working_title}))}))};
+  const brief={repo:"thuexemayhanoi/global",writer:opt.writer,mode:"EXTERNAL_MANUAL_NO_API",max_batch:5,safety:"No automatic publishing; writer claims no human approval",rules:["Read AGENTS.md and factory/external-writers/README.md","Work only in own inbox; do not edit Matrix or generated HTML","Use researched original writing, between 1,000 and 5,000 useful words and at least 4 substantive H2 sections","At least two genuinely consulted source URLs; never invent legal/price details","Keep facts_reviewed_by_human=false and serp_intent_checked=false; editor will check","Open PR from writer branch; no merge; run writer-lanes verify"],items:rows.map(r=>({id:r.id,locale:r.locale,role:r.role,cluster:r.cluster,primary_query_hypothesis:r.primary_query,title:r.working_title,search_intent:r.search_intent,parent_id:r.parent_id,url:r.url,exact_output:INBOX+"/"+opt.writer+"/"+r.id+".json",related_published:matrix.rows.filter(x=>x.locale===r.locale&&x.status==="PUBLISHED"&&(x.role==="PILLAR"||x.id.endsWith("-CHECKLIST"))).map(x=>({url:x.url,title:x.working_title}))}))};
   console.log(JSON.stringify(brief,null,2));return;
  }
  if(cmd==="verify"||cmd==="verify-all"){
   const chosen=cmd==="verify-all"?inbox.files:inbox.files.filter(f=>f.writer===opt.writer&&f.path===opt.file);
-  if(!chosen.length)throw Error("Exact --writer and --file inside your inbox required");
+  if(!chosen.length&&cmd==="verify")throw Error("Exact --writer and --file inside your inbox required");
   const checks=chosen.map(f=>({...verifyPacket(f.packet,f.writer,matrix,board,locales),file:f.path}));
   const dup=checkDuplicates(inbox.files),passed=checks.every(x=>x.passed)&&dup.length===0;
   console.log(JSON.stringify({mode:"DRAFT_QA_ONLY",passed,checked:checks.length,checks,duplicates:dup,publish_allowed:false},null,2));
