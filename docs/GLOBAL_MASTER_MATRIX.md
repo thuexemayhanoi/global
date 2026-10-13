@@ -61,3 +61,14 @@ node scripts/writer-lanes.mjs status
 ```
 
 **Rollback:** Close technical PR if unmerged. If a merged change causes regressions, revert the specific merged commit in a reviewed PR, regenerate pages and rerun all checks. Do not force-push main.
+
+## Implementation evidence — PR #8 (technical, NOT production)
+
+- **Baseline audit:** 25 PUBLISHED URLs, 10 locale pairs of home/checklist, 120 IDEA, 145 Matrix rows; source file `data/seo/master-matrix.json`. Browser audit 2026-10-14 observed desktop menu hidden on /en/ and /de/, mobile footer tall, no search/TOC; unknown URL returns real HTTP 404, explicit /404.html returns HTTP 200 due to static hosting.
+- **P0 desktop fix:** `scripts/navigation.mjs` emits SSR-open desktop disclosure, with `assets/premium.js` collapsing drawer on smartphone. Pre-merge checks assert existence; real deployment visual QA **still pending**.
+- **Global search:** `scripts/premium.mjs`, `assets/search.js`, `assets/search-index/manifest.json`; 10 locale-specific shards, only title/description/URL/role; article text never bundled. Noindex /search/ intentionally excluded from the unchanged 25-URL sitemap.
+- **Reading UX:** server-side TOC anchors, sticky reading rail, related PUBLISHED-only links, branded author contact, reading progress and back-to-top controls. Shared CSS no third-party font requests.
+- **Content graph:** 145 deterministic nodes in `data/seo/content-graph.json` linked to the original Matrix and 3 Writer assignments; external SERP/volume left unverified.
+- **Claims and editorial intake:** `writer-claims.mjs` local atomic write, manual PR review, session/revision, claim refusal; `import-markdown.mjs` JSON frontmatter to private JSON, no model API or automatic publication.
+- **CI:** Premium nav/search/hreflang/schema checks, claim refusal tests, article QA, content-graph consistency and metadata benchmark; latest confirmed green before final additions: Static SEO QA run 38447466810 and Writer Draft QA run 38447466782. Need fresh green run after current commit before approving PR.
+- **Non-goals / limits:** No merge/main write, no new published SEO URL, no CVW field data, no 40k full HTML build test, no automatic Writer/API, no mass translated content. Independent PR #6 still open and not deployed.

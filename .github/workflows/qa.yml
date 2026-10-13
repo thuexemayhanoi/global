@@ -19,7 +19,7 @@ jobs:
       - name: Verify deterministic content graph
         run: node scripts/seo/content-graph.mjs --check
       - name: Premium SEO, navigation, search and accessibility regression
-        run: node --test tests/premium.test.mjs tests/claims.test.mjs tests/external-writers.test.mjs
+        run: node --test tests/premium.test.mjs tests/claims.test.mjs tests/external-writers.test.mjs tests/search-index.test.mjs tests/markdown-import.test.mjs
       - name: Verify CNAME and canonical outputs
         shell: bash
         run: |
@@ -56,5 +56,7 @@ jobs:
           grep -q 'nguyentuantu8x@gmail.com' contact/index.html
           grep -q '<loc>https://global.rentbikehanoi.com/about/</loc>' sitemap.xml
           grep -q '<loc>https://global.rentbikehanoi.com/contact/</loc>' sitemap.xml
+      - name: Synthetic metadata scalability smoke check (no network or HTML generation)
+        run: node scripts/bench/search-scale.mjs
       - name: Test safe article rendering and refusal gates
         run: node --test tests/content-publisher.test.mjs

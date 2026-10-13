@@ -12,30 +12,63 @@
     5,
     6
   ],
-  "lastBatch": "audit-baseline-and-stale-docs",
-  "lastValidatedCommit": null,
+  "lastBatch": "premium-search-design-content-graph-claims-markdown-i18n-and-benchmark",
+  "lastValidatedCommit": "34f23f44019bf37f95beb61069871070e634fec9",
   "phases": [
     {
       "batch": "01",
-      "scope": "refresh, stale document counters, canonical execution matrix",
-      "status": "STAGED",
-      "qa": "NOT_RUN"
+      "scope": "refresh, stale counters, baseline 25/145, P0-P3 matrix",
+      "status": "STAGED_AND_REVIEWABLE",
+      "commit": "ec2ea42a7380b7ae2710bceda8ac7cf788e6480a",
+      "qa": "SUCCESS"
     },
     {
       "batch": "02",
-      "scope": "premium design, reader tools and per-locale search",
-      "status": "PLANNED"
+      "scope": "Premium design, desktop menu defect fix, search shards, TOC/sidebar/footer, build regenerate",
+      "status": "STAGED_AND_REVIEWABLE",
+      "commit": "5425054d31e319197a1a4a8364b8b752041d81b5",
+      "qa": "SUCCESS"
     },
     {
       "batch": "03",
-      "scope": "content graph, technical SEO and AI factory recovery",
-      "status": "PLANNED"
+      "scope": "content graph, writer claim/session/checkpoint, editorial Markdown intake, localization",
+      "status": "STAGED_NEEDS_LATEST_QA",
+      "commit": "23b9c9d5aafca03f6bd5c1074bd3e3230b79190f",
+      "qa": "PENDING"
     },
     {
       "batch": "04",
-      "scope": "CI, benchmark, regression, visual production checks",
-      "status": "PLANNED"
+      "scope": "synthetic scale benchmark and final documentation",
+      "status": "STAGED_NEEDS_LATEST_QA",
+      "commit": "23b9c9d5aafca03f6bd5c1074bd3e3230b79190f",
+      "qa": "PENDING"
+    },
+    {
+      "batch": "05",
+      "scope": "real production iPhone/desktop visual QA, Core Web Vitals, full HTML scaling benchmark",
+      "status": "BLOCKED_UNTIL_APPROVED_DEPLOY_OR_FURTHER_TESTING"
+    },
+    {
+      "batch": "06",
+      "scope": "real Hub pilot content review and PR #6 publication",
+      "status": "SEPARATE_PR_AWAITS_APPROVED_PRODUCTION_MERGE"
     }
   ],
-  "resume": "Read /docs/GLOBAL_MASTER_MATRIX.md, this checkpoint, and latest HEAD of main and working branch. Preserve other sessions' commits; do not merge production without approval."
+  "resume": "Check main HEAD and PR #8 first, compare any later AI merges; run CI. Do not merge without owner approval. If QA fails, inspect failed step, fix in next small commit and update checkpoint. PR #6 remains separate.",
+  "lastStagedCommit": "23b9c9d5aafca03f6bd5c1074bd3e3230b79190f",
+  "currentTechnicalPR": 8,
+  "lastConfirmedQA": [
+    {
+      "workflow": "Static SEO QA",
+      "run": 38447466810,
+      "conclusion": "SUCCESS",
+      "commit": "34f23f44019bf37f95beb61069871070e634fec9"
+    },
+    {
+      "workflow": "External Writer Draft QA",
+      "run": 38447466782,
+      "conclusion": "SUCCESS",
+      "commit": "34f23f44019bf37f95beb61069871070e634fec9"
+    }
+  ]
 }
