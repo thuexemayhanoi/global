@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "workflow_mode": "human_supervised",
+  "default_batch_size": 2,
+  "max_batch_size": 10,
+  "minimum_words": 550,
+  "languages": ["vi","en","de","fr","es","nl","zh","pt","ko","ja"],
+  "autonomous_publication_enabled": false,
+  "auto_fix_allowed": ["create_read_only_audit_report","prepare_draft_outline","run_validation","propose_pull_request_changes"],
+  "protected_operations": ["change_CNAME","change_DNS","change_live_URL","delete_published_article","publish_without_approved_QA","modify_other_repositories"],
+  "required_gates": ["verified_native_language_search_intent","editorial_research","claim_source_review","content_uniqueness","internal_link_validation","technical_QA","human_publication_approval"]
+}
