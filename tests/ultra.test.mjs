@@ -71,3 +71,22 @@ test("responsive, print, reduced-motion and focus-mode CSS is bundled locally",(
  assert.ok(css.includes("@media print"));
  assert.ok(css.includes("body.ultra-focus .premium-article-grid"));
 });
+
+test("uploaded WebP media is referenced in generated pages without broken paths",()=>{
+ const media=["hero-hanoi.webp","topic-choose-bike.webp","topic-prices-deposits.webp","topic-documents.webp","topic-safety.webp"];
+ for(const f of media){assert.ok(fs.existsSync(f),"Missing uploaded asset: "+f);const stat=fs.statSync(f);assert.ok(stat.size>1000&&stat.size<350000,"WebP too large or empty: "+f);}
+ const root=read("index.html");
+ assert.ok(root.includes('src="/hero-hanoi.webp"'));
+ assert.equal((root.match(/class="ultra-gallery-card"/g)||[]).length,4);
+ for(const f of media.slice(1)){assert.ok(root.includes('src="/'+f+'"'),"Gateway missing "+f);}
+ for(const l of locales){const h=read(l.code+"/index.html");assert.equal((h.match(/class="ultra-topic-image"/g)||[]).length,4,l.code);for(const f of media.slice(1))assert.ok(h.includes('src="/'+f+'"'),l.code+" missing "+f);}
+});
+test("photo layout is responsive and images below the fold are lazy loaded",()=>{
+ const style=read("assets/ultra.css"),root=read("index.html");
+ assert.ok(style.includes("grid-template-columns:repeat(4,minmax(0,1fr))"));
+ assert.ok(style.includes("@media(max-width:1023px)"));
+ assert.ok(style.includes("@media(max-width:760px)"));
+ assert.ok(root.includes('fetchpriority="high" loading="eager"'));
+ assert.equal((root.match(/loading="lazy"/g)||[]).length>=4,true);
+ assert.ok(root.indexOf('id="languages"')<root.indexOf('class="ultra-gateway-gallery"'),"Must keep language choice above photos");
+});
