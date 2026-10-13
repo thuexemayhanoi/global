@@ -1,0 +1,24 @@
+name: Post-Publish Live HTTP QA (manual, read-only)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Compare deployed HTML, sitemap, robots, 404 and Search to reviewed Matrix
+        run: node scripts/seo/post-publish-qa.mjs --confirm-live
+      - name: Store QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: global-live-post-publish-qa
+          path: reports/post-publish-qa.json
+          if-no-files-found: ignore
+          retention-days: 14
