@@ -44,3 +44,8 @@ The shared `scripts/navigation.mjs` renders responsive 4-Hub menus and 8 Support
 ## Five SEO tools
 
 Read [Five SEO weapons](docs/FIVE-SEO-WEAPONS.md). Run `node scripts/seo/engine.mjs --locale de --count 2` for read-only auditing, QA, a research queue and P0–P3 report. No article writing APIs or auto-publishing are enabled.
+
+## Publishing actual articles (pilot)
+The `scripts/articles.mjs` adapter generates localized static article pages from approved, source-backed packets in `content/articles/`. No AI provider or API key is connected. The `scripts/seo/publish-batch.mjs` command performs a strict dry-run by default and only stages content on a non-main branch after an owner approval manifest; a reviewed PR merge triggers GitHub Pages publication.
+
+See [Content Factory](docs/CONTENT-FACTORY.md) and [Batch Publishing](docs/BATCH-PUBLISHING.md).

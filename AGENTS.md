@@ -30,3 +30,10 @@
 - Never infer actual rankings, Google indexation, backlinks, AI citations or search volume from static audit outputs.
 - AI Writer is currently a native-language research/QA scaffold without API connection; no auto-publishing.
 - Protect CNAME, published URLs and other repos; propose fixes through QA-reviewed PRs.
+
+## Publishing adapter contract
+
+- `content/articles/<MATRIX-ID>.json` is a source-of-truth for articles the owner has explicitly approved in a reviewed branch/PR. It must correspond 1:1 with a Matrix row marked PUBLISHED.
+- `scripts/seo/publish-batch.mjs` defaults to dry-run. --apply must require an exact owner approval manifest, a non-main work branch, complete editorial QA, and must not replace an existing live page.
+- Run `node --test tests/content-publisher.test.mjs` and `node scripts/build.mjs --check` in CI.
+- Do not auto-generate AI text, approve articles on the owner's behalf, or modify production DNS/CNAME/other repositories.
