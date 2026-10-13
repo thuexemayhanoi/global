@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { enhanceNavigation } from "./navigation.mjs";
 import { applyPremium, createSearchPage } from "./premium.mjs";
+import { applyUltra } from "./ultra.mjs";
 import { generateApprovedArticles } from "./articles.mjs";
 const root=process.cwd();
 const data=JSON.parse(fs.readFileSync(path.join(root,"content/locales.json"),"utf8"));
@@ -66,7 +67,7 @@ for(const key of Object.keys(articles)) {
  if(Object.hasOwn(basePages,key))throw Error("Cannot overwrite existing page: "+key);
  basePages[key]=articles[key];
 }
-const allPages=applyPremium(enhanceNavigation(basePages,data,menuMatrix),menuMatrix,data);
+const allPages=applyUltra(applyPremium(enhanceNavigation(basePages,data,menuMatrix),menuMatrix,data),menuMatrix,data);
 // Regenerate sitemap from exactly the real HTML pages, including approved articles.
 const urlKeys=Object.keys(allPages).filter(p=>p.endsWith("index.html")&&p!=="search/index.html");
 const xmlEscape=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
