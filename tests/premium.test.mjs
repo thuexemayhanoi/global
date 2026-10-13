@@ -44,15 +44,17 @@ test("real technical search page noindexed with metadata-only language-sharded i
 test("desktop menu visibly open without JS, mobile accordion exists and CSS breakpoint",()=>{
  for(const l of langs){
   const h=read(l.code+"/index.html");
-  assert.ok(h.includes('class="nav2-drawer" open'),l.code);
-  assert.equal((h.match(/class="nav2-topic"/g)||[]).length,4,l.code);
+  assert.ok(h.includes('class="nav2-desktop"'),l.code);
+  assert.ok(h.includes('class="nav2-drawer"'),l.code);
+  assert.ok(!h.includes('class="nav2-drawer" open'),l.code);
+  assert.equal((h.match(/class="nav2-topic"/g)||[]).length,8,l.code);
   assert.ok(h.includes('class="premium-featured"'),l.code);
  }
  const css=read("assets/premium.css");
  assert.ok(css.includes(".nav2-head{position:sticky"));
  assert.ok(css.includes("@media(max-width:760px)"));
  assert.ok(css.includes("prefers-reduced-motion"));
- assert.ok(read("assets/premium.js").includes('window.matchMedia("(max-width:760px)")'));
+ assert.ok(read("assets/premium.js").includes('menu.removeAttribute("open")'));
 });
 test("article checklists have server-rendered TOCs, reading progress, related real links",()=>{
  for(const l of langs){
