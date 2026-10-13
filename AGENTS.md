@@ -22,7 +22,7 @@
 - `scripts/navigation.mjs` is the single source of rendered site-wide menus and footers; `data/seo/master-matrix.json` is the taxonomy source.
 - All 4 parent Hub labels and 8 child topic labels per locale are displayed, but IDEA rows must NOT be clickable or placed in sitemap/hreflang. This owner-approved preview only displays category names until their actual pages are approved and published.
 - After adding published content or changing Matrix, run `node scripts/build.mjs`, `node scripts/build.mjs --check`, `node scripts/nav-qa.mjs`.
-- Preserve CNAME and all 23 URLs; do not overwrite unrelated repositories.
+- Preserve CNAME and all 25 URLs; do not overwrite unrelated repositories.
 
 ## Five-weapon governance
 

@@ -28,7 +28,7 @@ Pilot stage: 10 localized overviews and 10 localized practical checklists. Broad
 
 ## Phase 2 — multilingual SEO Master Matrix
 
-The planning inventory covers all 23 current public URLs and 120 non-published native-language topic candidates across 10 locales. `IDEA` items are **not** generated pages or verified search-demand opportunities. See [Multilingual SEO Matrix](docs/MULTILINGUAL-SEO-MATRIX.md).
+The planning inventory covers all 25 current public URLs and 120 non-published native-language topic candidates across 10 locales. `IDEA` items are **not** generated pages or verified search-demand opportunities. See [Multilingual SEO Matrix](docs/MULTILINGUAL-SEO-MATRIX.md).
 
 ```sh
 node scripts/seo/validate-plan.mjs
