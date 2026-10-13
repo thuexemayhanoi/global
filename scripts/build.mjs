@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { enhanceNavigation } from "./navigation.mjs";
+import { applyPremium, createSearchPage } from "./premium.mjs";
 import { generateApprovedArticles } from "./articles.mjs";
 const root=process.cwd();
 const data=JSON.parse(fs.readFileSync(path.join(root,"content/locales.json"),"utf8"));
@@ -9,7 +10,7 @@ const siteOutput=function siteOutput(locales,siteInfo){
   const site="https://global.rentbikehanoi.com";
   const langs=locales.map(l=>({code:l.code,htmlLang:l.htmlLang,flag:l.flag,name:l.name}));
   const href=(l,page)=>`/${l.code}/${page?"checklist/":""}`;
-  const langLinks=(page)=>langs.map(l=>`<link rel="alternate" hreflang="${esc(l.htmlLang)}" href="${site}${href(l,page)}">`).join("\n")+`\n<link rel="alternate" hreflang="x-default" href="${site}/">`;
+  const langLinks=(page)=>langs.map(l=>`<link rel="alternate" hreflang="${esc(l.htmlLang)}" href="${site}${href(l,page)}">`).join("\n")+(page?"":`\n<link rel="alternate" hreflang="x-default" href="${site}/">`);
   const jsonLd=v=>`<script type="application/ld+json">${JSON.stringify(v).replace(/</g,"\\u003c")}</script>`;
   const head=(lang,title,description,path,page,structured)=>`<!doctype html>
 <html lang="${esc(lang)}"><head>
@@ -59,14 +60,15 @@ ${jsonLd(structured)}
 const menuMatrix=JSON.parse(fs.readFileSync(path.join(root,"data/seo/master-matrix.json"),"utf8"));
 const siteInfo=JSON.parse(fs.readFileSync(path.join(root,"content/site-info.json"),"utf8"));
 const basePages=siteOutput(data,siteInfo);
+basePages["search/index.html"]=createSearchPage(data);
 const articles=generateApprovedArticles(root,menuMatrix,data);
 for(const key of Object.keys(articles)) {
  if(Object.hasOwn(basePages,key))throw Error("Cannot overwrite existing page: "+key);
  basePages[key]=articles[key];
 }
-const allPages=enhanceNavigation(basePages,data,menuMatrix);
+const allPages=applyPremium(enhanceNavigation(basePages,data,menuMatrix),menuMatrix,data);
 // Regenerate sitemap from exactly the real HTML pages, including approved articles.
-const urlKeys=Object.keys(allPages).filter(p=>p.endsWith("index.html"));
+const urlKeys=Object.keys(allPages).filter(p=>p.endsWith("index.html")&&p!=="search/index.html");
 const xmlEscape=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
 allPages["sitemap.xml"]='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 +urlKeys.map(k=>"https://global.rentbikehanoi.com/"+(k==="index.html"?"":k.slice(0,-10))).sort().map(x=>"<url><loc>"+xmlEscape(x)+"</loc></url>").join("\n")

@@ -22,7 +22,7 @@
 - `scripts/navigation.mjs` is the single source of rendered site-wide menus and footers; `data/seo/master-matrix.json` is the taxonomy source.
 - All 4 parent Hub labels and 8 child topic labels per locale are displayed, but IDEA rows must NOT be clickable or placed in sitemap/hreflang. This owner-approved preview only displays category names until their actual pages are approved and published.
 - After adding published content or changing Matrix, run `node scripts/build.mjs`, `node scripts/build.mjs --check`, `node scripts/nav-qa.mjs`.
-- Preserve CNAME and all 23 URLs; do not overwrite unrelated repositories.
+- Preserve CNAME and all 25 URLs; do not overwrite unrelated repositories.
 
 ## Five-weapon governance
 
@@ -47,3 +47,13 @@
 - Writer must keep human review flags false, 1,000–5,000 words and four meaningful H2. Static CI verifies drafted content but does not assert facts are true.
 - No API, no LLM running in GitHub Actions, no autonomous publish or background model. Coordinator moves genuinely reviewed/approved content through existing `scripts/seo/publish-batch.mjs`, as a separate PR.
 - Do not copy `/total`'s auto-publish-on-main behavior into `/global`; it could bypass human approval. Never edit /total.
+
+## Premium Master Work branch safeguards
+
+- `docs/GLOBAL_MASTER_MATRIX.md` and `docs/MASTERWORK-CHECKPOINT.json` document current P0–P3 gaps and resumable state. Do not claim branch features are deployed.
+- Search at `/search/` is a nonindex technical utility: valid internal navigation target with real static HTML; intentionally absent from SEO Matrix's PUBLISHED set and sitemap. It must carry `noindex,follow` and must not produce query-parameter SEO URLs.
+- Homepage language equivalents and truly translated checklist equivalents retain reciprocal hreflang. Distinct new Hub/supporting articles must not auto-claim hreflang.
+- `data/seo/content-graph.json` is deterministic/derived; regenerate `node scripts/seo/content-graph.mjs --write` whenever the Matrix or Writer assignment changes; CI verifies byte-exact --check.
+- Three external Writer lane claims are coordinator-owned and persisted as `factory/external-writers/claims.json` via reviewed commits. Git PRs must resolve collisions; local filesystem locks are not a cross-clone distributed service.
+- Markdown writer intake accepts strict JSON frontmatter and writes only ignored private drafts; neither import nor AI writer scripts may publish automatically.
+- Do not merge this technical branch, merge publication PR #6 or deploy without the owner's separate explicit production approval.

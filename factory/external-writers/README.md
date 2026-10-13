@@ -56,3 +56,17 @@ Bộ cổng xuất bản hiện có: `node scripts/seo/publish-batch.mjs --file 
 
 ### Đóng góp từ mô hình /total
 Đã kế thừa: Writer Pack theo ID thật, exact file scope, phân vai Writer/editor/publisher, tài liệu một-lệnh, QA trước publish, cổng ngăn 404, không để Actions tạo nội dung. Chưa sao chép cơ chế auto publisher push trực tiếp main của /total vì /global cần giữ quyền phê duyệt từng lô, không mở backdoor cho Writer.
+
+### Chủ đề claim / checkpoint (đã hỗ trợ)
+
+Coordinator có thể giữ slot theo một session nhất quán, để 2 AI không lấy lại cùng đề tài khi mất mạng. File canonical: `factory/external-writers/claims.json`. Không đưa API token/mật khẩu vào đây. `claim` mặc định DRY-RUN; `--apply` cần Git feature branch sạch và phải tạo PR để merge, không sửa main trực tiếp.
+
+```sh
+node scripts/seo/writer-claims.mjs status
+node scripts/seo/writer-claims.mjs claim --writer W1 --id VI-H01 --session w1-20261014
+node scripts/seo/writer-claims.mjs claim --writer W1 --id VI-H01 --session w1-20261014 --apply
+node scripts/writer-lanes.mjs pack --writer W1 --session w1-20261014 --count 2
+node scripts/seo/writer-claims.mjs resume --writer W1 --session w1-20261014
+```
+
+Chỉ coordinator được ghi `claims.json`. Writer chỉ ghi JSON bài của làn mình, có thể thêm `writer_session` khớp claim. Mọi trạng thái claim sau khi thay đổi phải tạo commit và PR, được đối chiếu với main mới nhất trước merge. Điều này **không** phải lock phân tán thực sự giữa nhiều bản sao Git chưa merge, nên tuyệt đối tránh hai người sửa cùng claim branch song song. Sau khi nhận bài trong inbox, coordinator mới chạy `submit`/review. `SUBMITTED` tiếp tục khóa ID chờ kiểm duyệt, không được tự tái claim để viết trùng.

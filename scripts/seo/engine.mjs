@@ -12,6 +12,7 @@ fs.mkdirSync(path.join(root,"reports"),{recursive:true});
 const steps=[
 ["Generated page drift",["scripts/build.mjs","--check"]],
 ["SEO Matrix validation",["scripts/seo/validate-plan.mjs"]],
+["Content graph coherence",["scripts/seo/content-graph.mjs","--check"]],
 ["Menu and footer QA",["scripts/nav-qa.mjs"]],
 ["Technical SEO audit",["scripts/seo/audit-static.mjs","--out","reports/technical-audit.json","--fail-p0"]],
 ["AI Search signals",["scripts/seo/audit-ai-search.mjs","--out","reports/ai-search-audit.json"]],

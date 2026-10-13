@@ -54,7 +54,7 @@ for(const row of published){
   const target=normalizedHref(href,row.url);
   if(target===null)continue;
   if(target.startsWith("/assets/")){if(!fs.existsSync(path.join(root,target.slice(1))))issue("P1","MISSING_ASSET",row.url,"Referenced asset not found: "+target,"Restore the asset");continue;}
-  if(!publishedURLs.has(target)&&target!=="/"){issue("P1","BROKEN_INTERNAL_LINK",row.url,"Internal link points outside published inventory: "+target,"Remove/repair this link before publishing");}
+  if(!publishedURLs.has(target)&&target!=="/"&&!(target==="/search/"&&fs.existsSync(path.join(root,"search/index.html"))&&fs.readFileSync(path.join(root,"search/index.html"),"utf8").includes('name="robots" content="noindex,follow"'))){issue("P1","BROKEN_INTERNAL_LINK",row.url,"Internal link points outside published inventory: "+target,"Remove/repair this link before publishing");}
  }
 }
 for(const url of publishedURLs)if(!sitemapURLs.includes(expectedCanonical(url)))issue("P0","SITEMAP_MISSING_PUBLISHED",url,"Published URL missing from sitemap","Regenerate the sitemap");

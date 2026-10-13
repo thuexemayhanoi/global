@@ -6,7 +6,7 @@ Live site: https://global.rentbikehanoi.com/
 Repo: `thuexemayhanoi/global`  
 Languages: vi, en, de, fr, es, nl, zh-CN (/zh/), pt, ko, ja.
 
-**Current inventory:** 23 existing public HTML URLs + 120 **IDEA only** proposals = 143 matrix rows.
+**Current inventory:** 25 existing public HTML URLs + 120 **IDEA only** proposals = 145 matrix rows.
 IDEA items are *not pages*, are *not indexed*, and must not enter sitemap, navigation, content indexes or hreflang.
 
 ## Pillar > Hub > Silo/Support
@@ -48,11 +48,11 @@ The editor should expand this Matrix only after real user/search-intent research
 ## Technical safety
 
 - GitHub Pages root deployment and `CNAME=global.rentbikehanoi.com` are frozen.
-- The `scripts/build.mjs` generator owns the original 23 URLs, and this Matrix is observational/planning only.
+- The `scripts/build.mjs` generator owns the 25 live URLs, and this Matrix is observational/planning only.
 - Keep WordPress sites, `/lab`, `/german`, and their NAP/SEO out of scope.
 - No generic 404 redirects to the homepage; decide migrations with evidence.
 - Use locale-appropriate `html lang`, self canonical, correct sitemap and no speculative structured claims.
-- Protect existing 23 URLs from deletion and retain linkability throughout future expansions.
+- Protect existing 25 URLs from deletion and retain linkability throughout future expansions.
 
 ## Research taxonomy and roles
 

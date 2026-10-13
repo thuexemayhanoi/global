@@ -28,7 +28,7 @@ Pilot stage: 10 localized overviews and 10 localized practical checklists. Broad
 
 ## Phase 2 — multilingual SEO Master Matrix
 
-The planning inventory covers all 23 current public URLs and 120 non-published native-language topic candidates across 10 locales. `IDEA` items are **not** generated pages or verified search-demand opportunities. See [Multilingual SEO Matrix](docs/MULTILINGUAL-SEO-MATRIX.md).
+The planning inventory covers all 25 current public URLs and 120 non-published native-language topic candidates across 10 locales. `IDEA` items are **not** generated pages or verified search-demand opportunities. See [Multilingual SEO Matrix](docs/MULTILINGUAL-SEO-MATRIX.md).
 
 ```sh
 node scripts/seo/validate-plan.mjs
@@ -53,3 +53,7 @@ See [Content Factory](docs/CONTENT-FACTORY.md) and [Batch Publishing](docs/BATCH
 ## Three external AI Writers — no API
 
 The /total-inspired manual writer lanes are documented in [Three External Writers](factory/external-writers/README.md). Fixed W1/W2/W3 assignments cover the currently planned Hub and Supporting IDs without duplicates. Generate a bounded copy/pasteable brief using `node scripts/writer-lanes.mjs pack --writer W1 --count 2` or GitHub Actions → **Manual Writer Pack**. A separate read-only Writer Draft QA verifies incoming JSON through PRs. No external model is invoked or auto-published; the editorial/publisher approval process stays intact.
+
+## Premium Global Master Work — technical PR only (2026-10-14)
+
+For execution priorities and evidence: [Global Master Matrix](docs/GLOBAL_MASTER_MATRIX.md) and [Checkpoint](docs/MASTERWORK-CHECKPOINT.json). Branch `feat/global-premium-masterwork-v1` proposes sticky desktop/mobile navigation, 10-language search metadata shards, article TOC/reading rail, content graph, manual coordinator Writer claim ledger and Markdown/JSON intake. The search utility page is deliberately `noindex` and excluded from the 25-URL SEO sitemap. **None of these proposed changes is live before a separately approved PR merge.** Scalability test is synthetic metadata only; see [Performance Limits](docs/PERFORMANCE-LIMITS.md).

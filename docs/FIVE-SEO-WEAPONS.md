@@ -1,5 +1,5 @@
 # Five SEO weapons — global.rentbikehanoi.com
-**Current snapshot:** 10 languages, 23 published URLs, 120 unverified IDEA rows in SEO Matrix.
+**Current snapshot:** 10 languages, 25 published URLs, 120 unverified IDEA rows in SEO Matrix.
 
 | Weapon | Delivered | Next dependency |
 |---|---|---|
