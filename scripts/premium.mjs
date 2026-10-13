@@ -15,12 +15,12 @@ const langUI={
  ko:["검색","게시된 가이드","목차","관련 가이드","맨 위로","편집팀"],
  ja:["検索","公開中のガイド","目次","関連記事","ページ上部へ","編集部"]
 };
-function makeSearchPage(locales){
+export function createSearchPage(locales){
  const opts=locales.map(l=>'<option value="'+safe(l.code)+'">'+safe(l.flag+" "+l.name)+'</option>').join("");
  const ld={"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Vietnam Two-Wheel Guide","url":HOST+"/"},{"@type":"WebPage","name":"Search published guides","url":HOST+"/search/","isPartOf":{"@id":HOST+"/"}}]};
  const json=JSON.stringify(ld).replace(/</g,"\\u003c");
  return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
- '<title>Search Multilingual Guides | Vietnam Two-Wheel Guide</title><meta name="description" content="Search published Vietnam motorbike rental guides by keyword and language. Search results use a bounded static metadata index.">'+
+ '<title>Search Multilingual Guides | Vietnam Two-Wheel Guide</title><meta name="description" content="Search published Vietnam motorbike rental guides by keyword and language. Search results use a bounded static metadata index."><meta name="robots" content="noindex,follow">'+
  '<link rel="canonical" href="'+HOST+'/search/"><meta property="og:type" content="website"><meta property="og:title" content="Search Vietnam Two-Wheel Guide"><meta property="og:url" content="'+HOST+'/search/">'+
  '<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"><link rel="stylesheet" href="/assets/styles.css"><script type="application/ld+json">'+json+'</script></head>'+
  '<body><a class="skip" href="#main">Skip to content</a><header class="header"><div class="container header-in"><a class="brand" href="/">VIETNAM / WHEELS</a></div></header>'+
@@ -76,13 +76,25 @@ function enhanceArticle(html,route,matrix){
  return html.replace(articleMatch[0],rebuilt);
 }
 export function applyPremium(files,matrix,locales){
- files["search/index.html"]=makeSearchPage(locales);
+ // Search is a real technical route added by build before navigation, not an indexable content item.
  const routes=Object.keys(files).filter(p=>p.endsWith(".html"));
  const published=matrix.rows.filter(x=>x.status==="PUBLISHED");
  for(const p of routes){
   let h=files[p];
   if(!h.includes('href="/assets/premium.css"'))h=h.replace('</head>','<link rel="stylesheet" href="/assets/premium.css"><script src="/assets/premium.js" defer></script>'+ (p==="search/index.html"?'<script src="/assets/search.js" defer></script>':"")+'</head>');
   h=enhanceArticle(h,p,matrix);
+  // Truly published locale pages only; do not generate empty Hub category URLs.
+  const localeHome=p.match(/^([a-z]{2})\/index\.html$/);
+  if(localeHome){
+   const code=localeHome[1],tr=langUI[code]||langUI.en;
+   const cards=matrix.rows.filter(r=>r.locale===code&&r.status==="PUBLISHED"&&(r.role==="HUB"||r.role==="SUPPORT")&&files[r.url.slice(1)+"index.html"]).slice(0,8);
+   if(cards.length){
+    const region='<section class="premium-featured" aria-label="'+safe(tr[1])+'"><div class="container"><h2>'+safe(tr[1])+'</h2><div class="premium-featured-grid">'+cards.map(r=>'<a class="premium-featured-card" href="'+safe(r.url)+'"><strong>'+safe(r.working_title)+'</strong><span>'+safe(r.role==="HUB"?"Topic hub":"Practical guide")+'</span><em>Read →</em></a>').join("")+'</div></div></section>';
+    h=h.replace('</main>',region+'</main>');
+   }
+  }
+  if(h.includes('<div class="nav2-legal">'))h=h.replace('<div class="nav2-legal">','<div class="nav2-legal"><a href="/search/">'+safe(tr[0])+'</a>');
+
   if(!h.includes('id="top"'))h=h.replace('<body>','<body id="top">');
   const l=p.match(/^([a-z]{2})\//)?.[1],tr=langUI[l]||langUI.en;
   if(!h.includes('class="premium-search-link"')){
