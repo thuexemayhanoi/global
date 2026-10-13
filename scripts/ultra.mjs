@@ -49,15 +49,14 @@ function articleDecor(html,code){
  if(html.includes('class="ultra-reading-tools"'))return html;
  if(!html.includes('premium-article-grid'))return html;
  const tr=classes(code),match=html.match(/<nav class="premium-toc" aria-label="([^"]+)"><strong>[^<]+<\/strong><ol>([\s\S]*?)<\/ol><\/nav>/);
- if(match){
-  const mobile='<details class="ultra-mobile-toc"><summary>☷ '+clean(tr[9])+' <span aria-hidden="true">⌄</span></summary><nav aria-label="'+clean(match[1])+'"><ol>'+match[2]+'</ol></nav></details>';
-  html=html.replace('<div class="premium-reading-content">','<div class="premium-reading-content">'+mobile);
- }
  const article=html.match(/<div class="premium-reading-content">([\s\S]*?)<\/div><aside class="premium-rail">/);
  if(!article)return html;
  const estimated=Math.max(1,Math.ceil(plaintext(article[1]).split(/\s+/).filter(Boolean).length/210));
  const top='<div class="ultra-reading-tools"><span class="ultra-reading-time" aria-label="Estimated reading time">◷ ≈'+estimated+' min</span><div class="ultra-reading-buttons"><button type="button" data-ultra-copy hidden>'+clean(tr[7])+'</button><button type="button" data-ultra-focus hidden aria-pressed="false">'+clean(tr[8])+'</button></div><span class="ultra-copy-feedback" aria-live="polite"></span></div>';
- html=html.replace(/(<div class="premium-reading-content">[\s\S]*?<h1[^>]*>[\s\S]*?<\/h1>)/,'$1'+top);
+ const mobile=match?'<details class="ultra-mobile-toc"><summary>☷ '+clean(tr[9])+' <span aria-hidden="true">⌄</span></summary><nav aria-label="'+clean(match[1])+'"><ol>'+match[2]+'</ol></nav></details>':"";
+ // Reading tools and mobile contents appear AFTER the meaningful article intro.
+ if(html.includes('class="article-lead"'))html=html.replace(/(<p class="article-lead">[\s\S]*?<\/p>)/,'$1'+top+mobile);
+ else html=html.replace(/(<div class="premium-reading-content">[\s\S]*?<h1[^>]*>[\s\S]*?<\/h1>)/,'$1'+top+mobile);
  return html;
 }
 function enhanceRoot(html){

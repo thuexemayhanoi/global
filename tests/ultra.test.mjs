@@ -48,6 +48,7 @@ test("all ten checklists have progressive mobile TOC, reading controls and keybo
   assert.ok(h.includes('data-ultra-copy hidden'),l.code);
   assert.ok(h.includes('data-ultra-focus hidden aria-pressed="false"'),l.code);
   assert.ok(h.includes('class="ultra-reading-tools"'),l.code);
+  assert.ok(h.indexOf('<h1')<h.indexOf('class="article-lead"')&&h.indexOf('class="article-lead"')<h.indexOf('class="ultra-mobile-toc"'),l.code+' mobile TOC must follow intro');
   assert.ok(h.includes('href="#section-1"'),l.code);
  }
 });
