@@ -12,7 +12,7 @@ test("all generated pages have offline Ultra assets, one H1 and intact canonical
  assert.ok(read("assets/ultra.js").length<8000);
  for(const p of files){
   const h=read(p);
-  assert.ok(h.includes('href="/assets/ultra.css"'),p);
+  assert.ok(h.includes('href="/assets/ultra.css?v=responsive-20261014-1"'),p);
   assert.ok(h.includes('src="/assets/ultra.js"'),p);
   assert.equal(h.split("<h1").length-1,1,p);
   if(p!=="404.html")assert.ok(h.includes('rel="canonical"'),p);
@@ -110,7 +110,7 @@ test("responsive photo CSS prevents Safari shrink-to-fit and keeps galleries wit
  assert.ok(css.length<24000,"CSS budget exceeded");
  for(const route of ["index.html",...locales.map(x=>x.code+"/index.html")]){
   const html=read(route);
-  assert.ok(html.includes('href="/assets/ultra.css"'),route);
+  assert.ok(html.includes('href="/assets/ultra.css?v=responsive-20261014-1"'),route);
   assert.ok(html.includes('name="viewport" content="width=device-width, initial-scale=1"'),route);
  }
 });
