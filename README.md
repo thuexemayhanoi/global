@@ -57,3 +57,7 @@ The /total-inspired manual writer lanes are documented in [Three External Writer
 ## Premium Global Master Work — technical PR only (2026-10-14)
 
 For execution priorities and evidence: [Global Master Matrix](docs/GLOBAL_MASTER_MATRIX.md) and [Checkpoint](docs/MASTERWORK-CHECKPOINT.json). Branch `feat/global-premium-masterwork-v1` proposes sticky desktop/mobile navigation, 10-language search metadata shards, article TOC/reading rail, content graph, manual coordinator Writer claim ledger and Markdown/JSON intake. The search utility page is deliberately `noindex` and excluded from the 25-URL SEO sitemap. **None of these proposed changes is live before a separately approved PR merge.** Scalability test is synthetic metadata only; see [Performance Limits](docs/PERFORMANCE-LIMITS.md).
+
+## Premium Ultra editorial theme (optional technical upgrade)
+
+The Ultra layer lives in `scripts/ultra.mjs`, `assets/ultra.css`, and `assets/ultra.js`, applied by `scripts/build.mjs` after the Premium renderer. It adds responsive branded hero artwork (pure CSS), native-locale in-page topic tabs, a richer global language directory, an aligned shared-header search action, and accessible mobile article reading tools (TOC, estimated reading time, copy link, focus mode). Zero third-party assets or AI API calls. Do not treat a PR as deployed until it is approved and GitHub Pages has finished.

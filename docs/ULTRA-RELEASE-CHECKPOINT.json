@@ -4,7 +4,7 @@
   "baseMain": "643aa0fde50ab8184b9bfbda700fdfed675cf3a5",
   "branch": "feat/premium-ultra-design-v1",
   "phase": "ULTRA_01",
-  "status": "BRANCH_UNMERGED",
+  "status": "IMPLEMENTED_ON_FEATURE_BRANCH_QA_PENDING",
   "ownerApprovedScope": "Implement technical Premium Ultra enhancements. Production merge awaits approval.",
   "date": "2026-10-14",
   "releasedBaseline": {
@@ -19,8 +19,11 @@
     "tests/ultra.test.mjs",
     "Generated all locale and utility HTML"
   ],
-  "qa": "NOT_YET_COMPLETE",
+  "qa": "GITHUB_ACTIONS_PENDING",
   "browserQA": "UNAVAILABLE_ERR_TUNNEL_CONNECTION_FAILED",
-  "notes": "Do not modify other repos. PR #6 (2 articles) separate; PR #10 (menu fix) overlaps previous Premium and must not be merged blindly.",
-  "resume": "Refresh main HEAD and branch HEAD, check CI, reconcile concurrent changes, regenerate static files and run node scripts/build.mjs --check. After explicit merge approval, verify GitHub Pages deploy and mobile live screenshot."
+  "notes": "Shared premium theme Ultra: CSS-only editorial hero, ten localized quick-topic navigators, 10 mobile TOCs and browser-native reader tools. No new indexed URLs or CMS; all 25 published URLs remain unchanged. Other PRs preserved. Deployment only after reviewed production merge.",
+  "resume": "Refresh main HEAD and branch HEAD, check CI, reconcile concurrent changes, regenerate static files and run node scripts/build.mjs --check. After explicit merge approval, verify GitHub Pages deploy and mobile live screenshot.",
+  "lastStagedCommit": "78a1c856b42e7b26a1a031a0a1a3fda01468b6fd",
+  "generatedRoutes": 26,
+  "generatedSupport404": true
 }
