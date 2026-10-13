@@ -89,10 +89,10 @@ node scripts/writer-lanes.mjs status
 
 | ID | Priority | Deliverable | Status | Acceptance |
 |---|---|---|---|---|
-| G-U01 | P1 | Editorial split hero with branded CSS-only artwork, 10-language copy | BRANCH IMPLEMENTED / QA PENDING | 10 locale pages + root generated, responsive tests |
-| G-U02 | P1 | Header search aligned within shared grid; iPhone nav retained | BRANCH IMPLEMENTED / QA PENDING | Static DOM/header regression; production visual follow-up |
-| G-U03 | P1 | Native-language topical jump navigation to four in-page sections | BRANCH IMPLEMENTED / QA PENDING | 4 real anchors per locale, no IDEA href |
-| G-U04 | P1 | Mobile TOC, reading-time estimate, Copy link and Focus reading | BRANCH IMPLEMENTED / QA PENDING | Progressive keyboard functionality; scripts omitted from SEO content |
-| G-U05 | P1 | Responsive/print/reduced-motion themes | BRANCH IMPLEMENTED / QA PENDING | CSS guard + generated markup + CI |
+| G-U01 | P1 | Editorial split hero with branded CSS-only artwork, 10-language copy | BRANCH CI SUCCESS / PRODUCTION PENDING | 10 locale pages + root generated, responsive tests |
+| G-U02 | P1 | Header search aligned within shared grid; iPhone nav retained | BRANCH CI SUCCESS / PRODUCTION PENDING | Static DOM/header regression; production visual follow-up |
+| G-U03 | P1 | Native-language topical jump navigation to four in-page sections | BRANCH CI SUCCESS / PRODUCTION PENDING | 4 real anchors per locale, no IDEA href |
+| G-U04 | P1 | Mobile TOC, reading-time estimate, Copy link and Focus reading | BRANCH CI SUCCESS / PRODUCTION PENDING | Progressive keyboard functionality; scripts omitted from SEO content |
+| G-U05 | P1 | Responsive/print/reduced-motion themes | BRANCH CI SUCCESS / PRODUCTION PENDING | CSS guard + generated markup + CI |
 
 No live screenshot or Lighthouse verification yet. No production merge authorization for this additional Ultra branch. The generator owns all HTML output; do not manually edit generated pages.
