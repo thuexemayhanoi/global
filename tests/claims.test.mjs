@@ -17,8 +17,7 @@ test("manual claim is bounded, exclusive and resumable",()=>{
  assert.equal(b.claims[0].status,"CLAIMED");
  const c=transition(b,matrix,board,"submit",{writer,id:row.id,session:"session-A"});
  assert.equal(c.claims[0].status,"SUBMITTED");assert.equal(c.revision,3);
- const d=transition(c,matrix,board,"claim",{writer,id:row.id,session:"session-new"});
- assert.equal(d.claims.filter(x=>x.status==="CLAIMED").length,1);
+ assert.throws(()=>transition(c,matrix,board,"claim",{writer,id:row.id,session:"session-new"}),/Submitted draft/);
 });
 test("writer cannot claim foreign assigned topic or unpublished parent",()=>{
  const other=["W1","W2","W3"].find(w=>w!==writer);

@@ -35,6 +35,7 @@ export function transition(state,matrix,board,op,{writer,id,session,now=new Date
   if(!row||!["IDEA","RESEARCHED"].includes(row.status))throw Error("Cannot claim already published/reviewed ID "+id);
   if(row.parent_id&&matrix.rows.find(p=>p.id===row.parent_id)?.status!=="PUBLISHED")throw Error("Claim refused: parent not published");
   if(open.length)throw Error("Already claimed by "+open[0].writer+"/"+open[0].session);
+  if(next.claims.some(c=>c.id===id&&c.status==="SUBMITTED"))throw Error("Submitted draft is awaiting review: "+id);
   const claim={id,writer,session,claim_id:randomUUID(),status:"CLAIMED",at:now,updated_at:now,phase:"RESEARCH",note:"Manual external writer; no model task scheduled"};
   next.claims.push(claim);
  }else if(["submit","release","heartbeat"].includes(op)){
@@ -81,6 +82,7 @@ function main(){
   const subset=state.claims.filter(c=>op==="status"||c.session===args.session&&c.writer===args.writer);
   console.log(JSON.stringify({version:state.version,revision:state.revision,repo:"thuexemayhanoi/global",claims:subset,pending:state.claims.filter(c=>c.status==="CLAIMED").length,notice:"No background Writer process exists; stale leases must be released explicitly by coordinator."},null,2));return;
  }
+ if(op==="submit"&&!fs.existsSync(path.join(ROOT,"factory/external-writers/inbox",args.writer||"",String(args.id||"")+".json")))throw Error("Submit requires a real review JSON in writer inbox");
  const next=transition(state,matrix,board,op,{writer:args.writer,id:args.id,session:args.session});
  if(!args.apply){console.log(JSON.stringify({mode:"DRY_RUN",branchOnly:true,action:op,revision:next.revision,claim:next.claims.at(-1)},null,2));return;}
  const br=featureBranchOnly();

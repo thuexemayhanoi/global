@@ -76,9 +76,11 @@ function flags(argv){
 export function main(argv=process.argv.slice(2)){
  const cmd=argv[0]||"status",opt=flags(argv.slice(1));
  const matrix=read("data/seo/master-matrix.json"),board=read("factory/external-writers/assignments.json"),control=read("factory/external-writers/control.json"),locales=read("content/locales.json");
+ const claims=read("factory/external-writers/claims.json");
  const boardProblems=validateBoard(matrix,board),inbox=inboxFiles();
  if(boardProblems.length||inbox.errors.length)throw Error([...boardProblems,...inbox.errors].join("; "));
- const taken=new Set(inbox.files.map(f=>f.id));
+ const reserved=claims.claims.filter(c=>c.status==="CLAIMED"||c.status==="SUBMITTED");
+ const taken=new Set([...inbox.files.map(f=>f.id),...reserved.filter(c=>c.session!==opt.session||c.status==="SUBMITTED").map(c=>c.id)]);
  if(cmd==="status"){
   const status={mode:control.mode,ai_api_calls:0,auto_publish:false};
   for(const w of W){
@@ -90,13 +92,18 @@ export function main(argv=process.argv.slice(2)){
  if(cmd==="pack"){
   if(!W.includes(opt.writer))throw Error("Supply --writer W1|W2|W3");
   const rows=pack(matrix,board,opt.writer,taken,Number(opt.count||2),opt.locale||null);
-  const brief={repo:"thuexemayhanoi/global",writer:opt.writer,mode:"EXTERNAL_MANUAL_NO_API",max_batch:5,safety:"No automatic publishing; writer claims no human approval",rules:["Read AGENTS.md and factory/external-writers/README.md","Work only in own inbox; do not edit Matrix or generated HTML","Use researched original writing, between 1,000 and 5,000 useful words and at least 4 substantive H2 sections","At least two genuinely consulted source URLs; never invent legal/price details","Keep facts_reviewed_by_human=false and serp_intent_checked=false; editor will check","Open PR from writer branch; no merge; run writer-lanes verify"],items:rows.map(r=>({id:r.id,locale:r.locale,role:r.role,cluster:r.cluster,primary_query_hypothesis:r.primary_query,title:r.working_title,search_intent:r.search_intent,parent_id:r.parent_id,url:r.url,exact_output:INBOX+"/"+opt.writer+"/"+r.id+".json",related_published:matrix.rows.filter(x=>x.locale===r.locale&&x.status==="PUBLISHED"&&(x.role==="PILLAR"||x.id.endsWith("-CHECKLIST"))).map(x=>({url:x.url,title:x.working_title}))}))};
+  const brief={repo:"thuexemayhanoi/global",writer:opt.writer,session:opt.session||null,claim_revision:claims.revision,mode:"EXTERNAL_MANUAL_NO_API",max_batch:5,safety:"No automatic publishing; writer claims no human approval",rules:["Read AGENTS.md and factory/external-writers/README.md","Use coordinator claim --session and refresh main before writing; do not start a topic locked by another session","Work only in own inbox; do not edit Matrix or generated HTML","Use researched original writing, between 1,000 and 5,000 useful words and at least 4 substantive H2 sections","At least two genuinely consulted source URLs; never invent legal/price details","Keep facts_reviewed_by_human=false and serp_intent_checked=false; editor will check","Open PR from writer branch; no merge; run writer-lanes verify"],items:rows.map(r=>({id:r.id,locale:r.locale,role:r.role,cluster:r.cluster,primary_query_hypothesis:r.primary_query,title:r.working_title,search_intent:r.search_intent,parent_id:r.parent_id,url:r.url,exact_output:INBOX+"/"+opt.writer+"/"+r.id+".json",writer_session:opt.session||null,related_published:matrix.rows.filter(x=>x.locale===r.locale&&x.status==="PUBLISHED"&&(x.role==="PILLAR"||x.id.endsWith("-CHECKLIST"))).map(x=>({url:x.url,title:x.working_title}))}))};
   console.log(JSON.stringify(brief,null,2));return;
  }
  if(cmd==="verify"||cmd==="verify-all"){
   const chosen=cmd==="verify-all"?inbox.files:inbox.files.filter(f=>f.writer===opt.writer&&f.path===opt.file);
   if(!chosen.length&&cmd==="verify")throw Error("Exact --writer and --file inside your inbox required");
-  const checks=chosen.map(f=>({...verifyPacket(f.packet,f.writer,matrix,board,locales),file:f.path}));
+  const checks=chosen.map(f=>{
+   const check=verifyPacket(f.packet,f.writer,matrix,board,locales);
+   const claim=reserved.find(c=>c.id===f.id);
+   if(claim&&claim.session!==f.packet.writer_session){check.errors.push("Draft session does not match coordinator claim");check.passed=false;}
+   return {...check,file:f.path};
+  });
   const dup=checkDuplicates(inbox.files),passed=checks.every(x=>x.passed)&&dup.length===0;
   console.log(JSON.stringify({mode:"DRAFT_QA_ONLY",passed,checked:checks.length,checks,duplicates:dup,publish_allowed:false},null,2));
   if(!passed)process.exitCode=1;return;
