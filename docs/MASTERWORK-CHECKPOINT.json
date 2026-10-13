@@ -12,8 +12,8 @@
     5,
     6
   ],
-  "lastBatch": "premium-search-design-content-graph-claims-markdown-i18n-and-benchmark",
-  "lastValidatedCommit": "34f23f44019bf37f95beb61069871070e634fec9",
+  "lastBatch": "post-publish-live-qa-manual-release-rollback",
+  "lastValidatedCommit": "04093d02bd62b5636176dcf9ad5003a65c6a90b6",
   "phases": [
     {
       "batch": "01",
@@ -52,23 +52,30 @@
       "batch": "06",
       "scope": "real Hub pilot content review and PR #6 publication",
       "status": "SEPARATE_PR_AWAITS_APPROVED_PRODUCTION_MERGE"
+    },
+    {
+      "batch": "07",
+      "scope": "manual production HTTP post-publish QA and approved git revert process",
+      "status": "STAGED_NEEDS_LATEST_QA",
+      "commit": "fa51d3fb34e50a288924b075568a337e7dfc71d2",
+      "qa": "PENDING"
     }
   ],
-  "resume": "Check main HEAD and PR #8 first, compare any later AI merges; run CI. Do not merge without owner approval. If QA fails, inspect failed step, fix in next small commit and update checkpoint. PR #6 remains separate.",
-  "lastStagedCommit": "23b9c9d5aafca03f6bd5c1074bd3e3230b79190f",
+  "resume": "Open PR #8 and check latest technical HEAD. Run Static SEO QA and Writer QA; fix failures on branch only. Owner has not approved production merge. After a separate merge approval, check GitHub Pages deploy and manually run post-publish-qa.yml; record screenshots/mobile audit and real performance data. Keep PR #6 separate.",
+  "lastStagedCommit": "fa51d3fb34e50a288924b075568a337e7dfc71d2",
   "currentTechnicalPR": 8,
   "lastConfirmedQA": [
     {
       "workflow": "Static SEO QA",
-      "run": 38447466810,
+      "run": 38448335439,
       "conclusion": "SUCCESS",
-      "commit": "34f23f44019bf37f95beb61069871070e634fec9"
+      "commit": "04093d02bd62b5636176dcf9ad5003a65c6a90b6"
     },
     {
       "workflow": "External Writer Draft QA",
-      "run": 38447466782,
+      "run": 38448335307,
       "conclusion": "SUCCESS",
-      "commit": "34f23f44019bf37f95beb61069871070e634fec9"
+      "commit": "04093d02bd62b5636176dcf9ad5003a65c6a90b6"
     }
   ]
 }

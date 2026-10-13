@@ -72,3 +72,9 @@ node scripts/writer-lanes.mjs status
 - **Claims and editorial intake:** `writer-claims.mjs` local atomic write, manual PR review, session/revision, claim refusal; `import-markdown.mjs` JSON frontmatter to private JSON, no model API or automatic publication.
 - **CI:** Premium nav/search/hreflang/schema checks, claim refusal tests, article QA, content-graph consistency and metadata benchmark; latest confirmed green before final additions: Static SEO QA run 38447466810 and Writer Draft QA run 38447466782. Need fresh green run after current commit before approving PR.
 - **Non-goals / limits:** No merge/main write, no new published SEO URL, no CVW field data, no 40k full HTML build test, no automatic Writer/API, no mass translated content. Independent PR #6 still open and not deployed.
+
+## Release evidence and remaining gates
+
+- **Live read-only QA:** `scripts/seo/post-publish-qa.mjs --confirm-live`, manual workflow `post-publish-qa.yml` must be executed **after an owner-approved deployment**. The branch-level tests cover only offline error-detection behavior; live new UI behavior is not yet verified.
+- **Rollback:** `docs/RELEASE-ROLLBACK.md` prescribes a reviewed git revert PR and post-deploy smoke test. Never force-reset main or silently delete indexed article URLs.
+- **Search metadata benchmark:** GitHub QA run 38448335439, Node 22.23.3: synthetic 10k → 70 shards, 2,190,070 bytes, 14.1 ms; synthetic 40k → 270 shards, 8,760,270 bytes, 59.7 ms. Max shard size 32,851 bytes, **not a complete HTML 40k build or user CWV measurement**.
