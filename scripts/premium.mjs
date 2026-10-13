@@ -81,6 +81,7 @@ export function applyPremium(files,matrix,locales){
  const published=matrix.rows.filter(x=>x.status==="PUBLISHED");
  for(const p of routes){
   let h=files[p];
+  if(p==="404.html")h=h.replace('<link rel="canonical" href="'+HOST+'/404.html">','<meta name="robots" content="noindex,follow">');
   if(!h.includes('href="/assets/premium.css"'))h=h.replace('</head>','<link rel="stylesheet" href="/assets/premium.css"><script src="/assets/premium.js" defer></script>'+ (p==="search/index.html"?'<script src="/assets/search.js" defer></script>':"")+'</head>');
   h=enhanceArticle(h,p,matrix);
   // Truly published locale pages only; do not generate empty Hub category URLs.
