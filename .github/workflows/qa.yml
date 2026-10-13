@@ -28,3 +28,5 @@ jobs:
         run: node scripts/seo/validate-plan.mjs
       - name: Smoke test read-only German writer planning
         run: node scripts/seo/writer-queue.mjs --locale de --count 2
+      - name: Validate 10-language navigation and footer
+        run: node scripts/nav-qa.mjs

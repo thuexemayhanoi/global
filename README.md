@@ -36,3 +36,7 @@ node scripts/seo/writer-queue.mjs --locale de --count 2
 ```
 
 All new content awaits research, intent validation, QA and a separate publishing decision. This commit does not modify the sitemap or create new public pages.
+
+## Full synchronized navigation
+
+The shared `scripts/navigation.mjs` renders responsive 4-Hub menus and 8 Supporting topics for every locale, with footer taxonomy generated from the same Matrix. Nonpublished topics are labeled coming soon without creating broken URLs. The menu is a dropdown on desktop and an accordion drawer on mobile. Use `node scripts/build.mjs` then `node scripts/build.mjs --check` and `node scripts/nav-qa.mjs`.
