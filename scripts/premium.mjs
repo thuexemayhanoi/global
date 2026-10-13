@@ -81,6 +81,7 @@ export function applyPremium(files,matrix,locales){
  const published=matrix.rows.filter(x=>x.status==="PUBLISHED");
  for(const p of routes){
   let h=files[p];
+  const l=p.match(/^([a-z]{2})\//)?.[1],tr=langUI[l]||langUI.en;
   if(p==="404.html")h=h.replace('<link rel="canonical" href="'+HOST+'/404.html">','<meta name="robots" content="noindex,follow">');
   if(!h.includes('href="/assets/premium.css"'))h=h.replace('</head>','<link rel="stylesheet" href="/assets/premium.css"><script src="/assets/premium.js" defer></script>'+ (p==="search/index.html"?'<script src="/assets/search.js" defer></script>':"")+'</head>');
   h=enhanceArticle(h,p,matrix);
@@ -97,7 +98,6 @@ export function applyPremium(files,matrix,locales){
   if(h.includes('<div class="nav2-legal">'))h=h.replace('<div class="nav2-legal">','<div class="nav2-legal"><a href="/search/">'+safe(tr[0])+'</a>');
 
   if(!h.includes('id="top"'))h=h.replace('<body>','<body id="top">');
-  const l=p.match(/^([a-z]{2})\//)?.[1],tr=langUI[l]||langUI.en;
   if(!h.includes('class="premium-search-link"')){
    const link='<a class="premium-search-link" href="/search/" aria-label="'+safe(tr[0])+'">⌕ <span>'+safe(tr[0])+'</span></a>';
    h=h.replace('</div></header>','</div></header>'); // No-op fallback for pages without a shared header.
