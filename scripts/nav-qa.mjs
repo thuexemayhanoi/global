@@ -11,7 +11,7 @@ for(const code of localeCodes)for(const route of [code+"/index.html",code+"/chec
  for(const r of all.filter(r=>r.locale===code&&r.role==="SUPPORT"))if(!html.includes('data-planned-id="'+r.id+'"'))errors.push("planned label missing "+r.id);
  for(const r of all)if(html.includes('href="'+r.url+'"'))errors.push("IDEA href present: "+r.id);
  for(const m of html.matchAll(/href="(\/[^"#?]*)(?:#[^"]*)?"/g)){
-  if(["/assets/styles.css","/assets/navigation.css","/assets/premium.css","/assets/favicon.svg"].includes(m[1]))continue;
+  if(["/assets/styles.css","/assets/navigation.css","/assets/premium.css","/assets/ultra.css","/assets/favicon.svg"].includes(m[1]))continue;
   if(m[1]==="/search/"&&fs.existsSync("search/index.html")&&fs.readFileSync("search/index.html","utf8").includes('name="robots" content="noindex,follow"'))continue;
   if(!live.has(m[1]))errors.push("unpublished link: "+route+" -> "+m[1]);
  }

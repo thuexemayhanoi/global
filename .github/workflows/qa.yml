@@ -19,7 +19,7 @@ jobs:
       - name: Verify deterministic content graph
         run: node scripts/seo/content-graph.mjs --check
       - name: Premium SEO, navigation, search and accessibility regression
-        run: node --test tests/premium.test.mjs tests/claims.test.mjs tests/external-writers.test.mjs tests/search-index.test.mjs tests/markdown-import.test.mjs tests/post-publish.test.mjs
+        run: node --test tests/ultra.test.mjs tests/premium.test.mjs tests/claims.test.mjs tests/external-writers.test.mjs tests/search-index.test.mjs tests/markdown-import.test.mjs tests/post-publish.test.mjs
       - name: Verify CNAME and canonical outputs
         shell: bash
         run: |

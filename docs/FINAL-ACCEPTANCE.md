@@ -1,4 +1,11 @@
 # GLOBAL MASTER WORK — EXECUTION & ACCEPTANCE REPORT
+## Status update — Premium baseline deployed; Ultra awaiting approval
+
+- **Premium PR #8** was explicitly approved and merged at main commit **643aa0fde50ab8184b9bfbda700fdfed675cf3a5**; GitHub Pages deployment and CI reported SUCCESS.
+- **Premium Ultra PR #11** adds editorial CSS art, native-language topic jumps, a correctly aligned header Search, mobile reader TOC, copy link, focus mode and reduced-motion/print styles; latest generated HTML and SEO QA SUCCESS on **fc6ba9f** (run **38452792759**).
+- The table below originally described the pre-PR-#8 audit snapshot, not today's live production. It is retained for traceability; the Premium features described as not deployed there were included in the approved PR #8.
+- PR #11 is **not merged to main**; production visual verification is still unavailable because the browser probe returned ERR_TUNNEL_CONNECTION_FAILED. A passing static CI is not a screenshot or CWV metric.
+
 **Repo:** https://github.com/thuexemayhanoi/global  
 **Technical branch:** `feat/global-premium-masterwork-v1`  
 **PR:** https://github.com/thuexemayhanoi/global/pull/8 — **DRAFT; DO NOT MERGE WITHOUT OWNER APPROVAL**  

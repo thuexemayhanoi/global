@@ -84,3 +84,15 @@ node scripts/writer-lanes.mjs status
 - Verified branch commit `c5604c7daa69144d612166685828843dd66d50aa`: Static SEO QA **38448971915 SUCCESS**; External Writer Draft QA **38448971817 SUCCESS**.
 - 10 checklist templates now carry reciprocal real equivalents but no inappropriate root homepage `x-default` relation.
 - See `docs/FINAL-ACCEPTANCE.md` for the exact feature evidence, publishing blockers, data counts, benchmark scope and rollback.
+
+## Premium Ultra enhancement — technical extension
+
+| ID | Priority | Deliverable | Status | Acceptance |
+|---|---|---|---|---|
+| G-U01 | P1 | Editorial split hero with branded CSS-only artwork, 10-language copy | BRANCH CI SUCCESS / PRODUCTION PENDING | 10 locale pages + root generated, responsive tests |
+| G-U02 | P1 | Header search aligned within shared grid; iPhone nav retained | BRANCH CI SUCCESS / PRODUCTION PENDING | Static DOM/header regression; production visual follow-up |
+| G-U03 | P1 | Native-language topical jump navigation to four in-page sections | BRANCH CI SUCCESS / PRODUCTION PENDING | 4 real anchors per locale, no IDEA href |
+| G-U04 | P1 | Mobile TOC, reading-time estimate, Copy link and Focus reading | BRANCH CI SUCCESS / PRODUCTION PENDING | Progressive keyboard functionality; scripts omitted from SEO content |
+| G-U05 | P1 | Responsive/print/reduced-motion themes | BRANCH CI SUCCESS / PRODUCTION PENDING | CSS guard + generated markup + CI |
+
+No live screenshot or Lighthouse verification yet. No production merge authorization for this additional Ultra branch. The generator owns all HTML output; do not manually edit generated pages.

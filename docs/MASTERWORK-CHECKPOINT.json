@@ -12,7 +12,7 @@
     5,
     6
   ],
-  "lastBatch": "equivalence-only-hreflang-and-final-review",
+  "lastBatch": "Premium Ultra QA passed, production pending",
   "lastValidatedCommit": "c5604c7daa69144d612166685828843dd66d50aa",
   "phases": [
     {
@@ -61,9 +61,9 @@
       "qa": "PENDING"
     }
   ],
-  "resume": "At next session: confirm main HEAD and PR #8 HEAD, diff competing AI changes, run latest CI. PR #8 is draft, do NOT merge without owner approval. If approved, merge via PR then verify Pages SHA, run manual post-publish-qa.yml and mobile/desktop screenshot and CWV checks. PR #5/#6 remain independent and unpublished.",
+  "resume": "Read docs/ULTRA-RELEASE-CHECKPOINT.json, fetch latest main HEAD and PR #11 HEAD. Preserve PR #6/#10 and 25 published URLs. Do not merge Ultra before owner approval. After approval, confirm Pages deployment, run post-publish QA and device inspection.",
   "lastStagedCommit": "c5604c7daa69144d612166685828843dd66d50aa",
-  "currentTechnicalPR": 8,
+  "currentTechnicalPR": 11,
   "lastConfirmedQA": [
     {
       "workflow": "Static SEO QA",
@@ -90,5 +90,20 @@
       "ms": 59.7
     },
     "limitations": "Metadata sharding only; full HTML 40k, mobile latency and Web Vitals not benchmarked"
+  },
+  "latestProductionBaseline": {
+    "commit": "643aa0fde50ab8184b9bfbda700fdfed675cf3a5",
+    "pr": 8,
+    "qa": "success",
+    "pagesDeployment": "success"
+  },
+  "latestUltraBranch": {
+    "branch": "feat/premium-ultra-design-v1",
+    "pr": 11,
+    "head": "fc6ba9f796b3d4fbedf23ad2aabf672227231cd3",
+    "qaRun": 38452792759,
+    "qa": "SUCCESS",
+    "mergeApproved": false,
+    "liveVisualQA": "BLOCKED_CONNECTIVITY"
   }
 }

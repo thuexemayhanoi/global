@@ -57,3 +57,11 @@
 - Three external Writer lane claims are coordinator-owned and persisted as `factory/external-writers/claims.json` via reviewed commits. Git PRs must resolve collisions; local filesystem locks are not a cross-clone distributed service.
 - Markdown writer intake accepts strict JSON frontmatter and writes only ignored private drafts; neither import nor AI writer scripts may publish automatically.
 - Do not merge this technical branch, merge publication PR #6 or deploy without the owner's separate explicit production approval.
+
+## Premium Ultra component boundary
+
+- Render site-wide Ultra visuals in `scripts/ultra.mjs` after navigation + `applyPremium`; styles in `assets/ultra.css`; optional progressive interactions in `assets/ultra.js`.
+- Never directly patch locale HTML after build: generate with `node scripts/build.mjs` and verify `node scripts/build.mjs --check`.
+- Preserve the 10 locales, 25 published URLs, 120 IDEA rows and CNAME. Use only on-page anchors or PUBLISHED URLs; no extra indexable archive/category stubs.
+- Keep essential reading and navigation functional without JS. Reader controls remain `hidden` until event handlers are installed.
+- Run `node --test tests/ultra.test.mjs` and full QA. No merging this branch without the owner's production approval.
