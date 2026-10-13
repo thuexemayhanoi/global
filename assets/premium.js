@@ -18,16 +18,8 @@
  update();
  const menu=document.querySelector(".nav2-drawer");
  if(menu){
-  // Native <details open> makes the desktop nav usable even without JavaScript.
-  // On smartphones, turn it into an initially collapsed hamburger accordion.
-  const narrow=window.matchMedia("(max-width:760px)");
-  const sync=()=>{
-   if(narrow.matches)menu.removeAttribute("open");
-   else menu.setAttribute("open","");
-  };
-  sync();
-  if(narrow.addEventListener)narrow.addEventListener("change",sync);
-  else narrow.addListener(sync);
-  menu.querySelectorAll("a[href]").forEach(a=>a.addEventListener("click",()=>{if(narrow.matches)menu.removeAttribute("open")}));
-}
+  // Closed by default in HTML. Desktop nav is a separate semantic <nav>, no JS dependency.
+  menu.removeAttribute("open");
+  menu.querySelectorAll("a[href]").forEach(a=>a.addEventListener("click",()=>menu.removeAttribute("open")));
+ }
 })();

@@ -7,7 +7,7 @@ const errors=[];
 for(const code of localeCodes)for(const route of [code+"/index.html",code+"/checklist/index.html"]){
  const html=fs.readFileSync(route,"utf8");
  if(!html.includes('data-nav-version="2"')||!html.includes('data-footer-version="2"'))errors.push("missing shared shell: "+route);
- if((html.match(/class="nav2-topic"/g)||[]).length!==4)errors.push("hub count: "+route);
+ if((html.match(/class="nav2-topic"/g)||[]).length!==8)errors.push("hub count: "+route);
  for(const r of all.filter(r=>r.locale===code&&r.role==="SUPPORT"))if(!html.includes('data-planned-id="'+r.id+'"'))errors.push("planned label missing "+r.id);
  for(const r of all)if(html.includes('href="'+r.url+'"'))errors.push("IDEA href present: "+r.id);
  for(const m of html.matchAll(/href="(\/[^"#?]*)(?:#[^"]*)?"/g)){
@@ -21,6 +21,7 @@ for(const p of ["index.html","search/index.html","about/index.html","contact/ind
  if(!html.includes('data-nav-version="2"')||!html.includes('data-footer-version="2"'))errors.push("footer/header missing "+p);
 }
 if(!fs.readFileSync("index.html","utf8").includes('id="languages"'))errors.push("language selector anchor missing");
-if(!fs.readFileSync("en/index.html","utf8").includes('class="nav2-drawer" open'))errors.push("Desktop menu closed without JS");
+if(!fs.readFileSync("en/index.html","utf8").includes('class="nav2-desktop"'))errors.push("Missing visible desktop category navigation");
+if(fs.readFileSync("en/index.html","utf8").includes('class="nav2-drawer" open'))errors.push("Mobile drawer must start collapsed");
 if(errors.length){errors.forEach(e=>console.error(e));process.exit(1)}
 console.log("Shared navigation QA PASS — 10 locales, 4 hubs and 8 child labels each, zero IDEA hyperlinks");
