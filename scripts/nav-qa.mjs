@@ -21,7 +21,7 @@ for(const p of ["index.html","search/index.html","about/index.html","contact/ind
  if(!html.includes('data-nav-version="2"')||!html.includes('data-footer-version="2"'))errors.push("footer/header missing "+p);
 }
 if(!fs.readFileSync("index.html","utf8").includes('id="languages"'))errors.push("language selector anchor missing");
-if(errors.length){errors.forEach(e=>console.error(e));process.exit(1)}
 if(!fs.readFileSync("en/index.html","utf8").includes('class="nav2-desktop"'))errors.push("Desktop navigation absent");
 if(fs.readFileSync("en/index.html","utf8").includes('class="nav2-drawer" open'))errors.push("Mobile drawer should start closed");
+if(errors.length){errors.forEach(e=>console.error(e));process.exit(1)}
 console.log("Shared navigation QA PASS — 10 locales, 4 hubs and 8 child labels each, zero IDEA hyperlinks");

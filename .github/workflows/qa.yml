@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+    branches: [main, feat/global-premium-masterwork-v1]
 permissions:
   contents: read
 jobs:
@@ -54,3 +54,10 @@ jobs:
           grep -q '<loc>https://global.rentbikehanoi.com/contact/</loc>' sitemap.xml
       - name: Test safe article rendering and refusal gates
         run: node --test tests/content-publisher.test.mjs
+      - name: Premium responsive, search, hreflang and reader regression tests
+        run: node --test tests/premium.test.mjs
+      - name: Premium JavaScript syntax checks
+        run: |
+          node --check assets/premium.js
+          node --check assets/search.js
+          node --check scripts/premium.mjs
