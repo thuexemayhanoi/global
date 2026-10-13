@@ -104,3 +104,25 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
 
 /* Mobile footer: planned articles stay discoverable in the menu, but don't dominate the footer. */
 @media(max-width:600px){.nav2-foot-groups .nav2-child.nav2-pending{display:none}.nav2-foot-groups{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.nav2-foot-groups h3{margin:0;padding:6px 0;border-bottom:1px solid #395769}.nav2-foot-main{gap:18px}}
+
+/* Separate desktop navigation fixes hidden native <details> descendants. */
+.nav2-desktop{display:flex;align-items:center;justify-content:center;gap:2px;flex:1;min-width:0}
+.nav2-desktop .nav2-topic{position:relative}
+.nav2-drawer{display:none}
+@media(max-width:1220px){
+ .nav2-desktop{display:none}
+ .nav2-drawer{display:block;order:3;flex-basis:100%;min-width:0}
+ .nav2-drawer>.nav2-menu-button{display:block;cursor:pointer;list-style:none;text-align:center;padding:10px;border:1px solid #d8e5ed;border-radius:10px;background:#e9f7f8;font-weight:800}
+ .nav2-drawer>.nav2-menu-button::-webkit-details-marker{display:none}
+ .nav2-drawer:not([open])>.nav2-main{display:none}
+ .nav2-main{display:flex;flex-direction:column;align-items:stretch;gap:4px;border-top:1px solid #d8e5ed;margin-top:10px;padding-top:10px}
+ .nav2-topic>summary,.nav2-direct{padding:12px;white-space:normal}
+ .nav2-panel{position:static;width:100%;max-width:none;box-shadow:none;margin-bottom:10px}
+ .nav2-head-inner{flex-wrap:wrap}
+ .nav2-lang{margin-left:auto}
+}
+@media(max-width:440px){
+ .nav2-foot-groups{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .nav2-foot-groups section{min-width:0}
+ .nav2-foot-groups .nav2-child{overflow-wrap:anywhere}
+}

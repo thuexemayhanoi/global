@@ -33,7 +33,10 @@ export function enhanceNavigation(files, locales, matrix) {
   function navHead(l,isChecklist) {
     const tr=translations[l.code], groups=hubs(l.code);
     if(groups.length!==4||groups.some(g=>children(g.id).length!==2))throw Error('Expected 4 hubs with 8 children for '+l.code);
-    return '<header class="header nav2-head" data-nav-version="2"><div class="container nav2-head-inner"><a class="brand nav2-brand" href="/"><span class="mark" aria-hidden="true">✳</span>VIETNAM<span class="brand-light">/</span>WHEELS</a><details class="nav2-drawer" open><summary class="nav2-menu-button">☰ '+esc(tr[6])+'</summary><nav class="nav2-main" aria-label="'+esc(tr[6])+'"><a class="nav2-direct" href="/'+l.code+'/">'+esc(tr[0])+'</a>'+groups.map((g,i)=>topicMenu(l,g,i)).join('')+'<a class="nav2-direct" href="/'+l.code+'/checklist/">'+esc(tr[5])+'</a></nav></details>'+languages(l,isChecklist)+'</div></header>';
+    const links='<a class="nav2-direct" href="/'+l.code+'/">'+esc(tr[0])+'</a>'+groups.map((g,i)=>topicMenu(l,g,i)).join('')+'<a class="nav2-direct" href="/'+l.code+'/checklist/">'+esc(tr[5])+'</a>';
+    // Desktop navigation MUST be outside a closed <details> element.
+    // Hidden <details> descendants cannot be made accessible with display:flex alone.
+    return '<header class="header nav2-head" data-nav-version="2"><div class="container nav2-head-inner"><a class="brand nav2-brand" href="/"><span class="mark" aria-hidden="true">✳</span>VIETNAM<span class="brand-light">/</span>WHEELS</a><nav class="nav2-desktop" aria-label="'+esc(tr[6])+'">'+links+'</nav><details class="nav2-drawer"><summary class="nav2-menu-button">☰ '+esc(tr[6])+'</summary><nav class="nav2-main" aria-label="'+esc(tr[6])+'">'+links+'</nav></details>'+languages(l,isChecklist)+'</div></header>';
   }
   function footer(l){
     const tr=translations[l.code],groups=hubs(l.code);
