@@ -9,3 +9,10 @@
 - No invented prices, local premises, reviews, licence rules, or statements of service availability.
 - No unreviewed mass auto-publishing. Add researched topic/keyword matrix, scoped QA and safe batch publishing before scaling.
 - Do not remove or rename a live URL without a redirect/SEO plan.
+
+## Phase 2 matrix rules
+
+- Read `docs/MULTILINGUAL-SEO-MATRIX.md`, `data/seo/taxonomy.json`, and `data/seo/master-matrix.json` before any topic expansion.
+- `IDEA` is merely a keyword hypothesis. Do not render it as a page or reference it in a sitemap/navigation/hreflang.
+- Run `node scripts/seo/validate-plan.mjs` after changes to the matrix or deployment files; run `node scripts/seo/writer-queue.mjs --locale de --count 2` for a **read-only** research queue.
+- First publish pilots must be separately approved and verified before enabling a recurring writer. Never silently publish proposed topics.

@@ -24,3 +24,7 @@ jobs:
           grep -q '<html lang="de"' de/index.html
           grep -q '<html lang="ko"' ko/index.html
           grep -q '<html lang="ja"' ja/index.html
+      - name: Validate SEO matrix and live URL inventory
+        run: node scripts/seo/validate-plan.mjs
+      - name: Smoke test read-only German writer planning
+        run: node scripts/seo/writer-queue.mjs --locale de --count 2

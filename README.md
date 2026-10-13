@@ -25,3 +25,14 @@ Each locale has an independently indexable homepage and a structured rental chec
 - Protect `CNAME` (global.rentbikehanoi.com) and existing URLs. Never import or overwrite WordPress or /lab projects.
 
 Pilot stage: 10 localized overviews and 10 localized practical checklists. Broader hub/silo clusters will be added incrementally only with useful content and QA.
+
+## Phase 2 — multilingual SEO Master Matrix
+
+The planning inventory covers all 23 current public URLs and 120 non-published native-language topic candidates across 10 locales. `IDEA` items are **not** generated pages or verified search-demand opportunities. See [Multilingual SEO Matrix](docs/MULTILINGUAL-SEO-MATRIX.md).
+
+```sh
+node scripts/seo/validate-plan.mjs
+node scripts/seo/writer-queue.mjs --locale de --count 2
+```
+
+All new content awaits research, intent validation, QA and a separate publishing decision. This commit does not modify the sitemap or create new public pages.
