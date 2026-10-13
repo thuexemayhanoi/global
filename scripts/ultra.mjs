@@ -28,6 +28,7 @@ function heroMarkup(html,code){
  });
 }
 function injectHome(html,code,matrix,files){
+ if(html.includes('class="ultra-topic-tabs"'))return html;
  const tr=classes(code),l=code;
  const links=matrix.rows.filter(x=>x.locale===l&&x.role==="HUB").sort((a,b)=>a.priority-b.priority).slice(0,4);
  if(links.length!==4)throw Error("Ultra expects 4 hubs for "+code);
@@ -45,6 +46,7 @@ function injectHome(html,code,matrix,files){
  return html;
 }
 function articleDecor(html,code){
+ if(html.includes('class="ultra-reading-tools"'))return html;
  if(!html.includes('class="premium-article-grid"'))return html;
  const tr=classes(code),match=html.match(/<nav class="premium-toc" aria-label="([^"]+)"><strong>[^<]+<\/strong><ol>([\s\S]*?)<\/ol><\/nav>/);
  if(match){
