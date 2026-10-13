@@ -50,9 +50,10 @@ export function enhanceNavigation(files, locales, matrix) {
 
     if(!html.includes('data-nav-version="2"'))html=html.replace(/(<body><a class="skip"[^>]*>[^<]*<\/a>)/,'$1'+h);
     if(!html.includes('data-footer-version="2"'))html=html.replace(/<\/body>/,f+'</body>');
-    const labels={vi:["Giới thiệu","Liên hệ"],en:["About","Contact"],de:["Über uns","Kontakt"],fr:["À propos","Contact"],es:["Acerca de","Contacto"],nl:["Over ons","Contact"],zh:["关于我们","联系我们"],pt:["Sobre","Contacto"],ko:["소개","문의"],ja:["サイトについて","お問い合わせ"]};
-    const [aboutLabel,contactLabel]=labels[l?.code||"en"];
+    const labels={vi:["Giới thiệu","Liên hệ","Bảo mật","Điều khoản"],en:["About","Contact","Privacy","Terms"],de:["Über uns","Kontakt","Datenschutz","Nutzungsbedingungen"],fr:["À propos","Contact","Confidentialité","Conditions"],es:["Acerca de","Contacto","Privacidad","Condiciones"],nl:["Over ons","Contact","Privacybeleid","Voorwaarden"],zh:["关于我们","联系我们","隐私政策","使用条款"],pt:["Sobre","Contacto","Privacidade","Termos"],ko:["소개","문의","개인정보 보호","이용약관"],ja:["サイトについて","お問い合わせ","プライバシー","利用規約"]};
+    const [aboutLabel,contactLabel,privacyLabel,termsLabel]=labels[l?.code||"en"];
     html=html.replace('<div class="nav2-legal">','<div class="nav2-legal"><a href="/about/">'+esc(aboutLabel)+'</a><a href="/contact/">'+esc(contactLabel)+'</a>');
+    html=html.replace('<a href="/privacy/">Privacy</a>','<a href="/privacy/">'+esc(privacyLabel)+'</a>').replace('<a href="/terms/">Terms</a>','<a href="/terms/">'+esc(termsLabel)+'</a>');
 
     if(!html.includes('/assets/navigation.css'))html=html.replace('<link rel="stylesheet" href="/assets/styles.css">','<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">');
     if(p==='index.html')html=html.replace('<div class="language-grid">','<div class="language-grid" id="languages">');

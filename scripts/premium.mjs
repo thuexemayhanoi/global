@@ -15,6 +15,18 @@ const langUI={
  ko:["검색","게시된 가이드","목차","관련 가이드","맨 위로","편집팀"],
  ja:["検索","公開中のガイド","目次","関連記事","ページ上部へ","編集部"]
 };
+const readingLabels={
+ vi:["Chủ đề","Hướng dẫn thực tế","Đọc bài →","Liên hệ / góp ý"],
+ en:["Topic hub","Practical guide","Read →","Contact / corrections"],
+ de:["Themenübersicht","Praktischer Ratgeber","Weiterlesen →","Kontakt / Korrekturen"],
+ fr:["Rubrique","Guide pratique","Lire →","Contact / corrections"],
+ es:["Tema principal","Guía práctica","Leer →","Contacto / correcciones"],
+ nl:["Onderwerp","Praktische gids","Lees verder →","Contact / correcties"],
+ zh:["主题中心","实用指南","阅读 →","联系 / 更正"],
+ pt:["Tema central","Guia prático","Ler →","Contacto / correções"],
+ ko:["주제 허브","실용 가이드","읽기 →","문의 / 정정"],
+ ja:["トピック","実用ガイド","読む →","お問い合わせ / 訂正"]
+};
 export function createSearchPage(locales){
  const opts=locales.map(l=>'<option value="'+safe(l.code)+'">'+safe(l.flag+" "+l.name)+'</option>').join("");
  const ld={"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Vietnam Two-Wheel Guide","url":HOST+"/"},{"@type":"WebPage","name":"Search published guides","url":HOST+"/search/","isPartOf":{"@id":HOST+"/"}}]};
@@ -56,7 +68,7 @@ function addSearchMetadata(files,matrix,locales){
 function enhanceArticle(html,route,matrix){
  const m=route.match(/^([a-z]{2})\/(?:checklist|topics\/[a-z0-9-]+|guides\/[a-z0-9-]+)\/index\.html$/);
  if(!m||!html.includes('<article class="article">'))return html;
- const code=m[1],tr=langUI[code]||langUI.en;
+ const code=m[1],tr=langUI[code]||langUI.en,copy=readingLabels[code]||readingLabels.en;
  const articleMatch=html.match(/<article class="article">([\s\S]*?)<\/article>/);
  if(!articleMatch)return html;
  let contents=articleMatch[1];const headings=[];const used=new Set();
@@ -71,7 +83,7 @@ function enhanceArticle(html,route,matrix){
  const related=matrix.rows.filter(r=>r.status==="PUBLISHED"&&r.locale===code&&r.url!==pRow?.url&&r.role!=="UTILITY"&&r.role!=="LANGUAGE_SELECTOR"&&(r.parent_id===pRow?.parent_id||r.parent_id===pRow?.id||r.role==="PILLAR")).slice(0,5);
  const menu=headings.length>=2?'<nav class="premium-toc" aria-label="'+safe(tr[2])+'"><strong>'+safe(tr[2])+'</strong><ol>'+headings.map(h=>'<li><a href="#'+h.id+'">'+safe(h.title)+'</a></li>').join("")+'</ol></nav>':"";
  const relatedNav=related.length?'<nav class="premium-related" aria-label="'+safe(tr[3])+'"><strong>'+safe(tr[3])+'</strong>'+related.map(r=>'<a href="'+safe(r.url)+'">'+safe(r.working_title)+'</a>').join("")+'</nav>':"";
- const signature='<p class="premium-author">'+safe(tr[5])+': <a href="/about/">Vietnam Two-Wheel Guide</a> · <a href="/contact/">Contact / corrections</a></p>';
+ const signature='<p class="premium-author">'+safe(tr[5])+': <a href="/about/">Vietnam Two-Wheel Guide</a> · <a href="/contact/">'+safe(copy[3])+'</a></p>';
  const rebuilt='<article class="article premium-article-grid"><div class="premium-reading-content">'+contents+signature+'</div><aside class="premium-rail">'+menu+relatedNav+'</aside></article>';
  return html.replace(articleMatch[0],rebuilt);
 }
@@ -88,10 +100,10 @@ export function applyPremium(files,matrix,locales){
   // Truly published locale pages only; do not generate empty Hub category URLs.
   const localeHome=p.match(/^([a-z]{2})\/index\.html$/);
   if(localeHome){
-   const code=localeHome[1],tr=langUI[code]||langUI.en;
+   const code=localeHome[1],tr=langUI[code]||langUI.en,copy=readingLabels[code]||readingLabels.en;
    const cards=matrix.rows.filter(r=>r.locale===code&&r.status==="PUBLISHED"&&(r.role==="HUB"||r.role==="SUPPORT")&&files[r.url.slice(1)+"index.html"]).slice(0,8);
    if(cards.length){
-    const region='<section class="premium-featured" aria-label="'+safe(tr[1])+'"><div class="container"><h2>'+safe(tr[1])+'</h2><div class="premium-featured-grid">'+cards.map(r=>'<a class="premium-featured-card" href="'+safe(r.url)+'"><strong>'+safe(r.working_title)+'</strong><span>'+safe(r.role==="HUB"?"Topic hub":"Practical guide")+'</span><em>Read →</em></a>').join("")+'</div></div></section>';
+    const region='<section class="premium-featured" aria-label="'+safe(tr[1])+'"><div class="container"><h2>'+safe(tr[1])+'</h2><div class="premium-featured-grid">'+cards.map(r=>'<a class="premium-featured-card" href="'+safe(r.url)+'"><strong>'+safe(r.working_title)+'</strong><span>'+safe(r.role==="HUB"?copy[0]:copy[1])+'</span><em>'+safe(copy[2])+'</em></a>').join("")+'</div></div></section>';
     h=h.replace('</main>',region+'</main>');
    }
   }
