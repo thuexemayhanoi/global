@@ -90,3 +90,27 @@ test("photo layout is responsive and images below the fold are lazy loaded",()=>
  assert.equal((root.match(/loading="lazy"/g)||[]).length>=4,true);
  assert.ok(root.indexOf('id="languages"')<root.indexOf('class="ultra-gateway-gallery"'),"Must keep language choice above photos");
 });
+
+test("responsive photo CSS prevents Safari shrink-to-fit and keeps galleries within phone width",()=>{
+ const css=read("assets/ultra.css");
+ const start=css.indexOf("/* Responsive image/gallery hotfix:");
+ assert.ok(start>0);
+ const rules=css.slice(start);
+ for(const entry of [
+  "html{max-width:100%;overflow-x:clip}",
+  "body{max-width:100%;min-width:0;overflow-x:clip}",
+  "@media(min-width:1024px)",
+  "@media(min-width:768px) and (max-width:1023px)",
+  "@media(max-width:767px)",
+  "grid-template-columns:minmax(0,1fr)",
+  "aspect-ratio:16/10",
+  ".topic-grid .ultra-topic-card .ultra-topic-image{width:100%;max-width:100%;margin:0 0 17px",
+  ".nav2-footer{width:100%;max-width:100%}"
+ ]) assert.ok(rules.includes(entry),"Missing responsive containment: "+entry);
+ assert.ok(css.length<24000,"CSS budget exceeded");
+ for(const route of ["index.html",...locales.map(x=>x.code+"/index.html")]){
+  const html=read(route);
+  assert.ok(html.includes('href="/assets/ultra.css"'),route);
+  assert.ok(html.includes('name="viewport" content="width=device-width, initial-scale=1"'),route);
+ }
+});
