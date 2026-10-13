@@ -17,6 +17,29 @@ const micro={
 const origin="https://global.rentbikehanoi.com";
 const publishedUrl=(row,files)=>row&&row.status==="PUBLISHED"&&Object.prototype.hasOwnProperty.call(files,row.url==="/"? "index.html":row.url.slice(1)+"index.html");
 const classes=(code)=>micro[code]||micro.en;
+
+const globalPhotoAssets=[{"path":"/topic-choose-bike.webp","title":"Choose your vehicle","desc":"Find a vehicle that fits your experience, route and needs."},{"path":"/topic-prices-deposits.webp","title":"Prices & deposits","desc":"Compare the full rental terms, not just the daily rate."},{"path":"/topic-documents.webp","title":"Documents & contracts","desc":"Know which questions to ask before signing."},{"path":"/topic-safety.webp","title":"Safety & pickup checks","desc":"Check the condition of the bike before riding."}];
+function globalHeroPhoto(){
+ // Illustration is decorative; adjacent heading carries the actual meaning.
+ return '<figure class="ultra-hero-photo"><img src="/hero-hanoi.webp" width="1600" height="900" alt="" fetchpriority="high" loading="eager" decoding="async"><figcaption><span>✳</span> HANOI-INSPIRED • TWO-WHEEL TRAVEL</figcaption></figure>';
+}
+function injectGatewayGallery(html){
+ if(html.includes('class="ultra-gateway-gallery"'))return html;
+ const gallery='<section class="ultra-gateway-gallery" aria-labelledby="ultra-gallery-heading"><div class="container"><div class="ultra-gallery-heading"><div><p class="ultra-gallery-overline">TRAVEL EDITORIAL</p><h2 id="ultra-gallery-heading">Discover our four guide topics</h2></div><p>Choose a language above to explore guidance on each topic.</p></div><div class="ultra-gallery-grid">'+globalPhotoAssets.map((item,i)=>'<article class="ultra-gallery-card"><div class="ultra-gallery-image"><img src="'+clean(item.path)+'" width="960" height="720" loading="lazy" decoding="async" alt=""></div><div class="ultra-gallery-content"><span class="ultra-gallery-count">0'+(i+1)+'</span><h3>'+clean(item.title)+'</h3><p>'+clean(item.desc)+'</p></div></article>').join("")+'</div></div></section>';
+ return html.replace('</main>',gallery+'</main>');
+}
+function addTopicPhotos(html){
+ if(html.includes('class="ultra-topic-image"'))return html;
+ let idx=0;
+ html=html.replace(/(<article class="topic ultra-topic-card" id="ultra-topic-\d+">)/g,head=>{
+  const a=globalPhotoAssets[idx++];
+  if(!a)throw Error("No image assigned to topic card "+idx);
+  return head+'<div class="ultra-topic-image"><img src="'+clean(a.path)+'" width="960" height="720" loading="lazy" decoding="async" alt=""></div>';
+ });
+ if(idx!==4)throw Error("Expected 4 images for all four topic cards, got "+idx);
+ return html;
+}
+
 function heroArtwork(code){
  const tr=classes(code);
  return '<div class="ultra-hero-art" aria-hidden="true"><div class="ultra-art-glow"></div><div class="ultra-art-card"><div class="ultra-art-top"><span class="ultra-art-monogram">VW<span>✳</span></span><span class="ultra-art-pill">VIETNAM / WHEELS</span></div><p class="ultra-art-eyebrow">'+clean(tr[0])+'</p><div class="ultra-art-steps">'+[tr[1],tr[2],tr[3]].map((x,i)=>'<div class="ultra-art-step"><span>'+String(i+1).padStart(2,"0")+'</span><strong>'+clean(x)+'</strong><span class="ultra-art-check">↗</span></div>').join("")+'</div><div class="ultra-art-line"></div><div class="ultra-art-bottom"><span>10 LANGUAGES</span><span>4 TOPIC HUBS</span></div></div><div class="ultra-art-satellite ultra-art-satellite--one">✦</div><div class="ultra-art-satellite ultra-art-satellite--two">◉</div></div>';
@@ -24,7 +47,7 @@ function heroArtwork(code){
 function heroMarkup(html,code){
  return html.replace(/<section class="hero"><div class="container hero-inner">([\s\S]*?)<\/div><\/section>/,(whole,inside)=>{
   const body=inside+(code===null?'<div class="ultra-hero-actions"><a href="#languages" class="ultra-outline-link">Explore languages ↓</a><a href="/search/" class="ultra-outline-link">Search guides ↗</a></div>':"");
-  return '<section class="hero ultra-hero"><div class="container hero-inner ultra-hero-grid"><div class="ultra-hero-copy">'+body+'</div>'+heroArtwork(code||"en")+'</div></section>';
+  return '<section class="hero ultra-hero"><div class="container hero-inner ultra-hero-grid"><div class="ultra-hero-copy">'+body+'</div>'+(code===null?globalHeroPhoto():heroArtwork(code))+'</div></section>';
  });
 }
 function injectHome(html,code,matrix,files){
@@ -35,6 +58,7 @@ function injectHome(html,code,matrix,files){
  let i=0;
  html=html.replace(/<article class="topic">/g,()=>'<article class="topic ultra-topic-card" id="ultra-topic-'+(++i)+'">');
  if(i!==4)throw Error("Homepage topic inventory drift: "+code+"="+i);
+ html=addTopicPhotos(html);
  const chips='<nav class="ultra-topic-tabs" aria-label="'+clean(tr[4])+'">'+links.map((r,i)=>'<a href="#ultra-topic-'+(i+1)+'"><span>'+String(i+1).padStart(2,"0")+'</span>'+clean(r.working_title)+'</a>').join("")+'</nav>';
  html=html.replace('<div class="topic-grid">',chips+'<div class="topic-grid">');
  // A genuine internal-navigation section only. No IDEA slug becomes a URL.
@@ -70,7 +94,7 @@ export function applyUltra(files,matrix,locales){
  for(const p of Object.keys(files).filter(p=>p.endsWith(".html"))){
   let html=files[p],locale=p.match(/^([a-z]{2})\//)?.[1]||null;
   if(locale&&!known.has(locale))locale=null;
-  if(p==="index.html"){html=heroMarkup(html,null);html=enhanceRoot(html);}
+  if(p==="index.html"){html=heroMarkup(html,null);html=enhanceRoot(html);html=injectGatewayGallery(html);}
   else if(locale&&p===locale+"/index.html"){html=heroMarkup(html,locale);html=injectHome(html,locale,matrix,files);}
   if(locale)html=articleDecor(html,locale);
   // Place the existing search control inside the same header flex container.

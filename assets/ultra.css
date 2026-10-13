@@ -115,3 +115,30 @@ body.ultra-focus .premium-rail{display:none}
 @media(max-width:440px){.hero-inner.ultra-hero-grid{padding-block:45px 40px}.ultra-hero-art{padding:0 8px}.ultra-art-card{padding:19px;border-radius:19px;min-height:290px}.ultra-art-top .ultra-art-pill{font-size:7px;letter-spacing:.1em}.ultra-art-satellite--one{width:40px;height:40px;right:-8px;font-size:26px}.ultra-art-satellite--two{left:-6px}.ultra-art-bottom{font-size:8px}.ultra-art-steps{gap:7px}.ultra-art-step{min-height:50px;padding:7px 11px}.ultra-hero-copy .actions>.btn{flex:1 1 auto}.ultra-next-heading{flex-direction:column;align-items:flex-start;gap:4px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 @media print{.nav2-head,.nav2-footer,.premium-search-link,.ultra-hero-art,.ultra-reading-tools,.ultra-mobile-toc,.premium-rail,.premium-back-top,#premium-reading-progress{display:none!important}body{background:#fff;color:#000}.premium-reading-content{max-width:none}.premium-article-grid{display:block}.article{box-shadow:none}}
+
+/* Five local, optimized WebP assets, reused across the 10 language hubs. */
+.ultra-hero-photo{width:100%;max-width:570px;margin:0;position:relative;isolation:isolate;align-self:center;aspect-ratio:4/3;border-radius:23px;overflow:hidden;border:1px solid rgba(218,252,254,.45);box-shadow:0 25px 72px rgba(0,18,33,.52);background:#102f3a}
+.ultra-hero-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%}
+.ultra-hero-photo:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(4,29,41,.65),transparent 50%)}
+.ultra-hero-photo figcaption{position:absolute;z-index:1;bottom:18px;left:22px;right:18px;display:flex;align-items:center;gap:7px;color:white;font-size:11px;letter-spacing:.15em;font-weight:900;text-shadow:0 1px 3px #05202e}
+.ultra-hero-photo figcaption span{color:#80ecdc;font-size:22px}
+.ultra-gateway-gallery{padding:56px 0 84px;background:linear-gradient(180deg,#f4f9fa,#fff);border-top:1px solid #e1edf0}
+.ultra-gallery-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px}
+.ultra-gallery-heading h2{font-size:clamp(1.6rem,3vw,2.6rem);line-height:1.13;letter-spacing:-.04em;margin:6px 0 0;color:#143547}
+.ultra-gallery-heading>p{font-size:14px;line-height:1.7;color:#516d7b;max-width:310px;margin:0}
+.ultra-gallery-overline{font-weight:900;font-size:11px;letter-spacing:.14em;color:#00838c;margin:0}
+.ultra-gallery-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.ultra-gallery-card{overflow:hidden;border-radius:17px;background:white;border:1px solid #d7e6eb;box-shadow:0 12px 28px rgba(15,55,72,.07);min-width:0}
+.ultra-gallery-image{width:100%;aspect-ratio:4/3;overflow:hidden;background:#dbeaf0}
+.ultra-gallery-image img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.ultra-gallery-card:hover .ultra-gallery-image img{transform:scale(1.035)}
+.ultra-gallery-content{padding:19px 20px 23px}
+.ultra-gallery-count{font-size:11px;font-weight:950;letter-spacing:.1em;color:#008993}
+.ultra-gallery-content h3{font-size:clamp(1rem,1.4vw,1.24rem);line-height:1.3;margin:9px 0;color:#183b50}
+.ultra-gallery-content p{font-size:13px;line-height:1.65;color:#566f7e;margin:0}
+.ultra-topic-image{display:block;width:calc(100% + 48px);margin:-25px -24px 21px;aspect-ratio:4/3;overflow:hidden;background:#dbe9ed}
+.ultra-topic-image img{display:block;width:100%;height:100%;object-fit:cover}
+@media(max-width:1023px){.ultra-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ultra-hero-photo{max-width:520px}}
+@media(max-width:760px){.ultra-hero-photo{width:100%;max-width:470px;aspect-ratio:16/10;margin-inline:auto}.ultra-gateway-gallery{padding:40px 0 62px}.ultra-gallery-heading{align-items:start;flex-direction:column;gap:8px}.ultra-gallery-grid{gap:12px}.ultra-gallery-content{padding:13px 13px 18px}.ultra-gallery-content h3{font-size:1rem}.ultra-gallery-content p{font-size:12px}.ultra-topic-image{width:calc(100% + 48px)}}
+@media(max-width:460px){.ultra-hero-photo{aspect-ratio:16/10;border-radius:17px}.ultra-hero-photo figcaption{font-size:9px;left:15px;bottom:13px}.ultra-gallery-grid{gap:9px}.ultra-gallery-content{padding:12px}.ultra-gallery-content h3{font-size:.95rem;letter-spacing:-.01em}.ultra-gallery-content p{font-size:11px;line-height:1.55}}
+@media(prefers-reduced-motion:reduce){.ultra-gallery-image img{transition:none}.ultra-gallery-card:hover .ultra-gallery-image img{transform:none}}
