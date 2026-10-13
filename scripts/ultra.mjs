@@ -75,7 +75,7 @@ export function applyUltra(files,matrix,locales){
   else if(locale&&p===locale+"/index.html"){html=heroMarkup(html,locale);html=injectHome(html,locale,matrix,files);}
   if(locale)html=articleDecor(html,locale);
   // Place the existing search control inside the same header flex container.
-  if(html.includes('class="nav2-head-inner"'))html=html.replace(/<\/div>(<a class="premium-search-link"[^>]*>[\s\S]*?<\/a>)<\/header>/,'$1</div></header>');
+  if(html.includes('nav2-head-inner'))html=html.replace(/<\/div>(<a class="premium-search-link"[^>]*>[\s\S]*?<\/a>)<\/header>/,'$1</div></header>');
   if(p==="404.html")html=html.replace('<a class="btn" href="/">Browse languages →</a>','<div class="ultra-404-actions"><a class="btn" href="/">Browse languages →</a><a class="btn secondary" href="/search/">Search published guides ↗</a></div>');
   if(!html.includes('href="/assets/ultra.css"'))html=html.replace('</head>','<link rel="stylesheet" href="/assets/ultra.css"><script defer src="/assets/ultra.js"></script></head>');
   files[p]=html;
