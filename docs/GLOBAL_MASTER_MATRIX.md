@@ -78,3 +78,9 @@ node scripts/writer-lanes.mjs status
 - **Live read-only QA:** `scripts/seo/post-publish-qa.mjs --confirm-live`, manual workflow `post-publish-qa.yml` must be executed **after an owner-approved deployment**. The branch-level tests cover only offline error-detection behavior; live new UI behavior is not yet verified.
 - **Rollback:** `docs/RELEASE-ROLLBACK.md` prescribes a reviewed git revert PR and post-deploy smoke test. Never force-reset main or silently delete indexed article URLs.
 - **Search metadata benchmark:** GitHub QA run 38448335439, Node 22.23.3: synthetic 10k → 70 shards, 2,190,070 bytes, 14.1 ms; synthetic 40k → 270 shards, 8,760,270 bytes, 59.7 ms. Max shard size 32,851 bytes, **not a complete HTML 40k build or user CWV measurement**.
+
+## Final current-turn QA checkpoint
+
+- Verified branch commit `c5604c7daa69144d612166685828843dd66d50aa`: Static SEO QA **38448971915 SUCCESS**; External Writer Draft QA **38448971817 SUCCESS**.
+- 10 checklist templates now carry reciprocal real equivalents but no inappropriate root homepage `x-default` relation.
+- See `docs/FINAL-ACCEPTANCE.md` for the exact feature evidence, publishing blockers, data counts, benchmark scope and rollback.

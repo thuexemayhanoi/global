@@ -12,8 +12,8 @@
     5,
     6
   ],
-  "lastBatch": "post-publish-live-qa-manual-release-rollback",
-  "lastValidatedCommit": "04093d02bd62b5636176dcf9ad5003a65c6a90b6",
+  "lastBatch": "equivalence-only-hreflang-and-final-review",
+  "lastValidatedCommit": "c5604c7daa69144d612166685828843dd66d50aa",
   "phases": [
     {
       "batch": "01",
@@ -61,21 +61,34 @@
       "qa": "PENDING"
     }
   ],
-  "resume": "Open PR #8 and check latest technical HEAD. Run Static SEO QA and Writer QA; fix failures on branch only. Owner has not approved production merge. After a separate merge approval, check GitHub Pages deploy and manually run post-publish-qa.yml; record screenshots/mobile audit and real performance data. Keep PR #6 separate.",
-  "lastStagedCommit": "fa51d3fb34e50a288924b075568a337e7dfc71d2",
+  "resume": "At next session: confirm main HEAD and PR #8 HEAD, diff competing AI changes, run latest CI. PR #8 is draft, do NOT merge without owner approval. If approved, merge via PR then verify Pages SHA, run manual post-publish-qa.yml and mobile/desktop screenshot and CWV checks. PR #5/#6 remain independent and unpublished.",
+  "lastStagedCommit": "c5604c7daa69144d612166685828843dd66d50aa",
   "currentTechnicalPR": 8,
   "lastConfirmedQA": [
     {
       "workflow": "Static SEO QA",
-      "run": 38448335439,
+      "run": 38448971915,
       "conclusion": "SUCCESS",
-      "commit": "04093d02bd62b5636176dcf9ad5003a65c6a90b6"
+      "commit": "c5604c7daa69144d612166685828843dd66d50aa"
     },
     {
       "workflow": "External Writer Draft QA",
-      "run": 38448335307,
+      "run": 38448971817,
       "conclusion": "SUCCESS",
-      "commit": "04093d02bd62b5636176dcf9ad5003a65c6a90b6"
+      "commit": "c5604c7daa69144d612166685828843dd66d50aa"
     }
-  ]
+  ],
+  "productionLiveQA": "NOT_RUN_PENDING_OWNER_APPROVAL",
+  "productionMobileVisualQA": "PENDING_AFTER_DEPLOY",
+  "currentPublishedUrlsOnMain": 25,
+  "currentIdeasOnMain": 120,
+  "searchTechnicalNoindexRouteCountProposed": 1,
+  "syntheticIndexBenchmark": {
+    "total40k": {
+      "shards": 270,
+      "bytes": 8760270,
+      "ms": 59.7
+    },
+    "limitations": "Metadata sharding only; full HTML 40k, mobile latency and Web Vitals not benchmarked"
+  }
 }
