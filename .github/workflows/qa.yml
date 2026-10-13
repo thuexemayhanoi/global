@@ -16,6 +16,10 @@ jobs:
           node-version: 22
       - name: Verify generated pages and metadata
         run: node scripts/build.mjs --check
+      - name: Verify deterministic content graph
+        run: node scripts/seo/content-graph.mjs --check
+      - name: Premium SEO, navigation, search and accessibility regression
+        run: node --test tests/premium.test.mjs tests/claims.test.mjs tests/external-writers.test.mjs
       - name: Verify CNAME and canonical outputs
         shell: bash
         run: |

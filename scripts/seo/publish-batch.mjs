@@ -78,6 +78,7 @@ try{
   }
   fs.writeFileSync(matrixPath,JSON.stringify(altered,null,2)+"\n");
   run("scripts/build.mjs");
+  run("scripts/seo/content-graph.mjs","--write");
   for(const [file,extra] of [["scripts/build.mjs",["--check"]],["scripts/seo/validate-plan.mjs",[]],["scripts/nav-qa.mjs",[]],["scripts/seo/audit-static.mjs",["--fail-p0"]],["tests/content-publisher.test.mjs",[]]]){
    if(file.startsWith("tests/"))continue;
    run(file,...extra);
@@ -90,7 +91,7 @@ try{
  }catch(e){
   fs.writeFileSync(matrixPath,original);
   for(const f of stagedJson)if(fs.existsSync(f))fs.unlinkSync(f);
-  try{run("scripts/build.mjs")}catch(restoreError){console.error("Rollback regeneration needs manual review: "+restoreError.message);}
+  try{run("scripts/build.mjs");run("scripts/seo/content-graph.mjs","--write")}catch(restoreError){console.error("Rollback regeneration needs manual review: "+restoreError.message);}
   for(const f of htmlPaths)if(fs.existsSync(f))fs.unlinkSync(f);
   throw e;
  }
