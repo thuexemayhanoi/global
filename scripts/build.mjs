@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { enhanceNavigation } from "./navigation.mjs";
 const root=process.cwd();
 const data=JSON.parse(fs.readFileSync(path.join(root,"content/locales.json"),"utf8"));
 const siteOutput=function siteOutput(locales){
@@ -50,7 +51,8 @@ ${jsonLd(structured)}
   OUT["robots.txt"]=`User-agent: *\nAllow: /\nSitemap: ${site}/sitemap.xml\n`;
   return OUT;
 };
-const files=siteOutput(data);
+const menuMatrix=JSON.parse(fs.readFileSync(path.join(root,"data/seo/master-matrix.json"),"utf8"));
+const files=enhanceNavigation(siteOutput(data),data,menuMatrix);
 const check=process.argv.includes("--check");
 let errors=0;
 for(const [p,c] of Object.entries(files)){
