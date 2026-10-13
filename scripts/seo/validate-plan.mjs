@@ -20,7 +20,8 @@ for(const r of matrix.rows){
  if(!r.primary_query?.trim()||!r.working_title?.trim())err("Missing query or title "+r.id);
  const searchKey=r.locale+"::"+r.primary_query?.toLowerCase().trim();
  if(queries.has(searchKey))err("Query cannibalization candidate "+r.id);else queries.add(searchKey);
- if(!["ROOT","PRIVACY","TERMS"].includes(r.id)&&!r.url.startsWith("/"+r.locale+"/"))err("Locale path mismatch "+r.id);
+ const globalUtility=r.role==="UTILITY"&&r.parent_id==="ROOT"&&r.locale==="en";
+ if(r.id!=="ROOT"&&!globalUtility&&!r.url.startsWith("/"+r.locale+"/"))err("Locale path mismatch "+r.id);
  if(r.status==="IDEA"&&(r.serp_evidence!=="NOT_VALIDATED"||r.source_verification!=="NOT_STARTED"))err("Unverified keyword claims "+r.id);
 }
 for(const r of matrix.rows){
