@@ -69,6 +69,7 @@ test("reciprocal hreflang only for equivalent locale homepage/checklist",()=>{
  for(const suffix of ["","checklist/"]){
   for(const a of langs){
    const h=read(a.code+"/"+suffix+"index.html");
+   if(suffix==="checklist/")assert.ok(!h.includes('hreflang="x-default"'),"Checklist root selector is not an equivalent checklist page");
    for(const b of langs){
     const target="https://global.rentbikehanoi.com/"+b.code+"/"+suffix;
     assert.ok(h.includes('hreflang="'+b.htmlLang+'" href="'+target+'"'),a.code+"->"+b.code);

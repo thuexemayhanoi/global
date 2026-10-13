@@ -10,7 +10,7 @@ const siteOutput=function siteOutput(locales,siteInfo){
   const site="https://global.rentbikehanoi.com";
   const langs=locales.map(l=>({code:l.code,htmlLang:l.htmlLang,flag:l.flag,name:l.name}));
   const href=(l,page)=>`/${l.code}/${page?"checklist/":""}`;
-  const langLinks=(page)=>langs.map(l=>`<link rel="alternate" hreflang="${esc(l.htmlLang)}" href="${site}${href(l,page)}">`).join("\n")+`\n<link rel="alternate" hreflang="x-default" href="${site}/">`;
+  const langLinks=(page)=>langs.map(l=>`<link rel="alternate" hreflang="${esc(l.htmlLang)}" href="${site}${href(l,page)}">`).join("\n")+(page?"":`\n<link rel="alternate" hreflang="x-default" href="${site}/">`);
   const jsonLd=v=>`<script type="application/ld+json">${JSON.stringify(v).replace(/</g,"\\u003c")}</script>`;
   const head=(lang,title,description,path,page,structured)=>`<!doctype html>
 <html lang="${esc(lang)}"><head>
