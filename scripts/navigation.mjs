@@ -43,7 +43,7 @@ export function enhanceNavigation(files, locales, matrix) {
   const publicFooter='<footer class="footer nav2-footer" data-footer-version="2"><div class="container nav2-foot-wrap"><div class="nav2-footer-main"><div class="nav2-foot-brand"><a href="/" class="nav2-foot-logo">VIETNAM / WHEELS</a><p>Practical information for two-wheel travel in Vietnam.</p></div><nav class="nav2-foot-globallangs" aria-label="Languages">'+locales.map(l=>'<a href="/'+esc(l.code)+'/" lang="'+esc(l.htmlLang)+'">'+esc(l.flag)+' '+esc(l.name)+'</a>').join('')+'</nav></div><div class="nav2-foot-bottom"><span>Vietnam Two-Wheel Guide</span><div class="nav2-legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></div></div></footer>';
   for(const [p,raw] of Object.entries(files)){
     if(!p.endsWith('.html'))continue;
-    const m=p.match(/^([a-z]{2})\/(?:checklist\/)?index\.html$/);
+    const m=p.match(/^([a-z]{2})\/(?:checklist\/|(?:topics|guides)\/[a-z0-9-]+\/)?index\.html$/);
     const l=m&&localeByCode[m[1]],isChecklist=p.includes('/checklist/');
     const h=l?navHead(l,isChecklist):publicHeader,f=l?footer(l):publicFooter;
     let html=raw.replace(/<header class="header">[\s\S]*?<\/header>/,h).replace(/<footer class="footer">[\s\S]*?<\/footer>/,f);
