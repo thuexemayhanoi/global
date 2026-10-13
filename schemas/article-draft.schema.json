@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SEO Native Language Article Draft QA Packet",
+  "description": "Draft exchange format for external AI writers; not a publication manifest.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["matrix_id","locale","proposed_url","title","meta_description","h1","body_markdown","sources","serp_intent_checked","facts_reviewed_by_human"],
+  "properties": {
+    "matrix_id":{"type":"string","minLength":4},
+    "locale":{"enum":["vi","en","de","fr","es","nl","zh","pt","ko","ja"]},
+    "proposed_url":{"type":"string","pattern":"^/[a-z]{2}/"},
+    "title":{"type":"string","minLength":16,"maxLength":100},
+    "meta_description":{"type":"string","minLength":80,"maxLength":200},
+    "h1":{"type":"string","minLength":12},
+    "body_markdown":{"type":"string","minLength":2000},
+    "sources":{"type":"array","minItems":2,"items":{"type":"object","required":["url","title","checked_on"],"properties":{"url":{"type":"string","format":"uri"},"title":{"type":"string"},"checked_on":{"type":"string","format":"date"}}}},
+    "serp_intent_checked":{"type":"boolean","const":true},
+    "facts_reviewed_by_human":{"type":"boolean","const":true},
+    "editorial_notes":{"type":"string"}
+  }
+}

@@ -40,3 +40,7 @@ All new content awaits research, intent validation, QA and a separate publishing
 ## Full synchronized navigation
 
 The shared `scripts/navigation.mjs` renders responsive 4-Hub menus and 8 Supporting topics for every locale, with footer taxonomy generated from the same Matrix. Nonpublished topics are labeled coming soon without creating broken URLs. The menu is a dropdown on desktop and an accordion drawer on mobile. Use `node scripts/build.mjs` then `node scripts/build.mjs --check` and `node scripts/nav-qa.mjs`.
+
+## Five SEO tools
+
+Read [Five SEO weapons](docs/FIVE-SEO-WEAPONS.md). Run `node scripts/seo/engine.mjs --locale de --count 2` for read-only auditing, QA, a research queue and P0–P3 report. No article writing APIs or auto-publishing are enabled.

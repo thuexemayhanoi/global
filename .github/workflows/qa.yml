@@ -30,3 +30,17 @@ jobs:
         run: node scripts/seo/writer-queue.mjs --locale de --count 2
       - name: Validate 10-language navigation and footer
         run: node scripts/nav-qa.mjs
+      - name: Read-only technical and AI Search audits
+        run: |
+          node scripts/seo/audit-static.mjs --out reports/technical-audit.json --fail-p0
+          node scripts/seo/audit-ai-search.mjs --out reports/ai-search-audit.json
+      - name: Autonomous SEO engineer (read-only QA and reports)
+        run: node scripts/seo/engine.mjs --locale de --count 2
+      - name: Archive audit reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: global-seo-review
+          path: reports/
+          if-no-files-found: ignore
+          retention-days: 14
