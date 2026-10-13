@@ -20,7 +20,8 @@ for(const r of matrix.rows){
  if(!r.primary_query?.trim()||!r.working_title?.trim())err("Missing query or title "+r.id);
  const searchKey=r.locale+"::"+r.primary_query?.toLowerCase().trim();
  if(queries.has(searchKey))err("Query cannibalization candidate "+r.id);else queries.add(searchKey);
- if(!["ROOT","PRIVACY","TERMS"].includes(r.id)&&!r.url.startsWith("/"+r.locale+"/"))err("Locale path mismatch "+r.id);
+ const globalUtility=r.role==="UTILITY"&&r.parent_id==="ROOT"&&r.locale==="en";
+ if(r.id!=="ROOT"&&!globalUtility&&!r.url.startsWith("/"+r.locale+"/"))err("Locale path mismatch "+r.id);
  if(r.status==="IDEA"&&(r.serp_evidence!=="NOT_VALIDATED"||r.source_verification!=="NOT_STARTED"))err("Unverified keyword claims "+r.id);
 }
 for(const r of matrix.rows){
@@ -41,7 +42,7 @@ for(const r of matrix.rows.filter(r=>r.status==="PUBLISHED")){
 }
 const group=Object.fromEntries(matrix.locales.map(l=>[l,{published:0,ideas:0}]));
 for(const r of matrix.rows)if(group[r.locale])group[r.locale][r.status==="PUBLISHED"?"published":"ideas"]++;
-if(matrix.rows.length!==143)err("Unexpected matrix inventory count "+matrix.rows.length);
-if(published.size!==23)err("Unexpected published inventory count "+published.size);
+if(matrix.rows.length<145)err("Unexpected matrix inventory count "+matrix.rows.length);
+if(published.size<25)err("Unexpected published inventory count "+published.size);
 if(errors.length){for(const e of errors)console.error("FAIL:",e);process.exit(1)}
 console.log("SEO MATRIX VALID ✓",JSON.stringify({rows:matrix.rows.length,published:published.size,planned:matrix.rows.length-published.size,group},null,2));

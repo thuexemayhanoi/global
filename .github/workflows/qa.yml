@@ -44,3 +44,11 @@ jobs:
           path: reports/
           if-no-files-found: ignore
           retention-days: 14
+      - name: Verify public About and Contact and approved address
+        shell: bash
+        run: |
+          test -f about/index.html
+          test -f contact/index.html
+          grep -q 'nguyentuantu8x@gmail.com' contact/index.html
+          grep -q '<loc>https://global.rentbikehanoi.com/about/</loc>' sitemap.xml
+          grep -q '<loc>https://global.rentbikehanoi.com/contact/</loc>' sitemap.xml

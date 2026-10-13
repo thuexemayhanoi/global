@@ -15,7 +15,7 @@ for(const code of localeCodes)for(const route of [code+"/index.html",code+"/chec
   if(!live.has(m[1]))errors.push("unpublished link: "+route+" -> "+m[1]);
  }
 }
-for(const p of ["index.html","privacy/index.html","terms/index.html","404.html"]){
+for(const p of ["index.html","about/index.html","contact/index.html","privacy/index.html","terms/index.html","404.html"]){
  const html=fs.readFileSync(p,"utf8");
  if(!html.includes('data-nav-version="2"')||!html.includes('data-footer-version="2"'))errors.push("footer/header missing "+p);
 }
