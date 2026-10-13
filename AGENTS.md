@@ -37,3 +37,13 @@
 - `scripts/seo/publish-batch.mjs` defaults to dry-run. --apply must require an exact owner approval manifest, a non-main work branch, complete editorial QA, and must not replace an existing live page.
 - Run `node --test tests/content-publisher.test.mjs` and `node scripts/build.mjs --check` in CI.
 - Do not auto-generate AI text, approve articles on the owner's behalf, or modify production DNS/CNAME/other repositories.
+
+## External three-Writer manual protocol (source /total, adapted /global)
+
+- Actual /total production pattern at the time of reference: **1 external Writer + 2 supervisors**. /global now uses **3 exclusive external writer lanes** W1/W2/W3 for simultaneous human-operated AI applications.
+- The Writer Board is `factory/external-writers/assignments.json`, validated against SEO Matrix. Never reassign existing IDs without explicit coordinator migration.
+- Run `node scripts/writer-lanes.mjs pack --writer W1 --count 2` for a bounded read-only work pack. Use W2/W3 analogously.
+- External Writer can only add `factory/external-writers/inbox/<W>/<ID>.json` on its own feature branch and submit PR. No direct Matrix edits, no generated HTML or public-site changes.
+- Writer must keep human review flags false, 1,000–5,000 words and four meaningful H2. Static CI verifies drafted content but does not assert facts are true.
+- No API, no LLM running in GitHub Actions, no autonomous publish or background model. Coordinator moves genuinely reviewed/approved content through existing `scripts/seo/publish-batch.mjs`, as a separate PR.
+- Do not copy `/total`'s auto-publish-on-main behavior into `/global`; it could bypass human approval. Never edit /total.

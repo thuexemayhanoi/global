@@ -49,3 +49,7 @@ Read [Five SEO weapons](docs/FIVE-SEO-WEAPONS.md). Run `node scripts/seo/engine.
 The `scripts/articles.mjs` adapter generates localized static article pages from approved, source-backed packets in `content/articles/`. No AI provider or API key is connected. The `scripts/seo/publish-batch.mjs` command performs a strict dry-run by default and only stages content on a non-main branch after an owner approval manifest; a reviewed PR merge triggers GitHub Pages publication.
 
 See [Content Factory](docs/CONTENT-FACTORY.md) and [Batch Publishing](docs/BATCH-PUBLISHING.md).
+
+## Three external AI Writers — no API
+
+The /total-inspired manual writer lanes are documented in [Three External Writers](factory/external-writers/README.md). Fixed W1/W2/W3 assignments cover the currently planned Hub and Supporting IDs without duplicates. Generate a bounded copy/pasteable brief using `node scripts/writer-lanes.mjs pack --writer W1 --count 2` or GitHub Actions → **Manual Writer Pack**. A separate read-only Writer Draft QA verifies incoming JSON through PRs. No external model is invoked or auto-published; the editorial/publisher approval process stays intact.

@@ -1,0 +1,54 @@
+name: Manual Writer Pack (no AI API)
+on:
+  workflow_dispatch:
+    inputs:
+      writer:
+        description: "Select external writer lane"
+        required: true
+        type: choice
+        options: [W1, W2, W3]
+      count:
+        description: "Articles to research (maximum five)"
+        required: true
+        type: choice
+        default: "2"
+        options: ["1","2","3","4","5"]
+      locale:
+        description: "Optional locale filter vi/en/de/fr/es/nl/zh/pt/ko/ja, blank for any"
+        required: false
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: global-manual-writer-pack-${{ github.event.inputs.writer }}
+  cancel-in-progress: false
+jobs:
+  pack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify topic ownership
+        run: node --test tests/external-writers.test.mjs
+      - name: Produce exact manual task pack, without invoking any model
+        env:
+          WRITER: ${{ inputs.writer }}
+          COUNT: ${{ inputs.count }}
+          LOCALE: ${{ inputs.locale }}
+        run: |
+          set -euo pipefail
+          mkdir -p reports
+          if [ -n "$LOCALE" ]; then
+            node scripts/writer-lanes.mjs pack --writer "$WRITER" --count "$COUNT" --locale "$LOCALE" > reports/writer-pack.json
+          else
+            node scripts/writer-lanes.mjs pack --writer "$WRITER" --count "$COUNT" > reports/writer-pack.json
+          fi
+          cat reports/writer-pack.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: external-writer-pack
+          path: reports/writer-pack.json
+          retention-days: 7
