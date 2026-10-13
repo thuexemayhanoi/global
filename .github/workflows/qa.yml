@@ -1,0 +1,26 @@
+name: Static SEO QA
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify generated pages and metadata
+        run: node scripts/build.mjs --check
+      - name: Verify CNAME and canonical outputs
+        shell: bash
+        run: |
+          test "$(cat CNAME)" = "global.rentbikehanoi.com"
+          grep -q 'https://global.rentbikehanoi.com/sitemap.xml' robots.txt
+          grep -q '<html lang="de"' de/index.html
+          grep -q '<html lang="ko"' ko/index.html
+          grep -q '<html lang="ja"' ja/index.html
