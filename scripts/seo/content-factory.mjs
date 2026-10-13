@@ -43,7 +43,7 @@ function validate(){
  }
  if(!matrix.locales.includes(draft.locale))errors.push("Unsupported language");
  const text=String(draft.body_markdown||"");
- const words=text.trim().split(/\s+/).filter(Boolean).length;
+ const words=["zh","ja","ko"].includes(draft.locale)?[...new Intl.Segmenter(draft.locale,{granularity:"word"}).segment(text)].filter(w=>w.isWordLike).length:text.trim().split(/\s+/).filter(Boolean).length;
  if(words<cfg.minimum_words)errors.push("Insufficient substantial text: "+words+" words; minimum "+cfg.minimum_words);
  if(!draft.title||draft.title.length<16||draft.title.length>100)errors.push("Title missing or implausible length");
  if(!draft.meta_description||draft.meta_description.length<80||draft.meta_description.length>200)errors.push("Meta description length outside 80..200");

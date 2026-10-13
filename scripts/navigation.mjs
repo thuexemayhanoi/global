@@ -17,7 +17,7 @@ export function enhanceNavigation(files, locales, matrix) {
   const published=new Set(matrix.rows.filter(r=>r.status==="PUBLISHED").map(r=>r.url));
   const hubs=code=>matrix.rows.filter(r=>r.locale===code&&r.role==="HUB").sort((a,b)=>a.priority-b.priority);
   const children=id=>matrix.rows.filter(r=>r.parent_id===id&&r.role==="SUPPORT"&&r.status!=="BLOCKED").sort((a,b)=>a.priority-b.priority);
-  const available=row=>row&&published.has(row.url);
+  const available=row=>Boolean(row&&published.has(row.url)&&Object.prototype.hasOwnProperty.call(files,row.url==="/"? "index.html":row.url.slice(1)+"index.html"));
   function childItem(row,code) {
     if(available(row)) return '<a class="nav2-child" href="'+esc(row.url)+'">'+esc(row.working_title)+'</a>';
     return '<span class="nav2-child nav2-pending" data-planned-id="'+esc(row.id)+'" aria-disabled="true">'+esc(row.working_title)+'<small>'+esc(translations[code][7])+'</small></span>';

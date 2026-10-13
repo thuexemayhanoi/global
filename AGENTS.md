@@ -23,3 +23,10 @@
 - All 4 parent Hub labels and 8 child topic labels per locale are displayed, but IDEA rows must NOT be clickable or placed in sitemap/hreflang. This owner-approved preview only displays category names until their actual pages are approved and published.
 - After adding published content or changing Matrix, run `node scripts/build.mjs`, `node scripts/build.mjs --check`, `node scripts/nav-qa.mjs`.
 - Preserve CNAME and all 23 URLs; do not overwrite unrelated repositories.
+
+## Five-weapon governance
+
+- Run `node scripts/seo/engine.mjs --locale de --count 2` for Audit→Matrix→QA→Report. It must only write gitignored reports, never site content or production settings.
+- Never infer actual rankings, Google indexation, backlinks, AI citations or search volume from static audit outputs.
+- AI Writer is currently a native-language research/QA scaffold without API connection; no auto-publishing.
+- Protect CNAME, published URLs and other repos; propose fixes through QA-reviewed PRs.
