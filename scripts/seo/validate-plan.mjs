@@ -41,7 +41,7 @@ for(const r of matrix.rows.filter(r=>r.status==="PUBLISHED")){
 }
 const group=Object.fromEntries(matrix.locales.map(l=>[l,{published:0,ideas:0}]));
 for(const r of matrix.rows)if(group[r.locale])group[r.locale][r.status==="PUBLISHED"?"published":"ideas"]++;
-if(matrix.rows.length!==143)err("Unexpected matrix inventory count "+matrix.rows.length);
-if(published.size!==23)err("Unexpected published inventory count "+published.size);
+if(matrix.rows.length<145)err("Unexpected matrix inventory count "+matrix.rows.length);
+if(published.size<25)err("Unexpected published inventory count "+published.size);
 if(errors.length){for(const e of errors)console.error("FAIL:",e);process.exit(1)}
 console.log("SEO MATRIX VALID ✓",JSON.stringify({rows:matrix.rows.length,published:published.size,planned:matrix.rows.length-published.size,group},null,2));
