@@ -1,3 +1,7 @@
+# Continuous Writer — ZERO-CLICK is the default
+
+Follow docs/ZERO-CLICK-WRITER.md, not the old manual GitHub workflow_dispatch sequence. A Writer activates once by committing a requests/W<lane>/<session>.json on its own branch. Every green Writer QA PUSH auto-triggers Global Dynamic Writer Autopilot which serially manages claims and draft submission on main. No user button per batch.
+
 # Continuous Writer (shared dynamic pool) — /global
 
 The authoritative live instructions are in docs/DYNAMIC-WRITER-POOL.md and AGENTS.md. This replaces the old fixed W1/W2/W3 assignment protocol. One active W1 can write all remaining eligible ideas; W2/W3 are optional parallel accelerators, not mandatory quotas.
