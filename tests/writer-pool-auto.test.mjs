@@ -4,6 +4,7 @@ import fs from "node:fs";
 import {autoAdvance} from "../scripts/writer-pool-auto-core.mjs";
 import {newRequest,validateRequest,requestPath} from "../scripts/writer-request-core.mjs";
 import {poolCandidates,validatePool} from "../scripts/writer-pool-core.mjs";
+import {checkArticle} from "../scripts/articles.mjs";
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
 const empty={version:1,revision:0,claims:[]};
@@ -87,4 +88,19 @@ test("three Writers receive unique batches; no one steals protected, claimed or 
  assert.ok(next.submitted.every(x=>first.slice(0,2).includes(x)));
  assert.ok(next.claimed.every(x=>!first.includes(x)));
  assert.equal(new Set(ledger.claims.filter(c=>c.status==="CLAIMED").map(c=>c.id)).size,6);
+});
+
+test("Supporting DRAFT QA may precede Hub publication; production publisher keeps the parent gate",()=>{
+ const row=matrix.rows.find(x=>x.role==="SUPPORT"&&matrix.rows.find(p=>p.id===x.parent_id)?.status!=="PUBLISHED");
+ assert.ok(row,"Expected an unpublished-parent support topic in Matrix");
+ const locales=JSON.parse(fs.readFileSync("content/locales.json","utf8"));
+ const packet={matrix_id:row.id,locale:row.locale,proposed_url:row.url,
+  title:"A comprehensive guide to staying safe while renting a motorbike in Hanoi",
+  meta_description:"Practical tips for planning your motorbike rental, understanding the rental agreement and navigating Vietnamese traffic safely.",
+  h1:"Guide for safe rental decisions in Hanoi",body_markdown:"## Preparation\nRead the terms carefully.\n## Safety\nCheck your vehicle.\n## Prices\nConfirm with rental provider.\n## Contract\nRead the complete agreement.",
+  sources:[],serp_intent_checked:false,facts_reviewed_by_human:false};
+ const publication=checkArticle(packet,matrix,locales);
+ const externalDraft=checkArticle(packet,matrix,locales,{allowUnpublishedParentForDraft:true});
+ assert.ok(publication.errors.some(x=>x.includes("Parent Hub/Pillar must be published")));
+ assert.ok(!externalDraft.errors.some(x=>x.includes("Parent Hub/Pillar must be published")));
 });
