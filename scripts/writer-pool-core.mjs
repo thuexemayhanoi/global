@@ -20,7 +20,14 @@ export function validatePool(matrix,ledger,protectedData){
  if(protectedData?.version!==1||!Array.isArray(protectedData?.protected))errors.push("Invalid protected drafts registry");
  if(errors.length)return errors;
  const rows=new Map(matrix.rows.map(r=>[r.id,r]));
+ const held=protectedData.held_ids||[];
+ if(!Array.isArray(held))errors.push("Invalid additional editorial holds");
  const reserved=new Set();
+ for(const p of held){
+  if(!rows.has(p.id)||!Number.isInteger(p.source_pr)||typeof p.branch!=="string")errors.push("Bad editorial hold "+p.id);
+  if(reserved.has(p.id))errors.push("Duplicate protected ID "+p.id);
+  reserved.add(p.id);
+ }
  for(const p of protectedData.protected){
   if(!rows.has(p.id)||!WRITERS.includes(p.writer)||!SESSION.test(p.session||"")||
    !new RegExp("^writer/"+String(p.writer).toLowerCase()+"-[A-Za-z0-9_-]+$").test(p.branch||""))errors.push("Bad protected draft "+p.id);
@@ -50,13 +57,15 @@ export function ensureIdentity(writer,session,branch){
   throw Error("Use own branch writer/"+writer.toLowerCase()+"-*");
 }
 export function protectedSet(registry){
- return new Set(registry.protected.map(p=>p.id));
+ return new Set([...registry.protected.map(p=>p.id),...(registry.held_ids||[]).map(p=>p.id)]);
 }
 export function poolCandidates(matrix,ledger,registry,opts={}){
  const unavailable=new Set([...protectedSet(registry),...ledger.claims.filter(c=>ACTIVE.has(c.status)).map(c=>c.id),...(opts.inboxIds||[])]);
  return matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&
   PLANNED.has(r.status)&&!unavailable.has(r.id)&&(!opts.locale||r.locale===opts.locale)&&
-  (!r.parent_id||matrix.rows.find(p=>p.id===r.parent_id)?.status==="PUBLISHED"))
+  // Supporting may be DRAFTED before parent Hub publication. Publisher
+  // still independently refuses to publish them until that gate passes.
+  (!r.parent_id||matrix.rows.some(p=>p.id===r.parent_id)))
   .sort(sortRows);
 }
 export function poolStatus(matrix,ledger,registry,{writer,session,branch,locale}={}){
@@ -77,9 +86,9 @@ export function poolStatus(matrix,ledger,registry,{writer,session,branch,locale}
    pub===matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)).length?"COMPLETE":"AWAIT_EDITORIAL_REVIEW";
  if(!writer&&status==="WRITE_NEXT_PAIR")status="CLAIM_REQUIRED";
  return {status,writer:writer||null,session:session||null,branch:branch||null,locale:locale||null,
-  published:pub,protected_drafts:registry.protected.length,submitted:active.filter(c=>c.status==="SUBMITTED").length,
+  published:pub,protected_drafts:registry.protected.length+(registry.held_ids||[]).length,submitted:active.filter(c=>c.status==="SUBMITTED").length,
   active_claims:active.filter(c=>c.status==="CLAIMED").length,
-  available_now:candidates.length,blocked_by_parent:waitingParent.length,waiting_for_review_or_claim:Math.max(0,unblockedWithoutFree),
+  available_now:candidates.length,blocked_by_parent:0,parents_unpublished_for_publish:waitingParent.length,waiting_for_review_or_claim:Math.max(0,pending.length-candidates.length),
   items:(assigned.length?assigned:candidates.slice(0,2)).map(r=>({
    id:r.id,locale:r.locale,role:r.role,title:r.working_title,query:r.primary_query,url:r.url,
    parent_id:r.parent_id,legacy_owner:null,

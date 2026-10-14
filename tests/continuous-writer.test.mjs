@@ -49,12 +49,19 @@ test("three sessions see only their own confirmed IDs and never mistake a previe
  const none=decideNext(matrix,board,state,empty,{writer:"W1",session:"new-w1",branch:"writer/w1-new-w1",registry});
  assert.equal(none.status,"CLAIM_REQUIRED");
 });
-test("Supporting articles remain blocked until the actual Hub reaches PUBLISHED",()=>{
- const mock=structuredClone(matrix);
- for(const row of mock.rows)if(row.role==="HUB")row.status="PUBLISHED";
- const r=decideNext(mock,board,ledger,empty,opts);
- assert.equal(r.status,"CLAIM_REQUIRED");
- assert.ok(r.items.every(x=>x.role==="SUPPORT"));
+test("Supporting drafts are available after Hub drafts even before parent publication",()=>{
+ let ledgerState=structuredClone(ledger);
+ let claimed=[];
+ for(let n=0;n<52;n++){
+  const pair=transitionPool(matrix,ledgerState,registry,"claim",{writer:"W1",session,branch,count:2},{nonce:"loop"+n,now:"2026-10-14T00:00:00Z"});
+  ledgerState=pair.ledger;claimed.push(...pair.ids);
+  const submitted=transitionPool(matrix,ledgerState,registry,"submit",{writer:"W1",session,branch,ids:pair.ids.join(",")},{nonce:"submit"+n,now:"2026-10-14T00:00:00Z"});
+  ledgerState=submitted.ledger;
+ }
+ assert.equal(claimed.length,104);
+ assert.ok(claimed.some(id=>matrix.rows.find(r=>r.id===id).role==="SUPPORT"));
+ const r=decideNext(matrix,board,ledgerState,empty,opts);
+ assert.equal(r.status,"AWAIT_CLAIMS_OR_REVIEW");
 });
 test("invalid batch / unknown Writer always fails closed",()=>{
  assert.throws(()=>decideNext(matrix,board,ledger,empty,{...opts,count:8}),/pair size/);

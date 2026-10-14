@@ -22,7 +22,7 @@ function collectMarkdownTargets(text){
 function isPublishedLinked(pathname,matrix,pending){
  return matrix.rows.some(r=>r.url===pathname && (r.status==="PUBLISHED"||pending.has(r.id)));
 }
-export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublished=false,pending=new Set(),assetsRoot=null}={}){
+export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublished=false,pending=new Set(),assetsRoot=null,allowUnpublishedParentForDraft=false}={}){
  const errors=[], warnings=[];
  const row=matrix.rows.find(r=>r.id===packet?.matrix_id);
  const locale=locales.find(l=>l.code===packet?.locale);
@@ -37,7 +37,10 @@ export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublis
   if(row.locale!==packet.locale)errors.push("Locale must match Matrix row");
   if(row.parent_id){
    const parent=matrix.rows.find(r=>r.id===row.parent_id);
-   if(!parent||parent.status!=="PUBLISHED"&&!pending.has(parent.id))errors.push("Parent Hub/Pillar must be published before its child");
+   // Drafts may be researched before parent publication, but publishing
+   // still requires a PUBLISHED parent (or co-published parent in pending).
+   if(!parent||(!allowUnpublishedParentForDraft&&parent.status!=="PUBLISHED"&&!pending.has(parent.id)))
+    errors.push("Parent Hub/Pillar must be published before its child");
   }
   try{htmlPagePath(row.url)}catch(e){errors.push(e.message)}
  }

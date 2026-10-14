@@ -1,3 +1,7 @@
+# One-click-to-start outside AI Writer — ZERO-CLICK GitHub Actions
+
+**READ docs/ZERO-CLICK-WRITER.md FIRST.** A GitHub Run workflow button is NOT necessary; the external AI pushes one session request to bootstrap, then every green draft pair push automatically completes and claims the next batch. W1 alone can take any eligible shared topic; W2/W3 optional. Preserve the 14 W1 PR #17 drafts and EN-H01/DE-H01 editorial pilot drafts.
+
 # External Writer Pool — /global (10 languages, 1–3 active AI sessions)
 
 Canonical instructions: docs/DYNAMIC-WRITER-POOL.md and AGENTS.md.
@@ -21,7 +25,7 @@ Production: https://global.rentbikehanoi.com/ — NO auto AI API inside GitHub, 
 8. Fetch/merge main, next pair immediately. DO NOT stop after push/QA/PR when eligible IDs remain. On network/quota loss, resume same branch/session and claims next time.
 
 ## Strict gates
-- Supporting IDs cannot be claimed until their Hub parent is PUBLISHED; editor-reviewed drafts do not count.
+- Supporting drafts may be claimed before their Hub is PUBLISHED; final publication STILL requires approved Hub parent.
 - Coordinator human review of source claims, factual accuracy and SERP intent is separate from deterministic JSON QA. Writer never changes review flags to true.
 - Publishing remains owner-approved via scripts/seo/publish-batch.mjs on a feature branch and reviewed PR; no direct Writer merge or auto publication.
 - No inventing price, legal rights, deposits, insurance, delivery, local office details or third-party citations. No duplicate URLs/content.

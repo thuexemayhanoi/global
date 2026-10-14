@@ -4,6 +4,7 @@ on:
     branches: ['writer/w1-*', 'writer/w2-*', 'writer/w3-*']
     paths:
       - 'factory/external-writers/inbox/**'
+      - 'factory/external-writers/requests/**'
   pull_request:
     branches: [main]
     paths:
@@ -12,6 +13,12 @@ on:
       - 'scripts/continuous-writer.mjs'
       - 'scripts/writer-pool.mjs'
       - 'scripts/writer-pool-core.mjs'
+      - 'scripts/writer-request.mjs'
+      - 'scripts/writer-request-core.mjs'
+      - 'scripts/writer-pool-auto.mjs'
+      - 'scripts/writer-pool-auto-core.mjs'
+      - 'tests/writer-pool-auto.test.mjs'
+      - '.github/workflows/writer-pool-auto.yml'
       - 'tests/writer-pool.test.mjs'
       - '.github/workflows/writer-pool.yml'
       - 'tests/continuous-writer.test.mjs'
@@ -37,7 +44,7 @@ jobs:
       - name: Deterministic assignment and refusal-gate tests
         run: node --test tests/external-writers.test.mjs
       - name: Validate uninterrupted session loop planner
-        run: node --test tests/continuous-writer.test.mjs tests/writer-pool.test.mjs
+        run: node --test tests/continuous-writer.test.mjs tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs
       - name: Validate all inbox drafts, no article publishing
         run: node scripts/writer-lanes.mjs verify-all
       - name: Refuse writer PR changes outside its own inbox
@@ -62,7 +69,9 @@ jobs:
           while IFS= read -r file; do
             case "$file" in
               factory/external-writers/inbox/"$lane"/*.json) ;;
+              factory/external-writers/requests/"$lane"/*.json) ;;
               *) echo "FORBIDDEN WRITER PATH: $file"; exit 1 ;;
             esac
           done <<< "$changed"
+          node scripts/writer-request.mjs validate --writer "$lane" --branch "$WRITER_BRANCH"
           echo "Scoped writer PR: $lane"
