@@ -1,3 +1,9 @@
+# DYNAMIC WRITER POOL — refer to docs/ZERO-CLICK-WRITER.md
+
+This document describes the manual **fallback** mechanism. The DEFAULT workflow is now zero-click: one-time branch Writer request push triggers GitHub Actions Writer QA and automatic centralized claim; every subsequent green pair push submits current draft pair and reserves the next pair.
+
+DO NOT instruct an external AI to wait for its owner to press "Run workflow" for claim/submit. Read docs/ZERO-CLICK-WRITER.md instead. This manual workflow is for recovery only; no human per-batch approval is needed for DRAFT creation. Publication still requires genuine editorial/owner approval.
+
 # DYNAMIC WRITER POOL — /global
 
 ## One Writer or three Writers
