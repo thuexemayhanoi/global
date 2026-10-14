@@ -26,6 +26,7 @@ const argsOf=argv=>{
  return out;
 };
 function shell(cmd,args){return execFileSync(cmd,args,{cwd:ROOT,encoding:"utf8",timeout:20000,maxBuffer:4*1024*1024}).trim();}
+const rawGit=(args)=>execFileSync("git",args,{cwd:ROOT,encoding:"utf8",timeout:20000,maxBuffer:4*1024*1024});
 function assertMainCoordinator(){
  if(process.env.GITHUB_ACTIONS!=="true"||process.env.GITHUB_WORKFLOW!=="Global Dynamic Writer Pool")throw Error("Claims must be mutated by the serialized Global Dynamic Writer Pool workflow");
  if(shell("git",["branch","--show-current"])!=="main")throw Error("Claims must be committed on main, never a Writer PR");
@@ -52,7 +53,7 @@ function verifySubmittedFiles(ids,opts,matrix,board,locales,ledger,registry){
  for(const id of ids){
   const file="factory/external-writers/inbox/"+opts.writer+"/"+id+".json";
   let raw;
-  try{raw=shell("git",["show","refs/remotes/origin/"+branch+":"+file]);}
+  try{raw=rawGit(["show","refs/remotes/origin/"+branch+":"+file]);}
   catch{throw Error("Missing claimed article JSON on remote branch "+branch+" "+id);}
   let p;
   try{p=JSON.parse(raw);}catch{throw Error("Invalid article JSON "+file);}
