@@ -105,7 +105,7 @@ export function main(argv=process.argv.slice(2)){
   const preview=poolStatus(matrix,claims,registry,{writer:opt.writer,session:opt.session,locale:opt.locale});
   const brief={repo:"thuexemayhanoi/global",mode:"READ_ONLY_DYNAMIC_POOL_PREVIEW_NOT_A_CLAIM",writer:opt.writer,
    claim_revision:claims.revision,eligible_shared:preview.available_now,items:preview.items,
-   safety:"Call writer-pool.yml action=claim, wait for SUCCESS and refresh main before writing; this preview is not reserved.",
+   safety:"Preview is not a claim. Start/push a Writer request once; green Writer QA auto-claims up to 10. Fetch main before drafting.",
    auto_publish:false};
   console.log(JSON.stringify(brief,null,2));return;
  }
