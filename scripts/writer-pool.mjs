@@ -38,6 +38,15 @@ function verifySubmittedFiles(ids,opts,matrix,board,locales,ledger,registry){
  const prText=shell("gh",["pr","list","--repo",ROOT_REPO,"--head",branch,"--state","open","--json","number"]);
  const prs=JSON.parse(prText);
  if(!Array.isArray(prs)||!prs.length)throw Error("Submit needs an open Writer draft PR: "+branch);
+ // Enforce an actual green Writer QA check for this open PR, not merely
+ // a syntactically valid article packet or a self-reported success.
+ const checks=JSON.parse(shell("gh",["pr","checks",branch,"--repo",ROOT_REPO,"--json","name,state,workflow"]));
+ const scoped=checks.filter(c=>c.name==="check"&&String(c.workflow||"").includes("External Writer Draft QA"));
+ if(!scoped.length||scoped.some(c=>c.state!=="SUCCESS"))
+  throw Error("Submit blocked until the remote PR's External Writer Draft QA is green");
+ if(checks.some(c=>c.state==="FAILURE"||c.state==="ERROR"||c.state==="CANCELLED"))
+  throw Error("Submit blocked by failed PR CI checks");
+
  shell("git",["fetch","--no-tags","origin",branch+":refs/remotes/origin/"+branch]);
  const packets=[];
  for(const id of ids){
