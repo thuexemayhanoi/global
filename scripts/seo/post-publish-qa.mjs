@@ -7,6 +7,8 @@ import fs from "node:fs";
 import path from "node:path";
 import {fileURLToPath} from "node:url";
 import {parseSitemapIndex,parseSitemapUrlset} from "../sitemaps.mjs";
+import {fingerprint,FINGERPRINT_FIELDS} from "./seo-guard-core.mjs";
+import {scanHtml} from "./fact-guard-core.mjs";
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
 export function inspectHTML(html,url,expectedLang=null){
  const errors=[];
@@ -19,7 +21,8 @@ export function inspectHTML(html,url,expectedLang=null){
  if(url!=="/"&&!/<main\b[^>]*>[\s\S]*?<p\b/i.test(html))errors.push("No crawlable visible description "+url);
  return errors;
 }
-export async function inspectProduction(fetcher=fetch,origin="https://global.rentbikehanoi.com",matrix,locales){
+export async function inspectProduction(fetcher=fetch,origin="https://global.rentbikehanoi.com",matrix,locales,registry=null){
+ const frozen=new Map((registry?.urls||[]).map(u=>[u.url,u]));
  const issues=[],evidence=[];
  const get=async (route,headers={})=>{
   let lastError;
@@ -36,8 +39,15 @@ export async function inspectProduction(fetcher=fetch,origin="https://global.ren
    const {response,text}=await get(r.url);
    const l=locales.find(x=>x.code===r.locale);
    if(response.status!==200)issues.push("Unexpected HTTP status "+response.status+" "+r.url);
-   else issues.push(...inspectHTML(text,r.url,l?.htmlLang||null));
-   evidence.push({route:r.url,http_status:response.status,bytes:Buffer.byteLength(text)});
+   else{
+    issues.push(...inspectHTML(text,r.url,l?.htmlLang||null));
+    // Production must equal the reviewed, frozen SEO state (no repo↔live drift).
+    const f=frozen.get(r.url);
+    if(f){const live=fingerprint(text);for(const k of FINGERPRINT_FIELDS)if(JSON.stringify(live[k])!==JSON.stringify(f.fingerprint[k]))issues.push("Live SEO fingerprint drift "+r.url+": "+k);}
+    else if(registry)issues.push("Live PUBLISHED URL is not frozen "+r.url);
+    for(const x of scanHtml(text,{locale:r.locale,where:r.url}))if(x.level==="FAIL")issues.push("Live fact guard "+x.code+" "+r.url);
+   }
+   evidence.push({route:r.url,http_status:response.status,bytes:Buffer.byteLength(text),fingerprint_checked:frozen.has(r.url)});
   }catch(e){issues.push("Fetch failed "+r.url+": "+e.message)}
  }
  try{
@@ -91,7 +101,8 @@ async function cli(){
  if(!process.argv.includes("--confirm-live"))throw Error("Explicit --confirm-live is required; do not run on PR before approved Pages deployment");
  const matrix=JSON.parse(fs.readFileSync(path.join(ROOT,"data/seo/master-matrix.json"),"utf8"));
  const locales=JSON.parse(fs.readFileSync(path.join(ROOT,"content/locales.json"),"utf8"));
- const report=await inspectProduction(fetch,"https://global.rentbikehanoi.com",matrix,locales);
+ const registry=JSON.parse(fs.readFileSync(path.join(ROOT,"data/seo/url-freeze.json"),"utf8"));
+ const report=await inspectProduction(fetch,"https://global.rentbikehanoi.com",matrix,locales,registry);
  fs.mkdirSync(path.join(ROOT,"reports"),{recursive:true});
  fs.writeFileSync(path.join(ROOT,"reports/post-publish-qa.json"),JSON.stringify(report,null,2)+"\n");
  console.log(JSON.stringify({passed:report.passed,issues:report.issues,checked:report.evidence.length,report:"reports/post-publish-qa.json"},null,2));
