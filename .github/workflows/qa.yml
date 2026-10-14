@@ -16,6 +16,12 @@ jobs:
           node-version: 22
       - name: Verify generated pages and metadata
         run: node scripts/build.mjs --check
+      - name: Dynamic Writer Pool CLI smoke checks (read only)
+        run: |
+          node --check scripts/writer-pool.mjs
+          node --check scripts/writer-pool-core.mjs
+          node scripts/writer-pool.mjs status
+          node scripts/continuous-writer.mjs status
       - name: Verify deterministic content graph
         run: node scripts/seo/content-graph.mjs --check
       - name: Premium SEO, navigation, search and accessibility regression
