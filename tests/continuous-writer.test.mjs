@@ -74,5 +74,5 @@ test("one session can claim TEN items and the continuous advisor displays only i
  const view=decideNext(matrix,board,res.ledger,empty,opts);
  assert.equal(view.batch_size,10);
  assert.equal(view.status,"WRITE_NEXT_BATCH");
- assert.deepEqual(view.items.map(x=>x.id),res.ids);
+ assert.deepEqual(new Set(view.items.map(x=>x.id)),new Set(res.ids),"The advisor may sort confirmed IDs differently but must never add/drop one");
 });
