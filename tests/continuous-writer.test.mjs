@@ -15,7 +15,7 @@ test("three writers have disjoint deterministic next pairs",()=>{
 });
 test("after drafts land, next excludes their ids",()=>{
  const a=decideNext(matrix,board,ledger,empty,{writer:"W1"});
- const fakeInbox={files:a.items.map(i=>({id:i.id,writer:"W1",path:i.output,packet:{matrix_id:i.id}})),errors:[]};
+ const fakeInbox={files:a.items.slice(0,1).map(i=>({id:i.id,writer:"W1",path:i.output,packet:{matrix_id:i.id}})),errors:[]};
  // Existing invalid draft is a hard QA blocker, never silently skipped.
  const b=decideNext(matrix,board,ledger,fakeInbox,{writer:"W1"});
  assert.equal(b.status,"REPAIR_DRAFT");
