@@ -4,7 +4,11 @@ import fs from "node:fs";
 import {poolCandidates,poolStatus,transitionPool,validatePool,ensureIdentity} from "../scripts/writer-pool-core.mjs";
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
-const original=JSON.parse(fs.readFileSync("factory/external-writers/claims.json","utf8"));
+const currentLedger=JSON.parse(fs.readFileSync("factory/external-writers/claims.json","utf8"));
+const original={version:1,revision:0,claims:[]};
+test("real currently committed ledger is valid independent of synthetic test state",()=>{
+ assert.deepEqual(validatePool(matrix,currentLedger,registry),[]);
+});
 const writer=(w)=>({writer:w,session:w.toLowerCase()+"-test",branch:"writer/"+w.toLowerCase()+"-test"});
 const options=(id)=>({now:"2026-10-14T00:00:00.000Z",nonce:id});
 test("actual PR #17's fourteen draft IDs are protected from every writer including original W1",()=>{
