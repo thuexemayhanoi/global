@@ -23,8 +23,7 @@ export function validatePool(matrix,ledger,protectedData){
  const reserved=new Set();
  for(const p of protectedData.protected){
   if(!rows.has(p.id)||!WRITERS.includes(p.writer)||!SESSION.test(p.session||"")||
-   p.branch!=="writer/"+p.writer.toLowerCase()+"-"+p.session.slice(p.writer.length+1)&&
-   !new RegExp("^writer/"+p.writer.toLowerCase()+"-[A-Za-z0-9_-]+$").test(p.branch||""))errors.push("Bad protected draft "+p.id);
+   !new RegExp("^writer/"+String(p.writer).toLowerCase()+"-[A-Za-z0-9_-]+$").test(p.branch||""))errors.push("Bad protected draft "+p.id);
   if(reserved.has(p.id))errors.push("Duplicate protected ID "+p.id);
   reserved.add(p.id);
  }
@@ -112,6 +111,9 @@ export function transitionPool(matrix,ledger,registry,action,input,{now=new Date
    next.claims.push(claim);items.push(id);
   }
   if(!items.length)throw Error("No eligible unclaimed topics: inspect parent Hub publication and protected drafts");
+  // Re-dispatch after a network timeout must resume the same batch, not
+  // change ledger revision or consume another pair.
+  if(!newIds.length)return {ledger:next,ids:items,action,revision:next.revision,idempotent:true};
  }else if(action==="submit"){
   const ids=String(input.ids||"").split(",").map(x=>x.trim()).filter(Boolean);
   if(!ids.length||ids.length>2||new Set(ids).size!==ids.length)throw Error("Submit exactly 1-2 unique IDs");
