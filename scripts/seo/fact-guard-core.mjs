@@ -49,6 +49,8 @@ const RENTAL_WORDS=["thuê","cọc","rent","rental","deposit","miete","mieten","
 const CONTRADICTIONS=["không cần cọc","không cọc","miễn cọc","không đặt cọc","no deposit","without a deposit","deposit-free","zero deposit","ohne kaution","keine kaution","kautionsfrei","sans caution","pas de caution","sin depósito","sin fianza","zonder borg","geen borg","sem caução","sem depósito","免押金","无需押金","不用押金","보증금 없이","보증금 없음","무보증","保証金なし","保証金不要","デポジット不要",
  "miễn phí giao","giao xe miễn phí","free ship","free delivery","delivered free","kostenlose zustellung","gratis zustellung","kostenlose lieferung","livraison gratuite","entrega gratuita","entrega gratis","gratis bezorging","gratis bezorgd","entrega grátis","免费送车","免费配送","무료 배달","무료 배송","配達無料","無料配達","送料無料",
  "24/7","24 giờ","24h/24","around the clock","rund um die uhr","24 stunden","24 heures sur 24","24 horas","24 uur","24小时","全天候","24시간","24時間"];
+// Folded once: folding (NFD + NFKC) per paragraph × keyword dominated scans at thousands of pages.
+const HOUR_FOLDED=HOUR_WORDS.map(fold),RENTAL_FOLDED=RENTAL_WORDS.map(fold),CONTRADICTIONS_FOLDED=CONTRADICTIONS.map(c=>[c,fold(c)]);
 const BUSINESS_TYPES=new Set(["LocalBusiness","AutoRental","AutomotiveBusiness","Store","MotorcycleDealer","MotorcycleRepair","AutoDealer","RentalCarReservation","Place"]);
 const BUSINESS_KEYS=["telephone","address","priceRange","openingHours","openingHoursSpecification","geo","hasMap","makesOffer","offers"];
 
@@ -113,7 +115,7 @@ export function scanText(text,{locale="en",mode="strict",ref=loadReference(),whe
  if(!ref)return findings;
  const push=(level,code,message,excerpt)=>findings.push({level,code,message,where,excerpt:String(excerpt).slice(0,160)});
  const allowed=allowedAmounts(ref),terms=brandTerms(ref),refPhone=ref.phone.digits;
- const mentions=t=>terms.some(x=>fold(t).includes(x))||extractPhones(strip(t)).some(p=>p.digits===refPhone);
+ const mentions=(t,folded=fold(t))=>terms.some(x=>folded.includes(x))||extractPhones(strip(t)).some(p=>p.digits===refPhone);
  for(const section of sections(text)){
  const sectionBrand=mentions(section);
  for(const para of paragraphs(section)){
@@ -121,7 +123,7 @@ export function scanText(text,{locale="en",mode="strict",ref=loadReference(),whe
   const cited=CITATION.test(para);
   const body=strip(para);
   const phones=extractPhones(body);
-  const brand=mentions(para);
+  const brand=mentions(para,folded);
   if(brand)for(const m of body.matchAll(/(\d+[a-z]?)\s*(?:,\s*)?(?:đường|phố|street|str\.?)?\s*(nguyễn văn cừ|nguyen van cu)/giu)){
    if(m[1]!==ref.address.street_number)push("FAIL","ADDRESS_MISMATCH","Nguyễn Tú address must read "+ref.address.lines,m[0]);
   }
@@ -136,11 +138,11 @@ export function scanText(text,{locale="en",mode="strict",ref=loadReference(),whe
     else for(const v of a.values)if(!allowed.has(v))push("FAIL","BRAND_PRICE_MISMATCH",v+" VND is not in the Nguyễn Tú reference ("+REFERENCE_PATH+")",a.raw);
    }else if(sectionBrand&&a.currency==="VND"&&a.values.every(v=>allowed.has(v)))continue;
    else if(!cited)push(mode==="strict"?"FAIL":"WARN","UNSOURCED_AMOUNT","Currency amount without an inline source in the same paragraph",a.raw);
-   else if(RENTAL_WORDS.some(w=>folded.includes(fold(w))))push("WARN","THIRD_PARTY_PRICE_REVIEW","Sourced third-party rental price: re-check date and source before publication",a.raw);
+   else if(RENTAL_FOLDED.some(w=>folded.includes(w)))push("WARN","THIRD_PARTY_PRICE_REVIEW","Sourced third-party rental price: re-check date and source before publication",a.raw);
   }
-  if(brand)for(const c of CONTRADICTIONS)if(folded.includes(fold(c)))push("FAIL","BRAND_CONTRADICTION","'"+c+"' contradicts the reference (deposit, delivery fee or hours)",para);
+  if(brand)for(const [c,fc] of CONTRADICTIONS_FOLDED)if(folded.includes(fc))push("FAIL","BRAND_CONTRADICTION","'"+c+"' contradicts the reference (deposit, delivery fee or hours)",para);
   if(sectionBrand){
-   if(HOUR_WORDS.some(w=>folded.includes(fold(w))))for(const t of body.matchAll(TIME_RANGE)){
+   if(HOUR_FOLDED.some(w=>folded.includes(w)))for(const t of body.matchAll(TIME_RANGE)){
     const open=String(t[1]).padStart(2,"0")+":"+(t[2]||"00"),close=String(t[3]).padStart(2,"0")+":"+(t[4]||"00");
     if(open!==ref.hours.opens||close!==ref.hours.closes)push("FAIL","HOURS_MISMATCH","Nguyễn Tú hours are "+ref.hours.opens+"–"+ref.hours.closes,t[0]);
    }
@@ -161,9 +163,9 @@ const htmlText=html=>String(html).replace(/<script\b[\s\S]*?<\/script>/gi," ").r
  .replace(/<\/(?:p|li|h[1-6]|td|th|summary|details|div|section|article|header|footer|nav|dd|dt|figcaption|blockquote)>/gi,"\n\n").replace(/<br\s*\/?>/gi,"\n")
  .replace(/<[^>]+>/g," ").replace(/&nbsp;/g," ").replace(/&amp;/g,"&").replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/[ \t]+/g," ");
 export function scanHtml(html,{locale,ref=loadReference(),where=""}={}){
- const findings=scanText(htmlText(html),{locale,mode:"strict",ref,where});
+ const plain=htmlText(html),findings=scanText(plain,{locale,mode:"strict",ref,where});
  if(!ref)return findings;
- const text=fold(htmlText(html)),digits=String(html).replace(/[\s.\-()]/g,"");
+ const text=fold(plain),digits=String(html).replace(/[\s.\-()]/g,"");
  const shows=digits.includes(ref.phone.digits)||digits.includes(ref.phone.e164)||text.includes(fold(ref.address.street_number+" "+ref.address.street));
  if(shows&&ref.publication?.site_display_approved!==true)findings.push({level:"FAIL",code:"NAP_DISPLAY_NOT_APPROVED",where,message:"Page shows Nguyễn Tú phone/address but publication.site_display_approved is false",excerpt:""});
  for(const m of String(html).matchAll(/<script\s+type="application\/ld\+json"\s*>([\s\S]*?)<\/script>/gi)){

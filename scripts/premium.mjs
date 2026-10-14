@@ -65,7 +65,16 @@ function addSearchMetadata(files,matrix,locales){
  }
  files["assets/search-index/manifest.json"]=JSON.stringify(manifest,null,2)+"\n";
 }
-function enhanceArticle(html,route,matrix){
+// Matrix lookups indexed once per build: per-page scans of every row were O(pages × rows).
+function relatedIndex(matrix){
+ const byUrl=new Map(),pool=new Map();
+ for(const r of matrix.rows){
+  if(!byUrl.has(r.url))byUrl.set(r.url,r);
+  if(r.status==="PUBLISHED"&&r.role!=="UTILITY"&&r.role!=="LANGUAGE_SELECTOR"){if(!pool.has(r.locale))pool.set(r.locale,[]);pool.get(r.locale).push(r);}
+ }
+ return {byUrl,pool};
+}
+function enhanceArticle(html,route,idx){
  const m=route.match(/^([a-z]{2})\/(?:checklist|topics\/[a-z0-9-]+|guides\/[a-z0-9-]+)\/index\.html$/);
  if(!m||!html.includes('<article class="article">'))return html;
  const code=m[1],tr=langUI[code]||langUI.en,copy=readingLabels[code]||readingLabels.en;
@@ -79,8 +88,12 @@ function enhanceArticle(html,route,matrix){
   headings.push({id,title:labelText});
   return '<h2 id="'+id+'">'+label+'</h2>';
  });
- const pRow=matrix.rows.find(r=>r.url==="/"+route.replace(/index\.html$/,""));
- const related=matrix.rows.filter(r=>r.status==="PUBLISHED"&&r.locale===code&&r.url!==pRow?.url&&r.role!=="UTILITY"&&r.role!=="LANGUAGE_SELECTOR"&&(r.parent_id===pRow?.parent_id||r.parent_id===pRow?.id||r.role==="PILLAR")).slice(0,5);
+ const pRow=idx.byUrl.get("/"+route.replace(/index\.html$/,""));
+ const related=[];
+ for(const r of idx.pool.get(code)||[]){
+  if(related.length===5)break;
+  if(r.url!==pRow?.url&&(r.parent_id===pRow?.parent_id||r.parent_id===pRow?.id||r.role==="PILLAR"))related.push(r);
+ }
  const menu=headings.length>=2?'<nav class="premium-toc" aria-label="'+safe(tr[2])+'"><strong>'+safe(tr[2])+'</strong><ol>'+headings.map(h=>'<li><a href="#'+h.id+'">'+safe(h.title)+'</a></li>').join("")+'</ol></nav>':"";
  const relatedNav=related.length?'<nav class="premium-related" aria-label="'+safe(tr[3])+'"><strong>'+safe(tr[3])+'</strong>'+related.map(r=>'<a href="'+safe(r.url)+'">'+safe(r.working_title)+'</a>').join("")+'</nav>':"";
  const signature='<p class="premium-author">'+safe(tr[5])+': <a href="/about/">Vietnam Two-Wheel Guide</a> · <a href="/contact/">'+safe(copy[3])+'</a></p>';
@@ -90,13 +103,13 @@ function enhanceArticle(html,route,matrix){
 export function applyPremium(files,matrix,locales){
  // Search is a real technical route added by build before navigation, not an indexable content item.
  const routes=Object.keys(files).filter(p=>p.endsWith(".html"));
- const published=matrix.rows.filter(x=>x.status==="PUBLISHED");
+ const idx=relatedIndex(matrix);
  for(const p of routes){
   let h=files[p];
   const l=p.match(/^([a-z]{2})\//)?.[1],tr=langUI[l]||langUI.en;
   if(p==="404.html")h=h.replace('<link rel="canonical" href="'+HOST+'/404.html">','<meta name="robots" content="noindex,follow">');
   if(!h.includes('href="/assets/premium.css"'))h=h.replace('</head>','<link rel="stylesheet" href="/assets/premium.css"><script src="/assets/premium.js" defer></script>'+ (p==="search/index.html"?'<script src="/assets/search.js" defer></script>':"")+'</head>');
-  h=enhanceArticle(h,p,matrix);
+  h=enhanceArticle(h,p,idx);
   // Truly published locale pages only; do not generate empty Hub category URLs.
   const localeHome=p.match(/^([a-z]{2})\/index\.html$/);
   if(localeHome){

@@ -58,7 +58,8 @@
     {
       "batch": "TA-08",
       "scope": "root hreflang cluster, Pillar BreadcrumbList + Hanoi entity, checklist breadcrumb level, live fingerprint drift QA",
-      "status": "PR_5_IN_FLIGHT"
+      "status": "DONE",
+      "evidence": "PR #28; live post-publish QA run 38579335957 passed (0 issues, 25 URLs)"
     },
     {
       "batch": "TA-09",
@@ -82,6 +83,12 @@
       "batch": "TA-12",
       "scope": "editorial UPGRADE of 20 live pages (depth, citations)",
       "status": "AWAITING_OWNER"
+    },
+    {
+      "batch": "TA-13",
+      "scope": "scale hot paths: per-build Matrix indexes (navigation, premium, articles), fact-guard keyword folding, native-script CJK benchmark text, url-freeze size alarm",
+      "status": "DONE",
+      "evidence": "PR-6; docs/PERFORMANCE-LIMITS.md before/after at 10,000 articles; byte-identical output"
     }
   ],
   "resume": "Fetch main; run node scripts/build.mjs --check, node scripts/seo/seo-guard.mjs, node scripts/seo/fact-guard.mjs, node scripts/seo/content-graph.mjs --check, node scripts/seo/topical-authority.mjs validate and node --test tests/*.test.mjs. Owner decisions are listed at the end of docs/GAP-MATRIX.md. Never promote, publish or change NAP without the owner's manifest/approval.",
@@ -105,7 +112,21 @@
       "pr": 27,
       "sha": "9a6379fa4090315c8f9dd0f9a42221fe6f2eee37",
       "scope": "link integrity, content protection, publisher freeze, scale"
+    },
+    {
+      "pr": 28,
+      "sha": "baf0ae72dfbd280d5a78b661efbefa39c8bc3274",
+      "scope": "root hreflang cluster, Pillar breadcrumbs + Hanoi entity, live drift QA"
     }
   ],
-  "gapMatrix": "docs/GAP-MATRIX.md"
+  "gapMatrix": "docs/GAP-MATRIX.md",
+  "productionQA": {
+    "deployedCommit": "baf0ae72dfbd280d5a78b661efbefa39c8bc3274",
+    "pagesRun": 38579133780,
+    "postPublishQaRun": 38579335957,
+    "passed": true,
+    "issues": 0,
+    "checks": 40,
+    "checkedOn": "2026-10-14"
+  }
 }

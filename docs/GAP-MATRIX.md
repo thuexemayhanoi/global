@@ -2,7 +2,7 @@
 
 Audit → Gap Matrix → P0/P1/P2 → Fix → Test → PR → CI → Merge → Production QA. Only gaps with evidence were changed. Statuses: **DONE** (built and verified), **PARTIAL**, **MISSING**, **BROKEN** (defect with evidence), **PROTECTED** (working or important data, kept unchanged), **OWNER** (needs an owner decision), **BLOCKED** (no data source or permission).
 
-Merged PRs: #24 guard + topical map · #25 business reference + fact guard · #26 site matrix + knowledge graph + duplicate gate · #27 links, content protection, publisher freeze, scale · PR-5 live technical SEO (this document).
+Merged PRs: #24 guard + topical map · #25 business reference + fact guard · #26 site matrix + knowledge graph + duplicate gate · #27 links, content protection, publisher freeze, scale · #28 live technical SEO + live drift QA · PR-6 scale hot paths + production evidence (this update).
 
 ## Objectives
 
@@ -26,7 +26,7 @@ Merged PRs: #24 guard + topical map · #25 business reference + fact guard · #2
 | GM-14 | P0 | Business NAP/prices reference ×10 + anti-fabrication | MISSING | DONE | `data/business/` + `fact-guard` (#25); evidence from Google Business Profile, official site and listings |
 | GM-14b | P1 | Conflicting public business facts | Not tracked | OWNER | C1 site hours 08:00–21:30 vs 09:00–21:00; C2 delivery threshold 800,000 VND; C3 GBP title |
 | GM-15 | P1 | Depth of live pages | Not measured | OWNER (editorial UPGRADE) | Pillars 282–516 words, checklists 176–383 words, below targets; content changes go through the editorial gate |
-| GM-16 | P0 | Production verification | Live check of 2 URLs only | See "Production QA" below | Post-publish QA with fingerprint drift + fact gate |
+| GM-16 | P0 | Production verification | Live check of 2 URLs only | DONE | Post-publish QA now checks fingerprint drift and runs the fact gate. Live run 38579335957 passed with 0 issues on all 25 URLs (see "Production QA") |
 
 ## Defects found and fixed (BROKEN → DONE)
 
@@ -52,7 +52,16 @@ CNAME `global.rentbikehanoi.com`; all 25 live URLs and their canonicals/lang; 10
 
 ## Production QA
 
-Filled after the PR-5 deployment (see `docs/TOPICAL-AUTHORITY-CHECKPOINT.json`).
+PR #28 (PR-5, merge `baf0ae7`) went live on 2026-10-14:
+
+| Check | Run / method | Result |
+|---|---|---|
+| Static SEO QA on `main` | Actions run 38579134775 | success |
+| GitHub Pages build and deployment | Actions run 38579133780 (14:17–14:18 UTC) | success |
+| Live post-publish QA (`post-publish-qa.yml`, read-only) | Actions run 38579335957, artifact `global-live-post-publish-qa` | **passed, 0 issues, 40 checks.** All 25 PUBLISHED URLs return HTTP 200 with the right lang, canonical, H1 and shared nav/footer. Their live SEO fingerprints equal the frozen registry, with no fact-guard failure. `/search/` is noindex. The sitemap index and its 11 shards equal the PUBLISHED Matrix. robots.txt passes, and unknown routes return HTTP 404. |
+| Independent uncached fetch | `/` and `/ja/` | `/` serves the 10 hreflang alternates plus `x-default` → `/`. `/ja/` serves WebPage (`about` Hanoi, Wikidata Q1858) plus BreadcrumbList Global › 日本語. |
+
+These checks prove what the site serves, not Google indexation, rankings or AI citations.
 
 ## Owner decisions (OWNER)
 
