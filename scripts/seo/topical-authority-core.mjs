@@ -80,6 +80,33 @@ export function tokens(text,locale,stop=[]){
  for(const t of stops){const needle=" "+t.replace(/[^\p{L}\p{N}']+/gu," ")+" ";while(s.includes(needle))s=s.replace(needle," ");}
  return new Set(s.split(" ").filter(x=>x.length>1));
 }
+/**
+ * All-pairs Jaccard ≥ threshold with prefix filtering (sub-quadratic in
+ * practice): tokens are ordered rare-first and only each set's prefix is
+ * indexed; any pair reaching the threshold must share a prefix token.
+ * Returns [[i,j,score]] with i<j.
+ */
+export function similarPairs(sets,threshold){
+ const df=new Map();
+ for(const s of sets)for(const t of s)df.set(t,(df.get(t)||0)+1);
+ const ordered=sets.map(s=>[...s].sort((a,b)=>df.get(a)-df.get(b)||(a<b?-1:a>b?1:0)));
+ const index=new Map(),out=[];
+ for(let i=0;i<ordered.length;i++){
+  const x=ordered[i],size=x.length;
+  if(!size)continue;
+  const prefix=size-Math.ceil(threshold*size)+1,cands=new Set();
+  for(let k=0;k<prefix;k++)for(const j of index.get(x[k])||[])cands.add(j);
+  for(const j of [...cands].sort((a,b)=>a-b)){
+   const y=sets[j],small=size<y.size?sets[i]:y,big=small===y?sets[i]:y;
+   if(small.size<threshold*big.size)continue;
+   let inter=0;for(const t of small)if(big.has(t))inter++;
+   const score=inter/(size+y.size-inter);
+   if(score>=threshold)out.push([j,i,score]);
+  }
+  for(let k=0;k<prefix;k++){const t=x[k];if(!index.has(t))index.set(t,[]);index.get(t).push(i);}
+ }
+ return out.sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
+}
 export function similarity(a,b,locale,stop){
  const x=tokens(a,locale,stop),y=tokens(b,locale,stop);
  const union=new Set([...x,...y]).size;
@@ -119,6 +146,16 @@ export function validateTopicalMap({map,matrix,frozenUrls=[]}){
   const stop=L.stop_tokens||[];
   const localRows=rows.filter(r=>r.locale===code&&["PILLAR","HUB","SUPPORT"].includes(r.role));
   const seen=[];
+  // Each proposal is compared with the locale's Matrix rows and earlier proposals (≥ warn threshold).
+  const props=Array.isArray(L.proposals)?L.proposals:[];
+  const pool=[...localRows.map(r=>({id:r.id,q:r.primary_query})),...props.map(p=>({id:p?.candidate_id,q:p?.primary_query}))];
+  const pairsFor=new Map();
+  for(const [x,y,score] of similarPairs(pool.map(o=>tokens(o.q,code,stop)),SIMILARITY_WARN)){
+   if(y<localRows.length)continue;
+   const pi=y-localRows.length;
+   if(!pairsFor.has(pi))pairsFor.set(pi,[]);
+   pairsFor.get(pi).push([pool[x].id,score]);
+  }
   for(const [i,p] of (L.proposals||[]).entries()){
    const id=p?.candidate_id||code+"-row-"+i;
    if(!p||typeof p!=="object"){fail("T1",id,"Proposal must be an object");continue;}
@@ -155,10 +192,8 @@ export function validateTopicalMap({map,matrix,frozenUrls=[]}){
    if(!Array.isArray(p.secondary_queries)||p.secondary_queries.length<2||p.secondary_queries.length>6||p.secondary_queries.some(unsafeText))
     fail("T4",id,"Provide 2–6 native secondary query variants");
    const distinct=new Map((p.distinct_from||[]).map(d=>[d?.id,d?.reason]));
-   for(const other of [...localRows,...seen]){
-    const oid=other.id||other.candidate_id;
+   for(const [oid,score] of (pairsFor.get(i)||[])){
     if(oid===self)continue;
-    const score=similarity(p.primary_query,other.primary_query,code,stop);
     const justified=String(distinct.get(oid)||"").length>=40;
     if(justified)continue;
     if(score>=SIMILARITY_FAIL)fail("T4",id,"Cannibalization risk vs "+oid+" (overlap "+score.toFixed(2)+"); merge, re-scope or justify in distinct_from");

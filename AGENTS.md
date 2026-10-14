@@ -99,3 +99,10 @@
 - `docs/GLOBAL-SITE-MATRIX.md` is the Global Content Cannibalization Matrix (Homepage → Pillar → Hub → Silo → Supporting). Silos are graph nodes and Hub-page sections, never URLs. UPGRADE on a live page is an editorial recommendation with metrics; change live content only through the reviewed publication gate.
 - `node scripts/seo/validate-plan.mjs` fails any two non-parent/child Hub/Supporting rows with query overlap ≥ 0.66 and no ≥40-char `distinct_from` reason, so a duplicate intent never reaches the Writer pool. Promotion copies candidate `distinct_from` into the Matrix row.
 - Performance signals are NOT_CONNECTED (no Search Console property for global.rentbikehanoi.com in the connected tools); never infer rankings or traffic.
+
+## Link integrity, content protection and scale (PR-4)
+
+- `seo-guard` also audits PUBLISHED pages: orphans, two-way parent↔child links (Hub/Pillar in-content link to every published child; child links back), empty anchors (FAIL) and generic/ambiguous/undiverse anchors (WARN). It freezes each live page's H2 outline and main-text size: removing a frozen H2 or losing >10% of main text fails until a reviewed `--write`.
+- Published Hub articles render "Guides in this topic" (every published child, grouped by silo label); Supporting articles render up to six published siblings. Only PUBLISHED URLs. Do not remove these sections: at scale they are what prevents orphan guides.
+- `publish-batch --apply` runs `seo-guard --add-new` (freezes only new URLs, refuses on any FAIL) and `fact-guard`, and restores the registry on rollback.
+- Matrix/article IDs allow 2–4 digits (XX-S100+). Overlap checks use prefix-filtered all-pairs similarity. Benchmark: `node scripts/bench/full-build-scale.mjs --articles N` (temp copy only); CI runs N=300. See docs/PERFORMANCE-LIMITS.md before scaling past 10,000 URLs (shard url-freeze and content-graph by locale).

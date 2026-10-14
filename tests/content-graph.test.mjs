@@ -4,7 +4,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import {spawnSync} from "node:child_process";
-import {buildGraph,renderReport,GRAPH_PATH,REPORT_PATH} from "../scripts/seo/content-graph.mjs";
+import {buildGraph,renderReport,stringify,GRAPH_PATH,REPORT_PATH} from "../scripts/seo/content-graph.mjs";
 const {graph,errors}=buildGraph(process.cwd());
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const copyRepo=()=>{
@@ -15,10 +15,12 @@ const copyRepo=()=>{
 
 test("graph and site-matrix report are deterministic and committed in sync",()=>{
  assert.deepEqual(errors,[]);
- assert.equal(fs.readFileSync(GRAPH_PATH,"utf8"),JSON.stringify(graph,null,2)+"\n");
+ assert.equal(fs.readFileSync(GRAPH_PATH,"utf8"),stringify(graph)+"\n");
+ assert.deepEqual(JSON.parse(fs.readFileSync(GRAPH_PATH,"utf8")),JSON.parse(JSON.stringify(graph)),"compact serializer is lossless");
  assert.equal(fs.readFileSync(REPORT_PATH,"utf8"),renderReport(graph));
  assert.equal(graph.performance_signals.status,"NOT_CONNECTED");
  assert.ok(!/"pipeline_state": "(?:CLAIMED|SUBMITTED)"/.test(fs.readFileSync(GRAPH_PATH,"utf8")),"volatile claim states stay out of the committed graph");
+ assert.ok(fs.statSync(GRAPH_PATH).size<25e6,"graph must stay far below GitHub file limits (shard by locale before ~10k URLs)");
 });
 
 test("every Matrix row keeps its legacy fields and gains level, action and evidence",()=>{

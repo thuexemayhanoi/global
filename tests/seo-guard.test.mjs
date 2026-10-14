@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import {readLocalSitemapInventory} from "../scripts/sitemaps.mjs";
-import {buildRegistry,checkGuard,fingerprint,ORIGIN} from "../scripts/seo/seo-guard-core.mjs";
+import {buildRegistry,checkGuard,fingerprint,ORIGIN,checkLinks,addNewToRegistry,contentSnapshot} from "../scripts/seo/seo-guard-core.mjs";
 import {collectHtml} from "../scripts/seo/seo-guard.mjs";
 const read=p=>fs.readFileSync(p,"utf8");
 const matrix=JSON.parse(read("data/seo/master-matrix.json"));
@@ -20,8 +20,13 @@ test("every live URL is frozen with its current SEO fingerprint and the guard pa
  assert.ok(registry.urls.length>=25);
  assert.deepEqual(registry.noindex_utilities.map(u=>u.url),["/search/"]);
  assert.deepEqual(codes(checkGuard(base())),[]);
- // Re-freezing the unchanged build must be byte-stable.
- assert.deepEqual(buildRegistry({matrix,locales,files,previous:registry}),registry);
+ // Re-freezing must reproduce every frozen SEO fingerprint (content snapshots may only grow after publication).
+ const fresh=buildRegistry({matrix,locales,files,previous:registry});
+ for(const u of registry.urls){
+  const f=fresh.urls.find(x=>x.url===u.url);
+  assert.deepEqual(f.fingerprint,u.fingerprint,u.url);
+  if(u.content)assert.ok(f.content.main_words>=Math.floor(u.content.main_words*0.9),u.url);
+ }
 });
 
 test("fingerprint reads lang, canonical, robots, title, description, H1, hreflang and schema types",()=>{
@@ -72,7 +77,7 @@ test("planned or proposed URLs never leak into links, sitemap or search shards",
  const idea=matrix.rows.find(r=>r.status==="IDEA").url;
  ctx.files["en/index.html"]=ctx.files["en/index.html"].replace("</main>",'<a href="'+idea+'">x</a></main>');
  ctx.sitemapUrls.push(idea);
- ctx.searchShards=['[{"url":"'+idea+'"}]'];
+ ctx.searchShards=['[{"u":"'+idea+'","t":"x","d":"x","type":"SUPPORT"}]'];
  const c=codes(checkGuard(ctx));
  for(const code of ["PLANNED_URL_LEAK","PLANNED_URL_IN_SITEMAP","PLANNED_URL_IN_SEARCH","SITEMAP_UNPUBLISHED"])assert.ok(c.includes(code),code);
 });
@@ -105,4 +110,40 @@ test("duplicate titles or descriptions across published pages fail",()=>{
  const d=fingerprint(ctx.files["en/index.html"]).description;
  ctx.files["de/index.html"]=ctx.files["de/index.html"].replace(/<meta name="description" content="[^"]*">/,'<meta name="description" content="'+d+'">');
  assert.ok(codes(checkGuard(ctx)).includes("DUPLICATE_DESCRIPTION"));
+});
+
+test("published content cannot silently shrink or lose a section",()=>{
+ const ctx=base();
+ const en=ctx.files["en/index.html"];
+ ctx.files["en/index.html"]=en.replace(/<section class="section"><div class="container"><p class="overline">FAQ<\/p>[\s\S]*?<\/section>/,"");
+ const c=codes(checkGuard(ctx));
+ assert.ok(c.includes("HEADING_REMOVED"),c.join());
+ const shrink=base();
+ shrink.files["ja/checklist/index.html"]=shrink.files["ja/checklist/index.html"].replace(/<p>[^<]{20,}<\/p>/g,"<p>短</p>");
+ assert.ok(codes(checkGuard(shrink)).includes("CONTENT_LOSS"));
+ const grow=base();
+ grow.files["de/index.html"]=grow.files["de/index.html"].replace("</main>","<section><h2>Neu</h2><p>Zusätzlicher Inhalt für Leser.</p></section></main>");
+ assert.ok(!codes(checkGuard(grow)).some(x=>x==="CONTENT_LOSS"||x==="HEADING_REMOVED"));
+ assert.ok(contentSnapshot(files["zh/index.html"],"zh").main_words>100,"CJK text is segmented, not split on spaces");
+});
+
+test("internal links: orphans, two-way parent/child links and anchor quality",()=>{
+ assert.deepEqual(checkLinks({matrix,files}).filter(f=>f.level==="FAIL"),[]);
+ const m=structuredClone(matrix),f={...files};
+ m.rows.push({id:"EN-H01X",locale:"en",url:"/en/topics/test-hub/",role:"HUB",status:"PUBLISHED",parent_id:"EN-HOME",cluster:"vehicle-choice"});
+ f["en/topics/test-hub/index.html"]='<html><body><main><h1>Hub</h1><p>No links.</p><a href="/de/">here</a><a href="/en/checklist/">Guide</a><a href="/fr/">Guide</a><a href="/es/"></a></main></body></html>';
+ const r=checkLinks({matrix:m,files:f}),c=r.map(x=>x.level+":"+x.code);
+ for(const code of ["FAIL:ORPHAN_PAGE","FAIL:PARENT_MISSING_CHILD_LINK","FAIL:CHILD_MISSING_PARENT_LINK","FAIL:EMPTY_ANCHOR","WARN:GENERIC_ANCHOR","WARN:AMBIGUOUS_ANCHOR"])assert.ok(c.includes(code),code);
+});
+
+test("publisher freezing adds only new URLs and never re-freezes existing ones",()=>{
+ const m=structuredClone(matrix),f={...files};
+ m.rows.push({id:"EN-H01X",locale:"en",url:"/en/topics/test-hub/",role:"HUB",status:"PUBLISHED",parent_id:"EN-HOME",cluster:"vehicle-choice"});
+ f["en/topics/test-hub/index.html"]=files["en/checklist/index.html"].replace(ORIGIN+"/en/checklist/",ORIGIN+"/en/topics/test-hub/");
+ f["en/index.html"]=files["en/index.html"].replace(/<title>[^<]*/,"<title>Drifted");
+ const {registry:next,added}=addNewToRegistry({previous:registry,matrix:m,locales,files:f});
+ assert.deepEqual(added,["/en/topics/test-hub/"]);
+ assert.equal(next.frozen_count,registry.frozen_count+1);
+ assert.deepEqual(next.urls.find(u=>u.url==="/en/").fingerprint,registry.urls.find(u=>u.url==="/en/").fingerprint,"existing fingerprints are never overwritten");
+ assert.ok(fs.readFileSync("scripts/seo/publish-batch.mjs","utf8").includes('run("scripts/seo/seo-guard.mjs","--add-new")'));
 });

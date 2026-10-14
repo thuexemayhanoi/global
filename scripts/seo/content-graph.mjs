@@ -16,10 +16,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import {fileURLToPath} from "node:url";
-import {loadTopicalMap,similarity,proposalURL} from "./topical-authority-core.mjs";
+import {loadTopicalMap,tokens,similarPairs,proposalURL} from "./topical-authority-core.mjs";
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
 export const GRAPH_PATH="data/seo/content-graph.json";
 export const REPORT_PATH="docs/GLOBAL-SITE-MATRIX.md";
+export const MAX_OVERLAPS=5,MAX_REVIEW_LISTED=200;
 export const THRESHOLDS={
  PILLAR:{words:600,h2:3,faq:3},HUB:{words:1000,h2:4,faq:0},SUPPORT:{words:800,h2:4,faq:0},
  overlap_review:0.66,overlap_review_same_silo_intent:0.5,overlap_note:0.5,content_overlap_review:0.5
@@ -37,7 +38,6 @@ function contentTokens(text,locale){
  if(CJK.has(locale)){const c=[...t.replace(/[\s\p{P}]/gu,"")],out=new Set();for(let i=0;i<c.length-1;i++)out.add(c[i]+c[i+1]);return out;}
  return new Set(t.split(/[^\p{L}\p{N}]+/u).filter(x=>x.length>2));
 }
-const jaccard=(a,b)=>{const u=new Set([...a,...b]).size;return u?[...a].filter(x=>b.has(x)).length/u:0;};
 const mainOf=html=>(html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)||[,""])[1];
 const textOf=html=>html.replace(/<script\b[\s\S]*?<\/script>/gi," ").replace(/<style\b[\s\S]*?<\/style>/gi," ").replace(/<[^>]+>/g," ").replace(/&[a-z#0-9]+;/gi," ").replace(/\s+/g," ").trim();
 const hrefs=html=>[...html.matchAll(/\bhref="([^"#?]*)/g)].map(m=>m[1].replace(/^https:\/\/global\.rentbikehanoi\.com/,"")).filter(h=>h.startsWith("/"));
@@ -64,20 +64,20 @@ export function buildGraph(root=ROOT){
   if(!fs.existsSync(f)){errors.push("Missing published HTML "+r.id);continue;}
   html.set(r.id,fs.readFileSync(f,"utf8"));
  }
- const metrics=new Map(),edges=[],tokens=new Map();
+ const metrics=new Map(),edges=[],contentTok=new Map(),metricsOut=new Map();
  const inbound=new Map(rows.map(r=>[r.id,{main:new Set(),any:new Set()}]));
  for(const [id,h] of html){
   const r=byId.get(id),main=mainOf(h),text=textOf(main);
   metrics.set(id,{words:words(text,r.locale==="global"?"en":r.locale),h2:(main.match(/<h2\b/gi)||[]).length,faq:(main.match(/<details\b/gi)||[]).length});
-  tokens.set(id,contentTokens(text,r.locale));
+  contentTok.set(id,contentTokens(text,r.locale));
   const mainLinks=new Set(hrefs(main)),all=new Set(hrefs(h));
   for(const u of all){const t=byUrl.get(u);if(!t||t.id===id||!published(t))continue;inbound.get(t.id).any.add(id);if(mainLinks.has(u))inbound.get(t.id).main.add(id);}
-  for(const u of [...mainLinks].sort()){const t=byUrl.get(u);if(t&&t.id!==id&&published(t))edges.push([id,"links_in_content",t.id]);}
+  metricsOut.set(id,[...mainLinks].filter(u=>{const t=byUrl.get(u);return t&&t.id!==id&&published(t);}).length);
   for(const m of h.matchAll(/<link rel="alternate" hreflang="([^"]+)" href="https:\/\/global\.rentbikehanoi\.com([^"]*)">/g)){
    const t=byUrl.get(m[2]);if(t&&t.id!==id&&m[1]!=="x-default")edges.push([id,"hreflang_equivalent",t.id]);
   }
  }
- for(const [id,m] of metrics){m.inbound_pages=inbound.get(id).any.size;m.inbound_contextual=inbound.get(id).main.size;}
+ for(const [id,m] of metrics){m.inbound_pages=inbound.get(id).any.size;m.inbound_contextual=inbound.get(id).main.size;m.outbound_contextual=metricsOut.get(id)||0;}
  // Silo membership from topical locale maps.
  const siloOf=new Map(),siloLabel=new Map();
  for(const [code,L] of Object.entries(map.locales)){
@@ -91,10 +91,8 @@ export function buildGraph(root=ROOT){
  const overlaps=new Map(items.map(i=>[i.id,[]])),review=[];
  for(const code of matrix.locales){
   const set=items.filter(i=>i.locale===code),stop=map.locales[code]?.stop_tokens||[];
-  for(let a=0;a<set.length;a++)for(let b=a+1;b<set.length;b++){
+  for(const [a,b,s] of similarPairs(set.map(i=>tokens(i.query,code,stop)),0.34)){
    const x=set[a],y=set[b];
-   const s=similarity(x.query,y.query,code,stop);
-   if(s<0.34)continue;
    const parentChild=x.parent===y.id||y.parent===x.id;
    const sameSilo=Boolean(x.silo)&&x.silo===y.silo,sameIntent=x.intent===y.intent;
    const justified=String(x.distinct.get(y.id)||y.distinct.get(x.id)||"").length>=40;
@@ -107,13 +105,14 @@ export function buildGraph(root=ROOT){
   }
  }
  // Published content overlap (actual text), same locale, excluding the language selector.
- const pub=rows.filter(r=>published(r)&&tokens.has(r.id)&&r.role!=="LANGUAGE_SELECTOR"&&r.role!=="UTILITY");
  const contentOverlap=new Map();
- for(let a=0;a<pub.length;a++)for(let b=a+1;b<pub.length;b++){
-  const x=pub[a],y=pub[b];if(x.locale!==y.locale)continue;
-  const s=jaccard(tokens.get(x.id),tokens.get(y.id));
-  contentOverlap.set(x.id,Math.max(contentOverlap.get(x.id)||0,s));contentOverlap.set(y.id,Math.max(contentOverlap.get(y.id)||0,s));
-  if(s>=THRESHOLDS.content_overlap_review)review.push({a:x.id,b:y.id,score:Number(s.toFixed(2)),level:"HIGH",basis:"published_content"});
+ for(const code of matrix.locales){
+  const pub=rows.filter(r=>r.locale===code&&published(r)&&contentTok.has(r.id)&&r.role!=="LANGUAGE_SELECTOR"&&r.role!=="UTILITY");
+  for(const [a,b,s] of similarPairs(pub.map(r=>contentTok.get(r.id)),THRESHOLDS.content_overlap_review)){
+   const x=pub[a],y=pub[b];
+   contentOverlap.set(x.id,Math.max(contentOverlap.get(x.id)||0,s));contentOverlap.set(y.id,Math.max(contentOverlap.get(y.id)||0,s));
+   review.push({a:x.id,b:y.id,score:Number(s.toFixed(2)),level:"HIGH",basis:"published_content"});
+  }
  }
  const reviewIds=new Set(review.flatMap(r=>[r.a,r.b]));
  const entitiesOf=silo=>clusters.get(silo)?.entities||[];
@@ -151,7 +150,7 @@ export function buildGraph(root=ROOT){
    level,pipeline_state:published(r)?"PUBLISHED":protectedIds.has(r.id)?"PROTECTED_DRAFT":r.status,
    action,action_reasons:reasons,silo:silo,journey_stage:r.role==="PILLAR"?"awareness":r.role==="HUB"?arch?.hub_journey?.[r.cluster]||null:c?.journey_stage||null,
    intent_class:c?.intent_class||(r.role==="PILLAR"?"commercial":null),entities:r.role==="PILLAR"?[arch?.central_entity?.id].filter(Boolean):entitiesOf(silo),
-   overlaps:ov.sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id)),
+   overlaps:ov.sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id)).slice(0,MAX_OVERLAPS),overlap_count:ov.length,
    content_metrics:m?{...m,max_content_overlap:Number((contentOverlap.get(r.id)||0).toFixed(2))}:null,
    performance:"NOT_CONNECTED"
   };
@@ -164,7 +163,7 @@ export function buildGraph(root=ROOT){
   candidates.push({id:p.candidate_id,locale:code,level:"SUPPORT",silo:p.subcluster,hub:c?.hub||null,parent_id:p.parent_id,proposed_url:proposalURL(p),
    primary_query_hypothesis:p.primary_query,working_title:p.working_title,intent:p.search_intent,journey_stage:c?.journey_stage||null,intent_class:c?.intent_class||null,
    pipeline_state:p.status,action:reviewIds.has(p.candidate_id)?"REVIEW":"CREATE",blocked_by:blocked?"ARCHITECTURE_REVIEW":"OWNER_PROMOTION_MANIFEST",
-   overlaps:(overlaps.get(p.candidate_id)||[]).sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id)),performance:"NOT_CONNECTED"});
+   overlaps:(overlaps.get(p.candidate_id)||[]).sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id)).slice(0,MAX_OVERLAPS),performance:"NOT_CONNECTED"});
  }
  const nodeById=new Map(nodes.map(n=>[n.id,n]));
  const silos=[];
@@ -208,11 +207,27 @@ export function buildGraph(root=ROOT){
   counts:{rows:nodes.length,published:nodes.filter(x=>x.editorial_status==="PUBLISHED").length,idea:nodes.filter(x=>x.editorial_status==="IDEA").length,locales:matrix.locales.length,
    candidates:candidates.length,silos:silos.length,entities:entities.length,edges:uniqEdges.length,
    actions:tally(all,"action"),silo_actions:tally(silos,"action"),review_pairs:review.length},
-  review_pairs:review.sort((a,b)=>b.score-a.score||a.a.localeCompare(b.a)),
+  review_pairs:review.sort((a,b)=>b.score-a.score||a.a.localeCompare(b.a)||a.b.localeCompare(b.b)).slice(0,MAX_REVIEW_LISTED),
   nodes,silos,candidates,entities,edges:uniqEdges};
  return {graph,errors};
 }
 
+/** Pretty JSON, but arrays of primitives (ids, edges, entity lists) stay on one line. */
+export function stringify(v,indent=""){
+ const next=indent+"  ";
+ if(Array.isArray(v)){
+  if(!v.length)return "[]";
+  if(v.every(x=>x===null||typeof x!=="object"||(Array.isArray(x)&&x.every(y=>y===null||typeof y!=="object"))))
+   return "["+v.map(x=>JSON.stringify(x)).join(", ")+"]";
+  return "[\n"+v.map(x=>next+stringify(x,next)).join(",\n")+"\n"+indent+"]";
+ }
+ if(v&&typeof v==="object"){
+  const keys=Object.keys(v).filter(k=>v[k]!==undefined);
+  if(!keys.length)return "{}";
+  return "{\n"+keys.map(k=>next+JSON.stringify(k)+": "+stringify(v[k],next)).join(",\n")+"\n"+indent+"}";
+ }
+ return JSON.stringify(v);
+}
 const pct=(a,b)=>b?Math.round(100*a/b)+"%":"–";
 export function renderReport(graph){
  const L=[...new Set(graph.nodes.map(n=>n.locale).filter(l=>l!=="global"))];
@@ -228,7 +243,7 @@ export function renderReport(graph){
  out.push("","Knowledge graph: "+graph.counts.entities+" entities, "+graph.counts.edges+" typed edges ("+Object.entries(graph.edges.reduce((o,e)=>(o[e[1]]=(o[e[1]]||0)+1,o),{})).map(([k,v])=>k+" "+v).join(", ")+").","");
  out.push("## REVIEW — competing intents","");
  if(!graph.review_pairs.length)out.push("No unjustified high-overlap pair across "+graph.nodes.length+" Matrix rows and "+graph.candidates.length+" candidates (query similarity ≥ "+graph.thresholds.overlap_review+", or ≥ "+graph.thresholds.overlap_review_same_silo_intent+" within the same silo and intent; published text Jaccard ≥ "+graph.thresholds.content_overlap_review+"). Parent/child Hub overlaps are expected and justified pairs carry a written `distinct_from` reason.");
- else{out.push("| A | B | Score | Basis |","|---|---|---|---|");for(const r of graph.review_pairs)out.push("| "+r.a+" | "+r.b+" | "+r.score+" | "+r.basis+" |");}
+ else{out.push(graph.counts.review_pairs+" pair(s); showing up to "+graph.review_pairs.length+".","","| A | B | Score | Basis |","|---|---|---|---|");for(const r of graph.review_pairs)out.push("| "+r.a+" | "+r.b+" | "+r.score+" | "+r.basis+" |");}
  out.push("","## UPGRADE — live pages below targets","","| ID | URL | Words | H2 | FAQ | Inbound pages | Reasons |","|---|---|---|---|---|---|---|");
  for(const n of graph.nodes.filter(n=>n.action==="UPGRADE"))out.push("| "+n.id+" | "+n.published_url+" | "+n.content_metrics.words+" | "+n.content_metrics.h2+" | "+n.content_metrics.faq+" | "+n.content_metrics.inbound_pages+" | "+n.action_reasons.join("; ")+" |");
  out.push("","Targets: Pillar ≥ "+graph.thresholds.PILLAR.words+" words, ≥ "+graph.thresholds.PILLAR.faq+" FAQ; Supporting ≥ "+graph.thresholds.SUPPORT.words+" words, ≥ "+graph.thresholds.SUPPORT.h2+" H2 (new drafts already need ≥ 1,000 words).","");
@@ -265,7 +280,7 @@ function main(){
  const arg=process.argv[2]||"--check";
  const {graph,errors}=buildGraph();
  if(errors.length){console.error(errors.join("\n"));process.exit(1)}
- const output=JSON.stringify(graph,null,2)+"\n",report=renderReport(graph);
+ const output=stringify(graph)+"\n",report=renderReport(graph);
  const dest=path.join(ROOT,GRAPH_PATH),rdest=path.join(ROOT,REPORT_PATH);
  if(arg==="--write"){fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,output);fs.writeFileSync(rdest,report);}
  else if(arg==="--check"){

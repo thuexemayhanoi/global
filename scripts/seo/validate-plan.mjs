@@ -2,7 +2,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import {readLocalSitemapInventory} from "../sitemaps.mjs";
-import {loadTopicalMap,similarity,SIMILARITY_FAIL} from "./topical-authority-core.mjs";
+import {loadTopicalMap,tokens,similarPairs,SIMILARITY_FAIL} from "./topical-authority-core.mjs";
 const root=process.cwd();
 const matrix=JSON.parse(fs.readFileSync(path.join(root,"data/seo/master-matrix.json"),"utf8"));
 const taxonomy=JSON.parse(fs.readFileSync(path.join(root,"data/seo/taxonomy.json"),"utf8"));
@@ -36,12 +36,11 @@ for(const r of matrix.rows){
 const topical=loadTopicalMap(root);
 for(const l of matrix.locales){
  const rs=matrix.rows.filter(r=>r.locale===l&&(r.role==="HUB"||r.role==="SUPPORT")),stop=topical.locales[l]?.stop_tokens||[];
- for(let i=0;i<rs.length;i++)for(let j=i+1;j<rs.length;j++){
+ for(const [i,j,score] of similarPairs(rs.map(r=>tokens(r.primary_query,l,stop)),SIMILARITY_FAIL)){
   const a=rs[i],b=rs[j];
   if(a.parent_id===b.id||b.parent_id===a.id)continue;
   const justified=[...(a.distinct_from||[]),...(b.distinct_from||[])].some(d=>[a.id,b.id].includes(d?.id)&&String(d?.reason||"").length>=40);
-  const score=similarity(a.primary_query,b.primary_query,l,stop);
-  if(score>=SIMILARITY_FAIL&&!justified)err("Cannibalization candidate "+a.id+" vs "+b.id+" (overlap "+score.toFixed(2)+"): merge, re-scope or add distinct_from before any Writer claim");
+  if(!justified)err("Cannibalization candidate "+a.id+" vs "+b.id+" (overlap "+score.toFixed(2)+"): merge, re-scope or add distinct_from before any Writer claim");
  }
 }
 let sitemapInventory={urls:[]};
