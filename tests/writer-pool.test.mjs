@@ -62,6 +62,7 @@ test("three concurrent Writer sessions receive disjoint pairs from one serialize
  // Second request by same active session always resumes existing IDs, not claims more.
  const again=transitionPool(matrix,ledger,registry,"claim",{...writer("W1"),count:2},options("again"));
  assert.deepEqual(again.ids,all.slice(0,2));
+ assert.equal(again.revision,ledger.revision,"Retrying claim must not increment revision or consume more IDs");
 });
 
 test("submitted claims cannot be stolen and cannot be released for redistribution",()=>{
