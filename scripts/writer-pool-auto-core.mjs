@@ -25,9 +25,9 @@ export function autoAdvance(matrix,ledger,registry,request,{verifiedDraftIds=new
  }
  const eligible=poolCandidates(matrix,state,registry);
  if(!eligible.length){
-  return {status:submitted.length?"BATCH_SUBMITTED_WAITING_FOR_HUB":"NO_ELIGIBLE_TOPICS",
+  return {status:submitted.length?"BATCH_SUBMITTED_AWAIT_EDITORIAL_REVIEW":"NO_ELIGIBLE_TOPICS",
    submitted,claimed,ledger:state,changed,
-   message:"No eligible unclaimed Hub or Supporting topic. Do not bypass actual Hub PUBLISHED/owner editorial gates."};
+   message:"No eligible unclaimed draft topic. Drafting is finished or topics await editorial release; actual Supporting PUBLICATION still requires a PUBLISHED parent Hub and owner approval."};
  }
  const next=transitionPool(matrix,state,registry,"claim",{...identity,count:2},{now,nonce:nonce+"-claimed"});
  state=next.ledger;claimed=next.ids;changed=changed||!next.idempotent;
