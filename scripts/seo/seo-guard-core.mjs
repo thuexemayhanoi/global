@@ -50,6 +50,16 @@ export function fingerprint(html){
  };
 }
 const indexable=fp=>!/noindex/i.test(fp.robots||"");
+const mainOf=html=>(String(html).match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)||[,""])[1];
+const CJK=new Set(["zh","ja","ko"]);
+/** Published-content snapshot: main-text size and H2 outline (additions allowed, losses fail). */
+export function contentSnapshot(html,locale){
+ const main=mainOf(html);
+ const t=text(main.replace(/<script\b[\s\S]*?<\/script>/gi," ").replace(/<style\b[\s\S]*?<\/style>/gi," "));
+ const words=CJK.has(locale)?[...new Intl.Segmenter(locale,{granularity:"word"}).segment(t)].filter(w=>w.isWordLike).length:t.split(/\s+/u).filter(Boolean).length;
+ return {main_words:words,h2:[...main.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/gi)].map(m=>text(m[1])).filter(Boolean)};
+}
+export const CONTENT_LOSS_TOLERANCE=0.9;
 
 /**
  * Build a registry from the current build. `previous` keeps reviewed
@@ -63,7 +73,7 @@ export function buildRegistry({matrix,locales,files,previous=null}){
  const urls=published.map(r=>{
   const html=files[pageFile(r.url)];
   if(typeof html!=="string"){errors.push("PUBLISHED HTML missing for "+r.url);return null;}
-  return {url:r.url,id:r.id,locale:r.locale,role:r.role,fingerprint:fingerprint(html)};
+  return {url:r.url,id:r.id,locale:r.locale,role:r.role,fingerprint:fingerprint(html),content:contentSnapshot(html,r.locale)};
  }).filter(Boolean);
  const now=new Set(urls.map(u=>u.url));
  for(const old of previous?.urls||[])if(!now.has(old.url)&&!retiredUrls.has(old.url))
@@ -74,13 +84,28 @@ export function buildRegistry({matrix,locales,files,previous=null}){
   .map(u=>({url:u,robots:fingerprint(files[pageFile(u)]).robots}));
  return {
   version:1,origin:ORIGIN,
-  policy:"Every frozen URL must stay PUBLISHED, indexable, self-canonical and in the sitemap with an unchanged SEO fingerprint. Change fingerprints only through a reviewed `node scripts/seo/seo-guard.mjs --write` commit. Removal or moves need a reviewed retired entry with a PUBLISHED redirect_to; GitHub Pages has no server 301, so a retired path must keep a static HTML redirect stub.",
+  policy:"Every frozen URL must stay PUBLISHED, indexable, self-canonical and in the sitemap with an unchanged SEO fingerprint, keep its frozen H2 outline and at least 90% of its main-text words. Change fingerprints only through a reviewed `node scripts/seo/seo-guard.mjs --write` commit. Removal or moves need a reviewed retired entry with a PUBLISHED redirect_to; GitHub Pages has no server 301, so a retired path must keep a static HTML redirect stub.",
   locales:locales.map(l=>l.code),
   frozen_count:urls.length,
   urls,
   retired,
   noindex_utilities:utilities
  };
+}
+
+/**
+ * Publisher mode: append newly PUBLISHED URLs to the registry without touching
+ * any existing frozen entry, retirement or utility.
+ */
+export function addNewToRegistry({previous,matrix,locales,files}){
+ const fresh=buildRegistry({matrix,locales,files,previous});
+ const known=new Set(previous.urls.map(u=>u.url));
+ const added=fresh.urls.filter(u=>!known.has(u.url));
+ const urls=[...previous.urls,...added].sort((a,b)=>a.url.localeCompare(b.url));
+ const utilities=[...previous.noindex_utilities];
+ for(const u of fresh.noindex_utilities)if(!utilities.some(x=>x.url===u.url))utilities.push(u);
+ utilities.sort((a,b)=>a.url.localeCompare(b.url));
+ return {registry:{...previous,frozen_count:urls.length,urls,noindex_utilities:utilities},added:added.map(u=>u.url)};
 }
 
 /**
@@ -118,6 +143,11 @@ export function checkGuard({registry,matrix,locales,files,sitemapUrls,cname,robo
   for(const k of FINGERPRINT_FIELDS){
    const a=JSON.stringify(frozen.fingerprint?.[k]),b=JSON.stringify(now[k]);
    if(a!==b)fail("FINGERPRINT_CHANGED",url,k+" changed: "+a+" → "+b+" (re-freeze with --write only after review)");
+  }
+  if(frozen.content){
+   const c=contentSnapshot(html,frozen.locale);
+   if(c.main_words<Math.floor(frozen.content.main_words*CONTENT_LOSS_TOLERANCE))fail("CONTENT_LOSS",url,"Main text fell from "+frozen.content.main_words+" to "+c.main_words+" words (>10% loss)");
+   for(const h of frozen.content.h2)if(!c.h2.includes(h))fail("HEADING_REMOVED",url,"Published H2 section removed: "+h);
   }
  }
  const frozenUrls=new Set((registry.urls||[]).map(u=>u.url));
@@ -179,6 +209,61 @@ export function checkGuard({registry,matrix,locales,files,sitemapUrls,cname,robo
   }
  }
  for(const u of plannedSet)if(sitemap.has(u))fail("PLANNED_URL_IN_SITEMAP",u,"Unpublished planned URL is in the sitemap");
- for(const shard of searchShards)for(const u of plannedSet)if(shard.includes('"'+u+'"'))fail("PLANNED_URL_IN_SEARCH",u,"Unpublished planned URL in search index shard");
+ const shardUrls=new Set();
+ for(const shard of searchShards){
+  let data;try{data=JSON.parse(shard);}catch{fail("SEARCH_SHARD_INVALID","/assets/search-index/","A search index file is not valid JSON");continue;}
+  if(Array.isArray(data))for(const v of data)if(v&&typeof v.u==="string")shardUrls.add(v.u);
+ }
+ for(const u of plannedSet)if(shardUrls.has(u))fail("PLANNED_URL_IN_SEARCH",u,"Unpublished planned URL in search index shard");
+ findings.push(...checkLinks({matrix,files}));
+ return findings;
+}
+
+const GENERIC_ANCHORS=new Set(["click here","here","read more","more","read","learn more","link","this page","xem thêm","tại đây","bấm vào đây","hier","mehr","weiterlesen","ici","cliquez ici","en savoir plus","aquí","leer más","más","klik hier","lees meer","aqui","leia mais","saiba mais","点击这里","这里","更多","여기","더보기","こちら","詳しくはこちら","もっと見る"]);
+const anchorText=s=>text(s).replace(/[→←↗↓↑›»«⌄✳·|]/g," ").replace(/\s+/g," ").trim().toLocaleLowerCase();
+function anchors(html){
+ return [...String(html).matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)].map(m=>({
+  href:(m[1].match(/\bhref="([^"]*)"/i)||[])[1]||"",text:anchorText(m[2]),aria:(m[1].match(/\baria-label="([^"]*)"/i)||[])[1]||""
+ })).map(a=>({...a,path:a.href.startsWith(ORIGIN)?a.href.slice(ORIGIN.length):a.href})).filter(a=>a.path.startsWith("/"))
+  .map(a=>({...a,path:a.path.split("#")[0].split("?")[0]})).filter(a=>a.path);
+}
+/**
+ * Internal-link audit over PUBLISHED pages: two-way parent/child links,
+ * orphans, empty/ambiguous/generic anchors and anchor diversity.
+ */
+export function checkLinks({matrix,files}){
+ const findings=[];
+ const fail=(code,url,message)=>findings.push({level:"FAIL",code,url,message});
+ const warn=(code,url,message)=>findings.push({level:"WARN",code,url,message});
+ const rows=matrix.rows.filter(r=>r.status==="PUBLISHED"&&typeof files[pageFile(r.url)]==="string");
+ const byId=new Map(rows.map(r=>[r.id,r])),byUrl=new Map(rows.map(r=>[r.url,r]));
+ const all=new Map(),main=new Map(),inbound=new Map(rows.map(r=>[r.url,new Set()])),contextual=new Map(rows.map(r=>[r.url,[]]));
+ for(const r of rows){
+  const html=files[pageFile(r.url)];
+  all.set(r.url,anchors(html));main.set(r.url,anchors(mainOf(html)));
+  for(const a of all.get(r.url))if(a.path!==r.url&&inbound.has(a.path))inbound.get(a.path).add(r.url);
+  for(const a of main.get(r.url))if(a.path!==r.url&&contextual.has(a.path))contextual.get(a.path).push({from:r.url,text:a.text});
+ }
+ for(const r of rows){
+  if(r.url!=="/"&&!inbound.get(r.url).size)fail("ORPHAN_PAGE",r.url,"No PUBLISHED page links to this URL");
+  const parent=byId.get(r.parent_id);
+  if(parent&&parent.role!=="LANGUAGE_SELECTOR"&&(r.role==="HUB"||r.role==="SUPPORT")){
+   if(!main.get(parent.url).some(a=>a.path===r.url))fail("PARENT_MISSING_CHILD_LINK",parent.url,"Parent "+parent.id+" has no in-content link to published child "+r.id);
+   if(!all.get(r.url).some(a=>a.path===parent.url))fail("CHILD_MISSING_PARENT_LINK",r.url,r.id+" does not link back to its parent "+parent.id);
+  }
+  const seen=new Map();
+  for(const a of main.get(r.url)){
+   if(!a.text&&!a.aria)fail("EMPTY_ANCHOR",r.url,"Internal link to "+a.path+" has no text or aria-label");
+   if(GENERIC_ANCHORS.has(a.text)&&byUrl.has(a.path))warn("GENERIC_ANCHOR",r.url,"Generic anchor '"+a.text+"' → "+a.path);
+   if(a.text&&byUrl.has(a.path)){
+    if(seen.has(a.text)&&seen.get(a.text)!==a.path)warn("AMBIGUOUS_ANCHOR",r.url,"Anchor '"+a.text+"' points to "+seen.get(a.text)+" and "+a.path);
+    else seen.set(a.text,a.path);
+   }
+  }
+ }
+ for(const [url,list] of contextual){
+  const pages=new Set(list.map(x=>x.from)),texts=new Set(list.map(x=>x.text).filter(Boolean));
+  if(pages.size>=3&&texts.size===1)warn("ANCHOR_DIVERSITY",url,pages.size+" pages link here with the identical anchor '"+[...texts][0]+"'");
+ }
  return findings;
 }

@@ -16,7 +16,7 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 | Topical candidates (196) | 0 | 0 | 0 | 196 |
 | Silos (180) | 0 | 10 | 0 | 170 |
 
-Knowledge graph: 40 entities, 1161 typed edges (links_in_content 75, hreflang_equivalent 180, about 410, contains 286, has_silo 160, has_hub 40, has_pillar 10).
+Knowledge graph: 40 entities, 1086 typed edges (hreflang_equivalent 180, about 410, contains 286, has_silo 160, has_hub 40, has_pillar 10).
 
 ## REVIEW — competing intents
 

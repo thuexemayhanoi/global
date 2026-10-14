@@ -33,7 +33,7 @@ export function inboxFiles(){
   if(!fs.existsSync(d))continue;
   for(const file of fs.readdirSync(d)){
    if(file===".gitkeep")continue;
-   if(!/^[A-Z]{2}-[HS][0-9]{2}\.json$/.test(file)){errors.push("Invalid inbox filename "+w+"/"+file);continue;}
+   if(!/^[A-Z]{2}-[HS][0-9]{2,4}\.json$/.test(file)){errors.push("Invalid inbox filename "+w+"/"+file);continue;}
    const id=file.slice(0,-5),rel=INBOX+"/"+w+"/"+file;
    if(ids.has(id))errors.push("Same ID appears twice "+id);
    ids.add(id);

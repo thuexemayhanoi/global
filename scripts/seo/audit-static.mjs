@@ -61,7 +61,8 @@ for(const row of published){
   if(!publishedURLs.has(target)&&target!=="/"&&!(target==="/search/"&&fs.existsSync(path.join(root,"search/index.html"))&&fs.readFileSync(path.join(root,"search/index.html"),"utf8").includes('name="robots" content="noindex,follow"'))){issue("P1","BROKEN_INTERNAL_LINK",row.url,"Internal link points outside published inventory: "+target,"Remove/repair this link before publishing");}
  }
 }
-for(const url of publishedURLs)if(!sitemapURLs.includes(expectedCanonical(url)))issue("P0","SITEMAP_MISSING_PUBLISHED",url,"Published URL missing from sitemap","Regenerate the sitemap");
+const sitemapSet=new Set(sitemapURLs);
+for(const url of publishedURLs)if(!sitemapSet.has(expectedCanonical(url)))issue("P0","SITEMAP_MISSING_PUBLISHED",url,"Published URL missing from sitemap","Regenerate the sitemap");
 for(const url of sitemapURLs)if(!publishedURLs.has(url.replace(origin,"")))issue("P0","SITEMAP_EXTRA",url,"Sitemap references a non-published URL","Remove until HTML is approved");
 const titleMap=new Map(),queryMap=new Map();
 for(const m of metadata){const key=m.locale+"::"+m.title.toLowerCase().trim();if(m.title){if(titleMap.has(key))issue("P1","DUPLICATE_TITLE",m.url,"Title duplicates "+titleMap.get(key),"Resolve intent ownership and title");else titleMap.set(key,m.url);}}

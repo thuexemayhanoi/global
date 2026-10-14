@@ -29,7 +29,7 @@ jobs:
       - name: Verify deterministic content graph
         run: node scripts/seo/content-graph.mjs --check
       - name: Premium SEO, navigation, search and accessibility regression
-        run: node --test tests/ultra.test.mjs tests/premium.test.mjs tests/claims.test.mjs tests/external-writers.test.mjs tests/continuous-writer.test.mjs tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-refill.test.mjs tests/sitemaps.test.mjs tests/search-index.test.mjs tests/markdown-import.test.mjs tests/post-publish.test.mjs tests/seo-guard.test.mjs tests/topical-authority.test.mjs tests/fact-guard.test.mjs tests/content-graph.test.mjs
+        run: node --test tests/ultra.test.mjs tests/premium.test.mjs tests/claims.test.mjs tests/external-writers.test.mjs tests/continuous-writer.test.mjs tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-refill.test.mjs tests/sitemaps.test.mjs tests/search-index.test.mjs tests/markdown-import.test.mjs tests/post-publish.test.mjs tests/seo-guard.test.mjs tests/topical-authority.test.mjs tests/fact-guard.test.mjs tests/content-graph.test.mjs tests/article-links.test.mjs
       - name: Verify CNAME and canonical outputs
         shell: bash
         run: |
@@ -76,5 +76,7 @@ jobs:
           grep -q '<loc>https://global.rentbikehanoi.com/contact/</loc>' sitemap-main.xml
       - name: Synthetic metadata scalability smoke check (no network or HTML generation)
         run: node scripts/bench/search-scale.mjs
+      - name: Full-pipeline scale smoke (300 synthetic articles in a temp copy; build + every SEO gate)
+        run: node scripts/bench/full-build-scale.mjs --articles 300
       - name: Test safe article rendering and refusal gates
         run: node --test tests/content-publisher.test.mjs
