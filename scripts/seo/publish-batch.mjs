@@ -8,6 +8,7 @@ import path from "node:path";
 import {spawnSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
 import {checkArticle,articlePath} from "../articles.mjs";
+import {readLocalSitemapInventory} from "../sitemaps.mjs";
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
 const args=process.argv.slice(2);
 const values=key=>args.flatMap((a,i)=>a===key?[args[i+1]]:[]);
@@ -83,9 +84,9 @@ try{
    if(file.startsWith("tests/"))continue;
    run(file,...extra);
   }
-  const sitemap=fs.readFileSync(path.join(root,"sitemap.xml"),"utf8");
+  const sitemapInventory=readLocalSitemapInventory(root,locales.map(l=>l.code));
   for(const p of packets){
-   if(!sitemap.includes("<loc>https://global.rentbikehanoi.com"+p.proposed_url+"</loc>"))throw Error("Missing sitemap entry for "+p.matrix_id);
+   if(!sitemapInventory.urls.includes(p.proposed_url))throw Error("Missing sitemap entry for "+p.matrix_id);
   }
   console.log(JSON.stringify({...plan,branch:current,passed:true,ready_for_review:true,published_on_live_site:false,next_step:"Review git diff, run Node tests, open and merge approved PR after GitHub QA"},null,2));
  }catch(e){

@@ -1,8 +1,9 @@
 import fs from "node:fs";
+import {readLocalSitemapInventory} from "./sitemaps.mjs";
 const localeCodes=["vi","en","de","fr","es","nl","zh","pt","ko","ja"];
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const all=matrix.rows.filter(r=>r.status==="IDEA");
-const live=new Set([...fs.readFileSync("sitemap.xml","utf8").matchAll(/<loc>https:\/\/global\.rentbikehanoi\.com(\/[^<]*)<\/loc>/g)].map(m=>m[1]));
+const live=new Set(readLocalSitemapInventory(process.cwd(),localeCodes).urls);
 const errors=[];
 for(const code of localeCodes)for(const route of [code+"/index.html",code+"/checklist/index.html"]){
  const html=fs.readFileSync(route,"utf8");

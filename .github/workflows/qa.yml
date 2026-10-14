@@ -16,10 +16,16 @@ jobs:
           node-version: 22
       - name: Verify generated pages and metadata
         run: node scripts/build.mjs --check
+      - name: Dynamic Writer Pool CLI smoke checks (read only)
+        run: |
+          node --check scripts/writer-pool.mjs
+          node --check scripts/writer-pool-core.mjs
+          node scripts/writer-pool.mjs status
+          node scripts/continuous-writer.mjs status
       - name: Verify deterministic content graph
         run: node scripts/seo/content-graph.mjs --check
       - name: Premium SEO, navigation, search and accessibility regression
-        run: node --test tests/ultra.test.mjs tests/premium.test.mjs tests/claims.test.mjs tests/external-writers.test.mjs tests/continuous-writer.test.mjs tests/search-index.test.mjs tests/markdown-import.test.mjs tests/post-publish.test.mjs
+        run: node --test tests/ultra.test.mjs tests/premium.test.mjs tests/claims.test.mjs tests/external-writers.test.mjs tests/continuous-writer.test.mjs tests/writer-pool.test.mjs tests/sitemaps.test.mjs tests/search-index.test.mjs tests/markdown-import.test.mjs tests/post-publish.test.mjs
       - name: Verify CNAME and canonical outputs
         shell: bash
         run: |
@@ -54,8 +60,8 @@ jobs:
           test -f about/index.html
           test -f contact/index.html
           grep -q 'nguyentuantu8x@gmail.com' contact/index.html
-          grep -q '<loc>https://global.rentbikehanoi.com/about/</loc>' sitemap.xml
-          grep -q '<loc>https://global.rentbikehanoi.com/contact/</loc>' sitemap.xml
+          grep -q '<loc>https://global.rentbikehanoi.com/about/</loc>' sitemap-main.xml
+          grep -q '<loc>https://global.rentbikehanoi.com/contact/</loc>' sitemap-main.xml
       - name: Synthetic metadata scalability smoke check (no network or HTML generation)
         run: node scripts/bench/search-scale.mjs
       - name: Test safe article rendering and refusal gates

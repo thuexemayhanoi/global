@@ -4,6 +4,7 @@ import { enhanceNavigation } from "./navigation.mjs";
 import { applyPremium, createSearchPage } from "./premium.mjs";
 import { applyUltra } from "./ultra.mjs";
 import { generateApprovedArticles } from "./articles.mjs";
+import { generateSitemaps } from "./sitemaps.mjs";
 const root=process.cwd();
 const data=JSON.parse(fs.readFileSync(path.join(root,"content/locales.json"),"utf8"));
 const siteOutput=function siteOutput(locales,siteInfo){
@@ -19,7 +20,7 @@ const siteOutput=function siteOutput(locales,siteInfo){
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${site}${path}">
-${page==="locale"?langLinks(false):page==="guide"?langLinks(true):""}
+${path==="/"?'<meta name="google-site-verification" content="HwLeUnxn5y1nBbGQD-54b3hR_dw10qMQ12wfmuDPfBg" />\n':""}${page==="locale"?langLinks(false):page==="guide"?langLinks(true):""}
 <meta property="og:type" content="${page==="guide"?"article":"website"}">
 <meta property="og:site_name" content="Vietnam Two-Wheel Guide">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${site}${path}">
@@ -52,9 +53,6 @@ ${jsonLd(structured)}
   OUT["contact/index.html"]=head("en","Contact Vietnam Two-Wheel Guide | Editorial Enquiries","Contact the Vietnam Two-Wheel Guide editorial website by email for corrections, sources and website enquiries.","/contact/","legal",{"@context":"https://schema.org","@type":"ContactPage","name":"Contact Vietnam Two-Wheel Guide","url":site+"/contact/","mainEntity":{"@type":"Organization","name":"Vietnam Two-Wheel Guide","email":siteInfo.contactEmail}})+`<header class="header"><div class="container header-in"><a href="/" class="brand"><span class="mark">✳</span>VIETNAM<span class="brand-light">/</span>WHEELS</a></div></header><main id="main"><div class="container"><article class="legal"><p class="overline">Get in touch</p><h1>Contact Vietnam Two-Wheel Guide</h1><p>Contact us with questions about our published guides, factual corrections, broken links or relevant sources. This address is for editorial and website enquiries; the site does not take motorbike rental reservations.</p><h2>Email</h2><p><a class="btn" href="mailto:${esc(siteInfo.contactEmail)}?subject=Vietnam%20Two-Wheel%20Guide%20enquiry">${esc(siteInfo.contactEmail)} →</a></p><h2>Sending a correction</h2><p>Please include the page URL, the specific information you believe needs updating and a reference where available. Do not send passports, payment-card details or other sensitive documents by email.</p><h2>About the website</h2><p>For information about our editorial scope and language guides, see <a href="/about/">About Vietnam Two-Wheel Guide</a>. We cannot guarantee an individual response time.</p><p class="quiet">The English contact page serves the entire multilingual website.</p></article></div></main><footer class="footer"><div class="container foot-in"><span>VIETNAM / WHEELS</span><a href="/">Home</a></div></footer></body></html>`;
   OUT["privacy/index.html"]=OUT["privacy/index.html"].replace("<h2>Changes</h2>","<h2>Emails sent to us</h2><p>If you choose to email the editorial contact, your email address and the information you send may be processed by email service providers to deliver and handle your message. Please do not email sensitive personal documents.</p><h2>Changes</h2>");
   OUT["404.html"]=head("en","Page not found | Vietnam Two-Wheel Guide","The requested page was not found. Browse the available language guides.","/404.html","error",{"@context":"https://schema.org","@type":"WebPage","name":"Page not found"})+`<main id="main"><section class="section"><div class="container"><h1>Page not found</h1><p>That guide may have moved or the address may contain a typo.</p><a class="btn" href="/">Browse languages →</a></div></section></main></body></html>`;
-  const pages=Object.keys(OUT).filter(k=>k.endsWith("index.html")).map(k=>site+"/"+(k==="index.html"?"":k.slice(0,-10))).sort();
-  const xml=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
-  OUT["sitemap.xml"]=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(p=>`<url><loc>${xml(p)}</loc></url>`).join("\n")}\n</urlset>\n`;
   OUT["robots.txt"]=`User-agent: *\nAllow: /\nSitemap: ${site}/sitemap.xml\n`;
   return OUT;
 };
@@ -68,15 +66,24 @@ for(const key of Object.keys(articles)) {
  basePages[key]=articles[key];
 }
 const allPages=applyUltra(applyPremium(enhanceNavigation(basePages,data,menuMatrix),menuMatrix,data),menuMatrix,data);
-// Regenerate sitemap from exactly the real HTML pages, including approved articles.
-const urlKeys=Object.keys(allPages).filter(p=>p.endsWith("index.html")&&p!=="search/index.html");
-const xmlEscape=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
-allPages["sitemap.xml"]='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-+urlKeys.map(k=>"https://global.rentbikehanoi.com/"+(k==="index.html"?"":k.slice(0,-10))).sort().map(x=>"<url><loc>"+xmlEscape(x)+"</loc></url>").join("\n")
-+"\n</urlset>\n";
+// Sitemaps are derived ONLY from actual approved/generated HTML (not IDEA rows).
+// Root sitemap.xml is an index; each locale and global/utility URLs have their own child.
+Object.assign(allPages,generateSitemaps(
+ Object.keys(allPages).filter(p=>p.endsWith("index.html")&&p!=="search/index.html"),
+ data.map(l=>l.code),menuMatrix.base_url
+));
 const files=allPages;
 const check=process.argv.includes("--check");
 let errors=0;
+// Reject/remove stale generated shards after a batch shrinks or URLs move;
+// never delete content outside the explicitly owned sitemap namespace.
+const ownedSitemap=/^sitemap-(?:main|vi|en|de|fr|es|nl|zh|pt|ko|ja)(?:-[2-9][0-9]*)?\.xml$/;
+for(const name of fs.readdirSync(root)){
+ if(ownedSitemap.test(name)&&!Object.hasOwn(files,name)){
+  if(check){console.error("STALE-SITEMAP",name);errors++;}
+  else fs.unlinkSync(path.join(root,name));
+ }
+}
 for(const [p,c] of Object.entries(files)){
  const full=path.join(root,p);
  if(check){if(!fs.existsSync(full)||fs.readFileSync(full,"utf8")!==c){console.error("OUT-OF-SYNC",p);errors++;}}

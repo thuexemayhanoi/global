@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
+import {readLocalSitemapInventory} from "../sitemaps.mjs";
 const root=process.cwd();
 const matrix=JSON.parse(fs.readFileSync(path.join(root,"data/seo/master-matrix.json"),"utf8"));
 const taxonomy=JSON.parse(fs.readFileSync(path.join(root,"data/seo/taxonomy.json"),"utf8"));
@@ -29,8 +30,10 @@ for(const r of matrix.rows){
  if(r.role==="HUB"&&r.parent_id!==r.locale.toUpperCase()+"-HOME")err("Hub parent mismatch "+r.id);
  if(r.role==="SUPPORT"&&r.status==="IDEA"&&!ids.get(r.parent_id)?.id?.endsWith("H"+r.parent_id?.slice(-2)))err("Support parent mismatch "+r.id);
 }
-const sitemap=fs.readFileSync(path.join(root,"sitemap.xml"),"utf8");
-const indexed=new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>new URL(m[1]).pathname));
+let sitemapInventory={urls:[]};
+try{sitemapInventory=readLocalSitemapInventory(root,locales);}
+catch(e){err("Sitemap index or locale shard invalid: "+e.message);}
+const indexed=new Set(sitemapInventory.urls);
 const published=new Set(matrix.rows.filter(r=>r.status==="PUBLISHED").map(r=>r.url));
 for(const u of published)if(!indexed.has(u))err("Published URL absent from sitemap "+u);
 for(const u of indexed)if(!published.has(u))err("Unmapped sitemap URL "+u);
