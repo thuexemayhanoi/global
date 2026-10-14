@@ -1,17 +1,8 @@
-# Shared Writer Autopilot coordinator
+# Global Writer Coordinator (Turbo 10)
 
-Default flow now follows docs/ZERO-CLICK-WRITER.md. Owner DOES NOT need to press the manual GitHub Run workflow button for each pair. One branch start request triggers QA and automatic centralized claim. A green 2-draft push automatically submits and claims next. Manual workflow_dispatch is recovery only.
+Canonical source: docs/GLOBAL-CONTENT-FACTORY-TURBO.md.
+Trusted Global Dynamic Writer Autopilot workflow_run executes on green PUSH Writer Draft QA; main code only, serialized group shared with manual fallback. AutoPool transitions only verified own draft IDs to SUBMITTED (remote SHA+sha256 evidence), retains partial unfinished claims, refills to maximum TEN. On concurrent updates, re-fetch main and recompute up to three CAS retries; no force push.
 
-Protect 14 W1 PR #17 drafts AND EN-H01/DE-H01 editorial PR #5/#6 drafts; verify content and search intent before separately owner-approved publication. Do not turn automatic DRAFT submission into automatic SITE publishing.
+W1 alone can write every eligible Matrix article; W2 and W3 optional. One active Writer session per slot. Existing W1 PR #17 14 drafts, and EN-H01/DE-H01 editorial pilots are reserved.
 
-# Coordinator protocol — Dynamic Shared Writer Pool
-
-1. Source of truth: docs/DYNAMIC-WRITER-POOL.md. W1/W2/W3 may claim ANY eligible shared topic. Old assignments.json (40 each) are only historical reference.
-2. Existing 14 W1 drafts in PR #17 are protected, not published. Never reassign or rewrite without verified owner intervention.
-3. Claims on main are mutated exclusively by serialized GitHub Actions Global Dynamic Writer Pool: claim → Writer QA/remote PR → submit. Other Writer sessions cannot steal active or submitted claims.
-4. Coordinator may release a genuinely abandoned UNFINISHED claim only with explicit reason and confirmation after inspecting PR/branch. Never auto-timeout a legitimate writing session or release SUBMITTED content.
-5. Writer can only touch own inbox files; irrespective of historical topic origin. Writer cannot set facts_reviewed_by_human or serp_intent_checked true.
-6. Human editorial review of research sources, legal claims, intent, factual pricing, NAP and links remains mandatory. QA PASS is not verified factual correctness.
-7. Publishing via scripts/seo/publish-batch.mjs requires separate exact owner approval manifest on clean feature branch. No automatic publish, direct Writer merge, Matrix/sitemap/CNAME edits.
-8. Only Supporting PUBLICATION remains gated by actual PUBLISHED Hub; Supporting DRAFTS may proceed without waiting. On claimed backlog exhaustion, review/approve Hub batches first; do not bypass.
-9. Never touch /total, /vanchinh, /japan, WordPress, DNS or other sites while operating /global.
+Topic refill research is G1–G8 validated in proposals; zero silent Matrix materialization. Editor examines SERP/source/overlap before any Matrix expansion. Publishing remains owner-reviewed approval manifest with Supporting parent truly PUBLISHED. No auto AI, no auto public article publishing, no production URL/CNAME/sitemap changes.
