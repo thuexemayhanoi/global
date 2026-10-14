@@ -2,43 +2,61 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import {decideNext} from "../scripts/continuous-writer.mjs";
+import {transitionPool} from "../scripts/writer-pool-core.mjs";
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const board=JSON.parse(fs.readFileSync("factory/external-writers/assignments.json","utf8"));
-const ledger={version:1,revision:0,claims:[]};
+const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
+const ledger=JSON.parse(fs.readFileSync("factory/external-writers/claims.json","utf8"));
 const empty={files:[],errors:[]};
-test("three writers have disjoint deterministic next pairs",()=>{
- const picks=["W1","W2","W3"].map(writer=>decideNext(matrix,board,ledger,empty,{writer,session:"test-session"}));
- assert.ok(picks.every(p=>p.status==="WRITE_NEXT_PAIR"&&p.batch_size===2&&p.auto_publish===false));
- assert.equal(new Set(picks.flatMap(p=>p.items.map(x=>x.id))).size,6);
- assert.ok(picks.flatMap(p=>p.items).every(i=>i.role==="HUB"));
- assert.equal(picks.reduce((n,p)=>n+p.assigned,0),120);
+const session="w1-test";
+const branch="writer/w1-test";
+const opts={writer:"W1",session,branch,registry};
+test("read-only preview cannot authorize writing without a real committed claim",()=>{
+ const status=decideNext(matrix,board,ledger,empty,opts);
+ assert.equal(status.status,"CLAIM_REQUIRED");
+ assert.equal(status.batch_size,0);
+ assert.equal(status.items.length,2);
+ assert.ok(status.claim_required);
+ assert.ok(status.items.every(x=>!registry.protected.some(p=>p.id===x.id)));
 });
-test("after drafts land, next excludes their ids",()=>{
- const a=decideNext(matrix,board,ledger,empty,{writer:"W1"});
- const fakeInbox={files:a.items.slice(0,1).map(i=>({id:i.id,writer:"W1",path:i.output,packet:{matrix_id:i.id}})),errors:[]};
- // Existing invalid draft is a hard QA blocker, never silently skipped.
- const b=decideNext(matrix,board,ledger,fakeInbox,{writer:"W1"});
- assert.equal(b.status,"REPAIR_DRAFT");
- assert.equal(b.batch_size,undefined);
+test("confirmed claims authorize one pair for any Writer, including foreign legacy owners",()=>{
+ const a=transitionPool(matrix,ledger,registry,"claim",{writer:"W1",session,branch,count:2},{nonce:"testing",now:"2026-10-14T00:00:00Z"});
+ const status=decideNext(matrix,board,a.ledger,empty,opts);
+ assert.equal(status.status,"WRITE_NEXT_PAIR");
+ assert.equal(status.batch_size,2);
+ assert.deepEqual(status.items.map(x=>x.id),a.ids);
 });
-test("same-session claims are eligible, foreign claims are withheld",()=>{
- const a=decideNext(matrix,board,ledger,empty,{writer:"W1",session:"writer-session"});
- const id=a.items[0].id;
- const state={version:1,revision:1,claims:[{id,writer:"W1",session:"different-session",status:"CLAIMED"}]};
- const b=decideNext(matrix,board,state,empty,{writer:"W1",session:"writer-session"});
- assert.equal(b.items.some(item=>item.id===id),false);
- const c=decideNext(matrix,board,state,empty,{writer:"W1",session:"different-session"});
- assert.equal(c.items.some(item=>item.id===id),true);
+test("missing or invalid drafted packet blocks further writing, not silently skipped",()=>{
+ const claimed=transitionPool(matrix,ledger,registry,"claim",{writer:"W1",session,branch,count:2},{nonce:"repair",now:"2026-10-14T00:00:00Z"});
+ const id=claimed.ids[0];
+ const inbox={files:[{id,writer:"W1",path:"factory/external-writers/inbox/W1/"+id+".json",packet:{matrix_id:id}}],errors:[]};
+ const r=decideNext(matrix,board,claimed.ledger,inbox,opts);
+ assert.equal(r.status,"REPAIR_DRAFT");
+ assert.ok(r.bad_drafts[0].errors.length);
 });
-test("never drafts supporting pages while hub parents remain unpublished",()=>{
- const draftOnly=structuredClone(matrix);
- for(const row of draftOnly.rows)if(row.role==="HUB")row.status="DRAFT";
- const out=decideNext(draftOnly,board,ledger,empty,{writer:"W2"});
- assert.equal(out.status,"WAIT_PARENT_PUBLICATION");
- assert.equal(out.batch_size,0);
- assert.ok(out.blocked_by_parent>0);
+test("three sessions see only their own confirmed IDs and never mistake a preview for a claim",()=>{
+ let state=structuredClone(ledger);
+ const all=new Set();
+ for(const w of ["W1","W2","W3"]){
+  const session=w.toLowerCase()+"-test",branch="writer/"+w.toLowerCase()+"-test";
+  const out=transitionPool(matrix,state,registry,"claim",{writer:w,session,branch,count:2},{nonce:w,now:"2026-10-14T00:00:00Z"});
+  state=out.ledger;for(const id of out.ids){assert.ok(!all.has(id));all.add(id);}
+  const p=decideNext(matrix,board,state,empty,{writer:w,session,branch,registry});
+  assert.equal(p.status,"WRITE_NEXT_PAIR");
+  assert.deepEqual(p.items.map(x=>x.id),out.ids);
+ }
+ assert.equal(all.size,6);
+ const none=decideNext(matrix,board,state,empty,{writer:"W1",session:"new-w1",branch:"writer/w1-new-w1",registry});
+ assert.equal(none.status,"CLAIM_REQUIRED");
 });
-test("fails closed on invalid writer and batch count",()=>{
- assert.throws(()=>decideNext(matrix,board,ledger,empty,{writer:"W4"}));
- assert.throws(()=>decideNext(matrix,board,ledger,empty,{writer:"W1",count:10}));
+test("Supporting articles remain blocked until the actual Hub reaches PUBLISHED",()=>{
+ const mock=structuredClone(matrix);
+ for(const row of mock.rows)if(row.role==="HUB")row.status="PUBLISHED";
+ const r=decideNext(mock,board,ledger,empty,opts);
+ assert.equal(r.status,"CLAIM_REQUIRED");
+ assert.ok(r.items.every(x=>x.role==="SUPPORT"));
+});
+test("invalid batch / unknown Writer always fails closed",()=>{
+ assert.throws(()=>decideNext(matrix,board,ledger,empty,{...opts,count:8}),/pair size/);
+ assert.throws(()=>decideNext(matrix,board,ledger,empty,{...opts,writer:"W4"}));
 });
