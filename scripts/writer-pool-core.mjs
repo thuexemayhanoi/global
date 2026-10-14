@@ -63,7 +63,9 @@ export function poolCandidates(matrix,ledger,registry,opts={}){
  const unavailable=new Set([...protectedSet(registry),...ledger.claims.filter(c=>ACTIVE.has(c.status)).map(c=>c.id),...(opts.inboxIds||[])]);
  return matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&
   PLANNED.has(r.status)&&!unavailable.has(r.id)&&(!opts.locale||r.locale===opts.locale)&&
-  (!r.parent_id||matrix.rows.find(p=>p.id===r.parent_id)?.status==="PUBLISHED"))
+  // Supporting may be DRAFTED before parent Hub publication. Publisher
+  // still independently refuses to publish them until that gate passes.
+  (!r.parent_id||matrix.rows.some(p=>p.id===r.parent_id)))
   .sort(sortRows);
 }
 export function poolStatus(matrix,ledger,registry,{writer,session,branch,locale}={}){
@@ -86,7 +88,7 @@ export function poolStatus(matrix,ledger,registry,{writer,session,branch,locale}
  return {status,writer:writer||null,session:session||null,branch:branch||null,locale:locale||null,
   published:pub,protected_drafts:registry.protected.length+(registry.held_ids||[]).length,submitted:active.filter(c=>c.status==="SUBMITTED").length,
   active_claims:active.filter(c=>c.status==="CLAIMED").length,
-  available_now:candidates.length,blocked_by_parent:waitingParent.length,waiting_for_review_or_claim:Math.max(0,unblockedWithoutFree),
+  available_now:candidates.length,blocked_by_parent:0,parents_unpublished_for_publish:waitingParent.length,waiting_for_review_or_claim:Math.max(0,pending.length-candidates.length),
   items:(assigned.length?assigned:candidates.slice(0,2)).map(r=>({
    id:r.id,locale:r.locale,role:r.role,title:r.working_title,query:r.primary_query,url:r.url,
    parent_id:r.parent_id,legacy_owner:null,
