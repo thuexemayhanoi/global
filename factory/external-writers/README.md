@@ -25,7 +25,7 @@ Production: https://global.rentbikehanoi.com/ — NO auto AI API inside GitHub, 
 8. Fetch/merge main, next pair immediately. DO NOT stop after push/QA/PR when eligible IDs remain. On network/quota loss, resume same branch/session and claims next time.
 
 ## Strict gates
-- Supporting IDs cannot be claimed until their Hub parent is PUBLISHED; editor-reviewed drafts do not count.
+- Supporting drafts may be claimed before their Hub is PUBLISHED; final publication STILL requires approved Hub parent.
 - Coordinator human review of source claims, factual accuracy and SERP intent is separate from deterministic JSON QA. Writer never changes review flags to true.
 - Publishing remains owner-approved via scripts/seo/publish-batch.mjs on a feature branch and reviewed PR; no direct Writer merge or auto publication.
 - No inventing price, legal rights, deposits, insurance, delivery, local office details or third-party citations. No duplicate URLs/content.
