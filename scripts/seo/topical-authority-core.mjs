@@ -269,7 +269,7 @@ export function coverage({map,matrix,claims={claims:[]},protectedData={protected
   for(const [cid] of clusters)loc.clusters[cid]=empty();
   for(const r of matrix.rows.filter(r=>r.locale===code&&["HUB","SUPPORT","PILLAR"].includes(r.role))){
    const s=stateOf(r);loc.totals[s]++;out.totals[s]++;
-   const cid=L.existing?.[r.id];
+   const cid=L.existing?.[r.id]||r.subcluster; // promoted rows carry their silo
    if(cid&&loc.clusters[cid])loc.clusters[cid][s]++;
   }
   for(const p of L.proposals||[]){
@@ -292,10 +292,10 @@ export function linkPlan({map,matrix,id}){
  const node=byId.get(id)||(prop&&{id:prop.candidate_id,locale:prop.locale,role:"SUPPORT",parent_id:prop.parent_id,url:proposalURL(prop),status:prop.status});
  if(!node)throw Error("Unknown ID "+id);
  const L=map.locales[node.locale]||{existing:{},proposals:[]};
- const sub=prop?prop.subcluster:L.existing?.[node.id];
+ const sub=prop?prop.subcluster:L.existing?.[node.id]||node.subcluster;
  const clusters=clusterIndex(map.architecture);
  const hub=sub?clusters.get(sub)?.hub:node.role==="HUB"?node.cluster:null;
- const subOf=x=>x.candidate_id?x.subcluster:L.existing?.[x.id];
+ const subOf=x=>x.candidate_id?x.subcluster:L.existing?.[x.id]||x.subcluster;
  const pool=[...rows.filter(r=>r.locale===node.locale&&r.role==="SUPPORT"&&r.id!==node.id),
   ...(L.proposals||[]).filter(p=>p.status!=="PROMOTED"&&p.candidate_id!==node.id).map(p=>({...p,id:p.candidate_id,url:proposalURL(p)}))];
  const planned=[];

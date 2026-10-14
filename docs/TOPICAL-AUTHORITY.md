@@ -85,7 +85,7 @@ The manifest must carry the exact sentence *"I approve adding these topical-map 
 - marks candidates `PROMOTED` with their `matrix_id`,
 - regenerates `data/seo/content-graph.json`.
 
-It never edits HTML, sitemap, canonical, hreflang, CNAME or claims. After the reviewed PR merges, the Turbo Writer pool can claim the new rows like any other IDEA. Menus keep exactly two featured Supporting labels per Hub (`menuChildren` in `scripts/navigation.mjs`: PUBLISHED first, then priority), so the owner-approved 4 × 2 menu stays stable as Hubs grow. Writer tests derive counts from the Matrix with a 120-IDEA floor, so promotion does not require test edits.
+It never edits HTML, sitemap, canonical, hreflang, CNAME or claims. After the reviewed PR merges, the Turbo Writer pool can claim the new rows like any other IDEA. Menus keep exactly two featured Supporting labels per Hub (`menuChildren` in `scripts/navigation.mjs`: PUBLISHED first, then priority), so the owner-approved 4 × 2 menu stays stable as Hubs grow. Writer tests derive counts from the Matrix with a 120-IDEA floor, and the topical tests count PROPOSED + PROMOTED capacity and pick the next free candidate and Matrix ID dynamically, so promotion does not require test edits (verified by the first real promotion on 2026-10-14).
 
 A full rehearsal (5 candidates across de/en/ja/vi/zh, in a throwaway copy) kept `build --check`, nav QA, `validate-plan`, content graph, the guard, topical gates, `writer-lanes verify-all` and all tests green.
 
