@@ -24,6 +24,8 @@ This synthesizes 10k and 40k short title/description entries over 10 locales, ti
 
 `node scripts/bench/full-build-scale.mjs --articles N` copies the repository to a temporary directory, publishes N synthetic articles there (all 40 Hubs plus Supporting guides, IDs past XX-S100), then times the real build and every SEO gate. The working tree is never modified. CI runs N=300 on every PR.
 
+First measurement (PR #27, Latin pseudo-text in every locale):
+
 | Step | 400 articles (425 URLs) | 2,000 articles (2,025 URLs) | 10,000 articles (10,025 URLs) |
 |---|---|---|---|
 | build | 1.7 s | 9.0 s | 83.5 s |
@@ -41,9 +43,38 @@ Defects this benchmark found and fixed before any article went live:
 - Overlap checks were O(n²): at 2,000 articles `validate-plan` took 7.3 s and the graph build 16.8 s. They now use prefix-filtered all-pairs similarity.
 - The content graph reached 31 MB at 2,000 articles because of pair lists and per-link edges. Lists are now capped, link edges are replaced by counts, and arrays are compact.
 
-All gates pass at 10,000 articles. Build and graph time grow faster than linear between 2,000 and 10,000 articles. The cause is per-page lookups that scan every Matrix row (related links, Hub child lists, graph link targets). Index rows by locale/parent before going much beyond 10,000 URLs; 40,000 is not yet proven.
+All gates passed at 10,000 articles, but build and graph time grew faster than linear between 2,000 and 10,000 articles. PR-6 below removed the cause.
 
-Sharding trigger: `url-freeze.json` (~0.9 KB per URL) and `content-graph.json` (~1.6 KB per URL) should be split per locale before ~10,000 published URLs. CI fails if the graph exceeds 25 MB.
+### Hot-path fixes (PR-6, 2026-10-14)
+
+CPU profiles at 10,000 articles showed four causes of the superlinear growth:
+- **Navigation:** the header and footer were rebuilt for every page by scanning every Matrix row (O(pages × rows)).
+- **Article lookups:** related links, Hub child lists and article lookups each scanned all rows per article.
+- **Fact guard:** it re-folded (NFD/NFKC) the same text for every brand term and keyword.
+- **Overlap ordering:** the overlap sort looked up a Map on every comparison.
+
+The benchmark also had an artefact of its own. Its Latin pseudo-words in zh/ja/ko collapsed CJK character bigrams to a 16-letter alphabet. Every CJK page therefore looked like a near-duplicate of every other (499,500 pairs per locale). zh/ja/ko now get native-script pseudo-words.
+
+Fixes:
+- **Per-build indexes.** The build now uses `rowsIndex` in `articles.mjs` and `relatedIndex` in `premium.mjs`, and renders the header and footer once per locale.
+- **Fact guard.** Keyword lists are folded once, and each paragraph is folded once.
+- **Overlap ordering.** `similarPairs` buckets tokens by document frequency and only counts tokens that no other set contains. A test checks it against brute-force Jaccard.
+
+Same 10,000-article fixture (10,025 URLs), before and after. The generated output is **byte-identical: 20,166 files, 0 differences**.
+
+| Step | Before | After |
+|---|---|---|
+| build | 81.5 s | 24.1 s |
+| build --check | 83.3 s | 21.7 s |
+| seo-guard --add-new / check | 15.4 / 14.8 s | 14.6 / 15.0 s |
+| fact-guard | 59.0 s | 24.1 s |
+| content-graph --write | 50.5 s | 29.9 s |
+| validate-plan / nav-qa / topical validate / audit-static | 0.6 / 0.2 / 1.3 / 3.8 s | 0.7 / 0.2 / 1.1 / 3.7 s |
+| **All gates** | **310 s** | **135 s** |
+
+Build cost per article is now flat: 2.8 ms at 300 articles (the CI smoke run) and 2.4 ms at 10,000. Per-page code must keep using the indexes (AGENTS.md). 40,000 URLs is still unproven.
+
+Sharding trigger: split `url-freeze.json` (~0.9 KB per URL) and `content-graph.json` (~1.5 KB per URL) per locale before ~10,000 published URLs. CI fails if either file exceeds 25 MB.
 
 ## Future P2 work
 1. Profile Node build with 1k, 10k and 40k representative actual article HTML fixtures (not only search metadata).
