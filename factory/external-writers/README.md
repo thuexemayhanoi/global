@@ -70,3 +70,7 @@ node scripts/seo/writer-claims.mjs resume --writer W1 --session w1-20261014
 ```
 
 Chỉ coordinator được ghi `claims.json`. Writer chỉ ghi JSON bài của làn mình, có thể thêm `writer_session` khớp claim. Mọi trạng thái claim sau khi thay đổi phải tạo commit và PR, được đối chiếu với main mới nhất trước merge. Điều này **không** phải lock phân tán thực sự giữa nhiều bản sao Git chưa merge, nên tuyệt đối tránh hai người sửa cùng claim branch song song. Sau khi nhận bài trong inbox, coordinator mới chạy `submit`/review. `SUBMITTED` tiếp tục khóa ID chờ kiểm duyệt, không được tự tái claim để viết trùng.
+
+## Continuous loop upgrade (2026-10-14)
+
+All three writer sessions must follow [`docs/CONTINUOUS-WRITER.md`](../../docs/CONTINUOUS-WRITER.md). A writer DOES NOT stop after two drafts or one successful PR/QA. On its existing writer branch, run `node scripts/continuous-writer.mjs next --writer W1 --session w1-live --count 2`, draft the selected IDs, validate, commit and push; wait for the exact `writer-qa` SHA to pass, fetch fresh main, and immediately request the next pair. Repeat while eligible topics remain and the external AI session works. No auto-publishing: editor verification/approval is unchanged. The 80 Supporting ideas remain gated by their parent Hub being PUBLISHED. For review/backlog blockers, report WAIT, never hot-spin.

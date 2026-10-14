@@ -65,3 +65,11 @@
 - Preserve the 10 locales, 25 published URLs, 120 IDEA rows and CNAME. Use only on-page anchors or PUBLISHED URLs; no extra indexable archive/category stubs.
 - Keep essential reading and navigation functional without JS. Reader controls remain `hidden` until event handlers are installed.
 - Run `node --test tests/ultra.test.mjs` and full QA. No merging this branch without the owner's production approval.
+
+## Continuous external Writer sessions (approved technical loop)
+
+- Read `docs/CONTINUOUS-WRITER.md` before using W1/W2/W3. Reference design: `/vanchinh/docs/CONTINUOUS-WRITER.md`; do NOT copy `/vanchinh` auto-publication semantics.
+- Each *active external AI session* must repeat: refresh main → resume/repair → `node scripts/continuous-writer.mjs next --writer W1 --session <session> --count 2` → write own 2 JSON drafts → local QA → safe commit/push to own `writer/w1-*` branch → wait for the exact SHA's `writer-qa.yml` GREEN → refresh main → next pair, until no eligible row or genuine blocker. W2/W3 follow same pattern.
+- No stopping after a successful pair, QA, PR update, or commit while eligible work remains and the agent session is active. Keep the same writer branch for unmerged drafts so they are not reissued. A PR may be updated by subsequent writer-only commits; only editor may merge/review it.
+- `WAIT_PARENT_PUBLICATION`/`AWAIT_EDITORIAL_REVIEW` are real gates, not permission to write unpublished child hubs or publish unreviewed content. Runtime/network/quota limits stop the external session safely; GitHub does not keep an LLM running.
+- No force push, no direct writer push to main, no auto merge, no automatic publication, no human fact/intent approval by Writer. `content/articles`, Matrix, CNAME, sitemap and website outputs are unchanged by this loop.
