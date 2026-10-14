@@ -8,7 +8,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {execFileSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
-import {randomUUID} from "node:crypto";
+import {randomUUID,createHash} from "node:crypto";
 import {poolStatus,transitionPool,validatePool,WRITERS} from "./writer-pool-core.mjs";
 import {verifyPacket,checkDuplicates} from "./writer-lanes.mjs";
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
@@ -48,7 +48,7 @@ function verifySubmittedFiles(ids,opts,matrix,board,locales,ledger,registry){
   throw Error("Submit blocked by failed PR CI checks");
 
  shell("git",["fetch","--no-tags","origin",branch+":refs/remotes/origin/"+branch]);
- const packets=[];
+ const packets=[],evidence={};
  for(const id of ids){
   const file="factory/external-writers/inbox/"+opts.writer+"/"+id+".json";
   let raw;
@@ -59,10 +59,13 @@ function verifySubmittedFiles(ids,opts,matrix,board,locales,ledger,registry){
   if(p.matrix_id!==id||p.writer_session!==opts.session)throw Error("Article identity/session mismatch "+file);
   const qa=verifyPacket(p,opts.writer,matrix,board,locales,ledger,registry);
   if(!qa.passed)throw Error("Claimed draft QA failed "+id+": "+qa.errors.join("; "));
+  evidence[id]={source_sha256:createHash("sha256").update(raw).digest("hex"),
+    source_commit:shell("git",["rev-parse","refs/remotes/origin/"+branch])};
   packets.push({writer:opts.writer,id,path:file,packet:p});
  }
  const duplicates=checkDuplicates(packets);
  if(duplicates.length)throw Error(duplicates.join("; "));
+ return evidence;
 }
 function main(){
  const [action="status",...argv]=process.argv.slice(2);
@@ -79,15 +82,18 @@ function main(){
  if(!["claim","submit","release"].includes(action))throw Error("Actions: status | next | assigned | claim | submit | release");
  if(!WRITERS.includes(opts.writer))throw Error("Unknown Writer");
  const request={writer:opts.writer,session:opts.session,branch:opts.branch,locale:opts.locale,
-   count:opts.count?Number(opts.count):2,ids:opts.ids,reason:opts.reason,confirmed:opts.confirmed=== "true" };
+   count:opts.count?Number(opts.count):10,ids:opts.ids,reason:opts.reason,confirmed:opts.confirmed=== "true" };
  const nonce=randomUUID();
- const output=transitionPool(matrix,ledger,registry,action,request,{nonce});
+ let output=transitionPool(matrix,ledger,registry,action,request,{nonce});
  if(!opts.apply){
   console.log(JSON.stringify({mode:"DRY_RUN_ONLY",revision:output.revision,action,ids:output.ids,
     next:"Only GitHub Actions writer-pool.yml may commit claims on main. Do not write before confirmed claim."},null,2));return;
  }
  assertMainCoordinator();
- if(action==="submit")verifySubmittedFiles(output.ids,opts,matrix,board,locales,ledger,registry);
+ if(action==="submit"){
+  const evidence=verifySubmittedFiles(output.ids,opts,matrix,board,locales,ledger,registry);
+  output=transitionPool(matrix,ledger,registry,action,{...request,evidence},{nonce});
+ }
  // Release is coordinator-only: workflow refuses to release if a branch still
  // contains the article, preventing accidental redistribution of WIP.
  if(action==="release"){
