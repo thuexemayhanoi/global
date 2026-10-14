@@ -9,7 +9,7 @@ Merged PRs: #24 guard + topical map · #25 business reference + fact guard · #2
 | ID | Pri | Area | Before (evidence) | Now | Evidence |
 |---|---|---|---|---|---|
 | GM-01 | P1 | Keyword mapping, intent, cannibalization, coverage ×10 locales | PARTIAL: only exact-duplicate queries checked; 7 of 15 open clusters had no coverage in any locale | DONE (structural) | 196 native candidates; gates T1–T10; multi-signal overlap; 0 unjustified competing intents (#24, #26) |
-| GM-01b | P1 | Real search demand / SERP per market | MISSING | BLOCKED | No Search Console property or keyword data for global.rentbikehanoi.com in the connected tools; queries stay `NOT_VALIDATED` |
+| GM-01b | P1 | Real search demand / SERP per market | MISSING | BLOCKED / OWNER | No Search Console property for global.rentbikehanoi.com in the connected tools (no first-party demand or performance data). The connected third-party keyword tools spend paid credits per market, so they need the owner's approval (decision 3). Queries stay `NOT_VALIDATED` |
 | GM-02 | P1 | Homepage → Pillar → Hub → Silo → Supporting + knowledge graph | PARTIAL: 145 graph nodes, no silos, entities or typed edges. BROKEN: menu build crashed if a Hub ever had ≠ 2 children | DONE | 180 silos, 40 entities, typed edges, growth-safe menu (#24, #26) |
 | GM-03 | P0 | Two-way internal links, orphans, anchors | MISSING (only broken-link check). BROKEN at scale: published Hubs did not link their guides (benchmark) | DONE | Link audit in `seo-guard`; Hub child lists + sibling links; verified at 10,000 articles (#27) |
 | GM-04 | P1 | Entities, schema, breadcrumbs, AEO/GEO | PARTIAL: Pillars had WebPage only; checklist breadcrumb schema skipped the "Global" level; article "References" heading English in all 10 locales | DONE | Pillar WebPage + BreadcrumbList + `about` Hanoi (Wikidata Q1858); 3-level checklist breadcrumb; localized references (#27, #28) |
@@ -19,7 +19,7 @@ Merged PRs: #24 guard + topical map · #25 business reference + fact guard · #2
 | GM-07 | P0 | QA at thousands of URLs, manifest drift, index sync | BROKEN: 11 tests failed on the first real publication (hard-coded 25/20/2/120); IDs capped at 99 guides per locale; metadata-only benchmark | DONE | Derived invariants (#26); 2–4 digit IDs, full-pipeline benchmark to 10,000 (#27); live fingerprint drift check (#28) |
 | GM-08 | P0 | SEO regression tests for URLs, metadata, published content, in-flight work | PARTIAL: exact counts, no content-loss protection | DONE | Frozen registry + H2/text-loss checks + `--add-new` in publisher; merge simulations against open PRs |
 | GM-09 | P2 | Build performance and long-term scale | PARTIAL: untested beyond metadata; superlinear build at 10,000 articles (81 s) | DONE up to 10,000 URLs (measured) | #29 indexes Matrix lookups per build, folds fact-guard keywords once and speeds up overlap ordering. At 10,000 articles: build 81 → 24 s, fact-guard 59 → 24 s, content-graph 51 → 30 s, all gates 310 → 135 s. Output is byte-identical (20,166 files) and cost per article is flat. Beyond ~10,000 URLs, shard `url-freeze`/`content-graph` by locale; CI size alarms at 25 MB enforce this (`docs/PERFORMANCE-LIMITS.md`) |
-| GM-10 | P0 | Writer / Turbo / Refill / Publisher integration | Unverified | DONE | W1 branch + PR-2 merge simulation: 14 drafts pass; publisher rehearsal of EN-H01 passes 108/108 tests unaided; refill shows topical backlog |
+| GM-10 | P0 | Writer / Turbo / Refill / Publisher integration | Unverified | DONE | W1 branch + #25 merge simulation: 14 drafts pass; publisher rehearsal of EN-H01 passes 108/108 tests unaided; refill shows topical backlog |
 | GM-11 | P1 | Global Content Cannibalization Matrix (KEEP/UPGRADE/REVIEW/CREATE) | MISSING | DONE | `docs/GLOBAL-SITE-MATRIX.md`: 5 KEEP, 20 UPGRADE, 0 REVIEW, 316 CREATE |
 | GM-12 | P1 | Topical gap analysis (core, sub-topics, FAQ, intents, local, journey, entities) | MISSING | DONE (structural) | Silo × locale coverage, search journey, intent classes, live FAQ map; performance signals `NOT_CONNECTED` |
 | GM-13 | P1 | Knowledge Hub parent/child categories | MISSING | DONE (architecture) | Silos are Hub sections + graph nodes, never thin URLs. A silo landing page needs ≥ 12 published guides with a distinct intent and an owner decision |
@@ -49,7 +49,7 @@ CNAME `global.rentbikehanoi.com`; all 25 live URLs and their canonicals/lang; 10
 
 ## Open PRs not owned by this work
 
-- #6 (publish EN/DE Hubs) and #10 (old desktop-nav fix) already conflicted with `main` before this work: they are 40–62 commits behind, with generated HTML and sitemap conflicts. #10 also gains a one-line adjacent conflict in `scripts/nav-qa.mjs`. Both need a rebase by their owner. After rebasing, #6 will pass the new guards, and `publish-batch` freezes its URLs automatically.
+- #6 (publish EN/DE Hubs) and #10 (old desktop-nav fix) already conflicted with `main` before this work: they are 40–62 commits behind, with generated HTML and sitemap conflicts. #10 also gains a one-line adjacent conflict in `scripts/nav-qa.mjs`; #29 edits different lines of `scripts/navigation.mjs` than #10 and adds no conflict. Both need a rebase by their owner. After rebasing, #6 will pass the new guards, and `publish-batch` freezes its URLs automatically.
 - #5, #12 and #17 merge cleanly.
 
 ## Production QA
