@@ -6,6 +6,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {readLocalSitemapInventory} from "../sitemaps.mjs";
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
 const read=p=>fs.readFileSync(path.join(root,p),"utf8");
 const matrix=JSON.parse(read("data/seo/master-matrix.json"));
@@ -17,8 +18,11 @@ const published=matrix.rows.filter(r=>r.status==="PUBLISHED");
 const idea=matrix.rows.filter(r=>r.status==="IDEA");
 const canonicalFile=url=>url==="/"? "index.html":url.slice(1)+"index.html";
 const publishedURLs=new Set(published.map(r=>r.url));
-const siteMap=read("sitemap.xml");
-const sitemapURLs=[...siteMap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);
+let sitemapURLs=[];
+try{
+ const sitemapInventory=readLocalSitemapInventory(root,locales.map(l=>l.code));
+ sitemapURLs=sitemapInventory.urls.map(url=>origin+url);
+}catch(e){issue("P0","SITEMAP_INDEX_INVALID","/sitemap.xml",e.message,"Regenerate all sitemap shards and index");}
 const expectedCanonical=url=>origin+url;
 const normalizedHref=(href,from)=>{
  try {const u=new URL(href,origin+from); return u.origin===origin?u.pathname:null;}catch{return null;}
