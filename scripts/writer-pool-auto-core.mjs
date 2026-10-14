@@ -10,7 +10,7 @@
  */
 import {transitionPool,poolCandidates,validatePool,MAX_BATCH} from "./writer-pool-core.mjs";
 export function autoAdvance(matrix,ledger,registry,request,{
- verifiedDraftIds=new Set(),now="2026-10-14T00:00:00Z",nonce="auto",maxBatch=MAX_BATCH
+ verifiedDraftIds=new Set(),verifiedDraftEvidence=new Map(),now="2026-10-14T00:00:00Z",nonce="auto",maxBatch=MAX_BATCH
 }={}){
  const errors=validatePool(matrix,ledger,registry);
  if(errors.length)throw Error(errors.join("; "));
@@ -20,7 +20,8 @@ export function autoAdvance(matrix,ledger,registry,request,{
  const inProgress=state.claims.filter(c=>c.status==="CLAIMED"&&c.writer===writer&&c.session===session&&c.branch===branch);
  const verified=inProgress.filter(c=>verifiedDraftIds.has(c.id)).map(c=>c.id);
  if(verified.length){
-  const result=transitionPool(matrix,state,registry,"submit",{...identity,ids:verified.join(",")},{now,nonce:nonce+"-submitted"});
+  const result=transitionPool(matrix,state,registry,"submit",{...identity,ids:verified.join(","),
+   evidence:Object.fromEntries(verified.filter(id=>verifiedDraftEvidence.has(id)).map(id=>[id,verifiedDraftEvidence.get(id)]))},{now,nonce:nonce+"-submitted"});
   state=result.ledger;submitted=result.ids;changed=true;
  }
  const unfinished=state.claims.filter(c=>c.status==="CLAIMED"&&c.writer===writer&&c.session===session&&c.branch===branch);
