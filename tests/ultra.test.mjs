@@ -114,3 +114,14 @@ test("responsive photo CSS prevents Safari shrink-to-fit and keeps galleries wit
   assert.ok(html.includes('name="viewport" content="width=device-width, initial-scale=1"'),route);
  }
 });
+
+test("root homepage carries stable Google Search Console verification in document head",()=>{
+ const tag='<meta name="google-site-verification" content="HwLeUnxn5y1nBbGQD-54b3hR_dw10qMQ12wfmuDPfBg" />';
+ const homepage=read("index.html");
+ assert.equal(homepage.split(tag).length-1,1);
+ assert.ok(homepage.indexOf(tag)>homepage.indexOf("<head>"));
+ assert.ok(homepage.indexOf(tag)<homepage.indexOf("</head>"));
+ for(const lang of ["vi","en","de","fr","es","nl","zh","pt","ko","ja"]){
+  assert.ok(!read(lang+"/index.html").includes(tag),"Only property root requires verification tag");
+ }
+});
