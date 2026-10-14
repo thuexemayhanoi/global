@@ -1,4 +1,13 @@
 // Shared static menu renderer. Only matrix PUBLISHED pages can become clickable.
+// The owner-approved menu shows exactly two Supporting labels per Hub. When a
+// Hub gains more Supporting rows (topical-map promotion), PUBLISHED rows win,
+// then lowest priority; the rest are reached from the Hub page itself.
+export const MENU_CHILDREN_PER_HUB=2;
+export function menuChildren(matrix,hubId){
+  return matrix.rows.filter(r=>r.parent_id===hubId&&r.role==="SUPPORT"&&r.status!=="BLOCKED")
+    .sort((a,b)=>(a.status==="PUBLISHED"?0:1)-(b.status==="PUBLISHED"?0:1)||a.priority-b.priority||a.id.localeCompare(b.id))
+    .slice(0,MENU_CHILDREN_PER_HUB);
+}
 export function enhanceNavigation(files, locales, matrix) {
   const translations = {
     vi:["Trang chủ","Chọn loại xe","Giá thuê & cọc","Giấy tờ & hợp đồng","An toàn & hỗ trợ","Kiểm tra xe","Danh mục","Sắp có bài","Xem hướng dẫn","Ngôn ngữ"],
@@ -16,7 +25,7 @@ export function enhanceNavigation(files, locales, matrix) {
   const localeByCode=Object.fromEntries(locales.map(l=>[l.code,l]));
   const published=new Set(matrix.rows.filter(r=>r.status==="PUBLISHED").map(r=>r.url));
   const hubs=code=>matrix.rows.filter(r=>r.locale===code&&r.role==="HUB").sort((a,b)=>a.priority-b.priority);
-  const children=id=>matrix.rows.filter(r=>r.parent_id===id&&r.role==="SUPPORT"&&r.status!=="BLOCKED").sort((a,b)=>a.priority-b.priority);
+  const children=id=>menuChildren(matrix,id);
   const available=row=>Boolean(row&&published.has(row.url)&&Object.prototype.hasOwnProperty.call(files,row.url==="/"? "index.html":row.url.slice(1)+"index.html"));
   function childItem(row,code) {
     if(available(row)) return '<a class="nav2-child" href="'+esc(row.url)+'">'+esc(row.working_title)+'</a>';

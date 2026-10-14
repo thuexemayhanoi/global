@@ -14,6 +14,8 @@ const steps=[
 ["SEO Matrix validation",["scripts/seo/validate-plan.mjs"]],
 ["Content graph coherence",["scripts/seo/content-graph.mjs","--check"]],
 ["Menu and footer QA",["scripts/nav-qa.mjs"]],
+["SEO protection guard",["scripts/seo/seo-guard.mjs"]],
+["Topical authority gates",["scripts/seo/topical-authority.mjs","validate"]],
 ["Technical SEO audit",["scripts/seo/audit-static.mjs","--out","reports/technical-audit.json","--fail-p0"]],
 ["AI Search signals",["scripts/seo/audit-ai-search.mjs","--out","reports/ai-search-audit.json"]],
 ["Next content research batch",["scripts/seo/content-factory.mjs","plan","--locale",locale,"--count",String(count),"--out","reports/writer-batch.json"]]

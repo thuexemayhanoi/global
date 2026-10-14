@@ -8,6 +8,11 @@ import {checkArticle} from "../scripts/articles.mjs";
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
 const empty={version:1,revision:0,claims:[]};
+// 120 original IDEA rows is a floor; owner-approved topical-map promotion may only add rows.
+const HELD=new Set([...registry.protected,...(registry.held_ids||[])].map(x=>x.id));
+const IDEAS=matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&r.status==="IDEA");
+const DRAFTABLE=IDEAS.filter(r=>!HELD.has(r.id)).length;
+const SUPPORT_DRAFTABLE=IDEAS.filter(r=>r.role==="SUPPORT"&&!HELD.has(r.id)).length;
 const opts={now:"2026-10-14T00:00:00.000Z",nonce:"auto-test"};
 const req=w=>newRequest(w,w.toLowerCase()+"-mistral-test","writer/"+w.toLowerCase()+"-mistral-test");
 const open=(l,w="W1")=>l.claims.filter(c=>c.status==="CLAIMED"&&c.writer===w);
@@ -22,7 +27,8 @@ test("protect W1's fourteen existing drafts and two EN/DE editorial Hub drafts",
  assert.equal(registry.protected.length,14);
  assert.equal(registry.held_ids.length,2);
  assert.deepEqual(validatePool(matrix,empty,registry),[]);
- assert.equal(poolCandidates(matrix,empty,registry).length,104);
+ assert.ok(IDEAS.length>=120);
+ assert.equal(poolCandidates(matrix,empty,registry).length,DRAFTABLE);
  const candidates=new Set(poolCandidates(matrix,empty,registry).map(r=>r.id));
  for(const id of [...registry.protected,...registry.held_ids].map(x=>x.id))
   assert.ok(!candidates.has(id),"Protected ID "+id);
@@ -51,7 +57,7 @@ test("partial green push submits only actual verified drafts and refills free sl
  assert.equal(replay.changed,false);
  assert.equal(replay.status,"WAITING_FOR_DRAFTS");
 });
-test("one Writer can draft all 104 remaining Matrix ideas using turbo, without publishing",()=>{
+test("one Writer can draft every remaining Matrix idea (104 at baseline) using turbo, without publishing",()=>{
  let ledger=autoAdvance(matrix,empty,registry,req("W1"),opts).ledger;
  const done=[];
  for(let i=0;i<20;i++){
@@ -61,12 +67,12 @@ test("one Writer can draft all 104 remaining Matrix ideas using turbo, without p
   done.push(...a.submitted);
   ledger=a.ledger;
  }
- assert.equal(done.length,104);
- assert.equal(new Set(done).size,104);
+ assert.equal(done.length,DRAFTABLE);
+ assert.equal(new Set(done).size,DRAFTABLE);
  assert.equal(open(ledger).length,0);
- assert.equal(ledger.claims.filter(c=>c.status==="SUBMITTED").length,104);
+ assert.equal(ledger.claims.filter(c=>c.status==="SUBMITTED").length,DRAFTABLE);
  assert.equal(poolCandidates(matrix,ledger,registry).length,0);
- assert.equal(done.filter(id=>matrix.rows.find(r=>r.id===id).role==="SUPPORT").length,80);
+ assert.equal(done.filter(id=>matrix.rows.find(r=>r.id===id).role==="SUPPORT").length,SUPPORT_DRAFTABLE);
  assert.equal(matrix.rows.filter(r=>r.role==="HUB"&&r.status==="PUBLISHED").length,0);
 });
 test("three Writers each claim up to ten unique article IDs, W1 continues without W2/W3",()=>{

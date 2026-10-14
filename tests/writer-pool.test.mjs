@@ -6,6 +6,10 @@ const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
 const currentLedger=JSON.parse(fs.readFileSync("factory/external-writers/claims.json","utf8"));
 const original={version:1,revision:0,claims:[]};
+// 120 original IDEA rows is a floor; owner-approved topical-map promotion may only add rows.
+const IDEA_ROWS=matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&r.status==="IDEA");
+const DRAFTABLE=IDEA_ROWS.length-16;
+const SUPPORT_IDEAS=IDEA_ROWS.filter(r=>r.role==="SUPPORT").length;
 test("real currently committed ledger is valid independent of synthetic test state",()=>{
  assert.deepEqual(validatePool(matrix,currentLedger,registry),[]);
 });
@@ -22,26 +26,28 @@ test("actual PR #17's fourteen draft IDs are protected from every writer includi
  const state=poolStatus(matrix,original,registry,{writer:"W1"});
  assert.equal(state.status,"CLAIM_REQUIRED");
  assert.equal(state.protected_drafts,16);
- assert.equal(state.available_now,104);
+ assert.ok(IDEA_ROWS.length>=120&&SUPPORT_IDEAS>=80);
+ assert.equal(state.available_now,DRAFTABLE);
  assert.equal(state.blocked_by_parent,0);
- assert.equal(state.parents_unpublished_for_publish,80);
+ assert.equal(state.parents_unpublished_for_publish,SUPPORT_IDEAS);
 });
 
 test("a single W1 can write every remaining topic, including former W2/W3-owned topics",()=>{
  let ledger=structuredClone(original),claimed=[];
  const originalOwners=JSON.parse(fs.readFileSync("factory/external-writers/assignments.json","utf8"));
  const owners=new Map(originalOwners.entries.map(e=>[e.id,e.writer]));
- for(let n=0;n<52;n++){
-  const a=transitionPool(matrix,ledger,registry,"claim",{...writer("W1"),count:2},options("c"+n));
-  assert.equal(a.ids.length,2);claimed.push(...a.ids);ledger=a.ledger;
+ for(let n=0;claimed.length<DRAFTABLE;n++){
+  const want=Math.min(2,DRAFTABLE-claimed.length);
+  const a=transitionPool(matrix,ledger,registry,"claim",{...writer("W1"),count:want},options("c"+n));
+  assert.equal(a.ids.length,want);claimed.push(...a.ids);ledger=a.ledger;
   const b=transitionPool(matrix,ledger,registry,"submit",{...writer("W1"),ids:a.ids.join(",")},options("s"+n));ledger=b.ledger;
  }
- assert.equal(new Set(claimed).size,104);
+ assert.equal(new Set(claimed).size,DRAFTABLE);
  assert.ok(claimed.some(id=>owners.get(id)==="W2"));
  assert.ok(claimed.some(id=>owners.get(id)==="W3"));
  assert.equal(poolCandidates(matrix,ledger,registry).length,0); // All draftable IDs claimed/submitted
- assert.equal(claimed.length,104);
- assert.equal(new Set(claimed).size,104);
+ assert.equal(claimed.length,DRAFTABLE);
+ assert.equal(new Set(claimed).size,DRAFTABLE);
  assert.ok(claimed.every(id=>![...registry.protected,...registry.held_ids].some(p=>p.id===id)));
  assert.equal(poolCandidates(matrix,ledger,registry).length,0);
 });

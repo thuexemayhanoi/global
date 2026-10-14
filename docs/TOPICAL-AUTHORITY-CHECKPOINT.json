@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "repository": "thuexemayhanoi/global",
+  "branch": "claude/topical-authority-seo-expansion-wi7nh1",
+  "baselineMain": "84257e0ed9a6c5c19d1d3f93e1e75be03a9b79fc",
+  "updatedAt": "2026-10-14",
+  "productionMergeAuthorized": false,
+  "livePublishedUrls": 25,
+  "matrixRows": 145,
+  "ideaRows": 120,
+  "topicalCandidates": { "proposed": 176, "architectureBlocked": 20, "promoted": 0 },
+  "verifiedReferences": 22,
+  "phases": [
+    { "batch": "TA-01", "scope": "baseline audit of repo, PRs, Actions, Writer ledger and live sitemap/en pillar", "status": "DONE", "evidence": "docs/TOPICAL-AUTHORITY-BASELINE.md" },
+    { "batch": "TA-02", "scope": "SEO protection guard: frozen URL registry, fingerprint, hreflang reciprocity, leak and robots/CNAME checks", "status": "DONE_LOCAL_QA", "evidence": "scripts/seo/seo-guard*.mjs, data/seo/url-freeze.json, tests/seo-guard.test.mjs" },
+    { "batch": "TA-03", "scope": "language-neutral architecture + 10 native locale topical maps + verified references", "status": "DONE_LOCAL_QA", "evidence": "data/seo/topical-authority/, gates T1-T10 pass" },
+    { "batch": "TA-04", "scope": "engine CLI: status, validate, links, backlog, owner-gated promotion; refill/engine/CI integration; growth-safe navigation and Writer tests", "status": "DONE_LOCAL_QA", "evidence": "scripts/seo/topical-authority*.mjs, tests/topical-authority.test.mjs, promotion rehearsal in a throwaway copy" },
+    { "batch": "TA-05", "scope": "real per-market SERP/volume validation of candidates", "status": "NOT_STARTED", "blocker": "needs owner decision to spend keyword-tool credits or manual SERP review" },
+    { "batch": "TA-06", "scope": "first owner promotion manifest (recommend 2 per locale, licence/insurance clusters first)", "status": "AWAITING_OWNER" },
+    { "batch": "TA-07", "scope": "routes-trips fifth Hub architecture decision", "status": "AWAITING_OWNER" },
+    { "batch": "TA-08", "scope": "pillar BreadcrumbList/about schema and root hreflang cluster (live-page changes)", "status": "PROPOSED_SEPARATE_PR" }
+  ],
+  "resume": "Fetch main, merge into this branch, run node scripts/build.mjs --check, node scripts/seo/seo-guard.mjs, node scripts/seo/topical-authority.mjs validate and node --test tests/*.test.mjs. Never promote or publish without the owner's manifest; never merge without owner approval."
+}

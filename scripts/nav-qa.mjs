@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import {readLocalSitemapInventory} from "./sitemaps.mjs";
+import {menuChildren} from "./navigation.mjs";
 const localeCodes=["vi","en","de","fr","es","nl","zh","pt","ko","ja"];
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const all=matrix.rows.filter(r=>r.status==="IDEA");
@@ -9,7 +10,9 @@ for(const code of localeCodes)for(const route of [code+"/index.html",code+"/chec
  const html=fs.readFileSync(route,"utf8");
  if(!html.includes('data-nav-version="2"')||!html.includes('data-footer-version="2"'))errors.push("missing shared shell: "+route);
  if((html.match(/class="nav2-topic"/g)||[]).length!==4)errors.push("hub count: "+route);
- for(const r of all.filter(r=>r.locale===code&&r.role==="SUPPORT"))if(!html.includes('data-planned-id="'+r.id+'"'))errors.push("planned label missing "+r.id);
+ const featured=matrix.rows.filter(h=>h.locale===code&&h.role==="HUB").flatMap(h=>menuChildren(matrix,h.id));
+ if(featured.length!==8)errors.push("expected 8 featured child labels: "+route);
+ for(const r of featured.filter(r=>r.status!=="PUBLISHED"))if(!html.includes('data-planned-id="'+r.id+'"'))errors.push("planned label missing "+r.id);
  for(const r of all)if(html.includes('href="'+r.url+'"'))errors.push("IDEA href present: "+r.id);
  for(const m of html.matchAll(/href="(\/[^"#?]*)(?:#[^"]*)?"/g)){
   if(["/assets/styles.css","/assets/navigation.css","/assets/premium.css","/assets/ultra.css","/assets/favicon.svg"].includes(m[1]))continue;

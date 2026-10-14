@@ -78,3 +78,12 @@
 - Only PUBLISHED HTML URLs are included, never IDEA, noindex search, unpublished content or 404. The generator in `scripts/sitemaps.mjs` automatically shards a large language at <=40,000 URLs / <=40 MiB, avoids duplicate URLs and reuses `robots.txt` for discovery.
 - Never manually patch the sitemap files. Run `node scripts/build.mjs`, `node scripts/build.mjs --check`, `node --test tests/sitemaps.test.mjs`, `node scripts/seo/validate-plan.mjs`, and live post-publish QA after an approved deployment.
 - Updating sitemaps does not approve drafts or bypass existing Writer/Coordinator gates, nor guarantee bot indexing.
+
+## Topical Authority + SEO protection (branch claude/topical-authority-seo-expansion-wi7nh1)
+
+- Runbook: `docs/TOPICAL-AUTHORITY.md`; baseline audit: `docs/TOPICAL-AUTHORITY-BASELINE.md`. Hierarchy Entity Hub (PILLAR) → Topic Pillar (HUB) → Cluster (section, never a URL) → Supporting (SUPPORT). Do not rename live Matrix roles.
+- `data/seo/url-freeze.json` freezes every live URL's lang, canonical, robots, title, description, H1, hreflang and JSON-LD types. Run `node scripts/seo/seo-guard.mjs` after any build/generator/Matrix change. Re-freeze with `--write` only in a reviewed commit; never remove a frozen URL without a reviewed `retired` entry pointing at a PUBLISHED `redirect_to`. A publication PR freezes its new URL with `--write`.
+- `data/seo/topical-authority/` (architecture, verified references, 10 native locale maps) is CAPACITY, not content: PROPOSED/ARCHITECTURE_BLOCKED candidates never enter sitemap, navigation, hreflang, search shards or HTML links, and are not claimable. Run `node scripts/seo/topical-authority.mjs validate` (gates T1–T10) after editing them; do not machine-translate one locale into another.
+- Only `node scripts/seo/topical-authority.mjs promote --manifest <committed owner manifest> --apply` on a clean non-main branch may add them to the Matrix as IDEA rows. Never write or fake that manifest on the owner's behalf. The `routes-trips` Hub needs a separate owner architecture decision first.
+- Navigation shows exactly two featured Supporting labels per Hub (`menuChildren`, PUBLISHED first). Writer tests derive IDEA counts from the Matrix with a 120-row floor.
+- Keyword queries stay `NOT_VALIDATED` until real market data/SERP review; never invent volumes, rankings, prices, availability or legal certainty.
