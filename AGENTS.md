@@ -73,3 +73,10 @@
 - No stopping after a successful pair, QA, PR update, or commit while eligible work remains and the agent session is active. Keep the same writer branch for unmerged drafts so they are not reissued. A PR may be updated by subsequent writer-only commits; only editor may merge/review it.
 - `WAIT_PARENT_PUBLICATION`/`AWAIT_EDITORIAL_REVIEW` are real gates, not permission to write unpublished child hubs or publish unreviewed content. Runtime/network/quota limits stop the external session safely; GitHub does not keep an LLM running.
 - No force push, no direct writer push to main, no auto merge, no automatic publication, no human fact/intent approval by Writer. `content/articles`, Matrix, CNAME, sitemap and website outputs are unchanged by this loop.
+
+## Multilingual sitemap index (approved 2026-10-14)
+
+- Read `docs/SITEMAP-INDEX.md` before editing sitemap, build scripts or SEO validation. `sitemap.xml` is now a sitemap INDEX referencing 10 locale shards plus `sitemap-main.xml` for shared utilities.
+- Only PUBLISHED HTML URLs are included, never IDEA, noindex search, unpublished content or 404. The generator in `scripts/sitemaps.mjs` automatically shards a large language at <=40,000 URLs / <=40 MiB, avoids duplicate URLs and reuses `robots.txt` for discovery.
+- Never manually patch the sitemap files. Run `node scripts/build.mjs`, `node scripts/build.mjs --check`, `node --test tests/sitemaps.test.mjs`, `node scripts/seo/validate-plan.mjs`, and live post-publish QA after an approved deployment.
+- Updating sitemaps does not approve drafts or bypass existing Writer/Coordinator gates, nor guarantee bot indexing.
