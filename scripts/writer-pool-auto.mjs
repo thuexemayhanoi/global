@@ -19,6 +19,8 @@ const ledgerFile="factory/external-writers/claims.json";
 const read=p=>JSON.parse(fs.readFileSync(path.join(ROOT,p),"utf8"));
 const shell=(cmd,args)=>execFileSync(cmd,args,{cwd:ROOT,encoding:"utf8",timeout:24000,maxBuffer:8*1024*1024}).trim();
 const git=(...args)=>shell("git",args);
+// Byte-exact article evidence: unlike shell(), git show must NOT trim whitespace.
+const gitRaw=(...args)=>execFileSync("git",args,{cwd:ROOT,encoding:"utf8",timeout:24000,maxBuffer:8*1024*1024});
 const flags=args=>{const r={};for(let i=0;i<args.length;i++){if(!args[i].startsWith("--"))throw Error("Unexpected parameter "+args[i]);r[args[i].slice(2)]=args[++i];}return r;};
 function assertAuthorized(){
  if(process.env.GITHUB_ACTIONS!=="true"||process.env.GITHUB_WORKFLOW!=="Global Dynamic Writer Autopilot")
@@ -49,7 +51,7 @@ function draftSet(sha,claims,request,matrix,board,locales,ledger,registry){
  for(const claim of claims){
   const file="factory/external-writers/inbox/"+request.writer+"/"+claim.id+".json";
   let raw;
-  try{raw=git("show",sha+":"+file);}catch{continue;} // Incomplete pair, not a failed submit.
+  try{raw=gitRaw("show",sha+":"+file);}catch{continue;} // Incomplete pair, not a failed submit.
   let packet;
   try{packet=JSON.parse(raw);}catch{throw Error("Malformed submitted JSON "+file);}
   if(packet.matrix_id!==claim.id||packet.writer_session!==request.session)
@@ -93,7 +95,7 @@ function main(){
  for(const c of ledger.claims.filter(c=>c.status==="SUBMITTED"&&c.branch===branch&&c.writer===request.writer&&c.session===request.session&&c.source_sha256)){
   const file="factory/external-writers/inbox/"+request.writer+"/"+c.id+".json";
   let prior;
-  try{prior=git("show",sha+":"+file);}
+  try{prior=gitRaw("show",sha+":"+file);}
   catch{throw Error("Submitted draft disappeared from Writer branch: "+c.id);}
   const digest=createHash("sha256").update(prior).digest("hex");
   if(digest!==c.source_sha256)throw Error("IMMUTABLE_SUBMITTED_DRAFT_CHANGED "+c.id+": restore exact committed content before continuing");
