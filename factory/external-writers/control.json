@@ -1,7 +1,7 @@
 {
   "version": 1,
   "mode": "dynamic-pool",
-  "max_batch": 5,
+  "max_batch": 10,
   "writers": [
     "W1",
     "W2",
@@ -12,7 +12,7 @@
   "no_auto_write": true,
   "no_auto_publish": true,
   "owner_review_required": true,
-  "explanation": "External Writer starts once with a branch request; subsequent green Writer QA pushes automatically reserve/submit draft IDs using trusted main GitHub Actions. No AI prose is generated or published by Actions.",
+  "explanation": "External W1/W2/W3 push up to 10 drafts. Green Writer QA triggers trusted Autopilot which atomically records completed packets and refills active session up to 10. Public publication remains separate owner reviewed.",
   "allocation": "shared-id-queue-any-of-W1-W2-W3",
   "claim_authority": "automatic-workflow_run-after-green-Writer-QA-on-main",
   "legacy_assignments": "historical-only",
@@ -23,5 +23,11 @@
   "auto_publish": false,
   "editorial_review_required": true,
   "supporting_drafts_before_hub_published": true,
-  "supporting_publish_requires_published_parent": true
+  "supporting_publish_requires_published_parent": true,
+  "writer_turbo_default": 10,
+  "partial_draft_submission": true,
+  "minimum_drafts_per_push": 1,
+  "max_simultaneous_writers": 3,
+  "immutable_submitted_packet_sha": true,
+  "checkpoint_source": "factory/external-writers/claims.json (revision + source_commit + source_sha256)"
 }
