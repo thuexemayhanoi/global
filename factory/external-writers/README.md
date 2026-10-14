@@ -1,3 +1,7 @@
+# One-click-to-start outside AI Writer — ZERO-CLICK GitHub Actions
+
+**READ docs/ZERO-CLICK-WRITER.md FIRST.** A GitHub Run workflow button is NOT necessary; the external AI pushes one session request to bootstrap, then every green draft pair push automatically completes and claims the next batch. W1 alone can take any eligible shared topic; W2/W3 optional. Preserve the 14 W1 PR #17 drafts and EN-H01/DE-H01 editorial pilot drafts.
+
 # External Writer Pool — /global (10 languages, 1–3 active AI sessions)
 
 Canonical instructions: docs/DYNAMIC-WRITER-POOL.md and AGENTS.md.
