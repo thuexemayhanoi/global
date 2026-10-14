@@ -21,7 +21,7 @@ test("protect all 14 W1 and two EN-DE previously researched Hub drafts",()=>{
  assert.equal(registry.protected.length,14);
  assert.equal(registry.held_ids.length,2);
  assert.deepEqual(validatePool(matrix,empty,registry),[]);
- assert.equal(poolCandidates(matrix,empty,registry).length,24);
+ assert.equal(poolCandidates(matrix,empty,registry).length,104);
  const ids=poolCandidates(matrix,empty,registry).map(x=>x.id);
  for(const id of [...registry.protected,...registry.held_ids].map(x=>x.id))
   assert.ok(!ids.includes(id),id);
@@ -51,32 +51,30 @@ test("green two-draft push AUTO-SUBMITS original IDs and AUTO-CLAIMS next pair",
  assert.equal(b.ledger.claims.filter(c=>c.status==="SUBMITTED").length,2);
  assert.equal(b.ledger.claims.filter(c=>c.status==="CLAIMED").length,2);
 });
-test("ONE Writer automatically completes all remaining eligible Hub drafts without a manual workflow dispatch",()=>{
+test("ONE Writer auto-drafts all 104 remaining Hub and Supporting topics without publishing parents",()=>{
  let ledger=empty,request=req("W1"),submitted=[];
- for(let i=0;i<12;i++){
+ for(let i=0;i<52;i++){
   const state=autoAdvance(matrix,ledger,registry,request,{...opts,nonce:"auto-"+i,
-   verifiedDraftIds:i===0?new Set():new Set(ledger.claims.filter(c=>c.status==="CLAIMED").map(c=>c.id))});
-  if(i===0){assert.equal(state.status,"NEXT_PAIR_CLAIMED");ledger=state.ledger;continue;}
-  assert.equal(state.status,"SUBMITTED_AND_NEXT_PAIR");
-  submitted.push(...state.submitted);ledger=state.ledger;
+    verifiedDraftIds:i===0?new Set():new Set(ledger.claims.filter(c=>c.status==="CLAIMED").map(c=>c.id))});
+  if(i===0){
+   assert.equal(state.status,"NEXT_PAIR_CLAIMED");
+  }else{
+   assert.equal(state.status,"SUBMITTED_AND_NEXT_PAIR");
+   submitted.push(...state.submitted);
+  }
+  ledger=state.ledger;
  }
- // 12 batches in total; submit last pair explicitly.
- const final=autoAdvance(matrix,ledger,registry,request,{...opts,nonce:"last",
+ const last=autoAdvance(matrix,ledger,registry,request,{...opts,nonce:"end",
   verifiedDraftIds:new Set(ledger.claims.filter(c=>c.status==="CLAIMED").map(c=>c.id))});
- submitted.push(...final.submitted);
- assert.equal(final.status,"BATCH_SUBMITTED_WAITING_FOR_HUB");
- assert.equal(submitted.length,24);
- assert.equal(new Set(submitted).size,24);
- assert.equal(final.ledger.claims.filter(c=>c.status==="SUBMITTED").length,24);
- assert.equal(final.ledger.claims.filter(c=>c.status==="CLAIMED").length,0);
- // When owner approves the Hub publications, 80 Supporting automatically
- // become eligible; the coordinator doesn't bypass the editorial gate.
- const publishedHubs=structuredClone(matrix);
- for(const r of publishedHubs.rows)if(r.role==="HUB")r.status="PUBLISHED";
- const resumed=autoAdvance(publishedHubs,final.ledger,registry,request,opts);
- assert.equal(resumed.status,"NEXT_PAIR_CLAIMED");
- assert.equal(resumed.claimed.length,2);
- assert.ok(resumed.claimed.every(id=>publishedHubs.rows.find(r=>r.id===id).role==="SUPPORT"));
+ submitted.push(...last.submitted);
+ assert.equal(last.status,"BATCH_SUBMITTED_AWAIT_EDITORIAL_REVIEW");
+ assert.equal(submitted.length,104);
+ assert.equal(new Set(submitted).size,104);
+ assert.equal(last.ledger.claims.filter(c=>c.status==="CLAIMED").length,0);
+ assert.equal(last.ledger.claims.filter(c=>c.status==="SUBMITTED").length,104);
+ const support=submitted.filter(id=>matrix.rows.find(r=>r.id===id).role==="SUPPORT");
+ assert.equal(support.length,80);
+ assert.equal(matrix.rows.filter(r=>r.role==="HUB"&&r.status==="PUBLISHED").length,0);
 });
 test("three Writers receive unique batches; no one steals protected, claimed or submitted topics",()=>{
  let ledger=empty,first=[];
