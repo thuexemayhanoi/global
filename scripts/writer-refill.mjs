@@ -8,6 +8,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {fileURLToPath} from "node:url";
 import {refillHealth,validateProposalBatch,REFILL_BATCH_MAX} from "./writer-refill-core.mjs";
+import {loadTopicalMap,allProposals} from "./seo/topical-authority-core.mjs";
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const read=p=>JSON.parse(fs.readFileSync(path.join(ROOT,p),"utf8"));
 const argsOf=argv=>{
@@ -36,7 +37,12 @@ function main(){
    protectedData=read("factory/external-writers/protected-drafts.json");
  if(cmd==="status"){
   const health=refillHealth(matrix,ledger,protectedData);
-  console.log(JSON.stringify({repo:"thuexemayhanoi/global",...health},null,2));return;
+  // First refill source: the validated topical map backlog (promotion needs an owner manifest).
+  const backlog=allProposals(loadTopicalMap(ROOT));
+  const topical_map_backlog={proposed:backlog.filter(p=>p.status==="PROPOSED").length,
+   architecture_blocked:backlog.filter(p=>p.status==="ARCHITECTURE_BLOCKED").length,
+   next:"node scripts/seo/topical-authority.mjs backlog --count 10, then an owner promotion manifest (docs/TOPICAL-AUTHORITY.md)"};
+  console.log(JSON.stringify({repo:"thuexemayhanoi/global",...health,topical_map_backlog},null,2));return;
  }
  if(cmd!=="validate"||!["W1","W2","W3"].includes(o.writer)||typeof o.branch!=="string"||
     !new RegExp("^writer/"+o.writer.toLowerCase()+"-[A-Za-z0-9_-]+$").test(o.branch))

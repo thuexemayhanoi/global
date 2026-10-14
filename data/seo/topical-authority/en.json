@@ -1,0 +1,658 @@
+{
+  "version": 1,
+  "locale": "en",
+  "updated_on": "2026-10-14",
+  "market_notes": "English is the lingua franca for international visitors (UK, US, Australia, backpackers from everywhere). Vocabulary differs by origin — motorbike (UK/AU), scooter, motorcycle (US) — and the Ha Giang Loop drives much north-Vietnam interest. Recurring worries are IDP validity, travel-insurance exclusions, passports held as deposits and the 'blue card' registration paper.",
+  "stop_tokens": [
+    "motorbike",
+    "motorbikes",
+    "motorcycle",
+    "scooter",
+    "scooters",
+    "bike",
+    "rental",
+    "rent",
+    "renting",
+    "rented",
+    "hanoi",
+    "vietnam",
+    "in",
+    "on",
+    "a",
+    "an",
+    "the",
+    "of",
+    "to",
+    "for",
+    "and",
+    "or",
+    "as",
+    "my",
+    "i",
+    "do",
+    "does",
+    "what",
+    "how",
+    "with",
+    "is",
+    "can",
+    "from",
+    "your",
+    "when",
+    "after"
+  ],
+  "reserved_terms": [
+    "checklist",
+    "pickup",
+    "pick-up",
+    "handover inspection"
+  ],
+  "forbidden_claim_terms": [
+    "cheapest",
+    "cheap",
+    "best",
+    "no deposit",
+    "guaranteed",
+    "free",
+    "24/7",
+    "top-rated",
+    "number one"
+  ],
+  "cluster_labels": {
+    "vc-transmission": "Manual, semi-automatic, automatic",
+    "vc-power": "Engine size and electric",
+    "vc-models": "Common model families",
+    "vc-trip-fit": "Matching bike to trip",
+    "rc-period": "Rental period",
+    "rc-deposit": "Deposits and documents held",
+    "rc-extras": "Costs beyond the fee",
+    "dc-licence": "Licences and permits",
+    "dc-contract": "Agreement and liability",
+    "dc-insurance": "Insurance",
+    "dc-papers": "Papers to carry",
+    "ss-pickup": "Pickup and return",
+    "ss-weather": "Weather",
+    "ss-incidents": "Incidents on the road",
+    "ss-gear": "Helmets and gear",
+    "ss-city": "Riding in Hanoi",
+    "rt-northern-loops": "Northern loops",
+    "rt-day-trips": "Day rides from Hanoi"
+  },
+  "existing": {
+    "EN-CHECKLIST": "ss-pickup",
+    "EN-S01": "vc-transmission",
+    "EN-S02": "vc-power",
+    "EN-S03": "rc-period",
+    "EN-S04": "rc-deposit",
+    "EN-S05": "dc-licence",
+    "EN-S06": "dc-contract",
+    "EN-S07": "ss-weather",
+    "EN-S08": "ss-incidents"
+  },
+  "proposals": [
+    {
+      "candidate_id": "TA-EN-0001",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-transmission",
+      "slug": "how-to-ride-semi-automatic-motorbike",
+      "primary_query": "how to ride a semi automatic motorbike",
+      "secondary_queries": [
+        "semi automatic motorbike gears explained",
+        "riding a honda wave for beginners"
+      ],
+      "working_title": "How to Ride a Semi-Automatic Motorbike: A First-Timer's Guide",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 51,
+      "intent_rationale": "Visitors who have only ridden automatic scooters search for how to operate a clutchless semi-automatic before choosing one; how-to intent, distinct from the manual-versus-automatic choice guide.",
+      "references": [
+        "en-fcdo-safety",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0002",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-power",
+      "slug": "110cc-125cc-or-150cc",
+      "primary_query": "125cc vs 150cc motorbike vietnam",
+      "secondary_queries": [
+        "is 110cc enough for ha giang",
+        "what cc motorbike can i ride in vietnam"
+      ],
+      "working_title": "110cc, 125cc or 150cc: Which Engine Size Fits Your Hanoi Trip?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 52,
+      "intent_rationale": "Riders planning mountain routes compare engine capacity and ask what their licence class permits; complements the 50cc/electric guide, which covers the low-power end.",
+      "references": [
+        "vi-law-36-2024",
+        "en-fcdo-safety"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0003",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "honda-wave-vision-air-blade-lead",
+      "primary_query": "honda wave vs honda vision",
+      "secondary_queries": [
+        "honda air blade rental hanoi",
+        "honda lead scooter vietnam"
+      ],
+      "working_title": "Honda Wave, Vision, Air Blade and Lead: Rental Scooter Types Explained",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Model names are how many renters actually search. Explaining the widely sold Honda families as vehicle types, with no availability claim, captures comparison intent the generic Hub cannot.",
+      "references": [
+        "honda-vn-motorbike-range",
+        "en-fcdo-safety"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0004",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "honda-xr150l-dual-sport",
+      "primary_query": "honda xr150 rental hanoi",
+      "secondary_queries": [
+        "dirt bike rental hanoi",
+        "xr150 vs scooter northern vietnam"
+      ],
+      "working_title": "Honda XR150L and Dual-Sport Bikes: When a Bigger Bike Makes Sense",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 60,
+      "intent_rationale": "English-speaking adventure riders search for larger dual-sport bikes for northern routes; isolates heavier-bike intent from the scooter comparisons.",
+      "references": [
+        "honda-vn-motorbike-range",
+        "en-fcdo-safety"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0005",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-trip-fit",
+      "slug": "two-up-riding-with-luggage",
+      "primary_query": "motorbike for two people and luggage vietnam",
+      "secondary_queries": [
+        "riding pillion in vietnam",
+        "backpack on a scooter vietnam"
+      ],
+      "working_title": "Riding Two-Up with Luggage: Choosing a Bike for Two People",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 57,
+      "intent_rationale": "Couples and backpackers ask whether one bike can carry two people and luggage safely; a decision guide about load, seating and handling that no existing row answers.",
+      "references": [
+        "en-fcdo-safety",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0006",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-period",
+      "slug": "long-term-rental-for-expats",
+      "primary_query": "long term motorbike rental hanoi expat",
+      "secondary_queries": [
+        "rent a motorbike for 3 months hanoi",
+        "monthly scooter rental for students hanoi"
+      ],
+      "working_title": "Long-Term Motorbike Rental in Hanoi for Expats and Students",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 54,
+      "intent_rationale": "Residents, students and long-stay workers rent for months and need maintenance, paperwork and contract answers that a day/week/month price comparison does not cover.",
+      "references": [
+        "en-fcdo-safety",
+        "vi-law-36-2024"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0007",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-deposit",
+      "slug": "passport-as-rental-deposit",
+      "primary_query": "leaving passport as deposit motorbike vietnam",
+      "secondary_queries": [
+        "can a rental shop keep my passport vietnam",
+        "motorbike rental without leaving passport"
+      ],
+      "working_title": "Leaving Your Passport as a Rental Deposit: Risks and Alternatives",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 48,
+      "intent_rationale": "Leaving an identity document as security is a recurring traveller worry that official travel advice addresses; covers risks and questions to ask, never a provider's policy.",
+      "references": [
+        "en-fcdo-safety",
+        "de-auswaertiges-amt"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0008",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-extras",
+      "slug": "costs-beyond-the-rental-fee",
+      "primary_query": "hidden costs of renting a motorbike in vietnam",
+      "secondary_queries": [
+        "motorbike rental extra charges hanoi",
+        "damage charges scooter rental vietnam"
+      ],
+      "working_title": "Beyond the Rental Fee: Fuel, Parking, Delivery and Damage Costs",
+      "search_intent": "commercial_investigation",
+      "word_target": 1600,
+      "priority": 49,
+      "intent_rationale": "People comparing quotes want to know which charges sit outside the rental fee; scoped to cost categories and questions to ask, never to amounts.",
+      "references": [
+        "en-fcdo-safety",
+        "en-us-state-advisory"
+      ],
+      "distinct_from": [
+        {
+          "id": "EN-H02",
+          "reason": "The Hub owns the overall Hanoi rental cost question; this guide is limited to charges that appear on top of the quoted fee."
+        }
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0009",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-extras",
+      "slug": "refuelling-ron92-ron95",
+      "primary_query": "petrol for scooter vietnam ron 92 or 95",
+      "secondary_queries": [
+        "how to buy petrol in vietnam",
+        "e5 ron 92 vs ron 95 motorbike"
+      ],
+      "working_title": "Refuelling a Rental Motorbike in Vietnam: RON 92, RON 95 and E5",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 55,
+      "intent_rationale": "First-time riders ask which petrol grade to buy and how stations work; practical, low-risk content that supports cost and breakdown-prevention questions.",
+      "references": [
+        "petrolimex-home",
+        "en-fcdo-safety"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0010",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-licence",
+      "slug": "international-driving-permit-motorbike",
+      "primary_query": "international driving permit vietnam motorbike",
+      "secondary_queries": [
+        "1968 convention idp vietnam",
+        "does my idp cover motorcycles vietnam"
+      ],
+      "working_title": "International Driving Permits for Motorbikes in Vietnam",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 40,
+      "intent_rationale": "Licence validity is the highest-stakes rental question. This guide is scoped to the international permit itself, separate from the home-licence guide, and must follow current official sources.",
+      "references": [
+        "en-fcdo-safety",
+        "untc-1968-vienna-road-traffic",
+        "vi-law-36-2024"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0011",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-licence",
+      "slug": "convert-licence-to-vietnamese",
+      "primary_query": "convert foreign driving licence to vietnamese licence",
+      "secondary_queries": [
+        "vietnamese motorbike licence for expats",
+        "how to get an a1 licence in hanoi"
+      ],
+      "working_title": "Converting a Foreign Licence to a Vietnamese Motorbike Licence",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 40,
+      "intent_rationale": "Long-stay residents need the conversion route to a Vietnamese licence, a different intent and audience from short-stay visitors asking whether their own licence works.",
+      "references": [
+        "en-fcdo-safety",
+        "untc-1968-vienna-road-traffic",
+        "vi-law-36-2024"
+      ],
+      "distinct_from": [
+        {
+          "id": "EN-S05",
+          "reason": "EN-S05 answers whether a visitor's own licence is enough; this guide is for long-stay residents obtaining a Vietnamese licence."
+        }
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0012",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-contract",
+      "slug": "damage-and-theft-liability",
+      "primary_query": "motorbike rental stolen who pays vietnam",
+      "secondary_queries": [
+        "scooter rental damage dispute hanoi",
+        "rental agreement liability clause motorbike"
+      ],
+      "working_title": "Damage and Theft Liability in a Motorbike Rental Agreement",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 56,
+      "intent_rationale": "Disputes over scratches, damage and theft are a major source of rental conflict; explains clauses to read and evidence to keep, without legal promises.",
+      "references": [
+        "en-fcdo-safety",
+        "de-auswaertiges-amt"
+      ],
+      "research_gap": "Civil-law liability sources are not attached; drafting must cite the governing civil-code provisions or stay at questions-to-ask level.",
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0013",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-insurance",
+      "slug": "travel-insurance-motorbike-vietnam",
+      "primary_query": "travel insurance motorbike vietnam",
+      "secondary_queries": [
+        "compulsory motorbike insurance vietnam",
+        "travel insurance exclusions unlicensed riding"
+      ],
+      "working_title": "Does Travel Insurance Cover Riding a Motorbike in Vietnam?",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 42,
+      "intent_rationale": "Riders want to know what compulsory liability insurance covers and whether travel insurance pays after a crash; needs current decree references (67/2023 as amended by 220/2026) and policy-specific caveats.",
+      "references": [
+        "en-fcdo-safety",
+        "vi-decree-67-2023",
+        "vi-decree-220-2026-amends-67"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0014",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-papers",
+      "slug": "papers-to-carry-registration-card",
+      "primary_query": "motorbike blue card vietnam rental",
+      "secondary_queries": [
+        "what documents to carry riding in vietnam",
+        "vehicle registration card vietnam motorbike"
+      ],
+      "working_title": "Which Papers to Carry on a Rental Bike: the Blue Card and More",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 45,
+      "intent_rationale": "Riders ask which papers to carry if stopped, notably the vehicle registration card ('blue card'); distinct from the rental-documents Hub, which covers renting rather than riding. English-speaking travellers call the registration card the 'blue card', the vocabulary used in the query.",
+      "references": [
+        "vi-law-36-2024",
+        "en-fcdo-safety"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0015",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-gear",
+      "slug": "choosing-a-helmet-vietnam",
+      "primary_query": "motorbike helmet standards vietnam",
+      "secondary_queries": [
+        "should i bring my own helmet to vietnam",
+        "helmet law vietnam tourists"
+      ],
+      "working_title": "Choosing a Helmet in Vietnam: Standards, Fit and Bringing Your Own",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 53,
+      "intent_rationale": "Helmets are mandatory and the single biggest injury-prevention factor; readers ask about standards, fit and whether to bring their own.",
+      "references": [
+        "vi-law-36-2024",
+        "who-road-traffic-injuries",
+        "en-fcdo-safety"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0016",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "hanoi-traffic-for-first-time-riders",
+      "primary_query": "how to ride a motorbike in hanoi traffic",
+      "secondary_queries": [
+        "hanoi traffic rules for tourists",
+        "crossing roundabouts on a scooter hanoi"
+      ],
+      "working_title": "Hanoi Traffic for First-Time Riders: How the Flow Works",
+      "search_intent": "informational",
+      "word_target": 1700,
+      "priority": 43,
+      "intent_rationale": "First-time riders need to understand Hanoi's traffic flow and core rules before riding; distinct from the rain and breakdown guides and from the general safety Hub.",
+      "references": [
+        "vi-law-36-2024",
+        "who-road-traffic-injuries",
+        "en-fcdo-safety"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0017",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "ring-road-1-low-emission-zone",
+      "primary_query": "hanoi petrol motorbike ban ring road 1",
+      "secondary_queries": [
+        "hanoi low emission zone motorbike",
+        "electric scooter rental hanoi old quarter"
+      ],
+      "working_title": "Hanoi's Ring Road 1 Low-Emission Zone: What It Means for Motorbike Renters",
+      "search_intent": "informational",
+      "word_target": 1600,
+      "priority": 44,
+      "intent_rationale": "Hanoi announced a phased low-emission zone for Ring Road 1 starting with a 2026 pilot; renters need a sourced, date-checked explainer that does not overstate what is restricted.",
+      "references": [
+        "vi-hanoi-lez-ring-road-1",
+        "vi-directive-20-ct-ttg-2025"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0018",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "traffic-police-stop-rental-bike",
+      "primary_query": "stopped by police on motorbike in vietnam",
+      "secondary_queries": [
+        "vietnam traffic police check tourists",
+        "traffic fine on rental motorbike vietnam"
+      ],
+      "working_title": "Stopped by Traffic Police on a Rental Bike: What to Expect",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 46,
+      "intent_rationale": "Travellers worry about traffic police checks; covers documents to carry and the expected procedure, with no invented fine amounts.",
+      "references": [
+        "vi-law-36-2024",
+        "en-fcdo-safety"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0019",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "after-a-motorbike-accident",
+      "primary_query": "what to do after motorbike accident vietnam",
+      "secondary_queries": [
+        "scooter crash vietnam tourist",
+        "minor collision rental bike hanoi"
+      ],
+      "working_title": "After a Motorbike Accident in Vietnam: First Steps",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 47,
+      "intent_rationale": "After a collision readers need immediate first steps and emergency contacts; distinct from the breakdown guide, which covers mechanical failure.",
+      "references": [
+        "en-fcdo-safety",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0020",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-northern-loops",
+      "slug": "ha-giang-loop-from-hanoi",
+      "primary_query": "ha giang loop motorbike rental from hanoi",
+      "secondary_queries": [
+        "self ride ha giang loop",
+        "hanoi to ha giang by motorbike"
+      ],
+      "working_title": "Riding the Ha Giang Loop on a Bike Rented in Hanoi",
+      "search_intent": "commercial_investigation",
+      "word_target": 2200,
+      "priority": 80,
+      "intent_rationale": "Many renters plan the Ha Giang Loop from Hanoi. Sits under the proposed routes Hub and stays ARCHITECTURE_BLOCKED until the owner approves that Hub.",
+      "references": [
+        "en-fcdo-safety",
+        "who-road-traffic-injuries"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-EN-0021",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-day-trips",
+      "slug": "hanoi-to-ninh-binh-by-motorbike",
+      "primary_query": "hanoi to ninh binh by motorbike",
+      "secondary_queries": [
+        "ninh binh day trip scooter",
+        "ride from hanoi to tam coc"
+      ],
+      "working_title": "Hanoi to Ninh Binh by Motorbike: Planning a Day Ride",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 81,
+      "intent_rationale": "Day rides to Ninh Binh are a common first trip outside the city. Part of the proposed routes Hub and blocked until approval.",
+      "references": [
+        "en-fcdo-safety",
+        "vi-nchmf-home"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    }
+  ]
+}

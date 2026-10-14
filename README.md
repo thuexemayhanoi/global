@@ -61,3 +61,16 @@ For execution priorities and evidence: [Global Master Matrix](docs/GLOBAL_MASTER
 ## Premium Ultra editorial theme (optional technical upgrade)
 
 The Ultra layer lives in `scripts/ultra.mjs`, `assets/ultra.css`, and `assets/ultra.js`, applied by `scripts/build.mjs` after the Premium renderer. It adds responsive branded hero artwork (pure CSS), native-locale in-page topic tabs, a richer global language directory, an aligned shared-header search action, and accessible mobile article reading tools (TOC, estimated reading time, copy link, focus mode). Zero third-party assets or AI API calls. Do not treat a PR as deployed until it is approved and GitHub Pages has finished.
+
+## Topical authority expansion and SEO protection
+
+[Topical Authority runbook](docs/TOPICAL-AUTHORITY.md) · [Baseline audit 2026-10-14](docs/TOPICAL-AUTHORITY-BASELINE.md)
+
+```sh
+node scripts/seo/seo-guard.mjs                     # frozen live URLs, fingerprints, hreflang, leak checks
+node scripts/seo/topical-authority.mjs validate    # gates T1–T10 over 10 native-language topical maps
+node scripts/seo/topical-authority.mjs status      # PUBLISHED / REVIEW / WRITING / PLANNED / PROPOSED per locale and cluster
+node scripts/seo/topical-authority.mjs backlog --count 10
+```
+
+The topical map is a validated backlog (196 candidates), not pages. Candidates reach the Matrix only through an owner promotion manifest; publication still goes through `scripts/seo/publish-batch.mjs`.

@@ -7,6 +7,8 @@ const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const board=JSON.parse(fs.readFileSync("factory/external-writers/assignments.json","utf8"));
 const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
 const ledger={version:1,revision:0,claims:[]};
+// 120 original IDEA rows is a floor; owner-approved topical-map promotion may only add rows.
+const DRAFTABLE=matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&r.status==="IDEA").length-16;
 const empty={files:[],errors:[]};
 const session="w1-test";
 const branch="writer/w1-test";
@@ -52,13 +54,14 @@ test("three sessions see only their own confirmed IDs and never mistake a previe
 test("Supporting drafts are available after Hub drafts even before parent publication",()=>{
  let ledgerState=structuredClone(ledger);
  let claimed=[];
- for(let n=0;n<52;n++){
-  const pair=transitionPool(matrix,ledgerState,registry,"claim",{writer:"W1",session,branch,count:2},{nonce:"loop"+n,now:"2026-10-14T00:00:00Z"});
+ assert.ok(DRAFTABLE>=104);
+ for(let n=0;claimed.length<DRAFTABLE;n++){
+  const pair=transitionPool(matrix,ledgerState,registry,"claim",{writer:"W1",session,branch,count:Math.min(2,DRAFTABLE-claimed.length)},{nonce:"loop"+n,now:"2026-10-14T00:00:00Z"});
   ledgerState=pair.ledger;claimed.push(...pair.ids);
   const submitted=transitionPool(matrix,ledgerState,registry,"submit",{writer:"W1",session,branch,ids:pair.ids.join(",")},{nonce:"submit"+n,now:"2026-10-14T00:00:00Z"});
   ledgerState=submitted.ledger;
  }
- assert.equal(claimed.length,104);
+ assert.equal(claimed.length,DRAFTABLE);
  assert.ok(claimed.some(id=>matrix.rows.find(r=>r.id===id).role==="SUPPORT"));
  const r=decideNext(matrix,board,ledgerState,empty,opts);
  assert.equal(r.status,"AWAIT_CLAIMS_OR_REVIEW");

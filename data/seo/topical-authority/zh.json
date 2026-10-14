@@ -1,0 +1,591 @@
+{
+  "version": 1,
+  "locale": "zh",
+  "updated_on": "2026-10-14",
+  "market_notes": "Simplified-Chinese readers include mainland tourists, business travellers and long-stay workers. A recurring, high-stakes question is whether a Chinese licence can be used at all, alongside 押护照 deposits, insurance and how to deal with 交警. Queries are written without spaces, so overlap scoring uses character bigrams; slugs use pinyin.",
+  "stop_tokens": [
+    "河内",
+    "越南",
+    "摩托车",
+    "摩托",
+    "租赁",
+    "的",
+    "吗",
+    "怎么",
+    "如何",
+    "什么"
+  ],
+  "reserved_terms": [
+    "取车",
+    "检查清单",
+    "交车"
+  ],
+  "forbidden_claim_terms": [
+    "最便宜",
+    "便宜",
+    "最好",
+    "免押金",
+    "保证",
+    "免费",
+    "24小时"
+  ],
+  "cluster_labels": {
+    "vc-transmission": "手动挡、半自动、自动挡",
+    "vc-power": "排量与电动车",
+    "vc-models": "常见车型",
+    "vc-trip-fit": "按行程选车",
+    "rc-period": "租期",
+    "rc-deposit": "押金与证件",
+    "rc-extras": "额外费用",
+    "dc-licence": "驾照",
+    "dc-contract": "合同与责任",
+    "dc-insurance": "保险",
+    "dc-papers": "随身证件",
+    "ss-pickup": "取车与还车",
+    "ss-weather": "天气",
+    "ss-incidents": "路上突发情况",
+    "ss-gear": "头盔与护具",
+    "ss-city": "在河内骑行",
+    "rt-northern-loops": "北部环线",
+    "rt-day-trips": "河内出发一日游"
+  },
+  "existing": {
+    "ZH-CHECKLIST": "ss-pickup",
+    "ZH-S01": "vc-transmission",
+    "ZH-S02": "vc-power",
+    "ZH-S03": "rc-period",
+    "ZH-S04": "rc-deposit",
+    "ZH-S05": "dc-licence",
+    "ZH-S06": "dc-contract",
+    "ZH-S07": "ss-weather",
+    "ZH-S08": "ss-incidents"
+  },
+  "proposals": [
+    {
+      "candidate_id": "TA-ZH-0001",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-transmission",
+      "slug": "bandong-dang-qifa",
+      "primary_query": "半自动挡摩托车怎么骑",
+      "secondary_queries": [
+        "本田wave怎么换挡",
+        "越南弯梁车新手"
+      ],
+      "working_title": "半自动挡摩托车怎么骑：不用离合器的换挡方法",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 51,
+      "intent_rationale": "Visitors who have only ridden automatic scooters search for how to operate a clutchless semi-automatic before choosing one; how-to intent, distinct from the manual-versus-automatic choice guide.",
+      "references": [
+        "zh-embassy-reminder-beijing-fao",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0002",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-power",
+      "slug": "pailiang-xuanze",
+      "primary_query": "越南骑摩托车选多大排量",
+      "secondary_queries": [
+        "125cc摩托车越南北部山路",
+        "110cc能跑河江环线吗"
+      ],
+      "working_title": "110cc、125cc还是150cc：城市与山路该选多大排量",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 52,
+      "intent_rationale": "Riders planning mountain routes compare engine capacity and ask what their licence class permits; complements the 50cc/electric guide, which covers the low-power end.",
+      "references": [
+        "vi-law-36-2024",
+        "zh-embassy-reminder-beijing-fao"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0003",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "bentian-chexing",
+      "primary_query": "本田vision和air blade哪个好",
+      "secondary_queries": [
+        "越南本田wave租车",
+        "河内租踏板车车型"
+      ],
+      "working_title": "本田Wave、Vision、Air Blade：越南常见车型怎么选",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Model names are how many renters actually search. Explaining the widely sold Honda families as vehicle types, with no availability claim, captures comparison intent the generic Hub cannot.",
+      "references": [
+        "honda-vn-motorbike-range",
+        "zh-embassy-reminder-beijing-fao"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0004",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-trip-fit",
+      "slug": "liangren-xingli",
+      "primary_query": "两个人骑摩托车带行李越南",
+      "secondary_queries": [
+        "越南摩托车载人",
+        "背包骑踏板车"
+      ],
+      "working_title": "两人骑行带行李：怎样选合适的车",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 57,
+      "intent_rationale": "Couples and backpackers ask whether one bike can carry two people and luggage safely; a decision guide about load, seating and handling that no existing row answers.",
+      "references": [
+        "zh-embassy-reminder-beijing-fao",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0005",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-period",
+      "slug": "changzu-xuzhi",
+      "primary_query": "河内长租摩托车",
+      "secondary_queries": [
+        "越南摩托车月租留学生",
+        "河内租摩托车几个月"
+      ],
+      "working_title": "在河内长租摩托车：外派人员与留学生须知",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 54,
+      "intent_rationale": "Residents, students and long-stay workers rent for months and need maintenance, paperwork and contract answers that a day/week/month price comparison does not cover.",
+      "references": [
+        "zh-embassy-reminder-beijing-fao",
+        "vi-law-36-2024"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0006",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-deposit",
+      "slug": "huzhao-diya",
+      "primary_query": "越南租摩托车押护照",
+      "secondary_queries": [
+        "租车不押护照可以吗",
+        "车行扣护照怎么办"
+      ],
+      "working_title": "用护照抵押租车：风险与替代方式",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 48,
+      "intent_rationale": "Leaving an identity document as security is a recurring traveller worry that official travel advice addresses; covers risks and questions to ask, never a provider's policy. Chinese queries use 押护照 phrasing; covers the risk of handing over a passport, not provider practices.",
+      "references": [
+        "zh-embassy-reminder-beijing-fao",
+        "de-auswaertiges-amt"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0007",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-extras",
+      "slug": "ewai-feiyong",
+      "primary_query": "越南租摩托车隐藏费用",
+      "secondary_queries": [
+        "河内停车费摩托车",
+        "租车损坏赔偿费用"
+      ],
+      "working_title": "租金以外的费用：油费、停车、送车与损坏",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 49,
+      "intent_rationale": "People comparing quotes want to know which charges sit outside the rental fee; scoped to cost categories and questions to ask, never to amounts.",
+      "references": [
+        "zh-embassy-reminder-beijing-fao",
+        "en-fcdo-safety"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0008",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-extras",
+      "slug": "jiayou-zhinan",
+      "primary_query": "越南摩托车加92还是95汽油",
+      "secondary_queries": [
+        "越南加油站怎么付款",
+        "e5汽油摩托车"
+      ],
+      "working_title": "越南加油指南：E5 RON 92还是RON 95",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 55,
+      "intent_rationale": "First-time riders ask which petrol grade to buy and how stations work; practical, low-risk content that supports cost and breakdown-prevention questions.",
+      "references": [
+        "petrolimex-home",
+        "zh-embassy-reminder-beijing-fao"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0009",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-licence",
+      "slug": "zhongguo-jiazhao-yuenan",
+      "primary_query": "中国驾照在越南能骑摩托车吗",
+      "secondary_queries": [
+        "越南认可中国驾照吗",
+        "国际驾照越南摩托车"
+      ],
+      "working_title": "中国驾照能在越南骑摩托车吗？",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 40,
+      "intent_rationale": "Chinese readers repeatedly ask whether a mainland licence can be used at all; consular reminders stress holding a Vietnamese licence, so the question needs its own carefully sourced page.",
+      "references": [
+        "zh-embassy-reminder-beijing-fao",
+        "untc-1968-vienna-road-traffic",
+        "vi-law-36-2024"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0010",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-licence",
+      "slug": "huanling-yuenan-jiazhao",
+      "primary_query": "在越南换领摩托车驾照",
+      "secondary_queries": [
+        "在越南考摩托车驾照",
+        "外国人越南a1驾照"
+      ],
+      "working_title": "在越南换领本地摩托车驾照：长期居留者须知",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 40,
+      "intent_rationale": "Long-stay residents need the conversion route to a Vietnamese licence, a different intent and audience from short-stay visitors asking whether their own licence works.",
+      "references": [
+        "zh-embassy-reminder-beijing-fao",
+        "untc-1968-vienna-road-traffic",
+        "vi-law-36-2024"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0011",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-contract",
+      "slug": "sunhuai-beidao-zeren",
+      "primary_query": "越南租的摩托车被偷怎么赔",
+      "secondary_queries": [
+        "租车划痕赔偿纠纷",
+        "租车合同责任条款"
+      ],
+      "working_title": "车辆损坏与被盗：租车合同中的责任条款",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 56,
+      "intent_rationale": "Disputes over scratches, damage and theft are a major source of rental conflict; explains clauses to read and evidence to keep, without legal promises.",
+      "references": [
+        "zh-embassy-reminder-beijing-fao",
+        "de-auswaertiges-amt"
+      ],
+      "research_gap": "Civil-law liability sources are not attached; drafting must cite the governing civil-code provisions or stay at questions-to-ask level.",
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0012",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-insurance",
+      "slug": "baoxian-zhinan",
+      "primary_query": "越南骑摩托车保险",
+      "secondary_queries": [
+        "越南摩托车强制保险",
+        "旅行保险骑摩托车理赔"
+      ],
+      "working_title": "越南摩托车保险：强制责任险与旅行保险",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 42,
+      "intent_rationale": "Riders want to know what compulsory liability insurance covers and whether travel insurance pays after a crash; needs current decree references (67/2023 as amended by 220/2026) and policy-specific caveats.",
+      "references": [
+        "zh-embassy-reminder-beijing-fao",
+        "vi-decree-67-2023",
+        "vi-decree-220-2026-amends-67"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0013",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-papers",
+      "slug": "suishen-zhengjian",
+      "primary_query": "越南骑摩托车要带什么证件",
+      "secondary_queries": [
+        "越南摩托车登记证蓝卡",
+        "租车行驶证复印件"
+      ],
+      "working_title": "骑车需随身携带哪些证件：车辆登记证等",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 45,
+      "intent_rationale": "Riders ask which papers to carry if stopped, notably the vehicle registration card ('blue card'); distinct from the rental-documents Hub, which covers renting rather than riding.",
+      "references": [
+        "vi-law-36-2024",
+        "zh-embassy-reminder-beijing-fao"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0014",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-gear",
+      "slug": "toukui-biaozhun",
+      "primary_query": "越南骑摩托车头盔要求",
+      "secondary_queries": [
+        "去越南要不要带头盔",
+        "河内买头盔"
+      ],
+      "working_title": "越南骑车头盔：标准、尺码与自带头盔",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 53,
+      "intent_rationale": "Helmets are mandatory and the single biggest injury-prevention factor; readers ask about standards, fit and whether to bring their own.",
+      "references": [
+        "vi-law-36-2024",
+        "who-road-traffic-injuries",
+        "zh-embassy-reminder-beijing-fao"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0015",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "hanei-cheliu",
+      "primary_query": "河内骑摩托车交通规则",
+      "secondary_queries": [
+        "越南交通规则摩托车游客",
+        "河内环岛怎么骑"
+      ],
+      "working_title": "河内骑车实用指南：理解车流与路口通行",
+      "search_intent": "informational",
+      "word_target": 1700,
+      "priority": 43,
+      "intent_rationale": "First-time riders need to understand Hanoi's traffic flow and core rules before riding; distinct from the rain and breakdown guides and from the general safety Hub.",
+      "references": [
+        "vi-law-36-2024",
+        "who-road-traffic-injuries",
+        "zh-embassy-reminder-beijing-fao"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0016",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "yihuan-dipaifangqu",
+      "primary_query": "河内一环禁止燃油摩托车",
+      "secondary_queries": [
+        "河内2026禁摩",
+        "河内租电动摩托车"
+      ],
+      "working_title": "河内一环低排放区：租车骑行者需要了解什么",
+      "search_intent": "informational",
+      "word_target": 1600,
+      "priority": 44,
+      "intent_rationale": "Hanoi announced a phased low-emission zone for Ring Road 1 starting with a 2026 pilot; renters need a sourced, date-checked explainer that does not overstate what is restricted.",
+      "references": [
+        "vi-hanoi-lez-ring-road-1",
+        "vi-directive-20-ct-ttg-2025"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0017",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "jiaojing-jiancha",
+      "primary_query": "越南交警查摩托车游客",
+      "secondary_queries": [
+        "越南骑摩托车罚款",
+        "越南交警查驾照"
+      ],
+      "working_title": "租车骑行遇到交警检查：需要出示什么",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 46,
+      "intent_rationale": "Travellers worry about traffic police checks; covers documents to carry and the expected procedure, with no invented fine amounts.",
+      "references": [
+        "vi-law-36-2024",
+        "zh-embassy-reminder-beijing-fao"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0018",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "shigu-hou-diyibu",
+      "primary_query": "越南摩托车事故怎么处理",
+      "secondary_queries": [
+        "租的摩托车撞了怎么办",
+        "越南游客交通事故"
+      ],
+      "working_title": "在越南发生摩托车事故后的第一步",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 47,
+      "intent_rationale": "After a collision readers need immediate first steps and emergency contacts; distinct from the breakdown guide, which covers mechanical failure.",
+      "references": [
+        "zh-embassy-reminder-beijing-fao",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0019",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-northern-loops",
+      "slug": "hejiang-huanxian",
+      "primary_query": "河内租摩托车去河江",
+      "secondary_queries": [
+        "河江环线自驾摩托",
+        "河江环线骑行攻略"
+      ],
+      "working_title": "从河内租摩托车骑行河江环线",
+      "search_intent": "commercial_investigation",
+      "word_target": 2200,
+      "priority": 80,
+      "intent_rationale": "Many renters plan the Ha Giang Loop from Hanoi. Sits under the proposed routes Hub and stays ARCHITECTURE_BLOCKED until the owner approves that Hub.",
+      "references": [
+        "zh-embassy-reminder-beijing-fao",
+        "who-road-traffic-injuries"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-ZH-0020",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-day-trips",
+      "slug": "ningping-yiriyou",
+      "primary_query": "河内骑摩托车去宁平",
+      "secondary_queries": [
+        "宁平摩托车一日游",
+        "河内到宁平怎么骑"
+      ],
+      "working_title": "河内到宁平摩托车一日游",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 81,
+      "intent_rationale": "Day rides to Ninh Binh are a common first trip outside the city. Part of the proposed routes Hub and blocked until approval.",
+      "references": [
+        "zh-embassy-reminder-beijing-fao",
+        "vi-nchmf-home"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    }
+  ]
+}

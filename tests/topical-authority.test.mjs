@@ -1,0 +1,126 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import {loadTopicalMap,validateTopicalMap,coverage,linkPlan,planPromotion,similarity,tokens,allProposals,proposalURL} from "../scripts/seo/topical-authority-core.mjs";
+import {menuChildren} from "../scripts/navigation.mjs";
+import {readLocalSitemapInventory} from "../scripts/sitemaps.mjs";
+const read=p=>JSON.parse(fs.readFileSync(p,"utf8"));
+const matrix=read("data/seo/master-matrix.json");
+const board=read("factory/external-writers/assignments.json");
+const frozen=read("data/seo/url-freeze.json").urls.map(u=>u.url);
+const map=loadTopicalMap(process.cwd());
+const fails=(m,mx=matrix)=>validateTopicalMap({map:m,matrix:mx,frozenUrls:frozen}).issues;
+const clone=()=>structuredClone(map);
+const first=(m,locale)=>m.locales[locale].proposals.find(p=>p.status==="PROPOSED");
+const MANIFEST={version:1,repo:"thuexemayhanoi/global",purpose:"TOPICAL_MAP_PROMOTION",approved_by:"Test owner",approved_on:"2026-10-14",
+ statement:"I approve adding these topical-map candidates to the SEO Matrix as unpublished IDEA rows. This is not publication approval.",candidate_ids:["TA-DE-0009","TA-EN-0010"]};
+
+test("the committed 10-locale topical map passes every gate and stays out of the live site",()=>{
+ const v=validateTopicalMap({map,matrix,frozenUrls:frozen});
+ assert.deepEqual(v.issues,[]);
+ assert.equal(Object.keys(map.locales).length,10);
+ assert.deepEqual(Object.keys(map.locales).sort(),[...matrix.locales].sort());
+ for(const code of matrix.locales)assert.ok(map.locales[code].proposals.filter(p=>p.status==="PROPOSED").length>=15,code);
+ assert.equal(v.auto_publish,false);
+ const live=new Set(readLocalSitemapInventory(process.cwd(),matrix.locales).urls);
+ const matrixUrls=new Set(matrix.rows.map(r=>r.url));
+ for(const p of allProposals(map)){
+  assert.ok(!live.has(proposalURL(p)),p.candidate_id);
+  if(p.status!=="PROMOTED")assert.ok(!matrixUrls.has(proposalURL(p)),p.candidate_id);
+  assert.equal(p.serp_evidence,"NOT_VALIDATED");
+ }
+ for(const r of map.references.references)assert.match(r.url,/^https:\/\/[^&]*(?:&(?!amp;)[^&]*)*$/,r.key);
+});
+
+test("overlap scoring removes head-entity words and uses bigrams for Chinese and Japanese",()=>{
+ assert.deepEqual([...tokens("thuê xe máy xem giá","vi",["xe","thuê"])].sort(),["giá","máy","xem"]);
+ assert.ok(tokens("河内长租摩托车","zh",["河内","摩托车"]).has("长租"));
+ assert.equal(similarity("Hanoi motorbike rental deposit","motorbike rental deposit Hanoi","en",["hanoi","motorbike","rental"]),1);
+ assert.ok(similarity("ハノイ バイク 事故 対応","ベトナム レンタルバイク 故障","ja",["ハノイ","ベトナム","レンタルバイク","バイク"])<0.5);
+});
+
+test("cannibalization: exact or near-duplicate intents fail unless explicitly differentiated",()=>{
+ const m=clone(),p=first(m,"de");
+ p.primary_query="Kaution Motorrad mieten Hanoi Rückzahlung";
+ assert.ok(fails(m).some(i=>i.gate==="T4"&&/Exact query collision with DE-S04/.test(i.reason)));
+ const n=clone(),q=first(n,"de");
+ q.primary_query="motorrad mieten hanoi rückzahlung kaution prüfen";
+ assert.ok(fails(n).some(i=>i.gate==="T4"&&/Cannibalization risk vs DE-S04/.test(i.reason)));
+ q.distinct_from=[{id:"DE-S04",reason:"Test-only justification long enough to pass the forty char rule."}];
+ assert.ok(!fails(n).some(i=>i.gate==="T4"&&/DE-S04/.test(i.reason)));
+});
+
+test("reserved live intents, money amounts, unsupported claims and wrong scripts are refused",()=>{
+ const m=clone();
+ first(m,"en").working_title="Hanoi pickup checklist for rental scooters explained";
+ first(m,"vi").primary_query="thuê xe máy 150k một ngày hà nội";
+ first(m,"fr").working_title="Le scooter le moins cher de Hanoï pour les voyageurs";
+ first(m,"ja").working_title="Honda Wave rental guide for Hanoi riders";
+ first(m,"zh").primary_query="ハノイ バイク 中国";
+ const gates=fails(m).map(i=>i.gate+":"+i.id);
+ assert.ok(gates.includes("T5:"+first(m,"en").candidate_id));
+ assert.ok(gates.includes("T7:"+first(m,"vi").candidate_id));
+ assert.ok(gates.includes("T7:"+first(m,"fr").candidate_id));
+ assert.ok(gates.includes("T10:"+first(m,"ja").candidate_id));
+ assert.ok(gates.includes("T10:"+first(m,"zh").candidate_id));
+});
+
+test("hierarchy, governance and research gates fail closed",()=>{
+ const m=clone(),p=first(m,"nl");
+ p.parent_id="DE-H01";
+ const q=m.locales.ko.proposals.find(x=>x.status==="ARCHITECTURE_BLOCKED");q.status="PROPOSED";
+ const r=first(m,"es");r.publish=true;
+ const s=first(m,"pt");s.references=["pt-portal-comunidades"];
+ const t=m.locales.en.proposals[1],copied=m.locales.de.proposals[1];t.primary_query=copied.primary_query;t.working_title=copied.working_title;
+ const issues=fails(m),has=(g,id)=>issues.some(i=>i.gate===g&&i.id===id);
+ assert.ok(has("T2",p.candidate_id));
+ assert.ok(has("T2",q.candidate_id));
+ assert.ok(has("T9",r.candidate_id));
+ assert.ok(has("T8",s.candidate_id));
+ assert.ok(has("T10",t.candidate_id)||has("T10",copied.candidate_id)); // flagged on whichever locale is checked second
+});
+
+test("coverage separates live, pipeline and capacity states without double counting",()=>{
+ const cov=coverage({map,matrix,claims:read("factory/external-writers/claims.json"),protectedData:read("factory/external-writers/protected-drafts.json")});
+ const pipeline=["PUBLISHED","REVIEW","SUBMITTED","WRITING","PLANNED","BLOCKED"].reduce((a,k)=>a+cov.totals[k],0);
+ assert.equal(pipeline,matrix.rows.filter(r=>["PILLAR","HUB","SUPPORT"].includes(r.role)).length);
+ assert.equal(cov.totals.PROPOSED+cov.totals.ARCHITECTURE_BLOCKED,allProposals(map).filter(p=>p.status!=="PROMOTED").length);
+ for(const code of matrix.locales)assert.deepEqual(cov.locales[code].gaps,[],code);
+});
+
+test("link plans only render PUBLISHED targets",()=>{
+ const plan=linkPlan({map,matrix,id:"TA-EN-0010"});
+ assert.equal(plan.hub,"documents-contracts");
+ assert.ok(plan.planned.some(x=>x.relation==="topic_pillar"&&x.id==="EN-H03"));
+ const published=new Set(matrix.rows.filter(r=>r.status==="PUBLISHED").map(r=>r.url));
+ assert.ok(plan.renderable_now.every(u=>published.has(u)));
+ assert.throws(()=>linkPlan({map,matrix,id:"NOPE"}),/Unknown ID/);
+});
+
+test("promotion needs the exact owner manifest and only adds balanced IDEA rows",()=>{
+ const validation=validateTopicalMap({map,matrix,frozenUrls:frozen});
+ const before=JSON.stringify(matrix);
+ const plan=planPromotion({map,matrix,board,manifest:MANIFEST,validation});
+ assert.equal(JSON.stringify(matrix),before);
+ assert.deepEqual(plan.added.map(r=>r.id),["DE-S09","EN-S09"]);
+ assert.ok(plan.added.every(r=>r.status==="IDEA"&&r.serp_evidence==="NOT_VALIDATED"&&r.role==="SUPPORT"));
+ assert.equal(plan.publish,false);
+ const counts=["W1","W2","W3"].map(w=>plan.board.entries.filter(e=>e.writer===w).length);
+ assert.ok(Math.max(...counts)-Math.min(...counts)<=1);
+ assert.throws(()=>planPromotion({map,matrix,board,manifest:{...MANIFEST,statement:"yes"},validation}),/exact approval sentence/);
+ assert.throws(()=>planPromotion({map,matrix,board,manifest:{...MANIFEST,approved_by:""},validation}),/approved_by/);
+ const blocked=allProposals(map).find(p=>p.status==="ARCHITECTURE_BLOCKED").candidate_id;
+ assert.throws(()=>planPromotion({map,matrix,board,manifest:{...MANIFEST,candidate_ids:[blocked]},validation}),/ARCHITECTURE_BLOCKED/);
+ assert.throws(()=>planPromotion({map,matrix,board,manifest:MANIFEST,validation:{passed:false}}),/failing gates/);
+ // After promotion the candidate validates as PROMOTED against its own new row.
+ const promoted=clone();
+ for(const {candidate_id,matrix_id} of plan.promoted){const p=allProposals(promoted).find(x=>x.candidate_id===candidate_id);p.status="PROMOTED";p.matrix_id=matrix_id;}
+ assert.deepEqual(fails(promoted,plan.matrix),[]);
+});
+
+test("menus keep exactly two featured Supporting labels per Hub, PUBLISHED first",()=>{
+ for(const hub of matrix.rows.filter(r=>r.role==="HUB"))assert.equal(menuChildren(matrix,hub.id).length,2,hub.id);
+ const grown=structuredClone(matrix);
+ grown.rows.push({...grown.rows.find(r=>r.id==="EN-S01"),id:"EN-S99",url:"/en/guides/test/",status:"PUBLISHED",priority:90});
+ assert.deepEqual(menuChildren(grown,"EN-H01").map(r=>r.id),["EN-S99","EN-S01"]);
+});

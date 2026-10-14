@@ -1,0 +1,590 @@
+{
+  "version": 1,
+  "locale": "de",
+  "updated_on": "2026-10-14",
+  "market_notes": "German-speaking travellers plan thoroughly and search for legality before booking: whether their Internationaler Führerschein covers motorbikes, whether Auslandskranken- and Haftpflichtversicherung pay after a Rollerunfall, and what a Kaution involves. 'Roller' dominates everyday vocabulary; 'Motorrad' appears in licence and touring queries.",
+  "stop_tokens": [
+    "motorrad",
+    "motorroller",
+    "roller",
+    "mietroller",
+    "mieten",
+    "miete",
+    "hanoi",
+    "vietnam",
+    "in",
+    "im",
+    "mit",
+    "und",
+    "oder",
+    "der",
+    "die",
+    "das",
+    "den",
+    "dem",
+    "für",
+    "beim",
+    "bei",
+    "was",
+    "wie",
+    "ein",
+    "eine",
+    "einen",
+    "zu",
+    "auf",
+    "ist",
+    "als",
+    "ab",
+    "von",
+    "nach",
+    "tun"
+  ],
+  "reserved_terms": [
+    "checkliste",
+    "übergabe",
+    "abholung"
+  ],
+  "forbidden_claim_terms": [
+    "günstigste",
+    "billigste",
+    "beste",
+    "ohne kaution",
+    "garantiert",
+    "kostenlos",
+    "gratis",
+    "sofort verfügbar",
+    "24/7"
+  ],
+  "cluster_labels": {
+    "vc-transmission": "Schaltung, Halbautomatik, Automatik",
+    "vc-power": "Hubraum und Elektro",
+    "vc-models": "Typische Modelle",
+    "vc-trip-fit": "Passend zur Reise",
+    "rc-period": "Mietdauer",
+    "rc-deposit": "Kaution und Ausweise",
+    "rc-extras": "Nebenkosten",
+    "dc-licence": "Führerschein",
+    "dc-contract": "Vertrag und Haftung",
+    "dc-insurance": "Versicherung",
+    "dc-papers": "Papiere unterwegs",
+    "ss-pickup": "Abholung und Rückgabe",
+    "ss-weather": "Wetter",
+    "ss-incidents": "Pannen und Vorfälle",
+    "ss-gear": "Helm und Ausrüstung",
+    "ss-city": "Fahren in Hanoi",
+    "rt-northern-loops": "Rundtouren im Norden",
+    "rt-day-trips": "Tagesausflüge ab Hanoi"
+  },
+  "existing": {
+    "DE-CHECKLIST": "ss-pickup",
+    "DE-S01": "vc-transmission",
+    "DE-S02": "vc-power",
+    "DE-S03": "rc-period",
+    "DE-S04": "rc-deposit",
+    "DE-S05": "dc-licence",
+    "DE-S06": "dc-contract",
+    "DE-S07": "ss-weather",
+    "DE-S08": "ss-incidents"
+  },
+  "proposals": [
+    {
+      "candidate_id": "TA-DE-0001",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-transmission",
+      "slug": "halbautomatik-fahren",
+      "primary_query": "halbautomatik motorrad fahren anleitung",
+      "secondary_queries": [
+        "honda wave schalten ohne kupplung",
+        "halbautomatik roller vietnam"
+      ],
+      "working_title": "Halbautomatik-Motorrad fahren: Schalten ohne Kupplung erklärt",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 51,
+      "intent_rationale": "Visitors who have only ridden automatic scooters search for how to operate a clutchless semi-automatic before choosing one; how-to intent, distinct from the manual-versus-automatic choice guide.",
+      "references": [
+        "de-auswaertiges-amt",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0002",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-power",
+      "slug": "hubraum-110-125-150",
+      "primary_query": "welcher hubraum roller vietnam berge",
+      "secondary_queries": [
+        "125ccm roller vietnam",
+        "reicht 110ccm für nordvietnam"
+      ],
+      "working_title": "110, 125 oder 150 cm³: Welcher Hubraum passt zu Stadt und Bergen?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 52,
+      "intent_rationale": "Riders planning mountain routes compare engine capacity and ask what their licence class permits; complements the 50cc/electric guide, which covers the low-power end.",
+      "references": [
+        "vi-law-36-2024",
+        "de-auswaertiges-amt"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0003",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "honda-wave-vision-air-blade",
+      "primary_query": "honda wave oder honda vision mieten",
+      "secondary_queries": [
+        "honda air blade vietnam",
+        "welcher roller vietnam anfänger"
+      ],
+      "working_title": "Honda Wave, Vision und Air Blade: Mietroller-Typen im Vergleich",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Model names are how many renters actually search. Explaining the widely sold Honda families as vehicle types, with no availability claim, captures comparison intent the generic Hub cannot.",
+      "references": [
+        "honda-vn-motorbike-range",
+        "de-auswaertiges-amt"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0004",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-trip-fit",
+      "slug": "zu-zweit-mit-gepaeck",
+      "primary_query": "roller zu zweit mit gepäck vietnam",
+      "secondary_queries": [
+        "sozius fahren vietnam",
+        "rucksack auf dem roller"
+      ],
+      "working_title": "Zu zweit mit Gepäck: das passende Zweirad wählen",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 57,
+      "intent_rationale": "Couples and backpackers ask whether one bike can carry two people and luggage safely; a decision guide about load, seating and handling that no existing row answers.",
+      "references": [
+        "de-auswaertiges-amt",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0005",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-period",
+      "slug": "langzeitmiete-mehrere-monate",
+      "primary_query": "roller langzeitmiete hanoi",
+      "secondary_queries": [
+        "motorrad mehrere monate mieten vietnam",
+        "roller mieten auswandern vietnam"
+      ],
+      "working_title": "Langzeitmiete in Hanoi: Was bei mehreren Monaten zu klären ist",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 54,
+      "intent_rationale": "Residents, students and long-stay workers rent for months and need maintenance, paperwork and contract answers that a day/week/month price comparison does not cover.",
+      "references": [
+        "de-auswaertiges-amt",
+        "vi-law-36-2024"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0006",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-deposit",
+      "slug": "reisepass-als-kaution",
+      "primary_query": "reisepass als kaution roller vietnam",
+      "secondary_queries": [
+        "roller mieten ohne reisepass abgeben",
+        "verleiher behält reisepass vietnam"
+      ],
+      "working_title": "Reisepass als Kaution hinterlegen: Risiken und Alternativen",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 48,
+      "intent_rationale": "Leaving an identity document as security is a recurring traveller worry that official travel advice addresses; covers risks and questions to ask, never a provider's policy. The Auswärtiges Amt explicitly advises against leaving a passport as rental deposit.",
+      "references": [
+        "de-auswaertiges-amt",
+        "pt-portal-comunidades"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0007",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-extras",
+      "slug": "nebenkosten-neben-der-miete",
+      "primary_query": "roller mieten vietnam versteckte kosten",
+      "secondary_queries": [
+        "parkgebühr roller hanoi",
+        "schadenspauschale mietroller vietnam"
+      ],
+      "working_title": "Kosten neben der Miete: Benzin, Parken, Zustellung und Schäden",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 49,
+      "intent_rationale": "People comparing quotes want to know which charges sit outside the rental fee; scoped to cost categories and questions to ask, never to amounts.",
+      "references": [
+        "de-auswaertiges-amt",
+        "en-fcdo-safety"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0008",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-extras",
+      "slug": "tanken-ron92-ron95",
+      "primary_query": "tanken vietnam roller ron 95",
+      "secondary_queries": [
+        "benzin kaufen vietnam tankstelle",
+        "e5 ron 92 vietnam roller"
+      ],
+      "working_title": "Tanken in Vietnam: RON 92 (E5) oder RON 95 für den Mietroller?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 55,
+      "intent_rationale": "First-time riders ask which petrol grade to buy and how stations work; practical, low-risk content that supports cost and breakdown-prevention questions.",
+      "references": [
+        "petrolimex-home",
+        "de-auswaertiges-amt"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0009",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-licence",
+      "slug": "internationaler-fuehrerschein-vietnam",
+      "primary_query": "internationaler führerschein vietnam motorrad",
+      "secondary_queries": [
+        "wiener übereinkommen 1968 führerschein vietnam",
+        "führerschein klasse a1 vietnam"
+      ],
+      "working_title": "Internationaler Führerschein für Motorräder in Vietnam",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 40,
+      "intent_rationale": "Licence validity is the highest-stakes rental question. This guide is scoped to the international permit itself, separate from the home-licence guide, and must follow current official sources.",
+      "references": [
+        "de-auswaertiges-amt",
+        "untc-1968-vienna-road-traffic",
+        "vi-law-36-2024"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0010",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-contract",
+      "slug": "haftung-schaden-diebstahl",
+      "primary_query": "mietroller gestohlen vietnam haftung",
+      "secondary_queries": [
+        "roller schaden vermieter streit",
+        "mietvertrag haftung roller vietnam"
+      ],
+      "working_title": "Schaden und Diebstahl: Haftungsklauseln im Mietvertrag",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 56,
+      "intent_rationale": "Disputes over scratches, damage and theft are a major source of rental conflict; explains clauses to read and evidence to keep, without legal promises.",
+      "references": [
+        "de-auswaertiges-amt",
+        "en-fcdo-safety"
+      ],
+      "research_gap": "Civil-law liability sources are not attached; drafting must cite the governing civil-code provisions or stay at questions-to-ask level.",
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0011",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-insurance",
+      "slug": "reiseversicherung-rollerunfall",
+      "primary_query": "auslandskrankenversicherung roller vietnam",
+      "secondary_queries": [
+        "haftpflichtversicherung roller vietnam",
+        "versicherung ohne motorradführerschein vietnam"
+      ],
+      "working_title": "Zahlt die Reiseversicherung bei einem Rollerunfall in Vietnam?",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 42,
+      "intent_rationale": "Riders want to know what compulsory liability insurance covers and whether travel insurance pays after a crash; needs current decree references (67/2023 as amended by 220/2026) and policy-specific caveats. German searchers pair Auslandskrankenversicherung with licence class, so insurance and licence validity must be explained together.",
+      "references": [
+        "de-auswaertiges-amt",
+        "vi-decree-67-2023",
+        "vi-decree-220-2026-amends-67"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0012",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-papers",
+      "slug": "papiere-beim-fahren",
+      "primary_query": "fahrzeugschein roller vietnam blue card",
+      "secondary_queries": [
+        "welche dokumente beim roller fahren vietnam",
+        "zulassungskarte motorrad vietnam"
+      ],
+      "working_title": "Welche Papiere beim Fahren dabei? Zulassungskarte (Blue Card) und mehr",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 45,
+      "intent_rationale": "Riders ask which papers to carry if stopped, notably the vehicle registration card ('blue card'); distinct from the rental-documents Hub, which covers renting rather than riding.",
+      "references": [
+        "vi-law-36-2024",
+        "de-auswaertiges-amt"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0013",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-gear",
+      "slug": "helm-normen-passform",
+      "primary_query": "helmpflicht vietnam roller",
+      "secondary_queries": [
+        "eigenen motorradhelm mitnehmen vietnam",
+        "helm kaufen hanoi"
+      ],
+      "working_title": "Helm in Vietnam: Normen, Passform und eigener Helm",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 53,
+      "intent_rationale": "Helmets are mandatory and the single biggest injury-prevention factor; readers ask about standards, fit and whether to bring their own.",
+      "references": [
+        "vi-law-36-2024",
+        "who-road-traffic-injuries",
+        "de-auswaertiges-amt"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0014",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "stadtverkehr-hanoi",
+      "primary_query": "roller fahren hanoi verkehr tipps",
+      "secondary_queries": [
+        "verkehrsregeln vietnam roller",
+        "kreisverkehr hanoi roller"
+      ],
+      "working_title": "Rollerfahren im Stadtverkehr von Hanoi: So funktioniert der Verkehrsfluss",
+      "search_intent": "informational",
+      "word_target": 1700,
+      "priority": 43,
+      "intent_rationale": "First-time riders need to understand Hanoi's traffic flow and core rules before riding; distinct from the rain and breakdown guides and from the general safety Hub.",
+      "references": [
+        "vi-law-36-2024",
+        "who-road-traffic-injuries",
+        "de-auswaertiges-amt"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0015",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "niedrigemissionszone-ring-1",
+      "primary_query": "hanoi benzinroller verbot ring 1",
+      "secondary_queries": [
+        "hanoi umweltzone motorrad",
+        "elektroroller mieten hanoi altstadt"
+      ],
+      "working_title": "Niedrigemissionszone im Hanoier Ring 1: Was Mieter von Zweirädern wissen sollten",
+      "search_intent": "informational",
+      "word_target": 1600,
+      "priority": 44,
+      "intent_rationale": "Hanoi announced a phased low-emission zone for Ring Road 1 starting with a 2026 pilot; renters need a sourced, date-checked explainer that does not overstate what is restricted.",
+      "references": [
+        "vi-hanoi-lez-ring-road-1",
+        "vi-directive-20-ct-ttg-2025"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0016",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "polizeikontrolle-mietroller",
+      "primary_query": "polizeikontrolle vietnam roller touristen",
+      "secondary_queries": [
+        "strafe roller vietnam tourist",
+        "verkehrspolizei vietnam führerschein kontrolle"
+      ],
+      "working_title": "Polizeikontrolle mit dem Mietroller: Was Sie erwartet",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 46,
+      "intent_rationale": "Travellers worry about traffic police checks; covers documents to carry and the expected procedure, with no invented fine amounts.",
+      "references": [
+        "vi-law-36-2024",
+        "de-auswaertiges-amt"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0017",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "nach-einem-rollerunfall",
+      "primary_query": "rollerunfall vietnam was tun",
+      "secondary_queries": [
+        "unfall mit mietroller vietnam",
+        "verkehrsunfall vietnam tourist"
+      ],
+      "working_title": "Nach einem Rollerunfall in Vietnam: die ersten Schritte",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 47,
+      "intent_rationale": "After a collision readers need immediate first steps and emergency contacts; distinct from the breakdown guide, which covers mechanical failure.",
+      "references": [
+        "de-auswaertiges-amt",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0018",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-northern-loops",
+      "slug": "ha-giang-loop-ab-hanoi",
+      "primary_query": "ha giang loop motorrad mieten hanoi",
+      "secondary_queries": [
+        "ha giang loop selbst fahren",
+        "hanoi nach ha giang roller"
+      ],
+      "working_title": "Ha-Giang-Loop mit einem in Hanoi gemieteten Motorrad",
+      "search_intent": "commercial_investigation",
+      "word_target": 2200,
+      "priority": 80,
+      "intent_rationale": "Many renters plan the Ha Giang Loop from Hanoi. Sits under the proposed routes Hub and stays ARCHITECTURE_BLOCKED until the owner approves that Hub.",
+      "references": [
+        "de-auswaertiges-amt",
+        "who-road-traffic-injuries"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-DE-0019",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-day-trips",
+      "slug": "tagesausflug-ninh-binh",
+      "primary_query": "hanoi ninh binh roller tagesausflug",
+      "secondary_queries": [
+        "ninh binh mit dem roller",
+        "tam coc roller ab hanoi"
+      ],
+      "working_title": "Tagesausflug von Hanoi nach Ninh Binh mit dem Roller",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 81,
+      "intent_rationale": "Day rides to Ninh Binh are a common first trip outside the city. Part of the proposed routes Hub and blocked until approval.",
+      "references": [
+        "de-auswaertiges-amt",
+        "vi-nchmf-home"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    }
+  ]
+}
