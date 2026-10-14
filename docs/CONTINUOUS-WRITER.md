@@ -10,6 +10,6 @@ Each active external AI session must FETCH main → preview → atomically CLAIM
 
 Preview is NEVER permission to write. Only successfully committed main claims authorize new Writer drafts. The 14 already written W1 draft IDs from PR #17 are reserved in protected-drafts.json and must not be rewritten. Resume your own original branch/session across interruptions without reset or force push.
 
-Continuous means keep working while the external AI chat has tools/network/quota and eligible topics remain. GitHub Actions does NOT generate content or revive stopped sessions. WAIT_PARENT_PUBLICATION and AWAIT_CLAIMS_OR_REVIEW are genuine gating states; they require approved editorial publication or coordinator reconciliation, not infinite spinning.
+Continuous means keep working while the external AI chat has tools/network/quota and eligible topics remain. GitHub Actions does NOT generate content or revive stopped sessions. AWAIT_CLAIMS_OR_REVIEW and AWAIT_EDITORIAL_REVIEW are genuine gating states; they require approved editorial publication or coordinator reconciliation, not infinite spinning.
 
 A green Writer PR is NOT an approved live article. Preserve separate owner editorial review, approval manifest and safe publisher, all 10 languages, URLs, sitemap index, canonical/hreflang and CNAME.
