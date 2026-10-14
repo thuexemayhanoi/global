@@ -67,7 +67,7 @@ These checks prove what the site serves, not Google indexation, rankings or AI c
 
 ## Owner decisions (OWNER)
 
-1. First topical promotion manifest (recommended: 2 per locale, licence + insurance silos first).
+1. ~~First topical promotion manifest~~ Done 2026-10-14: `approvals/topical-20261014.json` promoted 50 candidates (5 per locale) as IDEA rows; 126 PROPOSED remain for later manifests.
 2. The fifth `routes-trips` Hub (Ha Giang / Ninh Binh).
 3. Real keyword/SERP validation per market (connect Search Console for global.rentbikehanoi.com and/or approve keyword-tool credits).
 4. Resolve business conflicts C1–C3, and decide whether /global may display NAP/prices or business schema (`publication.*_approved`).
