@@ -46,20 +46,31 @@ jobs:
         run: |
           set -euo pipefail
           node scripts/writer-pool-auto.mjs --branch "$WRITER_BRANCH" --sha "$GREEN_COMMIT"
-      - name: Commit only centralized claims ledger
+      - name: Commit only centralized claims ledger (three safe CAS retries)
+        env:
+          WRITER_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          GREEN_COMMIT: ${{ github.event.workflow_run.head_sha }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           git config user.name "global-writer-autopilot"
           git config user.email "global-writer-autopilot@users.noreply.github.com"
-          git add factory/external-writers/claims.json
-          if git diff --cached --quiet; then
-            echo "No ledger transition: idle, stale run, unfinished pair or no eligible topics."
-            exit 0
-          fi
-          git commit -m "pool(global): advance green Writer batch"
-          git fetch --no-tags origin main
-          if [ "$(git rev-parse origin/main)" != "$(git rev-parse HEAD^)" ]; then
-            echo "SAFE_STOP main changed; don't overwrite. External Writer should push/retry."
-            exit 1
-          fi
-          git push origin HEAD:main
+          for attempt in 1 2 3; do
+            git add factory/external-writers/claims.json
+            if git diff --cached --quiet; then
+              echo "No further ledger change required (idempotent / unfinished / stale)."
+              exit 0
+            fi
+            git commit -m "pool(global): record verified Writer drafts and refill slot"
+            git fetch --no-tags origin main
+            if [ "$(git rev-parse origin/main)" = "$(git rev-parse HEAD^)" ] && git push origin HEAD:main; then
+              echo "Turbo claims committed safely to latest main."
+              exit 0
+            fi
+            echo "CONCURRENT_MAIN_UPDATE attempt=$attempt: re-read freshest main and recompute, never force push"
+            git fetch --no-tags origin main
+            git reset --hard origin/main
+            node scripts/writer-pool-auto.mjs --branch "$WRITER_BRANCH" --sha "$GREEN_COMMIT"
+          done
+          echo "SAFE_STOP: retry budget exhausted, remote draft remains intact; re-push/nudge same Writer branch after recovery."
+          exit 1
