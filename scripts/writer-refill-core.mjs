@@ -52,6 +52,7 @@ export function validateProposalBatch(matrix,batch,writer,{otherProposals=[]}={}
  }
  for(const [i,r]of batch.topics.entries()){
   const id=r?.candidate_id||"row-"+i;
+  if(!r||typeof r!=="object"||Array.isArray(r)){errors("G2",id,"Candidate must be a JSON object");continue;}
   if(!/^REFILL-(VI|EN|DE|FR|ES|NL|ZH|PT|KO|JA)-\d{5,8}$/.test(id)||ids.has(id)||byId.has(id))
    errors("G2",id,"Invalid or duplicate candidate ID");
   ids.add(id);
