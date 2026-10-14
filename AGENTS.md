@@ -38,15 +38,14 @@
 - Run `node --test tests/content-publisher.test.mjs` and `node scripts/build.mjs --check` in CI.
 - Do not auto-generate AI text, approve articles on the owner's behalf, or modify production DNS/CNAME/other repositories.
 
-## External three-Writer manual protocol (source /total, adapted /global)
+## Dynamic shared Writer Pool — owner approved
 
-- Actual /total production pattern at the time of reference: **1 external Writer + 2 supervisors**. /global now uses **3 exclusive external writer lanes** W1/W2/W3 for simultaneous human-operated AI applications.
-- The Writer Board is `factory/external-writers/assignments.json`, validated against SEO Matrix. Never reassign existing IDs without explicit coordinator migration.
-- Run `node scripts/writer-lanes.mjs pack --writer W1 --count 2` for a bounded read-only work pack. Use W2/W3 analogously.
-- External Writer can only add `factory/external-writers/inbox/<W>/<ID>.json` on its own feature branch and submit PR. No direct Matrix edits, no generated HTML or public-site changes.
-- Writer must keep human review flags false, 1,000–5,000 words and four meaningful H2. Static CI verifies drafted content but does not assert facts are true.
-- No API, no LLM running in GitHub Actions, no autonomous publish or background model. Coordinator moves genuinely reviewed/approved content through existing `scripts/seo/publish-batch.mjs`, as a separate PR.
-- Do not copy `/total`'s auto-publish-on-main behavior into `/global`; it could bypass human approval. Never edit /total.
+- Source of truth: docs/DYNAMIC-WRITER-POOL.md and Global Dynamic Writer Pool (writer-pool.yml). Shared queue of 120 planned topics across 10 languages; **ANY one Writer W1, W2, W3 may claim any unreserved eligible topic**. Two or three active sessions share the same serialized queue. No 40-topic ownership ceiling.
+- Historical assignments.json is retained only as provenance/initial distribution, not an exclusion fence. protected-drafts.json permanently protects 14 already written W1 drafts on PR #17. Do not rewrite, overwrite, release or delete these without explicit coordinator review.
+- Claims are authoritative ONLY when committed to main by writer-pool.yml action=claim after successful GitHub Actions run. Preview/pack output is NOT a reservation. Writer branches write ONLY their own inbox, with exact confirmed claim and writer_session, preserving false human-review flags. New Writer drafts without confirmed claims fail QA; 14 legacy W1 drafts are grandfathered.
+- Protocol: fetch+merge main → preview → serialized claim → wait successful Actions → fetch+merge main → confirm claimed IDs → write native-language research-backed 2 articles → verify QA → push own writer branch → open/update draft PR → writer CI green → serialized action=submit → next pair. Continue while active and eligible; no stop after successful batch. No force push, no direct Writer push to main.
+- Do not auto-expire or steal claims on network loss; resume same session/branch, or coordinator explicitly inspects remote before release. Supporting requires actual published Hub; no bypass.
+- GitHub Actions never runs a model or auto-publishes. Publishing remains separate owner-reviewed approval manifest and feature PR. Preserve production CNAME, all URLs, sitemap index/children and canonical/hreflang.
 
 ## Premium Master Work branch safeguards
 
@@ -54,7 +53,7 @@
 - Search at `/search/` is a nonindex technical utility: valid internal navigation target with real static HTML; intentionally absent from SEO Matrix's PUBLISHED set and sitemap. It must carry `noindex,follow` and must not produce query-parameter SEO URLs.
 - Homepage language equivalents and truly translated checklist equivalents retain reciprocal hreflang. Distinct new Hub/supporting articles must not auto-claim hreflang.
 - `data/seo/content-graph.json` is deterministic/derived; regenerate `node scripts/seo/content-graph.mjs --write` whenever the Matrix or Writer assignment changes; CI verifies byte-exact --check.
-- Three external Writer lane claims are coordinator-owned and persisted as `factory/external-writers/claims.json` via reviewed commits. Git PRs must resolve collisions; local filesystem locks are not a cross-clone distributed service.
+- All current dynamic Writer claims are serialized by the dedicated GitHub Actions dispatcher into main claims.json; local writer-claims.mjs is historical/test-only and must not be used for new claim mutations.
 - Markdown writer intake accepts strict JSON frontmatter and writes only ignored private drafts; neither import nor AI writer scripts may publish automatically.
 - Do not merge this technical branch, merge publication PR #6 or deploy without the owner's separate explicit production approval.
 
@@ -66,13 +65,12 @@
 - Keep essential reading and navigation functional without JS. Reader controls remain `hidden` until event handlers are installed.
 - Run `node --test tests/ultra.test.mjs` and full QA. No merging this branch without the owner's production approval.
 
-## Continuous external Writer sessions (approved technical loop)
+## Continuous external Writer sessions (shared pool)
 
-- Read `docs/CONTINUOUS-WRITER.md` before using W1/W2/W3. Reference design: `/vanchinh/docs/CONTINUOUS-WRITER.md`; do NOT copy `/vanchinh` auto-publication semantics.
-- Each *active external AI session* must repeat: refresh main → resume/repair → `node scripts/continuous-writer.mjs next --writer W1 --session <session> --count 2` → write own 2 JSON drafts → local QA → safe commit/push to own `writer/w1-*` branch → wait for the exact SHA's `writer-qa.yml` GREEN → refresh main → next pair, until no eligible row or genuine blocker. W2/W3 follow same pattern.
-- No stopping after a successful pair, QA, PR update, or commit while eligible work remains and the agent session is active. Keep the same writer branch for unmerged drafts so they are not reissued. A PR may be updated by subsequent writer-only commits; only editor may merge/review it.
-- `WAIT_PARENT_PUBLICATION`/`AWAIT_EDITORIAL_REVIEW` are real gates, not permission to write unpublished child hubs or publish unreviewed content. Runtime/network/quota limits stop the external session safely; GitHub does not keep an LLM running.
-- No force push, no direct writer push to main, no auto merge, no automatic publication, no human fact/intent approval by Writer. `content/articles`, Matrix, CNAME, sitemap and website outputs are unchanged by this loop.
+- Read docs/DYNAMIC-WRITER-POOL.md and docs/CONTINUOUS-WRITER.md. One AI session can exhaust all unclaimed eligible articles regardless of old W1/W2/W3 assignment; concurrent Writers use main serialized claim dispatcher.
+- node scripts/continuous-writer.mjs next is READ ONLY: CLAIM_REQUIRED previews must not be written until writer-pool.yml action=claim succeeds and main ledger is fetched. After writing and QA, push, PR, submit IDs through writer-pool.yml and get next confirmed pair immediately.
+- Genuine blockers (parent Hub not PUBLISHED, 26 remaining Hub claimed, editorial review, chat/network timeout) are stop points requiring reconciliation, not excuses to fabricate drafts. No model runs in Actions.
+- Do not mutate production or other repositories and do not bypass editorial approval.
 
 ## Multilingual sitemap index (approved 2026-10-14)
 
