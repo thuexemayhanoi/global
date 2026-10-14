@@ -12,9 +12,16 @@
   "no_auto_write": true,
   "no_auto_publish": true,
   "owner_review_required": true,
-  "explanation": "Outside AI sessions W1/W2/W3 share all eligible Matrix IDs via serialized main claims. One session can write all remaining topics; CI only validates, owner approves publication.",
+  "explanation": "External Writer starts once with a branch request; subsequent green Writer QA pushes automatically reserve/submit draft IDs using trusted main GitHub Actions. No AI prose is generated or published by Actions.",
   "allocation": "shared-id-queue-any-of-W1-W2-W3",
-  "claim_authority": "github-actions-writer-pool-on-main",
+  "claim_authority": "automatic-workflow_run-after-green-Writer-QA-on-main",
   "legacy_assignments": "historical-only",
-  "protected_drafts": "factory/external-writers/protected-drafts.json"
+  "protected_drafts": "factory/external-writers/protected-drafts.json",
+  "auto_claim_after_green_writer_push": true,
+  "auto_submit_drafts_after_green_writer_push": true,
+  "owner_click_per_batch_required": false,
+  "auto_publish": false,
+  "editorial_review_required": true,
+  "supporting_drafts_before_hub_published": true,
+  "supporting_publish_requires_published_parent": true
 }

@@ -38,13 +38,22 @@
 - Run `node --test tests/content-publisher.test.mjs` and `node scripts/build.mjs --check` in CI.
 - Do not auto-generate AI text, approve articles on the owner's behalf, or modify production DNS/CNAME/other repositories.
 
+## Zero-click continuous Writer Autopilot (approved)
+
+- Canonical active-session runbook: docs/ZERO-CLICK-WRITER.md. A SINGLE user instruction lets outside AI Writer write eligible ideas continuously while its session runs. **No per-two-article Run workflow click.**
+- Each Writer creates ONE branch-local JSON request with scripts/writer-request.mjs start and pushes its own request. Green Writer Draft QA on PUSH then triggers Global Dynamic Writer Autopilot via workflow_run. It commits serialized claims on main; subsequent green draft pair pushes automatically SUBMIT and reserve next 1–2 IDs.
+- Do not trust previews or manually edit claims.json. AI MUST fetch/merge main and verify assigned IDs before drafting. The branch must be active and request matched to the session. Editor review and separately approved public publication remain mandatory.
+- Protect 14 original W1 drafts in PR #17 PLUS the already written EN-H01 and DE-H01 editorial pilots in PRs #5/#6; none may be drafted again. Supporting may be drafted before their Hub is published, using published-only internal links; Supporting PUBLICATION still requires actual PUBLISHED Hub.
+- Workflow_run uses trusted main code only and reads Writer branches as data. No AI calls or automatic production publication, no cross-repo writes. Existing manual writer-pool.yml is RECOVERY only.
+- Keep own branch/PR and stop only for actual blockers or an ended chat. Never force push/reset or bypass disabled Actions token permissions.
+
 ## Dynamic shared Writer Pool — owner approved
 
 - Source of truth: docs/DYNAMIC-WRITER-POOL.md and Global Dynamic Writer Pool (writer-pool.yml). Shared queue of 120 planned topics across 10 languages; **ANY one Writer W1, W2, W3 may claim any unreserved eligible topic**. Two or three active sessions share the same serialized queue. No 40-topic ownership ceiling.
 - Historical assignments.json is retained only as provenance/initial distribution, not an exclusion fence. protected-drafts.json permanently protects 14 already written W1 drafts on PR #17. Do not rewrite, overwrite, release or delete these without explicit coordinator review.
 - Claims are authoritative ONLY when committed to main by writer-pool.yml action=claim after successful GitHub Actions run. Preview/pack output is NOT a reservation. Writer branches write ONLY their own inbox, with exact confirmed claim and writer_session, preserving false human-review flags. New Writer drafts without confirmed claims fail QA; 14 legacy W1 drafts are grandfathered.
 - Protocol: fetch+merge main → preview → serialized claim → wait successful Actions → fetch+merge main → confirm claimed IDs → write native-language research-backed 2 articles → verify QA → push own writer branch → open/update draft PR → writer CI green → serialized action=submit → next pair. Continue while active and eligible; no stop after successful batch. No force push, no direct Writer push to main.
-- Do not auto-expire or steal claims on network loss; resume same session/branch, or coordinator explicitly inspects remote before release. Supporting requires actual published Hub; no bypass.
+- Do not auto-expire or steal claims on network loss; resume same session/branch, or coordinator explicitly inspects remote before release. Supporting may be drafted before parent publication; actual supporting PUBLICATION requires published Hub; no bypass.
 - GitHub Actions never runs a model or auto-publishes. Publishing remains separate owner-reviewed approval manifest and feature PR. Preserve production CNAME, all URLs, sitemap index/children and canonical/hreflang.
 
 ## Premium Master Work branch safeguards
@@ -69,7 +78,7 @@
 
 - Read docs/DYNAMIC-WRITER-POOL.md and docs/CONTINUOUS-WRITER.md. One AI session can exhaust all unclaimed eligible articles regardless of old W1/W2/W3 assignment; concurrent Writers use main serialized claim dispatcher.
 - node scripts/continuous-writer.mjs next is READ ONLY: CLAIM_REQUIRED previews must not be written until writer-pool.yml action=claim succeeds and main ledger is fetched. After writing and QA, push, PR, submit IDs through writer-pool.yml and get next confirmed pair immediately.
-- Genuine blockers (parent Hub not PUBLISHED, 26 remaining Hub claimed, editorial review, chat/network timeout) are stop points requiring reconciliation, not excuses to fabricate drafts. No model runs in Actions.
+- Genuine blockers (all drafts claimed/submitted, editorial review, chat/network timeout) are stop points requiring reconciliation, not excuses to fabricate drafts. No model runs in Actions.
 - Do not mutate production or other repositories and do not bypass editorial approval.
 
 ## Multilingual sitemap index (approved 2026-10-14)

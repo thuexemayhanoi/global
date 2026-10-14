@@ -1,3 +1,9 @@
+# DYNAMIC WRITER POOL — refer to docs/ZERO-CLICK-WRITER.md
+
+This document describes the manual **fallback** mechanism. The DEFAULT workflow is now zero-click: one-time branch Writer request push triggers GitHub Actions Writer QA and automatic centralized claim; every subsequent green pair push submits current draft pair and reserves the next pair.
+
+DO NOT instruct an external AI to wait for its owner to press "Run workflow" for claim/submit. Read docs/ZERO-CLICK-WRITER.md instead. This manual workflow is for recovery only; no human per-batch approval is needed for DRAFT creation. Publication still requires genuine editorial/owner approval.
+
 # DYNAMIC WRITER POOL — /global
 
 ## One Writer or three Writers
@@ -32,7 +38,7 @@ For W2/W3 substitute the appropriate writer, branch and session. All three use t
 - WRITE_NEXT_PAIR = confirmed claimed topics; writer may produce drafts.
 - REPAIR_DRAFT = QA failed; fix, never skip.
 - SUBMIT_CLAIMS = drafts exist, QA/push/open PR then action=submit.
-- WAIT_PARENT_PUBLICATION = remaining Supporting need their parent Hub PUBLISHED, not merely drafted. Do not spin endlessly.
+- Supporting DRAFTS may be written before their Hub is published. Supporting PUBLICATION still requires PUBLISHED parent Hub and separate editorial approval.
 - AWAIT_CLAIMS_OR_REVIEW = topics reserved or awaiting editorial action; do not steal or guess.
 - COMPLETE = all 120 Matrix topics genuinely PUBLISHED, NOT merely in an inbox.
 

@@ -62,7 +62,7 @@ export function verifyPacket(packet,writer,matrix,board,locales,ledger=null,regi
  if(!r||!["IDEA","RESEARCHED"].includes(r.status))errors.push("Topic already reserved or published");
  if(packet?.facts_reviewed_by_human!==false)errors.push("Writer must leave human fact review false");
  if(packet?.serp_intent_checked!==false)errors.push("Writer must leave SERP review false for coordinator");
- const checked=checkArticle(packet,matrix,locales,{minimumWords:1000});
+ const checked=checkArticle(packet,matrix,locales,{minimumWords:1000,allowUnpublishedParentForDraft:true});
  if(checked.words>5000)errors.push("Over 5,000 words; remove repetitive sections");
  if((String(packet?.body_markdown||"").match(/^##\s+\S/gm)||[]).length<4)errors.push("Minimum four meaningful H2 sections required");
  const reserved=new Set(["Human editorial fact review is required","SERP search-intent confirmation is required"]);
@@ -91,7 +91,7 @@ export function main(argv=process.argv.slice(2)){
  const poolFaults=validatePool(matrix,claims,registry);
  if(poolFaults.length)throw Error(poolFaults.join("; "));
  if(cmd==="status"){
-  const status={mode:control.mode,ai_api_calls:0,auto_publish:false,claim_revision:claims.revision,protected_drafts:registry.protected.length};
+  const status={mode:control.mode,ai_api_calls:0,auto_publish:false,claim_revision:claims.revision,protected_drafts:registry.protected.length+(registry.held_ids||[]).length};
   for(const w of W){
    const preview=poolStatus(matrix,claims,registry,{writer:w});
    status[w]={legacy_assignments:board.entries.filter(e=>e.writer===w).length,
