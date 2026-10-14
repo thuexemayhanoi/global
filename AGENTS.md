@@ -38,6 +38,15 @@
 - Run `node --test tests/content-publisher.test.mjs` and `node scripts/build.mjs --check` in CI.
 - Do not auto-generate AI text, approve articles on the owner's behalf, or modify production DNS/CNAME/other repositories.
 
+## Zero-click continuous Writer Autopilot (approved)
+
+- Canonical active-session runbook: docs/ZERO-CLICK-WRITER.md. A SINGLE user instruction lets outside AI Writer write eligible ideas continuously while its session runs. **No per-two-article Run workflow click.**
+- Each Writer creates ONE branch-local JSON request with scripts/writer-request.mjs start and pushes its own request. Green Writer Draft QA on PUSH then triggers Global Dynamic Writer Autopilot via workflow_run. It commits serialized claims on main; subsequent green draft pair pushes automatically SUBMIT and reserve next 1–2 IDs.
+- Do not trust previews or manually edit claims.json. AI MUST fetch/merge main and verify assigned IDs before drafting. The branch must be active and request matched to the session. Editor review and separately approved public publication remain mandatory.
+- Protect 14 original W1 drafts in PR #17 PLUS the already written EN-H01 and DE-H01 editorial pilots in PRs #5/#6; none may be drafted again. Supporting rows require real PUBLISHED Hub.
+- Workflow_run uses trusted main code only and reads Writer branches as data. No AI calls or automatic production publication, no cross-repo writes. Existing manual writer-pool.yml is RECOVERY only.
+- Keep own branch/PR and stop only for actual blockers or an ended chat. Never force push/reset or bypass disabled Actions token permissions.
+
 ## Dynamic shared Writer Pool — owner approved
 
 - Source of truth: docs/DYNAMIC-WRITER-POOL.md and Global Dynamic Writer Pool (writer-pool.yml). Shared queue of 120 planned topics across 10 languages; **ANY one Writer W1, W2, W3 may claim any unreserved eligible topic**. Two or three active sessions share the same serialized queue. No 40-topic ownership ceiling.
