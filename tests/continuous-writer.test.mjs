@@ -15,14 +15,14 @@ test("read-only preview cannot authorize writing without a real committed claim"
  const status=decideNext(matrix,board,ledger,empty,opts);
  assert.equal(status.status,"CLAIM_REQUIRED");
  assert.equal(status.batch_size,0);
- assert.equal(status.items.length,2);
+ assert.equal(status.items.length,10);
  assert.ok(status.claim_required);
  assert.ok(status.items.every(x=>!registry.protected.some(p=>p.id===x.id)));
 });
 test("confirmed claims authorize one pair for any Writer, including foreign legacy owners",()=>{
  const a=transitionPool(matrix,ledger,registry,"claim",{writer:"W1",session,branch,count:2},{nonce:"testing",now:"2026-10-14T00:00:00Z"});
  const status=decideNext(matrix,board,a.ledger,empty,opts);
- assert.equal(status.status,"WRITE_NEXT_PAIR");
+ assert.equal(status.status,"WRITE_NEXT_BATCH");
  assert.equal(status.batch_size,2);
  assert.deepEqual(status.items.map(x=>x.id),a.ids);
 });
@@ -42,7 +42,7 @@ test("three sessions see only their own confirmed IDs and never mistake a previe
   const out=transitionPool(matrix,state,registry,"claim",{writer:w,session,branch,count:2},{nonce:w,now:"2026-10-14T00:00:00Z"});
   state=out.ledger;for(const id of out.ids){assert.ok(!all.has(id));all.add(id);}
   const p=decideNext(matrix,board,state,empty,{writer:w,session,branch,registry});
-  assert.equal(p.status,"WRITE_NEXT_PAIR");
+  assert.equal(p.status,"WRITE_NEXT_BATCH");
   assert.deepEqual(p.items.map(x=>x.id),out.ids);
  }
  assert.equal(all.size,6);
@@ -64,6 +64,15 @@ test("Supporting drafts are available after Hub drafts even before parent public
  assert.equal(r.status,"AWAIT_CLAIMS_OR_REVIEW");
 });
 test("invalid batch / unknown Writer always fails closed",()=>{
- assert.throws(()=>decideNext(matrix,board,ledger,empty,{...opts,count:8}),/pair size/);
+ assert.throws(()=>decideNext(matrix,board,ledger,empty,{...opts,count:11}),/turbo target/);
  assert.throws(()=>decideNext(matrix,board,ledger,empty,{...opts,writer:"W4"}));
+});
+
+test("one session can claim TEN items and the continuous advisor displays only its confirmed IDs",()=>{
+ const res=transitionPool(matrix,ledger,registry,"claim",{writer:"W1",session,branch,count:10},{nonce:"turbo",now:"2026-10-14T00:00:00Z"});
+ assert.equal(res.ids.length,10);
+ const view=decideNext(matrix,board,res.ledger,empty,opts);
+ assert.equal(view.batch_size,10);
+ assert.equal(view.status,"WRITE_NEXT_BATCH");
+ assert.deepEqual(view.items.map(x=>x.id),res.ids);
 });
