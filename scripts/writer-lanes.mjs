@@ -91,7 +91,7 @@ export function main(argv=process.argv.slice(2)){
  const poolFaults=validatePool(matrix,claims,registry);
  if(poolFaults.length)throw Error(poolFaults.join("; "));
  if(cmd==="status"){
-  const status={mode:control.mode,ai_api_calls:0,auto_publish:false,claim_revision:claims.revision,protected_drafts:registry.protected.length};
+  const status={mode:control.mode,ai_api_calls:0,auto_publish:false,claim_revision:claims.revision,protected_drafts:registry.protected.length+(registry.held_ids||[]).length};
   for(const w of W){
    const preview=poolStatus(matrix,claims,registry,{writer:w});
    status[w]={legacy_assignments:board.entries.filter(e=>e.writer===w).length,
