@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
+import {readLocalSitemapInventory} from "../scripts/sitemaps.mjs";
 const read=p=>fs.readFileSync(p,"utf8");
 const matrix=JSON.parse(read("data/seo/master-matrix.json"));
 const langs=JSON.parse(read("content/locales.json"));
@@ -9,13 +10,14 @@ const map=new Map(matrix.rows.filter(r=>r.status==="PUBLISHED").map(r=>[r.url,r]
 const pageOf=url=>url==="/"? "index.html":url.slice(1)+"index.html";
 const parseLinks=html=>[...html.matchAll(/href="([^"]+)"/g)].map(m=>m[1]);
 test("25 existing public content URLs stay indexed and canonical",()=>{
- const sitemap=read("sitemap.xml");
+ const sitemap=readLocalSitemapInventory(process.cwd(),langs.map(l=>l.code));
  assert.equal(map.size,25);
- assert.equal((sitemap.match(/<loc>/g)||[]).length,map.size);
- assert.ok(!sitemap.includes("<loc>https://global.rentbikehanoi.com/search/</loc>"));
+ assert.equal(sitemap.indexFiles.length,11);
+ assert.equal(sitemap.urls.length,map.size);
+ assert.ok(!sitemap.urls.includes("/search/"));
  for(const [url,r] of map){
   const f=pageOf(url),h=read(f);
-  assert.ok(sitemap.includes("<loc>https://global.rentbikehanoi.com"+url+"</loc>"),url);
+  assert.ok(sitemap.urls.includes(url),url);
   assert.ok(h.includes('<link rel="canonical" href="https://global.rentbikehanoi.com'+url+'">'),f);
   assert.equal((h.match(/<h1[\s>]/g)||[]).length,1,f);
   const lang=langs.find(x=>x.code===r.locale);

@@ -6,6 +6,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import {fileURLToPath} from "node:url";
+import {parseSitemapIndex,parseSitemapUrlset} from "../sitemaps.mjs";
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
 export function inspectHTML(html,url,expectedLang=null){
  const errors=[];
@@ -46,11 +47,33 @@ export async function inspectProduction(fetcher=fetch,origin="https://global.ren
  }catch(e){issues.push("Search utility unavailable "+e.message)}
  try{
   const {response,text}=await get("/sitemap.xml");
-  const entries=[...text.matchAll(/<loc>https:\/\/global\.rentbikehanoi\.com([^<]+)<\/loc>/g)].map(m=>m[1]);
-  const urls=new Set(matrix.rows.filter(x=>x.status==="PUBLISHED").map(x=>x.url));
-  if(response.status!==200||entries.length!==urls.size||entries.some(x=>!urls.has(x)))issues.push("Live sitemap does not match reviewed PUBLISHED Matrix");
-  evidence.push({route:"/sitemap.xml",http_status:response.status,entries:entries.length});
- }catch(e){issues.push("Live sitemap unavailable "+e.message)}
+  if(response.status!==200)throw Error("HTTP "+response.status);
+  const children=parseSitemapIndex(text,origin);
+  const expectedGroups=new Set(["main",...locales.map(l=>l.code)]);
+  const discovered=new Set(),groups=new Set();
+  for(const name of children){
+   const group=name.match(/^sitemap-(main|[a-z]{2})(?:-[2-9][0-9]*)?\.xml$/)?.[1];
+   if(!expectedGroups.has(group))throw Error("Unrecognized sitemap child "+name);
+   groups.add(group);
+   const shard=await get("/"+name);
+   if(shard.response.status!==200)throw Error("HTTP "+shard.response.status+" /"+name);
+   const entries=parseSitemapUrlset(shard.text,origin);
+   if(entries.length>40000||Buffer.byteLength(shard.text)>40*1024*1024)throw Error("Sitemap shard exceeds safe size "+name);
+   for(const url of entries){
+    const prefix=url.split("/")[1];
+    const belongs=expectedGroups.has(prefix)?prefix:"main";
+    if(belongs!==group)throw Error("URL in wrong locale shard "+url);
+    if(discovered.has(url))throw Error("Duplicate across sitemap shards "+url);
+    discovered.add(url);
+   }
+   evidence.push({route:"/"+name,http_status:shard.response.status,entries:entries.length});
+  }
+  for(const group of expectedGroups)if(!groups.has(group))throw Error("Missing locale sitemap "+group);
+  const published=new Set(matrix.rows.filter(x=>x.status==="PUBLISHED").map(x=>x.url));
+  if(discovered.size!==published.size||[...discovered].some(url=>!published.has(url)))issues.push("Live sitemap shards do not match reviewed PUBLISHED Matrix");
+  evidence.push({route:"/sitemap.xml",http_status:response.status,sitemap_children:children.length,published_urls:discovered.size});
+ }catch(e){issues.push("Live sitemap index/shards invalid: "+e.message)}
+
  try{
   const {response,text}=await get("/robots.txt",{"User-Agent":"OAI-SearchBot"});
   if(response.status!==200||!/Sitemap:\s*https:\/\/global\.rentbikehanoi\.com\/sitemap\.xml/.test(text))issues.push("Live robots or sitemap directive invalid");
