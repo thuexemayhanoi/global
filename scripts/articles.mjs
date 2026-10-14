@@ -21,12 +21,27 @@ function countWords(text,locale){
 function collectMarkdownTargets(text){
  return [...text.matchAll(/!?(?:\[[^\]]*\])\(([^)]+)\)/g)].map(m=>m[1].trim());
 }
-function isPublishedLinked(pathname,matrix,pending){
- return matrix.rows.some(r=>r.url===pathname && (r.status==="PUBLISHED"||pending.has(r.id)));
+/**
+ * One pass over the Matrix (first row wins per id, as with rows.find). The build
+ * passes it to every article so lookups stay O(1) instead of O(articles × rows).
+ */
+export function rowsIndex(matrix){
+ const byId=new Map(),byUrl=new Map(),pubSupport=new Map();
+ const add=(map,key,r)=>{if(!map.has(key))map.set(key,[]);map.get(key).push(r);};
+ for(const r of matrix.rows){
+  if(!byId.has(r.id))byId.set(r.id,r);
+  add(byUrl,r.url,r);
+  if(r.status==="PUBLISHED"&&r.role==="SUPPORT")add(pubSupport,r.parent_id,r);
+ }
+ return {byId,byUrl,pubSupport};
 }
-export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublished=false,pending=new Set(),assetsRoot=null,allowUnpublishedParentForDraft=false,factMode="warn"}={}){
+function isPublishedLinked(pathname,ix,pending){
+ return (ix.byUrl.get(pathname)||[]).some(r=>r.status==="PUBLISHED"||pending.has(r.id));
+}
+export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublished=false,pending=new Set(),assetsRoot=null,allowUnpublishedParentForDraft=false,factMode="warn",index=null}={}){
  const errors=[], warnings=[];
- const row=matrix.rows.find(r=>r.id===packet?.matrix_id);
+ const ix=index||rowsIndex(matrix);
+ const row=ix.byId.get(packet?.matrix_id);
  const locale=locales.find(l=>l.code===packet?.locale);
  if(!row)errors.push("Unknown matrix_id");
  if(!locale)errors.push("Unknown locale");
@@ -38,7 +53,7 @@ export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublis
   if(row.url!==packet.proposed_url)errors.push("URL must match approved Matrix row");
   if(row.locale!==packet.locale)errors.push("Locale must match Matrix row");
   if(row.parent_id){
-   const parent=matrix.rows.find(r=>r.id===row.parent_id);
+   const parent=ix.byId.get(row.parent_id);
    // Drafts may be researched before parent publication, but publishing
    // still requires a PUBLISHED parent (or co-published parent in pending).
    if(!parent||(!allowUnpublishedParentForDraft&&parent.status!=="PUBLISHED"&&!pending.has(parent.id)))
@@ -69,7 +84,7 @@ export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublis
   if(/^(?:javascript:|data:|file:)/i.test(href))errors.push("Unsafe markdown URL: "+href);
   if(href.startsWith("/")){
    const url=href.split("#")[0].split("?")[0];
-   if(!isPublishedLinked(url,matrix,pending))errors.push("Unpublished internal link: "+url);
+   if(!isPublishedLinked(url,ix,pending))errors.push("Unpublished internal link: "+url);
   }else if(!/^https:\/\//i.test(href))errors.push("Markdown links must be HTTPS or root-relative: "+href);
  }
  if(packet?.cover_image){
@@ -141,14 +156,15 @@ const ARTICLE_LABELS={
  * Hub → every PUBLISHED child grouped by silo (no orphan Supporting pages);
  * Supporting → up to six PUBLISHED siblings, same silo first. PUBLISHED only.
  */
-export function topicLinks(row,matrix,topical,code){
+export function topicLinks(row,matrix,topical,code,ix=rowsIndex(matrix)){
  const L=ARTICLE_LABELS[code]||ARTICLE_LABELS.en,tl=topical?.locales?.[code];
  const siloOf=r=>tl?.existing?.[r.id]||r.subcluster||"";
  const order=(a,b)=>(a.priority??99)-(b.priority??99)||a.id.localeCompare(b.id);
- const pub=matrix.rows.filter(r=>r.status==="PUBLISHED"&&r.role==="SUPPORT"&&r.locale===code&&r.id!==row.id);
+ // PUBLISHED Supporting rows under one parent, in Matrix order (filter copies, so sorting never touches the index).
+ const under=id=>(ix.pubSupport.get(id)||[]).filter(r=>r.locale===code&&r.id!==row.id);
  const item=r=>'<li><a href="'+esc(r.url)+'">'+esc(r.working_title)+'</a></li>';
  if(row.role==="HUB"){
-  const kids=pub.filter(r=>r.parent_id===row.id).sort(order);
+  const kids=under(row.id).sort(order);
   if(!kids.length)return "";
   const groups=new Map();
   for(const k of kids){const s=siloOf(k);if(!groups.has(s))groups.set(s,[]);groups.get(s).push(k);}
@@ -158,39 +174,39 @@ export function topicLinks(row,matrix,topical,code){
  }
  if(row.role==="SUPPORT"){
   const own=siloOf(row);
-  const sib=pub.filter(r=>r.parent_id===row.parent_id).sort((a,b)=>(siloOf(a)===own?0:1)-(siloOf(b)===own?0:1)||order(a,b)).slice(0,6);
+  const sib=under(row.parent_id).sort((a,b)=>(siloOf(a)===own?0:1)-(siloOf(b)===own?0:1)||order(a,b)).slice(0,6);
   return sib.length?'<section class="topic-guides topic-guides--siblings"><h2>'+esc(L[1])+'</h2><ul>'+sib.map(item).join("")+'</ul></section>':"";
  }
  return "";
 }
-export function renderArticle(packet,locale,row,matrix,topical=null){
+export function renderArticle(packet,locale,row,matrix,topical=null,ix=rowsIndex(matrix)){
  const htmlLang=locale.htmlLang||locale.code,url=SITE+row.url;
- const parent=matrix.rows.find(r=>r.id===row.parent_id);
+ const parent=ix.byId.get(row.parent_id);
  const parentURL=parent?.status==="PUBLISHED"?parent.url:"/"+locale.code+"/";
  const parentLabel=parent?.status==="PUBLISHED"?parent.working_title:locale.name;
  const data={"@context":"https://schema.org","@graph":[{"@type":"Article","headline":packet.title,"description":packet.meta_description,"inLanguage":htmlLang,"mainEntityOfPage":url,"author":{"@type":"Organization","name":"Vietnam Two-Wheel Guide"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":locale.name,"item":SITE+"/"+locale.code+"/"},{"@type":"ListItem","position":2,"name":parentLabel,"item":SITE+parentURL},{"@type":"ListItem","position":3,"name":packet.title,"item":url}]}]};
  const sources=packet.sources.map(s=>'<li><a href="'+esc(s.url)+'" rel="noopener noreferrer">'+esc(s.title)+'</a></li>').join("");
  const cover=packet.cover_image?'<figure><img src="'+esc(packet.cover_image)+'" alt="'+esc(packet.cover_alt)+'" loading="lazy" decoding="async"><figcaption>'+esc(packet.image_credit)+'</figcaption></figure>':"";
  const json=JSON.stringify(data).replace(/</g,"\\u003c");
- return '<!doctype html>\n<html lang="'+esc(htmlLang)+'"><head>\n<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<title>'+esc(packet.title)+'</title>\n<meta name="description" content="'+esc(packet.meta_description)+'">\n<link rel="canonical" href="'+esc(url)+'">\n<meta property="og:type" content="article"><meta property="og:title" content="'+esc(packet.title)+'"><meta property="og:description" content="'+esc(packet.meta_description)+'"><meta property="og:url" content="'+esc(url)+'">\n<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">\n<script type="application/ld+json">'+json+'</script>\n</head><body><a class="skip" href="#main">Skip to content</a><main id="main"><div class="container"><nav class="crumb" aria-label="Breadcrumb"><a href="/'+esc(locale.code)+'/">'+esc(locale.name)+'</a> <span aria-hidden="true">›</span> <a href="'+esc(parentURL)+'">'+esc(parentLabel)+'</a></nav><article class="article"><h1>'+esc(packet.h1)+'</h1><p class="article-lead">'+esc(packet.meta_description)+'</p>'+cover+'<div class="article-copy">'+renderMarkdown(packet.body_markdown)+'</div>'+topicLinks(row,matrix,topical,locale.code)+'<section class="article-references"><h2>'+esc((ARTICLE_LABELS[locale.code]||ARTICLE_LABELS.en)[2])+'</h2><ol>'+sources+'</ol></section><p><a href="'+esc(parentURL)+'">← '+esc(parentLabel)+'</a></p></article></div></main></body></html>\n';
+ return '<!doctype html>\n<html lang="'+esc(htmlLang)+'"><head>\n<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<title>'+esc(packet.title)+'</title>\n<meta name="description" content="'+esc(packet.meta_description)+'">\n<link rel="canonical" href="'+esc(url)+'">\n<meta property="og:type" content="article"><meta property="og:title" content="'+esc(packet.title)+'"><meta property="og:description" content="'+esc(packet.meta_description)+'"><meta property="og:url" content="'+esc(url)+'">\n<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">\n<script type="application/ld+json">'+json+'</script>\n</head><body><a class="skip" href="#main">Skip to content</a><main id="main"><div class="container"><nav class="crumb" aria-label="Breadcrumb"><a href="/'+esc(locale.code)+'/">'+esc(locale.name)+'</a> <span aria-hidden="true">›</span> <a href="'+esc(parentURL)+'">'+esc(parentLabel)+'</a></nav><article class="article"><h1>'+esc(packet.h1)+'</h1><p class="article-lead">'+esc(packet.meta_description)+'</p>'+cover+'<div class="article-copy">'+renderMarkdown(packet.body_markdown)+'</div>'+topicLinks(row,matrix,topical,locale.code,ix)+'<section class="article-references"><h2>'+esc((ARTICLE_LABELS[locale.code]||ARTICLE_LABELS.en)[2])+'</h2><ol>'+sources+'</ol></section><p><a href="'+esc(parentURL)+'">← '+esc(parentLabel)+'</a></p></article></div></main></body></html>\n';
 }
 export function generateApprovedArticles(root,matrix,locales){
  const dir=path.join(root,"content/articles");
  const pages={};
  if(!fs.existsSync(dir))return pages;
- const topical=loadTopicalMap(root);
+ const topical=loadTopicalMap(root),ix=rowsIndex(matrix);
  for(const file of fs.readdirSync(dir).sort()){
   if(!file.endsWith(".json"))continue;
   if(!/^[A-Z]{2}-[HS]\d{2,4}\.json$/.test(file))throw Error("Unexpected article filename: "+file);
   const packet=JSON.parse(fs.readFileSync(path.join(dir,file),"utf8"));
-  const row=matrix.rows.find(r=>r.id===packet.matrix_id),locale=locales.find(l=>l.code===packet.locale);
+  const row=ix.byId.get(packet.matrix_id),locale=locales.find(l=>l.code===packet.locale);
   if(!row||row.status!=="PUBLISHED")throw Error("Article must have PUBLISHED Matrix row: "+file);
   if(file!==packet.matrix_id+".json")throw Error("Filename / Matrix ID mismatch");
-  const qa=checkArticle(packet,matrix,locales,{allowPublished:true,assetsRoot:root,factMode:"strict"});
+  const qa=checkArticle(packet,matrix,locales,{allowPublished:true,assetsRoot:root,factMode:"strict",index:ix});
   if(!qa.passed)throw Error("Stored article QA failed "+file+": "+qa.errors.join("; "));
   const generated=htmlPagePath(row.url);
   if(pages[generated])throw Error("Article URL collision "+generated);
-  pages[generated]=renderArticle(packet,locale,row,matrix,topical);
+  pages[generated]=renderArticle(packet,locale,row,matrix,topical,ix);
  }
  return pages;
 }

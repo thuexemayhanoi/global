@@ -106,6 +106,7 @@
 - Published Hub articles render "Guides in this topic" (every published child, grouped by silo label); Supporting articles render up to six published siblings. Only PUBLISHED URLs. Do not remove these sections: at scale they are what prevents orphan guides.
 - `publish-batch --apply` runs `seo-guard --add-new` (freezes only new URLs, refuses on any FAIL) and `fact-guard`, and restores the registry on rollback.
 - Matrix/article IDs allow 2–4 digits (XX-S100+). Overlap checks use prefix-filtered all-pairs similarity. Benchmark: `node scripts/bench/full-build-scale.mjs --articles N` (temp copy only); CI runs N=300. See docs/PERFORMANCE-LIMITS.md before scaling past 10,000 URLs (shard url-freeze and content-graph by locale).
+- Per-page build code must not scan every Matrix row. Use the per-build indexes instead: `rowsIndex` in `scripts/articles.mjs`, `relatedIndex` in `scripts/premium.mjs`, and header/footer rendered once per locale in `scripts/navigation.mjs`. Any optimization must keep `build --check` byte-identical.
 
 ## Live structured data + production QA (PR-5)
 

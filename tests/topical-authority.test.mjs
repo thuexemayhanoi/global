@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import {loadTopicalMap,validateTopicalMap,coverage,linkPlan,planPromotion,similarity,tokens,allProposals,proposalURL} from "../scripts/seo/topical-authority-core.mjs";
+import {loadTopicalMap,validateTopicalMap,coverage,linkPlan,planPromotion,similarity,tokens,allProposals,proposalURL,similarPairs} from "../scripts/seo/topical-authority-core.mjs";
 import {menuChildren} from "../scripts/navigation.mjs";
 import {readLocalSitemapInventory} from "../scripts/sitemaps.mjs";
 const read=p=>JSON.parse(fs.readFileSync(p,"utf8"));
@@ -123,4 +123,21 @@ test("menus keep exactly two featured Supporting labels per Hub, PUBLISHED first
  const grown=structuredClone(matrix);
  grown.rows.push({...grown.rows.find(r=>r.id==="EN-S01"),id:"EN-S99",url:"/en/guides/test/",status:"PUBLISHED",priority:90});
  assert.deepEqual(menuChildren(grown,"EN-H01").map(r=>r.id),["EN-S99","EN-S01"]);
+});
+
+test("prefix-filtered similarPairs returns exactly the brute-force pairs and scores",()=>{
+ let seed=7;const rnd=()=>(seed=(seed*1103515245+12345)%2147483648)/2147483648;
+ for(let round=0;round<200;round++){
+  const vocab=2+Math.floor(rnd()*60),n=1+Math.floor(rnd()*30);
+  const sets=Array.from({length:n},()=>{const s=new Set(),k=Math.floor(rnd()*Math.min(vocab,25));for(let i=0;i<k;i++)s.add("t"+Math.floor(rnd()*vocab));return s;});
+  for(const t of [0.34,0.5,0.66]){
+   const brute=[];
+   for(let i=0;i<n;i++)for(let j=i+1;j<n;j++){
+    const a=sets[i],b=sets[j];if(!a.size||!b.size)continue;
+    let inter=0;for(const x of a)if(b.has(x))inter++;
+    const s=inter/(a.size+b.size-inter);if(s>=t)brute.push([i,j,Number(s.toFixed(12))]);
+   }
+   assert.deepEqual(similarPairs(sets,t).map(([i,j,s])=>[i,j,Number(s.toFixed(12))]),brute,"round "+round+" threshold "+t);
+  }
+ }
 });

@@ -25,8 +25,17 @@ const matrix=read("data/seo/master-matrix.json"),board=read("factory/external-wr
 const hubs=matrix.rows.filter(r=>r.role==="HUB");
 const perHub=Math.max(0,Math.ceil((N-hubs.length)/hubs.length));
 // Distinct pseudo-words per article so published-text overlap reflects real, non-templated content.
-const word=(i,k)=>createHash("sha1").update(i+":"+k).digest("hex").slice(0,8).replace(/[0-9]/g,d=>"ghijklmnop"[d]);
-const filler=(i,lang)=>Array.from({length:70},(_,k)=>Array.from({length:9},(_,w)=>word(i,k*9+w)).join(" ")+".").join("\n\n");
+// zh/ja/ko get native-script pseudo-words: Latin letters collapse CJK character bigrams to a tiny
+// alphabet, which made every CJK page a near-duplicate of every other (an O(n²) benchmark artefact).
+const SCRIPT={zh:[0x4e00,20900],ja:[0x4e00,20900],ko:[0xac00,11172]};
+const word=(i,k,lang)=>{
+ const h=createHash("sha1").update(i+":"+k).digest(),s=SCRIPT[lang];
+ return s?String.fromCodePoint(...[0,2,4].map(j=>s[0]+h.readUInt16BE(j)%s[1])):h.toString("hex").slice(0,8).replace(/[0-9]/g,d=>"ghijklmnop"[d]);
+};
+const filler=(i,lang)=>{
+ const cjk=lang==="zh"||lang==="ja";
+ return Array.from({length:70},(_,k)=>Array.from({length:9},(_,w)=>word(i,k*9+w,lang)).join(cjk?"":" ")+(cjk?"。":".")).join("\n\n");
+};
 const article=(row,i)=>({matrix_id:row.id,locale:row.locale,proposed_url:row.url,
  title:"Benchmark article "+i+" "+row.locale+" synthetic title",meta_description:"Synthetic benchmark description number "+i+" for "+row.locale+" used only to measure static build and SEO gate throughput.",
  h1:"Benchmark article "+i+" heading",body_markdown:"## Part one\n\n"+filler(i,row.locale)+"\n\n## Part two\n\nMore text.\n\n## Part three\n\nEnd.",

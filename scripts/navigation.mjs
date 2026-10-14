@@ -48,13 +48,16 @@ export function enhanceNavigation(files, locales, matrix) {
     const tr=translations[l.code],groups=hubs(l.code);
     return '<footer class="footer nav2-footer" data-footer-version="2"><div class="container nav2-foot-wrap"><div class="nav2-footer-main"><div class="nav2-foot-brand"><a href="/" class="nav2-foot-logo">VIETNAM / WHEELS</a><p>'+esc(l.navNote)+'</p><a href="/'+l.code+'/">'+esc(tr[0])+'</a><a href="/'+l.code+'/checklist/">'+esc(tr[5])+'</a></div><nav class="nav2-foot-groups" aria-label="'+esc(tr[6])+'">'+groups.map((hub,i)=>'<section><h3>'+esc(tr[i+1])+'</h3>'+children(hub.id).map(r=>childItem(r,l.code)).join('')+'</section>').join('')+'</nav></div><div class="nav2-foot-bottom"><div class="nav2-foot-languages">'+locales.map(to=>'<a lang="'+esc(to.htmlLang)+'" href="/'+esc(to.code)+'/"'+(to.code===l.code?' aria-current="page"':'')+'>'+esc(to.flag)+' '+esc(to.code.toUpperCase())+'</a>').join('')+'</div><div class="nav2-legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></div></div></footer>';
   }
+  // Header and footer depend on the locale (and checklist switcher), never on the page:
+  // render each once instead of re-scanning the Matrix for every page (O(pages × rows)).
+  const rendered=new Map(),once=(key,render)=>{if(!rendered.has(key))rendered.set(key,render());return rendered.get(key);};
   const publicHeader='<header class="header nav2-head" data-nav-version="2"><div class="container nav2-head-inner"><a class="brand nav2-brand" href="/"><span class="mark" aria-hidden="true">✳</span>VIETNAM<span class="brand-light">/</span>WHEELS</a><a class="nav2-global-link" href="/#languages">🌐 Languages ↓</a></div></header>';
   const publicFooter='<footer class="footer nav2-footer" data-footer-version="2"><div class="container nav2-foot-wrap"><div class="nav2-footer-main"><div class="nav2-foot-brand"><a href="/" class="nav2-foot-logo">VIETNAM / WHEELS</a><p>Practical information for two-wheel travel in Vietnam.</p></div><nav class="nav2-foot-globallangs" aria-label="Languages">'+locales.map(l=>'<a href="/'+esc(l.code)+'/" lang="'+esc(l.htmlLang)+'">'+esc(l.flag)+' '+esc(l.name)+'</a>').join('')+'</nav></div><div class="nav2-foot-bottom"><span>Vietnam Two-Wheel Guide</span><div class="nav2-legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></div></div></footer>';
   for(const [p,raw] of Object.entries(files)){
     if(!p.endsWith('.html'))continue;
     const m=p.match(/^([a-z]{2})\/(?:checklist\/|(?:topics|guides)\/[a-z0-9-]+\/)?index\.html$/);
     const l=m&&localeByCode[m[1]],isChecklist=p.includes('/checklist/');
-    const h=l?navHead(l,isChecklist):publicHeader,f=l?footer(l):publicFooter;
+    const h=l?once("head:"+l.code+":"+isChecklist,()=>navHead(l,isChecklist)):publicHeader,f=l?once("foot:"+l.code,()=>footer(l)):publicFooter;
     let html=raw.replace(/<header class="header">[\s\S]*?<\/header>/,h).replace(/<footer class="footer">[\s\S]*?<\/footer>/,f);
 
     if(!html.includes('data-nav-version="2"'))html=html.replace(/(<body><a class="skip"[^>]*>[^<]*<\/a>)/,'$1'+h);

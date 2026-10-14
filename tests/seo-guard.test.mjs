@@ -18,6 +18,7 @@ test("every live URL is frozen with its current SEO fingerprint and the guard pa
  const published=matrix.rows.filter(r=>r.status==="PUBLISHED").map(r=>r.url).sort();
  assert.deepEqual(registry.urls.map(u=>u.url).sort(),published);
  assert.ok(registry.urls.length>=25);
+ assert.ok(fs.statSync("data/seo/url-freeze.json").size<25e6,"shard the registry by locale before ~25,000 URLs (docs/PERFORMANCE-LIMITS.md)");
  assert.deepEqual(registry.noindex_utilities.map(u=>u.url),["/search/"]);
  assert.deepEqual(codes(checkGuard(base())),[]);
  // Re-freezing must reproduce every frozen SEO fingerprint (content snapshots may only grow after publication).
