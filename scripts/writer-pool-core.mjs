@@ -43,6 +43,10 @@ export function validatePool(matrix,ledger,protectedData){
      !VALID.has(c.status)||typeof c.branch!=="string"||
      !c.branch.startsWith("writer/"+c.writer.toLowerCase()+"-"))errors.push("Invalid claim "+c.id);
   if(!c.claim_id||!c.at||!c.updated_at)errors.push("Incomplete claim "+c.id);
+  if(c.source_sha256!==undefined||c.source_commit!==undefined){
+   if(c.status!=="SUBMITTED"||!/^[0-9a-f]{64}$/.test(c.source_sha256||"")||
+      !/^[0-9a-f]{40}$/.test(c.source_commit||""))errors.push("Invalid immutable submitted draft evidence "+c.id);
+  }
   if(c.status!=="RELEASED"){
    if(active.has(c.id))errors.push("Duplicate live claim "+c.id);
    if(reserved.has(c.id))errors.push("Claim overlaps protected existing draft "+c.id);
@@ -135,6 +139,12 @@ export function transitionPool(matrix,ledger,registry,action,input,{now=new Date
    const c=next.claims.find(c=>c.id===id&&c.status==="CLAIMED");
    if(!c||c.writer!==writer||c.session!==session||c.branch!==branch)throw Error("No matching active claim "+id);
    c.status="SUBMITTED";c.phase="WAITING_EDITORIAL_REVIEW";c.updated_at=now;
+   const evidence=input.evidence?.[id];
+   if(evidence){
+    if(!/^[0-9a-f]{64}$/.test(evidence.source_sha256||"")||!/^[0-9a-f]{40}$/.test(evidence.source_commit||""))
+     throw Error("Invalid remote draft evidence for "+id);
+    c.source_sha256=evidence.source_sha256;c.source_commit=evidence.source_commit;
+   }
    items.push(id);
   }
  }else if(action==="release"){
