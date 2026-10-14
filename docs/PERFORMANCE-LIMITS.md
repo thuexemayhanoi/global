@@ -43,9 +43,9 @@ Defects this benchmark found and fixed before any article went live:
 - Overlap checks were O(n²): at 2,000 articles `validate-plan` took 7.3 s and the graph build 16.8 s. They now use prefix-filtered all-pairs similarity.
 - The content graph reached 31 MB at 2,000 articles because of pair lists and per-link edges. Lists are now capped, link edges are replaced by counts, and arrays are compact.
 
-All gates passed at 10,000 articles, but build and graph time grew faster than linear between 2,000 and 10,000 articles. PR-6 below removed the cause.
+All gates passed at 10,000 articles, but build and graph time grew faster than linear between 2,000 and 10,000 articles. #29 below removed the cause.
 
-### Hot-path fixes (PR-6, 2026-10-14)
+### Hot-path fixes (#29, 2026-10-14)
 
 CPU profiles at 10,000 articles showed four causes of the superlinear growth:
 - **Navigation:** the header and footer were rebuilt for every page by scanning every Matrix row (O(pages × rows)).

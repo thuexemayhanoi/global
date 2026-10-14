@@ -2,7 +2,7 @@
 
 Audit → Gap Matrix → P0/P1/P2 → Fix → Test → PR → CI → Merge → Production QA. Only gaps with evidence were changed. Statuses: **DONE** (built and verified), **PARTIAL**, **MISSING**, **BROKEN** (defect with evidence), **PROTECTED** (working or important data, kept unchanged), **OWNER** (needs an owner decision), **BLOCKED** (no data source or permission).
 
-Merged PRs: #24 guard + topical map · #25 business reference + fact guard · #26 site matrix + knowledge graph + duplicate gate · #27 links, content protection, publisher freeze, scale · #28 live technical SEO + live drift QA · PR-6 scale hot paths + production evidence (this update).
+Merged PRs: #24 guard + topical map · #25 business reference + fact guard · #26 site matrix + knowledge graph + duplicate gate · #27 links, content protection, publisher freeze, scale · #28 live technical SEO + live drift QA · #29 scale hot paths + production evidence.
 
 ## Objectives
 
@@ -18,7 +18,7 @@ Merged PRs: #24 guard + topical map · #25 business reference + fact guard · #2
 | GM-06 | P1 | Matrix expansion + duplicate detection before Writer claims | PARTIAL: refill proposals only; exact-match duplicates only | DONE | Owner-manifest promotion; near-duplicate gate in `validate-plan` (#24, #26) |
 | GM-07 | P0 | QA at thousands of URLs, manifest drift, index sync | BROKEN: 11 tests failed on the first real publication (hard-coded 25/20/2/120); IDs capped at 99 guides per locale; metadata-only benchmark | DONE | Derived invariants (#26); 2–4 digit IDs, full-pipeline benchmark to 10,000 (#27); live fingerprint drift check (#28) |
 | GM-08 | P0 | SEO regression tests for URLs, metadata, published content, in-flight work | PARTIAL: exact counts, no content-loss protection | DONE | Frozen registry + H2/text-loss checks + `--add-new` in publisher; merge simulations against open PRs |
-| GM-09 | P2 | Build performance and long-term scale | PARTIAL: untested beyond metadata; superlinear build at 10,000 articles (81 s) | DONE up to 10,000 URLs (measured) | PR-6 indexes Matrix lookups per build, folds fact-guard keywords once and speeds up overlap ordering. At 10,000 articles: build 81 → 24 s, fact-guard 59 → 24 s, content-graph 51 → 30 s, all gates 310 → 135 s. Output is byte-identical (20,166 files) and cost per article is flat. Beyond ~10,000 URLs, shard `url-freeze`/`content-graph` by locale; CI size alarms at 25 MB enforce this (`docs/PERFORMANCE-LIMITS.md`) |
+| GM-09 | P2 | Build performance and long-term scale | PARTIAL: untested beyond metadata; superlinear build at 10,000 articles (81 s) | DONE up to 10,000 URLs (measured) | #29 indexes Matrix lookups per build, folds fact-guard keywords once and speeds up overlap ordering. At 10,000 articles: build 81 → 24 s, fact-guard 59 → 24 s, content-graph 51 → 30 s, all gates 310 → 135 s. Output is byte-identical (20,166 files) and cost per article is flat. Beyond ~10,000 URLs, shard `url-freeze`/`content-graph` by locale; CI size alarms at 25 MB enforce this (`docs/PERFORMANCE-LIMITS.md`) |
 | GM-10 | P0 | Writer / Turbo / Refill / Publisher integration | Unverified | DONE | W1 branch + PR-2 merge simulation: 14 drafts pass; publisher rehearsal of EN-H01 passes 108/108 tests unaided; refill shows topical backlog |
 | GM-11 | P1 | Global Content Cannibalization Matrix (KEEP/UPGRADE/REVIEW/CREATE) | MISSING | DONE | `docs/GLOBAL-SITE-MATRIX.md`: 5 KEEP, 20 UPGRADE, 0 REVIEW, 316 CREATE |
 | GM-12 | P1 | Topical gap analysis (core, sub-topics, FAQ, intents, local, journey, entities) | MISSING | DONE (structural) | Silo × locale coverage, search journey, intent classes, live FAQ map; performance signals `NOT_CONNECTED` |
@@ -40,12 +40,12 @@ Merged PRs: #24 guard + topical map · #25 business reference + fact guard · #2
 | IDs capped at 99 guides per locale | Filename regex `\d{2}` | #27 |
 | O(n²) overlap checks, 31 MB graph at 2,000 articles | Benchmark timings | #27 |
 | Checklist breadcrumb schema skipped the visible "Global" level; root not returning `x-default` | Live HTML | PR-5 (#28) |
-| Every page re-scanned the whole Matrix for its header/footer, related links and article links (O(pages × rows)); fact guard re-folded text per keyword | CPU profile at 10,000 articles: build 81 s, fact-guard 59 s | PR-6 |
-| Benchmark artefact: Latin pseudo-text in zh/ja/ko made every CJK page a near-duplicate of every other (499,500 pairs per locale) | Instrumented `similarPairs` on the 10,000-article fixture | PR-6 (native-script CJK text) |
+| Every page re-scanned the whole Matrix for its header/footer, related links and article links (O(pages × rows)); fact guard re-folded text per keyword | CPU profile at 10,000 articles: build 81 s, fact-guard 59 s | #29 |
+| Benchmark artefact: Latin pseudo-text in zh/ja/ko made every CJK page a near-duplicate of every other (499,500 pairs per locale) | Instrumented `similarPairs` on the 10,000-article fixture | #29 (native-script CJK text) |
 
 ## PROTECTED (verified unchanged)
 
-CNAME `global.rentbikehanoi.com`; all 25 live URLs and their canonicals/lang; 10 locales; navigation/footer UI (byte-identical; #28 changed `<head>` only; PR-6 output byte-identical); claims ledger (never read or written); protected drafts in PR #17 (all 14 pass the new QA); EN-H01/DE-H01 in PR #5/#6; checkpoints; no owner approval written on the owner's behalf; no other repository touched.
+CNAME `global.rentbikehanoi.com`; all 25 live URLs and their canonicals/lang; 10 locales; navigation/footer UI (byte-identical; #28 changed `<head>` only; #29 output byte-identical); claims ledger (never read or written); protected drafts in PR #17 (all 14 pass the new QA); EN-H01/DE-H01 in PR #5/#6; checkpoints; no owner approval written on the owner's behalf; no other repository touched.
 
 ## Open PRs not owned by this work
 

@@ -88,7 +88,7 @@
       "batch": "TA-13",
       "scope": "scale hot paths: per-build Matrix indexes (navigation, premium, articles), fact-guard keyword folding, native-script CJK benchmark text, url-freeze size alarm",
       "status": "DONE",
-      "evidence": "PR-6; docs/PERFORMANCE-LIMITS.md before/after at 10,000 articles; byte-identical output"
+      "evidence": "PR #29; docs/PERFORMANCE-LIMITS.md before/after at 10,000 articles; byte-identical output"
     }
   ],
   "resume": "Fetch main; run node scripts/build.mjs --check, node scripts/seo/seo-guard.mjs, node scripts/seo/fact-guard.mjs, node scripts/seo/content-graph.mjs --check, node scripts/seo/topical-authority.mjs validate and node --test tests/*.test.mjs. Owner decisions are listed at the end of docs/GAP-MATRIX.md. Never promote, publish or change NAP without the owner's manifest/approval.",
