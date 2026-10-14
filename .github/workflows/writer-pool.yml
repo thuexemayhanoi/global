@@ -49,6 +49,7 @@ on:
 permissions:
   contents: write
   pull-requests: read
+  checks: read
 concurrency:
   group: global-dynamic-writer-pool
   cancel-in-progress: false
