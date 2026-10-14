@@ -89,13 +89,20 @@ export function tokens(text,locale,stop=[]){
 export function similarPairs(sets,threshold){
  const df=new Map();
  for(const s of sets)for(const t of s)df.set(t,(df.get(t)||0)+1);
- const ordered=sets.map(s=>[...s].sort((a,b)=>df.get(a)-df.get(b)||(a<b?-1:a>b?1:0)));
+ // Rare-first order is (df, code-unit). Tokens in no other set (df 1) come first but can never
+ // form a candidate, so only their count matters; shared tokens are bucketed by df and sorted
+ // without a Map lookup per comparison. Same prefixes, candidates and scores as a full sort.
+ const ordered=sets.map(s=>{
+  let unique=0;const buckets=new Map();
+  for(const t of s){const d=df.get(t);if(d===1){unique++;continue;}const b=buckets.get(d);if(b)b.push(t);else buckets.set(d,[t]);}
+  return {unique,shared:[...buckets.keys()].sort((a,b)=>a-b).flatMap(d=>buckets.get(d).sort())};
+ });
  const index=new Map(),out=[];
- for(let i=0;i<ordered.length;i++){
-  const x=ordered[i],size=x.length;
+ for(let i=0;i<sets.length;i++){
+  const size=sets[i].size;
   if(!size)continue;
-  const prefix=size-Math.ceil(threshold*size)+1,cands=new Set();
-  for(let k=0;k<prefix;k++)for(const j of index.get(x[k])||[])cands.add(j);
+  const {unique,shared}=ordered[i],take=Math.max(0,size-Math.ceil(threshold*size)+1-unique),cands=new Set();
+  for(let k=0;k<take;k++)for(const j of index.get(shared[k])||[])cands.add(j);
   for(const j of [...cands].sort((a,b)=>a-b)){
    const y=sets[j],small=size<y.size?sets[i]:y,big=small===y?sets[i]:y;
    if(small.size<threshold*big.size)continue;
@@ -103,7 +110,7 @@ export function similarPairs(sets,threshold){
    const score=inter/(size+y.size-inter);
    if(score>=threshold)out.push([j,i,score]);
   }
-  for(let k=0;k<prefix;k++){const t=x[k];if(!index.has(t))index.set(t,[]);index.get(t).push(i);}
+  for(let k=0;k<take;k++){const t=shared[k];if(!index.has(t))index.set(t,[]);index.get(t).push(i);}
  }
  return out.sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
 }
