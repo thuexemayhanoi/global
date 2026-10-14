@@ -33,7 +33,7 @@ export function inboxFiles(){
   if(!fs.existsSync(d))continue;
   for(const file of fs.readdirSync(d)){
    if(file===".gitkeep")continue;
-   if(!/^[A-Z]{2}-[HS][0-9]{2}\.json$/.test(file)){errors.push("Invalid inbox filename "+w+"/"+file);continue;}
+   if(!/^[A-Z]{2}-[HS][0-9]{2,4}\.json$/.test(file)){errors.push("Invalid inbox filename "+w+"/"+file);continue;}
    const id=file.slice(0,-5),rel=INBOX+"/"+w+"/"+file;
    if(ids.has(id))errors.push("Same ID appears twice "+id);
    ids.add(id);
@@ -105,7 +105,7 @@ export function main(argv=process.argv.slice(2)){
   const preview=poolStatus(matrix,claims,registry,{writer:opt.writer,session:opt.session,locale:opt.locale});
   const brief={repo:"thuexemayhanoi/global",mode:"READ_ONLY_DYNAMIC_POOL_PREVIEW_NOT_A_CLAIM",writer:opt.writer,
    claim_revision:claims.revision,eligible_shared:preview.available_now,items:preview.items,
-   safety:"Call writer-pool.yml action=claim, wait for SUCCESS and refresh main before writing; this preview is not reserved.",
+   safety:"Preview is not a claim. Start/push a Writer request once; green Writer QA auto-claims up to 10. Fetch main before drafting.",
    auto_publish:false};
   console.log(JSON.stringify(brief,null,2));return;
  }

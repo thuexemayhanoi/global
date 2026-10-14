@@ -1,0 +1,582 @@
+{
+  "version": 1,
+  "locale": "nl",
+  "updated_on": "2026-10-14",
+  "market_notes": "Dutch travellers are experienced cyclists and scooter riders at home, but Dutch reisverzekeringen frequently tie motorbike cover to holding the matching rijbewijs, so licence and insurance questions are tightly linked. 'Scooter huren' is the everyday phrase; 'motor' appears for larger bikes and the Ha Giang Loop.",
+  "stop_tokens": [
+    "motor",
+    "scooter",
+    "huurscooter",
+    "huren",
+    "huur",
+    "gehuurde",
+    "hanoi",
+    "vietnam",
+    "in",
+    "met",
+    "en",
+    "of",
+    "de",
+    "het",
+    "een",
+    "voor",
+    "op",
+    "bij",
+    "van",
+    "wat",
+    "hoe",
+    "je",
+    "als",
+    "te",
+    "doen",
+    "naar",
+    "vanuit",
+    "z'n"
+  ],
+  "reserved_terms": [
+    "checklist",
+    "ophalen",
+    "overdracht"
+  ],
+  "forbidden_claim_terms": [
+    "goedkoopste",
+    "goedkoop",
+    "beste",
+    "zonder borg",
+    "gegarandeerd",
+    "gratis",
+    "24/7"
+  ],
+  "cluster_labels": {
+    "vc-transmission": "Schakel, semi-automaat, automaat",
+    "vc-power": "Cilinderinhoud en elektrisch",
+    "vc-models": "Gangbare modellen",
+    "vc-trip-fit": "Passend bij je reis",
+    "rc-period": "Huurduur",
+    "rc-deposit": "Borg en documenten",
+    "rc-extras": "Bijkomende kosten",
+    "dc-licence": "Rijbewijs",
+    "dc-contract": "Contract en aansprakelijkheid",
+    "dc-insurance": "Verzekering",
+    "dc-papers": "Papieren onderweg",
+    "ss-pickup": "Ophalen en inleveren",
+    "ss-weather": "Weer",
+    "ss-incidents": "Pech en incidenten",
+    "ss-gear": "Helm en uitrusting",
+    "ss-city": "Rijden in Hanoi",
+    "rt-northern-loops": "Rondritten in het noorden",
+    "rt-day-trips": "Dagtochten vanuit Hanoi"
+  },
+  "existing": {
+    "NL-CHECKLIST": "ss-pickup",
+    "NL-S01": "vc-transmission",
+    "NL-S02": "vc-power",
+    "NL-S03": "rc-period",
+    "NL-S04": "rc-deposit",
+    "NL-S05": "dc-licence",
+    "NL-S06": "dc-contract",
+    "NL-S07": "ss-weather",
+    "NL-S08": "ss-incidents"
+  },
+  "proposals": [
+    {
+      "candidate_id": "TA-NL-0001",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-transmission",
+      "slug": "semi-automaat-rijden",
+      "primary_query": "semi automaat motor rijden uitleg",
+      "secondary_queries": [
+        "honda wave schakelen zonder koppeling",
+        "semi automaat beginner vietnam"
+      ],
+      "working_title": "Semi-automaat rijden: schakelen zonder koppeling uitgelegd",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 51,
+      "intent_rationale": "Visitors who have only ridden automatic scooters search for how to operate a clutchless semi-automatic before choosing one; how-to intent, distinct from the manual-versus-automatic choice guide.",
+      "references": [
+        "nl-nederlandwereldwijd",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0002",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-power",
+      "slug": "cilinderinhoud-110-125-150",
+      "primary_query": "welke cc scooter vietnam bergen",
+      "secondary_queries": [
+        "125cc scooter noord vietnam",
+        "is 110cc genoeg voor ha giang"
+      ],
+      "working_title": "110, 125 of 150 cc: welke cilinderinhoud past bij stad en bergen?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 52,
+      "intent_rationale": "Riders planning mountain routes compare engine capacity and ask what their licence class permits; complements the 50cc/electric guide, which covers the low-power end.",
+      "references": [
+        "vi-law-36-2024",
+        "nl-nederlandwereldwijd"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0003",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "honda-wave-vision-air-blade",
+      "primary_query": "honda wave of honda vision huren",
+      "secondary_queries": [
+        "honda air blade vietnam",
+        "welke scooter huren vietnam beginner"
+      ],
+      "working_title": "Honda Wave, Vision en Air Blade: huurscooters uitgelegd",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Model names are how many renters actually search. Explaining the widely sold Honda families as vehicle types, with no availability claim, captures comparison intent the generic Hub cannot.",
+      "references": [
+        "honda-vn-motorbike-range",
+        "nl-nederlandwereldwijd"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0004",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-trip-fit",
+      "slug": "met-zn-tweeen-en-bagage",
+      "primary_query": "scooter met twee personen en bagage vietnam",
+      "secondary_queries": [
+        "achterop de scooter vietnam",
+        "rugzak op de scooter"
+      ],
+      "working_title": "Met z'n tweeën en bagage: het juiste tweewieler kiezen",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 57,
+      "intent_rationale": "Couples and backpackers ask whether one bike can carry two people and luggage safely; a decision guide about load, seating and handling that no existing row answers.",
+      "references": [
+        "nl-nederlandwereldwijd",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0005",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-period",
+      "slug": "langdurig-huren",
+      "primary_query": "scooter langdurig huren hanoi",
+      "secondary_queries": [
+        "motor meerdere maanden huren vietnam",
+        "scooter per maand huren expat hanoi"
+      ],
+      "working_title": "Langdurig huren in Hanoi: waar expats en studenten op letten",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 54,
+      "intent_rationale": "Residents, students and long-stay workers rent for months and need maintenance, paperwork and contract answers that a day/week/month price comparison does not cover.",
+      "references": [
+        "nl-nederlandwereldwijd",
+        "vi-law-36-2024"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0006",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-deposit",
+      "slug": "paspoort-als-borg",
+      "primary_query": "paspoort als borg scooter vietnam",
+      "secondary_queries": [
+        "scooter huren zonder paspoort af te geven",
+        "verhuurder houdt paspoort vietnam"
+      ],
+      "working_title": "Je paspoort als borg achterlaten: risico's en alternatieven",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 48,
+      "intent_rationale": "Leaving an identity document as security is a recurring traveller worry that official travel advice addresses; covers risks and questions to ask, never a provider's policy.",
+      "references": [
+        "nl-nederlandwereldwijd",
+        "de-auswaertiges-amt"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0007",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-extras",
+      "slug": "bijkomende-kosten",
+      "primary_query": "verborgen kosten scooter huren vietnam",
+      "secondary_queries": [
+        "parkeren scooter hanoi kosten",
+        "schadekosten huurscooter vietnam"
+      ],
+      "working_title": "Meer dan de huurprijs: benzine, parkeren, bezorging en schade",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 49,
+      "intent_rationale": "People comparing quotes want to know which charges sit outside the rental fee; scoped to cost categories and questions to ask, never to amounts.",
+      "references": [
+        "nl-nederlandwereldwijd",
+        "en-fcdo-safety"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0008",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-extras",
+      "slug": "tanken-ron92-ron95",
+      "primary_query": "benzine tanken vietnam scooter ron 95",
+      "secondary_queries": [
+        "benzine kopen vietnam tankstation",
+        "e5 ron 92 scooter"
+      ],
+      "working_title": "Tanken in Vietnam: kies je RON 92 (E5) of RON 95?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 55,
+      "intent_rationale": "First-time riders ask which petrol grade to buy and how stations work; practical, low-risk content that supports cost and breakdown-prevention questions.",
+      "references": [
+        "petrolimex-home",
+        "nl-nederlandwereldwijd"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0009",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-licence",
+      "slug": "internationaal-rijbewijs",
+      "primary_query": "internationaal rijbewijs vietnam scooter",
+      "secondary_queries": [
+        "verdrag van wenen 1968 rijbewijs vietnam",
+        "rijbewijs a vietnam scooter"
+      ],
+      "working_title": "Internationaal rijbewijs en motorrijden in Vietnam",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 40,
+      "intent_rationale": "Licence validity is the highest-stakes rental question. This guide is scoped to the international permit itself, separate from the home-licence guide, and must follow current official sources.",
+      "references": [
+        "nl-nederlandwereldwijd",
+        "untc-1968-vienna-road-traffic",
+        "vi-law-36-2024"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0010",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-contract",
+      "slug": "aansprakelijkheid-schade-diefstal",
+      "primary_query": "huurscooter gestolen vietnam wie betaalt",
+      "secondary_queries": [
+        "schade huurscooter discussie verhuurder",
+        "huurcontract aansprakelijkheid scooter"
+      ],
+      "working_title": "Schade en diefstal: aansprakelijkheid in het huurcontract",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 56,
+      "intent_rationale": "Disputes over scratches, damage and theft are a major source of rental conflict; explains clauses to read and evidence to keep, without legal promises.",
+      "references": [
+        "nl-nederlandwereldwijd",
+        "de-auswaertiges-amt"
+      ],
+      "research_gap": "Civil-law liability sources are not attached; drafting must cite the governing civil-code provisions or stay at questions-to-ask level.",
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0011",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-insurance",
+      "slug": "reisverzekering-scooterongeluk",
+      "primary_query": "reisverzekering scooter vietnam rijbewijs",
+      "secondary_queries": [
+        "verplichte verzekering scooter vietnam",
+        "reisverzekering motor zonder rijbewijs a"
+      ],
+      "working_title": "Dekt je reisverzekering een scooterongeluk in Vietnam?",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 42,
+      "intent_rationale": "Riders want to know what compulsory liability insurance covers and whether travel insurance pays after a crash; needs current decree references (67/2023 as amended by 220/2026) and policy-specific caveats. Dutch policies often tie motorbike cover to the matching rijbewijs, which is why the query includes 'rijbewijs'.",
+      "references": [
+        "nl-nederlandwereldwijd",
+        "vi-decree-67-2023",
+        "vi-decree-220-2026-amends-67"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0012",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-papers",
+      "slug": "papieren-kentekenkaart",
+      "primary_query": "kentekenkaart scooter vietnam blue card",
+      "secondary_queries": [
+        "welke documenten mee scooter vietnam",
+        "papieren huurscooter vietnam"
+      ],
+      "working_title": "Welke papieren neem je mee? Kentekenkaart (blue card) en meer",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 45,
+      "intent_rationale": "Riders ask which papers to carry if stopped, notably the vehicle registration card ('blue card'); distinct from the rental-documents Hub, which covers renting rather than riding.",
+      "references": [
+        "vi-law-36-2024",
+        "nl-nederlandwereldwijd"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0013",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-gear",
+      "slug": "helm-normen-pasvorm",
+      "primary_query": "helmplicht vietnam scooter",
+      "secondary_queries": [
+        "eigen helm meenemen naar vietnam",
+        "helm kopen in hanoi"
+      ],
+      "working_title": "Helm in Vietnam: normen, pasvorm en je eigen helm",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 53,
+      "intent_rationale": "Helmets are mandatory and the single biggest injury-prevention factor; readers ask about standards, fit and whether to bring their own.",
+      "references": [
+        "vi-law-36-2024",
+        "who-road-traffic-injuries",
+        "nl-nederlandwereldwijd"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0014",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "verkeer-in-hanoi",
+      "primary_query": "scooter rijden verkeer hanoi tips",
+      "secondary_queries": [
+        "verkeersregels vietnam scooter",
+        "rotonde hanoi scooter"
+      ],
+      "working_title": "Scooterrijden in het verkeer van Hanoi: zo werkt de stroom",
+      "search_intent": "informational",
+      "word_target": 1700,
+      "priority": 43,
+      "intent_rationale": "First-time riders need to understand Hanoi's traffic flow and core rules before riding; distinct from the rain and breakdown guides and from the general safety Hub.",
+      "references": [
+        "vi-law-36-2024",
+        "who-road-traffic-injuries",
+        "nl-nederlandwereldwijd"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0015",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "milieuzone-ring-1",
+      "primary_query": "hanoi verbod benzinescooter ring 1",
+      "secondary_queries": [
+        "hanoi scooterverbod 2026",
+        "elektrische scooter huren hanoi"
+      ],
+      "working_title": "Milieuzone binnen Ring 1 in Hanoi: wat betekent die voor huurders?",
+      "search_intent": "informational",
+      "word_target": 1600,
+      "priority": 44,
+      "intent_rationale": "Hanoi announced a phased low-emission zone for Ring Road 1 starting with a 2026 pilot; renters need a sourced, date-checked explainer that does not overstate what is restricted.",
+      "references": [
+        "vi-hanoi-lez-ring-road-1",
+        "vi-directive-20-ct-ttg-2025"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0016",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "politiecontrole-huurscooter",
+      "primary_query": "politiecontrole vietnam scooter toerist",
+      "secondary_queries": [
+        "boete scooter vietnam toerist",
+        "verkeerspolitie vietnam rijbewijs"
+      ],
+      "working_title": "Politiecontrole met een huurscooter: wat kun je verwachten?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 46,
+      "intent_rationale": "Travellers worry about traffic police checks; covers documents to carry and the expected procedure, with no invented fine amounts.",
+      "references": [
+        "vi-law-36-2024",
+        "nl-nederlandwereldwijd"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0017",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": "NL-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "na-een-scooterongeluk",
+      "primary_query": "scooterongeluk vietnam wat te doen",
+      "secondary_queries": [
+        "aanrijding huurscooter hanoi",
+        "ongeluk scooter toerist vietnam"
+      ],
+      "working_title": "Na een scooterongeluk in Vietnam: de eerste stappen",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 47,
+      "intent_rationale": "After a collision readers need immediate first steps and emergency contacts; distinct from the breakdown guide, which covers mechanical failure.",
+      "references": [
+        "nl-nederlandwereldwijd",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0018",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-northern-loops",
+      "slug": "ha-giang-loop-vanuit-hanoi",
+      "primary_query": "ha giang loop motor huren hanoi",
+      "secondary_queries": [
+        "ha giang loop zelf rijden",
+        "van hanoi naar ha giang met de scooter"
+      ],
+      "working_title": "De Ha Giang Loop met een in Hanoi gehuurde motor",
+      "search_intent": "commercial_investigation",
+      "word_target": 2200,
+      "priority": 80,
+      "intent_rationale": "Many renters plan the Ha Giang Loop from Hanoi. Sits under the proposed routes Hub and stays ARCHITECTURE_BLOCKED until the owner approves that Hub.",
+      "references": [
+        "nl-nederlandwereldwijd",
+        "who-road-traffic-injuries"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-NL-0019",
+      "locale": "nl",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-day-trips",
+      "slug": "dagtocht-ninh-binh",
+      "primary_query": "hanoi ninh binh scooter dagtocht",
+      "secondary_queries": [
+        "tam coc met de scooter",
+        "ninh binh scooter vanuit hanoi"
+      ],
+      "working_title": "Dagtocht van Hanoi naar Ninh Binh met de scooter",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 81,
+      "intent_rationale": "Day rides to Ninh Binh are a common first trip outside the city. Part of the proposed routes Hub and blocked until approval.",
+      "references": [
+        "nl-nederlandwereldwijd",
+        "vi-nchmf-home"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    }
+  ]
+}

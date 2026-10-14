@@ -1,0 +1,614 @@
+{
+  "version": 1,
+  "locale": "fr",
+  "updated_on": "2026-10-14",
+  "market_notes": "French travellers often hold a car licence (permis B) plus the 125 cm³ training valid in France and ask whether that suffices in Vietnam; many rely on credit-card travel insurance (assurance carte bancaire). Vocabulary mixes 'scooter', 'moto' and 'deux-roues'; 'Hanoï' carries the tréma in titles while queries often drop it.",
+  "stop_tokens": [
+    "location",
+    "louer",
+    "loué",
+    "moto",
+    "motos",
+    "scooter",
+    "scooters",
+    "hanoï",
+    "hanoi",
+    "vietnam",
+    "à",
+    "au",
+    "en",
+    "de",
+    "du",
+    "des",
+    "la",
+    "le",
+    "les",
+    "un",
+    "une",
+    "et",
+    "ou",
+    "pour",
+    "avec",
+    "sur",
+    "quel",
+    "quelle",
+    "que",
+    "faire",
+    "d",
+    "l"
+  ],
+  "reserved_terms": [
+    "checklist",
+    "état des lieux",
+    "prise en main"
+  ],
+  "forbidden_claim_terms": [
+    "moins cher",
+    "pas cher",
+    "meilleur",
+    "meilleure",
+    "sans caution",
+    "garanti",
+    "gratuit",
+    "24h/24"
+  ],
+  "cluster_labels": {
+    "vc-transmission": "Vitesses, semi-automatique, automatique",
+    "vc-power": "Cylindrée et électrique",
+    "vc-models": "Modèles courants",
+    "vc-trip-fit": "Selon le voyage",
+    "rc-period": "Durée de location",
+    "rc-deposit": "Caution et papiers laissés",
+    "rc-extras": "Frais annexes",
+    "dc-licence": "Permis",
+    "dc-contract": "Contrat et responsabilité",
+    "dc-insurance": "Assurance",
+    "dc-papers": "Papiers à emporter",
+    "ss-pickup": "Retrait et retour",
+    "ss-weather": "Météo",
+    "ss-incidents": "Incidents en route",
+    "ss-gear": "Casque et équipement",
+    "ss-city": "Rouler à Hanoï",
+    "rt-northern-loops": "Boucles du Nord",
+    "rt-day-trips": "Excursions d'une journée"
+  },
+  "existing": {
+    "FR-CHECKLIST": "ss-pickup",
+    "FR-S01": "vc-transmission",
+    "FR-S02": "vc-power",
+    "FR-S03": "rc-period",
+    "FR-S04": "rc-deposit",
+    "FR-S05": "dc-licence",
+    "FR-S06": "dc-contract",
+    "FR-S07": "ss-weather",
+    "FR-S08": "ss-incidents"
+  },
+  "proposals": [
+    {
+      "candidate_id": "TA-FR-0001",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-transmission",
+      "slug": "conduire-semi-automatique",
+      "primary_query": "conduire moto semi automatique",
+      "secondary_queries": [
+        "honda wave vitesses sans embrayage",
+        "semi automatique débutant vietnam"
+      ],
+      "working_title": "Conduire une moto semi-automatique : passer les vitesses sans embrayage",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 51,
+      "intent_rationale": "Visitors who have only ridden automatic scooters search for how to operate a clutchless semi-automatic before choosing one; how-to intent, distinct from the manual-versus-automatic choice guide.",
+      "references": [
+        "fr-diplomatie-securite",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0002",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-power",
+      "slug": "cylindree-110-125-150",
+      "primary_query": "quelle cylindrée scooter vietnam montagne",
+      "secondary_queries": [
+        "scooter 125 vietnam nord",
+        "110 cm3 suffisant ha giang"
+      ],
+      "working_title": "110, 125 ou 150 cm³ : quelle cylindrée pour la ville et la montagne ?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 52,
+      "intent_rationale": "Riders planning mountain routes compare engine capacity and ask what their licence class permits; complements the 50cc/electric guide, which covers the low-power end.",
+      "references": [
+        "vi-law-36-2024",
+        "fr-diplomatie-securite"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0003",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "honda-wave-vision-air-blade",
+      "primary_query": "honda wave ou honda vision location",
+      "secondary_queries": [
+        "honda air blade vietnam",
+        "quel scooter louer au vietnam débutant"
+      ],
+      "working_title": "Honda Wave, Vision, Air Blade : les deux-roues de location expliqués",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Model names are how many renters actually search. Explaining the widely sold Honda families as vehicle types, with no availability claim, captures comparison intent the generic Hub cannot.",
+      "references": [
+        "honda-vn-motorbike-range",
+        "fr-diplomatie-securite"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0004",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-trip-fit",
+      "slug": "a-deux-avec-bagages",
+      "primary_query": "scooter à deux avec bagages vietnam",
+      "secondary_queries": [
+        "passager scooter vietnam",
+        "sac à dos sur scooter"
+      ],
+      "working_title": "À deux avec des bagages : choisir le bon deux-roues",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 57,
+      "intent_rationale": "Couples and backpackers ask whether one bike can carry two people and luggage safely; a decision guide about load, seating and handling that no existing row answers.",
+      "references": [
+        "fr-diplomatie-securite",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0005",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-period",
+      "slug": "location-longue-duree",
+      "primary_query": "location scooter longue durée hanoï",
+      "secondary_queries": [
+        "louer un scooter plusieurs mois vietnam",
+        "location moto au mois expatrié hanoï"
+      ],
+      "working_title": "Location longue durée à Hanoï : expatriés et étudiants",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 54,
+      "intent_rationale": "Residents, students and long-stay workers rent for months and need maintenance, paperwork and contract answers that a day/week/month price comparison does not cover.",
+      "references": [
+        "fr-diplomatie-securite",
+        "vi-law-36-2024"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0006",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-deposit",
+      "slug": "passeport-en-caution",
+      "primary_query": "laisser passeport caution scooter vietnam",
+      "secondary_queries": [
+        "loueur garde passeport vietnam",
+        "location scooter sans laisser passeport"
+      ],
+      "working_title": "Laisser son passeport en caution : risques et alternatives",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 48,
+      "intent_rationale": "Leaving an identity document as security is a recurring traveller worry that official travel advice addresses; covers risks and questions to ask, never a provider's policy.",
+      "references": [
+        "fr-diplomatie-securite",
+        "de-auswaertiges-amt"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0007",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-extras",
+      "slug": "frais-annexes-location",
+      "primary_query": "frais cachés location scooter vietnam",
+      "secondary_queries": [
+        "parking scooter hanoï tarif",
+        "frais de dommages scooter loué"
+      ],
+      "working_title": "Au-delà du prix : essence, parking, livraison et dommages",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 49,
+      "intent_rationale": "People comparing quotes want to know which charges sit outside the rental fee; scoped to cost categories and questions to ask, never to amounts.",
+      "references": [
+        "fr-diplomatie-securite",
+        "en-fcdo-safety"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0008",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-extras",
+      "slug": "faire-le-plein-ron92-ron95",
+      "primary_query": "essence scooter vietnam ron 95",
+      "secondary_queries": [
+        "station essence vietnam comment payer",
+        "e5 ron 92 scooter"
+      ],
+      "working_title": "Faire le plein au Vietnam : RON 92 (E5) ou RON 95 ?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 55,
+      "intent_rationale": "First-time riders ask which petrol grade to buy and how stations work; practical, low-risk content that supports cost and breakdown-prevention questions.",
+      "references": [
+        "petrolimex-home",
+        "fr-diplomatie-securite"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0009",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-licence",
+      "slug": "permis-international-deux-roues",
+      "primary_query": "permis international vietnam moto",
+      "secondary_queries": [
+        "convention de vienne 1968 permis vietnam",
+        "permis international catégorie a vietnam"
+      ],
+      "working_title": "Permis international et deux-roues au Vietnam",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 40,
+      "intent_rationale": "Licence validity is the highest-stakes rental question. This guide is scoped to the international permit itself, separate from the home-licence guide, and must follow current official sources.",
+      "references": [
+        "fr-diplomatie-infos-utiles",
+        "untc-1968-vienna-road-traffic",
+        "vi-law-36-2024"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0010",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-licence",
+      "slug": "permis-b-formation-125",
+      "primary_query": "permis b 125 vietnam scooter",
+      "secondary_queries": [
+        "formation 7 heures 125 vietnam",
+        "permis b conduire scooter vietnam"
+      ],
+      "working_title": "Permis B et formation 125 : suffisant pour rouler au Vietnam ?",
+      "search_intent": "informational",
+      "word_target": 1600,
+      "priority": 41,
+      "intent_rationale": "French car-licence holders who completed the 125 cm³ training ask whether it carries over to Vietnam, a France-specific intent the general foreign-licence guide does not answer.",
+      "references": [
+        "fr-diplomatie-infos-utiles",
+        "untc-1968-vienna-road-traffic",
+        "vi-law-36-2024"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0011",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-contract",
+      "slug": "responsabilite-dommages-vol",
+      "primary_query": "scooter loué volé vietnam responsabilité",
+      "secondary_queries": [
+        "litige dommages scooter loueur",
+        "clause responsabilité contrat location moto"
+      ],
+      "working_title": "Dommages et vol : la responsabilité dans le contrat de location",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 56,
+      "intent_rationale": "Disputes over scratches, damage and theft are a major source of rental conflict; explains clauses to read and evidence to keep, without legal promises.",
+      "references": [
+        "fr-diplomatie-securite",
+        "de-auswaertiges-amt"
+      ],
+      "research_gap": "Civil-law liability sources are not attached; drafting must cite the governing civil-code provisions or stay at questions-to-ask level.",
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0012",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-insurance",
+      "slug": "assurance-voyage-scooter",
+      "primary_query": "assurance voyage scooter vietnam",
+      "secondary_queries": [
+        "assurance responsabilité civile moto vietnam",
+        "assurance carte bancaire scooter vietnam"
+      ],
+      "working_title": "Assurance voyage et accident de scooter au Vietnam : ce qu'il faut vérifier",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 42,
+      "intent_rationale": "Riders want to know what compulsory liability insurance covers and whether travel insurance pays after a crash; needs current decree references (67/2023 as amended by 220/2026) and policy-specific caveats. French travellers frequently rely on credit-card travel insurance, a market-specific angle.",
+      "references": [
+        "fr-diplomatie-infos-utiles",
+        "vi-decree-67-2023",
+        "vi-decree-220-2026-amends-67"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0013",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-papers",
+      "slug": "papiers-carte-grise",
+      "primary_query": "carte grise scooter vietnam location",
+      "secondary_queries": [
+        "documents à avoir en scooter vietnam",
+        "blue card scooter vietnam"
+      ],
+      "working_title": "Papiers à avoir sur soi : carte grise vietnamienne et autres documents",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 45,
+      "intent_rationale": "Riders ask which papers to carry if stopped, notably the vehicle registration card ('blue card'); distinct from the rental-documents Hub, which covers renting rather than riding.",
+      "references": [
+        "vi-law-36-2024",
+        "fr-diplomatie-securite"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0014",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-gear",
+      "slug": "casque-normes-taille",
+      "primary_query": "casque obligatoire vietnam scooter",
+      "secondary_queries": [
+        "emporter son casque moto vietnam",
+        "acheter un casque à hanoï"
+      ],
+      "working_title": "Casque au Vietnam : normes, taille et casque personnel",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 53,
+      "intent_rationale": "Helmets are mandatory and the single biggest injury-prevention factor; readers ask about standards, fit and whether to bring their own.",
+      "references": [
+        "vi-law-36-2024",
+        "who-road-traffic-injuries",
+        "fr-diplomatie-infos-utiles"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0015",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "circuler-a-hanoi",
+      "primary_query": "conduire scooter hanoï circulation conseils",
+      "secondary_queries": [
+        "code de la route vietnam scooter",
+        "rond-point hanoï scooter"
+      ],
+      "working_title": "Circuler à Hanoï en deux-roues : comprendre le flux",
+      "search_intent": "informational",
+      "word_target": 1700,
+      "priority": 43,
+      "intent_rationale": "First-time riders need to understand Hanoi's traffic flow and core rules before riding; distinct from the rain and breakdown guides and from the general safety Hub.",
+      "references": [
+        "vi-law-36-2024",
+        "who-road-traffic-injuries",
+        "fr-diplomatie-securite"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0016",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "zone-faibles-emissions-ring-1",
+      "primary_query": "hanoï interdiction scooter essence ring road 1",
+      "secondary_queries": [
+        "hanoï zone à faibles émissions moto",
+        "louer scooter électrique hanoï"
+      ],
+      "working_title": "Zone à faibles émissions du périphérique 1 de Hanoï : ce qui change pour les locataires de deux-roues",
+      "search_intent": "informational",
+      "word_target": 1600,
+      "priority": 44,
+      "intent_rationale": "Hanoi announced a phased low-emission zone for Ring Road 1 starting with a 2026 pilot; renters need a sourced, date-checked explainer that does not overstate what is restricted.",
+      "references": [
+        "vi-hanoi-lez-ring-road-1",
+        "vi-directive-20-ct-ttg-2025"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0017",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "controle-de-police",
+      "primary_query": "contrôle police scooter vietnam touriste",
+      "secondary_queries": [
+        "amende scooter vietnam touriste",
+        "police vietnam contrôle permis"
+      ],
+      "working_title": "Contrôle de police avec un scooter loué : à quoi s'attendre",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 46,
+      "intent_rationale": "Travellers worry about traffic police checks; covers documents to carry and the expected procedure, with no invented fine amounts.",
+      "references": [
+        "vi-law-36-2024",
+        "fr-diplomatie-securite"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0018",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "apres-un-accident",
+      "primary_query": "accident scooter vietnam que faire",
+      "secondary_queries": [
+        "accrochage scooter loué hanoï",
+        "accident moto touriste vietnam"
+      ],
+      "working_title": "Après un accident de scooter au Vietnam : premières démarches",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 47,
+      "intent_rationale": "After a collision readers need immediate first steps and emergency contacts; distinct from the breakdown guide, which covers mechanical failure.",
+      "references": [
+        "fr-diplomatie-infos-utiles",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0019",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-northern-loops",
+      "slug": "boucle-ha-giang-depuis-hanoi",
+      "primary_query": "boucle ha giang moto location hanoï",
+      "secondary_queries": [
+        "ha giang loop en autonomie",
+        "hanoï ha giang en moto"
+      ],
+      "working_title": "La boucle de Ha Giang avec une moto louée à Hanoï",
+      "search_intent": "commercial_investigation",
+      "word_target": 2200,
+      "priority": 80,
+      "intent_rationale": "Many renters plan the Ha Giang Loop from Hanoi. Sits under the proposed routes Hub and stays ARCHITECTURE_BLOCKED until the owner approves that Hub.",
+      "references": [
+        "fr-diplomatie-securite",
+        "who-road-traffic-injuries"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-FR-0020",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-day-trips",
+      "slug": "hanoi-ninh-binh-en-scooter",
+      "primary_query": "hanoï ninh binh en scooter",
+      "secondary_queries": [
+        "tam coc en scooter",
+        "excursion ninh binh scooter journée"
+      ],
+      "working_title": "Hanoï – Ninh Binh en scooter : préparer l'excursion",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 81,
+      "intent_rationale": "Day rides to Ninh Binh are a common first trip outside the city. Part of the proposed routes Hub and blocked until approval.",
+      "references": [
+        "fr-diplomatie-securite",
+        "vi-nchmf-home"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    }
+  ]
+}

@@ -47,7 +47,7 @@ try{
  const pending=new Set(ids);
  const failures=[];
  for(const p of packets){
-  const qa=checkArticle(p,matrix,locales,{pending,assetsRoot:root});
+  const qa=checkArticle(p,matrix,locales,{pending,assetsRoot:root,factMode:"strict"});
   if(!qa.passed)failures.push({id:p.matrix_id,errors:qa.errors});
   const output=matrix.rows.find(r=>r.id===p.matrix_id)?.url;
   if(output){
@@ -66,6 +66,8 @@ try{
  const approved=approval.approved_ids;
  if(!Array.isArray(approved)||approved.length!==ids.length||approved.some((id,i)=>id!==ids[i]))throw Error("Approval manifest must list exact IDs in the supplied order");
  const original=fs.readFileSync(matrixPath,"utf8");
+ const freezePath=path.join(root,"data/seo/url-freeze.json");
+ const originalFreeze=fs.existsSync(freezePath)?fs.readFileSync(freezePath,"utf8"):null;
  const stagedJson=[];
  const htmlPaths=packets.map(p=>path.join(root,articlePath(p.proposed_url)));
  try{
@@ -80,6 +82,9 @@ try{
   fs.writeFileSync(matrixPath,JSON.stringify(altered,null,2)+"\n");
   run("scripts/build.mjs");
   run("scripts/seo/content-graph.mjs","--write");
+  // Freeze only the newly published URLs; refuses if any SEO guard check fails.
+  run("scripts/seo/seo-guard.mjs","--add-new");
+  run("scripts/seo/fact-guard.mjs");
   for(const [file,extra] of [["scripts/build.mjs",["--check"]],["scripts/seo/validate-plan.mjs",[]],["scripts/nav-qa.mjs",[]],["scripts/seo/audit-static.mjs",["--fail-p0"]],["tests/content-publisher.test.mjs",[]]]){
    if(file.startsWith("tests/"))continue;
    run(file,...extra);
@@ -91,6 +96,7 @@ try{
   console.log(JSON.stringify({...plan,branch:current,passed:true,ready_for_review:true,published_on_live_site:false,next_step:"Review git diff, run Node tests, open and merge approved PR after GitHub QA"},null,2));
  }catch(e){
   fs.writeFileSync(matrixPath,original);
+  if(originalFreeze!==null)fs.writeFileSync(freezePath,originalFreeze);
   for(const f of stagedJson)if(fs.existsSync(f))fs.unlinkSync(f);
   try{run("scripts/build.mjs");run("scripts/seo/content-graph.mjs","--write")}catch(restoreError){console.error("Rollback regeneration needs manual review: "+restoreError.message);}
   for(const f of htmlPaths)if(fs.existsSync(f))fs.unlinkSync(f);

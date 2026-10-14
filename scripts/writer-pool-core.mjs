@@ -4,6 +4,9 @@
  * This module performs no I/O and never publishes articles.
  */
 export const WRITERS=["W1","W2","W3"];
+// Shared cap across one active session per lane. Writer may push 1..10 drafts;
+// QA/publisher still processes each packet independently, never auto-publishes.
+export const MAX_BATCH=10;
 const ACTIVE=new Set(["CLAIMED","SUBMITTED"]);
 const VALID=new Set(["CLAIMED","SUBMITTED","RELEASED"]);
 const PLANNED=new Set(["IDEA","RESEARCHED"]);
@@ -34,16 +37,27 @@ export function validatePool(matrix,ledger,protectedData){
   if(reserved.has(p.id))errors.push("Duplicate protected ID "+p.id);
   reserved.add(p.id);
  }
- const active=new Set(),claimIds=new Set();
+ const active=new Set(),claimIds=new Set(),claimedSessions=new Map(),unfinishedPerLane=new Map();
  for(const c of ledger.claims){
   if(!rows.has(c.id)||!WRITERS.includes(c.writer)||!SESSION.test(c.session||"")||
      !VALID.has(c.status)||typeof c.branch!=="string"||
      !c.branch.startsWith("writer/"+c.writer.toLowerCase()+"-"))errors.push("Invalid claim "+c.id);
   if(!c.claim_id||!c.at||!c.updated_at)errors.push("Incomplete claim "+c.id);
+  if(c.source_sha256!==undefined||c.source_commit!==undefined){
+   if(c.status!=="SUBMITTED"||!/^[0-9a-f]{64}$/.test(c.source_sha256||"")||
+      !/^[0-9a-f]{40}$/.test(c.source_commit||""))errors.push("Invalid immutable submitted draft evidence "+c.id);
+  }
   if(c.status!=="RELEASED"){
    if(active.has(c.id))errors.push("Duplicate live claim "+c.id);
    if(reserved.has(c.id))errors.push("Claim overlaps protected existing draft "+c.id);
    active.add(c.id);
+  }
+  if(c.status==="CLAIMED"){
+   const sessionKey=c.session+"::"+c.branch;
+   if(claimedSessions.has(c.writer)&&claimedSessions.get(c.writer)!==sessionKey)errors.push("Concurrent sessions on the same Writer lane "+c.writer);
+   claimedSessions.set(c.writer,sessionKey);
+   unfinishedPerLane.set(c.writer,(unfinishedPerLane.get(c.writer)||0)+1);
+   if(unfinishedPerLane.get(c.writer)>MAX_BATCH)errors.push("Writer exceeds ten unfinished claims "+c.writer);
   }
   if(c.claim_id&&claimIds.has(c.claim_id))errors.push("Duplicate claim token");
   claimIds.add(c.claim_id);
@@ -81,20 +95,20 @@ export function poolStatus(matrix,ledger,registry,{writer,session,branch,locale}
  const waitingParent=pending.filter(r=>r.parent_id&&matrix.rows.find(p=>p.id===r.parent_id)?.status!=="PUBLISHED");
  const unblockedWithoutFree= pending.length-waitingParent.length-candidates.length;
  const pub=matrix.rows.filter(r=>r.status==="PUBLISHED"&&["HUB","SUPPORT"].includes(r.role)).length;
- let status=assigned.length?"WRITE_NEXT_PAIR":candidates.length?"CLAIM_REQUIRED":pending.length?
+ let status=assigned.length?"WRITE_NEXT_BATCH":candidates.length?"CLAIM_REQUIRED":pending.length?
    waitingParent.length===pending.length?"WAIT_PARENT_PUBLICATION":"AWAIT_CLAIMS_OR_REVIEW":
    pub===matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)).length?"COMPLETE":"AWAIT_EDITORIAL_REVIEW";
- if(!writer&&status==="WRITE_NEXT_PAIR")status="CLAIM_REQUIRED";
+ if(!writer&&status==="WRITE_NEXT_BATCH")status="CLAIM_REQUIRED";
  return {status,writer:writer||null,session:session||null,branch:branch||null,locale:locale||null,
   published:pub,protected_drafts:registry.protected.length+(registry.held_ids||[]).length,submitted:active.filter(c=>c.status==="SUBMITTED").length,
   active_claims:active.filter(c=>c.status==="CLAIMED").length,
   available_now:candidates.length,blocked_by_parent:0,parents_unpublished_for_publish:waitingParent.length,waiting_for_review_or_claim:Math.max(0,pending.length-candidates.length),
-  items:(assigned.length?assigned:candidates.slice(0,2)).map(r=>({
+  items:(assigned.length?assigned:candidates.slice(0,MAX_BATCH)).map(r=>({
    id:r.id,locale:r.locale,role:r.role,title:r.working_title,query:r.primary_query,url:r.url,
    parent_id:r.parent_id,legacy_owner:null,
    output:writer?"factory/external-writers/inbox/"+writer+"/"+r.id+".json":null
   })),claim_required:!assigned.length&&candidates.length>0,
-  next_action:assigned.length?"Write only confirmed claimed IDs, QA, push, open/update PR, then submit claim via workflow.":candidates.length?
+  next_action:assigned.length?"Write only confirmed claim IDs (max 10). QA and push your own Writer branch; green CI automatically submits valid drafts and refills slots.":candidates.length?
    "Request a serialized claim using writer-pool.yml and read the confirmed ledger before writing.":
    "No unclaimed eligible topic. Wait for editorial publication, reconcile claims or resume after safe release.",
   auto_publish:false};
@@ -107,8 +121,10 @@ export function transitionPool(matrix,ledger,registry,action,input,{now=new Date
  let items=[];
  if(action==="claim"){
   const count=Number(input.count??2);
-  if(!Number.isInteger(count)||count<1||count>2)throw Error("Claim batch size must be 1 or 2");
+  if(!Number.isInteger(count)||count<1||count>MAX_BATCH)throw Error("Claim batch size must be 1.."+MAX_BATCH);
   if(input.locale&&!matrix.locales.includes(input.locale))throw Error("Unknown locale");
+  const other=next.claims.filter(c=>c.status==="CLAIMED"&&c.writer===writer&&c.session!==session);
+  if(other.length)throw Error("WRITER_SLOT_HELD: "+writer+" has active unfinished claims in a different session; resume it or obtain explicit coordinator release");
   const active=next.claims.filter(c=>c.status==="CLAIMED"&&c.writer===writer&&c.session===session);
   if(active.some(c=>c.branch!==branch))throw Error("Session has claims on another branch; resume original branch");
   if(active.length>count)throw Error("Too many unfinished claims; submit before next batch");
@@ -125,11 +141,17 @@ export function transitionPool(matrix,ledger,registry,action,input,{now=new Date
   if(!newIds.length)return {ledger:next,ids:items,action,revision:next.revision,idempotent:true};
  }else if(action==="submit"){
   const ids=String(input.ids||"").split(",").map(x=>x.trim()).filter(Boolean);
-  if(!ids.length||ids.length>2||new Set(ids).size!==ids.length)throw Error("Submit exactly 1-2 unique IDs");
+  if(!ids.length||ids.length>MAX_BATCH||new Set(ids).size!==ids.length)throw Error("Submit exactly 1.."+MAX_BATCH+" unique IDs");
   for(const id of ids){
    const c=next.claims.find(c=>c.id===id&&c.status==="CLAIMED");
    if(!c||c.writer!==writer||c.session!==session||c.branch!==branch)throw Error("No matching active claim "+id);
    c.status="SUBMITTED";c.phase="WAITING_EDITORIAL_REVIEW";c.updated_at=now;
+   const evidence=input.evidence?.[id];
+   if(evidence){
+    if(!/^[0-9a-f]{64}$/.test(evidence.source_sha256||"")||!/^[0-9a-f]{40}$/.test(evidence.source_commit||""))
+     throw Error("Invalid remote draft evidence for "+id);
+    c.source_sha256=evidence.source_sha256;c.source_commit=evidence.source_commit;
+   }
    items.push(id);
   }
  }else if(action==="release"){

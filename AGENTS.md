@@ -38,30 +38,22 @@
 - Run `node --test tests/content-publisher.test.mjs` and `node scripts/build.mjs --check` in CI.
 - Do not auto-generate AI text, approve articles on the owner's behalf, or modify production DNS/CNAME/other repositories.
 
-## Zero-click continuous Writer Autopilot (approved)
+## Global Turbo Content Factory (owner-approved; /global ONLY)
 
-- Canonical active-session runbook: docs/ZERO-CLICK-WRITER.md. A SINGLE user instruction lets outside AI Writer write eligible ideas continuously while its session runs. **No per-two-article Run workflow click.**
-- Each Writer creates ONE branch-local JSON request with scripts/writer-request.mjs start and pushes its own request. Green Writer Draft QA on PUSH then triggers Global Dynamic Writer Autopilot via workflow_run. It commits serialized claims on main; subsequent green draft pair pushes automatically SUBMIT and reserve next 1–2 IDs.
-- Do not trust previews or manually edit claims.json. AI MUST fetch/merge main and verify assigned IDs before drafting. The branch must be active and request matched to the session. Editor review and separately approved public publication remain mandatory.
-- Protect 14 original W1 drafts in PR #17 PLUS the already written EN-H01 and DE-H01 editorial pilots in PRs #5/#6; none may be drafted again. Supporting may be drafted before their Hub is published, using published-only internal links; Supporting PUBLICATION still requires actual PUBLISHED Hub.
-- Workflow_run uses trusted main code only and reads Writer branches as data. No AI calls or automatic production publication, no cross-repo writes. Existing manual writer-pool.yml is RECOVERY only.
-- Keep own branch/PR and stop only for actual blockers or an ended chat. Never force push/reset or bypass disabled Actions token permissions.
-
-## Dynamic shared Writer Pool — owner approved
-
-- Source of truth: docs/DYNAMIC-WRITER-POOL.md and Global Dynamic Writer Pool (writer-pool.yml). Shared queue of 120 planned topics across 10 languages; **ANY one Writer W1, W2, W3 may claim any unreserved eligible topic**. Two or three active sessions share the same serialized queue. No 40-topic ownership ceiling.
-- Historical assignments.json is retained only as provenance/initial distribution, not an exclusion fence. protected-drafts.json permanently protects 14 already written W1 drafts on PR #17. Do not rewrite, overwrite, release or delete these without explicit coordinator review.
-- Claims are authoritative ONLY when committed to main by writer-pool.yml action=claim after successful GitHub Actions run. Preview/pack output is NOT a reservation. Writer branches write ONLY their own inbox, with exact confirmed claim and writer_session, preserving false human-review flags. New Writer drafts without confirmed claims fail QA; 14 legacy W1 drafts are grandfathered.
-- Protocol: fetch+merge main → preview → serialized claim → wait successful Actions → fetch+merge main → confirm claimed IDs → write native-language research-backed 2 articles → verify QA → push own writer branch → open/update draft PR → writer CI green → serialized action=submit → next pair. Continue while active and eligible; no stop after successful batch. No force push, no direct Writer push to main.
-- Do not auto-expire or steal claims on network loss; resume same session/branch, or coordinator explicitly inspects remote before release. Supporting may be drafted before parent publication; actual supporting PUBLICATION requires published Hub; no bypass.
-- GitHub Actions never runs a model or auto-publishes. Publishing remains separate owner-reviewed approval manifest and feature PR. Preserve production CNAME, all URLs, sitemap index/children and canonical/hreflang.
+- Canonical runbook: docs/GLOBAL-CONTENT-FACTORY-TURBO.md. This repository is NOT /blog and must NEVER copy its posts or import /blog checkpoint, lease state or publishing policy.
+- Shared queue, up to THREE independent external Writer sessions W1/W2/W3 (one live session per lane), each may claim up to TEN unfinished draft topics across all 10 locales. One active W1 can write every topic. Existing ES-H01 + KO-H01 W1 claims remain valid and finish before Turbo refills.
+- Each Writer uses the SAME stable session/branch across restarts. Request activation ONCE on Writer branch. GREEN Writer QA after push triggers Global Dynamic Writer Autopilot; no per-batch GitHub Run click. Writer fetches+merges main, confirms exact 1–10 IDs, creates original native-language draft JSON, verifies QA, pushes OWN inbox, then auto submits verified subset and refills up to 10. Up to ten drafts per push; partial green push of 1–9 is supported.
+- Main claims ledger is the sole ownership source; preview is NEVER authorization. Trusted coordinator (main code only) records source commit+SHA256 for new SUBMITTED drafts. Those packets are immutable on Writer branches. Incomplete claims remain owned; no auto-expiry or silent transfer. Concurrent main writes recompute from latest main with bounded CAS retries and NEVER force push.
+- Protect 14 W1 legacy drafts in PR #17 and EN-H01/DE-H01 in editorial PRs #5/#6. Claims are not publication, QA PASS is not human review, no model APIs or AI text generation in Actions.
+- Topic refill planning: run scripts/writer-refill.mjs status; below 30 free IDEA topics, outside Writer may stage researched Supporting proposals in its OWN factory/topic-refill/proposals/Wn/ directory. G1–G8 are strict structural gates; real sources/SERP still need review. Proposals remain editorial-review-only and DO NOT silently become Matrix rows or live URLs.
+- Production requires owner approval manifest via scripts/seo/publish-batch.mjs on reviewed feature branch. Supporting DRAFTS can precede parent publication, but Supporting PUBLICATION needs a genuine PUBLISHED Hub. No automatic publication; never modify CNAME, live URLs, canonical/hreflang/sitemap or unrelated repos while writing.
 
 ## Premium Master Work branch safeguards
 
 - `docs/GLOBAL_MASTER_MATRIX.md` and `docs/MASTERWORK-CHECKPOINT.json` document current P0–P3 gaps and resumable state. Do not claim branch features are deployed.
 - Search at `/search/` is a nonindex technical utility: valid internal navigation target with real static HTML; intentionally absent from SEO Matrix's PUBLISHED set and sitemap. It must carry `noindex,follow` and must not produce query-parameter SEO URLs.
 - Homepage language equivalents and truly translated checklist equivalents retain reciprocal hreflang. Distinct new Hub/supporting articles must not auto-claim hreflang.
-- `data/seo/content-graph.json` is deterministic/derived; regenerate `node scripts/seo/content-graph.mjs --write` whenever the Matrix or Writer assignment changes; CI verifies byte-exact --check.
+- `data/seo/content-graph.json` (knowledge graph: nodes, silos, candidates, entities, typed edges, KEEP/UPGRADE/REVIEW/CREATE actions) and its readable report `docs/GLOBAL-SITE-MATRIX.md` are deterministic/derived; regenerate `node scripts/seo/content-graph.mjs --write` whenever the Matrix, Writer assignment, protected drafts, topical map or generated HTML changes; CI verifies byte-exact --check. They never read the volatile claims ledger.
 - All current dynamic Writer claims are serialized by the dedicated GitHub Actions dispatcher into main claims.json; local writer-claims.mjs is historical/test-only and must not be used for new claim mutations.
 - Markdown writer intake accepts strict JSON frontmatter and writes only ignored private drafts; neither import nor AI writer scripts may publish automatically.
 - Do not merge this technical branch, merge publication PR #6 or deploy without the owner's separate explicit production approval.
@@ -74,12 +66,11 @@
 - Keep essential reading and navigation functional without JS. Reader controls remain `hidden` until event handlers are installed.
 - Run `node --test tests/ultra.test.mjs` and full QA. No merging this branch without the owner's production approval.
 
-## Continuous external Writer sessions (shared pool)
+## Continuous external Writer sessions — Turbo
 
-- Read docs/DYNAMIC-WRITER-POOL.md and docs/CONTINUOUS-WRITER.md. One AI session can exhaust all unclaimed eligible articles regardless of old W1/W2/W3 assignment; concurrent Writers use main serialized claim dispatcher.
-- node scripts/continuous-writer.mjs next is READ ONLY: CLAIM_REQUIRED previews must not be written until writer-pool.yml action=claim succeeds and main ledger is fetched. After writing and QA, push, PR, submit IDs through writer-pool.yml and get next confirmed pair immediately.
-- Genuine blockers (all drafts claimed/submitted, editorial review, chat/network timeout) are stop points requiring reconciliation, not excuses to fabricate drafts. No model runs in Actions.
-- Do not mutate production or other repositories and do not bypass editorial approval.
+- Read docs/GLOBAL-CONTENT-FACTORY-TURBO.md for current default; docs/DYNAMIC-WRITER-POOL.md is only a manual recovery pointer.
+- Write-ahead queue: active Writer W1/W2/W3 → confirmed claims (up to 10) → 1–10 QA-verified drafts → push own branch → auto SUBMITTED/sha journal + refill → fetch main → repeat. No user approval per DRAFT batch.
+- Recovery: do NOT skip or steal incomplete claims; resume same session/branch and replay green QA. If no real topics or CI/approval/quota genuinely blocks, stop and report. Never fabricate reviewed sources or mark proposed IDEA as PUBLISHED.
 
 ## Multilingual sitemap index (approved 2026-10-14)
 
@@ -87,3 +78,38 @@
 - Only PUBLISHED HTML URLs are included, never IDEA, noindex search, unpublished content or 404. The generator in `scripts/sitemaps.mjs` automatically shards a large language at <=40,000 URLs / <=40 MiB, avoids duplicate URLs and reuses `robots.txt` for discovery.
 - Never manually patch the sitemap files. Run `node scripts/build.mjs`, `node scripts/build.mjs --check`, `node --test tests/sitemaps.test.mjs`, `node scripts/seo/validate-plan.mjs`, and live post-publish QA after an approved deployment.
 - Updating sitemaps does not approve drafts or bypass existing Writer/Coordinator gates, nor guarantee bot indexing.
+
+## Topical Authority + SEO protection (branch claude/topical-authority-seo-expansion-wi7nh1)
+
+- Runbook: `docs/TOPICAL-AUTHORITY.md`; baseline audit: `docs/TOPICAL-AUTHORITY-BASELINE.md`. Hierarchy Entity Hub (PILLAR) → Topic Pillar (HUB) → Cluster (section, never a URL) → Supporting (SUPPORT). Do not rename live Matrix roles.
+- `data/seo/url-freeze.json` freezes every live URL's lang, canonical, robots, title, description, H1, hreflang and JSON-LD types. Run `node scripts/seo/seo-guard.mjs` after any build/generator/Matrix change. Re-freeze with `--write` only in a reviewed commit; never remove a frozen URL without a reviewed `retired` entry pointing at a PUBLISHED `redirect_to`. A publication PR freezes its new URL with `--write`.
+- `data/seo/topical-authority/` (architecture, verified references, 10 native locale maps) is CAPACITY, not content: PROPOSED/ARCHITECTURE_BLOCKED candidates never enter sitemap, navigation, hreflang, search shards or HTML links, and are not claimable. Run `node scripts/seo/topical-authority.mjs validate` (gates T1–T10) after editing them; do not machine-translate one locale into another.
+- Only `node scripts/seo/topical-authority.mjs promote --manifest <committed owner manifest> --apply` on a clean non-main branch may add them to the Matrix as IDEA rows. Never write or fake that manifest on the owner's behalf. The `routes-trips` Hub needs a separate owner architecture decision first.
+- Navigation shows exactly two featured Supporting labels per Hub (`menuChildren`, PUBLISHED first). Writer tests derive IDEA counts from the Matrix with a 120-row floor.
+- Keyword queries stay `NOT_VALIDATED` until real market data/SERP review; never invent volumes, rankings, prices, availability or legal certainty.
+
+## Business reference + fact guard (approved 2026-10-14)
+
+- `data/business/reference.json` is the ONLY source of Thuê Xe Máy Hà Nội Nguyễn Tú NAP, hours and prices; `data/business/reference.localized.json` is generated (`node scripts/seo/fact-guard.mjs --write`). Read `docs/BUSINESS-REFERENCE.md`.
+- `node scripts/seo/fact-guard.mjs` (CI) fails wrong Nguyễn Tú facts anywhere, unsourced amounts/phones on live pages, site copy, Matrix, topical map and approved articles, and any NAP display or LocalBusiness-type schema while `publication.*_approved` flags are false. Writer drafts get warnings for unsourced amounts; `publish-batch` is strict.
+- Never change NAP, prices, flags or conflicts without dated evidence and owner approval in a reviewed PR. Known conflicts (site hours 08:00–21:30 vs canonical 09:00–21:00, delivery threshold, GBP title) stay listed until the owner resolves them outside this repo.
+
+## Global site matrix + pre-claim duplicate gate
+
+- `docs/GLOBAL-SITE-MATRIX.md` is the Global Content Cannibalization Matrix (Homepage → Pillar → Hub → Silo → Supporting). Silos are graph nodes and Hub-page sections, never URLs. UPGRADE on a live page is an editorial recommendation with metrics; change live content only through the reviewed publication gate.
+- `node scripts/seo/validate-plan.mjs` fails any two non-parent/child Hub/Supporting rows with query overlap ≥ 0.66 and no ≥40-char `distinct_from` reason, so a duplicate intent never reaches the Writer pool. Promotion copies candidate `distinct_from` into the Matrix row.
+- Performance signals are NOT_CONNECTED (no Search Console property for global.rentbikehanoi.com in the connected tools); never infer rankings or traffic.
+
+## Link integrity, content protection and scale (PR-4)
+
+- `seo-guard` also audits PUBLISHED pages: orphans, two-way parent↔child links (Hub/Pillar in-content link to every published child; child links back), empty anchors (FAIL) and generic/ambiguous/undiverse anchors (WARN). It freezes each live page's H2 outline and main-text size: removing a frozen H2 or losing >10% of main text fails until a reviewed `--write`.
+- Published Hub articles render "Guides in this topic" (every published child, grouped by silo label); Supporting articles render up to six published siblings. Only PUBLISHED URLs. Do not remove these sections: at scale they are what prevents orphan guides.
+- `publish-batch --apply` runs `seo-guard --add-new` (freezes only new URLs, refuses on any FAIL) and `fact-guard`, and restores the registry on rollback.
+- Matrix/article IDs allow 2–4 digits (XX-S100+). Overlap checks use prefix-filtered all-pairs similarity. Benchmark: `node scripts/bench/full-build-scale.mjs --articles N` (temp copy only); CI runs N=300. See docs/PERFORMANCE-LIMITS.md before scaling past 10,000 URLs (shard url-freeze and content-graph by locale).
+- Per-page build code must not scan every Matrix row. Use the per-build indexes instead: `rowsIndex` in `scripts/articles.mjs`, `relatedIndex` in `scripts/premium.mjs`, and header/footer rendered once per locale in `scripts/navigation.mjs`. Any optimization must keep `build --check` byte-identical.
+
+## Live structured data + production QA (PR-5)
+
+- Root `/` carries the 10-locale hreflang cluster with `x-default` to itself; Pillars carry WebPage + BreadcrumbList (Global › Language) with `about` Hanoi (Wikidata Q1858); checklists carry a 3-level BreadcrumbList. Never add business (LocalBusiness/AutoRental/NAP) schema while `publication.business_schema_approved` is false.
+- After any approved deployment run the manual `post-publish-qa.yml` workflow: it fetches every PUBLISHED URL live and fails on status/lang/canonical issues, sitemap mismatch, any SEO fingerprint drift from `data/seo/url-freeze.json`, or live NAP/business-schema violations.
+- `docs/GAP-MATRIX.md` is the current DONE/PARTIAL/OWNER/BLOCKED status of the master work; update it with evidence, never optimistic claims.
