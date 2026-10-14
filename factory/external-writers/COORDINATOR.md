@@ -1,3 +1,9 @@
+# Shared Writer Autopilot coordinator
+
+Default flow now follows docs/ZERO-CLICK-WRITER.md. Owner DOES NOT need to press the manual GitHub Run workflow button for each pair. One branch start request triggers QA and automatic centralized claim. A green 2-draft push automatically submits and claims next. Manual workflow_dispatch is recovery only.
+
+Protect 14 W1 PR #17 drafts AND EN-H01/DE-H01 editorial PR #5/#6 drafts; verify content and search intent before separately owner-approved publication. Do not turn automatic DRAFT submission into automatic SITE publishing.
+
 # Coordinator protocol — Dynamic Shared Writer Pool
 
 1. Source of truth: docs/DYNAMIC-WRITER-POOL.md. W1/W2/W3 may claim ANY eligible shared topic. Old assignments.json (40 each) are only historical reference.
