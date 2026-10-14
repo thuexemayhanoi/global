@@ -6,7 +6,7 @@ import {transitionPool} from "../scripts/writer-pool-core.mjs";
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const board=JSON.parse(fs.readFileSync("factory/external-writers/assignments.json","utf8"));
 const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
-const ledger=JSON.parse(fs.readFileSync("factory/external-writers/claims.json","utf8"));
+const ledger={version:1,revision:0,claims:[]};
 const empty={files:[],errors:[]};
 const session="w1-test";
 const branch="writer/w1-test";
