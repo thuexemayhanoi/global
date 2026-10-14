@@ -85,8 +85,10 @@ function main(){
   const file="factory/external-writers/inbox/"+opts.writer+"/"+output.ids[0]+".json";
   try{shell("git",["fetch","--no-tags","origin",opts.branch+":refs/remotes/origin/"+opts.branch]);}
   catch{throw Error("Release blocked: cannot inspect original Writer branch");}
-  const check=execFileSync("git",["cat-file","-e","refs/remotes/origin/"+opts.branch+":"+file],{cwd:ROOT,stdio:"ignore",timeout:8000});
-  if(check!==undefined)throw Error("Release blocked: draft still exists "+file);
+  let draftExists=false;
+  try{execFileSync("git",["cat-file","-e","refs/remotes/origin/"+opts.branch+":"+file],{cwd:ROOT,stdio:"ignore",timeout:8000});draftExists=true;}
+  catch(e){if(e.status!==1&&e.status!==128)throw e;}
+  if(draftExists)throw Error("Release blocked: draft still exists "+file);
  }
  fs.writeFileSync(path.join(ROOT,FILE),JSON.stringify(output.ledger,null,2)+"\n","utf8");
  console.log(JSON.stringify({mode:"STAGED_CLAIMS_ON_MAIN",action,revision:output.revision,
