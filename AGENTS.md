@@ -87,3 +87,9 @@
 - Only `node scripts/seo/topical-authority.mjs promote --manifest <committed owner manifest> --apply` on a clean non-main branch may add them to the Matrix as IDEA rows. Never write or fake that manifest on the owner's behalf. The `routes-trips` Hub needs a separate owner architecture decision first.
 - Navigation shows exactly two featured Supporting labels per Hub (`menuChildren`, PUBLISHED first). Writer tests derive IDEA counts from the Matrix with a 120-row floor.
 - Keyword queries stay `NOT_VALIDATED` until real market data/SERP review; never invent volumes, rankings, prices, availability or legal certainty.
+
+## Business reference + fact guard (approved 2026-10-14)
+
+- `data/business/reference.json` is the ONLY source of Thuê Xe Máy Hà Nội Nguyễn Tú NAP, hours and prices; `data/business/reference.localized.json` is generated (`node scripts/seo/fact-guard.mjs --write`). Read `docs/BUSINESS-REFERENCE.md`.
+- `node scripts/seo/fact-guard.mjs` (CI) fails wrong Nguyễn Tú facts anywhere, unsourced amounts/phones on live pages, site copy, Matrix, topical map and approved articles, and any NAP display or LocalBusiness-type schema while `publication.*_approved` flags are false. Writer drafts get warnings for unsourced amounts; `publish-batch` is strict.
+- Never change NAP, prices, flags or conflicts without dated evidence and owner approval in a reviewed PR. Known conflicts (site hours 08:00–21:30 vs canonical 09:00–21:00, delivery threshold, GBP title) stay listed until the owner resolves them outside this repo.

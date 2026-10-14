@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import {scanPacket} from "./seo/fact-guard-core.mjs";
 
 const SITE="https://global.rentbikehanoi.com";
 const esc=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
@@ -22,7 +23,7 @@ function collectMarkdownTargets(text){
 function isPublishedLinked(pathname,matrix,pending){
  return matrix.rows.some(r=>r.url===pathname && (r.status==="PUBLISHED"||pending.has(r.id)));
 }
-export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublished=false,pending=new Set(),assetsRoot=null,allowUnpublishedParentForDraft=false}={}){
+export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublished=false,pending=new Set(),assetsRoot=null,allowUnpublishedParentForDraft=false,factMode="warn"}={}){
  const errors=[], warnings=[];
  const row=matrix.rows.find(r=>r.id===packet?.matrix_id);
  const locale=locales.find(l=>l.code===packet?.locale);
@@ -79,6 +80,12 @@ export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublis
    const abs=path.join(assetsRoot,p.slice(1));
    if(!fs.existsSync(abs))errors.push("Cover image file is missing: "+p);
   }
+ }
+ // Anti-fabrication: wrong Nguyễn Tú prices/NAP/hours always fail; unsourced
+ // amounts or phones fail in strict (publisher) mode and warn in Writer QA.
+ for(const f of scanPacket(packet,factMode)){
+  const line="Fact guard "+f.code+" in "+f.where+": "+f.message+(f.excerpt?" «"+f.excerpt+"»":"");
+  (f.level==="FAIL"?errors:warnings).push(line);
  }
  if(!packet?.editorial_notes)warnings.push("Add editorial methodology or verification notes");
  return {passed:errors.length===0,words,errors,warnings,row_id:row?.id??null};
@@ -138,7 +145,7 @@ export function generateApprovedArticles(root,matrix,locales){
   const row=matrix.rows.find(r=>r.id===packet.matrix_id),locale=locales.find(l=>l.code===packet.locale);
   if(!row||row.status!=="PUBLISHED")throw Error("Article must have PUBLISHED Matrix row: "+file);
   if(file!==packet.matrix_id+".json")throw Error("Filename / Matrix ID mismatch");
-  const qa=checkArticle(packet,matrix,locales,{allowPublished:true,assetsRoot:root});
+  const qa=checkArticle(packet,matrix,locales,{allowPublished:true,assetsRoot:root,factMode:"strict"});
   if(!qa.passed)throw Error("Stored article QA failed "+file+": "+qa.errors.join("; "));
   const generated=htmlPagePath(row.url);
   if(pages[generated])throw Error("Article URL collision "+generated);
