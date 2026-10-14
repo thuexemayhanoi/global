@@ -37,7 +37,7 @@ export function validatePool(matrix,ledger,protectedData){
   if(reserved.has(p.id))errors.push("Duplicate protected ID "+p.id);
   reserved.add(p.id);
  }
- const active=new Set(),claimIds=new Set();
+ const active=new Set(),claimIds=new Set(),claimedSessions=new Map(),unfinishedPerLane=new Map();
  for(const c of ledger.claims){
   if(!rows.has(c.id)||!WRITERS.includes(c.writer)||!SESSION.test(c.session||"")||
      !VALID.has(c.status)||typeof c.branch!=="string"||
@@ -51,6 +51,13 @@ export function validatePool(matrix,ledger,protectedData){
    if(active.has(c.id))errors.push("Duplicate live claim "+c.id);
    if(reserved.has(c.id))errors.push("Claim overlaps protected existing draft "+c.id);
    active.add(c.id);
+  }
+  if(c.status==="CLAIMED"){
+   const sessionKey=c.session+"::"+c.branch;
+   if(claimedSessions.has(c.writer)&&claimedSessions.get(c.writer)!==sessionKey)errors.push("Concurrent sessions on the same Writer lane "+c.writer);
+   claimedSessions.set(c.writer,sessionKey);
+   unfinishedPerLane.set(c.writer,(unfinishedPerLane.get(c.writer)||0)+1);
+   if(unfinishedPerLane.get(c.writer)>MAX_BATCH)errors.push("Writer exceeds ten unfinished claims "+c.writer);
   }
   if(c.claim_id&&claimIds.has(c.claim_id))errors.push("Duplicate claim token");
   claimIds.add(c.claim_id);
