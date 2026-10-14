@@ -52,7 +52,7 @@ export async function inspectProduction(fetcher=fetch,origin="https://global.ren
   const expectedGroups=new Set(["main",...locales.map(l=>l.code)]);
   const discovered=new Set(),groups=new Set();
   for(const name of children){
-   const group=name.match(/^sitemap-(main|[a-z]{2})(?:-[2-9][0-9]*)?\\.xml$/)?.[1];
+   const group=name.match(/^sitemap-(main|[a-z]{2})(?:-[2-9][0-9]*)?\.xml$/)?.[1];
    if(!expectedGroups.has(group))throw Error("Unrecognized sitemap child "+name);
    groups.add(group);
    const shard=await get("/"+name);
