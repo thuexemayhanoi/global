@@ -10,6 +10,10 @@ on:
       - 'factory/external-writers/**'
       - 'scripts/writer-lanes.mjs'
       - 'scripts/continuous-writer.mjs'
+      - 'scripts/writer-pool.mjs'
+      - 'scripts/writer-pool-core.mjs'
+      - 'tests/writer-pool.test.mjs'
+      - '.github/workflows/writer-pool.yml'
       - 'tests/continuous-writer.test.mjs'
       - 'tests/external-writers.test.mjs'
       - '.github/workflows/writer-qa.yml'
@@ -33,7 +37,7 @@ jobs:
       - name: Deterministic assignment and refusal-gate tests
         run: node --test tests/external-writers.test.mjs
       - name: Validate uninterrupted session loop planner
-        run: node --test tests/continuous-writer.test.mjs
+        run: node --test tests/continuous-writer.test.mjs tests/writer-pool.test.mjs
       - name: Validate all inbox drafts, no article publishing
         run: node scripts/writer-lanes.mjs verify-all
       - name: Refuse writer PR changes outside its own inbox
