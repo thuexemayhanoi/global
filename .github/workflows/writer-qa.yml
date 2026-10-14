@@ -53,7 +53,15 @@ jobs:
             *) echo "Writer branch name must be writer/w1-*, writer/w2-* or writer/w3-*"; exit 1 ;;
           esac
           if [ "${{ github.event_name }}" = "push" ]; then
-            changed=$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}")
+            before="${{ github.event.before }}"
+            if [[ "$before" =~ ^0+$ ]]; then
+              # A brand-new Writer branch has no prior SHA; diff with the
+              # fork point instead of failing on an all-zero git object.
+              git fetch --no-tags origin main
+              changed=$(git diff --name-only origin/main...HEAD)
+            else
+              changed=$(git diff --name-only "$before" "${{ github.sha }}")
+            fi
           else
             git fetch --no-tags origin main
             changed=$(git diff --name-only origin/main...HEAD)
