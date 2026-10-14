@@ -297,6 +297,7 @@ export function planPromotion({map,matrix,board,manifest,validation}){
   const row={id,locale:code,url:proposalURL(p),role:"SUPPORT",cluster:p.cluster,parent_id:p.parent_id,
    primary_query:p.primary_query,working_title:p.working_title,search_intent:p.search_intent,status:"IDEA",
    serp_evidence:"NOT_VALIDATED",source_verification:"NOT_STARTED",priority:p.priority,subcluster:p.subcluster,topical_candidate_id:cid};
+  if(Array.isArray(p.distinct_from)&&p.distinct_from.length)row.distinct_from=p.distinct_from;
   rows.push(row);
   const writer=["W1","W2","W3"].sort((a,b)=>counts(a)-counts(b)||a.localeCompare(b))[0];
   entries.push({id,writer,url:row.url,locale:code,role:"SUPPORT",parent_id:row.parent_id,cluster:row.cluster});

@@ -2,6 +2,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import {readLocalSitemapInventory} from "../sitemaps.mjs";
+import {loadTopicalMap,similarity,SIMILARITY_FAIL} from "./topical-authority-core.mjs";
 const root=process.cwd();
 const matrix=JSON.parse(fs.readFileSync(path.join(root,"data/seo/master-matrix.json"),"utf8"));
 const taxonomy=JSON.parse(fs.readFileSync(path.join(root,"data/seo/taxonomy.json"),"utf8"));
@@ -29,6 +30,19 @@ for(const r of matrix.rows){
  if(r.parent_id){const p=ids.get(r.parent_id);if(!p)err("Unknown parent "+r.id);else if(p.locale!==r.locale&&p.id!=="ROOT")err("Cross-language parent "+r.id)}
  if(r.role==="HUB"&&r.parent_id!==r.locale.toUpperCase()+"-HOME")err("Hub parent mismatch "+r.id);
  if(r.role==="SUPPORT"&&r.status==="IDEA"&&!ids.get(r.parent_id)?.id?.endsWith("H"+r.parent_id?.slice(-2)))err("Support parent mismatch "+r.id);
+}
+// Pre-claim duplicate gate: an unjustified high intent overlap between two
+// Hub/Supporting rows must be resolved before any Writer can claim either one.
+const topical=loadTopicalMap(root);
+for(const l of matrix.locales){
+ const rs=matrix.rows.filter(r=>r.locale===l&&(r.role==="HUB"||r.role==="SUPPORT")),stop=topical.locales[l]?.stop_tokens||[];
+ for(let i=0;i<rs.length;i++)for(let j=i+1;j<rs.length;j++){
+  const a=rs[i],b=rs[j];
+  if(a.parent_id===b.id||b.parent_id===a.id)continue;
+  const justified=[...(a.distinct_from||[]),...(b.distinct_from||[])].some(d=>[a.id,b.id].includes(d?.id)&&String(d?.reason||"").length>=40);
+  const score=similarity(a.primary_query,b.primary_query,l,stop);
+  if(score>=SIMILARITY_FAIL&&!justified)err("Cannibalization candidate "+a.id+" vs "+b.id+" (overlap "+score.toFixed(2)+"): merge, re-scope or add distinct_from before any Writer claim");
+ }
 }
 let sitemapInventory={urls:[]};
 try{sitemapInventory=readLocalSitemapInventory(root,locales);}
