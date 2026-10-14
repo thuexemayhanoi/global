@@ -13,5 +13,5 @@ Protect 14 W1 PR #17 drafts AND EN-H01/DE-H01 editorial PR #5/#6 drafts; verify 
 5. Writer can only touch own inbox files; irrespective of historical topic origin. Writer cannot set facts_reviewed_by_human or serp_intent_checked true.
 6. Human editorial review of research sources, legal claims, intent, factual pricing, NAP and links remains mandatory. QA PASS is not verified factual correctness.
 7. Publishing via scripts/seo/publish-batch.mjs requires separate exact owner approval manifest on clean feature branch. No automatic publish, direct Writer merge, Matrix/sitemap/CNAME edits.
-8. Supporting remains gated by actual PUBLISHED Hub. On claimed backlog exhaustion, review/approve Hub batches first; do not bypass.
+8. Only Supporting PUBLICATION remains gated by actual PUBLISHED Hub; Supporting DRAFTS may proceed without waiting. On claimed backlog exhaustion, review/approve Hub batches first; do not bypass.
 9. Never touch /total, /vanchinh, /japan, WordPress, DNS or other sites while operating /global.
