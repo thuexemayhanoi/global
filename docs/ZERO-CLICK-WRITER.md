@@ -22,7 +22,7 @@ Source: thuexemayhanoi/global. This is for outside AI assistants with GitHub/ter
 5. Commit/push ONLY your own inbox JSON to SAME branch. Keep/update one open Writer draft PR (not production PR). **Writer Draft QA PASS automatically triggers Autopilot to submit this pair and claim next eligible pair in one atomic main-ledger commit.** No manual Run click.
 6. Wait Autopilot SUCCESS; fetch/merge main; immediately return to step 2. Don't stop after two drafts, CI green or a push.
 7. On flaky network/CI red, repair/retry and refresh main rather than guessing ownership or writing duplicates. If an outdated push's CI completes after newer changes, autopilot ignores it.
-8. When no unclaimed Hub remains, wait for parent Hub publication. Supporting drafts become available only after the *separately reviewed* Hub is genuinely PUBLISHED.
+8. After Hub drafts, continue automatically with Supporting DRAFTS, even if Hub is still awaiting editorial publication. Do NOT add unpublished Hub links. The separately reviewed PUBLISHER still requires a PUBLISHED parent Hub before any Supporting URL goes live.
 
 ## Exactly what is automatic
 - A successful QA push on an opted-in Writer branch triggers an automatic serialized GitHub workflow_run with repository-owned write permissions. It reads Writer branch content as DATA (never executes branch code).
@@ -42,4 +42,4 @@ Source: thuexemayhanoi/global. This is for outside AI assistants with GitHub/ter
 - CI logs: External Writer Draft QA (read-only), then Global Dynamic Writer Autopilot.
 - CLI: node scripts/writer-pool.mjs status
 - Confirm: node scripts/continuous-writer.mjs assigned --writer W1 --session w1-vibe-20261014 --branch writer/w1-vibe-20261014
-- If no eligible item remains, stop the tight loop and report WAIT_PARENT_PUBLICATION or AWAIT_EDITORIAL_REVIEW. Never fabricate a success or spin indefinitely.
+- If no eligible draft item remains, stop the tight loop and report AWAIT_EDITORIAL_REVIEW. Never fabricate a success or spin indefinitely.
