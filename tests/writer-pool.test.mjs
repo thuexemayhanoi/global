@@ -43,7 +43,7 @@ test("a single W1 can write every remaining topic, including former W2/W3-owned 
  assert.equal(claimed.length,104);
  assert.equal(new Set(claimed).size,104);
  assert.ok(claimed.every(id=>![...registry.protected,...registry.held_ids].some(p=>p.id===id)));
- assert.equal(poolCandidates(afterHubs,ledger,registry).length,0);
+ assert.equal(poolCandidates(matrix,ledger,registry).length,0);
 });
 
 test("three concurrent Writer sessions receive disjoint pairs from one serialized ledger",()=>{
