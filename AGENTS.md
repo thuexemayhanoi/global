@@ -106,3 +106,9 @@
 - Published Hub articles render "Guides in this topic" (every published child, grouped by silo label); Supporting articles render up to six published siblings. Only PUBLISHED URLs. Do not remove these sections: at scale they are what prevents orphan guides.
 - `publish-batch --apply` runs `seo-guard --add-new` (freezes only new URLs, refuses on any FAIL) and `fact-guard`, and restores the registry on rollback.
 - Matrix/article IDs allow 2–4 digits (XX-S100+). Overlap checks use prefix-filtered all-pairs similarity. Benchmark: `node scripts/bench/full-build-scale.mjs --articles N` (temp copy only); CI runs N=300. See docs/PERFORMANCE-LIMITS.md before scaling past 10,000 URLs (shard url-freeze and content-graph by locale).
+
+## Live structured data + production QA (PR-5)
+
+- Root `/` carries the 10-locale hreflang cluster with `x-default` to itself; Pillars carry WebPage + BreadcrumbList (Global › Language) with `about` Hanoi (Wikidata Q1858); checklists carry a 3-level BreadcrumbList. Never add business (LocalBusiness/AutoRental/NAP) schema while `publication.business_schema_approved` is false.
+- After any approved deployment run the manual `post-publish-qa.yml` workflow: it fetches every PUBLISHED URL live and fails on status/lang/canonical issues, sitemap mismatch, any SEO fingerprint drift from `data/seo/url-freeze.json`, or live NAP/business-schema violations.
+- `docs/GAP-MATRIX.md` is the current DONE/PARTIAL/OWNER/BLOCKED status of the master work; update it with evidence, never optimistic claims.
