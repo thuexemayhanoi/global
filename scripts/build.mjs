@@ -20,6 +20,7 @@ const siteOutput=function siteOutput(locales,siteInfo){
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${site}${path}">
+${path==="/"?'<meta name="google-site-verification" content="HwLeUnxn5y1nBbGQD-54b3hR_dw10qMQ12wfmuDPfBg" />':""}
 ${page==="locale"?langLinks(false):page==="guide"?langLinks(true):""}
 <meta property="og:type" content="${page==="guide"?"article":"website"}">
 <meta property="og:site_name" content="Vietnam Two-Wheel Guide">
