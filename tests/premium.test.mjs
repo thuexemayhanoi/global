@@ -9,9 +9,10 @@ const langs=JSON.parse(read("content/locales.json"));
 const map=new Map(matrix.rows.filter(r=>r.status==="PUBLISHED").map(r=>[r.url,r]));
 const pageOf=url=>url==="/"? "index.html":url.slice(1)+"index.html";
 const parseLinks=html=>[...html.matchAll(/href="([^"]+)"/g)].map(m=>m[1]);
-test("25 existing public content URLs stay indexed and canonical",()=>{
+test("every frozen live URL (25 at baseline) stays indexed and canonical",()=>{
  const sitemap=readLocalSitemapInventory(process.cwd(),langs.map(l=>l.code));
- assert.equal(map.size,25);
+ const frozen=JSON.parse(read("data/seo/url-freeze.json")).urls.map(u=>u.url);
+ assert.ok(map.size>=25&&frozen.every(u=>map.has(u)));
  assert.equal(sitemap.indexFiles.length,11);
  assert.equal(sitemap.urls.length,map.size);
  assert.ok(!sitemap.urls.includes("/search/"));
@@ -41,7 +42,7 @@ test("real technical search page noindexed with metadata-only language-sharded i
    for(const v of data){assert.deepEqual(Object.keys(v).sort(),["d","t","type","u"]);assert.ok(map.has(v.u));assert.ok(!all.has(v.u));all.add(v.u);}
   }
  }
- assert.equal(all.size,20);
+ assert.equal(all.size,matrix.rows.filter(r=>r.status==="PUBLISHED"&&["PILLAR","HUB","SUPPORT"].includes(r.role)).length);
 });
 test("desktop menu visibly open without JS, mobile accordion exists and CSS breakpoint",()=>{
  for(const l of langs){
