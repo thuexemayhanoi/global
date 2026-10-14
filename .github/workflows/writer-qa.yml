@@ -1,10 +1,16 @@
 name: External Writer Draft QA (read-only)
 on:
+  push:
+    branches: ['writer/w1-*', 'writer/w2-*', 'writer/w3-*']
+    paths:
+      - 'factory/external-writers/inbox/**'
   pull_request:
     branches: [main]
     paths:
       - 'factory/external-writers/**'
       - 'scripts/writer-lanes.mjs'
+      - 'scripts/continuous-writer.mjs'
+      - 'tests/continuous-writer.test.mjs'
       - 'tests/external-writers.test.mjs'
       - '.github/workflows/writer-qa.yml'
   workflow_dispatch:
@@ -26,12 +32,14 @@ jobs:
           node-version: "22"
       - name: Deterministic assignment and refusal-gate tests
         run: node --test tests/external-writers.test.mjs
+      - name: Validate uninterrupted session loop planner
+        run: node --test tests/continuous-writer.test.mjs
       - name: Validate all inbox drafts, no article publishing
         run: node scripts/writer-lanes.mjs verify-all
       - name: Refuse writer PR changes outside its own inbox
-        if: ${{ github.event_name == 'pull_request' && startsWith(github.head_ref, 'writer/') }}
+        if: ${{ (github.event_name == 'pull_request' && startsWith(github.head_ref, 'writer/')) || github.event_name == 'push' }}
         env:
-          WRITER_BRANCH: ${{ github.head_ref }}
+          WRITER_BRANCH: ${{ github.head_ref || github.ref_name }}
         run: |
           set -euo pipefail
           case "$WRITER_BRANCH" in
@@ -40,8 +48,12 @@ jobs:
             writer/w3-*) lane=W3 ;;
             *) echo "Writer branch name must be writer/w1-*, writer/w2-* or writer/w3-*"; exit 1 ;;
           esac
-          git fetch --no-tags origin main
-          changed=$(git diff --name-only origin/main...HEAD)
+          if [ "${{ github.event_name }}" = "push" ]; then
+            changed=$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}")
+          else
+            git fetch --no-tags origin main
+            changed=$(git diff --name-only origin/main...HEAD)
+          fi
           test -n "$changed" || { echo "Writer PR contains no changed files"; exit 1; }
           while IFS= read -r file; do
             case "$file" in
