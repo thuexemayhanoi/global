@@ -9,7 +9,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {fileURLToPath} from "node:url";
 import {execFileSync} from "node:child_process";
-import {randomUUID} from "node:crypto";
+import {randomUUID,createHash} from "node:crypto";
 import {autoAdvance} from "./writer-pool-auto-core.mjs";
 import {validateRequest} from "./writer-request-core.mjs";
 import {verifyPacket,checkDuplicates} from "./writer-lanes.mjs";
@@ -45,7 +45,7 @@ function parseRequestFromCommit(sha,branch){
  return validateRequest(obj,file,branch);
 }
 function draftSet(sha,claims,request,matrix,board,locales,ledger,registry){
- const verified=new Set(),packets=[];
+ const verified=new Set(),evidence=new Map(),packets=[];
  for(const claim of claims){
   const file="factory/external-writers/inbox/"+request.writer+"/"+claim.id+".json";
   let raw;
@@ -56,11 +56,13 @@ function draftSet(sha,claims,request,matrix,board,locales,ledger,registry){
    throw Error("Submitted article has wrong ID/session "+file);
   const qc=verifyPacket(packet,request.writer,matrix,board,locales,ledger,registry);
   if(!qc.passed)throw Error("Article failed main-source QA "+file+": "+qc.errors.join("; "));
-  verified.add(claim.id);packets.push({writer:request.writer,id:claim.id,path:file,packet});
+  verified.add(claim.id);
+  evidence.set(claim.id,{source_sha256:createHash("sha256").update(raw).digest("hex"),source_commit:sha});
+  packets.push({writer:request.writer,id:claim.id,path:file,packet});
  }
  const dups=checkDuplicates(packets);
  if(dups.length)throw Error(dups.join("; "));
- return verified;
+ return {verified,evidence};
 }
 function main(){
  const o=flags(process.argv.slice(2)),branch=o.branch,sha=o.sha;
@@ -84,14 +86,25 @@ function main(){
    board=read("factory/external-writers/assignments.json"),
    locales=read("content/locales.json");
  const inProgress=ledger.claims.filter(c=>c.status==="CLAIMED"&&c.writer===request.writer&&c.session===request.session&&c.branch===branch);
- const verified=draftSet(sha,inProgress,request,matrix,board,locales,ledger,registry);
+ const {verified,evidence}=draftSet(sha,inProgress,request,matrix,board,locales,ledger,registry);
+ // Submission is immutable: every later push must preserve the exact remote
+ // bytes of all previously submitted packets, or fail closed. Protected
+ // legacy draft IDs use separate protection and are not rewritten.
+ for(const c of ledger.claims.filter(c=>c.status==="SUBMITTED"&&c.branch===branch&&c.writer===request.writer&&c.session===request.session&&c.source_sha256)){
+  const file="factory/external-writers/inbox/"+request.writer+"/"+c.id+".json";
+  let prior;
+  try{prior=git("show",sha+":"+file);}
+  catch{throw Error("Submitted draft disappeared from Writer branch: "+c.id);}
+  const digest=createHash("sha256").update(prior).digest("hex");
+  if(digest!==c.source_sha256)throw Error("IMMUTABLE_SUBMITTED_DRAFT_CHANGED "+c.id+": restore exact committed content before continuing");
+ }
  // Only real green Writer PRs may be entered into the editorial SUBMITTED queue.
  // Initial branch/request may claim without a PR; the outside AI must open a
  // draft PR once before pushing its first completed pair.
- if(inProgress.length&&inProgress.every(c=>verified.has(c.id))){
+ if(verified.size){
   if(!repoPR(branch))throw Error("AUTO_POOL_WAIT_PR: Open a Writer draft PR to main once, then push a small updated commit; no manual Actions button needed");
  }
- const result=autoAdvance(matrix,ledger,registry,request,{verifiedDraftIds:verified,
+ const result=autoAdvance(matrix,ledger,registry,request,{verifiedDraftIds:verified,verifiedDraftEvidence:evidence,
    now:new Date().toISOString(),nonce:randomUUID()});
  if(!result.changed){
   console.log(JSON.stringify({mode:"AUTO_POOL_NO_MUTATION",status:result.status,
@@ -101,7 +114,7 @@ function main(){
  fs.writeFileSync(path.join(ROOT,ledgerFile),JSON.stringify(result.ledger,null,2)+"\n");
  console.log(JSON.stringify({mode:"AUTO_POOL_LEDGER_STAGED",status:result.status,
    session:request.session,writer:request.writer,branch,sha,
-   submitted:result.submitted,claimed:result.claimed,revision:result.ledger.revision,
+   submitted:result.submitted,claimed:result.claimed,new_claims:result.new_claims||[],revision:result.ledger.revision,
    article_publication:false,model_calls:0}));
 }
 try{main()}catch(e){console.error("AUTO_POOL_REFUSED "+e.message);process.exitCode=1;}
