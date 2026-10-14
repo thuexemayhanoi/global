@@ -38,7 +38,7 @@ jobs:
           node --check scripts/writer-request.mjs
           node --test tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs
           node scripts/build.mjs --check
-      - name: Coordinate next pair after green Writer QA (no manual button)
+      - name: Auto-submit verified 1–10 drafts and refill Writer queue (no manual button)
         env:
           WRITER_BRANCH: ${{ github.event.workflow_run.head_branch }}
           GREEN_COMMIT: ${{ github.event.workflow_run.head_sha }}
