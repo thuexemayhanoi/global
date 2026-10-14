@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "mode": "manual-ready",
+  "mode": "dynamic-pool",
   "max_batch": 5,
   "writers": [
     "W1",
@@ -12,5 +12,9 @@
   "no_auto_write": true,
   "no_auto_publish": true,
   "owner_review_required": true,
-  "explanation": "Outside AI works in its own app and submits drafts via GitHub; CI only validates."
+  "explanation": "Outside AI sessions W1/W2/W3 share all eligible Matrix IDs via serialized main claims. One session can write all remaining topics; CI only validates, owner approves publication.",
+  "allocation": "shared-id-queue-any-of-W1-W2-W3",
+  "claim_authority": "github-actions-writer-pool-on-main",
+  "legacy_assignments": "historical-only",
+  "protected_drafts": "factory/external-writers/protected-drafts.json"
 }

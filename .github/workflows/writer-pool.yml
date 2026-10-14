@@ -1,0 +1,116 @@
+name: Global Dynamic Writer Pool
+run-name: Pool ${{ inputs.action }} / ${{ inputs.writer }} / ${{ inputs.session }}
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Serialized queue operation (does NOT run AI)'
+        required: true
+        type: choice
+        default: status
+        options: [status, claim, submit, release]
+      writer:
+        description: 'Active Writer lane; W1 alone may claim topics formerly assigned to W2 or W3'
+        required: true
+        type: choice
+        default: W1
+        options: [W1, W2, W3]
+      session:
+        description: 'Stable nonsecret session ID (e.g. w1-mistral-20261014)'
+        required: false
+        type: string
+      branch:
+        description: 'Writer branch, e.g. writer/w1-mistral-20261014'
+        required: false
+        type: string
+      count:
+        description: 'Topics to claim per pair (max 2)'
+        required: true
+        type: choice
+        default: '2'
+        options: ['1', '2']
+      ids:
+        description: 'Submit/release: comma separated ID(s), max 2'
+        required: false
+        type: string
+      locale:
+        description: 'Optional locale filter (vi,en,de,fr,es,nl,zh,pt,ko,ja)'
+        required: false
+        type: string
+      reason:
+        description: 'Explicit coordinator release reason (min 12 chars)'
+        required: false
+        type: string
+      confirmed:
+        description: 'Coordinator release confirmation only'
+        required: false
+        type: boolean
+        default: false
+permissions:
+  contents: write
+  pull-requests: read
+concurrency:
+  group: global-dynamic-writer-pool
+  cancel-in-progress: false
+jobs:
+  claim:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate shared queue and legacy draft reservations
+        run: |
+          node --test tests/writer-pool.test.mjs
+          node scripts/writer-pool.mjs status
+      - name: Serialize claims/submissions on main (never publish content)
+        env:
+          MODE: ${{ inputs.action }}
+          WRITER: ${{ inputs.writer }}
+          SESSION: ${{ inputs.session }}
+          WRITER_BRANCH: ${{ inputs.branch }}
+          COUNT: ${{ inputs.count }}
+          IDS: ${{ inputs.ids }}
+          LOCALE: ${{ inputs.locale }}
+          REASON: ${{ inputs.reason }}
+          CONFIRMED: ${{ inputs.confirmed }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ "$MODE" = "status" ]; then
+            node scripts/writer-pool.mjs status --writer "$WRITER"
+            exit 0
+          fi
+          if [ -z "$SESSION" ] || [ -z "$WRITER_BRANCH" ]; then
+            echo "A stable session and writer branch are required for mutations"
+            exit 1
+          fi
+          args=(--writer "$WRITER" --session "$SESSION" --branch "$WRITER_BRANCH" --count "$COUNT")
+          if [ -n "$IDS" ]; then args+=(--ids "$IDS"); fi
+          if [ -n "$LOCALE" ]; then args+=(--locale "$LOCALE"); fi
+          if [ -n "$REASON" ]; then args+=(--reason "$REASON"); fi
+          if [ "$CONFIRMED" = "true" ]; then args+=(--confirmed true); fi
+          node scripts/writer-pool.mjs "$MODE" "${args[@]}" --apply
+      - name: Commit only claims ledger with race protection
+        if: ${{ inputs.action != 'status' }}
+        run: |
+          set -euo pipefail
+          git config user.name "global-writer-pool"
+          git config user.email "global-writer-pool@users.noreply.github.com"
+          git add factory/external-writers/claims.json
+          if git diff --cached --quiet; then
+            echo "No new claim transition; existing session resumes its ID(s)."
+            exit 0
+          fi
+          git commit -m "pool(global): ${{ inputs.action }} for ${{ inputs.writer }}"
+          git fetch --no-tags origin main
+          if [ "$(git rev-parse origin/main)" != "$(git rev-parse HEAD^)" ]; then
+            echo "SAFE_STOP: main advanced concurrently. Re-run dispatch after refreshing."
+            exit 1
+          fi
+          git push origin HEAD:main

@@ -76,6 +76,10 @@ function atomicWrite(next){
 }
 function main(){
  const op=process.argv[2]||"status",args=getArgs(process.argv.slice(3));
+ const control=read("factory/external-writers/control.json");
+ if(control.mode==="dynamic-pool"&&!["status","resume"].includes(op)){
+  throw Error("LEGACY_CLAIMS_DISABLED: use serialized GitHub Actions writer-pool.yml; do NOT mutate static-owner claims.");
+ }
  const state=read(STATE),board=read("factory/external-writers/assignments.json"),matrix=read("data/seo/master-matrix.json");
  const invalid=validateLedger(state,board);if(invalid.length)throw Error(invalid.join("; "));
  if(op==="status"||op==="resume"){
