@@ -47,7 +47,7 @@ try{
  const pending=new Set(ids);
  const failures=[];
  for(const p of packets){
-  const qa=checkArticle(p,matrix,locales,{pending,assetsRoot:root});
+  const qa=checkArticle(p,matrix,locales,{pending,assetsRoot:root,factMode:"strict"});
   if(!qa.passed)failures.push({id:p.matrix_id,errors:qa.errors});
   const output=matrix.rows.find(r=>r.id===p.matrix_id)?.url;
   if(output){

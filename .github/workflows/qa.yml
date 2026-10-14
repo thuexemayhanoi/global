@@ -29,7 +29,7 @@ jobs:
       - name: Verify deterministic content graph
         run: node scripts/seo/content-graph.mjs --check
       - name: Premium SEO, navigation, search and accessibility regression
-        run: node --test tests/ultra.test.mjs tests/premium.test.mjs tests/claims.test.mjs tests/external-writers.test.mjs tests/continuous-writer.test.mjs tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-refill.test.mjs tests/sitemaps.test.mjs tests/search-index.test.mjs tests/markdown-import.test.mjs tests/post-publish.test.mjs tests/seo-guard.test.mjs tests/topical-authority.test.mjs
+        run: node --test tests/ultra.test.mjs tests/premium.test.mjs tests/claims.test.mjs tests/external-writers.test.mjs tests/continuous-writer.test.mjs tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-refill.test.mjs tests/sitemaps.test.mjs tests/search-index.test.mjs tests/markdown-import.test.mjs tests/post-publish.test.mjs tests/seo-guard.test.mjs tests/topical-authority.test.mjs tests/fact-guard.test.mjs
       - name: Verify CNAME and canonical outputs
         shell: bash
         run: |
@@ -42,6 +42,8 @@ jobs:
         run: node scripts/seo/validate-plan.mjs
       - name: SEO protection guard (frozen live URLs, fingerprints, hreflang, planned-URL leaks)
         run: node scripts/seo/seo-guard.mjs
+      - name: Anti-fabrication fact guard (prices, NAP, hours, business schema)
+        run: node scripts/seo/fact-guard.mjs
       - name: Topical authority gates T1-T10 and coverage (read only)
         run: |
           node scripts/seo/topical-authority.mjs validate
