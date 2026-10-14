@@ -15,8 +15,8 @@ test("one sitemap index contains ten language shards and global pages, no IDEA o
  assert.deepEqual(found.urls,published);
  assert.ok(!found.urls.includes("/search/"));
  for(const row of matrix.rows.filter(x=>x.status==="IDEA"))assert.ok(!found.urls.includes(row.url),row.id);
- for(const code of langs)assert.equal(found.byChild["sitemap-"+code+".xml"].length,2);
- assert.equal(found.byChild["sitemap-main.xml"].length,5);
+ for(const code of langs)assert.equal(found.byChild["sitemap-"+code+".xml"].length,matrix.rows.filter(r=>r.status==="PUBLISHED"&&r.url.startsWith("/"+code+"/")).length);
+ assert.equal(found.byChild["sitemap-main.xml"].length,published.filter(u=>!langs.some(code=>u.startsWith("/"+code+"/"))).length);
 });
 
 test("sitemap bytes are deterministic derived state of only published generated pages",()=>{

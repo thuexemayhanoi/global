@@ -8,7 +8,7 @@ import {checkArticle} from "../scripts/articles.mjs";
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
 const empty={version:1,revision:0,claims:[]};
-// 120 original IDEA rows is a floor; owner-approved topical-map promotion may only add rows.
+// 120 original topics is a floor for IDEA + PUBLISHED Hub/Supporting rows: promotion adds rows, publication moves IDEA to PUBLISHED.
 const HELD=new Set([...registry.protected,...(registry.held_ids||[])].map(x=>x.id));
 const IDEAS=matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&r.status==="IDEA");
 const DRAFTABLE=IDEAS.filter(r=>!HELD.has(r.id)).length;
@@ -27,7 +27,7 @@ test("protect W1's fourteen existing drafts and two EN/DE editorial Hub drafts",
  assert.equal(registry.protected.length,14);
  assert.equal(registry.held_ids.length,2);
  assert.deepEqual(validatePool(matrix,empty,registry),[]);
- assert.ok(IDEAS.length>=120);
+ assert.ok(IDEAS.length+matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&r.status==="PUBLISHED").length>=120);
  assert.equal(poolCandidates(matrix,empty,registry).length,DRAFTABLE);
  const candidates=new Set(poolCandidates(matrix,empty,registry).map(r=>r.id));
  for(const id of [...registry.protected,...registry.held_ids].map(x=>x.id))
@@ -58,6 +58,7 @@ test("partial green push submits only actual verified drafts and refills free sl
  assert.equal(replay.status,"WAITING_FOR_DRAFTS");
 });
 test("one Writer can draft every remaining Matrix idea (104 at baseline) using turbo, without publishing",()=>{
+ const matrixBefore=JSON.stringify(matrix);
  let ledger=autoAdvance(matrix,empty,registry,req("W1"),opts).ledger;
  const done=[];
  for(let i=0;i<20;i++){
@@ -73,7 +74,7 @@ test("one Writer can draft every remaining Matrix idea (104 at baseline) using t
  assert.equal(ledger.claims.filter(c=>c.status==="SUBMITTED").length,DRAFTABLE);
  assert.equal(poolCandidates(matrix,ledger,registry).length,0);
  assert.equal(done.filter(id=>matrix.rows.find(r=>r.id===id).role==="SUPPORT").length,SUPPORT_DRAFTABLE);
- assert.equal(matrix.rows.filter(r=>r.role==="HUB"&&r.status==="PUBLISHED").length,0);
+ assert.equal(JSON.stringify(matrix),matrixBefore); // the Turbo loop never publishes or edits the Matrix
 });
 test("three Writers each claim up to ten unique article IDs, W1 continues without W2/W3",()=>{
  let ledger=empty,seen=new Set();

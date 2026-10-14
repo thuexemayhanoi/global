@@ -53,7 +53,7 @@
 - `docs/GLOBAL_MASTER_MATRIX.md` and `docs/MASTERWORK-CHECKPOINT.json` document current P0–P3 gaps and resumable state. Do not claim branch features are deployed.
 - Search at `/search/` is a nonindex technical utility: valid internal navigation target with real static HTML; intentionally absent from SEO Matrix's PUBLISHED set and sitemap. It must carry `noindex,follow` and must not produce query-parameter SEO URLs.
 - Homepage language equivalents and truly translated checklist equivalents retain reciprocal hreflang. Distinct new Hub/supporting articles must not auto-claim hreflang.
-- `data/seo/content-graph.json` is deterministic/derived; regenerate `node scripts/seo/content-graph.mjs --write` whenever the Matrix or Writer assignment changes; CI verifies byte-exact --check.
+- `data/seo/content-graph.json` (knowledge graph: nodes, silos, candidates, entities, typed edges, KEEP/UPGRADE/REVIEW/CREATE actions) and its readable report `docs/GLOBAL-SITE-MATRIX.md` are deterministic/derived; regenerate `node scripts/seo/content-graph.mjs --write` whenever the Matrix, Writer assignment, protected drafts, topical map or generated HTML changes; CI verifies byte-exact --check. They never read the volatile claims ledger.
 - All current dynamic Writer claims are serialized by the dedicated GitHub Actions dispatcher into main claims.json; local writer-claims.mjs is historical/test-only and must not be used for new claim mutations.
 - Markdown writer intake accepts strict JSON frontmatter and writes only ignored private drafts; neither import nor AI writer scripts may publish automatically.
 - Do not merge this technical branch, merge publication PR #6 or deploy without the owner's separate explicit production approval.
@@ -93,3 +93,9 @@
 - `data/business/reference.json` is the ONLY source of Thuê Xe Máy Hà Nội Nguyễn Tú NAP, hours and prices; `data/business/reference.localized.json` is generated (`node scripts/seo/fact-guard.mjs --write`). Read `docs/BUSINESS-REFERENCE.md`.
 - `node scripts/seo/fact-guard.mjs` (CI) fails wrong Nguyễn Tú facts anywhere, unsourced amounts/phones on live pages, site copy, Matrix, topical map and approved articles, and any NAP display or LocalBusiness-type schema while `publication.*_approved` flags are false. Writer drafts get warnings for unsourced amounts; `publish-batch` is strict.
 - Never change NAP, prices, flags or conflicts without dated evidence and owner approval in a reviewed PR. Known conflicts (site hours 08:00–21:30 vs canonical 09:00–21:00, delivery threshold, GBP title) stay listed until the owner resolves them outside this repo.
+
+## Global site matrix + pre-claim duplicate gate
+
+- `docs/GLOBAL-SITE-MATRIX.md` is the Global Content Cannibalization Matrix (Homepage → Pillar → Hub → Silo → Supporting). Silos are graph nodes and Hub-page sections, never URLs. UPGRADE on a live page is an editorial recommendation with metrics; change live content only through the reviewed publication gate.
+- `node scripts/seo/validate-plan.mjs` fails any two non-parent/child Hub/Supporting rows with query overlap ≥ 0.66 and no ≥40-char `distinct_from` reason, so a duplicate intent never reaches the Writer pool. Promotion copies candidate `distinct_from` into the Matrix row.
+- Performance signals are NOT_CONNECTED (no Search Console property for global.rentbikehanoi.com in the connected tools); never infer rankings or traffic.

@@ -7,8 +7,9 @@ const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const board=JSON.parse(fs.readFileSync("factory/external-writers/assignments.json","utf8"));
 const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
 const ledger={version:1,revision:0,claims:[]};
-// 120 original IDEA rows is a floor; owner-approved topical-map promotion may only add rows.
-const DRAFTABLE=matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&r.status==="IDEA").length-16;
+// 120 original topics is a floor for IDEA + PUBLISHED Hub/Supporting rows: promotion adds rows, publication moves IDEA to PUBLISHED.
+const HELD=new Set([...registry.protected,...(registry.held_ids||[])].map(x=>x.id));
+const DRAFTABLE=matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&r.status==="IDEA"&&!HELD.has(r.id)).length;
 const empty={files:[],errors:[]};
 const session="w1-test";
 const branch="writer/w1-test";
@@ -54,7 +55,7 @@ test("three sessions see only their own confirmed IDs and never mistake a previe
 test("Supporting drafts are available after Hub drafts even before parent publication",()=>{
  let ledgerState=structuredClone(ledger);
  let claimed=[];
- assert.ok(DRAFTABLE>=104);
+ assert.ok(DRAFTABLE>0);
  for(let n=0;claimed.length<DRAFTABLE;n++){
   const pair=transitionPool(matrix,ledgerState,registry,"claim",{writer:"W1",session,branch,count:Math.min(2,DRAFTABLE-claimed.length)},{nonce:"loop"+n,now:"2026-10-14T00:00:00Z"});
   ledgerState=pair.ledger;claimed.push(...pair.ids);

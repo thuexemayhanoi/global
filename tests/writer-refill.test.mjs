@@ -28,9 +28,11 @@ test("refill health shows real free ideas; capacity is not content",()=>{
  assert.equal(h.target,REFILL_TARGET);
  assert.equal(h.publish_allowed,false);
  assert.equal(h.auto_materialize,false);
- const ideas=matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&r.status==="IDEA").length;
- assert.ok(ideas>=120); // 120 original IDEA rows is a floor; approved topical-map promotion may only add
- assert.equal(h.free_ideas,ideas-16-ledger.claims.filter(c=>c.status!=="RELEASED").length); // Source-of-truth changes safely as Writer progresses
+ const held=new Set([...registry.protected,...(registry.held_ids||[])].map(x=>x.id));
+ const topics=matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&["IDEA","PUBLISHED"].includes(r.status));
+ assert.ok(topics.length>=120); // 120 original topics is a floor; promotion adds rows, publication moves IDEA to PUBLISHED
+ const live=new Set(ledger.claims.filter(c=>c.status!=="RELEASED").map(c=>c.id));
+ assert.equal(h.free_ideas,topics.filter(r=>r.status==="IDEA"&&!held.has(r.id)&&!live.has(r.id)).length); // Source-of-truth changes safely as Writer progresses
  const allClaimed=structuredClone(ledger);
  for(const row of matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&r.status==="IDEA"))
   if(!allClaimed.claims.some(c=>c.id===row.id)&&![...registry.protected,...registry.held_ids].some(p=>p.id===row.id))

@@ -118,3 +118,7 @@ From `architecture.json`: Supporting guides open with a 2–3 sentence direct an
 - No model APIs, no AI text generation, no auto-publication, no fabricated sources, search volume, rankings, reviews, prices, premises or availability.
 - Paid keyword tools (OpenSEO, Ubersuggest) were **not** used; queries are hypotheses until validated with real SERP/volume data in the target market and language.
 - Never edit CNAME, live URLs, canonical/hreflang/sitemap by hand; never touch `/blog`, `/lab`, WordPress, DNS or other repositories.
+
+## 10. Site matrix and knowledge graph (PR-3)
+
+`node scripts/seo/content-graph.mjs --write` extends the content graph with levels (HOMEPAGE/PILLAR/HUB/SILO/SUPPORT/UTILITY), KEEP/UPGRADE/REVIEW/CREATE actions with reasons, silo nodes per locale, topical candidates, the entity list and typed edges (has_pillar, has_hub, has_silo, contains, about, hreflang_equivalent, links_in_content). It also regenerates `docs/GLOBAL-SITE-MATRIX.md`, which covers competing intents, live pages below depth targets, silo coverage per locale, search-journey coverage and live FAQ coverage. Overlap combines query similarity, same silo, same intent and published-text similarity; parent/child Hub overlap is expected, and justified pairs need a written reason.
