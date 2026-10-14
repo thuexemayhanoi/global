@@ -44,6 +44,7 @@ export function generateSitemaps(pageKeys,localeCodes,origin=SITEMAP_ORIGIN){
  const groups=new Map([["main",[]],...localeCodes.map(code=>[code,[]])]);
  const seen=new Set();
  for(const key of pageKeys){
+  if(key==="search/index.html")throw Error("Noindex search may not enter sitemaps");
   const absolute=htmlKeyToURL(key,origin);
   if(seen.has(absolute))throw Error("Duplicate sitemap URL "+absolute);
   seen.add(absolute);
