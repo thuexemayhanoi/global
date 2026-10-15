@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 139,
+  "clean_runs": 141,
   "published": [
     {
       "id": "NL-H01",
@@ -3436,41 +3436,45 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T21:12:20.222Z"
+    },
+    {
+      "id": "DE-S70",
+      "locale": "de",
+      "url": "/de/guides/richtig-bremsen-roller-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:16:30.025Z",
+      "source_sha256": "e630565071af7ebe7e87a146c85d4d3a8ba8e6cae3664ce617dab3e4e8e58bd5",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T21:17:41.553Z"
+    },
+    {
+      "id": "DE-S71",
+      "locale": "de",
+      "url": "/de/guides/kurven-serpentinen-roller-fahren-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:16:30.025Z",
+      "source_sha256": "174258ff0ea57dbfca16fe3565e9d21d69a967e3436cc1cb6af20ff6d3a591d0",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T21:17:41.553Z"
+    },
+    {
+      "id": "DE-S72",
+      "locale": "de",
+      "url": "/de/guides/beifahrer-roller-vietnam-tipps/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:17:58.167Z",
+      "source_sha256": "c6920e075da85e4c7b58c74f925f8811cc08436f86cc22b59d7a957718b4f882",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T21:19:10.062Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T13:24:39.602Z",
-      "ids": [
-        "JA-H04",
-        "VI-H04"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T13:25:48.933Z",
-      "ids": [
-        "JA-H04",
-        "VI-H04"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T13:26:06.396Z",
-      "ids": [
-        "EN-S01",
-        "FR-S01"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T13:27:57.180Z",
-      "ids": [
-        "EN-S01",
-        "FR-S01"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T13:28:14.148Z",
       "ids": [
@@ -5012,16 +5016,47 @@
         "EN-S64"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T21:16:30.025Z",
+      "ids": [
+        "DE-S70",
+        "DE-S71"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T21:17:41.553Z",
+      "ids": [
+        "DE-S70",
+        "DE-S71"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T21:17:58.167Z",
+      "ids": [
+        "DE-S72"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T21:19:10.062Z",
+      "ids": [
+        "DE-S72"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T21:12:20.222Z",
+    "at": "2026-10-15T21:19:10.062Z",
     "ids": [
-      "EN-S63",
-      "EN-S64"
+      "DE-S72"
     ],
-    "commit": "b984c6fe15dc2a51730c0fc3787221559ea122d6",
-    "live_seconds": 62
+    "commit": "4aa10de3791db46093a3ca479a852c5dfffbc543",
+    "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
