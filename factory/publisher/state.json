@@ -1960,6 +1960,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T17:40:20.296Z"
+    },
+    {
+      "id": "DE-S13",
+      "locale": "de",
+      "url": "/de/guides/papiere-beim-fahren/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:40:38.025Z",
+      "source_sha256": "8cb18fbe3dfcc9db7c87ea8a51e2921afc70c4c65ec794c4da6b1c8d535cacce",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S14",
+      "locale": "en",
+      "url": "/en/guides/papers-to-carry-registration-card/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:40:38.025Z",
+      "source_sha256": "9420a6d84b86f896e211df5d3e1bc6534936d1d2957bf6ebfd6ec5e0e2eb6b13",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -3357,6 +3379,14 @@
         "ZH-S13"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:40:38.025Z",
+      "ids": [
+        "DE-S13",
+        "EN-S14"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3369,6 +3399,6 @@
     "live_seconds": 81
   },
   "queue": {
-    "APPROVED_BY_POLICY": 9
+    "APPROVED_BY_POLICY": 10
   }
 }
