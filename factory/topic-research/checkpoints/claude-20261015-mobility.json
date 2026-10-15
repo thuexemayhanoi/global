@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility",
   "batch_session": "research-claude-20261015-mobility",
   "created_at": "2026-10-15T09:33:24.963Z",
-  "updated_at": "2026-10-15T17:45:29.972Z",
-  "base_main_sha": "45bc7afb1a89b1254b8828062d572f74cdbbcb7e",
-  "last_commit_sha": "fcbbe336db50a427a555e16ebc5e69e65990cc25",
+  "updated_at": "2026-10-15T17:46:21.161Z",
+  "base_main_sha": "3ed26464887a6453f26cb5791c302971d699ca4a",
+  "last_commit_sha": "bd5ccdc04367fde21371f26875ce6702ba34a5d9",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 80,
-    "qa_pass": 80,
+    "researched": 90,
+    "qa_pass": 90,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 70,
+    "pushed": 80,
     "pending_push": 10
   },
   "coverage": {
@@ -30,18 +30,19 @@
       "es": 10,
       "nl": 10,
       "pt": 10,
-      "ko": 10
+      "ko": 10,
+      "ja": 10
     },
     "domains": {
       "transportation-mobility": 10,
-      "motorbike-rental": 7,
-      "traffic-law-safety": 63
+      "motorbike-rental": 8,
+      "traffic-law-safety": 72
     }
   },
   "last_batch": {
-    "seq": 8,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0008.json",
-    "sha256": "50c49b1245678f44f8a080f1182609e1ffed405a914cb42dd2cb97e87578dce5",
+    "seq": 9,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0009.json",
+    "sha256": "1aa055f8a2aa0b3246487fd5ccea5712760a9ac66f9ee654f4e9edaf8157bb0b",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -828,8 +829,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility-0008.json",
       "sha256": "50c49b1245678f44f8a080f1182609e1ffed405a914cb42dd2cb97e87578dce5",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "bd5ccdc04367fde21371f26875ce6702ba34a5d9",
       "researched_on": "2026-10-15",
       "topics": [
         {
@@ -933,11 +934,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 9,
+      "file": "factory/topic-research/batches/claude-20261015-mobility-0009.json",
+      "sha256": "1aa055f8a2aa0b3246487fd5ccea5712760a9ac66f9ee654f4e9edaf8157bb0b",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-15",
+      "topics": [
+        {
+          "ref": "ja:clutch-bike-practice-before-vietnam",
+          "locale": "ja",
+          "slug": "clutch-bike-practice-before-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-transmission",
+          "key": "ja::ヘトナム旅行前 クラッチ付きハイク 乗り方",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:vietnam-drink-riding-zero-tolerance",
+          "locale": "ja",
+          "slug": "vietnam-drink-riding-zero-tolerance",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナム 飲酒運転 基準 ハイク",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:vietnam-bike-speed-limits",
+          "locale": "ja",
+          "slug": "vietnam-bike-speed-limits",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナム ハイク 制限速度",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:vietnam-a1-licence-test-foreigners",
+          "locale": "ja",
+          "slug": "vietnam-a1-licence-test-foreigners",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H03",
+          "subcluster": "dc-licence",
+          "key": "ja::ヘトナム ハイク 免許 取得 外国人",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:vietnam-compulsory-bike-insurance",
+          "locale": "ja",
+          "slug": "vietnam-compulsory-bike-insurance",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H03",
+          "subcluster": "dc-insurance",
+          "key": "ja::ヘトナム ハイク 強制保険",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:vietnam-road-signs-for-bikes",
+          "locale": "ja",
+          "slug": "vietnam-road-signs-for-bikes",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナム 道路標識 ハイク",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-winter-bike-riding",
+          "locale": "ja",
+          "slug": "hanoi-winter-bike-riding",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-weather",
+          "key": "ja::ハノイ 冬 ハイク",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:vietnam-bike-trip-clothing",
+          "locale": "ja",
+          "slug": "vietnam-bike-trip-clothing",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-gear",
+          "key": "ja::ヘトナム ハイク 服装",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-bike-theft-prevention",
+          "locale": "ja",
+          "slug": "hanoi-bike-theft-prevention",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ハノイ ハイク 盗難 防止",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-bike-parking",
+          "locale": "ja",
+          "slug": "hanoi-bike-parking",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ハノイ ハイク 駐車",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 9,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0009.json",
+    "seq": 10,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0010.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -1009,6 +1121,13 @@
       "seq": 8,
       "topics": 10,
       "sha256": "50c49b1245678f44f8a080f1182609e1ffed405a914cb42dd2cb97e87578dce5"
+    },
+    {
+      "at": "2026-10-15T17:46:21.161Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 9,
+      "topics": 10,
+      "sha256": "1aa055f8a2aa0b3246487fd5ccea5712760a9ac66f9ee654f4e9edaf8157bb0b"
     }
   ]
 }
