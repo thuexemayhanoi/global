@@ -3,34 +3,12 @@
   "ledger_revision": 57,
   "stage": "PILOT",
   "counts": {
-    "APPROVED_BY_POLICY": 3,
     "REVIEW_REQUIRED": 73,
-    "WAIT_PARENT": 6,
+    "WAIT_PARENT": 5,
+    "APPROVED_BY_POLICY": 2,
     "REJECTED": 30
   },
   "items": [
-    {
-      "id": "ES-H01",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "8370e101b1e6ccd833589f60062d4a28716b9f9aae9299c2fd05e45807ee9166",
-      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
-      "details": []
-    },
-    {
-      "id": "KO-H01",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "457f225cbf89d1715619c3c7191c7611ca04b08377994d8f79aad3d37df47986",
-      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
-      "details": []
-    },
     {
       "id": "EN-H02",
       "decision": "REVIEW_REQUIRED",
@@ -429,7 +407,6 @@
       "id": "ES-S01",
       "decision": "REVIEW_REQUIRED",
       "failed": [
-        "G2_PARENT_PUBLISHED",
         "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
@@ -439,7 +416,6 @@
       "source_sha256": "3a8e5455d4d3768feee666b0da883b2ef04f879f0c73d83b1d96c3798c185cba",
       "source_commit": "b89e3768ba9765a094d920ff988fe3df71873342",
       "details": [
-        "G2_PARENT_PUBLISHED: ES-H01 is IDEA",
         "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
         "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: - ¿Tu permiso internacional solo muestra la categoría A1? Cualquier moto por debajo de 125 cm³, así que ni Winner ni Exciter."
       ]
@@ -480,18 +456,14 @@
     },
     {
       "id": "KO-S01",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "10f94df1aef1f04aa6b12c3ebfe211b4cc53a8052e3d21007bd8990f9af9c455",
       "source_commit": "e7ece5d9c4372faacd386f9c1c892c0cffcba968",
-      "details": [
-        "G2_PARENT_PUBLISHED: KO-H01 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "NL-S01",
@@ -599,8 +571,7 @@
       "id": "ES-S02",
       "decision": "REJECTED",
       "failed": [
-        "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED"
+        "G1_DRAFT_QA"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
@@ -608,8 +579,7 @@
       "source_sha256": "b7549cb045d5223a4e84efc914624b8398dddcfd2384541d8ff64709f6c4d84b",
       "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
       "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «200.000 dong»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph ",
-        "G2_PARENT_PUBLISHED: ES-H01 is IDEA"
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «200.000 dong»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph "
       ]
     },
     {
@@ -653,7 +623,6 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
         "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
@@ -664,7 +633,6 @@
       "source_commit": "fcb7d4f0a038b2f79324d4bfebd28dbc0e18e828",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «20만 동»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «9,000동",
-        "G2_PARENT_PUBLISHED: KO-H01 is IDEA",
         "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
         "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: 하노이 렌터바이크 시장에는 대부분의 여행자가 제대로 분류하지 못하지만 같은 문제를 정반대 방식으로 푸는 두 가지 카테고리가 있다. 바로 50cc 스쿠터와 전동 스쿠터다. 두 종 모두 최대한의 단순함을 약속하고, 같은 이유로 매력적이다. 베트남 규정상  | 2025년 1월 1일부터 베트남에서는 도로 교통 질서·안전법 36/20"
       ]
