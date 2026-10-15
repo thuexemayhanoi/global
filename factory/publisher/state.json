@@ -3892,17 +3892,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T22:08:25.485Z"
+    },
+    {
+      "id": "ES-S37",
+      "locale": "es",
+      "url": "/es/guides/movil-conduciendo-moto-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:14:18.311Z",
+      "source_sha256": "b6517dd91b30c1b96d073784d97322080b86275a3628c7d882d638225561766e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ES-S38",
+      "locale": "es",
+      "url": "/es/guides/convertir-carnet-espanol-en-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:14:18.311Z",
+      "source_sha256": "c53722a375a1cd2e5be71366f25c3b5401d635ef78c28ff6a14d817379c86342",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T17:12:29.729Z",
-      "ids": [
-        "EN-S12",
-        "ES-S11"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T17:14:01.205Z",
       "ids": [
@@ -5454,6 +5468,14 @@
         "ES-S36"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T22:14:18.311Z",
+      "ids": [
+        "ES-S37",
+        "ES-S38"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -5464,5 +5486,7 @@
     "commit": "2353c170e0c28e99bbc3a4ece522bd93a3389271",
     "live_seconds": 62
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 8
+  }
 }
