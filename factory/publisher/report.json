@@ -3,8 +3,8 @@
   "ledger_revision": 84,
   "stage": "CONTINUOUS",
   "counts": {
-    "APPROVED_BY_POLICY": 21,
-    "WAIT_PARENT": 11,
+    "APPROVED_BY_POLICY": 24,
+    "WAIT_PARENT": 6,
     "REJECTED": 1
   },
   "items": [
@@ -142,18 +142,14 @@
     },
     {
       "id": "PT-S05",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
       "source_sha256": "54f6aab2e0d495f01f79c7ab1f452e0690d6144a3d210cacd5feb1a98c3653d5",
       "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": [
-        "G2_PARENT_PUBLISHED: PT-H03 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "EN-S06",
@@ -179,33 +175,25 @@
     },
     {
       "id": "PT-S06",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "4f163c29aeeb2297dfe7fd6532d3dc9c58135321628d7ea4e445df62b87e3ba7",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: PT-H03 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "FR-S07",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
       "source_sha256": "03347b22e7ae7b8b4f988b645ea86e6e5959512609b5bbaf0e6eea23f46b7877",
       "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": [
-        "G2_PARENT_PUBLISHED: FR-H04 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "JA-S07",
@@ -254,18 +242,14 @@
     },
     {
       "id": "FR-S08",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "3ac9994cc29aca1d7ffa0d62d30cc0c22bbd670303320365e3ddb0a7ba97ceda",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: FR-H04 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "JA-S08",
@@ -347,28 +331,13 @@
     },
     {
       "id": "PT-S09",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "975c0a9bf6681504d5047d7b46dcb2c5143c1f2b516e1914c4e299a199d78437",
-      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": [
-        "G2_PARENT_PUBLISHED: PT-H03 is IDEA"
-      ]
-    },
-    {
-      "id": "FR-H04",
       "decision": "APPROVED_BY_POLICY",
       "failed": [],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "6f9999924049d348813da8d9fa2e8403debc4c37f11dc873f1f984be20ff40e3",
-      "source_commit": "cd4f4a23b487ce3fedd247064619509a1bc4dcad",
+      "source_sha256": "975c0a9bf6681504d5047d7b46dcb2c5143c1f2b516e1914c4e299a199d78437",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": []
     },
     {
@@ -379,17 +348,6 @@
       "session": "w2-live",
       "branch": "writer/w2-live",
       "source_sha256": "0bfd6869d4a084c67a1ddf2e84a59a037851d1f244d7fc326641cd2baa950052",
-      "source_commit": "cd4f4a23b487ce3fedd247064619509a1bc4dcad",
-      "details": []
-    },
-    {
-      "id": "PT-H03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "63385ba6c1b4ca4bab9fefbbdf970a52f4d50e9b3e6f4f8bd1dad99acecb82fd",
       "source_commit": "cd4f4a23b487ce3fedd247064619509a1bc4dcad",
       "details": []
     },

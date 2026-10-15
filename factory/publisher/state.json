@@ -1192,6 +1192,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T13:24:20.231Z"
+    },
+    {
+      "id": "JA-H04",
+      "locale": "ja",
+      "url": "/ja/topics/anzen-trouble/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:24:39.602Z",
+      "source_sha256": "0bfd6869d4a084c67a1ddf2e84a59a037851d1f244d7fc326641cd2baa950052",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "VI-H04",
+      "locale": "vi",
+      "url": "/vi/topics/an-toan-hanh-trinh/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:24:39.602Z",
+      "source_sha256": "71614679dd7b934d798d8735e558c6ee8f978c8e91422071829b1455e91d260e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2065,6 +2087,14 @@
         "FR-H04"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T13:24:39.602Z",
+      "ids": [
+        "JA-H04",
+        "VI-H04"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2077,8 +2107,8 @@
     "live_seconds": 102
   },
   "queue": {
-    "APPROVED_BY_POLICY": 21,
-    "WAIT_PARENT": 11,
+    "APPROVED_BY_POLICY": 24,
+    "WAIT_PARENT": 6,
     "REJECTED": 1
   }
 }
