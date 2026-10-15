@@ -11,6 +11,18 @@ Research is the only part of the Topic Factory that needs live web access, so it
 
 No PR or owner click is needed for intake. Replaying the same **fully accepted** batch is a no-op (SHA-256 log in `data/seo/topic-factory/research-log.json`). If you rebase the research branch onto newer `main`, `validate-batches` recognizes unchanged previously accepted batch payloads using this log and validates only new or modified payloads. Previously rejected batches remain failed until corrected; changing their contents creates a new digest and re-runs all gates. Do not copy old acceptance onto a changed file.
 
+## Crash-safe sessions (recommended for any agent that can run commands)
+
+Sessions die; work that is only in an agent's memory or local clone dies with them. `node scripts/topic-research.mjs` saves every batch of **10 real topics** the moment it passes QA and lets any later session continue from GitHub:
+
+```
+node scripts/topic-research.mjs resume --agent claude --session 20261015          # first, and after every crash
+node scripts/topic-research.mjs check  --agent claude --session 20261015 --draft drafts/b.json
+node scripts/topic-research.mjs commit --agent claude --session 20261015 --draft drafts/b.json
+```
+
+`commit` = Duplicate, Intent, Source and Schema QA → one commit with `factory/topic-research/batches/<agent>-<session>-NNNN.json` plus `factory/topic-research/checkpoints/<agent>-<session>.json` → non-force push of `research/<agent>-<session>` → verified on GitHub → `SAVED`. The checkpoint records totals, QA pass/fail, the SHA-256 and commit of every batch, the next batch and unresolved items; it is **not** a batch and the Topic Factory never ingests it. A QA FAIL is repaired first, never forced; 1–9 topics only with `--final`; never pad a batch or invent data. Drafts may live in `factory/topic-research/drafts/` (git-ignored). Hand-pushed batches under any other file name keep working exactly as before. Full runbook: `docs/TOPIC-RESEARCH-CHECKPOINT.md`.
+
 ## Batch schema
 
 ```json

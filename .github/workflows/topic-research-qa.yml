@@ -15,8 +15,13 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - name: Validate research batches (schema, evidence, duplicate layers, topical gates; read-only)
         run: node scripts/topic-factory.mjs validate-batches
+      - name: Verify the session checkpoint travels with its batches (own files only; read-only)
+        # The branch name comes from the runner's own GITHUB_HEAD_REF / GITHUB_REF_NAME (never interpolated into the shell).
+        run: node scripts/topic-research.mjs verify-tree --base origin/main
