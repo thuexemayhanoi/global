@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 96,
+  "clean_runs": 98,
   "published": [
     {
       "id": "NL-H01",
@@ -2522,7 +2522,8 @@
       "at": "2026-10-15T18:32:36.546Z",
       "source_sha256": "3688ddc1d152b46ad6a1f3c053ddcbcb363f6f768e23abee6bdeb4d6c16fb4e5",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:34:10.856Z"
     },
     {
       "id": "PT-S17",
@@ -2533,34 +2534,35 @@
       "at": "2026-10-15T18:32:36.546Z",
       "source_sha256": "f4d78c501f59c91fb80d3ed60bbea8959496c6be4e984afc80b4c250219a30dd",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:34:10.856Z"
+    },
+    {
+      "id": "VI-S17",
+      "locale": "vi",
+      "url": "/vi/guides/chi-phi-phat-sinh-thue-xe/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:34:31.539Z",
+      "source_sha256": "d69cb2bd879c7e7233b76250657a4bdb6503b19ab5a8c166960b3f0bee68d1a5",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:35:43.077Z"
+    },
+    {
+      "id": "ZH-S18",
+      "locale": "zh",
+      "url": "/zh/guides/ewai-feiyong/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:34:31.539Z",
+      "source_sha256": "64c46216788dda2331902ae035c2ec3469e022a9adf616a88cafbb41f09767c7",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:35:43.077Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:21:02.105Z",
-      "ids": [
-        "KO-H03",
-        "NL-H03"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:22:33.546Z",
-      "ids": [
-        "KO-H03",
-        "NL-H03"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:22:50.449Z",
-      "ids": [
-        "VI-H03",
-        "ZH-H03"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T09:23:57.451Z",
       "ids": [
@@ -4119,18 +4121,42 @@
         "PT-S17"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:34:10.856Z",
+      "ids": [
+        "NL-S17",
+        "PT-S17"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:34:31.539Z",
+      "ids": [
+        "VI-S17",
+        "ZH-S18"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:35:43.077Z",
+      "ids": [
+        "VI-S17",
+        "ZH-S18"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T18:31:57.701Z",
+    "at": "2026-10-15T18:35:43.077Z",
     "ids": [
-      "JA-S17",
-      "KO-S17"
+      "VI-S17",
+      "ZH-S18"
     ],
-    "commit": "697780e446a5834b4c0aaf7abc75d3a952559ca8",
-    "live_seconds": 162
+    "commit": "4c78be6474e1fc1c75b5d86046a35f4b1c5aa2f3",
+    "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 4
+    "APPROVED_BY_POLICY": 2
   }
 }
