@@ -772,6 +772,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:58:25.757Z"
+    },
+    {
+      "id": "DE-S04",
+      "locale": "de",
+      "url": "/de/guides/kaution-rueckzahlung/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:58:42.415Z",
+      "source_sha256": "4bb1711de4153223f1ebf97c8b4121cc045f89ace3419ee5c5db90177cb69624",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S04",
+      "locale": "ko",
+      "url": "/ko/guides/bojeunggeum-hwanbul/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:58:42.415Z",
+      "source_sha256": "e250b879b50c95395ab1409ecbdcfc44b40a4b093b4953103a938e5250273c71",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1347,6 +1369,14 @@
         "NL-S03"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:58:42.415Z",
+      "ids": [
+        "DE-S04",
+        "KO-S04"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1360,7 +1390,7 @@
   },
   "queue": {
     "WAIT_PARENT": 30,
-    "APPROVED_BY_POLICY": 25,
+    "APPROVED_BY_POLICY": 23,
     "REJECTED": 11
   }
 }
