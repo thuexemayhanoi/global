@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "kind": "LEGACY_HUB_SOURCE_INTAKE",
+  "owner_approved_on": "2026-10-15",
+  "source_pr": 17,
+  "source_branch": "writer/w1-vibe-20261014",
+  "batch_size": 2,
+  "ids": [
+    "DE-H02",
+    "EN-H03",
+    "ES-H03",
+    "FR-H01",
+    "FR-H04",
+    "JA-H01",
+    "JA-H04",
+    "KO-H02",
+    "NL-H02",
+    "PT-H03",
+    "VI-H01",
+    "VI-H04",
+    "ZH-H01",
+    "ZH-H04"
+  ],
+  "guardrails": [
+    "Keep original Writer branch files untouched",
+    "New claims need exact source commit and byte SHA-256",
+    "No URL/canonical/NAP/price edits",
+    "Writer QA must pass before imported claim",
+    "Publisher QA and Live QA remain mandatory",
+    "Never import published, protected held-by-editorial, or duplicate claims"
+  ],
+  "notes": "Explicit owner approval on 2026-10-15 to unblock legacy Hub drafts through QA. This approval is for trusted source intake only, not QA bypass or guaranteed publication."
+}
