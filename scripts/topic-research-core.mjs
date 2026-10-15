@@ -567,6 +567,18 @@ export function planResume(f){
  const open=(cp?.unresolved||[]);
  if(open.some(u=>u.kind==="QA_FAIL"))actions.push("FIX_UNRESOLVED: "+open.filter(u=>u.kind==="QA_FAIL").length+" QA FAIL candidate(s) are kept in the checkpoint; repair them (never force) and include them in a later batch");
  for(const u of open.filter(x=>x.kind==="BLOCKER"))actions.push("BLOCKER: "+u.message);
+ // A commit cannot record its own SHA: the newest batch stays COMMITTED in the checkpoint (and the TA IDs
+ // main assigns later are missing) until the next commit settles it. Say so, so a session that ends now
+ // leaves a checkpoint on GitHub that itself reads PUSHED with commit SHAs and TA IDs.
+ if(cp&&checkpoint.trust==="VERIFIED"){
+  const onGitHub=new Set(remoteBatches.map(b=>b.sha256));
+  checkpoint.settle={unsettled_batches:(cp.batches||[]).filter(b=>b.state!=="PUSHED"&&onGitHub.has(b.sha256)).length,
+   missing_ta_ids:(cp.batches||[]).flatMap(b=>b.topics||[]).filter(t=>!t.ta_id&&taByKey.get(t.key)).length};
+  const {unsettled_batches:u,missing_ta_ids:m}=checkpoint.settle;
+  if((u||m)&&!["PUSH_PENDING","REPLAY_UNPUSHED"].includes(action))
+   actions.push("SETTLE_CHECKPOINT: the checkpoint on GitHub still records "+u+" pushed batch(es) as COMMITTED"+
+    (m?" and lacks "+m+" TA ID(s) main has assigned":"")+"; the next batch commit settles this automatically, and a session that ends now runs `checkpoint --sync-ids --note \"session end\"`");
+ }
  const nextSeq=maxSeq+1;
  actions.push("READ_CONTRACT: re-read AGENTS.md and docs/TOPIC-FACTORY.md on main"+(f.main?.sha?"@"+f.main.sha.slice(0,12):"")+" before researching (the research contract is authoritative)");
  actions.push("CONTINUE: research the next "+BATCH_SIZE+" topics → batch "+String(nextSeq).padStart(4,"0")+" (skip every topic in do_not_research)");

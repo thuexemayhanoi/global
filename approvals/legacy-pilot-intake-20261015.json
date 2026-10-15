@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "LEGACY_PILOT_SOURCE_INTAKE",
+  "owner_approved_on": "2026-10-15",
+  "source_pr": 6,
+  "source_branch": "publish/pilot-hubs-en-de",
+  "ids": [
+    "EN-H01",
+    "DE-H01"
+  ],
+  "ownership": {
+    "EN-H01": {
+      "writer": "W2",
+      "session": "w2-live",
+      "branch": "writer/w2-live"
+    },
+    "DE-H01": {
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live"
+    }
+  },
+  "metadata_normalization": {
+    "facts_reviewed_by_human": false,
+    "serp_intent_checked": false
+  },
+  "guardrails": [
+    "Retain original manuscript commit and full SHA-256 unchanged",
+    "Only normalize stale review metadata and attach current Writer session",
+    "All G1-G5 G7 source and live QA mandatory",
+    "No URL changes, existing page overwrites, or fake human approval",
+    "Use same source PR6 manuscripts; never re-draft"
+  ]
+}
