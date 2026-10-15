@@ -4168,17 +4168,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T22:40:20.772Z"
+    },
+    {
+      "id": "FR-S28",
+      "locale": "fr",
+      "url": "/fr/guides/alcool-et-scooter-au-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:40:38.337Z",
+      "source_sha256": "4af6046d9c3d094349325a011405987385d509685fd77950bfde11f24ce7ba6d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S29",
+      "locale": "fr",
+      "url": "/fr/guides/limitations-de-vitesse-moto-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:40:38.337Z",
+      "source_sha256": "caaff64b72e5de0700e7011798807f85bc901ac614335cfd5e6f70dcfe192098",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T17:45:43.823Z",
-      "ids": [
-        "NL-S13",
-        "PT-S13"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T17:47:57.627Z",
       "ids": [
@@ -5726,6 +5740,14 @@
         "FR-S27"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T22:40:38.337Z",
+      "ids": [
+        "FR-S28",
+        "FR-S29"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -5738,6 +5760,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 5
+    "APPROVED_BY_POLICY": 3
   }
 }
