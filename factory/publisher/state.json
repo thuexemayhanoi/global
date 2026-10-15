@@ -1144,6 +1144,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T13:20:44.457Z"
+    },
+    {
+      "id": "EN-H03",
+      "locale": "en",
+      "url": "/en/topics/documents-and-contracts/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:21:05.334Z",
+      "source_sha256": "17a345569a7b1e96da8c40d98fa71b8995be22a25678b0b8106c31f0ccef12a9",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ES-H03",
+      "locale": "es",
+      "url": "/es/topics/documentos-y-contrato/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:21:05.334Z",
+      "source_sha256": "772865013baf341b70a44d086764d7101e6c0499169f3cc35a1471caac015710",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1985,6 +2007,14 @@
         "ZH-H01"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T13:21:05.334Z",
+      "ids": [
+        "EN-H03",
+        "ES-H03"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1997,8 +2027,8 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 14,
-    "WAIT_PARENT": 22,
+    "APPROVED_BY_POLICY": 16,
+    "WAIT_PARENT": 18,
     "REJECTED": 1
   }
 }
