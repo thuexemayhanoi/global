@@ -220,6 +220,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:14:37.291Z"
+    },
+    {
+      "id": "KO-H03",
+      "locale": "ko",
+      "url": "/ko/topics/myeonheo-gyeyak/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T09:21:02.105Z",
+      "source_sha256": "42ad62b8267b5d14af6df494235913ec952e85df56207d17355c227b9a19bd39",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "NL-H03",
+      "locale": "nl",
+      "url": "/nl/topics/rijbewijs-en-contract/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T09:21:02.105Z",
+      "source_sha256": "284207bb9343c8b86aa219bb3b26d50545604c074382128a9fefa1581cd04414",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -422,6 +444,14 @@
         "JA-H03"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:21:02.105Z",
+      "ids": [
+        "KO-H03",
+        "NL-H03"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -434,8 +464,8 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 11,
-    "REJECTED": 73,
-    "WAIT_PARENT": 14
+    "APPROVED_BY_POLICY": 30,
+    "WAIT_PARENT": 42,
+    "REJECTED": 24
   }
 }
