@@ -292,6 +292,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:25:44.055Z"
+    },
+    {
+      "id": "ES-H04",
+      "locale": "es",
+      "url": "/es/topics/seguridad-en-ruta/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:26:03.344Z",
+      "source_sha256": "4b1e95a9116ce8aaa720e190f3d48a8ef7480dac79148489a332e1bad96a34b4",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "NL-H04",
+      "locale": "nl",
+      "url": "/nl/topics/veilig-rijden/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:26:03.344Z",
+      "source_sha256": "fb298cdad17d07179dea3ad19c0cdfca48f4ada184192a7308b04cb6fb9ff16c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -547,6 +569,14 @@
       "at": "2026-10-15T09:25:44.055Z",
       "ids": [],
       "result": "STAGE_ADVANCED RAMP→CONTINUOUS"
+    },
+    {
+      "at": "2026-10-15T09:26:03.344Z",
+      "ids": [
+        "ES-H04",
+        "NL-H04"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -559,8 +589,7 @@
     "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 33,
-    "WAIT_PARENT": 35,
-    "REJECTED": 24
+    "APPROVED_BY_POLICY": 48,
+    "WAIT_PARENT": 42
   }
 }
