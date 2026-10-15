@@ -1864,6 +1864,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T17:34:12.704Z"
+    },
+    {
+      "id": "ES-S10",
+      "locale": "es",
+      "url": "/es/guides/seguro-viaje-moto-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:34:35.047Z",
+      "source_sha256": "629d1789e01f95cf4b0f6d5857d2b568b726c088e505302fffc06514d539fdd1",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S11",
+      "locale": "fr",
+      "url": "/fr/guides/assurance-voyage-scooter/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:34:35.047Z",
+      "source_sha256": "8f70b7a63960d79590a607386482def835620a853228f7e4d057657ba12f3156",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -3197,6 +3219,14 @@
         "EN-S11"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:34:35.047Z",
+      "ids": [
+        "ES-S10",
+        "FR-S11"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3209,6 +3239,6 @@
     "live_seconds": 142
   },
   "queue": {
-    "APPROVED_BY_POLICY": 3
+    "APPROVED_BY_POLICY": 13
   }
 }
