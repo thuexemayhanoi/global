@@ -6,7 +6,7 @@ Research is the only part of the Topic Factory that needs live web access, so it
 
 1. Branch from latest `main` as `research/<agent>-<session>` (for example `research/claude-20261015`).
 2. Add one JSON file per batch under `factory/topic-research/batches/` (25–50 candidates is the normal size, 1–50 accepted).
-3. Run `node scripts/topic-factory.mjs validate-batch --file factory/topic-research/batches/<file>.json` and fix every rejection.
+3. Run `node scripts/topic-factory.mjs validate-batches` to check **all files together**, including duplicate intents across different batch JSONs and the 1,000-topic planning-slot cap per locale. For the first isolated file, `validate-batch --file <file>` is also available. Fix every rejection before push.
 4. Push the branch. **Topic Research QA** validates it; on green, **Global Topic Factory** (main code only) ingests the batch as DATA, assigns `TA-XX-NNNN` IDs, registers the references and, when a locale's READY backlog is below 100, promotes gate-clean candidates to Matrix `IDEA` rows under `approvals/standing-policy-20261015.json`.
 
 No PR or owner click is needed for intake. Replaying the same batch is a no-op (SHA-256 log in `data/seo/topic-factory/research-log.json`).
@@ -57,4 +57,4 @@ Other examples: `road-trips-routes` → `rt-day-trips`, `transportation-mobility
 - No `search_volume`, `ranking` or `traffic` fields; keyword evidence stays `NOT_VALIDATED` (or `AGENT_OBSERVED_SERP` when the agent actually looked at a results page).
 - All eight domains are open for research: existing Hub topics use a real same-locale `parent_id`; a new proposed-Hub topic uses `parent_id:null`, matching `domain_id` and a valid `subcluster` from the six `RESEARCH_OPEN` domains. These are recorded as `ARCHITECTURE_BLOCKED` only; no Matrix promotion until its reviewed new-Hub architecture PR (at least eight distinct validated supporting candidates).
 - No transactional rental intent: commercial rental keywords belong to thuexemaynguyentu.com and rentbikehanoi.com.
-- Duplicate layers L1–L5 (exact, diacritic-folded, intent overlap, title trigram, topic signature) plus topical gates T1–T10 decide; rejected candidates are logged, never forced in.
+- Duplicate layers L1–L5 (exact, diacritic-folded, intent overlap, title trigram, topic signature) plus topical gates T1–T10 decide; **validation is cumulative across all files on the branch**. A locale cannot exceed 1,000 Matrix + research slots, including ARCHITECTURE_BLOCKED candidates (PROMOTED proposals count only through their Matrix row). Rejections are logged, never forced in.
