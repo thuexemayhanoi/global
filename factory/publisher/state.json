@@ -4348,17 +4348,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T22:57:57.178Z"
+    },
+    {
+      "id": "FR-S43",
+      "locale": "fr",
+      "url": "/fr/guides/scooter-autoroute-vietnam-interdit/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:58:14.870Z",
+      "source_sha256": "a3070fefa51646feef34d3963c4f18129f6381055f546137063c0f177fce9521",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S44",
+      "locale": "fr",
+      "url": "/fr/guides/depasser-scooter-vietnam-regles/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:58:14.870Z",
+      "source_sha256": "be43238945f2b150e37758f538b0ff1d90d9e5eda8199e39570c9187f2ba95c2",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T18:03:12.422Z",
-      "ids": [
-        "PT-S14",
-        "VI-S14"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T18:04:23.556Z",
       "ids": [
@@ -5902,6 +5916,14 @@
         "FR-S42"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T22:58:14.870Z",
+      "ids": [
+        "FR-S43",
+        "FR-S44"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -5914,6 +5936,6 @@
     "live_seconds": 81
   },
   "queue": {
-    "APPROVED_BY_POLICY": 6
+    "APPROVED_BY_POLICY": 4
   }
 }
