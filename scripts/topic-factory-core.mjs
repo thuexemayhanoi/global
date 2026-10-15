@@ -249,6 +249,15 @@ export function validateResearchBatch(batch,{matrix,map,policy}){
  * TA IDs, then drop any that fail topical gates or factory duplicate layers.
  * Returns a new map (input untouched) plus per-candidate outcome.
  */
+/** A proposal consumes a planning slot until it is promoted into the Matrix.
+ * PROMOTED is counted via its Matrix row, never twice.
+ * Blocked architecture research also consumes a planning slot, not an article. */
+export function researchUsage({matrix,map,policy},locale){
+ const roles=new Set(policy.targets.counted_roles);
+ const rows=matrix.rows.filter(r=>r.locale===locale&&roles.has(r.role)).length;
+ const pending=(map.locales[locale]?.proposals||[]).filter(p=>p.status!=="PROMOTED").length;
+ return {locale,target:policy.targets.per_locale,rows,pending,total:rows+pending,available:Math.max(0,policy.targets.per_locale-rows-pending)};
+}
 export function ingestResearch(batch,{matrix,map,policy,source,frozenUrls=[]}){
  const v=validateResearchBatch(batch,{matrix,map,policy});
  const next=structuredClone(map),added=[],rejected=v.issues.filter(x=>x.index>=0).map(x=>({index:x.index,gate:x.gate,reason:x.reason}));
@@ -256,6 +265,12 @@ export function ingestResearch(batch,{matrix,map,policy,source,frozenUrls=[]}){
  const refs=next.references.references;
  for(const {index,candidate:c} of v.accepted){
   const L=next.locales[c.locale];
+  const usage=researchUsage({matrix,map:next,policy},c.locale);
+  if(usage.available===0){
+   rejected.push({index,gate:"F6_LOCALE_CAP",reason:"Locale "+c.locale+" has "+usage.total+"/"+usage.target+
+    " reserved planning slots (Matrix + unpromoted research); no new candidate admitted"});
+   continue;
+  }
   const nums=L.proposals.map(p=>Number(String(p.candidate_id).split("-")[2])||0);
   const id="TA-"+c.locale.toUpperCase()+"-"+String(1+Math.max(0,...nums)).padStart(4,"0");
   const keys=[];
@@ -301,6 +316,22 @@ export function ingestResearch(batch,{matrix,map,policy,source,frozenUrls=[]}){
  const used=new Set(allProposals(next).flatMap(p=>p.references||[]));
  next.references.references=refs.filter(r=>!r.key.startsWith("rx-")||used.has(r.key));
  return {map:next,added,rejected,batch_error:false};
+}
+
+/** Validate multiple research files against one cumulative simulated map.
+ * The actual repo remains unchanged; duplicate/intent and locale-cap gates
+ * include every previously accepted batch, not just individual JSON files. */
+export function validateResearchSequence(files,{matrix,map,policy,frozenUrls=[]}){
+ let next=map;
+ const results=[];
+ for(const {file,batch} of files){
+  const v=validateResearchBatch(batch,{matrix,map:next,policy});
+  const dry=ingestResearch(batch,{matrix,map:next,policy,source:file,frozenUrls});
+  const passed=v.passed&&!dry.batch_error&&dry.rejected.length===0&&dry.added.length===batch?.candidates?.length;
+  results.push({file,passed,would_add:dry.added.length,rejected:dry.rejected});
+  if(passed)next=dry.map;
+ }
+ return {passed:results.every(r=>r.passed),results,map:next};
 }
 
 /** Markdown dashboard from status + publisher state; data-derived only, no timestamps. */
