@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 100,
+  "clean_runs": 102,
   "published": [
     {
       "id": "NL-H01",
@@ -2608,41 +2608,45 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:39:05.034Z"
+    },
+    {
+      "id": "DE-S39",
+      "locale": "de",
+      "url": "/de/guides/hupen-in-vietnam-regeln/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:41:14.794Z",
+      "source_sha256": "fe3c36eb327e09da0efd00cfcd13404e432f19233376a1b53999729c7df94b84",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:42:28.751Z"
+    },
+    {
+      "id": "DE-S40",
+      "locale": "de",
+      "url": "/de/guides/vorfahrt-kreuzung-kreisverkehr-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:41:14.794Z",
+      "source_sha256": "658500f8d69c80bf1264155e1e4f9be9af299fb80a8d21b230f7da78568696d2",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:42:28.751Z"
+    },
+    {
+      "id": "EN-S32",
+      "locale": "en",
+      "url": "/en/guides/compulsory-motorbike-insurance-in-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:42:47.075Z",
+      "source_sha256": "9791e45c9029fdecc8e70cc61c6c0c3f63639b1b761109fb44c8f1e57331c2ce",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:43:58.246Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:26:03.344Z",
-      "ids": [
-        "ES-H04",
-        "NL-H04"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:27:10.818Z",
-      "ids": [
-        "ES-H04",
-        "NL-H04"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:27:28.016Z",
-      "ids": [
-        "PT-H04",
-        "ES-S01"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:28:35.432Z",
-      "ids": [
-        "PT-H04",
-        "ES-S01"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T09:28:52.024Z",
       "ids": [
@@ -4196,16 +4200,47 @@
         "EN-S29"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:41:14.794Z",
+      "ids": [
+        "DE-S39",
+        "DE-S40"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:42:28.751Z",
+      "ids": [
+        "DE-S39",
+        "DE-S40"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:42:47.075Z",
+      "ids": [
+        "EN-S32"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:43:58.246Z",
+      "ids": [
+        "EN-S32"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T18:39:05.034Z",
+    "at": "2026-10-15T18:43:58.246Z",
     "ids": [
-      "DE-S38",
-      "EN-S29"
+      "EN-S32"
     ],
-    "commit": "bac43f9ea37d9101f4f8bbdb7cfb737ff6a03c92",
-    "live_seconds": 61
+    "commit": "70dce48de76cb7124966b7dda4d9aba35998f8de",
+    "live_seconds": 62
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
