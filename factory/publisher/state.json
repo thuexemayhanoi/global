@@ -1684,6 +1684,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T17:09:02.609Z"
+    },
+    {
+      "id": "PT-S10",
+      "locale": "pt",
+      "url": "/pt/guides/seguro-viagem-moto/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:09:32.688Z",
+      "source_sha256": "61d7aadd6d5b106092dc119f9dd833de4010487977ca87f1f46de4af1dcfd240",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "VI-S10",
+      "locale": "vi",
+      "url": "/vi/guides/bao-hiem-bat-buoc-xe-thue/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:09:32.688Z",
+      "source_sha256": "fd32efd2cf089406d3158d3d0f1137595cc53802e8bb11c648a1dc119855b44d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2891,6 +2913,14 @@
         "ZH-S12"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:09:32.688Z",
+      "ids": [
+        "PT-S10",
+        "VI-S10"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2903,6 +2933,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 10
   }
 }
