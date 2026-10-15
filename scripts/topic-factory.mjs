@@ -16,7 +16,7 @@ import {createHash} from "node:crypto";
 import {execFileSync,spawnSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
 import {loadTopicalMap,validateTopicalMap,TA_DIR} from "./seo/topical-authority-core.mjs";
-import {factoryStatus,selectRefill,planStandingPromotion,validatePolicy,validateResearchBatch,ingestResearch,dashboardMarkdown,publicationQueue,RESEARCH_PURPOSE} from "./topic-factory-core.mjs";
+import {factoryStatus,selectRefill,planStandingPromotion,validatePolicy,validateResearchBatch,ingestResearch,validateResearchSequence,dashboardMarkdown,publicationQueue,RESEARCH_PURPOSE} from "./topic-factory-core.mjs";
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const POLICY="data/seo/topic-factory/policy.json";
@@ -83,19 +83,25 @@ function cmdStatus(o){
  const out={mode:"READ_ONLY",...status,queue,refill:{selected:refill.selected.length,research_needed:refill.research_needed,locales:refill.locales,rejected:refill.rejected.length}};
  if(o.json||!o.markdown)console.log(JSON.stringify(o.json?out:{totals:out.totals,locales:Object.fromEntries(Object.entries(out.locales).map(([k,v])=>[k,{published:v.published,submitted:v.submitted,claimed:v.claimed,ready:v.ready,proposed:v.proposed,remaining:v.remaining,refill:v.refill}])),queue:queueSummary,refill:out.refill},null,2));
 }
-function validateFile(rel,c){
- const batch=JSON.parse(fs.readFileSync(path.join(ROOT,rel),"utf8"));
- const v=validateResearchBatch(batch,c);
- const dry=ingestResearch(batch,{...c,source:rel,frozenUrls:c.frozen});
- return {file:rel,passed:v.passed&&!dry.batch_error&&dry.rejected.length===0,would_add:dry.added.length,rejected:dry.rejected};
-}
 function cmdValidateBatch(o){
  const c=context();
- const files=o.file?[o.file]:fs.existsSync(path.join(ROOT,BATCH_DIR))?fs.readdirSync(path.join(ROOT,BATCH_DIR)).filter(f=>f.endsWith(".json")).sort().map(f=>BATCH_DIR+f):[];
- for(const f of files)if(path.isAbsolute(f)||f.split(/[\\/]/).includes("..")||!f.startsWith(BATCH_DIR))throw Error("Batch files live under "+BATCH_DIR);
- const results=files.map(f=>validateFile(f,c));
- console.log(JSON.stringify({mode:"READ_ONLY",batches:results.length,results},null,2));
- if(results.some(r=>!r.passed))process.exitCode=1;
+ const files=o.file?[o.file]:fs.existsSync(path.join(ROOT,BATCH_DIR))?
+  fs.readdirSync(path.join(ROOT,BATCH_DIR)).filter(f=>f.endsWith(".json")).sort().map(f=>BATCH_DIR+f):[];
+ for(const f of files)if(path.isAbsolute(f)||f.split(/[\\/]/).includes("..")||!f.startsWith(BATCH_DIR))
+  throw Error("Batch files live under "+BATCH_DIR);
+ // Use a cumulative dry-run map: every later file is checked against earlier
+ // accepted research files. This never writes any map, claim, Matrix or URL.
+ const processed=optional(RESEARCH_LOG,{version:1,batches:[]});
+ const byDigest=new Map((processed.batches||[]).filter(b=>b.sha256).map(b=>[b.sha256,b]));
+ const prepared=files.map(file=>{
+  const raw=fs.readFileSync(path.join(ROOT,file),"utf8");
+  const digest=createHash("sha256").update(raw).digest("hex");
+  return {file,batch:JSON.parse(raw),replay:byDigest.get(digest)||null};
+ });
+ const checked=validateResearchSequence(prepared,{matrix:c.matrix,map:c.map,policy:c.policy,frozenUrls:c.frozen});
+ console.log(JSON.stringify({mode:"READ_ONLY",batches:checked.results.length,
+  sequential_validation:true,results:checked.results},null,2));
+ if(!checked.passed)process.exitCode=1;
 }
 function cmdIngest(o){
  if(!trustedMain("Global Topic Factory"))throw Error("FACTORY_REFUSED: ingest runs only in the trusted Global Topic Factory workflow");

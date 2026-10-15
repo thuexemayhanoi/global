@@ -5,15 +5,35 @@
   "positioning": {
     "global": "Multilingual Vietnam travel & mobility knowledge hub (not a rental storefront)",
     "commercial_sites": [
-      {"domain": "thuexemaynguyentu.com", "role": "Main Vietnamese commercial motorbike rental website"},
-      {"domain": "rentbikehanoi.com", "role": "English commercial motorbike rental website"}
+      {
+        "domain": "thuexemaynguyentu.com",
+        "role": "Main Vietnamese commercial motorbike rental website"
+      },
+      {
+        "domain": "rentbikehanoi.com",
+        "role": "English commercial motorbike rental website"
+      }
     ],
     "rule": "Transactional rental keywords belong to the commercial sites; /global topics stay informational or commercial-investigation and link out only where it genuinely helps the reader."
   },
   "targets": {
     "per_locale": 1000,
-    "locales": ["vi", "en", "de", "fr", "es", "nl", "zh", "pt", "ko", "ja"],
-    "counted_roles": ["HUB", "SUPPORT"],
+    "locales": [
+      "vi",
+      "en",
+      "de",
+      "fr",
+      "es",
+      "nl",
+      "zh",
+      "pt",
+      "ko",
+      "ja"
+    ],
+    "counted_roles": [
+      "HUB",
+      "SUPPORT"
+    ],
     "note": "Planning ceiling, not a quota to fill. Homepage, About, Contact, Privacy, Terms and utilities never count."
   },
   "refill": {
@@ -33,16 +53,74 @@
     "distinct_reason_min": 40
   },
   "domains": [
-    {"id": "hanoi-vietnam-travel", "label": "Hanoi & Vietnam Travel Guides", "clusters": [], "status": "ARCHITECTURE_PENDING"},
-    {"id": "motorbike-rental", "label": "Motorbike Rental & Vehicle Selection", "clusters": ["vehicle-choice", "rental-costs"], "status": "ACTIVE"},
-    {"id": "road-trips-routes", "label": "Vietnam Road Trips & Travel Routes", "clusters": ["routes-trips"], "status": "ARCHITECTURE_PENDING"},
-    {"id": "transportation-mobility", "label": "Transportation & Urban Mobility", "clusters": [], "status": "ARCHITECTURE_PENDING"},
-    {"id": "traffic-law-safety", "label": "Traffic Laws, Licensing & Riding Safety", "clusters": ["documents-contracts", "safety-support"], "status": "ACTIVE"},
-    {"id": "destinations-experiences", "label": "Destinations & Local Experiences", "clusters": [], "status": "ARCHITECTURE_PENDING"},
-    {"id": "travel-planning", "label": "Travel Planning, Budget & Itineraries", "clusters": [], "status": "ARCHITECTURE_PENDING"},
-    {"id": "electric-mobility", "label": "Electric Motorbikes & Sustainable Mobility", "clusters": [], "status": "ARCHITECTURE_PENDING"}
+    {
+      "id": "hanoi-vietnam-travel",
+      "label": "Hanoi & Vietnam Travel Guides",
+      "clusters": [
+        "travel-guides"
+      ],
+      "status": "RESEARCH_OPEN"
+    },
+    {
+      "id": "motorbike-rental",
+      "label": "Motorbike Rental & Vehicle Selection",
+      "clusters": [
+        "vehicle-choice",
+        "rental-costs"
+      ],
+      "status": "ACTIVE"
+    },
+    {
+      "id": "road-trips-routes",
+      "label": "Vietnam Road Trips & Travel Routes",
+      "clusters": [
+        "routes-trips"
+      ],
+      "status": "RESEARCH_OPEN"
+    },
+    {
+      "id": "transportation-mobility",
+      "label": "Transportation & Urban Mobility",
+      "clusters": [
+        "transport-mobility"
+      ],
+      "status": "RESEARCH_OPEN"
+    },
+    {
+      "id": "traffic-law-safety",
+      "label": "Traffic Laws, Licensing & Riding Safety",
+      "clusters": [
+        "documents-contracts",
+        "safety-support"
+      ],
+      "status": "ACTIVE"
+    },
+    {
+      "id": "destinations-experiences",
+      "label": "Destinations & Local Experiences",
+      "clusters": [
+        "destinations-experiences"
+      ],
+      "status": "RESEARCH_OPEN"
+    },
+    {
+      "id": "travel-planning",
+      "label": "Travel Planning, Budget & Itineraries",
+      "clusters": [
+        "travel-planning"
+      ],
+      "status": "RESEARCH_OPEN"
+    },
+    {
+      "id": "electric-mobility",
+      "label": "Electric Motorbikes & Sustainable Mobility",
+      "clusters": [
+        "electric-mobility"
+      ],
+      "status": "RESEARCH_OPEN"
+    }
   ],
-  "architecture_rule": "A domain marked ARCHITECTURE_PENDING gets a Hub only through a reviewed architecture PR with at least 8 validated Supporting candidates, so no thin Hub is created to hold articles.",
+  "architecture_rule": "All 8 domains are open for research. A RESEARCH_OPEN domain with no existing Hub accepts candidates using parent_id:null, domain_id and its proposed-Hub subcluster as ARCHITECTURE_BLOCKED in the topical map. Such candidates are not Matrix IDEA, Writer claims or publishable URLs. To create a Hub: reviewed architecture PR plus at least 8 distinct validated Supporting candidates, and existing Matrix/SEO/URL safeguards.",
   "sensitivity": {
     "clusters": {
       "documents-contracts": "LEGAL",
@@ -53,5 +131,7 @@
     },
     "default": "STANDARD"
   },
-  "forbidden_intents": ["transactional"]
+  "forbidden_intents": [
+    "transactional"
+  ]
 }

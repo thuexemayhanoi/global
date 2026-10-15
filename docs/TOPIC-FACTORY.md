@@ -44,22 +44,34 @@ It runs every six hours, on manual dispatch, and after every green research push
 
 Promotion uses `approvals/standing-policy-20261015.json`, which records the owner's 2026-10-15 instruction. Each run writes a machine manifest to `approvals/auto/topic-promotion-NNNN.json` with `approval_mode: STANDING_POLICY`. The manifest names the policy and never impersonates a personal owner approval.
 
-Each run also appends to `data/seo/topic-factory/promotion-log.json`. New Hubs and new domains are outside the standing policy: they need an architecture PR with at least eight validated Supporting candidates, so no thin Hub is created.
+Each run also appends to `data/seo/topic-factory/promotion-log.json`. **All eight domains now accept research batches.** Six `RESEARCH_OPEN` domains without an existing Hub ingest into locale maps as `ARCHITECTURE_BLOCKED`; they are **not** Matrix IDEA rows, cannot be claimed by Writers, and cannot publish. A reviewed architecture PR (with at least eight unique validated Supporting candidates for each new Hub, appropriate locale Hub mapping, and passing URL/SEO/build checks) is required before a new Hub and its Supporting topics are promoted.
+
+### Mistral — research for all six newly open domains
+
+Push sequential JSON batches of 25–50 (or fewer for final partial batch) on `research/mistral-<session>`, under `factory/topic-research/batches/`. For a proposed Hub specify `parent_id:null`, its `domain_id`, and an allowed proposed-Hub `subcluster` from `data/seo/topical-authority/architecture.json`. Existing Hubs continue to specify their real same-locale parent IDs. QA and ingest create unique TA IDs, keep research references, and record these six domains as `ARCHITECTURE_BLOCKED` until their real Hub PR passes. Do not mark blocked candidates READY, invent existing Hub IDs, or add unpublished URLs to sitemap.
+
+### Crash-safe research sessions
+
+Research agents push every 10 real topics immediately instead of accumulating them, and resume from GitHub after any lost session. `node scripts/topic-research.mjs commit` runs four QA phases (duplicate, intent, source, schema), writes the batch **and** its checkpoint (`factory/topic-research/checkpoints/<agent>-<session>.json`, never ingested) in one commit, pushes `research/<agent>-<session>` without force and prints `SAVED` only after GitHub confirms it. `resume` rebuilds the state from GitHub (batch files, checkpoint, research log) without re-researching accepted topics. Runbook: `docs/TOPIC-RESEARCH-CHECKPOINT.md`. The intake, gates, caps and the Factory itself are unchanged.
 
 ## Commands
 
 ```
 node scripts/topic-factory.mjs status [--json] [--markdown docs/CONTENT-FACTORY-DASHBOARD.md]
+node scripts/topic-factory.mjs validate-batches       # cumulative dry run across all branch batch files
 node scripts/topic-factory.mjs validate-batch --file factory/topic-research/batches/<file>.json
 node scripts/topic-factory.mjs refill                    # dry run
 node scripts/topic-factory.mjs refill --apply --local    # rehearsal on a clean non-main branch
 node --test tests/topic-factory.test.mjs
+node scripts/topic-research.mjs resume|check|commit|push-pending|checkpoint|verify --agent <a> --session <s>   # crash-safe research loop
+node scripts/topic-research.mjs verify-tree             # CI: a research branch's checkpoint matches its batches
+node --test tests/topic-research-core.test.mjs tests/topic-research-recovery.test.mjs
 ```
 
-The dashboard (`docs/CONTENT-FACTORY-DASHBOARD.md`) is regenerated from data by this workflow and by every Auto Publisher run. Besides topic counts it shows every SUBMITTED draft in exactly one publication-queue state (AWAITING QA, APPROVED_BY_POLICY, REPAIR, HUMAN_REVIEW_REQUIRED, WAIT_PARENT, WAIT_STAGE, ESCALATED, BLOCKED), the publisher's live states (PUBLISH_STAGED, LIVE_QA_PASS/FAIL/INCONCLUSIVE) and the Writer slot states. Never edit it by hand.
+The dashboard (`docs/CONTENT-FACTORY-DASHBOARD.md`) is regenerated from data by this workflow and by every Auto Publisher run. It now shows each domain’s research-only PROPOSED/ARCHITECTURE_BLOCKED candidates across all 10 locales, Matrix counts separately, and how many locales have reached the eight-candidate threshold for a future reviewed Hub PR. The threshold is not automatic Hub approval. Besides topic counts it shows every SUBMITTED draft in exactly one publication-queue state (AWAITING QA, APPROVED_BY_POLICY, REPAIR, HUMAN_REVIEW_REQUIRED, WAIT_PARENT, WAIT_STAGE, ESCALATED, BLOCKED), the publisher's live states (PUBLISH_STAGED, LIVE_QA_PASS/FAIL/INCONCLUSIVE) and the Writer slot states. Never edit it by hand.
 
 ## Honest limits
 
-The factory cannot research by itself. GitHub Actions has no model provider, so new topics only arrive when an AI agent with web access pushes a research batch.
+The factory cannot research by itself. GitHub Actions has no model provider, so new topics only arrive when an AI agent with web access pushes a research batch. `validate-batches` is a cumulative dry run: research files are validated against prior accepted files and the 1,000-per-locale research+Matrix planning cap before any merge, without fabricating topics or writing state.
 
-Keyword evidence stays `NOT_VALIDATED` until real market or SERP data is attached. The factory never infers search volume, rankings or traffic.
+The checkpoint tooling makes research durable and resumable; it creates no topics. Keyword evidence stays `NOT_VALIDATED` until real market or SERP data is attached. The factory never infers search volume, rankings or traffic.

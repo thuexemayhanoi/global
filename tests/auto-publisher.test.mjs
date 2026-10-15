@@ -4,6 +4,7 @@ import fs from "node:fs";
 import {spawnSync} from "node:child_process";
 import {classify,editorial,contentDuplicates,shingles,validateReview,eligibility,publicationRecord,nextStage,isOfficial,REVIEW_CHECKS} from "../scripts/auto-publisher-core.mjs";
 import {checkArticle,renderArticle,validatePublicationRecord} from "../scripts/articles.mjs";
+import {scanHtml} from "../scripts/seo/fact-guard-core.mjs";
 
 const read=p=>JSON.parse(fs.readFileSync(p,"utf8"));
 const matrix=read("data/seo/master-matrix.json"),locales=read("content/locales.json");
@@ -52,7 +53,35 @@ test("hard legal claims need an official citation in the same paragraph; plain a
  assert.match(c.unsupported[0],/fine or jail/);
  assert.equal(classify(packet({body_markdown:"Mopeds under 50 cc need no licence, per a [blog](https://someblog.com/x)."}),hub,policy).unsupported.length,1);
  assert.equal(classify(packet({body_markdown:"A deposit of 3,000,000 VND is common."}),hub,policy).money_paragraphs,1);
+ assert.equal(classify(packet({body_markdown:"A deposit of 3,000,000 VND is common."}),hub,policy).uncited_money.length,1);
+ assert.equal(classify(packet({body_markdown:"See QH15 원문."}),hub,policy).money_paragraphs,0);
  assert.equal(classify(packet(),legalHub,policy).topicClass,"LEGAL");
+});
+
+test("Human Review retired: sourced legal, safety and monetary content uses automatic G3 gates",()=>{
+ // EN-H02 is live and protected; test monetary evidence on an unpublished Hub classified PRICE.
+ const pricedHub=legalHub;
+ const pricePolicy={...policy,sensitivity:{...policy.sensitivity,clusters:{...policy.sensitivity.clusters,"documents-contracts":"PRICE"}}};
+ const evidence={url:"https://xaydungchinhsach.chinhphu.vn/x.htm",title:"Official Vietnamese legal reference",checked_on:"2026-10-15"};
+ const legal=packet({matrix_id:legalHub.id,proposed_url:legalHub.url,sources:[...packet().sources,evidence]});
+ const eligibleLegal=eligibility(ctx({packet:legal,row:legalHub}));
+ assert.equal(eligibleLegal.decision,"APPROVED_BY_POLICY",JSON.stringify(eligibleLegal.gates.filter(g=>!g.passed)));
+ const noEvidence=packet({matrix_id:legalHub.id,proposed_url:legalHub.url,sources:[{url:"https://vexere.com/x",title:"Travel provider",checked_on:"2026-10-15"},{url:"https://hagiangtrips.com/x",title:"Travel guide",checked_on:"2026-10-15"}]});
+ const rejectedLegal=eligibility(ctx({packet:noEvidence,row:legalHub}));
+ assert.equal(rejectedLegal.decision,"REJECTED");
+ assert.ok(rejectedLegal.failed.includes("G3_SENSITIVE_SOURCES"));
+ const amount="A typical deposit of 3,000,000 VND appears on the [supplier fee page](https://vexere.com/prices).";
+ const payment=packet({matrix_id:pricedHub.id,proposed_url:pricedHub.url,
+   body_markdown:packet().body_markdown+"\n\n"+amount,
+   sources:[...packet().sources,{url:"https://vexere.com/prices",title:"Supplier fee schedule",checked_on:"2026-10-15"}]});
+ assert.equal(classify(payment,pricedHub,pricePolicy).topicClass,"PRICE");
+ const approvedPrice=eligibility(ctx({packet:payment,row:pricedHub,policy:pricePolicy}));
+ assert.equal(approvedPrice.decision,"APPROVED_BY_POLICY",JSON.stringify(approvedPrice.gates.filter(g=>!g.passed)));
+ const noListedSource=packet({...payment,sources:packet().sources});
+ const rejectedPrice=eligibility(ctx({packet:noListedSource,row:pricedHub,policy:pricePolicy}));
+ assert.equal(rejectedPrice.decision,"REJECTED");
+ assert.ok(rejectedPrice.failed.includes("G3_PRICE_EVIDENCE"));
+ assert.ok(![eligibleLegal,approvedPrice,rejectedLegal,rejectedPrice].some(x=>x.decision==="REVIEW_REQUIRED"));
 });
 
 test("editorial heuristics catch wrong language, repeated paragraphs, keyword stuffing and missing internal context links",()=>{
@@ -90,13 +119,31 @@ test("eligibility: automated QA approves without reviewer; still blocks bad fact
  const ok=eligibility(ctx());
  assert.equal(ok.decision,"APPROVED_BY_POLICY",JSON.stringify(ok.gates.filter(g=>!g.passed)));
  assert.equal(eligibility(ctx({review:null})).decision,"APPROVED_BY_POLICY");
- assert.equal(eligibility(ctx({row:legalHub,packet:packet({matrix_id:legalHub.id,proposed_url:legalHub.url})})).decision,"REVIEW_REQUIRED");
- assert.equal(eligibility(ctx({packet:packet({body_markdown:packet().body_markdown+"\n\nA typical deposit is 3,000,000 VND per [Vexere](https://vexere.com/x)."})})).decision,"REVIEW_REQUIRED");
+ assert.equal(eligibility(ctx({row:legalHub,packet:packet({matrix_id:legalHub.id,proposed_url:legalHub.url})})).decision,"APPROVED_BY_POLICY");
+ assert.equal(eligibility(ctx({packet:packet({body_markdown:packet().body_markdown+"\n\nA typical deposit is 3,000,000 VND per [Vexere](https://vexere.com/x)."})})).decision,"REJECTED");
  assert.equal(eligibility(ctx({protectedIds:new Set([hub.id])})).decision,"BLOCKED");
  assert.equal(eligibility(ctx({state:{stage:"PILOT",published:[{locale:"en"},{locale:"en"}]}})).decision,"WAIT_STAGE");
  const child=matrix.rows.find(r=>r.locale==="en"&&r.role==="SUPPORT"&&r.parent_id===hub.id&&r.status==="IDEA");
  if(child)assert.equal(eligibility(ctx({row:child,packet:packet({matrix_id:child.id,proposed_url:child.url}),review:review({matrix_id:child.id})})).decision,"WAIT_PARENT");
  assert.equal(eligibility(ctx({packet:packet({body_markdown:"## a\n\nshort"})})).decision,"REJECTED");
+});
+
+test("source titles are fact-checked like the rendered reference list, so the pre-commit fact guard cannot pause the queue",()=>{
+ const priced=packet({sources:[{url:"https://vietnamnews.vn/economy/1724202/swap.html",title:"Vietnam News: battery swap costs 200,000 VND per month",checked_on:"2026-10-15"},
+  {url:"https://www.smartraveller.gov.au/destinations/asia/vietnam",title:"Smartraveller",checked_on:"2026-10-15"}]});
+ // The published page lists source titles; the site fact guard that runs before the publish commit reads them.
+ const rec=publicationRecord({claim,reviewSha:null,now:"2026-10-15T01:00:00.000Z",stage:"PILOT"});
+ const html=renderArticle({...priced,publication:rec},locales.find(l=>l.code==="en"),{...hub,status:"PUBLISHED"},matrix);
+ assert.ok(!scanHtml(html,{locale:"en"}).some(f=>f.level==="FAIL"&&f.code==="UNSOURCED_AMOUNT"),"rendered source-title hyperlink is an HTTPS citation; G1 still catches an uncited source title");
+ // Eligibility stops that one draft with a repairable G1 failure instead of approving it.
+ const e=eligibility(ctx({packet:priced}));
+ assert.equal(e.decision,"REJECTED");
+ assert.ok(e.gates.some(g=>g.gate==="G1_DRAFT_QA"&&!g.passed&&/UNSOURCED_AMOUNT in sources\[0\]\.title/.test(g.detail)),JSON.stringify(e.gates.filter(g=>!g.passed)));
+ // Writer QA (warn mode) only warns before submission.
+ const w=checkArticle({...priced,serp_intent_checked:true,facts_reviewed_by_human:true},matrix,locales,{factMode:"warn",allowUnpublishedParentForDraft:true});
+ assert.ok(!w.errors.some(x=>/sources\[0\]/.test(x)),w.errors.join("; "));
+ assert.ok(w.warnings.some(x=>/UNSOURCED_AMOUNT in sources\[0\]\.title/.test(x)));
+ assert.equal(eligibility(ctx()).decision,"APPROVED_BY_POLICY","plain source titles are unaffected");
 });
 
 test("stored policy articles: honest record accepted, human-review claims refused, provenance note rendered",()=>{

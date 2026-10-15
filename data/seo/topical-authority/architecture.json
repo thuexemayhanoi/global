@@ -2,12 +2,12 @@
   "version": 1,
   "repo": "thuexemayhanoi/global",
   "site": "https://global.rentbikehanoi.com",
-  "updated_on": "2026-10-14",
+  "updated_on": "2026-10-15",
   "purpose": "Language-neutral topical authority architecture. Locale files under data/seo/topical-authority/<locale>.json hold native-language keyword hypotheses. Nothing here is a page, a Matrix row, a sitemap entry, a hreflang relation or a verified search-demand claim.",
   "central_entity": {
     "id": "E-HANOI-TWO-WHEEL-RENTAL",
-    "label_en": "Renting a motorbike or scooter in Hanoi",
-    "kind": "Informational guide topic (the site is an independent guide, not a rental provider)",
+    "label_en": "Vietnam travel, transportation and local mobility knowledge",
+    "kind": "Independent multilingual Vietnam travel and mobility knowledge hub (not a rental storefront)",
     "place": {
       "name": "Hanoi",
       "country": "Vietnam"
@@ -40,7 +40,7 @@
       "name": "Topic Pillar",
       "matrix_role": "HUB",
       "url_pattern": "/{locale}/topics/{slug}/",
-      "note": "Four per locale (vehicle-choice, rental-costs, documents-contracts, safety-support). Repo role name stays HUB; do not rename live roles."
+      "note": "Four existing Hubs per locale are live/frozen. Six research-open proposed Hubs require a reviewed architecture PR, at least eight distinct validated Supporting candidates and SEO checks before creating Matrix/live pages."
     },
     {
       "level": 2,
@@ -270,6 +270,196 @@
           ],
           "journey_stage": "planning",
           "intent_class": "local"
+        }
+      ]
+    },
+    {
+      "id": "travel-guides",
+      "status": "ARCHITECTURE_REVIEW",
+      "scope": "Hanoi & Vietnam Travel Guides research within Vietnam/Hanoi travel and local mobility, independent of rental storefronts",
+      "why_review": "Owner authorized research intake on 2026-10-15. Hub remains non-live until reviewed architecture PR, eight distinct validated Supporting candidates per Hub, localization, content and SEO QA.",
+      "clusters": [
+        {
+          "id": "travel-neighborhoods",
+          "scope": "Neighborhood orientation, culture and how travellers reach independent attractions in Hanoi",
+          "entities": [
+            "Vietnam",
+            "Hanoi"
+          ],
+          "journey_stage": "planning",
+          "intent_class": "informational"
+        },
+        {
+          "id": "travel-seasons",
+          "scope": "Seasonal Vietnam/Hanoi travel decisions, climate and itinerary trade-offs",
+          "entities": [
+            "Vietnam",
+            "Hanoi"
+          ],
+          "journey_stage": "planning",
+          "intent_class": "informational"
+        },
+        {
+          "id": "travel-etiquette",
+          "scope": "Local culture, visitor etiquette and contextual travel knowledge",
+          "entities": [
+            "Vietnam",
+            "Hanoi"
+          ],
+          "journey_stage": "planning",
+          "intent_class": "informational"
+        }
+      ]
+    },
+    {
+      "id": "transport-mobility",
+      "status": "ARCHITECTURE_REVIEW",
+      "scope": "Transportation & Urban Mobility research within Vietnam/Hanoi travel and local mobility, independent of rental storefronts",
+      "why_review": "Owner authorized research intake on 2026-10-15. Hub remains non-live until reviewed architecture PR, eight distinct validated Supporting candidates per Hub, localization, content and SEO QA.",
+      "clusters": [
+        {
+          "id": "mob-urban-transit",
+          "scope": "Hanoi urban transit, buses, metro and multimodal navigation",
+          "entities": [
+            "Vietnam",
+            "Hanoi"
+          ],
+          "journey_stage": "planning",
+          "intent_class": "informational"
+        },
+        {
+          "id": "mob-intercity",
+          "scope": "Intercity train, bus and practical travel connections across Vietnam",
+          "entities": [
+            "Vietnam",
+            "Hanoi"
+          ],
+          "journey_stage": "planning",
+          "intent_class": "informational"
+        },
+        {
+          "id": "mob-last-mile",
+          "scope": "Airport, stations and neighborhood last-mile transfers",
+          "entities": [
+            "Vietnam",
+            "Hanoi"
+          ],
+          "journey_stage": "planning",
+          "intent_class": "informational"
+        }
+      ]
+    },
+    {
+      "id": "destinations-experiences",
+      "status": "ARCHITECTURE_REVIEW",
+      "scope": "Destinations & Local Experiences research within Vietnam/Hanoi travel and local mobility, independent of rental storefronts",
+      "why_review": "Owner authorized research intake on 2026-10-15. Hub remains non-live until reviewed architecture PR, eight distinct validated Supporting candidates per Hub, localization, content and SEO QA.",
+      "clusters": [
+        {
+          "id": "dest-northern",
+          "scope": "Independent access guides to northern Vietnam destinations",
+          "entities": [
+            "Vietnam",
+            "Hanoi"
+          ],
+          "journey_stage": "planning",
+          "intent_class": "informational"
+        },
+        {
+          "id": "dest-local",
+          "scope": "Cultural and community experiences, without invented firsthand claims",
+          "entities": [
+            "Vietnam",
+            "Hanoi"
+          ],
+          "journey_stage": "planning",
+          "intent_class": "informational"
+        },
+        {
+          "id": "dest-landscapes",
+          "scope": "Natural attractions, conservation, seasonality and transport access",
+          "entities": [
+            "Vietnam",
+            "Hanoi"
+          ],
+          "journey_stage": "planning",
+          "intent_class": "informational"
+        }
+      ]
+    },
+    {
+      "id": "travel-planning",
+      "status": "ARCHITECTURE_REVIEW",
+      "scope": "Travel Planning, Budget & Itineraries research within Vietnam/Hanoi travel and local mobility, independent of rental storefronts",
+      "why_review": "Owner authorized research intake on 2026-10-15. Hub remains non-live until reviewed architecture PR, eight distinct validated Supporting candidates per Hub, localization, content and SEO QA.",
+      "clusters": [
+        {
+          "id": "plan-itineraries",
+          "scope": "Hanoi and Vietnam journey plans and transport-specific itineraries",
+          "entities": [
+            "Vietnam",
+            "Hanoi"
+          ],
+          "journey_stage": "planning",
+          "intent_class": "informational"
+        },
+        {
+          "id": "plan-budget",
+          "scope": "Evidence-backed trip budgeting and genuine pricing caveats",
+          "entities": [
+            "Vietnam",
+            "Hanoi"
+          ],
+          "journey_stage": "planning",
+          "intent_class": "informational"
+        },
+        {
+          "id": "plan-logistics",
+          "scope": "Weather, packing, travel logistics and accessibility",
+          "entities": [
+            "Vietnam",
+            "Hanoi"
+          ],
+          "journey_stage": "planning",
+          "intent_class": "informational"
+        }
+      ]
+    },
+    {
+      "id": "electric-mobility",
+      "status": "ARCHITECTURE_REVIEW",
+      "scope": "Electric Motorbikes & Sustainable Mobility research within Vietnam/Hanoi travel and local mobility, independent of rental storefronts",
+      "why_review": "Owner authorized research intake on 2026-10-15. Hub remains non-live until reviewed architecture PR, eight distinct validated Supporting candidates per Hub, localization, content and SEO QA.",
+      "clusters": [
+        {
+          "id": "electric-choice",
+          "scope": "Electric two-wheeler comparison by journey needs",
+          "entities": [
+            "Vietnam",
+            "Hanoi"
+          ],
+          "journey_stage": "planning",
+          "intent_class": "informational"
+        },
+        {
+          "id": "electric-infrastructure",
+          "scope": "Evidence-based charging and battery-swapping logistics",
+          "entities": [
+            "Vietnam",
+            "Hanoi"
+          ],
+          "journey_stage": "planning",
+          "intent_class": "informational"
+        },
+        {
+          "id": "electric-sustainability",
+          "scope": "Environmental impacts and limitations of urban electric mobility",
+          "entities": [
+            "Vietnam",
+            "Hanoi"
+          ],
+          "journey_stage": "planning",
+          "intent_class": "informational"
         }
       ]
     }

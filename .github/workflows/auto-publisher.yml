@@ -1,4 +1,5 @@
 name: Global Auto Publisher
+# Owner-authorized no-Human-Review source-evidence gates, 2026-10-15; publisher trigger only.
 run-name: "Auto Publisher ${{ github.event_name }} ${{ inputs.action }} ${{ github.event.workflow_run.name }}"
 on:
   push:

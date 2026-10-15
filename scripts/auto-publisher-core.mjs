@@ -5,16 +5,16 @@
  *  → G1 draft QA (strict fact guard, structure, links, sources)
  *  → G2 Matrix & parent (IDEA row, new URL, PUBLISHED parent, not protected)
  *  → G3 sensitivity & evidence (LEGAL/SAFETY/PRICE topics and money amounts
- *       need human review; legal/safety statements in standard topics must
- *       cite an official source in the same paragraph)
+ *       must cite declared dated evidence and legal/safety claims must cite an official source. No Human Review gate.
  *  → G4 editorial heuristics (language, repetition, keyword stuffing, depth)
  *  → G5 duplicate content L6 drafts / L7 published (shingle similarity)
  *  → Automated QA only: no separate AI reviewer is needed for publication
  *  → G7 stage caps (PILOT 2 → RAMP 10 → CONTINUOUS per locale)
- * → APPROVED_BY_POLICY | REVIEW_REQUIRED | BLOCKED | REJECTED | WAIT_PARENT.
+ * → APPROVED_BY_POLICY | BLOCKED | REJECTED (repair) | WAIT_PARENT.
  * Publication itself, build gates, deployment and live QA run in the CLI.
  */
 import {checkArticle,validatePublicationRecord,STANDING_POLICY_PATH} from "./articles.mjs";
+import {extractAmounts} from "./seo/fact-guard-core.mjs";
 export {validatePublicationRecord,STANDING_POLICY_PATH};
 
 const HEX64=/^[0-9a-f]{64}$/,HEX40=/^[0-9a-f]{40}$/,DATE=/^\d{4}-\d{2}-\d{2}$/;
@@ -73,19 +73,25 @@ export function paragraphs(md){
 /** Topic class from the cluster plus paragraph-level legal/safety/price detection and evidence. */
 export function classify(packet,row,policy){
  const topicClass=policy?.sensitivity?.clusters?.[row?.cluster]||policy?.sensitivity?.default||"STANDARD";
- const unsupported=[];
- let sensitive=0,money=0,officialCited=0;
+ const unsupported=[],uncitedMoney=[];
+ const declared=new Set((packet.sources||[]).filter(s=>/^https:\/\//.test(s.url||"")&&DATE.test(s.checked_on||"")).map(s=>s.url));
+ let sensitive=0,money=0,officialCited=0,officialListed=0;
  for(const p of paragraphs(packet.body_markdown)){
   const links=[...p.matchAll(LINK)].map(m=>m[1]);
   const official=links.some(isOfficial);
-  if(MONEY.test(p))money++;
+  if(links.some(u=>isOfficial(u)&&declared.has(u)))officialListed++;
+  if(extractAmounts(p,packet.locale).length){
+   money++;
+   if(!links.some(u=>declared.has(u)))uncitedMoney.push(p.replace(ANCHOR,"$1").slice(0,140));
+  }
   if(isLegalClaim(p,packet.locale)){
    sensitive++;
    if(official)officialCited++;
    else unsupported.push(p.replace(ANCHOR,"$1").slice(0,140));
   }
  }
- return {topicClass,sensitive_paragraphs:sensitive,official_cited:officialCited,unsupported,money_paragraphs:money};
+ return {topicClass,sensitive_paragraphs:sensitive,official_cited:officialCited,official_listed:officialListed,
+  unsupported,money_paragraphs:money,uncited_money:uncitedMoney};
 }
 export function editorial(packet,row){
  const issues=[],warnings=[],body=String(packet.body_markdown||""),loc=packet.locale;
@@ -182,10 +188,13 @@ export function eligibility(ctx){
  add("G2_IMMUTABLE_SOURCE",claim?.status==="SUBMITTED"&&HEX64.test(claim?.source_sha256||"")&&HEX40.test(claim?.source_commit||""),"ledger evidence");
  // G3 sensitivity and evidence
  const cls=classify(packet,row,policy);
- const reviewClasses=standing?.publication?.review_required_classes||["LEGAL","SAFETY","PRICE"];
- add("G3_TOPIC_CLASS",!reviewClasses.includes(cls.topicClass),"topic class "+cls.topicClass+(reviewClasses.includes(cls.topicClass)?" requires human review":""));
- add("G3_NO_PRICES",cls.money_paragraphs===0,cls.money_paragraphs+" paragraph(s) with money amounts need human price verification");
- add("G3_OFFICIAL_EVIDENCE",cls.unsupported.length===0,cls.unsupported.length?cls.unsupported.length+" legal/safety statement(s) without an official citation: "+cls.unsupported.slice(0,2).join(" | "):cls.official_cited+" sensitive paragraph(s) cite official sources");
+ const sensitiveTopic=["LEGAL","SAFETY"].includes(cls.topicClass);
+ add("G3_SENSITIVE_SOURCES",!sensitiveTopic||cls.official_listed>0,
+  sensitiveTopic&&cls.official_listed===0?"LEGAL/SAFETY topic must cite at least one declared dated official source inline":"Declared official source paragraphs: "+cls.official_listed);
+ add("G3_PRICE_EVIDENCE",cls.uncited_money.length===0,
+  cls.uncited_money.length+" monetary paragraph(s) lack citations to dated declared HTTPS sources: "+cls.uncited_money.slice(0,2).join(" | "));
+ add("G3_OFFICIAL_EVIDENCE",cls.unsupported.length===0,
+  cls.unsupported.length?cls.unsupported.length+" hard legal statement(s) lack an inline official citation: "+cls.unsupported.slice(0,2).join(" | "):cls.official_cited+" official citations");
  // G4 editorial heuristics
  const ed=editorial(packet,row);
  add("G4_EDITORIAL",ed.passed,ed.issues.join("; "));
@@ -193,7 +202,7 @@ export function eligibility(ctx){
  const t=policy?.duplicates||{};
  const dups=contentDuplicates(packet,corpus,{fail:t.draft_shingle_fail??0.45,warn:t.draft_shingle_warn??0.3});
  add("G5_CONTENT_DUPLICATES",!dups.some(d=>d.level==="FAIL"),dups.map(d=>d.kind+":"+d.with+"="+d.score).join(", "));
- // Independent reviewer G6 retired by owner: G1-G5 + G7 and human-sensitive gates remain mandatory.
+ // Independent reviewer G6 retired by owner: G1-G5 + G7 and G3 source evidence gates remain mandatory.
  // G7 stage caps
  const stage=state.stage||"PILOT",caps=standing?.publication?.stages||{},cap=caps[stage]?.max_per_locale??2;
  const done=(state.published||[]).filter(p=>p.locale===packet.locale).length;
@@ -202,7 +211,7 @@ export function eligibility(ctx){
  let decision="APPROVED_BY_POLICY";
  if(failed.some(g=>["G1_DRAFT_QA","G1_DEPTH","G4_EDITORIAL","G5_CONTENT_DUPLICATES"].includes(g)))decision="REJECTED";
  else if(failed.includes("G2_NEW_URL")||failed.includes("G2_IMMUTABLE_SOURCE")||failed.includes("G2_NOT_PROTECTED"))decision="BLOCKED";
- else if(failed.some(g=>g.startsWith("G3_")))decision="REVIEW_REQUIRED";
+ else if(failed.some(g=>g.startsWith("G3_")))decision="REJECTED"; // Source defects go to same-session Writer repair.
  else if(failed.includes("G2_PARENT_PUBLISHED"))decision="WAIT_PARENT";
  else if(failed.includes("G7_STAGE_CAP"))decision="WAIT_STAGE";
  return {id:packet.matrix_id,locale:packet.locale,role:row?.role,decision,failed,gates,classification:cls,editorial:ed,duplicates:dups,words:qa.words};
