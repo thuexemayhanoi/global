@@ -460,6 +460,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:37:35.411Z"
+    },
+    {
+      "id": "VI-S03",
+      "locale": "vi",
+      "url": "/vi/guides/thue-ngay-tuan-thang/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:37:55.131Z",
+      "source_sha256": "7665e19d26d366b65ecedba497ca272602ef8c367f36a72ac53384453aa653c6",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S03",
+      "locale": "zh",
+      "url": "/zh/guides/ri-zhou-yue/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:37:55.131Z",
+      "source_sha256": "b6d85dc50165d6446e92cdfaccff7da0ed2cfd6e947909a2900f714d0de175d7",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -827,6 +849,14 @@
         "PT-S03"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:37:55.131Z",
+      "ids": [
+        "VI-S03",
+        "ZH-S03"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -840,6 +870,6 @@
   },
   "queue": {
     "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 42
+    "APPROVED_BY_POLICY": 40
   }
 }
