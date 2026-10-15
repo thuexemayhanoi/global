@@ -892,6 +892,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T10:06:53.893Z"
+    },
+    {
+      "id": "NL-S07",
+      "locale": "nl",
+      "url": "/nl/guides/rijden-in-regen/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T10:07:13.156Z",
+      "source_sha256": "a7464d39a3146bbb2d065bc9ad138fe65136b4ed2dcc7f9d1d0fedb49444d213",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "PT-S07",
+      "locale": "pt",
+      "url": "/pt/guides/conduzir-chuva/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T10:07:13.156Z",
+      "source_sha256": "2c2263cc6ae7090a359b2879dcae5a77d6d949ba57d6b90413d7c8bf19159634",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1547,6 +1569,14 @@
         "KO-S07"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T10:07:13.156Z",
+      "ids": [
+        "NL-S07",
+        "PT-S07"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1560,7 +1590,7 @@
   },
   "queue": {
     "WAIT_PARENT": 30,
-    "APPROVED_BY_POLICY": 15,
+    "APPROVED_BY_POLICY": 13,
     "REJECTED": 11
   }
 }
