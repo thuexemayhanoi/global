@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 85,
+  "revision": 86,
   "claims": [
     {
       "id": "ES-H01",
@@ -3826,11 +3826,11 @@
       "branch": "writer/w2-live",
       "claim_id": "legacy-intake-ZH-H04-f5389d45db2b",
       "status": "SUBMITTED",
-      "phase": "CROSS_WRITER_REPAIR_HANDOFF",
+      "phase": "REVISED_AWAITING_AUTO_QA",
       "at": "2026-10-15T09:52:52.939Z",
-      "updated_at": "2026-10-15T16:37:14.556Z",
-      "source_sha256": "4f141a0ff3985987f992ac06c003b926e1dcae2bd449c9367282294325996ea7",
-      "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
+      "updated_at": "2026-10-15T16:39:27.235Z",
+      "source_sha256": "fb4284069ae4f97b2e2d1cdcc3e4a4262070dbac061afe1e9fd31d116e90d945",
+      "source_commit": "49686618fba007f27f65d3da9e59325d3346ac52",
       "handoffs": [
         {
           "writer": "W1",
@@ -3844,8 +3844,22 @@
           "at": "2026-10-15T16:37:14.556Z"
         }
       ],
-      "source_path": "factory/external-writers/inbox/W1/ZH-H04.json",
-      "source_branch": "writer/w1-vibe-20261014"
+      "source_path": "factory/external-writers/inbox/W2/revisions/ZH-H04.r2.json",
+      "source_branch": "writer/w2-live",
+      "revisions": [
+        {
+          "source_sha256": "4f141a0ff3985987f992ac06c003b926e1dcae2bd449c9367282294325996ea7",
+          "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
+          "source_path": "factory/external-writers/inbox/W1/ZH-H04.json",
+          "review_verdict": "QA_FAIL",
+          "repair_gates": [
+            "G3_SENSITIVE_SOURCES",
+            "G3_OFFICIAL_EVIDENCE"
+          ],
+          "superseded_at": "2026-10-15T16:39:27.235Z"
+        }
+      ],
+      "revision": 2
     },
     {
       "id": "EN-H01",

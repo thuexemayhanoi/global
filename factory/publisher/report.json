@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "ledger_revision": 85,
+  "ledger_revision": 86,
   "stage": "CONTINUOUS",
   "counts": {
     "WAIT_PARENT": 2,
-    "REJECTED": 1
+    "APPROVED_BY_POLICY": 1
   },
   "items": [
     {
@@ -39,20 +39,14 @@
     },
     {
       "id": "ZH-H04",
-      "decision": "REJECTED",
-      "failed": [
-        "G3_SENSITIVE_SOURCES",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "4f141a0ff3985987f992ac06c003b926e1dcae2bd449c9367282294325996ea7",
-      "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
-      "details": [
-        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
-        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: 在越南,驾驶人和后座乘客都必须戴头盔,而且系带要系紧。2024年12月颁布的168/2024/NĐ-CP 号议定自2025年1月1日生效,不戴头盔或未系紧系带,罚款40万至60万越南盾,比旧标准明显提高,VnExpress 报道当时已有详细说明。但比罚款更重要的是保护效果:根据世"
-      ]
+      "source_sha256": "fb4284069ae4f97b2e2d1cdcc3e4a4262070dbac061afe1e9fd31d116e90d945",
+      "source_commit": "49686618fba007f27f65d3da9e59325d3346ac52",
+      "details": []
     }
   ]
 }

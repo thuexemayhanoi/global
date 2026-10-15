@@ -12,7 +12,7 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
-| Matrix rows (331) | 133 | 19 | 0 | 179 |
+| Matrix rows (331) | 134 | 19 | 0 | 178 |
 | Topical candidates (30) | 0 | 0 | 0 | 30 |
 | Silos (330) | 78 | 10 | 0 | 95 |
 
@@ -27,23 +27,23 @@ No unjustified high-overlap pair across 331 Matrix rows and 30 candidates (query
 | ID | URL | Words | H2 | FAQ | Inbound pages | Reasons |
 |---|---|---|---|---|---|---|
 | VI-CHECKLIST | /vi/checklist/ | 428 | 5 | 1 | 23 | Main content 428 words < 800 target for SUPPORT |
-| EN-HOME | /en/ | 463 | 5 | 3 | 151 | Main content 463 words < 600 target for PILLAR |
+| EN-HOME | /en/ | 463 | 5 | 3 | 152 | Main content 463 words < 600 target for PILLAR |
 | EN-CHECKLIST | /en/checklist/ | 286 | 5 | 1 | 24 | Main content 286 words < 800 target for SUPPORT |
-| DE-HOME | /de/ | 432 | 5 | 3 | 151 | Main content 432 words < 600 target for PILLAR |
+| DE-HOME | /de/ | 432 | 5 | 3 | 152 | Main content 432 words < 600 target for PILLAR |
 | DE-CHECKLIST | /de/checklist/ | 257 | 5 | 1 | 23 | Main content 257 words < 800 target for SUPPORT |
-| FR-HOME | /fr/ | 513 | 5 | 3 | 151 | Main content 513 words < 600 target for PILLAR |
+| FR-HOME | /fr/ | 513 | 5 | 3 | 152 | Main content 513 words < 600 target for PILLAR |
 | FR-CHECKLIST | /fr/checklist/ | 286 | 5 | 1 | 23 | Main content 286 words < 800 target for SUPPORT |
-| ES-HOME | /es/ | 471 | 5 | 3 | 151 | Main content 471 words < 600 target for PILLAR |
+| ES-HOME | /es/ | 471 | 5 | 3 | 152 | Main content 471 words < 600 target for PILLAR |
 | ES-CHECKLIST | /es/checklist/ | 273 | 5 | 1 | 23 | Main content 273 words < 800 target for SUPPORT |
-| NL-HOME | /nl/ | 445 | 5 | 3 | 151 | Main content 445 words < 600 target for PILLAR |
+| NL-HOME | /nl/ | 445 | 5 | 3 | 152 | Main content 445 words < 600 target for PILLAR |
 | NL-CHECKLIST | /nl/checklist/ | 244 | 5 | 1 | 23 | Main content 244 words < 800 target for SUPPORT |
-| ZH-HOME | /zh/ | 504 | 5 | 3 | 151 | Main content 504 words < 600 target for PILLAR |
-| ZH-CHECKLIST | /zh/checklist/ | 275 | 5 | 1 | 19 | Main content 275 words < 800 target for SUPPORT |
-| PT-HOME | /pt/ | 445 | 5 | 3 | 151 | Main content 445 words < 600 target for PILLAR |
+| ZH-HOME | /zh/ | 507 | 5 | 3 | 152 | Main content 507 words < 600 target for PILLAR |
+| ZH-CHECKLIST | /zh/checklist/ | 285 | 5 | 1 | 20 | Main content 285 words < 800 target for SUPPORT |
+| PT-HOME | /pt/ | 445 | 5 | 3 | 152 | Main content 445 words < 600 target for PILLAR |
 | PT-CHECKLIST | /pt/checklist/ | 252 | 5 | 1 | 23 | Main content 252 words < 800 target for SUPPORT |
-| KO-HOME | /ko/ | 354 | 5 | 3 | 151 | Main content 354 words < 600 target for PILLAR |
+| KO-HOME | /ko/ | 354 | 5 | 3 | 152 | Main content 354 words < 600 target for PILLAR |
 | KO-CHECKLIST | /ko/checklist/ | 198 | 5 | 1 | 23 | Main content 198 words < 800 target for SUPPORT |
-| JA-HOME | /ja/ | 519 | 5 | 3 | 151 | Main content 519 words < 600 target for PILLAR |
+| JA-HOME | /ja/ | 519 | 5 | 3 | 152 | Main content 519 words < 600 target for PILLAR |
 | JA-CHECKLIST | /ja/checklist/ | 280 | 5 | 1 | 23 | Main content 280 words < 800 target for SUPPORT |
 
 Targets: Pillar ≥ 600 words, ≥ 3 FAQ; Supporting ≥ 800 words, ≥ 4 H2 (new drafts already need ≥ 1,000 words).
@@ -114,7 +114,7 @@ Every locale checklist also covers the consideration → decision → pickup →
 | fr | 32 | 15 | 0 | 17 | 2 | 87% |
 | es | 31 | 15 | 0 | 16 | 2 | 87% |
 | nl | 31 | 15 | 0 | 16 | 2 | 87% |
-| zh | 32 | 11 | 0 | 21 | 2 | 82% |
+| zh | 32 | 12 | 0 | 20 | 2 | 83% |
 | pt | 31 | 15 | 0 | 16 | 2 | 87% |
 | ko | 31 | 15 | 0 | 16 | 2 | 87% |
 | ja | 31 | 15 | 0 | 16 | 2 | 87% |
