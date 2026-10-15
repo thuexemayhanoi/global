@@ -3628,17 +3628,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T21:38:13.801Z"
+    },
+    {
+      "id": "ES-S27",
+      "locale": "es",
+      "url": "/es/guides/alcohol-y-moto-en-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:41:11.400Z",
+      "source_sha256": "5b20f7511ab457f4daf1fc11d2b884f1f3f451b7547fa2f963da0caaa13054d4",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ES-S28",
+      "locale": "es",
+      "url": "/es/guides/limites-de-velocidad-moto-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:41:11.400Z",
+      "source_sha256": "97236f9c1488c4dc51af34d811744c61d74342cf70e40f8fa66900bec36c9217",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T13:41:41.280Z",
-      "ids": [
-        "VI-S07",
-        "FR-S08"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T13:42:50.917Z",
       "ids": [
@@ -5196,6 +5210,14 @@
         "EN-S70"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T21:41:11.400Z",
+      "ids": [
+        "ES-S27",
+        "ES-S28"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -5207,6 +5229,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 1
+    "APPROVED_BY_POLICY": 2
   }
 }
