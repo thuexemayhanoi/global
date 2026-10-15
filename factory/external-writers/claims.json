@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 142,
+  "revision": 145,
   "claims": [
     {
       "id": "ES-H01",
@@ -5312,10 +5312,24 @@
       "claim_id": "6638be69-fa14-49db-9156-801b2b925f8d-claimed-138-DE-S55",
       "status": "SUBMITTED",
       "at": "2026-10-15T19:33:02.992Z",
-      "updated_at": "2026-10-15T19:51:44.146Z",
-      "phase": "AWAITING_AUTOMATED_QA",
-      "source_sha256": "a5abe432d9a8a2035a1b2f48c1a4b910afa07a9648c8230914778080741c0c75",
-      "source_commit": "7cea3aa6d6e61d994d9c357697bbe937688524a2"
+      "updated_at": "2026-10-15T20:01:02.869Z",
+      "phase": "REVISED_AWAITING_AUTO_QA",
+      "source_sha256": "b184852230bfbc38b2f674181c3f04d33d9eb386223e1080ea12ba84cb7a9218",
+      "source_commit": "7a0ee95b21668716d5019258cfbc44eac57c1417",
+      "revisions": [
+        {
+          "source_sha256": "a5abe432d9a8a2035a1b2f48c1a4b910afa07a9648c8230914778080741c0c75",
+          "source_commit": "7cea3aa6d6e61d994d9c357697bbe937688524a2",
+          "review_verdict": "QA_FAIL",
+          "repair_gates": [
+            "G3_SENSITIVE_SOURCES"
+          ],
+          "superseded_at": "2026-10-15T20:01:02.869Z"
+        }
+      ],
+      "source_path": "factory/external-writers/inbox/W3/revisions/DE-S55.r2.json",
+      "source_branch": "writer/w3-live",
+      "revision": 2
     },
     {
       "id": "EN-S40",
@@ -5336,10 +5350,12 @@
       "session": "w3-live",
       "branch": "writer/w3-live",
       "claim_id": "68a46e90-209e-4126-8f60-5d8003661b53-claimed-140-EN-S41",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-15T19:35:44.096Z",
-      "updated_at": "2026-10-15T19:35:44.096Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-15T20:01:02.869Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "60e47a7ae79eb3871c847b6e7689df83b2b072aa0a47de89a51aae560be56323",
+      "source_commit": "7a0ee95b21668716d5019258cfbc44eac57c1417"
     },
     {
       "id": "EN-S42",
@@ -5347,10 +5363,12 @@
       "session": "w3-live",
       "branch": "writer/w3-live",
       "claim_id": "68a46e90-209e-4126-8f60-5d8003661b53-claimed-140-EN-S42",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-15T19:35:44.096Z",
-      "updated_at": "2026-10-15T19:35:44.096Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-15T20:01:02.869Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "f3c3bb8800196cb64d01c99e2e6a82b383556765115dbd5472ca2ed7b57d5b0f",
+      "source_commit": "7a0ee95b21668716d5019258cfbc44eac57c1417"
     },
     {
       "id": "DE-S56",
@@ -5405,6 +5423,28 @@
       "status": "CLAIMED",
       "at": "2026-10-15T19:51:44.146Z",
       "updated_at": "2026-10-15T19:51:44.146Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "DE-S61",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "61b703c6-2235-436c-8c1a-78376819a868-claimed-145-DE-S61",
+      "status": "CLAIMED",
+      "at": "2026-10-15T20:01:02.869Z",
+      "updated_at": "2026-10-15T20:01:02.869Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "DE-S62",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "61b703c6-2235-436c-8c1a-78376819a868-claimed-145-DE-S62",
+      "status": "CLAIMED",
+      "at": "2026-10-15T20:01:02.869Z",
+      "updated_at": "2026-10-15T20:01:02.869Z",
       "phase": "WRITING"
     }
   ]
