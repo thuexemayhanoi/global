@@ -1708,6 +1708,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T17:10:24.270Z"
+    },
+    {
+      "id": "ZH-S11",
+      "locale": "zh",
+      "url": "/zh/guides/baoxian-zhinan/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:10:42.099Z",
+      "source_sha256": "3e52a9beec60c8a8b46ccf916c641818dc6a12c02e1e44d20b996aff58a27f80",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S11",
+      "locale": "de",
+      "url": "/de/guides/stadtverkehr-hanoi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:10:42.099Z",
+      "source_sha256": "46229892f806ca65d5ef747ad66bff160ae5ec5f1cfcc1af5995076b6f29fc30",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2931,6 +2953,14 @@
         "VI-S10"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:10:42.099Z",
+      "ids": [
+        "ZH-S11",
+        "DE-S11"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2943,6 +2973,6 @@
     "live_seconds": 42
   },
   "queue": {
-    "APPROVED_BY_POLICY": 10
+    "APPROVED_BY_POLICY": 8
   }
 }
