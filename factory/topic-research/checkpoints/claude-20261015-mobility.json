@@ -7,25 +7,25 @@
   "branch": "research/claude-20261015-mobility",
   "batch_session": "research-claude-20261015-mobility",
   "created_at": "2026-10-15T09:33:24.963Z",
-  "updated_at": "2026-10-15T18:47:22.229Z",
-  "base_main_sha": "f3bc000c339c8fac83121b497fb4e8c23d823afa",
-  "last_commit_sha": "7926927e43a7cb189b8cf9982da43724f0d97d59",
+  "updated_at": "2026-10-15T19:08:00.375Z",
+  "base_main_sha": "8741786ecc34f5fb6e48898068221119d9e605e1",
+  "last_commit_sha": "34fd043403b3a67179944d9bd36376fc4fc5f09f",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 170,
-    "qa_pass": 170,
+    "researched": 180,
+    "qa_pass": 180,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 160,
+    "pushed": 170,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
       "en": 28,
-      "de": 20,
+      "de": 30,
       "fr": 17,
       "es": 17,
       "nl": 15,
@@ -38,13 +38,13 @@
     "domains": {
       "transportation-mobility": 10,
       "motorbike-rental": 10,
-      "traffic-law-safety": 150
+      "traffic-law-safety": 160
     }
   },
   "last_batch": {
-    "seq": 17,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0017.json",
-    "sha256": "4bbc8d31744294107bcd32beb6caa6ac9dd7c99415ce579bbcb569c737f40c39",
+    "seq": 18,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0018.json",
+    "sha256": "da6ed54dbcebf590fe42030219edae07f6f416d086a511e3f39478af753e4794",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -1830,8 +1830,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility-0017.json",
       "sha256": "4bbc8d31744294107bcd32beb6caa6ac9dd7c99415ce579bbcb569c737f40c39",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "34fd043403b3a67179944d9bd36376fc4fc5f09f",
       "researched_on": "2026-10-15",
       "topics": [
         {
@@ -1842,7 +1842,7 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-city",
           "key": "es::cuando se puede tocar la bocina en vietnam en moto",
-          "ta_id": null
+          "ta_id": "TA-ES-0035"
         },
         {
           "ref": "es:prioridad-cruces-rotondas-vietnam",
@@ -1852,7 +1852,7 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-city",
           "key": "es::prioridad en cruces y rotondas en vietnam en moto",
-          "ta_id": null
+          "ta_id": "TA-ES-0036"
         },
         {
           "ref": "fr:priorite-intersections-rond-points-vietnam",
@@ -1862,7 +1862,7 @@
           "parent_id": "FR-H04",
           "subcluster": "ss-city",
           "key": "fr::priorite aux intersections au vietnam en scooter",
-          "ta_id": null
+          "ta_id": "TA-FR-0036"
         },
         {
           "ref": "fr:scooter-autoroute-vietnam-interdit",
@@ -1872,7 +1872,7 @@
           "parent_id": "FR-H04",
           "subcluster": "ss-city",
           "key": "fr::scooter sur autoroute au vietnam interdit",
-          "ta_id": null
+          "ta_id": "TA-FR-0037"
         },
         {
           "ref": "nl:scooter-op-de-snelweg-vietnam",
@@ -1882,7 +1882,7 @@
           "parent_id": "NL-H04",
           "subcluster": "ss-city",
           "key": "nl::mag je met een scooter op de snelweg in vietnam",
-          "ta_id": null
+          "ta_id": "TA-NL-0034"
         },
         {
           "ref": "pt:moto-na-autoestrada-vietname",
@@ -1892,7 +1892,7 @@
           "parent_id": "PT-H04",
           "subcluster": "ss-city",
           "key": "pt::pode andar de moto na autoestrada no vietname",
-          "ta_id": null
+          "ta_id": "TA-PT-0034"
         },
         {
           "ref": "zh:motuoche-mingdi-guiding",
@@ -1902,7 +1902,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南骑摩托车鸣笛规定",
-          "ta_id": null
+          "ta_id": "TA-ZH-0034"
         },
         {
           "ref": "ko:horn-rules-motorbike-vietnam",
@@ -1912,7 +1912,7 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-city",
           "key": "ko::베트남 오토바이 경적 사용 규칙",
-          "ta_id": null
+          "ta_id": "TA-KO-0034"
         },
         {
           "ref": "ja:klaxon-rule-vietnam",
@@ -1922,7 +1922,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::ヘトナム ハイク クラクション ルール",
-          "ta_id": null
+          "ta_id": "TA-JA-0034"
         },
         {
           "ref": "vi:quy-dinh-vuot-xe-may",
@@ -1932,14 +1932,125 @@
           "parent_id": "VI-H04",
           "subcluster": "ss-city",
           "key": "vi::quy dinh vuot xe khi di xe may",
+          "ta_id": "TA-VI-0035"
+        }
+      ]
+    },
+    {
+      "seq": 18,
+      "file": "factory/topic-research/batches/claude-20261015-mobility-0018.json",
+      "sha256": "da6ed54dbcebf590fe42030219edae07f6f416d086a511e3f39478af753e4794",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-15",
+      "topics": [
+        {
+          "ref": "de:mindestalter-roller-fahren-vietnam",
+          "locale": "de",
+          "slug": "mindestalter-roller-fahren-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H03",
+          "subcluster": "dc-licence",
+          "key": "de::ab welchem alter roller fahren vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:punktesystem-fuehrerschein-vietnam",
+          "locale": "de",
+          "slug": "punktesystem-fuehrerschein-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H03",
+          "subcluster": "dc-licence",
+          "key": "de::punkte fuhrerschein vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:ampeln-vietnam-regeln-roller",
+          "locale": "de",
+          "slug": "ampeln-vietnam-regeln-roller",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::ampel vietnam regeln roller",
+          "ta_id": null
+        },
+        {
+          "ref": "de:bahnuebergang-roller-vietnam",
+          "locale": "de",
+          "slug": "bahnuebergang-roller-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::bahnubergang vietnam roller",
+          "ta_id": null
+        },
+        {
+          "ref": "de:in-der-gruppe-roller-fahren-vietnam",
+          "locale": "de",
+          "slug": "in-der-gruppe-roller-fahren-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::in der gruppe roller fahren vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:kamera-bussgeld-mietroller-vietnam",
+          "locale": "de",
+          "slug": "kamera-bussgeld-mietroller-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H03",
+          "subcluster": "dc-contract",
+          "key": "de::verkehrsstrafe kamera vietnam mietroller",
+          "ta_id": null
+        },
+        {
+          "ref": "de:bussgeld-vietnam-bezahlen",
+          "locale": "de",
+          "slug": "bussgeld-vietnam-bezahlen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::bußgeld vietnam bezahlen",
+          "ta_id": null
+        },
+        {
+          "ref": "de:roller-abschleppen-schieben-vietnam",
+          "locale": "de",
+          "slug": "roller-abschleppen-schieben-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::roller abschleppen vietnam erlaubt",
+          "ta_id": null
+        },
+        {
+          "ref": "de:roller-fahren-hitze-vietnam",
+          "locale": "de",
+          "slug": "roller-fahren-hitze-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-weather",
+          "key": "de::roller fahren vietnam hitze",
+          "ta_id": null
+        },
+        {
+          "ref": "de:luftverschmutzung-hanoi-roller",
+          "locale": "de",
+          "slug": "luftverschmutzung-hanoi-roller",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-weather",
+          "key": "de::luftverschmutzung hanoi roller",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 18,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0018.json",
+    "seq": 19,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0019.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -2084,6 +2195,13 @@
       "seq": 17,
       "topics": 10,
       "sha256": "4bbc8d31744294107bcd32beb6caa6ac9dd7c99415ce579bbcb569c737f40c39"
+    },
+    {
+      "at": "2026-10-15T19:08:00.375Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 18,
+      "topics": 10,
+      "sha256": "da6ed54dbcebf590fe42030219edae07f6f416d086a511e3f39478af753e4794"
     }
   ]
 }
