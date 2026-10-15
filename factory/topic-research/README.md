@@ -9,7 +9,7 @@ Research is the only part of the Topic Factory that needs live web access, so it
 3. Run `node scripts/topic-factory.mjs validate-batches` to check **all files together**, including duplicate intents across different batch JSONs and the 1,000-topic planning-slot cap per locale. For the first isolated file, `validate-batch --file <file>` is also available. Fix every rejection before push.
 4. Push the branch. **Topic Research QA** validates it; on green, **Global Topic Factory** (main code only) ingests the batch as DATA, assigns `TA-XX-NNNN` IDs, registers the references and, when a locale's READY backlog is below 100, promotes gate-clean candidates to Matrix `IDEA` rows under `approvals/standing-policy-20261015.json`.
 
-No PR or owner click is needed for intake. Replaying the same batch is a no-op (SHA-256 log in `data/seo/topic-factory/research-log.json`).
+No PR or owner click is needed for intake. Replaying the same **fully accepted** batch is a no-op (SHA-256 log in `data/seo/topic-factory/research-log.json`). If you rebase the research branch onto newer `main`, `validate-batches` recognizes unchanged previously accepted batch payloads using this log and validates only new or modified payloads. Previously rejected batches remain failed until corrected; changing their contents creates a new digest and re-runs all gates. Do not copy old acceptance onto a changed file.
 
 ## Batch schema
 
