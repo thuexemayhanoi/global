@@ -3244,17 +3244,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T20:47:03.729Z"
+    },
+    {
+      "id": "DE-S67",
+      "locale": "de",
+      "url": "/de/guides/tiere-auf-der-strasse-vietnam-roller/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:50:23.415Z",
+      "source_sha256": "0be32ef57ba21d6d664dce8260701c756af2ebda1f0b1c6e44bd259e38bdc4f5",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S68",
+      "locale": "de",
+      "url": "/de/guides/langsam-fahren-pflicht-vietnam-roller/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:50:23.415Z",
+      "source_sha256": "a0d41d979fbd5bd92a6e38227956d378d5bffcff5c30fc8175d1b7d964834bd1",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T10:14:36.826Z",
-      "ids": [
-        "KO-S09",
-        "NL-S09"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T10:15:45.234Z",
       "ids": [
@@ -4818,6 +4832,14 @@
         "DE-S66"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T20:50:23.415Z",
+      "ids": [
+        "DE-S67",
+        "DE-S68"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4830,6 +4852,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 3
   }
 }
