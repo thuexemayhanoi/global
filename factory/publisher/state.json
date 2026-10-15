@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 189,
+  "clean_runs": 192,
   "published": [
     {
       "id": "NL-H01",
@@ -4466,50 +4466,59 @@
       "at": "2026-10-15T23:10:16.785Z",
       "source_sha256": "5a723f6a03f301a98f4e562809f7066a9cdf72fed9bd242b6beefafc820d369e",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T23:11:32.458Z"
+    },
+    {
+      "id": "FR-S53",
+      "locale": "fr",
+      "url": "/fr/guides/amende-camera-scooter-de-location-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T23:13:13.067Z",
+      "source_sha256": "abc239addd3691f8ae98b1fb49c4f61a5ba37b7207ac3c5b3e241b91cef01859",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T23:14:26.233Z"
+    },
+    {
+      "id": "FR-S54",
+      "locale": "fr",
+      "url": "/fr/guides/payer-une-amende-routiere-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T23:13:13.067Z",
+      "source_sha256": "cd7940264fa0288eca2e6c2facc5b26c14eb80ac84337d8587bc1e1170bea1ed",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T23:14:26.233Z"
+    },
+    {
+      "id": "FR-S55",
+      "locale": "fr",
+      "url": "/fr/guides/scooter-forte-chaleur-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T23:14:46.017Z",
+      "source_sha256": "0c48a5d12f9dc8a3f702de9ce1d86b7e51e02455baefa3c61828488032f33e50",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T23:16:02.569Z"
+    },
+    {
+      "id": "FR-S56",
+      "locale": "fr",
+      "url": "/fr/guides/pollution-air-hanoi-scooter/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T23:14:46.017Z",
+      "source_sha256": "eafe174df9ae47cca86611966338c5cab6e94c4219f4bbf56ac60371e0ed06e6",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T23:16:02.569Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T18:20:40.590Z",
-      "ids": [
-        "ES-S17",
-        "FR-S18"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T18:21:02.987Z",
-      "ids": [
-        "DE-S16",
-        "EN-S17"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T18:21:54.521Z",
-      "ids": [
-        "DE-S16",
-        "EN-S17"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T18:22:19.559Z",
-      "ids": [
-        "ES-S16",
-        "FR-S17"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T18:23:33.246Z",
-      "ids": [
-        "ES-S16",
-        "FR-S17"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T18:23:55.445Z",
       "ids": [
@@ -6020,18 +6029,55 @@
         "FR-S52"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T23:11:32.458Z",
+      "ids": [
+        "FR-S52"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T23:13:13.067Z",
+      "ids": [
+        "FR-S53",
+        "FR-S54"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T23:14:26.233Z",
+      "ids": [
+        "FR-S53",
+        "FR-S54"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T23:14:46.017Z",
+      "ids": [
+        "FR-S55",
+        "FR-S56"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T23:16:02.569Z",
+      "ids": [
+        "FR-S55",
+        "FR-S56"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T23:09:58.850Z",
+    "at": "2026-10-15T23:16:02.569Z",
     "ids": [
-      "FR-S50",
-      "FR-S51"
+      "FR-S55",
+      "FR-S56"
     ],
-    "commit": "dadb5c24093ba005c3c21a5d11f67a9d875768b1",
-    "live_seconds": 41
+    "commit": "86c2fbc4ddcb7a576852b69ebc735fbe7d0f86be",
+    "live_seconds": 62
   },
-  "queue": {
-    "APPROVED_BY_POLICY": 1
-  }
+  "queue": {}
 }
