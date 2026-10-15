@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 81,
+  "clean_runs": 82,
   "published": [
     {
       "id": "NL-H01",
@@ -2174,7 +2174,8 @@
       "at": "2026-10-15T17:57:16.955Z",
       "source_sha256": "de7f2fff96788f429e33ca77c8a62f6dee5c03cb328339ea1e4e196725309d11",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T17:58:47.527Z"
     },
     {
       "id": "PT-S15",
@@ -2184,6 +2185,29 @@
       "stage": "CONTINUOUS",
       "at": "2026-10-15T17:57:16.955Z",
       "source_sha256": "b474f46d23bb403d366e37396549f325b25f9ceecefb8073ce3813247a8bb665",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T17:58:47.527Z"
+    },
+    {
+      "id": "FR-S15",
+      "locale": "fr",
+      "url": "/fr/guides/controle-de-police/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:59:08.539Z",
+      "source_sha256": "3a8f09c2685045614c843787707f946cd914e1988344ee611a0a692f832347a5",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S14",
+      "locale": "ja",
+      "url": "/ja/guides/koutsuu-keisatsu/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:59:08.539Z",
+      "source_sha256": "c30819cd6274461020b1c60540695b3083b84a099e0aa957068919da5949fad2",
       "review_sha256": null,
       "live_qa": "PENDING"
     }
@@ -3733,18 +3757,34 @@
         "PT-S15"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T17:58:47.527Z",
+      "ids": [
+        "NL-S15",
+        "PT-S15"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:59:08.539Z",
+      "ids": [
+        "FR-S15",
+        "JA-S14"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T17:57:02.932Z",
+    "at": "2026-10-15T17:58:47.527Z",
     "ids": [
-      "KO-S15",
-      "ZH-S16"
+      "NL-S15",
+      "PT-S15"
     ],
-    "commit": "c5d88d1c4205f5d16a317650e15e24fced1f3d77",
-    "live_seconds": 81
+    "commit": "f9d7e298919ea6a6b56b399d332c5cfe16f51662",
+    "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 3
+    "APPROVED_BY_POLICY": 11
   }
 }
