@@ -4,11 +4,12 @@ import fs from "node:fs";
 import {loadTopicalMap,validateTopicalMap,coverage,linkPlan,planPromotion,similarity,tokens,allProposals,proposalURL,similarPairs} from "../scripts/seo/topical-authority-core.mjs";
 import {menuChildren} from "../scripts/navigation.mjs";
 import {readLocalSitemapInventory} from "../scripts/sitemaps.mjs";
+import {rewindPromotions} from "./support/promotion-fixture.mjs";
 const read=p=>JSON.parse(fs.readFileSync(p,"utf8"));
-const matrix=read("data/seo/master-matrix.json");
+// The factory may have promoted every PROPOSED candidate; rewind the latest promotion per locale in memory.
+const {matrix,map}=rewindPromotions({matrix:read("data/seo/master-matrix.json"),map:loadTopicalMap(process.cwd())});
 const board=read("factory/external-writers/assignments.json");
 const frozen=read("data/seo/url-freeze.json").urls.map(u=>u.url);
-const map=loadTopicalMap(process.cwd());
 const fails=(m,mx=matrix)=>validateTopicalMap({map:m,matrix:mx,frozenUrls:frozen}).issues;
 const clone=()=>structuredClone(map);
 const first=(m,locale)=>m.locales[locale].proposals.find(p=>p.status==="PROPOSED");
@@ -133,6 +134,8 @@ test("promotion needs the exact owner manifest and only adds balanced IDEA rows"
 test("menus keep exactly two featured Supporting labels per Hub, PUBLISHED first",()=>{
  for(const hub of matrix.rows.filter(r=>r.role==="HUB"))assert.equal(menuChildren(matrix,hub.id).length,2,hub.id);
  const grown=structuredClone(matrix);
+ // EN-H01's real children get published over time; keep them IDEA here so the newcomer's PUBLISHED status is what ranks it.
+ for(const r of grown.rows)if(r.parent_id==="EN-H01")r.status="IDEA";
  grown.rows.push({...grown.rows.find(r=>r.id==="EN-S01"),id:"EN-S99",url:"/en/guides/test/",status:"PUBLISHED",priority:90});
  assert.deepEqual(menuChildren(grown,"EN-H01").map(r=>r.id),["EN-S99","EN-S01"]);
 });

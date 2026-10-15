@@ -11,8 +11,24 @@ export const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),".."
 export const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),"utf8"));
 export const policy=read("data/seo/topic-factory/policy.json");
 export const standing=read(policy.standing_policy);
-export const matrix=read("data/seo/master-matrix.json");
-export const map=loadTopicalMap(root);
+/**
+ * The world the synthetic topics are judged against: the live Matrix and topical map minus everything that real
+ * research sessions have ingested (data/seo/topic-factory/research-log.json). Real research can legitimately
+ * cover the same ground as a fixture topic; the tooling under test must not depend on what has been researched.
+ */
+const LOG="data/seo/topic-factory/research-log.json";
+export const INGESTED=new Set((fs.existsSync(path.join(root,LOG))?read(LOG).batches||[]:[]).flatMap(b=>b.added||[]));
+export function withoutResearchIntake({matrix,map=null,ledger=null,files=null}){
+ const dropped=new Set(matrix.rows.filter(r=>INGESTED.has(r.topical_candidate_id)).map(r=>r.id));
+ const out={matrix:{...matrix,rows:matrix.rows.filter(r=>!dropped.has(r.id))}};
+ if(map){out.map=structuredClone(map);for(const l of Object.values(out.map.locales))l.proposals=l.proposals.filter(p=>!INGESTED.has(p.candidate_id));}
+ if(files){out.files={};for(const [k,f] of Object.entries(files))out.files[k]={...f,proposals:(f.proposals||[]).filter(p=>!INGESTED.has(p.candidate_id))};}
+ if(ledger)out.ledger={...ledger,claims:ledger.claims.filter(c=>!dropped.has(c.id))};
+ return out;
+}
+const world=withoutResearchIntake({matrix:read("data/seo/master-matrix.json"),map:loadTopicalMap(root)});
+export const matrix=world.matrix;
+export const map=world.map;
 export const frozen=read("data/seo/url-freeze.json").urls.map(u=>u.url);
 export const hub=(locale,cluster)=>matrix.rows.find(r=>r.locale===locale&&r.role==="HUB"&&r.cluster===cluster).id;
 

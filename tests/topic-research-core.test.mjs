@@ -140,7 +140,7 @@ test("ten genuine candidates pass all four phases against the real Matrix and to
 });
 
 test("failures are attributed to the right phase and name the real gate",()=>{
- const existing=map.locales.en.proposals.find(p=>p.status==="PROPOSED");
+ const existing=map.locales.en.proposals.find(p=>p.status==="PROPOSED")||map.locales.en.proposals.find(p=>p.status==="PROMOTED");
  const r=ev([
   enTopic(0,{primary_query:existing.primary_query,slug:"copy-of-a-proposal"}),                                              // duplicate
   enTopic(1,{search_intent:"transactional",primary_query:"book a scooter in hanoi now with deposit"}),                      // intent
