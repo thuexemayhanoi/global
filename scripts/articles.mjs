@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import {scanPacket} from "./seo/fact-guard-core.mjs";
+import {scanPacket,scanText} from "./seo/fact-guard-core.mjs";
 import {loadTopicalMap} from "./seo/topical-authority-core.mjs";
 
 const SITE="https://global.rentbikehanoi.com";
@@ -121,7 +121,10 @@ export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublis
  }
  // Anti-fabrication: wrong Nguyễn Tú prices/NAP/hours always fail; unsourced
  // amounts or phones fail in strict (publisher) mode and warn in Writer QA.
- for(const f of scanPacket(packet,factMode)){
+ // Source titles are rendered as the page's reference list, which the site
+ // fact guard reads too, so they are checked here as well.
+ const sourceTitles=Array.isArray(packet?.sources)?packet.sources.flatMap((s,i)=>s?.title?scanText(String(s.title),{locale:packet.locale,mode:factMode,where:"sources["+i+"].title"}):[]):[];
+ for(const f of [...scanPacket(packet,factMode),...sourceTitles]){
   const line="Fact guard "+f.code+" in "+f.where+": "+f.message+(f.excerpt?" «"+f.excerpt+"»":"");
   (f.level==="FAIL"?errors:warnings).push(line);
  }
