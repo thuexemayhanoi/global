@@ -3496,17 +3496,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T21:22:36.066Z"
+    },
+    {
+      "id": "DE-S75",
+      "locale": "de",
+      "url": "/de/guides/erste-fahrt-automatikroller-uebungsplan/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:22:53.729Z",
+      "source_sha256": "05c566a5f5a62a49dc8ad7f491031b838c63c658e5d51617051ad019c3f4baec",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S76",
+      "locale": "de",
+      "url": "/de/guides/elektroroller-reichweite-laden-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:22:53.729Z",
+      "source_sha256": "5f289ff9e21ea1622698366b9127b263064006a2127ccd519775fb85be711c45",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T13:30:01.437Z",
-      "ids": [
-        "ZH-S01",
-        "EN-S02"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T13:31:31.922Z",
       "ids": [
@@ -5070,6 +5084,14 @@
         "DE-S74"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T21:22:53.729Z",
+      "ids": [
+        "DE-S75",
+        "DE-S76"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -5082,6 +5104,6 @@
     "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 4
+    "APPROVED_BY_POLICY": 2
   }
 }
