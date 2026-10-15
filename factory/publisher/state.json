@@ -388,6 +388,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:31:48.543Z"
+    },
+    {
+      "id": "NL-S02",
+      "locale": "nl",
+      "url": "/nl/guides/50cc-of-elektrisch/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:32:15.389Z",
+      "source_sha256": "ea7b6ca6e2543dcaee3177ce07232c5b481b8b5821d27786601182f45d5b82f2",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S03",
+      "locale": "en",
+      "url": "/en/guides/daily-weekly-monthly/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:32:15.389Z",
+      "source_sha256": "d7f73315781ff2be7577f4a88196a4cf7bc98b7bcb54edece9c4f253f48bb132",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -707,6 +729,14 @@
         "KO-S02"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:32:15.389Z",
+      "ids": [
+        "NL-S02",
+        "EN-S03"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -720,6 +750,6 @@
   },
   "queue": {
     "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 48
+    "APPROVED_BY_POLICY": 46
   }
 }
