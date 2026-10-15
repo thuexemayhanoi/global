@@ -2692,17 +2692,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T19:01:48.985Z"
+    },
+    {
+      "id": "DE-S43",
+      "locale": "de",
+      "url": "/de/guides/ueberholen-roller-vietnam-regeln/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:02:08.450Z",
+      "source_sha256": "893adb58168cb6610eff35387932e295df3f912057e5b273a8e14341f31b0eef",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S44",
+      "locale": "de",
+      "url": "/de/guides/wenden-und-abbiegen-roller-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:02:08.450Z",
+      "source_sha256": "cb16412a3b156b26b0cc7cba1f4042c147161579ce5e127d790da2d4e1fb4df7",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:32:15.389Z",
-      "ids": [
-        "NL-S02",
-        "EN-S03"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T09:34:24.262Z",
       "ids": [
@@ -4278,6 +4292,14 @@
         "DE-S42"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T19:02:08.450Z",
+      "ids": [
+        "DE-S43",
+        "DE-S44"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4290,6 +4312,6 @@
     "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 5
+    "APPROVED_BY_POLICY": 3
   }
 }
