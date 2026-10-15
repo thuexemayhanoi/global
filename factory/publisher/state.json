@@ -2008,6 +2008,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T17:43:26.456Z"
+    },
+    {
+      "id": "JA-S13",
+      "locale": "ja",
+      "url": "/ja/guides/keitai-shorui/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:43:45.033Z",
+      "source_sha256": "a142a82108dc39a9f857a878c9ffdbf17bef1e41cf7b3f02b8dfecb0a7559cee",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S13",
+      "locale": "ko",
+      "url": "/ko/guides/chaengil-seoryu/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:43:45.033Z",
+      "source_sha256": "878049eb0a01c816fbd753c8615693ecb9a177674f5aad6cbb47121a19151675",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -3437,6 +3459,14 @@
         "FR-S14"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:43:45.033Z",
+      "ids": [
+        "JA-S13",
+        "KO-S13"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3449,6 +3479,6 @@
     "live_seconds": 42
   },
   "queue": {
-    "APPROVED_BY_POLICY": 11
+    "APPROVED_BY_POLICY": 9
   }
 }
