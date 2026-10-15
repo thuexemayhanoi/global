@@ -151,19 +151,24 @@ function main(){
  const rec=slots.slots[request.writer];
  if(rec.state!==signal||rec.session!==request.session||rec.branch!==branch||(request.agent&&rec.agent!==request.agent))
   slots=signalSlot(ledger,slots,{writer:request.writer,session:request.session,branch,state:signal,reason:request.slot_reason||"",agent:request.agent||null,source:"agent",now});
- const revised=applyRevisions(matrix,ledger,registry,{writer:request.writer,session:request.session,branch},revs,{now});
- const result=autoAdvance(matrix,revised.ledger,registry,request,{verifiedDraftIds:verified,verifiedDraftEvidence:evidence,
-   now,nonce:randomUUID(),refill:["ACTIVE","RECOVERING"].includes(signal)&&request.claim_new!==false});
- if(revised.applied.length){result.changed=true;console.log("REVISIONS_RECORDED "+revised.applied.join(","));}
+ // Read trusted Publisher repair tickets against the ORIGINAL incoming ledger.
+ // Submitting/revising/claiming on this push increments the revision. Doing those
+ // writes before the handoff made every simultaneous repair_take+claim_new push
+ // permanently miss with REPAIR_REPORT_STALE.
+ let intake={ledger,changed:false,transferred:[],reason:"NOT_REQUESTED"};
  if(request.repair_take===true&&["ACTIVE","RECOVERING"].includes(signal)){
-  // Transfer only when the current report and claims ledger match exactly.
-  // The next Publisher scan issues fresh tickets for the new sole owner.
-  const transfer=takeRepairTickets(matrix,result.ledger,registry,report,request,{now,max:10});
-  if(transfer.changed){
-   result.ledger=transfer.ledger;result.changed=true;
-   console.log("CROSS_REPAIR_TRANSFERRED "+transfer.transferred.join(","));
-  }else console.log("CROSS_REPAIR_NOOP "+transfer.reason);
+  intake=takeRepairTickets(matrix,ledger,registry,report,request,{now,max:10});
+  if(intake.changed)console.log("CROSS_REPAIR_TRANSFERRED "+intake.transferred.join(","));
+  else console.log("CROSS_REPAIR_NOOP "+intake.reason);
  }
+ const revised=applyRevisions(matrix,intake.ledger,registry,{writer:request.writer,session:request.session,branch},revs,{now});
+ const result=autoAdvance(matrix,revised.ledger,registry,request,{verifiedDraftIds:verified,verifiedDraftEvidence:evidence,
+   now,nonce:randomUUID(),
+   // If Writer adopted someone else's failures, repair them FIRST. Do not also
+   // assign ten new article topics on the same push.
+   refill:["ACTIVE","RECOVERING"].includes(signal)&&request.claim_new!==false&&!intake.changed});
+ if(revised.applied.length||intake.changed)result.changed=true;
+ if(revised.applied.length)console.log("REVISIONS_RECORDED "+revised.applied.join(","));
  if(slots!==slotsBefore)fs.writeFileSync(path.join(ROOT,slotsFile),JSON.stringify(slots,null,2)+"\n");
  if(!result.changed){
   console.log(JSON.stringify({mode:"AUTO_POOL_NO_MUTATION",status:result.status,
