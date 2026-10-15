@@ -201,6 +201,31 @@ test("sequential research QA catches duplicate keywords across separate files be
  assert.equal(separate.passed,true);
 });
 
+test("SHA-256 log replay after research-branch rebase does not reject previously accepted batches",()=>{
+ const first=batch([good]),ingested=ingestResearch(first,{matrix,map,policy,source:"accepted.json",frozenUrls:frozen});
+ assert.equal(ingested.added.length,1);
+ const newCandidate={...good,slug:"choosing-helmet-fit-on-vietnam-trip",
+  primary_query:"how to choose a correctly fitted helmet for a vietnam riding trip",
+  secondary_queries:["helmet size measurements for vietnam trip","head circumference fit for motorcycle helmet"],
+  working_title:"How to Check Helmet Fit Before a Riding Trip in Vietnam",
+  intent_rationale:"Independent riders need to check helmet fit, fasteners and suitability for their trip; this differs from luggage space and motorbike model selection.",
+  content_angle:"Step-by-step safe helmet fitting and checks for travellers, with verified safety references and no ungrounded rental claims."};
+ const rerun=validateResearchSequence([
+  {file:"old.json",batch:first,replay:{sha256:"rehearsal",added:ingested.added.map(x=>x.candidate_id),rejected:[]}},
+  {file:"new.json",batch:batch([newCandidate])}
+ ],{matrix,map:ingested.map,policy,frozenUrls:frozen});
+ assert.equal(rerun.results[0].passed,true);
+ assert.equal(rerun.results[0].replayed,true);
+ assert.equal(rerun.results[0].would_add,0);
+ assert.equal(rerun.results[1].passed,true,JSON.stringify(rerun.results[1].rejected));
+ const rejected=validateResearchSequence([
+  {file:"rejected.json",batch:first,replay:{sha256:"failure",rejected:[{gate:"F5_DUPLICATE",reason:"previously rejected"}]}}
+ ],{matrix,map:ingested.map,policy,frozenUrls:frozen});
+ assert.equal(rejected.passed,false);
+ assert.equal(rejected.results[0].replayed,true);
+ assert.equal(rejected.results[0].rejected[0].gate,"F5_DUPLICATE");
+});
+
 test("topic research intake reserves at most 1000 planning slots per locale before Matrix promotion",()=>{
  const usage=researchUsage({matrix,map,policy},"en");
  assert.ok(usage.total<1000);
