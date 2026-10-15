@@ -1,68 +1,45 @@
 {
   "version": 2,
-  "ledger_revision": 57,
+  "ledger_revision": 58,
   "stage": "RAMP",
   "counts": {
-    "REJECTED": 97,
-    "APPROVED_BY_POLICY": 2,
+    "APPROVED_BY_POLICY": 3,
+    "REJECTED": 94,
     "WAIT_PARENT": 5
   },
   "items": [
     {
       "id": "ES-H02",
-      "decision": "REJECTED",
-      "failed": [
-        "G3_OFFICIAL_EVIDENCE"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "acf1210591ab7621d70486eaa1576ebee48cc6df5894646449dbe0488e9d71f7",
-      "source_commit": "a2f863db8e928d1300dc1933e50fdaef92b06a1b",
-      "details": [
-        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: Elige el depósito en efectivo con recibo antes que dejar el pasaporte. Exteriores recomienda exigir la devolución inmediata del pasaporte cu"
-      ]
-    },
-    {
-      "id": "VI-H02",
-      "decision": "REJECTED",
-      "failed": [
-        "G3_OFFICIAL_EVIDENCE"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "b5d0e8beccc59c4c5925d6df18c21dcfa4f3816f81d04abf22cecdac753078e2",
-      "source_commit": "36c4eb49b5206aed484ee9ab93f0c6347821c651",
-      "details": [
-        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: Điều này ảnh hưởng trực tiếp đến chi phí. Nếu bạn chỉ có bằng A1 cấp sau năm 2025 mà thuê một chiếc côn tay 150 cm3, bạn đang lái xe không đ"
-      ]
-    },
-    {
-      "id": "ZH-H02",
       "decision": "APPROVED_BY_POLICY",
       "failed": [],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "c4edf500c817f106544160ba675d34e1e0a13eb6ff971898bf3431fdcff54707",
-      "source_commit": "36c4eb49b5206aed484ee9ab93f0c6347821c651",
+      "source_sha256": "be33cfd7ac7348d38cc3e6d299af5b56bc4ba9f145669832899353f474ff5b20",
+      "source_commit": "04574e632c8117a0838adbc8b2c6e3cc90030d1b",
+      "details": []
+    },
+    {
+      "id": "VI-H02",
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
+      "writer": "W2",
+      "session": "w2-live",
+      "branch": "writer/w2-live",
+      "source_sha256": "134aabc6d57bdedd3ee92c7e56f687f70dc0c5062bac31c1fca8fd3ad20a9700",
+      "source_commit": "04574e632c8117a0838adbc8b2c6e3cc90030d1b",
       "details": []
     },
     {
       "id": "DE-H03",
-      "decision": "REJECTED",
-      "failed": [
-        "G3_OFFICIAL_EVIDENCE"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "1de0857a54a5288f2942a40c10018219dd361df0c6c75e458866a349d0c11ed6",
-      "source_commit": "36c4eb49b5206aed484ee9ab93f0c6347821c651",
-      "details": [
-        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: Hier liegt der häufigste Irrtum deutscher Urlauber. Das Auswärtige Amt weist ausdrücklich darauf hin, dass das Fahren von Motorrädern oder M | Die typischen Mietroller in Hanoi lie"
-      ]
+      "source_sha256": "ff9b5f1d659294a5242d4e0a7101a0ca9a7447937bbfbcf8be94ea0667663b78",
+      "source_commit": "04574e632c8117a0838adbc8b2c6e3cc90030d1b",
+      "details": []
     },
     {
       "id": "FR-H03",
@@ -198,17 +175,6 @@
       "details": [
         "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: La seguridad empieza antes de encender el motor. Vietnam reconoce el permiso de conducir internacional expedido conforme a la Convención de "
       ]
-    },
-    {
-      "id": "KO-H04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "47f7619b6867eeb88c11a621b746856a22bd2ae6ebedaa44eb551c4648a84562",
-      "source_commit": "a57f262b4d16987229dfad7dbb47d62ec3627572",
-      "details": []
     },
     {
       "id": "NL-H04",
@@ -711,8 +677,7 @@
       "id": "ZH-S03",
       "decision": "REJECTED",
       "failed": [
-        "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED"
+        "G1_DRAFT_QA"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
@@ -720,8 +685,7 @@
       "source_sha256": "fa619f705f51a3182f36d9eb6eef5823f2742159f186896602f917395c657d73",
       "source_commit": "427dfdcf1f07c254c7cdb51162c8bf32c38ee15e",
       "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same paragraph «150,000–200,000盾»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same paragr",
-        "G2_PARENT_PUBLISHED: ZH-H02 is IDEA"
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same paragraph «150,000–200,000盾»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same paragr"
       ]
     },
     {
@@ -906,7 +870,6 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
         "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
@@ -917,7 +880,6 @@
       "source_commit": "074204cf19fd4809ba767db6ef0a5624ef3c1c77",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «1.5万至3万越南盾»",
-        "G2_PARENT_PUBLISHED: ZH-H02 is IDEA",
         "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: MOTOGO的政策展示了这些条款在实际中的写法：承租人造成的严重损坏需更换原厂配件，轻微划痕按市场报价赔偿，车辆被盗或完全损毁按租赁时的评估价值赔偿，逾期按小时计费，各车型每小时1.5万至3万越南盾，超过8小时按一天计算。每一条你都可以接受或协商，但只要有一条不清楚就不要签字。",
         "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: 根据越南《民法典》（2015年）第328条，最高人民法院《法院杂志》的分析指出，定金是一方在一定期限内交给另一方一笔钱或有价值的物品，用以担保合同的订立或履行。合同履行后，定金应退还或抵作价款；交付定金的一方拒绝履行则丧失定金，收受定金的一方拒绝履行则须返还定金并另付同等金额，但 | 对越南本国人，法律也已经收紧经营场所扣留顾客身份证件的做法。据《劳动报》报"
       ]
@@ -1367,7 +1329,6 @@
       "id": "KO-S07",
       "decision": "REJECTED",
       "failed": [
-        "G2_PARENT_PUBLISHED",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1376,7 +1337,6 @@
       "source_sha256": "3a11aa76452d6345be9138b204a3d39c1c6c05292205c4df936790a9cfb8e300",
       "source_commit": "5031ea384ce8fc6b4d8746cc7c6f7ece108d182d",
       "details": [
-        "G2_PARENT_PUBLISHED: KO-H04 is IDEA",
         "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: 등화는 권고가 아니라 의무입니다. VOV 교통이 인용한 시행령 168/2024/NĐ-CP 제7조 제1항 g호에 따르면, 이륜차 운전자가 전날 18시부터 다음 날 6시 사이, 또는 안개, 연기, 먼지, 비, 악천후로 시야가 제한될 때 전조등을 켜지 않으"
       ]
     },
@@ -1540,7 +1500,6 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
         "G3_SENSITIVE_SOURCES"
       ],
       "writer": "W1",
@@ -1550,7 +1509,6 @@
       "source_commit": "e0610b31cd991c1f74379016e9f41251b8382409",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[1].title: Currency amount without an inline source in the same paragraph «40만 동»; Fact guard UNSOURCED_AMOUNT in sources[2].title: Currency amount without an inline source in the same paragraph «3만 동»;",
-        "G2_PARENT_PUBLISHED: KO-H04 is IDEA",
         "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
       ]
     },
