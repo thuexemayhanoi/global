@@ -56,6 +56,8 @@ node scripts/topic-factory.mjs refill --apply --local    # rehearsal on a clean 
 node --test tests/topic-factory.test.mjs
 ```
 
+The dashboard (`docs/CONTENT-FACTORY-DASHBOARD.md`) is regenerated from data by this workflow and by every Auto Publisher run. Besides topic counts it shows every SUBMITTED draft in exactly one publication-queue state (AWAITING QA, APPROVED_BY_POLICY, REPAIR, HUMAN_REVIEW_REQUIRED, WAIT_PARENT, WAIT_STAGE, ESCALATED, BLOCKED), the publisher's live states (PUBLISH_STAGED, LIVE_QA_PASS/FAIL/INCONCLUSIVE) and the Writer slot states. Never edit it by hand.
+
 ## Honest limits
 
 The factory cannot research by itself. GitHub Actions has no model provider, so new topics only arrive when an AI agent with web access pushes a research batch.

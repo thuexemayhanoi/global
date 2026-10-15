@@ -1,28 +1,38 @@
-# Production release and rollback procedure — /global only
+# Production release and rollback — /global only
 
-## Before merge
-- Verify PR branch HEAD and main HEAD at the same moment; resolve competing AI changes rather than overwriting main.
-- Run GitHub Static SEO QA, External Writer QA if writer files changed, content graph and SEO checks; check that CNAME is `global.rentbikehanoi.com`.
-- Inspect the PR diff for URLs deleted, altered canonical/hreflang, changes to approved editorial status or accidental AI API secrets. Refuse merge on unexpected changes.
-- **Do not merge without the owner's explicit separate production approval.**
+Two kinds of change reach production. Their rules differ; the protections are the same.
 
-## After approved merge
-1. Wait for GitHub Pages `pages build and deployment` to succeed on that exact merge SHA.
-2. In Actions, manually run `Post-Publish Live HTTP QA (manual, read-only)`. It compares actual live HTML for all PUBLISHED Matrix URLs, sitemap, search noindex, robots and real unknown-path 404.
-3. Inspect UI at desktop 1440×900 and iPhone 390×844, including the desktop menu previously hidden by closed details. Test nested menu, TOC anchors, language switch, back-to-top, search query/locale/pagination and footer.
-4. Measure LCP/INP/CLS from Lighthouse/CrUX if available. Do not mark Core Web Vitals completed from desktop screenshots.
-5. Only after QA and Pages deployment do dashboards count new articles as **live**. A PR's staged PUBLISHED state is not proof of live publication.
+| Change | How it reaches `main` | Approval |
+|---|---|---|
+| Code, workflows, docs, site generator ("technical release") | reviewed PR, green CI | per the owner's instruction for that work |
+| New article URLs (standing policy) | the Auto Publisher commits directly to `main`, ≤2 per run | `approvals/standing-policy-20261015.json` + automated gates + Live QA |
+| New article URLs (manual path) | reviewed PR built with `publish-batch.mjs` | exact owner approval manifest |
 
-## Rollback without force-push
-1. Identify the bad merge SHA in GitHub and the last good release.
-2. Create a NEW rollback branch from latest main; use `git revert <bad-merge-commit> -m 1` for a merge commit only after reviewing conflicts. Do not reset hard or force-push `main`.
-3. Run full generator, static SEO and content graph QA. Ensure no unintentional deletion of user content merged since that release.
-4. Open rollback PR and obtain approval; merge through normal review.
-5. Wait for Pages deploy and rerun live post-publish QA; record result in checkpoint.
+## Before merging a technical PR
+- Compare the PR head with the latest `main`; resolve competing AI changes rather than overwriting `main`. Never force-push `main`.
+- Green Static SEO QA, External Writer QA if Writer files changed, content graph and SEO checks; CNAME is `global.rentbikehanoi.com`.
+- Read the diff for deleted URLs, altered canonical/hreflang, changes to published or frozen pages, NAP/prices, or accidental secrets. Refuse the merge on anything unexpected.
 
-**Critical:** Reverting published article URLs may hurt SEO or break incoming links; get specific approval and a redirect strategy first. Prefer reverting broken layout/CSS without deleting indexed URLs. If a bad release introduced a new URL, investigate indexing before removing it. Never auto-rollback another writer's code blindly.
+## After a technical merge
+1. Wait for GitHub Pages `pages build and deployment` to succeed on that merge SHA.
+2. Run `Post-Publish Live HTTP QA` (`post-publish-qa.yml`): every PUBLISHED URL, the sitemap index and all shards, `/search/` noindex, robots and a real 404, compared with the frozen SEO registry.
+3. Optional visual checks at 1440×900 and 390×844 (menu, TOC anchors, language switch, search, footer). Do not report Core Web Vitals from screenshots.
+4. Count new articles as **live** only after Pages deployment and live QA. A staged PUBLISHED state is not proof.
+
+## Standing-policy publications (automatic)
+- Every Auto Publisher run verifies its own pair with Live QA (`docs/AUTO-PUBLISHER.md`). FAIL → the workflow reverts the publish commit with a new commit and pauses; INCONCLUSIVE → it pauses without touching production; nothing resumes without a confirmed `resume` dispatch with a reason.
+- If an automatic revert conflicts, the run pauses and names the commit; an operator reverts it in a reviewed PR.
+
+## Manual rollback without force-push
+1. Identify the bad commit and the last good release.
+2. Create a new branch from the latest `main`; `git revert <commit>` (`-m 1` for a merge commit) after reviewing conflicts. Never reset or force-push `main`.
+3. Run the generator, static SEO and content-graph QA; make sure nothing merged since that release is lost.
+4. Open a rollback PR, get it reviewed, merge normally.
+5. Wait for Pages and re-run live post-publish QA; record the result in `docs/GAP-MATRIX.md`.
+
+**Critical:** removing a published article URL can hurt SEO and break links; it needs specific approval and a redirect plan. Prefer reverting broken layout/CSS over deleting indexed URLs. Never auto-rollback another writer's code blindly.
 
 ## State recovery
-- `docs/MASTERWORK-CHECKPOINT.json` records technical PR branch and last verified SHA.
-- External Writer claims are stored in `factory/external-writers/claims.json` with manually reviewed session changes.
-- Never invent task completion, actual indexed pages or external AI Writer heartbeat.
+- `factory/external-writers/claims.json` holds Writer claims and immutable draft evidence; `factory/publisher/state.json` holds publication and live QA state.
+- `docs/MASTERWORK-CHECKPOINT.json` and similar files are dated snapshots.
+- Never invent task completion, indexed pages or a Writer heartbeat.

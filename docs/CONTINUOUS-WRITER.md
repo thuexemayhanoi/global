@@ -1,12 +1,10 @@
-# /global Continuous Writer — canonical TURBO contract
+# /global Continuous Writer — pointer (LEGACY page, updated 2026-10-15)
 
-READ docs/GLOBAL-CONTENT-FACTORY-TURBO.md for the current protocol.
-This document no longer defines a mandatory pair of two. W1/W2/W3 have a shared dynamic pool, each able to hold up to TEN unfinished claims. The existing two-topic W1 lease remains valid and completes first.
+The current loop is in `docs/CURRENT-WORKFLOW.md`; the binding rules are in `AGENTS.md` § CURRENT PRODUCTION WORKFLOW. Slot and claim mechanics: `docs/GLOBAL-CONTENT-FACTORY-TURBO.md`.
 
-External AI session: FETCH+merge main → check confirmed assigned IDs → original researched native-language drafts (1–10) → Writer QA → push same own Writer branch → verified AutoPool green → fetch main and repeat. Autopilot immediately submits valid finished IDs and refills open slots. No GitHub Run click per batch.
+Summary of what is still true from this page's earlier versions:
 
-Unfinished claims survive network failures and must be resumed on the SAME session/branch. Newly submitted packets store remote SHA/sha256 and may not be silently rewritten. W2/W3 may run simultaneously with distinct branches; one Writer alone is sufficient.
-
-At low free IDEA count, prepare topic research proposals as described in the canonical TURBO guide; gate G1–G8 checks proposals, which remain editor-review-only and do not silently modify the Matrix.
-
-Autopilot never generates AI text, never publishes live HTML, never bypasses the owner-approved publication manifest or published-parent gate for Supporting pages. 
+- W1/W2/W3 share one dynamic pool; each slot holds up to TEN unfinished claims. There is no mandatory pair of two.
+- External AI session loop: fetch + merge `main` → repair tickets first (`node scripts/writer-repair.mjs next --writer Wn --session s`) → confirmed IDs (`node scripts/continuous-writer.mjs assigned …`) → original native-language drafts (1–10) → Writer QA → push the same own Writer branch → Autopilot submits and refills → repeat. No GitHub Run click per batch.
+- Unfinished claims survive network failures and quota pauses and are resumed by the SAME session and branch. SUBMITTED drafts are hash-locked; corrections only through repair tickets (`docs/AI-WRITER-REPAIR-LOOP.md`).
+- The Autopilot never generates text and never publishes. Publication is done by the standing-policy Auto Publisher (`docs/AUTO-PUBLISHER.md`) after automated QA, two URLs per run with Live QA; Supporting pages wait for a PUBLISHED Hub.

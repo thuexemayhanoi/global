@@ -30,7 +30,9 @@ node scripts/seo/validate-plan.mjs
 node scripts/seo/audit-static.mjs --fail-p0
 \`\`\`
 
-Local validation checks every shard path and file, sorted/unique URLs, correct language ownership, size limits, actual published inventory and no stray indexable IDEA. The builder detects/removes stale generated shards after shrink or move. After an approved production deployment, use manual post-publish-qa.yml to check HTTP 200 for the root index and every shard against the reviewed Matrix.
+Local validation checks every shard path and file, sorted/unique URLs, correct language ownership, size limits, actual published inventory and no stray indexable IDEA. The builder detects/removes stale generated shards after shrink or move. After a production deployment, use manual post-publish-qa.yml to check HTTP 200 for the root index and every shard against the reviewed Matrix; every Auto Publisher run performs the same live inventory check for its new URLs.
+
+Live readers (`post-publish-qa.mjs`, the Auto Publisher's Live QA) go through `fetchSitemapInventory()` in `scripts/sitemaps.mjs`: child names from the index (`sitemap-main.xml`, `sitemap-<ll>.xml`, `sitemap-<ll>-<n>.xml`, one grammar in `SITEMAP_CHILD`) are turned into absolute same-origin URLs by `sitemapChildURL()`, which refuses traversal, other hosts, queries and encoded names. Requests carry a `?qa=` cache-buster so the CDN cannot hide a fresh deploy. Never pass a bare child name to `fetch()`: that is the defect behind Actions run 38668639207 (`tests/live-qa.test.mjs`).
 
 ## Limits
 

@@ -1,8 +1,13 @@
-# Global Writer Coordinator (Turbo 10)
+# Global Writer Coordinator (Writer Autopilot)
 
-Canonical source: docs/GLOBAL-CONTENT-FACTORY-TURBO.md.
-Trusted Global Dynamic Writer Autopilot workflow_run executes on green PUSH Writer Draft QA; main code only, serialized group shared with manual fallback. AutoPool transitions only verified own draft IDs to SUBMITTED (remote SHA+sha256 evidence), retains partial unfinished claims, refills to maximum TEN. On concurrent updates, re-fetch main and recompute up to three CAS retries; no force push.
+Canonical runbooks: `docs/CURRENT-WORKFLOW.md` and `docs/GLOBAL-CONTENT-FACTORY-TURBO.md`.
 
-W1 alone can write every eligible Matrix article; W2 and W3 optional. One active Writer session per slot. Existing W1 PR #17 14 drafts, and EN-H01/DE-H01 editorial pilots are reserved.
+The trusted **Global Dynamic Writer Autopilot** (`writer-pool-auto.yml`) runs main code only, after a green same-repository PUSH run of External Writer Draft QA on a `writer/wN-*` branch, serialized with the manual pool workflow. It:
 
-Topic refill research is G1–G8 validated in proposals; zero silent Matrix materialization. Editor examines SERP/source/overlap before any Matrix expansion. Publishing remains owner-reviewed approval manifest with Supporting parent truly PUBLISHED. No auto AI, no auto public article publishing, no production URL/CNAME/sitemap changes.
+- reads the branch's request file and drafts as DATA at the exact green commit (stale runs are skipped);
+- transitions only verified own draft IDs to SUBMITTED with remote commit + SHA-256 evidence, keeps partial unfinished claims, refills to a maximum of TEN;
+- refuses any change to an already SUBMITTED file and accepts a revision only for a current REPAIR ticket of that exact hash, Writer and session (`REPAIR_TICKET_REQUIRED` otherwise);
+- records the slot signal from the agent's own request file;
+- commits only `claims.json`/`slots.json` with up to three compare-and-swap retries; never force-pushes.
+
+W1 alone can write every eligible topic; W2 and W3 are optional concurrent slots. The 14 W1 legacy drafts (PR #17) and the EN-H01/DE-H01 editorial pilots are reserved. Publication is not done here: the Auto Publisher evaluates SUBMITTED drafts with automated QA and publishes eligible ones two at a time. No AI model runs in any of these workflows.

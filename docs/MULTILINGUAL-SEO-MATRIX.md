@@ -1,5 +1,7 @@
 # Global multilingual SEO Master Matrix — planning contract
 
+> **Dated snapshot (2026-10-13).** Counts and publication rules on this page describe that date. Current rules: `AGENTS.md` § CURRENT PRODUCTION WORKFLOW and `docs/CURRENT-WORKFLOW.md`.
+
 ## Status · 2026-10-13
 
 Live site: https://global.rentbikehanoi.com/  
