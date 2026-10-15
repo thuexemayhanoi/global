@@ -346,7 +346,17 @@ export function ingestResearch(batch,{matrix,map,policy,source,frozenUrls=[]}){
 export function validateResearchSequence(files,{matrix,map,policy,frozenUrls=[]}){
  let next=map;
  const results=[];
- for(const {file,batch} of files){
+ for(const {file,batch,replay} of files){
+  // A research branch may be rebased onto main between batches. The exact
+  // SHA-256 payload recorded in main's intake ledger is replay-safe; a changed
+  // payload is checked normally instead of inheriting an old acceptance.
+  if(replay){
+   const rejected=Array.isArray(replay.rejected)?replay.rejected:[];
+   const passed=!replay.error&&rejected.length===0;
+   results.push({file,passed,replayed:true,would_add:0,rejected:passed?[]:rejected.length?rejected:
+    [{gate:"R_REPLAY",reason:String(replay.error||"Previously rejected research batch")}]});
+   continue;
+  }
   const v=validateResearchBatch(batch,{matrix,map:next,policy});
   const dry=ingestResearch(batch,{matrix,map:next,policy,source:file,frozenUrls});
   const passed=v.passed&&!dry.batch_error&&dry.rejected.length===0&&dry.added.length===batch?.candidates?.length;
