@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 88,
+  "clean_runs": 92,
   "published": [
     {
       "id": "NL-H01",
@@ -2320,67 +2320,105 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:09:43.572Z"
+    },
+    {
+      "id": "DE-S17",
+      "locale": "de",
+      "url": "/de/guides/nebenkosten-neben-der-miete/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:17:57.024Z",
+      "source_sha256": "cf3bda4896e94c4772f84ced56d7ac3d0f5ee8f16a640a0970c79644232228e0",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:19:06.970Z"
+    },
+    {
+      "id": "EN-S18",
+      "locale": "en",
+      "url": "/en/guides/costs-beyond-the-rental-fee/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:17:57.024Z",
+      "source_sha256": "42751c7824e289bb2ae7e3259d5434231e083ef4eaef98571472b49c37d79172",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:19:06.970Z"
+    },
+    {
+      "id": "ES-S17",
+      "locale": "es",
+      "url": "/es/guides/costes-adicionales/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:19:38.116Z",
+      "source_sha256": "69e282babb96c8908d204d0bf1dfdb682eb1352c2dc3376ed5a72016ae222867",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:20:40.590Z"
+    },
+    {
+      "id": "FR-S18",
+      "locale": "fr",
+      "url": "/fr/guides/frais-annexes-location/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:19:38.116Z",
+      "source_sha256": "a87e6af9412d96dac25cc3c2840987ad2f1f97fc256309706a7d454c559b39ff",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:20:40.590Z"
+    },
+    {
+      "id": "DE-S16",
+      "locale": "de",
+      "url": "/de/guides/reisepass-als-kaution/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:21:02.987Z",
+      "source_sha256": "91f0d33dada4353fda7f310a31137aeddf3066d8a0876e5e49e80030e0f44435",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:21:54.521Z"
+    },
+    {
+      "id": "EN-S17",
+      "locale": "en",
+      "url": "/en/guides/passport-as-rental-deposit/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:21:02.987Z",
+      "source_sha256": "f7fbca90fce18023b81157b95704dd2548931c9f5dd3a4ea4a6eedcad2e3513f",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:21:54.521Z"
+    },
+    {
+      "id": "ES-S16",
+      "locale": "es",
+      "url": "/es/guides/pasaporte-como-deposito/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:22:19.559Z",
+      "source_sha256": "e43aa17f26aeb9c29c7cc2c161801a3336a2a868a3cbb85ae6ea8b3c0ba36e55",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:23:33.246Z"
+    },
+    {
+      "id": "FR-S17",
+      "locale": "fr",
+      "url": "/fr/guides/passeport-en-caution/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:22:19.559Z",
+      "source_sha256": "0c10d3b2daa2a536166d621e3f805f3a06817a7e7e1529b07709a78d6cf376eb",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:23:33.246Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T05:14:48.442Z",
-      "ids": [],
-      "result": "STAGE_ADVANCED PILOT→RAMP"
-    },
-    {
-      "at": "2026-10-15T05:29:54.892Z",
-      "ids": [
-        "EN-H02",
-        "FR-H02"
-      ],
-      "result": "GATE_FAILED"
-    },
-    {
-      "at": "2026-10-15T05:34:24.609Z",
-      "ids": [],
-      "result": "RESUME: Owner authorized: HTML inline-price citations restored in merged PR 46; checks and production HTTP QA pass"
-    },
-    {
-      "at": "2026-10-15T05:34:42.542Z",
-      "ids": [
-        "EN-H02",
-        "FR-H02"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T05:36:30.154Z",
-      "ids": [
-        "EN-H02",
-        "FR-H02"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T06:26:39.346Z",
-      "ids": [
-        "JA-H02",
-        "PT-H02"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T06:27:47.515Z",
-      "ids": [
-        "JA-H02",
-        "PT-H02"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T06:28:04.637Z",
-      "ids": [
-        "ZH-H02",
-        "KO-H04"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T06:29:12.740Z",
       "ids": [
@@ -3895,15 +3933,82 @@
         "VI-S15"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:17:57.024Z",
+      "ids": [
+        "DE-S17",
+        "EN-S18"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:19:06.970Z",
+      "ids": [
+        "DE-S17",
+        "EN-S18"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:19:38.116Z",
+      "ids": [
+        "ES-S17",
+        "FR-S18"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:20:40.590Z",
+      "ids": [
+        "ES-S17",
+        "FR-S18"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:21:02.987Z",
+      "ids": [
+        "DE-S16",
+        "EN-S17"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:21:54.521Z",
+      "ids": [
+        "DE-S16",
+        "EN-S17"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:22:19.559Z",
+      "ids": [
+        "ES-S16",
+        "FR-S17"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:23:33.246Z",
+      "ids": [
+        "ES-S16",
+        "FR-S17"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T18:09:43.572Z",
+    "at": "2026-10-15T18:23:33.246Z",
     "ids": [
-      "VI-S15"
+      "ES-S16",
+      "FR-S17"
     ],
-    "commit": "6fb4ab1d6a0ce4ac49973c6767237b513dd68e1c",
-    "live_seconds": 61
+    "commit": "9cb20e129ccbfd8f483c2a643ec7a96e55b86be3",
+    "live_seconds": 63
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 11
+  }
 }
