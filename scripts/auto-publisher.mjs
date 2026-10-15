@@ -125,13 +125,21 @@ function cmdPublish(o){
  const apply=o.apply===true,isTrusted=apply&&trusted();
  if(apply&&!isTrusted){if(o.local!==true)throw Error("PUBLISHER_REFUSED: publish --apply runs only in the Global Auto Publisher workflow (or --local rehearsal)");rehearsal();}
  const c=context();
- if(c.state.paused){console.log(JSON.stringify({mode:"PAUSED",reason:c.state.pause_reason,published:[]}));return;}
- const rs=evaluate(c),chosen=pick(rs,c,max,o.ids?String(o.ids).split(","):null);
+ // Always refresh trusted repair tickets, EVEN WHEN publication is paused.
+ // Each ticket is bound to the real immutable Writer source SHA and session.
+ const rs=evaluate(c),chosen=c.state.paused?[]:pick(rs,c,max,o.ids?String(o.ids).split(","):null);
  const now=new Date().toISOString();
  c.state.queue=summary(rs);
- // Revision queue for writers/reviewers: every non-published draft with the gates it failed.
- if(apply)write("factory/publisher/report.json",{version:1,ledger_revision:c.ledger.revision,stage:c.state.stage,counts:summary(rs),
-  items:rs.map(r=>({id:r.id,decision:r.decision,failed:r.failed,details:(r.gates||[]).filter(g=>!g.passed).map(g=>g.gate+": "+String(g.detail).slice(0,240))}))});
+ if(apply)write("factory/publisher/report.json",{version:2,ledger_revision:c.ledger.revision,stage:c.state.stage,counts:summary(rs),
+  items:rs.map(r=>({id:r.id,decision:r.decision,failed:r.failed,
+   writer:r._claim?.writer||null,session:r._claim?.session||null,branch:r._claim?.branch||null,
+   source_sha256:r._claim?.source_sha256||null,source_commit:r._claim?.source_commit||null,
+   details:(r.gates||[]).filter(g=>!g.passed).map(g=>g.gate+": "+String(g.detail).slice(0,240))}))});
+ if(c.state.paused){
+  if(apply)write(STATE,c.state);
+  console.log(JSON.stringify({mode:"PAUSED",reason:c.state.pause_reason,counts:summary(rs),repair_report_refreshed:apply,published:[]}));
+  return;
+ }
  if(!apply||!chosen.length){
   if(apply)write(STATE,c.state);
   console.log(JSON.stringify({mode:apply?"NOTHING_ELIGIBLE":"DRY_RUN",stage:c.state.stage,counts:summary(rs),would_publish:chosen.map(r=>({id:r.id,url:r._packet.proposed_url}))},null,2));
