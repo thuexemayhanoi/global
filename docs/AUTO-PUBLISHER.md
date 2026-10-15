@@ -23,7 +23,7 @@ hourly schedule / dispatch ─────────────────�
         INCONCLUSIVE  → PAUSE, production untouched, re-checked by later runs
 ```
 
-Writers never wait for publication; the publisher picks drafts up as soon as they become eligible. Each successful run evaluates `node scripts/auto-publisher.mjs drain-decision` against a fresh checkout of `main` and, if another pair is eligible and nothing is paused or unverified, dispatches the next 2-article run with the built-in `GITHUB_TOKEN` (no AI key). Runs are serialized (`concurrency: global-auto-publisher`, `queue: max`); the hourly trigger is only a fallback. Ten eligible drafts are consumed as five runs of 2+2+2+2+2. A failing draft, a review hold, an unpublished parent or a stage cap never blocks another eligible draft and is never bypassed. The workflow cannot write article prose.
+Writers never wait for publication; the publisher picks drafts up as soon as they become eligible. Each successful run evaluates `node scripts/auto-publisher.mjs drain-decision` against a fresh checkout of `main` and, if another pair is eligible and nothing is paused or unverified, dispatches the next 2-article run with the built-in `GITHUB_TOKEN` (no AI key). Runs are serialized (`concurrency: global-auto-publisher`, `queue: max`); the hourly schedule is only a best-effort fallback (GitHub may delay or skip scheduled runs, and none had fired in this repository by 2026-10-15), so an operator dispatches `action=publish` instead of waiting for it. Ten eligible drafts are consumed as five runs of 2+2+2+2+2. A failing draft, a review hold, an unpublished parent or a stage cap never blocks another eligible draft and is never bypassed. The workflow cannot write article prose.
 
 ## Gates
 
@@ -76,7 +76,7 @@ node --test tests/auto-publisher.test.mjs tests/live-qa.test.mjs tests/publisher
 - **Pause or resume:** dispatch `auto-publisher.yml` with `action=pause|resume`. Resume needs `confirmed=true` and a reason of at least 12 characters. Before resuming, verify the latest Pages deployment and run `post-publish-qa.yml` (`docs/CURRENT-WORKFLOW.md` § 8).
 - **State:** `factory/publisher/state.json` holds the stage, pause flag and reason, the published list with each live QA result, and the last successful deployment.
 - **Report:** `factory/publisher/report.json` (version 2) lists every failed gate per draft hash with Writer, session, branch, source commit and SHA-256. It is rewritten by every run, even while paused, and is the only source of repair tickets.
-- **Dashboard:** each run also regenerates `docs/CONTENT-FACTORY-DASHBOARD.md` from data.
+- **Dashboard:** each run also regenerates `docs/CONTENT-FACTORY-DASHBOARD.md` from data: in the publish commit (the pair shows as PUBLISH_STAGED) and again once the live QA result (PASS, pause or revert) is on `main`. The second refresh is a separate best-effort step; it never changes the verdict, the revert or the drain decision.
 - **Rollback:** after a live FAIL the workflow reverts the publish commit and pauses. To reverse a publication manually, revert its `publish(global): …` commit and freeze-registry entry in a reviewed PR. Publication never deletes or redirects URLs on its own.
 
 ## Repair tickets (QA FAIL → owning AI Writer → re-QA)
