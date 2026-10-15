@@ -765,13 +765,17 @@ function cmdVerifyTree(o){
  const list=dir=>fs.existsSync(path.join(ROOT,dir))?fs.readdirSync(path.join(ROOT,dir)).filter(f=>f.endsWith(".json")).sort().map(f=>dir+f):[];
  const batches=list(BATCH_DIR),cps=list(CHECKPOINT_DIR);
  const add=(code,message)=>result.issues.push({code,message});
+ const base=o.base||"origin/main";
+ // A file that is byte-identical on the base branch was not written by this branch (an older session that was
+ // merged is not this session's doing); only what this branch adds or changes is judged.
+ const inherited=f=>{const b=blobAt(base,f);return b!==null&&b===fs.readFileSync(path.join(ROOT,f),"utf8");};
  const own=batches.filter(f=>parseBatchFile(f,ids)!==null);
  for(const f of batches){
   const m=managedBatchOwner(f);
-  if(m&&m.stem!==ids.stem)add("TREE_FOREIGN_BATCH",f+" belongs to another research session; a session never writes another session's files");
+  if(m&&m.stem!==ids.stem){if(!inherited(f))add("TREE_FOREIGN_BATCH",f+" belongs to another research session; a session never writes another session's files");}
   else if(!m)result.warnings.push(f+" is a legacy-named batch (allowed; it has no checkpoint coverage)");
  }
- for(const f of cps)if(checkpointOwner(f)!==ids.stem)add("TREE_FOREIGN_CHECKPOINT",f+" belongs to another research session");
+ for(const f of cps)if(checkpointOwner(f)!==ids.stem&&!inherited(f))add("TREE_FOREIGN_CHECKPOINT",f+" belongs to another research session");
  const cpPath=ids.checkpointPath;
  const cpRaw=fs.existsSync(path.join(ROOT,cpPath))?fs.readFileSync(path.join(ROOT,cpPath),"utf8"):null;
  if(own.length&&cpRaw===null)add("TREE_CHECKPOINT_MISSING","batches exist but "+cpPath+" is missing; the checkpoint is committed with every batch");
@@ -781,13 +785,16 @@ function cmdVerifyTree(o){
    for(const i of [...validateCheckpoint(cp,{ids}),...verifyCheckpointContent(cp,own.map(f=>({file:f,raw:fs.readFileSync(path.join(ROOT,f),"utf8")})),ids)])add(i.code,i.message);
   }
  }
- const base=o.base||"origin/main";
+ // Sessions that use the checkpoint protocol (an own numbered batch or checkpoint on the branch) are held to the
+ // path allowlist; a plain legacy session keeps its old contract (validate-batches) and only gets warnings.
+ const adopted=own.length>0||cpRaw!==null;
  const diff=run(["diff","--name-only","--no-renames",base+"...HEAD"],{allow:true});
  if(diff.status!==0)result.warnings.push("could not diff against "+base+" (shallow checkout?); the path allowlist was not checked here");
  else for(const f of diff.stdout.split("\n").filter(Boolean)){
   if(isAllowedPath(f,ids))continue;
   if(f.startsWith(BATCH_DIR)&&!managedBatchOwner(f))continue;
-  add("TREE_PATH_NOT_ALLOWED",f+" changed on this research branch; a session writes only "+cpPath+" and "+batchFile(ids,1).replace("0001","NNNN"));
+  const msg=f+" changed on this research branch; a session writes only "+cpPath+" and "+batchFile(ids,1).replace("0001","NNNN");
+  if(adopted)add("TREE_PATH_NOT_ALLOWED",msg);else result.warnings.push("legacy session (no checkpoint): "+msg);
  }
  finish();
 }

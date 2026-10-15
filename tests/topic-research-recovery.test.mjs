@@ -546,6 +546,11 @@ await scenario("verify-tree (CI): a research branch must carry a consistent chec
  const vt=(...x)=>env.cli(w,["verify-tree","--branch",ids.branch,"--base","origin/main",...x]);
  const ok=vt();
  assert.equal(ok.status,0,ok.stdout+ok.stderr);assert.equal(ok.data.managed,true);assert.deepEqual(ok.data.issues,[]);
+ // CI passes the branch through the runner's environment (push event, then pull_request event), never through the shell.
+ const viaPush=env.cli(w,["verify-tree","--base","origin/main"],{env:{GITHUB_REF_NAME:ids.branch,GITHUB_HEAD_REF:""}});
+ assert.equal(viaPush.status,0,viaPush.stdout);assert.equal(viaPush.data.branch,ids.branch);
+ const viaPr=env.cli(w,["verify-tree","--base","origin/main"],{env:{GITHUB_REF_NAME:"12/merge",GITHUB_HEAD_REF:ids.branch}});
+ assert.equal(viaPr.status,0,viaPr.stdout);assert.equal(viaPr.data.branch,ids.branch);
  // Non-managed branches (feature branches, legacy research names) are skipped.
  assert.equal(env.cli(w,["verify-tree","--branch","feature/anything"]).data.managed,false);
  assert.equal(env.cli(w,["verify-tree","--branch","research/legacy"]).status,0);
@@ -583,6 +588,43 @@ await scenario("verify-tree (CI): a research branch must carry a consistent chec
  assert.ok(out.data.warnings.some(x=>/legacy-notes\.json is a legacy-named batch/.test(x)));
 });
 function canonicalOf(v){return JSON.stringify(v,null,2)+"\n";}
+
+await scenario("verify-tree is fair: another session already on main is not blamed; a legacy session keeps its old contract",async env=>{
+ // An older managed session was merged into main (its files are on main, byte for byte).
+ const old=env.clone("old-merge");
+ expectSaved(env.cli(old,cmd("commit",ids,"--draft",env.draft(old,"o1",enTopics(0,10)))));
+ git(old,["fetch","-q","origin",ids.branch]);
+ git(old,["switch","-q","-c","merge-old","origin/main"]);
+ git(old,["checkout","FETCH_HEAD","--",batchFile(ids,1),ids.checkpointPath]);
+ git(old,["commit","-q","-m","merge an old research session into main"]);
+ git(old,["push","-q","origin","HEAD:refs/heads/main"]);
+
+ // A new session branches from that main: the inherited foreign files are not its doing.
+ const w=env.clone("new-session");
+ const fresh=expectSaved(env.cli(w,cmd("commit",id2,"--draft",env.draft(w,"n1",enTopics(10,10)))));
+ assert.ok(fresh.sha);
+ git(w,["switch","-q",id2.branch]);
+ assert.ok(fs.existsSync(path.join(w,batchFile(ids,1))),"the old session's batch is part of this branch's tree (inherited from main)");
+ const vt=(i,...x)=>env.cli(w,["verify-tree","--branch",i.branch,"--base","origin/main",...x]);
+ const ok=vt(id2);
+ assert.equal(ok.status,0,ok.stdout);assert.deepEqual(ok.data.issues,[],"files identical to main are never blamed on this branch");
+ // ...but touching that old session's batch on this branch is refused.
+ const oldBatch=path.join(w,batchFile(ids,1));
+ fs.writeFileSync(oldBatch,fs.readFileSync(oldBatch,"utf8")+" ");
+ assert.ok(vt(id2).data.issues.some(i=>i.code==="TREE_FOREIGN_BATCH"));
+ git(w,["checkout","--",batchFile(ids,1)]);
+
+ // A legacy session (hand-pushed batch, no checkpoint) is not newly broken by the checkpoint rules.
+ const l=env.clone("legacy");
+ git(l,["switch","-q","-c","research/gemini-20261015","origin/main"]);
+ fs.writeFileSync(path.join(l,"factory/topic-research/batches/gemini-20261015-legacy.json"),canonicalOf(batchOf(sessionIds({agent:"gemini",session:"20261015"}),enTopics(20,2))));
+ fs.writeFileSync(path.join(l,"docs/legacy-scratch.md"),"scratch\n");
+ git(l,["add","-A"]);git(l,["commit","-q","-m","legacy research push"]);
+ const leg=env.cli(l,["verify-tree","--branch","research/gemini-20261015","--base","origin/main"]);
+ assert.equal(leg.status,0,leg.stdout);assert.deepEqual(leg.data.issues,[]);
+ assert.ok(leg.data.warnings.some(x=>/legacy session \(no checkpoint\)/.test(x)&&/docs\/legacy-scratch\.md/.test(x)));
+ assert.ok(leg.data.warnings.some(x=>/legacy-named batch/.test(x)));
+});
 
 /* ------------------------------------------------------------------ no AI, no new secrets */
 
