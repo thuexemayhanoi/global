@@ -1432,6 +1432,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T13:41:21.878Z"
+    },
+    {
+      "id": "VI-S07",
+      "locale": "vi",
+      "url": "/vi/guides/lai-xe-khi-mua/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:41:41.280Z",
+      "source_sha256": "bd5bbc7aa8ebfb182826a5badc6dda88a8dcb5e9a6ca49406e757bf8cc187dcf",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S08",
+      "locale": "fr",
+      "url": "/fr/guides/panne-scooter/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:41:41.280Z",
+      "source_sha256": "3ac9994cc29aca1d7ffa0d62d30cc0c22bbd670303320365e3ddb0a7ba97ceda",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2465,6 +2487,14 @@
         "JA-S07"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T13:41:41.280Z",
+      "ids": [
+        "VI-S07",
+        "FR-S08"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2477,7 +2507,7 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 10,
+    "APPROVED_BY_POLICY": 8,
     "WAIT_PARENT": 2,
     "REJECTED": 1
   }
