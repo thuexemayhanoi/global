@@ -61,7 +61,7 @@ node scripts/topic-factory.mjs refill --apply --local    # rehearsal on a clean 
 node --test tests/topic-factory.test.mjs
 ```
 
-The dashboard (`docs/CONTENT-FACTORY-DASHBOARD.md`) is regenerated from data by this workflow and by every Auto Publisher run. Besides topic counts it shows every SUBMITTED draft in exactly one publication-queue state (AWAITING QA, APPROVED_BY_POLICY, REPAIR, HUMAN_REVIEW_REQUIRED, WAIT_PARENT, WAIT_STAGE, ESCALATED, BLOCKED), the publisher's live states (PUBLISH_STAGED, LIVE_QA_PASS/FAIL/INCONCLUSIVE) and the Writer slot states. Never edit it by hand.
+The dashboard (`docs/CONTENT-FACTORY-DASHBOARD.md`) is regenerated from data by this workflow and by every Auto Publisher run. It now shows each domain’s research-only PROPOSED/ARCHITECTURE_BLOCKED candidates across all 10 locales, Matrix counts separately, and how many locales have reached the eight-candidate threshold for a future reviewed Hub PR. The threshold is not automatic Hub approval. Besides topic counts it shows every SUBMITTED draft in exactly one publication-queue state (AWAITING QA, APPROVED_BY_POLICY, REPAIR, HUMAN_REVIEW_REQUIRED, WAIT_PARENT, WAIT_STAGE, ESCALATED, BLOCKED), the publisher's live states (PUBLISH_STAGED, LIVE_QA_PASS/FAIL/INCONCLUSIVE) and the Writer slot states. Never edit it by hand.
 
 ## Honest limits
 
