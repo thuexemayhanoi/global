@@ -8,6 +8,15 @@ import {submittedLock} from "../scripts/writer-lanes.mjs";
 import {createHash} from "node:crypto";
 
 const sha="a".repeat(64),commit="b".repeat(40);
+// The handoff fixtures need a Hub that is still unpublished and unprotected; the live Matrix changes as
+// pages go live (FR-H03 was published on 2026-10-15), so pick the fixture from the current data.
+function unpublishedHub(matrix,registry){
+ const prot=new Set([...(registry.protected||[]).map(x=>x.id),...(registry.held_ids||[]).map(x=>x.id)]);
+ const row=matrix.rows.find(r=>r.role==="HUB"&&r.status!=="PUBLISHED"&&!prot.has(r.id));
+ if(!row)throw Error("handoff fixture needs an unpublished, unprotected Hub row");
+ return row.id;
+}
+
 const claim={id:"EN-H01",writer:"W2",session:"w2-live",branch:"writer/w2-live",status:"SUBMITTED",source_sha256:sha,source_commit:commit};
 const item={id:"EN-H01",writer:"W2",session:"w2-live",branch:"writer/w2-live",source_sha256:sha,source_commit:commit,
   decision:"REJECTED",failed:["G4_EDITORIAL","G1_DEPTH"],details:["G4_EDITORIAL: Need genuine H2 structure","G1_DEPTH: Need >= 900 researched words"]};
@@ -75,7 +84,7 @@ test("parent/stage waits are not treated as text rewrite failures",()=>{
 test("opt-in W1 receives W3 failed Hub atomically while source stays locked",()=>{
  const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
  const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
- const id="FR-H03",raw='{"immutable":"original"}\\n';
+ const id=unpublishedHub(matrix,registry),raw='{"immutable":"original"}\\n';
  const base={id,writer:"W3",session:"w3-live",branch:"writer/w3-live",status:"SUBMITTED",
   source_sha256:createHash("sha256").update(raw).digest("hex"),source_commit:commit,
   claim_id:"handoff-test",at:"2026-10-15T00:00:00Z",updated_at:"2026-10-15T00:00:00Z"};
@@ -89,7 +98,7 @@ test("opt-in W1 receives W3 failed Hub atomically while source stays locked",()=
  const c=out.ledger.claims[0];
  assert.equal(c.writer,"W1");assert.equal(c.session,who.session);
  assert.equal(c.source_branch,"writer/w3-live");
- assert.equal(c.source_path,"factory/external-writers/inbox/W3/FR-H03.json");
+ assert.equal(c.source_path,"factory/external-writers/inbox/W3/"+id+".json");
  assert.equal(c.source_sha256,base.source_sha256);
  assert.equal(c.handoffs[0].writer,"W3");
  assert.deepEqual(validatePool(matrix,out.ledger,registry),[]);
@@ -100,7 +109,7 @@ test("opt-in W1 receives W3 failed Hub atomically while source stays locked",()=
  const current={...qa.items[0],writer:"W1",session:"w1-current",branch:"writer/w1-current"};
  const ticket=repairTicket(current,c);
  assert.equal(ticket.state,"REPAIR");
- assert.equal(ticket.revision_path,"factory/external-writers/inbox/W1/revisions/FR-H03.r2.json");
+ assert.equal(ticket.revision_path,"factory/external-writers/inbox/W1/revisions/"+id+".r2.json");
  const revision={id,revision:2,source_path:ticket.revision_path,source_sha256:"c".repeat(64),
   source_commit:"d".repeat(40),review_verdict:"QA_FAIL",repair_basis_sha256:c.source_sha256,
   repair_gates:["G3_OFFICIAL_EVIDENCE"]};
@@ -114,7 +123,7 @@ test("opt-in W1 receives W3 failed Hub atomically while source stays locked",()=
 test("handoff refuses stale report, same Writer, original owner overwrite, and unsafe replay",()=>{
  const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
  const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
- const c={id:"FR-H03",writer:"W3",session:"w3-live",branch:"writer/w3-live",status:"SUBMITTED",
+ const c={id:unpublishedHub(matrix,registry),writer:"W3",session:"w3-live",branch:"writer/w3-live",status:"SUBMITTED",
   source_sha256:sha,source_commit:commit,claim_id:"handoff-test",at:"2026-10-15T00:00:00Z",updated_at:"2026-10-15T00:00:00Z"};
  const ledger={version:1,revision:11,claims:[c]};
  const report={version:2,ledger_revision:10,items:[{...item,id:c.id,writer:c.writer,session:c.session,branch:c.branch,source_sha256:sha}]};
