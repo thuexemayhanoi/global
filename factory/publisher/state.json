@@ -628,6 +628,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:48:49.380Z"
+    },
+    {
+      "id": "VI-S05",
+      "locale": "vi",
+      "url": "/vi/guides/giay-phep-lai-xe/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:49:04.969Z",
+      "source_sha256": "c82125ff656f3b8a3f375cc6653fc9170b0b9e359c080a7d6f77dbd69fb3c33b",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S05",
+      "locale": "zh",
+      "url": "/zh/guides/waiguo-jiazhao/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:49:04.969Z",
+      "source_sha256": "b53a449575fde23d2d4e6163e343b01b2494f58a462e7c1ea426766cc44604b7",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1107,6 +1129,14 @@
         "NL-S05"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:49:04.969Z",
+      "ids": [
+        "VI-S05",
+        "ZH-S05"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1120,6 +1150,6 @@
   },
   "queue": {
     "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 28
+    "APPROVED_BY_POLICY": 26
   }
 }

@@ -38,28 +38,35 @@
   },
   "counts": {
     "rows": 295,
-    "published": 77,
-    "idea": 218,
+    "published": 79,
+    "idea": 216,
     "locales": 10,
     "candidates": 56,
     "silos": 330,
     "entities": 42,
     "edges": 1406,
     "actions": {
-      "KEEP": 55,
+      "KEEP": 56,
       "UPGRADE": 19,
-      "CREATE": 274,
-      "REVIEW": 3
+      "CREATE": 272,
+      "REVIEW": 4
     },
     "silo_actions": {
-      "CREATE": 146,
-      "KEEP": 26,
-      "UPGRADE": 11,
+      "CREATE": 144,
+      "KEEP": 27,
+      "UPGRADE": 12,
       "GAP": 147
     },
-    "review_pairs": 2
+    "review_pairs": 3
   },
   "review_pairs": [
+    {
+      "a": "VI-H03",
+      "b": "VI-S05",
+      "score": 0.58,
+      "level": "HIGH",
+      "basis": "published_content"
+    },
     {
       "a": "VI-H03",
       "b": "VI-S04",
@@ -111,7 +118,7 @@
         "words": 209,
         "h2": 2,
         "faq": 0,
-        "inbound_pages": 76,
+        "inbound_pages": 78,
         "inbound_contextual": 23,
         "outbound_contextual": 10,
         "max_content_overlap": 0
@@ -150,12 +157,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 609,
+        "words": 628,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 76,
-        "inbound_contextual": 6,
-        "outbound_contextual": 6,
+        "inbound_pages": 78,
+        "inbound_contextual": 7,
+        "outbound_contextual": 7,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -195,8 +202,8 @@
         "words": 407,
         "h2": 5,
         "faq": 1,
-        "inbound_pages": 14,
-        "inbound_contextual": 5,
+        "inbound_pages": 15,
+        "inbound_contextual": 6,
         "outbound_contextual": 6,
         "max_content_overlap": 0
       },
@@ -279,7 +286,7 @@
         "words": 2145,
         "h2": 12,
         "faq": 1,
-        "inbound_pages": 5,
+        "inbound_pages": 6,
         "inbound_contextual": 5,
         "outbound_contextual": 7,
         "max_content_overlap": 0.52
@@ -318,13 +325,13 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 2418,
-        "h2": 7,
+        "words": 2463,
+        "h2": 8,
         "faq": 1,
-        "inbound_pages": 5,
-        "inbound_contextual": 3,
-        "outbound_contextual": 5,
-        "max_content_overlap": 0.55
+        "inbound_pages": 6,
+        "inbound_contextual": 4,
+        "outbound_contextual": 6,
+        "max_content_overlap": 0.58
       },
       "performance": "NOT_CONNECTED"
     },
@@ -465,7 +472,7 @@
         "words": 1683,
         "h2": 8,
         "faq": 1,
-        "inbound_pages": 5,
+        "inbound_pages": 6,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -515,7 +522,7 @@
         "words": 2074,
         "h2": 9,
         "faq": 1,
-        "inbound_pages": 5,
+        "inbound_pages": 6,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0.55
@@ -533,27 +540,35 @@
       "parent_id": "VI-H03",
       "child_ids": [],
       "proposed_url": "/vi/guides/giay-phep-lai-xe/",
-      "published_url": null,
-      "editorial_status": "IDEA",
-      "qa_status": "NOT_RUN",
+      "published_url": "/vi/guides/giay-phep-lai-xe/",
+      "editorial_status": "PUBLISHED",
+      "qa_status": "PUBLISHED_HTML_EXISTS_REQUIRES_CONTENT_REVIEW",
       "source_verification": "NOT_STARTED",
       "serp_evidence": "NOT_VALIDATED",
-      "cannibalization_risk": "NONE_DETECTED_STRUCTURAL",
+      "cannibalization_risk": "REVIEW_STRUCTURAL_OVERLAP",
       "internal_link_targets_published": ["/vi/", "/vi/checklist/", "/vi/topics/giay-to-hop-dong/"],
       "writer_lane": "W3",
-      "implementation_priority": "P2",
+      "implementation_priority": "P1",
       "priority_value": 34,
       "level": "SUPPORT",
-      "pipeline_state": "IDEA",
-      "action": "CREATE",
-      "action_reasons": ["Evidence-free gap: no PUBLISHED page owns this intent"],
+      "pipeline_state": "PUBLISHED",
+      "action": "REVIEW",
+      "action_reasons": ["Meets depth and linking targets"],
       "silo": "dc-licence",
       "journey_stage": "decision",
       "intent_class": "informational",
       "entities": ["E-DRIVING-LICENCE-A1-A", "E-INTERNATIONAL-DRIVING-PERMIT", "E-VIENNA-CONVENTION-1968"],
       "overlaps": [],
       "overlap_count": 0,
-      "content_metrics": null,
+      "content_metrics": {
+        "words": 1923,
+        "h2": 8,
+        "faq": 1,
+        "inbound_pages": 6,
+        "inbound_contextual": 2,
+        "outbound_contextual": 5,
+        "max_content_overlap": 0.58
+      },
       "performance": "NOT_CONNECTED"
     },
     {
@@ -693,7 +708,7 @@
         "words": 431,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 76,
+        "inbound_pages": 78,
         "inbound_contextual": 6,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -1233,7 +1248,7 @@
         "words": 407,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 76,
+        "inbound_pages": 78,
         "inbound_contextual": 6,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -1749,7 +1764,7 @@
         "words": 484,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 76,
+        "inbound_pages": 78,
         "inbound_contextual": 7,
         "outbound_contextual": 7,
         "max_content_overlap": 0
@@ -2281,7 +2296,7 @@
         "words": 470,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 76,
+        "inbound_pages": 78,
         "inbound_contextual": 9,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -2829,7 +2844,7 @@
         "words": 434,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 76,
+        "inbound_pages": 78,
         "inbound_contextual": 8,
         "outbound_contextual": 8,
         "max_content_overlap": 0
@@ -3358,7 +3373,7 @@
       "level": "PILLAR",
       "pipeline_state": "PUBLISHED",
       "action": "UPGRADE",
-      "action_reasons": ["Main content 469 words < 600 target for PILLAR"],
+      "action_reasons": ["Main content 482 words < 600 target for PILLAR"],
       "silo": null,
       "journey_stage": "awareness",
       "intent_class": "commercial",
@@ -3366,12 +3381,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 469,
+        "words": 482,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 76,
-        "inbound_contextual": 6,
-        "outbound_contextual": 6,
+        "inbound_pages": 78,
+        "inbound_contextual": 7,
+        "outbound_contextual": 7,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -3411,8 +3426,8 @@
         "words": 267,
         "h2": 5,
         "faq": 1,
-        "inbound_pages": 14,
-        "inbound_contextual": 5,
+        "inbound_pages": 15,
+        "inbound_contextual": 6,
         "outbound_contextual": 6,
         "max_content_overlap": 0
       },
@@ -3487,7 +3502,7 @@
         "words": 1534,
         "h2": 11,
         "faq": 1,
-        "inbound_pages": 5,
+        "inbound_pages": 6,
         "inbound_contextual": 5,
         "outbound_contextual": 7,
         "max_content_overlap": 0
@@ -3526,12 +3541,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 2063,
-        "h2": 8,
+        "words": 2092,
+        "h2": 9,
         "faq": 1,
-        "inbound_pages": 5,
-        "inbound_contextual": 3,
-        "outbound_contextual": 5,
+        "inbound_pages": 6,
+        "inbound_contextual": 4,
+        "outbound_contextual": 6,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -3673,7 +3688,7 @@
         "words": 1351,
         "h2": 8,
         "faq": 1,
-        "inbound_pages": 5,
+        "inbound_pages": 6,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -3715,7 +3730,7 @@
         "words": 1674,
         "h2": 9,
         "faq": 1,
-        "inbound_pages": 5,
+        "inbound_pages": 6,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -3733,27 +3748,35 @@
       "parent_id": "ZH-H03",
       "child_ids": [],
       "proposed_url": "/zh/guides/waiguo-jiazhao/",
-      "published_url": null,
-      "editorial_status": "IDEA",
-      "qa_status": "NOT_RUN",
+      "published_url": "/zh/guides/waiguo-jiazhao/",
+      "editorial_status": "PUBLISHED",
+      "qa_status": "PUBLISHED_HTML_EXISTS_REQUIRES_CONTENT_REVIEW",
       "source_verification": "NOT_STARTED",
       "serp_evidence": "NOT_VALIDATED",
       "cannibalization_risk": "NONE_DETECTED_STRUCTURAL",
       "internal_link_targets_published": ["/zh/", "/zh/checklist/", "/zh/topics/zhengjian-hetong/"],
       "writer_lane": "W3",
-      "implementation_priority": "P2",
+      "implementation_priority": "P1",
       "priority_value": 34,
       "level": "SUPPORT",
-      "pipeline_state": "IDEA",
-      "action": "CREATE",
-      "action_reasons": ["Evidence-free gap: no PUBLISHED page owns this intent"],
+      "pipeline_state": "PUBLISHED",
+      "action": "KEEP",
+      "action_reasons": ["Meets depth and linking targets"],
       "silo": "dc-licence",
       "journey_stage": "decision",
       "intent_class": "informational",
       "entities": ["E-DRIVING-LICENCE-A1-A", "E-INTERNATIONAL-DRIVING-PERMIT", "E-VIENNA-CONVENTION-1968"],
       "overlaps": [],
       "overlap_count": 0,
-      "content_metrics": null,
+      "content_metrics": {
+        "words": 1714,
+        "h2": 9,
+        "faq": 1,
+        "inbound_pages": 6,
+        "inbound_contextual": 2,
+        "outbound_contextual": 5,
+        "max_content_overlap": 0
+      },
       "performance": "NOT_CONNECTED"
     },
     {
@@ -3893,7 +3916,7 @@
         "words": 444,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 76,
+        "inbound_pages": 78,
         "inbound_contextual": 9,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -4441,7 +4464,7 @@
         "words": 345,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 76,
+        "inbound_pages": 78,
         "inbound_contextual": 8,
         "outbound_contextual": 8,
         "max_content_overlap": 0
@@ -4981,7 +5004,7 @@
         "words": 502,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 76,
+        "inbound_pages": 78,
         "inbound_contextual": 7,
         "outbound_contextual": 7,
         "max_content_overlap": 0
@@ -5529,7 +5552,7 @@
         "words": 157,
         "h2": 4,
         "faq": 0,
-        "inbound_pages": 76,
+        "inbound_pages": 78,
         "inbound_contextual": 0,
         "outbound_contextual": 1,
         "max_content_overlap": 0
@@ -5571,7 +5594,7 @@
         "words": 118,
         "h2": 3,
         "faq": 0,
-        "inbound_pages": 76,
+        "inbound_pages": 78,
         "inbound_contextual": 0,
         "outbound_contextual": 1,
         "max_content_overlap": 0
@@ -5613,8 +5636,8 @@
         "words": 185,
         "h2": 3,
         "faq": 0,
-        "inbound_pages": 76,
-        "inbound_contextual": 63,
+        "inbound_pages": 78,
+        "inbound_contextual": 65,
         "outbound_contextual": 2,
         "max_content_overlap": 0
       },
@@ -5655,8 +5678,8 @@
         "words": 107,
         "h2": 3,
         "faq": 0,
-        "inbound_pages": 76,
-        "inbound_contextual": 63,
+        "inbound_pages": 78,
+        "inbound_contextual": 65,
         "outbound_contextual": 1,
         "max_content_overlap": 0
       },
@@ -10965,12 +10988,12 @@
       "reserved_by": null,
       "url": null,
       "members": {
-        "published": [],
+        "published": ["VI-S05"],
         "protected_drafts": [],
-        "planned": ["VI-S05", "VI-S09"],
+        "planned": ["VI-S09"],
         "candidates": []
       },
-      "action": "CREATE"
+      "action": "UPGRADE"
     },
     {
       "id": "VI-dc-contract",
@@ -15123,12 +15146,12 @@
       "reserved_by": null,
       "url": null,
       "members": {
-        "published": [],
+        "published": ["ZH-S05"],
         "protected_drafts": [],
-        "planned": ["ZH-S05", "ZH-S09", "ZH-S10"],
+        "planned": ["ZH-S09", "ZH-S10"],
         "candidates": []
       },
-      "action": "CREATE"
+      "action": "KEEP"
     },
     {
       "id": "ZH-dc-contract",
