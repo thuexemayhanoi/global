@@ -940,6 +940,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T10:09:49.071Z"
+    },
+    {
+      "id": "ES-S08",
+      "locale": "es",
+      "url": "/es/guides/averia-moto/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T10:10:08.235Z",
+      "source_sha256": "b7652f85c8b032ff5554e7a3dff675e67839f6eed3c938d75fc1b54378451487",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S08",
+      "locale": "ko",
+      "url": "/ko/guides/gajang-daechoh/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T10:10:08.235Z",
+      "source_sha256": "1abd4b0a4e4e406af1a91bd90019068271a06f5573edf3c9b0042698a3aa3cc2",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1627,6 +1649,14 @@
         "EN-S08"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T10:10:08.235Z",
+      "ids": [
+        "ES-S08",
+        "KO-S08"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1640,7 +1670,7 @@
   },
   "queue": {
     "WAIT_PARENT": 30,
-    "APPROVED_BY_POLICY": 11,
+    "APPROVED_BY_POLICY": 9,
     "REJECTED": 11
   }
 }
