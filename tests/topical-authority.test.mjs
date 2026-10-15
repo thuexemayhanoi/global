@@ -133,9 +133,14 @@ test("promotion needs the exact owner manifest and only adds balanced IDEA rows"
 
 test("menus keep exactly two featured Supporting labels per Hub, PUBLISHED first",()=>{
  for(const hub of matrix.rows.filter(r=>r.role==="HUB"))assert.equal(menuChildren(matrix,hub.id).length,2,hub.id);
+ // Synthetic: the real children of this Hub become live over time, so none of them is treated as published here. A published
+ // row must then beat every open idea even with a worse priority number.
  const grown=structuredClone(matrix);
- grown.rows.push({...grown.rows.find(r=>r.id==="EN-S01"),id:"EN-S99",url:"/en/guides/test/",status:"PUBLISHED",priority:90});
- assert.deepEqual(menuChildren(grown,"EN-H01").map(r=>r.id),["EN-S99","EN-S01"]);
+ const kids=grown.rows.filter(r=>r.parent_id==="EN-H01"&&r.role==="SUPPORT");
+ for(const k of kids)k.status="IDEA";
+ const best=kids.slice().sort((a,b)=>a.priority-b.priority||a.id.localeCompare(b.id))[0];
+ grown.rows.push({...best,id:"EN-S99",url:"/en/guides/test/",status:"PUBLISHED",priority:90});
+ assert.deepEqual(menuChildren(grown,"EN-H01").map(r=>r.id),["EN-S99",best.id]);
 });
 
 test("prefix-filtered similarPairs returns exactly the brute-force pairs and scores",()=>{

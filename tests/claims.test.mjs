@@ -2,10 +2,16 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import {transition,validateLedger} from "../scripts/seo/writer-claims.mjs";
-const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const board=JSON.parse(fs.readFileSync("factory/external-writers/assignments.json","utf8"));
-const published=matrix.rows.find(r=>r.status==="PUBLISHED"&&r.role==="PILLAR");
-const row=board.entries.map(x=>matrix.rows.find(r=>r.id===x.id)).find(r=>r.role==="HUB"&&matrix.rows.find(p=>p.id===r.parent_id)?.status==="PUBLISHED");
+// Synthetic Matrix: live publication moves rows from IDEA to PUBLISHED, so the claim rules are proven on a clone where one assigned
+// Hub is still open under a published parent and one assigned Supporting row waits for a Hub that is not live.
+const matrix=structuredClone(JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8")));
+const byId=id=>matrix.rows.find(r=>r.id===id);
+const assigned=board.entries.map(x=>byId(x.id)).filter(Boolean);
+const row=assigned.find(r=>r.role==="HUB"&&byId(r.parent_id));
+row.status="IDEA";byId(row.parent_id).status="PUBLISHED";
+const child=assigned.find(r=>r.role==="SUPPORT"&&byId(r.parent_id)&&r.parent_id!==row.parent_id);
+child.status="IDEA";byId(child.parent_id).status="IDEA";
 const writer=board.entries.find(e=>e.id===row.id).writer;
 const initial={version:1,revision:0,claims:[]};
 test("manual claim is bounded, exclusive and resumable",()=>{
@@ -22,7 +28,6 @@ test("manual claim is bounded, exclusive and resumable",()=>{
 test("writer cannot claim foreign assigned topic or unpublished parent",()=>{
  const other=["W1","W2","W3"].find(w=>w!==writer);
  assert.throws(()=>transition(initial,matrix,board,"claim",{writer:other,id:row.id,session:"session-A"}),/not the permanent owner/);
- const child=board.entries.map(x=>matrix.rows.find(r=>r.id===x.id)).find(r=>r.role==="SUPPORT"&&matrix.rows.find(p=>p.id===r.parent_id)?.status!=="PUBLISHED");
  const owner=board.entries.find(e=>e.id===child.id).writer;
  assert.throws(()=>transition(initial,matrix,board,"claim",{writer:owner,id:child.id,session:"session-A"}),/parent not published/);
 });

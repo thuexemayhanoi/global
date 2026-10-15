@@ -128,14 +128,19 @@ test("source SHA+content hash are recorded on submitted drafts and cannot be mal
  assert.ok(validatePool(matrix,corrupted,registry).some(x=>x.includes("immutable submitted")));
 });
 test("Supporting drafts can pass prepublication parent test; publisher still refuses",()=>{
- const row=matrix.rows.find(x=>x.role==="SUPPORT"&&matrix.rows.find(p=>p.id===x.parent_id)?.status!=="PUBLISHED");
+ // Synthetic state: once every Hub is live no real Supporting row has an unpublished parent, so the scenario is built on a
+ // clone of the Matrix (an open Supporting idea whose Hub is not live yet) instead of relying on live publication progress.
+ const synthetic=structuredClone(matrix);
+ const row=synthetic.rows.find(x=>x.role==="SUPPORT"&&synthetic.rows.some(p=>p.id===x.parent_id));
  assert.ok(row);
+ row.status="IDEA";
+ synthetic.rows.find(p=>p.id===row.parent_id).status="IDEA";
  const locales=JSON.parse(fs.readFileSync("content/locales.json","utf8"));
  const packet={matrix_id:row.id,locale:row.locale,proposed_url:row.url,
   title:"A comprehensive guide to staying safe while renting a motorbike in Hanoi",
   meta_description:"Practical tips for planning your motorbike rental, understanding the rental agreement and navigating Vietnamese traffic safely.",
   h1:"Guide for safe rental decisions in Hanoi",body_markdown:"## Preparation\nRead the terms carefully.\n## Safety\nCheck your vehicle.\n## Prices\nConfirm with rental provider.\n## Contract\nRead the complete agreement.",
   sources:[],serp_intent_checked:false,facts_reviewed_by_human:false};
- assert.ok(checkArticle(packet,matrix,locales).errors.some(x=>x.includes("Parent Hub/Pillar must be published")));
- assert.ok(!checkArticle(packet,matrix,locales,{allowUnpublishedParentForDraft:true}).errors.some(x=>x.includes("Parent Hub/Pillar must be published")));
+ assert.ok(checkArticle(packet,synthetic,locales).errors.some(x=>x.includes("Parent Hub/Pillar must be published")));
+ assert.ok(!checkArticle(packet,synthetic,locales,{allowUnpublishedParentForDraft:true}).errors.some(x=>x.includes("Parent Hub/Pillar must be published")));
 });
