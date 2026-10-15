@@ -11,7 +11,7 @@ import {fileURLToPath} from "node:url";
 import {execFileSync} from "node:child_process";
 import {randomUUID,createHash} from "node:crypto";
 import {autoAdvance,applyRevisions} from "./writer-pool-auto-core.mjs";
-import {reviewFile,validateReview} from "./auto-publisher-core.mjs";
+import {repairQueue,ticketValid} from "./repair-queue-core.mjs";
 import {validateRequest} from "./writer-request-core.mjs";
 import {verifyPacket,checkDuplicates} from "./writer-lanes.mjs";
 import {emptySlots,slotView,signalSlot,validateSlots} from "./writer-slots-core.mjs";
@@ -106,29 +106,31 @@ function main(){
    if(createHash("sha256").update(prior).digest("hex")!==v.source_sha256)throw Error("IMMUTABLE_SUBMITTED_DRAFT_CHANGED "+file+": restore exact committed content; revise via revisions/<ID>.rN.json");
   }
  }
- // Revisions: new files only, for drafts whose current version an independent review sent back.
+ // Revisions: new files only, for strict auto-QA FAIL tickets bound to the immutable source SHA.
  const revs=[];
  const revNames=git("ls-tree","-r","--name-only",sha,"--","factory/external-writers/inbox/"+request.writer+"/revisions/").split("\n").filter(Boolean);
+ const report=revNames.length?read("factory/publisher/report.json"):null;
+ if(report&&report.version!==2)throw Error("REPAIR_REPORT_STALE: trusted publisher has not emitted hash-bound repair tickets");
+ const repairTasks=new Map(report?repairQueue(report,ledger,{writer:request.writer,session:request.session}).map(t=>[t.id,t]):[]);
  for(const file of revNames){
   const m=file.match(/\/revisions\/([A-Z]{2}-[HS][0-9]{2,4})\.r([0-9]+)\.json$/);
   if(!m)throw Error("Invalid revision file "+file);
   const c=own.find(x=>x.id===m[1]);
   if(!c||c.source_path===file||(c.revisions||[]).some(v=>v.source_path===file))continue; // not ours or already recorded
-  const reviewRel=reviewFile(c.id,c.source_sha256);
-  if(!fs.existsSync(path.join(ROOT,reviewRel)))continue; // no review on main yet: nothing to revise against
-  const review=JSON.parse(fs.readFileSync(path.join(ROOT,reviewRel),"utf8"));
-  if(validateReview(review,{packet:{matrix_id:c.id,writer_session:c.session},claim:c}).length||!["REVISE","FAIL"].includes(review.verdict))continue;
+  const ticket=repairTasks.get(c.id);
+  if(!ticket||!ticketValid(ticket,c))throw Error("REPAIR_TICKET_REQUIRED: "+c.id+" needs current machine QA failure for its exact hash, writer and session");
+  if(file!==ticket.revision_path||Number(m[2])!==ticket.next_revision)throw Error("REPAIR_VERSION_REFUSED: expected "+ticket.revision_path);
   const raw=gitRaw("show",sha+":"+file);
   let packet;try{packet=JSON.parse(raw);}catch{throw Error("Malformed revision JSON "+file);}
   if(packet.matrix_id!==c.id||packet.writer_session!==request.session)throw Error("Revision has wrong ID/session "+file);
   const qc=verifyPacket(packet,request.writer,matrix,board,locales,ledger,registry);
   if(!qc.passed)throw Error("Revision failed main-source QA "+file+": "+qc.errors.join("; "));
-  revs.push({id:c.id,revision:Number(m[2]),source_sha256:createHash("sha256").update(raw).digest("hex"),source_commit:sha,source_path:file,review_verdict:review.verdict});
+  revs.push({id:c.id,revision:Number(m[2]),source_sha256:createHash("sha256").update(raw).digest("hex"),source_commit:sha,source_path:file,review_verdict:"QA_FAIL",repair_basis_sha256:ticket.source_sha256,repair_gates:ticket.fixable});
  }
- // Only real green Writer PRs may be entered into the editorial SUBMITTED queue.
+ // Only real green Writer PRs may enter the immutable SUBMITTED queue.
  // Initial branch/request may claim without a PR; the outside AI must open a
  // draft PR once before pushing its first completed pair.
- if(verified.size){
+ if(verified.size||revs.length){
   if(!repoPR(branch))throw Error("AUTO_POOL_WAIT_PR: Open a Writer draft PR to main once, then push a small updated commit; no manual Actions button needed");
  }
  // Slot signal comes only from the agent's own request file on its own green branch commit.

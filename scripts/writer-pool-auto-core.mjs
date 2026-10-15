@@ -38,9 +38,9 @@ export function autoAdvance(matrix,ledger,registry,request,{
  }
  const candidates=poolCandidates(matrix,state,registry);
  if(!candidates.length){
-  return {status:unfinished.length?"WAITING_FOR_DRAFTS":submitted.length?"BATCH_SUBMITTED_AWAIT_EDITORIAL_REVIEW":"NO_ELIGIBLE_TOPICS",
+  return {status:unfinished.length?"WAITING_FOR_DRAFTS":submitted.length?"BATCH_SUBMITTED_FOR_AUTO_QA":"NO_ELIGIBLE_TOPICS",
    submitted,claimed:unfinished.map(c=>c.id),missing_ids:unfinished.map(c=>c.id),ledger:state,changed,
-   message:"No more eligible new draft topics. Keep unfinished claims until written; completed draft packets await human editorial review, not automatic publishing."};
+   message:"No more eligible new draft topics. Keep unfinished claims until written; completed draft packets await strict automated QA, not independent AI review."};
  }
  const next=transitionPool(matrix,state,registry,"claim",{...identity,count:maxBatch},{now,nonce:nonce+"-claimed"});
  state=next.ledger;changed=changed||!next.idempotent;
@@ -51,9 +51,9 @@ export function autoAdvance(matrix,ledger,registry,request,{
 }
 
 /**
- * Record verified revisions of SUBMITTED drafts that an independent review sent back (REVISE/FAIL).
+ * Record AI Writer revisions only for a matching machine-generated QA FAIL ticket.
  * The previous immutable version moves to `revisions` history; nothing is overwritten or deleted.
- * `revs`: [{id, revision, source_sha256, source_commit, source_path, review_verdict}]
+ * `revs`: [{id, revision, source_sha256, source_commit, source_path, review_verdict:"QA_FAIL", repair_basis_sha256, repair_gates}]
  */
 export function applyRevisions(matrix,ledger,registry,{writer,session,branch},revs,{now}){
  if(!revs.length)return {ledger,applied:[]};
@@ -61,13 +61,15 @@ export function applyRevisions(matrix,ledger,registry,{writer,session,branch},re
  for(const r of revs){
   const c=next.claims.find(x=>x.id===r.id&&x.status==="SUBMITTED"&&x.writer===writer&&x.session===session&&x.branch===branch);
   if(!c)throw Error("REVISION_REFUSED: no SUBMITTED claim of this session for "+r.id);
-  if(!["REVISE","FAIL"].includes(r.review_verdict))throw Error("REVISION_REFUSED: "+r.id+" has no REVISE/FAIL review on its current version");
+  if(r.review_verdict!=="QA_FAIL"||r.repair_basis_sha256!==c.source_sha256||!Array.isArray(r.repair_gates)||!r.repair_gates.length)
+   throw Error("REVISION_REFUSED: "+r.id+" needs current strict QA failure evidence matching the exact source hash");
+  if((c.revisions||[]).length>=3)throw Error("REVISION_REFUSED: "+r.id+" exceeded three automatic repairs; escalate");
   const expected=(c.revisions||[]).length+2;
   if(r.revision!==expected)throw Error("REVISION_REFUSED: "+r.id+" expects r"+expected);
   if(r.source_sha256===c.source_sha256)throw Error("REVISION_REFUSED: "+r.id+" revision is byte-identical");
-  c.revisions=[...(c.revisions||[]),{source_sha256:c.source_sha256,source_commit:c.source_commit,...(c.source_path?{source_path:c.source_path}:{}),review_verdict:r.review_verdict,superseded_at:now}];
+  c.revisions=[...(c.revisions||[]),{source_sha256:c.source_sha256,source_commit:c.source_commit,...(c.source_path?{source_path:c.source_path}:{}),review_verdict:"QA_FAIL",repair_gates:r.repair_gates,superseded_at:now}];
   c.source_sha256=r.source_sha256;c.source_commit=r.source_commit;c.source_path=r.source_path;c.revision=r.revision;
-  c.phase="REVISED_AWAITING_REVIEW";c.updated_at=now;applied.push(r.id);
+  c.phase="REVISED_AWAITING_AUTO_QA";c.updated_at=now;applied.push(r.id);
  }
  next.revision++;
  const e=validatePool(matrix,next,registry);if(e.length)throw Error(e.join("; "));

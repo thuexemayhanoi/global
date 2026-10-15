@@ -51,18 +51,17 @@ node --test tests/auto-publisher.test.mjs
 - **Revision queue:** `factory/publisher/report.json` lists every failed gate per draft, so the responsible Writer knows what to fix. Sensitive/price/legal topics remain held for qualified factual review.
 - **Rollback:** after a live failure the workflow reverts the publish commit and pauses. To reverse a publication manually, revert its `publish(global): …` commit and freeze-registry entry in a reviewed PR. Publication never deletes or redirects URLs on its own.
 
-## Revision loop (rejected drafts go back to the writer)
+## Automated repair tickets (QA FAIL → owning AI Writer → re-QA)
 
-- A review can say `PASS`, `REVISE` or `FAIL`.
-  - `REVISE` sets the decision to **REVISION_REQUESTED**.
-  - `FAIL` sets it to **REJECTED_BY_REVIEW**.
-  - Both are recorded as feedback and show up in `factory/publisher/report.json`.
-- The draft's writer session fixes the issues in a **new file**: `factory/external-writers/inbox/<W>/revisions/<ID>.r2.json` (then `.r3`, and so on). The original stays byte-identical.
-- A revision-only push sets `"claim_new": false` in the request file so no new topics are claimed.
-- After green Writer QA, the Autopilot verifies the revision against main and checks that a REVISE/FAIL review exists for the current hash. It then:
-  - moves the old hash into the claim's `revisions` history;
-  - points the claim at the new file and hash (`phase: REVISED_AWAITING_REVIEW`).
-- The new version needs its **own** independent review. Review files are per draft hash, `<ID>.<first 12 hex of SHA-256>.json`, so an earlier verdict can never approve a later version.
+No independent AI Reviewer and no fake human approvals. Every trusted Publisher attempt (including while publication is PAUSED) recomputes `factory/publisher/report.json` version 2 with the exact source SHA-256 and W1/W2/W3 owner/session/branch.
+
+- Only genuine fixable failures (`G1_DRAFT_QA`, `G1_DEPTH`, `G3_OFFICIAL_EVIDENCE`, `G4_EDITORIAL`, `G5_CONTENT_DUPLICATES`) become `REPAIR` tickets. Protected/blocked URLs and any `G3_TOPIC_CLASS` or `G3_NO_PRICES` require appropriate factual approval and never auto-pass.
+- The **active external AI Writer** calls `node scripts/writer-repair.mjs next --writer W2 --session w2-live` (use its own lane/session), uses the ticket's concrete QA failure details, researches/fixes the article and creates **a new immutable revision** at the given `revision_path`. Original SUBMITTED source bytes remain unchanged.
+- Verify with `node scripts/writer-repair.mjs check --writer W2 --session w2-live --file factory/external-writers/inbox/W2/revisions/<ID>.r2.json`, then `node scripts/writer-lanes.mjs verify-all`. After the Writer pushes to its original branch, green Writer QA triggers trusted Autopilot to verify same-owner, exact-source-hash repair evidence and append revision history; Publisher re-runs every content/safety/SEO gate.
+- Up to **three repairs** (`r2/r3/r4`); beyond that status `ESCALATED_MAX_ATTEMPTS` and the AI must stop and report why. Missing official evidence cannot be invented. Other Writers' held or protected drafts are never taken over.
+- One bad article never blocks unrelated QA-approved articles from publishing in a separate pair. Publisher rollback/pause after failed live deploy is separate from *content repair* and is **never auto-resumed** by the Writer.
+
+GitHub Actions does not contain a model provider: the repair ticket is created automatically, but natural-language rewriting is performed by an **actively running AI Writer session**, not by GitHub Actions itself. See `docs/AI-WRITER-REPAIR-LOOP.md`.
 
 ## Owner-approved automatic QA (without an AI Reviewer)
 
