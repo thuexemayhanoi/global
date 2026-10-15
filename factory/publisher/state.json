@@ -2440,17 +2440,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:25:08.320Z"
+    },
+    {
+      "id": "KO-S16",
+      "locale": "ko",
+      "url": "/ko/guides/yeogwon-bojeunggeum/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:25:31.288Z",
+      "source_sha256": "8081b0cea9aca6297b584723b2e46ec1392920d591254fa5dafe39029be0479c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "PT-S16",
+      "locale": "pt",
+      "url": "/pt/guides/passaporte-como-caucao/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:25:31.288Z",
+      "source_sha256": "d8de56241907084bb63904a43ce5258f32104a471bd76fee81e921598a60fcdc",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T07:55:11.491Z",
-      "ids": [
-        "ES-H02",
-        "VI-H02"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T07:55:29.690Z",
       "ids": [
@@ -4021,6 +4035,14 @@
         "NL-S16"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:25:31.288Z",
+      "ids": [
+        "KO-S16",
+        "PT-S16"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4033,6 +4055,6 @@
     "live_seconds": 63
   },
   "queue": {
-    "APPROVED_BY_POLICY": 9
+    "APPROVED_BY_POLICY": 10
   }
 }
