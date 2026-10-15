@@ -1360,6 +1360,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T13:36:41.372Z"
+    },
+    {
+      "id": "PT-S05",
+      "locale": "pt",
+      "url": "/pt/guides/carta-estrangeira/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:36:59.423Z",
+      "source_sha256": "54f6aab2e0d495f01f79c7ab1f452e0690d6144a3d210cacd5feb1a98c3653d5",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S06",
+      "locale": "en",
+      "url": "/en/guides/contract-cancellation/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:36:59.423Z",
+      "source_sha256": "8734391c4bde30999f9b49f1294d4d97a5348750ea43c4e36afe29f0db37f1ed",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2345,6 +2367,14 @@
         "ES-S05"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T13:36:59.423Z",
+      "ids": [
+        "PT-S05",
+        "EN-S06"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2357,7 +2387,7 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 16,
+    "APPROVED_BY_POLICY": 14,
     "WAIT_PARENT": 2,
     "REJECTED": 1
   }
