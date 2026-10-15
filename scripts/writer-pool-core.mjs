@@ -47,8 +47,23 @@ export function validatePool(matrix,ledger,protectedData){
    if(c.status!=="SUBMITTED"||!/^[0-9a-f]{64}$/.test(c.source_sha256||"")||
       !/^[0-9a-f]{40}$/.test(c.source_commit||""))errors.push("Invalid immutable submitted draft evidence "+c.id);
   }
+  // A submitted packet may be delegated to another live Writer without moving its
+  // immutable source bytes. The current file then lives at the previous holder's
+  // path until the new owner pushes a verified revision.
+  if(c.handoffs!==undefined){
+   if(c.status!=="SUBMITTED"||!Array.isArray(c.handoffs)||c.handoffs.length===0||
+      c.handoffs.some(h=>!WRITERS.includes(h.writer)||!SESSION.test(h.session||"")||
+       typeof h.branch!=="string"||!h.branch.startsWith("writer/"+h.writer.toLowerCase()+"-")||
+       !new RegExp("^factory/external-writers/inbox/"+h.writer+"/(?:revisions/)?"+c.id+"(?:\\.r\\d+)?\\.json$").test(h.source_path||"")||
+       !/^[0-9a-f]{64}$/.test(h.source_sha256||"")||!/^[0-9a-f]{40}$/.test(h.source_commit||"")))
+    errors.push("Invalid repair handoff history "+c.id);
+  }
+  if(c.source_branch!==undefined&&(c.status!=="SUBMITTED"||typeof c.source_branch!=="string"||!/^writer\/w[123]-[A-Za-z0-9_-]+$/.test(c.source_branch)))errors.push("Invalid source branch "+c.id);
   // A strict QA failure ticket can lead to a new version in inbox/<W>/revisions/<ID>.r<N>.json; history keeps every earlier hash.
-  if(c.source_path!==undefined&&(c.status!=="SUBMITTED"||!new RegExp("^factory/external-writers/inbox/"+c.writer+"/revisions/"+c.id+"\\.r\\d+\\.json$").test(c.source_path||"")))errors.push("Invalid revision source path "+c.id);
+  if(c.source_path!==undefined&&(c.status!=="SUBMITTED"||!(
+    new RegExp("^factory/external-writers/inbox/"+c.writer+"/revisions/"+c.id+"\\.r\\d+\\.json$").test(c.source_path||"")||
+    (c.handoffs||[]).some(h=>h.source_path===c.source_path&&h.source_sha256===c.source_sha256)
+   )))errors.push("Invalid revision source path "+c.id);
   if(c.revisions!==undefined&&(c.status!=="SUBMITTED"||!Array.isArray(c.revisions)||c.revisions.some(v=>!/^[0-9a-f]{64}$/.test(v?.source_sha256||"")||!/^[0-9a-f]{40}$/.test(v?.source_commit||""))))errors.push("Invalid revision history "+c.id);
   if(c.status!=="RELEASED"){
    if(active.has(c.id))errors.push("Duplicate live claim "+c.id);

@@ -8,8 +8,8 @@
  *   return to the candidates pool.
  * - Deterministic core: no network, filesystem, AI, publishing or timer.
  */
-import {transitionPool,poolCandidates,validatePool,MAX_BATCH} from "./writer-pool-core.mjs";
-import {MAX_REPAIR_ATTEMPTS} from "./repair-queue-core.mjs";
+import {transitionPool,poolCandidates,validatePool,ensureIdentity,MAX_BATCH} from "./writer-pool-core.mjs";
+import {MAX_REPAIR_ATTEMPTS,repairQueue,ticketValid} from "./repair-queue-core.mjs";
 export function autoAdvance(matrix,ledger,registry,request,{
  verifiedDraftIds=new Set(),verifiedDraftEvidence=new Map(),now="2026-10-14T00:00:00Z",nonce="auto",maxBatch=MAX_BATCH,refill=true
 }={}){
@@ -69,10 +69,56 @@ export function applyRevisions(matrix,ledger,registry,{writer,session,branch},re
   if(r.revision!==expected)throw Error("REVISION_REFUSED: "+r.id+" expects r"+expected);
   if(r.source_sha256===c.source_sha256)throw Error("REVISION_REFUSED: "+r.id+" revision is byte-identical");
   c.revisions=[...(c.revisions||[]),{source_sha256:c.source_sha256,source_commit:c.source_commit,...(c.source_path?{source_path:c.source_path}:{}),review_verdict:"QA_FAIL",repair_gates:r.repair_gates,superseded_at:now}];
-  c.source_sha256=r.source_sha256;c.source_commit=r.source_commit;c.source_path=r.source_path;c.revision=r.revision;
+  c.source_sha256=r.source_sha256;c.source_commit=r.source_commit;c.source_path=r.source_path;c.source_branch=branch;c.revision=r.revision;
   c.phase="REVISED_AWAITING_AUTO_QA";c.updated_at=now;applied.push(r.id);
  }
  next.revision++;
  const e=validatePool(matrix,next,registry);if(e.length)throw Error(e.join("; "));
  return {ledger:next,applied};
+}
+
+/**
+ * Owner-authorized work stealing: a Writer may explicitly opt into REPAIR tickets
+ * from any other W1/W2/W3 session. Transfer is atomic on the central claims ledger
+ * (CAS push on main); old source SHA/commit/branch/path remain immutable evidence.
+ * Only one live holder can submit revisions. No automatic model calls or QA bypass.
+ */
+export function takeRepairTickets(matrix,ledger,registry,report,{writer,session,branch},
+ {now="2026-10-15T00:00:00Z",max=10}={}){
+ ensureIdentity(writer,session,branch);
+ const errors=validatePool(matrix,ledger,registry);
+ if(errors.length)throw Error(errors.join("; "));
+ if(!Number.isInteger(max)||max<1||max>MAX_BATCH)throw Error("CROSS_REPAIR_MAX must be 1.."+MAX_BATCH);
+ if(report?.version!==2||report.ledger_revision!==ledger.revision)
+  return {ledger,changed:false,transferred:[],reason:"REPAIR_REPORT_STALE"};
+ const rows=new Map(matrix.rows.map(r=>[r.id,r]));
+ const pending=ledger.claims.filter(c=>c.status==="SUBMITTED"&&c.writer===writer&&c.session===session&&
+  c.handoffs?.length&&rows.get(c.id)?.status!=="PUBLISHED").length;
+ const capacity=Math.max(0,max-pending);
+ if(!capacity)return {ledger,changed:false,transferred:[],reason:"REPAIR_CAPACITY_FULL"};
+ const candidates=repairQueue(report,ledger).filter(t=>t.state==="REPAIR"&&t.writer!==writer&&
+  rows.get(t.id)?.status!=="PUBLISHED").sort((a,b)=>
+   (rows.get(a.id)?.role==="HUB"?0:1)-(rows.get(b.id)?.role==="HUB"?0:1)||
+   a.attempts-b.attempts||a.id.localeCompare(b.id));
+ const next=structuredClone(ledger),transferred=[];
+ for(const t of candidates){
+  if(transferred.length>=capacity)break;
+  const c=next.claims.find(x=>x.id===t.id&&x.status==="SUBMITTED");
+  if(!c||!ticketValid(t,c)||c.handoffs?.some(h=>h.writer===writer&&h.session===session))continue;
+  const oldPath=c.source_path||"factory/external-writers/inbox/"+c.writer+"/"+c.id+".json";
+  c.handoffs=[...(c.handoffs||[]),{
+   writer:c.writer,session:c.session,branch:c.branch,source_path:oldPath,
+   source_sha256:c.source_sha256,source_commit:c.source_commit,to_writer:writer,to_session:session,at:now
+  }];
+  c.source_path=oldPath;
+  c.source_branch=c.source_branch||c.branch;
+  c.writer=writer;c.session=session;c.branch=branch;
+  c.phase="CROSS_WRITER_REPAIR_HANDOFF";c.updated_at=now;
+  transferred.push(t.id);
+ }
+ if(!transferred.length)return {ledger,changed:false,transferred,reason:"NO_ELIGIBLE_FOREIGN_TICKETS"};
+ next.revision++;
+ const problems=validatePool(matrix,next,registry);
+ if(problems.length)throw Error("CROSS_REPAIR_REFUSED: "+problems.join("; "));
+ return {ledger:next,changed:true,transferred,reason:"TRANSFERRED_TO_SINGLE_ACTIVE_OWNER"};
 }
