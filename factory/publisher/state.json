@@ -3856,17 +3856,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T22:04:57.681Z"
+    },
+    {
+      "id": "ES-S34",
+      "locale": "es",
+      "url": "/es/guides/evitar-robo-de-moto-en-hanoi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:05:17.301Z",
+      "source_sha256": "aa6056a2bfd1579dfe1683bc5bd6d93c8679002f245ff47d08d4e4e6353523c6",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ES-S35",
+      "locale": "es",
+      "url": "/es/guides/donde-aparcar-la-moto-en-hanoi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:05:17.301Z",
+      "source_sha256": "d08f6a35504599507c126213aea3c6ceb17e66c37472dfde17b54f4376542078",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T17:09:32.688Z",
-      "ids": [
-        "PT-S10",
-        "VI-S10"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T17:10:24.270Z",
       "ids": [
@@ -5420,6 +5434,14 @@
         "ES-S33"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T22:05:17.301Z",
+      "ids": [
+        "ES-S34",
+        "ES-S35"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -5432,6 +5454,6 @@
     "live_seconds": 43
   },
   "queue": {
-    "APPROVED_BY_POLICY": 5
+    "APPROVED_BY_POLICY": 3
   }
 }
