@@ -2980,17 +2980,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T20:05:57.821Z"
+    },
+    {
+      "id": "EN-S19",
+      "locale": "en",
+      "url": "/en/guides/honda-wave-vision-air-blade-lead/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:11:16.748Z",
+      "source_sha256": "bdf8ddf69041330feb4dbfeda111681932ca5a3d0841a5f79f2a6cb2b597cd2e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S28",
+      "locale": "en",
+      "url": "/en/guides/how-to-ride-a-manual-motorbike-with-a-clutch/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:11:16.748Z",
+      "source_sha256": "4b7313e229f3ca42d7157bbe0f50d53f6ddbb5eb09e6f8a78021b522bb75def8",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:55:31.140Z",
-      "ids": [
-        "NL-H02",
-        "DE-S03"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T09:56:59.914Z",
       "ids": [
@@ -4558,6 +4572,14 @@
         "EN-S31"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T20:11:16.748Z",
+      "ids": [
+        "EN-S19",
+        "EN-S28"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4569,6 +4591,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 1
+    "APPROVED_BY_POLICY": 2
   }
 }
