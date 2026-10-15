@@ -128,8 +128,11 @@ test("source SHA+content hash are recorded on submitted drafts and cannot be mal
  assert.ok(validatePool(matrix,corrupted,registry).some(x=>x.includes("immutable submitted")));
 });
 test("Supporting drafts can pass prepublication parent test; publisher still refuses",()=>{
- const row=matrix.rows.find(x=>x.role==="SUPPORT"&&matrix.rows.find(p=>p.id===x.parent_id)?.status!=="PUBLISHED");
+ // Every Hub may already be live; force one Supporting row and its parent Hub to IDEA on a copy (fixture only).
+ const matrix=structuredClone(JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8")));
+ const row=matrix.rows.find(x=>x.role==="SUPPORT"&&matrix.rows.find(p=>p.id===x.parent_id)?.role==="HUB");
  assert.ok(row);
+ row.status="IDEA";matrix.rows.find(p=>p.id===row.parent_id).status="IDEA";
  const locales=JSON.parse(fs.readFileSync("content/locales.json","utf8"));
  const packet={matrix_id:row.id,locale:row.locale,proposed_url:row.url,
   title:"A comprehensive guide to staying safe while renting a motorbike in Hanoi",

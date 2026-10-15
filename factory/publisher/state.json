@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 53,
+  "clean_runs": 55,
   "published": [
     {
       "id": "NL-H01",
@@ -1538,7 +1538,32 @@
       "at": "2026-10-15T16:39:42.059Z",
       "source_sha256": "fb4284069ae4f97b2e2d1cdcc3e4a4262070dbac061afe1e9fd31d116e90d945",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T16:49:31.793Z"
+    },
+    {
+      "id": "ZH-S07",
+      "locale": "zh",
+      "url": "/zh/guides/yutian-qixing/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T16:49:50.580Z",
+      "source_sha256": "87048cad437e6805076df854a74118b4a23cd23f39264808f2a922d8f9baf659",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T16:53:42.734Z"
+    },
+    {
+      "id": "ZH-S08",
+      "locale": "zh",
+      "url": "/zh/guides/guzhang-chuli/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T16:49:50.580Z",
+      "source_sha256": "9fae2047b799210e860fca7030c3a9ec9fceeca157858dbb210dcd8ab8f40ddc",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T16:53:42.734Z"
     }
   ],
   "runs": [
@@ -2643,19 +2668,41 @@
         "ZH-H04"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T16:49:31.793Z",
+      "ids": [
+        "ZH-H04"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T16:49:50.580Z",
+      "ids": [
+        "ZH-S07",
+        "ZH-S08"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T16:53:42.734Z",
+      "ids": [
+        "ZH-S07",
+        "ZH-S08"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T13:47:56.955Z",
+    "at": "2026-10-15T16:53:42.734Z",
     "ids": [
-      "ES-S09",
-      "PT-S09"
+      "ZH-S07",
+      "ZH-S08"
     ],
-    "commit": "d246f6603eaaccf42b440e9c5cb86c721a966364",
-    "live_seconds": 81
+    "commit": "2be828c2e0e8dfc5f60825a03dbb57b70038f33e",
+    "live_seconds": 223
   },
   "queue": {
-    "WAIT_PARENT": 2,
-    "APPROVED_BY_POLICY": 1
+    "APPROVED_BY_POLICY": 2
   }
 }
