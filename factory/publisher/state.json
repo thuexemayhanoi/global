@@ -1456,6 +1456,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T13:42:50.917Z"
+    },
+    {
+      "id": "JA-S08",
+      "locale": "ja",
+      "url": "/ja/guides/koshou-taiou/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:43:08.137Z",
+      "source_sha256": "837f201ffefdab87ccc3eddcb1466d501c5492af089d0473b471b734fb7b3e1d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "VI-S08",
+      "locale": "vi",
+      "url": "/vi/guides/xu-ly-xe-hong/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:43:08.137Z",
+      "source_sha256": "6bf5fb9773200409d996285dc2bf5b4deba778f096e22f4b1aa61a37d262cc6c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2505,6 +2527,14 @@
         "FR-S08"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T13:43:08.137Z",
+      "ids": [
+        "JA-S08",
+        "VI-S08"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2517,8 +2547,8 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 8,
     "WAIT_PARENT": 2,
+    "APPROVED_BY_POLICY": 6,
     "REJECTED": 1
   }
 }
