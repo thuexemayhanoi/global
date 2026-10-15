@@ -1384,6 +1384,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T13:38:27.560Z"
+    },
+    {
+      "id": "ES-S06",
+      "locale": "es",
+      "url": "/es/guides/cancelar-reserva/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:38:47.789Z",
+      "source_sha256": "694368d5369ac34016b0e855c9be79b1b966e7b59f9386e19810d739310a4403",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "PT-S06",
+      "locale": "pt",
+      "url": "/pt/guides/cancelar-reserva/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:38:47.789Z",
+      "source_sha256": "4f163c29aeeb2297dfe7fd6532d3dc9c58135321628d7ea4e445df62b87e3ba7",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2385,6 +2407,14 @@
         "EN-S06"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T13:38:47.789Z",
+      "ids": [
+        "ES-S06",
+        "PT-S06"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2397,7 +2427,7 @@
     "live_seconds": 81
   },
   "queue": {
-    "APPROVED_BY_POLICY": 14,
+    "APPROVED_BY_POLICY": 12,
     "WAIT_PARENT": 2,
     "REJECTED": 1
   }
