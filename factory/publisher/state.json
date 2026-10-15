@@ -3388,17 +3388,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T21:09:18.428Z"
+    },
+    {
+      "id": "EN-S61",
+      "locale": "en",
+      "url": "/en/guides/pedestrian-crossings-motorbike-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:09:36.524Z",
+      "source_sha256": "75c786a03485a8975a2660e3cbc0353ad84f3b828d9037b57f735d6558a9d22e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S62",
+      "locale": "en",
+      "url": "/en/guides/safe-following-distance-motorbike-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:09:36.524Z",
+      "source_sha256": "92a14ae5c89d66ef920f6fd1edb90da1e530c1c74611405b3818dd925a97b586",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T13:21:05.334Z",
-      "ids": [
-        "EN-H03",
-        "ES-H03"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T13:22:12.722Z",
       "ids": [
@@ -4964,6 +4978,14 @@
         "EN-S60"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T21:09:36.524Z",
+      "ids": [
+        "EN-S61",
+        "EN-S62"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4976,6 +4998,6 @@
     "live_seconds": 41
   },
   "queue": {
-    "APPROVED_BY_POLICY": 3
+    "APPROVED_BY_POLICY": 4
   }
 }
