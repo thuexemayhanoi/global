@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "ledger_revision": 55,
+  "ledger_revision": 56,
   "stage": "PILOT",
   "counts": {
-    "REVIEW_REQUIRED": 93,
+    "REVIEW_REQUIRED": 90,
+    "WAIT_PARENT": 3,
     "REJECTED": 19
   },
   "items": [
@@ -471,36 +472,32 @@
     },
     {
       "id": "JA-S01",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
-      "source_sha256": "24b8b7d0192b624ff0984765bdae566d8c7c529074016157cba014df863c0cf5",
-      "source_commit": "b89e3768ba9765a094d920ff988fe3df71873342",
+      "source_sha256": "839f2823b3c76839478dd3588ddabb0226eafde1195d096f917860f0931a7443",
+      "source_commit": "e7ece5d9c4372faacd386f9c1c892c0cffcba968",
       "details": [
-        "G2_PARENT_PUBLISHED: JA-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: - 免許の区分が125 cm³以下に限られる。→ WinnerもExciterも不可、125 cm³未満の車種から選ぶ。"
+        "G2_PARENT_PUBLISHED: JA-H01 is IDEA"
       ]
     },
     {
       "id": "KO-S01",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
-      "source_sha256": "482f66e1b52fc276b1bb9eae2cf4f79b82956211fdea67652357dc4a6ab67f74",
-      "source_commit": "b89e3768ba9765a094d920ff988fe3df71873342",
+      "source_sha256": "10f94df1aef1f04aa6b12c3ebfe211b4cc53a8052e3d21007bd8990f9af9c455",
+      "source_commit": "e7ece5d9c4372faacd386f9c1c892c0cffcba968",
       "details": [
-        "G2_PARENT_PUBLISHED: KO-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: - 국제운전면허증의 범위가 125 cm³ 이하다. → Winner도 Exciter도 불가, 125 cm³ 미만 차종에서 고른다."
+        "G2_PARENT_PUBLISHED: KO-H01 is IDEA"
       ]
     },
     {
@@ -732,19 +729,17 @@
     },
     {
       "id": "ZH-S02",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
-      "source_sha256": "0fd1c7b0824ad39484762fa0ee52740aac574e871e8e56738ca9e623cd2331d8",
-      "source_commit": "f3fe97d44e3902813e8bf30f86b89d271b79456c",
+      "source_sha256": "e4b26abeb069d79645127bbc232c98d4da648c847e3ce000808018a47ede1605",
+      "source_commit": "e7ece5d9c4372faacd386f9c1c892c0cffcba968",
       "details": [
-        "G2_PARENT_PUBLISHED: ZH-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: \"租50cc或电动车不需要驾照\"是河内租车行最常见的广告语，尤其针对没有越南驾照的外国游客。这句话只对了一半。越南法律只对一个定义很窄的车型类别免除驾照要求，而市面上出租的许多电动车并不在这个类别之内。本文先讲清法律界限，再用厂方公布的数据比较50cc汽油车和电动车，最后给出按河 | 正是这些数字带来法律上的提醒：设计时速70到78 km/h的车型不符合上文轻便"
+        "G2_PARENT_PUBLISHED: ZH-H01 is IDEA"
       ]
     },
     {
