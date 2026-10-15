@@ -7,44 +7,44 @@
   "branch": "research/claude-20261015-mobility",
   "batch_session": "research-claude-20261015-mobility",
   "created_at": "2026-10-15T09:33:24.963Z",
-  "updated_at": "2026-10-15T17:50:45.686Z",
-  "base_main_sha": "f597a1b1509a03e4f034e2e01c166ab8c1f47a08",
-  "last_commit_sha": "cc8da8385a0201e109446a657ffd579ba2377257",
+  "updated_at": "2026-10-15T17:52:41.178Z",
+  "base_main_sha": "6276013aa213ea77e59dde8336046c0a20b1f99c",
+  "last_commit_sha": "1b462773bb01d19b20c3c56af1ef734f6d305024",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 110,
-    "qa_pass": 110,
+    "researched": 120,
+    "qa_pass": 120,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 100,
+    "pushed": 110,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "en": 20,
-      "de": 10,
-      "fr": 10,
-      "es": 10,
-      "nl": 10,
-      "pt": 10,
-      "ko": 10,
-      "ja": 10,
+      "en": 22,
+      "de": 12,
+      "fr": 11,
+      "es": 11,
+      "nl": 11,
+      "pt": 11,
+      "ko": 11,
+      "ja": 11,
       "zh": 10,
       "vi": 10
     },
     "domains": {
       "transportation-mobility": 10,
       "motorbike-rental": 10,
-      "traffic-law-safety": 90
+      "traffic-law-safety": 100
     }
   },
   "last_batch": {
-    "seq": 11,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0011.json",
-    "sha256": "77a5a75a74642f85f0835e938b9bbfe9bc1a71f2224ad43fc2a279bb11ac5d9e",
+    "seq": 12,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0012.json",
+    "sha256": "24cb2d298ca162b0cb205c83f9d2348c31e8b0d3c3741ad919ae05ac1ab8f869",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -1164,8 +1164,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility-0011.json",
       "sha256": "77a5a75a74642f85f0835e938b9bbfe9bc1a71f2224ad43fc2a279bb11ac5d9e",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "1b462773bb01d19b20c3c56af1ef734f6d305024",
       "researched_on": "2026-10-15",
       "topics": [
         {
@@ -1269,11 +1269,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 12,
+      "file": "factory/topic-research/batches/claude-20261015-mobility-0012.json",
+      "sha256": "24cb2d298ca162b0cb205c83f9d2348c31e8b0d3c3741ad919ae05ac1ab8f869",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-15",
+      "topics": [
+        {
+          "ref": "en:riding-a-motorbike-at-night-in-vietnam",
+          "locale": "en",
+          "slug": "riding-a-motorbike-at-night-in-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::riding a motorbike at night in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:nachts-roller-fahren-vietnam",
+          "locale": "de",
+          "slug": "nachts-roller-fahren-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::nachts roller fahren vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:rouler-a-scooter-la-nuit-au-vietnam",
+          "locale": "fr",
+          "slug": "rouler-a-scooter-la-nuit-au-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::conduire un scooter la nuit au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:conducir-moto-de-noche-en-vietnam",
+          "locale": "es",
+          "slug": "conducir-moto-de-noche-en-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::conducir moto de noche en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:s-nachts-scooterrijden-vietnam",
+          "locale": "nl",
+          "slug": "s-nachts-scooterrijden-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::s nachts scooter rijden vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:conduzir-moto-a-noite-no-vietname",
+          "locale": "pt",
+          "slug": "conduzir-moto-a-noite-no-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::conduzir moto a noite no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:vietnam-night-motorbike-riding",
+          "locale": "ko",
+          "slug": "vietnam-night-motorbike-riding",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::베트남 야간 오토바이 운전",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:vietnam-night-bike-riding",
+          "locale": "ja",
+          "slug": "vietnam-night-bike-riding",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナム 夜間 ハイク 運転",
+          "ta_id": null
+        },
+        {
+          "ref": "en:using-a-phone-while-riding-in-vietnam",
+          "locale": "en",
+          "slug": "using-a-phone-while-riding-in-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::using phone while riding motorbike vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:handy-beim-rollerfahren-vietnam",
+          "locale": "de",
+          "slug": "handy-beim-rollerfahren-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::handy am lenker roller vietnam erlaubt",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 12,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0012.json",
+    "seq": 13,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0013.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -1366,6 +1477,13 @@
       "seq": 11,
       "topics": 10,
       "sha256": "77a5a75a74642f85f0835e938b9bbfe9bc1a71f2224ad43fc2a279bb11ac5d9e"
+    },
+    {
+      "at": "2026-10-15T17:52:41.178Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 12,
+      "topics": 10,
+      "sha256": "24cb2d298ca162b0cb205c83f9d2348c31e8b0d3c3741ad919ae05ac1ab8f869"
     }
   ]
 }
