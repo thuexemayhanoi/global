@@ -34,16 +34,18 @@ Topic Factory ──▶ shared topic queue (Matrix IDEA rows)
 
 | Step | Runs automatically (GitHub Actions, Node.js only) | Needs an ACTIVE external AI Writer session |
 |---|---|---|
-| Topic refill | Topic Factory every 6 h, ≤50 IDEA rows per run, from already-researched candidates | new research batches (`research/*` branches) |
+| Topic refill | Topic Factory after each green research batch (and a 6-hourly schedule), ≤50 IDEA rows per run, from already-researched candidates | new research batches (`research/*` branches) |
 | Claims and refill | Writer Autopilot after each green Writer push | the push |
 | Writing drafts | — | **yes** |
 | Writer QA | `writer-qa.yml` on every Writer push | run it locally before pushing |
-| Automated QA, repair tickets | Auto Publisher, hourly and after every Autopilot run | — |
+| Automated QA, repair tickets | Auto Publisher after every Autopilot run (and an hourly schedule) | — |
 | Repairing a draft | — | **yes**, the session that submitted it |
 | Publishing 2 + Live QA + next 2 | Auto Publisher | — |
 | Lifting a PAUSE | — | operator: confirmed `resume` dispatch |
 
 There is no AI model in GitHub Actions. When no Writer session is active, already-eligible drafts are still published, but **no new text is written and no repair is made**. The system does not write 24/7 on its own.
+
+Schedules are a fallback only. GitHub runs `schedule` triggers best effort (it may delay or skip them), and by 2026-10-15 04:22 UTC no scheduled run had fired in this repository at all. The triggers that actually move work are a Writer push (Writer QA → Autopilot → Auto Publisher), a research batch (Topic Research QA → Topic Factory), the publisher's own drain dispatch, and an operator dispatch. Never wait on a schedule: dispatch the workflow.
 
 ## 2. Writer slots
 
@@ -143,7 +145,7 @@ git add <revision_path> && git commit -m "W1: repair ES-H01 r2" && git push
 1. Find and fix the cause. Confirm the latest `pages build and deployment` run succeeded.
 2. Run **Post-Publish Live HTTP QA** (`post-publish-qa.yml`) and check it passes: every PUBLISHED URL, the sitemap index and all shards, robots, 404, frozen SEO fingerprints.
 3. Dispatch **Global Auto Publisher** with `action=resume`, `confirmed=true` and a reason of at least 12 characters.
-4. Dispatch `action=publish` (or wait for the hourly run) and watch the pilot pair through Live QA.
+4. Dispatch `action=publish` (do not wait for the hourly schedule) and watch the pilot pair through Live QA.
 
 Other actions: `action=pause` (reason), `action=scan` (read-only eligibility), `action=publish` with optional `ids`.
 
@@ -160,7 +162,7 @@ Other actions: `action=pause` (reason), `action=scan` (read-only eligibility), `
 | `IMMUTABLE_SUBMITTED_DRAFT_CHANGED` | you edited a SUBMITTED draft | restore it: `git checkout <source_commit> -- <file>`; corrections go through a repair ticket |
 | `REVISION_WITHOUT_SUBMITTED_DRAFT` | revision file for a draft that is not SUBMITTED | fix the draft in place; if it was submitted, merge `main` first |
 | `REVISION_NUMBER` / `WRONG_REVISION_PATH` | wrong rN | merge `main`, use the ticket's `revision_path` |
-| `NO_CURRENT_TICKET` / `REPAIR_REPORT_STALE` | the publisher has not evaluated the current hash yet | wait for the next publisher run (hourly or after your Autopilot run) |
+| `NO_CURRENT_TICKET` / `REPAIR_REPORT_STALE` | the publisher has not evaluated the current hash yet | wait for the publisher run that follows your Autopilot run (the hourly schedule is best effort) |
 | `NOT_REPAIRABLE` / `REPAIR_TICKET_REQUIRED` | the draft is held, escalated or waiting | do not revise; remove the revision file |
 | `NOT_SUBMITTED` | the draft is still CLAIMED | fix it in place, no revision |
 | `AUTO_POOL_WAIT_PR` | no open PR for your Writer branch | open one draft PR to `main`, push again |
@@ -197,7 +199,7 @@ node scripts/topic-factory.mjs status                  # topics + publication qu
 | `factory/publisher/report.json` | Auto Publisher | decision and failed gates per draft hash (source of repair tickets) |
 | `factory/publisher/state.json` | Auto Publisher | stage, pause, publications and their live QA results |
 | `data/seo/master-matrix.json` | Topic Factory / publishers | topics and PUBLISHED URLs |
-| `docs/CONTENT-FACTORY-DASHBOARD.md` | Topic Factory and Auto Publisher, from data | every queue state; never edit by hand |
+| `docs/CONTENT-FACTORY-DASHBOARD.md` | Topic Factory and Auto Publisher (in the publish commit and again once the live QA result is on `main`), from data | every queue state; never edit by hand |
 
 ## 12. Legacy documents
 

@@ -41,9 +41,11 @@ Scope: the complete /global pipeline Topic Factory → W1/W2/W3 → Writer QA �
 | 20 | `factory/editorial-reviews/` | **OBSOLETE** | G6 retired; workflow removed in #37 | marked historical |
 | 21 | Claims, slots, CAS, idempotent replay | **DONE** | `tests/writer-pool*.test.mjs`, `tests/writer-slots.test.mjs` | scenario tests S1, S5, S6 |
 | 22 | Queue drain 2+2+2+2+2 | **DONE** | PR #38, `tests/publisher-drain.test.mjs` | scenario S2 covers stages and caps |
+| 23 | Dashboard after a live QA result | **BROKEN (found after the pilot)** | the PASS commit `40ab77f` recorded only `state.json`; the committed dashboard still showed NL-H01/PT-H01 as PUBLISH_STAGED and "Last successful deployment: none yet" | separate best-effort step regenerates the dashboard from `main` after PASS, pause or revert; `tests/dashboard.test.mjs` |
+| 24 | Scheduled triggers | **BROKEN (GitHub side)** | 0 `schedule` events in the run history by 2026-10-15 04:22 UTC, although the hourly Auto Publisher cron exists since 01:28 UTC | docs stop relying on schedules; the event and dispatch triggers carry the pipeline |
 
 ## Not changed
 
 No URL, canonical, hreflang, sitemap content, NAP, price, CNAME, published page or Matrix row was changed. No topic expansion (the 10,000-topic plan is separate). No AI API, model, key or reviewer was added.
 
-Post-merge production evidence (Pages deployment, Post-Publish Live HTTP QA, confirmed resume and pilot) is recorded in the pull request for this change and in `factory/publisher/state.json`; the status table is `docs/GAP-MATRIX.md` § Workflow final fix.
+Post-merge production evidence (Pages deployment, Post-Publish Live HTTP QA, confirmed resume and pilot) is recorded in `docs/GAP-MATRIX.md` § Workflow final fix (WF-07) and in `factory/publisher/state.json`.

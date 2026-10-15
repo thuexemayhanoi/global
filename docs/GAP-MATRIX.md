@@ -77,7 +77,9 @@ Audit with evidence: `docs/WORKFLOW-AUDIT-20261015.md`. Contract: `AGENTS.md` §
 | WF-04 | P1 | Repair CLI identity, holds, guidance | BROKEN/PARTIAL | DONE (code + tests): `tests/repair-queue.test.mjs` |
 | WF-05 | P1 | CI coverage, no-AI guard, scenarios | PARTIAL | DONE: repair/lock suites in every workflow that runs the code; `tests/no-ai-api.test.mjs`; ten scenarios in `tests/workflow-scenarios.test.mjs` |
 | WF-06 | P1 | Dashboard + docs | OBSOLETE | DONE: queue states generated from data; AGENTS.md contract; legacy docs marked |
-| WF-07 | P0 | Production resume | PAUSED since 2026-10-15T02:20Z | Verified only after merge: Pages deployment, Post-Publish Live HTTP QA, confirmed resume and pilot are recorded in the pull request and in `factory/publisher/state.json` |
+| WF-07 | P0 | Production resume | PAUSED since 2026-10-15T02:20Z | DONE (production): PR #40 merged as `eedb4ba`; Pages run 38680346553 success; Post-Publish Live HTTP QA 38680440442 passed (40 checks, 0 issues); confirmed resume 38680501986 (`c565664`); pilot run 38680543606 published NL-H01 + PT-H01 (`3980926`), Live QA PASS in 41 s with 11 sitemap files and 27 URLs (`40ab77f`); Post-Publish Live HTTP QA 38680674431 on `40ab77f` passed (42 checks, 0 issues). Stage PILOT, clean_runs 1; the drain stopped with `QUEUE_DRAINED_OR_HELD` (no third eligible draft) |
+| WF-08 | P2 | Dashboard after live QA | STALE: the committed dashboard kept the pilot pair as PUBLISH_STAGED after the PASS was recorded (only `state.json` was committed) | DONE (workflow + test): separate best-effort step regenerates it from `main` after the live result (`tests/dashboard.test.mjs`) |
+| WF-09 | P2 | Scheduled triggers | `schedule` never fired: 0 `schedule` events in the repository's run history by 2026-10-15 04:22 UTC (Auto Publisher hourly cron since 01:28 UTC) | OPEN (GitHub side, not repository code): docs no longer rely on schedules; Writer push → Autopilot → Auto Publisher, research batch → Topic Factory, drain dispatch and operator dispatch are the working triggers |
 
 ## Owner decisions (OWNER)
 

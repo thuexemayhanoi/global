@@ -209,6 +209,29 @@ jobs:
           done
           echo "::error::Could not record the failed live QA on main"; exit 1
 
+      # The publish commit carried a dashboard that shows the pair as PUBLISH_STAGED.
+      # Regenerate it from the result now on main (PASS, pause or revert) instead of
+      # waiting for a later run. Best effort and separate: it never changes the
+      # recorded verdict, the revert or the drain decision, and never force-pushes.
+      - name: Refresh the dashboard from the recorded live QA result
+        if: ${{ !cancelled() && (steps.pub.outputs.ids != '' || steps.pub.outputs.recover != '') }}
+        continue-on-error: true
+        run: |
+          set -uo pipefail
+          for attempt in 1 2 3; do
+            git rebase --abort > /dev/null 2>&1 || true
+            git reset -q --hard
+            git fetch --no-tags origin main
+            git reset -q --hard origin/main
+            if ! node scripts/topic-factory.mjs status --markdown docs/CONTENT-FACTORY-DASHBOARD.md > /dev/null; then echo "DASHBOARD_NOT_REFRESHED"; exit 0; fi
+            if git diff --quiet -- docs/CONTENT-FACTORY-DASHBOARD.md; then echo "Dashboard already current."; exit 0; fi
+            git add docs/CONTENT-FACTORY-DASHBOARD.md
+            git commit -q -m "publish(global): dashboard after live QA"
+            if git push -q origin HEAD:main; then exit 0; fi
+            echo "push attempt $attempt failed; retrying from latest main"; sleep $((attempt*5))
+          done
+          echo "DASHBOARD_NOT_REFRESHED: main kept moving; the next publisher run regenerates it"
+
       # Drain the shared Writer queue in pairs. Each follow-up gets a fresh
       # checkout, strict QA/build/SEO/fact checks, GitHub Pages deploy and
       # live HTTP QA before *it* may enqueue another pair. No API AI model.
