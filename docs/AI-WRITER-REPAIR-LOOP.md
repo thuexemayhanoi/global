@@ -1,6 +1,6 @@
 # AI Writer self-repair — /global (W1/W2/W3)
 
-**Objective:** an active AI Writer session corrects its own QA failures without a second AI Reviewer and without asking the website owner to approve every edit. Keep the same slot, session and Writer branch. Never touch other Writers' claims, protected drafts or published content. Full operating manual: `docs/CURRENT-WORKFLOW.md`.
+**Objective:** an active AI Writer session corrects any QA repair ticket it CURRENTLY OWNS (including a ticket securely transferred from W1/W2/W3) without a second AI Reviewer. Keep your own slot, session and Writer branch. Never overwrite another Writer's original bytes, protected drafts or published content. Full operating manual: `docs/CURRENT-WORKFLOW.md`.
 
 ## Two different situations
 
@@ -19,7 +19,7 @@
    node scripts/writer-repair.mjs next  --writer W2 --session w2-live
    ```
 
-   Use your **own** slot and session; both are required, and the CLI never shows another Writer's ticket for `next`/`check`. Tickets come from `factory/publisher/report.json`, written only by the trusted publisher, and are bound to the exact source SHA-256. If the CLI says `REPAIR_REPORT_STALE` or `NO_CURRENT_TICKET`, wait for the next publisher run; never write or edit a report.
+   Use your **own** slot and session; both are required. A ticket from another Writer appears under YOUR slot only after the trusted handoff updates the centralized claims ledger and the Publisher refreshes its report. Tickets come from `factory/publisher/report.json`, written only by the trusted publisher, and are bound to the exact source SHA-256. If the CLI says `REPAIR_REPORT_STALE` or `NO_CURRENT_TICKET`, wait for the next publisher run; never write or edit a report.
 3. For `state=REPAIR`: read the submitted text at the ticket's `source_commit` and `current_source_path`, its Matrix row and the ticket's `details`. Use your own model to research and **genuinely rewrite** only what failed. For a legal/safety claim, cite a real official source in the same paragraph or remove the claim. Never invent a source, add a price, dilute safety advice, pad words, game the duplicate check or change QA thresholds.
 4. Save the corrected article at exactly the ticket's `revision_path` (r2, then r3, then r4). Keep `matrix_id`, `proposed_url`, `locale`, `writer_session` and the truthful flags. Never overwrite the submitted draft or an earlier revision.
 5. Check:
@@ -37,6 +37,6 @@
 
 - Maximum three **accepted** repairs per article (r2–r4). Then `ESCALATED_MAX_ATTEMPTS`; no endless rewrite loop.
 - `HUMAN_REVIEW_REQUIRED` (LEGAL/SAFETY/PRICE topic or money amounts) stops automated publication; a human with real evidence decides. Never forge an approval. `WAIT_PARENT` and `WAIT_STAGE` are not text problems.
-- A Writer that runs out of quota signals `PAUSED_QUOTA`; its tickets wait for the **same** session. Another agent may take a free slot but can never take over a submitted draft or its repair.
+- A Writer that runs out of quota signals `PAUSED_QUOTA`. Another active Writer with `"repair_take":true` can take over its REPAIR tickets through trusted exact-SHA claim handoff, at most 10 at once, without changing the submitted source. Ownership is serialized and audited. No handoff applies to protected drafts, published articles or WAIT_PARENT-only items.
 - A failed live deployment is an infrastructure problem: the publisher PAUSE and any rollback stay until diagnosis and a confirmed resume. Never rewrite a correct article because of a deployment or QA-tool error.
 - GitHub Actions computes QA, routing, immutable evidence and publishing; **it has no AI generation API**. Repairs happen only inside an active external AI Writer session. A truly unattended rewriting agent would need a model service, credentials and budget, which this repository deliberately does not have. Never claim otherwise.
