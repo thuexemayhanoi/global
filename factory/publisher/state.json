@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 67,
+  "clean_runs": 68,
   "published": [
     {
       "id": "NL-H01",
@@ -1850,7 +1850,8 @@
       "at": "2026-10-15T17:31:41.027Z",
       "source_sha256": "7643b9ec018b56a4b63851aecc533452d09a15e7011eecb9c200c963cec54731",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T17:34:12.704Z"
     },
     {
       "id": "EN-S11",
@@ -1860,6 +1861,29 @@
       "stage": "CONTINUOUS",
       "at": "2026-10-15T17:31:41.027Z",
       "source_sha256": "80eaab1e8aa67fb17c98fc98ca1fbe682bcbd86f4b31c7ceee24d72df4bbcc95",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T17:34:12.704Z"
+    },
+    {
+      "id": "ES-S10",
+      "locale": "es",
+      "url": "/es/guides/seguro-viaje-moto-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:34:35.047Z",
+      "source_sha256": "629d1789e01f95cf4b0f6d5857d2b568b726c088e505302fffc06514d539fdd1",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S11",
+      "locale": "fr",
+      "url": "/fr/guides/assurance-voyage-scooter/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:34:35.047Z",
+      "source_sha256": "8f70b7a63960d79590a607386482def835620a853228f7e4d057657ba12f3156",
       "review_sha256": null,
       "live_qa": "PENDING"
     }
@@ -3187,17 +3211,34 @@
         "EN-S11"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T17:34:12.704Z",
+      "ids": [
+        "DE-S10",
+        "EN-S11"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:34:35.047Z",
+      "ids": [
+        "ES-S10",
+        "FR-S11"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T17:30:20.793Z",
+    "at": "2026-10-15T17:34:12.704Z",
     "ids": [
-      "FR-S10"
+      "DE-S10",
+      "EN-S11"
     ],
-    "commit": "877ec7793bda19dcb4b76912b3aad8c7ccff70ec",
-    "live_seconds": 61
+    "commit": "697806387e479f0a5a2bfc34da2a05e05b09c378",
+    "live_seconds": 142
   },
   "queue": {
-    "APPROVED_BY_POLICY": 3
+    "APPROVED_BY_POLICY": 13
   }
 }
