@@ -1612,6 +1612,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T17:03:51.447Z"
+    },
+    {
+      "id": "JA-S12",
+      "locale": "ja",
+      "url": "/ja/guides/kanjou-1-teihaishutsu/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:04:12.070Z",
+      "source_sha256": "3bc4acb75e405ecadbd52fd963641334a05e7d74d44ca60681405fed4d08cb3a",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S12",
+      "locale": "ko",
+      "url": "/ko/guides/jeobaechul-guyeok/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:04:12.070Z",
+      "source_sha256": "78e799ae960db4108ef045e0fe4d114258a569fd5eca8264ca4da8d8ace52a42",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2771,6 +2793,14 @@
         "FR-S13"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:04:12.070Z",
+      "ids": [
+        "JA-S12",
+        "KO-S12"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2783,6 +2813,6 @@
     "live_seconds": 102
   },
   "queue": {
-    "APPROVED_BY_POLICY": 6
+    "APPROVED_BY_POLICY": 4
   }
 }
