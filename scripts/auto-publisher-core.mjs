@@ -138,23 +138,31 @@ export function contentDuplicates(packet,corpus,{fail=0.45,warn=0.3}={}){
  return hits;
 }
 export const REVIEW_CHECKS=["native_fluency","search_intent","unique_value","factual_accuracy","structure","internal_links","no_duplication","no_fabricated_business_facts"];
-/** Independent AI editorial review, bound to the exact SUBMITTED bytes. */
-export function validateReview(review,{packet,claim}){
+/** Review files are per draft hash, so a REVISE on version 1 never blocks or approves version 2. */
+export const reviewFile=(id,sha)=>"factory/editorial-reviews/"+id+"."+String(sha||"").slice(0,12)+".json";
+export const REVIEW_FILE=/^([A-Z]{2}-[HS]\d{2,4})\.([0-9a-f]{12})\.json$/;
+/** Independent AI editorial review record (PASS, REVISE or FAIL), bound to exact draft bytes. */
+export function validateReview(review,{packet,claim,knownShas=null}){
  const e=[];
  if(review?.version!==1||review?.purpose!=="EDITORIAL_REVIEW")e.push("Review must be version 1, purpose EDITORIAL_REVIEW");
  if(review?.matrix_id!==packet.matrix_id)e.push("Review is for another article");
- if(!HEX64.test(review?.source_sha256||"")||review.source_sha256!==claim?.source_sha256)e.push("Review hash does not match the immutable SUBMITTED draft");
+ const shas=knownShas||new Set([claim?.source_sha256]);
+ if(!HEX64.test(review?.source_sha256||"")||!shas.has(review.source_sha256))e.push("Review hash does not match the immutable SUBMITTED draft");
  const r=review?.reviewer||{};
  if(typeof r.agent!=="string"||!r.agent.trim()||!/^[A-Za-z0-9_-]{3,80}$/.test(r.session||""))e.push("Reviewer agent and session required");
  if(r.session&&(r.session===packet.writer_session||r.session===claim?.session))e.push("Reviewer must be independent of the writing session");
  if(r.human===true)e.push("Automated reviews must not claim to be human");
  if(!DATE.test(review?.reviewed_on||""))e.push("reviewed_on must be YYYY-MM-DD");
- for(const k of REVIEW_CHECKS)if(review?.checks?.[k]!=="PASS")e.push("Review check "+k+" is not PASS");
- if(review?.verdict!=="PASS")e.push("Review verdict is not PASS");
+ if(!["PASS","REVISE","FAIL"].includes(review?.verdict))e.push("Review verdict must be PASS, REVISE or FAIL");
+ for(const k of REVIEW_CHECKS)if(!["PASS","FAIL"].includes(review?.checks?.[k]))e.push("Review check "+k+" must be PASS or FAIL");
+ if(review?.verdict==="PASS"&&REVIEW_CHECKS.some(k=>review?.checks?.[k]!=="PASS"))e.push("A PASS verdict needs every check PASS");
+ if(review?.issues!==undefined&&(!Array.isArray(review.issues)||review.issues.some(x=>typeof x!=="string")))e.push("issues must be a list of strings");
+ if(review?.verdict!=="PASS"&&!(review?.issues||[]).length)e.push("REVISE/FAIL reviews must list the issues to fix");
  if(String(review?.notes||"").trim().length<80)e.push("Review notes need ≥80 chars of concrete findings");
  if(!Array.isArray(review?.sources_checked)||review.sources_checked.length<1)e.push("List the sources the reviewer actually checked");
  return e;
 }
+export const reviewApproves=r=>r?.verdict==="PASS"&&REVIEW_CHECKS.every(k=>r?.checks?.[k]==="PASS");
 /**
  * Pure eligibility decision. `ctx`: {packet, claim, row, matrix, locales, policy, standing,
  * protectedIds:Set, corpus:[{id,locale,kind,body_markdown|shingles}], review, state}
@@ -185,9 +193,10 @@ export function eligibility(ctx){
  const t=policy?.duplicates||{};
  const dups=contentDuplicates(packet,corpus,{fail:t.draft_shingle_fail??0.45,warn:t.draft_shingle_warn??0.3});
  add("G5_CONTENT_DUPLICATES",!dups.some(d=>d.level==="FAIL"),dups.map(d=>d.kind+":"+d.with+"="+d.score).join(", "));
- // G6 independent AI editorial review
+ // G6 independent AI editorial review of exactly this draft version
  const rv=review?validateReview(review,{packet,claim}):["No independent editorial review recorded"];
- add("G6_INDEPENDENT_REVIEW",rv.length===0,rv.join("; "));
+ const approved=!rv.length&&reviewApproves(review);
+ add("G6_INDEPENDENT_REVIEW",approved,rv.length?rv.join("; "):approved?"":"Reviewer verdict "+review.verdict+": "+(review.issues||[]).slice(0,4).join(" | "));
  // G7 stage caps
  const stage=state.stage||"PILOT",caps=standing?.publication?.stages||{},cap=caps[stage]?.max_per_locale??2;
  const done=(state.published||[]).filter(p=>p.locale===packet.locale).length;
@@ -198,7 +207,7 @@ export function eligibility(ctx){
  else if(failed.includes("G2_NEW_URL")||failed.includes("G2_IMMUTABLE_SOURCE")||failed.includes("G2_NOT_PROTECTED"))decision="BLOCKED";
  else if(failed.some(g=>g.startsWith("G3_")))decision="REVIEW_REQUIRED";
  else if(failed.includes("G2_PARENT_PUBLISHED"))decision="WAIT_PARENT";
- else if(failed.includes("G6_INDEPENDENT_REVIEW"))decision="WAIT_REVIEW";
+ else if(failed.includes("G6_INDEPENDENT_REVIEW"))decision=!review||rv.length?"WAIT_REVIEW":review.verdict==="FAIL"?"REJECTED_BY_REVIEW":"REVISION_REQUESTED";
  else if(failed.includes("G7_STAGE_CAP"))decision="WAIT_STAGE";
  return {id:packet.matrix_id,locale:packet.locale,role:row?.role,decision,failed,gates,classification:cls,editorial:ed,duplicates:dups,words:qa.words};
 }

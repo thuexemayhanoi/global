@@ -47,6 +47,9 @@ export function validatePool(matrix,ledger,protectedData){
    if(c.status!=="SUBMITTED"||!/^[0-9a-f]{64}$/.test(c.source_sha256||"")||
       !/^[0-9a-f]{40}$/.test(c.source_commit||""))errors.push("Invalid immutable submitted draft evidence "+c.id);
   }
+  // A REVISE/FAIL review can lead to a new version in inbox/<W>/revisions/<ID>.r<N>.json; history keeps every earlier hash.
+  if(c.source_path!==undefined&&(c.status!=="SUBMITTED"||!new RegExp("^factory/external-writers/inbox/"+c.writer+"/revisions/"+c.id+"\\.r\\d+\\.json$").test(c.source_path||"")))errors.push("Invalid revision source path "+c.id);
+  if(c.revisions!==undefined&&(c.status!=="SUBMITTED"||!Array.isArray(c.revisions)||c.revisions.some(v=>!/^[0-9a-f]{64}$/.test(v?.source_sha256||"")||!/^[0-9a-f]{40}$/.test(v?.source_commit||""))))errors.push("Invalid revision history "+c.id);
   if(c.status!=="RELEASED"){
    if(active.has(c.id))errors.push("Duplicate live claim "+c.id);
    if(reserved.has(c.id))errors.push("Claim overlaps protected existing draft "+c.id);

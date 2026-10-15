@@ -17,7 +17,7 @@ import {createHash} from "node:crypto";
 import {execFileSync,spawnSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
 import {articlePath,STANDING_POLICY_PATH} from "./articles.mjs";
-import {eligibility,validateReview,shingles,publicationRecord,nextStage} from "./auto-publisher-core.mjs";
+import {eligibility,validateReview,shingles,publicationRecord,nextStage,reviewFile,REVIEW_FILE} from "./auto-publisher-core.mjs";
 import {readLocalSitemapInventory,parseSitemapIndex,parseSitemapUrlset} from "./sitemaps.mjs";
 import {inspectHTML} from "./seo/post-publish-qa.mjs";
 
@@ -58,7 +58,7 @@ function loadDraft(claim,fetched){
   if(!fetched.has(claim.branch)){fetched.add(claim.branch);gitOk("fetch","--no-tags","-q","origin","refs/heads/"+claim.branch+":refs/remotes/origin/"+claim.branch);}
   if(!gitOk("cat-file","-e",claim.source_commit+"^{commit}"))gitOk("fetch","--no-tags","-q","origin",claim.source_commit);
  }
- const file="factory/external-writers/inbox/"+claim.writer+"/"+claim.id+".json";
+ const file=claim.source_path||"factory/external-writers/inbox/"+claim.writer+"/"+claim.id+".json";
  let raw;try{raw=git("show",claim.source_commit+":"+file);}catch{return {error:"Draft not reachable at "+claim.source_commit.slice(0,12)};}
  if(sha256(raw)!==claim.source_sha256)return {error:"SHA-256 mismatch with ledger"};
  try{return {packet:JSON.parse(raw),raw};}catch{return {error:"Malformed JSON"};}
@@ -78,7 +78,7 @@ function evaluate(c){
  const results=[];
  for(const d of drafts){
   if(d.error){results.push({id:d.claim.id,decision:"BLOCKED",failed:["SOURCE"],gates:[{gate:"SOURCE",passed:false,detail:d.error}]});continue;}
-  const reviewPath=REVIEWS+"/"+d.claim.id+".json";
+  const reviewPath=reviewFile(d.claim.id,d.claim.source_sha256);
   const review=optional(reviewPath,null);
   const r=eligibility({packet:d.packet,claim:d.claim,row:d.row,matrix:c.matrix,locales:c.locales,policy:c.policy,standing:c.standing,
    protectedIds:c.protectedIds,corpus,review,state:c.state});
@@ -231,13 +231,17 @@ function cmdControl(cmd,o){
 }
 function reviewIssues(file,raw,c){
  let r;try{r=JSON.parse(raw);}catch{return ["Malformed JSON"];}
- const id=path.basename(file,".json"),claim=c.ledger.claims.find(x=>x.id===id&&x.status==="SUBMITTED");
- if(!claim)return ["No SUBMITTED claim for "+id];
- return validateReview(r,{packet:{matrix_id:id,writer_session:claim.session},claim});
+ const m=path.basename(file).match(REVIEW_FILE);
+ if(!m)return ["Review file must be <ID>.<first 12 hex of draft SHA-256>.json"];
+ const claim=c.ledger.claims.find(x=>x.id===m[1]&&x.status==="SUBMITTED");
+ if(!claim)return ["No SUBMITTED claim for "+m[1]];
+ const known=new Set([claim.source_sha256,...(claim.revisions||[]).map(v=>v.source_sha256)]);
+ if(!String(r?.source_sha256||"").startsWith(m[2]))return ["File name hash prefix differs from source_sha256"];
+ return validateReview(r,{packet:{matrix_id:m[1],writer_session:claim.session},claim,knownShas:known});
 }
 function cmdValidateReviews(o){
  const c=context(),dir=o.dir||REVIEWS,abs=path.join(ROOT,dir);
- const files=fs.existsSync(abs)?fs.readdirSync(abs).filter(f=>/^[A-Z]{2}-[HS]\d{2,4}\.json$/.test(f)):[];
+ const files=fs.existsSync(abs)?fs.readdirSync(abs).filter(f=>f.endsWith(".json")):[];
  const res=files.map(f=>({file:dir+"/"+f,issues:reviewIssues(f,fs.readFileSync(path.join(abs,f),"utf8"),c)}));
  console.log(JSON.stringify({mode:"READ_ONLY",reviews:res.length,results:res},null,2));
  if(res.some(r=>r.issues.length))process.exitCode=1;
@@ -247,7 +251,7 @@ function cmdIngestReviews(o){
  if(!/^review\/[A-Za-z0-9_-]+$/.test(o.branch||"")||!/^[0-9a-f]{40}$/.test(o.sha||""))throw Error("Expected review/<name> branch and 40-char SHA");
  git("fetch","--no-tags","origin","refs/heads/"+o.branch+":refs/remotes/origin/"+o.branch);
  if(git("rev-parse","refs/remotes/origin/"+o.branch).trim()!==o.sha){console.log("REVIEW_STALE_RUN_SKIP");return;}
- const c=context(),names=git("ls-tree","-r","--name-only",o.sha,"--",REVIEWS+"/").split("\n").filter(f=>/\/[A-Z]{2}-[HS]\d{2,4}\.json$/.test(f));
+ const c=context(),names=git("ls-tree","-r","--name-only",o.sha,"--",REVIEWS+"/").split("\n").filter(f=>REVIEW_FILE.test(path.basename(f)));
  for(const f of names){
   const raw=git("show",o.sha+":"+f),issues=reviewIssues(path.basename(f),raw,c);
   if(issues.length){console.log("REVIEW_REJECTED "+f+": "+issues.join("; "));continue;}

@@ -51,9 +51,22 @@ node --test tests/auto-publisher.test.mjs
 - **Revision queue:** `factory/publisher/report.json` lists every failed gate per draft, so writers and reviewers know what to fix.
 - **Rollback:** after a live failure the workflow reverts the publish commit and pauses. To reverse a publication manually, revert its `publish(global): …` commit and freeze-registry entry in a reviewed PR. Publication never deletes or redirects URLs on its own.
 
+## Revision loop (rejected drafts go back to the writer)
+
+- A review can say `PASS`, `REVISE` or `FAIL`.
+  - `REVISE` sets the decision to **REVISION_REQUESTED**.
+  - `FAIL` sets it to **REJECTED_BY_REVIEW**.
+  - Both are recorded as feedback and show up in `factory/publisher/report.json`.
+- The draft's writer session fixes the issues in a **new file**: `factory/external-writers/inbox/<W>/revisions/<ID>.r2.json` (then `.r3`, and so on). The original stays byte-identical.
+- A revision-only push sets `"claim_new": false` in the request file so no new topics are claimed.
+- After green Writer QA, the Autopilot verifies the revision against main and checks that a REVISE/FAIL review exists for the current hash. It then:
+  - moves the old hash into the claim's `revisions` history;
+  - points the claim at the new file and hash (`phase: REVISED_AWAITING_REVIEW`).
+- The new version needs its **own** independent review. Review files are per draft hash, `<ID>.<first 12 hex of SHA-256>.json`, so an earlier verdict can never approve a later version.
+
 ## Independent review intake
 
-Review agents push `factory/editorial-reviews/<ID>.json` on a `review/<agent>-<session>` branch. Editorial Review QA validates the file, then the publisher ingests it as data on its next run. The first accepted review for a draft hash is kept and never overwritten.
+Review agents push `factory/editorial-reviews/<ID>.<sha12>.json` on a `review/<agent>-<session>` branch. Editorial Review QA validates the file, then the publisher ingests it as data on its next run. The first accepted review for a draft hash is kept and never overwritten.
 
 ```json
 {
@@ -63,7 +76,8 @@ Review agents push `factory/editorial-reviews/<ID>.json` on a `review/<agent>-<s
   "reviewed_on": "2026-10-15",
   "checks": {"native_fluency": "PASS", "search_intent": "PASS", "unique_value": "PASS", "factual_accuracy": "PASS",
              "structure": "PASS", "internal_links": "PASS", "no_duplication": "PASS", "no_fabricated_business_facts": "PASS"},
-  "verdict": "PASS",
+  "verdict": "PASS | REVISE | FAIL",
+  "issues": ["required when REVISE/FAIL"],
   "sources_checked": ["https://…"],
   "notes": "≥80 chars of concrete findings"
 }
