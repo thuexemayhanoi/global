@@ -1012,6 +1012,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T10:14:19.900Z"
+    },
+    {
+      "id": "KO-S09",
+      "locale": "ko",
+      "url": "/ko/guides/gukje-myeonheo/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T10:14:36.826Z",
+      "source_sha256": "d0fad902a7c51658ec98d739ad92ff9244cb773f388a3f79c4523445fb5b2eb7",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "NL-S09",
+      "locale": "nl",
+      "url": "/nl/guides/internationaal-rijbewijs/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T10:14:36.826Z",
+      "source_sha256": "682e3bf18e2965c307a1e255d0c922db297ab9f0665cc3f7e64ff2da76a0f38a",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1747,6 +1769,14 @@
         "JA-S09"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T10:14:36.826Z",
+      "ids": [
+        "KO-S09",
+        "NL-S09"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1760,7 +1790,7 @@
   },
   "queue": {
     "WAIT_PARENT": 30,
-    "APPROVED_BY_POLICY": 5,
+    "APPROVED_BY_POLICY": 3,
     "REJECTED": 11
   }
 }
