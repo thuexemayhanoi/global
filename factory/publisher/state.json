@@ -2608,17 +2608,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:39:05.034Z"
+    },
+    {
+      "id": "DE-S39",
+      "locale": "de",
+      "url": "/de/guides/hupen-in-vietnam-regeln/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:41:14.794Z",
+      "source_sha256": "fe3c36eb327e09da0efd00cfcd13404e432f19233376a1b53999729c7df94b84",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S40",
+      "locale": "de",
+      "url": "/de/guides/vorfahrt-kreuzung-kreisverkehr-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:41:14.794Z",
+      "source_sha256": "658500f8d69c80bf1264155e1e4f9be9af299fb80a8d21b230f7da78568696d2",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:26:03.344Z",
-      "ids": [
-        "ES-H04",
-        "NL-H04"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T09:27:10.818Z",
       "ids": [
@@ -4196,6 +4210,14 @@
         "EN-S29"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:41:14.794Z",
+      "ids": [
+        "DE-S39",
+        "DE-S40"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4207,5 +4229,7 @@
     "commit": "bac43f9ea37d9101f4f8bbdb7cfb737ff6a03c92",
     "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 3
+  }
 }
