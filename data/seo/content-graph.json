@@ -46,35 +46,19 @@
     "entities": 42,
     "edges": 1406,
     "actions": {
-      "KEEP": 51,
+      "KEEP": 54,
       "UPGRADE": 19,
-      "CREATE": 278,
-      "REVIEW": 3
+      "CREATE": 278
     },
     "silo_actions": {
       "CREATE": 150,
-      "KEEP": 22,
-      "UPGRADE": 11,
+      "KEEP": 23,
+      "UPGRADE": 10,
       "GAP": 147
     },
-    "review_pairs": 2
+    "review_pairs": 0
   },
-  "review_pairs": [
-    {
-      "a": "VI-H03",
-      "b": "VI-S04",
-      "score": 0.55,
-      "level": "HIGH",
-      "basis": "published_content"
-    },
-    {
-      "a": "VI-H02",
-      "b": "VI-H03",
-      "score": 0.52,
-      "level": "HIGH",
-      "basis": "published_content"
-    }
-  ],
+  "review_pairs": [],
   "nodes": [
     {
       "id": "ROOT",
@@ -252,14 +236,14 @@
       "qa_status": "PUBLISHED_HTML_EXISTS_REQUIRES_CONTENT_REVIEW",
       "source_verification": "NOT_STARTED",
       "serp_evidence": "NOT_VALIDATED",
-      "cannibalization_risk": "REVIEW_STRUCTURAL_OVERLAP",
+      "cannibalization_risk": "PARENT_CHILD_EXPECTED",
       "internal_link_targets_published": ["/vi/", "/vi/checklist/"],
       "writer_lane": "W2",
       "implementation_priority": "P1",
       "priority_value": 12,
       "level": "HUB",
       "pipeline_state": "PUBLISHED",
-      "action": "REVIEW",
+      "action": "KEEP",
       "action_reasons": ["Meets depth and linking targets"],
       "silo": null,
       "journey_stage": "consideration",
@@ -282,7 +266,7 @@
         "inbound_pages": 5,
         "inbound_contextual": 5,
         "outbound_contextual": 7,
-        "max_content_overlap": 0.52
+        "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
     },
@@ -302,14 +286,14 @@
       "qa_status": "PUBLISHED_HTML_EXISTS_REQUIRES_CONTENT_REVIEW",
       "source_verification": "NOT_STARTED",
       "serp_evidence": "NOT_VALIDATED",
-      "cannibalization_risk": "REVIEW_STRUCTURAL_OVERLAP",
+      "cannibalization_risk": "NONE_DETECTED_STRUCTURAL",
       "internal_link_targets_published": ["/vi/", "/vi/checklist/"],
       "writer_lane": "W3",
       "implementation_priority": "P1",
       "priority_value": 14,
       "level": "HUB",
       "pipeline_state": "PUBLISHED",
-      "action": "REVIEW",
+      "action": "KEEP",
       "action_reasons": ["Meets depth and linking targets"],
       "silo": null,
       "journey_stage": "decision",
@@ -324,7 +308,7 @@
         "inbound_pages": 5,
         "inbound_contextual": 3,
         "outbound_contextual": 5,
-        "max_content_overlap": 0.55
+        "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
     },
@@ -488,14 +472,14 @@
       "qa_status": "PUBLISHED_HTML_EXISTS_REQUIRES_CONTENT_REVIEW",
       "source_verification": "NOT_STARTED",
       "serp_evidence": "NOT_VALIDATED",
-      "cannibalization_risk": "REVIEW_STRUCTURAL_OVERLAP",
+      "cannibalization_risk": "NOTED_STRUCTURAL_OVERLAP",
       "internal_link_targets_published": ["/vi/", "/vi/checklist/", "/vi/topics/chi-phi-thue-xe/"],
       "writer_lane": "W2",
       "implementation_priority": "P1",
       "priority_value": 33,
       "level": "SUPPORT",
       "pipeline_state": "PUBLISHED",
-      "action": "REVIEW",
+      "action": "KEEP",
       "action_reasons": ["Meets depth and linking targets"],
       "silo": "rc-deposit",
       "journey_stage": "decision",
@@ -518,7 +502,7 @@
         "inbound_pages": 5,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
-        "max_content_overlap": 0.55
+        "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
     },
@@ -10896,7 +10880,7 @@
         "planned": ["VI-S16"],
         "candidates": []
       },
-      "action": "UPGRADE"
+      "action": "KEEP"
     },
     {
       "id": "VI-rc-extras",

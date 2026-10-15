@@ -487,15 +487,18 @@ await scenario("rehearsal against the REAL Topic Factory ingest: pushed batches 
  const c2=expectSaved(env.cli(w,cmd("commit",ids,"--draft",env.draft(w,"b2",enTopics(10,10)))));
  // The Factory's job, run for real on a clone of main (trusted-workflow env), then committed to main like the workflow does.
  const f=env.clone("factory");
+ // main may already hold real ingested batches; only the entries this run appends are ours.
+ const logPath=path.join(f,"data/seo/topic-factory/research-log.json");
+ const before=fs.existsSync(logPath)?JSON.parse(fs.readFileSync(logPath,"utf8")).batches.length:0;
  const run=spawnSync(process.execPath,["scripts/topic-factory.mjs","ingest","--branch",ids.branch,"--sha",c2.sha],{cwd:f,encoding:"utf8",
   env:gitEnv({GITHUB_ACTIONS:"true",GITHUB_WORKFLOW:"Global Topic Factory"})});
  assert.equal(run.status,0,run.stdout+run.stderr);
  assert.match(run.stdout,/INGESTED factory\/topic-research\/batches\/claude-t1-0001\.json added=10 rejected=0/);
  assert.match(run.stdout,/INGESTED factory\/topic-research\/batches\/claude-t1-0002\.json added=10 rejected=0/);
- const log=JSON.parse(fs.readFileSync(path.join(f,"data/seo/topic-factory/research-log.json"),"utf8"));
- assert.equal(log.batches.length,2);
+ const log=JSON.parse(fs.readFileSync(logPath,"utf8"));
+ assert.equal(log.batches.length,before+2);
  assert.ok(log.batches.every(b=>b.file.startsWith("factory/topic-research/batches/")),"only batch files reach the intake; the checkpoint never does");
- assert.deepEqual(log.batches.map(b=>b.sha256),[sha256(env.remoteFile(ids.branch,batchFile(ids,1))),sha256(env.remoteFile(ids.branch,batchFile(ids,2)))]);
+ assert.deepEqual(log.batches.slice(before).map(b=>b.sha256),[sha256(env.remoteFile(ids.branch,batchFile(ids,1))),sha256(env.remoteFile(ids.branch,batchFile(ids,2)))]);
  git(f,["add","-A","data/seo"]);git(f,["commit","-q","-m","factory(global): research intake"]);git(f,["push","-q","origin","HEAD:main"]);
  // The Matrix, claims and URLs were not touched by the intake of research-only/proposed topics.
  assert.equal(git(f,["diff","--name-only","HEAD~1","--","data/seo/master-matrix.json","factory/external-writers"]),"");

@@ -92,8 +92,11 @@ test("refill selects at most 50 gate-clean PROPOSED candidates round-robin by lo
   assert.equal(p.status,"PROPOSED");
   assert.notEqual(p.search_intent,"transactional");
  }
- const perLocale=Object.values(sel.locales).map(l=>l.selected);
- assert.ok(Math.max(...perLocale)-Math.min(...perLocale)<=1,"round robin keeps locales balanced");
+ // Round robin over live data: a locale stays within one of the busiest one unless its own queue
+ // (its eligible PROPOSED topics, capped by its refill need) ran out first, which real data does.
+ const most=Math.max(...Object.values(sel.locales).map(l=>l.selected));
+ for(const [code,l] of Object.entries(sel.locales))
+  assert.ok(l.selected>=most-1||l.selected===Math.min(l.eligible,l.need),"round robin keeps "+code+" balanced unless its queue ran out");
  // A copy of an existing Matrix query and a transactional twin are rejected, not promoted.
  const fake=structuredClone(map),L=fake.locales.en;
  const base=L.proposals.find(p=>p.status==="PROPOSED");

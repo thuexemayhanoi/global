@@ -33,9 +33,13 @@ function words(text,locale){
  if(CJK.has(locale))return [...new Intl.Segmenter(locale,{granularity:"word"}).segment(text)].filter(w=>w.isWordLike).length;
  return text.split(/\s+/u).filter(Boolean).length;
 }
-function contentTokens(text,locale){
+export function contentTokens(text,locale){
  const t=q(text);
  if(CJK.has(locale)){const c=[...t.replace(/[\s\p{P}]/gu,"")],out=new Set();for(let i=0;i<c.length-1;i++)out.add(c[i]+c[i+1]);return out;}
+ // Vietnamese is written one syllable per token and most words are two-syllable compounds, so single
+ // syllables behave like sub-word units: any two related Vietnamese pages share most of them. Compare
+ // syllable pairs instead, as CJK compares character pairs.
+ if(locale==="vi"){const w=t.split(/[^\p{L}\p{N}]+/u).filter(Boolean),out=new Set();for(let i=0;i<w.length-1;i++)out.add(w[i]+" "+w[i+1]);return out;}
  return new Set(t.split(/[^\p{L}\p{N}]+/u).filter(x=>x.length>2));
 }
 const mainOf=html=>(html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)||[,""])[1];
@@ -242,7 +246,7 @@ export function renderReport(graph){
  row("Matrix rows ("+graph.nodes.length+")",graph.nodes);row("Topical candidates ("+graph.candidates.length+")",graph.candidates);row("Silos ("+graph.silos.length+")",graph.silos);
  out.push("","Knowledge graph: "+graph.counts.entities+" entities, "+graph.counts.edges+" typed edges ("+Object.entries(graph.edges.reduce((o,e)=>(o[e[1]]=(o[e[1]]||0)+1,o),{})).map(([k,v])=>k+" "+v).join(", ")+").","");
  out.push("## REVIEW — competing intents","");
- if(!graph.review_pairs.length)out.push("No unjustified high-overlap pair across "+graph.nodes.length+" Matrix rows and "+graph.candidates.length+" candidates (query similarity ≥ "+graph.thresholds.overlap_review+", or ≥ "+graph.thresholds.overlap_review_same_silo_intent+" within the same silo and intent; published text Jaccard ≥ "+graph.thresholds.content_overlap_review+"). Parent/child Hub overlaps are expected and justified pairs carry a written `distinct_from` reason.");
+ if(!graph.review_pairs.length)out.push("No unjustified high-overlap pair across "+graph.nodes.length+" Matrix rows and "+graph.candidates.length+" candidates (query similarity ≥ "+graph.thresholds.overlap_review+", or ≥ "+graph.thresholds.overlap_review_same_silo_intent+" within the same silo and intent; published text Jaccard ≥ "+graph.thresholds.content_overlap_review+", over syllable pairs in Vietnamese and character pairs in Chinese, Japanese and Korean). Parent/child Hub overlaps are expected and justified pairs carry a written `distinct_from` reason.");
  else{out.push(graph.counts.review_pairs+" pair(s); showing up to "+graph.review_pairs.length+".","","| A | B | Score | Basis |","|---|---|---|---|");for(const r of graph.review_pairs)out.push("| "+r.a+" | "+r.b+" | "+r.score+" | "+r.basis+" |");}
  out.push("","## UPGRADE — live pages below targets","","| ID | URL | Words | H2 | FAQ | Inbound pages | Reasons |","|---|---|---|---|---|---|---|");
  for(const n of graph.nodes.filter(n=>n.action==="UPGRADE"))out.push("| "+n.id+" | "+n.published_url+" | "+n.content_metrics.words+" | "+n.content_metrics.h2+" | "+n.content_metrics.faq+" | "+n.content_metrics.inbound_pages+" | "+n.action_reasons.join("; ")+" |");

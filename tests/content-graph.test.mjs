@@ -4,8 +4,20 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import {spawnSync} from "node:child_process";
-import {buildGraph,renderReport,stringify,GRAPH_PATH,REPORT_PATH} from "../scripts/seo/content-graph.mjs";
+import {buildGraph,renderReport,stringify,contentTokens,THRESHOLDS,GRAPH_PATH,REPORT_PATH} from "../scripts/seo/content-graph.mjs";
 const {graph,errors}=buildGraph(process.cwd());
+const jaccard=(a,b)=>{let i=0;for(const x of a)if(b.has(x))i++;return i/(a.size+b.size-i);};
+
+test("Vietnamese text is compared by syllable pairs: related pages stay apart, a near copy is still REVIEW",()=>{
+ const costs="Giá thuê xe máy ở Hà Nội phụ thuộc vào loại xe, số ngày thuê và mùa du lịch. Xe số thường rẻ hơn xe tay ga, còn thuê theo tuần hoặc theo tháng thường được giảm giá. Bạn nên hỏi rõ tiền đặt cọc, phí giao xe và chi phí xăng trước khi nhận xe từ cửa hàng, rồi ghi tất cả vào hợp đồng thuê xe.";
+ const papers="Khi thuê xe máy ở Hà Nội, bạn cần mang theo giấy phép lái xe phù hợp với dung tích xe, hộ chiếu hoặc căn cước và hợp đồng thuê xe có chữ ký của cửa hàng. Hãy kiểm tra giấy đăng ký xe và bảo hiểm bắt buộc trước khi nhận xe, rồi chụp ảnh tình trạng xe khi giao và khi trả.";
+ const nearCopy=costs.replace("mùa du lịch","dịp lễ tết").replace("chi phí xăng","tiền xăng");
+ const vi=s=>contentTokens(s,"vi");
+ assert.ok([...vi(costs)].every(t=>t.split(" ").length===2),"Vietnamese tokens are syllable pairs");
+ assert.ok(jaccard(vi(costs),vi(papers))<THRESHOLDS.content_overlap_review,"two related but different pages are not a content duplicate");
+ assert.ok(jaccard(vi(costs),vi(nearCopy))>=THRESHOLDS.content_overlap_review,"a near copy still reaches the REVIEW threshold");
+ assert.ok([...contentTokens("Renting a scooter in Hanoi","en")].every(t=>!t.includes(" ")),"other alphabetic locales keep single words");
+});
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const copyRepo=()=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),"global-graph-"));
