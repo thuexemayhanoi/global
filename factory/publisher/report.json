@@ -3,8 +3,8 @@
   "ledger_revision": 78,
   "stage": "CONTINUOUS",
   "counts": {
-    "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 23,
+    "WAIT_PARENT": 32,
+    "APPROVED_BY_POLICY": 25,
     "REJECTED": 11
   },
   "items": [
@@ -190,33 +190,25 @@
     },
     {
       "id": "DE-S03",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "ed4e371d738c2981e732aaa9ceb5f23b0477f185b949b2992fdab29974400955",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: DE-H02 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "KO-S03",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "ac8b44aceda9dbb9635f0c5d71760ea732b5ff60ecd04d3f42d2a100344cbb50",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: KO-H02 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "NL-S03",
@@ -235,33 +227,25 @@
     },
     {
       "id": "DE-S04",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
       "source_sha256": "4bb1711de4153223f1ebf97c8b4121cc045f89ace3419ee5c5db90177cb69624",
       "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": [
-        "G2_PARENT_PUBLISHED: DE-H02 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "KO-S04",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "e250b879b50c95395ab1409ecbdcfc44b40a4b093b4953103a938e5250273c71",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: KO-H02 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "NL-S04",
@@ -769,17 +753,6 @@
       "details": []
     },
     {
-      "id": "DE-H02",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "9d55a5a709a01bbc2e0ccb367b7cdb83a66a840a047e657d710b9675400ea4e1",
-      "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
-      "details": []
-    },
-    {
       "id": "EN-H03",
       "decision": "REJECTED",
       "failed": [
@@ -876,17 +849,6 @@
         "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
         "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: ベトナムでは運転者も同乗者もヘルメット着用が義務で、顎紐を締めなければならない。2024年12月に公布された議定168/2024/NĐ-CPは2025年1月1日から効力を持ち、ヘルメット不着用や紐未締めの罰金は40万~60万ベトナムドンと、旧基準から大きく引き上げられた。この経緯"
       ]
-    },
-    {
-      "id": "KO-H02",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "5dbe6e575e40cdea16f25bd68374a7920d607ed4a221141edbab1abc76a26539",
-      "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
-      "details": []
     },
     {
       "id": "NL-H02",

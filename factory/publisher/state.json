@@ -724,6 +724,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:55:14.589Z"
+    },
+    {
+      "id": "NL-H02",
+      "locale": "nl",
+      "url": "/nl/topics/huurprijs-en-borg/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:55:31.140Z",
+      "source_sha256": "68c68f2af954ae518e88fb34f62d4d014da501ee03734cee5df72f0c050cecc3",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S03",
+      "locale": "de",
+      "url": "/de/guides/tages-wochen-monatsmiete/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:55:31.140Z",
+      "source_sha256": "ed4e371d738c2981e732aaa9ceb5f23b0477f185b949b2992fdab29974400955",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1267,6 +1289,14 @@
         "KO-H02"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:55:31.140Z",
+      "ids": [
+        "NL-H02",
+        "DE-S03"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1279,8 +1309,8 @@
     "live_seconds": 61
   },
   "queue": {
-    "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 23,
+    "WAIT_PARENT": 32,
+    "APPROVED_BY_POLICY": 25,
     "REJECTED": 11
   }
 }
