@@ -4264,17 +4264,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T22:50:41.150Z"
+    },
+    {
+      "id": "FR-S36",
+      "locale": "fr",
+      "url": "/fr/guides/se-garer-en-scooter-a-hanoi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:51:02.759Z",
+      "source_sha256": "9b59d2404365d4197f59db504cf68398696b73023d588b649f07413dc5fafcab",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T17:55:33.123Z",
-      "ids": [
-        "KO-S15",
-        "ZH-S16"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T17:57:02.932Z",
       "ids": [
@@ -5820,6 +5823,13 @@
         "FR-S35"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T22:51:02.759Z",
+      "ids": [
+        "FR-S36"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -5832,6 +5842,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 3
+    "APPROVED_BY_POLICY": 1
   }
 }
