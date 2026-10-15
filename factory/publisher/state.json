@@ -2668,17 +2668,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:49:06.401Z"
+    },
+    {
+      "id": "DE-S41",
+      "locale": "de",
+      "url": "/de/guides/roller-autobahn-vietnam-verboten/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:00:19.332Z",
+      "source_sha256": "01cd82fa9491912dff72080ddbfedad68207f00ea55328ce85246a339092dfb9",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S42",
+      "locale": "de",
+      "url": "/de/guides/wie-viele-personen-auf-dem-roller-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:00:19.332Z",
+      "source_sha256": "0cda8e29906e3b84964103b7df7a44761a5f1c7800c522e07a96b36c100ba592",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:30:19.821Z",
-      "ids": [
-        "ES-S02",
-        "KO-S02"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T09:31:48.543Z",
       "ids": [
@@ -4254,6 +4268,14 @@
         "EN-S33"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T19:00:19.332Z",
+      "ids": [
+        "DE-S41",
+        "DE-S42"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4266,6 +4288,6 @@
     "live_seconds": 102
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 5
   }
 }
