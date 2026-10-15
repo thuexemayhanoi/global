@@ -1,30 +1,30 @@
 {
   "version": 1,
-  "revision": 1,
+  "revision": 4,
   "slots": {
     "W1": {
-      "state": "AVAILABLE",
-      "session": null,
-      "branch": null,
+      "state": "ACTIVE",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
       "agent": null,
       "reason": null,
-      "updated_at": null
+      "updated_at": "2026-10-15T04:51:22.493Z"
     },
     "W2": {
-      "state": "OFFLINE",
+      "state": "ACTIVE",
       "session": "w2-live",
       "branch": "writer/w2-live",
       "agent": "claude",
-      "reason": "Owner P0 override on 2026-10-15 stopped W2 article writing in this session; branch checkpoint intact",
-      "updated_at": "2026-10-15T01:20:37.246Z"
+      "reason": "Owner-directed 2026-10-15: w2-live resumed for QA repair tickets only; no new claims",
+      "updated_at": "2026-10-15T07:53:51.173Z"
     },
     "W3": {
-      "state": "AVAILABLE",
-      "session": null,
-      "branch": null,
+      "state": "ACTIVE",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
       "agent": null,
-      "reason": null,
-      "updated_at": null
+      "reason": "Owner-directed continuation of the existing W3 session for backlog repair only",
+      "updated_at": "2026-10-15T04:43:00.350Z"
     }
   }
 }

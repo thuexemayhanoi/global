@@ -34,7 +34,7 @@ export function loadReference(root=ROOT){
 const fold=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/đ/g,"d").replace(/Đ/g,"D").normalize("NFKC").toLowerCase();
 const MULT_WORDS="(?:(?:nghìn|ngàn|triệu|tr|millionen|millions|million|millones|millón|miljoen|milhões|milhão|mio\\.?|k)(?![\\p{L}])|百万|万|만|千)";
 const VND_UNIT="(?:vnd|vnđ|₫|đồng|đ(?![a-zà-ỹ])|dong(?![a-z])|ベトナムドン|ドン|越南盾|盾|동)";
-const FOREIGN_UNIT="(?:usd|us\\$|\\$|eur(?:o|os)?(?![a-z])|€|円|yen|¥|人民币|元|rmb|원|krw|won(?![a-z]))";
+const FOREIGN_UNIT="(?:usd|us\\$|\\$|eur(?:o|os)?(?![a-z])|€|円|yen|¥|人民币|元|rmb|원(?=$|[^\\p{L}\\p{N}]|은|는|이|가|을|를|에|의|와|과|도|만|씩|부터|까지|보다|으로|이다|입니다|이었|이며|짜리|정도)|krw|won(?![a-z]))";
 const RANGE_SEP="\\s*(?:–|—|-|~|～|〜|to|đến|tới|bis|à|a|tot|até|至|에서)\\s*";
 // Thousands separators must be consistent inside one number (backreference);
 // a plain space only groups digits when a unit, multiplier or range follows.
@@ -159,6 +159,8 @@ export function scanPacket(packet,mode="warn",ref=loadReference()){
 }
 
 const htmlText=html=>String(html).replace(/<script\b[\s\S]*?<\/script>/gi," ").replace(/<style\b[\s\S]*?<\/style>/gi," ")
+ // Keep the HTTPS URL of an inline source when HTML is flattened; the strict source check still applies.
+ .replace(/<a\b[^>]*href=(["\x27])(https:\/\/[^"\x27]+)\1[^>]*>([\s\S]*?)<\/a>/gi,(_,q,url,label)=>" "+label+" ("+url+") ")
  .replace(/<h[1-6]\b[^>]*>/gi,"\n## ")
  .replace(/<\/(?:p|li|h[1-6]|td|th|summary|details|div|section|article|header|footer|nav|dd|dt|figcaption|blockquote)>/gi,"\n\n").replace(/<br\s*\/?>/gi,"\n")
  .replace(/<[^>]+>/g," ").replace(/&nbsp;/g," ").replace(/&amp;/g,"&").replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/[ \t]+/g," ");

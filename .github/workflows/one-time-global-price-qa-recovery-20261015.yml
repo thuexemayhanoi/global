@@ -1,0 +1,73 @@
+name: One-time Global Price Citation QA Recovery 2026-10-15
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/one-time-global-price-qa-recovery-20261015.yml']
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: global-one-time-price-citation-recovery-20261015
+  cancel-in-progress: false
+jobs:
+  recovery:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify the exact paused reason and merged HTML citation fix
+        run: |
+          set -euo pipefail
+          node - <<'NODE'
+          const fs=require('fs');
+          const state=JSON.parse(fs.readFileSync('factory/publisher/state.json','utf8'));
+          const source=fs.readFileSync('scripts/seo/fact-guard-core.mjs','utf8');
+          if (!state.paused ||
+              !state.pause_reason?.includes('en/topics/rental-costs-and-fees/index.html') ||
+              !state.pause_reason?.includes('UNSOURCED_AMOUNT') ||
+              !source.includes('Keep the HTTPS URL of an inline source')) {
+            console.error('RECOVERY_REFUSED: publisher pause or fact guard fix does not match approved incident');
+            process.exit(1);
+          }
+          NODE
+          node --test tests/fact-guard.test.mjs tests/auto-publisher.test.mjs tests/repair-queue.test.mjs
+          node scripts/build.mjs --check
+          node scripts/seo/fact-guard.mjs
+      - name: Confirm existing production passes live HTTP QA
+        run: node scripts/seo/post-publish-qa.mjs --confirm-live
+      - name: Dispatch confirmed Publisher resume through its own workflow
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh workflow run auto-publisher.yml --ref main -f action=resume -f confirmed=true \
+            -f reason='Owner authorized: HTML inline-price citations restored in merged PR 46; checks and production HTTP QA pass'
+          echo 'RESUME_DISPATCHED' >> "$GITHUB_STEP_SUMMARY"
+      - name: Verify Publisher has actually resumed on main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 60); do
+            gh api "repos/${GITHUB_REPOSITORY}/contents/factory/publisher/state.json?ref=main" --jq '.content' | tr -d '\n' | base64 --decode > "$RUNNER_TEMP/publisher-state.json"
+            if node -e 'const s=require(process.argv[1]);process.exit(s.paused?1:0)' "$RUNNER_TEMP/publisher-state.json"; then
+              echo 'RESUME_CONFIRMED' >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo 'RECOVERY_REFUSED: Publisher never confirmed ACTIVE on main' >&2
+          exit 1
+      - name: Trigger QA-gated publish pair
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh workflow run auto-publisher.yml --ref main -f action=publish -f max=2
+          echo 'PUBLISH_PAIR_REQUESTED; require downstream Live QA PASS' >> "$GITHUB_STEP_SUMMARY"

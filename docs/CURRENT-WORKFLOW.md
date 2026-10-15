@@ -19,7 +19,7 @@ Topic Factory ──▶ shared topic queue (Matrix IDEA rows)
                           ▼
             Auto Publisher: automated QA G1–G5 + G7 on every SUBMITTED draft
               ├─ fixable FAIL ─▶ Repair Queue ─▶ same session writes revisions/<ID>.rN.json ─▶ back to Writer QA
-              ├─ LEGAL / SAFETY / PRICE / money ─▶ HUMAN_REVIEW_REQUIRED (held for a human)
+              ├─ missing legal / safety / price evidence ─▶ REPAIR (same Writer)
               ├─ WAIT_PARENT / WAIT_STAGE ─▶ waits, no rewriting
               └─ APPROVED_BY_POLICY ─▶ Publish Queue
                           │ ≤2 NEW URLs per run
@@ -84,6 +84,7 @@ Optional request fields: `"agent": "claude"` (label), `"slot_state"`, `"slot_rea
 4. Write 1–10 drafts as `factory/external-writers/inbox/W3/<ID>.json`: original native-language research, ≥1,000 words, ≥4 real H2 sections, ≥2 HTTPS sources you actually read, a contextual link to `/<ll>/` or `/<ll>/checklist/`, `facts_reviewed_by_human:false`, `serp_intent_checked:false`, `writer_session` = your session.
    - Nguyễn Tú NAP, hours and prices only by copying your locale's lines from `data/business/reference.localized.json`.
    - Any other price, fine, law/article number, licence-class threshold or penalty needs an **official** source linked in the **same paragraph**; otherwise leave it out. Money amounts and LEGAL/SAFETY/PRICE topics are held for a human in any case.
+   - Source titles are printed on the page as the reference list and fact-checked like the body: keep them to the publisher and document name, with no prices, amounts or phone numbers.
 5. QA: `node scripts/writer-lanes.mjs verify-all` and `node --test tests/external-writers.test.mjs tests/continuous-writer.test.mjs tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-refill.test.mjs tests/writer-qa-lock.test.mjs`.
 6. **A draft that fails before submission is fixed in place** (same file) and re-checked. No revision file, no ticket.
 7. Commit and push your own branch. Wait for Writer QA and the Autopilot (both green). The finished drafts become SUBMITTED, the slot refills to 10. Go to step 1.
@@ -95,7 +96,7 @@ A SUBMITTED draft is immutable: Writer QA locks it by its SHA-256 and the publis
 | Ticket / situation | Meaning | What you do |
 |---|---|---|
 | `REPAIR` | G1_DRAFT_QA, G1_DEPTH, G3_OFFICIAL_EVIDENCE, G4_EDITORIAL or G5_CONTENT_DUPLICATES failed | write the next revision (below) |
-| `HUMAN_REVIEW_REQUIRED` | LEGAL/SAFETY/PRICE topic or money amounts | nothing; a human decides with real evidence |
+| `G3 evidence REPAIR` | missing dated official or inline monetary evidence | original Writer verifies real sources or removes unsupported statements |
 | `ESCALATED` | three accepted revisions still failed | stop and report; no fourth attempt |
 | `WAIT_PARENT` / `WAIT_STAGE` | parent Hub not live / stage cap | nothing; this is not a text problem |
 | `BLOCKED` | protected draft, missing source evidence | nothing; operator issue |
@@ -171,8 +172,9 @@ Other actions: `action=pause` (reason), `action=scan` (read-only eligibility), `
 | Autopilot `SAFE_STOP: retry budget exhausted` | `main` moved three times during your run | push a small new commit to the same branch later |
 | `WAIT_PARENT` | the parent Hub is not live | write/repair the Hub; the Supporting draft publishes after it |
 | `WAIT_STAGE` | stage cap for that locale | wait for clean live runs |
-| `HUMAN_REVIEW_REQUIRED` | LEGAL/SAFETY/PRICE or money amounts | owner/human with real evidence; not a Writer task |
+| `REPAIR` (G3 source evidence) | unsupported legal/safety/price assertion | original Writer repairs sources; no Human Review hold |
 | Publisher `PAUSED` | Live QA FAIL/INCONCLUSIVE, a failed gate, or an operator pause | § 8 |
+| Pause reason `Pre-commit gate failed … fact-guard … UNSOURCED_AMOUNT <page>` | a staged page failed the site fact guard; nothing was published | the draft behind `<page>` needs a repair (since 2026-10-15 G1 also checks source titles, so this becomes a repair ticket instead of a pause); then the operator resumes (§ 8) |
 | `LIVE_QA_RECOVERY` | an earlier publication has no recorded live result | nothing; the run re-checks it before staging anything new |
 | `CONCURRENT_MAIN_UPDATE` | another workflow pushed to `main` | automatic recompute (three attempts), never a force-push |
 

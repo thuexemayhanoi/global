@@ -59,6 +59,8 @@ jobs:
             else
               node scripts/topic-factory.mjs refill
             fi
+            node scripts/seo/content-graph.mjs --write
+            node scripts/seo/content-graph.mjs --check
             node scripts/topic-factory.mjs status --markdown docs/CONTENT-FACTORY-DASHBOARD.md
             node scripts/topic-factory.mjs status >> "$GITHUB_STEP_SUMMARY"
           }

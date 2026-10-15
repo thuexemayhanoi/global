@@ -51,6 +51,15 @@ test("wrong Nguyễn Tú prices, phone, address, hours or contradictions always 
  assert.ok(f("Nguyen Tu Motorbike Rental: no deposit needed.","en").includes("BRAND_CONTRADICTION"));
 });
 
+test("Korean legal source titles are not prices, but real KRW amounts remain protected",()=>{
+ const source="베트남 도로교통법 36/2024/QH15 원문";
+ assert.deepEqual(extractAmounts(source,"ko"),[],"원문 means original text, not won");
+ assert.deepEqual(extractAmounts("법률 제15 원칙","ko"),[],"원칙 is a principle, not won");
+ assert.deepEqual(codes(scanHtml('<html><body><p>'+source+'</p></body></html>',{locale:"ko",ref})),[],"HTML source titles must not block an otherwise clean publish");
+ assert.deepEqual(extractAmounts("대여료 15 원, 계약금 15000원입니다.","ko").flatMap(x=>x.values),[15,15000],"actual won amounts are still parsed");
+ assert.ok(codes(scanText("대여료 15000원입니다.",{locale:"ko",mode:"strict",ref})).includes("UNSOURCED_AMOUNT"),"unsourced won must still fail");
+});
+
 test("unsourced amounts fail strictly, warn for drafts; cited third-party prices only warn",()=>{
  const s="Most shops charge 130,000 VND per day.";
  assert.ok(codes(scanText(s,{mode:"strict",ref})).includes("UNSOURCED_AMOUNT"));
@@ -61,6 +70,13 @@ test("unsourced amounts fail strictly, warn for drafts; cited third-party prices
  assert.ok(r.some(x=>x.code==="THIRD_PARTY_PRICE_REVIEW"));
  assert.deepEqual(scanText("Fines under Decree 168/2024 are 400,000–600,000 VND.",{mode:"strict",ref}).filter(x=>x.level==="FAIL"),[]);
  assert.deepEqual(scanText("See [report](https://x.vn/a-0261722607.htm)",{mode:"strict",ref}),[],"digits inside URLs are not phones");
+});
+
+test("rendered HTML preserves inline supplier citations for monetary claims but rejects unsourced prices",()=>{
+ const cited='<html><body><article><p>Hanoi motorbike prices may be 120,000 VND according to <a href="https://vexere.com/vn/prices">Vexere\'s listed rates</a>.</p></article></body></html>';
+ assert.deepEqual(codes(scanHtml(cited,{locale:"en",ref})),[],"a price and its inline HTTPS source must survive HTML flattening");
+ const missing=cited.replace(' href="https://vexere.com/vn/prices"',"");
+ assert.ok(codes(scanHtml(missing,{locale:"en",ref})).includes("UNSOURCED_AMOUNT"),"uncited prices remain blocked");
 });
 
 test("pages may not show NAP or business schema until the owner flags allow it",()=>{

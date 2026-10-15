@@ -1,186 +1,16 @@
 {
   "version": 2,
-  "ledger_revision": 55,
-  "stage": "PILOT",
+  "ledger_revision": 59,
+  "stage": "RAMP",
   "counts": {
-    "REVIEW_REQUIRED": 93,
-    "REJECTED": 19
+    "REJECTED": 84,
+    "WAIT_PARENT": 14
   },
   "items": [
     {
-      "id": "ES-H01",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_OFFICIAL_EVIDENCE"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "b9ec560ce61721da1d1f83b0f6418906583407cb21a18885065a347b51e63fad",
-      "source_commit": "4427428310c6f10951a15d2f564d15d98c471850",
-      "details": [
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Elegir el tipo de vehículo es la primera decisión real al alquilar una moto en Hanói, y llega antes de mirar ninguna tarifa. En el catálogo  | Desde el 1 de enero de 2025, la Ley de "
-      ]
-    },
-    {
-      "id": "KO-H01",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_OFFICIAL_EVIDENCE"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "bcfbf1a209aca68f6c4be251b1b50abd912018f0e751a1793f40c7537c709400",
-      "source_commit": "4427428310c6f10951a15d2f564d15d98c471850",
-      "details": [
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: 하노이에서 오토바이를 빌릴 때 가장 먼저 내려야 할 결정은 하루 대여료가 아니라 차종이다. 시내 렌트 샵의 차량 목록에는 수동 변속의 언더본, 가속만 하면 달리는 자동 스쿠터, 클러치가 있는 스포츠 모델, 그리고 소수의 50cc와 전기 이륜차가 섞여  | 50cc 차량은 '면허 부담이 없다는 이유'만으로 선택하기보다 주행 능"
-      ]
-    },
-    {
-      "id": "EN-H02",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "c47c022a1e533b96270f3fecfc682de9c40ea88f1d425359d3c5bf45c7eebbae",
-      "source_commit": "a2f863db8e928d1300dc1933e50fdaef92b06a1b",
-      "details": [
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 4 paragraph(s) with money amounts need human price verification"
-      ]
-    },
-    {
-      "id": "ES-H02",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "acf1210591ab7621d70486eaa1576ebee48cc6df5894646449dbe0488e9d71f7",
-      "source_commit": "a2f863db8e928d1300dc1933e50fdaef92b06a1b",
-      "details": [
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 4 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: Elige el depósito en efectivo con recibo antes que dejar el pasaporte. Exteriores recomienda exigir la devolución inmediata del pasaporte cu"
-      ]
-    },
-    {
-      "id": "FR-H02",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "8d42423f0ce287dc6f191bb3855f4c5a7a0edaab6d6feb28d5d5a1d7a3f6c608",
-      "source_commit": "a2f863db8e928d1300dc1933e50fdaef92b06a1b",
-      "details": [
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 4 paragraph(s) with money amounts need human price verification"
-      ]
-    },
-    {
-      "id": "JA-H02",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "0c775b2097570fe4345ee4f63a3984c3d50560867f6883e53b7abed5e3c7b28f",
-      "source_commit": "36c4eb49b5206aed484ee9ab93f0c6347821c651",
-      "details": [
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 4 paragraph(s) with money amounts need human price verification"
-      ]
-    },
-    {
-      "id": "PT-H02",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "0f6439d7dae545029be53bfe6d7d85bf829090fe4c4796e5f60aaa85963795b7",
-      "source_commit": "a2f863db8e928d1300dc1933e50fdaef92b06a1b",
-      "details": [
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 4 paragraph(s) with money amounts need human price verification"
-      ]
-    },
-    {
-      "id": "VI-H02",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "b5d0e8beccc59c4c5925d6df18c21dcfa4f3816f81d04abf22cecdac753078e2",
-      "source_commit": "36c4eb49b5206aed484ee9ab93f0c6347821c651",
-      "details": [
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: Điều này ảnh hưởng trực tiếp đến chi phí. Nếu bạn chỉ có bằng A1 cấp sau năm 2025 mà thuê một chiếc côn tay 150 cm3, bạn đang lái xe không đ"
-      ]
-    },
-    {
-      "id": "ZH-H02",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "c4edf500c817f106544160ba675d34e1e0a13eb6ff971898bf3431fdcff54707",
-      "source_commit": "36c4eb49b5206aed484ee9ab93f0c6347821c651",
-      "details": [
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 4 paragraph(s) with money amounts need human price verification"
-      ]
-    },
-    {
-      "id": "DE-H03",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "1de0857a54a5288f2942a40c10018219dd361df0c6c75e458866a349d0c11ed6",
-      "source_commit": "36c4eb49b5206aed484ee9ab93f0c6347821c651",
-      "details": [
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Hier liegt der häufigste Irrtum deutscher Urlauber. Das Auswärtige Amt weist ausdrücklich darauf hin, dass das Fahren von Motorrädern oder M | Die typischen Mietroller in Hanoi liege"
-      ]
-    },
-    {
       "id": "FR-H03",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -189,16 +19,13 @@
       "source_sha256": "cdad615f1d9a628ef2367600fa99da5092b5627f7cf8f7244c6896e4daed2b3c",
       "source_commit": "a57f262b4d16987229dfad7dbb47d62ec3627572",
       "details": [
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 6 legal/safety statement(s) without an official citation: Deux précautions s'imposent sur la question du passeport. D'une part, la loi vietnamienne sur l'entrée, la sortie et le séjour des étrangers | - Le périmètre d'utilisation : déplacem"
+        "G3_OFFICIAL_EVIDENCE: 6 hard legal statement(s) lack an inline official citation: Deux précautions s'imposent sur la question du passeport. D'une part, la loi vietnamienne sur l'entrée, la sortie et le séjour des étrangers | - Le périmètre d'utilisation : déplac"
       ]
     },
     {
       "id": "JA-H03",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -207,15 +34,13 @@
       "source_sha256": "56b10d94154b972ff600118f97548dcadf9b60ba9b95918ef51c09048cfe8286",
       "source_commit": "a57f262b4d16987229dfad7dbb47d62ec3627572",
       "details": [
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 4 legal/safety statement(s) without an official citation: パスポートについては二つの注意点があります。第一に、ベトナムの出入国・滞在に関する法律（法律47/2014/QH13）は、外国人にパスポートや滞在関係書類の携帯と、当局の求めに応じた提示を義務付けています。数日間パスポートを店に預けたままでは、ホテルのチェックインや航空券の変更も | 交通警察に止められた場合、運転免許証、車両登録証（ベトナムの車検証に相当）、強"
+        "G3_OFFICIAL_EVIDENCE: 4 hard legal statement(s) lack an inline official citation: パスポートについては二つの注意点があります。第一に、ベトナムの出入国・滞在に関する法律（法律47/2014/QH13）は、外国人にパスポートや滞在関係書類の携帯と、当局の求めに応じた提示を義務付けています。数日間パスポートを店に預けたままでは、ホテルのチェックインや航空券の変更も | 交通警察に止められた場合、運転免許証、車両登録証（ベトナムの車検証に相当）"
       ]
     },
     {
       "id": "KO-H03",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -224,16 +49,13 @@
       "source_sha256": "33f756d19dde7fe459b7271f6b2e63c8d776a7745c4ccb65f26be94f0889fa63",
       "source_commit": "a57f262b4d16987229dfad7dbb47d62ec3627572",
       "details": [
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 4 legal/safety statement(s) without an official citation: 실무적으로 세 가지를 지켜야 합니다. 첫째, 국제운전면허증은 한국 면허증과 함께 소지해야만 효력이 있습니다. 둘째, 국제운전면허증에 표기된 차종 범주가 실제로 빌리는 오토바이를 포함해야 합니다. 125cc 이하 스쿠터라도 베트남에서는 이륜차 면허 범위 | 여권에 관해서는 두 가지를 기억해야 합니다. 첫째, 베트남의 외국인 출"
+        "G3_OFFICIAL_EVIDENCE: 4 hard legal statement(s) lack an inline official citation: 실무적으로 세 가지를 지켜야 합니다. 첫째, 국제운전면허증은 한국 면허증과 함께 소지해야만 효력이 있습니다. 둘째, 국제운전면허증에 표기된 차종 범주가 실제로 빌리는 오토바이를 포함해야 합니다. 125cc 이하 스쿠터라도 베트남에서는 이륜차 면허 범위 | 여권에 관해서는 두 가지를 기억해야 합니다. 첫째, 베트남의 외국인"
       ]
     },
     {
       "id": "NL-H03",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -242,17 +64,13 @@
       "source_sha256": "ddd1527ff7702eb7f45120da6097c0807a322cf0ad71c313420e425cd6635694",
       "source_commit": "a57f262b4d16987229dfad7dbb47d62ec3627572",
       "details": [
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: Twee waarschuwingen over het paspoort. Ten eerste verplicht de Vietnamese wet op inreis, uitreis en verblijf van buitenlanders (wet 47/2014/ | - Gebruiksgebied: ritten buiten Hanoi, "
+        "G3_OFFICIAL_EVIDENCE: 5 hard legal statement(s) lack an inline official citation: Twee waarschuwingen over het paspoort. Ten eerste verplicht de Vietnamese wet op inreis, uitreis en verblijf van buitenlanders (wet 47/2014/ | - Gebruiksgebied: ritten buiten Hanoi"
       ]
     },
     {
       "id": "VI-H03",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -261,16 +79,13 @@
       "source_sha256": "a6f02e061ffa3a966bbacb882998b7531c16fabf3b450d038d51736a8fcafea7",
       "source_commit": "a57f262b4d16987229dfad7dbb47d62ec3627572",
       "details": [
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Với khách quốc tế, Việt Nam công nhận giấy phép lái xe quốc tế (IDP) cấp theo Công ước Viên 1968 khi được xuất trình cùng giấy phép quốc gia | Khi cảnh sát giao thông dừng xe, bạn cầ"
+        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: Với khách quốc tế, Việt Nam công nhận giấy phép lái xe quốc tế (IDP) cấp theo Công ước Viên 1968 khi được xuất trình cùng giấy phép quốc gia | Khi cảnh sát giao thông dừng xe, bạn "
       ]
     },
     {
       "id": "ZH-H03",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -279,16 +94,13 @@
       "source_sha256": "952a586f7c1c19ea983ba71ddc0bf74dcd133efc09761bc986781ff579ca896c",
       "source_commit": "a57f262b4d16987229dfad7dbb47d62ec3627572",
       "details": [
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: 关于护照有两点必须注意。第一，越南《外国人入境、出境、过境和居留法》（第47/2014/QH13号法律）规定外国人有义务随身携带护照及居留相关证件，并在主管机关要求时出示；护照压在租车行好几天，办理酒店入住或改签机票都会受阻。第二，多国外交部门都提醒公民不要把护照作为租车押金。合 | - 使用范围：能否出河内、能否走山路、能否载人载货，罚款和停车费由谁承担。"
+        "G3_OFFICIAL_EVIDENCE: 5 hard legal statement(s) lack an inline official citation: 关于护照有两点必须注意。第一，越南《外国人入境、出境、过境和居留法》（第47/2014/QH13号法律）规定外国人有义务随身携带护照及居留相关证件，并在主管机关要求时出示；护照压在租车行好几天，办理酒店入住或改签机票都会受阻。第二，多国外交部门都提醒公民不要把护照作为租车押金。合 | - 使用范围：能否出河内、能否走山路、能否载人载货，罚款和停车费由谁承担。"
       ]
     },
     {
       "id": "DE-H04",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -297,17 +109,13 @@
       "source_sha256": "9759f79df21ade365784b1f8f73f726dfa2aeecf95af98beba02b56015265123",
       "source_commit": "a57f262b4d16987229dfad7dbb47d62ec3627572",
       "details": [
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_NO_PRICES: 2 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: Nehmen Sie die rechtlichen Folgen ernst. Das Auswärtige Amt warnt, dass das Fahren ohne gültigen Führerschein mit einem Bußgeld oder im Fall"
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: Nehmen Sie die rechtlichen Folgen ernst. Das Auswärtige Amt warnt, dass das Fahren ohne gültigen Führerschein mit einem Bußgeld oder im Fall"
       ]
     },
     {
       "id": "EN-H04",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -316,17 +124,13 @@
       "source_sha256": "6bf9c69a6def219b198c17b4364bcc1c51f06ad1827a461ee1549152c6abdb68",
       "source_commit": "a57f262b4d16987229dfad7dbb47d62ec3627572",
       "details": [
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_NO_PRICES: 2 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: Wear a helmet with the chin strap fastened on every ride, including as a passenger. GOV.UK notes that it is illegal for drivers and passenge | Take the legal exposure seriously. GOV."
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: Wear a helmet with the chin strap fastened on every ride, including as a passenger. GOV.UK notes that it is illegal for drivers and passenge | Take the legal exposure seriously. GO"
       ]
     },
     {
       "id": "ES-H04",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -335,32 +139,13 @@
       "source_sha256": "9730b2f490495ba6fc8f8355eed8db88ac70ee5de5b71fac163ec405c67c594c",
       "source_commit": "a57f262b4d16987229dfad7dbb47d62ec3627572",
       "details": [
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_NO_PRICES: 2 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: La seguridad empieza antes de encender el motor. Vietnam reconoce el permiso de conducir internacional expedido conforme a la Convención de "
-      ]
-    },
-    {
-      "id": "KO-H04",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_TOPIC_CLASS"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "47f7619b6867eeb88c11a621b746856a22bd2ae6ebedaa44eb551c4648a84562",
-      "source_commit": "a57f262b4d16987229dfad7dbb47d62ec3627572",
-      "details": [
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review"
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: La seguridad empieza antes de encender el motor. Vietnam reconoce el permiso de conducir internacional expedido conforme a la Convención de "
       ]
     },
     {
       "id": "NL-H04",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -369,17 +154,13 @@
       "source_sha256": "868e56762282a9ff51905b345ba46d6ea8ffb07edaf91a9670f3aaa5c7b33ceb",
       "source_commit": "b89e3768ba9765a094d920ff988fe3df71873342",
       "details": [
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_NO_PRICES: 2 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: Veiligheid begint voordat de motor draait. Buitenlandse Zaken adviseert om goed na te denken of je in Vietnam zelf wilt rijden, om bij een b"
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: Veiligheid begint voordat de motor draait. Buitenlandse Zaken adviseert om goed na te denken of je in Vietnam zelf wilt rijden, om bij een b"
       ]
     },
     {
       "id": "PT-H04",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -388,17 +169,14 @@
       "source_sha256": "280c781704d732ee6013c62d204227aedd830d4496834f9604b6138ee0971518",
       "source_commit": "b89e3768ba9765a094d920ff988fe3df71873342",
       "details": [
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_NO_PRICES: 2 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: A segurança começa antes de ligar o motor. O Vietname reconhece a carta de condução internacional emitida ao abrigo da Convenção de Viena de"
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: A segurança começa antes de ligar o motor. O Vietname reconhece a carta de condução internacional emitida ao abrigo da Convenção de Viena de"
       ]
     },
     {
       "id": "DE-S01",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -408,16 +186,14 @@
       "source_commit": "b89e3768ba9765a094d920ff988fe3df71873342",
       "details": [
         "G2_PARENT_PUBLISHED: DE-H01 is IDEA",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: Zahlen helfen mehr als Gefühle. Honda Vietnam gibt für die halbautomatische Wave Alpha 110 ein Eigengewicht von 96 kg, 109,2 cm³ Hubraum, ei | - Haben Sie nur die Klasse A1 auf dem i"
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: Zahlen helfen mehr als Gefühle. Honda Vietnam gibt für die halbautomatische Wave Alpha 110 ein Eigengewicht von 96 kg, 109,2 cm³ Hubraum, ei | - Haben Sie nur die Klasse A1 auf dem"
       ]
     },
     {
       "id": "EN-S01",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -427,16 +203,13 @@
       "source_commit": "b89e3768ba9765a094d920ff988fe3df71873342",
       "details": [
         "G2_PARENT_PUBLISHED: EN-H01 is IDEA",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: - Only class A1 on your international permit? Anything under 125 cc, so no Winner and no Exciter."
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: - Only class A1 on your international permit? Anything under 125 cc, so no Winner and no Exciter."
       ]
     },
     {
       "id": "ES-S01",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -445,17 +218,14 @@
       "source_sha256": "3a8e5455d4d3768feee666b0da883b2ef04f879f0c73d83b1d96c3798c185cba",
       "source_commit": "b89e3768ba9765a094d920ff988fe3df71873342",
       "details": [
-        "G2_PARENT_PUBLISHED: ES-H01 is IDEA",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: - ¿Tu permiso internacional solo muestra la categoría A1? Cualquier moto por debajo de 125 cm³, así que ni Winner ni Exciter."
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: - ¿Tu permiso internacional solo muestra la categoría A1? Cualquier moto por debajo de 125 cm³, así que ni Winner ni Exciter."
       ]
     },
     {
       "id": "FR-S01",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -465,49 +235,28 @@
       "source_commit": "b89e3768ba9765a094d920ff988fe3df71873342",
       "details": [
         "G2_PARENT_PUBLISHED: FR-H01 is IDEA",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: - Votre permis international ne porte que la catégorie A1 ? Tout ce qui fait moins de 125 cm³, donc ni Winner ni Exciter."
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: - Votre permis international ne porte que la catégorie A1 ? Tout ce qui fait moins de 125 cm³, donc ni Winner ni Exciter."
       ]
     },
     {
       "id": "JA-S01",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
-      "source_sha256": "24b8b7d0192b624ff0984765bdae566d8c7c529074016157cba014df863c0cf5",
-      "source_commit": "b89e3768ba9765a094d920ff988fe3df71873342",
+      "source_sha256": "839f2823b3c76839478dd3588ddabb0226eafde1195d096f917860f0931a7443",
+      "source_commit": "e7ece5d9c4372faacd386f9c1c892c0cffcba968",
       "details": [
-        "G2_PARENT_PUBLISHED: JA-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: - 免許の区分が125 cm³以下に限られる。→ WinnerもExciterも不可、125 cm³未満の車種から選ぶ。"
-      ]
-    },
-    {
-      "id": "KO-S01",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "482f66e1b52fc276b1bb9eae2cf4f79b82956211fdea67652357dc4a6ab67f74",
-      "source_commit": "b89e3768ba9765a094d920ff988fe3df71873342",
-      "details": [
-        "G2_PARENT_PUBLISHED: KO-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: - 국제운전면허증의 범위가 125 cm³ 이하다. → Winner도 Exciter도 불가, 125 cm³ 미만 차종에서 고른다."
+        "G2_PARENT_PUBLISHED: JA-H01 is IDEA"
       ]
     },
     {
       "id": "NL-S01",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -516,15 +265,13 @@
       "source_sha256": "431eb3103c5969240865bf1845b757433bdc74adb85bb52d0d988052a7b5ccec",
       "source_commit": "b89e3768ba9765a094d920ff988fe3df71873342",
       "details": [
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: - Staat alleen categorie A1 op je internationaal rijbewijs? Alles onder 125 cm³, dus geen Winner en geen Exciter."
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: - Staat alleen categorie A1 op je internationaal rijbewijs? Alles onder 125 cm³, dus geen Winner en geen Exciter."
       ]
     },
     {
       "id": "PT-S01",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -533,99 +280,58 @@
       "source_sha256": "8bde0a2733753ffd261f9263a9af1c2b40accdd496c4b39c1346f4667f44bdba",
       "source_commit": "b89e3768ba9765a094d920ff988fe3df71873342",
       "details": [
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: - A sua carta internacional só mostra a categoria A1? Qualquer moto abaixo de 125 cm³, portanto nem Winner nem Exciter."
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: - A sua carta internacional só mostra a categoria A1? Qualquer moto abaixo de 125 cm³, portanto nem Winner nem Exciter."
       ]
     },
     {
       "id": "VI-S01",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "a5bdcea1bdb7ded6e3c81354072c67157153a9fa90cc022f64c115d46805ffdb",
-      "source_commit": "94acfc9ff13fbc0ecee701eb47f811502b5c5ff4",
+      "source_sha256": "c1c32c9a082ffc376dc3d1ecf27c716533a801d65010dd2af2e8f34199427f51",
+      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
       "details": [
-        "G2_PARENT_PUBLISHED: VI-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Trong hệ thống phân loại tại Việt Nam, nhóm xe được gọi chung là \"xe số\" ở các cửa hàng cho thuê phần lớn là xe nón sàn (underbone) kiểu Hon | Nhiều người cho rằng chọn xe nhỏ là các"
+        "G2_PARENT_PUBLISHED: VI-H01 is IDEA"
       ]
     },
     {
       "id": "ZH-S01",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "34e8d1ba7d65ad3334c0852b3112393dad9a942dcfc28fe4b495dc788e2ba44d",
-      "source_commit": "94acfc9ff13fbc0ecee701eb47f811502b5c5ff4",
+      "source_sha256": "bd389d348df4a94e6c0b290629d40ab8958331dc14eba00ea680a31064eacad6",
+      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
       "details": [
-        "G2_PARENT_PUBLISHED: ZH-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: 不少游客以为选小车就能绕开驾照问题。实际并非如此：河内主流的110cc弯梁车和110-125cc踏板车，全部落在越南的A1驾照范围内——按2025年1月1日生效的2024年《道路交通安全法》，A1覆盖排量不超过125cc或电机功率不超过11千瓦的两轮摩托车（Danang Visa | 真正放宽要求的是50cc以下车型：排量低于50立方厘米的机动自行车不强制持有驾"
+        "G2_PARENT_PUBLISHED: ZH-H01 is IDEA"
       ]
     },
     {
       "id": "DE-S02",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G1_DRAFT_QA",
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "08cab1e6cba5aa00b704bcbcc0b8cc9fb4d2bea035fa265bfa984ab6b2fb8b0e",
-      "source_commit": "f2b74a608b70e8f8a34bb0f2c87ca1b75c048fc8",
+      "source_sha256": "bc9bb4e239f61251b094135edcd1f9884675f593a3a2b4fc3d249dd32f6a034c",
+      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
       "details": [
-        "G2_PARENT_PUBLISHED: DE-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: Seit dem 1. Januar 2025 gilt in Vietnam das Gesetz über Ordnung und Sicherheit im Straßenverkehr 36/2024/QH15. Für Motorräder bis 125ccm ode | „Kein Führerschein nötig\" bedeutet nich"
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «200.000 Dong»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph ",
+        "G2_PARENT_PUBLISHED: DE-H01 is IDEA"
       ]
     },
     {
       "id": "EN-S02",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_NO_PRICES",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "4c64002b31b67adc12cb725de5b153abcbf739efd7bb9e6a705a0e87f3ce8442",
-      "source_commit": "f2b74a608b70e8f8a34bb0f2c87ca1b75c048fc8",
-      "details": [
-        "G2_PARENT_PUBLISHED: EN-H01 is IDEA",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: Two categories of rental two-wheelers in Hanoi sit just below the notice of most travellers, yet they solve the same problem in opposite way | Vietnam's Law on Order and Road Traffic"
-      ]
-    },
-    {
-      "id": "ES-S02",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "5d5f0ea1949000d7868984a7f0696c148183ec7a9fd6f104d132ea2506065d0b",
-      "source_commit": "67b7574799257d16756f31bcbdf1286e0e03bd70",
-      "details": [
-        "G2_PARENT_PUBLISHED: ES-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Desde el 1 de enero de 2025 rige en Vietnam la Ley de Orden y Seguridad del Tráfico, 36/2024/QH15. La clase A1 cubre motos de hasta 125 cc o | Para los visitantes hispanohablantes es"
-      ]
-    },
-    {
-      "id": "FR-S02",
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
@@ -635,20 +341,50 @@
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "5f6bbb408cd25d4c83aba3337bc60d92f12c51936582ba7f6e973b1b0a628681",
-      "source_commit": "67b7574799257d16756f31bcbdf1286e0e03bd70",
+      "source_sha256": "4c64002b31b67adc12cb725de5b153abcbf739efd7bb9e6a705a0e87f3ce8442",
+      "source_commit": "f2b74a608b70e8f8a34bb0f2c87ca1b75c048fc8",
       "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in meta_description: Currency amount without an inline source in the same paragraph «eur 50»; Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «eur 50»;",
-        "G2_PARENT_PUBLISHED: FR-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: À Hanoï, deux catégories de location échappent à l'attention de la plupart des voyageurs alors qu'elles résolvent le même problème de manièr | Depuis le 1er janvier 2025, la loi viet"
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «200,000 VND»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «",
+        "G2_PARENT_PUBLISHED: EN-H01 is IDEA",
+        "G3_OFFICIAL_EVIDENCE: 5 hard legal statement(s) lack an inline official citation: Two categories of rental two-wheelers in Hanoi sit just below the notice of most travellers, yet they solve the same problem in opposite way | Vietnam's Law on Order and Road Traff"
+      ]
+    },
+    {
+      "id": "ES-S02",
+      "decision": "REJECTED",
+      "failed": [
+        "G1_DRAFT_QA"
+      ],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "b7549cb045d5223a4e84efc914624b8398dddcfd2384541d8ff64709f6c4d84b",
+      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
+      "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «200.000 dong»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph "
+      ]
+    },
+    {
+      "id": "FR-S02",
+      "decision": "WAIT_PARENT",
+      "failed": [
+        "G2_PARENT_PUBLISHED"
+      ],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "e46116079e690c02abbfb029caa25354e9542f12dd679e988ec03f3f5e371a1e",
+      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
+      "details": [
+        "G2_PARENT_PUBLISHED: FR-H01 is IDEA"
       ]
     },
     {
       "id": "JA-S02",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
+        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W1",
@@ -657,17 +393,16 @@
       "source_sha256": "3af79ca2ae09723ea370366849312b7c254a1a93c3e503f9420824b1600dfd6a",
       "source_commit": "fcb7d4f0a038b2f79324d4bfebd28dbc0e18e828",
       "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «20万ドン»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «9,000ド",
         "G2_PARENT_PUBLISHED: JA-H01 is IDEA",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: ハノイのレンタルバイクには、ほとんどの旅行者が正しく分類できていないのに、同じ問題を正反対の方法で解決する2つのカテゴリーがあります。50ccの原付と電動スクーターです。どちらも「とにかく簡単」という同じ約束を掲げ、同じ理由で魅力に映ります。ベトナムの規則では、それぞれが一定の条 | 2025年1月1日から、ベトナムでは交通秩序・安全法36/2024/QH15が"
+        "G3_OFFICIAL_EVIDENCE: 5 hard legal statement(s) lack an inline official citation: ハノイのレンタルバイクには、ほとんどの旅行者が正しく分類できていないのに、同じ問題を正反対の方法で解決する2つのカテゴリーがあります。50ccの原付と電動スクーターです。どちらも「とにかく簡単」という同じ約束を掲げ、同じ理由で魅力に映ります。ベトナムの規則では、それぞれが一定の条 | 2025年1月1日から、ベトナムでは交通秩序・安全法36/2024/QH1"
       ]
     },
     {
       "id": "KO-S02",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_NO_PRICES",
+        "G1_DRAFT_QA",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W1",
@@ -676,47 +411,30 @@
       "source_sha256": "e81434b8f6662df685679ea068d9128313ab19d2b4d51d9462db4d699433a695",
       "source_commit": "fcb7d4f0a038b2f79324d4bfebd28dbc0e18e828",
       "details": [
-        "G2_PARENT_PUBLISHED: KO-H01 is IDEA",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: 하노이 렌터바이크 시장에는 대부분의 여행자가 제대로 분류하지 못하지만 같은 문제를 정반대 방식으로 푸는 두 가지 카테고리가 있다. 바로 50cc 스쿠터와 전동 스쿠터다. 두 종 모두 최대한의 단순함을 약속하고, 같은 이유로 매력적이다. 베트남 규정상  | 2025년 1월 1일부터 베트남에서는 도로 교통 질서·안전법 36/20"
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «20만 동»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «9,000동",
+        "G3_OFFICIAL_EVIDENCE: 5 hard legal statement(s) lack an inline official citation: 하노이 렌터바이크 시장에는 대부분의 여행자가 제대로 분류하지 못하지만 같은 문제를 정반대 방식으로 푸는 두 가지 카테고리가 있다. 바로 50cc 스쿠터와 전동 스쿠터다. 두 종 모두 최대한의 단순함을 약속하고, 같은 이유로 매력적이다. 베트남 규정상  | 2025년 1월 1일부터 베트남에서는 도로 교통 질서·안전법 36/"
       ]
     },
     {
       "id": "NL-S02",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G3_OFFICIAL_EVIDENCE"
+        "G1_DRAFT_QA"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "774f0a8367556869db13efd5de711b2afe8d6478e6cdbcc4410a45cdbeabdd52",
-      "source_commit": "0a13ac3f2b72b0460b60844212f37f67604c8ffe",
+      "source_sha256": "76a714ab9632383d6e1a46f10db40acb1139083c5ba697c0ed2e66452d4a3764",
+      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
       "details": [
-        "G3_OFFICIAL_EVIDENCE: 4 legal/safety statement(s) without an official citation: In Hanoi bestaan twee huurcategorieën die vrijwel geen reiziger goed indeelt, terwijl ze hetzelfde probleem op exact tegenovergestelde manie | Sinds 1 januari 2025 geldt in Vietnam d"
-      ]
-    },
-    {
-      "id": "PT-S02",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_OFFICIAL_EVIDENCE"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "636f9f60291b56dc66b9d5138281aa920c983b6671c94c56a8f65a1240eaf498",
-      "source_commit": "0a13ac3f2b72b0460b60844212f37f67604c8ffe",
-      "details": [
-        "G3_OFFICIAL_EVIDENCE: 6 legal/safety statement(s) without an official citation: Em Hanói existem duas categorias de aluguer que quase nenhum viajante classifica corretamente, apesar de resolverem o mesmo problema por cam | Desde 1 de janeiro de 2025 vigoram no V"
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «200.000 dong»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph "
       ]
     },
     {
       "id": "VI-S02",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -726,25 +444,22 @@
       "source_commit": "f3fe97d44e3902813e8bf30f86b89d271b79456c",
       "details": [
         "G2_PARENT_PUBLISHED: VI-H01 is IDEA",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 6 legal/safety statement(s) without an official citation: \"Thuê xe 50cc hay xe điện thì không cần bằng lái\" là câu quảng cáo rất hay gặp ở Hà Nội, nhất là với khách chưa có giấy phép lái xe máy hợp  | Chính các con số ấy lại là điểm cần lưu"
+        "G3_OFFICIAL_EVIDENCE: 6 hard legal statement(s) lack an inline official citation: \"Thuê xe 50cc hay xe điện thì không cần bằng lái\" là câu quảng cáo rất hay gặp ở Hà Nội, nhất là với khách chưa có giấy phép lái xe máy hợp  | Chính các con số ấy lại là điểm cần l"
       ]
     },
     {
       "id": "ZH-S02",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
-      "source_sha256": "0fd1c7b0824ad39484762fa0ee52740aac574e871e8e56738ca9e623cd2331d8",
-      "source_commit": "f3fe97d44e3902813e8bf30f86b89d271b79456c",
+      "source_sha256": "e4b26abeb069d79645127bbc232c98d4da648c847e3ce000808018a47ede1605",
+      "source_commit": "e7ece5d9c4372faacd386f9c1c892c0cffcba968",
       "details": [
-        "G2_PARENT_PUBLISHED: ZH-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: \"租50cc或电动车不需要驾照\"是河内租车行最常见的广告语，尤其针对没有越南驾照的外国游客。这句话只对了一半。越南法律只对一个定义很窄的车型类别免除驾照要求，而市面上出租的许多电动车并不在这个类别之内。本文先讲清法律界限，再用厂方公布的数据比较50cc汽油车和电动车，最后给出按河 | 正是这些数字带来法律上的提醒：设计时速70到78 km/h的车型不符合上文轻便"
+        "G2_PARENT_PUBLISHED: ZH-H01 is IDEA"
       ]
     },
     {
@@ -753,8 +468,7 @@
       "failed": [
         "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -765,9 +479,8 @@
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «1.000.000 bis 3.000.000 VND»",
         "G2_PARENT_PUBLISHED: DE-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 4 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Die Pflichtversicherung gehört in jedem Fall zum Fahrzeug, nicht zum Fahrer, und sie muss den gesamten Mietzeitraum abdecken. Nach Gia đình  | Der Vertrag für eine Wochen- oder Monat"
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: Mit der Mietdauer wächst das Risiko des Vermieters, und damit die Kaution. Die Preisliste von XeThienTri beschreibt als übliche Sicherheiten",
+        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: Die Pflichtversicherung gehört in jedem Fall zum Fahrzeug, nicht zum Fahrer, und sie muss den gesamten Mietzeitraum abdecken. Nach Gia đình  | Der Vertrag für eine Wochen- oder Mon"
       ]
     },
     {
@@ -775,9 +488,7 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -787,10 +498,8 @@
       "source_commit": "f3fe97d44e3902813e8bf30f86b89d271b79456c",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «1,000,000 to 3,000,000 VND»",
-        "G2_PARENT_PUBLISHED: EN-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 4 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Compulsory insurance always belongs to the vehicle, not the rider, and it must cover the whole rental period. According to Gia đình và Xã hộ | Beyond the usual points, a weekly or mo"
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: The longer the rental, the bigger the shop's risk, and the bigger the deposit. XeThienTri's price page describes the usual guarantees as a c",
+        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: Compulsory insurance always belongs to the vehicle, not the rider, and it must cover the whole rental period. According to Gia đình và Xã hộ | Beyond the usual points, a weekly or "
       ]
     },
     {
@@ -798,9 +507,7 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -810,10 +517,8 @@
       "source_commit": "f3fe97d44e3902813e8bf30f86b89d271b79456c",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «1.000.000 a 3.000.000 VND»",
-        "G2_PARENT_PUBLISHED: ES-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 4 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: El seguro obligatorio acompaña siempre al vehículo, no al conductor, y debe cubrir el periodo completo de alquiler. Según Gia đình và Xã hội | Más allá de lo habitual, un contrato se"
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: Cuanto más largo es el alquiler, mayor es el riesgo de la tienda y mayor la fianza. La página de precios de XeThienTri describe como garantí",
+        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: El seguro obligatorio acompaña siempre al vehículo, no al conductor, y debe cubrir el periodo completo de alquiler. Según Gia đình và Xã hội | Más allá de lo habitual, un contrato "
       ]
     },
     {
@@ -821,9 +526,7 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -833,10 +536,8 @@
       "source_commit": "f3fe97d44e3902813e8bf30f86b89d271b79456c",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «1 000 000 à 3 000 000 VND»",
-        "G2_PARENT_PUBLISHED: FR-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 4 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: L'assurance obligatoire suit toujours le véhicule, pas le conducteur, et elle doit couvrir toute la période de location. Selon Gia đình và X | Au-delà des points habituels, un contra"
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: Plus la location est longue, plus le risque du loueur grandit, et la caution avec lui. La page de XeThienTri décrit comme garanties habituel",
+        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: L'assurance obligatoire suit toujours le véhicule, pas le conducteur, et elle doit couvrir toute la période de location. Selon Gia đình và X | Au-delà des points habituels, un cont"
       ]
     },
     {
@@ -844,9 +545,7 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -856,10 +555,8 @@
       "source_commit": "f3fe97d44e3902813e8bf30f86b89d271b79456c",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «1,000,000〜3,000,000ドン»",
-        "G2_PARENT_PUBLISHED: JA-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 3 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: 強制保険は常に運転者ではなく車両に付帯し、レンタル期間全体をカバーしていなければなりません。Gia đình và Xã hộiによれば、議定67/2023/NĐ-CPの補償限度額は人身損害が1事故1人あたり1億5000万ドン、物的損害が1事故あたり5000万ドンです。特に1か月"
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: レンタル期間が長いほど店側のリスクは増え、保証金も増えます。XeThienTriの料金ページは一般的な担保として、車種と業者により1,000,000〜3,000,000ドンの現金保証金、または身分証明書の預託（外国人の場合はパスポートが多い）を挙げています。1か月の場合、パスポー",
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: 強制保険は常に運転者ではなく車両に付帯し、レンタル期間全体をカバーしていなければなりません。Gia đình và Xã hộiによれば、議定67/2023/NĐ-CPの補償限度額は人身損害が1事故1人あたり1億5000万ドン、物的損害が1事故あたり5000万ドンです。特に1か月"
       ]
     },
     {
@@ -868,8 +565,7 @@
       "failed": [
         "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -880,9 +576,8 @@
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «1,000,000~3,000,000동»",
         "G2_PARENT_PUBLISHED: KO-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 3 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: 의무 책임보험은 언제나 운전자가 아니라 차량에 붙고, 렌트 기간 전체를 보장해야 합니다. Gia đình và Xã hội에 따르면 시행령 67/2023/NĐ-CP의 보상 한도는 인명 피해가 사고당 1인 1억 5천만 동, 재산 피해가 사고당 5천만 동"
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: 렌트 기간이 길수록 업체의 위험이 커지고 보증금도 커집니다. XeThienTri의 요금 페이지는 통상적인 담보로 차종과 업체에 따라 1,000,000~3,000,000동의 현금 보증금, 또는 신분 서류 보관(외국인은 여권인 경우가 많음)을 들고 있습니",
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: 의무 책임보험은 언제나 운전자가 아니라 차량에 붙고, 렌트 기간 전체를 보장해야 합니다. Gia đình và Xã hội에 따르면 시행령 67/2023/NĐ-CP의 보상 한도는 인명 피해가 사고당 1인 1억 5천만 동, 재산 피해가 사고당 5천만 동"
       ]
     },
     {
@@ -891,8 +586,7 @@
       "failed": [
         "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -903,9 +597,8 @@
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «1.000.000 tot 3.000.000 VND»",
         "G2_PARENT_PUBLISHED: NL-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 4 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: De verplichte verzekering hoort altijd bij het voertuig, niet bij de bestuurder, en moet de hele huurperiode dekken. Volgens Gia đình và Xã  | Een week- of maandcontract moet naast d"
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: Hoe langer de huur, hoe groter het risico van de verhuurder en hoe hoger de borg. De prijspagina van XeThienTri beschrijft als gebruikelijke",
+        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: De verplichte verzekering hoort altijd bij het voertuig, niet bij de bestuurder, en moet de hele huurperiode dekken. Volgens Gia đình và Xã  | Een week- of maandcontract moet naast"
       ]
     },
     {
@@ -913,9 +606,7 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -925,19 +616,15 @@
       "source_commit": "f3fe97d44e3902813e8bf30f86b89d271b79456c",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «1.000.000 a 3.000.000 VND»",
-        "G2_PARENT_PUBLISHED: PT-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 4 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: O seguro obrigatório acompanha sempre o veículo, não o condutor, e tem de cobrir o período inteiro de aluguer. Segundo o Gia đình và Xã hội, | Além dos pontos habituais, um contrato "
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: Quanto mais longo o aluguer, maior o risco da loja e maior a caução. A página de preços da XeThienTri descreve como garantias habituais uma ",
+        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: O seguro obrigatório acompanha sempre o veículo, não o condutor, e tem de cobrir o período inteiro de aluguer. Segundo o Gia đình và Xã hội, | Além dos pontos habituais, um contrat"
       ]
     },
     {
       "id": "VI-S03",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES"
+        "G1_DRAFT_QA"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
@@ -945,17 +632,14 @@
       "source_sha256": "3da6e7a377e04ab748a4faeaf4021f838e498b7278cc5a9adee3d98458387f49",
       "source_commit": "427dfdcf1f07c254c7cdb51162c8bf32c38ee15e",
       "details": [
-        "G2_PARENT_PUBLISHED: VI-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 7 paragraph(s) with money amounts need human price verification"
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same paragraph «150.000–200.000 đồng»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same pa"
       ]
     },
     {
       "id": "ZH-S03",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS"
+        "G1_DRAFT_QA"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
@@ -963,8 +647,7 @@
       "source_sha256": "fa619f705f51a3182f36d9eb6eef5823f2742159f186896602f917395c657d73",
       "source_commit": "427dfdcf1f07c254c7cdb51162c8bf32c38ee15e",
       "details": [
-        "G2_PARENT_PUBLISHED: ZH-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review"
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same paragraph «150,000–200,000盾»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same paragr"
       ]
     },
     {
@@ -973,7 +656,6 @@
       "failed": [
         "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W1",
@@ -982,10 +664,9 @@
       "source_sha256": "d485bec348b8d7ebe531fb3c65635f8d51a496bdbc0deb1ee9f8c713dbc50b8f",
       "source_commit": "ed1015407bc36afdb41611d13e0e4de23a2f7f6b",
       "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in meta_description: Currency amount without an inline source in the same paragraph «2 bis 5 Millionen Dong»",
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in meta_description: Currency amount without an inline source in the same paragraph «2 bis 5 Millionen Dong»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same ",
         "G2_PARENT_PUBLISHED: DE-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Fast jede Motorradmiete in Hanoi endet mit derselben Szene: Die Vermietung zahlt eine Kaution zurück. Was eine reibungslose Rückgabe von ein | Kautionstreitigkeiten entstehen fast ni"
+        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: Fast jede Motorradmiete in Hanoi endet mit derselben Szene: Die Vermietung zahlt eine Kaution zurück. Was eine reibungslose Rückgabe von ein | Kautionstreitigkeiten entstehen fast "
       ]
     },
     {
@@ -993,9 +674,6 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W1",
@@ -1004,11 +682,8 @@
       "source_sha256": "37cb22a19f9f09a4a48302be425b3465584e835151511d7adac76fecaa8c1229",
       "source_commit": "ed1015407bc36afdb41611d13e0e4de23a2f7f6b",
       "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in meta_description: Currency amount without an inline source in the same paragraph «2 to 5 million VND»",
-        "G2_PARENT_PUBLISHED: EN-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 2 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Almost every motorbike rental in Hanoi ends the same way: the shop hands back a deposit. What separates a smooth return from a disputed one  | Deposit disputes almost never come from"
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in meta_description: Currency amount without an inline source in the same paragraph «2 to 5 million VND»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same para",
+        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: Almost every motorbike rental in Hanoi ends the same way: the shop hands back a deposit. What separates a smooth return from a disputed one  | Deposit disputes almost never come fr"
       ]
     },
     {
@@ -1016,9 +691,7 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1028,10 +701,8 @@
       "source_commit": "074204cf19fd4809ba767db6ef0a5624ef3c1c77",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «30.000 VND»",
-        "G2_PARENT_PUBLISHED: ES-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 3 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: El artículo 328 del Código Civil vietnamita de 2015, comentado en la revista del Tribunal Supremo Popular, define las arras como la entrega  | - Momento de la devolución: inmediatame"
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: La política de MOTOGO muestra cómo se redactan estas cláusulas en la práctica: los daños graves por culpa del cliente se reparan con piezas ",
+        "G3_OFFICIAL_EVIDENCE: 5 hard legal statement(s) lack an inline official citation: El artículo 328 del Código Civil vietnamita de 2015, comentado en la revista del Tribunal Supremo Popular, define las arras como la entrega  | - Momento de la devolución: inmediata"
       ]
     },
     {
@@ -1039,9 +710,7 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1051,10 +720,8 @@
       "source_commit": "074204cf19fd4809ba767db6ef0a5624ef3c1c77",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «15 000 à 30 000 VND»",
-        "G2_PARENT_PUBLISHED: FR-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 3 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: L'article 328 du Code civil vietnamien de 2015, commenté dans la revue de la Cour populaire suprême, définit le dépôt de garantie comme la r | - Le moment du remboursement : dès la r"
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: La politique de MOTOGO montre comment ces clauses s'écrivent en pratique : les dommages lourds imputables au client sont réparés avec des pi",
+        "G3_OFFICIAL_EVIDENCE: 5 hard legal statement(s) lack an inline official citation: L'article 328 du Code civil vietnamien de 2015, commenté dans la revue de la Cour populaire suprême, définit le dépôt de garantie comme la r | - Le moment du remboursement : dès la"
       ]
     },
     {
@@ -1062,9 +729,7 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1074,10 +739,8 @@
       "source_commit": "074204cf19fd4809ba767db6ef0a5624ef3c1c77",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «15,000〜30,000ドン»",
-        "G2_PARENT_PUBLISHED: JA-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: ベトナム民法（2015年）第328条について、最高人民裁判所の『裁判所雑誌』の解説はこう説明しています。手付金（đặt cọc）とは、契約の締結または履行を担保するため、一方が他方に一定期間、金銭または価値ある物を交付することです。契約が履行されれば手付金は返還されるか支払債務に | 交渉で解決しない場合、第328条と契約条項が話し合いの根拠になります。最も強い"
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: MOTOGOの規約は、こうした条項が実際にどう書かれるかを示しています。借主の過失による重大な損傷は純正部品で交換、軽い傷は市場価格の見積りに基づいて賠償、盗難や全損はレンタル開始時の査定額で賠償、返却遅延は車種により1時間15,000〜30,000ドンで、8時間を超えると1日分",
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: ベトナム民法（2015年）第328条について、最高人民裁判所の『裁判所雑誌』の解説はこう説明しています。手付金（đặt cọc）とは、契約の締結または履行を担保するため、一方が他方に一定期間、金銭または価値ある物を交付することです。契約が履行されれば手付金は返還されるか支払債務に | 交渉で解決しない場合、第328条と契約条項が話し合いの根拠になります。最も"
       ]
     },
     {
@@ -1086,8 +749,7 @@
       "failed": [
         "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1098,9 +760,8 @@
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «15,000~30,000동»",
         "G2_PARENT_PUBLISHED: KO-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: 베트남 민법(2015년) 제328조에 대해 최고인민법원 '법원 저널'의 해설은 이렇게 설명합니다. 계약금(đặt cọc)이란 계약의 체결 또는 이행을 담보하기 위해 한쪽이 다른 쪽에 일정 기간 금전이나 가치 있는 물건을 교부하는 것입니다. 계약이 이행 | 협의로 해결되지 않으면 제328조와 계약 조항이 협상의 근거입니다. 가"
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: MOTOGO의 정책은 이런 조항이 실제로 어떻게 적히는지 보여 줍니다. 임차인 과실로 인한 큰 파손은 정품 부품으로 교체하고, 가벼운 긁힘은 시장 견적에 따라 배상하며, 도난이나 전손은 렌트 시작 시점의 감정 가액으로 배상하고, 반납 지연은 차종에 따",
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: 베트남 민법(2015년) 제328조에 대해 최고인민법원 '법원 저널'의 해설은 이렇게 설명합니다. 계약금(đặt cọc)이란 계약의 체결 또는 이행을 담보하기 위해 한쪽이 다른 쪽에 일정 기간 금전이나 가치 있는 물건을 교부하는 것입니다. 계약이 이행 | 협의로 해결되지 않으면 제328조와 계약 조항이 협상의 근거입니다."
       ]
     },
     {
@@ -1109,8 +770,7 @@
       "failed": [
         "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1121,9 +781,8 @@
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «15.000 tot 30.000 VND»",
         "G2_PARENT_PUBLISHED: NL-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 3 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: Artikel 328 van het Vietnamese Burgerlijk Wetboek van 2015, toegelicht in het tijdschrift van het Volksgerechtshof, omschrijft de borg als h | - Moment van teruggave: direct na inlev"
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: Het beleid van MOTOGO laat zien hoe zulke clausules in de praktijk worden geschreven: zware schade door de huurder wordt hersteld met origin",
+        "G3_OFFICIAL_EVIDENCE: 5 hard legal statement(s) lack an inline official citation: Artikel 328 van het Vietnamese Burgerlijk Wetboek van 2015, toegelicht in het tijdschrift van het Volksgerechtshof, omschrijft de borg als h | - Moment van teruggave: direct na inl"
       ]
     },
     {
@@ -1131,9 +790,7 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1143,10 +800,8 @@
       "source_commit": "074204cf19fd4809ba767db6ef0a5624ef3c1c77",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «30.000 VND»",
-        "G2_PARENT_PUBLISHED: PT-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 3 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: O artigo 328 do Código Civil vietnamita de 2015, comentado na revista do Supremo Tribunal Popular, define o sinal como a entrega por uma par | - Momento da devolução: logo após a ver"
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: A política da MOTOGO mostra como estas cláusulas se escrevem na prática: os danos graves por culpa do cliente são reparados com peças origin",
+        "G3_OFFICIAL_EVIDENCE: 5 hard legal statement(s) lack an inline official citation: O artigo 328 do Código Civil vietnamita de 2015, comentado na revista do Supremo Tribunal Popular, define o sinal como a entrega por uma par | - Momento da devolução: logo após a v"
       ]
     },
     {
@@ -1154,9 +809,7 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1166,10 +819,8 @@
       "source_commit": "074204cf19fd4809ba767db6ef0a5624ef3c1c77",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «15.000–30.000 đồng»",
-        "G2_PARENT_PUBLISHED: VI-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_NO_PRICES: 3 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: Với người Việt, pháp luật cũng đã siết việc cơ sở kinh doanh giữ giấy tờ tùy thân của khách. Theo báo Lao Động, từ ngày 15/12/2025 Nghị định"
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: Chính sách của MOTOGO cho thấy cách các điều khoản này được viết trên thực tế: hư hỏng nặng do lỗi người thuê phải thay phụ tùng chính hãng,",
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: Với người Việt, pháp luật cũng đã siết việc cơ sở kinh doanh giữ giấy tờ tùy thân của khách. Theo báo Lao Động, từ ngày 15/12/2025 Nghị định"
       ]
     },
     {
@@ -1177,8 +828,7 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
+        "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1188,18 +838,14 @@
       "source_commit": "074204cf19fd4809ba767db6ef0a5624ef3c1c77",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «1.5万至3万越南盾»",
-        "G2_PARENT_PUBLISHED: ZH-H02 is IDEA",
-        "G3_TOPIC_CLASS: topic class PRICE requires human review",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: 根据越南《民法典》（2015年）第328条，最高人民法院《法院杂志》的分析指出，定金是一方在一定期限内交给另一方一笔钱或有价值的物品，用以担保合同的订立或履行。合同履行后，定金应退还或抵作价款；交付定金的一方拒绝履行则丧失定金，收受定金的一方拒绝履行则须返还定金并另付同等金额，但 | 对越南本国人，法律也已经收紧经营场所扣留顾客身份证件的做法。据《劳动报》报道，"
+        "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: MOTOGO的政策展示了这些条款在实际中的写法：承租人造成的严重损坏需更换原厂配件，轻微划痕按市场报价赔偿，车辆被盗或完全损毁按租赁时的评估价值赔偿，逾期按小时计费，各车型每小时1.5万至3万越南盾，超过8小时按一天计算。每一条你都可以接受或协商，但只要有一条不清楚就不要签字。",
+        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: 根据越南《民法典》（2015年）第328条，最高人民法院《法院杂志》的分析指出，定金是一方在一定期限内交给另一方一笔钱或有价值的物品，用以担保合同的订立或履行。合同履行后，定金应退还或抵作价款；交付定金的一方拒绝履行则丧失定金，收受定金的一方拒绝履行则须返还定金并另付同等金额，但 | 对越南本国人，法律也已经收紧经营场所扣留顾客身份证件的做法。据《劳动报》报"
       ]
     },
     {
       "id": "DE-S05",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1208,19 +854,14 @@
       "source_sha256": "c7b85baafc4ee03d8025b45bea77211dd3fe76f13636175d7f715ced7e81775e",
       "source_commit": "074204cf19fd4809ba767db6ef0a5624ef3c1c77",
       "details": [
-        "G2_PARENT_PUBLISHED: DE-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 4 legal/safety statement(s) without an official citation: Die Zuordnung ergibt sich aus den Hubraumgrenzen, nicht aus einer amtlichen Tabelle, und sollte so verstanden werden. Die deutsche Klasse AM | Die Bußgelder nach dem Dekret 168/2024/"
+        "G3_OFFICIAL_EVIDENCE: 4 hard legal statement(s) lack an inline official citation: Die Zuordnung ergibt sich aus den Hubraumgrenzen, nicht aus einer amtlichen Tabelle, und sollte so verstanden werden. Die deutsche Klasse AM | Die Bußgelder nach dem Dekret 168/202"
       ]
     },
     {
       "id": "EN-S05",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1230,17 +871,15 @@
       "source_commit": "074204cf19fd4809ba767db6ef0a5624ef3c1c77",
       "details": [
         "G2_PARENT_PUBLISHED: EN-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 4 legal/safety statement(s) without an official citation: \"Will my licence work in Vietnam?\" is the first question most visitors ask before renting a motorbike in Hanoi, and the honest answer depend | Decree 168/2024/NĐ-CP raised the penalt"
+        "G3_OFFICIAL_EVIDENCE: 4 hard legal statement(s) lack an inline official citation: \"Will my licence work in Vietnam?\" is the first question most visitors ask before renting a motorbike in Hanoi, and the honest answer depend | Decree 168/2024/NĐ-CP raised the pena"
       ]
     },
     {
       "id": "ES-S05",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
+        "G3_SENSITIVE_SOURCES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W1",
@@ -1250,16 +889,16 @@
       "source_commit": "9ed97278cf006e2b250e9d0b18d1d498b793b4c9",
       "details": [
         "G2_PARENT_PUBLISHED: ES-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: La ley vietnamita sobre orden y seguridad del tráfico, 36/2024/QH15, vigente desde el 1 de enero de 2025, asigna la clase A1 a las motos de  | Para un conductor español, estas dos ca"
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
+        "G3_OFFICIAL_EVIDENCE: 5 hard legal statement(s) lack an inline official citation: La ley vietnamita sobre orden y seguridad del tráfico, 36/2024/QH15, vigente desde el 1 de enero de 2025, asigna la clase A1 a las motos de  | Para un conductor español, estas dos "
       ]
     },
     {
       "id": "FR-S05",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
+        "G3_SENSITIVE_SOURCES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W1",
@@ -1269,16 +908,16 @@
       "source_commit": "9ed97278cf006e2b250e9d0b18d1d498b793b4c9",
       "details": [
         "G2_PARENT_PUBLISHED: FR-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 6 legal/safety statement(s) without an official citation: La loi vietnamienne sur l'ordre et la sécurité routière, 36/2024/QH15, en vigueur depuis le 1er janvier 2025, affecte la classe A1 aux motos | Pour un visiteur sans permis internatio"
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
+        "G3_OFFICIAL_EVIDENCE: 6 hard legal statement(s) lack an inline official citation: La loi vietnamienne sur l'ordre et la sécurité routière, 36/2024/QH15, en vigueur depuis le 1er janvier 2025, affecte la classe A1 aux motos | Pour un visiteur sans permis internat"
       ]
     },
     {
       "id": "JA-S05",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
+        "G3_SENSITIVE_SOURCES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W1",
@@ -1288,16 +927,16 @@
       "source_commit": "c469526f514428efc45ef5dfe3f982e3cb6b04d2",
       "details": [
         "G2_PARENT_PUBLISHED: JA-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 6 legal/safety statement(s) without an official citation: ここが核心です。アメリカ、カナダ、オーストラリア、ニュージーランド、アイルランド、日本、韓国、スペインが発行する国際運転免許は、ベトナムでは無効です。これらの国はジュネーブ1949年条約に基づいて発行しているためです（Ha Giang Trips）。日本のJAFや地方自動車協会が | 2025年1月1日に施行されたベトナムの交通秩序・安全法36/2024/QH1"
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
+        "G3_OFFICIAL_EVIDENCE: 6 hard legal statement(s) lack an inline official citation: ここが核心です。アメリカ、カナダ、オーストラリア、ニュージーランド、アイルランド、日本、韓国、スペインが発行する国際運転免許は、ベトナムでは無効です。これらの国はジュネーブ1949年条約に基づいて発行しているためです（Ha Giang Trips）。日本のJAFや地方自動車協会が | 2025年1月1日に施行されたベトナムの交通秩序・安全法36/2024/Q"
       ]
     },
     {
       "id": "KO-S05",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
+        "G3_SENSITIVE_SOURCES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W1",
@@ -1307,16 +946,16 @@
       "source_commit": "c469526f514428efc45ef5dfe3f982e3cb6b04d2",
       "details": [
         "G2_PARENT_PUBLISHED: KO-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 6 legal/safety statement(s) without an official citation: 핵심은 여기에 있다. 미국, 캐나다, 오스트레일리아, 뉴질랜드, 아일랜드, 일본, 한국, 스페인이 발급하는 국제운전면허는 베트남에서 무효다. 이 나라들이 제네바 1949년 협약에 따라 발급하기 때문이다(Ha Giang Trips). 한국의 자동차검사· | 2025년 1월 1일부터 시행된 베트남의 도로 교통 질서·안전법 36/"
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
+        "G3_OFFICIAL_EVIDENCE: 6 hard legal statement(s) lack an inline official citation: 핵심은 여기에 있다. 미국, 캐나다, 오스트레일리아, 뉴질랜드, 아일랜드, 일본, 한국, 스페인이 발급하는 국제운전면허는 베트남에서 무효다. 이 나라들이 제네바 1949년 협약에 따라 발급하기 때문이다(Ha Giang Trips). 한국의 자동차검사· | 2025년 1월 1일부터 시행된 베트남의 도로 교통 질서·안전법 3"
       ]
     },
     {
       "id": "NL-S05",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
+        "G3_SENSITIVE_SOURCES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W1",
@@ -1326,16 +965,15 @@
       "source_commit": "d4a6c85aeeeb18db0b6037614e67f7acae4599c0",
       "details": [
         "G2_PARENT_PUBLISHED: NL-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 4 legal/safety statement(s) without an official citation: Vietnam kent sinds 1 januari 2025 de A1-klasse voor motoren tot 125cc of elektromotoren tot 11kW, en de A-klasse voor alles daarboven (Danan | Voor wie zonder motorcategorie of zonde"
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
+        "G3_OFFICIAL_EVIDENCE: 4 hard legal statement(s) lack an inline official citation: Vietnam kent sinds 1 januari 2025 de A1-klasse voor motoren tot 125cc of elektromotoren tot 11kW, en de A-klasse voor alles daarboven (Danan | Voor wie zonder motorcategorie of zon"
       ]
     },
     {
       "id": "PT-S05",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W1",
@@ -1345,17 +983,14 @@
       "source_commit": "d4a6c85aeeeb18db0b6037614e67f7acae4599c0",
       "details": [
         "G2_PARENT_PUBLISHED: PT-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 4 legal/safety statement(s) without an official citation: Desde 1 de janeiro de 2025, a lei vietnamita 36/2024/QH15 define a classe A1 para motas até 125cc ou motores elétricos até 11kW, e a classe  | Para quem viaja sem categoria de mota n"
+        "G3_OFFICIAL_EVIDENCE: 4 hard legal statement(s) lack an inline official citation: Desde 1 de janeiro de 2025, a lei vietnamita 36/2024/QH15 define a classe A1 para motas até 125cc ou motores elétricos até 11kW, e a classe  | Para quem viaja sem categoria de mota"
       ]
     },
     {
       "id": "VI-S05",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1365,17 +1000,14 @@
       "source_commit": "652664c45ee7ba9364112524c02f2ffe04d419a0",
       "details": [
         "G2_PARENT_PUBLISHED: VI-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Ở Hà Nội, hầu như cửa hàng nào cũng sẵn lòng giao xe cho người có hộ chiếu và tiền cọc, nhưng việc giao xe không thay thế được điều kiện phá | Nghị định 168/2024/NĐ-CP nâng mức phạt "
+        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: Ở Hà Nội, hầu như cửa hàng nào cũng sẵn lòng giao xe cho người có hộ chiếu và tiền cọc, nhưng việc giao xe không thay thế được điều kiện phá | Nghị định 168/2024/NĐ-CP nâng mức phạ"
       ]
     },
     {
       "id": "ZH-S05",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1385,16 +1017,13 @@
       "source_commit": "652664c45ee7ba9364112524c02f2ffe04d419a0",
       "details": [
         "G2_PARENT_PUBLISHED: ZH-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 4 legal/safety statement(s) without an official citation: \"我的驾照在越南能用吗\"是大多数游客在河内租摩托车前问的第一个问题，而诚实的回答取决于三件事：你所在国家的国际驾照遵循哪个公约、驾照上印的是什么准驾类别、以及你想租的车排量多大。本文说明规则本身，列出官方来源对几个国家的描述，特别是中国驾照的处境，解释越南的驾照级别和125cc分 | 第168/2024/NĐ-CP号议定自2025年起大幅提高了处罚。根据Thư "
+        "G3_OFFICIAL_EVIDENCE: 4 hard legal statement(s) lack an inline official citation: \"我的驾照在越南能用吗\"是大多数游客在河内租摩托车前问的第一个问题，而诚实的回答取决于三件事：你所在国家的国际驾照遵循哪个公约、驾照上印的是什么准驾类别、以及你想租的车排量多大。本文说明规则本身，列出官方来源对几个国家的描述，特别是中国驾照的处境，解释越南的驾照级别和125cc分 | 第168/2024/NĐ-CP号议定自2025年起大幅提高了处罚。根据Th"
       ]
     },
     {
       "id": "DE-S06",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1403,17 +1032,14 @@
       "source_sha256": "dd54245070f80775009de0f2209677ed36c9995ca95e20200a53dfbbed8f3a75",
       "source_commit": "652664c45ee7ba9364112524c02f2ffe04d419a0",
       "details": [
-        "G2_PARENT_PUBLISHED: DE-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: Bei einer Rollermiete gibt es oft zwei verschiedene Zahlungen, die beide „Kaution\" genannt werden: die Reservierungsanzahlung vor der Anreis | Auch Vermieter sagen ab: Der reserviert"
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: Bei einer Rollermiete gibt es oft zwei verschiedene Zahlungen, die beide „Kaution\" genannt werden: die Reservierungsanzahlung vor der Anreis | Auch Vermieter sagen ab: Der reservie"
       ]
     },
     {
       "id": "EN-S06",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1423,16 +1049,14 @@
       "source_commit": "652664c45ee7ba9364112524c02f2ffe04d419a0",
       "details": [
         "G2_PARENT_PUBLISHED: EN-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: A motorbike rental often involves two payments that both get called a deposit: the booking deposit paid before you arrive and the security d | Shops cancel too: the reserved bike has"
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: A motorbike rental often involves two payments that both get called a deposit: the booking deposit paid before you arrive and the security d | Shops cancel too: the reserved bike h"
       ]
     },
     {
       "id": "ES-S06",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1442,16 +1066,14 @@
       "source_commit": "652664c45ee7ba9364112524c02f2ffe04d419a0",
       "details": [
         "G2_PARENT_PUBLISHED: ES-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: En un alquiler de moto suele haber dos pagos a los que se llama depósito: la señal de reserva que pagas antes de llegar y la fianza que entr | Las tiendas también cancelan: la moto r"
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: En un alquiler de moto suele haber dos pagos a los que se llama depósito: la señal de reserva que pagas antes de llegar y la fianza que entr | Las tiendas también cancelan: la moto"
       ]
     },
     {
       "id": "FR-S06",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1461,16 +1083,14 @@
       "source_commit": "652664c45ee7ba9364112524c02f2ffe04d419a0",
       "details": [
         "G2_PARENT_PUBLISHED: FR-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: Une location de scooter comporte souvent deux versements que l'on appelle tous deux « caution » : l'acompte de réservation payé avant l'arri | Les loueurs annulent aussi : le scooter"
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: Une location de scooter comporte souvent deux versements que l'on appelle tous deux « caution » : l'acompte de réservation payé avant l'arri | Les loueurs annulent aussi : le scoot"
       ]
     },
     {
       "id": "JA-S06",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1480,16 +1100,14 @@
       "source_commit": "652664c45ee7ba9364112524c02f2ffe04d419a0",
       "details": [
         "G2_PARENT_PUBLISHED: JA-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: バイクレンタルには「保証金」と呼ばれる支払いが二つあることが多いのです。到着前に払う予約金と、受け取り時に預ける保証金です。予約金には民法（2015年）第328条が適用され、最高人民裁判所の『裁判所雑誌』はこう説明しています。手付金は契約の締結または履行を担保するものであり、支払 | 店側がキャンセルすることもあります。予約した車両が事故に遭った、あなたの区への"
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: バイクレンタルには「保証金」と呼ばれる支払いが二つあることが多いのです。到着前に払う予約金と、受け取り時に預ける保証金です。予約金には民法（2015年）第328条が適用され、最高人民裁判所の『裁判所雑誌』はこう説明しています。手付金は契約の締結または履行を担保するものであり、支払 | 店側がキャンセルすることもあります。予約した車両が事故に遭った、あなたの区"
       ]
     },
     {
       "id": "KO-S06",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1499,16 +1117,14 @@
       "source_commit": "652664c45ee7ba9364112524c02f2ffe04d419a0",
       "details": [
         "G2_PARENT_PUBLISHED: KO-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: 오토바이 렌트에는 둘 다 보증금이라 불리는 두 가지 지급이 있는 경우가 많습니다. 도착 전에 내는 예약금과 인수할 때 맡기는 보증금입니다. 예약금에는 민법(2015년) 제328조가 적용되는데, 최고인민법원 '법원 저널'의 설명은 이렇습니다. 계약금은  | 업체도 취소합니다. 예약한 차량이 사고를 당했거나, 당신의 구로 배달이"
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: 오토바이 렌트에는 둘 다 보증금이라 불리는 두 가지 지급이 있는 경우가 많습니다. 도착 전에 내는 예약금과 인수할 때 맡기는 보증금입니다. 예약금에는 민법(2015년) 제328조가 적용되는데, 최고인민법원 '법원 저널'의 설명은 이렇습니다. 계약금은  | 업체도 취소합니다. 예약한 차량이 사고를 당했거나, 당신의 구로 배"
       ]
     },
     {
       "id": "NL-S06",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1518,16 +1134,14 @@
       "source_commit": "652664c45ee7ba9364112524c02f2ffe04d419a0",
       "details": [
         "G2_PARENT_PUBLISHED: NL-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: Bij scooterhuur zijn er vaak twee betalingen die allebei borg worden genoemd: de aanbetaling voor de reservering vóór aankomst en de borg bi | Verhuurders annuleren ook: de gereserve"
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: Bij scooterhuur zijn er vaak twee betalingen die allebei borg worden genoemd: de aanbetaling voor de reservering vóór aankomst en de borg bi | Verhuurders annuleren ook: de gereser"
       ]
     },
     {
       "id": "PT-S06",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1537,16 +1151,16 @@
       "source_commit": "652664c45ee7ba9364112524c02f2ffe04d419a0",
       "details": [
         "G2_PARENT_PUBLISHED: PT-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: Numa locação de moto há muitas vezes dois pagamentos a que se chama caução: o sinal de reserva pago antes da chegada e a caução entregue no  | As lojas também cancelam: a moto reserv"
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: Numa locação de moto há muitas vezes dois pagamentos a que se chama caução: o sinal de reserva pago antes da chegada e a caução entregue no  | As lojas também cancelam: a moto rese"
       ]
     },
     {
       "id": "VI-S06",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
+        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS"
+        "G3_SENSITIVE_SOURCES"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
@@ -1554,16 +1168,18 @@
       "source_sha256": "b2beae657f67ed16cb2f1439a7cbe6e9163816a73fd0b087a6b4b82caccdeb92",
       "source_commit": "72ff487669088294a9bd2b9d3314a5217e60f382",
       "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[4].title: Currency amount without an inline source in the same paragraph «2–5 triệu đồng»",
         "G2_PARENT_PUBLISHED: VI-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review"
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
       ]
     },
     {
       "id": "ZH-S06",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
+        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
+        "G3_SENSITIVE_SOURCES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W1",
@@ -1572,17 +1188,18 @@
       "source_sha256": "c21487083944d1cf78e8eb5cffe92900913c1d95ddc21cf9be0153d72562d147",
       "source_commit": "72ff487669088294a9bd2b9d3314a5217e60f382",
       "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[4].title: Currency amount without an inline source in the same paragraph «200万至500万越南盾»",
         "G2_PARENT_PUBLISHED: ZH-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: 根据越南《民法典》(2015年)第472条,财产租赁合同是双方之间的协议,据此出租方将财产交给承租方在一段期限内使用,承租方支付租金(iContract)。摩托车租赁合同属于财产租赁合同的一种,因此即使车行只开一张简短的租车单,原则上它仍然是一份有约束力的合同。"
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: 根据越南《民法典》(2015年)第472条,财产租赁合同是双方之间的协议,据此出租方将财产交给承租方在一段期限内使用,承租方支付租金(iContract)。摩托车租赁合同属于财产租赁合同的一种,因此即使车行只开一张简短的租车单,原则上它仍然是一份有约束力的合同。"
       ]
     },
     {
       "id": "DE-S07",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS"
+        "G3_SENSITIVE_SOURCES"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
@@ -1591,15 +1208,15 @@
       "source_commit": "fa2f7e2a37e298d7fe637758fc0f53ab80abb98d",
       "details": [
         "G2_PARENT_PUBLISHED: DE-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review"
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
       ]
     },
     {
       "id": "EN-S07",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS"
+        "G3_SENSITIVE_SOURCES"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
@@ -1608,15 +1225,15 @@
       "source_commit": "fa2f7e2a37e298d7fe637758fc0f53ab80abb98d",
       "details": [
         "G2_PARENT_PUBLISHED: EN-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review"
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
       ]
     },
     {
       "id": "ES-S07",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS"
+        "G3_SENSITIVE_SOURCES"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
@@ -1625,15 +1242,15 @@
       "source_commit": "7b3f03041d2dea0a863963b61a81eb0f1dbcd647",
       "details": [
         "G2_PARENT_PUBLISHED: ES-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review"
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
       ]
     },
     {
       "id": "FR-S07",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS"
+        "G3_SENSITIVE_SOURCES"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
@@ -1642,15 +1259,14 @@
       "source_commit": "7b3f03041d2dea0a863963b61a81eb0f1dbcd647",
       "details": [
         "G2_PARENT_PUBLISHED: FR-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review"
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
       ]
     },
     {
       "id": "JA-S07",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1660,16 +1276,13 @@
       "source_commit": "5031ea384ce8fc6b4d8746cc7c6f7ece108d182d",
       "details": [
         "G2_PARENT_PUBLISHED: JA-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: 灯火は助言ではなく義務です。VOV交通が引用する政令168/2024/NĐ-CP第7条第1項g号では、二輪車の運転者が前日18時から翌日6時までの間、または霧、煙、粉じん、雨、悪天候で視界が制限されるときに灯火を使用しない場合、20万〜40万ドンの罰金と定められています。昼間の豪"
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: 灯火は助言ではなく義務です。VOV交通が引用する政令168/2024/NĐ-CP第7条第1項g号では、二輪車の運転者が前日18時から翌日6時までの間、または霧、煙、粉じん、雨、悪天候で視界が制限されるときに灯火を使用しない場合、20万〜40万ドンの罰金と定められています。昼間の豪"
       ]
     },
     {
       "id": "KO-S07",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1678,17 +1291,14 @@
       "source_sha256": "3a11aa76452d6345be9138b204a3d39c1c6c05292205c4df936790a9cfb8e300",
       "source_commit": "5031ea384ce8fc6b4d8746cc7c6f7ece108d182d",
       "details": [
-        "G2_PARENT_PUBLISHED: KO-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: 등화는 권고가 아니라 의무입니다. VOV 교통이 인용한 시행령 168/2024/NĐ-CP 제7조 제1항 g호에 따르면, 이륜차 운전자가 전날 18시부터 다음 날 6시 사이, 또는 안개, 연기, 먼지, 비, 악천후로 시야가 제한될 때 전조등을 켜지 않으"
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: 등화는 권고가 아니라 의무입니다. VOV 교통이 인용한 시행령 168/2024/NĐ-CP 제7조 제1항 g호에 따르면, 이륜차 운전자가 전날 18시부터 다음 날 6시 사이, 또는 안개, 연기, 먼지, 비, 악천후로 시야가 제한될 때 전조등을 켜지 않으"
       ]
     },
     {
       "id": "NL-S07",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1698,16 +1308,14 @@
       "source_commit": "5031ea384ce8fc6b4d8746cc7c6f7ece108d182d",
       "details": [
         "G2_PARENT_PUBLISHED: NL-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: Verlichting is geen advies maar een plicht. VOV Giao thông citeert punt g van lid 1 van artikel 7 van decreet 168/2024/NĐ-CP: een bestuurder | De kinband van de helm moet ook met de "
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: Verlichting is geen advies maar een plicht. VOV Giao thông citeert punt g van lid 1 van artikel 7 van decreet 168/2024/NĐ-CP: een bestuurder | De kinband van de helm moet ook met d"
       ]
     },
     {
       "id": "PT-S07",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1717,17 +1325,14 @@
       "source_commit": "5031ea384ce8fc6b4d8746cc7c6f7ece108d182d",
       "details": [
         "G2_PARENT_PUBLISHED: PT-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: As luzes não são um conselho, são uma obrigação. A VOV Giao thông cita a alínea g do n.º 1 do artigo 7.º do Decreto 168/2024/NĐ-CP: o condut | A fivela do capacete tem de estar bem a"
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: As luzes não são um conselho, são uma obrigação. A VOV Giao thông cita a alínea g do n.º 1 do artigo 7.º do Decreto 168/2024/NĐ-CP: o condut | A fivela do capacete tem de estar bem"
       ]
     },
     {
       "id": "VI-S07",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1737,17 +1342,14 @@
       "source_commit": "5031ea384ce8fc6b4d8746cc7c6f7ece108d182d",
       "details": [
         "G2_PARENT_PUBLISHED: VI-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: Đèn chiếu sáng không chỉ là lời khuyên. Theo điểm g khoản 1 Điều 7 Nghị định 168/2024/NĐ-CP được VOV Giao thông trích dẫn, người điều khiển  | Mũ bảo hiểm phải cài quai đúng cách kể "
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: Đèn chiếu sáng không chỉ là lời khuyên. Theo điểm g khoản 1 Điều 7 Nghị định 168/2024/NĐ-CP được VOV Giao thông trích dẫn, người điều khiển  | Mũ bảo hiểm phải cài quai đúng cách k"
       ]
     },
     {
       "id": "ZH-S07",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1757,16 +1359,14 @@
       "source_commit": "5031ea384ce8fc6b4d8746cc7c6f7ece108d182d",
       "details": [
         "G2_PARENT_PUBLISHED: ZH-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: 开灯不只是建议。VOV 交通台引用第 168/2024/NĐ-CP 号议定第 7 条第 1 款 g 点：摩托车、轻便摩托车驾驶人在前一天 18 时至次日 6 时之间，或者在雾、烟、灰尘、下雨、恶劣天气导致能见度受限时不使用照明灯，处 200,000 至 400,000 越南盾罚款"
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: 开灯不只是建议。VOV 交通台引用第 168/2024/NĐ-CP 号议定第 7 条第 1 款 g 点：摩托车、轻便摩托车驾驶人在前一天 18 时至次日 6 时之间，或者在雾、烟、灰尘、下雨、恶劣天气导致能见度受限时不使用照明灯，处 200,000 至 400,000 越南盾罚款"
       ]
     },
     {
       "id": "DE-S08",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1776,16 +1376,14 @@
       "source_commit": "5031ea384ce8fc6b4d8746cc7c6f7ece108d182d",
       "details": [
         "G2_PARENT_PUBLISHED: DE-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: Die Pflichtversicherung, die jedes zugelassene Motorrad in Vietnam haben muss, ist eine Haftpflichtversicherung. Wie Gia đình và Xã hội das "
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: Die Pflichtversicherung, die jedes zugelassene Motorrad in Vietnam haben muss, ist eine Haftpflichtversicherung. Wie Gia đình và Xã hội das "
       ]
     },
     {
       "id": "EN-S08",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1795,16 +1393,14 @@
       "source_commit": "5031ea384ce8fc6b4d8746cc7c6f7ece108d182d",
       "details": [
         "G2_PARENT_PUBLISHED: EN-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: - Get a receipt with the shop's name and address. Hand-written is fine. Without it, the rental shop has no reason to reimburse you."
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: - Get a receipt with the shop's name and address. Hand-written is fine. Without it, the rental shop has no reason to reimburse you."
       ]
     },
     {
       "id": "ES-S08",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1814,16 +1410,14 @@
       "source_commit": "5031ea384ce8fc6b4d8746cc7c6f7ece108d182d",
       "details": [
         "G2_PARENT_PUBLISHED: ES-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: El seguro obligatorio que debe llevar toda moto matriculada en Vietnam es un seguro de responsabilidad civil. Como resume Gia đình và Xã hội"
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: El seguro obligatorio que debe llevar toda moto matriculada en Vietnam es un seguro de responsabilidad civil. Como resume Gia đình và Xã hội"
       ]
     },
     {
       "id": "FR-S08",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1833,16 +1427,16 @@
       "source_commit": "5031ea384ce8fc6b4d8746cc7c6f7ece108d182d",
       "details": [
         "G2_PARENT_PUBLISHED: FR-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: L'assurance obligatoire que doit porter tout deux-roues immatriculé au Vietnam est une assurance de responsabilité civile. Comme le résume G"
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: L'assurance obligatoire que doit porter tout deux-roues immatriculé au Vietnam est une assurance de responsabilité civile. Comme le résume G"
       ]
     },
     {
       "id": "JA-S08",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
+        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS"
+        "G3_SENSITIVE_SOURCES"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
@@ -1850,16 +1444,17 @@
       "source_sha256": "e3adca571daa34477934fa9172f0f9f138762a464a821e0d3936ab31c4ceaa3c",
       "source_commit": "e0610b31cd991c1f74379016e9f41251b8382409",
       "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[1].title: Currency amount without an inline source in the same paragraph «40万ドン»; Fact guard UNSOURCED_AMOUNT in sources[2].title: Currency amount without an inline source in the same paragraph «3万ドン»;",
         "G2_PARENT_PUBLISHED: JA-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review"
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
       ]
     },
     {
       "id": "KO-S08",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS"
+        "G1_DRAFT_QA",
+        "G3_SENSITIVE_SOURCES"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
@@ -1867,16 +1462,15 @@
       "source_sha256": "663fad6c4c3de0f1d1539834b8c4e7f7a0f3c9003bc70262ab54a533a937db74",
       "source_commit": "e0610b31cd991c1f74379016e9f41251b8382409",
       "details": [
-        "G2_PARENT_PUBLISHED: KO-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review"
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[1].title: Currency amount without an inline source in the same paragraph «40만 동»; Fact guard UNSOURCED_AMOUNT in sources[2].title: Currency amount without an inline source in the same paragraph «3만 동»;",
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
       ]
     },
     {
       "id": "NL-S08",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1886,16 +1480,14 @@
       "source_commit": "2f61a044c1eb954f30da00f0947f64d84936d477",
       "details": [
         "G2_PARENT_PUBLISHED: NL-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: De verplichte verzekering die elke geregistreerde scooter in Vietnam moet hebben, is een aansprakelijkheidsverzekering. Zoals Gia đình và Xã"
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: De verplichte verzekering die elke geregistreerde scooter in Vietnam moet hebben, is een aansprakelijkheidsverzekering. Zoals Gia đình và Xã"
       ]
     },
     {
       "id": "PT-S08",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1905,16 +1497,14 @@
       "source_commit": "2f61a044c1eb954f30da00f0947f64d84936d477",
       "details": [
         "G2_PARENT_PUBLISHED: PT-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: O seguro obrigatório que toda a moto matriculada no Vietname tem de ter é um seguro de responsabilidade civil. Como resume o Gia đình và Xã "
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: O seguro obrigatório que toda a moto matriculada no Vietname tem de ter é um seguro de responsabilidade civil. Como resume o Gia đình và Xã "
       ]
     },
     {
       "id": "VI-S08",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1924,16 +1514,14 @@
       "source_commit": "2f61a044c1eb954f30da00f0947f64d84936d477",
       "details": [
         "G2_PARENT_PUBLISHED: VI-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: Giao thông Hà Nội chảy vòng qua chướng ngại chứ không dừng lại vì nó. Trước khi xem xe bị gì, hãy dắt xe lên vỉa hè hoặc vào đầu ngõ, bật đè | Bảo hiểm bắt buộc mà mọi xe máy đã đăng"
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: Giao thông Hà Nội chảy vòng qua chướng ngại chứ không dừng lại vì nó. Trước khi xem xe bị gì, hãy dắt xe lên vỉa hè hoặc vào đầu ngõ, bật đè | Bảo hiểm bắt buộc mà mọi xe máy đã đă"
       ]
     },
     {
       "id": "ZH-S08",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
         "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1943,206 +1531,142 @@
       "source_commit": "2f61a044c1eb954f30da00f0947f64d84936d477",
       "details": [
         "G2_PARENT_PUBLISHED: ZH-H04 is IDEA",
-        "G3_TOPIC_CLASS: topic class SAFETY requires human review",
-        "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: 越南每辆登记在册的摩托车都必须投保的强制保险是第三者责任险。根据家庭与社会报对第 67/2023/NĐ-CP 号议定的归纳，它在固定限额内赔付他人的人身伤害和财产损失。它不赔租来的车本身，不赔拖车费，也不赔修理费。如果你有旅行保险或意外险，先读条款，因为多数保单都要求持有与所驾车"
-      ]
-    },
-    {
-      "id": "DE-S09",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "3e8b9c65e5f15f20cb6238490a8542e914409a5fd388c36921bdf0a56ba56474",
-      "source_commit": "bd98cccd289e832b00a45338c743d4e2a3f75541",
-      "details": [
-        "G2_PARENT_PUBLISHED: DE-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Wer in Deutschland A1, A2 oder A besitzt, sollte bei der Ausstellung prüfen, dass das Feld für Motorräder tatsächlich gestempelt ist. Wer nu | Seit einigen Jahren können Inhaber der "
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: 越南每辆登记在册的摩托车都必须投保的强制保险是第三者责任险。根据家庭与社会报对第 67/2023/NĐ-CP 号议定的归纳，它在固定限额内赔付他人的人身伤害和财产损失。它不赔租来的车本身，不赔拖车费，也不赔修理费。如果你有旅行保险或意外险，先读条款，因为多数保单都要求持有与所驾车"
       ]
     },
     {
       "id": "EN-S09",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "daf103c111219c239c12b91ec0736488aa28f4949ea6f1f024aaf1eadb505815",
-      "source_commit": "66c738da068412493d39c1dcd03c6ea823251560",
+      "source_sha256": "e9780f7dec833dae2d44475bcf5583540f6f4d96ef00f5dbbad364ece0f18bc2",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: EN-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: For a motorbike rider the box that matters is A, which covers motorcycles, or its sub-category A1 for light motorcycles. Vietnam's own licen | The only motorised two-wheelers in Viet"
+        "G2_PARENT_PUBLISHED: EN-H03 is IDEA"
       ]
     },
     {
       "id": "EN-S10",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "9f650b207bf3fd27c97e8e2419d7a7715a62e23f3c9e967c2f9e019617dc2259",
-      "source_commit": "66c738da068412493d39c1dcd03c6ea823251560",
+      "source_sha256": "10a660e697bfb2dfbe277b429e650661c27f1fae14d67410fba270d3b1d793a3",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: EN-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Article 24(1) then sets the eligibility conditions. A foreigner who lives, works or studies in Vietnam can apply if they have: | Under Article 24(3), you file in person at the provin"
+        "G2_PARENT_PUBLISHED: EN-H03 is IDEA"
       ]
     },
     {
       "id": "ES-S09",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "48ab1b0da6a180e764da56de9e8fff5506761db822f8ec320ab9984204126438",
-      "source_commit": "2729df12d00eaf15900e55c89d87ebc5dc62d343",
+      "source_sha256": "9aa054d77d90065945e7cf0680748a3111db99b6de0caacdbf1d5aa16e9ce257",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: ES-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: La misma página recuerda que la policía puede retirar el pasaporte a los extranjeros implicados en un accidente y proceder después al arrest | Aunque tengas un permiso internacional "
+        "G2_PARENT_PUBLISHED: ES-H03 is IDEA"
       ]
     },
     {
       "id": "FR-S09",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "b8573ff30a00da7642b5da95df61277b5380baf6bb9b8e74ba4da9361123737a",
-      "source_commit": "bd98cccd289e832b00a45338c743d4e2a3f75541",
+      "source_sha256": "2a8c607e3af92f3183b875b8057ebb6b899d65df543384b19f99e1afd02de9ed",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: FR-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Si votre permis français ne comporte que la catégorie B, votre permis international ne comportera que la catégorie B. Il vous permettra éven | Or le permis international ne reprend q"
+        "G2_PARENT_PUBLISHED: FR-H03 is IDEA"
       ]
     },
     {
       "id": "JA-S09",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_NO_PRICES",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "c9ed83e2b7a70cad35a4d94db1545e7c7c3e721a27bd6a5aab89794cc93afbc8",
-      "source_commit": "09da9b647e5a1aba89032ae5d656aad5297d8e6c",
+      "source_sha256": "e924c4b7b1e9e2e3a04b38ef9f989800e110c40eb17edd756a01ee95e9d89d29",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: JA-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: 通達第24条第1項の条件は、次の二つです。 | 通達第24条第3項によれば、申請は省・市の公安交通警察課、または受付窓口が設けられた社級公安に本人が出向いて行います。大使館の案内では、ハノイの申請窓口として公安省交通警察部の免許担当チーム（ハドン区フンフン通り2番地）が示されており、平日の午前と午後、土曜の午前に受付があり、番"
+        "G2_PARENT_PUBLISHED: JA-H03 is IDEA"
       ]
     },
     {
       "id": "KO-S09",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "7c49ab3a446d9a6d5487190b8f2f6b7b7202cad31970b9c4ad8b9ff5cfbd46b5",
-      "source_commit": "89ad687d3cd92dc2d6a44604bc07d0f984dc0426",
+      "source_sha256": "d0fad902a7c51658ec98d739ad92ff9244cb773f388a3f79c4523445fb5b2eb7",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: KO-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: 오토바이에 관해서는 두 번째와 세 번째 항목이 핵심입니다. A 범주가 없는 국제운전면허증은 협정상 B 범주, 즉 승용차 등만 허용되므로 이 면허증으로는 오토바이를 탈 수 없습니다. 협정 부속서의 베트남 국제운전면허증 분류표에서도 A는 모터사이클, A1 | 베트남 쪽 분류도 알아 두면 렌털 차량을 고를 때 도움이 됩니다. 베트"
+        "G2_PARENT_PUBLISHED: KO-H03 is IDEA"
       ]
     },
     {
       "id": "NL-S09",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "35ae0d4be633b4934d62c79fec9b76beec286e46e07c17e9440cb2007c99bb4f",
-      "source_commit": "09da9b647e5a1aba89032ae5d656aad5297d8e6c",
+      "source_sha256": "682e3bf18e2965c307a1e255d0c922db297ab9f0665cc3f7e64ff2da76a0f38a",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: NL-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: Heb je in Nederland alleen rijbewijs B, dan staat op je internationale rijbewijs alleen B. Daarmee mag je in Vietnam geen scooter boven de 5 | Er zit een verschil tussen wat de Vietn"
+        "G2_PARENT_PUBLISHED: NL-H03 is IDEA"
       ]
     },
     {
       "id": "PT-S09",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "2d315c00127110ab6f4f9172c9efbc7812963d560b4a5852b4bd397f583d526e",
-      "source_commit": "2729df12d00eaf15900e55c89d87ebc5dc62d343",
+      "source_sha256": "975c0a9bf6681504d5047d7b46dcb2c5143c1f2b516e1914c4e299a199d78437",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: PT-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: - só com a categoria A (ou A1, para cilindradas até 125 cm³) na carta nacional e na licença internacional pode alugar e conduzir legalmente  | A Autorização para Conduzir Ciclomotor "
+        "G2_PARENT_PUBLISHED: PT-H03 is IDEA"
       ]
     },
     {
       "id": "VI-S09",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_TOPIC_CLASS",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "1263b79961203ac3e1a412f871d555f1e34c46e2c3ecbbb49f32b33a245f9cee",
-      "source_commit": "89ad687d3cd92dc2d6a44604bc07d0f984dc0426",
+      "source_sha256": "e500d256e230f40635e4ebde4991a3d63274c642b7442094f3dce7f5b7f1b841",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: VI-H03 is IDEA",
-        "G3_TOPIC_CLASS: topic class LEGAL requires human review",
-        "G3_OFFICIAL_EVIDENCE: 11 legal/safety statement(s) without an official citation: Khi thuê xe máy ở Hà Nội, nhiều người chỉ hỏi giá và đời xe mà quên một câu quan trọng hơn: bằng lái của mình được lái chiếc xe đó không. Từ | Con số 125 cm³ là mức \"đến\", tức là xe"
+        "G2_PARENT_PUBLISHED: VI-H03 is IDEA"
       ]
     }
   ]

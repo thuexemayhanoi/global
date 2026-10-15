@@ -5,7 +5,7 @@ import path from "node:path";
 import {spawnSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
 import {loadTopicalMap,validateTopicalMap,planPromotion} from "../scripts/seo/topical-authority-core.mjs";
-import {factoryStatus,duplicateLayers,prepareCorpus,selectRefill,standingManifest,validatePolicy,validateResearchBatch,ingestResearch,fold,dashboardMarkdown,STANDING_STATEMENT} from "../scripts/topic-factory-core.mjs";
+import {factoryStatus,duplicateLayers,prepareCorpus,selectRefill,standingManifest,validatePolicy,validateResearchBatch,ingestResearch,validateResearchSequence,researchUsage,domainResearchCoverage,fold,dashboardMarkdown,STANDING_STATEMENT} from "../scripts/topic-factory-core.mjs";
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),"utf8"));
@@ -39,6 +39,32 @@ test("status counts are disjoint and remaining = target - accepted per locale",(
  const md=dashboardMarkdown(s,{});
  assert.match(md,/\| Locale \| Target \| PUBLISHED \| SUBMITTED \| CLAIMED/);
  assert.doesNotMatch(md,/(ranking|traffic|search volume)\s*[:=]\s*\d/i);
+});
+
+test("domain research dashboard separates staged candidates from Matrix and reports all ten locales",()=>{
+ const d=domainResearchCoverage({matrix,map,policy});
+ assert.equal(d.length,8);
+ assert.ok(d.every(x=>Object.keys(x.by_locale).length===10));
+ for(const x of d){
+  assert.equal(x.research_total,Object.values(x.by_locale).reduce((n,c)=>n+c.research,0));
+  assert.equal(x.matrix_total,Object.values(x.by_locale).reduce((n,c)=>n+c.matrix,0));
+  assert.ok(x.architecture_blocked_total<=x.research_total);
+ }
+ const opened=d.filter(x=>x.status==="RESEARCH_OPEN");
+ assert.equal(opened.length,6);
+ const demo=structuredClone(map);
+ const enHub=demo.architecture.proposed_hubs.find(x=>x.id==="travel-guides");
+ const existing=demo.locales.en.proposals[0];
+ demo.locales.en.proposals.push({...existing,candidate_id:"TA-EN-9898",parent_id:null,
+  cluster:enHub.id,subcluster:enHub.clusters[0].id,status:"ARCHITECTURE_BLOCKED"});
+ const next=domainResearchCoverage({matrix,map:demo,policy});
+ const travel=next.find(x=>x.id==="hanoi-vietnam-travel");
+ assert.equal(travel.by_locale.en.architecture_blocked,1);
+ assert.equal(travel.by_locale.en.research,1);
+ assert.equal(travel.by_locale.vi.architecture_blocked,0);
+ assert.equal(travel.locales_with_eight_candidates,0);
+ assert.match(dashboardMarkdown({...factoryStatus(ctx),domains:next},{}),/Research intake by domain and language/);
+ assert.match(dashboardMarkdown({...factoryStatus(ctx),domains:next},{}),/Travel Guides/);
 });
 
 test("duplicate layers L1–L5 catch exact, folded, overlapping and look-alike topics; distinct_from only excuses L3–L5",()=>{
@@ -114,6 +140,37 @@ test("research intake rejects invented metrics, missing evidence, new domains wi
  assert.ok(validateResearchBatch(batch([good],{purpose:"OTHER"}),{matrix,map,policy}).issues.some(i=>i.gate==="R1"));
 });
 
+test("six research-open domains accept research-only batches but never enter Writer Matrix before reviewed Hubs",()=>{
+ const pending=policy.domains.filter(d=>d.status==="RESEARCH_OPEN");
+ assert.equal(pending.length,6);
+ assert.equal(map.architecture.proposed_hubs.length,6);
+ assert.equal(policy.domains.filter(d=>d.status==="ACTIVE").length,2);
+ for(const d of pending){
+  const h=map.architecture.proposed_hubs.find(x=>x.id===d.clusters[0]);
+  assert.ok(h&&h.clusters.length>=2,d.id);
+  const c={...good,domain_id:d.id,parent_id:null,subcluster:h.clusters[0].id,
+   slug:"research-"+d.id+"-options",
+   primary_query:"independent visitor travel questions about "+d.label.toLowerCase()+" in vietnam",
+   working_title:"Independent Travel Planning for "+d.label+" in Vietnam",
+   intent_rationale:"Visitors researching this specific Vietnam travel domain need options, location context and realistic independent planning decisions rather than transactional bike booking.",
+   content_angle:"Distinct planning questions for independent visitors, grounded in sources and transport context, without imaginary rentals or reviews."};
+  const v=validateResearchBatch(batch([c]),{matrix,map,policy});
+  assert.equal(v.passed,true,JSON.stringify({domain:d.id,issues:v.issues}));
+  const ing=ingestResearch(batch([c]),{matrix,map,policy,source:"test.json",frozenUrls:frozen});
+  assert.equal(ing.added.length,1,JSON.stringify({domain:d.id,rejected:ing.rejected}));
+  const p=ing.map.locales.en.proposals.find(x=>x.candidate_id===ing.added[0].candidate_id);
+  assert.equal(p.status,"ARCHITECTURE_BLOCKED");
+  assert.equal(p.parent_id,null);
+  assert.equal(p.cluster,h.id);
+  const checked=validateTopicalMap({map:ing.map,matrix,frozenUrls:frozen});
+  assert.equal(checked.issues.filter(x=>x.id===p.candidate_id).length,0,JSON.stringify({domain:d.id,issues:checked.issues.filter(x=>x.id===p.candidate_id)}));
+  const refill=selectRefill({...ctx,map:ing.map,validation:checked});
+  assert.ok(!refill.selected.includes(p.candidate_id),"unparented research is not publishable or claimable");
+  assert.ok(validateResearchBatch(batch([{...c,parent_id:"EN-NOT-A-HUB"}]),{matrix,map,policy}).issues.some(x=>x.gate==="R3"));
+  assert.ok(validateResearchBatch(batch([{...c,domain_id:"motorbike-rental"}]),{matrix,map,policy}).issues.some(x=>x.gate==="R3"));
+ }
+});
+
 test("ingest assigns the next TA ID, registers references, passes T1–T10 and is replay-safe",()=>{
  const r=ingestResearch(batch([good]),{matrix,map,policy,source:"test.json",frozenUrls:frozen});
  assert.equal(r.added.length,1,JSON.stringify(r.rejected));
@@ -127,6 +184,64 @@ test("ingest assigns the next TA ID, registers references, passes T1–T10 and i
  const again=ingestResearch(batch([{...good,slug:"scooter-luggage-capacity-hanoi-2"}]),{matrix,map:r.map,policy,source:"test.json",frozenUrls:frozen});
  assert.equal(again.added.length,0);
  assert.ok(again.rejected.some(x=>x.gate==="F5_DUPLICATE"));
+});
+
+test("sequential research QA catches duplicate keywords across separate files before GitHub push",()=>{
+ const first=batch([good]),second=batch([{...good,slug:"different-url-same-query"}]);
+ const check=validateResearchSequence([
+  {file:"factory/topic-research/batches/0001.json",batch:first},
+  {file:"factory/topic-research/batches/0002.json",batch:second}
+ ],{matrix,map,policy,frozenUrls:frozen});
+ assert.equal(check.passed,false);
+ assert.deepEqual(check.results.map(x=>x.passed),[true,false]);
+ assert.equal(check.results[0].would_add,1);
+ assert.ok(check.results[1].rejected.some(x=>x.gate==="F5_DUPLICATE"),JSON.stringify(check.results));
+ assert.equal(map.locales.en.proposals.some(x=>x.slug==="different-url-same-query"),false,"validation never mutates main data");
+ const separate=validateResearchSequence([{file:"a.json",batch:first}],{matrix,map,policy,frozenUrls:frozen});
+ assert.equal(separate.passed,true);
+});
+
+test("SHA-256 log replay after research-branch rebase does not reject previously accepted batches",()=>{
+ const first=batch([good]),ingested=ingestResearch(first,{matrix,map,policy,source:"accepted.json",frozenUrls:frozen});
+ assert.equal(ingested.added.length,1);
+ const newCandidate={...good,slug:"choosing-helmet-fit-on-vietnam-trip",
+  primary_query:"how to choose a correctly fitted helmet for a vietnam riding trip",
+  secondary_queries:["helmet size measurements for vietnam trip","head circumference fit for motorcycle helmet"],
+  working_title:"How to Check Helmet Fit Before a Riding Trip in Vietnam",
+  intent_rationale:"Independent riders need to check helmet fit, fasteners and suitability for their trip; this differs from luggage space and motorbike model selection.",
+  content_angle:"Step-by-step safe helmet fitting and checks for travellers, with verified safety references and no ungrounded rental claims."};
+ const rerun=validateResearchSequence([
+  {file:"old.json",batch:first,replay:{sha256:"rehearsal",added:ingested.added.map(x=>x.candidate_id),rejected:[]}},
+  {file:"new.json",batch:batch([newCandidate])}
+ ],{matrix,map:ingested.map,policy,frozenUrls:frozen});
+ assert.equal(rerun.results[0].passed,true);
+ assert.equal(rerun.results[0].replayed,true);
+ assert.equal(rerun.results[0].would_add,0);
+ assert.equal(rerun.results[1].passed,true,JSON.stringify(rerun.results[1].rejected));
+ const rejected=validateResearchSequence([
+  {file:"rejected.json",batch:first,replay:{sha256:"failure",rejected:[{gate:"F5_DUPLICATE",reason:"previously rejected"}]}}
+ ],{matrix,map:ingested.map,policy,frozenUrls:frozen});
+ assert.equal(rejected.passed,false);
+ assert.equal(rejected.results[0].replayed,true);
+ assert.equal(rejected.results[0].rejected[0].gate,"F5_DUPLICATE");
+});
+
+test("topic research intake reserves at most 1000 planning slots per locale before Matrix promotion",()=>{
+ const usage=researchUsage({matrix,map,policy},"en");
+ assert.ok(usage.total<1000);
+ const cap=structuredClone(policy);
+ cap.targets.per_locale=usage.total; // exercise the exact cap without fake 1000-topic content
+ const blocked=ingestResearch(batch([good]),{matrix,map,policy:cap,source:"cap.json",frozenUrls:frozen});
+ assert.equal(blocked.added.length,0);
+ assert.ok(blocked.rejected.some(x=>x.gate==="F6_LOCALE_CAP"));
+ cap.targets.per_locale=usage.total+1;
+ const accepted=ingestResearch(batch([good]),{matrix,map,policy:cap,source:"one-more.json",frozenUrls:frozen});
+ assert.equal(accepted.added.length,1,JSON.stringify(accepted.rejected));
+ assert.equal(researchUsage({matrix,map:accepted.map,policy:cap},"en").available,0);
+ const subsequent=ingestResearch(batch([{...good,slug:"new-different-url",primary_query:"a different travel research question"}]),
+  {matrix,map:accepted.map,policy:cap,source:"excess.json",frozenUrls:frozen});
+ assert.equal(subsequent.added.length,0);
+ assert.ok(subsequent.rejected.some(x=>x.gate==="F6_LOCALE_CAP"));
 });
 
 test("trusted-only mutations: ingest and refill --apply refuse outside the Topic Factory workflow",()=>{

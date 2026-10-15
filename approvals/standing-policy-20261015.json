@@ -14,7 +14,8 @@
     "Các bài có thông tin pháp lý, an toàn, giá hoặc dữ liệu chưa kiểm chứng phải bị chặn xuất bản cho tới khi đủ bằng chứng hoặc được xét duyệt bổ sung.",
     "Triển khai an toàn bằng batch nhỏ, pilot trước, tăng dần khi QA ổn định. Chạy thử 2 bài/ngôn ngữ, sau đó 10 bài/ngôn ngữ. Chỉ tăng tốc sau khi xác nhận không có regression.",
     "Sau mỗi batch hợp lệ, có thể merge/deploy các hạng mục thuộc phạm vi ủy quyền, với CI và kiểm tra rollback.",
-    "2026-10-15, owner follow-up: 'pulish toàn bộ số bài nháp giờ bỏ cái AI đánh giá global đi giữ cái 3 W CÙNG VIẾT ... làm như /blog vậy'. Publish only QA-eligible drafts; maintain G1–G5/G7, human checks for legal/safety/price and all protected URL safeguards."
+    "2026-10-15, owner follow-up: 'pulish toàn bộ số bài nháp giờ bỏ cái AI đánh giá global đi giữ cái 3 W CÙNG VIẾT ... làm như /blog vậy'. Publish only QA-eligible drafts; maintain G1–G5/G7, human checks for legal/safety/price and all protected URL safeguards.",
+    "2026-10-15 owner: Xoá Human Review đi cho nó tự publish. No manual review hold: automatic source-evidence gates on legal/safety/money, with Writer repairs for failures; no QA bypass."
   ],
   "topic_promotion": {
     "authorized": true,
@@ -45,11 +46,7 @@
         "max_per_locale": 1000
       }
     },
-    "review_required_classes": [
-      "LEGAL",
-      "SAFETY",
-      "PRICE"
-    ],
+    "review_required_classes": [],
     "not_authorized": [
       "Deleting, renaming or redirecting any URL",
       "Changing NAP, opening hours, prices or business schema",

@@ -66,6 +66,28 @@ export function validatePolicy(policy,standing){
  return e;
 }
 
+/** Research visibility only. Planning-stage proposals never imply published
+ * content, Hub approval, factual verification or a Writer claim. */
+export function domainResearchCoverage({matrix,map,policy}){
+ return (policy.domains||[]).map(d=>{
+  const by_locale={};
+  let research_total=0,architecture_blocked_total=0,matrix_total=0;
+  for(const code of policy.targets.locales){
+   const props=(map.locales[code]?.proposals||[]).filter(p=>d.clusters.includes(p.cluster)&&p.status!=="PROMOTED");
+   const matrixCount=matrix.rows.filter(r=>r.locale===code&&
+    policy.targets.counted_roles.includes(r.role)&&d.clusters.includes(r.cluster)).length;
+   const blocked=props.filter(p=>p.status==="ARCHITECTURE_BLOCKED").length;
+   const proposed=props.filter(p=>p.status==="PROPOSED").length;
+   by_locale[code]={matrix:matrixCount,research:props.length,proposed,architecture_blocked:blocked,
+    eight_candidate_threshold_met:d.status==="RESEARCH_OPEN"&&blocked>=8};
+   research_total+=props.length;
+   architecture_blocked_total+=blocked;
+   matrix_total+=matrixCount;
+  }
+  return {...d,by_locale,research_total,architecture_blocked_total,matrix_total,
+   locales_with_eight_candidates:Object.values(by_locale).filter(x=>x.eight_candidate_threshold_met).length};
+ });
+}
 /** Per-locale dashboard counts: what is published, in drafting, queued, proposed or blocked. */
 export function factoryStatus({matrix,map,ledger,registry,policy}){
  const problems=validatePool(matrix,ledger,registry);
@@ -107,7 +129,7 @@ export function factoryStatus({matrix,map,ledger,registry,policy}){
    released:mine.filter(c=>c.status==="RELEASED").length,sessions:[...new Set(mine.filter(c=>c.status==="CLAIMED").map(c=>c.session))]};
  }
  return {ledger_revision:ledger.revision,locales,totals,writers,
-  domains:(policy.domains||[]).map(d=>({id:d.id,label:d.label,status:d.status,clusters:d.clusters})),
+  domains:domainResearchCoverage({matrix,map,policy}),
   note:"Counts are repository state. Keyword evidence stays NOT_VALIDATED until real market/SERP data is attached; rankings and traffic are not inferred."};
 }
 
@@ -208,16 +230,23 @@ export function validateResearchBatch(batch,{matrix,map,policy}){
  if(!Array.isArray(list)||list.length<1||list.length>policy.refill.batch_max)fail(-1,"R2","Provide 1.."+policy.refill.batch_max+" candidates");
  if(issues.length)return {passed:false,issues,accepted:[]};
  const clusters=new Map();
- for(const h of map.architecture?.hubs||[])for(const c of h.clusters)clusters.set(c.id,{hub:h.id,reserved:!!c.reserved_by});
+ for(const h of map.architecture?.hubs||[])for(const c of h.clusters)clusters.set(c.id,{hub:h.id,reserved:!!c.reserved_by,proposed:false});
+ for(const h of map.architecture?.proposed_hubs||[])for(const c of h.clusters)clusters.set(c.id,{hub:h.id,reserved:!!c.reserved_by,proposed:true});
  const accepted=[],seen=new Map();
  for(const [i,c] of list.entries()){
   const before=issues.length;
   if(!c||typeof c!=="object"){fail(i,"R2","Candidate must be an object");continue;}
   if("search_volume" in c||"ranking" in c||"traffic" in c)fail(i,"R8","Do not submit volumes, rankings or traffic; keyword evidence stays NOT_VALIDATED");
   const parent=matrix.rows.find(r=>r.id===c.parent_id);
-  if(!LOCALES.includes(c.locale)||!parent||parent.role!=="HUB"||parent.locale!==c.locale)fail(i,"R3","parent_id must be an existing same-locale HUB (new domains need an architecture PR first)");
   const cl=clusters.get(c.subcluster);
-  if(!cl||cl.reserved||(parent&&cl.hub!==parent.cluster))fail(i,"R3","subcluster must be an unreserved cluster of the parent Hub");
+  const domain=(policy.domains||[]).find(d=>d.id===c.domain_id);
+  const researchOnly=c.parent_id===null&&cl?.proposed===true&&
+    domain?.status==="RESEARCH_OPEN"&&domain.clusters.includes(cl.hub);
+  if(!LOCALES.includes(c.locale)||(!researchOnly&&(!parent||parent.role!=="HUB"||parent.locale!==c.locale)))
+   fail(i,"R3","Use an existing same-locale HUB or parent_id:null with RESEARCH_OPEN domain_id and proposed-Hub subcluster");
+  if(!cl||cl.reserved||(researchOnly?!!parent:cl.proposed||!parent||cl.hub!==parent.cluster))
+   fail(i,"R3","subcluster must belong to the existing Hub or the research-open proposed Hub");
+  if(c.parent_id===null&&!researchOnly)fail(i,"R3","Unparented research requires an explicitly RESEARCH_OPEN domain and matching proposed Hub");
   if(!SLUG.test(c.slug||"")||c.slug.length>80)fail(i,"R4","slug must be lowercase ASCII kebab-case ≤80 chars");
   for(const k of ["primary_query","working_title","intent_rationale","content_angle"])if(unsafe(c[k]))fail(i,"R5",k+" missing or unsafe");
   if(String(c.intent_rationale||"").trim().length<60)fail(i,"R5","intent_rationale needs ≥60 chars");
@@ -242,6 +271,15 @@ export function validateResearchBatch(batch,{matrix,map,policy}){
  * TA IDs, then drop any that fail topical gates or factory duplicate layers.
  * Returns a new map (input untouched) plus per-candidate outcome.
  */
+/** A proposal consumes a planning slot until it is promoted into the Matrix.
+ * PROMOTED is counted via its Matrix row, never twice.
+ * Blocked architecture research also consumes a planning slot, not an article. */
+export function researchUsage({matrix,map,policy},locale){
+ const roles=new Set(policy.targets.counted_roles);
+ const rows=matrix.rows.filter(r=>r.locale===locale&&roles.has(r.role)).length;
+ const pending=(map.locales[locale]?.proposals||[]).filter(p=>p.status!=="PROMOTED").length;
+ return {locale,target:policy.targets.per_locale,rows,pending,total:rows+pending,available:Math.max(0,policy.targets.per_locale-rows-pending)};
+}
 export function ingestResearch(batch,{matrix,map,policy,source,frozenUrls=[]}){
  const v=validateResearchBatch(batch,{matrix,map,policy});
  const next=structuredClone(map),added=[],rejected=v.issues.filter(x=>x.index>=0).map(x=>({index:x.index,gate:x.gate,reason:x.reason}));
@@ -249,6 +287,12 @@ export function ingestResearch(batch,{matrix,map,policy,source,frozenUrls=[]}){
  const refs=next.references.references;
  for(const {index,candidate:c} of v.accepted){
   const L=next.locales[c.locale];
+  const usage=researchUsage({matrix,map:next,policy},c.locale);
+  if(usage.available===0){
+   rejected.push({index,gate:"F6_LOCALE_CAP",reason:"Locale "+c.locale+" has "+usage.total+"/"+usage.target+
+    " reserved planning slots (Matrix + unpromoted research); no new candidate admitted"});
+   continue;
+  }
   const nums=L.proposals.map(p=>Number(String(p.candidate_id).split("-")[2])||0);
   const id="TA-"+c.locale.toUpperCase()+"-"+String(1+Math.max(0,...nums)).padStart(4,"0");
   const keys=[];
@@ -260,12 +304,14 @@ export function ingestResearch(batch,{matrix,map,policy,source,frozenUrls=[]}){
    if(!keys.includes(k))keys.push(k);
   }
   const parent=matrix.rows.find(r=>r.id===c.parent_id);
-  const proposal={candidate_id:id,locale:c.locale,role:"SUPPORT",parent_id:c.parent_id,cluster:parent.cluster,subcluster:c.subcluster,
+  const researchOnly=c.parent_id===null;
+  const hub=researchOnly?(policy.domains||[]).find(d=>d.id===c.domain_id)?.clusters?.[0]:parent?.cluster;
+  const proposal={candidate_id:id,locale:c.locale,role:"SUPPORT",parent_id:researchOnly?null:c.parent_id,cluster:hub,subcluster:c.subcluster,
    slug:c.slug,primary_query:c.primary_query.trim(),secondary_queries:c.secondary_queries,working_title:c.working_title.trim(),
    search_intent:c.search_intent,word_target:c.word_target,priority:50,intent_rationale:c.intent_rationale.trim(),
    content_angle:c.content_angle.trim(),...(c.entities?{entities:c.entities}:{}),references:keys,
    ...(Array.isArray(c.distinct_from)&&c.distinct_from.length?{distinct_from:c.distinct_from}:{}),
-   status:"PROPOSED",serp_evidence:"NOT_VALIDATED",source_verification:"NOT_STARTED",
+   status:researchOnly?"ARCHITECTURE_BLOCKED":"PROPOSED",serp_evidence:"NOT_VALIDATED",source_verification:"NOT_STARTED",
    research:{agent:batch.agent.name,session:batch.agent.session,researched_on:batch.researched_on,keyword_evidence:c.keyword_evidence||"NOT_VALIDATED",source}};
   // Factory duplicate layers against the Matrix and every live proposal in the locale.
   const stop=L.stop_tokens||[];
@@ -292,6 +338,32 @@ export function ingestResearch(batch,{matrix,map,policy,source,frozenUrls=[]}){
  const used=new Set(allProposals(next).flatMap(p=>p.references||[]));
  next.references.references=refs.filter(r=>!r.key.startsWith("rx-")||used.has(r.key));
  return {map:next,added,rejected,batch_error:false};
+}
+
+/** Validate multiple research files against one cumulative simulated map.
+ * The actual repo remains unchanged; duplicate/intent and locale-cap gates
+ * include every previously accepted batch, not just individual JSON files. */
+export function validateResearchSequence(files,{matrix,map,policy,frozenUrls=[]}){
+ let next=map;
+ const results=[];
+ for(const {file,batch,replay} of files){
+  // A research branch may be rebased onto main between batches. The exact
+  // SHA-256 payload recorded in main's intake ledger is replay-safe; a changed
+  // payload is checked normally instead of inheriting an old acceptance.
+  if(replay){
+   const rejected=Array.isArray(replay.rejected)?replay.rejected:[];
+   const passed=!replay.error&&rejected.length===0;
+   results.push({file,passed,replayed:true,would_add:0,rejected:passed?[]:rejected.length?rejected:
+    [{gate:"R_REPLAY",reason:String(replay.error||"Previously rejected research batch")}]});
+   continue;
+  }
+  const v=validateResearchBatch(batch,{matrix,map:next,policy});
+  const dry=ingestResearch(batch,{matrix,map:next,policy,source:file,frozenUrls});
+  const passed=v.passed&&!dry.batch_error&&dry.rejected.length===0&&dry.added.length===batch?.candidates?.length;
+  results.push({file,passed,would_add:dry.added.length,rejected:dry.rejected});
+  if(passed)next=dry.map;
+ }
+ return {passed:results.every(r=>r.passed),results,map:next};
 }
 
 /** Markdown dashboard from status + publisher state; data-derived only, no timestamps. */
@@ -363,7 +435,7 @@ export function dashboardMarkdown(status,{publisher=null,refill=null,rejectedTot
   const cols=QUEUE_STATES,head=["AWAITING QA","APPROVED_BY_POLICY (publish queue)","REPAIR","HUMAN_REVIEW_REQUIRED","WAIT_PARENT","WAIT_STAGE","ESCALATED","BLOCKED"];
   const line=(name,s)=>"| "+name+" | "+cols.map(k=>s?.[k]||0).join(" | ")+" |";
   out.push("## Publication queue (SUBMITTED drafts not live yet)","",
-   "Every open SUBMITTED draft is in exactly one state. AWAITING QA = the publisher has not evaluated this exact draft hash yet. REPAIR = automated QA failed on a fixable gate; the same Writer session writes the next revision. HUMAN_REVIEW_REQUIRED = LEGAL/SAFETY/PRICE topic or money amounts; never auto-published. ESCALATED = three accepted repairs did not pass.","",
+   "Every open SUBMITTED draft is in exactly one state. AWAITING QA = the publisher has not evaluated this exact draft hash yet. REPAIR = automated QA failed on a fixable gate; the same Writer session writes the next revision. HUMAN_REVIEW_REQUIRED is a legacy dashboard field kept for compatibility; the mandatory manual-review gate is retired. Unsupported legal/safety or price claims fail source QA and enter Writer repair instead. ESCALATED = three accepted repairs did not pass.","",
    "| Locale | "+head.join(" | ")+" |","|---|"+cols.map(()=>"---:").join("|")+"|",
    ...Object.keys(L).map(code=>line(code,queue.byLocale[code])),line("**all**",queue.totals),"",
    "- Writer CLAIMED (being written): **"+queue.claimed+"** · SUBMITTED and still open: **"+queue.submitted_open+"** · SUBMITTED and now live: **"+queue.submitted_live+"**","",
@@ -384,7 +456,13 @@ export function dashboardMarkdown(status,{publisher=null,refill=null,rejectedTot
    const state=v?v.state+(v.state==="AVAILABLE"&&slots?.slots?.[w]?.state&&slots.slots[w].state!=="AVAILABLE"?" (last report: "+slots.slots[w].state+")":""):"—";
    return "| "+w+" | "+state+" | "+(v?.session||slots?.slots?.[w]?.session||s.sessions.join(", ")||"—")+" | "+s.claimed+" | "+s.submitted+" | "+s.released+" | "+(q.REPAIR||0)+" | "+(q.HUMAN_REVIEW_REQUIRED||0)+" | "+(q.ESCALATED||0)+" |";
   }),"",
-  "## Scope domains","",...status.domains.map(d=>"- "+d.label+" — "+d.status+(d.clusters.length?" ("+d.clusters.join(", ")+")":"")),"");
+  "## Scope domains","",...status.domains.map(d=>"- "+d.label+" — "+d.status+(d.clusters.length?" ("+d.clusters.join(", ")+")":"")),"",
+  "## Research intake by domain and language","",
+  "Each VI–JA cell is a researched topic still outside the Matrix (PROPOSED or ARCHITECTURE_BLOCKED), not a published article. Matrix columns and blocked candidates are counted separately. Reaching eight candidates is only a signal for architecture PR evaluation; it does not approve a Hub.","",
+  "| Domain | State | "+Object.keys(L).map(c=>c.toUpperCase()).join(" | ")+" | Matrix topics | Research-only blocked | Locales ≥8 blocked |",
+  "|---|---|"+Object.keys(L).map(()=>"---:|").join("")+"---:|---:|---:|",
+  ...status.domains.map(d=>"| "+d.label+" | "+d.status+" | "+Object.keys(L).map(c=>d.by_locale?.[c]?.research||0).join(" | ")+
+    " | "+(d.matrix_total||0)+" | "+(d.architecture_blocked_total||0)+" | "+(d.locales_with_eight_candidates||0)+" |"),"");
  if(refill)out.push("## Topic refill","",
   "- Gate-clean PROPOSED candidates the next standing-policy refill would promote to IDEA (≤50 per run): "+refill.selected.length,
   "- Locales whose READY deficit is larger than the researched candidates available (more research needed): "+(refill.research_needed.join(", ")||"none"),"");
