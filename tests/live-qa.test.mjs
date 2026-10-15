@@ -11,7 +11,9 @@ const matrix=read("data/seo/master-matrix.json"),locales=read("content/locales.j
 const langs=locales.map(l=>l.code);
 const published=matrix.rows.filter(r=>r.status==="PUBLISHED").map(r=>r.url).sort();
 const toKey=url=>url==="/"?"index.html":url.slice(1)+"index.html";
-const NEW={id:"NL-H01",url:"/nl/topics/motor-of-scooter-kiezen/",title:"Scooter & motor: welke tweewieler?",lang:"nl"};
+// Synthetic target: never a real Matrix URL, so the fixture stays valid after real publications.
+const NEW={id:"NL-H999",url:"/nl/topics/live-qa-regression-fixture/",title:"Scooter & motor: welke tweewieler?",lang:"nl"};
+assert.ok(!published.includes(NEW.url));
 const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const page=(t,extra="")=>'<!doctype html><html lang="'+t.lang+'"><head><title>'+esc(t.title)+'</title><link rel="canonical" href="'+ORIGIN+t.url+'">'+
  '<link rel="stylesheet" href="/assets/premium.css"></head><body><header data-nav-version="2"></header><main><h1>'+esc(t.title)+'</h1><p>Body text.</p>'+
@@ -67,7 +69,7 @@ test("sitemap child names resolve only to the production origin; traversal, host
   assert.throws(()=>sitemapChildURL(bad),/Invalid sitemap child/,String(bad));
  for(const origin of ["http://global.rentbikehanoi.com","https://u:p@global.rentbikehanoi.com","https://global.rentbikehanoi.com/x/","not a url"])
   assert.throws(()=>sitemapChildURL("sitemap-en.xml",origin),String(origin));
- assert.equal(pageURL("/nl/topics/motor-of-scooter-kiezen/"),ORIGIN+"/nl/topics/motor-of-scooter-kiezen/");
+ assert.equal(pageURL(NEW.url),ORIGIN+NEW.url);
  for(const bad of ["nl/x/","/nl/../x/","//evil.example/","/nl/x","https://evil.example/"])assert.throws(()=>pageURL(bad),/Invalid page route/,bad);
 });
 

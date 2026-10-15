@@ -33,10 +33,13 @@ const STOPW=["the","and","you","for","with","that","your","are"];
 let seed=11;const rnd=()=>(seed=(seed*1103515245+12345)%2147483648)/2147483648;
 const sentence=()=>{const w=[];for(let i=0;i<14;i++)w.push(i%3===1?STOPW[Math.floor(rnd()*STOPW.length)]:VOCAB[Math.floor(rnd()*VOCAB.length)]);return w.join(" ").replace(/^./,c=>c.toUpperCase())+".";};
 const para=n=>Array.from({length:n},sentence).join(" ");
+// Fixture rows get their status forced here, so the scenarios do not depend on what is live today.
+const HELD=new Set([...registry.protected,...(registry.held_ids||[])].map(x=>x.id));
 const hub=matrix.rows.find(r=>r.locale==="en"&&r.role==="HUB"&&r.cluster==="vehicle-choice");
-const child=matrix.rows.find(r=>r.locale==="en"&&r.role==="SUPPORT"&&r.parent_id===hub.id&&r.status==="IDEA");
-// Ledger scenarios use an unprotected Supporting row; its Hub is published in this Matrix variant.
-const liveMatrix=structuredClone(matrix);liveMatrix.rows.find(r=>r.id===hub.id).status="PUBLISHED";
+const child=matrix.rows.find(r=>r.locale==="en"&&r.role==="SUPPORT"&&r.parent_id===hub.id&&!HELD.has(r.id));
+const variant=hubStatus=>{const m=structuredClone(matrix);m.rows.find(r=>r.id===hub.id).status=hubStatus;m.rows.find(r=>r.id===child.id).status="IDEA";return m;};
+// Ledger scenarios use an unprotected Supporting row: under an unpublished Hub (draftMatrix) or a published one (liveMatrix).
+const draftMatrix=variant("IDEA"),liveMatrix=variant("PUBLISHED");
 function article(row,{sections=5}={}){
  const parts=["Choosing well starts with honest questions about your experience. Read the [rental checklist](/en/checklist/) and the [English guide](/en/) first."];
  const heads=["Scooter or semi-automatic","Engine size and licence","Routes and luggage","Electric or petrol","Before you ride"];
@@ -79,7 +82,7 @@ test("S1 three Writers claim at the same time: serialized ledger, thirty unique 
 
 test("S2 ten QA-eligible drafts are published as five runs of two, each gated by live QA",()=>{
  // Ten eligible Hubs in ten locales (PILOT allows 2 per locale) …
- const hubs=locales.map(l=>matrix.rows.find(r=>r.locale===l.code&&r.role==="HUB"&&r.status==="IDEA")).filter(Boolean).slice(0,10);
+ const hubs=locales.map((l,i)=>({id:l.code.toUpperCase()+"-H9"+i,locale:l.code}));
  assert.equal(hubs.length,10);
  let results=hubs.map((r,i)=>({id:r.id,locale:r.locale,role:"HUB",decision:"APPROVED_BY_POLICY",priority:i}));
  let state={version:1,stage:"PILOT",paused:false,clean_runs:0,published:[],runs:[]},runs=[];
@@ -101,7 +104,7 @@ test("S2 ten QA-eligible drafts are published as five runs of two, each gated by
  assert.equal(state.stage,"RAMP","two clean PILOT runs advance to RAMP");
  assert.equal(drainDecision({state,eligible:[]}).reason,"QUEUE_DRAINED_OR_HELD");
  // … and ten Supporting drafts of ONE locale under RAMP (10 per locale) also drain 2+2+2+2+2.
- const en=matrix.rows.filter(r=>r.locale==="en"&&r.role==="SUPPORT"&&r.status==="IDEA").slice(0,10);
+ const en=Array.from({length:10},(_,i)=>({id:"EN-S9"+String(i).padStart(2,"0")}));
  let queue=en.map((r,i)=>({id:r.id,locale:"en",role:"SUPPORT",decision:"APPROVED_BY_POLICY",priority:i})),st={stage:"RAMP",published:[],runs:[]},pairs=0;
  while(queue.length){const c=selectForPublication(queue,{state:st,standing,max:2});st.published.push(...c.map(r=>({id:r.id,locale:"en",live_qa:"PASS"})));queue=queue.filter(r=>!c.includes(r));pairs++;}
  assert.equal(pairs,5);
@@ -205,12 +208,11 @@ test("S7 queue empty: no claims to hand out, no run to dispatch, nothing forced"
 
 test("S8 parent Hub not PUBLISHED: Supporting waits (no rewrite ticket), then becomes publishable",()=>{
  const claim=submitted(child,{id:child.id});
- const waiting=evaluate(article(child),claim,child);
+ const waiting=evaluate(article(child),claim,child,draftMatrix);
  assert.equal(waiting.decision,"WAIT_PARENT",JSON.stringify(waiting.gates.filter(g=>!g.passed)));
  assert.equal(repairTicket(reportItem(claim,waiting),claim).state,"WAIT_PARENT");
  assert.equal(repairQueue({version:2,items:[reportItem(claim,waiting)]},{claims:[claim]}).length,0,"waiting is not a text failure");
- const live=structuredClone(matrix);live.rows.find(r=>r.id===hub.id).status="PUBLISHED";
- assert.equal(evaluate(article(child),claim,child,live).decision,"APPROVED_BY_POLICY");
+ assert.equal(evaluate(article(child),claim,child,liveMatrix).decision,"APPROVED_BY_POLICY");
 });
 
 test("S9 live QA tool defect (the sitemap bug): INCONCLUSIVE pause without rollback, recovery verifies, operator resumes",()=>{

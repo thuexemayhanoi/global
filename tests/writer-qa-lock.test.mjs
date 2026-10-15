@@ -6,11 +6,15 @@ import {inboxChecks,submittedLock} from "../scripts/writer-lanes.mjs";
 import {decideNext} from "../scripts/continuous-writer.mjs";
 
 const read=p=>JSON.parse(fs.readFileSync(p,"utf8"));
-const matrix=read("data/seo/master-matrix.json"),board=read("factory/external-writers/assignments.json");
+const board=read("factory/external-writers/assignments.json");
 const locales=read("content/locales.json"),registry=read("factory/external-writers/protected-drafts.json");
 const HELD=new Set([...registry.protected,...(registry.held_ids||[])].map(x=>x.id));
-const row=matrix.rows.find(r=>r.role==="HUB"&&r.status==="IDEA"&&r.locale==="en"&&!HELD.has(r.id));
-const other=matrix.rows.find(r=>r.role==="SUPPORT"&&r.status==="IDEA"&&r.locale==="en"&&!HELD.has(r.id));
+// Two unprotected English rows, forced to IDEA so the fixtures do not depend on what is live today.
+const matrix=read("data/seo/master-matrix.json");
+const topic=r=>/^\/en\/(?:topics|guides)\//.test(r.url)&&!HELD.has(r.id);
+const row=matrix.rows.find(r=>r.role==="HUB"&&topic(r));
+const other=matrix.rows.find(r=>r.role==="SUPPORT"&&topic(r)&&r.parent_id!==row.id);
+row.status="IDEA";other.status="IDEA";
 const sha=s=>createHash("sha256").update(s).digest("hex");
 const prose=["## First assessment","Choosing a rental motorcycle starts with experience, route and legal eligibility.",
  "## Compare vehicle styles","Assess the specific machine and your comfort with the operating controls.",
