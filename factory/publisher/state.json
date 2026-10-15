@@ -820,6 +820,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T10:01:55.796Z"
+    },
+    {
+      "id": "VI-S06",
+      "locale": "vi",
+      "url": "/vi/guides/hop-dong-huy-lich/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T10:02:12.642Z",
+      "source_sha256": "71a9623c76e662d7fcfe4a0467976f860a343fa74dda703309b54e6e72703f1d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S06",
+      "locale": "zh",
+      "url": "/zh/guides/hetong-quxiao/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T10:02:12.642Z",
+      "source_sha256": "9bf1fdae69e6b6932263f77eb300b5d17cd5d5fb57752c218641c8ccf907929e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1427,6 +1449,14 @@
         "NL-S06"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T10:02:12.642Z",
+      "ids": [
+        "VI-S06",
+        "ZH-S06"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1440,7 +1470,7 @@
   },
   "queue": {
     "WAIT_PARENT": 30,
-    "APPROVED_BY_POLICY": 21,
+    "APPROVED_BY_POLICY": 19,
     "REJECTED": 11
   }
 }
