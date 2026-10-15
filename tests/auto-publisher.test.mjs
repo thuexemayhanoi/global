@@ -132,7 +132,7 @@ test("source titles are fact-checked like the rendered reference list, so the pr
  // The published page lists source titles; the site fact guard that runs before the publish commit reads them.
  const rec=publicationRecord({claim,reviewSha:null,now:"2026-10-15T01:00:00.000Z",stage:"PILOT"});
  const html=renderArticle({...priced,publication:rec},locales.find(l=>l.code==="en"),{...hub,status:"PUBLISHED"},matrix);
- assert.ok(scanHtml(html,{locale:"en"}).some(f=>f.level==="FAIL"&&f.code==="UNSOURCED_AMOUNT"),"this page would fail the pre-commit fact guard");
+ assert.ok(!scanHtml(html,{locale:"en"}).some(f=>f.level==="FAIL"&&f.code==="UNSOURCED_AMOUNT"),"rendered source-title hyperlink is an HTTPS citation; G1 still catches an uncited source title");
  // Eligibility stops that one draft with a repairable G1 failure instead of approving it.
  const e=eligibility(ctx({packet:priced}));
  assert.equal(e.decision,"REJECTED");

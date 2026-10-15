@@ -72,6 +72,13 @@ test("unsourced amounts fail strictly, warn for drafts; cited third-party prices
  assert.deepEqual(scanText("See [report](https://x.vn/a-0261722607.htm)",{mode:"strict",ref}),[],"digits inside URLs are not phones");
 });
 
+test("rendered HTML preserves inline supplier citations for monetary claims but rejects unsourced prices",()=>{
+ const cited='<html><body><article><p>Hanoi motorbike prices may be 120,000 VND according to <a href="https://vexere.com/vn/prices">Vexere\'s listed rates</a>.</p></article></body></html>';
+ assert.deepEqual(codes(scanHtml(cited,{locale:"en",ref})),[],"a price and its inline HTTPS source must survive HTML flattening");
+ const missing=cited.replace(' href="https://vexere.com/vn/prices"',"");
+ assert.ok(codes(scanHtml(missing,{locale:"en",ref})).includes("UNSOURCED_AMOUNT"),"uncited prices remain blocked");
+});
+
 test("pages may not show NAP or business schema until the owner flags allow it",()=>{
  const page='<html><body><main><p>Call 0942 467 674</p></main><script type="application/ld+json">{"@type":"AutoRental","telephone":"+84942467674","address":{"streetAddress":"112 Nguyễn Văn Cừ"}}</script></body></html>';
  const blocked=codes(scanHtml(page,{locale:"en",ref}));
