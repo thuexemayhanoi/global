@@ -7,9 +7,9 @@
   "branch": "research/claude-20261015-mobility",
   "batch_session": "research-claude-20261015-mobility",
   "created_at": "2026-10-15T09:33:24.963Z",
-  "updated_at": "2026-10-15T18:00:14.116Z",
-  "base_main_sha": "1b16af08ae5d4d11498833cb6d721895a4d54eb5",
-  "last_commit_sha": "b1f38d116e14c7d06aa4f16446e195694f67511f",
+  "updated_at": "2026-10-15T18:04:41.285Z",
+  "base_main_sha": "105859ae2bd51e8463b7db3dbfa8c8bbe4f20754",
+  "last_commit_sha": "b78f3c1ef61c5d1bc7161b72ff06d8d965cb9d18",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
@@ -19,8 +19,8 @@
     "qa_pass": 130,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 120,
-    "pending_push": 10
+    "pushed": 130,
+    "pending_push": 0
   },
   "coverage": {
     "locales": {
@@ -1386,8 +1386,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility-0013.json",
       "sha256": "1e49c3e38e418b4b07b5ab510f45e14ec53bf3e99dbe7ef514f2c02218f9f172",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "a1eca7d66f6a11239c4187303d54c0eb314109e8",
       "researched_on": "2026-10-15",
       "topics": [
         {
@@ -1505,6 +1505,12 @@
       "kind": "NOTE",
       "message": "session end: batch 0001 settled after fresh-clone recovery",
       "at": "2026-10-15T09:34:54.497Z"
+    },
+    {
+      "id": "note-9eb8356b",
+      "kind": "NOTE",
+      "message": "re-trigger Topic Research QA and ingest of batch 0013 after merging main (branch Matrix was stale)",
+      "at": "2026-10-15T18:04:41.285Z"
     }
   ],
   "history": [
@@ -1602,6 +1608,10 @@
       "seq": 13,
       "topics": 10,
       "sha256": "1e49c3e38e418b4b07b5ab510f45e14ec53bf3e99dbe7ef514f2c02218f9f172"
+    },
+    {
+      "at": "2026-10-15T18:04:41.285Z",
+      "event": "CHECKPOINT_UPDATED"
     }
   ]
 }
