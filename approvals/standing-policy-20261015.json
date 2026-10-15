@@ -13,7 +13,8 @@
     "Cho phép standing authorization đối với bài viết mới đạt toàn bộ các quality gates đã phê duyệt.",
     "Các bài có thông tin pháp lý, an toàn, giá hoặc dữ liệu chưa kiểm chứng phải bị chặn xuất bản cho tới khi đủ bằng chứng hoặc được xét duyệt bổ sung.",
     "Triển khai an toàn bằng batch nhỏ, pilot trước, tăng dần khi QA ổn định. Chạy thử 2 bài/ngôn ngữ, sau đó 10 bài/ngôn ngữ. Chỉ tăng tốc sau khi xác nhận không có regression.",
-    "Sau mỗi batch hợp lệ, có thể merge/deploy các hạng mục thuộc phạm vi ủy quyền, với CI và kiểm tra rollback."
+    "Sau mỗi batch hợp lệ, có thể merge/deploy các hạng mục thuộc phạm vi ủy quyền, với CI và kiểm tra rollback.",
+    "2026-10-15, owner follow-up: 'pulish toàn bộ số bài nháp giờ bỏ cái AI đánh giá global đi giữ cái 3 W CÙNG VIẾT ... làm như /blog vậy'. Publish only QA-eligible drafts; maintain G1–G5/G7, human checks for legal/safety/price and all protected URL safeguards."
   ],
   "topic_promotion": {
     "authorized": true,
@@ -28,15 +29,27 @@
   },
   "publication": {
     "authorized": true,
-    "what": "Publish NEW Hub/Supporting URLs whose SUBMITTED draft passes every Auto Publisher gate, including an independent AI editorial review recorded against the exact draft SHA-256.",
+    "what": "Publish NEW Hub/Supporting URLs from immutable SUBMITTED drafts when strict automated QA and independent safety/SEO/source/duplicate/Matrix gates pass, without a separate AI editorial reviewer.",
     "new_urls_only": true,
     "max_per_run": 2,
     "stages": {
-      "PILOT": {"max_per_locale": 2, "advance_after_clean_runs": 2},
-      "RAMP": {"max_per_locale": 10, "advance_after_clean_runs": 10},
-      "CONTINUOUS": {"max_per_locale": 1000}
+      "PILOT": {
+        "max_per_locale": 2,
+        "advance_after_clean_runs": 2
+      },
+      "RAMP": {
+        "max_per_locale": 10,
+        "advance_after_clean_runs": 10
+      },
+      "CONTINUOUS": {
+        "max_per_locale": 1000
+      }
     },
-    "review_required_classes": ["LEGAL", "SAFETY", "PRICE"],
+    "review_required_classes": [
+      "LEGAL",
+      "SAFETY",
+      "PRICE"
+    ],
     "not_authorized": [
       "Deleting, renaming or redirecting any URL",
       "Changing NAP, opening hours, prices or business schema",
@@ -44,6 +57,8 @@
       "Publishing a draft with unresolved legal, safety or price claims, or without a PUBLISHED parent",
       "Claiming human review: facts_reviewed_by_human and serp_intent_checked stay false on policy publications"
     ],
-    "failure_behaviour": "Any failed build, guard, deployment or live HTTP check pauses publication (factory/publisher/state.json) and reverts the publish commit with a new commit; never force-push main."
+    "failure_behaviour": "Any failed build, guard, deployment or live HTTP check pauses publication (factory/publisher/state.json) and reverts the publish commit with a new commit; never force-push main.",
+    "independent_ai_reviewer_required": false,
+    "qa_source": "AUTOMATED_G1_G5_G7"
   }
 }
