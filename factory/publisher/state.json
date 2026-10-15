@@ -1756,6 +1756,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T17:14:01.205Z"
+    },
+    {
+      "id": "FR-S12",
+      "locale": "fr",
+      "url": "/fr/guides/circuler-a-hanoi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:14:20.810Z",
+      "source_sha256": "c7cad10fed80410d2b6200f0f51d3a3ef452eceb5425f929d8409c6d0ea5d326",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S11",
+      "locale": "ja",
+      "url": "/ja/guides/koutsuu-nagare/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:14:20.810Z",
+      "source_sha256": "5665466beb396649008f6dd123c38c2a7d57a32af300de842a18788d2699063d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -3011,6 +3033,14 @@
         "ES-S11"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:14:20.810Z",
+      "ids": [
+        "FR-S12",
+        "JA-S11"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3023,6 +3053,6 @@
     "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 6
+    "APPROVED_BY_POLICY": 4
   }
 }
