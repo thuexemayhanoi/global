@@ -5,11 +5,9 @@
  */
 export const MAX_REPAIR_ATTEMPTS=3;
 export const REPAIR_GATES=new Set([
- "G1_DRAFT_QA","G1_DEPTH","G3_OFFICIAL_EVIDENCE","G4_EDITORIAL","G5_CONTENT_DUPLICATES"
+ "G1_DRAFT_QA","G1_DEPTH","G3_OFFICIAL_EVIDENCE","G3_PRICE_EVIDENCE","G3_SENSITIVE_SOURCES","G4_EDITORIAL","G5_CONTENT_DUPLICATES"
 ]);
-export const HUMAN_HOLD_GATES=new Set([
- "G3_TOPIC_CLASS","G3_NO_PRICES"
-]);
+export const HUMAN_HOLD_GATES=new Set(); // deprecated: no mandatory manual review
 const sourceHash=s=>typeof s==="string"&&/^[a-f0-9]{64}$/.test(s);
 export function repairTicket(item,claim,{maxAttempts=MAX_REPAIR_ATTEMPTS}={}){
  if(!item||!claim||item.id!==claim.id||claim.status!=="SUBMITTED"||!sourceHash(claim.source_sha256))return null;
@@ -18,7 +16,7 @@ export function repairTicket(item,claim,{maxAttempts=MAX_REPAIR_ATTEMPTS}={}){
  const fixable=failed.filter(g=>REPAIR_GATES.has(g)),holds=failed.filter(g=>HUMAN_HOLD_GATES.has(g));
  const attempts=(claim.revisions||[]).length;
  const permanent=failed.filter(g=>g==="G2_NOT_PROTECTED"||g==="G2_IMMUTABLE_SOURCE"||g==="G2_NEW_URL"||g==="SOURCE");
- let state="WAIT";if(permanent.length)state="BLOCKED";else if(holds.length)state="HUMAN_REVIEW_REQUIRED";
+ let state="WAIT";if(permanent.length)state="BLOCKED";
  else if(fixable.length&&attempts>=maxAttempts)state="ESCALATED_MAX_ATTEMPTS";
  else if(fixable.length)state="REPAIR";
  else if(failed.includes("G2_PARENT_PUBLISHED"))state="WAIT_PARENT";
@@ -29,6 +27,8 @@ export function repairTicket(item,claim,{maxAttempts=MAX_REPAIR_ATTEMPTS}={}){
   G1_DRAFT_QA:"Fix exact structural/metadata/source/factual errors. Do not claim human review.",
   G1_DEPTH:"Expand with useful, original, non-repetitive research, never padding.",
   G3_OFFICIAL_EVIDENCE:"Verify every hard legal/safety assertion with an official citation in the SAME paragraph; otherwise remove or qualify the unsupported claim.",
+  G3_PRICE_EVIDENCE:"For each amount cite an actual dated source in the same paragraph, list its exact HTTPS URL in packet.sources, or remove the claim.",
+  G3_SENSITIVE_SOURCES:"Cite at least one authoritative official source inline in a LEGAL/SAFETY article and list it with a real checked_on date.",
   G4_EDITORIAL:"Fix native-language fluency, real H2 depth, repeated text, keyword stuffing and contextual internal links.",
   G5_CONTENT_DUPLICATES:"Rewrite with distinct reader intent and researched original value; never paraphrase a near-duplicate just to bypass similarity."
  };
@@ -52,6 +52,6 @@ export function repairQueue(report,ledger,{writer=null,session=null,includeHeld=
   if(!ticket||(writer&&ticket.writer!==writer)||(session&&ticket.session!==session))continue;
   if(ticket.state==="REPAIR"||includeHeld&&ticket.state!=="WAIT")out.push(ticket);
  }
- const rank={REPAIR:0,HUMAN_REVIEW_REQUIRED:1,ESCALATED_MAX_ATTEMPTS:2,BLOCKED:3};
+ const rank={REPAIR:0,ESCALATED_MAX_ATTEMPTS:2,BLOCKED:3};
  return out.sort((a,b)=>(rank[a.state]??9)-(rank[b.state]??9)||a.attempts-b.attempts||a.id.localeCompare(b.id));
 }

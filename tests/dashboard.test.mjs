@@ -16,20 +16,20 @@ const ledger={version:1,revision:42,claims:[
  c("VI-H01","SUBMITTED"),c("JA-H01","CLAIMED"),c("KO-H01","RELEASED")]};
 const report={version:2,ledger_revision:41,items:[
  item("EN-H01","APPROVED_BY_POLICY",[]),item("EN-S01","REJECTED",["G4_EDITORIAL"]),item("EN-S02","REJECTED",["G4_EDITORIAL"]),
- item("DE-S01","REVIEW_REQUIRED",["G3_TOPIC_CLASS"]),item("FR-H01","REJECTED",["G1_DEPTH"]),item("FR-S01","WAIT_PARENT",["G2_PARENT_PUBLISHED"]),
+ item("DE-S01","REJECTED",["G3_PRICE_EVIDENCE"]),item("FR-H01","REJECTED",["G1_DEPTH"]),item("FR-S01","WAIT_PARENT",["G2_PARENT_PUBLISHED"]),
  item("NL-H01","WAIT_STAGE",["G7_STAGE_CAP"])]};
 const state={stage:"PILOT",paused:true,pause_reason:"Live QA inconclusive",published:[{id:"PT-H01",live_qa:"PENDING"},{id:"VI-H01",live_qa:"PASS"},{id:"X",live_qa:"FAIL"},{id:"Y",live_qa:"INCONCLUSIVE"}]};
 
 test("every open SUBMITTED draft lands in exactly one queue state, from real report hashes only",()=>{
  const q=publicationQueue({matrix,ledger,report,state});
- assert.deepEqual(q.totals,{AWAITING_QA:2,APPROVED_BY_POLICY:1,REPAIR:1,HUMAN_REVIEW_REQUIRED:1,WAIT_PARENT:1,WAIT_STAGE:1,ESCALATED:1,BLOCKED:0});
+ assert.deepEqual(q.totals,{AWAITING_QA:2,APPROVED_BY_POLICY:1,REPAIR:2,HUMAN_REVIEW_REQUIRED:0,WAIT_PARENT:1,WAIT_STAGE:1,ESCALATED:1,BLOCKED:0});
  assert.equal(q.submitted_open,Object.values(q.totals).reduce((a,b)=>a+b,0));
  assert.equal(q.submitted_open,8,"the SUBMITTED draft whose page is PUBLISHED is not in the queue");
  assert.equal(q.submitted_live,1);
  assert.equal(q.claimed,1);
  assert.equal(q.byLocale.en.AWAITING_QA,1,"a report row for an older hash never speaks for the new revision");
  assert.deepEqual(q.live,{PUBLISH_STAGED:1,LIVE_QA_PASS:1,LIVE_QA_FAIL:1,LIVE_QA_INCONCLUSIVE:1});
- assert.equal(q.byWriter.W1.REPAIR,1);
+ assert.equal(q.byWriter.W1.REPAIR,2);
  assert.equal(q.report_ledger_revision,41);
  const stale=publicationQueue({matrix,ledger,report:{version:1,items:report.items},state:null});
  assert.equal(stale.totals.AWAITING_QA,8,"an old-format report is never trusted");
