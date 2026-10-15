@@ -61,7 +61,8 @@ test("one Writer can draft every remaining Matrix idea (104 at baseline) using t
  const matrixBefore=JSON.stringify(matrix);
  let ledger=autoAdvance(matrix,empty,registry,req("W1"),opts).ledger;
  const done=[];
- for(let i=0;i<20;i++){
+ // Bound scales with the Matrix: the Topic Factory keeps adding IDEA rows.
+ for(let i=0;i<Math.ceil(DRAFTABLE/10)+2;i++){
   const ids=open(ledger).map(c=>c.id);
   if(!ids.length)break;
   const a=autoAdvance(matrix,ledger,registry,req("W1"),{...opts,nonce:"cycle-"+i,verifiedDraftIds:new Set(ids)});
