@@ -2932,17 +2932,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T19:54:47.932Z"
+    },
+    {
+      "id": "DE-S55",
+      "locale": "de",
+      "url": "/de/guides/luftverschmutzung-hanoi-roller/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:01:21.567Z",
+      "source_sha256": "b184852230bfbc38b2f674181c3f04d33d9eb386223e1080ea12ba84cb7a9218",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S41",
+      "locale": "en",
+      "url": "/en/guides/motorbikes-on-expressways-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:01:21.567Z",
+      "source_sha256": "60e47a7ae79eb3871c847b6e7689df83b2b072aa0a47de89a51aae560be56323",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:50:32.386Z",
-      "ids": [
-        "DE-S06",
-        "FR-S06"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T09:51:41.143Z",
       "ids": [
@@ -4514,6 +4528,14 @@
         "EN-S40"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T20:01:21.567Z",
+      "ids": [
+        "DE-S55",
+        "EN-S41"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4526,7 +4548,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2,
-    "REJECTED": 1
+    "APPROVED_BY_POLICY": 3
   }
 }
