@@ -3064,17 +3064,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T20:25:08.643Z"
+    },
+    {
+      "id": "DE-S61",
+      "locale": "de",
+      "url": "/de/guides/sicherheitsabstand-roller-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:25:25.615Z",
+      "source_sha256": "0db6bc73ff0cf04891e28e85ddbdcfedbdc42fb6d64d56b02656d5e157d01b23",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S62",
+      "locale": "de",
+      "url": "/de/guides/mietroller-technischer-zustand-spiegel-licht/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:25:25.615Z",
+      "source_sha256": "05bdb0bc77a198fd00a02c7fc0133e1a116480e832dbdbc1936bc3ac580c791e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T10:02:12.642Z",
-      "ids": [
-        "VI-S06",
-        "ZH-S06"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T10:03:21.331Z",
       "ids": [
@@ -4640,6 +4654,14 @@
         "DE-S60"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T20:25:25.615Z",
+      "ids": [
+        "DE-S61",
+        "DE-S62"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4652,6 +4674,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 5
+    "APPROVED_BY_POLICY": 3
   }
 }
