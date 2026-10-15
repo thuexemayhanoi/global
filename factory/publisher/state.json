@@ -868,6 +868,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T10:05:07.357Z"
+    },
+    {
+      "id": "ES-S07",
+      "locale": "es",
+      "url": "/es/guides/conducir-lluvia/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T10:05:24.154Z",
+      "source_sha256": "88e1a08d178631bdc4cee5b156b0b489ee1ff172ce08afb8966e45a0f6f40591",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S07",
+      "locale": "ko",
+      "url": "/ko/guides/bioneun-nal/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T10:05:24.154Z",
+      "source_sha256": "29038e45a1fff68084a635e2f9dba88bc3e207a5ddc1aa35ce75db3f88ebae45",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1507,6 +1529,14 @@
         "EN-S07"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T10:05:24.154Z",
+      "ids": [
+        "ES-S07",
+        "KO-S07"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1520,7 +1550,7 @@
   },
   "queue": {
     "WAIT_PARENT": 30,
-    "APPROVED_BY_POLICY": 17,
+    "APPROVED_BY_POLICY": 15,
     "REJECTED": 11
   }
 }
