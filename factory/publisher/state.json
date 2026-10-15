@@ -2392,17 +2392,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:21:54.521Z"
+    },
+    {
+      "id": "ES-S16",
+      "locale": "es",
+      "url": "/es/guides/pasaporte-como-deposito/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:22:19.559Z",
+      "source_sha256": "e43aa17f26aeb9c29c7cc2c161801a3336a2a868a3cbb85ae6ea8b3c0ba36e55",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S17",
+      "locale": "fr",
+      "url": "/fr/guides/passeport-en-caution/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:22:19.559Z",
+      "source_sha256": "0c10d3b2daa2a536166d621e3f805f3a06817a7e7e1529b07709a78d6cf376eb",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T06:27:47.515Z",
-      "ids": [
-        "JA-H02",
-        "PT-H02"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T06:28:04.637Z",
       "ids": [
@@ -3973,6 +3987,14 @@
         "EN-S17"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:22:19.559Z",
+      "ids": [
+        "ES-S16",
+        "FR-S17"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3985,6 +4007,6 @@
     "live_seconds": 41
   },
   "queue": {
-    "APPROVED_BY_POLICY": 13
+    "APPROVED_BY_POLICY": 11
   }
 }
