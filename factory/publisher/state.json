@@ -3100,17 +3100,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T20:28:25.610Z"
+    },
+    {
+      "id": "EN-S44",
+      "locale": "en",
+      "url": "/en/guides/overtaking-rules-motorbike-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:30:48.657Z",
+      "source_sha256": "971cf26a9b468504b01fa0133eca071fc08f5223631945f13d3847f121fe69d5",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S45",
+      "locale": "en",
+      "url": "/en/guides/u-turn-rules-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:30:48.657Z",
+      "source_sha256": "8d5b936269735f0f2eb26455999c5b72aa765486fcf5e52ec49b8537cc616e87",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T10:05:24.154Z",
-      "ids": [
-        "ES-S07",
-        "KO-S07"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T10:06:53.893Z",
       "ids": [
@@ -4674,6 +4688,14 @@
         "DE-S63"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T20:30:48.657Z",
+      "ids": [
+        "EN-S44",
+        "EN-S45"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4685,6 +4707,6 @@
     "live_seconds": 81
   },
   "queue": {
-    "APPROVED_BY_POLICY": 1
+    "APPROVED_BY_POLICY": 4
   }
 }
