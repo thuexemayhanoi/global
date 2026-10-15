@@ -49,10 +49,10 @@ Every open SUBMITTED draft is in exactly one state. AWAITING QA = the publisher 
 
 | PUBLISH_STAGED (committed, live QA pending) | LIVE_QA_PASS | LIVE_QA_FAIL | LIVE_QA_INCONCLUSIVE |
 |---:|---:|---:|---:|
-| 2 | 8 | 0 | 0 |
+| 0 | 10 | 0 | 0 |
 
 - Standing-policy publications on record: NL-H01, PT-H01, ES-H01, KO-H01, KO-S01, PT-S02, EN-H02, FR-H02, JA-H02, PT-H02
-- Last successful deployment: 2026-10-15T05:36:30.154Z
+- Last successful deployment: 2026-10-15T06:27:47.515Z
 
 ## Writer slots
 
