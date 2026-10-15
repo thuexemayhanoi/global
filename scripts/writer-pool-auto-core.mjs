@@ -9,6 +9,7 @@
  * - Deterministic core: no network, filesystem, AI, publishing or timer.
  */
 import {transitionPool,poolCandidates,validatePool,MAX_BATCH} from "./writer-pool-core.mjs";
+import {MAX_REPAIR_ATTEMPTS} from "./repair-queue-core.mjs";
 export function autoAdvance(matrix,ledger,registry,request,{
  verifiedDraftIds=new Set(),verifiedDraftEvidence=new Map(),now="2026-10-14T00:00:00Z",nonce="auto",maxBatch=MAX_BATCH,refill=true
 }={}){
@@ -63,7 +64,7 @@ export function applyRevisions(matrix,ledger,registry,{writer,session,branch},re
   if(!c)throw Error("REVISION_REFUSED: no SUBMITTED claim of this session for "+r.id);
   if(r.review_verdict!=="QA_FAIL"||r.repair_basis_sha256!==c.source_sha256||!Array.isArray(r.repair_gates)||!r.repair_gates.length)
    throw Error("REVISION_REFUSED: "+r.id+" needs current strict QA failure evidence matching the exact source hash");
-  if((c.revisions||[]).length>=3)throw Error("REVISION_REFUSED: "+r.id+" exceeded three automatic repairs; escalate");
+  if((c.revisions||[]).length>=MAX_REPAIR_ATTEMPTS)throw Error("REVISION_REFUSED: "+r.id+" exceeded "+MAX_REPAIR_ATTEMPTS+" automatic repairs; escalate");
   const expected=(c.revisions||[]).length+2;
   if(r.revision!==expected)throw Error("REVISION_REFUSED: "+r.id+" expects r"+expected);
   if(r.source_sha256===c.source_sha256)throw Error("REVISION_REFUSED: "+r.id+" revision is byte-identical");

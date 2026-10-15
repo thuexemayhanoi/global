@@ -111,14 +111,19 @@ function main(){
  const revNames=git("ls-tree","-r","--name-only",sha,"--","factory/external-writers/inbox/"+request.writer+"/revisions/").split("\n").filter(Boolean);
  const report=revNames.length?read("factory/publisher/report.json"):null;
  if(report&&report.version!==2)throw Error("REPAIR_REPORT_STALE: trusted publisher has not emitted hash-bound repair tickets");
- const repairTasks=new Map(report?repairQueue(report,ledger,{writer:request.writer,session:request.session}).map(t=>[t.id,t]):[]);
+ const allTickets=report?repairQueue(report,ledger,{writer:request.writer,session:request.session,includeHeld:true}):[];
+ const repairTasks=new Map(allTickets.filter(t=>t.state==="REPAIR").map(t=>[t.id,t]));
  for(const file of revNames){
   const m=file.match(/\/revisions\/([A-Z]{2}-[HS][0-9]{2,4})\.r([0-9]+)\.json$/);
   if(!m)throw Error("Invalid revision file "+file);
   const c=own.find(x=>x.id===m[1]);
-  if(!c||c.source_path===file||(c.revisions||[]).some(v=>v.source_path===file))continue; // not ours or already recorded
+  if(c&&(c.source_path===file||(c.revisions||[]).some(v=>v.source_path===file)))continue; // already recorded
+  if(!c){console.log("REVISION_IGNORED "+file+": "+m[1]+" is not a SUBMITTED draft of this session (Writer QA reports this too)");continue;}
   const ticket=repairTasks.get(c.id);
-  if(!ticket||!ticketValid(ticket,c))throw Error("REPAIR_TICKET_REQUIRED: "+c.id+" needs current machine QA failure for its exact hash, writer and session");
+  if(!ticket||!ticketValid(ticket,c)){
+   const held=allTickets.find(t=>t.id===c.id);
+   throw Error("REPAIR_TICKET_REQUIRED: "+c.id+" has "+(held?"state "+held.state:"no current machine QA failure for its exact hash")+"; a revision is accepted only for a REPAIR ticket of this writer and session");
+  }
   if(file!==ticket.revision_path||Number(m[2])!==ticket.next_revision)throw Error("REPAIR_VERSION_REFUSED: expected "+ticket.revision_path);
   const raw=gitRaw("show",sha+":"+file);
   let packet;try{packet=JSON.parse(raw);}catch{throw Error("Malformed revision JSON "+file);}
