@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 153,
+  "clean_runs": 155,
   "published": [
     {
       "id": "NL-H01",
@@ -3722,7 +3722,8 @@
       "at": "2026-10-15T21:51:28.122Z",
       "source_sha256": "eb9463e690eea585633ea769b931359a4c62b89260527439638e7f46e0a05b04",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T21:52:43.211Z"
     },
     {
       "id": "EN-S72",
@@ -3733,41 +3734,46 @@
       "at": "2026-10-15T21:51:28.122Z",
       "source_sha256": "5bb86be9c90906b8e1ab26373bc47f0085c785d6ee4dee001313b8c6da13294d",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T21:52:43.211Z"
+    },
+    {
+      "id": "EN-S73",
+      "locale": "en",
+      "url": "/en/guides/riding-pillion-passenger-tips-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:53:02.787Z",
+      "source_sha256": "064a5bb61306230ff4c973a26f653875612770ef80f46cdde6344c67a6db753f",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T21:53:55.839Z"
+    },
+    {
+      "id": "EN-S74",
+      "locale": "en",
+      "url": "/en/guides/witnessing-a-road-accident-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:53:02.787Z",
+      "source_sha256": "91673e3af9d8ce2b80d5a1d80fc614b9870dcf9bbbb77aa24222287521189d01",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T21:53:55.839Z"
+    },
+    {
+      "id": "EN-S75",
+      "locale": "en",
+      "url": "/en/guides/fatigue-breaks-long-motorbike-trips-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:54:16.753Z",
+      "source_sha256": "663185ded96f21feb67be6b49a6d770eb3beac7a051bc4d7338e9a143798b75e",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T16:49:31.793Z",
-      "ids": [
-        "ZH-H04"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T16:49:50.580Z",
-      "ids": [
-        "ZH-S07",
-        "ZH-S08"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T16:53:42.734Z",
-      "ids": [
-        "ZH-S07",
-        "ZH-S08"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T17:00:07.698Z",
-      "ids": [
-        "DE-S12",
-        "EN-S13"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T17:01:39.059Z",
       "ids": [
@@ -5301,17 +5307,49 @@
         "EN-S72"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T21:52:43.211Z",
+      "ids": [
+        "EN-S71",
+        "EN-S72"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T21:53:02.787Z",
+      "ids": [
+        "EN-S73",
+        "EN-S74"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T21:53:55.839Z",
+      "ids": [
+        "EN-S73",
+        "EN-S74"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T21:54:16.753Z",
+      "ids": [
+        "EN-S75"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T21:49:41.640Z",
+    "at": "2026-10-15T21:53:55.839Z",
     "ids": [
-      "ES-S26"
+      "EN-S73",
+      "EN-S74"
     ],
-    "commit": "aa1952dcb4a94ec720c13f2a79fb09d54f1ca330",
-    "live_seconds": 62
+    "commit": "dc91749cc4fc66dac0f096c26cc8aa0956245bdd",
+    "live_seconds": 42
   },
   "queue": {
-    "APPROVED_BY_POLICY": 5
+    "APPROVED_BY_POLICY": 1
   }
 }
