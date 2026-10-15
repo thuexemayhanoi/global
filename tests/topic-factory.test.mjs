@@ -5,7 +5,7 @@ import path from "node:path";
 import {spawnSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
 import {loadTopicalMap,validateTopicalMap,planPromotion} from "../scripts/seo/topical-authority-core.mjs";
-import {factoryStatus,duplicateLayers,prepareCorpus,selectRefill,standingManifest,validatePolicy,validateResearchBatch,ingestResearch,validateResearchSequence,researchUsage,fold,dashboardMarkdown,STANDING_STATEMENT} from "../scripts/topic-factory-core.mjs";
+import {factoryStatus,duplicateLayers,prepareCorpus,selectRefill,standingManifest,validatePolicy,validateResearchBatch,ingestResearch,validateResearchSequence,researchUsage,domainResearchCoverage,fold,dashboardMarkdown,STANDING_STATEMENT} from "../scripts/topic-factory-core.mjs";
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),"utf8"));
@@ -39,6 +39,32 @@ test("status counts are disjoint and remaining = target - accepted per locale",(
  const md=dashboardMarkdown(s,{});
  assert.match(md,/\| Locale \| Target \| PUBLISHED \| SUBMITTED \| CLAIMED/);
  assert.doesNotMatch(md,/(ranking|traffic|search volume)\s*[:=]\s*\d/i);
+});
+
+test("domain research dashboard separates staged candidates from Matrix and reports all ten locales",()=>{
+ const d=domainResearchCoverage({matrix,map,policy});
+ assert.equal(d.length,8);
+ assert.ok(d.every(x=>Object.keys(x.by_locale).length===10));
+ for(const x of d){
+  assert.equal(x.research_total,Object.values(x.by_locale).reduce((n,c)=>n+c.research,0));
+  assert.equal(x.matrix_total,Object.values(x.by_locale).reduce((n,c)=>n+c.matrix,0));
+  assert.ok(x.architecture_blocked_total<=x.research_total);
+ }
+ const opened=d.filter(x=>x.status==="RESEARCH_OPEN");
+ assert.equal(opened.length,6);
+ const demo=structuredClone(map);
+ const enHub=demo.architecture.proposed_hubs.find(x=>x.id==="travel-guides");
+ const existing=demo.locales.en.proposals[0];
+ demo.locales.en.proposals.push({...existing,candidate_id:"TA-EN-9898",parent_id:null,
+  cluster:enHub.id,subcluster:enHub.clusters[0].id,status:"ARCHITECTURE_BLOCKED"});
+ const next=domainResearchCoverage({matrix,map:demo,policy});
+ const travel=next.find(x=>x.id==="hanoi-vietnam-travel");
+ assert.equal(travel.by_locale.en.architecture_blocked,1);
+ assert.equal(travel.by_locale.en.research,1);
+ assert.equal(travel.by_locale.vi.architecture_blocked,0);
+ assert.equal(travel.locales_with_eight_candidates,0);
+ assert.match(dashboardMarkdown({...factoryStatus(ctx),domains:next},{}),/Research intake by domain and language/);
+ assert.match(dashboardMarkdown({...factoryStatus(ctx),domains:next},{}),/Travel Guides/);
 });
 
 test("duplicate layers L1–L5 catch exact, folded, overlapping and look-alike topics; distinct_from only excuses L3–L5",()=>{
