@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility",
   "batch_session": "research-claude-20261015-mobility",
   "created_at": "2026-10-15T09:33:24.963Z",
-  "updated_at": "2026-10-15T19:18:06.651Z",
-  "base_main_sha": "cd443451223b3ac343b262b4f7b8108500f23145",
-  "last_commit_sha": "af5a5ab1c622e0c2a1b0d54f0c8c453fc11b0258",
+  "updated_at": "2026-10-15T19:19:32.875Z",
+  "base_main_sha": "f2e75773bd49d92781e2b9656e88a91db0b8417f",
+  "last_commit_sha": "7d0429eed773b8b27996d4a75312f312e87f8a6c",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 200,
-    "qa_pass": 200,
+    "researched": 210,
+    "qa_pass": 210,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 190,
+    "pushed": 200,
     "pending_push": 10
   },
   "coverage": {
@@ -28,8 +28,8 @@
       "de": 30,
       "fr": 22,
       "es": 22,
-      "nl": 15,
-      "pt": 15,
+      "nl": 20,
+      "pt": 20,
       "ko": 15,
       "ja": 15,
       "zh": 14,
@@ -38,13 +38,13 @@
     "domains": {
       "transportation-mobility": 10,
       "motorbike-rental": 10,
-      "traffic-law-safety": 180
+      "traffic-law-safety": 190
     }
   },
   "last_batch": {
-    "seq": 20,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0020.json",
-    "sha256": "5615a4b9a5074cca29abc1f2411f18962ce7871be562b2e983735531036be5d2",
+    "seq": 21,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0021.json",
+    "sha256": "9de936bb9778af37e0caf59a280dc88bb8ecf43eea233fcc6e176a22352f7dfb",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -2163,8 +2163,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility-0020.json",
       "sha256": "5615a4b9a5074cca29abc1f2411f18962ce7871be562b2e983735531036be5d2",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "7d0429eed773b8b27996d4a75312f312e87f8a6c",
       "researched_on": "2026-10-15",
       "topics": [
         {
@@ -2175,7 +2175,7 @@
           "parent_id": "FR-H04",
           "subcluster": "ss-city",
           "key": "fr::depasser en scooter au vietnam regles",
-          "ta_id": null
+          "ta_id": "TA-FR-0038"
         },
         {
           "ref": "fr:tourner-demi-tour-scooter-vietnam",
@@ -2185,7 +2185,7 @@
           "parent_id": "FR-H04",
           "subcluster": "ss-city",
           "key": "fr::faire demi-tour en scooter au vietnam",
-          "ta_id": null
+          "ta_id": "TA-FR-0039"
         },
         {
           "ref": "fr:quelle-voie-scooter-vietnam",
@@ -2195,7 +2195,7 @@
           "parent_id": "FR-H04",
           "subcluster": "ss-city",
           "key": "fr::quelle voie pour un scooter au vietnam",
-          "ta_id": null
+          "ta_id": "TA-FR-0040"
         },
         {
           "ref": "fr:age-minimum-scooter-vietnam",
@@ -2205,7 +2205,7 @@
           "parent_id": "FR-H03",
           "subcluster": "dc-licence",
           "key": "fr::age minimum pour conduire un scooter au vietnam",
-          "ta_id": null
+          "ta_id": "TA-FR-0041"
         },
         {
           "ref": "fr:feux-de-circulation-vietnam-scooter",
@@ -2215,7 +2215,7 @@
           "parent_id": "FR-H04",
           "subcluster": "ss-city",
           "key": "fr::feux de circulation vietnam scooter regles",
-          "ta_id": null
+          "ta_id": "TA-FR-0042"
         },
         {
           "ref": "es:adelantar-moto-vietnam-normas",
@@ -2225,7 +2225,7 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-city",
           "key": "es::adelantar en moto en vietnam normas",
-          "ta_id": null
+          "ta_id": "TA-ES-0037"
         },
         {
           "ref": "es:giros-cambio-de-sentido-moto-vietnam",
@@ -2235,7 +2235,7 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-city",
           "key": "es::cambio de sentido en moto en vietnam",
-          "ta_id": null
+          "ta_id": "TA-ES-0038"
         },
         {
           "ref": "es:carril-moto-vietnam",
@@ -2245,7 +2245,7 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-city",
           "key": "es::por que carril ir en moto en vietnam",
-          "ta_id": null
+          "ta_id": "TA-ES-0039"
         },
         {
           "ref": "es:edad-minima-moto-vietnam",
@@ -2255,7 +2255,7 @@
           "parent_id": "ES-H03",
           "subcluster": "dc-licence",
           "key": "es::edad minima para conducir moto en vietnam",
-          "ta_id": null
+          "ta_id": "TA-ES-0040"
         },
         {
           "ref": "es:semaforos-vietnam-moto",
@@ -2265,14 +2265,125 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-city",
           "key": "es::semaforos en vietnam normas moto",
+          "ta_id": "TA-ES-0041"
+        }
+      ]
+    },
+    {
+      "seq": 21,
+      "file": "factory/topic-research/batches/claude-20261015-mobility-0021.json",
+      "sha256": "9de936bb9778af37e0caf59a280dc88bb8ecf43eea233fcc6e176a22352f7dfb",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-15",
+      "topics": [
+        {
+          "ref": "nl:toeteren-vietnam-regels-scooter",
+          "locale": "nl",
+          "slug": "toeteren-vietnam-regels-scooter",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::toeteren in vietnam regels scooter",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:inhalen-scooter-vietnam-regels",
+          "locale": "nl",
+          "slug": "inhalen-scooter-vietnam-regels",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::inhalen met de scooter in vietnam regels",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:afslaan-en-keren-scooter-vietnam",
+          "locale": "nl",
+          "slug": "afslaan-en-keren-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::keren met de scooter in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:rijstrook-scooter-vietnam",
+          "locale": "nl",
+          "slug": "rijstrook-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::welke rijstrook scooter vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:minimumleeftijd-scooter-vietnam",
+          "locale": "nl",
+          "slug": "minimumleeftijd-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H03",
+          "subcluster": "dc-licence",
+          "key": "nl::minimumleeftijd scooter rijden vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:buzina-moto-vietname-regras",
+          "locale": "pt",
+          "slug": "buzina-moto-vietname-regras",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::quando se pode buzinar no vietname de moto",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:ultrapassar-moto-vietname-regras",
+          "locale": "pt",
+          "slug": "ultrapassar-moto-vietname-regras",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::ultrapassar de moto no vietname regras",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:mudar-direcao-inverter-marcha-moto-vietname",
+          "locale": "pt",
+          "slug": "mudar-direcao-inverter-marcha-moto-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::inversao de marcha de moto no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:via-de-transito-moto-vietname",
+          "locale": "pt",
+          "slug": "via-de-transito-moto-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::em que faixa andar de moto no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:idade-minima-moto-vietname",
+          "locale": "pt",
+          "slug": "idade-minima-moto-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H03",
+          "subcluster": "dc-licence",
+          "key": "pt::idade minima para conduzir moto no vietname",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 21,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0021.json",
+    "seq": 22,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0022.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -2438,6 +2549,13 @@
       "seq": 20,
       "topics": 10,
       "sha256": "5615a4b9a5074cca29abc1f2411f18962ce7871be562b2e983735531036be5d2"
+    },
+    {
+      "at": "2026-10-15T19:19:32.875Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 21,
+      "topics": 10,
+      "sha256": "9de936bb9778af37e0caf59a280dc88bb8ecf43eea233fcc6e176a22352f7dfb"
     }
   ]
 }
