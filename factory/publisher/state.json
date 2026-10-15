@@ -1912,6 +1912,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T17:36:54.095Z"
+    },
+    {
+      "id": "NL-S10",
+      "locale": "nl",
+      "url": "/nl/guides/reisverzekering-scooterongeluk/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:37:11.239Z",
+      "source_sha256": "2ca54e738452ab96a84c548a41989ec424a892363c42f04cac438944c8510181",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "VI-S11",
+      "locale": "vi",
+      "url": "/vi/guides/chay-xe-pho-co-gio-cao-diem/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:37:11.239Z",
+      "source_sha256": "6d700ccb1ff429baa0cec2ec78f20c421b2dd94ac078a574a6a503cffec1732d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -3277,6 +3299,14 @@
         "KO-S10"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:37:11.239Z",
+      "ids": [
+        "NL-S10",
+        "VI-S11"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3289,6 +3319,6 @@
     "live_seconds": 41
   },
   "queue": {
-    "APPROVED_BY_POLICY": 13
+    "APPROVED_BY_POLICY": 11
   }
 }
