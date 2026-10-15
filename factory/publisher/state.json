@@ -1120,6 +1120,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T13:19:15.700Z"
+    },
+    {
+      "id": "VI-H01",
+      "locale": "vi",
+      "url": "/vi/topics/chon-loai-xe/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:19:36.319Z",
+      "source_sha256": "08b9fb24c6fd23b5c3a2acb845a84092ab3d3e8f3146b9e2af64a930f6f43c24",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-H01",
+      "locale": "zh",
+      "url": "/zh/topics/chexing-xuanze/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:19:36.319Z",
+      "source_sha256": "d04d9f54d1dff195dcc9eadffb5eddd68ec16cb29f3b7566ff7688d008616bfe",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1945,6 +1967,14 @@
         "JA-H01"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T13:19:36.319Z",
+      "ids": [
+        "VI-H01",
+        "ZH-H01"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1957,8 +1987,8 @@
     "live_seconds": 64
   },
   "queue": {
-    "APPROVED_BY_POLICY": 12,
-    "WAIT_PARENT": 26,
+    "APPROVED_BY_POLICY": 14,
+    "WAIT_PARENT": 22,
     "REJECTED": 1
   }
 }
