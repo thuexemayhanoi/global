@@ -7,7 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {fileURLToPath} from "node:url";
 import {poolStatus,validatePool,MAX_BATCH} from "./writer-pool-core.mjs";
-import {validateBoard,inboxFiles,checkDuplicates,verifyPacket} from "./writer-lanes.mjs";
+import {validateBoard,inboxFiles,checkDuplicates,inboxChecks} from "./writer-lanes.mjs";
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const read=p=>JSON.parse(fs.readFileSync(path.join(ROOT,p),"utf8"));
 function argsOf(argv){
@@ -29,8 +29,10 @@ export function decideNext(matrix,board,ledger,inbox,{writer,session=null,branch
  const duplicates=checkDuplicates(inbox.files);
  if(duplicates.length)throw Error("Duplicate Writer draft: "+duplicates.join("; "));
  const mine=inbox.files.filter(f=>f.writer===writer);
- const bad=mine.map(f=>({id:f.id,file:f.path,qa:verifyPacket(f.packet,writer,matrix,board,languages,ledger,registrations)})).filter(x=>!x.qa.passed);
- if(bad.length)return {status:"REPAIR_DRAFT",writer,session,branch,items:[],bad_drafts:bad.map(x=>({id:x.id,file:x.file,errors:x.qa.errors})),auto_publish:false};
+ // Locked SUBMITTED drafts are the publisher's business now; only open work can block writing.
+ const bad=inboxChecks(mine,matrix,board,languages,ledger,registrations).filter(x=>!x.passed);
+ if(bad.length)return {status:"REPAIR_DRAFT",writer,session,branch,items:[],bad_drafts:bad.map(x=>({id:x.id,file:x.file,errors:x.errors})),auto_publish:false,
+  next_action:"Fix these drafts BEFORE pushing: a draft that is not SUBMITTED yet is edited in place and re-checked with node scripts/writer-lanes.mjs verify-all (no revision file). Never edit a SUBMITTED draft; its corrections come only from a repair ticket (node scripts/writer-repair.mjs next)."};
  const data=poolStatus(matrix,ledger,registrations,{writer,session,branch,locale});
  if(data.status==="WRITE_NEXT_BATCH"){
   const toWrite=data.items.filter(x=>!mine.some(f=>f.id===x.id));

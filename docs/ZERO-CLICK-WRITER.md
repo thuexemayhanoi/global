@@ -1,21 +1,13 @@
-# ZERO-CLICK EXTERNAL WRITER — TURBO 10
+# Zero-click external Writer — pointer (LEGACY page, updated 2026-10-15)
 
-The canonical LIVE protocol is docs/GLOBAL-CONTENT-FACTORY-TURBO.md. Read it and AGENTS.md first.
+Follow `docs/CURRENT-WORKFLOW.md` (operating manual) and `AGENTS.md` § CURRENT PRODUCTION WORKFLOW (binding rules).
 
-**No per-batch GitHub Run workflow button.** A single W1 can handle every eligible Matrix idea. W2/W3 optional. Up to 10 unfinished CLAIMED topics per Writer lane, push 1–10 QA-green drafts at a time, and let GitHub Autopilot submit only completed packets and refill to ten on main.
+"Zero-click" still means: no per-batch GitHub Run button. A Writer pushes 1–10 QA-green drafts to its own branch; Writer QA and the Autopilot submit them and refill the slot to ten; the Auto Publisher then publishes eligible drafts two at a time with Live QA. One active W1 can cover every eligible topic; W2/W3 are optional concurrent slots.
 
-For active W1 use writer/w1-vibe-20261014 and w1-vibe-20261014 (PR #17). Preserve 14 existing W1 drafts and two EN-H01/DE-H01 editorial pilots. Active old ES-H01/KO-H01 claims must be finished or validly resumed before any new work.
+Corrections to earlier versions of this page:
 
-Fetch+merge main → confirm assigned IDs → write up to 10 factual, language-specific article JSON drafts → check QA → push OWN Writer branch → wait Writer QA green and AutoPool green → fetch+merge main → repeat. It is okay to push 1–9 valid drafts if the session cannot complete all ten; unfinished claims stay owned. New SUBMITTED article JSON is hash-locked.
+- Publication is no longer "owner manifest only": the standing-policy Auto Publisher publishes drafts that pass automated QA G1–G5 + G7. The owner-manifest path (`scripts/seo/publish-batch.mjs`) remains as the manual path.
+- W1's first ES-H01/KO-H01 claims were submitted on 2026-10-14; there is no outstanding pair to finish first. The 14 legacy W1 drafts (PR #17) and the EN-H01/DE-H01 editorial pilots remain protected.
+- Before new topics, every active Writer handles its own repair tickets (`docs/AI-WRITER-REPAIR-LOOP.md`).
 
-One-time bootstrap if needed:
-node scripts/writer-request.mjs start --writer W1 --session w1-vibe-20261014 --branch writer/w1-vibe-20261014
-
-Read-only health:
-node scripts/writer-refill.mjs status
-
-At <30 FREE ideas, prepare unique source-researched Supporting topic PROPOSALS in factory/topic-refill/proposals/W1/<batch>.json, validate via node scripts/writer-refill.mjs validate --writer W1 --branch writer/w1-vibe-20261014, and submit for editorial acceptance. Refill PROPOSALS are NOT approved Matrix rows, indexed URLs or permission to publish. Do not fake SERP evidence or source checking.
-
-No AI API or text generation inside GitHub Actions. No automatic article publication. Owner-reviewed source/fact/SERP approval manifest remains mandatory; Supporting PUBLICATION needs its Hub already PUBLISHED.
-
-If network or quota ends, resume the same Writer branch/session and unfinished claims; don't start a new lane with the same ID. Stop only on real blockers/empty approved queue or explicit STOP.
+One-time bootstrap and health checks: `node scripts/writer-request.mjs start --writer Wn --session s --branch writer/wn-s`, `node scripts/writer-pool.mjs slots`, `node scripts/writer-refill.mjs status`. Refill PROPOSALS are not Matrix rows, URLs or permission to publish; never fake SERP evidence or source checks. If network or quota ends, resume the same branch and session; stop only on real blockers, an empty queue or an explicit STOP.

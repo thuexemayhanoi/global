@@ -1,4 +1,7 @@
 # GLOBAL MASTER WORK — EXECUTION & ACCEPTANCE REPORT
+
+> **Dated snapshot (2026-10-14).** Counts and publication rules on this page describe that date. Current rules: `AGENTS.md` § CURRENT PRODUCTION WORKFLOW and `docs/CURRENT-WORKFLOW.md`.
+
 ## Status update — Premium baseline deployed; Ultra awaiting approval
 
 - **Premium PR #8** was explicitly approved and merged at main commit **643aa0fde50ab8184b9bfbda700fdfed675cf3a5**; GitHub Pages deployment and CI reported SUCCESS.

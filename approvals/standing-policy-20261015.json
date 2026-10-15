@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "STANDING_AUTOMATION_POLICY",
+  "id": "standing-policy-20261015",
+  "granted_by": "Repository owner (thuexemayhanoi), in the Claude Code session chat",
+  "granted_on": "2026-10-15",
+  "session": "https://claude.ai/code/session_01DXCqy2MZnHv2KFv872w9nS",
+  "owner_statements": [
+    "Ủy quyền của chủ website: Cho phép thiết kế cơ chế standing approval có phạm vi rõ ràng cho việc xuất bản nội dung mới đủ chuẩn, không cần hỏi lại từng bài hoặc từng batch thông thường.",
+    "Việc ủy quyền này không áp dụng cho xóa bài, đổi URL, redirect, thay đổi NAP, sửa giá thuê hoặc ghi đè nội dung đã được bảo vệ.",
+    "Sử dụng quy tắc phê duyệt tự động đã được chủ sở hữu cho phép trong phạm vi này. Cập nhật AGENTS.md và cơ chế manifest bằng PR có thể kiểm tra, thay vì âm thầm bỏ qua các protection gates hiện tại.",
+    "Cho phép standing authorization đối với bài viết mới đạt toàn bộ các quality gates đã phê duyệt.",
+    "Các bài có thông tin pháp lý, an toàn, giá hoặc dữ liệu chưa kiểm chứng phải bị chặn xuất bản cho tới khi đủ bằng chứng hoặc được xét duyệt bổ sung.",
+    "Triển khai an toàn bằng batch nhỏ, pilot trước, tăng dần khi QA ổn định. Chạy thử 2 bài/ngôn ngữ, sau đó 10 bài/ngôn ngữ. Chỉ tăng tốc sau khi xác nhận không có regression.",
+    "Sau mỗi batch hợp lệ, có thể merge/deploy các hạng mục thuộc phạm vi ủy quyền, với CI và kiểm tra rollback.",
+    "2026-10-15, owner follow-up: 'pulish toàn bộ số bài nháp giờ bỏ cái AI đánh giá global đi giữ cái 3 W CÙNG VIẾT ... làm như /blog vậy'. Publish only QA-eligible drafts; maintain G1–G5/G7, human checks for legal/safety/price and all protected URL safeguards."
+  ],
+  "topic_promotion": {
+    "authorized": true,
+    "what": "Promote PROPOSED topical-map candidates that pass gates T1-T10 and the Topic Factory gates F1-F8 into the SEO Matrix as unpublished IDEA rows.",
+    "statement": "I approve adding these topical-map candidates to the SEO Matrix as unpublished IDEA rows. This is not publication approval.",
+    "max_per_run": 50,
+    "not_authorized": [
+      "New Hub rows or architecture changes without a separate reviewed architecture decision",
+      "Candidates that fail any gate, lack two traceable references, or target transactional commercial rental intent",
+      "Exceeding the per-locale target in data/seo/topic-factory/policy.json"
+    ]
+  },
+  "publication": {
+    "authorized": true,
+    "what": "Publish NEW Hub/Supporting URLs from immutable SUBMITTED drafts when strict automated QA and independent safety/SEO/source/duplicate/Matrix gates pass, without a separate AI editorial reviewer.",
+    "new_urls_only": true,
+    "max_per_run": 2,
+    "stages": {
+      "PILOT": {
+        "max_per_locale": 2,
+        "advance_after_clean_runs": 2
+      },
+      "RAMP": {
+        "max_per_locale": 10,
+        "advance_after_clean_runs": 10
+      },
+      "CONTINUOUS": {
+        "max_per_locale": 1000
+      }
+    },
+    "review_required_classes": [
+      "LEGAL",
+      "SAFETY",
+      "PRICE"
+    ],
+    "not_authorized": [
+      "Deleting, renaming or redirecting any URL",
+      "Changing NAP, opening hours, prices or business schema",
+      "Overwriting a PUBLISHED, frozen or protected page or draft",
+      "Publishing a draft with unresolved legal, safety or price claims, or without a PUBLISHED parent",
+      "Claiming human review: facts_reviewed_by_human and serp_intent_checked stay false on policy publications"
+    ],
+    "failure_behaviour": "Any failed build, guard, deployment or live HTTP check pauses publication (factory/publisher/state.json) and reverts the publish commit with a new commit; never force-push main.",
+    "independent_ai_reviewer_required": false,
+    "qa_source": "AUTOMATED_G1_G5_G7"
+  }
+}

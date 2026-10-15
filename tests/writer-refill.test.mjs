@@ -35,7 +35,7 @@ test("refill health shows real free ideas; capacity is not content",()=>{
  assert.equal(h.free_ideas,topics.filter(r=>r.status==="IDEA"&&!held.has(r.id)&&!live.has(r.id)).length); // Source-of-truth changes safely as Writer progresses
  const allClaimed=structuredClone(ledger);
  for(const row of matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&r.status==="IDEA"))
-  if(!allClaimed.claims.some(c=>c.id===row.id)&&![...registry.protected,...registry.held_ids].some(p=>p.id===row.id))
+  if(!allClaimed.claims.some(c=>c.id===row.id&&c.status!=="RELEASED")&&![...registry.protected,...registry.held_ids].some(p=>p.id===row.id))
    allClaimed.claims.push({id:row.id,writer:"W2",session:"w2-test",branch:"writer/w2-test",claim_id:"test-"+row.id,
     status:"SUBMITTED",at:"2026-10-14T00:00:00Z",updated_at:"2026-10-14T00:00:00Z"});
  const emptyHealth=refillHealth(matrix,allClaimed,registry);

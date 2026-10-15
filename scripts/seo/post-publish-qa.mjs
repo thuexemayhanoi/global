@@ -6,7 +6,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import {fileURLToPath} from "node:url";
-import {parseSitemapIndex,parseSitemapUrlset} from "../sitemaps.mjs";
+import {fetchSitemapInventory} from "../sitemaps.mjs";
 import {fingerprint,FINGERPRINT_FIELDS} from "./seo-guard-core.mjs";
 import {scanHtml} from "./fact-guard-core.mjs";
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
@@ -21,19 +21,25 @@ export function inspectHTML(html,url,expectedLang=null){
  if(url!=="/"&&!/<main\b[^>]*>[\s\S]*?<p\b/i.test(html))errors.push("No crawlable visible description "+url);
  return errors;
 }
-export async function inspectProduction(fetcher=fetch,origin="https://global.rentbikehanoi.com",matrix,locales,registry=null){
+/**
+ * `cacheBust` (e.g. "?qa=<timestamp>") is appended to every request so the CDN
+ * serves the deployed origin copy rather than a cached one; GitHub Pages ignores
+ * the query, and canonical/fingerprint checks read the HTML, not the request URL.
+ */
+export async function inspectProduction(fetcher=fetch,origin="https://global.rentbikehanoi.com",matrix,locales,registry=null,{cacheBust=""}={}){
  const frozen=new Map((registry?.urls||[]).map(u=>[u.url,u]));
  const issues=[],evidence=[];
- const get=async (route,headers={})=>{
+ const getURL=async (url,headers={})=>{
   let lastError;
   for(let i=0;i<3;i++){
    try{
-    const response=await fetcher(origin+route,{headers,signal:AbortSignal.timeout(20000)});
-    return{response,text:await response.text()};
+    const response=await fetcher(url,{headers,signal:AbortSignal.timeout(20000)});
+    return{response,status:response.status,text:await response.text()};
    }catch(e){lastError=e;if(i<2)await new Promise(resolve=>setTimeout(resolve,1100*(i+1)));}
   }
   throw lastError;
  };
+ const get=(route,headers={})=>getURL(origin+route+cacheBust,headers);
  for(const r of matrix.rows.filter(x=>x.status==="PUBLISHED")){
   try{
    const {response,text}=await get(r.url);
@@ -56,32 +62,12 @@ export async function inspectProduction(fetcher=fetch,origin="https://global.ren
   evidence.push({route:"/search/",http_status:response.status,noindex:text.includes('noindex,follow')});
  }catch(e){issues.push("Search utility unavailable "+e.message)}
  try{
-  const {response,text}=await get("/sitemap.xml");
-  if(response.status!==200)throw Error("HTTP "+response.status);
-  const children=parseSitemapIndex(text,origin);
-  const expectedGroups=new Set(["main",...locales.map(l=>l.code)]);
-  const discovered=new Set(),groups=new Set();
-  for(const name of children){
-   const group=name.match(/^sitemap-(main|[a-z]{2})(?:-[2-9][0-9]*)?\.xml$/)?.[1];
-   if(!expectedGroups.has(group))throw Error("Unrecognized sitemap child "+name);
-   groups.add(group);
-   const shard=await get("/"+name);
-   if(shard.response.status!==200)throw Error("HTTP "+shard.response.status+" /"+name);
-   const entries=parseSitemapUrlset(shard.text,origin);
-   if(entries.length>40000||Buffer.byteLength(shard.text)>40*1024*1024)throw Error("Sitemap shard exceeds safe size "+name);
-   for(const url of entries){
-    const prefix=url.split("/")[1];
-    const belongs=expectedGroups.has(prefix)?prefix:"main";
-    if(belongs!==group)throw Error("URL in wrong locale shard "+url);
-    if(discovered.has(url))throw Error("Duplicate across sitemap shards "+url);
-    discovered.add(url);
-   }
-   evidence.push({route:"/"+name,http_status:shard.response.status,entries:entries.length});
-  }
-  for(const group of expectedGroups)if(!groups.has(group))throw Error("Missing locale sitemap "+group);
+  // Same reader as the Auto Publisher's live QA: child names resolve to absolute same-origin URLs.
+  const inv=await fetchSitemapInventory(url=>getURL(url),{origin,localeCodes:locales.map(l=>l.code),query:cacheBust});
+  for(const [name,entries] of Object.entries(inv.byChild))evidence.push({route:"/"+name,http_status:200,entries:entries.length});
   const published=new Set(matrix.rows.filter(x=>x.status==="PUBLISHED").map(x=>x.url));
-  if(discovered.size!==published.size||[...discovered].some(url=>!published.has(url)))issues.push("Live sitemap shards do not match reviewed PUBLISHED Matrix");
-  evidence.push({route:"/sitemap.xml",http_status:response.status,sitemap_children:children.length,published_urls:discovered.size});
+  if(inv.urls.length!==published.size||inv.urls.some(url=>!published.has(url)))issues.push("Live sitemap shards do not match reviewed PUBLISHED Matrix");
+  evidence.push({route:"/sitemap.xml",http_status:200,sitemap_children:inv.children.length,published_urls:inv.urls.length});
  }catch(e){issues.push("Live sitemap index/shards invalid: "+e.message)}
 
  try{
@@ -102,7 +88,7 @@ async function cli(){
  const matrix=JSON.parse(fs.readFileSync(path.join(ROOT,"data/seo/master-matrix.json"),"utf8"));
  const locales=JSON.parse(fs.readFileSync(path.join(ROOT,"content/locales.json"),"utf8"));
  const registry=JSON.parse(fs.readFileSync(path.join(ROOT,"data/seo/url-freeze.json"),"utf8"));
- const report=await inspectProduction(fetch,"https://global.rentbikehanoi.com",matrix,locales,registry);
+ const report=await inspectProduction(fetch,"https://global.rentbikehanoi.com",matrix,locales,registry,{cacheBust:"?qa="+Date.now()});
  fs.mkdirSync(path.join(ROOT,"reports"),{recursive:true});
  fs.writeFileSync(path.join(ROOT,"reports/post-publish-qa.json"),JSON.stringify(report,null,2)+"\n");
  console.log(JSON.stringify({passed:report.passed,issues:report.issues,checked:report.evidence.length,report:"reports/post-publish-qa.json"},null,2));
