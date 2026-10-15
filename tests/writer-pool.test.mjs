@@ -2,12 +2,18 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import {poolCandidates,poolStatus,transitionPool,validatePool,ensureIdentity} from "../scripts/writer-pool-core.mjs";
-import {PILOT_IDS,legacyPilotOriginal} from "../scripts/legacy-pilot-core.mjs";
+import {PILOT_IDS,PILOT_OWNERS,PILOT_SOURCE,legacyPilotOriginal} from "../scripts/legacy-pilot-core.mjs";
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
 const currentLedger=JSON.parse(fs.readFileSync("factory/external-writers/claims.json","utf8"));
 const original={version:1,revision:0,claims:[]};
-const immutablePilot=c=>legacyPilotOriginal(c)&&/^[0-9a-f]{64}$/.test(c.source_sha256||"")&&/^[0-9a-f]{40}$/.test(c.source_commit||"");
+// Custody, not phase: after a publisher repair ticket the pilot claim points at its SHA-bound revision, while the
+// original PR6 manuscript stays the first entry of its revision history and owner, session and branch never change.
+const revisedPilot=c=>{const o=PILOT_OWNERS[c.id],first=c.revisions?.[0];
+ return Boolean(o&&c.status==="SUBMITTED"&&c.legacy_pilot?.source_pr===6&&c.legacy_pilot.source_ref===PILOT_SOURCE&&
+  c.writer===o.writer&&c.session===o.session&&c.branch===o.branch&&first?.source_path==="content/articles/"+c.id+".json"&&
+  /^[0-9a-f]{64}$/.test(first.source_sha256||"")&&/^[0-9a-f]{40}$/.test(first.source_commit||""));};
+const immutablePilot=c=>(legacyPilotOriginal(c)||revisedPilot(c))&&/^[0-9a-f]{64}$/.test(c.source_sha256||"")&&/^[0-9a-f]{40}$/.test(c.source_commit||"");
 const validatePilotCustody=(ledger,registry,candidates)=>{
  for(const id of PILOT_IDS){
   const held=(registry.held_ids||[]).filter(p=>p.id===id);
