@@ -1168,6 +1168,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T13:22:12.722Z"
+    },
+    {
+      "id": "PT-H03",
+      "locale": "pt",
+      "url": "/pt/topics/documentos-contrato/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:22:29.544Z",
+      "source_sha256": "63385ba6c1b4ca4bab9fefbbdf970a52f4d50e9b3e6f4f8bd1dad99acecb82fd",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-H04",
+      "locale": "fr",
+      "url": "/fr/topics/securite-assistance/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:22:29.544Z",
+      "source_sha256": "6f9999924049d348813da8d9fa2e8403debc4c37f11dc873f1f984be20ff40e3",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2025,6 +2047,14 @@
         "ES-H03"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T13:22:29.544Z",
+      "ids": [
+        "PT-H03",
+        "FR-H04"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2037,8 +2067,8 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 16,
-    "WAIT_PARENT": 18,
+    "APPROVED_BY_POLICY": 21,
+    "WAIT_PARENT": 11,
     "REJECTED": 1
   }
 }

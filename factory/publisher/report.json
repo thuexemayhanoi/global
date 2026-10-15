@@ -3,8 +3,8 @@
   "ledger_revision": 84,
   "stage": "CONTINUOUS",
   "counts": {
-    "APPROVED_BY_POLICY": 16,
-    "WAIT_PARENT": 18,
+    "APPROVED_BY_POLICY": 21,
+    "WAIT_PARENT": 11,
     "REJECTED": 1
   },
   "items": [
@@ -120,33 +120,25 @@
     },
     {
       "id": "EN-S05",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "d51c8d69ba4e7b8094789a433b09fcd535f4e0d180f3730c0badec829b47c92c",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: EN-H03 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "ES-S05",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
       "source_sha256": "4ab7169d41c41d5d756e10e70d12855ec932e1a1a76f223205e7fbed824c7540",
       "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": [
-        "G2_PARENT_PUBLISHED: ES-H03 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "PT-S05",
@@ -165,33 +157,25 @@
     },
     {
       "id": "EN-S06",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "8734391c4bde30999f9b49f1294d4d97a5348750ea43c4e36afe29f0db37f1ed",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: EN-H03 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "ES-S06",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "694368d5369ac34016b0e855c9be79b1b966e7b59f9386e19810d739310a4403",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: ES-H03 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "PT-S06",
@@ -330,48 +314,36 @@
     },
     {
       "id": "EN-S09",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
       "source_sha256": "e9780f7dec833dae2d44475bcf5583540f6f4d96ef00f5dbbad364ece0f18bc2",
       "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": [
-        "G2_PARENT_PUBLISHED: EN-H03 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "EN-S10",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
       "source_sha256": "10a660e697bfb2dfbe277b429e650661c27f1fae14d67410fba270d3b1d793a3",
       "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": [
-        "G2_PARENT_PUBLISHED: EN-H03 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "ES-S09",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
       "source_sha256": "9aa054d77d90065945e7cf0680748a3111db99b6de0caacdbf1d5aa16e9ce257",
       "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": [
-        "G2_PARENT_PUBLISHED: ES-H03 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "PT-S09",
@@ -387,28 +359,6 @@
       "details": [
         "G2_PARENT_PUBLISHED: PT-H03 is IDEA"
       ]
-    },
-    {
-      "id": "EN-H03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "17a345569a7b1e96da8c40d98fa71b8995be22a25678b0b8106c31f0ccef12a9",
-      "source_commit": "cd4f4a23b487ce3fedd247064619509a1bc4dcad",
-      "details": []
-    },
-    {
-      "id": "ES-H03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "772865013baf341b70a44d086764d7101e6c0499169f3cc35a1471caac015710",
-      "source_commit": "cd4f4a23b487ce3fedd247064619509a1bc4dcad",
-      "details": []
     },
     {
       "id": "FR-H04",
