@@ -5,7 +5,8 @@
  *   drain-decision                        should workflow dispatch the next pair? (read-only)
  *   publish --max 2 --apply [--ids A,B]   stage ≤2 APPROVED_BY_POLICY drafts as NEW URLs and run every
  *                                         build/SEO/fact gate (trusted workflow on main, or --local rehearsal)
- *   live-qa --ids A,B [--timeout-seconds N] [--origin URL]  poll production until the new URLs pass
+ *   live-qa --ids A,B [--timeout-seconds N] [--record] [--recovery] [--out file]
+ *                                         poll production; verdict PASS | FAIL | INCONCLUSIVE
  *   record-failure --ids A,B --reason "…" pause publication after a failed gate/deploy (trusted)
  *   pause|resume --reason "…" --confirmed true                operator control (trusted)
  *   validate-reviews [--dir path]          schema/hash check of independent editorial reviews
@@ -18,9 +19,9 @@ import {createHash} from "node:crypto";
 import {execFileSync,spawnSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
 import {articlePath,STANDING_POLICY_PATH} from "./articles.mjs";
-import {eligibility,validateReview,shingles,publicationRecord,nextStage,reviewFile,REVIEW_FILE,drainDecision} from "./auto-publisher-core.mjs";
-import {readLocalSitemapInventory,parseSitemapIndex,parseSitemapUrlset} from "./sitemaps.mjs";
-import {inspectHTML} from "./seo/post-publish-qa.mjs";
+import {eligibility,validateReview,shingles,publicationRecord,REVIEW_FILE,drainDecision,publishGate,selectForPublication,recordLiveQA,applyControl} from "./auto-publisher-core.mjs";
+import {readLocalSitemapInventory,SITEMAP_ORIGIN} from "./sitemaps.mjs";
+import {runLiveQA} from "./publisher-live-qa.mjs";
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const WORKFLOW="Global Auto Publisher";
@@ -78,10 +79,17 @@ function evaluate(c){
  if(fs.existsSync(dir))for(const f of fs.readdirSync(dir).filter(f=>f.endsWith(".json"))){const p=JSON.parse(fs.readFileSync(path.join(dir,f),"utf8"));corpus.push({id:p.matrix_id,locale:p.locale,kind:"published",shingles:shingles(p.body_markdown,p.locale)});}
  const results=[];
  for(const d of drafts){
-  if(d.error){results.push({id:d.claim.id,decision:"BLOCKED",failed:["SOURCE"],gates:[{gate:"SOURCE",passed:false,detail:d.error}]});continue;}
+  if(d.error){results.push({id:d.claim.id,decision:"BLOCKED",failed:["SOURCE"],gates:[{gate:"SOURCE",passed:false,detail:d.error}],_claim:d.claim});continue;}
   // Writer QA and publisher gates are authoritative; no independent AI reviewer dependency.
-  const r=eligibility({packet:d.packet,claim:d.claim,row:d.row,matrix:c.matrix,locales:c.locales,policy:c.policy,standing:c.standing,
-   protectedIds:c.protectedIds,corpus,state:c.state});
+  // One malformed draft must never stop the evaluation (and publication) of the others.
+  let r;
+  try{
+   r=eligibility({packet:d.packet,claim:d.claim,row:d.row,matrix:c.matrix,locales:c.locales,policy:c.policy,standing:c.standing,
+    protectedIds:c.protectedIds,corpus,state:c.state});
+  }catch(e){
+   results.push({id:d.claim.id,decision:"BLOCKED",failed:["EVALUATION_ERROR"],gates:[{gate:"EVALUATION_ERROR",passed:false,detail:String(e.message).slice(0,240)}],_claim:d.claim});
+   continue;
+  }
   r.review_sha256=null;
   r.priority=d.row?.priority??99;
   results.push({...r,_packet:d.packet,_claim:d.claim});
@@ -103,21 +111,8 @@ function cmdScan(o){
  */
 function cmdDrainDecision(){
  const c=context(),rs=evaluate(c);
- const ready=pick(rs,c,2,null).map(r=>r.id);
+ const ready=selectForPublication(rs,{state:c.state,standing:c.standing,max:2}).map(r=>r.id);
  console.log(JSON.stringify({mode:"READ_ONLY",stage:c.state.stage,...drainDecision({state:c.state,eligible:ready}),counts:summary(rs)},null,2));
-}
-function pick(rs,c,max,only){
- const ok=rs.filter(r=>r.decision==="APPROVED_BY_POLICY"&&(!only||only.includes(r.id)));
- ok.sort((a,b)=>(a.role==="HUB"?0:1)-(b.role==="HUB"?0:1)||a.priority-b.priority||a.id.localeCompare(b.id));
- const cap=c.standing.publication.stages[c.state.stage]?.max_per_locale??2,used={},chosen=[];
- for(const p of c.state.published||[])used[p.locale]=(used[p.locale]||0)+1;
- for(const r of ok){
-  if(chosen.length>=max)break;
-  if((used[r.locale]||0)>=cap)continue;
-  // A Supporting child and its Hub are never published in the same run unless the Hub is already live.
-  used[r.locale]=(used[r.locale]||0)+1;chosen.push(r);
- }
- return chosen;
 }
 function cmdPublish(o){
  const max=Math.min(Number(o.max||2),2);
@@ -127,7 +122,8 @@ function cmdPublish(o){
  const c=context();
  // Always refresh trusted repair tickets, EVEN WHEN publication is paused.
  // Each ticket is bound to the real immutable Writer source SHA and session.
- const rs=evaluate(c),chosen=c.state.paused?[]:pick(rs,c,max,o.ids?String(o.ids).split(","):null);
+ const rs=evaluate(c),gate=publishGate(c.state);
+ const chosen=gate.allowed?selectForPublication(rs,{state:c.state,standing:c.standing,max,only:o.ids?String(o.ids).split(","):null}):[];
  const now=new Date().toISOString();
  c.state.queue=summary(rs);
  if(apply)write("factory/publisher/report.json",{version:2,ledger_revision:c.ledger.revision,stage:c.state.stage,counts:summary(rs),
@@ -135,6 +131,13 @@ function cmdPublish(o){
    writer:r._claim?.writer||null,session:r._claim?.session||null,branch:r._claim?.branch||null,
    source_sha256:r._claim?.source_sha256||null,source_commit:r._claim?.source_commit||null,
    details:(r.gates||[]).filter(g=>!g.passed).map(g=>g.gate+": "+String(g.detail).slice(0,240))}))});
+ if(gate.reason==="LIVE_QA_RECOVERY"){
+  // An earlier publication has no recorded live result (crashed run, lost state push,
+  // or an inconclusive check): verify it before anything new is staged.
+  if(apply)write(STATE,c.state);
+  console.log(JSON.stringify({mode:"LIVE_QA_RECOVERY",recover:gate.recover,paused:c.state.paused,counts:summary(rs),repair_report_refreshed:apply,published:[]}));
+  return;
+ }
  if(c.state.paused){
   if(apply)write(STATE,c.state);
   console.log(JSON.stringify({mode:"PAUSED",reason:c.state.pause_reason,counts:summary(rs),repair_report_refreshed:apply,published:[]}));
@@ -186,62 +189,41 @@ function cmdPublish(o){
   throw Error("PUBLISH_ROLLED_BACK_AND_PAUSED: "+e.message);
  }
 }
-async function fetchText(url){
- const r=await fetch(url,{signal:AbortSignal.timeout(20000),headers:{"cache-control":"no-cache"}});
- return {status:r.status,text:await r.text()};
-}
+/**
+ * Live HTTP QA after a deploy (or a recovery re-check with --recovery). The verdict
+ * is PASS, FAIL (production served something wrong → the workflow reverts) or
+ * INCONCLUSIVE (QA tool/network could not decide → pause, production untouched).
+ * A crash of this command itself is recorded as INCONCLUSIVE, never as FAIL.
+ */
 async function cmdLiveQA(o){
- const ids=String(o.ids||"").split(",").filter(Boolean),origin=o.origin||"https://global.rentbikehanoi.com";
- const timeout=Number(o["timeout-seconds"]||900)*1000,started=Date.now();
- const c=context(),targets=ids.map(id=>{const a=read("content/articles/"+id+".json");const l=c.locales.find(x=>x.code===a.locale);return {id,url:a.proposed_url,title:a.title,lang:l.htmlLang||l.code};});
- let last=[];
- while(Date.now()-started<timeout){
-  last=[];
-  for(const t of targets){
-   try{
-    const {status,text}=await fetchText(origin+t.url+"?qa="+Date.now());
-    if(status!==200){last.push(t.id+": HTTP "+status);continue;}
-    last.push(...inspectHTML(text,t.url,t.lang).map(e=>t.id+": "+e));
-    if(!text.includes("<title>"+t.title.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")+"</title>"))last.push(t.id+": title mismatch");
-    if(/name="robots" content="noindex/i.test(text))last.push(t.id+": unexpected noindex");
-    if(!text.includes('class="article-provenance"'))last.push(t.id+": AI provenance note missing");
-   }catch(e){last.push(t.id+": fetch "+e.message);}
-  }
-  if(!last.length){
-   try{
-    const idx=await fetchText(origin+"/sitemap.xml"),shards=parseSitemapIndex(idx.text,origin);
-    const urls=new Set();
-    for(const s of shards){const r=await fetchText(s);for(const u of parseSitemapUrlset(r.text,origin))urls.add(u);}
-    for(const t of targets)if(!urls.has(t.url)&&!urls.has(origin+t.url))last.push(t.id+": not in live sitemap");
-   }catch(e){last.push("sitemap: "+e.message);}
-  }
-  if(!last.length)break;
-  await new Promise(r=>setTimeout(r,20000));
+ const ids=String(o.ids||"").split(",").filter(Boolean),origin=SITEMAP_ORIGIN;
+ if(!ids.length||ids.some(id=>!/^[A-Z]{2}-[HS]\d{2,4}$/.test(id)))throw Error("live-qa needs --ids with Matrix IDs");
+ const timeoutMs=Number(o["timeout-seconds"]||900)*1000,started=Date.now(),recovery=o.recovery===true;
+ const c=context();
+ let result;
+ try{
+  const targets=ids.map(id=>{
+   const a=read("content/articles/"+id+".json"),l=c.locales.find(x=>x.code===a.locale);
+   return {id,url:a.proposed_url,title:a.title,lang:l?.htmlLang||l?.code||a.locale};
+  });
+  result=await runLiveQA({targets,origin,localeCodes:c.locales.map(l=>l.code),fetcher:fetch,timeoutMs});
+ }catch(e){
+  result={verdict:"INCONCLUSIVE",issues:[{kind:"TOOL",scope:"live-qa",detail:String(e.message).slice(0,300)}],attempts:0,seconds:Math.round((Date.now()-started)/1000)};
  }
- const passed=!last.length,now=new Date().toISOString();
+ const now=new Date().toISOString();
  if(o.record===true){
   const st=optional(STATE,emptyState());
-  for(const p of st.published)if(ids.includes(p.id)&&p.live_qa==="PENDING")p.live_qa=passed?"PASS":"FAIL";
-  if(passed){st.clean_runs=(st.clean_runs||0)+1;st.last_successful_deployment={at:now,ids,commit:o.commit||null,live_seconds:Math.round((Date.now()-started)/1000)};
-   const ns=nextStage(st,c.standing);if(ns!==st.stage){st.runs.push({at:now,ids:[],result:"STAGE_ADVANCED "+st.stage+"→"+ns});st.stage=ns;st.clean_runs=0;}}
-  else{st.paused=true;st.pause_reason="Live QA failed "+now+": "+last.slice(0,5).join(" | ");st.clean_runs=0;}
-  st.runs.push({at:now,ids,result:passed?"LIVE_QA_PASS":"LIVE_QA_FAIL"});
-  write(STATE,st);
+  write(STATE,recordLiveQA(st,{ids,verdict:result.verdict,issues:result.issues,commit:o.commit||null,seconds:result.seconds,now,standing:c.standing,recovery}));
  }
- console.log(JSON.stringify({mode:"LIVE_QA",passed,ids,issues:last,seconds:Math.round((Date.now()-started)/1000)},null,2));
- if(!passed)process.exitCode=1;
+ const out={mode:"LIVE_QA",verdict:result.verdict,passed:result.verdict==="PASS",recovery,ids,issues:result.issues,sitemap:result.sitemap||null,attempts:result.attempts,seconds:result.seconds};
+ if(typeof o.out==="string")fs.writeFileSync(path.resolve(o.out),JSON.stringify(out,null,2)+"\n");
+ console.log(JSON.stringify(out,null,2));
+ if(result.verdict!=="PASS")process.exitCode=1;
 }
 function cmdControl(cmd,o){
  if(!trusted())throw Error("PUBLISHER_REFUSED: "+cmd+" runs only in the Global Auto Publisher workflow");
- const st=optional(STATE,emptyState()),now=new Date().toISOString();
- if(String(o.reason||"").trim().length<12)throw Error(cmd+" needs a reason ≥12 chars");
- if(cmd==="resume"&&o.confirmed!=="true"&&o.confirmed!==true)throw Error("resume needs --confirmed true");
- if(cmd==="record-failure"){st.paused=true;st.pause_reason="Reverted "+now+": "+o.reason;st.clean_runs=0;
-  for(const p of st.published)if(String(o.ids||"").split(",").includes(p.id))p.live_qa="REVERTED";
-  st.published=st.published.filter(p=>p.live_qa!=="REVERTED");}
- else if(cmd==="pause"){st.paused=true;st.pause_reason=o.reason;}
- else {st.paused=false;st.pause_reason=null;}
- st.runs.push({at:now,ids:String(o.ids||"").split(",").filter(Boolean),result:cmd.toUpperCase()+": "+o.reason});
+ const st=applyControl(optional(STATE,emptyState()),cmd,{reason:o.reason===true?"":o.reason,confirmed:o.confirmed,
+  ids:String(o.ids||"").split(",").filter(Boolean),now:new Date().toISOString()});
  write(STATE,st);
  console.log(JSON.stringify({mode:cmd.toUpperCase(),paused:st.paused,reason:st.pause_reason}));
 }

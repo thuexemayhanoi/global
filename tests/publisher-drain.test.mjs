@@ -1,7 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import {drainDecision} from "../scripts/auto-publisher-core.mjs";
+import {drainDecision,selectForPublication} from "../scripts/auto-publisher-core.mjs";
+const standing=JSON.parse(fs.readFileSync("approvals/standing-policy-20261015.json","utf8"));
 
 test("ten queued QA-eligible drafts drain in five pairs of two without inventing more work",()=>{
  let waiting=Array.from({length:10},(_,i)=>"EN-S"+String(i+1).padStart(2,"0"));
@@ -41,7 +42,18 @@ test("workflow serializes runs, checks live QA before dispatch and never bypasse
  assert.match(y,/node scripts\/auto-publisher\.mjs drain-decision/);
  assert.match(y,/gh workflow run auto-publisher\.yml --ref main -f action=publish -f max=2/);
  assert.match(cli,/function cmdDrainDecision\(\)/);
- assert.match(cli,/const ready=pick\(rs,c,2,null\)/);
+ // Drain and publish use the same selection, so the drain never promises a pair the publisher would refuse.
+ assert.match(cli,/const ready=selectForPublication\(rs,\{state:c\.state,standing:c\.standing,max:2\}\)/);
+ assert.match(cli,/selectForPublication\(rs,\{state:c\.state,standing:c\.standing,max,only:/);
  assert.match(cli,/drainDecision\(\{state:c\.state,eligible:ready\}\)/);
  assert.match(y,/cron: '41 \* \* \* \*'/); // low-frequency fallback if a run is interrupted
+});
+
+test("selection: Hubs first, at most two, stage cap per locale, and failing drafts never block eligible ones",()=>{
+ const r=(id,locale,role,decision="APPROVED_BY_POLICY",priority=1)=>({id,locale,role,decision,priority});
+ const results=[r("EN-S01","en","SUPPORT"),r("NL-H01","nl","HUB"),r("PT-H01","pt","HUB"),r("ES-H01","es","HUB","REJECTED"),r("KO-H01","ko","HUB","REVIEW_REQUIRED")];
+ assert.deepEqual(selectForPublication(results,{state:{stage:"PILOT",published:[]},standing,max:2}).map(x=>x.id),["NL-H01","PT-H01"]);
+ assert.deepEqual(selectForPublication(results,{state:{stage:"PILOT",published:[{locale:"nl"},{locale:"nl"}]},standing,max:2}).map(x=>x.id),["PT-H01","EN-S01"]);
+ assert.deepEqual(selectForPublication(results,{state:{stage:"PILOT",published:[]},standing,max:2,only:["EN-S01"]}).map(x=>x.id),["EN-S01"]);
+ assert.deepEqual(selectForPublication([r("ES-H01","es","HUB","REJECTED")],{state:{},standing,max:2}),[]);
 });
