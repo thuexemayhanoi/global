@@ -3004,17 +3004,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T20:12:27.432Z"
+    },
+    {
+      "id": "DE-S56",
+      "locale": "de",
+      "url": "/de/guides/bergstrassen-gegenverkehr-roller-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:17:11.061Z",
+      "source_sha256": "7ab6d862213af58f1a636232040c1f63f8bc89542130fe8ca5295384d7fa688b",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S57",
+      "locale": "de",
+      "url": "/de/guides/roller-faehre-pontonbruecke-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:17:11.061Z",
+      "source_sha256": "ef85b23b43af10ba8c33d86b3a098104eacde71d76ff1521cc703c5afcce3094",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:57:17.366Z",
-      "ids": [
-        "KO-S03",
-        "NL-S03"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T09:58:25.757Z",
       "ids": [
@@ -4582,6 +4596,14 @@
         "EN-S28"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T20:17:11.061Z",
+      "ids": [
+        "DE-S56",
+        "DE-S57"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4594,6 +4616,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 3
   }
 }
