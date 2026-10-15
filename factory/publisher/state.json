@@ -1048,6 +1048,17 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T10:17:09.188Z"
+    },
+    {
+      "id": "DE-H01",
+      "locale": "de",
+      "url": "/de/topics/motorroller-und-motorrad-waehlen/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T10:29:56.537Z",
+      "source_sha256": "a26a0ad2110fb7ee48287ef977087104dd112e9e1d3d0ff25ef9cd2cf698738f",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1813,6 +1824,13 @@
         "VI-S09"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T10:29:56.537Z",
+      "ids": [
+        "DE-H01"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1825,6 +1843,7 @@
   },
   "queue": {
     "WAIT_PARENT": 30,
-    "REJECTED": 11
+    "REJECTED": 12,
+    "APPROVED_BY_POLICY": 1
   }
 }

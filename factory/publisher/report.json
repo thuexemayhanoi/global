@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "ledger_revision": 78,
+  "ledger_revision": 80,
   "stage": "CONTINUOUS",
   "counts": {
     "WAIT_PARENT": 30,
-    "REJECTED": 11
+    "REJECTED": 12,
+    "APPROVED_BY_POLICY": 1
   },
   "items": [
     {
@@ -635,6 +636,32 @@
         "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
         "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: 在越南,驾驶人和后座乘客都必须戴头盔,而且系带要系紧。2024年12月颁布的168/2024/NĐ-CP 号议定自2025年1月1日生效,不戴头盔或未系紧系带,罚款40万至60万越南盾,比旧标准明显提高,VnExpress 报道当时已有详细说明。但比罚款更重要的是保护效果:根据世"
       ]
+    },
+    {
+      "id": "EN-H01",
+      "decision": "REJECTED",
+      "failed": [
+        "G3_OFFICIAL_EVIDENCE"
+      ],
+      "writer": "W2",
+      "session": "w2-live",
+      "branch": "writer/w2-live",
+      "source_sha256": "29380fdc8f224d46444e46a8ae8ddb34e6837dc9ad38ff550938f133d3f74369",
+      "source_commit": "d60f0c62167728b55ef4652381baf95c7aabb851",
+      "details": [
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: Vietnam's Law on Road Traffic Order and Safety sets out vehicle classifications and driver-licence categories. It took effect on 1 January 2"
+      ]
+    },
+    {
+      "id": "DE-H01",
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "source_sha256": "a26a0ad2110fb7ee48287ef977087104dd112e9e1d3d0ff25ef9cd2cf698738f",
+      "source_commit": "d60f0c62167728b55ef4652381baf95c7aabb851",
+      "details": []
     }
   ]
 }
