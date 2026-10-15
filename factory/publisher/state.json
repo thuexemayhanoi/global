@@ -4,12 +4,44 @@
   "paused": false,
   "pause_reason": null,
   "clean_runs": 0,
-  "published": [],
-  "runs": [],
+  "published": [
+    {
+      "id": "NL-H01",
+      "locale": "nl",
+      "url": "/nl/topics/motor-of-scooter-kiezen/",
+      "role": "HUB",
+      "stage": "PILOT",
+      "at": "2026-10-15T02:00:06.181Z",
+      "source_sha256": "4846d24d0cb9846348da677e13de5a29fc1c377d00638967a5de80b8cf98b6bb",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "PT-H01",
+      "locale": "pt",
+      "url": "/pt/topics/escolher-moto/",
+      "role": "HUB",
+      "stage": "PILOT",
+      "at": "2026-10-15T02:00:06.181Z",
+      "source_sha256": "8446013e552564eb17a3723fb61478aced1ce7b93a1384d2962603ee6171d80a",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    }
+  ],
+  "runs": [
+    {
+      "at": "2026-10-15T02:00:06.181Z",
+      "ids": [
+        "NL-H01",
+        "PT-H01"
+      ],
+      "result": "STAGED"
+    }
+  ],
   "last_successful_deployment": null,
   "queue": {
     "REVIEW_REQUIRED": 93,
-    "WAIT_REVIEW": 2,
+    "APPROVED_BY_POLICY": 2,
     "REJECTED": 19
   }
 }
