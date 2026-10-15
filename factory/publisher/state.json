@@ -4672,17 +4672,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T23:38:05.812Z"
+    },
+    {
+      "id": "JA-S18",
+      "locale": "ja",
+      "url": "/ja/guides/honda-shashu/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T23:38:27.806Z",
+      "source_sha256": "0e27c0022ae9b41ef7343092839dee6374cef930b4357c0c6649cba30ae41305",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S26",
+      "locale": "ja",
+      "url": "/ja/guides/clutch-bike-practice-before-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T23:38:27.806Z",
+      "source_sha256": "d8e9efb98719071232c7b59028c5cb0037cba17e1d8bfcbcfe591bf7926a1501",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T18:37:53.150Z",
-      "ids": [
-        "DE-S38",
-        "EN-S29"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T18:39:05.034Z",
       "ids": [
@@ -6222,6 +6236,14 @@
         "FR-S69"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T23:38:27.806Z",
+      "ids": [
+        "JA-S18",
+        "JA-S26"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -6233,6 +6255,6 @@
     "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 1
+    "APPROVED_BY_POLICY": 3
   }
 }
