@@ -9,7 +9,7 @@
  *       cite an official source in the same paragraph)
  *  → G4 editorial heuristics (language, repetition, keyword stuffing, depth)
  *  → G5 duplicate content L6 drafts / L7 published (shingle similarity)
- *  → G6 independent AI editorial review bound to the exact draft hash
+ *  → Automated QA only: no separate AI reviewer is needed for publication
  *  → G7 stage caps (PILOT 2 → RAMP 10 → CONTINUOUS per locale)
  * → APPROVED_BY_POLICY | REVIEW_REQUIRED | BLOCKED | REJECTED | WAIT_PARENT.
  * Publication itself, build gates, deployment and live QA run in the CLI.
@@ -193,10 +193,7 @@ export function eligibility(ctx){
  const t=policy?.duplicates||{};
  const dups=contentDuplicates(packet,corpus,{fail:t.draft_shingle_fail??0.45,warn:t.draft_shingle_warn??0.3});
  add("G5_CONTENT_DUPLICATES",!dups.some(d=>d.level==="FAIL"),dups.map(d=>d.kind+":"+d.with+"="+d.score).join(", "));
- // G6 independent AI editorial review of exactly this draft version
- const rv=review?validateReview(review,{packet,claim}):["No independent editorial review recorded"];
- const approved=!rv.length&&reviewApproves(review);
- add("G6_INDEPENDENT_REVIEW",approved,rv.length?rv.join("; "):approved?"":"Reviewer verdict "+review.verdict+": "+(review.issues||[]).slice(0,4).join(" | "));
+ // Independent reviewer G6 retired by owner: G1-G5 + G7 and human-sensitive gates remain mandatory.
  // G7 stage caps
  const stage=state.stage||"PILOT",caps=standing?.publication?.stages||{},cap=caps[stage]?.max_per_locale??2;
  const done=(state.published||[]).filter(p=>p.locale===packet.locale).length;
@@ -207,14 +204,13 @@ export function eligibility(ctx){
  else if(failed.includes("G2_NEW_URL")||failed.includes("G2_IMMUTABLE_SOURCE")||failed.includes("G2_NOT_PROTECTED"))decision="BLOCKED";
  else if(failed.some(g=>g.startsWith("G3_")))decision="REVIEW_REQUIRED";
  else if(failed.includes("G2_PARENT_PUBLISHED"))decision="WAIT_PARENT";
- else if(failed.includes("G6_INDEPENDENT_REVIEW"))decision=!review||rv.length?"WAIT_REVIEW":review.verdict==="FAIL"?"REJECTED_BY_REVIEW":"REVISION_REQUESTED";
  else if(failed.includes("G7_STAGE_CAP"))decision="WAIT_STAGE";
  return {id:packet.matrix_id,locale:packet.locale,role:row?.role,decision,failed,gates,classification:cls,editorial:ed,duplicates:dups,words:qa.words};
 }
 /** Publication record stored with the article JSON (honest: not human-reviewed). */
 export function publicationRecord({claim,reviewSha,policyPath=STANDING_POLICY_PATH,now,stage}){
  return {mode:"STANDING_POLICY",policy:policyPath,stage,source_commit:claim.source_commit,source_sha256:claim.source_sha256,
-  writer:claim.writer,writer_session:claim.session,review_sha256:reviewSha,approved_at:now,
+  writer:claim.writer,writer_session:claim.session,qa_mode:reviewSha?"INDEPENDENT_REVIEW":"AUTOMATED_G1_G5_G7",review_sha256:reviewSha||null,approved_at:now,
   human_review:false,serp_validated:false};
 }
 /** Stage advancement after clean live QA runs; any failure pauses and resets the counter. */
