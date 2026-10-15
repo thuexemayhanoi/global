@@ -28,6 +28,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T04:16:37.044Z"
+    },
+    {
+      "id": "ES-H01",
+      "locale": "es",
+      "url": "/es/topics/elegir-moto/",
+      "role": "HUB",
+      "stage": "PILOT",
+      "at": "2026-10-15T05:12:18.241Z",
+      "source_sha256": "8370e101b1e6ccd833589f60062d4a28716b9f9aae9299c2fd05e45807ee9166",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-H01",
+      "locale": "ko",
+      "url": "/ko/topics/chajong-seontaek/",
+      "role": "HUB",
+      "stage": "PILOT",
+      "at": "2026-10-15T05:12:18.241Z",
+      "source_sha256": "457f225cbf89d1715619c3c7191c7611ca04b08377994d8f79aad3d37df47986",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -72,6 +94,14 @@
       "at": "2026-10-15T05:12:03.222Z",
       "ids": [],
       "result": "RESUME: Owner-authorized recovery: Korean QH15 won false positive fixed in PR 42, QA and live HTTP checks passed"
+    },
+    {
+      "at": "2026-10-15T05:12:18.241Z",
+      "ids": [
+        "ES-H01",
+        "KO-H01"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -84,9 +114,9 @@
     "live_seconds": 41
   },
   "queue": {
-    "APPROVED_BY_POLICY": 4,
-    "REVIEW_REQUIRED": 82,
-    "WAIT_PARENT": 8,
-    "REJECTED": 18
+    "APPROVED_BY_POLICY": 3,
+    "REVIEW_REQUIRED": 73,
+    "WAIT_PARENT": 6,
+    "REJECTED": 30
   }
 }

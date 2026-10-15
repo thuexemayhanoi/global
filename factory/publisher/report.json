@@ -3,10 +3,10 @@
   "ledger_revision": 57,
   "stage": "PILOT",
   "counts": {
-    "APPROVED_BY_POLICY": 4,
-    "REVIEW_REQUIRED": 82,
-    "WAIT_PARENT": 8,
-    "REJECTED": 18
+    "APPROVED_BY_POLICY": 3,
+    "REVIEW_REQUIRED": 73,
+    "WAIT_PARENT": 6,
+    "REJECTED": 30
   },
   "items": [
     {
@@ -559,8 +559,9 @@
     },
     {
       "id": "DE-S02",
-      "decision": "WAIT_PARENT",
+      "decision": "REJECTED",
       "failed": [
+        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
@@ -569,13 +570,15 @@
       "source_sha256": "bc9bb4e239f61251b094135edcd1f9884675f593a3a2b4fc3d249dd32f6a034c",
       "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
       "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «200.000 Dong»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph ",
         "G2_PARENT_PUBLISHED: DE-H01 is IDEA"
       ]
     },
     {
       "id": "EN-S02",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
+        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
         "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
@@ -586,6 +589,7 @@
       "source_sha256": "4c64002b31b67adc12cb725de5b153abcbf739efd7bb9e6a705a0e87f3ce8442",
       "source_commit": "f2b74a608b70e8f8a34bb0f2c87ca1b75c048fc8",
       "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «200,000 VND»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «",
         "G2_PARENT_PUBLISHED: EN-H01 is IDEA",
         "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
         "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: Two categories of rental two-wheelers in Hanoi sit just below the notice of most travellers, yet they solve the same problem in opposite way | Vietnam's Law on Order and Road Traffic"
@@ -593,8 +597,9 @@
     },
     {
       "id": "ES-S02",
-      "decision": "WAIT_PARENT",
+      "decision": "REJECTED",
       "failed": [
+        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
@@ -603,6 +608,7 @@
       "source_sha256": "b7549cb045d5223a4e84efc914624b8398dddcfd2384541d8ff64709f6c4d84b",
       "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
       "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «200.000 dong»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph ",
         "G2_PARENT_PUBLISHED: ES-H01 is IDEA"
       ]
     },
@@ -623,8 +629,9 @@
     },
     {
       "id": "JA-S02",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
+        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
         "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
@@ -635,6 +642,7 @@
       "source_sha256": "3af79ca2ae09723ea370366849312b7c254a1a93c3e503f9420824b1600dfd6a",
       "source_commit": "fcb7d4f0a038b2f79324d4bfebd28dbc0e18e828",
       "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «20万ドン»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «9,000ド",
         "G2_PARENT_PUBLISHED: JA-H01 is IDEA",
         "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
         "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: ハノイのレンタルバイクには、ほとんどの旅行者が正しく分類できていないのに、同じ問題を正反対の方法で解決する2つのカテゴリーがあります。50ccの原付と電動スクーターです。どちらも「とにかく簡単」という同じ約束を掲げ、同じ理由で魅力に映ります。ベトナムの規則では、それぞれが一定の条 | 2025年1月1日から、ベトナムでは交通秩序・安全法36/2024/QH15が"
@@ -642,8 +650,9 @@
     },
     {
       "id": "KO-S02",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
+        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
         "G3_NO_PRICES",
         "G3_OFFICIAL_EVIDENCE"
@@ -654,6 +663,7 @@
       "source_sha256": "e81434b8f6662df685679ea068d9128313ab19d2b4d51d9462db4d699433a695",
       "source_commit": "fcb7d4f0a038b2f79324d4bfebd28dbc0e18e828",
       "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «20만 동»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «9,000동",
         "G2_PARENT_PUBLISHED: KO-H01 is IDEA",
         "G3_NO_PRICES: 1 paragraph(s) with money amounts need human price verification",
         "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: 하노이 렌터바이크 시장에는 대부분의 여행자가 제대로 분류하지 못하지만 같은 문제를 정반대 방식으로 푸는 두 가지 카테고리가 있다. 바로 50cc 스쿠터와 전동 스쿠터다. 두 종 모두 최대한의 단순함을 약속하고, 같은 이유로 매력적이다. 베트남 규정상  | 2025년 1월 1일부터 베트남에서는 도로 교통 질서·안전법 36/20"
@@ -661,14 +671,18 @@
     },
     {
       "id": "NL-S02",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
+      "decision": "REJECTED",
+      "failed": [
+        "G1_DRAFT_QA"
+      ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
       "source_sha256": "76a714ab9632383d6e1a46f10db40acb1139083c5ba697c0ed2e66452d4a3764",
       "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
-      "details": []
+      "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «200.000 dong»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph "
+      ]
     },
     {
       "id": "PT-S02",
@@ -901,8 +915,9 @@
     },
     {
       "id": "VI-S03",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
+        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
         "G3_TOPIC_CLASS",
         "G3_NO_PRICES"
@@ -913,6 +928,7 @@
       "source_sha256": "3da6e7a377e04ab748a4faeaf4021f838e498b7278cc5a9adee3d98458387f49",
       "source_commit": "427dfdcf1f07c254c7cdb51162c8bf32c38ee15e",
       "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same paragraph «150.000–200.000 đồng»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same pa",
         "G2_PARENT_PUBLISHED: VI-H02 is IDEA",
         "G3_TOPIC_CLASS: topic class PRICE requires human review",
         "G3_NO_PRICES: 7 paragraph(s) with money amounts need human price verification"
@@ -920,8 +936,9 @@
     },
     {
       "id": "ZH-S03",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
+        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
         "G3_TOPIC_CLASS"
       ],
@@ -931,6 +948,7 @@
       "source_sha256": "fa619f705f51a3182f36d9eb6eef5823f2742159f186896602f917395c657d73",
       "source_commit": "427dfdcf1f07c254c7cdb51162c8bf32c38ee15e",
       "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same paragraph «150,000–200,000盾»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same paragr",
         "G2_PARENT_PUBLISHED: ZH-H02 is IDEA",
         "G3_TOPIC_CLASS: topic class PRICE requires human review"
       ]
@@ -950,7 +968,7 @@
       "source_sha256": "d485bec348b8d7ebe531fb3c65635f8d51a496bdbc0deb1ee9f8c713dbc50b8f",
       "source_commit": "ed1015407bc36afdb41611d13e0e4de23a2f7f6b",
       "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in meta_description: Currency amount without an inline source in the same paragraph «2 bis 5 Millionen Dong»",
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in meta_description: Currency amount without an inline source in the same paragraph «2 bis 5 Millionen Dong»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same ",
         "G2_PARENT_PUBLISHED: DE-H02 is IDEA",
         "G3_TOPIC_CLASS: topic class PRICE requires human review",
         "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Fast jede Motorradmiete in Hanoi endet mit derselben Szene: Die Vermietung zahlt eine Kaution zurück. Was eine reibungslose Rückgabe von ein | Kautionstreitigkeiten entstehen fast ni"
@@ -972,7 +990,7 @@
       "source_sha256": "37cb22a19f9f09a4a48302be425b3465584e835151511d7adac76fecaa8c1229",
       "source_commit": "ed1015407bc36afdb41611d13e0e4de23a2f7f6b",
       "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in meta_description: Currency amount without an inline source in the same paragraph «2 to 5 million VND»",
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in meta_description: Currency amount without an inline source in the same paragraph «2 to 5 million VND»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same para",
         "G2_PARENT_PUBLISHED: EN-H02 is IDEA",
         "G3_TOPIC_CLASS: topic class PRICE requires human review",
         "G3_NO_PRICES: 2 paragraph(s) with money amounts need human price verification",
@@ -1511,8 +1529,9 @@
     },
     {
       "id": "VI-S06",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
+        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
         "G3_TOPIC_CLASS"
       ],
@@ -1522,14 +1541,16 @@
       "source_sha256": "b2beae657f67ed16cb2f1439a7cbe6e9163816a73fd0b087a6b4b82caccdeb92",
       "source_commit": "72ff487669088294a9bd2b9d3314a5217e60f382",
       "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[4].title: Currency amount without an inline source in the same paragraph «2–5 triệu đồng»",
         "G2_PARENT_PUBLISHED: VI-H03 is IDEA",
         "G3_TOPIC_CLASS: topic class LEGAL requires human review"
       ]
     },
     {
       "id": "ZH-S06",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
+        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
         "G3_TOPIC_CLASS",
         "G3_OFFICIAL_EVIDENCE"
@@ -1540,6 +1561,7 @@
       "source_sha256": "c21487083944d1cf78e8eb5cffe92900913c1d95ddc21cf9be0153d72562d147",
       "source_commit": "72ff487669088294a9bd2b9d3314a5217e60f382",
       "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[4].title: Currency amount without an inline source in the same paragraph «200万至500万越南盾»",
         "G2_PARENT_PUBLISHED: ZH-H03 is IDEA",
         "G3_TOPIC_CLASS: topic class LEGAL requires human review",
         "G3_OFFICIAL_EVIDENCE: 1 legal/safety statement(s) without an official citation: 根据越南《民法典》(2015年)第472条,财产租赁合同是双方之间的协议,据此出租方将财产交给承租方在一段期限内使用,承租方支付租金(iContract)。摩托车租赁合同属于财产租赁合同的一种,因此即使车行只开一张简短的租车单,原则上它仍然是一份有约束力的合同。"
@@ -1807,8 +1829,9 @@
     },
     {
       "id": "JA-S08",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
+        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
         "G3_TOPIC_CLASS"
       ],
@@ -1818,14 +1841,16 @@
       "source_sha256": "e3adca571daa34477934fa9172f0f9f138762a464a821e0d3936ab31c4ceaa3c",
       "source_commit": "e0610b31cd991c1f74379016e9f41251b8382409",
       "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[1].title: Currency amount without an inline source in the same paragraph «40万ドン»; Fact guard UNSOURCED_AMOUNT in sources[2].title: Currency amount without an inline source in the same paragraph «3万ドン»;",
         "G2_PARENT_PUBLISHED: JA-H04 is IDEA",
         "G3_TOPIC_CLASS: topic class SAFETY requires human review"
       ]
     },
     {
       "id": "KO-S08",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "REJECTED",
       "failed": [
+        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED",
         "G3_TOPIC_CLASS"
       ],
@@ -1835,6 +1860,7 @@
       "source_sha256": "663fad6c4c3de0f1d1539834b8c4e7f7a0f3c9003bc70262ab54a533a937db74",
       "source_commit": "e0610b31cd991c1f74379016e9f41251b8382409",
       "details": [
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[1].title: Currency amount without an inline source in the same paragraph «40만 동»; Fact guard UNSOURCED_AMOUNT in sources[2].title: Currency amount without an inline source in the same paragraph «3만 동»;",
         "G2_PARENT_PUBLISHED: KO-H04 is IDEA",
         "G3_TOPIC_CLASS: topic class SAFETY requires human review"
       ]
