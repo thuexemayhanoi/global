@@ -1216,6 +1216,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T13:25:48.933Z"
+    },
+    {
+      "id": "EN-S01",
+      "locale": "en",
+      "url": "/en/guides/manual-vs-automatic/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:26:06.396Z",
+      "source_sha256": "5c9aacc7bd7d3b33b2a203f52cdebc0df7af5a7b41cbc02a0bc7d82e2a0665de",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S01",
+      "locale": "fr",
+      "url": "/fr/guides/moto-ou-scooter/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:26:06.396Z",
+      "source_sha256": "d2427eaa4afa4ee66723b056439c77b0bf9ebea9db48cf3e9ba8113dfb2c5d83",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2105,6 +2127,14 @@
         "VI-H04"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T13:26:06.396Z",
+      "ids": [
+        "EN-S01",
+        "FR-S01"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2117,8 +2147,8 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 24,
-    "WAIT_PARENT": 6,
+    "APPROVED_BY_POLICY": 26,
+    "WAIT_PARENT": 2,
     "REJECTED": 1
   }
 }
