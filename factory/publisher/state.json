@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 144,
+  "clean_runs": 146,
   "published": [
     {
       "id": "NL-H01",
@@ -3554,42 +3554,46 @@
       "at": "2026-10-15T21:26:21.195Z",
       "source_sha256": "61e24a53b7e3e10091df6b8baa575112ab41abc6da6f8539246bac249f17c49d",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T21:28:13.378Z"
+    },
+    {
+      "id": "DE-S77",
+      "locale": "de",
+      "url": "/de/guides/schlagloecher-schotter-steinschlag-roller-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:28:30.532Z",
+      "source_sha256": "39b13707a35ef62f0d8d6131fcf736637a4750ba22ed78c5088d85cfc89ae0ee",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T21:30:04.029Z"
+    },
+    {
+      "id": "DE-S78",
+      "locale": "de",
+      "url": "/de/guides/lkw-busse-toter-winkel-roller-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:28:30.532Z",
+      "source_sha256": "feeafe2228d407f14003f985b88d1ef8aa4ddc3f272f991717c88bd5b9ff002f",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T21:30:04.029Z"
+    },
+    {
+      "id": "DE-S79",
+      "locale": "de",
+      "url": "/de/guides/smart-key-mietroller-honda/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:30:19.093Z",
+      "source_sha256": "edc26ec3e7c6bedff9e3a6334558694fbb618c71c14554c94c3c36848dda66e4",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T13:35:10.775Z",
-      "ids": [
-        "VI-S02",
-        "ZH-S02"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T13:35:29.988Z",
-      "ids": [
-        "EN-S05",
-        "ES-S05"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T13:36:41.372Z",
-      "ids": [
-        "EN-S05",
-        "ES-S05"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T13:36:59.423Z",
-      "ids": [
-        "PT-S05",
-        "EN-S06"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T13:38:27.560Z",
       "ids": [
@@ -5128,16 +5132,46 @@
         "EN-S67"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T21:28:13.378Z",
+      "ids": [
+        "EN-S67"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T21:28:30.532Z",
+      "ids": [
+        "DE-S77",
+        "DE-S78"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T21:30:04.029Z",
+      "ids": [
+        "DE-S77",
+        "DE-S78"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T21:30:19.093Z",
+      "ids": [
+        "DE-S79"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T21:26:04.132Z",
+    "at": "2026-10-15T21:30:04.029Z",
     "ids": [
-      "EN-S65",
-      "EN-S66"
+      "DE-S77",
+      "DE-S78"
     ],
-    "commit": "607d764cac16a6d6846b0888e1cf6040c498d9dc",
-    "live_seconds": 61
+    "commit": "c88c28e1f5c12579b70153fd45b6d867e65142d0",
+    "live_seconds": 82
   },
   "queue": {
     "APPROVED_BY_POLICY": 1
