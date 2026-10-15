@@ -1,0 +1,147 @@
+name: Global Auto Publisher
+run-name: "Auto Publisher ${{ github.event_name }} ${{ inputs.action }} ${{ github.event.workflow_run.name }}"
+on:
+  schedule:
+    - cron: '41 * * * *'
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'publish (default), scan, pause or resume'
+        type: choice
+        default: publish
+        options: [publish, scan, pause, resume]
+      max:
+        description: 'Articles per run (the loop is 2 + 2 + …)'
+        type: choice
+        default: '2'
+        options: ['1', '2']
+      ids:
+        description: 'Optional comma-separated Matrix IDs to restrict this run'
+        required: false
+        type: string
+      reason:
+        description: 'pause/resume reason (≥12 chars)'
+        required: false
+        type: string
+      confirmed:
+        description: 'Required to resume after a pause'
+        type: boolean
+        default: false
+  workflow_run:
+    workflows: ["Global Dynamic Writer Autopilot", "Editorial Review QA"]
+    types: [completed]
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: global-auto-publisher
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_repository.full_name == github.repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ACTION: ${{ inputs.action || 'publish' }}
+      MAX: ${{ inputs.max || '2' }}
+      IDS: ${{ inputs.ids }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Trusted main code QA
+        run: |
+          node --test tests/auto-publisher.test.mjs tests/content-publisher.test.mjs tests/article-links.test.mjs
+          node scripts/build.mjs --check
+          test "$(cat CNAME)" = "global.rentbikehanoi.com"
+      - name: Configure git
+        run: |
+          git config user.name "global-auto-publisher"
+          git config user.email "global-auto-publisher@users.noreply.github.com"
+      - name: Operator pause/resume
+        if: github.event_name == 'workflow_dispatch' && (inputs.action == 'pause' || inputs.action == 'resume')
+        env:
+          REASON: ${{ inputs.reason }}
+          CONFIRMED: ${{ inputs.confirmed }}
+        run: |
+          set -euo pipefail
+          node scripts/auto-publisher.mjs "$ACTION" --reason "$REASON" --confirmed "$CONFIRMED"
+          git add factory/publisher/state.json
+          git commit -m "publish(global): $ACTION auto publisher"
+          git push origin HEAD:main
+      - name: Read-only scan
+        if: github.event_name == 'workflow_dispatch' && inputs.action == 'scan'
+        run: node scripts/auto-publisher.mjs scan | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Ingest independent editorial reviews from a green review branch
+        if: github.event_name == 'workflow_run' && github.event.workflow_run.name == 'Editorial Review QA' && github.event.workflow_run.event == 'push' && startsWith(github.event.workflow_run.head_branch, 'review/')
+        env:
+          REVIEW_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          REVIEW_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: node scripts/auto-publisher.mjs ingest-reviews --branch "$REVIEW_BRANCH" --sha "$REVIEW_SHA"
+      - name: Publish up to two eligible NEW articles and run every gate
+        id: pub
+        if: env.ACTION == 'publish'
+        run: |
+          set -uo pipefail
+          extra=()
+          if [ -n "${IDS:-}" ]; then extra+=(--ids "$IDS"); fi
+          status=0
+          node scripts/auto-publisher.mjs publish --max "$MAX" --apply "${extra[@]}" > publish.json || status=$?
+          cat publish.json; cat publish.json >> "$GITHUB_STEP_SUMMARY" || true
+          ids=$(node -e 'try{const j=JSON.parse(require("fs").readFileSync("publish.json","utf8"));console.log((j.published||[]).map(x=>x.id).join(","))}catch{console.log("")}')
+          rm -f publish.json
+          changed=$(git status --porcelain | awk '{print $2}')
+          if [ -z "$changed" ]; then echo "Nothing to commit."; exit $status; fi
+          if echo "$changed" | grep -E '^(CNAME|\.github/|scripts/|tests/|approvals/|AGENTS\.md|content/locales\.json|data/business/|factory/external-writers/)'; then
+            echo "PUBLISHER_SAFE_STOP: change outside the publication allowlist"; git status --porcelain; exit 1
+          fi
+          git add -A
+          if [ -n "$ids" ]; then msg="publish(global): standing-policy publication of $ids"; else msg="publish(global): queue report / pause state"; fi
+          git commit -q -m "$msg"
+          git fetch --no-tags origin main
+          if [ "$(git rev-parse origin/main)" != "$(git rev-parse HEAD^)" ]; then
+            echo "CONCURRENT_MAIN_UPDATE: main moved; next scheduled run recomputes. Nothing pushed."; exit 0
+          fi
+          git push origin HEAD:main
+          echo "ids=$ids" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          exit $status
+      - name: Request GitHub Pages build
+        if: steps.pub.outputs.ids != ''
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "PAGES_BUILD_REQUEST_NOT_ACCEPTED (branch deployment continues)"
+      - name: Live HTTP QA on production
+        id: live
+        if: steps.pub.outputs.ids != ''
+        continue-on-error: true
+        run: node scripts/auto-publisher.mjs live-qa --ids "${{ steps.pub.outputs.ids }}" --timeout-seconds 1200 --commit "${{ steps.pub.outputs.sha }}" --record
+      - name: Record live QA, or revert the publish commit and pause
+        if: steps.pub.outputs.ids != ''
+        env:
+          PUB_IDS: ${{ steps.pub.outputs.ids }}
+          PUB_SHA: ${{ steps.pub.outputs.sha }}
+        run: |
+          set -euo pipefail
+          if [ "${{ steps.live.outcome }}" = "success" ]; then
+            git add factory/publisher/state.json
+            git commit -q -m "publish(global): live QA passed for $PUB_IDS"
+            git pull --rebase -q origin main
+            git push origin HEAD:main
+            exit 0
+          fi
+          git reset -q --hard
+          git fetch --no-tags origin main
+          git reset -q --hard origin/main
+          git revert --no-edit "$PUB_SHA"
+          node scripts/auto-publisher.mjs record-failure --ids "$PUB_IDS" --reason "Live QA failed after deploy; publish commit $PUB_SHA reverted"
+          git add factory/publisher/state.json
+          git commit -q -m "publish(global): pause after failed live QA ($PUB_IDS)"
+          git push origin HEAD:main
+          exit 1

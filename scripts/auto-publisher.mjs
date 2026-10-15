@@ -1,0 +1,269 @@
+#!/usr/bin/env node
+/**
+ * Global Auto Publisher (owner standing policy 2026-10-15).
+ *   scan [--json]                         eligibility of every SUBMITTED draft (read-only)
+ *   publish --max 2 --apply [--ids A,B]   stage ≤2 APPROVED_BY_POLICY drafts as NEW URLs and run every
+ *                                         build/SEO/fact gate (trusted workflow on main, or --local rehearsal)
+ *   live-qa --ids A,B [--timeout-seconds N] [--origin URL]  poll production until the new URLs pass
+ *   record-failure --ids A,B --reason "…" pause publication after a failed gate/deploy (trusted)
+ *   pause|resume --reason "…" --confirmed true                operator control (trusted)
+ *   validate-reviews [--dir path]          schema/hash check of independent editorial reviews
+ *   ingest-reviews --branch review/x --sha <40>  copy valid reviews from a green review branch (trusted)
+ * Never deletes, renames or redirects URLs; never edits NAP, prices or protected/published pages.
+ */
+import fs from "node:fs";
+import path from "node:path";
+import {createHash} from "node:crypto";
+import {execFileSync,spawnSync} from "node:child_process";
+import {fileURLToPath} from "node:url";
+import {articlePath,STANDING_POLICY_PATH} from "./articles.mjs";
+import {eligibility,validateReview,shingles,publicationRecord,nextStage} from "./auto-publisher-core.mjs";
+import {readLocalSitemapInventory,parseSitemapIndex,parseSitemapUrlset} from "./sitemaps.mjs";
+import {inspectHTML} from "./seo/post-publish-qa.mjs";
+
+const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
+const WORKFLOW="Global Auto Publisher";
+const STATE="factory/publisher/state.json",REVIEWS="factory/editorial-reviews";
+const read=p=>JSON.parse(fs.readFileSync(path.join(ROOT,p),"utf8"));
+const optional=(p,f)=>fs.existsSync(path.join(ROOT,p))?read(p):f;
+const write=(p,v)=>{fs.mkdirSync(path.dirname(path.join(ROOT,p)),{recursive:true});fs.writeFileSync(path.join(ROOT,p),JSON.stringify(v,null,2)+"\n");};
+const git=(...a)=>execFileSync("git",a,{cwd:ROOT,encoding:"utf8",maxBuffer:32*1024*1024,timeout:60000});
+const gitOk=(...a)=>spawnSync("git",a,{cwd:ROOT,encoding:"utf8"}).status===0;
+const sha256=s=>createHash("sha256").update(s).digest("hex");
+const emptyState=()=>({version:1,stage:"PILOT",paused:false,pause_reason:null,clean_runs:0,published:[],runs:[],last_successful_deployment:null,queue:{}});
+function opts(argv){const o={};for(let i=0;i<argv.length;i++){const a=argv[i];if(!a.startsWith("--"))throw Error("Unexpected "+a);o[a.slice(2)]=argv[i+1]&&!argv[i+1].startsWith("--")?argv[++i]:true;}return o;}
+function trusted(){
+ if(process.env.GITHUB_ACTIONS!=="true"||process.env.GITHUB_WORKFLOW!==WORKFLOW)return false;
+ if(git("branch","--show-current").trim()!=="main")throw Error("PUBLISHER_REFUSED: main checkout required");
+ return true;
+}
+function rehearsal(){
+ const b=git("branch","--show-current").trim();
+ if(!b||["main","master"].includes(b))throw Error("PUBLISHER_REFUSED: --local rehearsal needs a non-main branch");
+ if(git("status","--porcelain").trim())throw Error("PUBLISHER_REFUSED: --local rehearsal needs a clean tree");
+}
+const run=(script,...a)=>{const r=spawnSync(process.execPath,[script,...a],{cwd:ROOT,encoding:"utf8",maxBuffer:64*1024*1024,timeout:600000});if(r.status!==0)throw Error(script+" "+a.join(" ")+" failed: "+(r.stderr||r.stdout).slice(-4000));return r.stdout;};
+
+function context(){
+ const matrix=read("data/seo/master-matrix.json"),locales=read("content/locales.json"),ledger=read("factory/external-writers/claims.json");
+ const registry=read("factory/external-writers/protected-drafts.json"),policy=read("data/seo/topic-factory/policy.json"),standing=read(STANDING_POLICY_PATH);
+ if(standing.publication?.authorized!==true)throw Error("Standing policy does not authorize publication");
+ const protectedIds=new Set([...registry.protected.map(p=>p.id),...(registry.held_ids||[]).map(p=>p.id)]);
+ return {matrix,locales,ledger,registry,policy,standing,protectedIds,state:optional(STATE,emptyState())};
+}
+/** Exact SUBMITTED bytes from the Writer branch commit recorded in the ledger. */
+function loadDraft(claim,fetched){
+ if(!claim.source_commit||!claim.source_sha256)return {error:"No immutable evidence in ledger"};
+ if(!gitOk("cat-file","-e",claim.source_commit+"^{commit}")){
+  if(!fetched.has(claim.branch)){fetched.add(claim.branch);gitOk("fetch","--no-tags","-q","origin","refs/heads/"+claim.branch+":refs/remotes/origin/"+claim.branch);}
+  if(!gitOk("cat-file","-e",claim.source_commit+"^{commit}"))gitOk("fetch","--no-tags","-q","origin",claim.source_commit);
+ }
+ const file="factory/external-writers/inbox/"+claim.writer+"/"+claim.id+".json";
+ let raw;try{raw=git("show",claim.source_commit+":"+file);}catch{return {error:"Draft not reachable at "+claim.source_commit.slice(0,12)};}
+ if(sha256(raw)!==claim.source_sha256)return {error:"SHA-256 mismatch with ledger"};
+ try{return {packet:JSON.parse(raw),raw};}catch{return {error:"Malformed JSON"};}
+}
+function evaluate(c){
+ const fetched=new Set(),drafts=[];
+ for(const claim of c.ledger.claims.filter(x=>x.status==="SUBMITTED")){
+  const row=c.matrix.rows.find(r=>r.id===claim.id);
+  if(row?.status==="PUBLISHED")continue;
+  const d=loadDraft(claim,fetched);
+  drafts.push({claim,row,...d});
+ }
+ const corpus=[];
+ for(const d of drafts)if(d.packet)corpus.push({id:d.claim.id,locale:d.packet.locale,kind:"draft",shingles:shingles(d.packet.body_markdown,d.packet.locale)});
+ const dir=path.join(ROOT,"content/articles");
+ if(fs.existsSync(dir))for(const f of fs.readdirSync(dir).filter(f=>f.endsWith(".json"))){const p=JSON.parse(fs.readFileSync(path.join(dir,f),"utf8"));corpus.push({id:p.matrix_id,locale:p.locale,kind:"published",shingles:shingles(p.body_markdown,p.locale)});}
+ const results=[];
+ for(const d of drafts){
+  if(d.error){results.push({id:d.claim.id,decision:"BLOCKED",failed:["SOURCE"],gates:[{gate:"SOURCE",passed:false,detail:d.error}]});continue;}
+  const reviewPath=REVIEWS+"/"+d.claim.id+".json";
+  const review=optional(reviewPath,null);
+  const r=eligibility({packet:d.packet,claim:d.claim,row:d.row,matrix:c.matrix,locales:c.locales,policy:c.policy,standing:c.standing,
+   protectedIds:c.protectedIds,corpus,review,state:c.state});
+  r.review_sha256=review?sha256(fs.readFileSync(path.join(ROOT,reviewPath),"utf8")):null;
+  r.priority=d.row?.priority??99;
+  results.push({...r,_packet:d.packet,_claim:d.claim});
+ }
+ return results;
+}
+const summary=rs=>{const by={};for(const r of rs)by[r.decision]=(by[r.decision]||0)+1;return by;};
+const strip=r=>{const {_packet,_claim,...rest}=r;return rest;};
+
+function cmdScan(o){
+ const c=context(),rs=evaluate(c);
+ const out={mode:"READ_ONLY",stage:c.state.stage,paused:c.state.paused,counts:summary(rs),
+  eligible:rs.filter(r=>r.decision==="APPROVED_BY_POLICY").map(r=>r.id),
+  items:o.json?rs.map(strip):rs.map(r=>({id:r.id,decision:r.decision,failed:r.failed}))};
+ console.log(JSON.stringify(out,null,2));
+}
+function pick(rs,c,max,only){
+ const ok=rs.filter(r=>r.decision==="APPROVED_BY_POLICY"&&(!only||only.includes(r.id)));
+ ok.sort((a,b)=>(a.role==="HUB"?0:1)-(b.role==="HUB"?0:1)||a.priority-b.priority||a.id.localeCompare(b.id));
+ const cap=c.standing.publication.stages[c.state.stage]?.max_per_locale??2,used={},chosen=[];
+ for(const p of c.state.published||[])used[p.locale]=(used[p.locale]||0)+1;
+ for(const r of ok){
+  if(chosen.length>=max)break;
+  if((used[r.locale]||0)>=cap)continue;
+  // A Supporting child and its Hub are never published in the same run unless the Hub is already live.
+  used[r.locale]=(used[r.locale]||0)+1;chosen.push(r);
+ }
+ return chosen;
+}
+function cmdPublish(o){
+ const max=Math.min(Number(o.max||2),2);
+ if(!Number.isInteger(max)||max<1)throw Error("--max must be 1 or 2");
+ const apply=o.apply===true,isTrusted=apply&&trusted();
+ if(apply&&!isTrusted){if(o.local!==true)throw Error("PUBLISHER_REFUSED: publish --apply runs only in the Global Auto Publisher workflow (or --local rehearsal)");rehearsal();}
+ const c=context();
+ if(c.state.paused){console.log(JSON.stringify({mode:"PAUSED",reason:c.state.pause_reason,published:[]}));return;}
+ const rs=evaluate(c),chosen=pick(rs,c,max,o.ids?String(o.ids).split(","):null);
+ const now=new Date().toISOString();
+ c.state.queue=summary(rs);
+ // Revision queue for writers/reviewers: every non-published draft with the gates it failed.
+ if(apply)write("factory/publisher/report.json",{version:1,ledger_revision:c.ledger.revision,stage:c.state.stage,counts:summary(rs),
+  items:rs.map(r=>({id:r.id,decision:r.decision,failed:r.failed,details:(r.gates||[]).filter(g=>!g.passed).map(g=>g.gate+": "+String(g.detail).slice(0,240))}))});
+ if(!apply||!chosen.length){
+  if(apply)write(STATE,c.state);
+  console.log(JSON.stringify({mode:apply?"NOTHING_ELIGIBLE":"DRY_RUN",stage:c.state.stage,counts:summary(rs),would_publish:chosen.map(r=>({id:r.id,url:r._packet.proposed_url}))},null,2));
+  return;
+ }
+ const snapshot={matrix:fs.readFileSync(path.join(ROOT,"data/seo/master-matrix.json"),"utf8"),
+  freeze:fs.readFileSync(path.join(ROOT,"data/seo/url-freeze.json"),"utf8"),state:JSON.stringify(c.state)};
+ const created=[];
+ try{
+  const matrix=structuredClone(c.matrix);
+  for(const r of chosen){
+   const row=matrix.rows.find(x=>x.id===r.id);
+   if(row.status==="PUBLISHED"||fs.existsSync(path.join(ROOT,articlePath(row.url)))||fs.existsSync(path.join(ROOT,"content/articles",r.id+".json")))throw Error("Refusing to overwrite an existing URL/article "+r.id);
+   const article={...r._packet,publication:publicationRecord({claim:r._claim,reviewSha:r.review_sha256,now,stage:c.state.stage})};
+   write("content/articles/"+r.id+".json",article);created.push("content/articles/"+r.id+".json");
+   created.push(articlePath(row.url));
+   row.status="PUBLISHED";
+  }
+  write("data/seo/master-matrix.json",matrix);
+  run("scripts/build.mjs");
+  run("scripts/seo/content-graph.mjs","--write");
+  run("scripts/seo/seo-guard.mjs","--add-new");
+  run("scripts/seo/fact-guard.mjs");
+  for(const [s,...a] of [["scripts/build.mjs","--check"],["scripts/seo/validate-plan.mjs"],["scripts/nav-qa.mjs"],["scripts/seo/audit-static.mjs","--fail-p0"],["scripts/seo/content-graph.mjs","--check"],["scripts/seo/seo-guard.mjs"]])run(s,...a);
+  const inv=readLocalSitemapInventory(ROOT,c.locales.map(l=>l.code));
+  for(const r of chosen)if(!inv.urls.includes(r._packet.proposed_url))throw Error("Sitemap is missing "+r._packet.proposed_url);
+  if(fs.readFileSync(path.join(ROOT,"CNAME"),"utf8").trim()!=="global.rentbikehanoi.com")throw Error("CNAME changed");
+  for(const r of chosen)c.state.published.push({id:r.id,locale:r.locale,url:r._packet.proposed_url,role:r.role,stage:c.state.stage,
+   at:now,source_sha256:r._claim.source_sha256,review_sha256:r.review_sha256,live_qa:"PENDING"});
+  c.state.runs.push({at:now,ids:chosen.map(r=>r.id),result:"STAGED"});
+  c.state.runs=c.state.runs.slice(-200);
+  write(STATE,c.state);
+  console.log(JSON.stringify({mode:"PUBLISH_STAGED",stage:c.state.stage,published:chosen.map(r=>({id:r.id,url:r._packet.proposed_url})),
+   next:"commit + push main, then live-qa --ids "+chosen.map(r=>r.id).join(",")},null,2));
+ }catch(e){
+  fs.writeFileSync(path.join(ROOT,"data/seo/master-matrix.json"),snapshot.matrix);
+  fs.writeFileSync(path.join(ROOT,"data/seo/url-freeze.json"),snapshot.freeze);
+  for(const f of created)if(fs.existsSync(path.join(ROOT,f)))fs.rmSync(path.join(ROOT,f));
+  try{run("scripts/build.mjs");run("scripts/seo/content-graph.mjs","--write");}catch(x){console.error("ROLLBACK_REBUILD_NEEDS_REVIEW "+x.message);}
+  const st=JSON.parse(snapshot.state);
+  st.paused=true;st.pause_reason="Pre-commit gate failed "+now+": "+e.message.slice(0,400);st.clean_runs=0;
+  st.runs.push({at:now,ids:chosen.map(r=>r.id),result:"GATE_FAILED"});
+  write(STATE,st);
+  throw Error("PUBLISH_ROLLED_BACK_AND_PAUSED: "+e.message);
+ }
+}
+async function fetchText(url){
+ const r=await fetch(url,{signal:AbortSignal.timeout(20000),headers:{"cache-control":"no-cache"}});
+ return {status:r.status,text:await r.text()};
+}
+async function cmdLiveQA(o){
+ const ids=String(o.ids||"").split(",").filter(Boolean),origin=o.origin||"https://global.rentbikehanoi.com";
+ const timeout=Number(o["timeout-seconds"]||900)*1000,started=Date.now();
+ const c=context(),targets=ids.map(id=>{const a=read("content/articles/"+id+".json");const l=c.locales.find(x=>x.code===a.locale);return {id,url:a.proposed_url,title:a.title,lang:l.htmlLang||l.code};});
+ let last=[];
+ while(Date.now()-started<timeout){
+  last=[];
+  for(const t of targets){
+   try{
+    const {status,text}=await fetchText(origin+t.url+"?qa="+Date.now());
+    if(status!==200){last.push(t.id+": HTTP "+status);continue;}
+    last.push(...inspectHTML(text,t.url,t.lang).map(e=>t.id+": "+e));
+    if(!text.includes("<title>"+t.title.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")+"</title>"))last.push(t.id+": title mismatch");
+    if(/name="robots" content="noindex/i.test(text))last.push(t.id+": unexpected noindex");
+    if(!text.includes('class="article-provenance"'))last.push(t.id+": AI provenance note missing");
+   }catch(e){last.push(t.id+": fetch "+e.message);}
+  }
+  if(!last.length){
+   try{
+    const idx=await fetchText(origin+"/sitemap.xml"),shards=parseSitemapIndex(idx.text,origin);
+    const urls=new Set();
+    for(const s of shards){const r=await fetchText(s);for(const u of parseSitemapUrlset(r.text,origin))urls.add(u);}
+    for(const t of targets)if(!urls.has(t.url)&&!urls.has(origin+t.url))last.push(t.id+": not in live sitemap");
+   }catch(e){last.push("sitemap: "+e.message);}
+  }
+  if(!last.length)break;
+  await new Promise(r=>setTimeout(r,20000));
+ }
+ const passed=!last.length,now=new Date().toISOString();
+ if(o.record===true){
+  const st=optional(STATE,emptyState());
+  for(const p of st.published)if(ids.includes(p.id)&&p.live_qa==="PENDING")p.live_qa=passed?"PASS":"FAIL";
+  if(passed){st.clean_runs=(st.clean_runs||0)+1;st.last_successful_deployment={at:now,ids,commit:o.commit||null,live_seconds:Math.round((Date.now()-started)/1000)};
+   const ns=nextStage(st,c.standing);if(ns!==st.stage){st.runs.push({at:now,ids:[],result:"STAGE_ADVANCED "+st.stage+"→"+ns});st.stage=ns;st.clean_runs=0;}}
+  else{st.paused=true;st.pause_reason="Live QA failed "+now+": "+last.slice(0,5).join(" | ");st.clean_runs=0;}
+  st.runs.push({at:now,ids,result:passed?"LIVE_QA_PASS":"LIVE_QA_FAIL"});
+  write(STATE,st);
+ }
+ console.log(JSON.stringify({mode:"LIVE_QA",passed,ids,issues:last,seconds:Math.round((Date.now()-started)/1000)},null,2));
+ if(!passed)process.exitCode=1;
+}
+function cmdControl(cmd,o){
+ if(!trusted())throw Error("PUBLISHER_REFUSED: "+cmd+" runs only in the Global Auto Publisher workflow");
+ const st=optional(STATE,emptyState()),now=new Date().toISOString();
+ if(String(o.reason||"").trim().length<12)throw Error(cmd+" needs a reason ≥12 chars");
+ if(cmd==="resume"&&o.confirmed!=="true"&&o.confirmed!==true)throw Error("resume needs --confirmed true");
+ if(cmd==="record-failure"){st.paused=true;st.pause_reason="Reverted "+now+": "+o.reason;st.clean_runs=0;
+  for(const p of st.published)if(String(o.ids||"").split(",").includes(p.id))p.live_qa="REVERTED";
+  st.published=st.published.filter(p=>p.live_qa!=="REVERTED");}
+ else if(cmd==="pause"){st.paused=true;st.pause_reason=o.reason;}
+ else {st.paused=false;st.pause_reason=null;}
+ st.runs.push({at:now,ids:String(o.ids||"").split(",").filter(Boolean),result:cmd.toUpperCase()+": "+o.reason});
+ write(STATE,st);
+ console.log(JSON.stringify({mode:cmd.toUpperCase(),paused:st.paused,reason:st.pause_reason}));
+}
+function reviewIssues(file,raw,c){
+ let r;try{r=JSON.parse(raw);}catch{return ["Malformed JSON"];}
+ const id=path.basename(file,".json"),claim=c.ledger.claims.find(x=>x.id===id&&x.status==="SUBMITTED");
+ if(!claim)return ["No SUBMITTED claim for "+id];
+ return validateReview(r,{packet:{matrix_id:id,writer_session:claim.session},claim});
+}
+function cmdValidateReviews(o){
+ const c=context(),dir=o.dir||REVIEWS,abs=path.join(ROOT,dir);
+ const files=fs.existsSync(abs)?fs.readdirSync(abs).filter(f=>/^[A-Z]{2}-[HS]\d{2,4}\.json$/.test(f)):[];
+ const res=files.map(f=>({file:dir+"/"+f,issues:reviewIssues(f,fs.readFileSync(path.join(abs,f),"utf8"),c)}));
+ console.log(JSON.stringify({mode:"READ_ONLY",reviews:res.length,results:res},null,2));
+ if(res.some(r=>r.issues.length))process.exitCode=1;
+}
+function cmdIngestReviews(o){
+ if(!trusted())throw Error("PUBLISHER_REFUSED: ingest-reviews runs only in the Global Auto Publisher workflow");
+ if(!/^review\/[A-Za-z0-9_-]+$/.test(o.branch||"")||!/^[0-9a-f]{40}$/.test(o.sha||""))throw Error("Expected review/<name> branch and 40-char SHA");
+ git("fetch","--no-tags","origin","refs/heads/"+o.branch+":refs/remotes/origin/"+o.branch);
+ if(git("rev-parse","refs/remotes/origin/"+o.branch).trim()!==o.sha){console.log("REVIEW_STALE_RUN_SKIP");return;}
+ const c=context(),names=git("ls-tree","-r","--name-only",o.sha,"--",REVIEWS+"/").split("\n").filter(f=>/\/[A-Z]{2}-[HS]\d{2,4}\.json$/.test(f));
+ for(const f of names){
+  const raw=git("show",o.sha+":"+f),issues=reviewIssues(path.basename(f),raw,c);
+  if(issues.length){console.log("REVIEW_REJECTED "+f+": "+issues.join("; "));continue;}
+  if(fs.existsSync(path.join(ROOT,f))&&fs.readFileSync(path.join(ROOT,f),"utf8")===raw)continue;
+  if(fs.existsSync(path.join(ROOT,f)))continue; // first accepted review for a draft hash is kept; never overwritten
+  fs.mkdirSync(path.dirname(path.join(ROOT,f)),{recursive:true});fs.writeFileSync(path.join(ROOT,f),raw);
+  console.log("REVIEW_INGESTED "+f);
+ }
+}
+try{
+ const [cmd,...rest]=process.argv.slice(2),o=opts(rest);
+ if(cmd==="scan")cmdScan(o);
+ else if(cmd==="publish")cmdPublish(o);
+ else if(cmd==="live-qa")await cmdLiveQA(o);
+ else if(["pause","resume","record-failure"].includes(cmd))cmdControl(cmd,o);
+ else if(cmd==="validate-reviews")cmdValidateReviews(o);
+ else if(cmd==="ingest-reviews")cmdIngestReviews(o);
+ else throw Error("Usage: auto-publisher.mjs scan|publish|live-qa|pause|resume|record-failure|validate-reviews|ingest-reviews");
+}catch(e){console.error("AUTO_PUBLISHER_ERROR: "+e.message);process.exitCode=1;}
