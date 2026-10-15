@@ -2140,6 +2140,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T17:54:15.300Z"
+    },
+    {
+      "id": "KO-S15",
+      "locale": "ko",
+      "url": "/ko/guides/sago-cheot-dangye/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:55:33.123Z",
+      "source_sha256": "b7a5041532d03cc7c438d4bf05c2c5470ff84bc702969244feebedf48da04f7d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S16",
+      "locale": "zh",
+      "url": "/zh/guides/shigu-hou-diyibu/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:55:33.123Z",
+      "source_sha256": "f2262580d4047fb74878e2cf0f6c7cb0203be8ae8d87c0d6e8c774b003e962b6",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -3663,6 +3685,14 @@
         "JA-S15"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:55:33.123Z",
+      "ids": [
+        "KO-S15",
+        "ZH-S16"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3673,5 +3703,7 @@
     "commit": "a2ebc9d6cf881cbdc9d6fe4b2fff9ecfa926aa3f",
     "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 2
+  }
 }
