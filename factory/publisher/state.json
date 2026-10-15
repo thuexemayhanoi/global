@@ -268,6 +268,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:23:57.451Z"
+    },
+    {
+      "id": "DE-H04",
+      "locale": "de",
+      "url": "/de/topics/sicher-unterwegs/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T09:24:15.155Z",
+      "source_sha256": "5545aa2d1ed141a654d576cf0322b5b7c14eee8fbd74e0324ba0bbe4d6786786",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-H04",
+      "locale": "en",
+      "url": "/en/topics/riding-safety-and-support/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T09:24:15.155Z",
+      "source_sha256": "bbda4231c73e276f99556cc6917673dd2e4c37afae62c004d0603177511a1fec",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -502,6 +524,14 @@
         "ZH-H03"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:24:15.155Z",
+      "ids": [
+        "DE-H04",
+        "EN-H04"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -514,8 +544,8 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 32,
-    "WAIT_PARENT": 38,
+    "APPROVED_BY_POLICY": 33,
+    "WAIT_PARENT": 35,
     "REJECTED": 24
   }
 }

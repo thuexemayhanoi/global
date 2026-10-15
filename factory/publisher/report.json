@@ -3,33 +3,11 @@
   "ledger_revision": 61,
   "stage": "RAMP",
   "counts": {
-    "APPROVED_BY_POLICY": 32,
-    "WAIT_PARENT": 38,
+    "APPROVED_BY_POLICY": 33,
+    "WAIT_PARENT": 35,
     "REJECTED": 24
   },
   "items": [
-    {
-      "id": "VI-H03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "5520d2ee9b0c9c8528ed4604b52240d5632210bca9304e3d8c7f9a85e0f0c337",
-      "source_commit": "57ee965d433c1ab0c6340e83549ad013ee1e333f",
-      "details": []
-    },
-    {
-      "id": "ZH-H03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "2b20ee197b73c277cd784d0df9b46291115adab5f8f75802769512a62467e8df",
-      "source_commit": "57ee965d433c1ab0c6340e83549ad013ee1e333f",
-      "details": []
-    },
     {
       "id": "DE-H04",
       "decision": "APPROVED_BY_POLICY",
@@ -749,33 +727,25 @@
     },
     {
       "id": "VI-S05",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "c82125ff656f3b8a3f375cc6653fc9170b0b9e359c080a7d6f77dbd69fb3c33b",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: VI-H03 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "ZH-S05",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "b53a449575fde23d2d4e6163e343b01b2494f58a462e7c1ea426766cc44604b7",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: ZH-H03 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "DE-S06",
@@ -882,7 +852,6 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
         "G3_SENSITIVE_SOURCES"
       ],
       "writer": "W1",
@@ -892,7 +861,6 @@
       "source_commit": "72ff487669088294a9bd2b9d3314a5217e60f382",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[4].title: Currency amount without an inline source in the same paragraph «2–5 triệu đồng»",
-        "G2_PARENT_PUBLISHED: VI-H03 is IDEA",
         "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
       ]
     },
@@ -901,7 +869,6 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
         "G3_SENSITIVE_SOURCES",
         "G3_OFFICIAL_EVIDENCE"
       ],
@@ -912,7 +879,6 @@
       "source_commit": "72ff487669088294a9bd2b9d3314a5217e60f382",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[4].title: Currency amount without an inline source in the same paragraph «200万至500万越南盾»",
-        "G2_PARENT_PUBLISHED: ZH-H03 is IDEA",
         "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
         "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: 根据越南《民法典》(2015年)第472条,财产租赁合同是双方之间的协议,据此出租方将财产交给承租方在一段期限内使用,承租方支付租金(iContract)。摩托车租赁合同属于财产租赁合同的一种,因此即使车行只开一张简短的租车单,原则上它仍然是一份有约束力的合同。"
       ]
@@ -1333,18 +1299,14 @@
     },
     {
       "id": "VI-S09",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
       "source_sha256": "e500d256e230f40635e4ebde4991a3d63274c642b7442094f3dce7f5b7f1b841",
       "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": [
-        "G2_PARENT_PUBLISHED: VI-H03 is IDEA"
-      ]
+      "details": []
     }
   ]
 }
