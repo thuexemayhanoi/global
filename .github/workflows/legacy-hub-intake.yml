@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/legacy-hub-intake.yml'
+      - 'tests/writer-pool.test.mjs'
+      - 'tests/legacy-hub-intake.test.mjs'
   workflow_dispatch:
 permissions:
   contents: write

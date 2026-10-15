@@ -17,17 +17,32 @@ test("real currently committed ledger is valid independent of synthetic test sta
 });
 const writer=(w)=>({writer:w,session:w.toLowerCase()+"-test",branch:"writer/"+w.toLowerCase()+"-test"});
 const options=(id)=>({now:"2026-10-14T00:00:00.000Z",nonce:id});
-test("actual PR #17's fourteen draft IDs are protected from every writer including original W1",()=>{
+test("all fourteen PR17 draft IDs stay protected or become immutable QA-adopted claims",()=>{
  assert.deepEqual(validatePool(matrix,original,registry),[]);
- assert.equal(registry.protected.length,14);
+ const manifest=JSON.parse(fs.readFileSync("approvals/legacy-hub-intake-20261015.json","utf8"));
+ const legacyIds=new Set(manifest.ids);
+ assert.equal(legacyIds.size,14);
  assert.equal(registry.held_ids.length,2);
  assert.deepEqual(new Set(registry.held_ids.map(x=>x.id)),new Set(["EN-H01","DE-H01"]));
-
- assert.equal(new Set(registry.protected.map(x=>x.id)).size,14);
- for(const p of [...registry.protected,...registry.held_ids])assert.ok(!poolCandidates(matrix,original,registry).some(r=>r.id===p.id),p.id);
+ assert.equal(new Set(registry.protected.map(x=>x.id)).size,registry.protected.length);
+ const admitted=currentLedger.claims.filter(c=>legacyIds.has(c.id)&&c.phase==="LEGACY_IMMUTABLE_QA_INTAKE");
+ assert.equal(registry.protected.length+admitted.length,14,"every original is protected or provenance-locked in the ledger");
+ for(const id of legacyIds){
+  const protectedDraft=registry.protected.find(p=>p.id===id);
+  const imported=admitted.find(c=>c.id===id);
+  assert.ok(Boolean(protectedDraft)!==Boolean(imported),id+" must have exactly one safe custody state");
+  if(imported){
+   assert.equal(imported.status,"SUBMITTED");
+   assert.equal(imported.writer,"W1");
+   assert.match(imported.source_sha256,/^[0-9a-f]{64}$/);
+   assert.match(imported.source_commit,/^[0-9a-f]{40}$/);
+  }
+  assert.ok(!poolCandidates(matrix,currentLedger,registry).some(r=>r.id===id),id);
+ }
+ for(const held of registry.held_ids)assert.ok(!poolCandidates(matrix,original,registry).some(r=>r.id===held.id));
  const state=poolStatus(matrix,original,registry,{writer:"W1"});
  assert.equal(state.status,"CLAIM_REQUIRED");
- assert.equal(state.protected_drafts,16);
+ assert.equal(state.protected_drafts,registry.protected.length+registry.held_ids.length);
  assert.ok(TOPICS.length>=120);
  assert.equal(state.available_now,DRAFTABLE);
  assert.equal(state.blocked_by_parent,0);

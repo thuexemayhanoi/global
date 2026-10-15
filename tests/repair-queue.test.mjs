@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import {repairQueue,repairTicket,ticketValid} from "../scripts/repair-queue-core.mjs";
-import {takeRepairTickets,applyRevisions} from "../scripts/writer-pool-auto-core.mjs";
+import {takeRepairTickets,applyRevisions,autoAdvance} from "../scripts/writer-pool-auto-core.mjs";
 import {validatePool} from "../scripts/writer-pool-core.mjs";
 import {submittedLock} from "../scripts/writer-lanes.mjs";
 import {createHash} from "node:crypto";
@@ -132,4 +132,29 @@ test("handoff refuses stale report, same Writer, original owner overwrite, and u
  assert.equal(first.transferred.length,1);
  assert.equal(takeRepairTickets(matrix,first.ledger,registry,current,who).reason,"REPAIR_REPORT_STALE");
  assert.equal(first.ledger.claims.filter(x=>x.status==="SUBMITTED").length,1);
+});
+
+test("repair takeover goes before new-topic refill and cannot ping-pong",()=>{
+ const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
+ matrix.rows.find(row=>row.id==="FR-H03").status="IDEA";
+ const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
+ const c={id:"FR-H03",writer:"W3",session:"w3-live",branch:"writer/w3-live",status:"SUBMITTED",
+  source_sha256:sha,source_commit:commit,claim_id:"repair-sequence",
+  at:"2026-10-15T00:00:00Z",updated_at:"2026-10-15T00:00:00Z"};
+ const ledger={version:1,revision:21,claims:[c]};
+ const report={version:2,ledger_revision:21,items:[{...item,id:c.id,writer:c.writer,session:c.session,branch:c.branch,source_sha256:c.source_sha256}]};
+ const receiving={writer:"W2",session:"w2-live",branch:"writer/w2-live"};
+ const intake=takeRepairTickets(matrix,ledger,registry,report,receiving);
+ assert.deepEqual(intake.transferred,[c.id],"the report is fresh before any new claims mutate the ledger");
+ const after=autoAdvance(matrix,intake.ledger,registry,receiving,{
+  now:"2026-10-15T09:50:00Z",refill:!intake.changed});
+ assert.equal(after.ledger.claims.filter(x=>x.status==="CLAIMED"&&x.writer==="W2").length,0,
+  "Writer must repair transferred source before taking ten additional draft topics");
+ const assigned=intake.ledger.claims[0],updated={...report,ledger_revision:intake.ledger.revision,
+  items:[{...report.items[0],writer:"W2",session:"w2-live",branch:"writer/w2-live"}]};
+ const bounce=takeRepairTickets(matrix,intake.ledger,registry,updated,
+  {writer:"W1",session:"w1-live",branch:"writer/w1-live"});
+ assert.deepEqual(bounce.transferred,[],"a newly transferred ticket must not be stolen again");
+ assert.equal(assigned.writer,"W2");
+ assert.equal(assigned.handoffs.length,1);
 });

@@ -104,7 +104,11 @@ export function takeRepairTickets(matrix,ledger,registry,report,{writer,session,
  for(const t of candidates){
   if(transferred.length>=capacity)break;
   const c=next.claims.find(x=>x.id===t.id&&x.status==="SUBMITTED");
-  if(!c||!ticketValid(t,c)||c.handoffs?.some(h=>h.writer===writer&&h.session===session))continue;
+  // Single handoff per immutable revision. A newly assigned Writer must get
+  // time to repair it, not have another slot immediately steal it back.
+  // Reassignment after a second quota loss requires a separate audited
+  // coordinator decision, never an unattended ping-pong.
+  if(!c||!ticketValid(t,c)||c.handoffs?.length)continue;
   const oldPath=c.source_path||"factory/external-writers/inbox/"+c.writer+"/"+c.id+".json";
   c.handoffs=[...(c.handoffs||[]),{
    writer:c.writer,session:c.session,branch:c.branch,source_path:oldPath,
