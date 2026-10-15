@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility",
   "batch_session": "research-claude-20261015-mobility",
   "created_at": "2026-10-15T09:33:24.963Z",
-  "updated_at": "2026-10-15T19:20:43.431Z",
-  "base_main_sha": "be802584baf3ee2f4a8fc59dd016aafd53ad4127",
-  "last_commit_sha": "899e5865f5f0d6f0bafef3e939006716781a4b73",
+  "updated_at": "2026-10-15T19:21:54.644Z",
+  "base_main_sha": "e68d8b1f32e62be59e17c505f1cd6bb231c44bee",
+  "last_commit_sha": "be15306b0bb98505fbda906ac70265c8559c2eba",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 220,
-    "qa_pass": 220,
+    "researched": 230,
+    "qa_pass": 230,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 210,
+    "pushed": 220,
     "pending_push": 10
   },
   "coverage": {
@@ -31,20 +31,20 @@
       "nl": 20,
       "pt": 20,
       "ko": 20,
-      "ja": 15,
+      "ja": 20,
       "zh": 19,
-      "vi": 14
+      "vi": 19
     },
     "domains": {
       "transportation-mobility": 10,
       "motorbike-rental": 10,
-      "traffic-law-safety": 200
+      "traffic-law-safety": 210
     }
   },
   "last_batch": {
-    "seq": 22,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0022.json",
-    "sha256": "d1dc81e2b95af1c4574f3d97beece93cab4e133110c24f7b003634c7ce5acee5",
+    "seq": 23,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0023.json",
+    "sha256": "9561325190c8b1092549eb40eaccd1363b8980d6a27e5b5115be264bd8c0c61c",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -2385,8 +2385,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility-0022.json",
       "sha256": "d1dc81e2b95af1c4574f3d97beece93cab4e133110c24f7b003634c7ce5acee5",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "be15306b0bb98505fbda906ac70265c8559c2eba",
       "researched_on": "2026-10-15",
       "topics": [
         {
@@ -2397,7 +2397,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南路口让行规则 摩托车",
-          "ta_id": null
+          "ta_id": "TA-ZH-0035"
         },
         {
           "ref": "zh:yuenan-motuoche-chaoche-guize",
@@ -2407,7 +2407,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南骑摩托车超车规则",
-          "ta_id": null
+          "ta_id": "TA-ZH-0036"
         },
         {
           "ref": "zh:yuenan-motuoche-diaotou-guiding",
@@ -2417,7 +2417,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南摩托车掉头规定",
-          "ta_id": null
+          "ta_id": "TA-ZH-0037"
         },
         {
           "ref": "zh:yuenan-motuoche-chedao",
@@ -2427,7 +2427,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南摩托车走哪条车道",
-          "ta_id": null
+          "ta_id": "TA-ZH-0038"
         },
         {
           "ref": "zh:yuenan-qi-motuoche-zuidi-nianling",
@@ -2437,7 +2437,7 @@
           "parent_id": "ZH-H03",
           "subcluster": "dc-licence",
           "key": "zh::越南骑摩托车最低年龄",
-          "ta_id": null
+          "ta_id": "TA-ZH-0039"
         },
         {
           "ref": "ko:motorbike-expressway-ban-vietnam",
@@ -2447,7 +2447,7 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-city",
           "key": "ko::베트남 오토바이 고속도로 진입",
-          "ta_id": null
+          "ta_id": "TA-KO-0035"
         },
         {
           "ref": "ko:overtaking-rules-motorbike-vietnam",
@@ -2457,7 +2457,7 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-city",
           "key": "ko::베트남 오토바이 추월 규칙",
-          "ta_id": null
+          "ta_id": "TA-KO-0036"
         },
         {
           "ref": "ko:u-turn-rules-motorbike-vietnam",
@@ -2467,7 +2467,7 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-city",
           "key": "ko::베트남 오토바이 유턴 규정",
-          "ta_id": null
+          "ta_id": "TA-KO-0037"
         },
         {
           "ref": "ko:lane-rules-motorbike-vietnam",
@@ -2477,7 +2477,7 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-city",
           "key": "ko::베트남 오토바이 차로 규칙",
-          "ta_id": null
+          "ta_id": "TA-KO-0038"
         },
         {
           "ref": "ko:minimum-age-motorbike-vietnam",
@@ -2487,14 +2487,125 @@
           "parent_id": "KO-H03",
           "subcluster": "dc-licence",
           "key": "ko::베트남 오토바이 운전 가능 나이",
+          "ta_id": "TA-KO-0039"
+        }
+      ]
+    },
+    {
+      "seq": 23,
+      "file": "factory/topic-research/batches/claude-20261015-mobility-0023.json",
+      "sha256": "9561325190c8b1092549eb40eaccd1363b8980d6a27e5b5115be264bd8c0c61c",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-15",
+      "topics": [
+        {
+          "ref": "ja:passenger-limit-motorbike-vietnam",
+          "locale": "ja",
+          "slug": "passenger-limit-motorbike-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナム ハイク 何人乗り",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:overtaking-rule-vietnam",
+          "locale": "ja",
+          "slug": "overtaking-rule-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナム ハイク 追い越し ルール",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:u-turn-rule-vietnam",
+          "locale": "ja",
+          "slug": "u-turn-rule-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナム ハイク uターン 禁止",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:lane-rule-vietnam",
+          "locale": "ja",
+          "slug": "lane-rule-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナム ハイク 車線 ルール",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:minimum-age-rule-vietnam",
+          "locale": "ja",
+          "slug": "minimum-age-rule-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H03",
+          "subcluster": "dc-licence",
+          "key": "ja::ヘトナム ハイク 何歳から",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:quy-dinh-quay-dau-xe-may",
+          "locale": "vi",
+          "slug": "quy-dinh-quay-dau-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::quay dau xe may o dau bi cam",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:xe-may-di-lan-nao",
+          "locale": "vi",
+          "slug": "xe-may-di-lan-nao",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::xe may di lan nao dung luat",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:do-tuoi-duoc-di-xe-may",
+          "locale": "vi",
+          "slug": "do-tuoi-duoc-di-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-licence",
+          "key": "vi::bao nhieu tuoi duoc di xe may",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:quy-dinh-den-tin-hieu-giao-thong",
+          "locale": "vi",
+          "slug": "quy-dinh-den-tin-hieu-giao-thong",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::quy dinh den tin hieu giao thong xe may",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:xe-may-thue-bi-phat-nguoi",
+          "locale": "vi",
+          "slug": "xe-may-thue-bi-phat-nguoi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-contract",
+          "key": "vi::xe may thue bi phat nguoi ai chiu",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 23,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0023.json",
+    "seq": 24,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0024.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -2674,6 +2785,13 @@
       "seq": 22,
       "topics": 10,
       "sha256": "d1dc81e2b95af1c4574f3d97beece93cab4e133110c24f7b003634c7ce5acee5"
+    },
+    {
+      "at": "2026-10-15T19:21:54.644Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 23,
+      "topics": 10,
+      "sha256": "9561325190c8b1092549eb40eaccd1363b8980d6a27e5b5115be264bd8c0c61c"
     }
   ]
 }
