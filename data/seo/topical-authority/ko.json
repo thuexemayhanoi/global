@@ -1237,6 +1237,258 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility-0017.json@34fd043403b3"
       },
       "matrix_id": "KO-S40"
+    },
+    {
+      "candidate_id": "TA-KO-0035",
+      "locale": "ko",
+      "role": "SUPPORT",
+      "parent_id": "KO-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "motorbike-expressway-ban-vietnam",
+      "primary_query": "베트남 오토바이 고속도로 진입",
+      "secondary_queries": [
+        "베트남 고속도로 오토바이 금지",
+        "베트남 고속도로 표지판",
+        "하노이 근교 오토바이 경로"
+      ],
+      "working_title": "베트남에서 오토바이로 고속도로를 달릴 수 있을까? 금지 규정과 벌금",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Travellers planning day trips from Hanoi see fast expressway routes in their map app and want to know whether a rented motorbike may use them, how to recognise an expressway and what happens if they end up on one by mistake.",
+      "content_angle": "Explains Article 25(3) of Law 36/2024/QH15 (motorbikes and mopeds may not use expressways), the expressway start and end signs IE.452 and IE.453 in QCVN 41:2024/BGTVT, the bans on U-turns and reversing on expressways, and the Decree 168/2024 Article 7(7)(b) fine of 4,000,000 to 6,000,000 VND plus 6 licence points under Article 7(13)(c), with advice on planning routes on national roads.",
+      "entities": [
+        "법률 제36/2024/QH15호 제25조",
+        "시행령 제168/2024/NĐ-CP호",
+        "고속도로",
+        "IE.452 표지판",
+        "국도"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "rx-178d8fdf2864"
+      ],
+      "distinct_from": [
+        {
+          "id": "KO-S11",
+          "reason": "KO-S11은 하노이 오토바이 교통 규칙을 전반적으로 다루고, 이 주제는 고속도로 통행 금지와 표지판, 벌금과 경로 계획을 다룹니다."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility",
+        "researched_on": "2026-10-15",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility-0022.json@be15306b0bb9"
+      },
+      "matrix_id": "KO-S41"
+    },
+    {
+      "candidate_id": "TA-KO-0036",
+      "locale": "ko",
+      "role": "SUPPORT",
+      "parent_id": "KO-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "overtaking-rules-motorbike-vietnam",
+      "primary_query": "베트남 오토바이 추월 규칙",
+      "secondary_queries": [
+        "베트남 오른쪽 추월 가능",
+        "베트남 추월 금지 구간",
+        "베트남 오토바이 트럭 추월"
+      ],
+      "working_title": "베트남 오토바이 추월 규칙: 왼쪽·오른쪽 추월과 추월 금지 구간",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Riders on Vietnamese roads, especially on rural highways with lorries and coaches, want to know on which side overtaking is allowed, where it is banned and how to signal it, because local practice looks very different from the written rule.",
+      "content_angle": "Explains Article 14 of Law 36/2024/QH15 (overtake on the left, on the right only when the vehicle ahead turns left or a working vehicle blocks the left, the four preconditions, duties of the vehicle being overtaken, light-only signalling in towns from 22:00 to 05:00, the ten no-overtaking situations) and the Decree 168/2024 Article 7 fines from 200,000 VND for not signalling to 800,000 to 1,000,000 VND for overtaking where it is banned.",
+      "entities": [
+        "법률 제36/2024/QH15호 제14조",
+        "시행령 제168/2024/NĐ-CP호",
+        "추월",
+        "전조등 신호",
+        "국도"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "KO-S39",
+          "reason": "KO-S39는 교차로 통행 우선순위를 다루고, 이 주제는 도로에서의 추월 조건과 추월이 금지된 상황, 신호 방법과 벌금을 다룹니다."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility",
+        "researched_on": "2026-10-15",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility-0022.json@be15306b0bb9"
+      },
+      "matrix_id": "KO-S42"
+    },
+    {
+      "candidate_id": "TA-KO-0037",
+      "locale": "ko",
+      "role": "SUPPORT",
+      "parent_id": "KO-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "u-turn-rules-motorbike-vietnam",
+      "primary_query": "베트남 오토바이 유턴 규정",
+      "secondary_queries": [
+        "베트남 유턴 금지 장소",
+        "베트남 오토바이 좌회전 방법",
+        "베트남 오토바이 후진 금지"
+      ],
+      "working_title": "베트남 오토바이 회전과 유턴: 유턴이 금지된 곳",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Visitors who miss a turn in Hanoi often see locals make U-turns anywhere and want to know how turning must be done and where U-turns and reversing are prohibited, including what the signs mean.",
+      "content_angle": "Explains Article 15 of Law 36/2024/QH15 (observe, slow down, signal continuously, move into the nearest lane, give way to pedestrians, non-motorised vehicles and oncoming traffic, the list of places where U-turns are banned) and Article 16 on reversing, signs P.124 and I.409 in QCVN 41:2024/BGTVT, and the Decree 168/2024 Article 7 fines from 400,000 VND for a U-turn where it is banned to 1,000,000 to 2,000,000 VND for failing to give way when turning.",
+      "entities": [
+        "법률 제36/2024/QH15호 제15조",
+        "시행령 제168/2024/NĐ-CP호",
+        "P.124 표지판",
+        "유턴",
+        "방향지시등"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "rx-178d8fdf2864"
+      ],
+      "distinct_from": [
+        {
+          "id": "KO-S39",
+          "reason": "KO-S39는 교차로 통행 우선순위를 다루고, 이 주제는 회전하는 방법과 유턴·후진이 금지된 장소, 위반 시 벌금을 다룹니다."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility",
+        "researched_on": "2026-10-15",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility-0022.json@be15306b0bb9"
+      },
+      "matrix_id": "KO-S43"
+    },
+    {
+      "candidate_id": "TA-KO-0038",
+      "locale": "ko",
+      "role": "SUPPORT",
+      "parent_id": "KO-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "lane-rules-motorbike-vietnam",
+      "primary_query": "베트남 오토바이 차로 규칙",
+      "secondary_queries": [
+        "베트남 오토바이 차로 변경",
+        "하노이 오토바이 전용차로 표지",
+        "베트남 차선 실선 넘기"
+      ],
+      "working_title": "베트남에서 오토바이는 어느 차로로 달려야 할까? 차로와 차로 변경 규칙",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Riders on Hanoi's wide multi-lane roads want to know where a motorbike belongs, how a legal lane change works and what lane signs and painted lines mean, because the rules differ from what many visitors expect.",
+      "content_angle": "Explains Article 13 of Law 36/2024/QH15 (slower vehicles keep right, motor vehicles left of the non-motorised lane, one adjacent lane at a time with a signal, reserved lanes), lane signs R.411 and R.412 and markings 2.1 to 2.3 and 3.1 in QCVN 41:2024/BGTVT, and the Decree 168/2024 Article 7 fines for improper lane changes (200,000 to 400,000 VND) and riding in the wrong lane (600,000 to 800,000 VND).",
+      "entities": [
+        "법률 제36/2024/QH15호 제13조",
+        "QCVN 41:2024/BGTVT",
+        "R.412d 표지판",
+        "차로 변경",
+        "노면 표시"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-178d8fdf2864",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "KO-S11",
+          "reason": "KO-S11은 하노이 교통 규칙을 전반적으로 소개하고, 이 주제는 여러 차로가 있는 도로에서의 차로 선택과 차로 변경, 차로 표지와 노면 표시를 다룹니다."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility",
+        "researched_on": "2026-10-15",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility-0022.json@be15306b0bb9"
+      },
+      "matrix_id": "KO-S44"
+    },
+    {
+      "candidate_id": "TA-KO-0039",
+      "locale": "ko",
+      "role": "SUPPORT",
+      "parent_id": "KO-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-licence",
+      "slug": "minimum-age-motorbike-vietnam",
+      "primary_query": "베트남 오토바이 운전 가능 나이",
+      "secondary_queries": [
+        "베트남 몇 살부터 오토바이 운전",
+        "베트남 미성년자 오토바이",
+        "베트남 16세 50cc 스쿠터"
+      ],
+      "working_title": "베트남 오토바이·모페드 운전 최저 연령",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Families travelling with teenagers and young travellers want to know the legal minimum age for riding a moped or a motorbike in Vietnam and what happens if someone under 18 rides a scooter of 50 cc or more.",
+      "content_angle": "Explains Article 59(1) of Law 36/2024/QH15 (16 and over for mopeds, 18 and over for A1 and A licences) and the Decree 168/2024 Article 18 sanctions (a warning for riders aged 14 or 15, 400,000 to 600,000 VND for 16- and 17-year-olds on bikes of 50 cc or 4 kW and more), and what this means when a family rents scooters.",
+      "entities": [
+        "법률 제36/2024/QH15호 제59조",
+        "시행령 제168/2024/NĐ-CP호",
+        "50cc 모페드",
+        "A1 면허",
+        "청소년"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "KO-S05",
+          "reason": "KO-S05는 외국인의 베트남 오토바이 운전면허를 다루고, 이 주제는 면허와 관계없이 모페드와 오토바이를 운전할 수 있는 법정 연령을 다룹니다."
+        },
+        {
+          "id": "KO-S02",
+          "reason": "KO-S02는 50cc 스쿠터와 전기 스쿠터 대여를 비교하고, 이 주제는 나이에 따라 어떤 차량을 운전할 수 있는지와 제재를 다룹니다."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility",
+        "researched_on": "2026-10-15",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility-0022.json@be15306b0bb9"
+      },
+      "matrix_id": "KO-S45"
     }
   ]
 }
