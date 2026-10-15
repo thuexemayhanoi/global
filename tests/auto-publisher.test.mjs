@@ -59,8 +59,9 @@ test("hard legal claims need an official citation in the same paragraph; plain a
 });
 
 test("Human Review retired: sourced legal, safety and monetary content uses automatic G3 gates",()=>{
- const pricedHub=matrix.rows.find(r=>r.locale==="en"&&r.role==="HUB"&&r.cluster==="rental-costs");
- assert.ok(pricedHub);
+ // EN-H02 is live and protected; test monetary evidence on an unpublished Hub classified PRICE.
+ const pricedHub=legalHub;
+ const pricePolicy={...policy,sensitivity:{...policy.sensitivity,clusters:{...policy.sensitivity.clusters,"documents-contracts":"PRICE"}}};
  const evidence={url:"https://xaydungchinhsach.chinhphu.vn/x.htm",title:"Official Vietnamese legal reference",checked_on:"2026-10-15"};
  const legal=packet({matrix_id:legalHub.id,proposed_url:legalHub.url,sources:[...packet().sources,evidence]});
  const eligibleLegal=eligibility(ctx({packet:legal,row:legalHub}));
@@ -73,10 +74,11 @@ test("Human Review retired: sourced legal, safety and monetary content uses auto
  const payment=packet({matrix_id:pricedHub.id,proposed_url:pricedHub.url,
    body_markdown:packet().body_markdown+"\n\n"+amount,
    sources:[...packet().sources,{url:"https://vexere.com/prices",title:"Supplier fee schedule",checked_on:"2026-10-15"}]});
- const approvedPrice=eligibility(ctx({packet:payment,row:pricedHub}));
+ assert.equal(classify(payment,pricedHub,pricePolicy).topicClass,"PRICE");
+ const approvedPrice=eligibility(ctx({packet:payment,row:pricedHub,policy:pricePolicy}));
  assert.equal(approvedPrice.decision,"APPROVED_BY_POLICY",JSON.stringify(approvedPrice.gates.filter(g=>!g.passed)));
  const noListedSource=packet({...payment,sources:packet().sources});
- const rejectedPrice=eligibility(ctx({packet:noListedSource,row:pricedHub}));
+ const rejectedPrice=eligibility(ctx({packet:noListedSource,row:pricedHub,policy:pricePolicy}));
  assert.equal(rejectedPrice.decision,"REJECTED");
  assert.ok(rejectedPrice.failed.includes("G3_PRICE_EVIDENCE"));
  assert.ok(![eligibleLegal,approvedPrice,rejectedLegal,rejectedPrice].some(x=>x.decision==="REVIEW_REQUIRED"));
