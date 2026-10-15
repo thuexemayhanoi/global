@@ -2212,17 +2212,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:00:20.841Z"
+    },
+    {
+      "id": "KO-S14",
+      "locale": "ko",
+      "url": "/ko/guides/gyotonggyeongchal-dansok/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:00:42.635Z",
+      "source_sha256": "b1c3a5294a862a4552693261b38d5a97da8328071cf2d27c6afa541fe41ede0c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "NL-S14",
+      "locale": "nl",
+      "url": "/nl/guides/politiecontrole-huurscooter/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:00:42.635Z",
+      "source_sha256": "7f8b8367072fe361259213963ff6c269511673d4e6c2ca4bcfdda4d748111c26",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T02:20:15.772Z",
-      "ids": [
-        "NL-H01",
-        "PT-H01"
-      ],
-      "result": "RECORD-FAILURE: Live QA failed after deploy; publish commit f257e24956df2320bfc323679bd0d72306cebf1a reverted"
-    },
     {
       "at": "2026-10-15T04:15:26.218Z",
       "ids": [],
@@ -3783,6 +3797,14 @@
         "JA-S14"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:00:42.635Z",
+      "ids": [
+        "KO-S14",
+        "NL-S14"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3795,6 +3817,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 11
+    "APPROVED_BY_POLICY": 9
   }
 }
