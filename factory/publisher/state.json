@@ -4228,17 +4228,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T22:46:50.421Z"
+    },
+    {
+      "id": "FR-S33",
+      "locale": "fr",
+      "url": "/fr/guides/scooter-a-hanoi-en-hiver/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:47:10.348Z",
+      "source_sha256": "bcfbba94565da2424c40c90a61d638f0b6071d7c4147f4db403c7782bbdfdd2b",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T17:51:14.614Z",
-      "ids": [
-        "ES-S14",
-        "FR-S16"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T17:52:49.295Z",
       "ids": [
@@ -5784,6 +5787,13 @@
         "FR-S32"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T22:47:10.348Z",
+      "ids": [
+        "FR-S33"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -5796,6 +5806,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 3
+    "APPROVED_BY_POLICY": 1
   }
 }
