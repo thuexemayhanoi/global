@@ -316,6 +316,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:27:10.818Z"
+    },
+    {
+      "id": "PT-H04",
+      "locale": "pt",
+      "url": "/pt/topics/seguranca-e-ajuda/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:27:28.016Z",
+      "source_sha256": "17f6d53356810d9ee0e67d32ec57871b4319f608daf8771279584d76db32fe28",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ES-S01",
+      "locale": "es",
+      "url": "/es/guides/manual-o-automatica/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:27:28.016Z",
+      "source_sha256": "246b775de3e5378c5f8c5d71a0dbe4ad8345b4b3e54fa58456cd617783d8c25a",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -587,6 +609,14 @@
         "NL-H04"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:27:28.016Z",
+      "ids": [
+        "PT-H04",
+        "ES-S01"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -599,7 +629,7 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 48,
-    "WAIT_PARENT": 42
+    "APPROVED_BY_POLICY": 50,
+    "WAIT_PARENT": 38
   }
 }
