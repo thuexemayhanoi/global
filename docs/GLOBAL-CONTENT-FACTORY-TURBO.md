@@ -68,3 +68,30 @@ IMPORTANT: Refills currently stage for editorial acceptance. They DO NOT secretl
 ## When to stop
 
 Stop for no accepted topic remaining, owner publication gate, unrecoverable GitHub/permission/claim conflict, exhausted external AI quota/runtime or explicit STOP. Do not stop after one successful draft batch; if network fails, resume same session/branch and exact unfinished claims. Production writing and actual live publication are always distinct.
+
+## Universal Writer slots (2026-10-15)
+
+W1, W2 and W3 are **seats**, not AI providers. Any agent with quota and repository access (ChatGPT, Claude, Gemini or another compatible agent) can take a free slot. It writes from the shared queue in every locale it can write natively. Nobody waits for an absent agent.
+
+| State | Meaning | New claims |
+|---|---|---|
+| `AVAILABLE` | no unfinished claims | any new session may claim |
+| `ACTIVE` | the holding session is writing | yes |
+| `PAUSED_QUOTA` | the holder reported exhausted quota | no; finished drafts are still submitted |
+| `OFFLINE` | the holder reported, or a coordinator confirmed, the session ended | no |
+| `RECOVERING` | the paused holder came back on the same session and branch | yes |
+
+**Signals.** State changes only on a trusted signal:
+- **Self-report:** the agent's own request file on its own green Writer branch, via the optional fields `slot_state` (`ACTIVE`, `PAUSED_QUOTA`, `OFFLINE` or `RECOVERING`), `slot_reason` and `agent`.
+- **Dispatch:** a `writer-pool.yml` dispatch with `action=signal`. With `confirmed=true`, the dispatch can record `OFFLINE` or `PAUSED_QUOTA` for the real holder.
+
+**Handover.** `action=handover` (confirmed, reason of at least 12 characters) works only on a `PAUSED_QUOTA` or `OFFLINE` slot. The coordinator first inspects the holder's branch tip:
+- claimed IDs with **no** draft file are released to the shared queue;
+- drafted-but-unsubmitted IDs stay owned so no written work is lost;
+- SUBMITTED drafts are never touched.
+
+No timer or timeout ever moves a claim. Every ledger write is a compare-and-swap push to `main`.
+
+**Commands:**
+- `node scripts/writer-pool.mjs slots` prints the live view.
+- `node --test tests/writer-slots.test.mjs` simulates these cases: W1 only, W1+W3, all three, W2 quota mid-batch with handover, W2 recovery, concurrent claims and network replay.

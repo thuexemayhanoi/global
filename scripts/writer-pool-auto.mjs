@@ -13,9 +13,11 @@ import {randomUUID,createHash} from "node:crypto";
 import {autoAdvance} from "./writer-pool-auto-core.mjs";
 import {validateRequest} from "./writer-request-core.mjs";
 import {verifyPacket,checkDuplicates} from "./writer-lanes.mjs";
+import {emptySlots,slotView,signalSlot,validateSlots} from "./writer-slots-core.mjs";
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const repo="thuexemayhanoi/global";
 const ledgerFile="factory/external-writers/claims.json";
+const slotsFile="factory/external-writers/slots.json";
 const read=p=>JSON.parse(fs.readFileSync(path.join(ROOT,p),"utf8"));
 const shell=(cmd,args)=>execFileSync(cmd,args,{cwd:ROOT,encoding:"utf8",timeout:24000,maxBuffer:8*1024*1024}).trim();
 const git=(...args)=>shell("git",args);
@@ -106,8 +108,19 @@ function main(){
  if(verified.size){
   if(!repoPR(branch))throw Error("AUTO_POOL_WAIT_PR: Open a Writer draft PR to main once, then push a small updated commit; no manual Actions button needed");
  }
+ // Slot signal comes only from the agent's own request file on its own green branch commit.
+ const now=new Date().toISOString();
+ const slotsBefore=fs.existsSync(path.join(ROOT,slotsFile))?read(slotsFile):emptySlots();
+ const slotErr=validateSlots(slotsBefore);if(slotErr.length)throw Error(slotErr.join("; "));
+ let slots=slotsBefore;
+ const wanted=request.slot_state||"ACTIVE",view=slotView(ledger,slots)[request.writer];
+ const signal=wanted==="RECOVERING"&&!["PAUSED_QUOTA","OFFLINE"].includes(view.state)?"ACTIVE":wanted;
+ const rec=slots.slots[request.writer];
+ if(rec.state!==signal||rec.session!==request.session||rec.branch!==branch||(request.agent&&rec.agent!==request.agent))
+  slots=signalSlot(ledger,slots,{writer:request.writer,session:request.session,branch,state:signal,reason:request.slot_reason||"",agent:request.agent||null,source:"agent",now});
  const result=autoAdvance(matrix,ledger,registry,request,{verifiedDraftIds:verified,verifiedDraftEvidence:evidence,
-   now:new Date().toISOString(),nonce:randomUUID()});
+   now,nonce:randomUUID(),refill:["ACTIVE","RECOVERING"].includes(signal)});
+ if(slots!==slotsBefore)fs.writeFileSync(path.join(ROOT,slotsFile),JSON.stringify(slots,null,2)+"\n");
  if(!result.changed){
   console.log(JSON.stringify({mode:"AUTO_POOL_NO_MUTATION",status:result.status,
     session:request.session,claimed:result.claimed,missing:result.missing_ids||[],message:result.message}));
