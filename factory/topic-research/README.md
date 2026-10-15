@@ -19,6 +19,7 @@ Sessions die; work that is only in an agent's memory or local clone dies with th
 node scripts/topic-research.mjs resume --agent claude --session 20261015          # first, and after every crash
 node scripts/topic-research.mjs check  --agent claude --session 20261015 --draft drafts/b.json
 node scripts/topic-research.mjs commit --agent claude --session 20261015 --draft drafts/b.json
+node scripts/topic-research.mjs checkpoint --agent claude --session 20261015 --sync-ids --note "session end"   # after the last batch
 ```
 
 `commit` = Duplicate, Intent, Source and Schema QA → one commit with `factory/topic-research/batches/<agent>-<session>-NNNN.json` plus `factory/topic-research/checkpoints/<agent>-<session>.json` → non-force push of `research/<agent>-<session>` → verified on GitHub → `SAVED`. The checkpoint records totals, QA pass/fail, the SHA-256 and commit of every batch, the next batch and unresolved items; it is **not** a batch and the Topic Factory never ingests it. A QA FAIL is repaired first, never forced; 1–9 topics only with `--final`; never pad a batch or invent data. Drafts may live in `factory/topic-research/drafts/` (git-ignored). Hand-pushed batches under any other file name keep working exactly as before. Full runbook: `docs/TOPIC-RESEARCH-CHECKPOINT.md`.

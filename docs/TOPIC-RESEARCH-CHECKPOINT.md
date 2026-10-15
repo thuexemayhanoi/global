@@ -12,9 +12,13 @@ node scripts/topic-research.mjs resume  --agent claude --session 20261015 # firs
 … research 10 real topics with real sources into a draft file …
 node scripts/topic-research.mjs check   --agent claude --session 20261015 --draft drafts/b.json   # read-only QA
 node scripts/topic-research.mjs commit  --agent claude --session 20261015 --draft drafts/b.json   # QA + commit + push + verify
+… repeat research → check → commit for every further 10 topics …
+node scripts/topic-research.mjs checkpoint --agent claude --session 20261015 --sync-ids --note "session end"   # last step of a session
 ```
 
 `commit` runs four QA phases, writes **one commit holding the batch file and the checkpoint**, pushes `research/<agent>-<session>` without force, and prints `SAVED` only after GitHub itself confirms it (see below). Then start the next 10.
+
+**End of session.** A commit cannot contain its own SHA, so the checkpoint written with a batch records that batch as `COMMITTED` (`commit_sha: null`); the next batch commit settles it to `PUSHED` with its commit SHA. After the session's last batch, run `checkpoint --sync-ids --note "session end"`: one checkpoint-only commit records every pushed batch as `PUSHED` with its commit SHA and copies the `TA-…` IDs main assigned on ingest. `resume` prints `SETTLE_CHECKPOINT` while this is still outstanding. The data is safe on GitHub either way; settling only makes the checkpoint file itself read the final state.
 
 - A normal batch is exactly **10 real topics**. A short batch (1–9) is accepted only with `--final` when the session is about to end; it is never padded and never filled with invented data.
 - Drafts are an array of candidates (or `{candidates:[…]}`) in the schema of `factory/topic-research/README.md`. Keep them outside the tree or in `factory/topic-research/drafts/` (git-ignored). The agent name and session in the branch decide who the batch belongs to; a draft naming another session is refused.
