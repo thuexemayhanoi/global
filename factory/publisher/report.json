@@ -3,33 +3,11 @@
   "ledger_revision": 61,
   "stage": "RAMP",
   "counts": {
-    "APPROVED_BY_POLICY": 30,
-    "WAIT_PARENT": 42,
+    "APPROVED_BY_POLICY": 32,
+    "WAIT_PARENT": 38,
     "REJECTED": 24
   },
   "items": [
-    {
-      "id": "KO-H03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "42ad62b8267b5d14af6df494235913ec952e85df56207d17355c227b9a19bd39",
-      "source_commit": "57ee965d433c1ab0c6340e83549ad013ee1e333f",
-      "details": []
-    },
-    {
-      "id": "NL-H03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "284207bb9343c8b86aa219bb3b26d50545604c074382128a9fefa1581cd04414",
-      "source_commit": "57ee965d433c1ab0c6340e83549ad013ee1e333f",
-      "details": []
-    },
     {
       "id": "VI-H03",
       "decision": "APPROVED_BY_POLICY",
@@ -722,7 +700,6 @@
       "id": "KO-S05",
       "decision": "REJECTED",
       "failed": [
-        "G2_PARENT_PUBLISHED",
         "G3_SENSITIVE_SOURCES",
         "G3_OFFICIAL_EVIDENCE"
       ],
@@ -732,7 +709,6 @@
       "source_sha256": "9e4d310ec6d411286d87ad9ad84422486ede6c77a7b1a87476963a8e44d7c6ea",
       "source_commit": "c469526f514428efc45ef5dfe3f982e3cb6b04d2",
       "details": [
-        "G2_PARENT_PUBLISHED: KO-H03 is IDEA",
         "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
         "G3_OFFICIAL_EVIDENCE: 6 hard legal statement(s) lack an inline official citation: 핵심은 여기에 있다. 미국, 캐나다, 오스트레일리아, 뉴질랜드, 아일랜드, 일본, 한국, 스페인이 발급하는 국제운전면허는 베트남에서 무효다. 이 나라들이 제네바 1949년 협약에 따라 발급하기 때문이다(Ha Giang Trips). 한국의 자동차검사· | 2025년 1월 1일부터 시행된 베트남의 도로 교통 질서·안전법 3"
       ]
@@ -741,7 +717,6 @@
       "id": "NL-S05",
       "decision": "REJECTED",
       "failed": [
-        "G2_PARENT_PUBLISHED",
         "G3_SENSITIVE_SOURCES",
         "G3_OFFICIAL_EVIDENCE"
       ],
@@ -751,7 +726,6 @@
       "source_sha256": "79955a51adca987ce3212f9e03e35f023c335c964758ef62720ab2008c45da54",
       "source_commit": "d4a6c85aeeeb18db0b6037614e67f7acae4599c0",
       "details": [
-        "G2_PARENT_PUBLISHED: NL-H03 is IDEA",
         "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
         "G3_OFFICIAL_EVIDENCE: 4 hard legal statement(s) lack an inline official citation: Vietnam kent sinds 1 januari 2025 de A1-klasse voor motoren tot 125cc of elektromotoren tot 11kW, en de A-klasse voor alles daarboven (Danan | Voor wie zonder motorcategorie of zon"
       ]
@@ -868,33 +842,25 @@
     },
     {
       "id": "KO-S06",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "250191cac419b083d74f3e3f26d190d5cb00e6947a32ca1a8325600dd578f795",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: KO-H03 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "NL-S06",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "9efbe9b0c32c5f78b13fb9363baba9eef663272768afb0de96ddd40b7831b175",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: NL-H03 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "PT-S06",
@@ -1330,33 +1296,25 @@
     },
     {
       "id": "KO-S09",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
       "source_sha256": "d0fad902a7c51658ec98d739ad92ff9244cb773f388a3f79c4523445fb5b2eb7",
       "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": [
-        "G2_PARENT_PUBLISHED: KO-H03 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "NL-S09",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
       "source_sha256": "682e3bf18e2965c307a1e255d0c922db297ab9f0665cc3f7e64ff2da76a0f38a",
       "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": [
-        "G2_PARENT_PUBLISHED: NL-H03 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "PT-S09",

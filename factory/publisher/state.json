@@ -244,6 +244,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:22:33.546Z"
+    },
+    {
+      "id": "VI-H03",
+      "locale": "vi",
+      "url": "/vi/topics/giay-to-hop-dong/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T09:22:50.449Z",
+      "source_sha256": "5520d2ee9b0c9c8528ed4604b52240d5632210bca9304e3d8c7f9a85e0f0c337",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-H03",
+      "locale": "zh",
+      "url": "/zh/topics/zhengjian-hetong/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T09:22:50.449Z",
+      "source_sha256": "2b20ee197b73c277cd784d0df9b46291115adab5f8f75802769512a62467e8df",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -462,6 +484,14 @@
         "NL-H03"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:22:50.449Z",
+      "ids": [
+        "VI-H03",
+        "ZH-H03"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -474,8 +504,8 @@
     "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 30,
-    "WAIT_PARENT": 42,
+    "APPROVED_BY_POLICY": 32,
+    "WAIT_PARENT": 38,
     "REJECTED": 24
   }
 }
