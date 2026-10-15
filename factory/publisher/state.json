@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 85,
+  "clean_runs": 88,
   "published": [
     {
       "id": "NL-H01",
@@ -2270,7 +2270,8 @@
       "at": "2026-10-15T18:04:41.625Z",
       "source_sha256": "29d6831bf58ee0dc69bef92d1579274802e896468d1889cdc8d414e15ba2220c",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:06:13.142Z"
     },
     {
       "id": "DE-S15",
@@ -2281,47 +2282,47 @@
       "at": "2026-10-15T18:04:41.625Z",
       "source_sha256": "43a5f7df7ac8f4f166178986098e844b645be5f146ecca34f7283b5b73f4d8d6",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:06:13.142Z"
+    },
+    {
+      "id": "EN-S16",
+      "locale": "en",
+      "url": "/en/guides/after-a-motorbike-accident/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:06:37.942Z",
+      "source_sha256": "470f45ba93cb425f4b9491f9da814b17aad6f953e75aff213babc7c1af0459e0",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:08:14.891Z"
+    },
+    {
+      "id": "ES-S15",
+      "locale": "es",
+      "url": "/es/guides/despues-de-un-accidente/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:06:37.942Z",
+      "source_sha256": "300dc8cc264dba6e6478b724978b15263a440d00c32a8c6db7075d7754bb9a10",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:08:14.891Z"
+    },
+    {
+      "id": "VI-S15",
+      "locale": "vi",
+      "url": "/vi/guides/va-cham-giao-thong-xe-thue/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:08:32.414Z",
+      "source_sha256": "442ea90d136c2253711f7b2280aad44ae3fef44d22f889b4071c27eb4bad6076",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:09:43.572Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T05:12:03.222Z",
-      "ids": [],
-      "result": "RESUME: Owner-authorized recovery: Korean QH15 won false positive fixed in PR 42, QA and live HTTP checks passed"
-    },
-    {
-      "at": "2026-10-15T05:12:18.241Z",
-      "ids": [
-        "ES-H01",
-        "KO-H01"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T05:13:25.336Z",
-      "ids": [
-        "ES-H01",
-        "KO-H01"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T05:13:43.129Z",
-      "ids": [
-        "KO-S01",
-        "PT-S02"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T05:14:48.442Z",
-      "ids": [
-        "KO-S01",
-        "PT-S02"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T05:14:48.442Z",
       "ids": [],
@@ -3856,18 +3857,53 @@
         "DE-S15"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:06:13.142Z",
+      "ids": [
+        "ZH-S15",
+        "DE-S15"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:06:37.942Z",
+      "ids": [
+        "EN-S16",
+        "ES-S15"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:08:14.891Z",
+      "ids": [
+        "EN-S16",
+        "ES-S15"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:08:32.414Z",
+      "ids": [
+        "VI-S15"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:09:43.572Z",
+      "ids": [
+        "VI-S15"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T18:04:23.556Z",
+    "at": "2026-10-15T18:09:43.572Z",
     "ids": [
-      "PT-S14",
-      "VI-S14"
+      "VI-S15"
     ],
-    "commit": "d4e43455ff02008376317242098c5e58a4b7eac5",
+    "commit": "6fb4ab1d6a0ce4ac49973c6767237b513dd68e1c",
     "live_seconds": 61
   },
-  "queue": {
-    "APPROVED_BY_POLICY": 5
-  }
+  "queue": {}
 }
