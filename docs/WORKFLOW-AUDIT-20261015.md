@@ -42,7 +42,10 @@ Scope: the complete /global pipeline Topic Factory → W1/W2/W3 → Writer QA �
 | 21 | Claims, slots, CAS, idempotent replay | **DONE** | `tests/writer-pool*.test.mjs`, `tests/writer-slots.test.mjs` | scenario tests S1, S5, S6 |
 | 22 | Queue drain 2+2+2+2+2 | **DONE** | PR #38, `tests/publisher-drain.test.mjs` | scenario S2 covers stages and caps |
 | 23 | Dashboard after a live QA result | **BROKEN (found after the pilot)** | the PASS commit `40ab77f` recorded only `state.json`; the committed dashboard still showed NL-H01/PT-H01 as PUBLISH_STAGED and "Last successful deployment: none yet" | separate best-effort step regenerates the dashboard from `main` after PASS, pause or revert; `tests/dashboard.test.mjs` |
-| 24 | Scheduled triggers | **BROKEN (GitHub side)** | 0 `schedule` events in the run history by 2026-10-15 04:22 UTC, although the hourly Auto Publisher cron exists since 01:28 UTC | docs stop relying on schedules; the event and dispatch triggers carry the pipeline |
+| 24 | Scheduled triggers | **BROKEN (GitHub side)** | 0 `schedule` events in the run history by 2026-10-15 04:57 UTC, although the hourly Auto Publisher cron exists since 01:28 UTC | docs stop relying on schedules; the event and dispatch triggers carry the pipeline |
+| 25 | One draft paused the whole queue | **BROKEN (found 04:51)** | pre-commit fact guard refused KO-H01's source title after G1 had passed it; every resume would re-select the same pair. After #42 the same still happens with NL-S02 (real amounts in a source title; rehearsal on `38ec146`) | G1 fact-checks source titles; `tests/auto-publisher.test.mjs` fails on the old logic |
+| 26 | G3 money detection | **INCONSISTENT (owner decision)** | misses multiplier/word forms of dong that the fact guard catches | GAP-MATRIX WF-11 |
+| 27 | Fact guard false positive | **DONE (#42)** | "QH15 원문" read as 15 won | GAP-MATRIX WF-12 |
 
 ## Not changed
 
