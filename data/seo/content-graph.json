@@ -38,22 +38,22 @@
   },
   "counts": {
     "rows": 295,
-    "published": 73,
-    "idea": 222,
+    "published": 75,
+    "idea": 220,
     "locales": 10,
     "candidates": 56,
     "silos": 330,
     "entities": 42,
     "edges": 1406,
     "actions": {
-      "KEEP": 51,
+      "KEEP": 53,
       "UPGRADE": 19,
-      "CREATE": 278,
+      "CREATE": 276,
       "REVIEW": 3
     },
     "silo_actions": {
-      "CREATE": 150,
-      "KEEP": 22,
+      "CREATE": 148,
+      "KEEP": 24,
       "UPGRADE": 11,
       "GAP": 147
     },
@@ -111,7 +111,7 @@
         "words": 209,
         "h2": 2,
         "faq": 0,
-        "inbound_pages": 72,
+        "inbound_pages": 74,
         "inbound_contextual": 23,
         "outbound_contextual": 10,
         "max_content_overlap": 0
@@ -153,7 +153,7 @@
         "words": 609,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 72,
+        "inbound_pages": 74,
         "inbound_contextual": 6,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -693,7 +693,7 @@
         "words": 431,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 72,
+        "inbound_pages": 74,
         "inbound_contextual": 6,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -1233,7 +1233,7 @@
         "words": 407,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 72,
+        "inbound_pages": 74,
         "inbound_contextual": 6,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -1738,7 +1738,7 @@
       "level": "PILLAR",
       "pipeline_state": "PUBLISHED",
       "action": "UPGRADE",
-      "action_reasons": ["Main content 472 words < 600 target for PILLAR"],
+      "action_reasons": ["Main content 484 words < 600 target for PILLAR"],
       "silo": null,
       "journey_stage": "awareness",
       "intent_class": "commercial",
@@ -1746,12 +1746,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 472,
+        "words": 484,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 72,
-        "inbound_contextual": 6,
-        "outbound_contextual": 6,
+        "inbound_pages": 74,
+        "inbound_contextual": 7,
+        "outbound_contextual": 7,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -1791,8 +1791,8 @@
         "words": 267,
         "h2": 5,
         "faq": 1,
-        "inbound_pages": 14,
-        "inbound_contextual": 5,
+        "inbound_pages": 15,
+        "inbound_contextual": 6,
         "outbound_contextual": 6,
         "max_content_overlap": 0
       },
@@ -1867,7 +1867,7 @@
         "words": 1712,
         "h2": 12,
         "faq": 1,
-        "inbound_pages": 5,
+        "inbound_pages": 6,
         "inbound_contextual": 5,
         "outbound_contextual": 7,
         "max_content_overlap": 0
@@ -1906,12 +1906,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 2013,
-        "h2": 7,
+        "words": 2041,
+        "h2": 8,
         "faq": 1,
-        "inbound_pages": 5,
-        "inbound_contextual": 3,
-        "outbound_contextual": 5,
+        "inbound_pages": 6,
+        "inbound_contextual": 4,
+        "outbound_contextual": 6,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -2053,7 +2053,7 @@
         "words": 1850,
         "h2": 8,
         "faq": 1,
-        "inbound_pages": 5,
+        "inbound_pages": 6,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -2095,7 +2095,7 @@
         "words": 1999,
         "h2": 9,
         "faq": 1,
-        "inbound_pages": 5,
+        "inbound_pages": 6,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -2113,27 +2113,35 @@
       "parent_id": "FR-H03",
       "child_ids": [],
       "proposed_url": "/fr/guides/permis-etranger/",
-      "published_url": null,
-      "editorial_status": "IDEA",
-      "qa_status": "NOT_RUN",
+      "published_url": "/fr/guides/permis-etranger/",
+      "editorial_status": "PUBLISHED",
+      "qa_status": "PUBLISHED_HTML_EXISTS_REQUIRES_CONTENT_REVIEW",
       "source_verification": "NOT_STARTED",
       "serp_evidence": "NOT_VALIDATED",
       "cannibalization_risk": "NONE_DETECTED_STRUCTURAL",
       "internal_link_targets_published": ["/fr/", "/fr/checklist/", "/fr/topics/documents-contrat/"],
       "writer_lane": "W3",
-      "implementation_priority": "P2",
+      "implementation_priority": "P1",
       "priority_value": 34,
       "level": "SUPPORT",
-      "pipeline_state": "IDEA",
-      "action": "CREATE",
-      "action_reasons": ["Evidence-free gap: no PUBLISHED page owns this intent"],
+      "pipeline_state": "PUBLISHED",
+      "action": "KEEP",
+      "action_reasons": ["Meets depth and linking targets"],
       "silo": "dc-licence",
       "journey_stage": "decision",
       "intent_class": "informational",
       "entities": ["E-DRIVING-LICENCE-A1-A", "E-INTERNATIONAL-DRIVING-PERMIT", "E-VIENNA-CONVENTION-1968"],
       "overlaps": [],
       "overlap_count": 0,
-      "content_metrics": null,
+      "content_metrics": {
+        "words": 1731,
+        "h2": 7,
+        "faq": 1,
+        "inbound_pages": 6,
+        "inbound_contextual": 2,
+        "outbound_contextual": 5,
+        "max_content_overlap": 0
+      },
       "performance": "NOT_CONNECTED"
     },
     {
@@ -2273,7 +2281,7 @@
         "words": 470,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 72,
+        "inbound_pages": 74,
         "inbound_contextual": 9,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -2821,7 +2829,7 @@
         "words": 422,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 72,
+        "inbound_pages": 74,
         "inbound_contextual": 7,
         "outbound_contextual": 7,
         "max_content_overlap": 0
@@ -3353,7 +3361,7 @@
         "words": 469,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 72,
+        "inbound_pages": 74,
         "inbound_contextual": 6,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -3877,7 +3885,7 @@
         "words": 444,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 72,
+        "inbound_pages": 74,
         "inbound_contextual": 9,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -4425,7 +4433,7 @@
         "words": 336,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 72,
+        "inbound_pages": 74,
         "inbound_contextual": 7,
         "outbound_contextual": 7,
         "max_content_overlap": 0
@@ -4946,7 +4954,7 @@
       "level": "PILLAR",
       "pipeline_state": "PUBLISHED",
       "action": "UPGRADE",
-      "action_reasons": ["Main content 489 words < 600 target for PILLAR"],
+      "action_reasons": ["Main content 502 words < 600 target for PILLAR"],
       "silo": null,
       "journey_stage": "awareness",
       "intent_class": "commercial",
@@ -4954,12 +4962,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 489,
+        "words": 502,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 72,
-        "inbound_contextual": 6,
-        "outbound_contextual": 6,
+        "inbound_pages": 74,
+        "inbound_contextual": 7,
+        "outbound_contextual": 7,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -4999,8 +5007,8 @@
         "words": 262,
         "h2": 5,
         "faq": 1,
-        "inbound_pages": 14,
-        "inbound_contextual": 5,
+        "inbound_pages": 15,
+        "inbound_contextual": 6,
         "outbound_contextual": 6,
         "max_content_overlap": 0
       },
@@ -5083,7 +5091,7 @@
         "words": 2045,
         "h2": 12,
         "faq": 1,
-        "inbound_pages": 5,
+        "inbound_pages": 6,
         "inbound_contextual": 5,
         "outbound_contextual": 7,
         "max_content_overlap": 0
@@ -5122,12 +5130,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 2399,
-        "h2": 8,
+        "words": 2431,
+        "h2": 9,
         "faq": 1,
-        "inbound_pages": 5,
-        "inbound_contextual": 3,
-        "outbound_contextual": 5,
+        "inbound_pages": 6,
+        "inbound_contextual": 4,
+        "outbound_contextual": 6,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -5269,7 +5277,7 @@
         "words": 2056,
         "h2": 8,
         "faq": 1,
-        "inbound_pages": 5,
+        "inbound_pages": 6,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -5319,7 +5327,7 @@
         "words": 2183,
         "h2": 9,
         "faq": 1,
-        "inbound_pages": 5,
+        "inbound_pages": 6,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -5337,27 +5345,35 @@
       "parent_id": "JA-H03",
       "child_ids": [],
       "proposed_url": "/ja/guides/gaikoku-menkyo/",
-      "published_url": null,
-      "editorial_status": "IDEA",
-      "qa_status": "NOT_RUN",
+      "published_url": "/ja/guides/gaikoku-menkyo/",
+      "editorial_status": "PUBLISHED",
+      "qa_status": "PUBLISHED_HTML_EXISTS_REQUIRES_CONTENT_REVIEW",
       "source_verification": "NOT_STARTED",
       "serp_evidence": "NOT_VALIDATED",
       "cannibalization_risk": "NONE_DETECTED_STRUCTURAL",
       "internal_link_targets_published": ["/ja/", "/ja/checklist/", "/ja/topics/menkyo-keiyaku/"],
       "writer_lane": "W3",
-      "implementation_priority": "P2",
+      "implementation_priority": "P1",
       "priority_value": 34,
       "level": "SUPPORT",
-      "pipeline_state": "IDEA",
-      "action": "CREATE",
-      "action_reasons": ["Evidence-free gap: no PUBLISHED page owns this intent"],
+      "pipeline_state": "PUBLISHED",
+      "action": "KEEP",
+      "action_reasons": ["Meets depth and linking targets"],
       "silo": "dc-licence",
       "journey_stage": "decision",
       "intent_class": "informational",
       "entities": ["E-DRIVING-LICENCE-A1-A", "E-INTERNATIONAL-DRIVING-PERMIT", "E-VIENNA-CONVENTION-1968"],
       "overlaps": [],
       "overlap_count": 0,
-      "content_metrics": null,
+      "content_metrics": {
+        "words": 2050,
+        "h2": 7,
+        "faq": 1,
+        "inbound_pages": 6,
+        "inbound_contextual": 2,
+        "outbound_contextual": 5,
+        "max_content_overlap": 0
+      },
       "performance": "NOT_CONNECTED"
     },
     {
@@ -5497,7 +5513,7 @@
         "words": 157,
         "h2": 4,
         "faq": 0,
-        "inbound_pages": 72,
+        "inbound_pages": 74,
         "inbound_contextual": 0,
         "outbound_contextual": 1,
         "max_content_overlap": 0
@@ -5539,7 +5555,7 @@
         "words": 118,
         "h2": 3,
         "faq": 0,
-        "inbound_pages": 72,
+        "inbound_pages": 74,
         "inbound_contextual": 0,
         "outbound_contextual": 1,
         "max_content_overlap": 0
@@ -5581,8 +5597,8 @@
         "words": 185,
         "h2": 3,
         "faq": 0,
-        "inbound_pages": 72,
-        "inbound_contextual": 59,
+        "inbound_pages": 74,
+        "inbound_contextual": 61,
         "outbound_contextual": 2,
         "max_content_overlap": 0
       },
@@ -5623,8 +5639,8 @@
         "words": 107,
         "h2": 3,
         "faq": 0,
-        "inbound_pages": 72,
-        "inbound_contextual": 59,
+        "inbound_pages": 74,
+        "inbound_contextual": 61,
         "outbound_contextual": 1,
         "max_content_overlap": 0
       },
@@ -13012,12 +13028,12 @@
       "reserved_by": null,
       "url": null,
       "members": {
-        "published": [],
+        "published": ["FR-S05"],
         "protected_drafts": [],
-        "planned": ["FR-S05", "FR-S09", "FR-S10"],
+        "planned": ["FR-S09", "FR-S10"],
         "candidates": []
       },
-      "action": "CREATE"
+      "action": "KEEP"
     },
     {
       "id": "FR-dc-contract",
@@ -17170,12 +17186,12 @@
       "reserved_by": null,
       "url": null,
       "members": {
-        "published": [],
+        "published": ["JA-S05"],
         "protected_drafts": [],
-        "planned": ["JA-S05", "JA-S09"],
+        "planned": ["JA-S09"],
         "candidates": []
       },
-      "action": "CREATE"
+      "action": "KEEP"
     },
     {
       "id": "JA-dc-contract",

@@ -12,9 +12,9 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
-| Matrix rows (295) | 51 | 19 | 3 | 222 |
+| Matrix rows (295) | 53 | 19 | 3 | 220 |
 | Topical candidates (56) | 0 | 0 | 0 | 56 |
-| Silos (330) | 22 | 11 | 0 | 150 |
+| Silos (330) | 24 | 11 | 0 | 148 |
 
 Knowledge graph: 42 entities, 1406 typed edges (hreflang_equivalent 190, about 710, contains 296, has_silo 160, has_hub 40, has_pillar 10).
 
@@ -32,24 +32,24 @@ Knowledge graph: 42 entities, 1406 typed edges (hreflang_equivalent 190, about 7
 | ID | URL | Words | H2 | FAQ | Inbound pages | Reasons |
 |---|---|---|---|---|---|---|
 | VI-CHECKLIST | /vi/checklist/ | 407 | 5 | 1 | 14 | Main content 407 words < 800 target for SUPPORT |
-| EN-HOME | /en/ | 431 | 5 | 3 | 72 | Main content 431 words < 600 target for PILLAR |
+| EN-HOME | /en/ | 431 | 5 | 3 | 74 | Main content 431 words < 600 target for PILLAR |
 | EN-CHECKLIST | /en/checklist/ | 274 | 5 | 1 | 14 | Main content 274 words < 800 target for SUPPORT |
-| DE-HOME | /de/ | 407 | 5 | 3 | 72 | Main content 407 words < 600 target for PILLAR |
+| DE-HOME | /de/ | 407 | 5 | 3 | 74 | Main content 407 words < 600 target for PILLAR |
 | DE-CHECKLIST | /de/checklist/ | 244 | 5 | 1 | 14 | Main content 244 words < 800 target for SUPPORT |
-| FR-HOME | /fr/ | 472 | 5 | 3 | 72 | Main content 472 words < 600 target for PILLAR |
-| FR-CHECKLIST | /fr/checklist/ | 267 | 5 | 1 | 14 | Main content 267 words < 800 target for SUPPORT |
-| ES-HOME | /es/ | 470 | 5 | 3 | 72 | Main content 470 words < 600 target for PILLAR |
+| FR-HOME | /fr/ | 484 | 5 | 3 | 74 | Main content 484 words < 600 target for PILLAR |
+| FR-CHECKLIST | /fr/checklist/ | 267 | 5 | 1 | 15 | Main content 267 words < 800 target for SUPPORT |
+| ES-HOME | /es/ | 470 | 5 | 3 | 74 | Main content 470 words < 600 target for PILLAR |
 | ES-CHECKLIST | /es/checklist/ | 265 | 5 | 1 | 17 | Main content 265 words < 800 target for SUPPORT |
-| NL-HOME | /nl/ | 422 | 5 | 3 | 72 | Main content 422 words < 600 target for PILLAR |
+| NL-HOME | /nl/ | 422 | 5 | 3 | 74 | Main content 422 words < 600 target for PILLAR |
 | NL-CHECKLIST | /nl/checklist/ | 237 | 5 | 1 | 15 | Main content 237 words < 800 target for SUPPORT |
-| ZH-HOME | /zh/ | 469 | 5 | 3 | 72 | Main content 469 words < 600 target for PILLAR |
+| ZH-HOME | /zh/ | 469 | 5 | 3 | 74 | Main content 469 words < 600 target for PILLAR |
 | ZH-CHECKLIST | /zh/checklist/ | 267 | 5 | 1 | 14 | Main content 267 words < 800 target for SUPPORT |
-| PT-HOME | /pt/ | 444 | 5 | 3 | 72 | Main content 444 words < 600 target for PILLAR |
+| PT-HOME | /pt/ | 444 | 5 | 3 | 74 | Main content 444 words < 600 target for PILLAR |
 | PT-CHECKLIST | /pt/checklist/ | 244 | 5 | 1 | 17 | Main content 244 words < 800 target for SUPPORT |
-| KO-HOME | /ko/ | 336 | 5 | 3 | 72 | Main content 336 words < 600 target for PILLAR |
+| KO-HOME | /ko/ | 336 | 5 | 3 | 74 | Main content 336 words < 600 target for PILLAR |
 | KO-CHECKLIST | /ko/checklist/ | 193 | 5 | 1 | 15 | Main content 193 words < 800 target for SUPPORT |
-| JA-HOME | /ja/ | 489 | 5 | 3 | 72 | Main content 489 words < 600 target for PILLAR |
-| JA-CHECKLIST | /ja/checklist/ | 262 | 5 | 1 | 14 | Main content 262 words < 800 target for SUPPORT |
+| JA-HOME | /ja/ | 502 | 5 | 3 | 74 | Main content 502 words < 600 target for PILLAR |
+| JA-CHECKLIST | /ja/checklist/ | 262 | 5 | 1 | 15 | Main content 262 words < 800 target for SUPPORT |
 
 Targets: Pillar ≥ 600 words, ≥ 3 FAQ; Supporting ≥ 800 words, ≥ 4 H2 (new drafts already need ≥ 1,000 words).
 
@@ -66,7 +66,7 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 | rc-period | consideration | commercial | Pillar FAQ ×10 | P1 I1 KEEP | P1 I1 KEEP | I2 CREATE | P1 I1 KEEP | P1 I1 KEEP | I2 CREATE | P1 I1 KEEP | P1 I1 KEEP | I2 CREATE | P1 I1 KEEP |
 | rc-deposit | decision | commercial | Pillar FAQ ×10 | P1 I1 UPGRADE | P1 I1 KEEP | I2 CREATE | P1 I1 KEEP | P1 I1 KEEP | I2 CREATE | P1 I1 KEEP | P1 I1 KEEP | I2 CREATE | P1 I1 KEEP |
 | rc-extras | decision | commercial | – | I2 CREATE | I1 C1 CREATE | I2 CREATE | I1 C1 CREATE | I2 CREATE | I2 CREATE | I1 C1 CREATE | I2 CREATE | I2 CREATE | I2 CREATE |
-| dc-licence | decision | informational | Pillar FAQ ×10 | I2 CREATE | I3 CREATE | P2 KEEP | I3 CREATE | I2 CREATE | I2 CREATE | I3 CREATE | I2 CREATE | I2 CREATE | I2 CREATE |
+| dc-licence | decision | informational | Pillar FAQ ×10 | I2 CREATE | I3 CREATE | P2 KEEP | P1 I2 KEEP | I2 CREATE | I2 CREATE | I3 CREATE | I2 CREATE | I2 CREATE | P1 I1 KEEP |
 | dc-contract | decision | informational | – | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE |
 | dc-insurance | decision | informational | – | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
 | dc-papers | riding | informational | – | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
@@ -101,7 +101,7 @@ Published / planned (IDEA + drafts) / candidates per stage.
 |---|---|---|---|---|---|---|---|---|---|---|
 | awareness | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
 | consideration | 1 / 6 / 1 | 1 / 6 / 2 | 0 / 7 / 1 | 1 / 6 / 1 | 3 / 4 / 1 | 2 / 5 / 1 | 1 / 6 / 1 | 3 / 4 / 1 | 2 / 5 / 1 | 1 / 6 / 1 |
-| decision | 1 / 7 / 1 | 1 / 7 / 2 | 2 / 6 / 1 | 1 / 7 / 2 | 1 / 7 / 1 | 0 / 8 / 1 | 1 / 7 / 2 | 1 / 7 / 1 | 0 / 8 / 1 | 1 / 7 / 1 |
+| decision | 1 / 7 / 1 | 1 / 7 / 2 | 2 / 6 / 1 | 2 / 6 / 2 | 1 / 7 / 1 | 0 / 8 / 1 | 1 / 7 / 2 | 1 / 7 / 1 | 0 / 8 / 1 | 2 / 6 / 1 |
 | pickup | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
 | riding | 0 / 8 / 2 | 0 / 8 / 0 | 0 / 8 / 0 | 0 / 8 / 0 | 0 / 8 / 0 | 0 / 8 / 0 | 0 / 8 / 0 | 0 / 8 / 0 | 0 / 8 / 0 | 0 / 8 / 0 |
 | return | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 |
@@ -116,13 +116,13 @@ Every locale checklist also covers the consideration → decision → pickup →
 | vi | 29 | 6 | 2 | 21 | 6 | 33% |
 | en | 29 | 6 | 2 | 21 | 16 | 67% |
 | de | 29 | 6 | 2 | 21 | 4 | 67% |
-| fr | 29 | 6 | 2 | 21 | 5 | 67% |
+| fr | 29 | 7 | 2 | 20 | 5 | 71% |
 | es | 29 | 9 | 1 | 19 | 4 | 78% |
 | nl | 29 | 7 | 1 | 21 | 4 | 71% |
 | zh | 29 | 6 | 2 | 21 | 5 | 67% |
 | pt | 29 | 9 | 1 | 19 | 4 | 78% |
 | ko | 29 | 7 | 1 | 21 | 4 | 71% |
-| ja | 29 | 6 | 2 | 21 | 4 | 67% |
+| ja | 29 | 7 | 2 | 20 | 4 | 71% |
 
 Live Writer states (CLAIMED/SUBMITTED) change on every autopilot commit and are not part of this file: run `node scripts/seo/topical-authority.mjs status`.
 
