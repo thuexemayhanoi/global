@@ -36,7 +36,8 @@ jobs:
         run: |
           node --check scripts/writer-pool-auto.mjs
           node --check scripts/writer-request.mjs
-          node --test tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-refill.test.mjs
+          node --check scripts/repair-queue-core.mjs
+          node --test tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-refill.test.mjs tests/writer-slots.test.mjs tests/repair-queue.test.mjs tests/writer-qa-lock.test.mjs
           node scripts/build.mjs --check
       - name: Auto-submit verified 1–10 drafts and refill Writer queue (no manual button)
         env:
@@ -57,6 +58,7 @@ jobs:
           git config user.email "global-writer-autopilot@users.noreply.github.com"
           for attempt in 1 2 3; do
             git add factory/external-writers/claims.json
+            if [ -f factory/external-writers/slots.json ]; then git add factory/external-writers/slots.json; fi
             if git diff --cached --quiet; then
               echo "No further ledger change required (idempotent / unfinished / stale)."
               exit 0

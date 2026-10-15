@@ -65,9 +65,25 @@ PR #28 (PR-5, merge `baf0ae7`) went live on 2026-10-14:
 
 These checks prove what the site serves, not Google indexation, rankings or AI citations.
 
+## Workflow final fix (2026-10-15)
+
+Audit with evidence: `docs/WORKFLOW-AUDIT-20261015.md`. Contract: `AGENTS.md` § CURRENT PRODUCTION WORKFLOW; manual: `docs/CURRENT-WORKFLOW.md`.
+
+| ID | Pri | Area | Before (evidence) | Now (evidence) |
+|---|---|---|---|---|
+| WF-01 | P0 | Live QA sitemap check | BROKEN: run 38668639207 fetched the bare name `sitemap-main.xml` ("Failed to parse URL"), reverting NL-H01/PT-H01 | DONE (code + tests): absolute same-origin shard URLs; regression test fails on the old behaviour (`tests/live-qa.test.mjs`) |
+| WF-02 | P0 | False rollback on QA-tool errors | BROKEN: any error reverted | DONE (code + tests): PASS / FAIL / INCONCLUSIVE; only FAIL reverts; unverified publications re-checked before new staging |
+| WF-03 | P1 | Writer QA after publication | BROKEN (latent): a published draft turned its Writer branch red | DONE (code + tests): SUBMITTED drafts hash-locked (`tests/writer-qa-lock.test.mjs`) |
+| WF-04 | P1 | Repair CLI identity, holds, guidance | BROKEN/PARTIAL | DONE (code + tests): `tests/repair-queue.test.mjs` |
+| WF-05 | P1 | CI coverage, no-AI guard, scenarios | PARTIAL | DONE: repair/lock suites in every workflow that runs the code; `tests/no-ai-api.test.mjs`; ten scenarios in `tests/workflow-scenarios.test.mjs` |
+| WF-06 | P1 | Dashboard + docs | OBSOLETE | DONE: queue states generated from data; AGENTS.md contract; legacy docs marked |
+| WF-07 | P0 | Production resume | PAUSED since 2026-10-15T02:20Z | DONE (production): PR #40 merged as `eedb4ba`; Pages run 38680346553 success; Post-Publish Live HTTP QA 38680440442 passed (40 checks, 0 issues); confirmed resume 38680501986 (`c565664`); pilot run 38680543606 published NL-H01 + PT-H01 (`3980926`), Live QA PASS in 41 s with 11 sitemap files and 27 URLs (`40ab77f`); Post-Publish Live HTTP QA 38680674431 on `40ab77f` passed (42 checks, 0 issues). Stage PILOT, clean_runs 1; the drain stopped with `QUEUE_DRAINED_OR_HELD` (no third eligible draft) |
+| WF-08 | P2 | Dashboard after live QA | STALE: the committed dashboard kept the pilot pair as PUBLISH_STAGED after the PASS was recorded (only `state.json` was committed) | DONE (workflow + test): separate best-effort step regenerates it from `main` after the live result (`tests/dashboard.test.mjs`) |
+| WF-09 | P2 | Scheduled triggers | `schedule` never fired: 0 `schedule` events in the repository's run history by 2026-10-15 04:22 UTC (Auto Publisher hourly cron since 01:28 UTC) | OPEN (GitHub side, not repository code): docs no longer rely on schedules; Writer push → Autopilot → Auto Publisher, research batch → Topic Factory, drain dispatch and operator dispatch are the working triggers |
+
 ## Owner decisions (OWNER)
 
-1. First topical promotion manifest (recommended: 2 per locale, licence + insurance silos first).
+1. ~~First topical promotion manifest~~ Done 2026-10-14: `approvals/topical-20261014.json` promoted 50 candidates (5 per locale) as IDEA rows; 126 PROPOSED remain for later manifests.
 2. The fifth `routes-trips` Hub (Ha Giang / Ninh Binh).
 3. Real keyword/SERP validation per market (connect Search Console for global.rentbikehanoi.com and/or approve keyword-tool credits).
 4. Resolve business conflicts C1–C3, and decide whether /global may display NAP/prices or business schema (`publication.*_approved`).

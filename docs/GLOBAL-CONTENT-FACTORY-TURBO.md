@@ -3,11 +3,13 @@
 Repository ONLY: thuexemayhanoi/global — https://global.rentbikehanoi.com/
 Architecture reference: thuexemayhanoi/blog. Borrow mechanisms, NEVER merge repositories or copy article content.
 
+> **Status (2026-10-15):** the claim, slot, recovery and handover mechanics on this page are current. For the whole pipeline (Writer QA → repair queue → Auto Publisher → Live QA) follow `docs/CURRENT-WORKFLOW.md` and `AGENTS.md` § CURRENT PRODUCTION WORKFLOW. Statements here about an owner manifest being required for every publication, or about W1's first ES-H01/KO-H01 pair, are historical.
+
 ## What changes
 
 1. An external AI Writer session uses W1, W2 or W3 and may write any eligible topic in the SAME shared 10-language Matrix. Running only W1 is enough; W2/W3 optional.
 2. Turbo can CLAIM up to 10 topics per active Writer session. One Writer push may include 1..10 completed article JSON drafts. Green Writer QA automatically SUBMITS the verified completed subset and refills that Writer's unfinished slot back up to 10. Incomplete claims keep the SAME owner/session/branch. Do not write preview IDs. Do not request per-batch GitHub Run clicks.
-3. Old W1's two outstanding ES-H01 + KO-H01 claims stay in place. Finish those two first; next successful push automatically expands the slot toward 10. Do not reset, release, rewrite or pretend either is complete.
+3. (Historical, 2026-10-14) W1's first ES-H01 + KO-H01 claims were finished and SUBMITTED; the rule that remains: never reset, release, rewrite or pretend an unfinished claim is complete.
 4. New SUBMITTED drafts record source commit and SHA256 of exact source JSON, checked on future Writer pushes. A changed submitted draft is refused; editorial changes require a reviewed branch. Retry/collision means re-fetch latest main and recompute ledger, bounded to three attempts without force push.
 5. All 14 W1 PR #17 drafts + EN-H01/DE-H01 editorial pilots remain reserved; never redraft these. Each Writer uses exactly one unfinished session per W1/W2/W3 lane.
 
@@ -20,6 +22,9 @@ node scripts/writer-request.mjs start --writer W1 --session w1-vibe-20261014 --b
 Commit/push the exact request JSON on the Writer branch (not main). Writer push QA green triggers Global Dynamic Writer Autopilot to claim up to ten.
 
 Then LOOP without asking the owner again:
+
+- **First check automated repair work** from QA-rejected SUBMITTED drafts: `node scripts/writer-repair.mjs next --writer W1 --session w1-vibe-20261014`. If `state=REPAIR`, use your own AI to correct its exact failed gates into the ticket's NEW `revisions/<ID>.rN.json` file, run `node scripts/writer-repair.mjs check --writer W1 --session w1-vibe-20261014 --file <ticket.revision_path>` and `node scripts/writer-lanes.mjs verify-all`. Push on the same active Writer branch; green CI and coordinator validate source SHA and append revision history, then Publisher re-evaluates QA. Retry up to 3 accepted revisions, never lower thresholds or mark fabricated human approval. Stop for `HUMAN_REVIEW_REQUIRED` or unrecoverable errors. Full contract: `docs/AI-WRITER-REPAIR-LOOP.md`.
+- **Writer QA red before first submission:** the same active AI must read `verify-all` and GitHub QA errors, correct the local unsubmitted draft, and rerun QA BEFORE pushing; an unsubmitted invalid draft cannot enter the Publisher's repair queue.
 - Fetch/merge newest origin/main.
 - Confirm real assigned IDs:
   node scripts/continuous-writer.mjs assigned --writer W1 --session w1-vibe-20261014 --branch writer/w1-vibe-20261014
@@ -33,11 +38,11 @@ Then LOOP without asking the owner again:
 
 W2/W3 use their OWN stable writer/w2-* or writer/w3-* branches/sessions and inbox. Never use another Writer's session or write its draft files.
 
-## Why the publisher is still gated
+## How drafts get published
 
-Submitted drafts are not indexed or live. Publication via scripts/seo/publish-batch.mjs remains owner-approval-manifest gated, with real fact/SERP/natural-language review. Supporting drafts may be written while Hub awaits review; Supporting PUBLICATION requires its own Hub already PUBLISHED. Never edit CNAME, sitemap, canonical, noindex search utility, prices, NAP, live URLs or other repos while writing.
+Submitted drafts are not live. Since 2026-10-15 the standing-policy **Auto Publisher** (`docs/AUTO-PUBLISHER.md`) evaluates every SUBMITTED draft with automated QA G1–G5 + G7 and publishes eligible ones two per run, each pair verified by Live QA before the next. Fixable failures go back to the same Writer as repair tickets; LEGAL/SAFETY/PRICE topics and money amounts wait for a human. The manual `scripts/seo/publish-batch.mjs` path with an owner approval manifest still exists for reviewed PRs. Supporting drafts may be written while their Hub is unpublished; Supporting PUBLICATION requires the Hub to be PUBLISHED. Writers never publish and never edit CNAME, sitemap, canonical, noindex search utility, prices, NAP, live URLs or other repos.
 
-## Refill preparation (early warning + independent editorial review)
+## Refill preparation (Writer-side proposals)
 
 Run node scripts/writer-refill.mjs status. When free Matrix ideas fall under 30 (planning target 120), the external Writer should RESEARCH original non-overlapping long-tail Supporting topics under existing same-locale Hubs. Stage up to 50 JSON proposals per file at factory/topic-refill/proposals/W1/<batch>.json, with W2/W3 variants for other lanes. Verify:
 node scripts/writer-refill.mjs validate --writer W1 --branch writer/w1-vibe-20261014
@@ -63,8 +68,35 @@ Required JSON batch:
 
 Eight gates G1–G8 check repo/schema, batch size/writer, parent/locale/cluster, URL uniqueness, query/intent overlap, title/slug quality, research references, and unverified IDEA governance. Source URLs and SERP intent are structural INPUTS, not independently validated facts or a ranking forecast.
 
-IMPORTANT: Refills currently stage for editorial acceptance. They DO NOT secretly append rows into the Matrix, change the Writer Board or publish pages. A separate reviewed Matrix expansion must regenerate content-graph, navigation/sitemaps and QA together. Do not promise 10,000 ready topics or publish unreviewed keyword proposals.
+IMPORTANT: these Writer-side refill proposals stage for editorial acceptance. They DO NOT append rows to the Matrix, change the Writer Board or publish pages. Automated Matrix growth runs only through the Topic Factory research intake (`docs/TOPIC-FACTORY.md`: `research/*` branches, gates T1–T10 and F1–F8, ≤50 IDEA rows per run under the standing policy). Do not promise 10,000 ready topics or publish unreviewed keyword proposals.
 
 ## When to stop
 
 Stop for no accepted topic remaining, owner publication gate, unrecoverable GitHub/permission/claim conflict, exhausted external AI quota/runtime or explicit STOP. Do not stop after one successful draft batch; if network fails, resume same session/branch and exact unfinished claims. Production writing and actual live publication are always distinct.
+
+## Universal Writer slots (2026-10-15)
+
+W1, W2 and W3 are **seats**, not AI providers. Any agent with quota and repository access (ChatGPT, Claude, Gemini or another compatible agent) can take a free slot. It writes from the shared queue in every locale it can write natively. Nobody waits for an absent agent.
+
+| State | Meaning | New claims |
+|---|---|---|
+| `AVAILABLE` | no unfinished claims | any new session may claim |
+| `ACTIVE` | the holding session is writing | yes |
+| `PAUSED_QUOTA` | the holder reported exhausted quota | no; finished drafts are still submitted |
+| `OFFLINE` | the holder reported, or a coordinator confirmed, the session ended | no |
+| `RECOVERING` | the paused holder came back on the same session and branch | yes |
+
+**Signals.** State changes only on a trusted signal:
+- **Self-report:** the agent's own request file on its own green Writer branch, via the optional fields `slot_state` (`ACTIVE`, `PAUSED_QUOTA`, `OFFLINE` or `RECOVERING`), `slot_reason` and `agent`.
+- **Dispatch:** a `writer-pool.yml` dispatch with `action=signal`. With `confirmed=true`, the dispatch can record `OFFLINE` or `PAUSED_QUOTA` for the real holder.
+
+**Handover.** `action=handover` (confirmed, reason of at least 12 characters) works only on a `PAUSED_QUOTA` or `OFFLINE` slot. The coordinator first inspects the holder's branch tip:
+- claimed IDs with **no** draft file are released to the shared queue;
+- drafted-but-unsubmitted IDs stay owned so no written work is lost;
+- SUBMITTED drafts are never touched.
+
+No timer or timeout ever moves a claim. Every ledger write is a compare-and-swap push to `main`.
+
+**Commands:**
+- `node scripts/writer-pool.mjs slots` prints the live view.
+- `node --test tests/writer-slots.test.mjs` simulates these cases: W1 only, W1+W3, all three, W2 quota mid-batch with handover, W2 recovery, concurrent claims and network replay.

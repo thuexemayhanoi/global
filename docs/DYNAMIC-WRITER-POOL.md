@@ -1,6 +1,13 @@
-# Dynamic Writer Pool — archival manual FALLBACK only
+# Dynamic Writer Pool — manual recovery fallback only
 
-CURRENT PRIMARY PROTOCOL: docs/GLOBAL-CONTENT-FACTORY-TURBO.md.
-Normal operation is zero-click per Writer push. One active Writer can handle the shared pool. Up to TEN unfinished claims per lane; QA-green partial 1–10 pushes are safe and auto-refilled. New submission records immutable evidence. Existing two-item W1 claims complete normally before expansion.
+Current protocol: `docs/CURRENT-WORKFLOW.md`; slot and claim mechanics: `docs/GLOBAL-CONTENT-FACTORY-TURBO.md`.
 
-The manual Global Dynamic Writer Pool workflow_dispatch remains only as a recovery option. No manual click needed for usual Writer operations. Never auto-publish or bypass editorial gates; ten-locale Matrix remains protected. See the canonical guide before issuing any commands.
+Normal operation is zero-click per Writer push: the Writer Autopilot claims (up to TEN unfinished per slot), submits verified drafts with immutable evidence and refills. The manual **Global Dynamic Writer Pool** workflow (`writer-pool.yml`) is only for recovery and operator actions:
+
+- `status` / `slots` — read-only views.
+- `signal` with `confirmed=true` — record `OFFLINE` or `PAUSED_QUOTA` for the real holder when the agent cannot push its own signal.
+- `handover` with `confirmed=true` and a reason — release only undrafted claims of a `PAUSED_QUOTA`/`OFFLINE` slot.
+- `release` with `confirmed=true` and a reason — release one unsubmitted claim.
+- `claim` / `submit` — manual equivalents of what the Autopilot does.
+
+It never runs an AI model, never publishes and never transfers SUBMITTED drafts.

@@ -25,6 +25,13 @@ on:
       - 'scripts/writer-request-core.mjs'
       - 'scripts/writer-pool-auto.mjs'
       - 'scripts/writer-pool-auto-core.mjs'
+      - 'scripts/writer-slots-core.mjs'
+      - 'scripts/repair-queue-core.mjs'
+      - 'scripts/writer-repair.mjs'
+      - 'tests/repair-queue.test.mjs'
+      - 'tests/writer-qa-lock.test.mjs'
+      - 'tests/writer-slots.test.mjs'
+      - 'tests/workflow-scenarios.test.mjs'
       - 'tests/writer-pool-auto.test.mjs'
       - '.github/workflows/writer-pool-auto.yml'
       - 'tests/writer-pool.test.mjs'
@@ -51,8 +58,10 @@ jobs:
           node-version: "22"
       - name: Deterministic assignment and refusal-gate tests
         run: node --test tests/external-writers.test.mjs
-      - name: Validate uninterrupted session loop planner
-        run: node --test tests/continuous-writer.test.mjs tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-refill.test.mjs
+      - name: Validate uninterrupted session loop planner, slots and repair queue
+        run: node --test tests/continuous-writer.test.mjs tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-refill.test.mjs tests/writer-slots.test.mjs tests/repair-queue.test.mjs tests/writer-qa-lock.test.mjs
+      # New and unsubmitted drafts get full QA (fix them in place); SUBMITTED drafts are
+      # locked evidence checked only for byte changes; revisions need a SUBMITTED draft.
       - name: Validate all inbox drafts, no article publishing
         run: node scripts/writer-lanes.mjs verify-all
       - name: Refuse writer PR changes outside its own inbox

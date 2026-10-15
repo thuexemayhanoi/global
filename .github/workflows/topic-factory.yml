@@ -1,0 +1,83 @@
+name: Global Topic Factory
+run-name: "Topic Factory ${{ github.event_name }} ${{ github.event.workflow_run.head_branch }}"
+on:
+  schedule:
+    - cron: '23 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: 'Promote eligible PROPOSED candidates under the standing policy (false = dry run)'
+        type: boolean
+        default: true
+  workflow_run:
+    workflows: ["Topic Research QA"]
+    types: [completed]
+permissions:
+  contents: write
+concurrency:
+  group: global-topic-factory
+  cancel-in-progress: false
+jobs:
+  factory:
+    # Research branches are trusted only after their own green push QA; code always comes from main.
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.event == 'push' &&
+       github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_repository.full_name == github.repository &&
+       startsWith(github.event.workflow_run.head_branch, 'research/'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify factory, topical and pool invariants on main code
+        run: |
+          node --test tests/topic-factory.test.mjs tests/topical-authority.test.mjs tests/writer-pool.test.mjs
+          node scripts/build.mjs --check
+      - name: Ingest, refill and dashboard (compare-and-swap commit, never force-push)
+        env:
+          EVENT: ${{ github.event_name }}
+          APPLY: ${{ github.event_name != 'workflow_dispatch' || inputs.apply }}
+          RESEARCH_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          RESEARCH_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+          git config user.name "global-topic-factory"
+          git config user.email "global-topic-factory@users.noreply.github.com"
+          step() {
+            if [ "$EVENT" = "workflow_run" ]; then
+              node scripts/topic-factory.mjs ingest --branch "$RESEARCH_BRANCH" --sha "$RESEARCH_SHA"
+            fi
+            if [ "$APPLY" = "true" ]; then
+              node scripts/topic-factory.mjs refill --apply
+            else
+              node scripts/topic-factory.mjs refill
+            fi
+            node scripts/topic-factory.mjs status --markdown docs/CONTENT-FACTORY-DASHBOARD.md
+            node scripts/topic-factory.mjs status >> "$GITHUB_STEP_SUMMARY"
+          }
+          allowed='^(data/seo/|factory/external-writers/assignments\.json$|approvals/auto/|docs/(GLOBAL-SITE-MATRIX|CONTENT-FACTORY-DASHBOARD)\.md$)'
+          for attempt in 1 2 3; do
+            step
+            changed=$(git status --porcelain | awk '{print $2}')
+            if [ -z "$changed" ]; then echo "No factory change."; exit 0; fi
+            if echo "$changed" | grep -Ev "$allowed"; then
+              echo "FACTORY_SAFE_STOP: change outside the factory allowlist"; git status --porcelain; exit 1
+            fi
+            test "$(cat CNAME)" = "global.rentbikehanoi.com"
+            git add -A data/seo factory/external-writers/assignments.json approvals/auto docs/GLOBAL-SITE-MATRIX.md docs/CONTENT-FACTORY-DASHBOARD.md
+            git commit -m "factory(global): research intake, standing-policy topic refill and dashboard"
+            git fetch --no-tags origin main
+            if [ "$(git rev-parse origin/main)" = "$(git rev-parse HEAD^)" ] && git push origin HEAD:main; then
+              echo "Factory state committed to latest main."; exit 0
+            fi
+            echo "CONCURRENT_MAIN_UPDATE attempt=$attempt: recompute from latest main"
+            git reset --hard origin/main
+          done
+          echo "FACTORY_SAFE_STOP: retry budget exhausted; nothing was force-pushed"; exit 1

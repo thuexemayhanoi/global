@@ -13,14 +13,17 @@ const fails=(m,mx=matrix)=>validateTopicalMap({map:m,matrix:mx,frozenUrls:frozen
 const clone=()=>structuredClone(map);
 const first=(m,locale)=>m.locales[locale].proposals.find(p=>p.status==="PROPOSED");
 const MANIFEST={version:1,repo:"thuexemayhanoi/global",purpose:"TOPICAL_MAP_PROMOTION",approved_by:"Test owner",approved_on:"2026-10-14",
- statement:"I approve adding these topical-map candidates to the SEO Matrix as unpublished IDEA rows. This is not publication approval.",candidate_ids:["TA-DE-0009","TA-EN-0010"]};
+ statement:"I approve adding these topical-map candidates to the SEO Matrix as unpublished IDEA rows. This is not publication approval.",candidate_ids:[first(map,"de").candidate_id,first(map,"en").candidate_id]};
+// Next free Supporting ID per locale, so the test stays valid after real promotions.
+const nextS=code=>code.toUpperCase()+"-S"+String(1+Math.max(0,...matrix.rows.filter(r=>r.locale===code&&/^[A-Z]{2}-S\d+$/.test(r.id)).map(r=>Number(r.id.split("-S")[1])))).padStart(2,"0");
 
 test("the committed 10-locale topical map passes every gate and stays out of the live site",()=>{
  const v=validateTopicalMap({map,matrix,frozenUrls:frozen});
  assert.deepEqual(v.issues,[]);
  assert.equal(Object.keys(map.locales).length,10);
  assert.deepEqual(Object.keys(map.locales).sort(),[...matrix.locales].sort());
- for(const code of matrix.locales)assert.ok(map.locales[code].proposals.filter(p=>p.status==="PROPOSED").length>=15,code);
+ // Capacity per locale: PROPOSED shrinks as owner manifests promote candidates (PROMOTED keeps the count).
+ for(const code of matrix.locales)assert.ok(map.locales[code].proposals.filter(p=>p.status==="PROPOSED"||p.status==="PROMOTED").length>=15,code);
  assert.equal(v.auto_publish,false);
  const live=new Set(readLocalSitemapInventory(process.cwd(),matrix.locales).urls);
  const matrixUrls=new Set(matrix.rows.map(r=>r.url));
@@ -102,7 +105,7 @@ test("promotion needs the exact owner manifest and only adds balanced IDEA rows"
  const before=JSON.stringify(matrix);
  const plan=planPromotion({map,matrix,board,manifest:MANIFEST,validation});
  assert.equal(JSON.stringify(matrix),before);
- assert.deepEqual(plan.added.map(r=>r.id),["DE-S09","EN-S09"]);
+ assert.deepEqual(plan.added.map(r=>r.id),[nextS("de"),nextS("en")]);
  assert.ok(plan.added.every(r=>r.status==="IDEA"&&r.serp_evidence==="NOT_VALIDATED"&&r.role==="SUPPORT"));
  assert.equal(plan.publish,false);
  const counts=["W1","W2","W3"].map(w=>plan.board.entries.filter(e=>e.writer===w).length);
