@@ -78,11 +78,10 @@ function evaluate(c){
  const results=[];
  for(const d of drafts){
   if(d.error){results.push({id:d.claim.id,decision:"BLOCKED",failed:["SOURCE"],gates:[{gate:"SOURCE",passed:false,detail:d.error}]});continue;}
-  const reviewPath=reviewFile(d.claim.id,d.claim.source_sha256);
-  const review=optional(reviewPath,null);
+  // Writer QA and publisher gates are authoritative; no independent AI reviewer dependency.
   const r=eligibility({packet:d.packet,claim:d.claim,row:d.row,matrix:c.matrix,locales:c.locales,policy:c.policy,standing:c.standing,
-   protectedIds:c.protectedIds,corpus,review,state:c.state});
-  r.review_sha256=review?sha256(fs.readFileSync(path.join(ROOT,reviewPath),"utf8")):null;
+   protectedIds:c.protectedIds,corpus,state:c.state});
+  r.review_sha256=null;
   r.priority=d.row?.priority??99;
   results.push({...r,_packet:d.packet,_claim:d.claim});
  }
