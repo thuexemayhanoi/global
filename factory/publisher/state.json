@@ -484,6 +484,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:39:04.491Z"
+    },
+    {
+      "id": "EN-S04",
+      "locale": "en",
+      "url": "/en/guides/rental-deposits/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:39:24.131Z",
+      "source_sha256": "7a35bcbe95381da7656dc39386d8e86faaa83aef691d92e3e0e894d6e94bc340",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ES-S04",
+      "locale": "es",
+      "url": "/es/guides/devolucion-deposito/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:39:24.131Z",
+      "source_sha256": "c64ce6d6cd7063f4fb3971fe1b61ef8eb685678de9f0c6f6082c104d90205115",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -867,6 +889,14 @@
         "ZH-S03"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:39:24.131Z",
+      "ids": [
+        "EN-S04",
+        "ES-S04"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -880,6 +910,6 @@
   },
   "queue": {
     "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 40
+    "APPROVED_BY_POLICY": 38
   }
 }
