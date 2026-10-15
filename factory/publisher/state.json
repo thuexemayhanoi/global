@@ -1480,6 +1480,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T13:44:17.532Z"
+    },
+    {
+      "id": "EN-S09",
+      "locale": "en",
+      "url": "/en/guides/international-driving-permit-motorbike/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:44:38.098Z",
+      "source_sha256": "e9780f7dec833dae2d44475bcf5583540f6f4d96ef00f5dbbad364ece0f18bc2",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S10",
+      "locale": "en",
+      "url": "/en/guides/convert-licence-to-vietnamese/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:44:38.098Z",
+      "source_sha256": "10a660e697bfb2dfbe277b429e650661c27f1fae14d67410fba270d3b1d793a3",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2545,6 +2567,14 @@
         "VI-S08"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T13:44:38.098Z",
+      "ids": [
+        "EN-S09",
+        "EN-S10"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2558,7 +2588,7 @@
   },
   "queue": {
     "WAIT_PARENT": 2,
-    "APPROVED_BY_POLICY": 6,
+    "APPROVED_BY_POLICY": 4,
     "REJECTED": 1
   }
 }
