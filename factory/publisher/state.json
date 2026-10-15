@@ -2236,17 +2236,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:02:55.056Z"
+    },
+    {
+      "id": "PT-S14",
+      "locale": "pt",
+      "url": "/pt/guides/fiscalizacao-policial/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:03:12.422Z",
+      "source_sha256": "4352494477e902787f49373454959751da6044778cc681f1a51b7c126544dd89",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "VI-S14",
+      "locale": "vi",
+      "url": "/vi/guides/csgt-dung-xe-khi-di-xe-thue/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:03:12.422Z",
+      "source_sha256": "78af45aa38aab90a3aa40f5b1fd4b8f3a8884561a4bace080fec970c3de7d3af",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T04:15:52.071Z",
-      "ids": [
-        "NL-H01",
-        "PT-H01"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T04:16:37.044Z",
       "ids": [
@@ -3810,6 +3824,14 @@
         "NL-S14"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:03:12.422Z",
+      "ids": [
+        "PT-S14",
+        "VI-S14"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3822,6 +3844,6 @@
     "live_seconds": 122
   },
   "queue": {
-    "APPROVED_BY_POLICY": 9
+    "APPROVED_BY_POLICY": 7
   }
 }
