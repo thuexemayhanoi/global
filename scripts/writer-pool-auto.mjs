@@ -107,11 +107,11 @@ function main(){
   }
  }
  // Revisions: new files only, for strict auto-QA FAIL tickets bound to the immutable source SHA.
- const report=read("factory/publisher/report.json");
- if(report.version!==2)throw Error("REPAIR_REPORT_STALE: trusted publisher has not emitted hash-bound repair tickets");
- const repairTasks=new Map(repairQueue(report,ledger,{writer:request.writer,session:request.session}).map(t=>[t.id,t]));
  const revs=[];
  const revNames=git("ls-tree","-r","--name-only",sha,"--","factory/external-writers/inbox/"+request.writer+"/revisions/").split("\n").filter(Boolean);
+ const report=revNames.length?read("factory/publisher/report.json"):null;
+ if(report&&report.version!==2)throw Error("REPAIR_REPORT_STALE: trusted publisher has not emitted hash-bound repair tickets");
+ const repairTasks=new Map(report?repairQueue(report,ledger,{writer:request.writer,session:request.session}).map(t=>[t.id,t]):[]);
  for(const file of revNames){
   const m=file.match(/\/revisions\/([A-Z]{2}-[HS][0-9]{2,4})\.r([0-9]+)\.json$/);
   if(!m)throw Error("Invalid revision file "+file);
