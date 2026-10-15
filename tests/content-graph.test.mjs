@@ -45,8 +45,17 @@ test("silos are graph nodes, never URLs, and cover every Hub in every locale",()
  for(const [a,t,b] of graph.edges)if(t==="links_in_content"||t==="hreflang_equivalent")assert.ok(published.has(a)&&published.has(b),a+" "+t+" "+b);
 });
 
-test("no unjustified competing intents today; an injected duplicate becomes REVIEW",()=>{
- assert.equal(graph.review_pairs.length,0);
+test("existing competing intents are explicitly REVIEW, and an injected duplicate stays blocked",()=>{
+ // Publication can reveal legitimate overlap between already-published pages.
+ // Never hide the findings or silently change live slugs/content to make this pass.
+ for(const pair of graph.review_pairs){
+  assert.ok(["HIGH","MEDIUM"].includes(pair.level),JSON.stringify(pair));
+  for(const id of [pair.a,pair.b]){
+   const n=graph.nodes.find(x=>x.id===id);
+   assert.equal(n?.action,"REVIEW",id+" must remain visible for cannibalization review");
+   assert.match(n?.cannibalization_risk||"",/REVIEW/,id);
+  }
+ }
  const dir=copyRepo();
  try{
   const rel="data/seo/topical-authority/de.json",d=JSON.parse(fs.readFileSync(path.join(dir,rel),"utf8"));
