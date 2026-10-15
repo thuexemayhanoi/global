@@ -796,6 +796,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T10:00:11.015Z"
+    },
+    {
+      "id": "NL-S04",
+      "locale": "nl",
+      "url": "/nl/guides/borg-terugkrijgen/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T10:00:27.675Z",
+      "source_sha256": "cd83de619f22b5cdced8f8ad4d0473d39aecbc5ed6170b4cdf8b53c61d0d5801",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "NL-S06",
+      "locale": "nl",
+      "url": "/nl/guides/annuleren-huur/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T10:00:27.675Z",
+      "source_sha256": "9efbe9b0c32c5f78b13fb9363baba9eef663272768afb0de96ddd40b7831b175",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1387,6 +1409,14 @@
         "KO-S04"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T10:00:27.675Z",
+      "ids": [
+        "NL-S04",
+        "NL-S06"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1400,7 +1430,7 @@
   },
   "queue": {
     "WAIT_PARENT": 30,
-    "APPROVED_BY_POLICY": 23,
+    "APPROVED_BY_POLICY": 21,
     "REJECTED": 11
   }
 }
