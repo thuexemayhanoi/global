@@ -82,10 +82,13 @@ export function assertAllowedPaths(paths,ids){
  const bad=paths.filter(p=>!isAllowedPath(p,ids));
  if(bad.length)throw Object.assign(Error("PATH_NOT_ALLOWED: a research session writes only its own batch and checkpoint files; refused "+bad.join(", ")),{code:"PATH_NOT_ALLOWED"});
 }
-/** The only git push shape the tooling uses: no force, no delete, a research branch only. */
+/**
+ * The only git push shape the tooling uses: no force, no delete, a research branch only. Commits are built
+ * with plumbing on the branch ref, so the refspec never depends on what the clone has checked out.
+ */
 export function pushArgs(remote,branch){
  if(!idsFromBranch(branch))throw Error("PUSH_REFUSED: only research/<agent>-<session> branches may be pushed, never "+branch);
- return ["push",remote,"HEAD:refs/heads/"+branch];
+ return ["push",remote,"refs/heads/"+branch+":refs/heads/"+branch];
 }
 
 /* ------------------------------------------------------------------ draft → batch */
@@ -352,7 +355,7 @@ export function applyUpdate(cp,{ids,now,mainSha,parentSha,contract,commitShaByFi
  * missing, invalid or does not match the tree: content is the truth, so counters and digests are
  * recomputed, while unresolved QA FAIL entries, notes, blockers and the QA FAIL tally are carried over.
  */
-export function rebuildCheckpoint(ids,{files,previous=null,now,mainSha=null,parentSha=null,contract=null,ctx={},pushedDigests=new Set()}){
+export function rebuildCheckpoint(ids,{files,previous=null,now,mainSha=null,parentSha=null,contract=null,ctx={},pushedDigests=new Set(),commitShaByFile={}}){
  const cp=newCheckpoint(ids,{now,mainSha,parentSha,contract});
  if(previous&&typeof previous==="object"){
   if(ISO.test(previous.created_at||""))cp.created_at=previous.created_at;
@@ -366,8 +369,9 @@ export function rebuildCheckpoint(ids,{files,previous=null,now,mainSha=null,pare
   const topics=(parsed.candidates||[]).filter(c=>c&&typeof c==="object").map(c=>topicSummary(c,ctx));
   if(!topics.length)continue;
   const digest=sha256(f.raw);
-  cp.batches.push({seq:parseBatchFile(f.file,ids),file:f.file,sha256:digest,candidates:topics.length,state:pushedDigests.has(digest)?"PUSHED":"COMMITTED",
-   commit_sha:null,researched_on:DAY.test(parsed.researched_on||"")?parsed.researched_on:now.slice(0,10),topics});
+  const pushed=pushedDigests.has(digest);
+  cp.batches.push({seq:parseBatchFile(f.file,ids),file:f.file,sha256:digest,candidates:topics.length,state:pushed?"PUSHED":"COMMITTED",
+   commit_sha:pushed?commitShaByFile[f.file]||null:null,researched_on:DAY.test(parsed.researched_on||"")?parsed.researched_on:now.slice(0,10),topics});
  }
  const have=new Set(cp.batches.flatMap(b=>b.topics.map(t=>t.key)));
  cp.unresolved=cp.unresolved.filter(u=>!(u.kind==="QA_FAIL"&&have.has(u.key)));
@@ -526,10 +530,10 @@ export function planResume(f){
   const r=local.relation;
   if(r==="EQUAL")action="NONE";
   else if(r==="BEHIND")action="FAST_FORWARD";
-  else if(r==="AHEAD")action=localOnly.length?"PUSH_PENDING":"NONE";
+  else if(r==="AHEAD")action="PUSH_PENDING"; // batches and/or checkpoint-only commits that GitHub does not have yet
   else action=localOnly.length?"REPLAY_UNPUSHED":"RESET_TO_REMOTE"; // DIVERGED / UNRELATED: replay by content, never by history
  }
- if(action==="PUSH_PENDING")actions.push("PUSH_PENDING: "+localOnly.length+" batch file(s) are committed locally but not on GitHub — QA, push and verify them before new research");
+ if(action==="PUSH_PENDING")actions.push("PUSH_PENDING: "+(localOnly.length?localOnly.length+" batch file(s) and/or checkpoint updates are":"checkpoint updates are")+" committed locally but not on GitHub — QA, push and verify them before new research");
  if(action==="REPLAY_UNPUSHED")actions.push("REPLAY_UNPUSHED: local and GitHub diverged; "+localOnly.length+" local-only batch(es) will be re-applied on top of GitHub (renumbered, duplicate-checked, QA re-run); nothing already pushed is touched");
  if(action==="RESET_TO_REMOTE")warnings.push("Local branch history is unrelated to GitHub but holds no unpushed batch; it will be reset to the GitHub branch");
  if(checkpoint.found&&checkpoint.trust!=="VERIFIED")warnings.push("CHECKPOINT_NOT_TRUSTED: state was re-derived from the batch files on GitHub; the next checkpoint commit rewrites the record ("+checkpoint.issues.map(i=>i.code).join(", ")+")");
@@ -545,6 +549,7 @@ export function planResume(f){
  if(open.some(u=>u.kind==="QA_FAIL"))actions.push("FIX_UNRESOLVED: "+open.filter(u=>u.kind==="QA_FAIL").length+" QA FAIL candidate(s) are kept in the checkpoint; repair them (never force) and include them in a later batch");
  for(const u of open.filter(x=>x.kind==="BLOCKER"))actions.push("BLOCKER: "+u.message);
  const nextSeq=maxSeq+1;
+ actions.push("READ_CONTRACT: re-read AGENTS.md and docs/TOPIC-FACTORY.md on main"+(f.main?.sha?"@"+f.main.sha.slice(0,12):"")+" before researching (the research contract is authoritative)");
  actions.push("CONTINUE: research the next "+BATCH_SIZE+" topics → batch "+String(nextSeq).padStart(4,"0")+" (skip every topic in do_not_research)");
 
  return {session:{agent:ids.agent,session:ids.session,branch:ids.branch,checkpoint:ids.checkpointPath},

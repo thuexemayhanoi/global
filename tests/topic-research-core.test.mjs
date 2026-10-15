@@ -54,7 +54,7 @@ test("a session may write only its own checkpoint and its own numbered batches",
 });
 
 test("the only push shape is a plain non-force push of a research branch",()=>{
- assert.deepEqual(pushArgs("origin",ids.branch),["push","origin","HEAD:refs/heads/"+ids.branch]);
+ assert.deepEqual(pushArgs("origin",ids.branch),["push","origin","refs/heads/"+ids.branch+":refs/heads/"+ids.branch]);
  for(const bad of ["main","master","research/x","feature/x","research/claude-20261015/extra","refs/heads/main"])assert.throws(()=>pushArgs("origin",bad),/PUSH_REFUSED/,bad);
  const flat=pushArgs("origin",ids.branch).join(" ");
  assert.doesNotMatch(flat,/--force|--delete|\+refs|-f\b/);
