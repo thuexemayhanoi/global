@@ -66,6 +66,13 @@
 - Keep essential reading and navigation functional without JS. Reader controls remain `hidden` until event handlers are installed.
 - Run `node --test tests/ultra.test.mjs` and full QA. No merging this branch without the owner's production approval.
 
+## QA-fail automatic repair (owner-approved, /global only)
+
+- Active W1/W2/W3 agents MUST inspect `node scripts/writer-repair.mjs next --writer Wn --session <own-session>` before claiming more ideas. A Publisher-issued QA FAIL ticket bound to the immutable source SHA authorizes one NEW revision; it does not authorize overwriting the submitted source.
+- After fixing, run `node scripts/writer-repair.mjs check --writer Wn --session <own-session> --file <ticket.revision_path>` and the normal Writer QA. Only a green push from the same Writer branch/session and a matching trusted Publisher ticket may update the ledger. Maximum 3 accepted self-repairs; no independent AI Reviewer.
+- The strict QA and human holds for sensitive legal/price/safety claims remain. No fake human approval or fabricated references. GitHub Actions cannot rewrite prose on its own; the **active** external AI Writer performs actual editing. See `docs/AI-WRITER-REPAIR-LOOP.md`.
+- Production publisher may remain PAUSED after live deploy failure; repair work does not lift this infrastructure pause.
+
 ## Continuous external Writer sessions — Turbo
 
 - Read docs/GLOBAL-CONTENT-FACTORY-TURBO.md for current default; docs/DYNAMIC-WRITER-POOL.md is only a manual recovery pointer.
