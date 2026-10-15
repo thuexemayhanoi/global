@@ -46,7 +46,7 @@ test("three sessions see only their own confirmed IDs and never mistake a previe
   state=out.ledger;for(const id of out.ids){assert.ok(!all.has(id));all.add(id);}
   const p=decideNext(matrix,board,state,empty,{writer:w,session,branch,registry});
   assert.equal(p.status,"WRITE_NEXT_BATCH");
-  assert.deepEqual(p.items.map(x=>x.id),out.ids);
+  assert.deepEqual(new Set(p.items.map(x=>x.id)),new Set(out.ids),"Writer receives only its confirmed claims, regardless of display ordering");
  }
  assert.equal(all.size,6);
  const none=decideNext(matrix,board,state,empty,{writer:"W1",session:"new-w1",branch:"writer/w1-new-w1",registry});

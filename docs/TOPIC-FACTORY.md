@@ -44,7 +44,11 @@ It runs every six hours, on manual dispatch, and after every green research push
 
 Promotion uses `approvals/standing-policy-20261015.json`, which records the owner's 2026-10-15 instruction. Each run writes a machine manifest to `approvals/auto/topic-promotion-NNNN.json` with `approval_mode: STANDING_POLICY`. The manifest names the policy and never impersonates a personal owner approval.
 
-Each run also appends to `data/seo/topic-factory/promotion-log.json`. New Hubs and new domains are outside the standing policy: they need an architecture PR with at least eight validated Supporting candidates, so no thin Hub is created.
+Each run also appends to `data/seo/topic-factory/promotion-log.json`. **All eight domains now accept research batches.** Six `RESEARCH_OPEN` domains without an existing Hub ingest into locale maps as `ARCHITECTURE_BLOCKED`; they are **not** Matrix IDEA rows, cannot be claimed by Writers, and cannot publish. A reviewed architecture PR (with at least eight unique validated Supporting candidates for each new Hub, appropriate locale Hub mapping, and passing URL/SEO/build checks) is required before a new Hub and its Supporting topics are promoted.
+
+### Mistral — research for all six newly open domains
+
+Push sequential JSON batches of 25–50 (or fewer for final partial batch) on `research/mistral-<session>`, under `factory/topic-research/batches/`. For a proposed Hub specify `parent_id:null`, its `domain_id`, and an allowed proposed-Hub `subcluster` from `data/seo/topical-authority/architecture.json`. Existing Hubs continue to specify their real same-locale parent IDs. QA and ingest create unique TA IDs, keep research references, and record these six domains as `ARCHITECTURE_BLOCKED` until their real Hub PR passes. Do not mark blocked candidates READY, invent existing Hub IDs, or add unpublished URLs to sitemap.
 
 ## Commands
 

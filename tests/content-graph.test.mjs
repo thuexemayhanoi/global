@@ -39,7 +39,8 @@ test("every Matrix row keeps its legacy fields and gains level, action and evide
 test("silos are graph nodes, never URLs, and cover every Hub in every locale",()=>{
  for(const s of graph.silos)assert.equal(s.url,null);
  for(const hub of matrix.rows.filter(r=>r.role==="HUB"))assert.ok(graph.edges.some(([a,t])=>a===hub.id&&t==="has_silo"),hub.id);
- assert.ok(graph.silos.every(s=>s.action!=="GAP"),"no silo without any planned or proposed coverage");
+ assert.ok(graph.silos.every(s=>s.action!=="GAP"||s.proposed_hub),"research-only proposed Hubs may have empty silo coverage");
+ assert.ok(graph.silos.filter(s=>!s.proposed_hub).every(s=>s.action!=="GAP"),"established Hubs must retain real planned or published coverage");
  const published=new Set(matrix.rows.filter(r=>r.status==="PUBLISHED").map(r=>r.id));
  for(const [a,t,b] of graph.edges)if(t==="links_in_content"||t==="hreflang_equivalent")assert.ok(published.has(a)&&published.has(b),a+" "+t+" "+b);
 });
