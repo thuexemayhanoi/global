@@ -1528,6 +1528,17 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T13:47:56.955Z"
+    },
+    {
+      "id": "ZH-H04",
+      "locale": "zh",
+      "url": "/zh/topics/anquan-yingji/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T16:39:42.059Z",
+      "source_sha256": "fb4284069ae4f97b2e2d1cdcc3e4a4262070dbac061afe1e9fd31d116e90d945",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2625,6 +2636,13 @@
         "PT-S09"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T16:39:42.059Z",
+      "ids": [
+        "ZH-H04"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2638,6 +2656,6 @@
   },
   "queue": {
     "WAIT_PARENT": 2,
-    "REJECTED": 1
+    "APPROVED_BY_POLICY": 1
   }
 }
