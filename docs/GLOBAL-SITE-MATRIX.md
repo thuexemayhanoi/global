@@ -12,7 +12,7 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
-| Matrix rows (321) | 97 | 19 | 0 | 205 |
+| Matrix rows (321) | 99 | 19 | 0 | 203 |
 | Topical candidates (30) | 0 | 0 | 0 | 30 |
 | Silos (330) | 56 | 10 | 0 | 117 |
 
@@ -27,24 +27,24 @@ No unjustified high-overlap pair across 321 Matrix rows and 30 candidates (query
 | ID | URL | Words | H2 | FAQ | Inbound pages | Reasons |
 |---|---|---|---|---|---|---|
 | VI-CHECKLIST | /vi/checklist/ | 407 | 5 | 1 | 17 | Main content 407 words < 800 target for SUPPORT |
-| EN-HOME | /en/ | 465 | 5 | 3 | 115 | Main content 465 words < 600 target for PILLAR |
+| EN-HOME | /en/ | 465 | 5 | 3 | 117 | Main content 465 words < 600 target for PILLAR |
 | EN-CHECKLIST | /en/checklist/ | 280 | 5 | 1 | 17 | Main content 280 words < 800 target for SUPPORT |
-| DE-HOME | /de/ | 432 | 5 | 3 | 115 | Main content 432 words < 600 target for PILLAR |
+| DE-HOME | /de/ | 432 | 5 | 3 | 117 | Main content 432 words < 600 target for PILLAR |
 | DE-CHECKLIST | /de/checklist/ | 257 | 5 | 1 | 23 | Main content 257 words < 800 target for SUPPORT |
-| FR-HOME | /fr/ | 505 | 5 | 3 | 115 | Main content 505 words < 600 target for PILLAR |
-| FR-CHECKLIST | /fr/checklist/ | 267 | 5 | 1 | 17 | Main content 267 words < 800 target for SUPPORT |
-| ES-HOME | /es/ | 470 | 5 | 3 | 115 | Main content 470 words < 600 target for PILLAR |
+| FR-HOME | /fr/ | 509 | 5 | 3 | 117 | Main content 509 words < 600 target for PILLAR |
+| FR-CHECKLIST | /fr/checklist/ | 277 | 5 | 1 | 18 | Main content 277 words < 800 target for SUPPORT |
+| ES-HOME | /es/ | 470 | 5 | 3 | 117 | Main content 470 words < 600 target for PILLAR |
 | ES-CHECKLIST | /es/checklist/ | 265 | 5 | 1 | 19 | Main content 265 words < 800 target for SUPPORT |
-| NL-HOME | /nl/ | 445 | 5 | 3 | 115 | Main content 445 words < 600 target for PILLAR |
+| NL-HOME | /nl/ | 445 | 5 | 3 | 117 | Main content 445 words < 600 target for PILLAR |
 | NL-CHECKLIST | /nl/checklist/ | 244 | 5 | 1 | 23 | Main content 244 words < 800 target for SUPPORT |
-| ZH-HOME | /zh/ | 492 | 5 | 3 | 115 | Main content 492 words < 600 target for PILLAR |
+| ZH-HOME | /zh/ | 492 | 5 | 3 | 117 | Main content 492 words < 600 target for PILLAR |
 | ZH-CHECKLIST | /zh/checklist/ | 267 | 5 | 1 | 16 | Main content 267 words < 800 target for SUPPORT |
-| PT-HOME | /pt/ | 444 | 5 | 3 | 115 | Main content 444 words < 600 target for PILLAR |
+| PT-HOME | /pt/ | 444 | 5 | 3 | 117 | Main content 444 words < 600 target for PILLAR |
 | PT-CHECKLIST | /pt/checklist/ | 244 | 5 | 1 | 19 | Main content 244 words < 800 target for SUPPORT |
-| KO-HOME | /ko/ | 354 | 5 | 3 | 115 | Main content 354 words < 600 target for PILLAR |
+| KO-HOME | /ko/ | 354 | 5 | 3 | 117 | Main content 354 words < 600 target for PILLAR |
 | KO-CHECKLIST | /ko/checklist/ | 198 | 5 | 1 | 23 | Main content 198 words < 800 target for SUPPORT |
-| JA-HOME | /ja/ | 527 | 5 | 3 | 115 | Main content 527 words < 600 target for PILLAR |
-| JA-CHECKLIST | /ja/checklist/ | 262 | 5 | 1 | 17 | Main content 262 words < 800 target for SUPPORT |
+| JA-HOME | /ja/ | 520 | 5 | 3 | 117 | Main content 520 words < 600 target for PILLAR |
+| JA-CHECKLIST | /ja/checklist/ | 269 | 5 | 1 | 18 | Main content 269 words < 800 target for SUPPORT |
 
 Targets: Pillar ≥ 600 words, ≥ 3 FAQ; Supporting ≥ 800 words, ≥ 4 H2 (new drafts already need ≥ 1,000 words).
 
@@ -111,13 +111,13 @@ Every locale checklist also covers the consideration → decision → pickup →
 | vi | 33 | 9 | 0 | 24 | 2 | 89% |
 | en | 33 | 9 | 0 | 24 | 12 | 78% |
 | de | 31 | 15 | 0 | 16 | 2 | 87% |
-| fr | 32 | 9 | 0 | 23 | 2 | 78% |
+| fr | 32 | 10 | 0 | 22 | 2 | 80% |
 | es | 31 | 11 | 0 | 20 | 2 | 82% |
 | nl | 31 | 15 | 0 | 16 | 2 | 87% |
 | zh | 32 | 8 | 0 | 24 | 2 | 75% |
 | pt | 31 | 11 | 0 | 20 | 2 | 82% |
 | ko | 31 | 15 | 0 | 16 | 2 | 87% |
-| ja | 31 | 9 | 0 | 22 | 2 | 78% |
+| ja | 31 | 10 | 0 | 21 | 2 | 80% |
 
 Live Writer states (CLAIMED/SUBMITTED) change on every autopilot commit and are not part of this file: run `node scripts/seo/topical-authority.mjs status`.
 

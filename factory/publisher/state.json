@@ -1096,6 +1096,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T12:17:47.870Z"
+    },
+    {
+      "id": "FR-H01",
+      "locale": "fr",
+      "url": "/fr/topics/choisir-moto-scooter/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:18:03.660Z",
+      "source_sha256": "bea3c22a2704a4ff860f8a1e810c9e91e935e137bae49f0e9bbbafc04d957386",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-H01",
+      "locale": "ja",
+      "url": "/ja/topics/sharyou-erabi/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:18:03.660Z",
+      "source_sha256": "8ba7e1c4f51f7ee54174a94c22b998b6aceedc298d2a7e13fbdf9ef07d45657b",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1905,6 +1927,14 @@
         "EN-H01"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T13:18:03.660Z",
+      "ids": [
+        "FR-H01",
+        "JA-H01"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1916,8 +1946,8 @@
     "live_seconds": 62
   },
   "queue": {
-    "WAIT_PARENT": 28,
-    "REJECTED": 11,
-    "APPROVED_BY_POLICY": 1
+    "APPROVED_BY_POLICY": 12,
+    "WAIT_PARENT": 26,
+    "REJECTED": 1
   }
 }
