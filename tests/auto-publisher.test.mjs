@@ -53,6 +53,8 @@ test("hard legal claims need an official citation in the same paragraph; plain a
  assert.match(c.unsupported[0],/fine or jail/);
  assert.equal(classify(packet({body_markdown:"Mopeds under 50 cc need no licence, per a [blog](https://someblog.com/x)."}),hub,policy).unsupported.length,1);
  assert.equal(classify(packet({body_markdown:"A deposit of 3,000,000 VND is common."}),hub,policy).money_paragraphs,1);
+ assert.equal(classify(packet({body_markdown:"A deposit of 3,000,000 VND is common."}),hub,policy).uncited_money.length,1);
+ assert.equal(classify(packet({body_markdown:"See QH15 원문."}),hub,policy).money_paragraphs,0);
  assert.equal(classify(packet(),legalHub,policy).topicClass,"LEGAL");
 });
 
@@ -91,8 +93,8 @@ test("eligibility: automated QA approves without reviewer; still blocks bad fact
  const ok=eligibility(ctx());
  assert.equal(ok.decision,"APPROVED_BY_POLICY",JSON.stringify(ok.gates.filter(g=>!g.passed)));
  assert.equal(eligibility(ctx({review:null})).decision,"APPROVED_BY_POLICY");
- assert.equal(eligibility(ctx({row:legalHub,packet:packet({matrix_id:legalHub.id,proposed_url:legalHub.url})})).decision,"REVIEW_REQUIRED");
- assert.equal(eligibility(ctx({packet:packet({body_markdown:packet().body_markdown+"\n\nA typical deposit is 3,000,000 VND per [Vexere](https://vexere.com/x)."})})).decision,"REVIEW_REQUIRED");
+ assert.equal(eligibility(ctx({row:legalHub,packet:packet({matrix_id:legalHub.id,proposed_url:legalHub.url})})).decision,"REJECTED");
+ assert.equal(eligibility(ctx({packet:packet({body_markdown:packet().body_markdown+"\n\nA typical deposit is 3,000,000 VND per [Vexere](https://vexere.com/x)."})})).decision,"REJECTED");
  assert.equal(eligibility(ctx({protectedIds:new Set([hub.id])})).decision,"BLOCKED");
  assert.equal(eligibility(ctx({state:{stage:"PILOT",published:[{locale:"en"},{locale:"en"}]}})).decision,"WAIT_STAGE");
  const child=matrix.rows.find(r=>r.locale==="en"&&r.role==="SUPPORT"&&r.parent_id===hub.id&&r.status==="IDEA");

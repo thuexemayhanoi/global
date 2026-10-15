@@ -153,8 +153,8 @@ test("S4 QA keeps failing: r2, r3, r4 are accepted, then ESCALATED and no endles
  assert.equal(ticketValid(last,claim),false);
  assert.throws(()=>applyRevisions(matrix,ledger,registry,{writer:"W1",session:"w1-scn",branch:"writer/w1-scn"},
   [{id:child.id,revision:5,source_sha256:shaOf(9),source_commit:hex("e",40),source_path:"factory/external-writers/inbox/W1/revisions/"+child.id+".r5.json",review_verdict:"QA_FAIL",repair_basis_sha256:claim.source_sha256,repair_gates:["G4_EDITORIAL"]}],{now:at(9)}),/exceeded 3/);
- // PRICE / LEGAL holds never become text-repair tickets, however often they fail.
- assert.equal(repairTicket(reportItem(claim,{decision:"REVIEW_REQUIRED",failed:["G3_NO_PRICES","G4_EDITORIAL"],gates:[]}),claim).state,"HUMAN_REVIEW_REQUIRED");
+ // Unverified PRICE / LEGAL claims now create Writer repair tickets.
+ assert.equal(repairTicket(reportItem(claim,{decision:"REJECTED",failed:["G3_PRICE_EVIDENCE","G4_EDITORIAL"],gates:[]}),claim).state,"REPAIR");
 });
 
 test("S5 a Writer runs out of quota mid-batch: finished drafts land, nothing is lost, others continue",()=>{

@@ -24,11 +24,12 @@ test("stale SHA, stolen writer identity, and ineligible packets never produce re
  assert.equal(repairTicket(item,{...claim,status:"CLAIMED"}),null);
  assert.equal(repairTicket(item,{...claim,source_sha256:"no"}),null);
 });
-test("sensitive PRICE/LEGAL topic requires human factual checks, never AI auto-pass",()=>{
- const t=repairTicket({...item,failed:["G3_TOPIC_CLASS","G3_NO_PRICES","G4_EDITORIAL"]},claim);
- assert.equal(t.state,"HUMAN_REVIEW_REQUIRED");
- assert.equal(ticketValid(t,claim),false);
- assert.equal(repairQueue({items:[{...item,failed:["G3_TOPIC_CLASS"]}]},{claims:[claim]}).length,0);
+test("missing legal and money source evidence is handled by same-session Writer repair, without Human Review",()=>{
+ const t=repairTicket({...item,failed:["G3_SENSITIVE_SOURCES","G3_PRICE_EVIDENCE","G4_EDITORIAL"]},claim);
+ assert.equal(t.state,"REPAIR");
+ assert.ok(ticketValid(t,claim));
+ assert.equal(t.fixable.length,3);
+ assert.equal(repairQueue({items:[{...item,failed:["G3_PRICE_EVIDENCE"]}]},{claims:[claim]}).length,1);
 });
 test("repair retry budget is bounded to r2/r3/r4 and then escalates",()=>{
  const once=repairTicket(item,{...claim,revisions:[{source_sha256:"c".repeat(64)}]});
