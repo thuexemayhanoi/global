@@ -1288,6 +1288,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T13:31:31.922Z"
+    },
+    {
+      "id": "FR-S02",
+      "locale": "fr",
+      "url": "/fr/guides/50cc-ou-electrique/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:31:52.402Z",
+      "source_sha256": "e46116079e690c02abbfb029caa25354e9542f12dd679e988ec03f3f5e371a1e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S02",
+      "locale": "ja",
+      "url": "/ja/guides/50cc-denki/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:31:52.402Z",
+      "source_sha256": "8c66a3a52d3d897501e409690b3b5c62b33e1867b3ae094ef249aa1e8cae471c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2225,6 +2247,14 @@
         "EN-S02"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T13:31:52.402Z",
+      "ids": [
+        "FR-S02",
+        "JA-S02"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2237,7 +2267,7 @@
     "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 22,
+    "APPROVED_BY_POLICY": 20,
     "WAIT_PARENT": 2,
     "REJECTED": 1
   }
