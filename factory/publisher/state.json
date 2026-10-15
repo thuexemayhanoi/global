@@ -1,8 +1,8 @@
 {
   "version": 1,
   "stage": "PILOT",
-  "paused": true,
-  "pause_reason": "Pre-commit gate failed 2026-10-15T04:51:35.940Z: scripts/seo/fact-guard.mjs  failed: FAIL UNSOURCED_AMOUNT ko/topics/chajong-seontaek/index.html — Currency amount without an inline source in the same paragraph «15 원»\n",
+  "paused": false,
+  "pause_reason": null,
   "clean_runs": 0,
   "published": [
     {
@@ -67,6 +67,11 @@
         "KO-H01"
       ],
       "result": "GATE_FAILED"
+    },
+    {
+      "at": "2026-10-15T05:12:03.222Z",
+      "ids": [],
+      "result": "RESUME: Owner-authorized recovery: Korean QH15 won false positive fixed in PR 42, QA and live HTTP checks passed"
     }
   ],
   "last_successful_deployment": {
