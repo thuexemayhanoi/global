@@ -1,4 +1,7 @@
 # Five SEO weapons — global.rentbikehanoi.com
+
+> **Dated snapshot (2026-10-14).** Counts and publication rules on this page describe that date. Current rules: `AGENTS.md` § CURRENT PRODUCTION WORKFLOW and `docs/CURRENT-WORKFLOW.md`.
+
 **Current snapshot:** 10 languages, 25 published URLs, 120 unverified IDEA rows in SEO Matrix.
 
 | Weapon | Delivered | Next dependency |

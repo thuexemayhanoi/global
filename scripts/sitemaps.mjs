@@ -12,6 +12,8 @@ import path from "node:path";
 export const SITEMAP_ORIGIN="https://global.rentbikehanoi.com";
 export const SITEMAP_LIMIT=40000;
 export const SITEMAP_MAX_BYTES=40*1024*1024;
+// One child-name grammar for every reader: sitemap-main.xml, sitemap-<ll>.xml, sitemap-<ll>-<n>.xml (n ≥ 2).
+export const SITEMAP_CHILD=/^sitemap-(main|[a-z]{2})(?:-(?:[2-9]|[1-9][0-9]+))?\.xml$/;
 const NS="http://www.sitemaps.org/schemas/sitemap/0.9";
 const XML_HEAD='<?xml version="1.0" encoding="UTF-8"?>\n';
 const escapeXML=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
@@ -84,9 +86,59 @@ export function parseSitemapIndex(xml,origin=SITEMAP_ORIGIN){
  const seen=new Set();
  return matches.map(m=>{
   const value=decodeXML(m[1]),pathname=safeURL(value,origin),name=pathname.slice(1);
-  if(!/^sitemap-(?:main|[a-z]{2})(?:-[2-9][0-9]*)?\.xml$/.test(name)||seen.has(name))throw Error("Invalid or duplicate sitemap child "+name);
+  if(!SITEMAP_CHILD.test(name)||seen.has(name))throw Error("Invalid or duplicate sitemap child "+name);
   seen.add(name);return name;
  });
+}
+/**
+ * Absolute same-origin URL of a child named in the sitemap index.
+ * parseSitemapIndex returns bare file names; a bare name such as "sitemap-main.xml"
+ * is not a fetchable URL (live QA run 38668639207 failed on exactly that).
+ * Only names matching SITEMAP_CHILD resolve, so traversal, other hosts, queries
+ * and encoded paths are refused before any request is made.
+ */
+export function sitemapChildURL(name,origin=SITEMAP_ORIGIN){
+ const base=new URL(origin);
+ if(base.protocol!=="https:"||base.username||base.password||base.pathname!=="/"||base.search||base.hash)throw Error("Invalid sitemap origin "+origin);
+ if(typeof name!=="string"||!SITEMAP_CHILD.test(name))throw Error("Invalid sitemap child "+name);
+ const url=new URL("/"+name,base.origin);
+ if(url.origin!==base.origin||url.pathname!=="/"+name)throw Error("Sitemap child escapes origin "+name);
+ return url.href;
+}
+/**
+ * Read the LIVE sitemap index and every child shard through get(absoluteUrl) → {status,text}.
+ * Checks HTTP 200, XML grammar, canonical same-origin <loc>s, a shard group for main and
+ * every locale, locale placement, cross-shard duplicates and protocol size limits.
+ * Faults in the served files throw errors tagged kind:"SITE"; errors raised by `get`
+ * propagate unchanged, so callers can tell a broken sitemap from a failed request.
+ */
+export async function fetchSitemapInventory(get,{origin=SITEMAP_ORIGIN,localeCodes,query=""}={}){
+ const site=msg=>Object.assign(Error(msg),{kind:"SITE"});
+ const expected=new Set(["main",...localeCodes]);
+ const index=await get(new URL("/sitemap.xml",origin).href+query);
+ if(index.status!==200)throw site("HTTP "+index.status+" /sitemap.xml");
+ let children;
+ try{children=parseSitemapIndex(index.text,origin);}catch(e){throw site("sitemap index invalid: "+e.message);}
+ const urls=new Set(),groups=new Set(),byChild={};
+ for(const name of children){
+  const group=name.match(SITEMAP_CHILD)[1];
+  if(!expected.has(group))throw site("Unrecognized sitemap child "+name);
+  groups.add(group);
+  const shard=await get(sitemapChildURL(name,origin)+query);
+  if(shard.status!==200)throw site("HTTP "+shard.status+" /"+name);
+  let entries;
+  try{entries=parseSitemapUrlset(shard.text,origin);}catch(e){throw site(name+" invalid: "+e.message);}
+  if(entries.length>SITEMAP_LIMIT||Buffer.byteLength(shard.text)>SITEMAP_MAX_BYTES)throw site("Sitemap shard exceeds safe size "+name);
+  for(const url of entries){
+   const prefix=url.split("/")[1],belongs=expected.has(prefix)?prefix:"main";
+   if(belongs!==group)throw site("URL in wrong locale shard "+url+" "+name);
+   if(urls.has(url))throw site("Duplicate across sitemap shards "+url);
+   urls.add(url);
+  }
+  byChild[name]=entries;
+ }
+ for(const group of expected)if(!groups.has(group))throw site("Missing locale sitemap "+group);
+ return {children,urls:[...urls].sort(),byChild};
 }
 export function parseSitemapUrlset(xml,origin=SITEMAP_ORIGIN){
  if(!xml.includes('<urlset xmlns="'+NS+'">')||xml.includes("<sitemapindex"))throw Error("Not a URL sitemap");
@@ -104,7 +156,7 @@ export function readLocalSitemapInventory(root,localeCodes,origin=SITEMAP_ORIGIN
  const expectedGroups=new Set(["main",...localeCodes]);
  const seen=new Set(),byChild={},groupsSeen=new Set();
  for(const name of index){
-  const match=name.match(/^sitemap-(main|[a-z]{2})(?:-[2-9][0-9]*)?\.xml$/);
+  const match=name.match(SITEMAP_CHILD);
   const group=match?.[1];
   if(!expectedGroups.has(group))throw Error("Unrecognized sitemap locale "+name);
   groupsSeen.add(group);

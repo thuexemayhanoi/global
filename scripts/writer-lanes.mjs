@@ -27,20 +27,72 @@ export function validateBoard(matrix,board){
  return problems;
 }
 export function inboxFiles(){
- const files=[],errors=[],ids=new Set();
+ const files=[],errors=[],ids=new Set(),revisions=[];
+ const load=rel=>{const raw=fs.readFileSync(path.join(ROOT,rel),"utf8");return {raw,packet:JSON.parse(raw)};};
  for(const w of W){
   const d=path.join(ROOT,INBOX,w);
   if(!fs.existsSync(d))continue;
   for(const file of fs.readdirSync(d)){
    if(file===".gitkeep")continue;
+   if(file==="revisions"){
+    for(const rf of fs.readdirSync(path.join(d,file))){
+     const m=rf.match(/^([A-Z]{2}-[HS][0-9]{2,4})\.r([0-9]+)\.json$/);
+     if(!m){errors.push("Invalid revision filename "+w+"/revisions/"+rf);continue;}
+     const rel=INBOX+"/"+w+"/revisions/"+rf;
+     try{revisions.push({id:m[1],revision:Number(m[2]),writer:w,path:rel,...load(rel)});}catch{errors.push("Unreadable JSON "+rel);}
+    }
+    continue;
+   }
    if(!/^[A-Z]{2}-[HS][0-9]{2,4}\.json$/.test(file)){errors.push("Invalid inbox filename "+w+"/"+file);continue;}
    const id=file.slice(0,-5),rel=INBOX+"/"+w+"/"+file;
    if(ids.has(id))errors.push("Same ID appears twice "+id);
    ids.add(id);
-   try{files.push({id,writer:w,path:rel,packet:read(rel)});}catch(e){errors.push("Unreadable JSON "+rel);}
+   try{files.push({id,writer:w,path:rel,...load(rel)});}catch(e){errors.push("Unreadable JSON "+rel);}
   }
  }
- return {files,errors};
+ return {files,errors,revisions};
+}
+const draftPath=(writer,id)=>INBOX+"/"+writer+"/"+id+".json";
+/**
+ * SUBMITTED drafts are immutable evidence the coordinator already accepted; from then on
+ * the Auto Publisher, not Writer QA, judges them (so a draft whose page went live, or an
+ * older draft under newer rules, never turns a Writer branch red). A recorded file whose
+ * bytes match the ledger hash is LOCKED; a recorded file with other bytes is CHANGED.
+ * Unrecorded files (new drafts, new revisions) return null and get full Writer QA.
+ */
+export function submittedLock(file,ledger){
+ if(typeof file?.raw!=="string")return null;
+ const c=(ledger?.claims||[]).find(x=>x.id===file.id&&x.writer===file.writer&&x.status==="SUBMITTED"&&x.source_sha256);
+ if(!c)return null;
+ const expected=new Map([[c.source_path||draftPath(c.writer,c.id),c.source_sha256]]);
+ for(const v of c.revisions||[])expected.set(v.source_path||draftPath(c.writer,c.id),v.source_sha256);
+ if(!expected.has(file.path))return null;
+ const actual=createHash("sha256").update(file.raw).digest("hex");
+ return actual===expected.get(file.path)?{state:"LOCKED",sha256:actual}:{state:"CHANGED",expected:expected.get(file.path),actual};
+}
+/** Writer QA for inbox drafts and revisions (pure): what `verify-all` and the session advisor report. */
+export function inboxChecks(entries,matrix,board,locales,ledger=null,registry=null){
+ return entries.map(f=>{
+  const base={writer:f.writer,id:f.id,file:f.path,warnings:[]};
+  const lock=submittedLock(f,ledger);
+  if(lock?.state==="LOCKED")return {...base,passed:true,locked:"IMMUTABLE_SUBMITTED",errors:[]};
+  if(lock?.state==="CHANGED")return {...base,passed:false,errors:["IMMUTABLE_SUBMITTED_DRAFT_CHANGED "+f.path+": restore the exact submitted bytes (sha256 "+lock.expected.slice(0,12)+"…); a correction is a NEW revisions/"+f.id+".rN.json written for a repair ticket"]};
+  const row=matrix.rows.find(r=>r.id===f.id);
+  if(f.revision===undefined&&row?.status==="PUBLISHED"&&registry?.protected?.some(p=>p.id===f.id&&p.writer===f.writer))
+   return {...base,passed:true,locked:"PUBLISHED_LEGACY_DRAFT",errors:[]};
+  const check=verifyPacket(f.packet,f.writer,matrix,board,locales,ledger,registry);
+  const errors=[...check.errors];
+  if(f.revision!==undefined&&ledger){
+   const c=ledger.claims.find(x=>x.id===f.id&&x.writer===f.writer&&x.status==="SUBMITTED");
+   if(!c)errors.push("REVISION_WITHOUT_SUBMITTED_DRAFT "+f.path+": "+f.id+" is not SUBMITTED by "+f.writer+" in this branch's ledger. A draft that was never submitted is fixed in place at "+draftPath(f.writer,f.id)+" (no revision file); if it was submitted, merge main first");
+   else{
+    if(f.packet?.writer_session!==c.session)errors.push("Revision writer_session must be the submitting session "+c.session);
+    const next=(c.revisions||[]).length+2;
+    if(f.revision!==next)errors.push("REVISION_NUMBER "+f.path+": the next revision of "+f.id+" is r"+next+" (merge main if the ledger moved)");
+   }
+  }
+  return {...check,...base,warnings:check.warnings||[],passed:errors.length===0,errors};
+ });
 }
 export function pack(matrix,board,writer,claimed=new Set(),count=2,locale=null){
  if(!W.includes(writer))throw Error("Valid writers: W1,W2,W3");
@@ -110,14 +162,14 @@ export function main(argv=process.argv.slice(2)){
   console.log(JSON.stringify(brief,null,2));return;
  }
  if(cmd==="verify"||cmd==="verify-all"){
-  const chosen=cmd==="verify-all"?inbox.files:inbox.files.filter(f=>f.writer===opt.writer&&f.path===opt.file);
+  const all=[...inbox.files,...(inbox.revisions||[])];
+  const chosen=cmd==="verify-all"?all:all.filter(f=>f.writer===opt.writer&&f.path===opt.file);
   if(!chosen.length&&cmd==="verify")throw Error("Exact --writer and --file inside your inbox required");
-  const checks=chosen.map(f=>{
-   const check=verifyPacket(f.packet,f.writer,matrix,board,locales,claims,registry);
-   return {...check,file:f.path};
-  });
+  const checks=inboxChecks(chosen,matrix,board,locales,claims,registry);
   const dup=checkDuplicates(inbox.files),passed=checks.every(x=>x.passed)&&dup.length===0;
-  console.log(JSON.stringify({mode:"DRAFT_QA_ONLY",passed,checked:checks.length,checks,duplicates:dup,publish_allowed:false},null,2));
+  const locked=checks.filter(x=>x.locked).length;
+  console.log(JSON.stringify({mode:"DRAFT_QA_ONLY",passed,checked:checks.length-locked,locked_submitted:locked,checks,duplicates:dup,publish_allowed:false,
+   next_action:passed?"Push your own Writer branch; green Writer QA triggers the coordinator.":"Fix the listed errors. A draft that is not SUBMITTED yet is edited in place and re-checked; a SUBMITTED draft is never edited (repairs use revisions/<ID>.rN.json from a repair ticket)."},null,2));
   if(!passed)process.exitCode=1;return;
  }
  throw Error("Commands: status | pack (preview only, claim required) | verify | verify-all");

@@ -1,8 +1,11 @@
-# Global Dynamic Writer Pool — TURBO 10
+# External Writers W1/W2/W3 — shared dynamic pool
 
-Read AGENTS.md and docs/GLOBAL-CONTENT-FACTORY-TURBO.md first.
-One session (W1) can write all eligible topics; W2/W3 optional concurrent lanes. Each owns 1–10 unfinished IDs maximum on its own stable branch/session.
+Read `AGENTS.md` § CURRENT PRODUCTION WORKFLOW and `docs/CURRENT-WORKFLOW.md` first. Prompts to paste into an AI session: `prompts/W1.md`, `prompts/W2.md`, `prompts/W3.md`.
 
-Write only confirmed IDs after fetching main, QA and push 1..10 native-language drafts into own inbox. Green Writer QA automatically submits verified drafts (with SHA evidence) and refills to ten; PR stays OPEN for owner editorial review. Preserve all 16 already-written protected drafts. Do not force push or modify claims.json from a Writer branch.
-
-Low queue threshold <30: write researched PROPOSALS at factory/topic-refill/proposals/<W1|W2|W3>/<batch>.json and validate through scripts/writer-refill.mjs; they do not become Matrix rows automatically. No model API in Actions; no auto live publishing or NAP/sitemap/URL edits.
+- W1/W2/W3 are seats for external AI sessions (any provider). One session per slot, each holding 1–10 unfinished claims on its own stable branch `writer/wN-<session>`; slots work concurrently and never receive the same ID. One active W1 can write every eligible topic.
+- Write only confirmed IDs after fetching `main`; push 1–10 native-language drafts into your own `inbox/Wn/`. Green Writer QA lets the Autopilot submit the verified drafts (with SHA-256 evidence) and refill to ten. Keep one draft PR open for your branch; it is never merged.
+- A draft that fails Writer QA before submission is fixed in place. A SUBMITTED draft is immutable (Writer QA locks it by hash); its corrections come only from repair tickets as `inbox/Wn/revisions/<ID>.rN.json` (`docs/AI-WRITER-REPAIR-LOOP.md`).
+- Publication is done by the standing-policy Auto Publisher after automated QA, two URLs per run with Live QA, never by a Writer.
+- Preserve the 14 protected legacy drafts and the EN-H01/DE-H01 editorial pilots (`protected-drafts.json`). Never force-push or edit `claims.json`/`slots.json` from a Writer branch.
+- Below 30 free topics a Writer may stage researched proposals in `factory/topic-refill/proposals/<Wn>/<batch>.json` (validated by `scripts/writer-refill.mjs`); they do not become Matrix rows on their own.
+- No model API in Actions; no NAP, price, sitemap or URL edits.

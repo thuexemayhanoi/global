@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "standing_policy": "approvals/standing-policy-20261015.json",
+  "positioning": {
+    "global": "Multilingual Vietnam travel & mobility knowledge hub (not a rental storefront)",
+    "commercial_sites": [
+      {
+        "domain": "thuexemaynguyentu.com",
+        "role": "Main Vietnamese commercial motorbike rental website"
+      },
+      {
+        "domain": "rentbikehanoi.com",
+        "role": "English commercial motorbike rental website"
+      }
+    ],
+    "rule": "Transactional rental keywords belong to the commercial sites; /global topics stay informational or commercial-investigation and link out only where it genuinely helps the reader."
+  },
+  "targets": {
+    "per_locale": 1000,
+    "locales": [
+      "vi",
+      "en",
+      "de",
+      "fr",
+      "es",
+      "nl",
+      "zh",
+      "pt",
+      "ko",
+      "ja"
+    ],
+    "counted_roles": [
+      "HUB",
+      "SUPPORT"
+    ],
+    "note": "Planning ceiling, not a quota to fill. Homepage, About, Contact, Privacy, Terms and utilities never count."
+  },
+  "refill": {
+    "ready_threshold": 100,
+    "ready_target": 250,
+    "batch_min": 25,
+    "batch_max": 50,
+    "max_promotions_per_run": 50,
+    "research_needed_when_proposed_below": 25
+  },
+  "duplicates": {
+    "intent_overlap_fail": 0.66,
+    "title_trigram_fail": 0.85,
+    "signature_fail": 0.6,
+    "draft_shingle_fail": 0.45,
+    "draft_shingle_warn": 0.3,
+    "distinct_reason_min": 40
+  },
+  "domains": [
+    {
+      "id": "hanoi-vietnam-travel",
+      "label": "Hanoi & Vietnam Travel Guides",
+      "clusters": [
+        "travel-guides"
+      ],
+      "status": "RESEARCH_OPEN"
+    },
+    {
+      "id": "motorbike-rental",
+      "label": "Motorbike Rental & Vehicle Selection",
+      "clusters": [
+        "vehicle-choice",
+        "rental-costs"
+      ],
+      "status": "ACTIVE"
+    },
+    {
+      "id": "road-trips-routes",
+      "label": "Vietnam Road Trips & Travel Routes",
+      "clusters": [
+        "routes-trips"
+      ],
+      "status": "RESEARCH_OPEN"
+    },
+    {
+      "id": "transportation-mobility",
+      "label": "Transportation & Urban Mobility",
+      "clusters": [
+        "transport-mobility"
+      ],
+      "status": "RESEARCH_OPEN"
+    },
+    {
+      "id": "traffic-law-safety",
+      "label": "Traffic Laws, Licensing & Riding Safety",
+      "clusters": [
+        "documents-contracts",
+        "safety-support"
+      ],
+      "status": "ACTIVE"
+    },
+    {
+      "id": "destinations-experiences",
+      "label": "Destinations & Local Experiences",
+      "clusters": [
+        "destinations-experiences"
+      ],
+      "status": "RESEARCH_OPEN"
+    },
+    {
+      "id": "travel-planning",
+      "label": "Travel Planning, Budget & Itineraries",
+      "clusters": [
+        "travel-planning"
+      ],
+      "status": "RESEARCH_OPEN"
+    },
+    {
+      "id": "electric-mobility",
+      "label": "Electric Motorbikes & Sustainable Mobility",
+      "clusters": [
+        "electric-mobility"
+      ],
+      "status": "RESEARCH_OPEN"
+    }
+  ],
+  "architecture_rule": "All 8 domains are open for research. A RESEARCH_OPEN domain with no existing Hub accepts candidates using parent_id:null, domain_id and its proposed-Hub subcluster as ARCHITECTURE_BLOCKED in the topical map. Such candidates are not Matrix IDEA, Writer claims or publishable URLs. To create a Hub: reviewed architecture PR plus at least 8 distinct validated Supporting candidates, and existing Matrix/SEO/URL safeguards.",
+  "sensitivity": {
+    "clusters": {
+      "documents-contracts": "LEGAL",
+      "safety-support": "SAFETY",
+      "rental-costs": "PRICE",
+      "vehicle-choice": "STANDARD",
+      "routes-trips": "STANDARD"
+    },
+    "default": "STANDARD"
+  },
+  "forbidden_intents": [
+    "transactional"
+  ]
+}

@@ -1,5 +1,7 @@
 # Markdown/JSON editorial intake (no API)
 
+> The publish step at the end of this page is the MANUAL PATH (owner manifest). Drafts written by W1/W2/W3 normally go through Writer QA and the standing-policy Auto Publisher (`docs/CURRENT-WORKFLOW.md`).
+
 External AI applications may write either **canonical article JSON** directly or a **Markdown draft with strict JSON frontmatter**. The Markdown body becomes `body_markdown` in the JSON schema; the converter does not auto-approve anything.
 
 ```sh

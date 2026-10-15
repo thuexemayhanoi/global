@@ -11,9 +11,11 @@ import {fileURLToPath} from "node:url";
 import {randomUUID,createHash} from "node:crypto";
 import {poolStatus,transitionPool,validatePool,WRITERS} from "./writer-pool-core.mjs";
 import {verifyPacket,checkDuplicates} from "./writer-lanes.mjs";
+import {emptySlots,slotView,signalSlot,handover,validateSlots} from "./writer-slots-core.mjs";
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const ROOT_REPO="thuexemayhanoi/global";
 const FILE="factory/external-writers/claims.json";
+const SLOTS="factory/external-writers/slots.json";
 const read=p=>JSON.parse(fs.readFileSync(path.join(ROOT,p),"utf8"));
 const argsOf=argv=>{
  const out={};
@@ -75,12 +77,45 @@ function main(){
  const board=read("factory/external-writers/assignments.json"),locales=read("content/locales.json");
  const faults=validatePool(matrix,ledger,registry);
  if(faults.length)throw Error(faults.join("; "));
+ const slots=fs.existsSync(path.join(ROOT,SLOTS))?read(SLOTS):emptySlots();
+ const slotErr=validateSlots(slots);if(slotErr.length)throw Error(slotErr.join("; "));
+ if(action==="slots"){console.log(JSON.stringify({mode:"READ_ONLY",slots_revision:slots.revision,slots:slotView(ledger,slots)},null,2));return;}
+ if(action==="signal"||action==="handover"){
+  if(!WRITERS.includes(opts.writer))throw Error("Unknown Writer");
+  const now=new Date().toISOString(),confirmed=opts.confirmed==="true";
+  let out={slots,ledger,released:[],kept:[]};
+  if(action==="signal"){
+   out.slots=signalSlot(ledger,slots,{writer:opts.writer,session:opts.session,branch:opts.branch,state:opts.state,reason:opts.reason||"",
+    agent:opts.agent||null,source:confirmed?"coordinator":"agent",confirmed,now});
+  }else{
+   // Inspect the holder's branch at its exact remote tip: IDs with a draft file stay owned.
+   let drafted=new Set();
+   if(opts.apply){
+    shell("git",["fetch","--no-tags","origin",opts.branch+":refs/remotes/origin/"+opts.branch]);
+    const names=shell("git",["ls-tree","-r","--name-only","refs/remotes/origin/"+opts.branch,"--","factory/external-writers/inbox/"+opts.writer+"/"]).split("\n").filter(Boolean);
+    drafted=new Set(names.map(n=>path.basename(n,".json")));
+   }
+   const h=handover(matrix,ledger,slots,registry,{writer:opts.writer,session:opts.session,branch:opts.branch,draftedIds:drafted,reason:opts.reason,confirmed,now});
+   out={slots,ledger:h.ledger,released:h.released,kept:h.kept};
+  }
+  if(!opts.apply){console.log(JSON.stringify({mode:"DRY_RUN_ONLY",action,released:out.released,kept:out.kept,slot:slotView(out.ledger,out.slots)[opts.writer]},null,2));return;}
+  assertMainCoordinator();
+  fs.writeFileSync(path.join(ROOT,SLOTS),JSON.stringify(out.slots,null,2)+"\n");
+  if(out.ledger!==ledger)fs.writeFileSync(path.join(ROOT,FILE),JSON.stringify(out.ledger,null,2)+"\n");
+  console.log(JSON.stringify({mode:"STAGED_SLOT_UPDATE",action,writer:opts.writer,released:out.released,kept:out.kept,slot:slotView(out.ledger,out.slots)[opts.writer]},null,2));
+  return;
+ }
  if(action==="status"||action==="next"||action==="assigned"){
   const data=poolStatus(matrix,ledger,registry,{writer:opts.writer,session:opts.session,branch:opts.branch,locale:opts.locale});
-  if(action==="assigned"&&data.status!=="WRITE_NEXT_PAIR")throw Error("NO CONFIRMED CLAIMS. Dispatch writer-pool.yml action=claim first and fetch fresh main; never write preview IDs.");
+  data.slots=slotView(ledger,slots);
+  if(action==="assigned"&&data.status!=="WRITE_NEXT_BATCH")throw Error("NO CONFIRMED CLAIMS. Dispatch writer-pool.yml action=claim first and fetch fresh main; never write preview IDs.");
   console.log(JSON.stringify({...data,claim_revision:ledger.revision,mode:action==="next"?"READ_ONLY_PREVIEW":"CONFIRMED_LEDGER_READ"},null,2));return;
  }
- if(!["claim","submit","release"].includes(action))throw Error("Actions: status | next | assigned | claim | submit | release");
+ if(!["claim","submit","release"].includes(action))throw Error("Actions: status | next | assigned | slots | claim | submit | release | signal | handover");
+ if(action==="claim"){
+  const v=slotView(ledger,slots)[opts.writer];
+  if(v&&!v.accepts_new_claims&&v.session===opts.session)throw Error("SLOT_PAUSED: report ACTIVE or RECOVERING before claiming new topics");
+ }
  if(!WRITERS.includes(opts.writer))throw Error("Unknown Writer");
  const request={writer:opts.writer,session:opts.session,branch:opts.branch,locale:opts.locale,
    count:opts.count?Number(opts.count):10,ids:opts.ids,reason:opts.reason,confirmed:opts.confirmed=== "true" };
@@ -107,6 +142,14 @@ function main(){
   if(draftExists)throw Error("Release blocked: draft still exists "+file);
  }
  fs.writeFileSync(path.join(ROOT,FILE),JSON.stringify(output.ledger,null,2)+"\n","utf8");
+ if(action==="claim"){
+  // A confirmed claim makes the claiming session the slot's ACTIVE holder (any AI agent may take a free slot).
+  const rec=slots.slots[opts.writer];
+  if(rec.state!=="ACTIVE"||rec.session!==opts.session||rec.branch!==opts.branch||(opts.agent&&rec.agent!==opts.agent)){
+   const next=signalSlot(output.ledger,slots,{writer:opts.writer,session:opts.session,branch:opts.branch,state:"ACTIVE",agent:opts.agent||null,source:"agent",now:new Date().toISOString()});
+   fs.writeFileSync(path.join(ROOT,SLOTS),JSON.stringify(next,null,2)+"\n");
+  }
+ }
  console.log(JSON.stringify({mode:"STAGED_CLAIMS_ON_MAIN",action,revision:output.revision,
    confirmed_ids:output.ids,writer:opts.writer,session:opts.session,branch:opts.branch,
    publication_allowed:false},null,2));
