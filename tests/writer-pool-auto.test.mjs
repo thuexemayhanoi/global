@@ -23,15 +23,22 @@ test("activation request is a single exact branch/session, no secrets",()=>{
  assert.throws(()=>validateRequest({...x,api_key:"secret"},requestPath("W1",x.session),x.branch),/Unexpected/);
  assert.throws(()=>validateRequest({...x,enabled:false},requestPath("W1",x.session),x.branch),/Invalid/);
 });
-test("protect W1's fourteen existing drafts and two EN/DE editorial Hub drafts",()=>{
- assert.equal(registry.protected.length,14);
+test("W1's fourteen legacy drafts stay protected or immutably adopted, and the two EN/DE editorial Hubs stay held",()=>{
+ // The legacy Hub intake moves a PR #17 draft from the protected registry into the claims ledger as a SUBMITTED
+ // claim locked to its source SHA-256 and commit; it never becomes claimable again, whatever its later phase.
+ const ledger=JSON.parse(fs.readFileSync("factory/external-writers/claims.json","utf8"));
+ const legacy=new Set(JSON.parse(fs.readFileSync("approvals/legacy-hub-intake-20261015.json","utf8")).ids);
+ assert.equal(legacy.size,14);
+ const adopted=ledger.claims.filter(c=>legacy.has(c.id)&&c.status==="SUBMITTED"&&/^[0-9a-f]{64}$/.test(c.source_sha256||"")&&/^[0-9a-f]{40}$/.test(c.source_commit||""));
+ for(const id of legacy)assert.equal(registry.protected.some(p=>p.id===id)+adopted.filter(c=>c.id===id).length,1,id+" has exactly one safe custody state");
  assert.equal(registry.held_ids.length,2);
  assert.deepEqual(validatePool(matrix,empty,registry),[]);
+ assert.deepEqual(validatePool(matrix,ledger,registry),[]);
  assert.ok(IDEAS.length+matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&r.status==="PUBLISHED").length>=120);
  assert.equal(poolCandidates(matrix,empty,registry).length,DRAFTABLE);
- const candidates=new Set(poolCandidates(matrix,empty,registry).map(r=>r.id));
- for(const id of [...registry.protected,...registry.held_ids].map(x=>x.id))
-  assert.ok(!candidates.has(id),"Protected ID "+id);
+ const candidates=new Set(poolCandidates(matrix,ledger,registry).map(r=>r.id));
+ for(const id of [...legacy,...registry.held_ids.map(x=>x.id)])
+  assert.ok(!candidates.has(id),"Protected or adopted ID "+id);
 });
 test("first green push claims TEN, old CI replay is idempotent",()=>{
  const a=autoAdvance(matrix,empty,registry,req("W1"),opts);
