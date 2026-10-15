@@ -9,6 +9,7 @@
  * Default is read-only; max two accepted claims per invocation.
  */
 import fs from "node:fs";
+import {fileURLToPath} from "node:url";
 import {execFileSync} from "node:child_process";
 import {createHash} from "node:crypto";
 import {verifyPacket} from "./writer-lanes.mjs";
@@ -111,4 +112,6 @@ function main(){
   claim_revision:ledger.revision,accepted,already,skipped,
   ready_to_publish:false,publisher_gates_required:true,no_ai_api:true},null,2));
 }
-try{main();}catch(e){console.error("LEGACY_HUB_INTAKE_REFUSED "+e.message);process.exitCode=1;}
+if(process.argv[1]&&process.argv[1]===fileURLToPath(import.meta.url)){
+ try{main();}catch(e){console.error("LEGACY_HUB_INTAKE_REFUSED "+e.message);process.exitCode=1;}
+}
