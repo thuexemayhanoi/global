@@ -33,6 +33,7 @@ export function repairTicket(item,claim,{maxAttempts=MAX_REPAIR_ATTEMPTS}={}){
   G5_CONTENT_DUPLICATES:"Rewrite with distinct reader intent and researched original value; never paraphrase a near-duplicate just to bypass similarity."
  };
  return {id:claim.id,writer:claim.writer,session:claim.session,branch:claim.branch,source_sha256:claim.source_sha256,
+  source_commit:claim.source_commit||item.source_commit||null,
   state,attempts,max_attempts:maxAttempts,next_revision,revision_path:prefix+claim.id+".r"+next_revision+".json",
   failed,fixable,holds,details:Array.isArray(item.details)?item.details:[],
   instructions:fixable.map(g=>actions[g]),current_source_path:claim.source_path||"factory/external-writers/inbox/"+claim.writer+"/"+claim.id+".json"};

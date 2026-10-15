@@ -222,15 +222,106 @@ export function nextStage(state,standing){
 }
 
 /**
+ * Live QA states of a publication: PENDING (committed, not yet verified), PASS,
+ * FAIL (production served something wrong) or INCONCLUSIVE (QA tool or network
+ * could not decide; production untouched). PENDING and INCONCLUSIVE are unverified:
+ * they block new staging and the queue drain until a re-check records a result.
+ */
+export const UNVERIFIED_LIVE=new Set(["PENDING","INCONCLUSIVE"]);
+export const unverifiedLive=state=>(state?.published||[]).filter(p=>UNVERIFIED_LIVE.has(p.live_qa)).map(p=>p.id);
+
+/**
  * Pure queue-drain decision. Every cycle publishes <=2 articles in a separate
  * GitHub Actions run, with deployment + live QA required before redispatch.
- * An empty/held/paused queue never generates a new run.
+ * An empty/held/paused/unverified queue never generates a new run.
  */
 export function drainDecision({state={},eligible=[]}={}){
- const outstanding=(state.published||[]).filter(p=>p.live_qa==="PENDING").map(p=>p.id);
+ const outstanding=unverifiedLive(state);
  if(state.paused)return {continue:false,reason:"PAUSED",ready:eligible.length,next_ids:[]};
  if(outstanding.length)return {continue:false,reason:"LIVE_QA_PENDING",ready:eligible.length,next_ids:[],outstanding};
  const next_ids=eligible.map(x=>typeof x==="string"?x:x.id).filter(Boolean).slice(0,2);
  return {continue:next_ids.length>0,reason:next_ids.length?"NEXT_PAIR_READY":"QUEUE_DRAINED_OR_HELD",ready:eligible.length,next_ids};
+}
+
+/**
+ * Whether a run may stage new articles: never while paused, and never while an
+ * earlier publication is unverified (the run re-checks those instead).
+ */
+export function publishGate(state={}){
+ const recover=unverifiedLive(state);
+ if(recover.length)return {allowed:false,reason:"LIVE_QA_RECOVERY",recover};
+ if(state.paused)return {allowed:false,reason:"PAUSED",recover:[]};
+ return {allowed:true,reason:"OPEN",recover:[]};
+}
+
+/**
+ * Pick ≤max APPROVED_BY_POLICY results: Hubs first, then Matrix priority, then ID,
+ * within the stage's per-locale cap (published entries count toward the cap).
+ * A failing article never blocks the others: only eligible results are considered.
+ */
+export function selectForPublication(results,{state={},standing,max=2,only=null}={}){
+ const ok=results.filter(r=>r.decision==="APPROVED_BY_POLICY"&&(!only||only.includes(r.id)));
+ ok.sort((a,b)=>(a.role==="HUB"?0:1)-(b.role==="HUB"?0:1)||(a.priority??99)-(b.priority??99)||a.id.localeCompare(b.id));
+ const cap=standing?.publication?.stages?.[state.stage||"PILOT"]?.max_per_locale??2,used={},chosen=[];
+ for(const p of state.published||[])used[p.locale]=(used[p.locale]||0)+1;
+ for(const r of ok){
+  if(chosen.length>=max)break;
+  if((used[r.locale]||0)>=cap)continue;
+  used[r.locale]=(used[r.locale]||0)+1;chosen.push(r);
+ }
+ return chosen;
+}
+
+/**
+ * Operator controls (pure). Every action needs a reason; resume needs an explicit
+ * confirmation. record-failure is used only after the publish commit was reverted.
+ */
+export function applyControl(state,cmd,{reason="",confirmed=false,ids=[],now}){
+ if(!["pause","resume","record-failure"].includes(cmd))throw Error("Unknown publisher control "+cmd);
+ if(String(reason||"").trim().length<12)throw Error(cmd+" needs a reason ≥12 chars");
+ if(cmd==="resume"&&confirmed!=="true"&&confirmed!==true)throw Error("resume needs --confirmed true");
+ const st=structuredClone(state||{});
+ st.published=st.published||[];st.runs=st.runs||[];
+ if(cmd==="record-failure"){
+  st.paused=true;st.pause_reason="Reverted "+now+": "+reason;st.clean_runs=0;
+  for(const p of st.published)if(ids.includes(p.id))p.live_qa="REVERTED";
+  st.published=st.published.filter(p=>p.live_qa!=="REVERTED");
+ }else if(cmd==="pause"){st.paused=true;st.pause_reason=reason;}
+ else {st.paused=false;st.pause_reason=null;}
+ st.runs.push({at:now,ids,result:cmd.toUpperCase()+": "+reason});
+ return st;
+}
+
+/**
+ * Record a live QA verdict for `ids` (pure). PASS on a fresh publication counts as a
+ * clean run and may advance the stage; a recovery re-check (`recovery:true`) only
+ * fixes the verification status. FAIL and INCONCLUSIVE pause publication; resuming
+ * always needs a confirmed operator dispatch. A recovery re-check that confirms an
+ * existing INCONCLUSIVE leaves the state untouched, so hourly re-checks add no churn.
+ */
+export function recordLiveQA(state,{ids,verdict,issues=[],commit=null,seconds=0,now,standing,recovery=false}){
+ if(!["PASS","FAIL","INCONCLUSIVE"].includes(verdict))throw Error("Unknown live QA verdict "+verdict);
+ const st=structuredClone(state||{});
+ st.published=st.published||[];st.runs=st.runs||[];
+ const touched=st.published.filter(p=>ids.includes(p.id)&&UNVERIFIED_LIVE.has(p.live_qa));
+ if(recovery&&verdict==="INCONCLUSIVE"&&touched.length&&touched.every(p=>p.live_qa==="INCONCLUSIVE"))return state;
+ for(const p of touched){p.live_qa=verdict;p.live_qa_at=now;}
+ const summary=issues.slice(0,5).map(i=>(i.scope?i.scope+": ":"")+(i.detail??i)).join(" | ");
+ if(verdict==="PASS"){
+  if(recovery)st.runs.push({at:now,ids,result:"LIVE_QA_RECOVERED_PASS"});
+  else{
+   st.clean_runs=(st.clean_runs||0)+1;
+   st.last_successful_deployment={at:now,ids,commit,live_seconds:seconds};
+   st.runs.push({at:now,ids,result:"LIVE_QA_PASS"});
+   const ns=nextStage(st,standing);
+   if(ns!==st.stage){st.runs.push({at:now,ids:[],result:"STAGE_ADVANCED "+st.stage+"→"+ns});st.stage=ns;st.clean_runs=0;}
+  }
+ }else{
+  st.paused=true;st.clean_runs=0;
+  st.pause_reason=(verdict==="FAIL"?"Live QA failed ":"Live QA inconclusive (QA tool or network; production untouched, no rollback) ")+now+": "+summary;
+  st.runs.push({at:now,ids,result:(recovery?"RECOVERY_":"")+"LIVE_QA_"+verdict});
+ }
+ st.runs=st.runs.slice(-200);
+ return st;
 }
 

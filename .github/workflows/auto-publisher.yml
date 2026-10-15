@@ -64,7 +64,7 @@ jobs:
           node-version: '22'
       - name: Trusted main code QA
         run: |
-          node --test tests/auto-publisher.test.mjs tests/publisher-drain.test.mjs tests/repair-queue.test.mjs tests/content-publisher.test.mjs tests/article-links.test.mjs
+          node --test tests/auto-publisher.test.mjs tests/publisher-drain.test.mjs tests/live-qa.test.mjs tests/repair-queue.test.mjs tests/workflow-scenarios.test.mjs tests/content-publisher.test.mjs tests/article-links.test.mjs tests/sitemaps.test.mjs
           node scripts/build.mjs --check
           test "$(cat CNAME)" = "global.rentbikehanoi.com"
       - name: Configure git
@@ -81,10 +81,17 @@ jobs:
           node scripts/auto-publisher.mjs "$ACTION" --reason "$REASON" --confirmed "$CONFIRMED"
           git add factory/publisher/state.json
           git commit -m "publish(global): $ACTION auto publisher"
-          git push origin HEAD:main
+          for attempt in 1 2 3; do
+            if git pull --rebase -q origin main && git push -q origin HEAD:main; then exit 0; fi
+            echo "push attempt $attempt failed; retrying from latest main"; sleep $((attempt*5))
+          done
+          echo "::error::Could not record $ACTION on main"; exit 1
       - name: Read-only scan
         if: github.event_name == 'workflow_dispatch' && inputs.action == 'scan'
         run: node scripts/auto-publisher.mjs scan | tee -a "$GITHUB_STEP_SUMMARY"
+      # Stage ≤2 eligible drafts (or, if an earlier publication is still unverified,
+      # stage nothing and name it for a recovery check). Compare-and-swap push with
+      # three recomputations from the latest main; never a force-push.
       - name: Publish up to two eligible NEW articles and run every gate
         id: pub
         if: env.ACTION == 'publish'
@@ -92,66 +99,122 @@ jobs:
           set -uo pipefail
           extra=()
           if [ -n "${IDS:-}" ]; then extra+=(--ids "$IDS"); fi
-          status=0
-          node scripts/auto-publisher.mjs publish --max "$MAX" --apply "${extra[@]}" > publish.json || status=$?
-          cat publish.json; cat publish.json >> "$GITHUB_STEP_SUMMARY" || true
-          ids=$(node -e 'try{const j=JSON.parse(require("fs").readFileSync("publish.json","utf8"));console.log((j.published||[]).map(x=>x.id).join(","))}catch{console.log("")}')
-          rm -f publish.json
-          changed=$(git status --porcelain | awk '{print $2}')
-          if [ -z "$changed" ]; then echo "Nothing to commit."; exit $status; fi
-          if echo "$changed" | grep -E '^(CNAME|\.github/|scripts/|tests/|approvals/|AGENTS\.md|content/locales\.json|data/business/|factory/external-writers/)'; then
-            echo "PUBLISHER_SAFE_STOP: change outside the publication allowlist"; git status --porcelain; exit 1
-          fi
-          git add -A
-          if [ -n "$ids" ]; then msg="publish(global): standing-policy publication of $ids"; else msg="publish(global): queue report / pause state"; fi
-          git commit -q -m "$msg"
-          git fetch --no-tags origin main
-          if [ "$(git rev-parse origin/main)" != "$(git rev-parse HEAD^)" ]; then
-            echo "CONCURRENT_MAIN_UPDATE: main moved; next scheduled run recomputes. Nothing pushed."; exit 0
-          fi
-          git push origin HEAD:main
-          echo "ids=$ids" >> "$GITHUB_OUTPUT"
-          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-          exit $status
+          out="$RUNNER_TEMP/publish.json"
+          field() { node -e 'try{const j=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8"));const v=j[process.argv[2]]||[];console.log(v.map(x=>x.id||x).join(","))}catch{console.log("")}' "$out" "$1"; }
+          for attempt in 1 2 3; do
+            status=0
+            node scripts/auto-publisher.mjs publish --max "$MAX" --apply "${extra[@]}" > "$out" || status=$?
+            cat "$out"; cat "$out" >> "$GITHUB_STEP_SUMMARY" || true
+            ids=$(field published); recover=$(field recover)
+            node scripts/topic-factory.mjs status --markdown docs/CONTENT-FACTORY-DASHBOARD.md > /dev/null || echo "DASHBOARD_NOT_REFRESHED (publication unaffected)"
+            changed=$(git status --porcelain | awk '{print $2}')
+            if [ -z "$changed" ]; then
+              echo "Nothing to commit."
+              echo "recover=$recover" >> "$GITHUB_OUTPUT"
+              exit $status
+            fi
+            if echo "$changed" | grep -E '^(CNAME|\.github/|scripts/|tests/|approvals/|AGENTS\.md|content/locales\.json|data/business/|factory/external-writers/)'; then
+              echo "PUBLISHER_SAFE_STOP: change outside the publication allowlist"; git status --porcelain; exit 1
+            fi
+            git add -A
+            if [ -n "$ids" ]; then msg="publish(global): standing-policy publication of $ids"; else msg="publish(global): queue report / pause state"; fi
+            git commit -q -m "$msg"
+            git fetch --no-tags origin main
+            if [ "$(git rev-parse origin/main)" = "$(git rev-parse HEAD^)" ]; then
+              if git push -q origin HEAD:main; then
+                echo "ids=$ids" >> "$GITHUB_OUTPUT"
+                echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+                echo "recover=$recover" >> "$GITHUB_OUTPUT"
+                exit $status
+              fi
+              git fetch --no-tags origin main
+              if [ "$(git rev-parse origin/main)" = "$(git rev-parse HEAD^)" ]; then echo "::error::PUSH_REFUSED: not a concurrency conflict"; exit 1; fi
+            fi
+            echo "CONCURRENT_MAIN_UPDATE attempt=$attempt: recompute from the latest main (never force-push)"
+            git reset -q --hard origin/main
+          done
+          echo "PUBLISHER_SAFE_STOP: main kept moving; nothing staged this run, the hourly schedule retries."
+          exit 0
       - name: Request GitHub Pages build
         if: steps.pub.outputs.ids != ''
         run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "PAGES_BUILD_REQUEST_NOT_ACCEPTED (branch deployment continues)"
+      # Verdict PASS | FAIL | INCONCLUSIVE goes to $RUNNER_TEMP/live-qa.json.
       - name: Live HTTP QA on production
         id: live
-        if: steps.pub.outputs.ids != ''
+        if: steps.pub.outputs.ids != '' || steps.pub.outputs.recover != ''
         continue-on-error: true
-        run: node scripts/auto-publisher.mjs live-qa --ids "${{ steps.pub.outputs.ids }}" --timeout-seconds 1200 --commit "${{ steps.pub.outputs.sha }}" --record
-      - name: Record live QA, or revert the publish commit and pause
-        id: finalize
-        if: steps.pub.outputs.ids != ''
         env:
           PUB_IDS: ${{ steps.pub.outputs.ids }}
           PUB_SHA: ${{ steps.pub.outputs.sha }}
+          RECOVER_IDS: ${{ steps.pub.outputs.recover }}
+        run: |
+          if [ -n "$PUB_IDS" ]; then
+            node scripts/auto-publisher.mjs live-qa --ids "$PUB_IDS" --timeout-seconds 1200 --commit "$PUB_SHA" --record --out "$RUNNER_TEMP/live-qa.json"
+          else
+            node scripts/auto-publisher.mjs live-qa --ids "$RECOVER_IDS" --timeout-seconds 600 --recovery --record --out "$RUNNER_TEMP/live-qa.json"
+          fi
+      - name: Record live QA, or revert the publish commit and pause
+        id: finalize
+        if: steps.pub.outputs.ids != '' || steps.pub.outputs.recover != ''
+        env:
+          PUB_IDS: ${{ steps.pub.outputs.ids }}
+          PUB_SHA: ${{ steps.pub.outputs.sha }}
+          RECOVER_IDS: ${{ steps.pub.outputs.recover }}
         run: |
           set -euo pipefail
-          if [ "${{ steps.live.outcome }}" = "success" ]; then
+          verdict=$(node -e 'try{const v=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).verdict;console.log(["PASS","FAIL","INCONCLUSIVE"].includes(v)?v:"INCONCLUSIVE")}catch{console.log("INCONCLUSIVE")}' "$RUNNER_TEMP/live-qa.json")
+          ids="${PUB_IDS:-$RECOVER_IDS}"
+          echo "LIVE_QA_VERDICT=$verdict ids=$ids" | tee -a "$GITHUB_STEP_SUMMARY"
+          push_main() {
+            for attempt in 1 2 3; do
+              if git pull --rebase -q origin main && git push -q origin HEAD:main; then return 0; fi
+              echo "push attempt $attempt failed; retrying from latest main"; sleep $((attempt*5))
+            done
+            echo "::error::Could not record the live QA result on main"; return 1
+          }
+          if [ "$verdict" = "PASS" ]; then
             git add factory/publisher/state.json
-            git commit -q -m "publish(global): live QA passed for $PUB_IDS"
-            git pull --rebase -q origin main
-            git push origin HEAD:main
+            git diff --cached --quiet || git commit -q -m "publish(global): live QA passed for $ids"
+            push_main
             exit 0
           fi
-          git reset -q --hard
-          git fetch --no-tags origin main
-          git reset -q --hard origin/main
-          git revert --no-edit "$PUB_SHA"
-          node scripts/auto-publisher.mjs record-failure --ids "$PUB_IDS" --reason "Live QA failed after deploy; publish commit $PUB_SHA reverted"
-          git add factory/publisher/state.json
-          git commit -q -m "publish(global): pause after failed live QA ($PUB_IDS)"
-          git push origin HEAD:main
-          exit 1
+          if [ "$verdict" = "INCONCLUSIVE" ] || [ -z "$PUB_IDS" ]; then
+            # The QA tool or the network could not decide, or this was a re-check of an
+            # earlier publication: keep production untouched, keep the recorded PAUSE.
+            echo "::error::Live QA $verdict for $ids: publisher paused without rollback; see docs/CURRENT-WORKFLOW.md"
+            git add factory/publisher/state.json
+            git diff --cached --quiet || git commit -q -m "publish(global): pause, live QA $verdict for $ids (no rollback)"
+            push_main
+            exit 1
+          fi
+          # FAIL on a fresh publication: production served something wrong → revert + pause.
+          cp factory/publisher/state.json "$RUNNER_TEMP/state-live-fail.json"
+          for attempt in 1 2 3; do
+            git reset -q --hard
+            git fetch --no-tags origin main
+            git reset -q --hard origin/main
+            if git revert --no-edit "$PUB_SHA"; then
+              node scripts/auto-publisher.mjs record-failure --ids "$PUB_IDS" --reason "Live QA failed after deploy; publish commit $PUB_SHA reverted"
+              git add factory/publisher/state.json
+              git commit -q -m "publish(global): pause after failed live QA ($PUB_IDS)"
+            else
+              git revert --abort || true
+              echo "::error::REVERT_CONFLICT: $PUB_SHA needs an operator revert in a reviewed PR; publisher paused"
+              cp "$RUNNER_TEMP/state-live-fail.json" factory/publisher/state.json
+              git add factory/publisher/state.json
+              git commit -q -m "publish(global): pause after failed live QA ($PUB_IDS), revert needs operator"
+            fi
+            if git push -q origin HEAD:main; then exit 1; fi
+            echo "push attempt $attempt failed; retrying from latest main"; sleep $((attempt*5))
+          done
+          echo "::error::Could not record the failed live QA on main"; exit 1
 
       # Drain the shared Writer queue in pairs. Each follow-up gets a fresh
       # checkout, strict QA/build/SEO/fact checks, GitHub Pages deploy and
       # live HTTP QA before *it* may enqueue another pair. No API AI model.
       # GITHUB_TOKEN workflow_dispatch is explicitly allowed by GitHub.
       - name: Dispatch next pair only after successful live QA
-        if: steps.pub.outputs.ids != '' && steps.live.outcome == 'success' && steps.finalize.outcome == 'success'
+        if: (steps.pub.outputs.ids != '' || steps.pub.outputs.recover != '') && steps.live.outcome == 'success' && steps.finalize.outcome == 'success'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

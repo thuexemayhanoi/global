@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import fs from "node:fs";
 import {repairQueue,repairTicket,ticketValid} from "../scripts/repair-queue-core.mjs";
 
 const sha="a".repeat(64),commit="b".repeat(40);
@@ -35,6 +36,30 @@ test("repair retry budget is bounded to r2/r3/r4 and then escalates",()=>{
  const twice=repairTicket(item,{...claim,revisions:[{},{},{}]});
  assert.equal(twice.state,"ESCALATED_MAX_ATTEMPTS");
  assert.equal(ticketValid(twice,claim),false);
+});
+test("tickets carry everything an AI Writer needs: ID, writer, session, source SHA and commit, gates and instructions",()=>{
+ const t=repairTicket(item,claim);
+ for(const k of ["id","writer","session","branch","source_sha256","source_commit","failed","fixable","details","instructions","revision_path","current_source_path"])assert.ok(t[k]!==undefined&&t[k]!==null,k);
+ assert.equal(t.source_commit,commit);
+ assert.equal(t.instructions.length,t.fixable.length);
+});
+test("the repair CLI never hands out another Writer's ticket and guides unsubmitted fixes in place",async()=>{
+ const {spawnSync}=await import("node:child_process");
+ const run=(...a)=>spawnSync(process.execPath,["scripts/writer-repair.mjs",...a],{encoding:"utf8"});
+ const anon=run("next");
+ assert.notEqual(anon.status,0);
+ assert.match(anon.stderr,/needs your own --writer/);
+ assert.match(run("check","--writer","W1","--session","w1-x").stderr,/check needs --file/);
+ assert.match(run("check","--writer","W1","--session","w1-x","--file","factory/external-writers/inbox/W1/revisions/EN-H01.r5.json").stderr,/N = 2\.\.4/);
+ const own=run("queue");
+ assert.equal(own.status,0,own.stderr);
+ assert.equal(JSON.parse(own.stdout).auto_model_calls,0);
+});
+test("every workflow that runs repair code also runs the repair tests",()=>{
+ for(const f of [".github/workflows/qa.yml",".github/workflows/writer-qa.yml",".github/workflows/writer-pool-auto.yml",".github/workflows/auto-publisher.yml"])
+  assert.match(fs.readFileSync(f,"utf8"),/tests\/repair-queue\.test\.mjs/,f);
+ const wq=fs.readFileSync(".github/workflows/writer-qa.yml","utf8");
+ for(const p of ["scripts/repair-queue-core.mjs","scripts/writer-repair.mjs","tests/repair-queue.test.mjs"])assert.ok(wq.includes("'"+p+"'"),"writer-qa.yml PR paths include "+p);
 });
 test("parent/stage waits are not treated as text rewrite failures",()=>{
  assert.equal(repairTicket({...item,failed:["G2_PARENT_PUBLISHED"]},claim).state,"WAIT_PARENT");

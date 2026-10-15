@@ -1,5 +1,7 @@
 # GLOBAL MASTER MATRIX — Premium Multilingual Publishing Platform
 
+> **Dated snapshot (2026-10-14).** Counts and publication rules on this page describe that date. Current rules: `AGENTS.md` § CURRENT PRODUCTION WORKFLOW and `docs/CURRENT-WORKFLOW.md`.
+
 Repository: `thuexemayhanoi/global` — GitHub Pages: `global.rentbikehanoi.com`. **This is an engineering execution matrix, not the keyword inventory** (`data/seo/master-matrix.json`). Only mark DONE with the evidence required below.
 
 ## Baseline — 2026-10-14, refreshed from main HEAD

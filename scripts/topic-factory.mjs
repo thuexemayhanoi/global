@@ -16,7 +16,7 @@ import {createHash} from "node:crypto";
 import {execFileSync,spawnSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
 import {loadTopicalMap,validateTopicalMap,TA_DIR} from "./seo/topical-authority-core.mjs";
-import {factoryStatus,selectRefill,planStandingPromotion,validatePolicy,validateResearchBatch,ingestResearch,dashboardMarkdown,RESEARCH_PURPOSE} from "./topic-factory-core.mjs";
+import {factoryStatus,selectRefill,planStandingPromotion,validatePolicy,validateResearchBatch,ingestResearch,dashboardMarkdown,publicationQueue,RESEARCH_PURPOSE} from "./topic-factory-core.mjs";
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const POLICY="data/seo/topic-factory/policy.json";
@@ -73,12 +73,15 @@ function cmdStatus(o){
  const validation=validateTopicalMap({map:c.map,matrix:c.matrix,frozenUrls:c.frozen});
  const refill=selectRefill({...c,validation});
  const publisher=optional("factory/publisher/state.json",null);
+ const queue=publicationQueue({matrix:c.matrix,ledger:c.ledger,report:optional("factory/publisher/report.json",null),state:publisher});
+ const slots=optional("factory/external-writers/slots.json",null);
  if(o.markdown){
   if(typeof o.markdown!=="string"||!/^docs\/[A-Z0-9-]+\.md$/.test(o.markdown))throw Error("--markdown must be docs/<NAME>.md");
-  fs.writeFileSync(path.join(ROOT,o.markdown),dashboardMarkdown(status,{publisher,refill,rejectedTotal:refill.rejected.length}));
+  fs.writeFileSync(path.join(ROOT,o.markdown),dashboardMarkdown(status,{publisher,refill,rejectedTotal:refill.rejected.length,queue,slots,ledger:c.ledger}));
  }
- const out={mode:"READ_ONLY",...status,refill:{selected:refill.selected.length,research_needed:refill.research_needed,locales:refill.locales,rejected:refill.rejected.length}};
- if(o.json||!o.markdown)console.log(JSON.stringify(o.json?out:{totals:out.totals,locales:Object.fromEntries(Object.entries(out.locales).map(([k,v])=>[k,{published:v.published,submitted:v.submitted,claimed:v.claimed,ready:v.ready,proposed:v.proposed,remaining:v.remaining,refill:v.refill}])),refill:out.refill},null,2));
+ const {byLocale,byWriter,...queueSummary}=queue;
+ const out={mode:"READ_ONLY",...status,queue,refill:{selected:refill.selected.length,research_needed:refill.research_needed,locales:refill.locales,rejected:refill.rejected.length}};
+ if(o.json||!o.markdown)console.log(JSON.stringify(o.json?out:{totals:out.totals,locales:Object.fromEntries(Object.entries(out.locales).map(([k,v])=>[k,{published:v.published,submitted:v.submitted,claimed:v.claimed,ready:v.ready,proposed:v.proposed,remaining:v.remaining,refill:v.refill}])),queue:queueSummary,refill:out.refill},null,2));
 }
 function validateFile(rel,c){
  const batch=JSON.parse(fs.readFileSync(path.join(ROOT,rel),"utf8"));

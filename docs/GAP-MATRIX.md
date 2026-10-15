@@ -65,6 +65,20 @@ PR #28 (PR-5, merge `baf0ae7`) went live on 2026-10-14:
 
 These checks prove what the site serves, not Google indexation, rankings or AI citations.
 
+## Workflow final fix (2026-10-15)
+
+Audit with evidence: `docs/WORKFLOW-AUDIT-20261015.md`. Contract: `AGENTS.md` § CURRENT PRODUCTION WORKFLOW; manual: `docs/CURRENT-WORKFLOW.md`.
+
+| ID | Pri | Area | Before (evidence) | Now (evidence) |
+|---|---|---|---|---|
+| WF-01 | P0 | Live QA sitemap check | BROKEN: run 38668639207 fetched the bare name `sitemap-main.xml` ("Failed to parse URL"), reverting NL-H01/PT-H01 | DONE (code + tests): absolute same-origin shard URLs; regression test fails on the old behaviour (`tests/live-qa.test.mjs`) |
+| WF-02 | P0 | False rollback on QA-tool errors | BROKEN: any error reverted | DONE (code + tests): PASS / FAIL / INCONCLUSIVE; only FAIL reverts; unverified publications re-checked before new staging |
+| WF-03 | P1 | Writer QA after publication | BROKEN (latent): a published draft turned its Writer branch red | DONE (code + tests): SUBMITTED drafts hash-locked (`tests/writer-qa-lock.test.mjs`) |
+| WF-04 | P1 | Repair CLI identity, holds, guidance | BROKEN/PARTIAL | DONE (code + tests): `tests/repair-queue.test.mjs` |
+| WF-05 | P1 | CI coverage, no-AI guard, scenarios | PARTIAL | DONE: repair/lock suites in every workflow that runs the code; `tests/no-ai-api.test.mjs`; ten scenarios in `tests/workflow-scenarios.test.mjs` |
+| WF-06 | P1 | Dashboard + docs | OBSOLETE | DONE: queue states generated from data; AGENTS.md contract; legacy docs marked |
+| WF-07 | P0 | Production resume | PAUSED since 2026-10-15T02:20Z | Verified only after merge: Pages deployment, Post-Publish Live HTTP QA, confirmed resume and pilot are recorded in the pull request and in `factory/publisher/state.json` |
+
 ## Owner decisions (OWNER)
 
 1. ~~First topical promotion manifest~~ Done 2026-10-14: `approvals/topical-20261014.json` promoted 50 candidates (5 per locale) as IDEA rows; 126 PROPOSED remain for later manifests.
