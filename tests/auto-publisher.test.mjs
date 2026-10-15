@@ -4,6 +4,7 @@ import fs from "node:fs";
 import {spawnSync} from "node:child_process";
 import {classify,editorial,contentDuplicates,shingles,validateReview,eligibility,publicationRecord,nextStage,isOfficial,REVIEW_CHECKS} from "../scripts/auto-publisher-core.mjs";
 import {checkArticle,renderArticle,validatePublicationRecord} from "../scripts/articles.mjs";
+import {scanHtml} from "../scripts/seo/fact-guard-core.mjs";
 
 const read=p=>JSON.parse(fs.readFileSync(p,"utf8"));
 const matrix=read("data/seo/master-matrix.json"),locales=read("content/locales.json");
@@ -97,6 +98,24 @@ test("eligibility: automated QA approves without reviewer; still blocks bad fact
  const child=matrix.rows.find(r=>r.locale==="en"&&r.role==="SUPPORT"&&r.parent_id===hub.id&&r.status==="IDEA");
  if(child)assert.equal(eligibility(ctx({row:child,packet:packet({matrix_id:child.id,proposed_url:child.url}),review:review({matrix_id:child.id})})).decision,"WAIT_PARENT");
  assert.equal(eligibility(ctx({packet:packet({body_markdown:"## a\n\nshort"})})).decision,"REJECTED");
+});
+
+test("source titles are fact-checked like the rendered reference list, so the pre-commit fact guard cannot pause the queue",()=>{
+ const priced=packet({sources:[{url:"https://vietnamnews.vn/economy/1724202/swap.html",title:"Vietnam News: battery swap costs 200,000 VND per month",checked_on:"2026-10-15"},
+  {url:"https://www.smartraveller.gov.au/destinations/asia/vietnam",title:"Smartraveller",checked_on:"2026-10-15"}]});
+ // The published page lists source titles; the site fact guard that runs before the publish commit reads them.
+ const rec=publicationRecord({claim,reviewSha:null,now:"2026-10-15T01:00:00.000Z",stage:"PILOT"});
+ const html=renderArticle({...priced,publication:rec},locales.find(l=>l.code==="en"),{...hub,status:"PUBLISHED"},matrix);
+ assert.ok(scanHtml(html,{locale:"en"}).some(f=>f.level==="FAIL"&&f.code==="UNSOURCED_AMOUNT"),"this page would fail the pre-commit fact guard");
+ // Eligibility stops that one draft with a repairable G1 failure instead of approving it.
+ const e=eligibility(ctx({packet:priced}));
+ assert.equal(e.decision,"REJECTED");
+ assert.ok(e.gates.some(g=>g.gate==="G1_DRAFT_QA"&&!g.passed&&/UNSOURCED_AMOUNT in sources\[0\]\.title/.test(g.detail)),JSON.stringify(e.gates.filter(g=>!g.passed)));
+ // Writer QA (warn mode) only warns before submission.
+ const w=checkArticle({...priced,serp_intent_checked:true,facts_reviewed_by_human:true},matrix,locales,{factMode:"warn",allowUnpublishedParentForDraft:true});
+ assert.ok(!w.errors.some(x=>/sources\[0\]/.test(x)),w.errors.join("; "));
+ assert.ok(w.warnings.some(x=>/UNSOURCED_AMOUNT in sources\[0\]\.title/.test(x)));
+ assert.equal(eligibility(ctx()).decision,"APPROVED_BY_POLICY","plain source titles are unaffected");
 });
 
 test("stored policy articles: honest record accepted, human-review claims refused, provenance note rendered",()=>{
