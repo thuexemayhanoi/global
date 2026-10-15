@@ -220,3 +220,17 @@ export function nextStage(state,standing){
  if(state.paused||!need||(state.clean_runs||0)<need)return s;
  return order[Math.min(order.indexOf(s)+1,order.length-1)];
 }
+
+/**
+ * Pure queue-drain decision. Every cycle publishes <=2 articles in a separate
+ * GitHub Actions run, with deployment + live QA required before redispatch.
+ * An empty/held/paused queue never generates a new run.
+ */
+export function drainDecision({state={},eligible=[]}={}){
+ const outstanding=(state.published||[]).filter(p=>p.live_qa==="PENDING").map(p=>p.id);
+ if(state.paused)return {continue:false,reason:"PAUSED",ready:eligible.length,next_ids:[]};
+ if(outstanding.length)return {continue:false,reason:"LIVE_QA_PENDING",ready:eligible.length,next_ids:[],outstanding};
+ const next_ids=eligible.map(x=>typeof x==="string"?x:x.id).filter(Boolean).slice(0,2);
+ return {continue:next_ids.length>0,reason:next_ids.length?"NEXT_PAIR_READY":"QUEUE_DRAINED_OR_HELD",ready:eligible.length,next_ids};
+}
+
