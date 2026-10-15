@@ -2056,6 +2056,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T17:47:57.627Z"
+    },
+    {
+      "id": "VI-S13",
+      "locale": "vi",
+      "url": "/vi/guides/giay-to-mang-theo-khi-di-xe-thue/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:48:16.389Z",
+      "source_sha256": "ba4eb4b3ef6d628b0e56820e740fd624d52f07a061fce3d71776fd8f12d03b47",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S14",
+      "locale": "zh",
+      "url": "/zh/guides/suishen-zhengjian/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:48:16.389Z",
+      "source_sha256": "cbf092c802f81a34f425fee08500d5418f9c8a4e80c9549463565235e81092e3",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -3517,6 +3539,14 @@
         "PT-S13"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:48:16.389Z",
+      "ids": [
+        "VI-S13",
+        "ZH-S14"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3529,6 +3559,6 @@
     "live_seconds": 122
   },
   "queue": {
-    "APPROVED_BY_POLICY": 9
+    "APPROVED_BY_POLICY": 7
   }
 }
