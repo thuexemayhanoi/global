@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 106,
+  "clean_runs": 107,
   "published": [
     {
       "id": "NL-H01",
@@ -2728,25 +2728,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T19:05:10.037Z"
+    },
+    {
+      "id": "EN-S38",
+      "locale": "en",
+      "url": "/en/guides/riding-a-motorbike-at-night-in-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:13:20.141Z",
+      "source_sha256": "104f43946713cdebcd729944b1b6ff22f730ab126c53812783a9bfda84c6a462",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T19:14:30.861Z"
+    },
+    {
+      "id": "EN-S39",
+      "locale": "en",
+      "url": "/en/guides/using-a-phone-while-riding-in-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:13:20.141Z",
+      "source_sha256": "f96eef8e073e125a73a3c5d6832950726cd425783b704ac84e2710afdecbe765",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T19:14:30.861Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:36:26.649Z",
-      "ids": [
-        "JA-S03",
-        "PT-S03"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:37:35.411Z",
-      "ids": [
-        "JA-S03",
-        "PT-S03"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T09:37:55.131Z",
       "ids": [
@@ -4312,17 +4320,34 @@
         "DE-S45"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T19:13:20.141Z",
+      "ids": [
+        "EN-S38",
+        "EN-S39"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T19:14:30.861Z",
+      "ids": [
+        "EN-S38",
+        "EN-S39"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T19:05:10.037Z",
+    "at": "2026-10-15T19:14:30.861Z",
     "ids": [
-      "DE-S45"
+      "EN-S38",
+      "EN-S39"
     ],
-    "commit": "1a3b1d6f5cfbc2e9abbe662b4bf68e9a4c9596b2",
-    "live_seconds": 62
+    "commit": "d49571c6ed466ca849a69b580ae4078ba766adc5",
+    "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 1
+    "APPROVED_BY_POLICY": 2
   }
 }
