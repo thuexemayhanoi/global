@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 203,
+  "clean_runs": 204,
   "published": [
     {
       "id": "NL-H01",
@@ -4766,7 +4766,8 @@
       "at": "2026-10-15T23:51:51.258Z",
       "source_sha256": "bb22eb475a5916ba65ea416b6f02038de85ca214f11e63851d0705c8bc9c3a05",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T23:53:04.237Z"
     },
     {
       "id": "ES-S63",
@@ -4777,26 +4778,33 @@
       "at": "2026-10-15T23:51:51.258Z",
       "source_sha256": "3c7dead53643a76dde3e3a072a3232144f968630eca74142e1d59c1935327ca6",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T23:53:04.237Z"
+    },
+    {
+      "id": "ES-S64",
+      "locale": "es",
+      "url": "/es/guides/primera-vez-en-scooter-automatico/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T23:53:21.028Z",
+      "source_sha256": "f1ed7923aa002b65e1724cfb6bcbde1252db5930846ca86978e54d15ddf01bc9",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ES-S65",
+      "locale": "es",
+      "url": "/es/guides/moto-electrica-de-alquiler-autonomia-y-carga/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T23:53:21.028Z",
+      "source_sha256": "522f38e9d3d4f30c64deca53b8caf9310909eadef0ad0eedd5be8ea929f64de0",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T19:01:48.985Z",
-      "ids": [
-        "DE-S41",
-        "DE-S42"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T19:02:08.450Z",
-      "ids": [
-        "DE-S43",
-        "DE-S44"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T19:03:39.331Z",
       "ids": [
@@ -6328,18 +6336,34 @@
         "ES-S63"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T23:53:04.237Z",
+      "ids": [
+        "ES-S62",
+        "ES-S63"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T23:53:21.028Z",
+      "ids": [
+        "ES-S64",
+        "ES-S65"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T23:51:33.423Z",
+    "at": "2026-10-15T23:53:04.237Z",
     "ids": [
-      "ES-S60",
-      "ES-S61"
+      "ES-S62",
+      "ES-S63"
     ],
-    "commit": "c78629157f89b29b37d98d56259c63674b843ff7",
+    "commit": "39dad41045596c18b9c2dcaf14a1fb54a88ed1dd",
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 6
+    "APPROVED_BY_POLICY": 4
   }
 }
