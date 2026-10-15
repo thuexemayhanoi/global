@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 178,
+  "clean_runs": 179,
   "published": [
     {
       "id": "NL-H01",
@@ -4228,32 +4228,43 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T22:46:50.421Z"
+    },
+    {
+      "id": "FR-S33",
+      "locale": "fr",
+      "url": "/fr/guides/scooter-a-hanoi-en-hiver/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:47:10.348Z",
+      "source_sha256": "bcfbba94565da2424c40c90a61d638f0b6071d7c4147f4db403c7782bbdfdd2b",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T22:49:07.421Z"
+    },
+    {
+      "id": "FR-S34",
+      "locale": "fr",
+      "url": "/fr/guides/tenue-pour-rouler-a-scooter-au-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:49:26.899Z",
+      "source_sha256": "3f07d5521f4bda2a022242fdae4cdebbe67402014b7df92baf846e8a8a672a97",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S35",
+      "locale": "fr",
+      "url": "/fr/guides/eviter-le-vol-de-scooter-a-hanoi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:49:26.899Z",
+      "source_sha256": "953ca5b38f28faabda5d5cee219c1544cd20f7a302b6523aab3e3ab10cc4e309",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T17:51:14.614Z",
-      "ids": [
-        "ES-S14",
-        "FR-S16"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T17:52:49.295Z",
-      "ids": [
-        "ES-S14",
-        "FR-S16"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T17:53:06.487Z",
-      "ids": [
-        "JA-S15"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T17:54:15.300Z",
       "ids": [
@@ -5784,16 +5795,37 @@
         "FR-S32"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T22:47:10.348Z",
+      "ids": [
+        "FR-S33"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T22:49:07.421Z",
+      "ids": [
+        "FR-S33"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T22:49:26.899Z",
+      "ids": [
+        "FR-S34",
+        "FR-S35"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T22:46:50.421Z",
+    "at": "2026-10-15T22:49:07.421Z",
     "ids": [
-      "FR-S31",
-      "FR-S32"
+      "FR-S33"
     ],
-    "commit": "9594b00e0aa61565fe66c52a3bed8f36bb83a5cb",
-    "live_seconds": 62
+    "commit": "bfa3a911299f26de6d584afd0d1837fe127d4224",
+    "live_seconds": 101
   },
   "queue": {
     "APPROVED_BY_POLICY": 3
