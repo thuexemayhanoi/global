@@ -2,6 +2,7 @@
 /**
  * Global Auto Publisher (owner standing policy 2026-10-15).
  *   scan [--json]                         eligibility of every SUBMITTED draft (read-only)
+ *   drain-decision                        should workflow dispatch the next pair? (read-only)
  *   publish --max 2 --apply [--ids A,B]   stage ≤2 APPROVED_BY_POLICY drafts as NEW URLs and run every
  *                                         build/SEO/fact gate (trusted workflow on main, or --local rehearsal)
  *   live-qa --ids A,B [--timeout-seconds N] [--origin URL]  poll production until the new URLs pass
@@ -17,7 +18,7 @@ import {createHash} from "node:crypto";
 import {execFileSync,spawnSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
 import {articlePath,STANDING_POLICY_PATH} from "./articles.mjs";
-import {eligibility,validateReview,shingles,publicationRecord,nextStage,reviewFile,REVIEW_FILE} from "./auto-publisher-core.mjs";
+import {eligibility,validateReview,shingles,publicationRecord,nextStage,reviewFile,REVIEW_FILE,drainDecision} from "./auto-publisher-core.mjs";
 import {readLocalSitemapInventory,parseSitemapIndex,parseSitemapUrlset} from "./sitemaps.mjs";
 import {inspectHTML} from "./seo/post-publish-qa.mjs";
 
@@ -96,6 +97,14 @@ function cmdScan(o){
   eligible:rs.filter(r=>r.decision==="APPROVED_BY_POLICY").map(r=>r.id),
   items:o.json?rs.map(strip):rs.map(r=>({id:r.id,decision:r.decision,failed:r.failed}))};
  console.log(JSON.stringify(out,null,2));
+}
+/** After a confirmed live deploy, decide whether a new publish run should start.
+ * Re-evaluates the fresh Matrix/ledger/state rather than trusting stale counts.
+ */
+function cmdDrainDecision(){
+ const c=context(),rs=evaluate(c);
+ const ready=pick(rs,c,2,null).map(r=>r.id);
+ console.log(JSON.stringify({mode:"READ_ONLY",stage:c.state.stage,...drainDecision({state:c.state,eligible:ready}),counts:summary(rs)},null,2));
 }
 function pick(rs,c,max,only){
  const ok=rs.filter(r=>r.decision==="APPROVED_BY_POLICY"&&(!only||only.includes(r.id)));
@@ -263,10 +272,11 @@ function cmdIngestReviews(o){
 try{
  const [cmd,...rest]=process.argv.slice(2),o=opts(rest);
  if(cmd==="scan")cmdScan(o);
+ else if(cmd==="drain-decision")cmdDrainDecision();
  else if(cmd==="publish")cmdPublish(o);
  else if(cmd==="live-qa")await cmdLiveQA(o);
  else if(["pause","resume","record-failure"].includes(cmd))cmdControl(cmd,o);
  else if(cmd==="validate-reviews")cmdValidateReviews(o);
  else if(cmd==="ingest-reviews")cmdIngestReviews(o);
- else throw Error("Usage: auto-publisher.mjs scan|publish|live-qa|pause|resume|record-failure|validate-reviews|ingest-reviews");
+ else throw Error("Usage: auto-publisher.mjs scan|drain-decision|publish|live-qa|pause|resume|record-failure|validate-reviews|ingest-reviews");
 }catch(e){console.error("AUTO_PUBLISHER_ERROR: "+e.message);process.exitCode=1;}

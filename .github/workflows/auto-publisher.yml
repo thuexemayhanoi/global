@@ -36,9 +36,11 @@ on:
 permissions:
   contents: write
   pages: write
+  actions: write
 concurrency:
   group: global-auto-publisher
   cancel-in-progress: false
+  queue: max
 jobs:
   publish:
     if: >-
@@ -62,7 +64,7 @@ jobs:
           node-version: '22'
       - name: Trusted main code QA
         run: |
-          node --test tests/auto-publisher.test.mjs tests/content-publisher.test.mjs tests/article-links.test.mjs
+          node --test tests/auto-publisher.test.mjs tests/publisher-drain.test.mjs tests/content-publisher.test.mjs tests/article-links.test.mjs
           node scripts/build.mjs --check
           test "$(cat CNAME)" = "global.rentbikehanoi.com"
       - name: Configure git
@@ -120,6 +122,7 @@ jobs:
         continue-on-error: true
         run: node scripts/auto-publisher.mjs live-qa --ids "${{ steps.pub.outputs.ids }}" --timeout-seconds 1200 --commit "${{ steps.pub.outputs.sha }}" --record
       - name: Record live QA, or revert the publish commit and pause
+        id: finalize
         if: steps.pub.outputs.ids != ''
         env:
           PUB_IDS: ${{ steps.pub.outputs.ids }}
@@ -142,3 +145,35 @@ jobs:
           git commit -q -m "publish(global): pause after failed live QA ($PUB_IDS)"
           git push origin HEAD:main
           exit 1
+
+      # Drain the shared Writer queue in pairs. Each follow-up gets a fresh
+      # checkout, strict QA/build/SEO/fact checks, GitHub Pages deploy and
+      # live HTTP QA before *it* may enqueue another pair. No API AI model.
+      # GITHUB_TOKEN workflow_dispatch is explicitly allowed by GitHub.
+      - name: Dispatch next pair only after successful live QA
+        if: steps.pub.outputs.ids != '' && steps.live.outcome == 'success' && steps.finalize.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          git reset --hard origin/main
+          decision="$(node scripts/auto-publisher.mjs drain-decision)"
+          echo "$decision"
+          printf '%s\n' "$decision" >> "$GITHUB_STEP_SUMMARY"
+          should_continue="$(printf '%s' "$decision" | node -e '
+            let raw="";
+            process.stdin.setEncoding("utf8");
+            process.stdin.on("data",v=>raw+=v);
+            process.stdin.on("end",()=>{
+              const d=JSON.parse(raw);
+              if(typeof d.continue!=="boolean")process.exit(2);
+              process.stdout.write(d.continue?"yes":"no");
+            });
+          ')"
+          if [ "$should_continue" = "yes" ]; then
+            echo "QUEUE_DRAIN: eligible pair remains, queueing next trusted workflow_dispatch"
+            gh workflow run auto-publisher.yml --ref main -f action=publish -f max=2
+          else
+            echo "QUEUE_DRAIN: no eligible next pair, or publisher paused; stop cleanly"
+          fi

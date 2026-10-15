@@ -2,20 +2,22 @@
 
 The Auto Publisher turns SUBMITTED Writer drafts into **new** live URLs without a per-article owner click. It acts only under `approvals/standing-policy-20261015.json` and only when automated QA and all safety/SEO gates pass. The owner retired the mandatory independent AI Reviewer on 2026-10-15; W1/W2/W3 remain concurrent Writers. It never deletes, renames or redirects a URL, and never edits NAP, prices, business schema, or a PUBLISHED, frozen or protected page.
 
-## Loop: write 2 → QA → publish 2 → live QA → repeat
+## Continuous Queue Drain: write up to 10 → Writer QA → publish 2 → live QA → next 2
 
 ```
-Writer slot pushes 1–2 drafts ─▶ Writer QA ─▶ Autopilot (SUBMITTED + exact SHA-256, refill)
+Writer slot pushes 1–10 drafts ─▶ Writer QA ─▶ Autopilot (SUBMITTED + exact SHA-256, refill)
                                                      │ workflow_run
 hourly schedule / dispatch ──────────────────────────┤
                                                      ▼
                                        Global Auto Publisher (main code only)
           scan → gates G1–G5 + G7 → ≤2 APPROVED_BY_POLICY → build + every SEO/fact gate → commit main
-          → request Pages build → live HTTP QA (≤20 min) → record PASS
+          → request Pages build → live HTTP QA (≤20 min) → record PASS → re-scan latest main\n          → if another pair is eligible, workflow_dispatch next run (repeat 2+2+2...)
                                      └─ failure → git revert the publish commit + PAUSE
 ```
 
 Writers never wait for publication; the publisher picks drafts up as soon as they become eligible.
+
+**Queue Drain (15 October 2026):** Each successful publication run performs live HTTP QA and records PASS before evaluating `node scripts/auto-publisher.mjs drain-decision` against a fresh checkout of main. If at least one additional article is eligible and no live QA is pending or publisher is paused, the same trusted workflow dispatches the **next** 2-article run using the built-in `GITHUB_TOKEN` (no external AI key). Runs are serialized with `concurrency: {group: global-auto-publisher, cancel-in-progress: false, queue: max}`; the hourly trigger remains a fallback. A queued batch of 10 eligible drafts will therefore be consumed in up to five separate 2-article publish/live-QA runs, without waiting an hour between pairs. A failed QA gate, review hold, unpublished parent, or stage cap is never bypassed, and blocked articles do not stop an otherwise eligible pair. The loops stop cleanly when no eligible articles remain. Three external AI Writer sessions may continue drafting concurrently, but the workflow itself cannot generate article prose.
 
 ## Gates
 
@@ -40,6 +42,7 @@ After staging, the build runs `seo-guard --add-new` (freezes only the new URLs),
 
 ```
 node scripts/auto-publisher.mjs scan                    # every SUBMITTED draft and its decision (read-only)
+node scripts/auto-publisher.mjs drain-decision          # next pair eligibility (read-only)
 node --test tests/auto-publisher.test.mjs
 ```
 
