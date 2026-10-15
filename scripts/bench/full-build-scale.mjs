@@ -43,7 +43,17 @@ const article=(row,i)=>({matrix_id:row.id,locale:row.locale,proposed_url:row.url
  serp_intent_checked:true,facts_reviewed_by_human:true,editorial_notes:"synthetic benchmark"});
 fs.mkdirSync(path.join(dir,"content/articles"),{recursive:true});
 let n=0;
-for(const h of hubs){h.status="PUBLISHED";write("content/articles/"+h.id+".json",article(h,n++));}
+for(const h of hubs){
+ // Preserve already-published, URL-frozen Hub content in the synthetic copy.
+ // Replacing it with benchmark prose made the SEO guard correctly fail
+ // after the first real auto-published Hub (NL-H01 / PT-H01).
+ const publishedSource=path.join(dir,"content/articles",h.id+".json");
+ if(h.status!=="PUBLISHED"||!fs.existsSync(publishedSource)){
+  h.status="PUBLISHED";
+  write("content/articles/"+h.id+".json",article(h,n));
+ }
+ n++;
+}
 const counters={};
 for(const h of hubs)for(let k=0;k<perHub&&n<N;k++){
  const code=h.locale,U=code.toUpperCase();counters[code]=(counters[code]||100)+1;
