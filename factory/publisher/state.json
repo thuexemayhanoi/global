@@ -100,6 +100,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T05:36:30.154Z"
+    },
+    {
+      "id": "JA-H02",
+      "locale": "ja",
+      "url": "/ja/topics/ryoukin-hoshoukin/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T06:26:39.346Z",
+      "source_sha256": "0c775b2097570fe4345ee4f63a3984c3d50560867f6883e53b7abed5e3c7b28f",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "PT-H02",
+      "locale": "pt",
+      "url": "/pt/topics/precos-e-caucao/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T06:26:39.346Z",
+      "source_sha256": "0f6439d7dae545029be53bfe6d7d85bf829090fe4c4796e5f60aaa85963795b7",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -210,6 +232,14 @@
         "FR-H02"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T06:26:39.346Z",
+      "ids": [
+        "JA-H02",
+        "PT-H02"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -222,8 +252,8 @@
     "live_seconds": 102
   },
   "queue": {
-    "APPROVED_BY_POLICY": 6,
     "REJECTED": 97,
+    "APPROVED_BY_POLICY": 4,
     "WAIT_PARENT": 5
   }
 }
