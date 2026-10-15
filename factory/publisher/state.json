@@ -556,6 +556,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:43:47.937Z"
+    },
+    {
+      "id": "ZH-S04",
+      "locale": "zh",
+      "url": "/zh/guides/yajin-tuihuan/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:44:05.141Z",
+      "source_sha256": "9354462b4ee0a9badacf4631aca4e29e574226bbb5c19c0a7e241b551ddee7f7",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S05",
+      "locale": "de",
+      "url": "/de/guides/auslaendischer-fuehrerschein/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:44:05.141Z",
+      "source_sha256": "2c7ff465ed139764a03292e4d5cb3963cde1c0a377a96663fbd37f5c11e452e2",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -987,6 +1009,14 @@
         "VI-S04"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:44:05.141Z",
+      "ids": [
+        "ZH-S04",
+        "DE-S05"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1000,6 +1030,6 @@
   },
   "queue": {
     "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 34
+    "APPROVED_BY_POLICY": 32
   }
 }
