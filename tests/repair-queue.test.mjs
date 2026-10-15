@@ -74,6 +74,8 @@ test("parent/stage waits are not treated as text rewrite failures",()=>{
 
 test("opt-in W1 receives W3 failed Hub atomically while source stays locked",()=>{
  const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
+ // This synthetic REPAIR fixture must not depend on whether the actual Hub is live.
+ matrix.rows.find(row=>row.id==="FR-H03").status="IDEA";
  const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
  const id="FR-H03",raw='{"immutable":"original"}\\n';
  const base={id,writer:"W3",session:"w3-live",branch:"writer/w3-live",status:"SUBMITTED",
@@ -113,6 +115,8 @@ test("opt-in W1 receives W3 failed Hub atomically while source stays locked",()=
 });
 test("handoff refuses stale report, same Writer, original owner overwrite, and unsafe replay",()=>{
  const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
+ // This synthetic REPAIR fixture must not depend on whether the actual Hub is live.
+ matrix.rows.find(row=>row.id==="FR-H03").status="IDEA";
  const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
  const c={id:"FR-H03",writer:"W3",session:"w3-live",branch:"writer/w3-live",status:"SUBMITTED",
   source_sha256:sha,source_commit:commit,claim_id:"handoff-test",at:"2026-10-15T00:00:00Z",updated_at:"2026-10-15T00:00:00Z"};
