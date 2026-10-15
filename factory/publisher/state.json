@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 26,
+  "clean_runs": 27,
   "published": [
     {
       "id": "NL-H01",
@@ -926,7 +926,8 @@
       "at": "2026-10-15T10:08:41.446Z",
       "source_sha256": "cf243c94b004fbfaa1907ad02b427deba262c818254733c3ac8049880124e35c",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T10:09:49.071Z"
     },
     {
       "id": "EN-S08",
@@ -937,7 +938,8 @@
       "at": "2026-10-15T10:08:41.446Z",
       "source_sha256": "25711ffc9e928f8c4ed178c63666194e3a4df9f9e00b334a8a098053e5872c2a",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T10:09:49.071Z"
     }
   ],
   "runs": [
@@ -1617,16 +1619,24 @@
         "EN-S08"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T10:09:49.071Z",
+      "ids": [
+        "DE-S08",
+        "EN-S08"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T10:08:22.326Z",
+    "at": "2026-10-15T10:09:49.071Z",
     "ids": [
-      "NL-S07",
-      "PT-S07"
+      "DE-S08",
+      "EN-S08"
     ],
-    "commit": "de84002a055d9b802fd4bffcce01f3e078ba8994",
-    "live_seconds": 62
+    "commit": "459ad87d85ca6ee3c29d37211429e1eb7aacb391",
+    "live_seconds": 61
   },
   "queue": {
     "WAIT_PARENT": 30,
