@@ -64,7 +64,7 @@ jobs:
           node-version: '22'
       - name: Trusted main code QA
         run: |
-          node --test tests/auto-publisher.test.mjs tests/content-publisher.test.mjs tests/article-links.test.mjs
+          node --test tests/auto-publisher.test.mjs tests/publisher-drain.test.mjs tests/content-publisher.test.mjs tests/article-links.test.mjs
           node scripts/build.mjs --check
           test "$(cat CNAME)" = "global.rentbikehanoi.com"
       - name: Configure git
