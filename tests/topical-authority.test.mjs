@@ -134,6 +134,8 @@ test("promotion needs the exact owner manifest and only adds balanced IDEA rows"
 test("menus keep exactly two featured Supporting labels per Hub, PUBLISHED first",()=>{
  for(const hub of matrix.rows.filter(r=>r.role==="HUB"))assert.equal(menuChildren(matrix,hub.id).length,2,hub.id);
  const grown=structuredClone(matrix);
+ // EN-H01's real children get published over time; keep them IDEA here so the newcomer's PUBLISHED status is what ranks it.
+ for(const r of grown.rows)if(r.parent_id==="EN-H01")r.status="IDEA";
  grown.rows.push({...grown.rows.find(r=>r.id==="EN-S01"),id:"EN-S99",url:"/en/guides/test/",status:"PUBLISHED",priority:90});
  assert.deepEqual(menuChildren(grown,"EN-H01").map(r=>r.id),["EN-S99","EN-S01"]);
 });

@@ -6,7 +6,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import {spawnSync} from "node:child_process";
-import {root} from "./topic-research-fixtures.mjs";
+import {root,withoutResearchIntake} from "./topic-research-fixtures.mjs";
 
 export const NOW="2026-10-15T10:00:00.000Z";
 const SEED=["scripts","data","approvals","factory","AGENTS.md","docs/TOPIC-FACTORY.md","CNAME",".github/workflows/topic-research-qa.yml",".github/workflows/topic-factory.yml"];
@@ -30,6 +30,14 @@ export function makeEnv(){
   fs.mkdirSync(path.dirname(path.join(seed,rel)),{recursive:true});
   fs.cpSync(from,path.join(seed,rel),{recursive:true,filter:s=>!s.includes(path.join("topic-research","drafts"))});
  }
+ // Same world as the in-memory fixtures: no topics ingested by real research sessions (see withoutResearchIntake).
+ const rd=rel=>JSON.parse(fs.readFileSync(path.join(seed,rel),"utf8")),wr=(rel,v)=>fs.writeFileSync(path.join(seed,rel),JSON.stringify(v,null,2)+"\n");
+ const mapDir="data/seo/topical-authority",localeFiles=Object.fromEntries(fs.readdirSync(path.join(seed,mapDir)).filter(f=>/^[a-z]{2}\.json$/.test(f)).map(f=>[f,rd(mapDir+"/"+f)]));
+ const clean=withoutResearchIntake({matrix:rd("data/seo/master-matrix.json"),ledger:rd("factory/external-writers/claims.json"),files:localeFiles});
+ wr("data/seo/master-matrix.json",clean.matrix);
+ wr("factory/external-writers/claims.json",clean.ledger);
+ for(const [f,v] of Object.entries(clean.files))wr(mapDir+"/"+f,v);
+ if(fs.existsSync(path.join(seed,"data/seo/topic-factory/research-log.json")))wr("data/seo/topic-factory/research-log.json",{...rd("data/seo/topic-factory/research-log.json"),batches:[]});
  git(seed,["add","-A"]);
  git(seed,["commit","-q","-m","seed main"]);
  git(seed,["remote","add","origin",origin]);
