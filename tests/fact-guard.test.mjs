@@ -60,6 +60,18 @@ test("Korean legal source titles are not prices, but real KRW amounts remain pro
  assert.ok(codes(scanText("대여료 15000원입니다.",{locale:"ko",mode:"strict",ref})).includes("UNSOURCED_AMOUNT"),"unsourced won must still fail");
 });
 
+test("currency words inside other words are not prices, but real EUR/USD/VND amounts remain protected",()=>{
+ for(const [s,l] of [["vitesse cyclomoteur 50 cm3 vietnam","fr"],["la zone du secteur 1 de Hoàn Kiếm","fr"],["chauffeur 2 jours","fr"],["Fahrer 2 Tage","de"]])
+  assert.deepEqual(extractAmounts(s,l),[],s+" contains no currency amount");
+ assert.deepEqual(codes(scanText("vitesse cyclomoteur 50 cm3 vietnam",{locale:"fr",mode:"strict",ref})),[],"a moped class must not fail the strict guard");
+ const v=(s,l)=>extractAmounts(s,l).flatMap(a=>a.values);
+ assert.deepEqual(v("caution de EUR 50","fr"),[50]);
+ assert.deepEqual(v("caution de eur 50","fr"),[50]);
+ assert.deepEqual(v("caution de €50 ou 50 euros","fr"),[50,50]);
+ assert.deepEqual(v("deposit USD 20 or VND 500.000","en"),[20,500000]);
+ assert.ok(codes(scanText("une caution de EUR 50",{locale:"fr",mode:"strict",ref})).includes("UNSOURCED_AMOUNT"),"an unsourced euro amount must still fail");
+});
+
 test("unsourced amounts fail strictly, warn for drafts; cited third-party prices only warn",()=>{
  const s="Most shops charge 130,000 VND per day.";
  assert.ok(codes(scanText(s,{mode:"strict",ref})).includes("UNSOURCED_AMOUNT"));
