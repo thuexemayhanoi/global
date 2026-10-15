@@ -1,68 +1,12 @@
 {
   "version": 2,
-  "ledger_revision": 61,
-  "stage": "RAMP",
+  "ledger_revision": 63,
+  "stage": "CONTINUOUS",
   "counts": {
-    "APPROVED_BY_POLICY": 33,
-    "WAIT_PARENT": 35,
-    "REJECTED": 24
+    "WAIT_PARENT": 36,
+    "APPROVED_BY_POLICY": 44
   },
   "items": [
-    {
-      "id": "DE-H04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "5545aa2d1ed141a654d576cf0322b5b7c14eee8fbd74e0324ba0bbe4d6786786",
-      "source_commit": "57ee965d433c1ab0c6340e83549ad013ee1e333f",
-      "details": []
-    },
-    {
-      "id": "EN-H04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "bbda4231c73e276f99556cc6917673dd2e4c37afae62c004d0603177511a1fec",
-      "source_commit": "57ee965d433c1ab0c6340e83549ad013ee1e333f",
-      "details": []
-    },
-    {
-      "id": "ES-H04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "4b1e95a9116ce8aaa720e190f3d48a8ef7480dac79148489a332e1bad96a34b4",
-      "source_commit": "57ee965d433c1ab0c6340e83549ad013ee1e333f",
-      "details": []
-    },
-    {
-      "id": "NL-H04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "fb298cdad17d07179dea3ad19c0cdfca48f4ada184192a7308b04cb6fb9ff16c",
-      "source_commit": "57ee965d433c1ab0c6340e83549ad013ee1e333f",
-      "details": []
-    },
-    {
-      "id": "PT-H04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "17f6d53356810d9ee0e67d32ec57871b4319f608daf8771279584d76db32fe28",
-      "source_commit": "57ee965d433c1ab0c6340e83549ad013ee1e333f",
-      "details": []
-    },
     {
       "id": "DE-S01",
       "decision": "WAIT_PARENT",
@@ -94,17 +38,6 @@
       ]
     },
     {
-      "id": "ES-S01",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "246b775de3e5378c5f8c5d71a0dbe4ad8345b4b3e54fa58456cd617783d8c25a",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
       "id": "FR-S01",
       "decision": "WAIT_PARENT",
       "failed": [
@@ -133,28 +66,6 @@
       "details": [
         "G2_PARENT_PUBLISHED: JA-H01 is IDEA"
       ]
-    },
-    {
-      "id": "NL-S01",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "d3e367c7dd15f89ee8244cd833053234a38ed46f214ec42a1bc8bd34b690f7a5",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "PT-S01",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "d7ccec717f65f4e8e5657eabb869d2f688c1851368d81fa40ffd9eabf187cd94",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
     },
     {
       "id": "VI-S01",
@@ -188,53 +99,32 @@
     },
     {
       "id": "DE-S02",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G1_DRAFT_QA",
         "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "bc9bb4e239f61251b094135edcd1f9884675f593a3a2b4fc3d249dd32f6a034c",
-      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
+      "source_sha256": "8b092983c318067d5948949132c23eae9287dba536aa7596d1e0a40b134fd742",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
       "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «200.000 Dong»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph ",
         "G2_PARENT_PUBLISHED: DE-H01 is IDEA"
       ]
     },
     {
       "id": "EN-S02",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "4c64002b31b67adc12cb725de5b153abcbf739efd7bb9e6a705a0e87f3ce8442",
-      "source_commit": "f2b74a608b70e8f8a34bb0f2c87ca1b75c048fc8",
+      "source_sha256": "24f5049982900326e765073667a1c178c474fe34bbd5cc6f3474b6ff50408929",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
       "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «200,000 VND»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «",
-        "G2_PARENT_PUBLISHED: EN-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 5 hard legal statement(s) lack an inline official citation: Two categories of rental two-wheelers in Hanoi sit just below the notice of most travellers, yet they solve the same problem in opposite way | Vietnam's Law on Order and Road Traff"
-      ]
-    },
-    {
-      "id": "ES-S02",
-      "decision": "REJECTED",
-      "failed": [
-        "G1_DRAFT_QA"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "b7549cb045d5223a4e84efc914624b8398dddcfd2384541d8ff64709f6c4d84b",
-      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
-      "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «200.000 dong»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph "
+        "G2_PARENT_PUBLISHED: EN-H01 is IDEA"
       ]
     },
     {
@@ -254,53 +144,17 @@
     },
     {
       "id": "JA-S02",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "3af79ca2ae09723ea370366849312b7c254a1a93c3e503f9420824b1600dfd6a",
-      "source_commit": "fcb7d4f0a038b2f79324d4bfebd28dbc0e18e828",
+      "source_sha256": "8c66a3a52d3d897501e409690b3b5c62b33e1867b3ae094ef249aa1e8cae471c",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
       "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «20万ドン»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «9,000ド",
-        "G2_PARENT_PUBLISHED: JA-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 5 hard legal statement(s) lack an inline official citation: ハノイのレンタルバイクには、ほとんどの旅行者が正しく分類できていないのに、同じ問題を正反対の方法で解決する2つのカテゴリーがあります。50ccの原付と電動スクーターです。どちらも「とにかく簡単」という同じ約束を掲げ、同じ理由で魅力に映ります。ベトナムの規則では、それぞれが一定の条 | 2025年1月1日から、ベトナムでは交通秩序・安全法36/2024/QH1"
-      ]
-    },
-    {
-      "id": "KO-S02",
-      "decision": "REJECTED",
-      "failed": [
-        "G1_DRAFT_QA",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "e81434b8f6662df685679ea068d9128313ab19d2b4d51d9462db4d699433a695",
-      "source_commit": "fcb7d4f0a038b2f79324d4bfebd28dbc0e18e828",
-      "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «20만 동»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «9,000동",
-        "G3_OFFICIAL_EVIDENCE: 5 hard legal statement(s) lack an inline official citation: 하노이 렌터바이크 시장에는 대부분의 여행자가 제대로 분류하지 못하지만 같은 문제를 정반대 방식으로 푸는 두 가지 카테고리가 있다. 바로 50cc 스쿠터와 전동 스쿠터다. 두 종 모두 최대한의 단순함을 약속하고, 같은 이유로 매력적이다. 베트남 규정상  | 2025년 1월 1일부터 베트남에서는 도로 교통 질서·안전법 36/"
-      ]
-    },
-    {
-      "id": "NL-S02",
-      "decision": "REJECTED",
-      "failed": [
-        "G1_DRAFT_QA"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "76a714ab9632383d6e1a46f10db40acb1139083c5ba697c0ed2e66452d4a3764",
-      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
-      "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph «200.000 dong»; Fact guard UNSOURCED_AMOUNT in sources[3].title: Currency amount without an inline source in the same paragraph "
+        "G2_PARENT_PUBLISHED: JA-H01 is IDEA"
       ]
     },
     {
@@ -347,17 +201,6 @@
       "details": [
         "G2_PARENT_PUBLISHED: DE-H02 is IDEA"
       ]
-    },
-    {
-      "id": "EN-S03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "d7f73315781ff2be7577f4a88196a4cf7bc98b7bcb54edece9c4f253f48bb132",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
     },
     {
       "id": "ES-S03",
@@ -435,69 +278,51 @@
     },
     {
       "id": "VI-S03",
-      "decision": "REJECTED",
-      "failed": [
-        "G1_DRAFT_QA"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "3da6e7a377e04ab748a4faeaf4021f838e498b7278cc5a9adee3d98458387f49",
-      "source_commit": "427dfdcf1f07c254c7cdb51162c8bf32c38ee15e",
-      "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same paragraph «150.000–200.000 đồng»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same pa"
-      ]
+      "source_sha256": "7665e19d26d366b65ecedba497ca272602ef8c367f36a72ac53384453aa653c6",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "details": []
     },
     {
       "id": "ZH-S03",
-      "decision": "REJECTED",
-      "failed": [
-        "G1_DRAFT_QA"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "fa619f705f51a3182f36d9eb6eef5823f2742159f186896602f917395c657d73",
-      "source_commit": "427dfdcf1f07c254c7cdb51162c8bf32c38ee15e",
-      "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same paragraph «150,000–200,000盾»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same paragr"
-      ]
+      "source_sha256": "b6d85dc50165d6446e92cdfaccff7da0ed2cfd6e947909a2900f714d0de175d7",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "details": []
     },
     {
       "id": "DE-S04",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "d485bec348b8d7ebe531fb3c65635f8d51a496bdbc0deb1ee9f8c713dbc50b8f",
-      "source_commit": "ed1015407bc36afdb41611d13e0e4de23a2f7f6b",
+      "source_sha256": "4bb1711de4153223f1ebf97c8b4121cc045f89ace3419ee5c5db90177cb69624",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
       "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in meta_description: Currency amount without an inline source in the same paragraph «2 bis 5 Millionen Dong»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same ",
-        "G2_PARENT_PUBLISHED: DE-H02 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: Fast jede Motorradmiete in Hanoi endet mit derselben Szene: Die Vermietung zahlt eine Kaution zurück. Was eine reibungslose Rückgabe von ein | Kautionstreitigkeiten entstehen fast "
+        "G2_PARENT_PUBLISHED: DE-H02 is IDEA"
       ]
     },
     {
       "id": "EN-S04",
-      "decision": "REJECTED",
-      "failed": [
-        "G1_DRAFT_QA",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "37cb22a19f9f09a4a48302be425b3465584e835151511d7adac76fecaa8c1229",
-      "source_commit": "ed1015407bc36afdb41611d13e0e4de23a2f7f6b",
-      "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in meta_description: Currency amount without an inline source in the same paragraph «2 to 5 million VND»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same para",
-        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: Almost every motorbike rental in Hanoi ends the same way: the shop hands back a deposit. What separates a smooth return from a disputed one  | Deposit disputes almost never come fr"
-      ]
+      "source_sha256": "7a35bcbe95381da7656dc39386d8e86faaa83aef691d92e3e0e894d6e94bc340",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "details": []
     },
     {
       "id": "ES-S04",
@@ -623,106 +448,76 @@
     },
     {
       "id": "ES-S05",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_SENSITIVE_SOURCES",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "a5f4e3562be1c3a4f5203c64bf59670277a9688e9814058434986d08dcc4e5e5",
-      "source_commit": "9ed97278cf006e2b250e9d0b18d1d498b793b4c9",
+      "source_sha256": "4ab7169d41c41d5d756e10e70d12855ec932e1a1a76f223205e7fbed824c7540",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
       "details": [
-        "G2_PARENT_PUBLISHED: ES-H03 is IDEA",
-        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
-        "G3_OFFICIAL_EVIDENCE: 5 hard legal statement(s) lack an inline official citation: La ley vietnamita sobre orden y seguridad del tráfico, 36/2024/QH15, vigente desde el 1 de enero de 2025, asigna la clase A1 a las motos de  | Para un conductor español, estas dos "
+        "G2_PARENT_PUBLISHED: ES-H03 is IDEA"
       ]
     },
     {
       "id": "FR-S05",
-      "decision": "REJECTED",
-      "failed": [
-        "G3_SENSITIVE_SOURCES",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "343f18ade0b06e3e77569b35ef1248838533cd95f435bf92af12e91584815071",
-      "source_commit": "9ed97278cf006e2b250e9d0b18d1d498b793b4c9",
-      "details": [
-        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
-        "G3_OFFICIAL_EVIDENCE: 6 hard legal statement(s) lack an inline official citation: La loi vietnamienne sur l'ordre et la sécurité routière, 36/2024/QH15, en vigueur depuis le 1er janvier 2025, affecte la classe A1 aux motos | Pour un visiteur sans permis internat"
-      ]
+      "source_sha256": "df3e83a2311824f870a674b8336ad6687dfe391310bddd555cdcb7ce2f574547",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "details": []
     },
     {
       "id": "JA-S05",
-      "decision": "REJECTED",
-      "failed": [
-        "G3_SENSITIVE_SOURCES",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "a43e647bece405948728eb0752e6f014f9b025fcc0387da30cbc0820e3e118a6",
-      "source_commit": "c469526f514428efc45ef5dfe3f982e3cb6b04d2",
-      "details": [
-        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
-        "G3_OFFICIAL_EVIDENCE: 6 hard legal statement(s) lack an inline official citation: ここが核心です。アメリカ、カナダ、オーストラリア、ニュージーランド、アイルランド、日本、韓国、スペインが発行する国際運転免許は、ベトナムでは無効です。これらの国はジュネーブ1949年条約に基づいて発行しているためです（Ha Giang Trips）。日本のJAFや地方自動車協会が | 2025年1月1日に施行されたベトナムの交通秩序・安全法36/2024/Q"
-      ]
+      "source_sha256": "d560aa8365edaaaa3d5e15e1a5acb731333adf4a81cc46b91f21e0cf52d34cc5",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "details": []
     },
     {
       "id": "KO-S05",
-      "decision": "REJECTED",
-      "failed": [
-        "G3_SENSITIVE_SOURCES",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "9e4d310ec6d411286d87ad9ad84422486ede6c77a7b1a87476963a8e44d7c6ea",
-      "source_commit": "c469526f514428efc45ef5dfe3f982e3cb6b04d2",
-      "details": [
-        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
-        "G3_OFFICIAL_EVIDENCE: 6 hard legal statement(s) lack an inline official citation: 핵심은 여기에 있다. 미국, 캐나다, 오스트레일리아, 뉴질랜드, 아일랜드, 일본, 한국, 스페인이 발급하는 국제운전면허는 베트남에서 무효다. 이 나라들이 제네바 1949년 협약에 따라 발급하기 때문이다(Ha Giang Trips). 한국의 자동차검사· | 2025년 1월 1일부터 시행된 베트남의 도로 교통 질서·안전법 3"
-      ]
+      "source_sha256": "ed1478787844fd2fc482ff779d89b58aa9bb155d3082ff939cc775ed83bbdb2a",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "details": []
     },
     {
       "id": "NL-S05",
-      "decision": "REJECTED",
-      "failed": [
-        "G3_SENSITIVE_SOURCES",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "79955a51adca987ce3212f9e03e35f023c335c964758ef62720ab2008c45da54",
-      "source_commit": "d4a6c85aeeeb18db0b6037614e67f7acae4599c0",
-      "details": [
-        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
-        "G3_OFFICIAL_EVIDENCE: 4 hard legal statement(s) lack an inline official citation: Vietnam kent sinds 1 januari 2025 de A1-klasse voor motoren tot 125cc of elektromotoren tot 11kW, en de A-klasse voor alles daarboven (Danan | Voor wie zonder motorcategorie of zon"
-      ]
+      "source_sha256": "6d2bbccb3f0c5f9d251090288e9c3a796cb53e5196a6f8e5142ed48197aa157e",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "details": []
     },
     {
       "id": "PT-S05",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "d19e60effd592259b92eef3f4e2f1c384edf76c82c701a5a5bc9296b833adec8",
-      "source_commit": "d4a6c85aeeeb18db0b6037614e67f7acae4599c0",
+      "source_sha256": "54f6aab2e0d495f01f79c7ab1f452e0690d6144a3d210cacd5feb1a98c3653d5",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
       "details": [
-        "G2_PARENT_PUBLISHED: PT-H03 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 4 hard legal statement(s) lack an inline official citation: Desde 1 de janeiro de 2025, a lei vietnamita 36/2024/QH15 define a classe A1 para motas até 125cc ou motores elétricos até 11kW, e a classe  | Para quem viaja sem categoria de mota"
+        "G2_PARENT_PUBLISHED: PT-H03 is IDEA"
       ]
     },
     {
@@ -849,106 +644,72 @@
     },
     {
       "id": "VI-S06",
-      "decision": "REJECTED",
-      "failed": [
-        "G1_DRAFT_QA",
-        "G3_SENSITIVE_SOURCES"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "b2beae657f67ed16cb2f1439a7cbe6e9163816a73fd0b087a6b4b82caccdeb92",
-      "source_commit": "72ff487669088294a9bd2b9d3314a5217e60f382",
-      "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[4].title: Currency amount without an inline source in the same paragraph «2–5 triệu đồng»",
-        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
-      ]
+      "source_sha256": "71a9623c76e662d7fcfe4a0467976f860a343fa74dda703309b54e6e72703f1d",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "details": []
     },
     {
       "id": "ZH-S06",
-      "decision": "REJECTED",
-      "failed": [
-        "G1_DRAFT_QA",
-        "G3_SENSITIVE_SOURCES",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "c21487083944d1cf78e8eb5cffe92900913c1d95ddc21cf9be0153d72562d147",
-      "source_commit": "72ff487669088294a9bd2b9d3314a5217e60f382",
-      "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[4].title: Currency amount without an inline source in the same paragraph «200万至500万越南盾»",
-        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
-        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: 根据越南《民法典》(2015年)第472条,财产租赁合同是双方之间的协议,据此出租方将财产交给承租方在一段期限内使用,承租方支付租金(iContract)。摩托车租赁合同属于财产租赁合同的一种,因此即使车行只开一张简短的租车单,原则上它仍然是一份有约束力的合同。"
-      ]
+      "source_sha256": "9bf1fdae69e6b6932263f77eb300b5d17cd5d5fb57752c218641c8ccf907929e",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "details": []
     },
     {
       "id": "DE-S07",
-      "decision": "REJECTED",
-      "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_SENSITIVE_SOURCES"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "e598793118284fd211fbf12894ffe3b4154ae8a087a6652ab27338ffea4f3369",
-      "source_commit": "fa2f7e2a37e298d7fe637758fc0f53ab80abb98d",
-      "details": [
-        "G2_PARENT_PUBLISHED: DE-H04 is IDEA",
-        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
-      ]
+      "source_sha256": "f1e5b6b202e7aec084ce9a23f717c7154970330c3af7ebabef90774b6cc8d1e1",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "details": []
     },
     {
       "id": "EN-S07",
-      "decision": "REJECTED",
-      "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_SENSITIVE_SOURCES"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "45d53b0f91c90652853fcd5ef243e51ae83b8ecc9ba76607eb15ad1b48f9100e",
-      "source_commit": "fa2f7e2a37e298d7fe637758fc0f53ab80abb98d",
-      "details": [
-        "G2_PARENT_PUBLISHED: EN-H04 is IDEA",
-        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
-      ]
+      "source_sha256": "59c1a3c6adf9e646fbbf111ac6e5fe278ea52e76d98a973defcb8c4311a7bfbd",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "details": []
     },
     {
       "id": "ES-S07",
-      "decision": "REJECTED",
-      "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_SENSITIVE_SOURCES"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "aabc38ce3350ad8bad01f8f8cd543ac091d6cbdcda50dd510b309a0a36e2fafa",
-      "source_commit": "7b3f03041d2dea0a863963b61a81eb0f1dbcd647",
-      "details": [
-        "G2_PARENT_PUBLISHED: ES-H04 is IDEA",
-        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
-      ]
+      "source_sha256": "88e1a08d178631bdc4cee5b156b0b489ee1ff172ce08afb8966e45a0f6f40591",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "details": []
     },
     {
       "id": "FR-S07",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_SENSITIVE_SOURCES"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "1c55033991c0113e89098c4a5fddf50f186faefcba97e47a8d0d9b78bf2036f4",
-      "source_commit": "7b3f03041d2dea0a863963b61a81eb0f1dbcd647",
+      "source_sha256": "03347b22e7ae7b8b4f988b645ea86e6e5959512609b5bbaf0e6eea23f46b7877",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
       "details": [
-        "G2_PARENT_PUBLISHED: FR-H04 is IDEA",
-        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
+        "G2_PARENT_PUBLISHED: FR-H04 is IDEA"
       ]
     },
     {
@@ -979,33 +740,25 @@
     },
     {
       "id": "NL-S07",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "a7464d39a3146bbb2d065bc9ad138fe65136b4ed2dcc7f9d1d0fedb49444d213",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: NL-H04 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "PT-S07",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "2c2263cc6ae7090a359b2879dcae5a77d6d949ba57d6b90413d7c8bf19159634",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: PT-H04 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "VI-S07",
@@ -1039,48 +792,36 @@
     },
     {
       "id": "DE-S08",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "cf243c94b004fbfaa1907ad02b427deba262c818254733c3ac8049880124e35c",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: DE-H04 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "EN-S08",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "25711ffc9e928f8c4ed178c63666194e3a4df9f9e00b334a8a098053e5872c2a",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: EN-H04 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "ES-S08",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "b7652f85c8b032ff5554e7a3dff675e67839f6eed3c938d75fc1b54378451487",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: ES-H04 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "FR-S08",
@@ -1099,69 +840,51 @@
     },
     {
       "id": "JA-S08",
-      "decision": "REJECTED",
-      "failed": [
-        "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_SENSITIVE_SOURCES"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "e3adca571daa34477934fa9172f0f9f138762a464a821e0d3936ab31c4ceaa3c",
-      "source_commit": "e0610b31cd991c1f74379016e9f41251b8382409",
-      "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[1].title: Currency amount without an inline source in the same paragraph «40万ドン»; Fact guard UNSOURCED_AMOUNT in sources[2].title: Currency amount without an inline source in the same paragraph «3万ドン»;",
-        "G2_PARENT_PUBLISHED: JA-H04 is IDEA",
-        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
-      ]
-    },
-    {
-      "id": "KO-S08",
-      "decision": "REJECTED",
-      "failed": [
-        "G1_DRAFT_QA",
-        "G3_SENSITIVE_SOURCES"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "663fad6c4c3de0f1d1539834b8c4e7f7a0f3c9003bc70262ab54a533a937db74",
-      "source_commit": "e0610b31cd991c1f74379016e9f41251b8382409",
-      "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[1].title: Currency amount without an inline source in the same paragraph «40만 동»; Fact guard UNSOURCED_AMOUNT in sources[2].title: Currency amount without an inline source in the same paragraph «3만 동»;",
-        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
-      ]
-    },
-    {
-      "id": "NL-S08",
       "decision": "WAIT_PARENT",
       "failed": [
         "G2_PARENT_PUBLISHED"
       ],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "837f201ffefdab87ccc3eddcb1466d501c5492af089d0473b471b734fb7b3e1d",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "details": [
+        "G2_PARENT_PUBLISHED: JA-H04 is IDEA"
+      ]
+    },
+    {
+      "id": "KO-S08",
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "1abd4b0a4e4e406af1a91bd90019068271a06f5573edf3c9b0042698a3aa3cc2",
+      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "details": []
+    },
+    {
+      "id": "NL-S08",
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "6f656234ba38760cb1476d2d040d91bc2a30caa5448ffddab83e32c018c1fb7b",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: NL-H04 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "PT-S08",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W3",
       "session": "w3-live",
       "branch": "writer/w3-live",
       "source_sha256": "89ffc5cd830ab1b2a9a7200c16deca63560581b7e8a3204dffa5d7af7aa547cd",
       "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: PT-H04 is IDEA"
-      ]
+      "details": []
     },
     {
       "id": "VI-S08",
