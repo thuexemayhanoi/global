@@ -7,26 +7,26 @@
   "branch": "research/claude-20261015-mobility",
   "batch_session": "research-claude-20261015-mobility",
   "created_at": "2026-10-15T09:33:24.963Z",
-  "updated_at": "2026-10-15T19:39:11.545Z",
-  "base_main_sha": "8fd55834c1847ebd8ee0766f29e6cf664c10ff12",
-  "last_commit_sha": "3880c5112c51729187246d7414e4087fb6e9a119",
+  "updated_at": "2026-10-15T19:55:44.830Z",
+  "base_main_sha": "5667eafb5fc4dba52247b8d6e4daa3dbf89b2062",
+  "last_commit_sha": "a9d0a8792898df0ac9264a8f9fd3935414c6db63",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 240,
-    "qa_pass": 240,
+    "researched": 250,
+    "qa_pass": 250,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 230,
+    "pushed": 240,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "en": 40,
-      "de": 38,
-      "fr": 22,
+      "en": 48,
+      "de": 39,
+      "fr": 23,
       "es": 22,
       "nl": 20,
       "pt": 20,
@@ -38,13 +38,13 @@
     "domains": {
       "transportation-mobility": 10,
       "motorbike-rental": 10,
-      "traffic-law-safety": 220
+      "traffic-law-safety": 230
     }
   },
   "last_batch": {
-    "seq": 24,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0024.json",
-    "sha256": "734eb2f36a7f548b5d7136c37cc22e1fc1dd1562dfffa590dac41b9e939a27a4",
+    "seq": 25,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0025.json",
+    "sha256": "94f621467fe47dac4b148a8269d10312198994413a341d20d4edc9b30deeb757",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -2607,8 +2607,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility-0024.json",
       "sha256": "734eb2f36a7f548b5d7136c37cc22e1fc1dd1562dfffa590dac41b9e939a27a4",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "a9d0a8792898df0ac9264a8f9fd3935414c6db63",
       "researched_on": "2026-10-15",
       "topics": [
         {
@@ -2619,7 +2619,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::enge bergstraßen vietnam roller gegenverkehr",
-          "ta_id": null
+          "ta_id": "TA-DE-0050"
         },
         {
           "ref": "de:roller-faehre-pontonbruecke-vietnam",
@@ -2629,7 +2629,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::mit dem roller auf die fahre vietnam",
-          "ta_id": null
+          "ta_id": "TA-DE-0051"
         },
         {
           "ref": "de:strassentunnel-roller-vietnam",
@@ -2639,7 +2639,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::tunnel vietnam roller regeln",
-          "ta_id": null
+          "ta_id": "TA-DE-0052"
         },
         {
           "ref": "de:einsatzfahrzeuge-platz-machen-vietnam",
@@ -2649,7 +2649,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::krankenwagen platz machen vietnam roller",
-          "ta_id": null
+          "ta_id": "TA-DE-0053"
         },
         {
           "ref": "de:fussgaengerueberweg-roller-vietnam",
@@ -2659,7 +2659,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::zebrastreifen vietnam roller vorrang",
-          "ta_id": null
+          "ta_id": "TA-DE-0054"
         },
         {
           "ref": "de:sicherheitsabstand-roller-vietnam",
@@ -2669,7 +2669,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::sicherheitsabstand roller vietnam",
-          "ta_id": null
+          "ta_id": "TA-DE-0055"
         },
         {
           "ref": "de:mietroller-technischer-zustand-spiegel-licht",
@@ -2679,7 +2679,7 @@
           "parent_id": "DE-H03",
           "subcluster": "dc-contract",
           "key": "de::roller ohne spiegel vietnam strafe",
-          "ta_id": null
+          "ta_id": "TA-DE-0056"
         },
         {
           "ref": "de:notrufnummern-vietnam",
@@ -2689,7 +2689,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-incidents",
           "key": "de::notruf vietnam nummer",
-          "ta_id": null
+          "ta_id": "TA-DE-0057"
         },
         {
           "ref": "en:tow-or-push-a-motorbike-vietnam",
@@ -2699,7 +2699,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-incidents",
           "key": "en::can you tow a motorbike with another motorbike in vietnam",
-          "ta_id": null
+          "ta_id": "TA-EN-0060"
         },
         {
           "ref": "en:taking-a-motorbike-on-a-ferry-vietnam",
@@ -2709,14 +2709,125 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-city",
           "key": "en::taking a motorbike on a ferry in vietnam",
+          "ta_id": "TA-EN-0061"
+        }
+      ]
+    },
+    {
+      "seq": 25,
+      "file": "factory/topic-research/batches/claude-20261015-mobility-0025.json",
+      "sha256": "94f621467fe47dac4b148a8269d10312198994413a341d20d4edc9b30deeb757",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-15",
+      "topics": [
+        {
+          "ref": "en:narrow-mountain-roads-oncoming-traffic-vietnam",
+          "locale": "en",
+          "slug": "narrow-mountain-roads-oncoming-traffic-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::who gives way on narrow mountain roads in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:road-tunnel-rules-motorbike-vietnam",
+          "locale": "en",
+          "slug": "road-tunnel-rules-motorbike-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::motorbike rules in road tunnels in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:give-way-to-emergency-vehicles-vietnam",
+          "locale": "en",
+          "slug": "give-way-to-emergency-vehicles-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::how to give way to an ambulance on a motorbike in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:pedestrian-crossings-motorbike-vietnam",
+          "locale": "en",
+          "slug": "pedestrian-crossings-motorbike-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::do motorbikes have to stop for pedestrians at zebra crossings in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:safe-following-distance-motorbike-vietnam",
+          "locale": "en",
+          "slug": "safe-following-distance-motorbike-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::safe following distance on a motorbike in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:rental-bike-defects-rider-fines-vietnam",
+          "locale": "en",
+          "slug": "rental-bike-defects-rider-fines-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H03",
+          "subcluster": "dc-contract",
+          "key": "en::fine for riding a motorbike without mirrors in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:emergency-numbers-vietnam",
+          "locale": "en",
+          "slug": "emergency-numbers-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::emergency numbers in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:one-way-streets-and-pavements-motorbike-vietnam",
+          "locale": "en",
+          "slug": "one-way-streets-and-pavements-motorbike-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::riding the wrong way down a one-way street in vietnam fine",
+          "ta_id": null
+        },
+        {
+          "ref": "de:einbahnstrasse-gehweg-roller-vietnam",
+          "locale": "de",
+          "slug": "einbahnstrasse-gehweg-roller-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::einbahnstraße falsch herum roller vietnam strafe",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:sens-interdit-trottoir-scooter-vietnam",
+          "locale": "fr",
+          "slug": "sens-interdit-trottoir-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::rouler a contresens en scooter au vietnam amende",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 25,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0025.json",
+    "seq": 26,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0026.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -2735,10 +2846,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-15T09:34:54.497Z",
-      "event": "CHECKPOINT_UPDATED"
-    },
     {
       "at": "2026-10-15T13:22:07.508Z",
       "event": "BATCH_COMMITTED",
@@ -2903,6 +3010,13 @@
       "seq": 24,
       "topics": 10,
       "sha256": "734eb2f36a7f548b5d7136c37cc22e1fc1dd1562dfffa590dac41b9e939a27a4"
+    },
+    {
+      "at": "2026-10-15T19:55:44.830Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 25,
+      "topics": 10,
+      "sha256": "94f621467fe47dac4b148a8269d10312198994413a341d20d4edc9b30deeb757"
     }
   ]
 }
