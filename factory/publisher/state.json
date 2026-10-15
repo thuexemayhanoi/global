@@ -4324,17 +4324,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T22:55:54.024Z"
+    },
+    {
+      "id": "FR-S41",
+      "locale": "fr",
+      "url": "/fr/guides/combien-de-personnes-sur-un-scooter-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:56:24.245Z",
+      "source_sha256": "26c03e1004505c5fa9eb29bcd02ba24f6286081dcf2819752424243dbdcb9bb5",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S42",
+      "locale": "fr",
+      "url": "/fr/guides/priorite-intersections-rond-points-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:56:24.245Z",
+      "source_sha256": "b1d36e8cfaebacef09670787caa57f14c29a0f1420a2119a89908cc75479646c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T18:00:42.635Z",
-      "ids": [
-        "KO-S14",
-        "NL-S14"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T18:02:55.056Z",
       "ids": [
@@ -5878,6 +5892,14 @@
         "FR-S40"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T22:56:24.245Z",
+      "ids": [
+        "FR-S41",
+        "FR-S42"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -5890,6 +5912,6 @@
     "live_seconds": 81
   },
   "queue": {
-    "APPROVED_BY_POLICY": 5
+    "APPROVED_BY_POLICY": 6
   }
 }
