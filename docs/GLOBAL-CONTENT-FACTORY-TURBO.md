@@ -20,6 +20,9 @@ node scripts/writer-request.mjs start --writer W1 --session w1-vibe-20261014 --b
 Commit/push the exact request JSON on the Writer branch (not main). Writer push QA green triggers Global Dynamic Writer Autopilot to claim up to ten.
 
 Then LOOP without asking the owner again:
+
+- **First check automated repair work** from QA-rejected SUBMITTED drafts: `node scripts/writer-repair.mjs next --writer W1 --session w1-vibe-20261014`. If `state=REPAIR`, use your own AI to correct its exact failed gates into the ticket's NEW `revisions/<ID>.rN.json` file, run `node scripts/writer-repair.mjs check --writer W1 --session w1-vibe-20261014 --file <ticket.revision_path>` and `node scripts/writer-lanes.mjs verify-all`. Push on the same active Writer branch; green CI and coordinator validate source SHA and append revision history, then Publisher re-evaluates QA. Retry up to 3 accepted revisions, never lower thresholds or mark fabricated human approval. Stop for `HUMAN_REVIEW_REQUIRED` or unrecoverable errors. Full contract: `docs/AI-WRITER-REPAIR-LOOP.md`.
+- **Writer QA red before first submission:** the same active AI must read `verify-all` and GitHub QA errors, correct the local unsubmitted draft, and rerun QA BEFORE pushing; an unsubmitted invalid draft cannot enter the Publisher's repair queue.
 - Fetch/merge newest origin/main.
 - Confirm real assigned IDs:
   node scripts/continuous-writer.mjs assigned --writer W1 --session w1-vibe-20261014 --branch writer/w1-vibe-20261014
