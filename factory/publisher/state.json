@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 34,
+  "clean_runs": 35,
   "published": [
     {
       "id": "NL-H01",
@@ -1084,6 +1084,18 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T10:32:52.653Z"
+    },
+    {
+      "id": "EN-H01",
+      "locale": "en",
+      "url": "/en/topics/choosing-a-rental-bike/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T12:16:40.326Z",
+      "source_sha256": "45428f833b4c6c8d3a175751de3907c34f269cac6008240fb701411e2c28937c",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T12:17:47.870Z"
     }
   ],
   "runs": [
@@ -1879,19 +1891,33 @@
         "DE-S02"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T12:16:40.326Z",
+      "ids": [
+        "EN-H01"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T12:17:47.870Z",
+      "ids": [
+        "EN-H01"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T10:32:52.653Z",
+    "at": "2026-10-15T12:17:47.870Z",
     "ids": [
-      "DE-S01",
-      "DE-S02"
+      "EN-H01"
     ],
-    "commit": "27f33ef29169c6ad7298f02d991cb6f57993e6d3",
-    "live_seconds": 82
+    "commit": "7c910681ee9c11fd7141bfb0b1419b3a8180a3e7",
+    "live_seconds": 62
   },
   "queue": {
     "WAIT_PARENT": 28,
-    "REJECTED": 12
+    "REJECTED": 11,
+    "APPROVED_BY_POLICY": 1
   }
 }
