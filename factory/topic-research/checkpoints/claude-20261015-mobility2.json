@@ -7,35 +7,37 @@
   "branch": "research/claude-20261015-mobility2",
   "batch_session": "research-claude-20261015-mobility2",
   "created_at": "2026-10-15T23:01:23.660Z",
-  "updated_at": "2026-10-15T23:38:36.307Z",
-  "base_main_sha": "fe98766dad93ec49b70a129ab1e48f93b28fa9f1",
-  "last_commit_sha": "ddb16e6d3ae4765d3bbd7ccaa978ced785f79c6e",
+  "updated_at": "2026-10-15T23:56:32.007Z",
+  "base_main_sha": "5eb051e89a6e5c1f24c6682c15de126851566900",
+  "last_commit_sha": "23e7a1e95be3bf6d595650568c7883509f5341f2",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 30,
-    "qa_pass": 30,
+    "researched": 40,
+    "qa_pass": 40,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 20,
+    "pushed": 30,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "fr": 20,
-      "es": 10
+      "fr": 22,
+      "es": 14,
+      "en": 2,
+      "de": 2
     },
     "domains": {
-      "traffic-law-safety": 24,
-      "motorbike-rental": 6
+      "traffic-law-safety": 30,
+      "motorbike-rental": 10
     }
   },
   "last_batch": {
-    "seq": 3,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0003.json",
-    "sha256": "b12647dfd7b6ef0bc91fa09f7ecd0a4db5828cc836016ffbf4ce94b343d91b12",
+    "seq": 4,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0004.json",
+    "sha256": "528a97c926ddcff6759a2a1b202be184dc4c022cbca2c557829e85e9abdfeff0",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -267,8 +269,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility2-0003.json",
       "sha256": "b12647dfd7b6ef0bc91fa09f7ecd0a4db5828cc836016ffbf4ce94b343d91b12",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "19dffe0ea47015eb5d9863052b2ca4120a4b80f0",
       "researched_on": "2026-10-15",
       "topics": [
         {
@@ -372,11 +374,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 4,
+      "file": "factory/topic-research/batches/claude-20261015-mobility2-0004.json",
+      "sha256": "528a97c926ddcff6759a2a1b202be184dc4c022cbca2c557829e85e9abdfeff0",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-15",
+      "topics": [
+        {
+          "ref": "en:e-bike-rules-vietnam",
+          "locale": "en",
+          "slug": "e-bike-rules-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-power",
+          "key": "en::e-bike rules in vietnam helmet and passengers",
+          "ta_id": null
+        },
+        {
+          "ref": "en:cycling-rules-vietnam",
+          "locale": "en",
+          "slug": "cycling-rules-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::cycling in vietnam traffic rules for bicycles",
+          "ta_id": null
+        },
+        {
+          "ref": "de:e-bike-regeln-vietnam",
+          "locale": "de",
+          "slug": "e-bike-regeln-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-power",
+          "key": "de::e-bike regeln in vietnam helmpflicht und mitfahrer",
+          "ta_id": null
+        },
+        {
+          "ref": "de:radfahren-vietnam-verkehrsregeln",
+          "locale": "de",
+          "slug": "radfahren-vietnam-verkehrsregeln",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::fahrrad fahren in vietnam verkehrsregeln",
+          "ta_id": null
+        },
+        {
+          "ref": "es:bicicleta-electrica-normas-vietnam",
+          "locale": "es",
+          "slug": "bicicleta-electrica-normas-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-power",
+          "key": "es::normas de la bicicleta electrica en vietnam casco y pasajero",
+          "ta_id": null
+        },
+        {
+          "ref": "es:ir-en-bicicleta-por-vietnam-normas",
+          "locale": "es",
+          "slug": "ir-en-bicicleta-por-vietnam-normas",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::ir en bicicleta por vietnam normas de trafico",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:velo-electrique-regles-vietnam",
+          "locale": "fr",
+          "slug": "velo-electrique-regles-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-power",
+          "key": "fr::regles du velo electrique au vietnam casque et passager",
+          "ta_id": null
+        },
+        {
+          "ref": "es:cansancio-y-pausas-viaje-largo-en-moto-vietnam",
+          "locale": "es",
+          "slug": "cansancio-y-pausas-viaje-largo-en-moto-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::cuantas horas al dia se puede ir en moto por vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:camiones-autobuses-angulos-muertos-moto-vietnam",
+          "locale": "es",
+          "slug": "camiones-autobuses-angulos-muertos-moto-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::angulos muertos de camiones y autobuses en moto",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:fatigue-pauses-long-trajet-scooter-vietnam",
+          "locale": "fr",
+          "slug": "fatigue-pauses-long-trajet-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::combien d’heures par jour rouler a scooter au vietnam",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 4,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0004.json",
+    "seq": 5,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0005.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -409,6 +522,13 @@
       "seq": 3,
       "topics": 10,
       "sha256": "b12647dfd7b6ef0bc91fa09f7ecd0a4db5828cc836016ffbf4ce94b343d91b12"
+    },
+    {
+      "at": "2026-10-15T23:56:32.007Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 4,
+      "topics": 10,
+      "sha256": "528a97c926ddcff6759a2a1b202be184dc4c022cbca2c557829e85e9abdfeff0"
     }
   ]
 }
