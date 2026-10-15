@@ -12,11 +12,11 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
-| Matrix rows (441) | 212 | 19 | 2 | 208 |
+| Matrix rows (451) | 212 | 19 | 2 | 218 |
 | Topical candidates (30) | 0 | 0 | 0 | 30 |
 | Silos (330) | 113 | 11 | 0 | 59 |
 
-Knowledge graph: 42 entities, 1526 typed edges (hreflang_equivalent 190, about 710, contains 416, has_silo 160, has_hub 40, has_pillar 10).
+Knowledge graph: 42 entities, 1536 typed edges (hreflang_equivalent 190, about 710, contains 426, has_silo 160, has_hub 40, has_pillar 10).
 
 ## REVIEW — competing intents
 
@@ -73,7 +73,7 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 | ss-weather | riding | local | – | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP |
 | ss-incidents | riding | informational | – | P3 I1 KEEP | P3 I1 KEEP | P3 I1 KEEP | P3 I1 KEEP | P3 I1 KEEP | P3 I1 KEEP | P3 I1 KEEP | P3 I1 KEEP | P3 I1 KEEP | P3 I1 KEEP |
 | ss-gear | riding | informational | – | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE |
-| ss-city | riding | local | – | P2 I7 KEEP | P2 I6 KEEP | P2 I6 KEEP | P2 I6 KEEP | P2 I6 KEEP | P2 I6 KEEP | P2 I6 KEEP | P2 I6 KEEP | P2 I6 KEEP | P2 I6 KEEP |
+| ss-city | riding | local | – | P2 I7 KEEP | P2 I9 KEEP | P2 I8 KEEP | P2 I7 KEEP | P2 I7 KEEP | P2 I6 KEEP | P2 I7 KEEP | P2 I6 KEEP | P2 I7 KEEP | P2 I7 KEEP |
 | rt-northern-loops (proposed Hub) | planning | local | – | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE |
 | rt-day-trips (proposed Hub) | planning | local | – | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE |
 | travel-neighborhoods (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
@@ -102,7 +102,7 @@ Published / planned (IDEA + drafts) / candidates per stage.
 | consideration | 3 / 6 / 0 | 3 / 7 / 0 | 3 / 6 / 0 | 3 / 6 / 0 | 3 / 6 / 0 | 3 / 6 / 0 | 3 / 6 / 0 | 3 / 6 / 0 | 3 / 6 / 0 | 3 / 6 / 0 |
 | decision | 6 / 4 / 0 | 8 / 4 / 0 | 7 / 5 / 0 | 8 / 5 / 0 | 7 / 5 / 0 | 6 / 5 / 0 | 7 / 4 / 0 | 6 / 5 / 0 | 6 / 5 / 0 | 6 / 5 / 0 |
 | pickup | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
-| riding | 7 / 11 / 0 | 7 / 10 / 0 | 7 / 10 / 0 | 7 / 10 / 0 | 7 / 10 / 0 | 7 / 10 / 0 | 7 / 10 / 0 | 7 / 10 / 0 | 7 / 10 / 0 | 7 / 10 / 0 |
+| riding | 7 / 11 / 0 | 7 / 13 / 0 | 7 / 12 / 0 | 7 / 11 / 0 | 7 / 11 / 0 | 7 / 10 / 0 | 7 / 11 / 0 | 7 / 10 / 0 | 7 / 11 / 0 | 7 / 11 / 0 |
 | return | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 |
 | planning | 0 / 0 / 2 | 0 / 0 / 12 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 |
 
@@ -113,15 +113,15 @@ Every locale checklist also covers the consideration → decision → pickup →
 | Locale | Rows | Published | Protected drafts | Planned | Candidates | Published depth OK |
 |---|---|---|---|---|---|---|
 | vi | 43 | 22 | 0 | 21 | 2 | 95% |
-| en | 45 | 24 | 0 | 21 | 12 | 92% |
-| de | 44 | 23 | 0 | 21 | 2 | 91% |
-| fr | 45 | 24 | 0 | 21 | 2 | 92% |
-| es | 44 | 23 | 0 | 21 | 2 | 87% |
+| en | 48 | 24 | 0 | 24 | 12 | 92% |
+| de | 46 | 23 | 0 | 23 | 2 | 91% |
+| fr | 46 | 24 | 0 | 22 | 2 | 92% |
+| es | 45 | 23 | 0 | 22 | 2 | 87% |
 | nl | 43 | 22 | 0 | 21 | 2 | 91% |
-| zh | 43 | 23 | 0 | 20 | 2 | 91% |
+| zh | 44 | 23 | 0 | 21 | 2 | 91% |
 | pt | 43 | 22 | 0 | 21 | 2 | 91% |
-| ko | 43 | 22 | 0 | 21 | 2 | 91% |
-| ja | 43 | 22 | 0 | 21 | 2 | 91% |
+| ko | 44 | 22 | 0 | 22 | 2 | 91% |
+| ja | 44 | 22 | 0 | 22 | 2 | 91% |
 
 Live Writer states (CLAIMED/SUBMITTED) change on every autopilot commit and are not part of this file: run `node scripts/seo/topical-authority.mjs status`.
 
