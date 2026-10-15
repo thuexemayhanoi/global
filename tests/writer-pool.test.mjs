@@ -25,7 +25,9 @@ test("all fourteen PR17 draft IDs stay protected or become immutable QA-adopted 
  assert.equal(registry.held_ids.length,2);
  assert.deepEqual(new Set(registry.held_ids.map(x=>x.id)),new Set(["EN-H01","DE-H01"]));
  assert.equal(new Set(registry.protected.map(x=>x.id)).size,registry.protected.length);
- const admitted=currentLedger.claims.filter(c=>legacyIds.has(c.id)&&c.phase==="LEGACY_IMMUTABLE_QA_INTAKE");
+ // Custody, not phase: an adopted draft keeps its SUBMITTED claim when a repair revision or a cross-writer
+ // handoff later changes its phase or current Writer.
+ const admitted=currentLedger.claims.filter(c=>legacyIds.has(c.id)&&c.status==="SUBMITTED");
  assert.equal(registry.protected.length+admitted.length,14,"every original is protected or provenance-locked in the ledger");
  for(const id of legacyIds){
   const protectedDraft=registry.protected.find(p=>p.id===id);
@@ -33,7 +35,7 @@ test("all fourteen PR17 draft IDs stay protected or become immutable QA-adopted 
   assert.ok(Boolean(protectedDraft)!==Boolean(imported),id+" must have exactly one safe custody state");
   if(imported){
    assert.equal(imported.status,"SUBMITTED");
-   assert.equal(imported.writer,"W1");
+   assert.equal(imported.handoffs?.[0]?.writer||imported.writer,"W1","adopted from W1's original draft");
    assert.match(imported.source_sha256,/^[0-9a-f]{64}$/);
    assert.match(imported.source_commit,/^[0-9a-f]{40}$/);
   }
