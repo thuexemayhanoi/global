@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility",
   "batch_session": "research-claude-20261015-mobility",
   "created_at": "2026-10-15T09:33:24.963Z",
-  "updated_at": "2026-10-15T21:30:19.776Z",
-  "base_main_sha": "9c1c3f64594ce36b032acb21fa030b13e9547957",
-  "last_commit_sha": "4a98ec6acead3cd2c79d379d173bab3aee2bbb46",
+  "updated_at": "2026-10-15T21:54:20.228Z",
+  "base_main_sha": "db56e4163cbaabc7669548e40cb71dd622286af2",
+  "last_commit_sha": "28fbfcb1f59653cd68dc6faade16503eb89e552d",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 280,
-    "qa_pass": 280,
+    "researched": 290,
+    "qa_pass": 290,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 270,
+    "pushed": 280,
     "pending_push": 10
   },
   "coverage": {
@@ -27,7 +27,7 @@
       "en": 63,
       "de": 54,
       "fr": 23,
-      "es": 22,
+      "es": 32,
       "nl": 20,
       "pt": 20,
       "ko": 20,
@@ -38,13 +38,13 @@
     "domains": {
       "transportation-mobility": 10,
       "motorbike-rental": 16,
-      "traffic-law-safety": 254
+      "traffic-law-safety": 264
     }
   },
   "last_batch": {
-    "seq": 28,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0028.json",
-    "sha256": "41b2b4db129f196412f32d295fd89a893569077917c292fe2a41a40bd2260e5f",
+    "seq": 29,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0029.json",
+    "sha256": "fb6db8e0ef28c5b76e7ea7a1780ccb69d28ff81f16cb8859faa4c80cf96257df",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -3051,8 +3051,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility-0028.json",
       "sha256": "41b2b4db129f196412f32d295fd89a893569077917c292fe2a41a40bd2260e5f",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "28fbfcb1f59653cd68dc6faade16503eb89e552d",
       "researched_on": "2026-10-15",
       "topics": [
         {
@@ -3063,7 +3063,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-city",
           "key": "en::how to brake properly on a scooter front and rear brake",
-          "ta_id": null
+          "ta_id": "TA-EN-0075"
         },
         {
           "ref": "en:riding-bends-and-hairpins-motorbike-vietnam",
@@ -3073,7 +3073,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-city",
           "key": "en::how to ride hairpin bends on a motorbike",
-          "ta_id": null
+          "ta_id": "TA-EN-0076"
         },
         {
           "ref": "en:riding-pillion-passenger-tips-vietnam",
@@ -3083,7 +3083,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-city",
           "key": "en::riding pillion on a scooter in vietnam tips",
-          "ta_id": null
+          "ta_id": "TA-EN-0077"
         },
         {
           "ref": "en:witnessing-a-road-accident-vietnam",
@@ -3093,7 +3093,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-incidents",
           "key": "en::what to do if you witness a road accident in vietnam",
-          "ta_id": null
+          "ta_id": "TA-EN-0078"
         },
         {
           "ref": "en:fatigue-breaks-long-motorbike-trips-vietnam",
@@ -3103,7 +3103,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-city",
           "key": "en::how many hours a day to ride a motorbike in vietnam",
-          "ta_id": null
+          "ta_id": "TA-EN-0079"
         },
         {
           "ref": "en:first-ride-automatic-scooter-practice-plan",
@@ -3113,7 +3113,7 @@
           "parent_id": "EN-H01",
           "subcluster": "vc-transmission",
           "key": "en::how to ride an automatic scooter for the first time",
-          "ta_id": null
+          "ta_id": "TA-EN-0080"
         },
         {
           "ref": "en:renting-electric-scooter-vietnam-range-charging",
@@ -3123,7 +3123,7 @@
           "parent_id": "EN-H01",
           "subcluster": "vc-power",
           "key": "en::renting an electric scooter in vietnam range and charging",
-          "ta_id": null
+          "ta_id": "TA-EN-0081"
         },
         {
           "ref": "en:potholes-gravel-rockfall-motorbike-vietnam",
@@ -3133,7 +3133,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-weather",
           "key": "en::riding a motorbike on gravel and potholes in vietnam",
-          "ta_id": null
+          "ta_id": "TA-EN-0082"
         },
         {
           "ref": "en:trucks-buses-blind-spots-motorbike-vietnam",
@@ -3143,7 +3143,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-city",
           "key": "en::trucks and buses blind spots motorbike vietnam",
-          "ta_id": null
+          "ta_id": "TA-EN-0083"
         },
         {
           "ref": "en:honda-smart-key-rental-scooter",
@@ -3153,14 +3153,125 @@
           "parent_id": "EN-H01",
           "subcluster": "vc-models",
           "key": "en::honda smart key scooter how to use",
+          "ta_id": "TA-EN-0084"
+        }
+      ]
+    },
+    {
+      "seq": 29,
+      "file": "factory/topic-research/batches/claude-20261015-mobility-0029.json",
+      "sha256": "fb6db8e0ef28c5b76e7ea7a1780ccb69d28ff81f16cb8859faa4c80cf96257df",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-15",
+      "topics": [
+        {
+          "ref": "es:puntos-del-carnet-vietnam",
+          "locale": "es",
+          "slug": "puntos-del-carnet-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H03",
+          "subcluster": "dc-licence",
+          "key": "es::puntos del carnet de conducir en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:pasos-a-nivel-vietnam-moto",
+          "locale": "es",
+          "slug": "pasos-a-nivel-vietnam-moto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::como cruzar un paso a nivel en moto en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:viajar-en-moto-en-grupo-vietnam",
+          "locale": "es",
+          "slug": "viajar-en-moto-en-grupo-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::viajar en moto en grupo por vietnam normas",
+          "ta_id": null
+        },
+        {
+          "ref": "es:multa-por-camara-moto-alquilada-vietnam",
+          "locale": "es",
+          "slug": "multa-por-camara-moto-alquilada-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H03",
+          "subcluster": "dc-contract",
+          "key": "es::multa por camara moto alquilada vietnam quien paga",
+          "ta_id": null
+        },
+        {
+          "ref": "es:pagar-multa-de-trafico-vietnam",
+          "locale": "es",
+          "slug": "pagar-multa-de-trafico-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::como pagar una multa de trafico en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:moto-con-calor-extremo-vietnam",
+          "locale": "es",
+          "slug": "moto-con-calor-extremo-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-weather",
+          "key": "es::ir en moto con mucho calor en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:contaminacion-del-aire-hanoi-moto",
+          "locale": "es",
+          "slug": "contaminacion-del-aire-hanoi-moto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-weather",
+          "key": "es::contaminacion del aire en hanoi ir en moto",
+          "ta_id": null
+        },
+        {
+          "ref": "es:remolcar-o-empujar-moto-vietnam",
+          "locale": "es",
+          "slug": "remolcar-o-empujar-moto-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::se puede remolcar una moto con otra moto en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:moto-en-ferry-vietnam",
+          "locale": "es",
+          "slug": "moto-en-ferry-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::subir la moto a un ferry en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:carreteras-de-montana-estrechas-vietnam",
+          "locale": "es",
+          "slug": "carreteras-de-montana-estrechas-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::quien cede el paso en carreteras de montana estrechas en vietnam",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 29,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0029.json",
+    "seq": 30,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0030.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -3179,13 +3290,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-15T17:14:27.941Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 5,
-      "topics": 10,
-      "sha256": "756b2e6869a2148d3763716f7ff22d2dc47169002f12476313be3ef01f0db7ad"
-    },
     {
       "at": "2026-10-15T17:15:45.738Z",
       "event": "BATCH_COMMITTED",
@@ -3350,6 +3454,13 @@
       "seq": 28,
       "topics": 10,
       "sha256": "41b2b4db129f196412f32d295fd89a893569077917c292fe2a41a40bd2260e5f"
+    },
+    {
+      "at": "2026-10-15T21:54:20.228Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 29,
+      "topics": 10,
+      "sha256": "fb6db8e0ef28c5b76e7ea7a1780ccb69d28ff81f16cb8859faa4c80cf96257df"
     }
   ]
 }
