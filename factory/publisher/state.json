@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 142,
+  "clean_runs": 144,
   "published": [
     {
       "id": "NL-H01",
@@ -3496,49 +3496,68 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T21:22:36.066Z"
+    },
+    {
+      "id": "DE-S75",
+      "locale": "de",
+      "url": "/de/guides/erste-fahrt-automatikroller-uebungsplan/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:22:53.729Z",
+      "source_sha256": "05c566a5f5a62a49dc8ad7f491031b838c63c658e5d51617051ad019c3f4baec",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T21:24:29.057Z"
+    },
+    {
+      "id": "DE-S76",
+      "locale": "de",
+      "url": "/de/guides/elektroroller-reichweite-laden-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:22:53.729Z",
+      "source_sha256": "5f289ff9e21ea1622698366b9127b263064006a2127ccd519775fb85be711c45",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T21:24:29.057Z"
+    },
+    {
+      "id": "EN-S65",
+      "locale": "en",
+      "url": "/en/guides/one-way-streets-and-pavements-motorbike-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:24:49.546Z",
+      "source_sha256": "c9b704677d493da42136e744d3bc67cb75acb1beee479d131d302d1c25407b54",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T21:26:04.132Z"
+    },
+    {
+      "id": "EN-S66",
+      "locale": "en",
+      "url": "/en/guides/traffic-police-hand-signals-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:24:49.546Z",
+      "source_sha256": "232aa53d6ec109f6ddf3d247f335efe9fbbf60e3985a404fb51dcf33b8bc1509",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T21:26:04.132Z"
+    },
+    {
+      "id": "EN-S67",
+      "locale": "en",
+      "url": "/en/guides/drugs-and-medication-riding-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:26:21.195Z",
+      "source_sha256": "61e24a53b7e3e10091df6b8baa575112ab41abc6da6f8539246bac249f17c49d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T13:30:01.437Z",
-      "ids": [
-        "ZH-S01",
-        "EN-S02"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T13:31:31.922Z",
-      "ids": [
-        "ZH-S01",
-        "EN-S02"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T13:31:52.402Z",
-      "ids": [
-        "FR-S02",
-        "JA-S02"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T13:33:02.766Z",
-      "ids": [
-        "FR-S02",
-        "JA-S02"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T13:33:39.260Z",
-      "ids": [
-        "VI-S02",
-        "ZH-S02"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T13:35:10.775Z",
       "ids": [
@@ -5070,18 +5089,57 @@
         "DE-S74"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T21:22:53.729Z",
+      "ids": [
+        "DE-S75",
+        "DE-S76"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T21:24:29.057Z",
+      "ids": [
+        "DE-S75",
+        "DE-S76"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T21:24:49.546Z",
+      "ids": [
+        "EN-S65",
+        "EN-S66"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T21:26:04.132Z",
+      "ids": [
+        "EN-S65",
+        "EN-S66"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T21:26:21.195Z",
+      "ids": [
+        "EN-S67"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T21:22:36.066Z",
+    "at": "2026-10-15T21:26:04.132Z",
     "ids": [
-      "DE-S73",
-      "DE-S74"
+      "EN-S65",
+      "EN-S66"
     ],
-    "commit": "39ba5e319be8dbde069275274e14ac186eba7a3d",
-    "live_seconds": 82
+    "commit": "607d764cac16a6d6846b0888e1cf6040c498d9dc",
+    "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 4
+    "APPROVED_BY_POLICY": 1
   }
 }
