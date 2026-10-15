@@ -2308,17 +2308,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:08:14.891Z"
+    },
+    {
+      "id": "VI-S15",
+      "locale": "vi",
+      "url": "/vi/guides/va-cham-giao-thong-xe-thue/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:08:32.414Z",
+      "source_sha256": "442ea90d136c2253711f7b2280aad44ae3fef44d22f889b4071c27eb4bad6076",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T05:13:43.129Z",
-      "ids": [
-        "KO-S01",
-        "PT-S02"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T05:14:48.442Z",
       "ids": [
@@ -3885,6 +3888,13 @@
         "ES-S15"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:08:32.414Z",
+      "ids": [
+        "VI-S15"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3897,6 +3907,6 @@
     "live_seconds": 81
   },
   "queue": {
-    "APPROVED_BY_POLICY": 3
+    "APPROVED_BY_POLICY": 1
   }
 }
