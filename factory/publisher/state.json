@@ -196,6 +196,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T07:58:21.698Z"
+    },
+    {
+      "id": "FR-H03",
+      "locale": "fr",
+      "url": "/fr/topics/documents-contrat/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T09:13:30.487Z",
+      "source_sha256": "8e164c5ba5536ca339d9669a1857121d16ba5d2e2a5403588d44890f0a1b117c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-H03",
+      "locale": "ja",
+      "url": "/ja/topics/menkyo-keiyaku/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T09:13:30.487Z",
+      "source_sha256": "40f3ab67337180ff940842d93b810acc8794c986257f8ec18049ce507b29af98",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -382,6 +404,14 @@
         "DE-S09"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:13:30.487Z",
+      "ids": [
+        "FR-H03",
+        "JA-H03"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -393,7 +423,8 @@
     "live_seconds": 61
   },
   "queue": {
-    "REJECTED": 84,
+    "APPROVED_BY_POLICY": 11,
+    "REJECTED": 73,
     "WAIT_PARENT": 14
   }
 }
