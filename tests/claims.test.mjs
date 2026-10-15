@@ -7,6 +7,10 @@ const board=JSON.parse(fs.readFileSync("factory/external-writers/assignments.jso
 const published=matrix.rows.find(r=>r.status==="PUBLISHED"&&r.role==="PILLAR");
 const row=board.entries.map(x=>matrix.rows.find(r=>r.id===x.id)).find(r=>r.role==="HUB"&&matrix.rows.find(p=>p.id===r.parent_id)?.status==="PUBLISHED");
 const writer=board.entries.find(e=>e.id===row.id).writer;
+// The scenarios need an unpublished Hub and an unpublished Supporting child under it. The real pipeline publishes
+// them, so force those states on this in-memory copy: the tests must not depend on what is live today.
+row.status="IDEA";
+for(const r of matrix.rows)if(r.role==="SUPPORT"&&r.parent_id===row.id&&board.entries.some(e=>e.id===r.id))r.status="IDEA";
 const initial={version:1,revision:0,claims:[]};
 test("manual claim is bounded, exclusive and resumable",()=>{
  const a=transition(initial,matrix,board,"claim",{writer,id:row.id,session:"session-A",now:"2026-10-14T00:00:00Z"});
