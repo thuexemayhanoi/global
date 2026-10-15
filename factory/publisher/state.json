@@ -3,7 +3,7 @@
   "stage": "RAMP",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 6,
+  "clean_runs": 7,
   "published": [
     {
       "id": "NL-H01",
@@ -196,6 +196,30 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T07:58:21.698Z"
+    },
+    {
+      "id": "FR-H03",
+      "locale": "fr",
+      "url": "/fr/topics/documents-contrat/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T09:13:30.487Z",
+      "source_sha256": "8e164c5ba5536ca339d9669a1857121d16ba5d2e2a5403588d44890f0a1b117c",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T09:14:37.291Z"
+    },
+    {
+      "id": "JA-H03",
+      "locale": "ja",
+      "url": "/ja/topics/menkyo-keiyaku/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T09:13:30.487Z",
+      "source_sha256": "40f3ab67337180ff940842d93b810acc8794c986257f8ec18049ce507b29af98",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T09:14:37.291Z"
     }
   ],
   "runs": [
@@ -382,18 +406,36 @@
         "DE-S09"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:13:30.487Z",
+      "ids": [
+        "FR-H03",
+        "JA-H03"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T09:14:37.291Z",
+      "ids": [
+        "FR-H03",
+        "JA-H03"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T07:58:21.698Z",
+    "at": "2026-10-15T09:14:37.291Z",
     "ids": [
-      "DE-S09"
+      "FR-H03",
+      "JA-H03"
     ],
-    "commit": "cb2d7990933e8ab4206a74936775dba2e162a743",
+    "commit": "d146b01900f89b601c982a07cf90e00e6d82a3cf",
     "live_seconds": 61
   },
   "queue": {
-    "REJECTED": 84,
+    "APPROVED_BY_POLICY": 11,
+    "REJECTED": 73,
     "WAIT_PARENT": 14
   }
 }

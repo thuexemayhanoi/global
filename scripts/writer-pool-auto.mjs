@@ -10,7 +10,7 @@ import path from "node:path";
 import {fileURLToPath} from "node:url";
 import {execFileSync} from "node:child_process";
 import {randomUUID,createHash} from "node:crypto";
-import {autoAdvance,applyRevisions} from "./writer-pool-auto-core.mjs";
+import {autoAdvance,applyRevisions,takeRepairTickets} from "./writer-pool-auto-core.mjs";
 import {repairQueue,ticketValid} from "./repair-queue-core.mjs";
 import {validateRequest} from "./writer-request-core.mjs";
 import {verifyPacket,checkDuplicates} from "./writer-lanes.mjs";
@@ -99,7 +99,10 @@ function main(){
  for(const c of own){
   // The current version and every superseded version stay byte-identical on the branch.
   for(const v of [{source_sha256:c.source_sha256,source_path:c.source_path},...(c.revisions||[])]){
-   const file=v.source_path||"factory/external-writers/inbox/"+request.writer+"/"+c.id+".json";
+   const file=v.source_path||"factory/external-writers/inbox/"+(c.handoffs?.[0]?.writer||request.writer)+"/"+c.id+".json";
+   // Cross-writer sources retain their exact commit/SHA but are not present on
+   // the new holder's branch. Never mistake their absence for changed bytes.
+   if(!file.startsWith("factory/external-writers/inbox/"+request.writer+"/"))continue;
    let prior;
    try{prior=gitRaw("show",sha+":"+file);}
    catch{throw Error("Submitted draft disappeared from Writer branch: "+file);}
@@ -109,7 +112,7 @@ function main(){
  // Revisions: new files only, for strict auto-QA FAIL tickets bound to the immutable source SHA.
  const revs=[];
  const revNames=git("ls-tree","-r","--name-only",sha,"--","factory/external-writers/inbox/"+request.writer+"/revisions/").split("\n").filter(Boolean);
- const report=revNames.length?read("factory/publisher/report.json"):null;
+ const report=revNames.length||request.repair_take===true?read("factory/publisher/report.json"):null;
  if(report&&report.version!==2)throw Error("REPAIR_REPORT_STALE: trusted publisher has not emitted hash-bound repair tickets");
  const allTickets=report?repairQueue(report,ledger,{writer:request.writer,session:request.session,includeHeld:true}):[];
  const repairTasks=new Map(allTickets.filter(t=>t.state==="REPAIR").map(t=>[t.id,t]));
@@ -152,6 +155,15 @@ function main(){
  const result=autoAdvance(matrix,revised.ledger,registry,request,{verifiedDraftIds:verified,verifiedDraftEvidence:evidence,
    now,nonce:randomUUID(),refill:["ACTIVE","RECOVERING"].includes(signal)&&request.claim_new!==false});
  if(revised.applied.length){result.changed=true;console.log("REVISIONS_RECORDED "+revised.applied.join(","));}
+ if(request.repair_take===true&&["ACTIVE","RECOVERING"].includes(signal)){
+  // Transfer only when the current report and claims ledger match exactly.
+  // The next Publisher scan issues fresh tickets for the new sole owner.
+  const transfer=takeRepairTickets(matrix,result.ledger,registry,report,request,{now,max:10});
+  if(transfer.changed){
+   result.ledger=transfer.ledger;result.changed=true;
+   console.log("CROSS_REPAIR_TRANSFERRED "+transfer.transferred.join(","));
+  }else console.log("CROSS_REPAIR_NOOP "+transfer.reason);
+ }
  if(slots!==slotsBefore)fs.writeFileSync(path.join(ROOT,slotsFile),JSON.stringify(slots,null,2)+"\n");
  if(!result.changed){
   console.log(JSON.stringify({mode:"AUTO_POOL_NO_MUTATION",status:result.status,
