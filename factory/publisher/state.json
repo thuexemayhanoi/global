@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 119,
+  "clean_runs": 121,
   "published": [
     {
       "id": "NL-H01",
@@ -3004,41 +3004,45 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T20:12:27.432Z"
+    },
+    {
+      "id": "DE-S56",
+      "locale": "de",
+      "url": "/de/guides/bergstrassen-gegenverkehr-roller-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:17:11.061Z",
+      "source_sha256": "7ab6d862213af58f1a636232040c1f63f8bc89542130fe8ca5295384d7fa688b",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T20:19:41.464Z"
+    },
+    {
+      "id": "DE-S57",
+      "locale": "de",
+      "url": "/de/guides/roller-faehre-pontonbruecke-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:17:11.061Z",
+      "source_sha256": "ef85b23b43af10ba8c33d86b3a098104eacde71d76ff1521cc703c5afcce3094",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T20:19:41.464Z"
+    },
+    {
+      "id": "DE-S58",
+      "locale": "de",
+      "url": "/de/guides/strassentunnel-roller-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:20:01.898Z",
+      "source_sha256": "5008e81b86fc8eec09ae59d64ba911435ad70529fc3627d6b166a51a734226e1",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T20:21:13.148Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:57:17.366Z",
-      "ids": [
-        "KO-S03",
-        "NL-S03"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:58:25.757Z",
-      "ids": [
-        "KO-S03",
-        "NL-S03"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:58:42.415Z",
-      "ids": [
-        "DE-S04",
-        "KO-S04"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T10:00:11.015Z",
-      "ids": [
-        "DE-S04",
-        "KO-S04"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T10:00:27.675Z",
       "ids": [
@@ -4582,18 +4586,47 @@
         "EN-S28"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T20:17:11.061Z",
+      "ids": [
+        "DE-S56",
+        "DE-S57"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T20:19:41.464Z",
+      "ids": [
+        "DE-S56",
+        "DE-S57"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T20:20:01.898Z",
+      "ids": [
+        "DE-S58"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T20:21:13.148Z",
+      "ids": [
+        "DE-S58"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T20:12:27.432Z",
+    "at": "2026-10-15T20:21:13.148Z",
     "ids": [
-      "EN-S19",
-      "EN-S28"
+      "DE-S58"
     ],
-    "commit": "9af6a694d8da4424409a1ca0bdfd268598bcd112",
-    "live_seconds": 61
+    "commit": "2a77aec563c7b4fa41ffd252aa5649607d8b1182",
+    "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 1
   }
 }
