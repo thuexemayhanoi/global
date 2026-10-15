@@ -2,10 +2,20 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import {poolCandidates,poolStatus,transitionPool,validatePool,ensureIdentity} from "../scripts/writer-pool-core.mjs";
+import {PILOT_IDS,legacyPilotOriginal} from "../scripts/legacy-pilot-core.mjs";
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
 const currentLedger=JSON.parse(fs.readFileSync("factory/external-writers/claims.json","utf8"));
 const original={version:1,revision:0,claims:[]};
+const immutablePilot=c=>legacyPilotOriginal(c)&&/^[0-9a-f]{64}$/.test(c.source_sha256||"")&&/^[0-9a-f]{40}$/.test(c.source_commit||"");
+const validatePilotCustody=(ledger,registry,candidates)=>{
+ for(const id of PILOT_IDS){
+  const held=(registry.held_ids||[]).filter(p=>p.id===id);
+  const imported=ledger.claims.filter(c=>c.id===id&&immutablePilot(c));
+  assert.equal(held.length+imported.length,1,id+" must be either held or immutably adopted, never both");
+  assert.ok(!candidates.some(r=>r.id===id),id+" cannot be claimed again");
+ }
+};
 // 120 original topics is a floor for IDEA + PUBLISHED Hub/Supporting rows: promotion adds rows, publication moves IDEA to PUBLISHED.
 const TOPICS=matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&["IDEA","PUBLISHED"].includes(r.status));
 const IDEA_ROWS=TOPICS.filter(r=>r.status==="IDEA");
@@ -17,17 +27,34 @@ test("real currently committed ledger is valid independent of synthetic test sta
 });
 const writer=(w)=>({writer:w,session:w.toLowerCase()+"-test",branch:"writer/"+w.toLowerCase()+"-test"});
 const options=(id)=>({now:"2026-10-14T00:00:00.000Z",nonce:id});
-test("actual PR #17's fourteen draft IDs are protected from every writer including original W1",()=>{
+test("all fourteen PR17 draft IDs stay protected or become immutable QA-adopted claims",()=>{
  assert.deepEqual(validatePool(matrix,original,registry),[]);
- assert.equal(registry.protected.length,14);
- assert.equal(registry.held_ids.length,2);
- assert.deepEqual(new Set(registry.held_ids.map(x=>x.id)),new Set(["EN-H01","DE-H01"]));
-
- assert.equal(new Set(registry.protected.map(x=>x.id)).size,14);
- for(const p of [...registry.protected,...registry.held_ids])assert.ok(!poolCandidates(matrix,original,registry).some(r=>r.id===p.id),p.id);
+ const manifest=JSON.parse(fs.readFileSync("approvals/legacy-hub-intake-20261015.json","utf8"));
+ const legacyIds=new Set(manifest.ids);
+ assert.equal(legacyIds.size,14);
+ // Two PR6 Hubs transition from editorial hold into hash-locked SUBMITTED claims. Test both custody states.
+ validatePilotCustody(currentLedger,registry,poolCandidates(matrix,currentLedger,registry));
+ assert.equal(new Set(registry.protected.map(x=>x.id)).size,registry.protected.length);
+ // Custody, not phase: an adopted draft keeps its SUBMITTED claim when a repair revision or a cross-writer
+ // handoff later changes its phase or current Writer.
+ const admitted=currentLedger.claims.filter(c=>legacyIds.has(c.id)&&c.status==="SUBMITTED");
+ assert.equal(registry.protected.length+admitted.length,14,"every original is protected or provenance-locked in the ledger");
+ for(const id of legacyIds){
+  const protectedDraft=registry.protected.find(p=>p.id===id);
+  const imported=admitted.find(c=>c.id===id);
+  assert.ok(Boolean(protectedDraft)!==Boolean(imported),id+" must have exactly one safe custody state");
+  if(imported){
+   assert.equal(imported.status,"SUBMITTED");
+   assert.equal(imported.handoffs?.[0]?.writer||imported.writer,"W1","adopted from W1's original draft");
+   assert.match(imported.source_sha256,/^[0-9a-f]{64}$/);
+   assert.match(imported.source_commit,/^[0-9a-f]{40}$/);
+  }
+  assert.ok(!poolCandidates(matrix,currentLedger,registry).some(r=>r.id===id),id);
+ }
+ for(const held of registry.held_ids)assert.ok(!poolCandidates(matrix,original,registry).some(r=>r.id===held.id));
  const state=poolStatus(matrix,original,registry,{writer:"W1"});
  assert.equal(state.status,"CLAIM_REQUIRED");
- assert.equal(state.protected_drafts,16);
+ assert.equal(state.protected_drafts,registry.protected.length+registry.held_ids.length);
  assert.ok(TOPICS.length>=120);
  assert.equal(state.available_now,DRAFTABLE);
  assert.equal(state.blocked_by_parent,0);

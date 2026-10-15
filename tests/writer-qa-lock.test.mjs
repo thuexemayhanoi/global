@@ -11,7 +11,9 @@ const locales=read("content/locales.json"),registry=read("factory/external-write
 const HELD=new Set([...registry.protected,...(registry.held_ids||[])].map(x=>x.id));
 // Two unprotected English rows, forced to IDEA so the fixtures do not depend on what is live today.
 const matrix=read("data/seo/master-matrix.json");
-const topic=r=>/^\/en\/(?:topics|guides)\//.test(r.url)&&!HELD.has(r.id);
+// Fixture topics must not take immutable PR6 pilot Hubs after they leave the historical hold list.
+const PILOT_IDS=new Set(read("approvals/legacy-pilot-intake-20261015.json").ids);
+const topic=r=>/^\/en\/(?:topics|guides)\//.test(r.url)&&!HELD.has(r.id)&&!PILOT_IDS.has(r.id);
 const row=matrix.rows.find(r=>r.role==="HUB"&&topic(r));
 const other=matrix.rows.find(r=>r.role==="SUPPORT"&&topic(r)&&r.parent_id!==row.id);
 row.status="IDEA";other.status="IDEA";
@@ -82,10 +84,14 @@ test("before submission a failing draft is fixed in place; a revision file for i
 });
 
 test("a protected legacy draft whose page was published through the manual path is archived, not re-judged",()=>{
- const p=registry.protected[0],r=matrix.rows.find(x=>x.id===p.id);
+ // Once the legacy intake has adopted every PR #17 draft the live registry may be empty; keep testing the
+ // rule with the first legacy ID as a protected fixture entry.
+ const legacyId=read("approvals/legacy-hub-intake-20261015.json").ids[0];
+ const reg=registry.protected.length?registry:{...registry,protected:[{id:legacyId,writer:"W1",session:"w1-vibe-20261014",branch:"writer/w1-vibe-20261014",source_pr:17,reason:"Test fixture: protected legacy draft"}]};
+ const p=reg.protected[0],r=matrix.rows.find(x=>x.id===p.id);
  const live=structuredClone(matrix);live.rows.find(x=>x.id===p.id).status="PUBLISHED";
  const f={...file(r,packet(r,{writer_session:p.session})),writer:p.writer,path:"factory/external-writers/inbox/"+p.writer+"/"+p.id+".json"};
- const [c]=inboxChecks([f],live,board,locales,{version:1,revision:1,claims:[]},registry);
+ const [c]=inboxChecks([f],live,board,locales,{version:1,revision:1,claims:[]},reg);
  assert.equal(c.passed,true);
  assert.equal(c.locked,"PUBLISHED_LEGACY_DRAFT");
 });

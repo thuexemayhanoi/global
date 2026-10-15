@@ -1,27 +1,12 @@
 {
   "version": 2,
-  "ledger_revision": 63,
+  "ledger_revision": 80,
   "stage": "CONTINUOUS",
   "counts": {
-    "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 44
+    "WAIT_PARENT": 28,
+    "REJECTED": 12
   },
   "items": [
-    {
-      "id": "DE-S01",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "f0f15cb20e81ddca73c8be069368edc3e5947919975419ac0b2bbb3016515e22",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: DE-H01 is IDEA"
-      ]
-    },
     {
       "id": "EN-S01",
       "decision": "WAIT_PARENT",
@@ -95,21 +80,6 @@
       "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
       "details": [
         "G2_PARENT_PUBLISHED: ZH-H01 is IDEA"
-      ]
-    },
-    {
-      "id": "DE-S02",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "8b092983c318067d5948949132c23eae9287dba536aa7596d1e0a40b134fd742",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": [
-        "G2_PARENT_PUBLISHED: DE-H01 is IDEA"
       ]
     },
     {
@@ -188,250 +158,6 @@
       ]
     },
     {
-      "id": "DE-S03",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "ed4e371d738c2981e732aaa9ceb5f23b0477f185b949b2992fdab29974400955",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: DE-H02 is IDEA"
-      ]
-    },
-    {
-      "id": "ES-S03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "fe8eee3bb5dc59f2acf930400e85512e7ae38f261288e2a0ad9371dfcd29865c",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "FR-S03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "95a8037ab4aee4ddebcd3e7cf633609260bb1d9c4d211b263d738e7577638ca6",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "JA-S03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "ea508fcafe1fc51482856d7928b6c86ae448383026191e4dcca50970b12f69ff",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "KO-S03",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "ac8b44aceda9dbb9635f0c5d71760ea732b5ff60ecd04d3f42d2a100344cbb50",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: KO-H02 is IDEA"
-      ]
-    },
-    {
-      "id": "NL-S03",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "c6109f3cf748a316f2bd3cdf2e3edaa9dcce55d75b643e1f1b5090f6c9d558aa",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: NL-H02 is IDEA"
-      ]
-    },
-    {
-      "id": "PT-S03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "0a6c6f641d89581c2dc8c4cf5a76ac70e140b4956ea3b3fbe2bcb970f1c18709",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "VI-S03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "7665e19d26d366b65ecedba497ca272602ef8c367f36a72ac53384453aa653c6",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "ZH-S03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "b6d85dc50165d6446e92cdfaccff7da0ed2cfd6e947909a2900f714d0de175d7",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "DE-S04",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "4bb1711de4153223f1ebf97c8b4121cc045f89ace3419ee5c5db90177cb69624",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": [
-        "G2_PARENT_PUBLISHED: DE-H02 is IDEA"
-      ]
-    },
-    {
-      "id": "EN-S04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "7a35bcbe95381da7656dc39386d8e86faaa83aef691d92e3e0e894d6e94bc340",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "ES-S04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "c64ce6d6cd7063f4fb3971fe1b61ef8eb685678de9f0c6f6082c104d90205115",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "FR-S04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "b5f4670592829357c6d0081d511cc86a00a2476b1a578fb919da4cb26adac22d",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "JA-S04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "80a80cb04731b444229cf6a1671d8995796fcb4ae49eb24697b6b8e9f9ce9e5e",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "KO-S04",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "e250b879b50c95395ab1409ecbdcfc44b40a4b093b4953103a938e5250273c71",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: KO-H02 is IDEA"
-      ]
-    },
-    {
-      "id": "NL-S04",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "cd83de619f22b5cdced8f8ad4d0473d39aecbc5ed6170b4cdf8b53c61d0d5801",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: NL-H02 is IDEA"
-      ]
-    },
-    {
-      "id": "PT-S04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "9249cc21d77b7d2a662d3421a003c838cb0972bf792ef811a0664e8bb49f6ad3",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "VI-S04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "4f745821e40424c8c76c7f91498e472d95eb7ab2cd9e7807b8f47858dbf3e00d",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "ZH-S04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "9354462b4ee0a9badacf4631aca4e29e574226bbb5c19c0a7e241b551ddee7f7",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "DE-S05",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "2c7ff465ed139764a03292e4d5cb3963cde1c0a377a96663fbd37f5c11e452e2",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
       "id": "EN-S05",
       "decision": "WAIT_PARENT",
       "failed": [
@@ -462,50 +188,6 @@
       ]
     },
     {
-      "id": "FR-S05",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "df3e83a2311824f870a674b8336ad6687dfe391310bddd555cdcb7ce2f574547",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "JA-S05",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "d560aa8365edaaaa3d5e15e1a5acb731333adf4a81cc46b91f21e0cf52d34cc5",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "KO-S05",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "ed1478787844fd2fc482ff779d89b58aa9bb155d3082ff939cc775ed83bbdb2a",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "NL-S05",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "6d2bbccb3f0c5f9d251090288e9c3a796cb53e5196a6f8e5142ed48197aa157e",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
       "id": "PT-S05",
       "decision": "WAIT_PARENT",
       "failed": [
@@ -519,39 +201,6 @@
       "details": [
         "G2_PARENT_PUBLISHED: PT-H03 is IDEA"
       ]
-    },
-    {
-      "id": "VI-S05",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "c82125ff656f3b8a3f375cc6653fc9170b0b9e359c080a7d6f77dbd69fb3c33b",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "ZH-S05",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "b53a449575fde23d2d4e6163e343b01b2494f58a462e7c1ea426766cc44604b7",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "DE-S06",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "448af27d1a168a685d04500caf73212632059fb56b6d49117b589dfb71b479da",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
     },
     {
       "id": "EN-S06",
@@ -584,50 +233,6 @@
       ]
     },
     {
-      "id": "FR-S06",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "62f3723c3b2dc731348d9d496c8696d3323c476b22c9ebdf9f8e3816d2c24585",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "JA-S06",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "4f8f0022928dc3ecb5005dcaf93742116befc54b25a06b68dc3ffd5ee6ed1865",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "KO-S06",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "250191cac419b083d74f3e3f26d190d5cb00e6947a32ca1a8325600dd578f795",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "NL-S06",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "9efbe9b0c32c5f78b13fb9363baba9eef663272768afb0de96ddd40b7831b175",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
       "id": "PT-S06",
       "decision": "WAIT_PARENT",
       "failed": [
@@ -641,61 +246,6 @@
       "details": [
         "G2_PARENT_PUBLISHED: PT-H03 is IDEA"
       ]
-    },
-    {
-      "id": "VI-S06",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "71a9623c76e662d7fcfe4a0467976f860a343fa74dda703309b54e6e72703f1d",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "ZH-S06",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "9bf1fdae69e6b6932263f77eb300b5d17cd5d5fb57752c218641c8ccf907929e",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "DE-S07",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "f1e5b6b202e7aec084ce9a23f717c7154970330c3af7ebabef90774b6cc8d1e1",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "EN-S07",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "59c1a3c6adf9e646fbbf111ac6e5fe278ea52e76d98a973defcb8c4311a7bfbd",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "ES-S07",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "88e1a08d178631bdc4cee5b156b0b489ee1ff172ce08afb8966e45a0f6f40591",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
     },
     {
       "id": "FR-S07",
@@ -728,39 +278,6 @@
       ]
     },
     {
-      "id": "KO-S07",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "29038e45a1fff68084a635e2f9dba88bc3e207a5ddc1aa35ce75db3f88ebae45",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "NL-S07",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "a7464d39a3146bbb2d065bc9ad138fe65136b4ed2dcc7f9d1d0fedb49444d213",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "PT-S07",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "2c2263cc6ae7090a359b2879dcae5a77d6d949ba57d6b90413d7c8bf19159634",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
       "id": "VI-S07",
       "decision": "WAIT_PARENT",
       "failed": [
@@ -791,39 +308,6 @@
       ]
     },
     {
-      "id": "DE-S08",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "cf243c94b004fbfaa1907ad02b427deba262c818254733c3ac8049880124e35c",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "EN-S08",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "25711ffc9e928f8c4ed178c63666194e3a4df9f9e00b334a8a098053e5872c2a",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "ES-S08",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "b7652f85c8b032ff5554e7a3dff675e67839f6eed3c938d75fc1b54378451487",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
       "id": "FR-S08",
       "decision": "WAIT_PARENT",
       "failed": [
@@ -852,39 +336,6 @@
       "details": [
         "G2_PARENT_PUBLISHED: JA-H04 is IDEA"
       ]
-    },
-    {
-      "id": "KO-S08",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "1abd4b0a4e4e406af1a91bd90019068271a06f5573edf3c9b0042698a3aa3cc2",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "NL-S08",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "6f656234ba38760cb1476d2d040d91bc2a30caa5448ffddab83e32c018c1fb7b",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "PT-S08",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "89ffc5cd830ab1b2a9a7200c16deca63560581b7e8a3204dffa5d7af7aa547cd",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
     },
     {
       "id": "VI-S08",
@@ -962,50 +413,6 @@
       ]
     },
     {
-      "id": "FR-S09",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "2a8c607e3af92f3183b875b8057ebb6b899d65df543384b19f99e1afd02de9ed",
-      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": []
-    },
-    {
-      "id": "JA-S09",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "e924c4b7b1e9e2e3a04b38ef9f989800e110c40eb17edd756a01ee95e9d89d29",
-      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": []
-    },
-    {
-      "id": "KO-S09",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "d0fad902a7c51658ec98d739ad92ff9244cb773f388a3f79c4523445fb5b2eb7",
-      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": []
-    },
-    {
-      "id": "NL-S09",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "682e3bf18e2965c307a1e255d0c922db297ab9f0665cc3f7e64ff2da76a0f38a",
-      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": []
-    },
-    {
       "id": "PT-S09",
       "decision": "WAIT_PARENT",
       "failed": [
@@ -1021,15 +428,198 @@
       ]
     },
     {
-      "id": "VI-S09",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
+      "id": "EN-H03",
+      "decision": "REJECTED",
+      "failed": [
+        "G3_SENSITIVE_SOURCES",
+        "G3_OFFICIAL_EVIDENCE"
+      ],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "125d005697730c01e0244b329f2fb29ec9f6b9a8ff314ae5f58bab48650aed67",
+      "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
+      "details": [
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
+        "G3_OFFICIAL_EVIDENCE: 4 hard legal statement(s) lack an inline official citation: Renting a motorbike in Hanoi is usually a fast, informal-looking transaction, but the paperwork around it decides what happens when somethin | Since 1 January 2025, Vietnam's licen"
+      ]
+    },
+    {
+      "id": "ES-H03",
+      "decision": "REJECTED",
+      "failed": [
+        "G3_SENSITIVE_SOURCES",
+        "G3_OFFICIAL_EVIDENCE"
+      ],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "dfad5536525eb2158a87f48d1062a7be618481864cc7fc964348342d14d43f75",
+      "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
+      "details": [
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
+        "G3_OFFICIAL_EVIDENCE: 4 hard legal statement(s) lack an inline official citation: Alquilar una moto en Hanói suele ser una transacción rápida y de aspecto informal, pero los documentos que entregas y el contrato que firmas | Desde el 1 de enero de 2025, la categ"
+      ]
+    },
+    {
+      "id": "FR-H01",
+      "decision": "REJECTED",
+      "failed": [
+        "G3_OFFICIAL_EVIDENCE"
+      ],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "c65f866f38fc37487d1badfda55eb477bf41d09bc57f767d0277e50565079cdf",
+      "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
+      "details": [
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: Le critère juridique prime sur le critère de confort. Depuis le 1er janvier 2025, la catégorie vietnamienne A1 couvre les deux-roues jusqu'à | Conséquence pratique : pour un conduc"
+      ]
+    },
+    {
+      "id": "FR-H04",
+      "decision": "REJECTED",
+      "failed": [
+        "G3_SENSITIVE_SOURCES",
+        "G3_OFFICIAL_EVIDENCE"
+      ],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "a1bb8c9b2941d233a1da75d3ff88d46662ca7bda633325a62f8e4a7fee14894c",
+      "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
+      "details": [
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: Au Vietnam, le casque est obligatoire pour le conducteur comme pour le passager, et la jugulaire doit être correctement attachée. Le décret "
+      ]
+    },
+    {
+      "id": "JA-H01",
+      "decision": "REJECTED",
+      "failed": [
+        "G3_OFFICIAL_EVIDENCE"
+      ],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "d881b902532c6e96541ccf3e8aad6a6f863777d56ae26b40f1c01341b5351d5e",
+      "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
+      "details": [
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: 車選びの最初の基準は快適さではなく、合法的に運転できるかどうかだ。2025年1月1日から、ベトナムの運転免許 A1 は排気量125cc以下の二輪車または出力11kW以下の電動二輪をカバーし、それを超えると A が必要になる。外国人が自分で運転するには、1968年のウィーン道路交通 | 結論は単純だ。必要な免許が揃っているライダーにとって、A1 の範囲に収まる"
+      ]
+    },
+    {
+      "id": "JA-H04",
+      "decision": "REJECTED",
+      "failed": [
+        "G3_SENSITIVE_SOURCES",
+        "G3_OFFICIAL_EVIDENCE"
+      ],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "6bb25a512380611526bd47b49492719e85f204d2c2015b681d023e2dbb006a44",
+      "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
+      "details": [
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: ベトナムでは運転者も同乗者もヘルメット着用が義務で、顎紐を締めなければならない。2024年12月に公布された議定168/2024/NĐ-CPは2025年1月1日から効力を持ち、ヘルメット不着用や紐未締めの罰金は40万~60万ベトナムドンと、旧基準から大きく引き上げられた。この経緯"
+      ]
+    },
+    {
+      "id": "PT-H03",
+      "decision": "REJECTED",
+      "failed": [
+        "G3_SENSITIVE_SOURCES",
+        "G3_OFFICIAL_EVIDENCE"
+      ],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "09483eb0f1b108e9878c162a6ec6b9e9122596cf6399a4fb3fee78e35402f932",
+      "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
+      "details": [
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
+        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: Alugar uma moto em Hanói parece, à primeira vista, uma transação rápida e quase informal: entregas uns papéis, recebes a chave e saídas. Mas | Desde 1 de janeiro de 2025, a categor"
+      ]
+    },
+    {
+      "id": "VI-H01",
+      "decision": "REJECTED",
+      "failed": [
+        "G3_OFFICIAL_EVIDENCE"
+      ],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "8a2b1c6823dd5a7746de44ba760f05e714f569578eea4334735126dae3e3e1f7",
+      "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
+      "details": [
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: Với khách quốc tế, điều kiện giấy phép cần được kiểm tra trước khi chọn xe. Từ ngày 1 tháng 1 năm 2025, giấy phép lái xe hạng A1 ở Việt Nam "
+      ]
+    },
+    {
+      "id": "VI-H04",
+      "decision": "REJECTED",
+      "failed": [
+        "G3_SENSITIVE_SOURCES",
+        "G3_OFFICIAL_EVIDENCE"
+      ],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "d55f7ca20afbe0571ce76c00145928e27ec72075463eab5050423b1ea3f62f78",
+      "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
+      "details": [
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: Mũ bảo hiểm là trang bị bắt buộc khi chạy xe máy ở Việt Nam, không chỉ với người lái mà cả người ngồi sau, và dây mũ phải cài chắc chắn. The"
+      ]
+    },
+    {
+      "id": "ZH-H01",
+      "decision": "REJECTED",
+      "failed": [
+        "G3_OFFICIAL_EVIDENCE"
+      ],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "b047182b7d25ad174141d4a2770f913b43b57fafe680bc7652faa54dee6aa363",
+      "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
+      "details": [
+        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: 选车的第一条标准是合法驾驶,而不是舒适度。自2025年1月1日起,越南驾照 A1 类适用于排量不超过125cc的两轮摩托车,或功率不超过11千瓦的电动摩托车;更大排量需要 A 类。外国游客若要自己骑车,需持1968年《维也纳道路交通公约》签发的国际驾照(IDP)并连同本国原驾照一 | 实际结论很直接:对证件齐全的骑手,一辆110到125cc的踏板车是最省心的"
+      ]
+    },
+    {
+      "id": "ZH-H04",
+      "decision": "REJECTED",
+      "failed": [
+        "G3_SENSITIVE_SOURCES",
+        "G3_OFFICIAL_EVIDENCE"
+      ],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "4f141a0ff3985987f992ac06c003b926e1dcae2bd449c9367282294325996ea7",
+      "source_commit": "f5389d45db2b2447de62b156770790f41e1e7f36",
+      "details": [
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline",
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: 在越南,驾驶人和后座乘客都必须戴头盔,而且系带要系紧。2024年12月颁布的168/2024/NĐ-CP 号议定自2025年1月1日生效,不戴头盔或未系紧系带,罚款40万至60万越南盾,比旧标准明显提高,VnExpress 报道当时已有详细说明。但比罚款更重要的是保护效果:根据世"
+      ]
+    },
+    {
+      "id": "EN-H01",
+      "decision": "REJECTED",
+      "failed": [
+        "G3_OFFICIAL_EVIDENCE"
+      ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "e500d256e230f40635e4ebde4991a3d63274c642b7442094f3dce7f5b7f1b841",
-      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": []
+      "source_sha256": "29380fdc8f224d46444e46a8ae8ddb34e6837dc9ad38ff550938f133d3f74369",
+      "source_commit": "d60f0c62167728b55ef4652381baf95c7aabb851",
+      "details": [
+        "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: Vietnam's Law on Road Traffic Order and Safety sets out vehicle classifications and driver-licence categories. It took effect on 1 January 2"
+      ]
     }
   ]
 }
