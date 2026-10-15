@@ -1,8 +1,8 @@
 {
   "version": 1,
   "stage": "RAMP",
-  "paused": true,
-  "pause_reason": "Pre-commit gate failed 2026-10-15T05:29:54.892Z: scripts/seo/fact-guard.mjs  failed: FAIL UNSOURCED_AMOUNT en/topics/rental-costs-and-fees/index.html — Currency amount without an inline source in the same paragraph «120,000 VND»\nFAIL UNSOURCED_AMOUNT en/topics/rental-costs-and-fees/index.html — Currency amount without an inline source in the same paragraph «180,000 VND»\nFAIL UNSOURCED_AMOUNT en/topics/rental-costs-and-fees/index.html — Currency ",
+  "paused": false,
+  "pause_reason": null,
   "clean_runs": 0,
   "published": [
     {
@@ -165,6 +165,11 @@
         "FR-H02"
       ],
       "result": "GATE_FAILED"
+    },
+    {
+      "at": "2026-10-15T05:34:24.609Z",
+      "ids": [],
+      "result": "RESUME: Owner authorized: HTML inline-price citations restored in merged PR 46; checks and production HTTP QA pass"
     }
   ],
   "last_successful_deployment": {
