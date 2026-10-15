@@ -4,7 +4,16 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import {spawnSync} from "node:child_process";
-import {buildGraph,renderReport,stringify,GRAPH_PATH,REPORT_PATH} from "../scripts/seo/content-graph.mjs";
+import {buildGraph,renderReport,stringify,contentTokens,THRESHOLDS,GRAPH_PATH,REPORT_PATH} from "../scripts/seo/content-graph.mjs";
+
+const jaccard=(a,b)=>{let n=0;for(const x of a)if(b.has(x))n++;return n/(a.size+b.size-n);};
+test("Vietnamese uses adjacent syllable pairs: distinct topics avoid false review, near copies stay detectable",()=>{
+ const prices="Giá thuê xe máy ở Hà Nội phụ thuộc vào dòng xe số ngày thuê và thời điểm thuê. Người thuê nên xác nhận tiền cọc phí giao xe phương thức trả xe chi phí xăng và thời hạn trong hợp đồng.";
+ const paperwork="Giấy tờ hợp đồng thuê xe máy ở Hà Nội cần xác định người thuê số giấy phép lái xe địa điểm nhận xe điều kiện thanh toán thời gian hoàn trả cùng trách nhiệm xử lý sự cố và điều khoản bảo hiểm.";
+ assert.ok(jaccard(contentTokens(prices,"vi"),contentTokens(paperwork,"vi"))<THRESHOLDS.content_overlap_review);
+ const nearCopy=prices.replace("dòng xe","loại xe").replace("chi phí xăng","tiền xăng");
+ assert.ok(jaccard(contentTokens(prices,"vi"),contentTokens(nearCopy,"vi"))>=THRESHOLDS.content_overlap_review,"near copy remains REVIEW");
+});
 const {graph,errors}=buildGraph(process.cwd());
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const copyRepo=()=>{

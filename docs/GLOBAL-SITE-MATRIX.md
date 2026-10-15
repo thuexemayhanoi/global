@@ -12,21 +12,15 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
-| Matrix rows (295) | 74 | 19 | 4 | 198 |
+| Matrix rows (295) | 78 | 19 | 0 | 198 |
 | Topical candidates (56) | 0 | 0 | 0 | 56 |
-| Silos (330) | 42 | 12 | 0 | 129 |
+| Silos (330) | 44 | 10 | 0 | 129 |
 
 Knowledge graph: 42 entities, 1406 typed edges (hreflang_equivalent 190, about 710, contains 296, has_silo 160, has_hub 40, has_pillar 10).
 
 ## REVIEW — competing intents
 
-3 pair(s); showing up to 3.
-
-| A | B | Score | Basis |
-|---|---|---|---|
-| VI-H03 | VI-S05 | 0.59 | published_content |
-| VI-H03 | VI-S04 | 0.55 | published_content |
-| VI-H02 | VI-H03 | 0.52 | published_content |
+No unjustified high-overlap pair across 295 Matrix rows and 56 candidates (query similarity ≥ 0.66, or ≥ 0.5 within the same silo and intent; published text Jaccard ≥ 0.5). Parent/child Hub overlaps are expected and justified pairs carry a written `distinct_from` reason.
 
 ## UPGRADE — live pages below targets
 
@@ -65,9 +59,9 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 | vc-models | consideration | commercial | – | I1 CREATE | I1 C1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
 | vc-trip-fit | consideration | informational | – | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE |
 | rc-period | consideration | commercial | Pillar FAQ ×10 | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP |
-| rc-deposit | decision | commercial | Pillar FAQ ×10 | P1 I1 UPGRADE | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP |
+| rc-deposit | decision | commercial | Pillar FAQ ×10 | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP |
 | rc-extras | decision | commercial | – | I2 CREATE | I1 C1 CREATE | I2 CREATE | I1 C1 CREATE | I2 CREATE | I2 CREATE | I1 C1 CREATE | I2 CREATE | I2 CREATE | I2 CREATE |
-| dc-licence | decision | informational | Pillar FAQ ×10 | P1 I1 UPGRADE | I3 CREATE | P2 KEEP | P1 I2 KEEP | I2 CREATE | P1 I1 KEEP | P1 I2 KEEP | I2 CREATE | P1 I1 KEEP | P1 I1 KEEP |
+| dc-licence | decision | informational | Pillar FAQ ×10 | P1 I1 KEEP | I3 CREATE | P2 KEEP | P1 I2 KEEP | I2 CREATE | P1 I1 KEEP | P1 I2 KEEP | I2 CREATE | P1 I1 KEEP | P1 I1 KEEP |
 | dc-contract | decision | informational | – | P1 C1 KEEP | I1 C1 CREATE | P1 C1 KEEP | P1 C1 KEEP | I1 C1 CREATE | P1 C1 KEEP | P1 C1 KEEP | I1 C1 CREATE | P1 C1 KEEP | P1 C1 KEEP |
 | dc-insurance | decision | informational | – | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
 | dc-papers | riding | informational | – | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
@@ -114,7 +108,7 @@ Every locale checklist also covers the consideration → decision → pickup →
 
 | Locale | Rows | Published | Protected drafts | Planned | Candidates | Published depth OK |
 |---|---|---|---|---|---|---|
-| vi | 29 | 8 | 0 | 21 | 6 | 38% |
+| vi | 29 | 8 | 0 | 21 | 6 | 88% |
 | en | 29 | 7 | 1 | 21 | 16 | 71% |
 | de | 29 | 11 | 1 | 17 | 4 | 82% |
 | fr | 29 | 8 | 0 | 21 | 5 | 75% |

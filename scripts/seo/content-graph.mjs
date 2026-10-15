@@ -33,9 +33,12 @@ function words(text,locale){
  if(CJK.has(locale))return [...new Intl.Segmenter(locale,{granularity:"word"}).segment(text)].filter(w=>w.isWordLike).length;
  return text.split(/\s+/u).filter(Boolean).length;
 }
-function contentTokens(text,locale){
+export function contentTokens(text,locale){
  const t=q(text);
  if(CJK.has(locale)){const c=[...t.replace(/[\s\p{P}]/gu,"")],out=new Set();for(let i=0;i<c.length-1;i++)out.add(c[i]+c[i+1]);return out;}
+ // Vietnamese whitespace separates syllables, not lexical words. A one-syllable overlap
+ // overcounts generic rental vocabulary; adjacent syllable pairs preserve near-copy detection.
+ if(locale==="vi"){const w=t.split(/[^\\p{L}\\p{N}]+/u).filter(Boolean),out=new Set();for(let i=0;i<w.length-1;i++)out.add(w[i]+" "+w[i+1]);return out;}
  return new Set(t.split(/[^\p{L}\p{N}]+/u).filter(x=>x.length>2));
 }
 const mainOf=html=>(html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)||[,""])[1];
