@@ -25,7 +25,8 @@ import {fileURLToPath,pathToFileURL} from "node:url";
 import {validatePolicy} from "./topic-factory-core.mjs";
 import {BATCH_DIR,CHECKPOINT_DIR,RESEARCH_LOG,BATCH_SIZE,sessionIds,idsFromBranch,batchFile,parseBatchFile,managedBatchOwner,checkpointOwner,isAllowedPath,
  assertAllowedPaths,pushArgs,normalizeDraft,evaluateDraft,decideBatch,passingBatch,quarantineEntries,newCheckpoint,applyBatch,applyUpdate,rebuildCheckpoint,
- resolveTaIds,validateCheckpoint,verifyCheckpointContent,planResume,planningHints,localeCapacity,topicSummary,topicKey,inFlightItems,canonical,sha256} from "./topic-research-core.mjs";
+ resolveTaIds,validateCheckpoint,verifyCheckpointContent,planResume,planningHints,localeCapacity,topicSummary,topicKey,inFlightItems,canonical,sha256,
+ classifyPushFailure,TRANSIENT_RE} from "./topic-research-core.mjs";
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const POLICY_PATH="data/seo/topic-factory/policy.json";
@@ -97,12 +98,11 @@ const isShallow=()=>out(["rev-parse","--is-shallow-repository"]).trim()==="true"
 const gitDir=()=>path.resolve(ROOT,out(["rev-parse","--git-common-dir"]).trim());
 const currentBranch=()=>run(["symbolic-ref","--short","-q","HEAD"],{allow:true}).stdout.trim();
 
-const TRANSIENT=/RPC failed|HTTP [5]\d\d|\b50[234]\b|Could not resolve|Connection (?:reset|timed out|refused)|timed out|early EOF|unexpected disconnect|remote end hung up|Temporary failure|TLS|SSL_|GnuTLS|\b413\b|Service Unavailable|Gateway/i;
 function retrying(fn){
  const delays=process.env.TOPIC_RESEARCH_RETRY_MS!==undefined?[Number(process.env.TOPIC_RESEARCH_RETRY_MS),Number(process.env.TOPIC_RESEARCH_RETRY_MS)]:[1500,4000,9000];
  for(let i=0;;i++){
   try{return fn();}catch(e){
-   if(i>=delays.length||!TRANSIENT.test(String(e.message)))throw e;
+   if(i>=delays.length||!TRANSIENT_RE.test(String(e.message)))throw e;
    sleep(delays[i]);
   }
  }
@@ -332,14 +332,20 @@ function plumbingCommit(ids,parent,files,message,at){
 }
 const withTrailers=(msg,trailers)=>msg.trimEnd()+(trailers.length?"\n\n"+trailers.join("\n"):"")+"\n";
 
+/** A push that failed without recognisable wording is a lost race when GitHub's branch is not an ancestor of ours. */
+function remoteMoved(ids,remote){
+ try{
+  const theirs=lsRemote(remote,"refs/heads/"+ids.branch).get("refs/heads/"+ids.branch);
+  const ours=refSha("refs/heads/"+ids.branch);
+  return !!theirs&&theirs!==ours&&!isAncestor(theirs,ours);
+ }catch{return false;}
+}
 function pushOnce(ids,remote){
  const r=run(pushArgs(remote,ids.branch),{allow:true});
  if(r.status===0)return {ok:true};
  const text=String(r.stderr+"\n"+r.stdout);
- let kind="UNKNOWN";
- if(/denied|forbidden|\b403\b|permission|protected branch|repository rule|authentication failed|could not read Username/i.test(text))kind="DENIED";
- else if(/non-fast-forward|\[rejected\]|fetch first|failed to update ref|stale info/i.test(text))kind="REJECTED";
- else if(TRANSIENT.test(text)||/does not appear to be a git repository|Could not read from remote/i.test(text))kind=/does not appear to be a git repository/i.test(text)?"UNREACHABLE":"TRANSIENT";
+ let kind=classifyPushFailure(text);
+ if(kind==="UNKNOWN"&&remoteMoved(ids,remote))kind="REJECTED";
  return {ok:false,kind,message:text.trim().slice(-800)};
 }
 function pushBranch(ids,remote){

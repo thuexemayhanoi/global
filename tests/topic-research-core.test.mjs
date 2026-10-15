@@ -60,6 +60,39 @@ test("the only push shape is a plain non-force push of a research branch",()=>{
  assert.doesNotMatch(flat,/--force|--delete|\+refs|-f\b/);
 });
 
+test("push failures are classified from git's many wordings; anything unfamiliar stays UNKNOWN (the CLI then judges by GitHub's state)",()=>{
+ const table={
+  REJECTED:[
+   " ! [rejected]        research/claude-t1 -> research/claude-t1 (non-fast-forward)",
+   " ! [rejected]        research/claude-t1 -> research/claude-t1 (fetch first)",
+   " ! [remote rejected] research/claude-t1 -> research/claude-t1 (failed to update ref)",
+   "remote: error: cannot lock ref 'refs/heads/research/claude-t1': reference already exists        \nTo /tmp/x/origin.git\n ! [remote rejected] research/claude-t1 -> research/claude-t1 (reference already exists)",
+   "error: cannot lock ref 'refs/heads/research/claude-t1': is at 1234567890abcdef1234567890abcdef12345678 but expected 0000000000000000000000000000000000000000",
+   " ! [remote rejected] research/claude-t1 -> research/claude-t1 (incorrect old value provided)",
+   " ! [rejected]        research/claude-t1 -> research/claude-t1 (stale info)"],
+  DENIED:[
+   "remote: Permission to thuexemayhanoi/global.git denied to someone.\nfatal: unable to access 'https://github.com/thuexemayhanoi/global/': The requested URL returned error: 403",
+   " ! [remote rejected] research/claude-t1 -> research/claude-t1 (protected branch hook declined)",
+   "remote: error: GH013: Repository rule violations found for refs/heads/research/claude-t1.",
+   "fatal: Authentication failed for 'https://github.com/thuexemayhanoi/global/'",
+   "fatal: could not read Username for 'https://github.com': terminal prompts disabled",
+   "git@github.com: Permission denied (publickey)."],
+  TRANSIENT:[
+   "error: RPC failed; HTTP 502 curl 22 The requested URL returned error: 502",
+   "error: RPC failed; HTTP 413 curl 22 The requested URL returned error: 413",
+   "fatal: unable to access 'https://github.com/x/y/': Could not resolve host: github.com",
+   "send-pack: unexpected disconnect while reading sideband packet",
+   "fatal: the remote end hung up unexpectedly",
+   "fatal: unable to access 'https://github.com/x/y/': Connection reset by peer",
+   "GnuTLS recv error (-110): The TLS connection was non-properly terminated.",
+   "ssh: connect to host github.com port 22: Connection timed out\nfatal: Could not read from remote repository."],
+  UNREACHABLE:["fatal: '/srv/nope.git' does not appear to be a git repository\nfatal: Could not read from remote repository."],
+  UNKNOWN:["","remote: error: a novel server message nobody has ever seen","! [remote rejected] research/claude-t1 -> research/claude-t1 (something else entirely)"]
+ };
+ for(const [kind,texts] of Object.entries(table))for(const t of texts)assert.equal(core.classifyPushFailure(t),kind,kind+": "+t.slice(0,90));
+ assert.equal(core.classifyPushFailure(undefined),"UNKNOWN");
+});
+
 test("the checkpoint can never be mistaken for a research batch or reach the Topic Factory intake",()=>{
  const cp=newCheckpoint(ids,{now:NOW,mainSha:M,parentSha:M});
  assert.equal(cp.purpose,"TOPIC_RESEARCH_CHECKPOINT");

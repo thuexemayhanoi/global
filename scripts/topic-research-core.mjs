@@ -82,6 +82,25 @@ export function assertAllowedPaths(paths,ids){
  const bad=paths.filter(p=>!isAllowedPath(p,ids));
  if(bad.length)throw Object.assign(Error("PATH_NOT_ALLOWED: a research session writes only its own batch and checkpoint files; refused "+bad.join(", ")),{code:"PATH_NOT_ALLOWED"});
 }
+/* ------------------------------------------------------------------ push failure wording */
+
+const DENIED_RE=/denied|forbidden|\b403\b|permission|protected branch|repository rule|authentication failed|could not read Username/i;
+const REJECTED_RE=/non-fast-forward|\[rejected\]|fetch first|failed to update ref|stale info|reference already exists|incorrect old value|is at [0-9a-f]{7,40} but expected/i;
+export const TRANSIENT_RE=/RPC failed|HTTP [5]\d\d|\b50[234]\b|Could not resolve|Connection (?:reset|timed out|refused)|timed out|early EOF|unexpected disconnect|remote end hung up|Temporary failure|TLS|SSL_|GnuTLS|\b413\b|Service Unavailable|Gateway/i;
+/**
+ * Classify the output of a failed `git push`: DENIED (credentials/rules: stop and report), REJECTED (GitHub's branch
+ * moved: reconcile by content and retry), UNREACHABLE (no such remote), TRANSIENT (network/5xx: retry) or UNKNOWN.
+ * Git's wording differs between versions and servers, so UNKNOWN is judged by the remote's state by the caller.
+ */
+export function classifyPushFailure(text){
+ const t=String(text||"");
+ if(DENIED_RE.test(t))return "DENIED";
+ if(REJECTED_RE.test(t))return "REJECTED";
+ if(/does not appear to be a git repository/i.test(t))return "UNREACHABLE";
+ if(TRANSIENT_RE.test(t)||/Could not read from remote/i.test(t))return "TRANSIENT";
+ return "UNKNOWN";
+}
+
 /**
  * The only git push shape the tooling uses: no force, no delete, a research branch only. Commits are built
  * with plumbing on the branch ref, so the refspec never depends on what the clone has checked out.

@@ -42,8 +42,9 @@ if [ -f ./interleave ]; then
   cmd=$(cat ./interleave); rm -f ./interleave
   unset GIT_DIR GIT_QUARANTINE_PATH GIT_OBJECT_DIRECTORY GIT_ALTERNATE_OBJECT_DIRECTORIES GIT_PUSH_OPTION_COUNT
   sh -c "$cmd" > ./interleave.out 2>&1
+  if [ -f ./interleave-reject ]; then cat ./interleave-reject >&2; rm -f ./interleave-reject; exit 1; fi
 fi
-if [ -f ./fail-count ]; then n=$(cat ./fail-count); if [ "$n" -gt 0 ]; then echo $((n-1)) > ./fail-count; echo "error: RPC failed; HTTP 502 curl 22 The requested URL returned error: 502" >&2; exit 1; fi; fi
+if [ -f ./fail-count ]; then n=$(cat ./fail-count); if [ "$n" -gt 0 ]; then echo $((n-1)) > ./fail-count; if [ -f ./fail-message ]; then cat ./fail-message >&2; else echo "error: RPC failed; HTTP 502 curl 22 The requested URL returned error: 502" >&2; fi; exit 1; fi; fi
 exit 0
 `,{mode:0o755});
  fs.writeFileSync(path.join(hooks,"post-receive"),`#!/bin/sh
@@ -68,9 +69,20 @@ exit 0
    fs.writeFileSync(f,JSON.stringify(value,null,2));
    return f;
   },
-  failNextPushes(n){fs.writeFileSync(path.join(origin,"fail-count"),String(n));},
-  /** Run a shell command on the server side of the NEXT push, before its refs update: a real concurrent writer. */
-  interleaveOnNextPush(command){fs.writeFileSync(path.join(origin,"interleave"),command);},
+  /** The next n pushes fail with an HTTP 502 outage, or with the given wording (to test unrecognised messages). */
+  failNextPushes(n,message=null){
+   fs.writeFileSync(path.join(origin,"fail-count"),String(n));
+   const f=path.join(origin,"fail-message");
+   if(message===null)fs.rmSync(f,{force:true});else fs.writeFileSync(f,message+"\n");
+  },
+  /**
+   * Run a shell command on the server side of the NEXT push, before its refs update: a real concurrent writer.
+   * With {reject} the push then fails with that wording (whatever the git version would have said).
+   */
+  interleaveOnNextPush(command,{reject=null}={}){
+   fs.writeFileSync(path.join(origin,"interleave"),command);
+   if(reject!==null)fs.writeFileSync(path.join(origin,"interleave-reject"),reject+"\n");
+  },
   interleaveOutput(){const f=path.join(origin,"interleave.out");return fs.existsSync(f)?fs.readFileSync(f,"utf8"):"";},
   /** Every ref update origin accepted: [{old,new,ref}]. */
   pushAudit(){

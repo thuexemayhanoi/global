@@ -418,6 +418,40 @@ await scenario("a REAL push race (another machine lands a batch while ours is be
  assertCleanPushHistory(env);
 });
 
+await scenario("push failures are judged by what GitHub holds, not by git's wording: a lost race with unfamiliar wording is reconciled",async env=>{
+ const a=env.clone("machine-a"),b=env.clone("machine-b");
+ const da=env.draft(a,"a1",enTopics(0,10)),db=env.draft(b,"b1",enTopics(10,10));
+ // Wording from other git versions/servers is unrecognised, yet A's batch landed first: the branch moved.
+ env.interleaveOnNextPush("cd "+a+" && node scripts/topic-research.mjs commit --agent claude --session t1 --draft "+da+" --json",
+  {reject:"remote: error: a novel server message nobody has ever seen\n ! [remote rejected] research/claude-t1 -> research/claude-t1 (something else entirely)"});
+ const r=env.cli(b,cmd("commit",ids,"--draft",db));
+ assert.match(env.interleaveOutput(),/"status": "SAVED"/,env.interleaveOutput());
+ assert.equal(r.status,0,r.stdout+r.stderr);
+ assert.ok(r.data.applied.some(x=>/PUSH_REJECTED/.test(x)),r.data.applied.join("\n"));
+ assert.deepEqual(remoteBatchFiles(env),[batchFile(ids,1),batchFile(ids,2)]);
+ assert.equal(new Set(remoteBatchTopics(env)).size,20);
+ assertGithubConsistent(env);
+ assertCleanPushHistory(env);
+});
+
+await scenario("an unrecognised push failure while GitHub did not move is NOT SAVED (kept locally), never reconciled in a loop, and pushed later",async env=>{
+ const w=env.clone();
+ const d1=env.draft(w,"b1",enTopics(0,10));
+ expectSaved(env.cli(w,cmd("commit",ids,"--draft",d1)));
+ env.failNextPushes(3,"remote: error: hook declined for reasons unknown\n ! [remote rejected] research/claude-t1 -> research/claude-t1 (hook declined)");
+ const r=env.cli(w,cmd("commit",ids,"--draft",env.draft(w,"b2",enTopics(10,10))));
+ assert.equal(r.status,1);assert.notEqual(r.data.status,"SAVED");
+ assert.equal(r.data.status,"NOT_SAVED");assert.equal(r.data.kind,"UNKNOWN");
+ assert.ok(!(r.data.applied||[]).some(x=>/PUSH_REJECTED/.test(x)),"nothing moved on GitHub, so there is nothing to reconcile");
+ assert.equal(remoteBatchFiles(env).length,1,"GitHub still has only the first batch");
+ env.failNextPushes(0);
+ const p=env.cli(w,cmd("push-pending",ids));
+ assert.equal(p.status,0,p.stdout+p.stderr);
+ assert.deepEqual(remoteBatchFiles(env),[batchFile(ids,1),batchFile(ids,2)]);
+ assertGithubConsistent(env);
+ assertCleanPushHistory(env);
+});
+
 /* ------------------------------------------------------------------ cross-session duplicates */
 
 await scenario("topics in flight on another session's branch block duplicates before they are ingested",async env=>{
