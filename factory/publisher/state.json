@@ -1588,6 +1588,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T17:01:39.059Z"
+    },
+    {
+      "id": "ES-S12",
+      "locale": "es",
+      "url": "/es/guides/zona-bajas-emisiones-anillo-1/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:02:00.563Z",
+      "source_sha256": "0e74ee4b73c0a4eca1051094ab752100f8ddaf31a30310e6c82934dfd0fd641c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S13",
+      "locale": "fr",
+      "url": "/fr/guides/zone-faibles-emissions-ring-1/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:02:00.563Z",
+      "source_sha256": "0e96cfc68ae575c6fcb743e13ce1ee53541cc062d954ad40090ba9afc8010085",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2731,6 +2753,14 @@
         "EN-S13"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:02:00.563Z",
+      "ids": [
+        "ES-S12",
+        "FR-S13"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2743,6 +2773,6 @@
     "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 8
+    "APPROVED_BY_POLICY": 6
   }
 }
