@@ -508,6 +508,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:40:33.386Z"
+    },
+    {
+      "id": "FR-S04",
+      "locale": "fr",
+      "url": "/fr/guides/remboursement-caution/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:40:52.587Z",
+      "source_sha256": "b5f4670592829357c6d0081d511cc86a00a2476b1a578fb919da4cb26adac22d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S04",
+      "locale": "ja",
+      "url": "/ja/guides/hoshoukin-henkin/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:40:52.587Z",
+      "source_sha256": "80a80cb04731b444229cf6a1671d8995796fcb4ae49eb24697b6b8e9f9ce9e5e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -907,6 +929,14 @@
         "ES-S04"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:40:52.587Z",
+      "ids": [
+        "FR-S04",
+        "JA-S04"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -920,6 +950,6 @@
   },
   "queue": {
     "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 38
+    "APPROVED_BY_POLICY": 36
   }
 }
