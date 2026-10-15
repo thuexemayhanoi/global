@@ -40,7 +40,8 @@ const RANGE_SEP="\\s*(?:–|—|-|~|～|〜|to|đến|tới|bis|à|a|tot|até|�
 // a plain space only groups digits when a unit, multiplier or range follows.
 const NUM=g=>"(?<"+g+">\\d{1,3}(?:(?<"+g+"s>[.,\\u00a0\\u202f])\\d{3})(?:\\k<"+g+"s>\\d{3})*|\\d{1,3}(?: \\d{3})+(?=\\s?(?:"+VND_UNIT+"|"+MULT_WORDS+"|"+RANGE_SEP+"\\d))|\\d+(?:[.,]\\d+)?)";
 const MULT=g=>"(?<"+g+">"+MULT_WORDS+")?";
-const AMOUNT=new RegExp("(?:(?<prefix>vnd|₫|us\\$|usd|\\$|€|eur)\\s?)?"+NUM("n1")+"\\s?"+MULT("m1")+"(?:"+RANGE_SEP+NUM("n2")+"\\s?"+MULT("m2")+")?(?:\\s(?:de|of|di)(?=\\s))?\\s?(?<suffix>"+VND_UNIT+"|"+FOREIGN_UNIT+")?","giu");
+// A currency prefix must start a word: "cyclomoteur 50" or "secteur 1" are not euro amounts.
+const AMOUNT=new RegExp("(?:(?<!\\p{L})(?<prefix>vnd|₫|us\\$|usd|\\$|€|eur)\\s?)?"+NUM("n1")+"\\s?"+MULT("m1")+"(?:"+RANGE_SEP+NUM("n2")+"\\s?"+MULT("m2")+")?(?:\\s(?:de|of|di)(?=\\s))?\\s?(?<suffix>"+VND_UNIT+"|"+FOREIGN_UNIT+")?","giu");
 const PHONE=/(?<![\d.,/])(?:\+84|0)(?:[\s.-]?\d){8,10}(?![\d])/g;
 const TIME_RANGE=/(?<!\d)(\d{1,2})(?:[:h.](\d{2}))?\s*(?:h|giờ|時|时|시)?\s*(?:–|—|-|~|～|〜|to|đến|bis|à|a|tot|até|至)\s*(\d{1,2})(?:[:h.](\d{2}))?(?!\d)/gu;
 const CITATION=/\]\(https:\/\/[^)]+\)|https:\/\/\S+|(?:nghị định|luật|thông tư|decree|law|dekret|gesetz|décret|loi|decreto|ley|besluit|wet|decreto-lei|议定|法令|法律|시행령|법률|議定|法)\s*(?:số|no\.?|nr\.?|n°|第)?\s*\d+\s*\/\s*\d{4}/iu;
