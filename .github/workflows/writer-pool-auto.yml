@@ -36,7 +36,8 @@ jobs:
         run: |
           node --check scripts/writer-pool-auto.mjs
           node --check scripts/writer-request.mjs
-          node --test tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-refill.test.mjs tests/writer-slots.test.mjs
+          node --check scripts/repair-queue-core.mjs
+          node --test tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-refill.test.mjs tests/writer-slots.test.mjs tests/repair-queue.test.mjs tests/writer-qa-lock.test.mjs
           node scripts/build.mjs --check
       - name: Auto-submit verified 1–10 drafts and refill Writer queue (no manual button)
         env:
