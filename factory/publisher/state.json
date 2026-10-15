@@ -4708,16 +4708,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T23:41:14.145Z"
+    },
+    {
+      "id": "ES-S58",
+      "locale": "es",
+      "url": "/es/guides/donde-hay-que-reducir-la-velocidad-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T23:48:42.058Z",
+      "source_sha256": "129f928060433f48008493d0228b783fe5d2307451e8c232acf11d778e316157",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ES-S59",
+      "locale": "es",
+      "url": "/es/guides/marcas-viales-vietnam-moto/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T23:48:42.058Z",
+      "source_sha256": "28af130491412a332fbb470f6da6c4b8d004b1bee9fc9b2233a480be5003f2be",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T18:42:47.075Z",
-      "ids": [
-        "EN-S32"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T18:43:58.246Z",
       "ids": [
@@ -6256,6 +6271,14 @@
         "JA-S27"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T23:48:42.058Z",
+      "ids": [
+        "ES-S58",
+        "ES-S59"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -6266,5 +6289,7 @@
     "commit": "ff05a4935aa3c1264a52294bf42f08f929562f4c",
     "live_seconds": 82
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 10
+  }
 }
