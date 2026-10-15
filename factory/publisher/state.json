@@ -340,6 +340,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:28:35.432Z"
+    },
+    {
+      "id": "NL-S01",
+      "locale": "nl",
+      "url": "/nl/guides/schakelen-of-automaat/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:28:52.024Z",
+      "source_sha256": "d3e367c7dd15f89ee8244cd833053234a38ed46f214ec42a1bc8bd34b690f7a5",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "PT-S01",
+      "locale": "pt",
+      "url": "/pt/guides/manual-ou-automatica/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:28:52.024Z",
+      "source_sha256": "d7ccec717f65f4e8e5657eabb869d2f688c1851368d81fa40ffd9eabf187cd94",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -627,6 +649,14 @@
         "ES-S01"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:28:52.024Z",
+      "ids": [
+        "NL-S01",
+        "PT-S01"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -639,7 +669,7 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 50,
-    "WAIT_PARENT": 38
+    "WAIT_PARENT": 36,
+    "APPROVED_BY_POLICY": 50
   }
 }

@@ -38,24 +38,24 @@
   },
   "counts": {
     "rows": 245,
-    "published": 53,
-    "idea": 192,
+    "published": 55,
+    "idea": 190,
     "locales": 10,
     "candidates": 96,
     "silos": 330,
     "entities": 42,
     "edges": 1396,
     "actions": {
-      "KEEP": 31,
+      "KEEP": 33,
       "UPGRADE": 20,
-      "CREATE": 288,
+      "CREATE": 286,
       "REVIEW": 2
     },
     "silo_actions": {
-      "CREATE": 166,
+      "CREATE": 164,
       "UPGRADE": 10,
       "GAP": 150,
-      "KEEP": 4
+      "KEEP": 6
     },
     "review_pairs": 1
   },
@@ -104,7 +104,7 @@
         "words": 209,
         "h2": 2,
         "faq": 0,
-        "inbound_pages": 52,
+        "inbound_pages": 54,
         "inbound_contextual": 23,
         "outbound_contextual": 10,
         "max_content_overlap": 0
@@ -146,7 +146,7 @@
         "words": 578,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 52,
+        "inbound_pages": 54,
         "inbound_contextual": 4,
         "outbound_contextual": 4,
         "max_content_overlap": 0
@@ -670,7 +670,7 @@
         "words": 411,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 52,
+        "inbound_pages": 54,
         "inbound_contextual": 4,
         "outbound_contextual": 4,
         "max_content_overlap": 0
@@ -1194,7 +1194,7 @@
         "words": 397,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 52,
+        "inbound_pages": 54,
         "inbound_contextual": 5,
         "outbound_contextual": 5,
         "max_content_overlap": 0
@@ -1702,7 +1702,7 @@
         "words": 447,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 52,
+        "inbound_pages": 54,
         "inbound_contextual": 4,
         "outbound_contextual": 4,
         "max_content_overlap": 0
@@ -2210,7 +2210,7 @@
         "words": 436,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 52,
+        "inbound_pages": 54,
         "inbound_contextual": 6,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -2723,7 +2723,7 @@
       "level": "PILLAR",
       "pipeline_state": "PUBLISHED",
       "action": "UPGRADE",
-      "action_reasons": ["Main content 401 words < 600 target for PILLAR"],
+      "action_reasons": ["Main content 411 words < 600 target for PILLAR"],
       "silo": null,
       "journey_stage": "awareness",
       "intent_class": "commercial",
@@ -2731,12 +2731,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 401,
+        "words": 411,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 52,
-        "inbound_contextual": 5,
-        "outbound_contextual": 5,
+        "inbound_pages": 54,
+        "inbound_contextual": 6,
+        "outbound_contextual": 6,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -2776,8 +2776,8 @@
         "words": 237,
         "h2": 5,
         "faq": 1,
-        "inbound_pages": 13,
-        "inbound_contextual": 4,
+        "inbound_pages": 14,
+        "inbound_contextual": 5,
         "outbound_contextual": 7,
         "max_content_overlap": 0
       },
@@ -2815,12 +2815,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 1253,
-        "h2": 9,
+        "words": 1275,
+        "h2": 10,
         "faq": 1,
-        "inbound_pages": 4,
-        "inbound_contextual": 4,
-        "outbound_contextual": 6,
+        "inbound_pages": 5,
+        "inbound_contextual": 5,
+        "outbound_contextual": 7,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -2894,7 +2894,7 @@
         "words": 1799,
         "h2": 7,
         "faq": 1,
-        "inbound_pages": 4,
+        "inbound_pages": 5,
         "inbound_contextual": 4,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -2936,7 +2936,7 @@
         "words": 1825,
         "h2": 7,
         "faq": 1,
-        "inbound_pages": 4,
+        "inbound_pages": 5,
         "inbound_contextual": 4,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -2954,27 +2954,35 @@
       "parent_id": "NL-H01",
       "child_ids": [],
       "proposed_url": "/nl/guides/schakelen-of-automaat/",
-      "published_url": null,
-      "editorial_status": "IDEA",
-      "qa_status": "NOT_RUN",
+      "published_url": "/nl/guides/schakelen-of-automaat/",
+      "editorial_status": "PUBLISHED",
+      "qa_status": "PUBLISHED_HTML_EXISTS_REQUIRES_CONTENT_REVIEW",
       "source_verification": "NOT_STARTED",
       "serp_evidence": "NOT_VALIDATED",
       "cannibalization_risk": "NONE_DETECTED_STRUCTURAL",
       "internal_link_targets_published": ["/nl/", "/nl/checklist/", "/nl/topics/motor-of-scooter-kiezen/"],
       "writer_lane": "W3",
-      "implementation_priority": "P2",
+      "implementation_priority": "P1",
       "priority_value": 30,
       "level": "SUPPORT",
-      "pipeline_state": "IDEA",
-      "action": "CREATE",
-      "action_reasons": ["Evidence-free gap: no PUBLISHED page owns this intent"],
+      "pipeline_state": "PUBLISHED",
+      "action": "KEEP",
+      "action_reasons": ["Meets depth and linking targets"],
       "silo": "vc-transmission",
       "journey_stage": "consideration",
       "intent_class": "informational",
       "entities": ["E-SEMI-AUTOMATIC-MOTORBIKE", "E-AUTOMATIC-SCOOTER", "E-MANUAL-MOTORBIKE"],
       "overlaps": [],
       "overlap_count": 0,
-      "content_metrics": null,
+      "content_metrics": {
+        "words": 1503,
+        "h2": 8,
+        "faq": 1,
+        "inbound_pages": 5,
+        "inbound_contextual": 2,
+        "outbound_contextual": 5,
+        "max_content_overlap": 0
+      },
       "performance": "NOT_CONNECTED"
     },
     {
@@ -3250,7 +3258,7 @@
         "words": 445,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 52,
+        "inbound_pages": 54,
         "inbound_contextual": 4,
         "outbound_contextual": 4,
         "max_content_overlap": 0
@@ -3747,7 +3755,7 @@
       "level": "PILLAR",
       "pipeline_state": "PUBLISHED",
       "action": "UPGRADE",
-      "action_reasons": ["Main content 409 words < 600 target for PILLAR"],
+      "action_reasons": ["Main content 421 words < 600 target for PILLAR"],
       "silo": null,
       "journey_stage": "awareness",
       "intent_class": "commercial",
@@ -3755,12 +3763,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 409,
+        "words": 421,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 52,
-        "inbound_contextual": 6,
-        "outbound_contextual": 6,
+        "inbound_pages": 54,
+        "inbound_contextual": 7,
+        "outbound_contextual": 7,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -3800,8 +3808,8 @@
         "words": 244,
         "h2": 5,
         "faq": 1,
-        "inbound_pages": 14,
-        "inbound_contextual": 5,
+        "inbound_pages": 15,
+        "inbound_contextual": 6,
         "outbound_contextual": 7,
         "max_content_overlap": 0
       },
@@ -3839,12 +3847,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 1373,
+        "words": 1387,
         "h2": 10,
         "faq": 1,
-        "inbound_pages": 5,
-        "inbound_contextual": 5,
-        "outbound_contextual": 7,
+        "inbound_pages": 6,
+        "inbound_contextual": 6,
+        "outbound_contextual": 8,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -3884,7 +3892,7 @@
         "words": 1422,
         "h2": 9,
         "faq": 1,
-        "inbound_pages": 5,
+        "inbound_pages": 6,
         "inbound_contextual": 4,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -3960,7 +3968,7 @@
         "words": 1953,
         "h2": 7,
         "faq": 1,
-        "inbound_pages": 5,
+        "inbound_pages": 6,
         "inbound_contextual": 4,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -3978,27 +3986,35 @@
       "parent_id": "PT-H01",
       "child_ids": [],
       "proposed_url": "/pt/guides/manual-ou-automatica/",
-      "published_url": null,
-      "editorial_status": "IDEA",
-      "qa_status": "NOT_RUN",
+      "published_url": "/pt/guides/manual-ou-automatica/",
+      "editorial_status": "PUBLISHED",
+      "qa_status": "PUBLISHED_HTML_EXISTS_REQUIRES_CONTENT_REVIEW",
       "source_verification": "NOT_STARTED",
       "serp_evidence": "NOT_VALIDATED",
       "cannibalization_risk": "NONE_DETECTED_STRUCTURAL",
       "internal_link_targets_published": ["/pt/", "/pt/checklist/", "/pt/topics/escolher-moto/"],
       "writer_lane": "W1",
-      "implementation_priority": "P2",
+      "implementation_priority": "P1",
       "priority_value": 30,
       "level": "SUPPORT",
-      "pipeline_state": "IDEA",
-      "action": "CREATE",
-      "action_reasons": ["Evidence-free gap: no PUBLISHED page owns this intent"],
+      "pipeline_state": "PUBLISHED",
+      "action": "KEEP",
+      "action_reasons": ["Meets depth and linking targets"],
       "silo": "vc-transmission",
       "journey_stage": "consideration",
       "intent_class": "informational",
       "entities": ["E-SEMI-AUTOMATIC-MOTORBIKE", "E-AUTOMATIC-SCOOTER", "E-MANUAL-MOTORBIKE"],
       "overlaps": [],
       "overlap_count": 0,
-      "content_metrics": null,
+      "content_metrics": {
+        "words": 1701,
+        "h2": 9,
+        "faq": 1,
+        "inbound_pages": 6,
+        "inbound_contextual": 3,
+        "outbound_contextual": 6,
+        "max_content_overlap": 0
+      },
       "performance": "NOT_CONNECTED"
     },
     {
@@ -4033,12 +4049,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 1713,
-        "h2": 7,
+        "words": 1741,
+        "h2": 8,
         "faq": 1,
-        "inbound_pages": 5,
-        "inbound_contextual": 2,
-        "outbound_contextual": 5,
+        "inbound_pages": 6,
+        "inbound_contextual": 3,
+        "outbound_contextual": 6,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -4282,7 +4298,7 @@
         "words": 328,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 52,
+        "inbound_pages": 54,
         "inbound_contextual": 6,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -4806,7 +4822,7 @@
         "words": 463,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 52,
+        "inbound_pages": 54,
         "inbound_contextual": 4,
         "outbound_contextual": 4,
         "max_content_overlap": 0
@@ -5330,7 +5346,7 @@
         "words": 157,
         "h2": 4,
         "faq": 0,
-        "inbound_pages": 52,
+        "inbound_pages": 54,
         "inbound_contextual": 0,
         "outbound_contextual": 1,
         "max_content_overlap": 0
@@ -5372,7 +5388,7 @@
         "words": 118,
         "h2": 3,
         "faq": 0,
-        "inbound_pages": 52,
+        "inbound_pages": 54,
         "inbound_contextual": 0,
         "outbound_contextual": 1,
         "max_content_overlap": 0
@@ -5414,8 +5430,8 @@
         "words": 185,
         "h2": 3,
         "faq": 0,
-        "inbound_pages": 52,
-        "inbound_contextual": 39,
+        "inbound_pages": 54,
+        "inbound_contextual": 41,
         "outbound_contextual": 2,
         "max_content_overlap": 0
       },
@@ -5456,8 +5472,8 @@
         "words": 107,
         "h2": 3,
         "faq": 0,
-        "inbound_pages": 52,
-        "inbound_contextual": 39,
+        "inbound_pages": 54,
+        "inbound_contextual": 41,
         "outbound_contextual": 1,
         "max_content_overlap": 0
       },
@@ -12384,12 +12400,12 @@
       "reserved_by": null,
       "url": null,
       "members": {
-        "published": [],
+        "published": ["NL-S01"],
         "protected_drafts": [],
-        "planned": ["NL-S01"],
+        "planned": [],
         "candidates": ["TA-NL-0001"]
       },
-      "action": "CREATE"
+      "action": "KEEP"
     },
     {
       "id": "NL-vc-power",
@@ -13770,12 +13786,12 @@
       "reserved_by": null,
       "url": null,
       "members": {
-        "published": [],
+        "published": ["PT-S01"],
         "protected_drafts": [],
-        "planned": ["PT-S01"],
+        "planned": [],
         "candidates": ["TA-PT-0001"]
       },
-      "action": "CREATE"
+      "action": "KEEP"
     },
     {
       "id": "PT-vc-power",
