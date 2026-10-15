@@ -2512,17 +2512,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:31:57.701Z"
+    },
+    {
+      "id": "NL-S17",
+      "locale": "nl",
+      "url": "/nl/guides/bijkomende-kosten/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:32:36.546Z",
+      "source_sha256": "3688ddc1d152b46ad6a1f3c053ddcbcb363f6f768e23abee6bdeb4d6c16fb4e5",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "PT-S17",
+      "locale": "pt",
+      "url": "/pt/guides/custos-adicionais/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:32:36.546Z",
+      "source_sha256": "f4d78c501f59c91fb80d3ed60bbea8959496c6be4e984afc80b4c250219a30dd",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:14:37.291Z",
-      "ids": [
-        "FR-H03",
-        "JA-H03"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T09:21:02.105Z",
       "ids": [
@@ -4097,6 +4111,14 @@
         "KO-S17"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:32:36.546Z",
+      "ids": [
+        "NL-S17",
+        "PT-S17"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4109,6 +4131,6 @@
     "live_seconds": 162
   },
   "queue": {
-    "APPROVED_BY_POLICY": 6
+    "APPROVED_BY_POLICY": 4
   }
 }
