@@ -208,16 +208,23 @@ export function validateResearchBatch(batch,{matrix,map,policy}){
  if(!Array.isArray(list)||list.length<1||list.length>policy.refill.batch_max)fail(-1,"R2","Provide 1.."+policy.refill.batch_max+" candidates");
  if(issues.length)return {passed:false,issues,accepted:[]};
  const clusters=new Map();
- for(const h of map.architecture?.hubs||[])for(const c of h.clusters)clusters.set(c.id,{hub:h.id,reserved:!!c.reserved_by});
+ for(const h of map.architecture?.hubs||[])for(const c of h.clusters)clusters.set(c.id,{hub:h.id,reserved:!!c.reserved_by,proposed:false});
+ for(const h of map.architecture?.proposed_hubs||[])for(const c of h.clusters)clusters.set(c.id,{hub:h.id,reserved:!!c.reserved_by,proposed:true});
  const accepted=[],seen=new Map();
  for(const [i,c] of list.entries()){
   const before=issues.length;
   if(!c||typeof c!=="object"){fail(i,"R2","Candidate must be an object");continue;}
   if("search_volume" in c||"ranking" in c||"traffic" in c)fail(i,"R8","Do not submit volumes, rankings or traffic; keyword evidence stays NOT_VALIDATED");
   const parent=matrix.rows.find(r=>r.id===c.parent_id);
-  if(!LOCALES.includes(c.locale)||!parent||parent.role!=="HUB"||parent.locale!==c.locale)fail(i,"R3","parent_id must be an existing same-locale HUB (new domains need an architecture PR first)");
   const cl=clusters.get(c.subcluster);
-  if(!cl||cl.reserved||(parent&&cl.hub!==parent.cluster))fail(i,"R3","subcluster must be an unreserved cluster of the parent Hub");
+  const domain=(policy.domains||[]).find(d=>d.id===c.domain_id);
+  const researchOnly=c.parent_id===null&&cl?.proposed===true&&
+    domain?.status==="RESEARCH_OPEN"&&domain.clusters.includes(cl.hub);
+  if(!LOCALES.includes(c.locale)||(!researchOnly&&(!parent||parent.role!=="HUB"||parent.locale!==c.locale)))
+   fail(i,"R3","Use an existing same-locale HUB or parent_id:null with RESEARCH_OPEN domain_id and proposed-Hub subcluster");
+  if(!cl||cl.reserved||(researchOnly?!!parent:cl.proposed||!parent||cl.hub!==parent.cluster))
+   fail(i,"R3","subcluster must belong to the existing Hub or the research-open proposed Hub");
+  if(c.parent_id===null&&!researchOnly)fail(i,"R3","Unparented research requires an explicitly RESEARCH_OPEN domain and matching proposed Hub");
   if(!SLUG.test(c.slug||"")||c.slug.length>80)fail(i,"R4","slug must be lowercase ASCII kebab-case ≤80 chars");
   for(const k of ["primary_query","working_title","intent_rationale","content_angle"])if(unsafe(c[k]))fail(i,"R5",k+" missing or unsafe");
   if(String(c.intent_rationale||"").trim().length<60)fail(i,"R5","intent_rationale needs ≥60 chars");
@@ -260,12 +267,14 @@ export function ingestResearch(batch,{matrix,map,policy,source,frozenUrls=[]}){
    if(!keys.includes(k))keys.push(k);
   }
   const parent=matrix.rows.find(r=>r.id===c.parent_id);
-  const proposal={candidate_id:id,locale:c.locale,role:"SUPPORT",parent_id:c.parent_id,cluster:parent.cluster,subcluster:c.subcluster,
+  const researchOnly=c.parent_id===null;
+  const hub=researchOnly?(policy.domains||[]).find(d=>d.id===c.domain_id)?.clusters?.[0]:parent?.cluster;
+  const proposal={candidate_id:id,locale:c.locale,role:"SUPPORT",parent_id:researchOnly?null:c.parent_id,cluster:hub,subcluster:c.subcluster,
    slug:c.slug,primary_query:c.primary_query.trim(),secondary_queries:c.secondary_queries,working_title:c.working_title.trim(),
    search_intent:c.search_intent,word_target:c.word_target,priority:50,intent_rationale:c.intent_rationale.trim(),
    content_angle:c.content_angle.trim(),...(c.entities?{entities:c.entities}:{}),references:keys,
    ...(Array.isArray(c.distinct_from)&&c.distinct_from.length?{distinct_from:c.distinct_from}:{}),
-   status:"PROPOSED",serp_evidence:"NOT_VALIDATED",source_verification:"NOT_STARTED",
+   status:researchOnly?"ARCHITECTURE_BLOCKED":"PROPOSED",serp_evidence:"NOT_VALIDATED",source_verification:"NOT_STARTED",
    research:{agent:batch.agent.name,session:batch.agent.session,researched_on:batch.researched_on,keyword_evidence:c.keyword_evidence||"NOT_VALIDATED",source}};
   // Factory duplicate layers against the Matrix and every live proposal in the locale.
   const stop=L.stop_tokens||[];
