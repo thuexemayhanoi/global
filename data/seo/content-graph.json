@@ -38,28 +38,35 @@
   },
   "counts": {
     "rows": 295,
-    "published": 69,
-    "idea": 226,
+    "published": 71,
+    "idea": 224,
     "locales": 10,
     "candidates": 56,
     "silos": 330,
     "entities": 42,
     "edges": 1406,
     "actions": {
-      "KEEP": 47,
-      "UPGRADE": 20,
-      "CREATE": 282,
-      "REVIEW": 2
+      "KEEP": 49,
+      "UPGRADE": 19,
+      "CREATE": 280,
+      "REVIEW": 3
     },
     "silo_actions": {
-      "CREATE": 153,
-      "KEEP": 20,
-      "UPGRADE": 10,
+      "CREATE": 151,
+      "KEEP": 21,
+      "UPGRADE": 11,
       "GAP": 147
     },
-    "review_pairs": 1
+    "review_pairs": 2
   },
   "review_pairs": [
+    {
+      "a": "VI-H03",
+      "b": "VI-S04",
+      "score": 0.55,
+      "level": "HIGH",
+      "basis": "published_content"
+    },
     {
       "a": "VI-H02",
       "b": "VI-H03",
@@ -104,7 +111,7 @@
         "words": 209,
         "h2": 2,
         "faq": 0,
-        "inbound_pages": 68,
+        "inbound_pages": 70,
         "inbound_contextual": 23,
         "outbound_contextual": 10,
         "max_content_overlap": 0
@@ -134,8 +141,8 @@
       "priority_value": 0,
       "level": "PILLAR",
       "pipeline_state": "PUBLISHED",
-      "action": "UPGRADE",
-      "action_reasons": ["Main content 593 words < 600 target for PILLAR"],
+      "action": "KEEP",
+      "action_reasons": ["Meets depth and linking targets"],
       "silo": null,
       "journey_stage": "awareness",
       "intent_class": "commercial",
@@ -143,12 +150,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 593,
+        "words": 609,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 68,
-        "inbound_contextual": 5,
-        "outbound_contextual": 5,
+        "inbound_pages": 70,
+        "inbound_contextual": 6,
+        "outbound_contextual": 6,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -188,8 +195,8 @@
         "words": 407,
         "h2": 5,
         "faq": 1,
-        "inbound_pages": 13,
-        "inbound_contextual": 4,
+        "inbound_pages": 14,
+        "inbound_contextual": 5,
         "outbound_contextual": 6,
         "max_content_overlap": 0
       },
@@ -269,12 +276,12 @@
       ],
       "overlap_count": 1,
       "content_metrics": {
-        "words": 2117,
+        "words": 2145,
         "h2": 12,
         "faq": 1,
-        "inbound_pages": 4,
-        "inbound_contextual": 4,
-        "outbound_contextual": 6,
+        "inbound_pages": 5,
+        "inbound_contextual": 5,
+        "outbound_contextual": 7,
         "max_content_overlap": 0.52
       },
       "performance": "NOT_CONNECTED"
@@ -314,10 +321,10 @@
         "words": 2418,
         "h2": 7,
         "faq": 1,
-        "inbound_pages": 4,
+        "inbound_pages": 5,
         "inbound_contextual": 3,
         "outbound_contextual": 5,
-        "max_content_overlap": 0.52
+        "max_content_overlap": 0.55
       },
       "performance": "NOT_CONNECTED"
     },
@@ -455,12 +462,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 1647,
-        "h2": 7,
+        "words": 1683,
+        "h2": 8,
         "faq": 1,
-        "inbound_pages": 4,
-        "inbound_contextual": 2,
-        "outbound_contextual": 5,
+        "inbound_pages": 5,
+        "inbound_contextual": 3,
+        "outbound_contextual": 6,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -476,20 +483,20 @@
       "parent_id": "VI-H02",
       "child_ids": [],
       "proposed_url": "/vi/guides/tien-coc-hoan-coc/",
-      "published_url": null,
-      "editorial_status": "IDEA",
-      "qa_status": "NOT_RUN",
+      "published_url": "/vi/guides/tien-coc-hoan-coc/",
+      "editorial_status": "PUBLISHED",
+      "qa_status": "PUBLISHED_HTML_EXISTS_REQUIRES_CONTENT_REVIEW",
       "source_verification": "NOT_STARTED",
       "serp_evidence": "NOT_VALIDATED",
-      "cannibalization_risk": "NOTED_STRUCTURAL_OVERLAP",
+      "cannibalization_risk": "REVIEW_STRUCTURAL_OVERLAP",
       "internal_link_targets_published": ["/vi/", "/vi/checklist/", "/vi/topics/chi-phi-thue-xe/"],
       "writer_lane": "W2",
-      "implementation_priority": "P2",
+      "implementation_priority": "P1",
       "priority_value": 33,
       "level": "SUPPORT",
-      "pipeline_state": "IDEA",
-      "action": "CREATE",
-      "action_reasons": ["Evidence-free gap: no PUBLISHED page owns this intent"],
+      "pipeline_state": "PUBLISHED",
+      "action": "REVIEW",
+      "action_reasons": ["Meets depth and linking targets"],
       "silo": "rc-deposit",
       "journey_stage": "decision",
       "intent_class": "commercial",
@@ -504,7 +511,15 @@
         }
       ],
       "overlap_count": 1,
-      "content_metrics": null,
+      "content_metrics": {
+        "words": 2074,
+        "h2": 9,
+        "faq": 1,
+        "inbound_pages": 5,
+        "inbound_contextual": 3,
+        "outbound_contextual": 6,
+        "max_content_overlap": 0.55
+      },
       "performance": "NOT_CONNECTED"
     },
     {
@@ -678,7 +693,7 @@
         "words": 431,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 68,
+        "inbound_pages": 70,
         "inbound_contextual": 6,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -1218,7 +1233,7 @@
         "words": 397,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 68,
+        "inbound_pages": 70,
         "inbound_contextual": 5,
         "outbound_contextual": 5,
         "max_content_overlap": 0
@@ -1726,7 +1741,7 @@
         "words": 472,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 68,
+        "inbound_pages": 70,
         "inbound_contextual": 6,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -2250,7 +2265,7 @@
         "words": 470,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 68,
+        "inbound_pages": 70,
         "inbound_contextual": 9,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -2798,7 +2813,7 @@
         "words": 422,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 68,
+        "inbound_pages": 70,
         "inbound_contextual": 7,
         "outbound_contextual": 7,
         "max_content_overlap": 0
@@ -3330,7 +3345,7 @@
         "words": 459,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 68,
+        "inbound_pages": 70,
         "inbound_contextual": 5,
         "outbound_contextual": 5,
         "max_content_overlap": 0
@@ -3835,7 +3850,7 @@
       "level": "PILLAR",
       "pipeline_state": "PUBLISHED",
       "action": "UPGRADE",
-      "action_reasons": ["Main content 433 words < 600 target for PILLAR"],
+      "action_reasons": ["Main content 444 words < 600 target for PILLAR"],
       "silo": null,
       "journey_stage": "awareness",
       "intent_class": "commercial",
@@ -3843,12 +3858,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 433,
+        "words": 444,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 68,
-        "inbound_contextual": 8,
-        "outbound_contextual": 8,
+        "inbound_pages": 70,
+        "inbound_contextual": 9,
+        "outbound_contextual": 9,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -3888,8 +3903,8 @@
         "words": 244,
         "h2": 5,
         "faq": 1,
-        "inbound_pages": 16,
-        "inbound_contextual": 7,
+        "inbound_pages": 17,
+        "inbound_contextual": 8,
         "outbound_contextual": 7,
         "max_content_overlap": 0
       },
@@ -3930,7 +3945,7 @@
         "words": 1387,
         "h2": 10,
         "faq": 1,
-        "inbound_pages": 7,
+        "inbound_pages": 8,
         "inbound_contextual": 6,
         "outbound_contextual": 8,
         "max_content_overlap": 0
@@ -3969,12 +3984,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 1447,
+        "words": 1460,
         "h2": 10,
         "faq": 1,
-        "inbound_pages": 7,
-        "inbound_contextual": 5,
-        "outbound_contextual": 7,
+        "inbound_pages": 8,
+        "inbound_contextual": 6,
+        "outbound_contextual": 8,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -4048,7 +4063,7 @@
         "words": 1953,
         "h2": 7,
         "faq": 1,
-        "inbound_pages": 7,
+        "inbound_pages": 8,
         "inbound_contextual": 4,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -4090,7 +4105,7 @@
         "words": 1701,
         "h2": 9,
         "faq": 1,
-        "inbound_pages": 7,
+        "inbound_pages": 8,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -4132,7 +4147,7 @@
         "words": 1741,
         "h2": 8,
         "faq": 1,
-        "inbound_pages": 7,
+        "inbound_pages": 8,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -4171,12 +4186,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 1736,
-        "h2": 7,
+        "words": 1762,
+        "h2": 8,
         "faq": 1,
-        "inbound_pages": 7,
-        "inbound_contextual": 2,
-        "outbound_contextual": 5,
+        "inbound_pages": 8,
+        "inbound_contextual": 3,
+        "outbound_contextual": 6,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -4192,27 +4207,35 @@
       "parent_id": "PT-H02",
       "child_ids": [],
       "proposed_url": "/pt/guides/reembolso-caucao/",
-      "published_url": null,
-      "editorial_status": "IDEA",
-      "qa_status": "NOT_RUN",
+      "published_url": "/pt/guides/reembolso-caucao/",
+      "editorial_status": "PUBLISHED",
+      "qa_status": "PUBLISHED_HTML_EXISTS_REQUIRES_CONTENT_REVIEW",
       "source_verification": "NOT_STARTED",
       "serp_evidence": "NOT_VALIDATED",
       "cannibalization_risk": "NONE_DETECTED_STRUCTURAL",
       "internal_link_targets_published": ["/pt/", "/pt/checklist/", "/pt/topics/precos-e-caucao/"],
       "writer_lane": "W1",
-      "implementation_priority": "P2",
+      "implementation_priority": "P1",
       "priority_value": 33,
       "level": "SUPPORT",
-      "pipeline_state": "IDEA",
-      "action": "CREATE",
-      "action_reasons": ["Evidence-free gap: no PUBLISHED page owns this intent"],
+      "pipeline_state": "PUBLISHED",
+      "action": "KEEP",
+      "action_reasons": ["Meets depth and linking targets"],
       "silo": "rc-deposit",
       "journey_stage": "decision",
       "intent_class": "commercial",
       "entities": ["E-RENTAL-DEPOSIT", "E-PASSPORT", "E-NATIONAL-ID-CARD"],
       "overlaps": [],
       "overlap_count": 0,
-      "content_metrics": null,
+      "content_metrics": {
+        "words": 1921,
+        "h2": 9,
+        "faq": 1,
+        "inbound_pages": 8,
+        "inbound_contextual": 3,
+        "outbound_contextual": 6,
+        "max_content_overlap": 0
+      },
       "performance": "NOT_CONNECTED"
     },
     {
@@ -4386,7 +4409,7 @@
         "words": 336,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 68,
+        "inbound_pages": 70,
         "inbound_contextual": 7,
         "outbound_contextual": 7,
         "max_content_overlap": 0
@@ -4918,7 +4941,7 @@
         "words": 489,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 68,
+        "inbound_pages": 70,
         "inbound_contextual": 6,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -5458,7 +5481,7 @@
         "words": 157,
         "h2": 4,
         "faq": 0,
-        "inbound_pages": 68,
+        "inbound_pages": 70,
         "inbound_contextual": 0,
         "outbound_contextual": 1,
         "max_content_overlap": 0
@@ -5500,7 +5523,7 @@
         "words": 118,
         "h2": 3,
         "faq": 0,
-        "inbound_pages": 68,
+        "inbound_pages": 70,
         "inbound_contextual": 0,
         "outbound_contextual": 1,
         "max_content_overlap": 0
@@ -5542,8 +5565,8 @@
         "words": 185,
         "h2": 3,
         "faq": 0,
-        "inbound_pages": 68,
-        "inbound_contextual": 55,
+        "inbound_pages": 70,
+        "inbound_contextual": 57,
         "outbound_contextual": 2,
         "max_content_overlap": 0
       },
@@ -5584,8 +5607,8 @@
         "words": 107,
         "h2": 3,
         "faq": 0,
-        "inbound_pages": 68,
-        "inbound_contextual": 55,
+        "inbound_pages": 70,
+        "inbound_contextual": 57,
         "outbound_contextual": 1,
         "max_content_overlap": 0
       },
@@ -10852,12 +10875,12 @@
       "reserved_by": null,
       "url": null,
       "members": {
-        "published": [],
+        "published": ["VI-S04"],
         "protected_drafts": [],
-        "planned": ["VI-S04", "VI-S16"],
+        "planned": ["VI-S16"],
         "candidates": []
       },
-      "action": "CREATE"
+      "action": "UPGRADE"
     },
     {
       "id": "VI-rc-extras",
@@ -15703,12 +15726,12 @@
       "reserved_by": null,
       "url": null,
       "members": {
-        "published": [],
+        "published": ["PT-S04"],
         "protected_drafts": [],
-        "planned": ["PT-S04", "PT-S16"],
+        "planned": ["PT-S16"],
         "candidates": []
       },
-      "action": "CREATE"
+      "action": "KEEP"
     },
     {
       "id": "PT-rc-extras",

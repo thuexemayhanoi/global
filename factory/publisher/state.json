@@ -532,6 +532,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:42:01.741Z"
+    },
+    {
+      "id": "PT-S04",
+      "locale": "pt",
+      "url": "/pt/guides/reembolso-caucao/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:42:20.910Z",
+      "source_sha256": "9249cc21d77b7d2a662d3421a003c838cb0972bf792ef811a0664e8bb49f6ad3",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "VI-S04",
+      "locale": "vi",
+      "url": "/vi/guides/tien-coc-hoan-coc/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:42:20.910Z",
+      "source_sha256": "4f745821e40424c8c76c7f91498e472d95eb7ab2cd9e7807b8f47858dbf3e00d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -947,6 +969,14 @@
         "JA-S04"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:42:20.910Z",
+      "ids": [
+        "PT-S04",
+        "VI-S04"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -960,6 +990,6 @@
   },
   "queue": {
     "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 36
+    "APPROVED_BY_POLICY": 34
   }
 }
