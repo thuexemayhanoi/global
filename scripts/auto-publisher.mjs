@@ -57,7 +57,8 @@ function context(){
 function loadDraft(claim,fetched){
  if(!claim.source_commit||!claim.source_sha256)return {error:"No immutable evidence in ledger"};
  if(!gitOk("cat-file","-e",claim.source_commit+"^{commit}")){
-  if(!fetched.has(claim.branch)){fetched.add(claim.branch);gitOk("fetch","--no-tags","-q","origin","refs/heads/"+claim.branch+":refs/remotes/origin/"+claim.branch);}
+  const sourceBranch=claim.source_branch||claim.branch;
+ if(!fetched.has(sourceBranch)){fetched.add(sourceBranch);gitOk("fetch","--no-tags","-q","origin","refs/heads/"+sourceBranch+":refs/remotes/origin/"+sourceBranch);}
   if(!gitOk("cat-file","-e",claim.source_commit+"^{commit}"))gitOk("fetch","--no-tags","-q","origin",claim.source_commit);
  }
  const file=claim.source_path||"factory/external-writers/inbox/"+claim.writer+"/"+claim.id+".json";
