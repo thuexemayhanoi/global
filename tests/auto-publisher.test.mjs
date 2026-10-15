@@ -129,3 +129,17 @@ test("mutating publisher commands refuse outside the trusted workflow",()=>{
   assert.match(r.stderr,/PUBLISHER_REFUSED/);
  }
 });
+
+test("revision loop: REVISE/FAIL reviews are valid feedback, never approval; per-version review files",async()=>{
+ const {reviewApproves,reviewFile,REVIEW_FILE}=await import("../scripts/auto-publisher-core.mjs");
+ const pk=packet();
+ const revise=review({verdict:"REVISE",checks:{...review().checks,factual_accuracy:"FAIL"},issues:["Model list not in cited source"]});
+ assert.deepEqual(validateReview(revise,{packet:pk,claim}),[]);
+ assert.equal(reviewApproves(revise),false);
+ assert.ok(validateReview(review({verdict:"REVISE"}),{packet:pk,claim}).some(e=>/list the issues/.test(e)));
+ assert.equal(eligibility(ctx({review:revise})).decision,"REVISION_REQUESTED");
+ assert.equal(eligibility(ctx({review:review({verdict:"FAIL",issues:["Unsafe advice"],checks:{...review().checks,search_intent:"FAIL"}})})).decision,"REJECTED_BY_REVIEW");
+ assert.equal(reviewFile("NL-H01","4846d24d0cb9846348"),"factory/editorial-reviews/NL-H01.4846d24d0cb9.json");
+ assert.ok(REVIEW_FILE.test("NL-H01.4846d24d0cb9.json"));
+ assert.ok(!REVIEW_FILE.test("NL-H01.json"));
+});

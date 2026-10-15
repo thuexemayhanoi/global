@@ -10,7 +10,8 @@ import path from "node:path";
 import {fileURLToPath} from "node:url";
 import {execFileSync} from "node:child_process";
 import {randomUUID,createHash} from "node:crypto";
-import {autoAdvance} from "./writer-pool-auto-core.mjs";
+import {autoAdvance,applyRevisions} from "./writer-pool-auto-core.mjs";
+import {reviewFile,validateReview} from "./auto-publisher-core.mjs";
 import {validateRequest} from "./writer-request-core.mjs";
 import {verifyPacket,checkDuplicates} from "./writer-lanes.mjs";
 import {emptySlots,slotView,signalSlot,validateSlots} from "./writer-slots-core.mjs";
@@ -94,13 +95,35 @@ function main(){
  // Submission is immutable: every later push must preserve the exact remote
  // bytes of all previously submitted packets, or fail closed. Protected
  // legacy draft IDs use separate protection and are not rewritten.
- for(const c of ledger.claims.filter(c=>c.status==="SUBMITTED"&&c.branch===branch&&c.writer===request.writer&&c.session===request.session&&c.source_sha256)){
-  const file="factory/external-writers/inbox/"+request.writer+"/"+c.id+".json";
-  let prior;
-  try{prior=gitRaw("show",sha+":"+file);}
-  catch{throw Error("Submitted draft disappeared from Writer branch: "+c.id);}
-  const digest=createHash("sha256").update(prior).digest("hex");
-  if(digest!==c.source_sha256)throw Error("IMMUTABLE_SUBMITTED_DRAFT_CHANGED "+c.id+": restore exact committed content before continuing");
+ const own=ledger.claims.filter(c=>c.status==="SUBMITTED"&&c.branch===branch&&c.writer===request.writer&&c.session===request.session&&c.source_sha256);
+ for(const c of own){
+  // The current version and every superseded version stay byte-identical on the branch.
+  for(const v of [{source_sha256:c.source_sha256,source_path:c.source_path},...(c.revisions||[])]){
+   const file=v.source_path||"factory/external-writers/inbox/"+request.writer+"/"+c.id+".json";
+   let prior;
+   try{prior=gitRaw("show",sha+":"+file);}
+   catch{throw Error("Submitted draft disappeared from Writer branch: "+file);}
+   if(createHash("sha256").update(prior).digest("hex")!==v.source_sha256)throw Error("IMMUTABLE_SUBMITTED_DRAFT_CHANGED "+file+": restore exact committed content; revise via revisions/<ID>.rN.json");
+  }
+ }
+ // Revisions: new files only, for drafts whose current version an independent review sent back.
+ const revs=[];
+ const revNames=git("ls-tree","-r","--name-only",sha,"--","factory/external-writers/inbox/"+request.writer+"/revisions/").split("\n").filter(Boolean);
+ for(const file of revNames){
+  const m=file.match(/\/revisions\/([A-Z]{2}-[HS][0-9]{2,4})\.r([0-9]+)\.json$/);
+  if(!m)throw Error("Invalid revision file "+file);
+  const c=own.find(x=>x.id===m[1]);
+  if(!c||c.source_path===file||(c.revisions||[]).some(v=>v.source_path===file))continue; // not ours or already recorded
+  const reviewRel=reviewFile(c.id,c.source_sha256);
+  if(!fs.existsSync(path.join(ROOT,reviewRel)))continue; // no review on main yet: nothing to revise against
+  const review=JSON.parse(fs.readFileSync(path.join(ROOT,reviewRel),"utf8"));
+  if(validateReview(review,{packet:{matrix_id:c.id,writer_session:c.session},claim:c}).length||!["REVISE","FAIL"].includes(review.verdict))continue;
+  const raw=gitRaw("show",sha+":"+file);
+  let packet;try{packet=JSON.parse(raw);}catch{throw Error("Malformed revision JSON "+file);}
+  if(packet.matrix_id!==c.id||packet.writer_session!==request.session)throw Error("Revision has wrong ID/session "+file);
+  const qc=verifyPacket(packet,request.writer,matrix,board,locales,ledger,registry);
+  if(!qc.passed)throw Error("Revision failed main-source QA "+file+": "+qc.errors.join("; "));
+  revs.push({id:c.id,revision:Number(m[2]),source_sha256:createHash("sha256").update(raw).digest("hex"),source_commit:sha,source_path:file,review_verdict:review.verdict});
  }
  // Only real green Writer PRs may be entered into the editorial SUBMITTED queue.
  // Initial branch/request may claim without a PR; the outside AI must open a
@@ -118,8 +141,10 @@ function main(){
  const rec=slots.slots[request.writer];
  if(rec.state!==signal||rec.session!==request.session||rec.branch!==branch||(request.agent&&rec.agent!==request.agent))
   slots=signalSlot(ledger,slots,{writer:request.writer,session:request.session,branch,state:signal,reason:request.slot_reason||"",agent:request.agent||null,source:"agent",now});
- const result=autoAdvance(matrix,ledger,registry,request,{verifiedDraftIds:verified,verifiedDraftEvidence:evidence,
-   now,nonce:randomUUID(),refill:["ACTIVE","RECOVERING"].includes(signal)});
+ const revised=applyRevisions(matrix,ledger,registry,{writer:request.writer,session:request.session,branch},revs,{now});
+ const result=autoAdvance(matrix,revised.ledger,registry,request,{verifiedDraftIds:verified,verifiedDraftEvidence:evidence,
+   now,nonce:randomUUID(),refill:["ACTIVE","RECOVERING"].includes(signal)&&request.claim_new!==false});
+ if(revised.applied.length){result.changed=true;console.log("REVISIONS_RECORDED "+revised.applied.join(","));}
  if(slots!==slotsBefore)fs.writeFileSync(path.join(ROOT,slotsFile),JSON.stringify(slots,null,2)+"\n");
  if(!result.changed){
   console.log(JSON.stringify({mode:"AUTO_POOL_NO_MUTATION",status:result.status,

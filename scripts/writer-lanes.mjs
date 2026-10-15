@@ -27,12 +27,21 @@ export function validateBoard(matrix,board){
  return problems;
 }
 export function inboxFiles(){
- const files=[],errors=[],ids=new Set();
+ const files=[],errors=[],ids=new Set(),revisions=[];
  for(const w of W){
   const d=path.join(ROOT,INBOX,w);
   if(!fs.existsSync(d))continue;
   for(const file of fs.readdirSync(d)){
    if(file===".gitkeep")continue;
+   if(file==="revisions"){
+    for(const rf of fs.readdirSync(path.join(d,file))){
+     const m=rf.match(/^([A-Z]{2}-[HS][0-9]{2,4})\.r([0-9]+)\.json$/);
+     if(!m){errors.push("Invalid revision filename "+w+"/revisions/"+rf);continue;}
+     const rel=INBOX+"/"+w+"/revisions/"+rf;
+     try{revisions.push({id:m[1],revision:Number(m[2]),writer:w,path:rel,packet:read(rel)});}catch{errors.push("Unreadable JSON "+rel);}
+    }
+    continue;
+   }
    if(!/^[A-Z]{2}-[HS][0-9]{2,4}\.json$/.test(file)){errors.push("Invalid inbox filename "+w+"/"+file);continue;}
    const id=file.slice(0,-5),rel=INBOX+"/"+w+"/"+file;
    if(ids.has(id))errors.push("Same ID appears twice "+id);
@@ -40,7 +49,7 @@ export function inboxFiles(){
    try{files.push({id,writer:w,path:rel,packet:read(rel)});}catch(e){errors.push("Unreadable JSON "+rel);}
   }
  }
- return {files,errors};
+ return {files,errors,revisions};
 }
 export function pack(matrix,board,writer,claimed=new Set(),count=2,locale=null){
  if(!W.includes(writer))throw Error("Valid writers: W1,W2,W3");
@@ -110,7 +119,8 @@ export function main(argv=process.argv.slice(2)){
   console.log(JSON.stringify(brief,null,2));return;
  }
  if(cmd==="verify"||cmd==="verify-all"){
-  const chosen=cmd==="verify-all"?inbox.files:inbox.files.filter(f=>f.writer===opt.writer&&f.path===opt.file);
+  const all=[...inbox.files,...(inbox.revisions||[])];
+  const chosen=cmd==="verify-all"?all:all.filter(f=>f.writer===opt.writer&&f.path===opt.file);
   if(!chosen.length&&cmd==="verify")throw Error("Exact --writer and --file inside your inbox required");
   const checks=chosen.map(f=>{
    const check=verifyPacket(f.packet,f.writer,matrix,board,locales,claims,registry);

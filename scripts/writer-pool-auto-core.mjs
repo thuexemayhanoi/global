@@ -49,3 +49,27 @@ export function autoAdvance(matrix,ledger,registry,request,{
    ledger:state,changed,
    message:"Fetch/merge latest main, write only confirmed IDs. A green 1–10 draft push automatically submits completed draft(s) and refills the active Writer slot up to ten. No public publication."};
 }
+
+/**
+ * Record verified revisions of SUBMITTED drafts that an independent review sent back (REVISE/FAIL).
+ * The previous immutable version moves to `revisions` history; nothing is overwritten or deleted.
+ * `revs`: [{id, revision, source_sha256, source_commit, source_path, review_verdict}]
+ */
+export function applyRevisions(matrix,ledger,registry,{writer,session,branch},revs,{now}){
+ if(!revs.length)return {ledger,applied:[]};
+ const next=structuredClone(ledger),applied=[];
+ for(const r of revs){
+  const c=next.claims.find(x=>x.id===r.id&&x.status==="SUBMITTED"&&x.writer===writer&&x.session===session&&x.branch===branch);
+  if(!c)throw Error("REVISION_REFUSED: no SUBMITTED claim of this session for "+r.id);
+  if(!["REVISE","FAIL"].includes(r.review_verdict))throw Error("REVISION_REFUSED: "+r.id+" has no REVISE/FAIL review on its current version");
+  const expected=(c.revisions||[]).length+2;
+  if(r.revision!==expected)throw Error("REVISION_REFUSED: "+r.id+" expects r"+expected);
+  if(r.source_sha256===c.source_sha256)throw Error("REVISION_REFUSED: "+r.id+" revision is byte-identical");
+  c.revisions=[...(c.revisions||[]),{source_sha256:c.source_sha256,source_commit:c.source_commit,...(c.source_path?{source_path:c.source_path}:{}),review_verdict:r.review_verdict,superseded_at:now}];
+  c.source_sha256=r.source_sha256;c.source_commit=r.source_commit;c.source_path=r.source_path;c.revision=r.revision;
+  c.phase="REVISED_AWAITING_REVIEW";c.updated_at=now;applied.push(r.id);
+ }
+ next.revision++;
+ const e=validatePool(matrix,next,registry);if(e.length)throw Error(e.join("; "));
+ return {ledger:next,applied};
+}

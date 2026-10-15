@@ -135,3 +135,27 @@ test("network failure: replaying a claim dispatch or a green push is idempotent 
  assert.equal(pushed.ledger.claims.filter(c=>c.status==="SUBMITTED").length,again.ledger.claims.filter(c=>c.status==="SUBMITTED").length);
  assert.equal(open(again.ledger,"W1").length,10);
 });
+
+test("revisions append a new version and keep every earlier hash; only REVISE/FAIL-reviewed drafts can be revised",async()=>{
+ const {applyRevisions}=await import("../scripts/writer-pool-auto-core.mjs");
+ const w=req("W2","gemini-b");
+ let ledger=cycle(empty,[w],0);
+ const id=open(ledger,"W2")[0].id;
+ ledger=autoAdvance(matrix,ledger,registry,w,{now:at(1),nonce:"s",verifiedDraftIds:new Set([id]),
+  verifiedDraftEvidence:new Map([[id,{source_sha256:"a".repeat(64),source_commit:"b".repeat(40)}]])}).ledger;
+ const rev={id,revision:2,source_sha256:"c".repeat(64),source_commit:"d".repeat(40),source_path:"factory/external-writers/inbox/W2/revisions/"+id+".r2.json",review_verdict:"REVISE"};
+ const ident={writer:"W2",session:w.session,branch:w.branch};
+ const r=applyRevisions(matrix,ledger,registry,ident,[rev],{now:at(2)});
+ const c=r.ledger.claims.find(x=>x.id===id&&x.status==="SUBMITTED");
+ assert.equal(c.source_sha256,"c".repeat(64));
+ assert.equal(c.revisions[0].source_sha256,"a".repeat(64));
+ assert.equal(c.phase,"REVISED_AWAITING_REVIEW");
+ assert.deepEqual(validatePool(matrix,r.ledger,registry),[]);
+ assert.throws(()=>applyRevisions(matrix,ledger,registry,ident,[{...rev,revision:3}],{now:at(2)}),/expects r2/);
+ assert.throws(()=>applyRevisions(matrix,ledger,registry,ident,[{...rev,review_verdict:"PASS"}],{now:at(2)}),/REVISE\/FAIL/);
+ assert.throws(()=>applyRevisions(matrix,ledger,registry,{...ident,session:"w2-other"},[rev],{now:at(2)}),/no SUBMITTED claim/);
+ assert.throws(()=>applyRevisions(matrix,ledger,registry,ident,[{...rev,source_sha256:"a".repeat(64)}],{now:at(2)}),/byte-identical/);
+ const bad=structuredClone(r.ledger);bad.claims.find(x=>x.id===id&&x.status==="SUBMITTED").source_path="factory/external-writers/inbox/W1/"+id+".json";
+ assert.ok(validatePool(matrix,bad,registry).some(e=>/revision source path/.test(e)));
+ assert.doesNotThrow(()=>validateRequest({...w,claim_new:false},requestPath("W2",w.session),w.branch));
+});
