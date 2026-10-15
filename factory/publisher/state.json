@@ -1,9 +1,9 @@
 {
   "version": 1,
   "stage": "PILOT",
-  "paused": false,
-  "pause_reason": null,
-  "clean_runs": 1,
+  "paused": true,
+  "pause_reason": "Pre-commit gate failed 2026-10-15T04:51:35.940Z: scripts/seo/fact-guard.mjs  failed: FAIL UNSOURCED_AMOUNT ko/topics/chajong-seontaek/index.html — Currency amount without an inline source in the same paragraph «15 원»\n",
+  "clean_runs": 0,
   "published": [
     {
       "id": "NL-H01",
@@ -59,6 +59,14 @@
         "PT-H01"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T04:51:35.940Z",
+      "ids": [
+        "ES-H01",
+        "KO-H01"
+      ],
+      "result": "GATE_FAILED"
     }
   ],
   "last_successful_deployment": {
@@ -71,8 +79,9 @@
     "live_seconds": 41
   },
   "queue": {
-    "REVIEW_REQUIRED": 90,
-    "WAIT_PARENT": 3,
-    "REJECTED": 19
+    "APPROVED_BY_POLICY": 4,
+    "REVIEW_REQUIRED": 82,
+    "WAIT_PARENT": 8,
+    "REJECTED": 18
   }
 }

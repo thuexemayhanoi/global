@@ -1,42 +1,35 @@
 {
   "version": 2,
-  "ledger_revision": 56,
+  "ledger_revision": 57,
   "stage": "PILOT",
   "counts": {
-    "REVIEW_REQUIRED": 90,
-    "WAIT_PARENT": 3,
-    "REJECTED": 19
+    "APPROVED_BY_POLICY": 4,
+    "REVIEW_REQUIRED": 82,
+    "WAIT_PARENT": 8,
+    "REJECTED": 18
   },
   "items": [
     {
       "id": "ES-H01",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_OFFICIAL_EVIDENCE"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "b9ec560ce61721da1d1f83b0f6418906583407cb21a18885065a347b51e63fad",
-      "source_commit": "4427428310c6f10951a15d2f564d15d98c471850",
-      "details": [
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Elegir el tipo de vehículo es la primera decisión real al alquilar una moto en Hanói, y llega antes de mirar ninguna tarifa. En el catálogo  | Desde el 1 de enero de 2025, la Ley de "
-      ]
+      "source_sha256": "8370e101b1e6ccd833589f60062d4a28716b9f9aae9299c2fd05e45807ee9166",
+      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
+      "details": []
     },
     {
       "id": "KO-H01",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_OFFICIAL_EVIDENCE"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "bcfbf1a209aca68f6c4be251b1b50abd912018f0e751a1793f40c7537c709400",
-      "source_commit": "4427428310c6f10951a15d2f564d15d98c471850",
-      "details": [
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: 하노이에서 오토바이를 빌릴 때 가장 먼저 내려야 할 결정은 하루 대여료가 아니라 차종이다. 시내 렌트 샵의 차량 목록에는 수동 변속의 언더본, 가속만 하면 달리는 자동 스쿠터, 클러치가 있는 스포츠 모델, 그리고 소수의 50cc와 전기 이륜차가 섞여  | 50cc 차량은 '면허 부담이 없다는 이유'만으로 선택하기보다 주행 능"
-      ]
+      "source_sha256": "457f225cbf89d1715619c3c7191c7611ca04b08377994d8f79aad3d37df47986",
+      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
+      "details": []
     },
     {
       "id": "EN-H02",
@@ -536,53 +529,47 @@
     },
     {
       "id": "VI-S01",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "a5bdcea1bdb7ded6e3c81354072c67157153a9fa90cc022f64c115d46805ffdb",
-      "source_commit": "94acfc9ff13fbc0ecee701eb47f811502b5c5ff4",
+      "source_sha256": "c1c32c9a082ffc376dc3d1ecf27c716533a801d65010dd2af2e8f34199427f51",
+      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
       "details": [
-        "G2_PARENT_PUBLISHED: VI-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Trong hệ thống phân loại tại Việt Nam, nhóm xe được gọi chung là \"xe số\" ở các cửa hàng cho thuê phần lớn là xe nón sàn (underbone) kiểu Hon | Nhiều người cho rằng chọn xe nhỏ là các"
+        "G2_PARENT_PUBLISHED: VI-H01 is IDEA"
       ]
     },
     {
       "id": "ZH-S01",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "34e8d1ba7d65ad3334c0852b3112393dad9a942dcfc28fe4b495dc788e2ba44d",
-      "source_commit": "94acfc9ff13fbc0ecee701eb47f811502b5c5ff4",
+      "source_sha256": "bd389d348df4a94e6c0b290629d40ab8958331dc14eba00ea680a31064eacad6",
+      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
       "details": [
-        "G2_PARENT_PUBLISHED: ZH-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: 不少游客以为选小车就能绕开驾照问题。实际并非如此：河内主流的110cc弯梁车和110-125cc踏板车，全部落在越南的A1驾照范围内——按2025年1月1日生效的2024年《道路交通安全法》，A1覆盖排量不超过125cc或电机功率不超过11千瓦的两轮摩托车（Danang Visa | 真正放宽要求的是50cc以下车型：排量低于50立方厘米的机动自行车不强制持有驾"
+        "G2_PARENT_PUBLISHED: ZH-H01 is IDEA"
       ]
     },
     {
       "id": "DE-S02",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "08cab1e6cba5aa00b704bcbcc0b8cc9fb4d2bea035fa265bfa984ab6b2fb8b0e",
-      "source_commit": "f2b74a608b70e8f8a34bb0f2c87ca1b75c048fc8",
+      "source_sha256": "bc9bb4e239f61251b094135edcd1f9884675f593a3a2b4fc3d249dd32f6a034c",
+      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
       "details": [
-        "G2_PARENT_PUBLISHED: DE-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 2 legal/safety statement(s) without an official citation: Seit dem 1. Januar 2025 gilt in Vietnam das Gesetz über Ordnung und Sicherheit im Straßenverkehr 36/2024/QH15. Für Motorräder bis 125ccm ode | „Kein Führerschein nötig\" bedeutet nich"
+        "G2_PARENT_PUBLISHED: DE-H01 is IDEA"
       ]
     },
     {
@@ -606,38 +593,32 @@
     },
     {
       "id": "ES-S02",
-      "decision": "REVIEW_REQUIRED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "5d5f0ea1949000d7868984a7f0696c148183ec7a9fd6f104d132ea2506065d0b",
-      "source_commit": "67b7574799257d16756f31bcbdf1286e0e03bd70",
+      "source_sha256": "b7549cb045d5223a4e84efc914624b8398dddcfd2384541d8ff64709f6c4d84b",
+      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
       "details": [
-        "G2_PARENT_PUBLISHED: ES-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 3 legal/safety statement(s) without an official citation: Desde el 1 de enero de 2025 rige en Vietnam la Ley de Orden y Seguridad del Tráfico, 36/2024/QH15. La clase A1 cubre motos de hasta 125 cc o | Para los visitantes hispanohablantes es"
+        "G2_PARENT_PUBLISHED: ES-H01 is IDEA"
       ]
     },
     {
       "id": "FR-S02",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "5f6bbb408cd25d4c83aba3337bc60d92f12c51936582ba7f6e973b1b0a628681",
-      "source_commit": "67b7574799257d16756f31bcbdf1286e0e03bd70",
+      "source_sha256": "e46116079e690c02abbfb029caa25354e9542f12dd679e988ec03f3f5e371a1e",
+      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
       "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in meta_description: Currency amount without an inline source in the same paragraph «eur 50»; Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «eur 50»;",
-        "G2_PARENT_PUBLISHED: FR-H01 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 5 legal/safety statement(s) without an official citation: À Hanoï, deux catégories de location échappent à l'attention de la plupart des voyageurs alors qu'elles résolvent le même problème de manièr | Depuis le 1er janvier 2025, la loi viet"
+        "G2_PARENT_PUBLISHED: FR-H01 is IDEA"
       ]
     },
     {
@@ -680,33 +661,25 @@
     },
     {
       "id": "NL-S02",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_OFFICIAL_EVIDENCE"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "774f0a8367556869db13efd5de711b2afe8d6478e6cdbcc4410a45cdbeabdd52",
-      "source_commit": "0a13ac3f2b72b0460b60844212f37f67604c8ffe",
-      "details": [
-        "G3_OFFICIAL_EVIDENCE: 4 legal/safety statement(s) without an official citation: In Hanoi bestaan twee huurcategorieën die vrijwel geen reiziger goed indeelt, terwijl ze hetzelfde probleem op exact tegenovergestelde manie | Sinds 1 januari 2025 geldt in Vietnam d"
-      ]
+      "source_sha256": "76a714ab9632383d6e1a46f10db40acb1139083c5ba697c0ed2e66452d4a3764",
+      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
+      "details": []
     },
     {
       "id": "PT-S02",
-      "decision": "REVIEW_REQUIRED",
-      "failed": [
-        "G3_OFFICIAL_EVIDENCE"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "636f9f60291b56dc66b9d5138281aa920c983b6671c94c56a8f65a1240eaf498",
-      "source_commit": "0a13ac3f2b72b0460b60844212f37f67604c8ffe",
-      "details": [
-        "G3_OFFICIAL_EVIDENCE: 6 legal/safety statement(s) without an official citation: Em Hanói existem duas categorias de aluguer que quase nenhum viajante classifica corretamente, apesar de resolverem o mesmo problema por cam | Desde 1 de janeiro de 2025 vigoram no V"
-      ]
+      "source_sha256": "eba910cedebd5cbc2b5fc021d2f1c2e67b8053b22d524a185fe3aabf16932fa7",
+      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
+      "details": []
     },
     {
       "id": "VI-S02",
