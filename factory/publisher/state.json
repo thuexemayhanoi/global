@@ -652,6 +652,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:50:12.763Z"
+    },
+    {
+      "id": "DE-S06",
+      "locale": "de",
+      "url": "/de/guides/stornierung-mietvertrag/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:50:32.386Z",
+      "source_sha256": "448af27d1a168a685d04500caf73212632059fb56b6d49117b589dfb71b479da",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S06",
+      "locale": "fr",
+      "url": "/fr/guides/annulation-location/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:50:32.386Z",
+      "source_sha256": "62f3723c3b2dc731348d9d496c8696d3323c476b22c9ebdf9f8e3816d2c24585",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1147,6 +1169,14 @@
         "ZH-S05"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:50:32.386Z",
+      "ids": [
+        "DE-S06",
+        "FR-S06"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1160,6 +1190,6 @@
   },
   "queue": {
     "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 26
+    "APPROVED_BY_POLICY": 24
   }
 }
