@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "purpose": "EDITORIAL_REVIEW",
+  "matrix_id": "PT-H01",
+  "source_sha256": "8446013e552564eb17a3723fb61478aced1ce7b93a1384d2962603ee6171d80a",
+  "reviewer": {
+    "agent": "claude-independent-subagent",
+    "session": "review-claude-subagent-20261015",
+    "human": false
+  },
+  "reviewed_on": "2026-10-15",
+  "checks": {
+    "native_fluency": "PASS",
+    "search_intent": "FAIL",
+    "unique_value": "PASS",
+    "factual_accuracy": "FAIL",
+    "structure": "PASS",
+    "internal_links": "PASS",
+    "no_duplication": "PASS",
+    "no_fabricated_business_facts": "PASS"
+  },
+  "verdict": "REVISE",
+  "sources_checked": [
+    "https://portaldascomunidades.mne.gov.pt/pt/vai-viajar/conselhos-aos-viajantes/asia/vietname",
+    "https://treaties.un.org/Pages/ViewDetailsIII.aspx?src=TREATY&mtdsg_no=XI-B-19&chapter=11&Temp=mtdsg3&clang=_en",
+    "https://luatvietnam.vn/giao-thong/luat-trat-tu-an-toan-giao-thong-duong-bo-2024-quy-dinh-nhu-the-nao-ve-giay-phep-lai-xe-hang-a1-863-100479-article.html",
+    "https://xaydungchinhsach.chinhphu.vn/cong-bo-de-an-vung-phat-thai-thap-trong-vanh-dai-1-thanh-pho-ha-noi-119260703145217105.htm",
+    "https://motogo.vn/ha-noi/",
+    "https://vexere.com/vn/thue-xe/xe-may-tai-ha-noi.vi"
+  ],
+  "issues": [
+    "Unsafe, self-contradictory beginner advice: 'Se nunca conduziu uma moto, uma scooter automática...' and 'Primeira vez numa moto, só cidade: scooter automática' steer unlicensed first-timers to A1-class scooters.",
+    "Honda Lead, Yamaha Exciter and 'modelos maiores para viagens longas' are attributed to Motogo/Vexere listings that do not contain them.",
+    "'Se a sua carta só habilita a conduzir automóveis, alugar uma moto acima do que a carta permite...' is illogical (every motorbike is above a car-only licence).",
+    "Unidiomatic 'a duas rodas certa' in first sentence and meta description.",
+    "Dangling reference 'veja os custos de aluguer' with no link (PT-H02 unpublished).",
+    "Missed: Portuguese MFA advice not to leave the passport as a deposit; Vexere shops limit use to the old Hanoi city area; Portal das Comunidades not linked in the body.",
+    "Meta description too long (191 chars).",
+    "'Verificações antes de aceitar a moto' repeats the published /pt/checklist/ items.",
+    "About half of the body is sentence-parallel with NL-H01; rewrite natively.",
+    "Owner note: drafts use European Portuguese while live /pt/ uses Brazilian 'aluguel'."
+  ],
+  "notes": "Sources opened live on 2026-10-15. Verified: Portal das Comunidades (updated 22/09/2026) on frequent road accidents and helmet use; Portugal (2010) and Brazil (1980) are parties to the 1968 convention; Law 36/2024 Art. 57 A1/A limits; IDP must be carried with a national licence of the matching class; low-emission-zone dates. Language is natural European Portuguese. Search intent and factual accuracy fail: beginner advice steers first-time riders to 110-125 cm3 scooters, contradicting the licence section, and model names are attributed to listings that do not contain them. Reviewer: a separate Claude subagent instance with fresh context and web access; same model family as the writer session, not a human."
+}

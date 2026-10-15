@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "purpose": "EDITORIAL_REVIEW",
+  "matrix_id": "NL-H01",
+  "source_sha256": "4846d24d0cb9846348da677e13de5a29fc1c377d00638967a5de80b8cf98b6bb",
+  "reviewer": {
+    "agent": "claude-independent-subagent",
+    "session": "review-claude-subagent-20261015",
+    "human": false
+  },
+  "reviewed_on": "2026-10-15",
+  "checks": {
+    "native_fluency": "FAIL",
+    "search_intent": "PASS",
+    "unique_value": "PASS",
+    "factual_accuracy": "FAIL",
+    "structure": "PASS",
+    "internal_links": "PASS",
+    "no_duplication": "PASS",
+    "no_fabricated_business_facts": "PASS"
+  },
+  "verdict": "REVISE",
+  "sources_checked": [
+    "https://www.nederlandwereldwijd.nl/reisadvies/vietnam",
+    "https://treaties.un.org/Pages/ViewDetailsIII.aspx?src=TREATY&mtdsg_no=XI-B-19&chapter=11&Temp=mtdsg3&clang=_en",
+    "https://luatvietnam.vn/giao-thong/luat-trat-tu-an-toan-giao-thong-duong-bo-2024-quy-dinh-nhu-the-nao-ve-giay-phep-lai-xe-hang-a1-863-100479-article.html",
+    "https://xaydungchinhsach.chinhphu.vn/cong-bo-de-an-vung-phat-thai-thap-trong-vanh-dai-1-thanh-pho-ha-noi-119260703145217105.htm",
+    "https://motogo.vn/ha-noi/",
+    "https://vexere.com/vn/thue-xe/xe-may-tai-ha-noi.vi"
+  ],
+  "issues": [
+    "Title: 'welk tweewieler' must be 'welke tweewieler' (de tweewieler).",
+    "Honda Lead, Yamaha Exciter and 'grotere modellen voor lange tochten' are attributed to Motogo/Vexere listings that do not contain them.",
+    "'sinds 2007 partij ... net als Vietnam' can be read as Vietnam joining in 2007; Viet Nam acceded 20 Aug 2014.",
+    "Low-emission-zone paragraph: the 'daarom ... het helpt wel' sentence is illogical because e-scooters are also banned in Zone 1 at those times.",
+    "MFA advice softened: source says 'Het is verstandig om een auto met chauffeur te huren', draft says 'eventueel'.",
+    "Summary recommends larger bikes to experienced riders without stating that this departs from the MFA under-50 cc advice.",
+    "Missed: Motogo lists a licence-free VinFast e-moped (max 50 km/h); Vexere shops limit use to the old Hanoi city area; MFA warns of landslides around Ha Giang.",
+    "Meta description too long (196 chars) and overclaims 'verkeersregels van 2026'.",
+    "'Controle voordat je wegrijdt' repeats the published /nl/checklist/ items; link instead.",
+    "About half of the body is sentence-parallel with PT-H01; rewrite natively."
+  ],
+  "notes": "All cited sources opened live on 2026-10-15. Core claims verified: Dutch MFA advice (under 50 cc, sufficient experience, travel insurance covering vehicle accidents, Dutch licence valid only with an IDP; considering a car with driver advised), Netherlands acceded to the 1968 convention on 8 Nov 2007 and Viet Nam on 20 Aug 2014, Law 36/2024 Art. 57 A1 up to 125 cm3 or 11 kW, A above, and the Ring Road 1 low-emission-zone dates and phase-1 weekend evening ban. Factual accuracy fails on attribution of model names to the cited listings; fluency fails on a title gender error and an illogical sentence. Strict fact guard found no prices, phones, addresses, hours or reviews. Reviewer: a separate Claude subagent instance with fresh context and web access; same model family as the writer session, not a human."
+}
