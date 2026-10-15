@@ -62,10 +62,15 @@ const draftPath=(writer,id)=>INBOX+"/"+writer+"/"+id+".json";
  */
 export function submittedLock(file,ledger){
  if(typeof file?.raw!=="string")return null;
- const c=(ledger?.claims||[]).find(x=>x.id===file.id&&x.writer===file.writer&&x.status==="SUBMITTED"&&x.source_sha256);
+ const c=(ledger?.claims||[]).find(x=>x.id===file.id&&x.status==="SUBMITTED"&&x.source_sha256&&
+  (x.writer===file.writer||(x.handoffs||[]).some(h=>h.writer===file.writer)));
  if(!c)return null;
+ const original=c.handoffs?.[0]?.writer||c.writer;
  const expected=new Map([[c.source_path||draftPath(c.writer,c.id),c.source_sha256]]);
- for(const v of c.revisions||[])expected.set(v.source_path||draftPath(c.writer,c.id),v.source_sha256);
+ for(const v of c.revisions||[])expected.set(v.source_path||draftPath(original,c.id),v.source_sha256);
+ // Historical branches stay byte-locked after a handoff, even if another
+ // Writer now holds the next repair revision.
+ for(const h of c.handoffs||[])if(!expected.has(h.source_path))expected.set(h.source_path,h.source_sha256);
  if(!expected.has(file.path))return null;
  const actual=createHash("sha256").update(file.raw).digest("hex");
  return actual===expected.get(file.path)?{state:"LOCKED",sha256:actual}:{state:"CHANGED",expected:expected.get(file.path),actual};

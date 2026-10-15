@@ -2,6 +2,10 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import {repairQueue,repairTicket,ticketValid} from "../scripts/repair-queue-core.mjs";
+import {takeRepairTickets,applyRevisions} from "../scripts/writer-pool-auto-core.mjs";
+import {validatePool} from "../scripts/writer-pool-core.mjs";
+import {submittedLock} from "../scripts/writer-lanes.mjs";
+import {createHash} from "node:crypto";
 
 const sha="a".repeat(64),commit="b".repeat(40);
 const claim={id:"EN-H01",writer:"W2",session:"w2-live",branch:"writer/w2-live",status:"SUBMITTED",source_sha256:sha,source_commit:commit};
@@ -66,4 +70,60 @@ test("parent/stage waits are not treated as text rewrite failures",()=>{
  assert.equal(repairTicket({...item,failed:["G2_PARENT_PUBLISHED"]},claim).state,"WAIT_PARENT");
  assert.equal(repairTicket({...item,failed:["G7_STAGE_CAP"]},claim).state,"WAIT_STAGE");
  assert.equal(repairTicket({...item,failed:["G2_NOT_PROTECTED","G4_EDITORIAL"]},claim).state,"BLOCKED");
+});
+
+test("opt-in W1 receives W3 failed Hub atomically while source stays locked",()=>{
+ const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
+ const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
+ const id="FR-H03",raw='{"immutable":"original"}\\n';
+ const base={id,writer:"W3",session:"w3-live",branch:"writer/w3-live",status:"SUBMITTED",
+  source_sha256:createHash("sha256").update(raw).digest("hex"),source_commit:commit,
+  claim_id:"handoff-test",at:"2026-10-15T00:00:00Z",updated_at:"2026-10-15T00:00:00Z"};
+ const ledger={version:1,revision:8,claims:[base]};
+ const qa={version:2,ledger_revision:8,items:[{id,writer:"W3",session:"w3-live",branch:"writer/w3-live",
+  source_sha256:base.source_sha256,failed:["G3_OFFICIAL_EVIDENCE"],decision:"REJECTED"}]};
+ const who={writer:"W1",session:"w1-current",branch:"writer/w1-current"};
+ const out=takeRepairTickets(matrix,ledger,registry,qa,who,{max:2,now:"2026-10-15T09:00:00Z"});
+ assert.equal(out.changed,true);assert.deepEqual(out.transferred,[id]);
+ assert.equal(ledger.claims[0].writer,"W3","caller cannot mutate old ledger");
+ const c=out.ledger.claims[0];
+ assert.equal(c.writer,"W1");assert.equal(c.session,who.session);
+ assert.equal(c.source_branch,"writer/w3-live");
+ assert.equal(c.source_path,"factory/external-writers/inbox/W3/FR-H03.json");
+ assert.equal(c.source_sha256,base.source_sha256);
+ assert.equal(c.handoffs[0].writer,"W3");
+ assert.deepEqual(validatePool(matrix,out.ledger,registry),[]);
+ const old={id,writer:"W3",path:c.source_path,raw};
+ assert.equal(submittedLock(old,out.ledger).state,"LOCKED");
+ assert.equal(submittedLock({...old,raw:raw+"edited"},out.ledger).state,"CHANGED");
+ assert.equal(repairQueue(qa,out.ledger,{writer:"W3"}).length,0,"stale old ticket invalid");
+ const current={...qa.items[0],writer:"W1",session:"w1-current",branch:"writer/w1-current"};
+ const ticket=repairTicket(current,c);
+ assert.equal(ticket.state,"REPAIR");
+ assert.equal(ticket.revision_path,"factory/external-writers/inbox/W1/revisions/FR-H03.r2.json");
+ const revision={id,revision:2,source_path:ticket.revision_path,source_sha256:"c".repeat(64),
+  source_commit:"d".repeat(40),review_verdict:"QA_FAIL",repair_basis_sha256:c.source_sha256,
+  repair_gates:["G3_OFFICIAL_EVIDENCE"]};
+ const accepted=applyRevisions(matrix,out.ledger,registry,who,[revision],{now:"2026-10-15T09:01:00Z"});
+ assert.equal(accepted.ledger.claims[0].source_branch,"writer/w1-current");
+ assert.equal(accepted.ledger.claims[0].writer,"W1");
+ assert.equal(accepted.ledger.claims[0].revisions[0].source_sha256,base.source_sha256);
+ assert.equal(submittedLock(old,accepted.ledger).state,"LOCKED");
+ assert.deepEqual(validatePool(matrix,accepted.ledger,registry),[]);
+});
+test("handoff refuses stale report, same Writer, original owner overwrite, and unsafe replay",()=>{
+ const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
+ const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
+ const c={id:"FR-H03",writer:"W3",session:"w3-live",branch:"writer/w3-live",status:"SUBMITTED",
+  source_sha256:sha,source_commit:commit,claim_id:"handoff-test",at:"2026-10-15T00:00:00Z",updated_at:"2026-10-15T00:00:00Z"};
+ const ledger={version:1,revision:11,claims:[c]};
+ const report={version:2,ledger_revision:10,items:[{...item,id:c.id,writer:c.writer,session:c.session,branch:c.branch,source_sha256:sha}]};
+ const who={writer:"W1",session:"w1-current",branch:"writer/w1-current"};
+ assert.equal(takeRepairTickets(matrix,ledger,registry,report,who).reason,"REPAIR_REPORT_STALE");
+ const current={...report,ledger_revision:11};
+ assert.deepEqual(takeRepairTickets(matrix,ledger,registry,current,{writer:"W3",session:"w3-live",branch:"writer/w3-live"}).transferred,[]);
+ const first=takeRepairTickets(matrix,ledger,registry,current,who);
+ assert.equal(first.transferred.length,1);
+ assert.equal(takeRepairTickets(matrix,first.ledger,registry,current,who).reason,"REPAIR_REPORT_STALE");
+ assert.equal(first.ledger.claims.filter(x=>x.status==="SUBMITTED").length,1);
 });

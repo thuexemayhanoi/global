@@ -3,7 +3,7 @@
   "stage": "RAMP",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 3,
+  "clean_runs": 6,
   "published": [
     {
       "id": "NL-H01",
@@ -148,6 +148,76 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T06:29:12.740Z"
+    },
+    {
+      "id": "ES-H02",
+      "locale": "es",
+      "url": "/es/topics/precios-y-deposito/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T07:54:04.610Z",
+      "source_sha256": "be33cfd7ac7348d38cc3e6d299af5b56bc4ba9f145669832899353f474ff5b20",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T07:55:11.491Z"
+    },
+    {
+      "id": "VI-H02",
+      "locale": "vi",
+      "url": "/vi/topics/chi-phi-thue-xe/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T07:54:04.610Z",
+      "source_sha256": "134aabc6d57bdedd3ee92c7e56f687f70dc0c5062bac31c1fca8fd3ad20a9700",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T07:55:11.491Z"
+    },
+    {
+      "id": "DE-H03",
+      "locale": "de",
+      "url": "/de/topics/fuehrerschein-und-vertrag/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T07:55:29.690Z",
+      "source_sha256": "ff9b5f1d659294a5242d4e0a7101a0ca9a7447937bbfbcf8be94ea0667663b78",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T07:56:56.789Z"
+    },
+    {
+      "id": "DE-S09",
+      "locale": "de",
+      "url": "/de/guides/internationaler-fuehrerschein-vietnam/",
+      "role": "SUPPORT",
+      "stage": "RAMP",
+      "at": "2026-10-15T07:57:14.354Z",
+      "source_sha256": "02be5fe37b490bfb9cf0554e67834eafd6a288c857b9b65668d71002d166a916",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T07:58:21.698Z"
+    },
+    {
+      "id": "FR-H03",
+      "locale": "fr",
+      "url": "/fr/topics/documents-contrat/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T09:13:30.487Z",
+      "source_sha256": "8e164c5ba5536ca339d9669a1857121d16ba5d2e2a5403588d44890f0a1b117c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-H03",
+      "locale": "ja",
+      "url": "/ja/topics/menkyo-keiyaku/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T09:13:30.487Z",
+      "source_sha256": "40f3ab67337180ff940842d93b810acc8794c986257f8ec18049ce507b29af98",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -290,20 +360,71 @@
         "KO-H04"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T07:54:04.610Z",
+      "ids": [
+        "ES-H02",
+        "VI-H02"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T07:55:11.491Z",
+      "ids": [
+        "ES-H02",
+        "VI-H02"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T07:55:29.690Z",
+      "ids": [
+        "DE-H03"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T07:56:56.789Z",
+      "ids": [
+        "DE-H03"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T07:57:14.354Z",
+      "ids": [
+        "DE-S09"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T07:58:21.698Z",
+      "ids": [
+        "DE-S09"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:13:30.487Z",
+      "ids": [
+        "FR-H03",
+        "JA-H03"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T06:29:12.740Z",
+    "at": "2026-10-15T07:58:21.698Z",
     "ids": [
-      "ZH-H02",
-      "KO-H04"
+      "DE-S09"
     ],
-    "commit": "b9f752071a879c534f54f63ea6eaabb2ed3ecc90",
-    "live_seconds": 62
+    "commit": "cb2d7990933e8ab4206a74936775dba2e162a743",
+    "live_seconds": 61
   },
   "queue": {
-    "REJECTED": 97,
-    "APPROVED_BY_POLICY": 2,
-    "WAIT_PARENT": 5
+    "APPROVED_BY_POLICY": 11,
+    "REJECTED": 73,
+    "WAIT_PARENT": 14
   }
 }

@@ -26,6 +26,7 @@
   "auto_submit_drafts_after_green_writer_push": true,
   "owner_click_per_batch_required": false,
   "repair_queue": "factory/publisher/report.json via scripts/writer-repair.mjs; max 3 accepted revisions",
+  "cross_writer_repair": "opt-in repair_take=true; trusted Autopilot transfers QA REPAIR ownership only, max 10 per receiver, immutable source history and strict QA preserved",
   "supporting_drafts_before_hub_published": true,
   "supporting_publish_requires_published_parent": true,
   "writer_turbo_default": 10,

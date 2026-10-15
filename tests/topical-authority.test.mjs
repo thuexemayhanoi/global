@@ -28,8 +28,17 @@ test("the committed 10-locale topical map passes every gate and stays out of the
  const live=new Set(readLocalSitemapInventory(process.cwd(),matrix.locales).urls);
  const matrixUrls=new Set(matrix.rows.map(r=>r.url));
  for(const p of allProposals(map)){
-  assert.ok(!live.has(proposalURL(p)),p.candidate_id);
-  if(p.status!=="PROMOTED")assert.ok(!matrixUrls.has(proposalURL(p)),p.candidate_id);
+  const url=proposalURL(p);
+  if(p.status==="PROMOTED"){
+   // Promoted is a Matrix row, and can legitimately become a published page
+   // after the Auto Publisher's independent source, content and live QA.
+   const row=matrix.rows.find(r=>r.id===p.matrix_id&&r.url===url);
+   assert.ok(row,p.candidate_id+" promoted without its matching Matrix row");
+   assert.equal(live.has(url),row.status==="PUBLISHED",p.candidate_id);
+  }else{
+   assert.ok(!live.has(url),p.candidate_id);
+   assert.ok(!matrixUrls.has(url),p.candidate_id);
+  }
   assert.equal(p.serp_evidence,"NOT_VALIDATED");
  }
  for(const r of map.references.references)assert.match(r.url,/^https:\/\/[^&]*(?:&(?!amp;)[^&]*)*$/,r.key);
