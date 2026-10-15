@@ -43,7 +43,10 @@ export const STANDING_POLICY_PATH="approvals/standing-policy-20261015.json";
 export function validatePublicationRecord(p){
  const e=[];
  if(p?.mode!=="STANDING_POLICY"||p?.policy!==STANDING_POLICY_PATH)e.push("Unknown publication policy");
- if(!/^[0-9a-f]{64}$/.test(p?.source_sha256||"")||!/^[0-9a-f]{40}$/.test(p?.source_commit||"")||!/^[0-9a-f]{64}$/.test(p?.review_sha256||""))e.push("Publication record needs source and review hashes");
+ const validSource=/^[0-9a-f]{64}$/.test(p?.source_sha256||"")&&/^[0-9a-f]{40}$/.test(p?.source_commit||"");
+ const reviewed=/^[0-9a-f]{64}$/.test(p?.review_sha256||"");
+ const autoQA=p?.qa_mode==="AUTOMATED_G1_G5_G7"&&p?.review_sha256===null;
+ if(!validSource||!(reviewed||autoQA))e.push("Publication record needs immutable source evidence and reviewed hash OR explicit automated-QA provenance");
  if(p?.human_review!==false||p?.serp_validated!==false)e.push("Policy publication must not claim human review or SERP validation");
  if(!/^\d{4}-\d{2}-\d{2}T/.test(p?.approved_at||""))e.push("approved_at timestamp required");
  return e;

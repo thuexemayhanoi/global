@@ -1,6 +1,9 @@
 name: Global Auto Publisher
 run-name: "Auto Publisher ${{ github.event_name }} ${{ inputs.action }} ${{ github.event.workflow_run.name }}"
 on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/auto-publisher.yml']
   schedule:
     - cron: '41 * * * *'
   workflow_dispatch:
@@ -28,7 +31,7 @@ on:
         type: boolean
         default: false
   workflow_run:
-    workflows: ["Global Dynamic Writer Autopilot", "Editorial Review QA"]
+    workflows: ["Global Dynamic Writer Autopilot"]
     types: [completed]
 permissions:
   contents: write
@@ -80,12 +83,6 @@ jobs:
       - name: Read-only scan
         if: github.event_name == 'workflow_dispatch' && inputs.action == 'scan'
         run: node scripts/auto-publisher.mjs scan | tee -a "$GITHUB_STEP_SUMMARY"
-      - name: Ingest independent editorial reviews from a green review branch
-        if: github.event_name == 'workflow_run' && github.event.workflow_run.name == 'Editorial Review QA' && github.event.workflow_run.event == 'push' && startsWith(github.event.workflow_run.head_branch, 'review/')
-        env:
-          REVIEW_BRANCH: ${{ github.event.workflow_run.head_branch }}
-          REVIEW_SHA: ${{ github.event.workflow_run.head_sha }}
-        run: node scripts/auto-publisher.mjs ingest-reviews --branch "$REVIEW_BRANCH" --sha "$REVIEW_SHA"
       - name: Publish up to two eligible NEW articles and run every gate
         id: pub
         if: env.ACTION == 'publish'

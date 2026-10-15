@@ -86,10 +86,10 @@ test("independent review must match the exact draft hash, come from another sess
  assert.ok(validateReview(review({checks:{...review().checks,factual_accuracy:"FAIL"}}),{packet:pk,claim}).length);
 });
 
-test("eligibility decisions: approve, wait for review/parent/stage, review-required for legal/price, blocked for protected",()=>{
+test("eligibility: automated QA approves without reviewer; still blocks bad facts, parent, stage, protected",()=>{
  const ok=eligibility(ctx());
  assert.equal(ok.decision,"APPROVED_BY_POLICY",JSON.stringify(ok.gates.filter(g=>!g.passed)));
- assert.equal(eligibility(ctx({review:null})).decision,"WAIT_REVIEW");
+ assert.equal(eligibility(ctx({review:null})).decision,"APPROVED_BY_POLICY");
  assert.equal(eligibility(ctx({row:legalHub,packet:packet({matrix_id:legalHub.id,proposed_url:legalHub.url})})).decision,"REVIEW_REQUIRED");
  assert.equal(eligibility(ctx({packet:packet({body_markdown:packet().body_markdown+"\n\nA typical deposit is 3,000,000 VND per [Vexere](https://vexere.com/x)."})})).decision,"REVIEW_REQUIRED");
  assert.equal(eligibility(ctx({protectedIds:new Set([hub.id])})).decision,"BLOCKED");
@@ -100,7 +100,10 @@ test("eligibility decisions: approve, wait for review/parent/stage, review-requi
 });
 
 test("stored policy articles: honest record accepted, human-review claims refused, provenance note rendered",()=>{
- const rec=publicationRecord({claim,reviewSha:H,now:"2026-10-15T01:00:00.000Z",stage:"PILOT"});
+ const rec=publicationRecord({claim,reviewSha:null,now:"2026-10-15T01:00:00.000Z",stage:"PILOT"});
+ assert.equal(rec.qa_mode,"AUTOMATED_G1_G5_G7");
+ assert.equal(rec.review_sha256,null);
+ assert.ok(validatePublicationRecord({...rec,qa_mode:"UNKNOWN"}).length);
  assert.deepEqual(validatePublicationRecord(rec),[]);
  const art={...packet(),publication:rec};
  const pend=new Set([hub.id]);
@@ -130,15 +133,15 @@ test("mutating publisher commands refuse outside the trusted workflow",()=>{
  }
 });
 
-test("revision loop: REVISE/FAIL reviews are valid feedback, never approval; per-version review files",async()=>{
+test("legacy reviewer records remain verifiable but cannot block automated QA",async()=>{
  const {reviewApproves,reviewFile,REVIEW_FILE}=await import("../scripts/auto-publisher-core.mjs");
  const pk=packet();
  const revise=review({verdict:"REVISE",checks:{...review().checks,factual_accuracy:"FAIL"},issues:["Model list not in cited source"]});
  assert.deepEqual(validateReview(revise,{packet:pk,claim}),[]);
  assert.equal(reviewApproves(revise),false);
  assert.ok(validateReview(review({verdict:"REVISE"}),{packet:pk,claim}).some(e=>/list the issues/.test(e)));
- assert.equal(eligibility(ctx({review:revise})).decision,"REVISION_REQUESTED");
- assert.equal(eligibility(ctx({review:review({verdict:"FAIL",issues:["Unsafe advice"],checks:{...review().checks,search_intent:"FAIL"}})})).decision,"REJECTED_BY_REVIEW");
+ assert.equal(eligibility(ctx({review:revise})).decision,"APPROVED_BY_POLICY");
+ assert.equal(eligibility(ctx({review:review({verdict:"FAIL",issues:["Unsafe advice"],checks:{...review().checks,search_intent:"FAIL"}})})).decision,"APPROVED_BY_POLICY");
  assert.equal(reviewFile("NL-H01","4846d24d0cb9846348"),"factory/editorial-reviews/NL-H01.4846d24d0cb9.json");
  assert.ok(REVIEW_FILE.test("NL-H01.4846d24d0cb9.json"));
  assert.ok(!REVIEW_FILE.test("NL-H01.json"));
