@@ -3196,17 +3196,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T20:37:31.157Z"
+    },
+    {
+      "id": "DE-S64",
+      "locale": "de",
+      "url": "/de/guides/einbahnstrasse-gehweg-roller-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:40:01.038Z",
+      "source_sha256": "bb0fd5845157e8359235542c0eb71449ad3a009a3f7d7e67f4bd356699a33031",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S43",
+      "locale": "en",
+      "url": "/en/guides/how-many-people-on-a-motorbike-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:40:01.038Z",
+      "source_sha256": "98ef16c84d08b6f3bd7eb981b4c2f56e019c1cb4e2ed05767df6f09baf881e0d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T10:11:38.423Z",
-      "ids": [
-        "NL-S08",
-        "PT-S08"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T10:12:50.616Z",
       "ids": [
@@ -4770,6 +4784,14 @@
         "EN-S51"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T20:40:01.038Z",
+      "ids": [
+        "DE-S64",
+        "EN-S43"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4781,5 +4803,7 @@
     "commit": "2a1b4853cd102dd1e298c7b2e1c96914ed81bcf4",
     "live_seconds": 62
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 2
+  }
 }
