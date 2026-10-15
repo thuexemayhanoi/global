@@ -1,0 +1,78 @@
+name: Global Legacy Pilot Hub Intake
+# Owner-approved PR6 source recovery. Two immutable manuscripts; strict QA intact.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/legacy-pilot-intake.yml'
+      - 'tests/legacy-pilot-intake.test.mjs'
+      - 'tests/writer-pool.test.mjs'
+      - 'tests/writer-pool-auto.test.mjs'
+      - 'tests/writer-qa-lock.test.mjs'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: global-legacy-pilot-intake
+  cancel-in-progress: false
+jobs:
+  intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Trusted provenance and policy regression
+        run: |
+          node --check scripts/legacy-pilot-intake.mjs
+          node --check scripts/legacy-pilot-core.mjs
+          node --test tests/legacy-pilot-intake.test.mjs tests/legacy-hub-intake.test.mjs tests/writer-pool.test.mjs tests/repair-queue.test.mjs tests/writer-pool-auto.test.mjs tests/writer-qa-lock.test.mjs
+          test "$(cat CNAME)" = "global.rentbikehanoi.com"
+      - name: Record two pilot source claims after Writer QA, with safe CAS
+        id: import
+        run: |
+          set -euo pipefail
+          git config user.name "global-legacy-pilot-intake"
+          git config user.email "global-legacy-pilot-intake@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch --no-tags origin main
+            git reset --hard origin/main
+            node scripts/legacy-pilot-intake.mjs --apply > "$RUNNER_TEMP/pilot-intake.json"
+            cat "$RUNNER_TEMP/pilot-intake.json" >> "$GITHUB_STEP_SUMMARY"
+            ids="$(node -e 'const j=JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")); console.log(j.accepted.map(x=>x.id).join(","))' "$RUNNER_TEMP/pilot-intake.json")"
+            if [ -z "$ids" ]; then
+              echo "No new pilot source passed immutable Writer QA"
+              echo "imported=no" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            changed="$(git status --porcelain | awk '{print $2}')"
+            if echo "$changed" | grep -vE '^(factory/external-writers/(claims|protected-drafts)\.json)$'; then
+              echo "::error::PILOT_IMPORT_OUTSIDE_ALLOWLIST $changed"; exit 1
+            fi
+            node --test tests/legacy-pilot-intake.test.mjs tests/legacy-hub-intake.test.mjs tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-qa-lock.test.mjs tests/repair-queue.test.mjs
+            node scripts/build.mjs --check
+            git add factory/external-writers/claims.json factory/external-writers/protected-drafts.json
+            git commit -m "factory(global): preserve immutable pilot manuscripts for $ids"
+            git fetch --no-tags origin main
+            if [ "$(git rev-parse origin/main)" = "$(git rev-parse HEAD^)" ] && git push origin HEAD:main; then
+              echo "imported=yes" >> "$GITHUB_OUTPUT"
+              echo "Two legacy pilot claims accepted for separate Publisher QA" >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            echo "Concurrent writer/publisher push, rechecking fresh ledger before retry $attempt"
+          done
+          echo "::error::PILOT_IMPORT_SAFE_STOP; no force-push, manuscripts intact"; exit 1
+      - name: Dispatch strict Auto Publisher after successfully staging claims
+        if: steps.import.outputs.imported == 'yes'
+        run: |
+          gh workflow run auto-publisher.yml --ref main -f action=publish -f max=2
+          echo "Publication requires current G1–G5/G7, legal-source and Live QA" >> "$GITHUB_STEP_SUMMARY"

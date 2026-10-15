@@ -22,6 +22,7 @@ import {articlePath,STANDING_POLICY_PATH} from "./articles.mjs";
 import {eligibility,validateReview,shingles,publicationRecord,REVIEW_FILE,drainDecision,publishGate,selectForPublication,recordLiveQA,applyControl} from "./auto-publisher-core.mjs";
 import {readLocalSitemapInventory,SITEMAP_ORIGIN} from "./sitemaps.mjs";
 import {runLiveQA} from "./publisher-live-qa.mjs";
+import {legacyPilotOriginal,normalizeLegacyPilot} from "./legacy-pilot-core.mjs";
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const WORKFLOW="Global Auto Publisher";
@@ -64,7 +65,13 @@ function loadDraft(claim,fetched){
  const file=claim.source_path||"factory/external-writers/inbox/"+claim.writer+"/"+claim.id+".json";
  let raw;try{raw=git("show",claim.source_commit+":"+file);}catch{return {error:"Draft not reachable at "+claim.source_commit.slice(0,12)};}
  if(sha256(raw)!==claim.source_sha256)return {error:"SHA-256 mismatch with ledger"};
- try{return {packet:JSON.parse(raw),raw};}catch{return {error:"Malformed JSON"};}
+ try{
+  const packet=JSON.parse(raw);
+  // PR6's old facts_reviewed_by_human=true flag was an editorial placeholder,
+  // NOT evidence of review. Only after validating exact original SHA do we
+  // normalize review flags to false; manuscript/URL/sources remain untouched.
+  return {packet:legacyPilotOriginal(claim)?normalizeLegacyPilot(packet,claim):packet,raw};
+ }catch{return {error:"Malformed or unauthorized pilot JSON"};}
 }
 function evaluate(c){
  const fetched=new Set(),drafts=[];
