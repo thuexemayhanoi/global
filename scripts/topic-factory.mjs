@@ -91,7 +91,13 @@ function cmdValidateBatch(o){
   throw Error("Batch files live under "+BATCH_DIR);
  // Use a cumulative dry-run map: every later file is checked against earlier
  // accepted research files. This never writes any map, claim, Matrix or URL.
- const prepared=files.map(file=>({file,batch:JSON.parse(fs.readFileSync(path.join(ROOT,file),"utf8"))}));
+ const processed=optional(RESEARCH_LOG,{version:1,batches:[]});
+ const byDigest=new Map((processed.batches||[]).filter(b=>b.sha256).map(b=>[b.sha256,b]));
+ const prepared=files.map(file=>{
+  const raw=fs.readFileSync(path.join(ROOT,file),"utf8");
+  const digest=createHash("sha256").update(raw).digest("hex");
+  return {file,batch:JSON.parse(raw),replay:byDigest.get(digest)||null};
+ });
  const checked=validateResearchSequence(prepared,{matrix:c.matrix,map:c.map,policy:c.policy,frozenUrls:c.frozen});
  console.log(JSON.stringify({mode:"READ_ONLY",batches:checked.results.length,
   sequential_validation:true,results:checked.results},null,2));
