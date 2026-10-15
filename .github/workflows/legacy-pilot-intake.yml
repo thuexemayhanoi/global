@@ -6,6 +6,9 @@ on:
     paths:
       - '.github/workflows/legacy-pilot-intake.yml'
       - 'tests/legacy-pilot-intake.test.mjs'
+      - 'tests/writer-pool.test.mjs'
+      - 'tests/writer-pool-auto.test.mjs'
+      - 'tests/writer-qa-lock.test.mjs'
   workflow_dispatch:
 permissions:
   contents: write
@@ -32,7 +35,7 @@ jobs:
         run: |
           node --check scripts/legacy-pilot-intake.mjs
           node --check scripts/legacy-pilot-core.mjs
-          node --test tests/legacy-pilot-intake.test.mjs tests/legacy-hub-intake.test.mjs tests/writer-pool.test.mjs tests/repair-queue.test.mjs
+          node --test tests/legacy-pilot-intake.test.mjs tests/legacy-hub-intake.test.mjs tests/writer-pool.test.mjs tests/repair-queue.test.mjs tests/writer-pool-auto.test.mjs tests/writer-qa-lock.test.mjs
           test "$(cat CNAME)" = "global.rentbikehanoi.com"
       - name: Record two pilot source claims after Writer QA, with safe CAS
         id: import
@@ -55,7 +58,7 @@ jobs:
             if echo "$changed" | grep -vE '^(factory/external-writers/(claims|protected-drafts)\.json)$'; then
               echo "::error::PILOT_IMPORT_OUTSIDE_ALLOWLIST $changed"; exit 1
             fi
-            node --test tests/legacy-pilot-intake.test.mjs tests/writer-pool.test.mjs
+            node --test tests/legacy-pilot-intake.test.mjs tests/legacy-hub-intake.test.mjs tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-qa-lock.test.mjs tests/repair-queue.test.mjs
             node scripts/build.mjs --check
             git add factory/external-writers/claims.json factory/external-writers/protected-drafts.json
             git commit -m "factory(global): preserve immutable pilot manuscripts for $ids"

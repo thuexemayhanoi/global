@@ -11,7 +11,9 @@ const locales=read("content/locales.json"),registry=read("factory/external-write
 const HELD=new Set([...registry.protected,...(registry.held_ids||[])].map(x=>x.id));
 // Two unprotected English rows, forced to IDEA so the fixtures do not depend on what is live today.
 const matrix=read("data/seo/master-matrix.json");
-const topic=r=>/^\/en\/(?:topics|guides)\//.test(r.url)&&!HELD.has(r.id);
+// Fixture topics must not take immutable PR6 pilot Hubs after they leave the historical hold list.
+const PILOT_IDS=new Set(read("approvals/legacy-pilot-intake-20261015.json").ids);
+const topic=r=>/^\/en\/(?:topics|guides)\//.test(r.url)&&!HELD.has(r.id)&&!PILOT_IDS.has(r.id);
 const row=matrix.rows.find(r=>r.role==="HUB"&&topic(r));
 const other=matrix.rows.find(r=>r.role==="SUPPORT"&&topic(r)&&r.parent_id!==row.id);
 row.status="IDEA";other.status="IDEA";
