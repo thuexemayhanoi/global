@@ -5,7 +5,7 @@ import path from "node:path";
 import {spawnSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
 import {loadTopicalMap,validateTopicalMap,planPromotion} from "../scripts/seo/topical-authority-core.mjs";
-import {factoryStatus,duplicateLayers,prepareCorpus,selectRefill,standingManifest,validatePolicy,validateResearchBatch,ingestResearch,fold,dashboardMarkdown,STANDING_STATEMENT} from "../scripts/topic-factory-core.mjs";
+import {factoryStatus,duplicateLayers,prepareCorpus,selectRefill,standingManifest,validatePolicy,validateResearchBatch,ingestResearch,validateResearchSequence,researchUsage,fold,dashboardMarkdown,STANDING_STATEMENT} from "../scripts/topic-factory-core.mjs";
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),"utf8"));
@@ -158,6 +158,39 @@ test("ingest assigns the next TA ID, registers references, passes T1–T10 and i
  const again=ingestResearch(batch([{...good,slug:"scooter-luggage-capacity-hanoi-2"}]),{matrix,map:r.map,policy,source:"test.json",frozenUrls:frozen});
  assert.equal(again.added.length,0);
  assert.ok(again.rejected.some(x=>x.gate==="F5_DUPLICATE"));
+});
+
+test("sequential research QA catches duplicate keywords across separate files before GitHub push",()=>{
+ const first=batch([good]),second=batch([{...good,slug:"different-url-same-query"}]);
+ const check=validateResearchSequence([
+  {file:"factory/topic-research/batches/0001.json",batch:first},
+  {file:"factory/topic-research/batches/0002.json",batch:second}
+ ],{matrix,map,policy,frozenUrls:frozen});
+ assert.equal(check.passed,false);
+ assert.deepEqual(check.results.map(x=>x.passed),[true,false]);
+ assert.equal(check.results[0].would_add,1);
+ assert.ok(check.results[1].rejected.some(x=>x.gate==="F5_DUPLICATE"),JSON.stringify(check.results));
+ assert.equal(map.locales.en.proposals.some(x=>x.slug==="different-url-same-query"),false,"validation never mutates main data");
+ const separate=validateResearchSequence([{file:"a.json",batch:first}],{matrix,map,policy,frozenUrls:frozen});
+ assert.equal(separate.passed,true);
+});
+
+test("topic research intake reserves at most 1000 planning slots per locale before Matrix promotion",()=>{
+ const usage=researchUsage({matrix,map,policy},"en");
+ assert.ok(usage.total<1000);
+ const cap=structuredClone(policy);
+ cap.targets.per_locale=usage.total; // exercise the exact cap without fake 1000-topic content
+ const blocked=ingestResearch(batch([good]),{matrix,map,policy:cap,source:"cap.json",frozenUrls:frozen});
+ assert.equal(blocked.added.length,0);
+ assert.ok(blocked.rejected.some(x=>x.gate==="F6_LOCALE_CAP"));
+ cap.targets.per_locale=usage.total+1;
+ const accepted=ingestResearch(batch([good]),{matrix,map,policy:cap,source:"one-more.json",frozenUrls:frozen});
+ assert.equal(accepted.added.length,1,JSON.stringify(accepted.rejected));
+ assert.equal(researchUsage({matrix,map:accepted.map,policy:cap},"en").available,0);
+ const subsequent=ingestResearch(batch([{...good,slug:"new-different-url",primary_query:"a different travel research question"}]),
+  {matrix,map:accepted.map,policy:cap,source:"excess.json",frozenUrls:frozen});
+ assert.equal(subsequent.added.length,0);
+ assert.ok(subsequent.rejected.some(x=>x.gate==="F6_LOCALE_CAP"));
 });
 
 test("trusted-only mutations: ingest and refill --apply refuse outside the Topic Factory workflow",()=>{
