@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility",
   "batch_session": "research-claude-20261015-mobility",
   "created_at": "2026-10-15T09:33:24.963Z",
-  "updated_at": "2026-10-15T18:35:55.600Z",
-  "base_main_sha": "30532421e37e0f4a939c7b2f4530886d2f082b16",
-  "last_commit_sha": "328b62dd29ab011327e0c34cbf9cdd9b5127f96d",
+  "updated_at": "2026-10-15T18:41:45.937Z",
+  "base_main_sha": "961d4d5c94ddfd26cbd3f9f7117bbde85e8e46e2",
+  "last_commit_sha": "93abe8b384b23b8a85ca9904a5ff96e2740df9c2",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 150,
-    "qa_pass": 150,
+    "researched": 160,
+    "qa_pass": 160,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 140,
+    "pushed": 150,
     "pending_push": 10
   },
   "coverage": {
@@ -28,23 +28,23 @@
       "de": 20,
       "fr": 15,
       "es": 15,
-      "nl": 12,
-      "pt": 12,
-      "ko": 13,
-      "ja": 13,
-      "zh": 12,
-      "vi": 10
+      "nl": 14,
+      "pt": 14,
+      "ko": 14,
+      "ja": 14,
+      "zh": 13,
+      "vi": 13
     },
     "domains": {
       "transportation-mobility": 10,
       "motorbike-rental": 10,
-      "traffic-law-safety": 130
+      "traffic-law-safety": 140
     }
   },
   "last_batch": {
-    "seq": 15,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0015.json",
-    "sha256": "694e64d1caf3d9d957c797cc59f5e737f567328660183a083bc7829dfa103a19",
+    "seq": 16,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0016.json",
+    "sha256": "645cb207623087ef2730626018cb3edefdd667cedfc1984242934b8618fa90bb",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -1608,8 +1608,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility-0015.json",
       "sha256": "694e64d1caf3d9d957c797cc59f5e737f567328660183a083bc7829dfa103a19",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "93abe8b384b23b8a85ca9904a5ff96e2740df9c2",
       "researched_on": "2026-10-15",
       "topics": [
         {
@@ -1620,7 +1620,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::darf man mit dem roller auf die autobahn vietnam",
-          "ta_id": null
+          "ta_id": "TA-DE-0035"
         },
         {
           "ref": "de:wie-viele-personen-auf-dem-roller-vietnam",
@@ -1630,7 +1630,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::wie viele personen auf einem roller vietnam erlaubt",
-          "ta_id": null
+          "ta_id": "TA-DE-0036"
         },
         {
           "ref": "de:ueberholen-roller-vietnam-regeln",
@@ -1640,7 +1640,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::uberholen mit dem roller vietnam regeln",
-          "ta_id": null
+          "ta_id": "TA-DE-0037"
         },
         {
           "ref": "de:wenden-und-abbiegen-roller-vietnam",
@@ -1650,7 +1650,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::wenden mit dem roller vietnam wo verboten",
-          "ta_id": null
+          "ta_id": "TA-DE-0038"
         },
         {
           "ref": "de:spurwahl-roller-vietnam",
@@ -1660,7 +1660,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::welche spur roller vietnam",
-          "ta_id": null
+          "ta_id": "TA-DE-0039"
         },
         {
           "ref": "en:how-many-people-on-a-motorbike-vietnam",
@@ -1670,7 +1670,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-city",
           "key": "en::how many people can ride a motorbike in vietnam",
-          "ta_id": null
+          "ta_id": "TA-EN-0047"
         },
         {
           "ref": "en:overtaking-rules-motorbike-vietnam",
@@ -1680,7 +1680,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-city",
           "key": "en::overtaking rules on a motorbike in vietnam",
-          "ta_id": null
+          "ta_id": "TA-EN-0048"
         },
         {
           "ref": "en:u-turn-rules-vietnam",
@@ -1690,7 +1690,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-city",
           "key": "en::where can you make a u-turn in vietnam",
-          "ta_id": null
+          "ta_id": "TA-EN-0049"
         },
         {
           "ref": "fr:combien-de-personnes-sur-un-scooter-vietnam",
@@ -1700,7 +1700,7 @@
           "parent_id": "FR-H04",
           "subcluster": "ss-city",
           "key": "fr::combien de personnes sur un scooter au vietnam",
-          "ta_id": null
+          "ta_id": "TA-FR-0035"
         },
         {
           "ref": "es:cuantas-personas-en-una-moto-vietnam",
@@ -1710,14 +1710,125 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-city",
           "key": "es::cuantas personas pueden ir en una moto en vietnam",
+          "ta_id": "TA-ES-0034"
+        }
+      ]
+    },
+    {
+      "seq": 16,
+      "file": "factory/topic-research/batches/claude-20261015-mobility-0016.json",
+      "sha256": "645cb207623087ef2730626018cb3edefdd667cedfc1984242934b8618fa90bb",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-15",
+      "topics": [
+        {
+          "ref": "vi:xe-may-di-vao-duong-cao-toc",
+          "locale": "vi",
+          "slug": "xe-may-di-vao-duong-cao-toc",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::xe may di vao duong cao toc bi phat bao nhieu",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:nhuong-duong-nga-tu-vong-xuyen",
+          "locale": "vi",
+          "slug": "nhuong-duong-nga-tu-vong-xuyen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::quy tac nhuong duong tai vong xuyen va nga tu",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:bam-coi-xe-may-ban-dem",
+          "locale": "vi",
+          "slug": "bam-coi-xe-may-ban-dem",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::bam coi xe may ban dem bi phat",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:hoeveel-personen-op-een-scooter-vietnam",
+          "locale": "nl",
+          "slug": "hoeveel-personen-op-een-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::hoeveel personen op een scooter in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:voorrang-kruispunt-rotonde-vietnam",
+          "locale": "nl",
+          "slug": "voorrang-kruispunt-rotonde-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::voorrang kruispunt vietnam scooter",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:quantas-pessoas-numa-moto-vietname",
+          "locale": "pt",
+          "slug": "quantas-pessoas-numa-moto-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::quantas pessoas podem andar numa moto no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:prioridade-cruzamentos-rotundas-vietname",
+          "locale": "pt",
+          "slug": "prioridade-cruzamentos-rotundas-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::prioridade nos cruzamentos no vietname moto",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:motuoche-gaosu-gonglu",
+          "locale": "zh",
+          "slug": "motuoche-gaosu-gonglu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南摩托车能上高速公路吗",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:intersection-right-of-way-vietnam",
+          "locale": "ko",
+          "slug": "intersection-right-of-way-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::베트남 교차로 통행 우선순위 오토바이",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:kousaten-yuusen-rule",
+          "locale": "ja",
+          "slug": "kousaten-yuusen-rule",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナム 交差点 優先 ルール ハイク",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 16,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0016.json",
+    "seq": 17,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0017.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -1848,6 +1959,13 @@
       "seq": 15,
       "topics": 10,
       "sha256": "694e64d1caf3d9d957c797cc59f5e737f567328660183a083bc7829dfa103a19"
+    },
+    {
+      "at": "2026-10-15T18:41:45.937Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 16,
+      "topics": 10,
+      "sha256": "645cb207623087ef2730626018cb3edefdd667cedfc1984242934b8618fa90bb"
     }
   ]
 }
