@@ -1631,6 +1631,60 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility-0020.json@7d0429eed773"
       },
       "matrix_id": "FR-S48"
+    },
+    {
+      "candidate_id": "TA-FR-0043",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "sens-interdit-trottoir-scooter-vietnam",
+      "primary_query": "rouler à contresens en scooter au vietnam amende",
+      "secondary_queries": [
+        "rouler sur le trottoir en scooter vietnam",
+        "panneau sens interdit vietnam",
+        "rue à sens unique vietnam scooter"
+      ],
+      "working_title": "Sens unique et trottoirs au Vietnam : ce qui est interdit en scooter",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Riders in Vietnamese cities see motorbikes ride against the traffic or along the pavement to avoid jams and want to know whether that is allowed, how one-way streets are signed and what wrong-way riding costs on a rental bike.",
+      "content_angle": "Explains the No entry sign P.102 and the One-way road signs I.407 (a, b, c) in QCVN 41:2024/BGTVT (no U-turn back against the arrow, W.204 marks the end), Article 77(1) of Law 36/2024/QH15 (the pavement is for pedestrians) and Article 33(3)(b) (riders may not enter parts of the road reserved for pedestrians and other vehicles), and the Decree 168/2024 Article 7(7)(a) fine of 4,000,000 to 6,000,000 VND with 2 licence points under Article 7(13)(a) for riding against a one-way street or on the pavement, except crossing it to enter a building.",
+      "entities": [
+        "Article 33 de la loi 36/2024/QH15",
+        "Décret 168/2024/NĐ-CP",
+        "sens unique",
+        "trottoir",
+        "panneau P.102"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "rx-178d8fdf2864"
+      ],
+      "distinct_from": [
+        {
+          "id": "FR-S46",
+          "reason": "FR-S46 explique le choix de la voie sur les routes à plusieurs voies ; ce sujet traite des rues à sens unique, du panneau sens interdit, de la circulation à contresens et sur le trottoir."
+        },
+        {
+          "id": "FR-S32",
+          "reason": "FR-S32 présente les panneaux routiers courants ; ce sujet se concentre sur les sens uniques et les trottoirs et sur l'amende pour circulation à contresens ou sur le trottoir."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility",
+        "researched_on": "2026-10-15",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility-0025.json@3a53a6fc8a26"
+      },
+      "matrix_id": "FR-S49"
     }
   ]
 }
