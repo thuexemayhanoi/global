@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "stage": "PILOT",
+  "stage": "RAMP",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 1,
+  "clean_runs": 0,
   "published": [
     {
       "id": "NL-H01",
@@ -62,7 +62,8 @@
       "at": "2026-10-15T05:13:43.129Z",
       "source_sha256": "10f94df1aef1f04aa6b12c3ebfe211b4cc53a8052e3d21007bd8990f9af9c455",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T05:14:48.442Z"
     },
     {
       "id": "PT-S02",
@@ -73,7 +74,8 @@
       "at": "2026-10-15T05:13:43.129Z",
       "source_sha256": "eba910cedebd5cbc2b5fc021d2f1c2e67b8053b22d524a185fe3aabf16932fa7",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T05:14:48.442Z"
     }
   ],
   "runs": [
@@ -142,16 +144,29 @@
         "PT-S02"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T05:14:48.442Z",
+      "ids": [
+        "KO-S01",
+        "PT-S02"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T05:14:48.442Z",
+      "ids": [],
+      "result": "STAGE_ADVANCED PILOT→RAMP"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T05:13:25.336Z",
+    "at": "2026-10-15T05:14:48.442Z",
     "ids": [
-      "ES-H01",
-      "KO-H01"
+      "KO-S01",
+      "PT-S02"
     ],
-    "commit": "94bb6fb80b9ef727dd8b536f36ea8e0f49cc6828",
-    "live_seconds": 62
+    "commit": "af43200895258bc4c5cbde06b628ca27b7313171",
+    "live_seconds": 61
   },
   "queue": {
     "REVIEW_REQUIRED": 73,
