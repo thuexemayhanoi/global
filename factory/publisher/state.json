@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 108,
+  "clean_runs": 110,
   "published": [
     {
       "id": "NL-H01",
@@ -2786,7 +2786,8 @@
       "at": "2026-10-15T19:25:51.280Z",
       "source_sha256": "2fcf0d791f83517ed0c83bbc0bcacf1e79690c2189efdc4ad144291c6246533d",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T19:27:23.132Z"
     },
     {
       "id": "EN-S36",
@@ -2797,34 +2798,23 @@
       "at": "2026-10-15T19:25:51.280Z",
       "source_sha256": "3072f6b3c88ea2bc0a31e015b3062cb5fc42e0683d7f925b0259a484c49e6c9b",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T19:27:23.132Z"
+    },
+    {
+      "id": "EN-S34",
+      "locale": "en",
+      "url": "/en/guides/riding-a-motorbike-in-hanoi-in-winter/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:27:41.257Z",
+      "source_sha256": "675bb03afe0529e431cdfebcbfbedfc829c4611dfce610ec836b2e2de4123155",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T19:28:32.255Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:40:33.386Z",
-      "ids": [
-        "EN-S04",
-        "ES-S04"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:40:52.587Z",
-      "ids": [
-        "FR-S04",
-        "JA-S04"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:42:01.741Z",
-      "ids": [
-        "FR-S04",
-        "JA-S04"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T09:42:20.910Z",
       "ids": [
@@ -4382,18 +4372,37 @@
         "EN-S36"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T19:27:23.132Z",
+      "ids": [
+        "EN-S35",
+        "EN-S36"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T19:27:41.257Z",
+      "ids": [
+        "EN-S34"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T19:28:32.255Z",
+      "ids": [
+        "EN-S34"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T19:17:57.500Z",
+    "at": "2026-10-15T19:28:32.255Z",
     "ids": [
-      "DE-S35",
-      "EN-S37"
+      "EN-S34"
     ],
-    "commit": "51d1ca0a9f040c77e596f9bd7ec279f5016dff71",
+    "commit": "ea2eacb56507c50a81ac19930a0bb605088b7692",
     "live_seconds": 41
   },
-  "queue": {
-    "APPROVED_BY_POLICY": 2
-  }
+  "queue": {}
 }
