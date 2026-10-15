@@ -2812,17 +2812,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T19:28:32.255Z"
+    },
+    {
+      "id": "DE-S46",
+      "locale": "de",
+      "url": "/de/guides/mindestalter-roller-fahren-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:30:52.991Z",
+      "source_sha256": "1d062690474b1314553e4d00bcf57203f974278b1ceddc80ef2fe24887e34ec4",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S47",
+      "locale": "de",
+      "url": "/de/guides/punktesystem-fuehrerschein-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:30:52.991Z",
+      "source_sha256": "e77856e7f6df25d2e9ebd4d00dc8d0c977361e2ae9e5e44643e514472ca521a5",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:42:20.910Z",
-      "ids": [
-        "PT-S04",
-        "VI-S04"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T09:43:47.937Z",
       "ids": [
@@ -4394,6 +4408,14 @@
         "EN-S34"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T19:30:52.991Z",
+      "ids": [
+        "DE-S46",
+        "DE-S47"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4404,5 +4426,7 @@
     "commit": "ea2eacb56507c50a81ac19930a0bb605088b7692",
     "live_seconds": 41
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 2
+  }
 }
