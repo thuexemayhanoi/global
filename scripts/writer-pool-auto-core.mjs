@@ -10,7 +10,7 @@
  */
 import {transitionPool,poolCandidates,validatePool,MAX_BATCH} from "./writer-pool-core.mjs";
 export function autoAdvance(matrix,ledger,registry,request,{
- verifiedDraftIds=new Set(),verifiedDraftEvidence=new Map(),now="2026-10-14T00:00:00Z",nonce="auto",maxBatch=MAX_BATCH
+ verifiedDraftIds=new Set(),verifiedDraftEvidence=new Map(),now="2026-10-14T00:00:00Z",nonce="auto",maxBatch=MAX_BATCH,refill=true
 }={}){
  const errors=validatePool(matrix,ledger,registry);
  if(errors.length)throw Error(errors.join("; "));
@@ -29,6 +29,12 @@ export function autoAdvance(matrix,ledger,registry,request,{
   return {status:submitted.length?"PARTIAL_SUBMITTED_WAITING_FOR_NEXT_PUSH":"WAITING_FOR_DRAFTS",
    submitted,claimed:unfinished.map(c=>c.id),missing_ids:unfinished.map(c=>c.id),ledger:state,changed,
    message:"Resume unfinished claims on the same branch/session, never rewrite submitted or protected IDs."};
+ }
+ // A slot that reported PAUSED_QUOTA/OFFLINE submits finished work but takes no new topics.
+ if(!refill){
+  return {status:submitted.length?"SUBMITTED_SLOT_PAUSED":"SLOT_PAUSED_NO_REFILL",submitted,claimed:unfinished.map(c=>c.id),
+   missing_ids:unfinished.map(c=>c.id),ledger:state,changed,
+   message:"Slot paused by its own signal: finished drafts recorded, no new claims until it reports ACTIVE/RECOVERING."};
  }
  const candidates=poolCandidates(matrix,state,registry);
  if(!candidates.length){

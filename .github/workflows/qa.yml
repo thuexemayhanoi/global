@@ -25,11 +25,12 @@ jobs:
           node --check scripts/writer-refill.mjs
           node scripts/writer-refill.mjs status
           node scripts/writer-pool.mjs status
+          node scripts/writer-pool.mjs slots
           node scripts/continuous-writer.mjs status
       - name: Verify deterministic content graph
         run: node scripts/seo/content-graph.mjs --check
       - name: Premium SEO, navigation, search and accessibility regression
-        run: node --test tests/ultra.test.mjs tests/premium.test.mjs tests/claims.test.mjs tests/external-writers.test.mjs tests/continuous-writer.test.mjs tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-refill.test.mjs tests/sitemaps.test.mjs tests/search-index.test.mjs tests/markdown-import.test.mjs tests/post-publish.test.mjs tests/seo-guard.test.mjs tests/topical-authority.test.mjs tests/fact-guard.test.mjs tests/content-graph.test.mjs tests/article-links.test.mjs tests/topic-factory.test.mjs
+        run: node --test tests/ultra.test.mjs tests/premium.test.mjs tests/claims.test.mjs tests/external-writers.test.mjs tests/continuous-writer.test.mjs tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-refill.test.mjs tests/sitemaps.test.mjs tests/search-index.test.mjs tests/markdown-import.test.mjs tests/post-publish.test.mjs tests/seo-guard.test.mjs tests/topical-authority.test.mjs tests/fact-guard.test.mjs tests/content-graph.test.mjs tests/article-links.test.mjs tests/topic-factory.test.mjs tests/writer-slots.test.mjs
       - name: Verify CNAME and canonical outputs
         shell: bash
         run: |
