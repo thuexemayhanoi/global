@@ -3,6 +3,7 @@
  * Data-only planner: ALL writes are serialized by writer-pool.yml on main.
  * This module performs no I/O and never publishes articles.
  */
+import {legacyPilotOriginal,PILOT_OWNERS,PILOT_SOURCE} from "./legacy-pilot-core.mjs";
 export const WRITERS=["W1","W2","W3"];
 // Shared cap across one active session per lane. Writer may push 1..10 drafts;
 // QA/publisher still processes each packet independently, never auto-publishes.
@@ -58,11 +59,21 @@ export function validatePool(matrix,ledger,protectedData){
        !/^[0-9a-f]{64}$/.test(h.source_sha256||"")||!/^[0-9a-f]{40}$/.test(h.source_commit||"")))
     errors.push("Invalid repair handoff history "+c.id);
   }
-  if(c.source_branch!==undefined&&(c.status!=="SUBMITTED"||typeof c.source_branch!=="string"||!/^writer\/w[123]-[A-Za-z0-9_-]+$/.test(c.source_branch)))errors.push("Invalid source branch "+c.id);
+  if(c.legacy_pilot!==undefined){
+   const expected=PILOT_OWNERS[c.id];
+   if(!expected||c.status!=="SUBMITTED"||c.legacy_pilot.source_pr!==6||
+      c.legacy_pilot.source_ref!==PILOT_SOURCE||c.writer!==expected.writer||
+      c.session!==expected.session||c.branch!==expected.branch)
+    errors.push("Invalid owner-approved pilot provenance "+c.id);
+  }
+  if(c.source_branch!==undefined&&(c.status!=="SUBMITTED"||typeof c.source_branch!=="string"||
+      !(legacyPilotOriginal(c)||/^writer\/w[123]-[A-Za-z0-9_-]+$/.test(c.source_branch))))
+   errors.push("Invalid source branch "+c.id);
   // A strict QA failure ticket can lead to a new version in inbox/<W>/revisions/<ID>.r<N>.json; history keeps every earlier hash.
   if(c.source_path!==undefined&&(c.status!=="SUBMITTED"||!(
     new RegExp("^factory/external-writers/inbox/"+c.writer+"/revisions/"+c.id+"\\.r\\d+\\.json$").test(c.source_path||"")||
-    (c.handoffs||[]).some(h=>h.source_path===c.source_path&&h.source_sha256===c.source_sha256)
+    (c.handoffs||[]).some(h=>h.source_path===c.source_path&&h.source_sha256===c.source_sha256)||
+    legacyPilotOriginal(c)
    )))errors.push("Invalid revision source path "+c.id);
   if(c.revisions!==undefined&&(c.status!=="SUBMITTED"||!Array.isArray(c.revisions)||c.revisions.some(v=>!/^[0-9a-f]{64}$/.test(v?.source_sha256||"")||!/^[0-9a-f]{40}$/.test(v?.source_commit||""))))errors.push("Invalid revision history "+c.id);
   if(c.status!=="RELEASED"){
