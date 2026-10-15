@@ -275,8 +275,11 @@ test("scale: 10 locales x 1000 synthetic candidates are deduplicated and selecte
   const base=L.proposals.find(p=>p.status==="PROPOSED"&&p.parent_id===hub.id)||L.proposals.find(p=>p.status==="PROPOSED");
   for(let i=0;i<1000;i++){
    const a=words[i%20],b=words[Math.floor(i/20)%20],c=words[Math.floor(i/400)%20];
+   // Each synthetic topic gets its own secondary query and entities: inheriting the base candidate's
+   // would make all 1000 clones intent duplicates of each other whenever the base has rich queries.
    L.proposals.push({...base,candidate_id:"TA-"+code.toUpperCase()+"-"+String(5000+i),slug:"synthetic-"+code+"-"+i,
-    primary_query:"synthetic "+a+" "+b+" "+c+" "+i,working_title:"Synthetic topic "+a+" "+b+" "+c+" number "+i,distinct_from:undefined});
+    primary_query:"synthetic "+a+" "+b+" "+c+" "+i,working_title:"Synthetic topic "+a+" "+b+" "+c+" number "+i,
+    secondary_queries:["synthetic "+c+" "+b+" "+a+" variant "+i],entities:[a,b,c,"synthetic-"+i],distinct_from:undefined});
    n++;
   }
  }
