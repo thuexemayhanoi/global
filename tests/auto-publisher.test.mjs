@@ -58,6 +58,30 @@ test("hard legal claims need an official citation in the same paragraph; plain a
  assert.equal(classify(packet(),legalHub,policy).topicClass,"LEGAL");
 });
 
+test("Human Review retired: sourced legal, safety and monetary content uses automatic G3 gates",()=>{
+ const pricedHub=matrix.rows.find(r=>r.locale==="en"&&r.role==="HUB"&&r.cluster==="rental-costs");
+ assert.ok(pricedHub);
+ const evidence={url:"https://xaydungchinhsach.chinhphu.vn/x.htm",title:"Official Vietnamese legal reference",checked_on:"2026-10-15"};
+ const legal=packet({matrix_id:legalHub.id,proposed_url:legalHub.url,sources:[...packet().sources,evidence]});
+ const eligibleLegal=eligibility(ctx({packet:legal,row:legalHub}));
+ assert.equal(eligibleLegal.decision,"APPROVED_BY_POLICY",JSON.stringify(eligibleLegal.gates.filter(g=>!g.passed)));
+ const noEvidence=packet({matrix_id:legalHub.id,proposed_url:legalHub.url});
+ const rejectedLegal=eligibility(ctx({packet:noEvidence,row:legalHub}));
+ assert.equal(rejectedLegal.decision,"REJECTED");
+ assert.ok(rejectedLegal.failed.includes("G3_SENSITIVE_SOURCES"));
+ const amount="A typical deposit of 3,000,000 VND appears on the [supplier fee page](https://vexere.com/prices).";
+ const payment=packet({matrix_id:pricedHub.id,proposed_url:pricedHub.url,
+   body_markdown:packet().body_markdown+"\n\n"+amount,
+   sources:[...packet().sources,{url:"https://vexere.com/prices",title:"Supplier fee schedule",checked_on:"2026-10-15"}]});
+ const approvedPrice=eligibility(ctx({packet:payment,row:pricedHub}));
+ assert.equal(approvedPrice.decision,"APPROVED_BY_POLICY",JSON.stringify(approvedPrice.gates.filter(g=>!g.passed)));
+ const noListedSource=packet({...payment,sources:packet().sources});
+ const rejectedPrice=eligibility(ctx({packet:noListedSource,row:pricedHub}));
+ assert.equal(rejectedPrice.decision,"REJECTED");
+ assert.ok(rejectedPrice.failed.includes("G3_PRICE_EVIDENCE"));
+ assert.ok(![eligibleLegal,approvedPrice,rejectedLegal,rejectedPrice].some(x=>x.decision==="REVIEW_REQUIRED"));
+});
+
 test("editorial heuristics catch wrong language, repeated paragraphs, keyword stuffing and missing internal context links",()=>{
  assert.equal(editorial(packet(),hub).passed,true,JSON.stringify(editorial(packet(),hub).issues));
  const deText=Array.from({length:40},(_,i)=>"Der Roller ist für die Stadt gut, und die Fahrerin prüft das Licht nicht nur am Abend, sondern auch bei Regen Nummer "+i+".").join(" ");
