@@ -3940,17 +3940,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T22:16:45.075Z"
+    },
+    {
+      "id": "ES-S41",
+      "locale": "es",
+      "url": "/es/guides/bocina-moto-vietnam-normas/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:17:01.314Z",
+      "source_sha256": "510cd61196b12df6ec87b165a36f94e9091434dce9cee8f048195604d8729c1d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ES-S42",
+      "locale": "es",
+      "url": "/es/guides/prioridad-cruces-rotondas-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:17:01.314Z",
+      "source_sha256": "41ef3e46baa9390c3c326618313394e753334e0324da47a9933b1b785f498386",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T17:16:30.189Z",
-      "ids": [
-        "KO-S11",
-        "NL-S11"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T17:17:38.968Z",
       "ids": [
@@ -5502,6 +5516,14 @@
         "ES-S40"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T22:17:01.314Z",
+      "ids": [
+        "ES-S41",
+        "ES-S42"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -5514,6 +5536,6 @@
     "live_seconds": 42
   },
   "queue": {
-    "APPROVED_BY_POLICY": 8
+    "APPROVED_BY_POLICY": 6
   }
 }
