@@ -1,0 +1,82 @@
+name: Global Legacy Hub Intake
+# Explicit owner-approved recovery of PR17 original Hub manuscripts.
+# Batches are strictly at most two, with immutable source SHA-256 and Writer QA.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/legacy-hub-intake.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: global-legacy-hub-intake
+  cancel-in-progress: false
+jobs:
+  intake:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      GH_TOKEN: \${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Trusted source-intake tests
+        run: |
+          node --check scripts/legacy-hub-intake.mjs
+          node --test tests/legacy-hub-intake.test.mjs tests/repair-queue.test.mjs tests/writer-pool.test.mjs tests/writer-qa-lock.test.mjs
+          test "$(cat CNAME)" = "global.rentbikehanoi.com"
+      - name: Import QA-clean protected Hub sources in two-ID commits
+        id: import
+        run: |
+          set -euo pipefail
+          git config user.name "global-legacy-intake"
+          git config user.email "global-legacy-intake@users.noreply.github.com"
+          imported=0
+          for batch in 1 2 3 4 5 6 7 8; do
+            applied=no
+            for retry in 1 2 3 4 5; do
+              git fetch --no-tags origin main
+              git reset --hard origin/main
+              node scripts/legacy-hub-intake.mjs --apply > "$RUNNER_TEMP/legacy-intake-result.json"
+              cat "$RUNNER_TEMP/legacy-intake-result.json" >> "$GITHUB_STEP_SUMMARY"
+              ids="$(node -e 'const x=require("fs").readFileSync(process.argv[1],"utf8"); console.log(JSON.parse(x).accepted.map(v=>v.id).join(","))' "$RUNNER_TEMP/legacy-intake-result.json")"
+              if [ -z "$ids" ]; then
+                echo "Legacy intake queue exhausted or remaining sources failed Writer QA"
+                echo "imported=$imported" >> "$GITHUB_OUTPUT"
+                exit 0
+              fi
+              changed="$(git status --porcelain | awk '{print $2}')"
+              if echo "$changed" | grep -vE '^(factory/external-writers/(claims|protected-drafts)\.json)$'; then
+                echo "::error::Unexpected file changed by trusted intake: $changed"; exit 1
+              fi
+              node --test tests/legacy-hub-intake.test.mjs tests/writer-pool.test.mjs
+              node scripts/build.mjs --check
+              git add factory/external-writers/claims.json factory/external-writers/protected-drafts.json
+              git commit -m "factory(global): immutable QA intake for Hub IDs $ids"
+              git fetch --no-tags origin main
+              if [ "$(git rev-parse origin/main)" = "$(git rev-parse HEAD^)" ] && git push origin HEAD:main; then
+                echo "IMPORT_BATCH_PASS $batch: $ids" >> "$GITHUB_STEP_SUMMARY"
+                imported=$((imported+1))
+                applied=yes
+                break
+              fi
+              echo "CAS_RETRY: main changed; re-read registry and recompute (attempt $retry)"
+            done
+            if [ "$applied" != "yes" ]; then
+              echo "::error::Legacy intake CAS retry budget exhausted; original manuscripts unchanged"; exit 1
+            fi
+          done
+          echo "imported=$imported" >> "$GITHUB_OUTPUT"
+      - name: Trigger independent strict Auto Publisher after successful source intake
+        if: steps.import.outputs.imported != '0'
+        run: |
+          gh workflow run auto-publisher.yml --ref main -f action=publish -f max=2
+          echo "Only publisher G1–G5/G7 and Live QA may publish imported Hub claims" >> "$GITHUB_STEP_SUMMARY"
