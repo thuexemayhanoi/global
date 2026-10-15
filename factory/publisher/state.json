@@ -76,6 +76,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T05:14:48.442Z"
+    },
+    {
+      "id": "EN-H02",
+      "locale": "en",
+      "url": "/en/topics/rental-costs-and-fees/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T05:34:42.542Z",
+      "source_sha256": "c47c022a1e533b96270f3fecfc682de9c40ea88f1d425359d3c5bf45c7eebbae",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-H02",
+      "locale": "fr",
+      "url": "/fr/topics/tarifs-caution/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T05:34:42.542Z",
+      "source_sha256": "8d42423f0ce287dc6f191bb3855f4c5a7a0edaab6d6feb28d5d5a1d7a3f6c608",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -170,6 +192,14 @@
       "at": "2026-10-15T05:34:24.609Z",
       "ids": [],
       "result": "RESUME: Owner authorized: HTML inline-price citations restored in merged PR 46; checks and production HTTP QA pass"
+    },
+    {
+      "at": "2026-10-15T05:34:42.542Z",
+      "ids": [
+        "EN-H02",
+        "FR-H02"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
