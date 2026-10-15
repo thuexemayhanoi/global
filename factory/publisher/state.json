@@ -3364,17 +3364,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T21:08:06.343Z"
+    },
+    {
+      "id": "EN-S59",
+      "locale": "en",
+      "url": "/en/guides/road-tunnel-rules-motorbike-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:08:24.826Z",
+      "source_sha256": "6a157ab822102fa45e81975ec2dcb09b55d69a6387b9dc024340c84ca688852d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S60",
+      "locale": "en",
+      "url": "/en/guides/give-way-to-emergency-vehicles-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:08:24.826Z",
+      "source_sha256": "f05563479dbc9f8a762f3a48be0ed6a752ab868475a8534bbae20c17c80600a0",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T13:19:36.319Z",
-      "ids": [
-        "VI-H01",
-        "ZH-H01"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T13:20:44.457Z",
       "ids": [
@@ -4940,6 +4954,14 @@
         "EN-S58"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T21:08:24.826Z",
+      "ids": [
+        "EN-S59",
+        "EN-S60"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4952,6 +4974,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 5
+    "APPROVED_BY_POLICY": 3
   }
 }
