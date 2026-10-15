@@ -3592,17 +3592,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T21:31:50.470Z"
+    },
+    {
+      "id": "EN-S68",
+      "locale": "en",
+      "url": "/en/guides/animals-on-the-road-vietnam-motorbike/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:35:31.260Z",
+      "source_sha256": "fd96dc7b4b892633c1a9b36174fe93cc0ec8c1b6c9f868f9ad15c818f4f20f7e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S69",
+      "locale": "en",
+      "url": "/en/guides/where-you-must-slow-down-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:35:31.260Z",
+      "source_sha256": "7e08baec29153e6c3c55b876e98f41b2a9f7c59811920752c42c147f273e7297",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T13:38:47.789Z",
-      "ids": [
-        "ES-S06",
-        "PT-S06"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T13:39:58.805Z",
       "ids": [
@@ -5162,6 +5176,14 @@
         "DE-S79"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T21:35:31.260Z",
+      "ids": [
+        "EN-S68",
+        "EN-S69"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -5172,5 +5194,7 @@
     "commit": "ec6e7a3f4aa03f0714b8e01f3384ea013115bffb",
     "live_seconds": 82
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 3
+  }
 }
