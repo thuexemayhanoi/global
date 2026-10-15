@@ -412,6 +412,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:34:24.262Z"
+    },
+    {
+      "id": "ES-S03",
+      "locale": "es",
+      "url": "/es/guides/dia-semana-mes/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:34:42.583Z",
+      "source_sha256": "fe8eee3bb5dc59f2acf930400e85512e7ae38f261288e2a0ad9371dfcd29865c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S03",
+      "locale": "fr",
+      "url": "/fr/guides/jour-semaine-mois/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:34:42.583Z",
+      "source_sha256": "95a8037ab4aee4ddebcd3e7cf633609260bb1d9c4d211b263d738e7577638ca6",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -747,6 +769,14 @@
         "EN-S03"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:34:42.583Z",
+      "ids": [
+        "ES-S03",
+        "FR-S03"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -760,6 +790,6 @@
   },
   "queue": {
     "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 46
+    "APPROVED_BY_POLICY": 44
   }
 }
