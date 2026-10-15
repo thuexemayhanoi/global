@@ -2800,17 +2800,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T19:27:23.132Z"
+    },
+    {
+      "id": "EN-S34",
+      "locale": "en",
+      "url": "/en/guides/riding-a-motorbike-in-hanoi-in-winter/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:27:41.257Z",
+      "source_sha256": "675bb03afe0529e431cdfebcbfbedfc829c4611dfce610ec836b2e2de4123155",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:40:52.587Z",
-      "ids": [
-        "FR-S04",
-        "JA-S04"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T09:42:01.741Z",
       "ids": [
@@ -4384,6 +4387,13 @@
         "EN-S36"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T19:27:41.257Z",
+      "ids": [
+        "EN-S34"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4396,6 +4406,6 @@
     "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 1
   }
 }
