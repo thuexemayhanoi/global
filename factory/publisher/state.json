@@ -1936,6 +1936,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T17:38:23.317Z"
+    },
+    {
+      "id": "VI-S12",
+      "locale": "vi",
+      "url": "/vi/guides/vung-phat-thai-thap-vanh-dai-1/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:38:45.626Z",
+      "source_sha256": "d9d08de7c55ecc67cb0d110ecc4816b55018222e26007facbd4caa95add524cb",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S13",
+      "locale": "zh",
+      "url": "/zh/guides/yihuan-dipaifangqu/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:38:45.626Z",
+      "source_sha256": "3cab18e51095a7d663acbe50ad49c51d848496ab6359a40b792ac8f5421a1282",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -3317,6 +3339,14 @@
         "VI-S11"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:38:45.626Z",
+      "ids": [
+        "VI-S12",
+        "ZH-S13"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3329,6 +3359,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 11
+    "APPROVED_BY_POLICY": 9
   }
 }
