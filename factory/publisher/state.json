@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 162,
+  "clean_runs": 164,
   "published": [
     {
       "id": "NL-H01",
@@ -3902,7 +3902,8 @@
       "at": "2026-10-15T22:14:18.311Z",
       "source_sha256": "b6517dd91b30c1b96d073784d97322080b86275a3628c7d882d638225561766e",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T22:15:32.122Z"
     },
     {
       "id": "ES-S38",
@@ -3913,42 +3914,57 @@
       "at": "2026-10-15T22:14:18.311Z",
       "source_sha256": "c53722a375a1cd2e5be71366f25c3b5401d635ef78c28ff6a14d817379c86342",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T22:15:32.122Z"
+    },
+    {
+      "id": "ES-S39",
+      "locale": "es",
+      "url": "/es/guides/moto-por-autopista-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:15:51.367Z",
+      "source_sha256": "cd189d3ab09887db6dca58ab3a21b81b4d56bc019cd86e1ab765a4ede4d65493",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T22:16:45.075Z"
+    },
+    {
+      "id": "ES-S40",
+      "locale": "es",
+      "url": "/es/guides/cuantas-personas-en-una-moto-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:15:51.367Z",
+      "source_sha256": "0f53a5a8fc8c9dc75395aeb6fa78babe874c951c81917ad9a75ac211b33c3ca9",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T22:16:45.075Z"
+    },
+    {
+      "id": "ES-S41",
+      "locale": "es",
+      "url": "/es/guides/bocina-moto-vietnam-normas/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:17:01.314Z",
+      "source_sha256": "510cd61196b12df6ec87b165a36f94e9091434dce9cee8f048195604d8729c1d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ES-S42",
+      "locale": "es",
+      "url": "/es/guides/prioridad-cruces-rotondas-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T22:17:01.314Z",
+      "source_sha256": "41ef3e46baa9390c3c326618313394e753334e0324da47a9933b1b785f498386",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T17:14:01.205Z",
-      "ids": [
-        "EN-S12",
-        "ES-S11"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T17:14:20.810Z",
-      "ids": [
-        "FR-S12",
-        "JA-S11"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T17:16:12.320Z",
-      "ids": [
-        "FR-S12",
-        "JA-S11"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T17:16:30.189Z",
-      "ids": [
-        "KO-S11",
-        "NL-S11"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T17:17:38.968Z",
       "ids": [
@@ -5476,17 +5492,50 @@
         "ES-S38"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T22:15:32.122Z",
+      "ids": [
+        "ES-S37",
+        "ES-S38"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T22:15:51.367Z",
+      "ids": [
+        "ES-S39",
+        "ES-S40"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T22:16:45.075Z",
+      "ids": [
+        "ES-S39",
+        "ES-S40"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T22:17:01.314Z",
+      "ids": [
+        "ES-S41",
+        "ES-S42"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T22:08:25.485Z",
+    "at": "2026-10-15T22:16:45.075Z",
     "ids": [
-      "ES-S36"
+      "ES-S39",
+      "ES-S40"
     ],
-    "commit": "2353c170e0c28e99bbc3a4ece522bd93a3389271",
-    "live_seconds": 62
+    "commit": "dc1c24f5fdbaa1b373535c7fcca3fa09266d0440",
+    "live_seconds": 42
   },
   "queue": {
-    "APPROVED_BY_POLICY": 8
+    "APPROVED_BY_POLICY": 6
   }
 }
