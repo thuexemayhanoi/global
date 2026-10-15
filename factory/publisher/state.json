@@ -2368,17 +2368,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:20:40.590Z"
+    },
+    {
+      "id": "DE-S16",
+      "locale": "de",
+      "url": "/de/guides/reisepass-als-kaution/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:21:02.987Z",
+      "source_sha256": "91f0d33dada4353fda7f310a31137aeddf3066d8a0876e5e49e80030e0f44435",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S17",
+      "locale": "en",
+      "url": "/en/guides/passport-as-rental-deposit/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:21:02.987Z",
+      "source_sha256": "f7fbca90fce18023b81157b95704dd2548931c9f5dd3a4ea4a6eedcad2e3513f",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T05:36:30.154Z",
-      "ids": [
-        "EN-H02",
-        "FR-H02"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T06:26:39.346Z",
       "ids": [
@@ -3949,6 +3963,14 @@
         "FR-S18"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:21:02.987Z",
+      "ids": [
+        "DE-S16",
+        "EN-S17"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3961,6 +3983,6 @@
     "live_seconds": 42
   },
   "queue": {
-    "APPROVED_BY_POLICY": 8
+    "APPROVED_BY_POLICY": 13
   }
 }
