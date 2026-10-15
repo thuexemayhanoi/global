@@ -3,7 +3,7 @@
   "stage": "RAMP",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 2,
+  "clean_runs": 3,
   "published": [
     {
       "id": "NL-H01",
@@ -134,7 +134,8 @@
       "at": "2026-10-15T06:28:04.637Z",
       "source_sha256": "c4edf500c817f106544160ba675d34e1e0a13eb6ff971898bf3431fdcff54707",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T06:29:12.740Z"
     },
     {
       "id": "KO-H04",
@@ -145,7 +146,8 @@
       "at": "2026-10-15T06:28:04.637Z",
       "source_sha256": "47f7619b6867eeb88c11a621b746856a22bd2ae6ebedaa44eb551c4648a84562",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T06:29:12.740Z"
     }
   ],
   "runs": [
@@ -280,16 +282,24 @@
         "KO-H04"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T06:29:12.740Z",
+      "ids": [
+        "ZH-H02",
+        "KO-H04"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T06:27:47.515Z",
+    "at": "2026-10-15T06:29:12.740Z",
     "ids": [
-      "JA-H02",
-      "PT-H02"
+      "ZH-H02",
+      "KO-H04"
     ],
-    "commit": "4febaacd15a973ccc1640723e15f89b8d993e358",
-    "live_seconds": 61
+    "commit": "b9f752071a879c534f54f63ea6eaabb2ed3ecc90",
+    "live_seconds": 62
   },
   "queue": {
     "REJECTED": 97,
