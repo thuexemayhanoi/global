@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 72,
+  "clean_runs": 74,
   "published": [
     {
       "id": "NL-H01",
@@ -1970,7 +1970,8 @@
       "at": "2026-10-15T17:40:38.025Z",
       "source_sha256": "8cb18fbe3dfcc9db7c87ea8a51e2921afc70c4c65ec794c4da6b1c8d535cacce",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T17:42:09.604Z"
     },
     {
       "id": "EN-S14",
@@ -1981,7 +1982,32 @@
       "at": "2026-10-15T17:40:38.025Z",
       "source_sha256": "9420a6d84b86f896e211df5d3e1bc6534936d1d2957bf6ebfd6ec5e0e2eb6b13",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T17:42:09.604Z"
+    },
+    {
+      "id": "ES-S13",
+      "locale": "es",
+      "url": "/es/guides/papeles-tarjeta-registro/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:42:35.527Z",
+      "source_sha256": "97c8c17571c1d6366475651d981480bfbc7c3156f500a236278a0e2e9458ab63",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T17:43:26.456Z"
+    },
+    {
+      "id": "FR-S14",
+      "locale": "fr",
+      "url": "/fr/guides/papiers-carte-grise/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:42:35.527Z",
+      "source_sha256": "7355ebdfe52f26b9562e71a3354a9d1a52ced4708d905e81b72fe23c1289f4da",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T17:43:26.456Z"
     }
   ],
   "runs": [
@@ -3387,18 +3413,42 @@
         "EN-S14"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T17:42:09.604Z",
+      "ids": [
+        "DE-S13",
+        "EN-S14"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:42:35.527Z",
+      "ids": [
+        "ES-S13",
+        "FR-S14"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T17:43:26.456Z",
+      "ids": [
+        "ES-S13",
+        "FR-S14"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T17:40:20.296Z",
+    "at": "2026-10-15T17:43:26.456Z",
     "ids": [
-      "VI-S12",
-      "ZH-S13"
+      "ES-S13",
+      "FR-S14"
     ],
-    "commit": "56dca8a8c4cdda2b98e503637bedf4781eab1356",
-    "live_seconds": 81
+    "commit": "61e462fec03d912700ed6c7019784639994efd22",
+    "live_seconds": 42
   },
   "queue": {
-    "APPROVED_BY_POLICY": 10
+    "APPROVED_BY_POLICY": 11
   }
 }
