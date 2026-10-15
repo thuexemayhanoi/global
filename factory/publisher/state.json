@@ -1,11 +1,20 @@
 {
   "version": 1,
   "stage": "PILOT",
-  "paused": false,
-  "pause_reason": null,
+  "paused": true,
+  "pause_reason": "Reverted 2026-10-15T02:20:15.772Z: Live QA failed after deploy; publish commit f257e24956df2320bfc323679bd0d72306cebf1a reverted",
   "clean_runs": 0,
   "published": [],
-  "runs": [],
+  "runs": [
+    {
+      "at": "2026-10-15T02:20:15.772Z",
+      "ids": [
+        "NL-H01",
+        "PT-H01"
+      ],
+      "result": "RECORD-FAILURE: Live QA failed after deploy; publish commit f257e24956df2320bfc323679bd0d72306cebf1a reverted"
+    }
+  ],
   "last_successful_deployment": null,
   "queue": {
     "REVIEW_REQUIRED": 93,
