@@ -2320,14 +2320,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:09:43.572Z"
+    },
+    {
+      "id": "DE-S17",
+      "locale": "de",
+      "url": "/de/guides/nebenkosten-neben-der-miete/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:17:57.024Z",
+      "source_sha256": "cf3bda4896e94c4772f84ced56d7ac3d0f5ee8f16a640a0970c79644232228e0",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S18",
+      "locale": "en",
+      "url": "/en/guides/costs-beyond-the-rental-fee/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:17:57.024Z",
+      "source_sha256": "42751c7824e289bb2ae7e3259d5434231e083ef4eaef98571472b49c37d79172",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T05:14:48.442Z",
-      "ids": [],
-      "result": "STAGE_ADVANCED PILOT→RAMP"
-    },
     {
       "at": "2026-10-15T05:29:54.892Z",
       "ids": [
@@ -3895,6 +3912,14 @@
         "VI-S15"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:17:57.024Z",
+      "ids": [
+        "DE-S17",
+        "EN-S18"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3905,5 +3930,7 @@
     "commit": "6fb4ab1d6a0ce4ac49973c6767237b513dd68e1c",
     "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 10
+  }
 }
