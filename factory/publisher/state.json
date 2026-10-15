@@ -700,6 +700,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:53:48.808Z"
+    },
+    {
+      "id": "DE-H02",
+      "locale": "de",
+      "url": "/de/topics/mietpreise-und-kaution/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:54:06.658Z",
+      "source_sha256": "9d55a5a709a01bbc2e0ccb367b7cdb83a66a840a047e657d710b9675400ea4e1",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-H02",
+      "locale": "ko",
+      "url": "/ko/topics/yogeum-bojeunggeum/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:54:06.658Z",
+      "source_sha256": "5dbe6e575e40cdea16f25bd68374a7920d607ed4a221141edbab1abc76a26539",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1227,6 +1249,14 @@
         "KO-S06"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:54:06.658Z",
+      "ids": [
+        "DE-H02",
+        "KO-H02"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1240,6 +1270,7 @@
   },
   "queue": {
     "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 22
+    "APPROVED_BY_POLICY": 23,
+    "REJECTED": 11
   }
 }

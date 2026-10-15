@@ -12,7 +12,7 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
-| Matrix rows (295) | 60 | 19 | 4 | 212 |
+| Matrix rows (295) | 62 | 19 | 4 | 210 |
 | Topical candidates (56) | 0 | 0 | 0 | 56 |
 | Silos (330) | 31 | 12 | 0 | 140 |
 
@@ -33,23 +33,23 @@ Knowledge graph: 42 entities, 1406 typed edges (hreflang_equivalent 190, about 7
 | ID | URL | Words | H2 | FAQ | Inbound pages | Reasons |
 |---|---|---|---|---|---|---|
 | VI-CHECKLIST | /vi/checklist/ | 407 | 5 | 1 | 15 | Main content 407 words < 800 target for SUPPORT |
-| EN-HOME | /en/ | 431 | 5 | 3 | 82 | Main content 431 words < 600 target for PILLAR |
+| EN-HOME | /en/ | 431 | 5 | 3 | 84 | Main content 431 words < 600 target for PILLAR |
 | EN-CHECKLIST | /en/checklist/ | 274 | 5 | 1 | 14 | Main content 274 words < 800 target for SUPPORT |
-| DE-HOME | /de/ | 416 | 5 | 3 | 82 | Main content 416 words < 600 target for PILLAR |
-| DE-CHECKLIST | /de/checklist/ | 244 | 5 | 1 | 15 | Main content 244 words < 800 target for SUPPORT |
-| FR-HOME | /fr/ | 495 | 5 | 3 | 82 | Main content 495 words < 600 target for PILLAR |
+| DE-HOME | /de/ | 424 | 5 | 3 | 84 | Main content 424 words < 600 target for PILLAR |
+| DE-CHECKLIST | /de/checklist/ | 250 | 5 | 1 | 16 | Main content 250 words < 800 target for SUPPORT |
+| FR-HOME | /fr/ | 495 | 5 | 3 | 84 | Main content 495 words < 600 target for PILLAR |
 | FR-CHECKLIST | /fr/checklist/ | 267 | 5 | 1 | 16 | Main content 267 words < 800 target for SUPPORT |
-| ES-HOME | /es/ | 470 | 5 | 3 | 82 | Main content 470 words < 600 target for PILLAR |
+| ES-HOME | /es/ | 470 | 5 | 3 | 84 | Main content 470 words < 600 target for PILLAR |
 | ES-CHECKLIST | /es/checklist/ | 265 | 5 | 1 | 17 | Main content 265 words < 800 target for SUPPORT |
-| NL-HOME | /nl/ | 434 | 5 | 3 | 82 | Main content 434 words < 600 target for PILLAR |
+| NL-HOME | /nl/ | 434 | 5 | 3 | 84 | Main content 434 words < 600 target for PILLAR |
 | NL-CHECKLIST | /nl/checklist/ | 237 | 5 | 1 | 16 | Main content 237 words < 800 target for SUPPORT |
-| ZH-HOME | /zh/ | 482 | 5 | 3 | 82 | Main content 482 words < 600 target for PILLAR |
+| ZH-HOME | /zh/ | 482 | 5 | 3 | 84 | Main content 482 words < 600 target for PILLAR |
 | ZH-CHECKLIST | /zh/checklist/ | 267 | 5 | 1 | 15 | Main content 267 words < 800 target for SUPPORT |
-| PT-HOME | /pt/ | 444 | 5 | 3 | 82 | Main content 444 words < 600 target for PILLAR |
+| PT-HOME | /pt/ | 444 | 5 | 3 | 84 | Main content 444 words < 600 target for PILLAR |
 | PT-CHECKLIST | /pt/checklist/ | 244 | 5 | 1 | 17 | Main content 244 words < 800 target for SUPPORT |
-| KO-HOME | /ko/ | 353 | 5 | 3 | 82 | Main content 353 words < 600 target for PILLAR |
-| KO-CHECKLIST | /ko/checklist/ | 193 | 5 | 1 | 17 | Main content 193 words < 800 target for SUPPORT |
-| JA-HOME | /ja/ | 511 | 5 | 3 | 82 | Main content 511 words < 600 target for PILLAR |
+| KO-HOME | /ko/ | 353 | 5 | 3 | 84 | Main content 353 words < 600 target for PILLAR |
+| KO-CHECKLIST | /ko/checklist/ | 198 | 5 | 1 | 18 | Main content 198 words < 800 target for SUPPORT |
+| JA-HOME | /ja/ | 511 | 5 | 3 | 84 | Main content 511 words < 600 target for PILLAR |
 | JA-CHECKLIST | /ja/checklist/ | 262 | 5 | 1 | 16 | Main content 262 words < 800 target for SUPPORT |
 
 Targets: Pillar ≥ 600 words, ≥ 3 FAQ; Supporting ≥ 800 words, ≥ 4 H2 (new drafts already need ≥ 1,000 words).
@@ -114,16 +114,16 @@ Every locale checklist also covers the consideration → decision → pickup →
 
 | Locale | Rows | Published | Protected drafts | Planned | Candidates | Published depth OK |
 |---|---|---|---|---|---|---|
-| vi | 29 | 7 | 2 | 20 | 6 | 29% |
-| en | 29 | 6 | 2 | 21 | 16 | 67% |
-| de | 29 | 7 | 2 | 20 | 4 | 71% |
-| fr | 29 | 8 | 2 | 19 | 5 | 75% |
-| es | 29 | 9 | 1 | 19 | 4 | 78% |
-| nl | 29 | 8 | 1 | 20 | 4 | 75% |
-| zh | 29 | 7 | 2 | 20 | 5 | 71% |
-| pt | 29 | 9 | 1 | 19 | 4 | 78% |
-| ko | 29 | 9 | 1 | 19 | 4 | 78% |
-| ja | 29 | 8 | 2 | 19 | 4 | 75% |
+| vi | 29 | 7 | 0 | 22 | 6 | 29% |
+| en | 29 | 6 | 1 | 22 | 16 | 67% |
+| de | 29 | 8 | 1 | 20 | 4 | 75% |
+| fr | 29 | 8 | 0 | 21 | 5 | 75% |
+| es | 29 | 9 | 0 | 20 | 4 | 78% |
+| nl | 29 | 8 | 0 | 21 | 4 | 75% |
+| zh | 29 | 7 | 0 | 22 | 5 | 71% |
+| pt | 29 | 9 | 0 | 20 | 4 | 78% |
+| ko | 29 | 10 | 0 | 19 | 4 | 80% |
+| ja | 29 | 8 | 0 | 21 | 4 | 75% |
 
 Live Writer states (CLAIMED/SUBMITTED) change on every autopilot commit and are not part of this file: run `node scripts/seo/topical-authority.mjs status`.
 
