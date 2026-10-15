@@ -54,6 +54,7 @@ Push sequential JSON batches of 25–50 (or fewer for final partial batch) on `r
 
 ```
 node scripts/topic-factory.mjs status [--json] [--markdown docs/CONTENT-FACTORY-DASHBOARD.md]
+node scripts/topic-factory.mjs validate-batches       # cumulative dry run across all branch batch files
 node scripts/topic-factory.mjs validate-batch --file factory/topic-research/batches/<file>.json
 node scripts/topic-factory.mjs refill                    # dry run
 node scripts/topic-factory.mjs refill --apply --local    # rehearsal on a clean non-main branch
@@ -64,6 +65,6 @@ The dashboard (`docs/CONTENT-FACTORY-DASHBOARD.md`) is regenerated from data by 
 
 ## Honest limits
 
-The factory cannot research by itself. GitHub Actions has no model provider, so new topics only arrive when an AI agent with web access pushes a research batch.
+The factory cannot research by itself. GitHub Actions has no model provider, so new topics only arrive when an AI agent with web access pushes a research batch. `validate-batches` is a cumulative dry run: research files are validated against prior accepted files and the 1,000-per-locale research+Matrix planning cap before any merge, without fabricating topics or writing state.
 
 Keyword evidence stays `NOT_VALIDATED` until real market or SERP data is attached. The factory never infers search volume, rankings or traffic.
