@@ -1336,6 +1336,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T13:35:10.775Z"
+    },
+    {
+      "id": "EN-S05",
+      "locale": "en",
+      "url": "/en/guides/foreign-driving-licence/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:35:29.988Z",
+      "source_sha256": "d51c8d69ba4e7b8094789a433b09fcd535f4e0d180f3730c0badec829b47c92c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ES-S05",
+      "locale": "es",
+      "url": "/es/guides/permiso-extranjero/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:35:29.988Z",
+      "source_sha256": "4ab7169d41c41d5d756e10e70d12855ec932e1a1a76f223205e7fbed824c7540",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2305,6 +2327,14 @@
         "ZH-S02"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T13:35:29.988Z",
+      "ids": [
+        "EN-S05",
+        "ES-S05"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2317,7 +2347,7 @@
     "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 18,
+    "APPROVED_BY_POLICY": 16,
     "WAIT_PARENT": 2,
     "REJECTED": 1
   }

@@ -38,21 +38,21 @@
   },
   "counts": {
     "rows": 331,
-    "published": 136,
-    "idea": 195,
+    "published": 138,
+    "idea": 193,
     "locales": 10,
     "candidates": 30,
     "silos": 330,
     "entities": 42,
     "edges": 1416,
     "actions": {
-      "KEEP": 117,
+      "KEEP": 119,
       "UPGRADE": 19,
-      "CREATE": 225
+      "CREATE": 223
     },
     "silo_actions": {
-      "KEEP": 66,
-      "CREATE": 107,
+      "KEEP": 68,
+      "CREATE": 105,
       "UPGRADE": 10,
       "GAP": 147
     },
@@ -95,7 +95,7 @@
         "words": 209,
         "h2": 2,
         "faq": 0,
-        "inbound_pages": 135,
+        "inbound_pages": 137,
         "inbound_contextual": 23,
         "outbound_contextual": 10,
         "max_content_overlap": 0
@@ -137,7 +137,7 @@
         "words": 657,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 135,
+        "inbound_pages": 137,
         "inbound_contextual": 13,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -725,8 +725,8 @@
         "words": 463,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 135,
-        "inbound_contextual": 12,
+        "inbound_pages": 137,
+        "inbound_contextual": 13,
         "outbound_contextual": 9,
         "max_content_overlap": 0
       },
@@ -767,8 +767,8 @@
         "words": 286,
         "h2": 5,
         "faq": 1,
-        "inbound_pages": 20,
-        "inbound_contextual": 11,
+        "inbound_pages": 21,
+        "inbound_contextual": 12,
         "outbound_contextual": 8,
         "max_content_overlap": 0
       },
@@ -809,7 +809,7 @@
         "words": 1656,
         "h2": 10,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 7,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -859,7 +859,7 @@
         "words": 1800,
         "h2": 10,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 7,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -898,12 +898,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 1585,
-        "h2": 7,
+        "words": 1605,
+        "h2": 8,
         "faq": 1,
-        "inbound_pages": 11,
-        "inbound_contextual": 5,
-        "outbound_contextual": 7,
+        "inbound_pages": 12,
+        "inbound_contextual": 6,
+        "outbound_contextual": 8,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -943,7 +943,7 @@
         "words": 1862,
         "h2": 8,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 7,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -985,7 +985,7 @@
         "words": 1570,
         "h2": 9,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -1027,7 +1027,7 @@
         "words": 1766,
         "h2": 8,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -1069,7 +1069,7 @@
         "words": 1675,
         "h2": 8,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -1111,7 +1111,7 @@
         "words": 1411,
         "h2": 8,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 2,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -1129,20 +1129,20 @@
       "parent_id": "EN-H03",
       "child_ids": [],
       "proposed_url": "/en/guides/foreign-driving-licence/",
-      "published_url": null,
-      "editorial_status": "IDEA",
-      "qa_status": "NOT_RUN",
+      "published_url": "/en/guides/foreign-driving-licence/",
+      "editorial_status": "PUBLISHED",
+      "qa_status": "PUBLISHED_HTML_EXISTS_REQUIRES_CONTENT_REVIEW",
       "source_verification": "NOT_STARTED",
       "serp_evidence": "NOT_VALIDATED",
       "cannibalization_risk": "NOTED_STRUCTURAL_OVERLAP",
       "internal_link_targets_published": ["/en/", "/en/checklist/", "/en/topics/documents-and-contracts/"],
       "writer_lane": "W2",
-      "implementation_priority": "P2",
+      "implementation_priority": "P1",
       "priority_value": 34,
       "level": "SUPPORT",
-      "pipeline_state": "IDEA",
-      "action": "CREATE",
-      "action_reasons": ["Evidence-free gap: no PUBLISHED page owns this intent"],
+      "pipeline_state": "PUBLISHED",
+      "action": "KEEP",
+      "action_reasons": ["Meets depth and linking targets"],
       "silo": "dc-licence",
       "journey_stage": "decision",
       "intent_class": "informational",
@@ -1157,7 +1157,15 @@
         }
       ],
       "overlap_count": 1,
-      "content_metrics": null,
+      "content_metrics": {
+        "words": 1539,
+        "h2": 8,
+        "faq": 1,
+        "inbound_pages": 12,
+        "inbound_contextual": 1,
+        "outbound_contextual": 5,
+        "max_content_overlap": 0
+      },
       "performance": "NOT_CONNECTED"
     },
     {
@@ -1229,7 +1237,7 @@
         "words": 1892,
         "h2": 10,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 2,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -1271,7 +1279,7 @@
         "words": 1852,
         "h2": 9,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 2,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -1313,7 +1321,7 @@
         "words": 432,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 135,
+        "inbound_pages": 137,
         "inbound_contextual": 15,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -1901,7 +1909,7 @@
         "words": 513,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 135,
+        "inbound_pages": 137,
         "inbound_contextual": 13,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -2473,8 +2481,8 @@
         "words": 471,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 135,
-        "inbound_contextual": 12,
+        "inbound_pages": 137,
+        "inbound_contextual": 13,
         "outbound_contextual": 9,
         "max_content_overlap": 0
       },
@@ -2515,8 +2523,8 @@
         "words": 273,
         "h2": 5,
         "faq": 1,
-        "inbound_pages": 20,
-        "inbound_contextual": 11,
+        "inbound_pages": 21,
+        "inbound_contextual": 12,
         "outbound_contextual": 8,
         "max_content_overlap": 0
       },
@@ -2557,7 +2565,7 @@
         "words": 1796,
         "h2": 8,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 7,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -2599,7 +2607,7 @@
         "words": 1709,
         "h2": 11,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 7,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -2638,12 +2646,12 @@
       "overlaps": [],
       "overlap_count": 0,
       "content_metrics": {
-        "words": 1443,
-        "h2": 6,
+        "words": 1463,
+        "h2": 7,
         "faq": 1,
-        "inbound_pages": 11,
-        "inbound_contextual": 5,
-        "outbound_contextual": 7,
+        "inbound_pages": 12,
+        "inbound_contextual": 6,
+        "outbound_contextual": 8,
         "max_content_overlap": 0
       },
       "performance": "NOT_CONNECTED"
@@ -2683,7 +2691,7 @@
         "words": 2055,
         "h2": 8,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 7,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -2725,7 +2733,7 @@
         "words": 1750,
         "h2": 9,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -2767,7 +2775,7 @@
         "words": 1803,
         "h2": 8,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -2809,7 +2817,7 @@
         "words": 1785,
         "h2": 8,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 3,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -2851,7 +2859,7 @@
         "words": 1917,
         "h2": 9,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 2,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -2869,27 +2877,35 @@
       "parent_id": "ES-H03",
       "child_ids": [],
       "proposed_url": "/es/guides/permiso-extranjero/",
-      "published_url": null,
-      "editorial_status": "IDEA",
-      "qa_status": "NOT_RUN",
+      "published_url": "/es/guides/permiso-extranjero/",
+      "editorial_status": "PUBLISHED",
+      "qa_status": "PUBLISHED_HTML_EXISTS_REQUIRES_CONTENT_REVIEW",
       "source_verification": "NOT_STARTED",
       "serp_evidence": "NOT_VALIDATED",
       "cannibalization_risk": "NONE_DETECTED_STRUCTURAL",
       "internal_link_targets_published": ["/es/", "/es/checklist/", "/es/topics/documentos-y-contrato/"],
       "writer_lane": "W2",
-      "implementation_priority": "P2",
+      "implementation_priority": "P1",
       "priority_value": 34,
       "level": "SUPPORT",
-      "pipeline_state": "IDEA",
-      "action": "CREATE",
-      "action_reasons": ["Evidence-free gap: no PUBLISHED page owns this intent"],
+      "pipeline_state": "PUBLISHED",
+      "action": "KEEP",
+      "action_reasons": ["Meets depth and linking targets"],
       "silo": "dc-licence",
       "journey_stage": "decision",
       "intent_class": "informational",
       "entities": ["E-DRIVING-LICENCE-A1-A", "E-INTERNATIONAL-DRIVING-PERMIT", "E-VIENNA-CONVENTION-1968"],
       "overlaps": [],
       "overlap_count": 0,
-      "content_metrics": null,
+      "content_metrics": {
+        "words": 1813,
+        "h2": 7,
+        "faq": 1,
+        "inbound_pages": 12,
+        "inbound_contextual": 1,
+        "outbound_contextual": 5,
+        "max_content_overlap": 0
+      },
       "performance": "NOT_CONNECTED"
     },
     {
@@ -2961,7 +2977,7 @@
         "words": 1993,
         "h2": 10,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 2,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -3003,7 +3019,7 @@
         "words": 2015,
         "h2": 9,
         "faq": 1,
-        "inbound_pages": 11,
+        "inbound_pages": 12,
         "inbound_contextual": 2,
         "outbound_contextual": 6,
         "max_content_overlap": 0
@@ -3045,7 +3061,7 @@
         "words": 445,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 135,
+        "inbound_pages": 137,
         "inbound_contextual": 15,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -3633,7 +3649,7 @@
         "words": 504,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 135,
+        "inbound_pages": 137,
         "inbound_contextual": 11,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -4197,7 +4213,7 @@
         "words": 445,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 135,
+        "inbound_pages": 137,
         "inbound_contextual": 12,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -4769,7 +4785,7 @@
         "words": 354,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 135,
+        "inbound_pages": 137,
         "inbound_contextual": 15,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -5357,7 +5373,7 @@
         "words": 519,
         "h2": 5,
         "faq": 3,
-        "inbound_pages": 135,
+        "inbound_pages": 137,
         "inbound_contextual": 13,
         "outbound_contextual": 9,
         "max_content_overlap": 0
@@ -5945,7 +5961,7 @@
         "words": 157,
         "h2": 4,
         "faq": 0,
-        "inbound_pages": 135,
+        "inbound_pages": 137,
         "inbound_contextual": 0,
         "outbound_contextual": 1,
         "max_content_overlap": 0
@@ -5987,7 +6003,7 @@
         "words": 118,
         "h2": 3,
         "faq": 0,
-        "inbound_pages": 135,
+        "inbound_pages": 137,
         "inbound_contextual": 0,
         "outbound_contextual": 1,
         "max_content_overlap": 0
@@ -6029,8 +6045,8 @@
         "words": 185,
         "h2": 3,
         "faq": 0,
-        "inbound_pages": 135,
-        "inbound_contextual": 122,
+        "inbound_pages": 137,
+        "inbound_contextual": 124,
         "outbound_contextual": 2,
         "max_content_overlap": 0
       },
@@ -6071,8 +6087,8 @@
         "words": 107,
         "h2": 3,
         "faq": 0,
-        "inbound_pages": 135,
-        "inbound_contextual": 122,
+        "inbound_pages": 137,
+        "inbound_contextual": 124,
         "outbound_contextual": 1,
         "max_content_overlap": 0
       },
@@ -13338,12 +13354,12 @@
       "reserved_by": null,
       "url": null,
       "members": {
-        "published": [],
+        "published": ["EN-S05"],
         "protected_drafts": [],
-        "planned": ["EN-S05", "EN-S09", "EN-S10", "EN-S31"],
+        "planned": ["EN-S09", "EN-S10", "EN-S31"],
         "candidates": []
       },
-      "action": "CREATE"
+      "action": "KEEP"
     },
     {
       "id": "EN-dc-contract",
@@ -15417,12 +15433,12 @@
       "reserved_by": null,
       "url": null,
       "members": {
-        "published": [],
+        "published": ["ES-S05"],
         "protected_drafts": [],
-        "planned": ["ES-S05", "ES-S09"],
+        "planned": ["ES-S09"],
         "candidates": []
       },
-      "action": "CREATE"
+      "action": "KEEP"
     },
     {
       "id": "ES-dc-contract",
