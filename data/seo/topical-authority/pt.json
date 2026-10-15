@@ -1,0 +1,598 @@
+{
+  "version": 1,
+  "locale": "pt",
+  "updated_on": "2026-10-14",
+  "market_notes": "Portuguese serves Portugal and Brazil. Live pages already mix European forms (Vietname, carta de condução, caução) with Brazilian 'aluguel', so titles stay in European Portuguese while queries carry Brazilian variants (Vietnã, CNH, PID, embreagem). Brazilian travellers ask whether a CNH category A plus a PID is enough; Portuguese advice explicitly warns against leaving a passport as deposit.",
+  "stop_tokens": [
+    "aluguel",
+    "aluguer",
+    "alugar",
+    "alugada",
+    "moto",
+    "motos",
+    "mota",
+    "scooter",
+    "hanói",
+    "hanoi",
+    "vietnam",
+    "vietname",
+    "vietnã",
+    "em",
+    "de",
+    "do",
+    "da",
+    "no",
+    "na",
+    "um",
+    "uma",
+    "e",
+    "ou",
+    "para",
+    "com",
+    "o",
+    "a",
+    "os",
+    "as",
+    "que",
+    "como",
+    "ao",
+    "qual",
+    "meu"
+  ],
+  "reserved_terms": [
+    "checklist",
+    "levantamento",
+    "entrega da moto"
+  ],
+  "forbidden_claim_terms": [
+    "mais barato",
+    "barato",
+    "melhor",
+    "sem caução",
+    "garantido",
+    "grátis",
+    "24 horas"
+  ],
+  "cluster_labels": {
+    "vc-transmission": "Manual, semiautomática, automática",
+    "vc-power": "Cilindrada e elétricas",
+    "vc-models": "Modelos comuns",
+    "vc-trip-fit": "Conforme a viagem",
+    "rc-period": "Duração do aluguer",
+    "rc-deposit": "Caução e documentos",
+    "rc-extras": "Custos adicionais",
+    "dc-licence": "Carta de condução",
+    "dc-contract": "Contrato e responsabilidade",
+    "dc-insurance": "Seguro",
+    "dc-papers": "Documentos na estrada",
+    "ss-pickup": "Levantamento e devolução",
+    "ss-weather": "Clima",
+    "ss-incidents": "Incidentes na estrada",
+    "ss-gear": "Capacete e equipamento",
+    "ss-city": "Conduzir em Hanói",
+    "rt-northern-loops": "Rotas do norte",
+    "rt-day-trips": "Passeios de um dia"
+  },
+  "existing": {
+    "PT-CHECKLIST": "ss-pickup",
+    "PT-S01": "vc-transmission",
+    "PT-S02": "vc-power",
+    "PT-S03": "rc-period",
+    "PT-S04": "rc-deposit",
+    "PT-S05": "dc-licence",
+    "PT-S06": "dc-contract",
+    "PT-S07": "ss-weather",
+    "PT-S08": "ss-incidents"
+  },
+  "proposals": [
+    {
+      "candidate_id": "TA-PT-0001",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-transmission",
+      "slug": "conduzir-semiautomatica",
+      "primary_query": "como pilotar moto semiautomática",
+      "secondary_queries": [
+        "moto semiautomática sem embreagem",
+        "honda wave como trocar marcha"
+      ],
+      "working_title": "Conduzir uma moto semiautomática: mudanças sem embraiagem",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 51,
+      "intent_rationale": "Visitors who have only ridden automatic scooters search for how to operate a clutchless semi-automatic before choosing one; how-to intent, distinct from the manual-versus-automatic choice guide.",
+      "references": [
+        "pt-portal-comunidades",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-PT-0002",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-power",
+      "slug": "cilindrada-110-125-150",
+      "primary_query": "qual cilindrada moto vietnã montanha",
+      "secondary_queries": [
+        "moto 125 cc norte do vietname",
+        "110 cc chega para ha giang"
+      ],
+      "working_title": "110, 125 ou 150 cc: que cilindrada para cidade e montanha?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 52,
+      "intent_rationale": "Riders planning mountain routes compare engine capacity and ask what their licence class permits; complements the 50cc/electric guide, which covers the low-power end.",
+      "references": [
+        "vi-law-36-2024",
+        "pt-portal-comunidades"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-PT-0003",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "honda-wave-vision-air-blade",
+      "primary_query": "honda wave ou honda vision alugar",
+      "secondary_queries": [
+        "honda air blade vietnã",
+        "que scooter alugar no vietnã iniciante"
+      ],
+      "working_title": "Honda Wave, Vision e Air Blade: tipos de moto para alugar explicados",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Model names are how many renters actually search. Explaining the widely sold Honda families as vehicle types, with no availability claim, captures comparison intent the generic Hub cannot.",
+      "references": [
+        "honda-vn-motorbike-range",
+        "pt-portal-comunidades"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "matrix_id": "PT-S18"
+    },
+    {
+      "candidate_id": "TA-PT-0004",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-trip-fit",
+      "slug": "a-dois-com-bagagem",
+      "primary_query": "moto para duas pessoas com bagagem vietnã",
+      "secondary_queries": [
+        "garupa de moto vietnã",
+        "mochila na scooter"
+      ],
+      "working_title": "A dois e com bagagem: escolher o veículo certo",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 57,
+      "intent_rationale": "Couples and backpackers ask whether one bike can carry two people and luggage safely; a decision guide about load, seating and handling that no existing row answers.",
+      "references": [
+        "pt-portal-comunidades",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-PT-0005",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-period",
+      "slug": "aluguer-longa-duracao",
+      "primary_query": "aluguel de moto longo prazo hanói",
+      "secondary_queries": [
+        "alugar moto vários meses vietname",
+        "aluguel mensal scooter expatriado hanói"
+      ],
+      "working_title": "Aluguer de longa duração em Hanói para expatriados e estudantes",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 54,
+      "intent_rationale": "Residents, students and long-stay workers rent for months and need maintenance, paperwork and contract answers that a day/week/month price comparison does not cover.",
+      "references": [
+        "pt-portal-comunidades",
+        "vi-law-36-2024"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-PT-0006",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-deposit",
+      "slug": "passaporte-como-caucao",
+      "primary_query": "deixar passaporte caução moto vietnã",
+      "secondary_queries": [
+        "alugar moto sem deixar passaporte",
+        "locadora fica com passaporte vietnã"
+      ],
+      "working_title": "Deixar o passaporte como caução: riscos e alternativas",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 48,
+      "intent_rationale": "Leaving an identity document as security is a recurring traveller worry that official travel advice addresses; covers risks and questions to ask, never a provider's policy. The Portal das Comunidades explicitly warns against leaving a passport as deposit when renting a vehicle.",
+      "references": [
+        "pt-portal-comunidades",
+        "de-auswaertiges-amt"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "matrix_id": "PT-S16"
+    },
+    {
+      "candidate_id": "TA-PT-0007",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-extras",
+      "slug": "custos-adicionais",
+      "primary_query": "custos escondidos aluguel moto vietnã",
+      "secondary_queries": [
+        "estacionamento moto hanói preço",
+        "taxa de danos moto alugada"
+      ],
+      "working_title": "Além do preço do aluguer: combustível, estacionamento, entrega e danos",
+      "search_intent": "commercial_investigation",
+      "word_target": 1500,
+      "priority": 49,
+      "intent_rationale": "People comparing quotes want to know which charges sit outside the rental fee; scoped to cost categories and questions to ask, never to amounts.",
+      "references": [
+        "pt-portal-comunidades",
+        "en-fcdo-safety"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "matrix_id": "PT-S17"
+    },
+    {
+      "candidate_id": "TA-PT-0008",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-extras",
+      "slug": "abastecer-ron92-ron95",
+      "primary_query": "abastecer moto no vietnã ron 95",
+      "secondary_queries": [
+        "posto de gasolina vietnã como pagar",
+        "e5 ron 92 moto vietname"
+      ],
+      "working_title": "Abastecer no Vietname: RON 92 (E5) ou RON 95?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 55,
+      "intent_rationale": "First-time riders ask which petrol grade to buy and how stations work; practical, low-risk content that supports cost and breakdown-prevention questions.",
+      "references": [
+        "petrolimex-home",
+        "pt-portal-comunidades"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-PT-0009",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-licence",
+      "slug": "pid-carta-internacional",
+      "primary_query": "permissão internacional para dirigir vietnã moto",
+      "secondary_queries": [
+        "carta de condução internacional vietname",
+        "cnh categoria a vietnã"
+      ],
+      "working_title": "PID e carta internacional: conduzir moto no Vietname",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 40,
+      "intent_rationale": "Licence validity is the highest-stakes rental question. This guide is scoped to the international permit itself, separate from the home-licence guide, and must follow current official sources. Brazilian readers ask about the PID with a CNH category A; Portuguese readers about the carta de condução internacional.",
+      "references": [
+        "pt-portal-comunidades",
+        "untc-1968-vienna-road-traffic",
+        "vi-law-36-2024"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "matrix_id": "PT-S09"
+    },
+    {
+      "candidate_id": "TA-PT-0010",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-contract",
+      "slug": "responsabilidade-danos-roubo",
+      "primary_query": "moto alugada roubada vietnã quem paga",
+      "secondary_queries": [
+        "disputa danos moto locadora hanói",
+        "cláusula responsabilidade contrato moto"
+      ],
+      "working_title": "Danos e roubo: a responsabilidade no contrato de aluguer",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 56,
+      "intent_rationale": "Disputes over scratches, damage and theft are a major source of rental conflict; explains clauses to read and evidence to keep, without legal promises.",
+      "references": [
+        "pt-portal-comunidades",
+        "de-auswaertiges-amt"
+      ],
+      "research_gap": "Civil-law liability sources are not attached; drafting must cite the governing civil-code provisions or stay at questions-to-ask level.",
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-PT-0011",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-insurance",
+      "slug": "seguro-viagem-moto",
+      "primary_query": "seguro viagem moto vietnã",
+      "secondary_queries": [
+        "seguro obrigatório moto vietname",
+        "seguro viagem sem carta de moto"
+      ],
+      "working_title": "O seguro de viagem cobre acidentes de moto no Vietname?",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 42,
+      "intent_rationale": "Riders want to know what compulsory liability insurance covers and whether travel insurance pays after a crash; needs current decree references (67/2023 as amended by 220/2026) and policy-specific caveats.",
+      "references": [
+        "pt-portal-comunidades",
+        "vi-decree-67-2023",
+        "vi-decree-220-2026-amends-67"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "matrix_id": "PT-S10"
+    },
+    {
+      "candidate_id": "TA-PT-0012",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-papers",
+      "slug": "documentos-cartao-registo",
+      "primary_query": "documento da moto vietnã blue card",
+      "secondary_queries": [
+        "que documentos levar de moto no vietnã",
+        "papéis moto alugada vietname"
+      ],
+      "working_title": "Que documentos levar ao conduzir: o cartão de registo e mais",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 45,
+      "intent_rationale": "Riders ask which papers to carry if stopped, notably the vehicle registration card ('blue card'); distinct from the rental-documents Hub, which covers renting rather than riding.",
+      "references": [
+        "vi-law-36-2024",
+        "pt-portal-comunidades"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "matrix_id": "PT-S13"
+    },
+    {
+      "candidate_id": "TA-PT-0013",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-gear",
+      "slug": "capacete-normas-tamanho",
+      "primary_query": "capacete obrigatório vietnã moto",
+      "secondary_queries": [
+        "levar meu capacete para o vietnã",
+        "comprar capacete em hanói"
+      ],
+      "working_title": "Capacete no Vietname: normas, tamanho e levar o seu",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 53,
+      "intent_rationale": "Helmets are mandatory and the single biggest injury-prevention factor; readers ask about standards, fit and whether to bring their own.",
+      "references": [
+        "vi-law-36-2024",
+        "who-road-traffic-injuries",
+        "pt-portal-comunidades"
+      ],
+      "status": "PROPOSED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-PT-0014",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "transito-de-hanoi",
+      "primary_query": "pilotar moto no trânsito de hanói dicas",
+      "secondary_queries": [
+        "regras de trânsito vietnã moto",
+        "rotundas hanói de moto"
+      ],
+      "working_title": "Conduzir no trânsito de Hanói: como funciona o fluxo",
+      "search_intent": "informational",
+      "word_target": 1700,
+      "priority": 43,
+      "intent_rationale": "First-time riders need to understand Hanoi's traffic flow and core rules before riding; distinct from the rain and breakdown guides and from the general safety Hub.",
+      "references": [
+        "vi-law-36-2024",
+        "who-road-traffic-injuries",
+        "pt-portal-comunidades"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "matrix_id": "PT-S11"
+    },
+    {
+      "candidate_id": "TA-PT-0015",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "zona-baixas-emissoes-anel-1",
+      "primary_query": "hanói proibição motos gasolina anel 1",
+      "secondary_queries": [
+        "hanói proibição motos 2026",
+        "alugar moto elétrica hanói"
+      ],
+      "working_title": "Zona de baixas emissões no Anel 1 de Hanói: o que muda para quem aluga",
+      "search_intent": "informational",
+      "word_target": 1600,
+      "priority": 44,
+      "intent_rationale": "Hanoi announced a phased low-emission zone for Ring Road 1 starting with a 2026 pilot; renters need a sourced, date-checked explainer that does not overstate what is restricted.",
+      "references": [
+        "vi-hanoi-lez-ring-road-1",
+        "vi-directive-20-ct-ttg-2025"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "matrix_id": "PT-S12"
+    },
+    {
+      "candidate_id": "TA-PT-0016",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "fiscalizacao-policial",
+      "primary_query": "polícia vietnã fiscalização moto turistas",
+      "secondary_queries": [
+        "multa moto vietnã turista",
+        "polícia de trânsito vietnã habilitação"
+      ],
+      "working_title": "Fiscalização policial com moto alugada: o que esperar",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 46,
+      "intent_rationale": "Travellers worry about traffic police checks; covers documents to carry and the expected procedure, with no invented fine amounts.",
+      "references": [
+        "vi-law-36-2024",
+        "pt-portal-comunidades"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "matrix_id": "PT-S14"
+    },
+    {
+      "candidate_id": "TA-PT-0017",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "depois-de-um-acidente",
+      "primary_query": "acidente de moto no vietnã o que fazer",
+      "secondary_queries": [
+        "batida moto alugada hanói",
+        "acidente moto turista vietname"
+      ],
+      "working_title": "Depois de um acidente de moto no Vietname: primeiros passos",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 47,
+      "intent_rationale": "After a collision readers need immediate first steps and emergency contacts; distinct from the breakdown guide, which covers mechanical failure.",
+      "references": [
+        "pt-portal-comunidades",
+        "who-road-traffic-injuries"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "matrix_id": "PT-S15"
+    },
+    {
+      "candidate_id": "TA-PT-0018",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-northern-loops",
+      "slug": "ha-giang-loop-desde-hanoi",
+      "primary_query": "ha giang loop aluguel moto hanói",
+      "secondary_queries": [
+        "ha giang loop por conta própria",
+        "hanói a ha giang de moto"
+      ],
+      "working_title": "O Ha Giang Loop com uma moto alugada em Hanói",
+      "search_intent": "commercial_investigation",
+      "word_target": 2200,
+      "priority": 80,
+      "intent_rationale": "Many renters plan the Ha Giang Loop from Hanoi. Sits under the proposed routes Hub and stays ARCHITECTURE_BLOCKED until the owner approves that Hub.",
+      "references": [
+        "pt-portal-comunidades",
+        "who-road-traffic-injuries"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    },
+    {
+      "candidate_id": "TA-PT-0019",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-day-trips",
+      "slug": "hanoi-ninh-binh-de-moto",
+      "primary_query": "hanói ninh binh de moto",
+      "secondary_queries": [
+        "tam coc de moto",
+        "passeio ninh binh moto um dia"
+      ],
+      "working_title": "De Hanói a Ninh Binh de moto: planear a excursão",
+      "search_intent": "informational",
+      "word_target": 1800,
+      "priority": 81,
+      "intent_rationale": "Day rides to Ninh Binh are a common first trip outside the city. Part of the proposed routes Hub and blocked until approval.",
+      "references": [
+        "pt-portal-comunidades",
+        "vi-nchmf-home"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+name: Topic Research QA
+run-name: "Topic research QA ${{ github.ref_name }}"
+on:
+  push:
+    branches: ['research/**']
+    paths: ['factory/topic-research/**']
+  pull_request:
+    branches: [main]
+    paths: ['factory/topic-research/**']
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate research batches (schema, evidence, duplicate layers, topical gates; read-only)
+        run: node scripts/topic-factory.mjs validate-batches

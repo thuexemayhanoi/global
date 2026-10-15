@@ -1,0 +1,78 @@
+name: One-time Global Publisher Recovery 2026-10-15
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/one-time-global-publisher-recovery-20261015.yml'
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: global-one-time-recovery-20261015
+  cancel-in-progress: false
+jobs:
+  recover:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify this exact pause and source fix
+        run: |
+          set -euo pipefail
+          node - <<'NODE'
+          const fs=require('fs');
+          const state=JSON.parse(fs.readFileSync('factory/publisher/state.json','utf8'));
+          const source=fs.readFileSync('scripts/seo/fact-guard-core.mjs','utf8');
+          if(!state.paused || !state.pause_reason?.includes('ko/topics/chajong-seontaek/index.html') ||
+             !state.pause_reason.includes('UNSOURCED_AMOUNT') ||
+             !source.includes('원(?=$|')) {
+            console.error('RECOVERY_REFUSED: current pause does not match fixed Korean won false positive');
+            process.exit(1);
+          }
+          NODE
+          node --test tests/fact-guard.test.mjs
+          node scripts/build.mjs --check
+          node scripts/seo/fact-guard.mjs
+      - name: Verify live production before any resume
+        run: node scripts/seo/post-publish-qa.mjs --confirm-live
+      - name: Dispatch explicitly confirmed Global Auto Publisher resume
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh workflow run auto-publisher.yml --ref main \
+            -f action=resume -f confirmed=true \
+            -f reason='Owner-authorized recovery: Korean QH15 won false positive fixed in PR 42, QA and live HTTP checks passed'
+          echo 'RESUME_DISPATCH_SENT' >> "$GITHUB_STEP_SUMMARY"
+      - name: Confirm publisher was actually resumed on main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          success=false
+          for attempt in $(seq 1 60); do
+            gh api "repos/${GITHUB_REPOSITORY}/contents/factory/publisher/state.json?ref=main" --jq '.content' | tr -d '\n' | base64 --decode > "$RUNNER_TEMP/publisher-state.json"
+            if node -e 'const s=require(process.argv[1]);process.exit(!s.paused ? 0 : 1)' "$RUNNER_TEMP/publisher-state.json"; then
+              success=true
+              break
+            fi
+            sleep 5
+          done
+          if [ "$success" != true ]; then
+            echo 'RECOVERY_REFUSED: confirmed resume did not clear PAUSED' >&2
+            exit 1
+          fi
+          echo 'RESUME_CONFIRMED_ON_MAIN' >> "$GITHUB_STEP_SUMMARY"
+      - name: Request next 2-article batch under existing QA gates
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh workflow run auto-publisher.yml --ref main -f action=publish -f max=2
+          echo 'PUBLISH_2_DISPATCH_SENT — check downstream build, Pages and Live QA separately' >> "$GITHUB_STEP_SUMMARY"

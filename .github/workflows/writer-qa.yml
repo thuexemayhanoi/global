@@ -1,0 +1,96 @@
+name: External Writer Draft QA (read-only)
+on:
+  push:
+    branches: ['writer/w1-*', 'writer/w2-*', 'writer/w3-*']
+    paths:
+      - 'factory/external-writers/inbox/**'
+      - 'factory/external-writers/requests/**'
+      - 'factory/topic-refill/proposals/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'factory/external-writers/**'
+      - 'factory/topic-refill/proposals/**'
+      - 'scripts/writer-refill-core.mjs'
+      - 'scripts/writer-refill.mjs'
+      - 'tests/writer-refill.test.mjs'
+      - 'scripts/writer-lanes.mjs'
+      - 'scripts/articles.mjs'
+      - 'scripts/seo/fact-guard-core.mjs'
+      - 'data/business/**'
+      - 'scripts/continuous-writer.mjs'
+      - 'scripts/writer-pool.mjs'
+      - 'scripts/writer-pool-core.mjs'
+      - 'scripts/writer-request.mjs'
+      - 'scripts/writer-request-core.mjs'
+      - 'scripts/writer-pool-auto.mjs'
+      - 'scripts/writer-pool-auto-core.mjs'
+      - 'scripts/writer-slots-core.mjs'
+      - 'scripts/repair-queue-core.mjs'
+      - 'scripts/writer-repair.mjs'
+      - 'tests/repair-queue.test.mjs'
+      - 'tests/writer-qa-lock.test.mjs'
+      - 'tests/writer-slots.test.mjs'
+      - 'tests/workflow-scenarios.test.mjs'
+      - 'tests/writer-pool-auto.test.mjs'
+      - '.github/workflows/writer-pool-auto.yml'
+      - 'tests/writer-pool.test.mjs'
+      - '.github/workflows/writer-pool.yml'
+      - 'tests/continuous-writer.test.mjs'
+      - 'tests/external-writers.test.mjs'
+      - '.github/workflows/writer-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: global-writer-qa-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Deterministic assignment and refusal-gate tests
+        run: node --test tests/external-writers.test.mjs
+      - name: Validate uninterrupted session loop planner, slots and repair queue
+        run: node --test tests/continuous-writer.test.mjs tests/writer-pool.test.mjs tests/writer-pool-auto.test.mjs tests/writer-refill.test.mjs tests/writer-slots.test.mjs tests/repair-queue.test.mjs tests/writer-qa-lock.test.mjs
+      # New and unsubmitted drafts get full QA (fix them in place); SUBMITTED drafts are
+      # locked evidence checked only for byte changes; revisions need a SUBMITTED draft.
+      - name: Validate all inbox drafts, no article publishing
+        run: node scripts/writer-lanes.mjs verify-all
+      - name: Refuse writer PR changes outside its own inbox
+        if: ${{ (github.event_name == 'pull_request' && startsWith(github.head_ref, 'writer/')) || github.event_name == 'push' }}
+        env:
+          WRITER_BRANCH: ${{ github.head_ref || github.ref_name }}
+        run: |
+          set -euo pipefail
+          case "$WRITER_BRANCH" in
+            writer/w1-*) lane=W1 ;;
+            writer/w2-*) lane=W2 ;;
+            writer/w3-*) lane=W3 ;;
+            *) echo "Writer branch name must be writer/w1-*, writer/w2-* or writer/w3-*"; exit 1 ;;
+          esac
+          # Always compare against the current main merge-base. Writer branches
+          # MUST fetch/merge main between batches to receive centralized claims.
+          # Diffing push before..after would mistake legitimate upstream main
+          # merges for forbidden Writer changes.
+          git fetch --no-tags origin main
+          changed=$(git diff --name-only origin/main...HEAD)
+          test -n "$changed" || { echo "Writer PR contains no changed files"; exit 1; }
+          while IFS= read -r file; do
+            case "$file" in
+              factory/external-writers/inbox/"$lane"/*.json) ;;
+              factory/external-writers/requests/"$lane"/*.json) ;;
+              factory/topic-refill/proposals/"$lane"/*.json) ;;
+              *) echo "FORBIDDEN WRITER PATH: $file"; exit 1 ;;
+            esac
+          done <<< "$changed"
+          node scripts/writer-request.mjs validate --writer "$lane" --branch "$WRITER_BRANCH"
+          node scripts/writer-refill.mjs validate --writer "$lane" --branch "$WRITER_BRANCH"
+          echo "Scoped writer PR: $lane"

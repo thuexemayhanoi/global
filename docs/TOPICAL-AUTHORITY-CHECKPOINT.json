@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "repository": "thuexemayhanoi/global",
+  "branch": "claude/topical-authority-seo-expansion-wi7nh1",
+  "baselineMain": "84257e0ed9a6c5c19d1d3f93e1e75be03a9b79fc",
+  "updatedAt": "2026-10-14",
+  "productionMergeAuthorized": "technical changes only, per owner brief 2026-10-14",
+  "livePublishedUrls": 25,
+  "matrixRows": 195,
+  "ideaRows": 170,
+  "topicalCandidates": {
+    "proposed": 126,
+    "architectureBlocked": 20,
+    "promoted": 50
+  },
+  "verifiedReferences": 22,
+  "phases": [
+    {
+      "batch": "TA-01",
+      "scope": "baseline audit of repo, PRs, Actions, Writer ledger and live sitemap/en pillar",
+      "status": "DONE",
+      "evidence": "docs/TOPICAL-AUTHORITY-BASELINE.md"
+    },
+    {
+      "batch": "TA-02",
+      "scope": "SEO protection guard: frozen URL registry, fingerprint, hreflang reciprocity, leak and robots/CNAME checks",
+      "status": "DONE_LOCAL_QA",
+      "evidence": "scripts/seo/seo-guard*.mjs, data/seo/url-freeze.json, tests/seo-guard.test.mjs"
+    },
+    {
+      "batch": "TA-03",
+      "scope": "language-neutral architecture + 10 native locale topical maps + verified references",
+      "status": "DONE_LOCAL_QA",
+      "evidence": "data/seo/topical-authority/, gates T1-T10 pass"
+    },
+    {
+      "batch": "TA-04",
+      "scope": "engine CLI: status, validate, links, backlog, owner-gated promotion; refill/engine/CI integration; growth-safe navigation and Writer tests",
+      "status": "DONE_LOCAL_QA",
+      "evidence": "scripts/seo/topical-authority*.mjs, tests/topical-authority.test.mjs, promotion rehearsal in a throwaway copy"
+    },
+    {
+      "batch": "TA-05",
+      "scope": "real per-market SERP/volume validation",
+      "status": "BLOCKED",
+      "blocker": "no Search Console for global.rentbikehanoi.com connected; owner decision on keyword-tool credits"
+    },
+    {
+      "batch": "TA-06",
+      "scope": "first owner promotion manifest",
+      "status": "DONE",
+      "evidence": "approvals/topical-20261014.json (owner OK in session chat): 50 candidates, 5 per locale, promoted as IDEA rows XX-S09..XX-S13"
+    },
+    {
+      "batch": "TA-07",
+      "scope": "routes-trips fifth Hub architecture decision",
+      "status": "AWAITING_OWNER"
+    },
+    {
+      "batch": "TA-08",
+      "scope": "root hreflang cluster, Pillar BreadcrumbList + Hanoi entity, checklist breadcrumb level, live fingerprint drift QA",
+      "status": "DONE",
+      "evidence": "PR #28; live post-publish QA run 38579335957 passed (0 issues, 25 URLs)"
+    },
+    {
+      "batch": "TA-09",
+      "scope": "business reference + fact guard",
+      "status": "DONE",
+      "evidence": "PR #25"
+    },
+    {
+      "batch": "TA-10",
+      "scope": "site matrix, knowledge graph, pre-claim duplicate gate",
+      "status": "DONE",
+      "evidence": "PR #26"
+    },
+    {
+      "batch": "TA-11",
+      "scope": "link integrity, content-loss, publisher freeze, scale to 10k",
+      "status": "DONE",
+      "evidence": "PR #27"
+    },
+    {
+      "batch": "TA-12",
+      "scope": "editorial UPGRADE of 20 live pages (depth, citations)",
+      "status": "AWAITING_OWNER"
+    },
+    {
+      "batch": "TA-13",
+      "scope": "scale hot paths: per-build Matrix indexes (navigation, premium, articles), fact-guard keyword folding, native-script CJK benchmark text, url-freeze size alarm",
+      "status": "DONE",
+      "evidence": "PR #29; docs/PERFORMANCE-LIMITS.md before/after at 10,000 articles; byte-identical output"
+    }
+  ],
+  "resume": "Fetch main; run node scripts/build.mjs --check, node scripts/seo/seo-guard.mjs, node scripts/seo/fact-guard.mjs, node scripts/seo/content-graph.mjs --check, node scripts/seo/topical-authority.mjs validate and node --test tests/*.test.mjs. Owner decisions are listed at the end of docs/GAP-MATRIX.md. Never promote, publish or change NAP without the owner's manifest/approval.",
+  "mergedPRs": [
+    {
+      "pr": 24,
+      "sha": "4b8b4ae22d1e8d75f973d01314cde8aa552ccd33",
+      "scope": "SEO guard + topical map"
+    },
+    {
+      "pr": 25,
+      "sha": "a9ac63b6ae4ed0d81e395f18400df2141819cf07",
+      "scope": "business reference + fact guard"
+    },
+    {
+      "pr": 26,
+      "sha": "a04f458d9b43a2a0d0bc22e6d7f6d5b295509387",
+      "scope": "site matrix, knowledge graph, duplicate gate, growth-safe tests"
+    },
+    {
+      "pr": 27,
+      "sha": "9a6379fa4090315c8f9dd0f9a42221fe6f2eee37",
+      "scope": "link integrity, content protection, publisher freeze, scale"
+    },
+    {
+      "pr": 28,
+      "sha": "baf0ae72dfbd280d5a78b661efbefa39c8bc3274",
+      "scope": "root hreflang cluster, Pillar breadcrumbs + Hanoi entity, live drift QA"
+    }
+  ],
+  "gapMatrix": "docs/GAP-MATRIX.md",
+  "productionQA": {
+    "deployedCommit": "baf0ae72dfbd280d5a78b661efbefa39c8bc3274",
+    "pagesRun": 38579133780,
+    "postPublishQaRun": 38579335957,
+    "passed": true,
+    "issues": 0,
+    "checks": 40,
+    "checkedOn": "2026-10-14"
+  }
+}
