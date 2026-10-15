@@ -1564,6 +1564,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T16:53:42.734Z"
+    },
+    {
+      "id": "DE-S12",
+      "locale": "de",
+      "url": "/de/guides/niedrigemissionszone-ring-1/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:00:07.698Z",
+      "source_sha256": "fe25d9758518eff6279c15ca1cc890833fafa14886a0218c7cfd985cacb0a0a7",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S13",
+      "locale": "en",
+      "url": "/en/guides/ring-road-1-low-emission-zone/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:00:07.698Z",
+      "source_sha256": "dcd55f407dd3c796ba6b4247b5092b10ca99bf64794e95edaefeaf5bf05f9c7b",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2691,6 +2713,14 @@
         "ZH-S08"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:00:07.698Z",
+      "ids": [
+        "DE-S12",
+        "EN-S13"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2703,6 +2733,6 @@
     "live_seconds": 223
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 8
   }
 }
