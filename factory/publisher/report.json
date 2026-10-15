@@ -1,24 +1,13 @@
 {
   "version": 2,
-  "ledger_revision": 58,
+  "ledger_revision": 59,
   "stage": "RAMP",
   "counts": {
-    "APPROVED_BY_POLICY": 1,
-    "REJECTED": 94,
-    "WAIT_PARENT": 5
+    "REJECTED": 84,
+    "WAIT_PARENT": 14,
+    "APPROVED_BY_POLICY": 1
   },
   "items": [
-    {
-      "id": "DE-H03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "ff9b5f1d659294a5242d4e0a7101a0ca9a7447937bbfbcf8be94ea0667663b78",
-      "source_commit": "04574e632c8117a0838adbc8b2c6e3cc90030d1b",
-      "details": []
-    },
     {
       "id": "FR-H03",
       "decision": "REJECTED",
@@ -858,7 +847,6 @@
       "id": "DE-S05",
       "decision": "REJECTED",
       "failed": [
-        "G2_PARENT_PUBLISHED",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -867,7 +855,6 @@
       "source_sha256": "c7b85baafc4ee03d8025b45bea77211dd3fe76f13636175d7f715ced7e81775e",
       "source_commit": "074204cf19fd4809ba767db6ef0a5624ef3c1c77",
       "details": [
-        "G2_PARENT_PUBLISHED: DE-H03 is IDEA",
         "G3_OFFICIAL_EVIDENCE: 4 hard legal statement(s) lack an inline official citation: Die Zuordnung ergibt sich aus den Hubraumgrenzen, nicht aus einer amtlichen Tabelle, und sollte so verstanden werden. Die deutsche Klasse AM | Die Bußgelder nach dem Dekret 168/202"
       ]
     },
@@ -1038,7 +1025,6 @@
       "id": "DE-S06",
       "decision": "REJECTED",
       "failed": [
-        "G2_PARENT_PUBLISHED",
         "G3_OFFICIAL_EVIDENCE"
       ],
       "writer": "W3",
@@ -1047,7 +1033,6 @@
       "source_sha256": "dd54245070f80775009de0f2209677ed36c9995ca95e20200a53dfbbed8f3a75",
       "source_commit": "652664c45ee7ba9364112524c02f2ffe04d419a0",
       "details": [
-        "G2_PARENT_PUBLISHED: DE-H03 is IDEA",
         "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: Bei einer Rollermiete gibt es oft zwei verschiedene Zahlungen, die beide „Kaution\" genannt werden: die Reservierungsanzahlung vor der Anreis | Auch Vermieter sagen ab: Der reservie"
       ]
     },
@@ -1552,172 +1537,148 @@
     },
     {
       "id": "DE-S09",
-      "decision": "REJECTED",
-      "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "3e8b9c65e5f15f20cb6238490a8542e914409a5fd388c36921bdf0a56ba56474",
-      "source_commit": "bd98cccd289e832b00a45338c743d4e2a3f75541",
-      "details": [
-        "G2_PARENT_PUBLISHED: DE-H03 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: Wer in Deutschland A1, A2 oder A besitzt, sollte bei der Ausstellung prüfen, dass das Feld für Motorräder tatsächlich gestempelt ist. Wer nu | Seit einigen Jahren können Inhaber de"
-      ]
+      "source_sha256": "02be5fe37b490bfb9cf0554e67834eafd6a288c857b9b65668d71002d166a916",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
+      "details": []
     },
     {
       "id": "EN-S09",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "daf103c111219c239c12b91ec0736488aa28f4949ea6f1f024aaf1eadb505815",
-      "source_commit": "66c738da068412493d39c1dcd03c6ea823251560",
+      "source_sha256": "e9780f7dec833dae2d44475bcf5583540f6f4d96ef00f5dbbad364ece0f18bc2",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: EN-H03 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: For a motorbike rider the box that matters is A, which covers motorcycles, or its sub-category A1 for light motorcycles. Vietnam's own licen | The only motorised two-wheelers in Vi"
+        "G2_PARENT_PUBLISHED: EN-H03 is IDEA"
       ]
     },
     {
       "id": "EN-S10",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "9f650b207bf3fd27c97e8e2419d7a7715a62e23f3c9e967c2f9e019617dc2259",
-      "source_commit": "66c738da068412493d39c1dcd03c6ea823251560",
+      "source_sha256": "10a660e697bfb2dfbe277b429e650661c27f1fae14d67410fba270d3b1d793a3",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: EN-H03 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: Article 24(1) then sets the eligibility conditions. A foreigner who lives, works or studies in Vietnam can apply if they have: | Under Article 24(3), you file in person at the prov"
+        "G2_PARENT_PUBLISHED: EN-H03 is IDEA"
       ]
     },
     {
       "id": "ES-S09",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "48ab1b0da6a180e764da56de9e8fff5506761db822f8ec320ab9984204126438",
-      "source_commit": "2729df12d00eaf15900e55c89d87ebc5dc62d343",
+      "source_sha256": "9aa054d77d90065945e7cf0680748a3111db99b6de0caacdbf1d5aa16e9ce257",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: ES-H03 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: La misma página recuerda que la policía puede retirar el pasaporte a los extranjeros implicados en un accidente y proceder después al arrest | Aunque tengas un permiso internaciona"
+        "G2_PARENT_PUBLISHED: ES-H03 is IDEA"
       ]
     },
     {
       "id": "FR-S09",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "b8573ff30a00da7642b5da95df61277b5380baf6bb9b8e74ba4da9361123737a",
-      "source_commit": "bd98cccd289e832b00a45338c743d4e2a3f75541",
+      "source_sha256": "2a8c607e3af92f3183b875b8057ebb6b899d65df543384b19f99e1afd02de9ed",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: FR-H03 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: Si votre permis français ne comporte que la catégorie B, votre permis international ne comportera que la catégorie B. Il vous permettra éven | Or le permis international ne reprend"
+        "G2_PARENT_PUBLISHED: FR-H03 is IDEA"
       ]
     },
     {
       "id": "JA-S09",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "c9ed83e2b7a70cad35a4d94db1545e7c7c3e721a27bd6a5aab89794cc93afbc8",
-      "source_commit": "09da9b647e5a1aba89032ae5d656aad5297d8e6c",
+      "source_sha256": "e924c4b7b1e9e2e3a04b38ef9f989800e110c40eb17edd756a01ee95e9d89d29",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: JA-H03 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: 通達第24条第1項の条件は、次の二つです。 | 通達第24条第3項によれば、申請は省・市の公安交通警察課、または受付窓口が設けられた社級公安に本人が出向いて行います。大使館の案内では、ハノイの申請窓口として公安省交通警察部の免許担当チーム（ハドン区フンフン通り2番地）が示されており、平日の午前と午後、土曜の午前に受付があり、番"
+        "G2_PARENT_PUBLISHED: JA-H03 is IDEA"
       ]
     },
     {
       "id": "KO-S09",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "7c49ab3a446d9a6d5487190b8f2f6b7b7202cad31970b9c4ad8b9ff5cfbd46b5",
-      "source_commit": "89ad687d3cd92dc2d6a44604bc07d0f984dc0426",
+      "source_sha256": "d0fad902a7c51658ec98d739ad92ff9244cb773f388a3f79c4523445fb5b2eb7",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: KO-H03 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: 오토바이에 관해서는 두 번째와 세 번째 항목이 핵심입니다. A 범주가 없는 국제운전면허증은 협정상 B 범주, 즉 승용차 등만 허용되므로 이 면허증으로는 오토바이를 탈 수 없습니다. 협정 부속서의 베트남 국제운전면허증 분류표에서도 A는 모터사이클, A1 | 베트남 쪽 분류도 알아 두면 렌털 차량을 고를 때 도움이 됩니다. "
+        "G2_PARENT_PUBLISHED: KO-H03 is IDEA"
       ]
     },
     {
       "id": "NL-S09",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "35ae0d4be633b4934d62c79fec9b76beec286e46e07c17e9440cb2007c99bb4f",
-      "source_commit": "09da9b647e5a1aba89032ae5d656aad5297d8e6c",
+      "source_sha256": "682e3bf18e2965c307a1e255d0c922db297ab9f0665cc3f7e64ff2da76a0f38a",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: NL-H03 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: Heb je in Nederland alleen rijbewijs B, dan staat op je internationale rijbewijs alleen B. Daarmee mag je in Vietnam geen scooter boven de 5 | Er zit een verschil tussen wat de Vie"
+        "G2_PARENT_PUBLISHED: NL-H03 is IDEA"
       ]
     },
     {
       "id": "PT-S09",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "2d315c00127110ab6f4f9172c9efbc7812963d560b4a5852b4bd397f583d526e",
-      "source_commit": "2729df12d00eaf15900e55c89d87ebc5dc62d343",
+      "source_sha256": "975c0a9bf6681504d5047d7b46dcb2c5143c1f2b516e1914c4e299a199d78437",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: PT-H03 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 2 hard legal statement(s) lack an inline official citation: - só com a categoria A (ou A1, para cilindradas até 125 cm³) na carta nacional e na licença internacional pode alugar e conduzir legalmente  | A Autorização para Conduzir Ciclomoto"
+        "G2_PARENT_PUBLISHED: PT-H03 is IDEA"
       ]
     },
     {
       "id": "VI-S09",
-      "decision": "REJECTED",
+      "decision": "WAIT_PARENT",
       "failed": [
-        "G2_PARENT_PUBLISHED",
-        "G3_OFFICIAL_EVIDENCE"
+        "G2_PARENT_PUBLISHED"
       ],
       "writer": "W2",
       "session": "w2-live",
       "branch": "writer/w2-live",
-      "source_sha256": "1263b79961203ac3e1a412f871d555f1e34c46e2c3ecbbb49f32b33a245f9cee",
-      "source_commit": "89ad687d3cd92dc2d6a44604bc07d0f984dc0426",
+      "source_sha256": "e500d256e230f40635e4ebde4991a3d63274c642b7442094f3dce7f5b7f1b841",
+      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
       "details": [
-        "G2_PARENT_PUBLISHED: VI-H03 is IDEA",
-        "G3_OFFICIAL_EVIDENCE: 11 hard legal statement(s) lack an inline official citation: Khi thuê xe máy ở Hà Nội, nhiều người chỉ hỏi giá và đời xe mà quên một câu quan trọng hơn: bằng lái của mình được lái chiếc xe đó không. Từ | Con số 125 cm³ là mức \"đến\", tức là "
+        "G2_PARENT_PUBLISHED: VI-H03 is IDEA"
       ]
     }
   ]
