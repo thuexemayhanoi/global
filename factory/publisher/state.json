@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 83,
+  "clean_runs": 84,
   "published": [
     {
       "id": "NL-H01",
@@ -2222,7 +2222,8 @@
       "at": "2026-10-15T18:00:42.635Z",
       "source_sha256": "b1c3a5294a862a4552693261b38d5a97da8328071cf2d27c6afa541fe41ede0c",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:02:55.056Z"
     },
     {
       "id": "NL-S14",
@@ -2233,15 +2234,11 @@
       "at": "2026-10-15T18:00:42.635Z",
       "source_sha256": "7f8b8367072fe361259213963ff6c269511673d4e6c2ca4bcfdda4d748111c26",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:02:55.056Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T04:15:26.218Z",
-      "ids": [],
-      "result": "RESUME: Live QA sitemap tool defect fixed in PR #40 (eedb4ba); Pages deploy 38680346553 success; Post-Publish Live HTTP QA 38680440442 passed, 40 checks, 0 issues"
-    },
     {
       "at": "2026-10-15T04:15:52.071Z",
       "ids": [
@@ -3805,16 +3802,24 @@
         "NL-S14"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:02:55.056Z",
+      "ids": [
+        "KO-S14",
+        "NL-S14"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T18:00:20.841Z",
+    "at": "2026-10-15T18:02:55.056Z",
     "ids": [
-      "FR-S15",
-      "JA-S14"
+      "KO-S14",
+      "NL-S14"
     ],
-    "commit": "1b16af08ae5d4d11498833cb6d721895a4d54eb5",
-    "live_seconds": 62
+    "commit": "8657d71f74e9ce8f934ecf4b96c2d17999f8bb46",
+    "live_seconds": 122
   },
   "queue": {
     "APPROVED_BY_POLICY": 9
