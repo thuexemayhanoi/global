@@ -2560,17 +2560,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:35:43.077Z"
+    },
+    {
+      "id": "DE-S36",
+      "locale": "de",
+      "url": "/de/guides/nachts-roller-fahren-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:36:03.283Z",
+      "source_sha256": "584f0605cb1ddf0f7819ced35ee8df6792b260b9de537a1471397e75b4efbb47",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S37",
+      "locale": "de",
+      "url": "/de/guides/handy-beim-rollerfahren-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:36:03.283Z",
+      "source_sha256": "d3dc18e27bf645f067f1e1cd7e8120904ffdb71b5ee97b584d21a401a810f32e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:23:57.451Z",
-      "ids": [
-        "VI-H03",
-        "ZH-H03"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T09:24:15.155Z",
       "ids": [
@@ -4145,6 +4159,14 @@
         "ZH-S18"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:36:03.283Z",
+      "ids": [
+        "DE-S36",
+        "DE-S37"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4157,6 +4179,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 4
   }
 }
