@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 98,
+  "clean_runs": 100,
   "published": [
     {
       "id": "NL-H01",
@@ -2560,38 +2560,57 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:35:43.077Z"
+    },
+    {
+      "id": "DE-S36",
+      "locale": "de",
+      "url": "/de/guides/nachts-roller-fahren-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:36:03.283Z",
+      "source_sha256": "584f0605cb1ddf0f7819ced35ee8df6792b260b9de537a1471397e75b4efbb47",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:37:35.558Z"
+    },
+    {
+      "id": "DE-S37",
+      "locale": "de",
+      "url": "/de/guides/handy-beim-rollerfahren-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:36:03.283Z",
+      "source_sha256": "d3dc18e27bf645f067f1e1cd7e8120904ffdb71b5ee97b584d21a401a810f32e",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:37:35.558Z"
+    },
+    {
+      "id": "DE-S38",
+      "locale": "de",
+      "url": "/de/guides/deutschen-fuehrerschein-in-vietnam-umschreiben/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:37:53.150Z",
+      "source_sha256": "45923bc418f70fe4f2a8b4b0587f381c2c4e76b8ecac1dadbf9ced81722e7d51",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:39:05.034Z"
+    },
+    {
+      "id": "EN-S29",
+      "locale": "en",
+      "url": "/en/guides/vietnam-drink-driving-rules-for-motorbike-riders/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:37:53.150Z",
+      "source_sha256": "9eb9c6509a28db842fb238be583172a754bbb1744d571fce71dcee3bce416e03",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:39:05.034Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:23:57.451Z",
-      "ids": [
-        "VI-H03",
-        "ZH-H03"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:24:15.155Z",
-      "ids": [
-        "DE-H04",
-        "EN-H04"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:25:44.055Z",
-      "ids": [
-        "DE-H04",
-        "EN-H04"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:25:44.055Z",
-      "ids": [],
-      "result": "STAGE_ADVANCED RAMP→CONTINUOUS"
-    },
     {
       "at": "2026-10-15T09:26:03.344Z",
       "ids": [
@@ -4145,18 +4164,48 @@
         "ZH-S18"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:36:03.283Z",
+      "ids": [
+        "DE-S36",
+        "DE-S37"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:37:35.558Z",
+      "ids": [
+        "DE-S36",
+        "DE-S37"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:37:53.150Z",
+      "ids": [
+        "DE-S38",
+        "EN-S29"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:39:05.034Z",
+      "ids": [
+        "DE-S38",
+        "EN-S29"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T18:35:43.077Z",
+    "at": "2026-10-15T18:39:05.034Z",
     "ids": [
-      "VI-S17",
-      "ZH-S18"
+      "DE-S38",
+      "EN-S29"
     ],
-    "commit": "4c78be6474e1fc1c75b5d86046a35f4b1c5aa2f3",
-    "live_seconds": 62
+    "commit": "bac43f9ea37d9101f4f8bbdb7cfb737ff6a03c92",
+    "live_seconds": 61
   },
-  "queue": {
-    "APPROVED_BY_POLICY": 2
-  }
+  "queue": {}
 }
