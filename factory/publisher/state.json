@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 113,
+  "clean_runs": 115,
   "published": [
     {
       "id": "NL-H01",
@@ -2884,41 +2884,57 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T19:37:13.868Z"
+    },
+    {
+      "id": "DE-S52",
+      "locale": "de",
+      "url": "/de/guides/bussgeld-vietnam-bezahlen/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:51:59.284Z",
+      "source_sha256": "5811644e1943277e0257fab0d6e52d115abe298d55e009ba91eadab6ad1dee20",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T19:53:16.533Z"
+    },
+    {
+      "id": "DE-S53",
+      "locale": "de",
+      "url": "/de/guides/roller-abschleppen-schieben-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:51:59.284Z",
+      "source_sha256": "d2dd4807532dabfae07aa76199ae2c06f43cc67d94525546ce9e343595e07f3a",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T19:53:16.533Z"
+    },
+    {
+      "id": "DE-S54",
+      "locale": "de",
+      "url": "/de/guides/roller-fahren-hitze-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:53:35.347Z",
+      "source_sha256": "734b042594383f6866d48c182c4bcb98cfa1827c396022e40e7d7a77790bf020",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T19:54:47.932Z"
+    },
+    {
+      "id": "EN-S40",
+      "locale": "en",
+      "url": "/en/guides/horn-rules-motorbike-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:53:35.347Z",
+      "source_sha256": "0958c80bf4552adbee9b7ba83db7f1fd0ac114666139b8a1d53638dcdd650340",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T19:54:47.932Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T09:47:40.866Z",
-      "ids": [
-        "KO-S05",
-        "NL-S05"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:48:49.380Z",
-      "ids": [
-        "KO-S05",
-        "NL-S05"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:49:04.969Z",
-      "ids": [
-        "VI-S05",
-        "ZH-S05"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:50:12.763Z",
-      "ids": [
-        "VI-S05",
-        "ZH-S05"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T09:50:32.386Z",
       "ids": [
@@ -4466,18 +4482,51 @@
         "DE-S51"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T19:51:59.284Z",
+      "ids": [
+        "DE-S52",
+        "DE-S53"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T19:53:16.533Z",
+      "ids": [
+        "DE-S52",
+        "DE-S53"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T19:53:35.347Z",
+      "ids": [
+        "DE-S54",
+        "EN-S40"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T19:54:47.932Z",
+      "ids": [
+        "DE-S54",
+        "EN-S40"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T19:37:13.868Z",
+    "at": "2026-10-15T19:54:47.932Z",
     "ids": [
-      "DE-S50",
-      "DE-S51"
+      "DE-S54",
+      "EN-S40"
     ],
-    "commit": "4b31dbf32e8e799752e911c4ed6c93a1403fdbf2",
-    "live_seconds": 61
+    "commit": "6e930b448bbf44cc87e69b334f99e40d053db6c7",
+    "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 2,
+    "REJECTED": 1
   }
 }
