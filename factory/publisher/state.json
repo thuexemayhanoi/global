@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 17,
+  "clean_runs": 20,
   "published": [
     {
       "id": "NL-H01",
@@ -710,7 +710,8 @@
       "at": "2026-10-15T09:54:06.658Z",
       "source_sha256": "9d55a5a709a01bbc2e0ccb367b7cdb83a66a840a047e657d710b9675400ea4e1",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T09:55:14.589Z"
     },
     {
       "id": "KO-H02",
@@ -720,6 +721,77 @@
       "stage": "CONTINUOUS",
       "at": "2026-10-15T09:54:06.658Z",
       "source_sha256": "5dbe6e575e40cdea16f25bd68374a7920d607ed4a221141edbab1abc76a26539",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T09:55:14.589Z"
+    },
+    {
+      "id": "NL-H02",
+      "locale": "nl",
+      "url": "/nl/topics/huurprijs-en-borg/",
+      "role": "HUB",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:55:31.140Z",
+      "source_sha256": "68c68f2af954ae518e88fb34f62d4d014da501ee03734cee5df72f0c050cecc3",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T09:56:59.914Z"
+    },
+    {
+      "id": "DE-S03",
+      "locale": "de",
+      "url": "/de/guides/tages-wochen-monatsmiete/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:55:31.140Z",
+      "source_sha256": "ed4e371d738c2981e732aaa9ceb5f23b0477f185b949b2992fdab29974400955",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T09:56:59.914Z"
+    },
+    {
+      "id": "KO-S03",
+      "locale": "ko",
+      "url": "/ko/guides/il-ju-wol/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:57:17.366Z",
+      "source_sha256": "ac8b44aceda9dbb9635f0c5d71760ea732b5ff60ecd04d3f42d2a100344cbb50",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T09:58:25.757Z"
+    },
+    {
+      "id": "NL-S03",
+      "locale": "nl",
+      "url": "/nl/guides/dag-week-maand/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:57:17.366Z",
+      "source_sha256": "c6109f3cf748a316f2bd3cdf2e3edaa9dcce55d75b643e1f1b5090f6c9d558aa",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T09:58:25.757Z"
+    },
+    {
+      "id": "DE-S04",
+      "locale": "de",
+      "url": "/de/guides/kaution-rueckzahlung/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:58:42.415Z",
+      "source_sha256": "4bb1711de4153223f1ebf97c8b4121cc045f89ace3419ee5c5db90177cb69624",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S04",
+      "locale": "ko",
+      "url": "/ko/guides/bojeunggeum-hwanbul/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:58:42.415Z",
+      "source_sha256": "e250b879b50c95395ab1409ecbdcfc44b40a4b093b4953103a938e5250273c71",
       "review_sha256": null,
       "live_qa": "PENDING"
     }
@@ -1257,19 +1329,67 @@
         "KO-H02"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T09:55:14.589Z",
+      "ids": [
+        "DE-H02",
+        "KO-H02"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:55:31.140Z",
+      "ids": [
+        "NL-H02",
+        "DE-S03"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T09:56:59.914Z",
+      "ids": [
+        "NL-H02",
+        "DE-S03"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:57:17.366Z",
+      "ids": [
+        "KO-S03",
+        "NL-S03"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T09:58:25.757Z",
+      "ids": [
+        "KO-S03",
+        "NL-S03"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:58:42.415Z",
+      "ids": [
+        "DE-S04",
+        "KO-S04"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T09:53:48.808Z",
+    "at": "2026-10-15T09:58:25.757Z",
     "ids": [
-      "JA-S06",
-      "KO-S06"
+      "KO-S03",
+      "NL-S03"
     ],
-    "commit": "b13628f7e274146ac9b33e920ec5baa1df3c3465",
-    "live_seconds": 102
+    "commit": "92dafed0c9f45fe8cc20349be5f5b8350889c1a9",
+    "live_seconds": 63
   },
   "queue": {
-    "WAIT_PARENT": 36,
+    "WAIT_PARENT": 30,
     "APPROVED_BY_POLICY": 23,
     "REJECTED": 11
   }
