@@ -4588,17 +4588,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T23:26:22.309Z"
+    },
+    {
+      "id": "FR-S63",
+      "locale": "fr",
+      "url": "/fr/guides/distance-de-securite-scooter-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T23:32:15.209Z",
+      "source_sha256": "92d0d38c29b95e871806f6a12dc01a1a10dcb266135abfcc30969efedb376cca",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S64",
+      "locale": "fr",
+      "url": "/fr/guides/scooter-sans-retroviseur-amende-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T23:32:15.209Z",
+      "source_sha256": "f6e17474115b8f86b88da784232dac336cae32c8bbd3ee1618914069515f06fe",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T18:29:06.965Z",
-      "ids": [
-        "JA-S17",
-        "KO-S17"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T18:31:57.701Z",
       "ids": [
@@ -6140,6 +6154,14 @@
         "FR-S62"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T23:32:15.209Z",
+      "ids": [
+        "FR-S63",
+        "FR-S64"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -6152,6 +6174,6 @@
     "live_seconds": 101
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 7
   }
 }
