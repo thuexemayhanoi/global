@@ -364,6 +364,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:29:59.954Z"
+    },
+    {
+      "id": "ES-S02",
+      "locale": "es",
+      "url": "/es/guides/50cc-o-electrica/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:30:19.821Z",
+      "source_sha256": "192a6b2beb4008e9b7c3a666b2b684496ef60c8fc3c528357e94b5d43d56ba54",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S02",
+      "locale": "ko",
+      "url": "/ko/guides/50cc-jeongi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:30:19.821Z",
+      "source_sha256": "4147fefd3e0f603ebf824e6a483d937167aa165f92d9e4e7a340598b30ba4720",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -667,6 +689,14 @@
         "PT-S01"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:30:19.821Z",
+      "ids": [
+        "ES-S02",
+        "KO-S02"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -680,6 +710,6 @@
   },
   "queue": {
     "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 50
+    "APPROVED_BY_POLICY": 48
   }
 }
