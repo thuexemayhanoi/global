@@ -51,6 +51,15 @@ test("wrong Nguyễn Tú prices, phone, address, hours or contradictions always 
  assert.ok(f("Nguyen Tu Motorbike Rental: no deposit needed.","en").includes("BRAND_CONTRADICTION"));
 });
 
+test("Korean legal source titles are not prices, but real KRW amounts remain protected",()=>{
+ const source="베트남 도로교통법 36/2024/QH15 원문";
+ assert.deepEqual(extractAmounts(source,"ko"),[],"원문 means original text, not won");
+ assert.deepEqual(extractAmounts("법률 제15 원칙","ko"),[],"원칙 is a principle, not won");
+ assert.deepEqual(codes(scanHtml('<html><body><p>'+source+'</p></body></html>',{locale:"ko",ref})),[],"HTML source titles must not block an otherwise clean publish");
+ assert.deepEqual(extractAmounts("대여료 15 원, 계약금 15000원입니다.","ko").flatMap(x=>x.values),[15,15000],"actual won amounts are still parsed");
+ assert.ok(codes(scanText("대여료 15000원입니다.",{locale:"ko",mode:"strict",ref})).includes("UNSOURCED_AMOUNT"),"unsourced won must still fail");
+});
+
 test("unsourced amounts fail strictly, warn for drafts; cited third-party prices only warn",()=>{
  const s="Most shops charge 130,000 VND per day.";
  assert.ok(codes(scanText(s,{mode:"strict",ref})).includes("UNSOURCED_AMOUNT"));
