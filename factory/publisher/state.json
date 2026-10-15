@@ -2284,17 +2284,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:06:13.142Z"
+    },
+    {
+      "id": "EN-S16",
+      "locale": "en",
+      "url": "/en/guides/after-a-motorbike-accident/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:06:37.942Z",
+      "source_sha256": "470f45ba93cb425f4b9491f9da814b17aad6f953e75aff213babc7c1af0459e0",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ES-S15",
+      "locale": "es",
+      "url": "/es/guides/despues-de-un-accidente/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:06:37.942Z",
+      "source_sha256": "300dc8cc264dba6e6478b724978b15263a440d00c32a8c6db7075d7754bb9a10",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T05:12:18.241Z",
-      "ids": [
-        "ES-H01",
-        "KO-H01"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T05:13:25.336Z",
       "ids": [
@@ -3861,6 +3875,14 @@
         "DE-S15"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:06:37.942Z",
+      "ids": [
+        "EN-S16",
+        "ES-S15"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3873,6 +3895,6 @@
     "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 5
+    "APPROVED_BY_POLICY": 3
   }
 }
