@@ -29,23 +29,25 @@ Every open SUBMITTED draft is in exactly one state. AWAITING QA = the publisher 
 
 | Locale | AWAITING QA | APPROVED_BY_POLICY (publish queue) | REPAIR | HUMAN_REVIEW_REQUIRED | WAIT_PARENT | WAIT_STAGE | ESCALATED | BLOCKED |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| vi | 0 | 0 | 0 | 10 | 1 | 0 | 0 | 0 |
-| en | 0 | 0 | 0 | 12 | 0 | 0 | 0 | 0 |
-| de | 0 | 0 | 1 | 10 | 0 | 0 | 0 | 0 |
-| fr | 0 | 0 | 0 | 10 | 1 | 0 | 0 | 0 |
-| es | 0 | 0 | 1 | 10 | 0 | 0 | 0 | 0 |
-| nl | 0 | 0 | 1 | 10 | 0 | 0 | 0 | 0 |
-| zh | 0 | 0 | 0 | 8 | 2 | 0 | 0 | 0 |
-| pt | 0 | 0 | 0 | 10 | 0 | 0 | 0 | 0 |
-| ko | 0 | 0 | 0 | 10 | 0 | 0 | 0 | 0 |
-| ja | 0 | 0 | 0 | 10 | 1 | 0 | 0 | 0 |
-| **all** | 0 | 0 | 3 | 100 | 5 | 0 | 0 | 0 |
+| vi | 0 | 0 | 10 | 0 | 1 | 0 | 0 | 0 |
+| en | 0 | 1 | 11 | 0 | 0 | 0 | 0 | 0 |
+| de | 0 | 0 | 11 | 0 | 0 | 0 | 0 | 0 |
+| fr | 0 | 1 | 9 | 0 | 1 | 0 | 0 | 0 |
+| es | 0 | 0 | 11 | 0 | 0 | 0 | 0 | 0 |
+| nl | 0 | 0 | 11 | 0 | 0 | 0 | 0 | 0 |
+| zh | 0 | 1 | 7 | 0 | 2 | 0 | 0 | 0 |
+| pt | 0 | 1 | 9 | 0 | 0 | 0 | 0 | 0 |
+| ko | 0 | 1 | 9 | 0 | 0 | 0 | 0 | 0 |
+| ja | 0 | 1 | 9 | 0 | 1 | 0 | 0 | 0 |
+| **all** | 0 | 6 | 97 | 0 | 5 | 0 | 0 | 0 |
 
 - Writer CLAIMED (being written): **0** · SUBMITTED and still open: **108** · SUBMITTED and now live: **6**
 
 ## Auto Publisher
 
-- Stage: **RAMP** — running
+- Stage: **RAMP** — **PAUSED**: Pre-commit gate failed 2026-10-15T05:29:54.892Z: scripts/seo/fact-guard.mjs  failed: FAIL UNSOURCED_AMOUNT en/topics/rental-costs-and-fees/index.html — Currency amount without an inline source in the same paragraph «120,000 VND»
+FAIL UNSOURCED_AMOUNT en/topics/rental-costs-and-fees/index.html — Currency amount without an inline source in the same paragraph «180,000 VND»
+FAIL UNSOURCED_AMOUNT en/topics/rental-costs-and-fees/index.html — Currency 
 
 | PUBLISH_STAGED (committed, live QA pending) | LIVE_QA_PASS | LIVE_QA_FAIL | LIVE_QA_INCONCLUSIVE |
 |---:|---:|---:|---:|
@@ -60,9 +62,9 @@ W1/W2/W3 are seats for external AI sessions (any provider). A slot only writes w
 
 | Slot | State | Session | Claimed | Submitted | Released | REPAIR | HUMAN_REVIEW_REQUIRED | ESCALATED |
 |---|---|---|---:|---:|---:|---:|---:|---:|
-| W1 | AVAILABLE (last report: ACTIVE) | w1-vibe-20261014 | 0 | 30 | 0 | 3 | 21 | 0 |
-| W2 | AVAILABLE (last report: OFFLINE) | w2-live | 0 | 20 | 10 | 0 | 18 | 0 |
-| W3 | AVAILABLE (last report: ACTIVE) | w3-live | 0 | 64 | 0 | 0 | 61 | 0 |
+| W1 | AVAILABLE (last report: ACTIVE) | w1-vibe-20261014 | 0 | 30 | 0 | 24 | 0 | 0 |
+| W2 | AVAILABLE (last report: OFFLINE) | w2-live | 0 | 20 | 10 | 13 | 0 | 0 |
+| W3 | AVAILABLE (last report: ACTIVE) | w3-live | 0 | 64 | 0 | 60 | 0 | 0 |
 
 ## Scope domains
 

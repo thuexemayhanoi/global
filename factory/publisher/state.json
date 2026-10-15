@@ -1,8 +1,8 @@
 {
   "version": 1,
   "stage": "RAMP",
-  "paused": false,
-  "pause_reason": null,
+  "paused": true,
+  "pause_reason": "Pre-commit gate failed 2026-10-15T05:29:54.892Z: scripts/seo/fact-guard.mjs  failed: FAIL UNSOURCED_AMOUNT en/topics/rental-costs-and-fees/index.html — Currency amount without an inline source in the same paragraph «120,000 VND»\nFAIL UNSOURCED_AMOUNT en/topics/rental-costs-and-fees/index.html — Currency amount without an inline source in the same paragraph «180,000 VND»\nFAIL UNSOURCED_AMOUNT en/topics/rental-costs-and-fees/index.html — Currency ",
   "clean_runs": 0,
   "published": [
     {
@@ -157,6 +157,14 @@
       "at": "2026-10-15T05:14:48.442Z",
       "ids": [],
       "result": "STAGE_ADVANCED PILOT→RAMP"
+    },
+    {
+      "at": "2026-10-15T05:29:54.892Z",
+      "ids": [
+        "EN-H02",
+        "FR-H02"
+      ],
+      "result": "GATE_FAILED"
     }
   ],
   "last_successful_deployment": {
@@ -169,9 +177,8 @@
     "live_seconds": 61
   },
   "queue": {
-    "REVIEW_REQUIRED": 73,
-    "WAIT_PARENT": 5,
-    "APPROVED_BY_POLICY": 2,
-    "REJECTED": 30
+    "APPROVED_BY_POLICY": 6,
+    "REJECTED": 97,
+    "WAIT_PARENT": 5
   }
 }
