@@ -11,6 +11,9 @@ const matrix=read("data/seo/master-matrix.json"),locales=read("content/locales.j
 const policy=read("data/seo/topic-factory/policy.json"),standing=read("approvals/standing-policy-20261015.json");
 const hub=matrix.rows.find(r=>r.locale==="en"&&r.role==="HUB"&&r.cluster==="vehicle-choice");
 const legalHub=matrix.rows.find(r=>r.locale==="en"&&r.role==="HUB"&&r.cluster==="documents-contracts");
+// The fixtures evaluate these two Hubs as NEW URLs. The real pipeline publishes them, so force IDEA on this
+// in-memory copy: the tests must not depend on what is live today.
+for(const r of [hub,legalHub])r.status="IDEA";
 const H="a".repeat(64),C="b".repeat(40);
 // Deterministic varied fixture prose (the gates under test reject repetitive templates, as they should).
 const VOCAB=("scooter semi-automatic clutch gearbox throttle brake tyre mirror helmet rain jacket backpack rack strap fuel tank range hill pass valley "+

@@ -4,6 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {spawnSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
+import {rewindPromotions} from "./support/promotion-fixture.mjs";
 import {loadTopicalMap,validateTopicalMap,planPromotion} from "../scripts/seo/topical-authority-core.mjs";
 import {factoryStatus,duplicateLayers,prepareCorpus,selectRefill,standingManifest,validatePolicy,validateResearchBatch,ingestResearch,validateResearchSequence,researchUsage,domainResearchCoverage,fold,dashboardMarkdown,STANDING_STATEMENT} from "../scripts/topic-factory-core.mjs";
 
@@ -16,6 +17,11 @@ const frozen=read("data/seo/url-freeze.json").urls.map(u=>u.url);
 const ctx={matrix,map,ledger,registry,policy};
 const validation=validateTopicalMap({map,matrix,frozenUrls:frozen});
 const enHub=matrix.rows.find(r=>r.locale==="en"&&r.role==="HUB"&&r.cluster==="vehicle-choice");
+// Refill drains PROPOSED stock while READY is low. Refill tests run on the in-memory state just before the latest
+// promotion of each locale, so they never depend on how much research is waiting today.
+const stock=rewindPromotions({map,matrix,ledger});
+const stockCtx={...ctx,map:stock.map,matrix:stock.matrix,ledger:stock.ledger};
+const stockValidation=validateTopicalMap({map:stock.map,matrix:stock.matrix,frozenUrls:frozen});
 
 test("policy encodes the owner scope: 10 locales x 1000, 8 domains, refill 100 -> 250, standing policy authorizes promotion only",()=>{
  assert.deepEqual(validatePolicy(policy,standing),[]);
@@ -83,10 +89,10 @@ test("duplicate layers L1–L5 catch exact, folded, overlapping and look-alike t
 });
 
 test("refill selects at most 50 gate-clean PROPOSED candidates round-robin by locale need and never transactional or duplicate ones",()=>{
- const sel=selectRefill({...ctx,validation});
+ const sel=selectRefill({...stockCtx,validation:stockValidation});
  assert.ok(sel.selected.length<=50);
  assert.equal(new Set(sel.selected).size,sel.selected.length);
- const props=new Map(Object.values(map.locales).flatMap(l=>l.proposals).map(p=>[p.candidate_id,p]));
+ const props=new Map(Object.values(stock.map.locales).flatMap(l=>l.proposals).map(p=>[p.candidate_id,p]));
  for(const id of sel.selected){
   const p=props.get(id);
   assert.equal(p.status,"PROPOSED");
@@ -102,11 +108,11 @@ test("refill selects at most 50 gate-clean PROPOSED candidates round-robin by lo
    code+" has fewer selections only because its valid candidate supply/need ran out");
  }
  // A copy of an existing Matrix query and a transactional twin are rejected, not promoted.
- const fake=structuredClone(map),L=fake.locales.en;
+ const fake=structuredClone(stock.map),L=fake.locales.en;
  const base=L.proposals.find(p=>p.status==="PROPOSED");
  L.proposals.push({...base,candidate_id:"TA-EN-9990",slug:"copy-of-existing-query",primary_query:enHub.primary_query,working_title:"A different title for a copied query"});
  L.proposals.push({...base,candidate_id:"TA-EN-9991",slug:"rent-now-transactional",primary_query:"book motorbike rental hanoi online deposit today",working_title:"Book a Hanoi motorbike online with a deposit today",search_intent:"transactional"});
- const s2=selectRefill({...ctx,map:fake,validation:validateTopicalMap({map:fake,matrix,frozenUrls:frozen}),limit:50});
+ const s2=selectRefill({...stockCtx,map:fake,validation:validateTopicalMap({map:fake,matrix:stock.matrix,frozenUrls:frozen}),limit:50});
  assert.ok(!s2.selected.includes("TA-EN-9990")&&!s2.selected.includes("TA-EN-9991"));
  const why=Object.fromEntries(s2.rejected.map(r=>[r.candidate_id,r.reasons.map(x=>x.gate)]));
  assert.ok(why["TA-EN-9990"].includes("F5_DUPLICATE")||why["TA-EN-9990"].includes("F1_TOPICAL_GATES"));
@@ -114,11 +120,12 @@ test("refill selects at most 50 gate-clean PROPOSED candidates round-robin by lo
 });
 
 test("standing manifest names the policy, keeps the exact statement and is accepted by the existing promotion planner",()=>{
- const ids=selectRefill({...ctx,validation,limit:3}).selected;
+ const ids=selectRefill({...stockCtx,validation:stockValidation,limit:3}).selected;
+ assert.ok(ids.length>0,"the stocked fixture always offers gate-clean candidates");
  const m=standingManifest(ids,{policyPath:policy.standing_policy,date:"2026-10-15"});
  assert.equal(m.approval_mode,"STANDING_POLICY");
  assert.match(m.approved_by,/not a personal owner approval/);
- const plan=planPromotion({map,matrix,board:read("factory/external-writers/assignments.json"),manifest:m,validation});
+ const plan=planPromotion({map:stock.map,matrix:stock.matrix,board:read("factory/external-writers/assignments.json"),manifest:m,validation:stockValidation});
  assert.equal(plan.added.length,ids.length);
  assert.ok(plan.added.every(r=>r.status==="IDEA"&&r.serp_evidence==="NOT_VALIDATED"));
  assert.equal(plan.publish,false);
@@ -261,7 +268,7 @@ test("trusted-only mutations: ingest and refill --apply refuse outside the Topic
 
 test("scale: 10 locales x 1000 synthetic candidates are deduplicated and selected within budget",()=>{
  const words="river mountain market temple coffee bridge island valley lake pass trail village night morning rain season museum lantern bay cave".split(" ");
- const big=structuredClone(map);
+ const big=structuredClone(stock.map);
  let n=0;
  for(const code of policy.targets.locales){
   const L=big.locales[code],hub=matrix.rows.find(r=>r.locale===code&&r.role==="HUB"&&r.cluster==="vehicle-choice");
@@ -274,7 +281,7 @@ test("scale: 10 locales x 1000 synthetic candidates are deduplicated and selecte
   }
  }
  const t0=Date.now();
- const sel=selectRefill({...ctx,map:big,validation:{issues:[]},limit:50});
+ const sel=selectRefill({...stockCtx,map:big,validation:{issues:[]},limit:50});
  const ms=Date.now()-t0;
  assert.equal(n,10000);
  assert.equal(sel.selected.length,50);

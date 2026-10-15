@@ -5,6 +5,7 @@ import os from "node:os";
 import path from "node:path";
 import {spawnSync} from "node:child_process";
 import {buildGraph,renderReport,stringify,contentTokens,THRESHOLDS,GRAPH_PATH,REPORT_PATH} from "../scripts/seo/content-graph.mjs";
+import {rewindPromotionsInDir} from "./support/promotion-fixture.mjs";
 
 const jaccard=(a,b)=>{let n=0;for(const x of a)if(b.has(x))n++;return n/(a.size+b.size-n);};
 test("Vietnamese uses adjacent syllable pairs: distinct topics avoid false review, near copies stay detectable",()=>{
@@ -71,6 +72,7 @@ test("existing competing intents are explicitly REVIEW, and an injected duplicat
  }
  const dir=copyRepo();
  try{
+  rewindPromotionsInDir(dir,{locales:["de"]}); // a PROPOSED DE candidate even when the factory promoted them all
   const rel="data/seo/topical-authority/de.json",d=JSON.parse(fs.readFileSync(path.join(dir,rel),"utf8"));
   const p=d.proposals.find(x=>x.status==="PROPOSED");
   p.primary_query="Führerschein deutscher Motorrad Vietnam";
