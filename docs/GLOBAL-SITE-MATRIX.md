@@ -12,44 +12,39 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
-| Matrix rows (245) | 37 | 20 | 2 | 186 |
-| Topical candidates (96) | 0 | 0 | 0 | 96 |
-| Silos (330) | 10 | 10 | 0 | 160 |
+| Matrix rows (331) | 148 | 19 | 0 | 164 |
+| Topical candidates (30) | 0 | 0 | 0 | 30 |
+| Silos (330) | 91 | 10 | 0 | 82 |
 
-Knowledge graph: 42 entities, 1396 typed edges (hreflang_equivalent 190, about 710, contains 286, has_silo 160, has_hub 40, has_pillar 10).
+Knowledge graph: 42 entities, 1416 typed edges (hreflang_equivalent 190, about 710, contains 306, has_silo 160, has_hub 40, has_pillar 10).
 
 ## REVIEW — competing intents
 
-1 pair(s); showing up to 1.
-
-| A | B | Score | Basis |
-|---|---|---|---|
-| VI-H02 | VI-H03 | 0.52 | published_content |
+No unjustified high-overlap pair across 331 Matrix rows and 30 candidates (query similarity ≥ 0.66, or ≥ 0.5 within the same silo and intent; published text Jaccard ≥ 0.5). Parent/child Hub overlaps are expected and justified pairs carry a written `distinct_from` reason.
 
 ## UPGRADE — live pages below targets
 
 | ID | URL | Words | H2 | FAQ | Inbound pages | Reasons |
 |---|---|---|---|---|---|---|
-| VI-HOME | /vi/ | 578 | 5 | 3 | 58 | Main content 578 words < 600 target for PILLAR |
-| VI-CHECKLIST | /vi/checklist/ | 407 | 5 | 1 | 12 | Main content 407 words < 800 target for SUPPORT |
-| EN-HOME | /en/ | 421 | 5 | 3 | 58 | Main content 421 words < 600 target for PILLAR |
-| EN-CHECKLIST | /en/checklist/ | 274 | 5 | 1 | 13 | Main content 274 words < 800 target for SUPPORT |
-| DE-HOME | /de/ | 397 | 5 | 3 | 58 | Main content 397 words < 600 target for PILLAR |
-| DE-CHECKLIST | /de/checklist/ | 244 | 5 | 1 | 13 | Main content 244 words < 800 target for SUPPORT |
-| FR-HOME | /fr/ | 447 | 5 | 3 | 58 | Main content 447 words < 600 target for PILLAR |
-| FR-CHECKLIST | /fr/checklist/ | 267 | 5 | 1 | 12 | Main content 267 words < 800 target for SUPPORT |
-| ES-HOME | /es/ | 447 | 5 | 3 | 58 | Main content 447 words < 600 target for PILLAR |
-| ES-CHECKLIST | /es/checklist/ | 265 | 5 | 1 | 15 | Main content 265 words < 800 target for SUPPORT |
-| NL-HOME | /nl/ | 422 | 5 | 3 | 58 | Main content 422 words < 600 target for PILLAR |
-| NL-CHECKLIST | /nl/checklist/ | 237 | 5 | 1 | 15 | Main content 237 words < 800 target for SUPPORT |
-| ZH-HOME | /zh/ | 445 | 5 | 3 | 58 | Main content 445 words < 600 target for PILLAR |
-| ZH-CHECKLIST | /zh/checklist/ | 267 | 5 | 1 | 12 | Main content 267 words < 800 target for SUPPORT |
-| PT-HOME | /pt/ | 421 | 5 | 3 | 58 | Main content 421 words < 600 target for PILLAR |
-| PT-CHECKLIST | /pt/checklist/ | 244 | 5 | 1 | 15 | Main content 244 words < 800 target for SUPPORT |
-| KO-HOME | /ko/ | 336 | 5 | 3 | 58 | Main content 336 words < 600 target for PILLAR |
-| KO-CHECKLIST | /ko/checklist/ | 193 | 5 | 1 | 15 | Main content 193 words < 800 target for SUPPORT |
-| JA-HOME | /ja/ | 463 | 5 | 3 | 58 | Main content 463 words < 600 target for PILLAR |
-| JA-CHECKLIST | /ja/checklist/ | 262 | 5 | 1 | 12 | Main content 262 words < 800 target for SUPPORT |
+| VI-CHECKLIST | /vi/checklist/ | 428 | 5 | 1 | 24 | Main content 428 words < 800 target for SUPPORT |
+| EN-HOME | /en/ | 463 | 5 | 3 | 166 | Main content 463 words < 600 target for PILLAR |
+| EN-CHECKLIST | /en/checklist/ | 286 | 5 | 1 | 25 | Main content 286 words < 800 target for SUPPORT |
+| DE-HOME | /de/ | 432 | 5 | 3 | 166 | Main content 432 words < 600 target for PILLAR |
+| DE-CHECKLIST | /de/checklist/ | 257 | 5 | 1 | 24 | Main content 257 words < 800 target for SUPPORT |
+| FR-HOME | /fr/ | 513 | 5 | 3 | 166 | Main content 513 words < 600 target for PILLAR |
+| FR-CHECKLIST | /fr/checklist/ | 286 | 5 | 1 | 24 | Main content 286 words < 800 target for SUPPORT |
+| ES-HOME | /es/ | 471 | 5 | 3 | 166 | Main content 471 words < 600 target for PILLAR |
+| ES-CHECKLIST | /es/checklist/ | 273 | 5 | 1 | 24 | Main content 273 words < 800 target for SUPPORT |
+| NL-HOME | /nl/ | 445 | 5 | 3 | 166 | Main content 445 words < 600 target for PILLAR |
+| NL-CHECKLIST | /nl/checklist/ | 244 | 5 | 1 | 24 | Main content 244 words < 800 target for SUPPORT |
+| ZH-HOME | /zh/ | 507 | 5 | 3 | 166 | Main content 507 words < 600 target for PILLAR |
+| ZH-CHECKLIST | /zh/checklist/ | 285 | 5 | 1 | 23 | Main content 285 words < 800 target for SUPPORT |
+| PT-HOME | /pt/ | 445 | 5 | 3 | 166 | Main content 445 words < 600 target for PILLAR |
+| PT-CHECKLIST | /pt/checklist/ | 252 | 5 | 1 | 26 | Main content 252 words < 800 target for SUPPORT |
+| KO-HOME | /ko/ | 354 | 5 | 3 | 166 | Main content 354 words < 600 target for PILLAR |
+| KO-CHECKLIST | /ko/checklist/ | 198 | 5 | 1 | 24 | Main content 198 words < 800 target for SUPPORT |
+| JA-HOME | /ja/ | 519 | 5 | 3 | 166 | Main content 519 words < 600 target for PILLAR |
+| JA-CHECKLIST | /ja/checklist/ | 280 | 5 | 1 | 24 | Main content 280 words < 800 target for SUPPORT |
 
 Targets: Pillar ≥ 600 words, ≥ 3 FAQ; Supporting ≥ 800 words, ≥ 4 H2 (new drafts already need ≥ 1,000 words).
 
@@ -59,30 +54,30 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 
 | Silo | Journey | Intent | Live FAQ | vi | en | de | fr | es | nl | zh | pt | ko | ja |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| vc-transmission | consideration | informational | – | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | P1 C1 KEEP | P1 C1 KEEP | I1 C1 CREATE | P1 C1 KEEP | P1 C1 KEEP | I1 C1 CREATE |
-| vc-power | consideration | informational | – | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | P1 C1 KEEP | P1 C1 KEEP | I1 C1 CREATE | P1 C1 KEEP | P1 C1 KEEP | I1 C1 CREATE |
-| vc-models | consideration | commercial | – | I1 CREATE | C2 CREATE | I1 CREATE | C1 CREATE | I1 CREATE | I1 CREATE | C1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
-| vc-trip-fit | consideration | informational | – | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE |
-| rc-period | consideration | commercial | Pillar FAQ ×10 | I1 C1 CREATE | P1 C1 KEEP | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE |
-| rc-deposit | decision | commercial | Pillar FAQ ×10 | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE |
-| rc-extras | decision | commercial | – | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE |
-| dc-licence | decision | informational | Pillar FAQ ×10 | I2 CREATE | I3 CREATE | P1 I1 KEEP | I3 CREATE | I2 CREATE | I2 CREATE | I3 CREATE | I2 CREATE | I2 CREATE | I2 CREATE |
-| dc-contract | decision | informational | – | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE | I1 C1 CREATE |
-| dc-insurance | decision | informational | – | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
+| vc-transmission | consideration | informational | – | P1 I1 KEEP | P1 I2 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP |
+| vc-power | consideration | informational | – | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP |
+| vc-models | consideration | commercial | – | I1 CREATE | I2 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
+| vc-trip-fit | consideration | informational | – | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
+| rc-period | consideration | commercial | Pillar FAQ ×10 | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP |
+| rc-deposit | decision | commercial | Pillar FAQ ×10 | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP |
+| rc-extras | decision | commercial | – | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE |
+| dc-licence | decision | informational | Pillar FAQ ×10 | P2 KEEP | P3 I1 KEEP | P2 KEEP | P2 I1 KEEP | P2 KEEP | P2 KEEP | P1 I2 KEEP | P2 KEEP | P2 KEEP | P2 KEEP |
+| dc-contract | decision | informational | – | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP |
+| dc-insurance | decision | informational | – | P1 KEEP | I2 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | P1 KEEP | I1 CREATE | I1 CREATE |
 | dc-papers | riding | informational | – | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
 | ss-pickup (reserved: CHECKLIST) | pickup | informational | – | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE |
-| ss-weather | riding | local | – | I1 C1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
-| ss-incidents | riding | informational | – | I3 CREATE | I3 CREATE | I3 CREATE | I3 CREATE | I3 CREATE | I3 CREATE | I3 CREATE | I3 CREATE | I3 CREATE | I3 CREATE |
-| ss-gear | riding | informational | – | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE |
-| ss-city | riding | local | – | I2 C1 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE |
+| ss-weather | riding | local | – | P1 I1 KEEP | P1 I1 KEEP | P1 KEEP | P1 KEEP | P1 KEEP | P1 KEEP | P1 KEEP | P1 KEEP | P1 KEEP | P1 KEEP |
+| ss-incidents | riding | informational | – | P1 I2 KEEP | P1 I3 KEEP | P1 I2 KEEP | P1 I2 KEEP | P1 I2 KEEP | P1 I2 KEEP | P1 I2 KEEP | P1 I2 KEEP | P1 I2 KEEP | P1 I2 KEEP |
+| ss-gear | riding | informational | – | I1 CREATE | I2 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
+| ss-city | riding | local | – | I3 CREATE | P1 I5 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P2 KEEP | P1 I1 KEEP | P1 I1 KEEP |
 | rt-northern-loops (proposed Hub) | planning | local | – | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE |
 | rt-day-trips (proposed Hub) | planning | local | – | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE |
 | travel-neighborhoods (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
 | travel-seasons (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
 | travel-etiquette (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
-| mob-urban-transit (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
-| mob-intercity (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
-| mob-last-mile (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
+| mob-urban-transit (proposed Hub) | planning | informational | – | ∅ GAP | C4 CREATE | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
+| mob-intercity (proposed Hub) | planning | informational | – | ∅ GAP | C4 CREATE | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
+| mob-last-mile (proposed Hub) | planning | informational | – | ∅ GAP | C2 CREATE | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
 | dest-northern (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
 | dest-local (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
 | dest-landscapes (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
@@ -100,12 +95,12 @@ Published / planned (IDEA + drafts) / candidates per stage.
 | Stage | vi | en | de | fr | es | nl | zh | pt | ko | ja |
 |---|---|---|---|---|---|---|---|---|---|---|
 | awareness | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
-| consideration | 0 / 4 / 4 | 1 / 2 / 6 | 0 / 4 / 4 | 0 / 3 / 5 | 2 / 2 / 4 | 2 / 2 / 4 | 0 / 3 / 5 | 2 / 2 / 4 | 2 / 2 / 4 | 0 / 4 / 4 |
-| decision | 0 / 7 / 2 | 0 / 8 / 2 | 1 / 6 / 2 | 0 / 8 / 2 | 0 / 7 / 2 | 0 / 7 / 2 | 0 / 8 / 2 | 0 / 7 / 2 | 0 / 7 / 2 | 0 / 7 / 2 |
+| consideration | 3 / 5 / 0 | 3 / 7 / 0 | 3 / 5 / 0 | 3 / 5 / 0 | 3 / 5 / 0 | 3 / 5 / 0 | 3 / 5 / 0 | 3 / 5 / 0 | 3 / 5 / 0 | 3 / 5 / 0 |
+| decision | 5 / 4 / 0 | 5 / 7 / 0 | 4 / 5 / 0 | 4 / 6 / 0 | 4 / 5 / 0 | 4 / 5 / 0 | 3 / 7 / 0 | 5 / 4 / 0 | 4 / 5 / 0 | 4 / 5 / 0 |
 | pickup | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
-| riding | 0 / 7 / 3 | 0 / 7 / 1 | 0 / 7 / 1 | 0 / 7 / 1 | 0 / 7 / 1 | 0 / 7 / 1 | 0 / 7 / 1 | 0 / 7 / 1 | 0 / 7 / 1 | 0 / 7 / 1 |
+| riding | 2 / 8 / 0 | 3 / 12 / 0 | 3 / 5 / 0 | 3 / 5 / 0 | 3 / 5 / 0 | 3 / 5 / 0 | 3 / 5 / 0 | 4 / 4 / 0 | 3 / 5 / 0 | 3 / 5 / 0 |
 | return | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 |
-| planning | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 |
+| planning | 0 / 0 / 2 | 0 / 0 / 12 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 |
 
 Every locale checklist also covers the consideration → decision → pickup → riding → return steps in short sections; that is breadth, not depth (see UPGRADE). `return` (deposit refund, late return) has no dedicated page and is answered inside the deposit and extra-cost silos rather than a separate silo. Transactional booking intent is deliberately not targeted: /global is an independent guide (owner positioning decision).
 
@@ -113,16 +108,16 @@ Every locale checklist also covers the consideration → decision → pickup →
 
 | Locale | Rows | Published | Protected drafts | Planned | Candidates | Published depth OK |
 |---|---|---|---|---|---|---|
-| vi | 24 | 4 | 2 | 18 | 11 | 0% |
-| en | 24 | 5 | 2 | 17 | 11 | 60% |
-| de | 24 | 5 | 2 | 17 | 9 | 60% |
-| fr | 24 | 4 | 2 | 18 | 10 | 50% |
-| es | 24 | 7 | 1 | 16 | 9 | 71% |
-| nl | 24 | 7 | 1 | 16 | 9 | 71% |
-| zh | 24 | 4 | 2 | 18 | 10 | 50% |
-| pt | 24 | 7 | 1 | 16 | 9 | 71% |
-| ko | 24 | 7 | 1 | 16 | 9 | 71% |
-| ja | 24 | 4 | 2 | 18 | 9 | 50% |
+| vi | 33 | 16 | 0 | 17 | 2 | 94% |
+| en | 43 | 17 | 0 | 26 | 12 | 88% |
+| de | 31 | 16 | 0 | 15 | 2 | 88% |
+| fr | 32 | 16 | 0 | 16 | 2 | 88% |
+| es | 31 | 16 | 0 | 15 | 2 | 88% |
+| nl | 31 | 16 | 0 | 15 | 2 | 88% |
+| zh | 32 | 15 | 0 | 17 | 2 | 87% |
+| pt | 31 | 18 | 0 | 13 | 2 | 89% |
+| ko | 31 | 16 | 0 | 15 | 2 | 88% |
+| ja | 31 | 16 | 0 | 15 | 2 | 88% |
 
 Live Writer states (CLAIMED/SUBMITTED) change on every autopilot commit and are not part of this file: run `node scripts/seo/topical-authority.mjs status`.
 

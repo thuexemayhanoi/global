@@ -1,1056 +1,119 @@
 {
   "version": 2,
-  "ledger_revision": 62,
+  "ledger_revision": 90,
   "stage": "CONTINUOUS",
   "counts": {
-    "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 46
+    "APPROVED_BY_POLICY": 10
   },
   "items": [
     {
-      "id": "DE-S01",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "f0f15cb20e81ddca73c8be069368edc3e5947919975419ac0b2bbb3016515e22",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: DE-H01 is IDEA"
-      ]
-    },
-    {
-      "id": "EN-S01",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "5c9aacc7bd7d3b33b2a203f52cdebc0df7af5a7b41cbc02a0bc7d82e2a0665de",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: EN-H01 is IDEA"
-      ]
-    },
-    {
-      "id": "FR-S01",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "d2427eaa4afa4ee66723b056439c77b0bf9ebea9db48cf3e9ba8113dfb2c5d83",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: FR-H01 is IDEA"
-      ]
-    },
-    {
-      "id": "JA-S01",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "839f2823b3c76839478dd3588ddabb0226eafde1195d096f917860f0931a7443",
-      "source_commit": "e7ece5d9c4372faacd386f9c1c892c0cffcba968",
-      "details": [
-        "G2_PARENT_PUBLISHED: JA-H01 is IDEA"
-      ]
-    },
-    {
-      "id": "VI-S01",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "c1c32c9a082ffc376dc3d1ecf27c716533a801d65010dd2af2e8f34199427f51",
-      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
-      "details": [
-        "G2_PARENT_PUBLISHED: VI-H01 is IDEA"
-      ]
-    },
-    {
-      "id": "ZH-S01",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "bd389d348df4a94e6c0b290629d40ab8958331dc14eba00ea680a31064eacad6",
-      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
-      "details": [
-        "G2_PARENT_PUBLISHED: ZH-H01 is IDEA"
-      ]
-    },
-    {
-      "id": "DE-S02",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "8b092983c318067d5948949132c23eae9287dba536aa7596d1e0a40b134fd742",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": [
-        "G2_PARENT_PUBLISHED: DE-H01 is IDEA"
-      ]
-    },
-    {
-      "id": "EN-S02",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "24f5049982900326e765073667a1c178c474fe34bbd5cc6f3474b6ff50408929",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": [
-        "G2_PARENT_PUBLISHED: EN-H01 is IDEA"
-      ]
-    },
-    {
-      "id": "FR-S02",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "e46116079e690c02abbfb029caa25354e9542f12dd679e988ec03f3f5e371a1e",
-      "source_commit": "e652da893a004095ecb17e3bf84829bd3ff35e66",
-      "details": [
-        "G2_PARENT_PUBLISHED: FR-H01 is IDEA"
-      ]
-    },
-    {
-      "id": "JA-S02",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "8c66a3a52d3d897501e409690b3b5c62b33e1867b3ae094ef249aa1e8cae471c",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": [
-        "G2_PARENT_PUBLISHED: JA-H01 is IDEA"
-      ]
-    },
-    {
-      "id": "NL-S02",
+      "id": "PT-S10",
       "decision": "APPROVED_BY_POLICY",
       "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "ea7b6ca6e2543dcaee3177ce07232c5b481b8b5821d27786601182f45d5b82f2",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "source_sha256": "61d7aadd6d5b106092dc119f9dd833de4010487977ca87f1f46de4af1dcfd240",
+      "source_commit": "a22f60f15b4b57c30a8c1eb8e6961edb20c1c1df",
       "details": []
     },
     {
-      "id": "VI-S02",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "6125849ed28158f67d61249601a088e614816a7dae46c4ba793532205a2cdbb3",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: VI-H01 is IDEA"
-      ]
-    },
-    {
-      "id": "ZH-S02",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "e4b26abeb069d79645127bbc232c98d4da648c847e3ce000808018a47ede1605",
-      "source_commit": "e7ece5d9c4372faacd386f9c1c892c0cffcba968",
-      "details": [
-        "G2_PARENT_PUBLISHED: ZH-H01 is IDEA"
-      ]
-    },
-    {
-      "id": "DE-S03",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "ed4e371d738c2981e732aaa9ceb5f23b0477f185b949b2992fdab29974400955",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: DE-H02 is IDEA"
-      ]
-    },
-    {
-      "id": "EN-S03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "d7f73315781ff2be7577f4a88196a4cf7bc98b7bcb54edece9c4f253f48bb132",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "ES-S03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "fe8eee3bb5dc59f2acf930400e85512e7ae38f261288e2a0ad9371dfcd29865c",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "FR-S03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "95a8037ab4aee4ddebcd3e7cf633609260bb1d9c4d211b263d738e7577638ca6",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "JA-S03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "ea508fcafe1fc51482856d7928b6c86ae448383026191e4dcca50970b12f69ff",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "KO-S03",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "ac8b44aceda9dbb9635f0c5d71760ea732b5ff60ecd04d3f42d2a100344cbb50",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: KO-H02 is IDEA"
-      ]
-    },
-    {
-      "id": "NL-S03",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "c6109f3cf748a316f2bd3cdf2e3edaa9dcce55d75b643e1f1b5090f6c9d558aa",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: NL-H02 is IDEA"
-      ]
-    },
-    {
-      "id": "PT-S03",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "0a6c6f641d89581c2dc8c4cf5a76ac70e140b4956ea3b3fbe2bcb970f1c18709",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "VI-S03",
+      "id": "VI-S10",
       "decision": "APPROVED_BY_POLICY",
       "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "7665e19d26d366b65ecedba497ca272602ef8c367f36a72ac53384453aa653c6",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "source_sha256": "fd32efd2cf089406d3158d3d0f1137595cc53802e8bb11c648a1dc119855b44d",
+      "source_commit": "a22f60f15b4b57c30a8c1eb8e6961edb20c1c1df",
       "details": []
     },
     {
-      "id": "ZH-S03",
+      "id": "ZH-S11",
       "decision": "APPROVED_BY_POLICY",
       "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "b6d85dc50165d6446e92cdfaccff7da0ed2cfd6e947909a2900f714d0de175d7",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "source_sha256": "3e52a9beec60c8a8b46ccf916c641818dc6a12c02e1e44d20b996aff58a27f80",
+      "source_commit": "a22f60f15b4b57c30a8c1eb8e6961edb20c1c1df",
       "details": []
     },
     {
-      "id": "DE-S04",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "4bb1711de4153223f1ebf97c8b4121cc045f89ace3419ee5c5db90177cb69624",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": [
-        "G2_PARENT_PUBLISHED: DE-H02 is IDEA"
-      ]
-    },
-    {
-      "id": "EN-S04",
+      "id": "DE-S11",
       "decision": "APPROVED_BY_POLICY",
       "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "7a35bcbe95381da7656dc39386d8e86faaa83aef691d92e3e0e894d6e94bc340",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "source_sha256": "46229892f806ca65d5ef747ad66bff160ae5ec5f1cfcc1af5995076b6f29fc30",
+      "source_commit": "a22f60f15b4b57c30a8c1eb8e6961edb20c1c1df",
       "details": []
     },
     {
-      "id": "ES-S04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "c64ce6d6cd7063f4fb3971fe1b61ef8eb685678de9f0c6f6082c104d90205115",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "FR-S04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "b5f4670592829357c6d0081d511cc86a00a2476b1a578fb919da4cb26adac22d",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "JA-S04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "80a80cb04731b444229cf6a1671d8995796fcb4ae49eb24697b6b8e9f9ce9e5e",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "KO-S04",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "e250b879b50c95395ab1409ecbdcfc44b40a4b093b4953103a938e5250273c71",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: KO-H02 is IDEA"
-      ]
-    },
-    {
-      "id": "NL-S04",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "cd83de619f22b5cdced8f8ad4d0473d39aecbc5ed6170b4cdf8b53c61d0d5801",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: NL-H02 is IDEA"
-      ]
-    },
-    {
-      "id": "PT-S04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "9249cc21d77b7d2a662d3421a003c838cb0972bf792ef811a0664e8bb49f6ad3",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "VI-S04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "4f745821e40424c8c76c7f91498e472d95eb7ab2cd9e7807b8f47858dbf3e00d",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "ZH-S04",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "9354462b4ee0a9badacf4631aca4e29e574226bbb5c19c0a7e241b551ddee7f7",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "DE-S05",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "2c7ff465ed139764a03292e4d5cb3963cde1c0a377a96663fbd37f5c11e452e2",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "EN-S05",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "d51c8d69ba4e7b8094789a433b09fcd535f4e0d180f3730c0badec829b47c92c",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: EN-H03 is IDEA"
-      ]
-    },
-    {
-      "id": "ES-S05",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "4ab7169d41c41d5d756e10e70d12855ec932e1a1a76f223205e7fbed824c7540",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": [
-        "G2_PARENT_PUBLISHED: ES-H03 is IDEA"
-      ]
-    },
-    {
-      "id": "FR-S05",
+      "id": "EN-S12",
       "decision": "APPROVED_BY_POLICY",
       "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "df3e83a2311824f870a674b8336ad6687dfe391310bddd555cdcb7ce2f574547",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "source_sha256": "dcace7a8f41e58050f4d451582db86e360ac35aacbd128492649de3a7b406667",
+      "source_commit": "a22f60f15b4b57c30a8c1eb8e6961edb20c1c1df",
       "details": []
     },
     {
-      "id": "JA-S05",
+      "id": "ES-S11",
       "decision": "APPROVED_BY_POLICY",
       "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "d560aa8365edaaaa3d5e15e1a5acb731333adf4a81cc46b91f21e0cf52d34cc5",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "source_sha256": "7235e38cf8151f2092c5cc710f19fd77f2ba5f440daf5097c7ff94820a38ac64",
+      "source_commit": "a22f60f15b4b57c30a8c1eb8e6961edb20c1c1df",
       "details": []
     },
     {
-      "id": "KO-S05",
+      "id": "FR-S12",
       "decision": "APPROVED_BY_POLICY",
       "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "ed1478787844fd2fc482ff779d89b58aa9bb155d3082ff939cc775ed83bbdb2a",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "source_sha256": "c7cad10fed80410d2b6200f0f51d3a3ef452eceb5425f929d8409c6d0ea5d326",
+      "source_commit": "a22f60f15b4b57c30a8c1eb8e6961edb20c1c1df",
       "details": []
     },
     {
-      "id": "NL-S05",
+      "id": "JA-S11",
       "decision": "APPROVED_BY_POLICY",
       "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "6d2bbccb3f0c5f9d251090288e9c3a796cb53e5196a6f8e5142ed48197aa157e",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "source_sha256": "5665466beb396649008f6dd123c38c2a7d57a32af300de842a18788d2699063d",
+      "source_commit": "a22f60f15b4b57c30a8c1eb8e6961edb20c1c1df",
       "details": []
     },
     {
-      "id": "PT-S05",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "54f6aab2e0d495f01f79c7ab1f452e0690d6144a3d210cacd5feb1a98c3653d5",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": [
-        "G2_PARENT_PUBLISHED: PT-H03 is IDEA"
-      ]
-    },
-    {
-      "id": "VI-S05",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "c82125ff656f3b8a3f375cc6653fc9170b0b9e359c080a7d6f77dbd69fb3c33b",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "ZH-S05",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "b53a449575fde23d2d4e6163e343b01b2494f58a462e7c1ea426766cc44604b7",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "DE-S06",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "448af27d1a168a685d04500caf73212632059fb56b6d49117b589dfb71b479da",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "EN-S06",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "8734391c4bde30999f9b49f1294d4d97a5348750ea43c4e36afe29f0db37f1ed",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: EN-H03 is IDEA"
-      ]
-    },
-    {
-      "id": "ES-S06",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "694368d5369ac34016b0e855c9be79b1b966e7b59f9386e19810d739310a4403",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: ES-H03 is IDEA"
-      ]
-    },
-    {
-      "id": "FR-S06",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "62f3723c3b2dc731348d9d496c8696d3323c476b22c9ebdf9f8e3816d2c24585",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "JA-S06",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "4f8f0022928dc3ecb5005dcaf93742116befc54b25a06b68dc3ffd5ee6ed1865",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "KO-S06",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "250191cac419b083d74f3e3f26d190d5cb00e6947a32ca1a8325600dd578f795",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "NL-S06",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "9efbe9b0c32c5f78b13fb9363baba9eef663272768afb0de96ddd40b7831b175",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "PT-S06",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "4f163c29aeeb2297dfe7fd6532d3dc9c58135321628d7ea4e445df62b87e3ba7",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: PT-H03 is IDEA"
-      ]
-    },
-    {
-      "id": "VI-S06",
+      "id": "KO-S11",
       "decision": "APPROVED_BY_POLICY",
       "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "71a9623c76e662d7fcfe4a0467976f860a343fa74dda703309b54e6e72703f1d",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
+      "source_sha256": "ad91115cef764918f312633400ba9879523d4c87981167d77f1530e4765d445a",
+      "source_commit": "a22f60f15b4b57c30a8c1eb8e6961edb20c1c1df",
       "details": []
     },
     {
-      "id": "ZH-S06",
+      "id": "NL-S11",
       "decision": "APPROVED_BY_POLICY",
       "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "9bf1fdae69e6b6932263f77eb300b5d17cd5d5fb57752c218641c8ccf907929e",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "DE-S07",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "f1e5b6b202e7aec084ce9a23f717c7154970330c3af7ebabef90774b6cc8d1e1",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "EN-S07",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "59c1a3c6adf9e646fbbf111ac6e5fe278ea52e76d98a973defcb8c4311a7bfbd",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "ES-S07",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "88e1a08d178631bdc4cee5b156b0b489ee1ff172ce08afb8966e45a0f6f40591",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "FR-S07",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "03347b22e7ae7b8b4f988b645ea86e6e5959512609b5bbaf0e6eea23f46b7877",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": [
-        "G2_PARENT_PUBLISHED: FR-H04 is IDEA"
-      ]
-    },
-    {
-      "id": "JA-S07",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "9cbdee5d69fc5268dcafce0fb660d1479a42ac7f9da888b37d5d5f37ebc33fbb",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: JA-H04 is IDEA"
-      ]
-    },
-    {
-      "id": "KO-S07",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "29038e45a1fff68084a635e2f9dba88bc3e207a5ddc1aa35ce75db3f88ebae45",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "NL-S07",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "a7464d39a3146bbb2d065bc9ad138fe65136b4ed2dcc7f9d1d0fedb49444d213",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "PT-S07",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "2c2263cc6ae7090a359b2879dcae5a77d6d949ba57d6b90413d7c8bf19159634",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "VI-S07",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "bd5bbc7aa8ebfb182826a5badc6dda88a8dcb5e9a6ca49406e757bf8cc187dcf",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: VI-H04 is IDEA"
-      ]
-    },
-    {
-      "id": "ZH-S07",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "87048cad437e6805076df854a74118b4a23cd23f39264808f2a922d8f9baf659",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: ZH-H04 is IDEA"
-      ]
-    },
-    {
-      "id": "DE-S08",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "cf243c94b004fbfaa1907ad02b427deba262c818254733c3ac8049880124e35c",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "EN-S08",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "25711ffc9e928f8c4ed178c63666194e3a4df9f9e00b334a8a098053e5872c2a",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "ES-S08",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "b7652f85c8b032ff5554e7a3dff675e67839f6eed3c938d75fc1b54378451487",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "FR-S08",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "3ac9994cc29aca1d7ffa0d62d30cc0c22bbd670303320365e3ddb0a7ba97ceda",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: FR-H04 is IDEA"
-      ]
-    },
-    {
-      "id": "JA-S08",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "837f201ffefdab87ccc3eddcb1466d501c5492af089d0473b471b734fb7b3e1d",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": [
-        "G2_PARENT_PUBLISHED: JA-H04 is IDEA"
-      ]
-    },
-    {
-      "id": "KO-S08",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "1abd4b0a4e4e406af1a91bd90019068271a06f5573edf3c9b0042698a3aa3cc2",
-      "source_commit": "1c2320294df086221573d27060267bdaab528d7d",
-      "details": []
-    },
-    {
-      "id": "NL-S08",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "6f656234ba38760cb1476d2d040d91bc2a30caa5448ffddab83e32c018c1fb7b",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "PT-S08",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "89ffc5cd830ab1b2a9a7200c16deca63560581b7e8a3204dffa5d7af7aa547cd",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": []
-    },
-    {
-      "id": "VI-S08",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "6bf5fb9773200409d996285dc2bf5b4deba778f096e22f4b1aa61a37d262cc6c",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: VI-H04 is IDEA"
-      ]
-    },
-    {
-      "id": "ZH-S08",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W3",
-      "session": "w3-live",
-      "branch": "writer/w3-live",
-      "source_sha256": "9fae2047b799210e860fca7030c3a9ec9fceeca157858dbb210dcd8ab8f40ddc",
-      "source_commit": "17c2026759517c92e282da4481477368f9eff820",
-      "details": [
-        "G2_PARENT_PUBLISHED: ZH-H04 is IDEA"
-      ]
-    },
-    {
-      "id": "EN-S09",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "e9780f7dec833dae2d44475bcf5583540f6f4d96ef00f5dbbad364ece0f18bc2",
-      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": [
-        "G2_PARENT_PUBLISHED: EN-H03 is IDEA"
-      ]
-    },
-    {
-      "id": "EN-S10",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "10a660e697bfb2dfbe277b429e650661c27f1fae14d67410fba270d3b1d793a3",
-      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": [
-        "G2_PARENT_PUBLISHED: EN-H03 is IDEA"
-      ]
-    },
-    {
-      "id": "ES-S09",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "9aa054d77d90065945e7cf0680748a3111db99b6de0caacdbf1d5aa16e9ce257",
-      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": [
-        "G2_PARENT_PUBLISHED: ES-H03 is IDEA"
-      ]
-    },
-    {
-      "id": "FR-S09",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "2a8c607e3af92f3183b875b8057ebb6b899d65df543384b19f99e1afd02de9ed",
-      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": []
-    },
-    {
-      "id": "JA-S09",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "e924c4b7b1e9e2e3a04b38ef9f989800e110c40eb17edd756a01ee95e9d89d29",
-      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": []
-    },
-    {
-      "id": "KO-S09",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "d0fad902a7c51658ec98d739ad92ff9244cb773f388a3f79c4523445fb5b2eb7",
-      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": []
-    },
-    {
-      "id": "NL-S09",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "682e3bf18e2965c307a1e255d0c922db297ab9f0665cc3f7e64ff2da76a0f38a",
-      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": []
-    },
-    {
-      "id": "PT-S09",
-      "decision": "WAIT_PARENT",
-      "failed": [
-        "G2_PARENT_PUBLISHED"
-      ],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "975c0a9bf6681504d5047d7b46dcb2c5143c1f2b516e1914c4e299a199d78437",
-      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
-      "details": [
-        "G2_PARENT_PUBLISHED: PT-H03 is IDEA"
-      ]
-    },
-    {
-      "id": "VI-S09",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "e500d256e230f40635e4ebde4991a3d63274c642b7442094f3dce7f5b7f1b841",
-      "source_commit": "4b1f3ea4fe5f8a3bda80e1ccb43fa57ea7f23681",
+      "source_sha256": "e8689fa5474ee779e54b24feff4a555baa74bb37564ed118c85496cc5af53a62",
+      "source_commit": "a22f60f15b4b57c30a8c1eb8e6961edb20c1c1df",
       "details": []
     }
   ]

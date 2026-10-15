@@ -8,7 +8,7 @@ import {policy,matrix,map,frozen,enTopic,enTopics,EN_COUNT,batchOf,root} from ".
 
 const {sessionIds,idsFromBranch,batchFile,parseBatchFile,managedBatchOwner,checkpointOwner,isAllowedPath,assertAllowedPaths,pushArgs,normalizeDraft,
  evaluateDraft,decideBatch,passingBatch,quarantineEntries,newCheckpoint,applyBatch,applyUpdate,rebuildCheckpoint,validateCheckpoint,verifyCheckpointContent,
- planResume,planningHints,localeCapacity,topicSummary,canonical,sha256,topicKey}=core;
+ planResume,planningHints,localeCapacity,topicSummary,canonical,sha256,topicKey,resolveTaIds}=core;
 
 const ids=sessionIds({agent:"claude",session:"20261015"});
 const NOW="2026-10-15T10:00:00.000Z",TODAY="2026-10-15";
@@ -140,7 +140,7 @@ test("ten genuine candidates pass all four phases against the real Matrix and to
 });
 
 test("failures are attributed to the right phase and name the real gate",()=>{
- const existing=map.locales.en.proposals.find(p=>p.status==="PROPOSED");
+ const existing=map.locales.en.proposals.find(p=>p.status==="PROPOSED")||map.locales.en.proposals.find(p=>p.status==="PROMOTED");
  const r=ev([
   enTopic(0,{primary_query:existing.primary_query,slug:"copy-of-a-proposal"}),                                              // duplicate
   enTopic(1,{search_intent:"transactional",primary_query:"book a scooter in hanoi now with deposit"}),                      // intent
@@ -461,6 +461,25 @@ test("environment lost: everything is recovered from the GitHub branch alone",()
  assert.deepEqual(p.batches.map(b=>[b.seq,b.ingest]),[[1,"PENDING"],[2,"PENDING"]]);
  assert.ok(p.warnings.some(w=>/INGEST_PENDING: 2/.test(w)));
  assert.ok(p.actions.at(-1).startsWith("CONTINUE: research the next 10 topics → batch 0003"));
+});
+
+test("a session that stops after its last batch is told to settle the checkpoint; a settled one is not",()=>{
+ const {cp,files}=session(2);
+ const taOf=enTopics(0,20).map((c,i)=>({ta_id:"TA-EN-"+(500+i),locale:"en",slug:c.slug,key:topicKey(c),status:"PROPOSED"}));
+ const remote=c=>({remote:{exists:true,sha:P1,checkpoint:{raw:canonical(c)},batches:files,binding:"OK"}});
+ const open=planResume(facts({...remote(cp),main:{sha:M,log:{batches:[]},sessionTopics:taOf}}));
+ assert.equal(open.checkpoint.trust,"VERIFIED");
+ assert.deepEqual(open.checkpoint.settle,{unsettled_batches:1,missing_ta_ids:20},"only the newest batch is unsettled; no TA ID recorded yet");
+ const hint=open.actions.find(a=>a.startsWith("SETTLE_CHECKPOINT"));
+ assert.ok(hint&&/1 pushed batch\(es\) as COMMITTED and lacks 20 TA ID/.test(hint)&&/checkpoint --sync-ids/.test(hint));
+ assert.ok(open.actions.at(-1).startsWith("CONTINUE"),"settling never blocks the next batch");
+ const proposals=new Map(enTopics(0,20).map((c,i)=>["en:"+c.slug,{candidate_id:"TA-EN-"+(500+i)}]));
+ const settled=resolveTaIds(applyUpdate(cp,{ids,now:NOW,mainSha:M,parentSha:P2,commitShaByFile:{[files[1].file]:P2}}),proposals).checkpoint;
+ assert.deepEqual(validateCheckpoint(settled,{ids}),[]);
+ assert.deepEqual(settled.batches.map(b=>b.state),["PUSHED","PUSHED"]);
+ const done=planResume(facts({...remote(settled),main:{sha:M,log:{batches:[]},sessionTopics:taOf}}));
+ assert.deepEqual(done.checkpoint.settle,{unsettled_batches:0,missing_ta_ids:0});
+ assert.ok(!done.actions.some(a=>a.startsWith("SETTLE_CHECKPOINT")));
 });
 
 test("a missing, corrupt or stale checkpoint is never trusted: state is re-derived from the files on GitHub",()=>{

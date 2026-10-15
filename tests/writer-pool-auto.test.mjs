@@ -4,10 +4,26 @@ import fs from "node:fs";
 import {autoAdvance} from "../scripts/writer-pool-auto-core.mjs";
 import {newRequest,validateRequest,requestPath} from "../scripts/writer-request-core.mjs";
 import {poolCandidates,validatePool,MAX_BATCH} from "../scripts/writer-pool-core.mjs";
+import {PILOT_IDS,PILOT_OWNERS,PILOT_SOURCE,legacyPilotOriginal} from "../scripts/legacy-pilot-core.mjs";
 import {checkArticle} from "../scripts/articles.mjs";
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const registry=JSON.parse(fs.readFileSync("factory/external-writers/protected-drafts.json","utf8"));
 const empty={version:1,revision:0,claims:[]};
+// Custody, not phase: after a publisher repair ticket the pilot claim points at its SHA-bound revision, while the
+// original PR6 manuscript stays the first entry of its revision history and owner, session and branch never change.
+const revisedPilot=c=>{const o=PILOT_OWNERS[c.id],first=c.revisions?.[0];
+ return Boolean(o&&c.status==="SUBMITTED"&&c.legacy_pilot?.source_pr===6&&c.legacy_pilot.source_ref===PILOT_SOURCE&&
+  c.writer===o.writer&&c.session===o.session&&c.branch===o.branch&&first?.source_path==="content/articles/"+c.id+".json"&&
+  /^[0-9a-f]{64}$/.test(first.source_sha256||"")&&/^[0-9a-f]{40}$/.test(first.source_commit||""));};
+const immutablePilot=c=>(legacyPilotOriginal(c)||revisedPilot(c))&&/^[0-9a-f]{64}$/.test(c.source_sha256||"")&&/^[0-9a-f]{40}$/.test(c.source_commit||"");
+const validatePilotCustody=(ledger,registry,candidates)=>{
+ for(const id of PILOT_IDS){
+  const held=(registry.held_ids||[]).filter(p=>p.id===id);
+  const imported=ledger.claims.filter(c=>c.id===id&&immutablePilot(c));
+  assert.equal(held.length+imported.length,1,id+" must be either held or immutably adopted, never both");
+  assert.ok(!candidates.some(r=>r.id===id),id+" cannot be claimed again");
+ }
+};
 // 120 original topics is a floor for IDEA + PUBLISHED Hub/Supporting rows: promotion adds rows, publication moves IDEA to PUBLISHED.
 const HELD=new Set([...registry.protected,...(registry.held_ids||[])].map(x=>x.id));
 const IDEAS=matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&r.status==="IDEA");
@@ -23,15 +39,22 @@ test("activation request is a single exact branch/session, no secrets",()=>{
  assert.throws(()=>validateRequest({...x,api_key:"secret"},requestPath("W1",x.session),x.branch),/Unexpected/);
  assert.throws(()=>validateRequest({...x,enabled:false},requestPath("W1",x.session),x.branch),/Invalid/);
 });
-test("protect W1's fourteen existing drafts and two EN/DE editorial Hub drafts",()=>{
- assert.equal(registry.protected.length,14);
- assert.equal(registry.held_ids.length,2);
+test("W1 legacy drafts and both PR6 Hubs remain protected or immutably adopted",()=>{
+ // The legacy Hub intake moves a PR #17 draft from the protected registry into the claims ledger as a SUBMITTED
+ // claim locked to its source SHA-256 and commit; it never becomes claimable again, whatever its later phase.
+ const ledger=JSON.parse(fs.readFileSync("factory/external-writers/claims.json","utf8"));
+ const legacy=new Set(JSON.parse(fs.readFileSync("approvals/legacy-hub-intake-20261015.json","utf8")).ids);
+ assert.equal(legacy.size,14);
+ const adopted=ledger.claims.filter(c=>legacy.has(c.id)&&c.status==="SUBMITTED"&&/^[0-9a-f]{64}$/.test(c.source_sha256||"")&&/^[0-9a-f]{40}$/.test(c.source_commit||""));
+ for(const id of legacy)assert.equal(registry.protected.some(p=>p.id===id)+adopted.filter(c=>c.id===id).length,1,id+" has exactly one safe custody state");
+ validatePilotCustody(ledger,registry,poolCandidates(matrix,ledger,registry));
  assert.deepEqual(validatePool(matrix,empty,registry),[]);
+ assert.deepEqual(validatePool(matrix,ledger,registry),[]);
  assert.ok(IDEAS.length+matrix.rows.filter(r=>["HUB","SUPPORT"].includes(r.role)&&r.status==="PUBLISHED").length>=120);
  assert.equal(poolCandidates(matrix,empty,registry).length,DRAFTABLE);
- const candidates=new Set(poolCandidates(matrix,empty,registry).map(r=>r.id));
- for(const id of [...registry.protected,...registry.held_ids].map(x=>x.id))
-  assert.ok(!candidates.has(id),"Protected ID "+id);
+ const candidates=new Set(poolCandidates(matrix,ledger,registry).map(r=>r.id));
+ for(const id of [...legacy,...PILOT_IDS,...registry.held_ids.map(x=>x.id)])
+  assert.ok(!candidates.has(id),"Protected or adopted ID "+id);
 });
 test("first green push claims TEN, old CI replay is idempotent",()=>{
  const a=autoAdvance(matrix,empty,registry,req("W1"),opts);
@@ -105,8 +128,11 @@ test("source SHA+content hash are recorded on submitted drafts and cannot be mal
  assert.ok(validatePool(matrix,corrupted,registry).some(x=>x.includes("immutable submitted")));
 });
 test("Supporting drafts can pass prepublication parent test; publisher still refuses",()=>{
- const row=matrix.rows.find(x=>x.role==="SUPPORT"&&matrix.rows.find(p=>p.id===x.parent_id)?.status!=="PUBLISHED");
+ // Every Hub may already be live; force one Supporting row and its parent Hub to IDEA on a copy (fixture only).
+ const matrix=structuredClone(JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8")));
+ const row=matrix.rows.find(x=>x.role==="SUPPORT"&&matrix.rows.find(p=>p.id===x.parent_id)?.role==="HUB");
  assert.ok(row);
+ row.status="IDEA";matrix.rows.find(p=>p.id===row.parent_id).status="IDEA";
  const locales=JSON.parse(fs.readFileSync("content/locales.json","utf8"));
  const packet={matrix_id:row.id,locale:row.locale,proposed_url:row.url,
   title:"A comprehensive guide to staying safe while renting a motorbike in Hanoi",
