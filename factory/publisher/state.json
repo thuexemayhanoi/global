@@ -1840,6 +1840,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T17:30:20.793Z"
+    },
+    {
+      "id": "DE-S10",
+      "locale": "de",
+      "url": "/de/guides/reiseversicherung-rollerunfall/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:31:41.027Z",
+      "source_sha256": "7643b9ec018b56a4b63851aecc533452d09a15e7011eecb9c200c963cec54731",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S11",
+      "locale": "en",
+      "url": "/en/guides/travel-insurance-motorbike-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:31:41.027Z",
+      "source_sha256": "80eaab1e8aa67fb17c98fc98ca1fbe682bcbd86f4b31c7ceee24d72df4bbcc95",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -3157,6 +3179,14 @@
         "FR-S10"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:31:41.027Z",
+      "ids": [
+        "DE-S10",
+        "EN-S11"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3168,6 +3198,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 1
+    "APPROVED_BY_POLICY": 3
   }
 }
