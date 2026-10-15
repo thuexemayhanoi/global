@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 84,
+  "clean_runs": 106,
   "published": [
     {
       "id": "NL-H01",
@@ -2246,7 +2246,8 @@
       "at": "2026-10-15T18:03:12.422Z",
       "source_sha256": "4352494477e902787f49373454959751da6044778cc681f1a51b7c126544dd89",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:04:23.556Z"
     },
     {
       "id": "VI-S14",
@@ -2257,338 +2258,479 @@
       "at": "2026-10-15T18:03:12.422Z",
       "source_sha256": "78af45aa38aab90a3aa40f5b1fd4b8f3a8884561a4bace080fec970c3de7d3af",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:04:23.556Z"
+    },
+    {
+      "id": "ZH-S15",
+      "locale": "zh",
+      "url": "/zh/guides/jiaojing-jiancha/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:04:41.625Z",
+      "source_sha256": "29d6831bf58ee0dc69bef92d1579274802e896468d1889cdc8d414e15ba2220c",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:06:13.142Z"
+    },
+    {
+      "id": "DE-S15",
+      "locale": "de",
+      "url": "/de/guides/nach-einem-rollerunfall/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:04:41.625Z",
+      "source_sha256": "43a5f7df7ac8f4f166178986098e844b645be5f146ecca34f7283b5b73f4d8d6",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:06:13.142Z"
+    },
+    {
+      "id": "EN-S16",
+      "locale": "en",
+      "url": "/en/guides/after-a-motorbike-accident/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:06:37.942Z",
+      "source_sha256": "470f45ba93cb425f4b9491f9da814b17aad6f953e75aff213babc7c1af0459e0",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:08:14.891Z"
+    },
+    {
+      "id": "ES-S15",
+      "locale": "es",
+      "url": "/es/guides/despues-de-un-accidente/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:06:37.942Z",
+      "source_sha256": "300dc8cc264dba6e6478b724978b15263a440d00c32a8c6db7075d7754bb9a10",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:08:14.891Z"
+    },
+    {
+      "id": "VI-S15",
+      "locale": "vi",
+      "url": "/vi/guides/va-cham-giao-thong-xe-thue/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:08:32.414Z",
+      "source_sha256": "442ea90d136c2253711f7b2280aad44ae3fef44d22f889b4071c27eb4bad6076",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:09:43.572Z"
+    },
+    {
+      "id": "DE-S17",
+      "locale": "de",
+      "url": "/de/guides/nebenkosten-neben-der-miete/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:17:57.024Z",
+      "source_sha256": "cf3bda4896e94c4772f84ced56d7ac3d0f5ee8f16a640a0970c79644232228e0",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:19:06.970Z"
+    },
+    {
+      "id": "EN-S18",
+      "locale": "en",
+      "url": "/en/guides/costs-beyond-the-rental-fee/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:17:57.024Z",
+      "source_sha256": "42751c7824e289bb2ae7e3259d5434231e083ef4eaef98571472b49c37d79172",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:19:06.970Z"
+    },
+    {
+      "id": "ES-S17",
+      "locale": "es",
+      "url": "/es/guides/costes-adicionales/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:19:38.116Z",
+      "source_sha256": "69e282babb96c8908d204d0bf1dfdb682eb1352c2dc3376ed5a72016ae222867",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:20:40.590Z"
+    },
+    {
+      "id": "FR-S18",
+      "locale": "fr",
+      "url": "/fr/guides/frais-annexes-location/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:19:38.116Z",
+      "source_sha256": "a87e6af9412d96dac25cc3c2840987ad2f1f97fc256309706a7d454c559b39ff",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:20:40.590Z"
+    },
+    {
+      "id": "DE-S16",
+      "locale": "de",
+      "url": "/de/guides/reisepass-als-kaution/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:21:02.987Z",
+      "source_sha256": "91f0d33dada4353fda7f310a31137aeddf3066d8a0876e5e49e80030e0f44435",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:21:54.521Z"
+    },
+    {
+      "id": "EN-S17",
+      "locale": "en",
+      "url": "/en/guides/passport-as-rental-deposit/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:21:02.987Z",
+      "source_sha256": "f7fbca90fce18023b81157b95704dd2548931c9f5dd3a4ea4a6eedcad2e3513f",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:21:54.521Z"
+    },
+    {
+      "id": "ES-S16",
+      "locale": "es",
+      "url": "/es/guides/pasaporte-como-deposito/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:22:19.559Z",
+      "source_sha256": "e43aa17f26aeb9c29c7cc2c161801a3336a2a868a3cbb85ae6ea8b3c0ba36e55",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:23:33.246Z"
+    },
+    {
+      "id": "FR-S17",
+      "locale": "fr",
+      "url": "/fr/guides/passeport-en-caution/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:22:19.559Z",
+      "source_sha256": "0c10d3b2daa2a536166d621e3f805f3a06817a7e7e1529b07709a78d6cf376eb",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:23:33.246Z"
+    },
+    {
+      "id": "JA-S16",
+      "locale": "ja",
+      "url": "/ja/guides/passport-azuke/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:23:55.445Z",
+      "source_sha256": "64916995e48a33a12ea4263b8027ad50956d9984f7d9f55f4d8a911d2806d42e",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:25:08.320Z"
+    },
+    {
+      "id": "NL-S16",
+      "locale": "nl",
+      "url": "/nl/guides/paspoort-als-borg/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:23:55.445Z",
+      "source_sha256": "9aad7f1c8a84c46e136d32a45ad8565ae5ab3e997407db1f2a0e4c991c818430",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:25:08.320Z"
+    },
+    {
+      "id": "KO-S16",
+      "locale": "ko",
+      "url": "/ko/guides/yeogwon-bojeunggeum/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:25:31.288Z",
+      "source_sha256": "8081b0cea9aca6297b584723b2e46ec1392920d591254fa5dafe39029be0479c",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:26:41.507Z"
+    },
+    {
+      "id": "PT-S16",
+      "locale": "pt",
+      "url": "/pt/guides/passaporte-como-caucao/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:25:31.288Z",
+      "source_sha256": "d8de56241907084bb63904a43ce5258f32104a471bd76fee81e921598a60fcdc",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:26:41.507Z"
+    },
+    {
+      "id": "VI-S16",
+      "locale": "vi",
+      "url": "/vi/guides/dat-coc-bang-can-cuoc/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:26:59.568Z",
+      "source_sha256": "4314aa7ce5248bbb12681b1bee41ba2492e499ae21daa18ff39112c108aed927",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:28:49.862Z"
+    },
+    {
+      "id": "ZH-S17",
+      "locale": "zh",
+      "url": "/zh/guides/huzhao-diya/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:26:59.568Z",
+      "source_sha256": "857333d7fc67d982fc0db92a004d8f9618e0f18970ef20d043623c1aaf59e130",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:28:49.862Z"
+    },
+    {
+      "id": "JA-S17",
+      "locale": "ja",
+      "url": "/ja/guides/tsuika-hiyou/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:29:06.965Z",
+      "source_sha256": "dc5ae967d28961da763a784e08b429f38992748af0b8e4aa97c1e60fa9722efb",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:31:57.701Z"
+    },
+    {
+      "id": "KO-S17",
+      "locale": "ko",
+      "url": "/ko/guides/chuga-biyong/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:29:06.965Z",
+      "source_sha256": "c3b85fac789d948fc6c3e246237cbb22a6a04d7cbe09cfe89ed714857cc5d0c9",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:31:57.701Z"
+    },
+    {
+      "id": "NL-S17",
+      "locale": "nl",
+      "url": "/nl/guides/bijkomende-kosten/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:32:36.546Z",
+      "source_sha256": "3688ddc1d152b46ad6a1f3c053ddcbcb363f6f768e23abee6bdeb4d6c16fb4e5",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:34:10.856Z"
+    },
+    {
+      "id": "PT-S17",
+      "locale": "pt",
+      "url": "/pt/guides/custos-adicionais/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:32:36.546Z",
+      "source_sha256": "f4d78c501f59c91fb80d3ed60bbea8959496c6be4e984afc80b4c250219a30dd",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:34:10.856Z"
+    },
+    {
+      "id": "VI-S17",
+      "locale": "vi",
+      "url": "/vi/guides/chi-phi-phat-sinh-thue-xe/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:34:31.539Z",
+      "source_sha256": "d69cb2bd879c7e7233b76250657a4bdb6503b19ab5a8c166960b3f0bee68d1a5",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:35:43.077Z"
+    },
+    {
+      "id": "ZH-S18",
+      "locale": "zh",
+      "url": "/zh/guides/ewai-feiyong/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:34:31.539Z",
+      "source_sha256": "64c46216788dda2331902ae035c2ec3469e022a9adf616a88cafbb41f09767c7",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:35:43.077Z"
+    },
+    {
+      "id": "DE-S36",
+      "locale": "de",
+      "url": "/de/guides/nachts-roller-fahren-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:36:03.283Z",
+      "source_sha256": "584f0605cb1ddf0f7819ced35ee8df6792b260b9de537a1471397e75b4efbb47",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:37:35.558Z"
+    },
+    {
+      "id": "DE-S37",
+      "locale": "de",
+      "url": "/de/guides/handy-beim-rollerfahren-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:36:03.283Z",
+      "source_sha256": "d3dc18e27bf645f067f1e1cd7e8120904ffdb71b5ee97b584d21a401a810f32e",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:37:35.558Z"
+    },
+    {
+      "id": "DE-S38",
+      "locale": "de",
+      "url": "/de/guides/deutschen-fuehrerschein-in-vietnam-umschreiben/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:37:53.150Z",
+      "source_sha256": "45923bc418f70fe4f2a8b4b0587f381c2c4e76b8ecac1dadbf9ced81722e7d51",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:39:05.034Z"
+    },
+    {
+      "id": "EN-S29",
+      "locale": "en",
+      "url": "/en/guides/vietnam-drink-driving-rules-for-motorbike-riders/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:37:53.150Z",
+      "source_sha256": "9eb9c6509a28db842fb238be583172a754bbb1744d571fce71dcee3bce416e03",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:39:05.034Z"
+    },
+    {
+      "id": "DE-S39",
+      "locale": "de",
+      "url": "/de/guides/hupen-in-vietnam-regeln/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:41:14.794Z",
+      "source_sha256": "fe3c36eb327e09da0efd00cfcd13404e432f19233376a1b53999729c7df94b84",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:42:28.751Z"
+    },
+    {
+      "id": "DE-S40",
+      "locale": "de",
+      "url": "/de/guides/vorfahrt-kreuzung-kreisverkehr-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:41:14.794Z",
+      "source_sha256": "658500f8d69c80bf1264155e1e4f9be9af299fb80a8d21b230f7da78568696d2",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:42:28.751Z"
+    },
+    {
+      "id": "EN-S32",
+      "locale": "en",
+      "url": "/en/guides/compulsory-motorbike-insurance-in-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:42:47.075Z",
+      "source_sha256": "9791e45c9029fdecc8e70cc61c6c0c3f63639b1b761109fb44c8f1e57331c2ce",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:43:58.246Z"
+    },
+    {
+      "id": "EN-S30",
+      "locale": "en",
+      "url": "/en/guides/motorbike-speed-limits-in-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:47:16.428Z",
+      "source_sha256": "364a1ae6559d339a7f54a9ff39a7e0bba478cd72b6efc0809ecde4d618f17250",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:49:06.401Z"
+    },
+    {
+      "id": "EN-S33",
+      "locale": "en",
+      "url": "/en/guides/vietnam-road-signs-for-motorbike-riders/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:47:16.428Z",
+      "source_sha256": "a3fa94ae19f133c6cf0dffcb7946b684fe33602ef1be12aded2c6d8d9b094c04",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T18:49:06.401Z"
+    },
+    {
+      "id": "DE-S41",
+      "locale": "de",
+      "url": "/de/guides/roller-autobahn-vietnam-verboten/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:00:19.332Z",
+      "source_sha256": "01cd82fa9491912dff72080ddbfedad68207f00ea55328ce85246a339092dfb9",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T19:01:48.985Z"
+    },
+    {
+      "id": "DE-S42",
+      "locale": "de",
+      "url": "/de/guides/wie-viele-personen-auf-dem-roller-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:00:19.332Z",
+      "source_sha256": "0cda8e29906e3b84964103b7df7a44761a5f1c7800c522e07a96b36c100ba592",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T19:01:48.985Z"
+    },
+    {
+      "id": "DE-S43",
+      "locale": "de",
+      "url": "/de/guides/ueberholen-roller-vietnam-regeln/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:02:08.450Z",
+      "source_sha256": "893adb58168cb6610eff35387932e295df3f912057e5b273a8e14341f31b0eef",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T19:03:39.331Z"
+    },
+    {
+      "id": "DE-S44",
+      "locale": "de",
+      "url": "/de/guides/wenden-und-abbiegen-roller-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:02:08.450Z",
+      "source_sha256": "cb16412a3b156b26b0cc7cba1f4042c147161579ce5e127d790da2d4e1fb4df7",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T19:03:39.331Z"
+    },
+    {
+      "id": "DE-S45",
+      "locale": "de",
+      "url": "/de/guides/spurwahl-roller-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T19:03:56.779Z",
+      "source_sha256": "7d0b8516171e70a937dd2e582d5b089de918583f53f22b86514bf145df3df3df",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T19:05:10.037Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T04:16:37.044Z",
-      "ids": [
-        "NL-H01",
-        "PT-H01"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T04:51:35.940Z",
-      "ids": [
-        "ES-H01",
-        "KO-H01"
-      ],
-      "result": "GATE_FAILED"
-    },
-    {
-      "at": "2026-10-15T05:12:03.222Z",
-      "ids": [],
-      "result": "RESUME: Owner-authorized recovery: Korean QH15 won false positive fixed in PR 42, QA and live HTTP checks passed"
-    },
-    {
-      "at": "2026-10-15T05:12:18.241Z",
-      "ids": [
-        "ES-H01",
-        "KO-H01"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T05:13:25.336Z",
-      "ids": [
-        "ES-H01",
-        "KO-H01"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T05:13:43.129Z",
-      "ids": [
-        "KO-S01",
-        "PT-S02"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T05:14:48.442Z",
-      "ids": [
-        "KO-S01",
-        "PT-S02"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T05:14:48.442Z",
-      "ids": [],
-      "result": "STAGE_ADVANCED PILOT→RAMP"
-    },
-    {
-      "at": "2026-10-15T05:29:54.892Z",
-      "ids": [
-        "EN-H02",
-        "FR-H02"
-      ],
-      "result": "GATE_FAILED"
-    },
-    {
-      "at": "2026-10-15T05:34:24.609Z",
-      "ids": [],
-      "result": "RESUME: Owner authorized: HTML inline-price citations restored in merged PR 46; checks and production HTTP QA pass"
-    },
-    {
-      "at": "2026-10-15T05:34:42.542Z",
-      "ids": [
-        "EN-H02",
-        "FR-H02"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T05:36:30.154Z",
-      "ids": [
-        "EN-H02",
-        "FR-H02"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T06:26:39.346Z",
-      "ids": [
-        "JA-H02",
-        "PT-H02"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T06:27:47.515Z",
-      "ids": [
-        "JA-H02",
-        "PT-H02"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T06:28:04.637Z",
-      "ids": [
-        "ZH-H02",
-        "KO-H04"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T06:29:12.740Z",
-      "ids": [
-        "ZH-H02",
-        "KO-H04"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T07:54:04.610Z",
-      "ids": [
-        "ES-H02",
-        "VI-H02"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T07:55:11.491Z",
-      "ids": [
-        "ES-H02",
-        "VI-H02"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T07:55:29.690Z",
-      "ids": [
-        "DE-H03"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T07:56:56.789Z",
-      "ids": [
-        "DE-H03"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T07:57:14.354Z",
-      "ids": [
-        "DE-S09"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T07:58:21.698Z",
-      "ids": [
-        "DE-S09"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:13:30.487Z",
-      "ids": [
-        "FR-H03",
-        "JA-H03"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:14:37.291Z",
-      "ids": [
-        "FR-H03",
-        "JA-H03"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:21:02.105Z",
-      "ids": [
-        "KO-H03",
-        "NL-H03"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:22:33.546Z",
-      "ids": [
-        "KO-H03",
-        "NL-H03"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:22:50.449Z",
-      "ids": [
-        "VI-H03",
-        "ZH-H03"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:23:57.451Z",
-      "ids": [
-        "VI-H03",
-        "ZH-H03"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:24:15.155Z",
-      "ids": [
-        "DE-H04",
-        "EN-H04"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:25:44.055Z",
-      "ids": [
-        "DE-H04",
-        "EN-H04"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:25:44.055Z",
-      "ids": [],
-      "result": "STAGE_ADVANCED RAMP→CONTINUOUS"
-    },
-    {
-      "at": "2026-10-15T09:26:03.344Z",
-      "ids": [
-        "ES-H04",
-        "NL-H04"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:27:10.818Z",
-      "ids": [
-        "ES-H04",
-        "NL-H04"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:27:28.016Z",
-      "ids": [
-        "PT-H04",
-        "ES-S01"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:28:35.432Z",
-      "ids": [
-        "PT-H04",
-        "ES-S01"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:28:52.024Z",
-      "ids": [
-        "NL-S01",
-        "PT-S01"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:29:59.954Z",
-      "ids": [
-        "NL-S01",
-        "PT-S01"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:30:19.821Z",
-      "ids": [
-        "ES-S02",
-        "KO-S02"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:31:48.543Z",
-      "ids": [
-        "ES-S02",
-        "KO-S02"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:32:15.389Z",
-      "ids": [
-        "NL-S02",
-        "EN-S03"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:34:24.262Z",
-      "ids": [
-        "NL-S02",
-        "EN-S03"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T09:34:42.583Z",
-      "ids": [
-        "ES-S03",
-        "FR-S03"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T09:36:09.139Z",
-      "ids": [
-        "ES-S03",
-        "FR-S03"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T09:36:26.649Z",
       "ids": [
@@ -3832,18 +3974,355 @@
         "VI-S14"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:04:23.556Z",
+      "ids": [
+        "PT-S14",
+        "VI-S14"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:04:41.625Z",
+      "ids": [
+        "ZH-S15",
+        "DE-S15"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:06:13.142Z",
+      "ids": [
+        "ZH-S15",
+        "DE-S15"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:06:37.942Z",
+      "ids": [
+        "EN-S16",
+        "ES-S15"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:08:14.891Z",
+      "ids": [
+        "EN-S16",
+        "ES-S15"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:08:32.414Z",
+      "ids": [
+        "VI-S15"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:09:43.572Z",
+      "ids": [
+        "VI-S15"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:17:57.024Z",
+      "ids": [
+        "DE-S17",
+        "EN-S18"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:19:06.970Z",
+      "ids": [
+        "DE-S17",
+        "EN-S18"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:19:38.116Z",
+      "ids": [
+        "ES-S17",
+        "FR-S18"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:20:40.590Z",
+      "ids": [
+        "ES-S17",
+        "FR-S18"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:21:02.987Z",
+      "ids": [
+        "DE-S16",
+        "EN-S17"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:21:54.521Z",
+      "ids": [
+        "DE-S16",
+        "EN-S17"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:22:19.559Z",
+      "ids": [
+        "ES-S16",
+        "FR-S17"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:23:33.246Z",
+      "ids": [
+        "ES-S16",
+        "FR-S17"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:23:55.445Z",
+      "ids": [
+        "JA-S16",
+        "NL-S16"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:25:08.320Z",
+      "ids": [
+        "JA-S16",
+        "NL-S16"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:25:31.288Z",
+      "ids": [
+        "KO-S16",
+        "PT-S16"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:26:41.507Z",
+      "ids": [
+        "KO-S16",
+        "PT-S16"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:26:59.568Z",
+      "ids": [
+        "VI-S16",
+        "ZH-S17"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:28:49.862Z",
+      "ids": [
+        "VI-S16",
+        "ZH-S17"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:29:06.965Z",
+      "ids": [
+        "JA-S17",
+        "KO-S17"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:31:57.701Z",
+      "ids": [
+        "JA-S17",
+        "KO-S17"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:32:36.546Z",
+      "ids": [
+        "NL-S17",
+        "PT-S17"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:34:10.856Z",
+      "ids": [
+        "NL-S17",
+        "PT-S17"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:34:31.539Z",
+      "ids": [
+        "VI-S17",
+        "ZH-S18"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:35:43.077Z",
+      "ids": [
+        "VI-S17",
+        "ZH-S18"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:36:03.283Z",
+      "ids": [
+        "DE-S36",
+        "DE-S37"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:37:35.558Z",
+      "ids": [
+        "DE-S36",
+        "DE-S37"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:37:53.150Z",
+      "ids": [
+        "DE-S38",
+        "EN-S29"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:39:05.034Z",
+      "ids": [
+        "DE-S38",
+        "EN-S29"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:41:14.794Z",
+      "ids": [
+        "DE-S39",
+        "DE-S40"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:42:28.751Z",
+      "ids": [
+        "DE-S39",
+        "DE-S40"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:42:47.075Z",
+      "ids": [
+        "EN-S32"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:43:58.246Z",
+      "ids": [
+        "EN-S32"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:47:16.428Z",
+      "ids": [
+        "EN-S30",
+        "EN-S33"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T18:49:06.401Z",
+      "ids": [
+        "EN-S30",
+        "EN-S33"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T19:00:19.332Z",
+      "ids": [
+        "DE-S41",
+        "DE-S42"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T19:01:48.985Z",
+      "ids": [
+        "DE-S41",
+        "DE-S42"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T19:02:08.450Z",
+      "ids": [
+        "DE-S43",
+        "DE-S44"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T19:03:39.331Z",
+      "ids": [
+        "DE-S43",
+        "DE-S44"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T19:03:56.779Z",
+      "ids": [
+        "DE-S45"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T19:05:10.037Z",
+      "ids": [
+        "DE-S45"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T18:02:55.056Z",
+    "at": "2026-10-15T19:05:10.037Z",
     "ids": [
-      "KO-S14",
-      "NL-S14"
+      "DE-S45"
     ],
-    "commit": "8657d71f74e9ce8f934ecf4b96c2d17999f8bb46",
-    "live_seconds": 122
+    "commit": "1a3b1d6f5cfbc2e9abbe662b4bf68e9a4c9596b2",
+    "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 7
+    "APPROVED_BY_POLICY": 1
   }
 }
