@@ -676,6 +676,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:51:41.143Z"
+    },
+    {
+      "id": "JA-S06",
+      "locale": "ja",
+      "url": "/ja/guides/yoyaku-henkou/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:51:59.627Z",
+      "source_sha256": "4f8f0022928dc3ecb5005dcaf93742116befc54b25a06b68dc3ffd5ee6ed1865",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S06",
+      "locale": "ko",
+      "url": "/ko/guides/yeyak-chwisoh/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:51:59.627Z",
+      "source_sha256": "250191cac419b083d74f3e3f26d190d5cb00e6947a32ca1a8325600dd578f795",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1187,6 +1209,14 @@
         "FR-S06"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:51:59.627Z",
+      "ids": [
+        "JA-S06",
+        "KO-S06"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1200,6 +1230,6 @@
   },
   "queue": {
     "WAIT_PARENT": 36,
-    "APPROVED_BY_POLICY": 24
+    "APPROVED_BY_POLICY": 22
   }
 }
