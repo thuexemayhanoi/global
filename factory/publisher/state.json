@@ -2260,17 +2260,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:04:23.556Z"
+    },
+    {
+      "id": "ZH-S15",
+      "locale": "zh",
+      "url": "/zh/guides/jiaojing-jiancha/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:04:41.625Z",
+      "source_sha256": "29d6831bf58ee0dc69bef92d1579274802e896468d1889cdc8d414e15ba2220c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S15",
+      "locale": "de",
+      "url": "/de/guides/nach-einem-rollerunfall/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:04:41.625Z",
+      "source_sha256": "43a5f7df7ac8f4f166178986098e844b645be5f146ecca34f7283b5b73f4d8d6",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T04:51:35.940Z",
-      "ids": [
-        "ES-H01",
-        "KO-H01"
-      ],
-      "result": "GATE_FAILED"
-    },
     {
       "at": "2026-10-15T05:12:03.222Z",
       "ids": [],
@@ -3834,6 +3848,14 @@
         "VI-S14"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:04:41.625Z",
+      "ids": [
+        "ZH-S15",
+        "DE-S15"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -3846,6 +3868,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 7
+    "APPROVED_BY_POLICY": 5
   }
 }
