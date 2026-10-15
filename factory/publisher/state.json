@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 152,
+  "clean_runs": 153,
   "published": [
     {
       "id": "NL-H01",
@@ -3710,18 +3710,11 @@
       "at": "2026-10-15T21:48:28.647Z",
       "source_sha256": "128b176894245ca35b02e2d448b04e96456637dc74eecc43d6ac7494ed1f3f44",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T21:49:41.640Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T13:47:56.955Z",
-      "ids": [
-        "ES-S09",
-        "PT-S09"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T16:39:42.059Z",
       "ids": [
@@ -5278,15 +5271,21 @@
         "ES-S26"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T21:49:41.640Z",
+      "ids": [
+        "ES-S26"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T21:48:05.505Z",
+    "at": "2026-10-15T21:49:41.640Z",
     "ids": [
-      "ES-S18",
-      "ES-S29"
+      "ES-S26"
     ],
-    "commit": "64d4f81efdc29dde8981b8ce1a57f1d5a7e1b864",
+    "commit": "aa1952dcb4a94ec720c13f2a79fb09d54f1ca330",
     "live_seconds": 62
   },
   "queue": {
