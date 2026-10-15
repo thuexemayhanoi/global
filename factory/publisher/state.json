@@ -3700,17 +3700,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T21:48:05.505Z"
+    },
+    {
+      "id": "ES-S26",
+      "locale": "es",
+      "url": "/es/guides/aprender-a-llevar-moto-con-embrague/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T21:48:28.647Z",
+      "source_sha256": "128b176894245ca35b02e2d448b04e96456637dc74eecc43d6ac7494ed1f3f44",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T13:46:27.563Z",
-      "ids": [
-        "ES-S09",
-        "PT-S09"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T13:47:56.955Z",
       "ids": [
@@ -5268,6 +5271,13 @@
         "ES-S29"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T21:48:28.647Z",
+      "ids": [
+        "ES-S26"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -5280,6 +5290,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 1
   }
 }
