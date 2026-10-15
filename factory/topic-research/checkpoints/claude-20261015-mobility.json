@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility",
   "batch_session": "research-claude-20261015-mobility",
   "created_at": "2026-10-15T09:33:24.963Z",
-  "updated_at": "2026-10-15T17:46:21.161Z",
+  "updated_at": "2026-10-15T17:47:22.329Z",
   "base_main_sha": "3ed26464887a6453f26cb5791c302971d699ca4a",
-  "last_commit_sha": "bd5ccdc04367fde21371f26875ce6702ba34a5d9",
+  "last_commit_sha": "647109c5b323f0812782af9abef18b5db01e8d90",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 90,
-    "qa_pass": 90,
+    "researched": 100,
+    "qa_pass": 100,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 80,
+    "pushed": 90,
     "pending_push": 10
   },
   "coverage": {
@@ -31,18 +31,19 @@
       "nl": 10,
       "pt": 10,
       "ko": 10,
-      "ja": 10
+      "ja": 10,
+      "zh": 10
     },
     "domains": {
       "transportation-mobility": 10,
-      "motorbike-rental": 8,
-      "traffic-law-safety": 72
+      "motorbike-rental": 9,
+      "traffic-law-safety": 81
     }
   },
   "last_batch": {
-    "seq": 9,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0009.json",
-    "sha256": "1aa055f8a2aa0b3246487fd5ccea5712760a9ac66f9ee654f4e9edaf8157bb0b",
+    "seq": 10,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0010.json",
+    "sha256": "4465a60cddb7d562c2a0fd87418e280be0b95bda17255ff6190138ccdbef6fea",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -940,8 +941,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility-0009.json",
       "sha256": "1aa055f8a2aa0b3246487fd5ccea5712760a9ac66f9ee654f4e9edaf8157bb0b",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "647109c5b323f0812782af9abef18b5db01e8d90",
       "researched_on": "2026-10-15",
       "topics": [
         {
@@ -1045,11 +1046,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 10,
+      "file": "factory/topic-research/batches/claude-20261015-mobility-0010.json",
+      "sha256": "4465a60cddb7d562c2a0fd87418e280be0b95bda17255ff6190138ccdbef6fea",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-15",
+      "topics": [
+        {
+          "ref": "zh:clutch-motorbike-practice-before-vietnam",
+          "locale": "zh",
+          "slug": "clutch-motorbike-practice-before-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-transmission",
+          "key": "zh::越南旅行前学骑离合器摩托车",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:vietnam-drink-riding-zero-tolerance",
+          "locale": "zh",
+          "slug": "vietnam-drink-riding-zero-tolerance",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南酒驾标准 摩托车",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:vietnam-motorbike-speed-limits",
+          "locale": "zh",
+          "slug": "vietnam-motorbike-speed-limits",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南摩托车限速",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:vietnam-a1-licence-test-foreigners",
+          "locale": "zh",
+          "slug": "vietnam-a1-licence-test-foreigners",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H03",
+          "subcluster": "dc-licence",
+          "key": "zh::外国人在越南考摩托车驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:vietnam-road-signs-for-riders",
+          "locale": "zh",
+          "slug": "vietnam-road-signs-for-riders",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南交通标志 摩托车",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-winter-motorbike-riding",
+          "locale": "zh",
+          "slug": "hanoi-winter-motorbike-riding",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-weather",
+          "key": "zh::河内冬天骑摩托车",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:vietnam-motorbike-trip-clothing",
+          "locale": "zh",
+          "slug": "vietnam-motorbike-trip-clothing",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-gear",
+          "key": "zh::越南骑摩托车穿什么",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-motorbike-theft-prevention",
+          "locale": "zh",
+          "slug": "hanoi-motorbike-theft-prevention",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::河内摩托车防盗",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-motorbike-parking",
+          "locale": "zh",
+          "slug": "hanoi-motorbike-parking",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::河内摩托车停车",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:vietnam-night-riding-lights",
+          "locale": "zh",
+          "slug": "vietnam-night-riding-lights",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南夜间骑摩托车注意事项",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 10,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0010.json",
+    "seq": 11,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0011.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -1128,6 +1240,13 @@
       "seq": 9,
       "topics": 10,
       "sha256": "1aa055f8a2aa0b3246487fd5ccea5712760a9ac66f9ee654f4e9edaf8157bb0b"
+    },
+    {
+      "at": "2026-10-15T17:47:22.329Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 10,
+      "topics": 10,
+      "sha256": "4465a60cddb7d562c2a0fd87418e280be0b95bda17255ff6190138ccdbef6fea"
     }
   ]
 }
