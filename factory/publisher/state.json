@@ -1504,6 +1504,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T13:46:07.802Z"
+    },
+    {
+      "id": "ES-S09",
+      "locale": "es",
+      "url": "/es/guides/permiso-internacional-motos/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:46:27.563Z",
+      "source_sha256": "9aa054d77d90065945e7cf0680748a3111db99b6de0caacdbf1d5aa16e9ce257",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "PT-S09",
+      "locale": "pt",
+      "url": "/pt/guides/pid-carta-internacional/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T13:46:27.563Z",
+      "source_sha256": "975c0a9bf6681504d5047d7b46dcb2c5143c1f2b516e1914c4e299a199d78437",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -2585,6 +2607,14 @@
         "EN-S10"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T13:46:27.563Z",
+      "ids": [
+        "ES-S09",
+        "PT-S09"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -2598,7 +2628,7 @@
   },
   "queue": {
     "WAIT_PARENT": 2,
-    "APPROVED_BY_POLICY": 4,
+    "APPROVED_BY_POLICY": 2,
     "REJECTED": 1
   }
 }
