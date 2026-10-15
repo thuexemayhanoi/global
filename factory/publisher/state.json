@@ -4636,17 +4636,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T23:34:41.845Z"
+    },
+    {
+      "id": "FR-S67",
+      "locale": "fr",
+      "url": "/fr/guides/drogue-et-scooter-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T23:35:01.017Z",
+      "source_sha256": "67e9050ccc77f67bd868886122073426648b9ff6583560b6a0a89c32eb6ea0ff",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S68",
+      "locale": "fr",
+      "url": "/fr/guides/animaux-sur-la-route-scooter-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T23:35:01.017Z",
+      "source_sha256": "433dbf7ee79e91931d113d95c1be5898d77ec9fe96c216def60e3779454816cd",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T18:34:31.539Z",
-      "ids": [
-        "VI-S17",
-        "ZH-S18"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T18:35:43.077Z",
       "ids": [
@@ -6188,6 +6202,14 @@
         "FR-S66"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T23:35:01.017Z",
+      "ids": [
+        "FR-S67",
+        "FR-S68"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -6200,6 +6222,6 @@
     "live_seconds": 42
   },
   "queue": {
-    "APPROVED_BY_POLICY": 5
+    "APPROVED_BY_POLICY": 3
   }
 }
