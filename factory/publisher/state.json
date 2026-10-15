@@ -2464,16 +2464,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T18:26:41.507Z"
+    },
+    {
+      "id": "VI-S16",
+      "locale": "vi",
+      "url": "/vi/guides/dat-coc-bang-can-cuoc/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:26:59.568Z",
+      "source_sha256": "4314aa7ce5248bbb12681b1bee41ba2492e499ae21daa18ff39112c108aed927",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S17",
+      "locale": "zh",
+      "url": "/zh/guides/huzhao-diya/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T18:26:59.568Z",
+      "source_sha256": "857333d7fc67d982fc0db92a004d8f9618e0f18970ef20d043623c1aaf59e130",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T07:56:56.789Z",
-      "ids": [
-        "DE-H03"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T07:57:14.354Z",
       "ids": [
@@ -4046,6 +4061,14 @@
         "PT-S16"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T18:26:59.568Z",
+      "ids": [
+        "VI-S16",
+        "ZH-S17"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4058,6 +4081,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 10
+    "APPROVED_BY_POLICY": 8
   }
 }
