@@ -38,6 +38,16 @@ export function rowsIndex(matrix){
 function isPublishedLinked(pathname,ix,pending){
  return (ix.byUrl.get(pathname)||[]).some(r=>r.status==="PUBLISHED"||pending.has(r.id));
 }
+export const STANDING_POLICY_PATH="approvals/standing-policy-20261015.json";
+/** Honest record for articles published under the owner's standing policy (never claims human review). */
+export function validatePublicationRecord(p){
+ const e=[];
+ if(p?.mode!=="STANDING_POLICY"||p?.policy!==STANDING_POLICY_PATH)e.push("Unknown publication policy");
+ if(!/^[0-9a-f]{64}$/.test(p?.source_sha256||"")||!/^[0-9a-f]{40}$/.test(p?.source_commit||"")||!/^[0-9a-f]{64}$/.test(p?.review_sha256||""))e.push("Publication record needs source and review hashes");
+ if(p?.human_review!==false||p?.serp_validated!==false)e.push("Policy publication must not claim human review or SERP validation");
+ if(!/^\d{4}-\d{2}-\d{2}T/.test(p?.approved_at||""))e.push("approved_at timestamp required");
+ return e;
+}
 export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublished=false,pending=new Set(),assetsRoot=null,allowUnpublishedParentForDraft=false,factMode="warn",index=null}={}){
  const errors=[], warnings=[];
  const ix=index||rowsIndex(matrix);
@@ -72,8 +82,17 @@ export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublis
  if(/^#\s+/m.test(body))errors.push("Do not put an H1 in body_markdown; use packet.h1");
  if(/\b(?:TODO|TBD|LOREM IPSUM|PLACEHOLDER)\b/i.test(body))errors.push("Draft contains placeholder content");
  if(/<\s*(?:script|style|iframe|form|img|a|p|h[1-6]|div)\b/i.test(body))errors.push("Raw HTML is not allowed; use Markdown");
- if(packet?.serp_intent_checked!==true)errors.push("SERP search-intent confirmation is required");
- if(packet?.facts_reviewed_by_human!==true)errors.push("Human editorial fact review is required");
+ // Owner-reviewed packets set both flags; standing-policy packets keep them false and carry a verified publication record.
+ const policyRecord=packet?.publication!==undefined;
+ if(policyRecord){
+  const pe=validatePublicationRecord(packet.publication);
+  errors.push(...pe);
+  if(assetsRoot&&!fs.existsSync(path.join(assetsRoot,STANDING_POLICY_PATH)))errors.push("Standing policy file missing");
+  if(packet.facts_reviewed_by_human!==false||packet.serp_intent_checked!==false)errors.push("Policy publications must keep human-review and SERP flags false");
+ }else{
+  if(packet?.serp_intent_checked!==true)errors.push("SERP search-intent confirmation is required");
+  if(packet?.facts_reviewed_by_human!==true)errors.push("Human editorial fact review is required");
+ }
  if(!Array.isArray(packet?.sources)||packet.sources.length<2)errors.push("At least two traceable references are required");
  else for(let i=0;i<packet.sources.length;i++){
   const s=packet.sources[i];
@@ -140,6 +159,19 @@ export function renderMarkdown(markdown){
  return out.join("\n");
 }
 // [topic guides, more in this topic, references, other guides] per locale.
+// Shown on standing-policy publications only: honest provenance, no claim of human review.
+const AI_DISCLOSURE={
+ vi:"Bài viết được soạn với sự hỗ trợ của AI và xuất bản sau các bước kiểm tra tự động về chất lượng, nguồn và trùng lặp; chưa được biên tập viên con người duyệt.",
+ en:"This guide was drafted with AI assistance and published after automated quality, source and duplication checks; it has not been reviewed by a human editor.",
+ de:"Dieser Ratgeber wurde mit KI-Unterstützung erstellt und nach automatischen Prüfungen von Qualität, Quellen und Dubletten veröffentlicht; eine menschliche Redaktion hat ihn nicht geprüft.",
+ fr:"Ce guide a été rédigé avec l'aide de l'IA et publié après des contrôles automatiques de qualité, de sources et de doublons ; il n'a pas été relu par un rédacteur humain.",
+ es:"Esta guía se redactó con ayuda de IA y se publicó tras controles automáticos de calidad, fuentes y duplicados; no la ha revisado un editor humano.",
+ nl:"Deze gids is met hulp van AI geschreven en gepubliceerd na automatische controles op kwaliteit, bronnen en dubbele inhoud; een menselijke redacteur heeft hem niet nagekeken.",
+ pt:"Este guia foi redigido com apoio de IA e publicado após verificações automáticas de qualidade, fontes e duplicação; não foi revisto por um editor humano.",
+ zh:"本指南在人工智能协助下撰写，经过质量、来源和重复内容的自动检查后发布，尚未经过人工编辑审核。",
+ ko:"이 가이드는 AI의 도움으로 작성되었으며 품질, 출처, 중복 여부에 대한 자동 검사를 거쳐 게시되었습니다. 사람 편집자의 검토는 거치지 않았습니다.",
+ ja:"このガイドはAIの支援を受けて作成され、品質・出典・重複の自動チェックを経て公開されました。人間の編集者による確認は行われていません。"
+};
 const ARTICLE_LABELS={
  vi:["Các hướng dẫn trong chủ đề này","Hướng dẫn khác trong chủ đề","Tài liệu tham khảo","Hướng dẫn khác"],
  en:["Guides in this topic","More in this topic","References","Other guides"],
@@ -188,7 +220,7 @@ export function renderArticle(packet,locale,row,matrix,topical=null,ix=rowsIndex
  const sources=packet.sources.map(s=>'<li><a href="'+esc(s.url)+'" rel="noopener noreferrer">'+esc(s.title)+'</a></li>').join("");
  const cover=packet.cover_image?'<figure><img src="'+esc(packet.cover_image)+'" alt="'+esc(packet.cover_alt)+'" loading="lazy" decoding="async"><figcaption>'+esc(packet.image_credit)+'</figcaption></figure>':"";
  const json=JSON.stringify(data).replace(/</g,"\\u003c");
- return '<!doctype html>\n<html lang="'+esc(htmlLang)+'"><head>\n<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<title>'+esc(packet.title)+'</title>\n<meta name="description" content="'+esc(packet.meta_description)+'">\n<link rel="canonical" href="'+esc(url)+'">\n<meta property="og:type" content="article"><meta property="og:title" content="'+esc(packet.title)+'"><meta property="og:description" content="'+esc(packet.meta_description)+'"><meta property="og:url" content="'+esc(url)+'">\n<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">\n<script type="application/ld+json">'+json+'</script>\n</head><body><a class="skip" href="#main">Skip to content</a><main id="main"><div class="container"><nav class="crumb" aria-label="Breadcrumb"><a href="/'+esc(locale.code)+'/">'+esc(locale.name)+'</a> <span aria-hidden="true">›</span> <a href="'+esc(parentURL)+'">'+esc(parentLabel)+'</a></nav><article class="article"><h1>'+esc(packet.h1)+'</h1><p class="article-lead">'+esc(packet.meta_description)+'</p>'+cover+'<div class="article-copy">'+renderMarkdown(packet.body_markdown)+'</div>'+topicLinks(row,matrix,topical,locale.code,ix)+'<section class="article-references"><h2>'+esc((ARTICLE_LABELS[locale.code]||ARTICLE_LABELS.en)[2])+'</h2><ol>'+sources+'</ol></section><p><a href="'+esc(parentURL)+'">← '+esc(parentLabel)+'</a></p></article></div></main></body></html>\n';
+ return '<!doctype html>\n<html lang="'+esc(htmlLang)+'"><head>\n<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<title>'+esc(packet.title)+'</title>\n<meta name="description" content="'+esc(packet.meta_description)+'">\n<link rel="canonical" href="'+esc(url)+'">\n<meta property="og:type" content="article"><meta property="og:title" content="'+esc(packet.title)+'"><meta property="og:description" content="'+esc(packet.meta_description)+'"><meta property="og:url" content="'+esc(url)+'">\n<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">\n<script type="application/ld+json">'+json+'</script>\n</head><body><a class="skip" href="#main">Skip to content</a><main id="main"><div class="container"><nav class="crumb" aria-label="Breadcrumb"><a href="/'+esc(locale.code)+'/">'+esc(locale.name)+'</a> <span aria-hidden="true">›</span> <a href="'+esc(parentURL)+'">'+esc(parentLabel)+'</a></nav><article class="article"><h1>'+esc(packet.h1)+'</h1><p class="article-lead">'+esc(packet.meta_description)+'</p>'+cover+'<div class="article-copy">'+renderMarkdown(packet.body_markdown)+'</div>'+topicLinks(row,matrix,topical,locale.code,ix)+'<section class="article-references"><h2>'+esc((ARTICLE_LABELS[locale.code]||ARTICLE_LABELS.en)[2])+'</h2><ol>'+sources+'</ol></section>'+(packet.publication?'<p class="article-provenance">'+esc(AI_DISCLOSURE[locale.code]||AI_DISCLOSURE.en)+'</p>':'')+'<p><a href="'+esc(parentURL)+'">← '+esc(parentLabel)+'</a></p></article></div></main></body></html>\n';
 }
 export function generateApprovedArticles(root,matrix,locales){
  const dir=path.join(root,"content/articles");
