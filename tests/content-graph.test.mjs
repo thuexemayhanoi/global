@@ -15,6 +15,10 @@ test("Vietnamese uses adjacent syllable pairs: distinct topics avoid false revie
  assert.ok(jaccard(contentTokens(prices,"vi"),contentTokens(nearCopy,"vi"))>=THRESHOLDS.content_overlap_review,"near copy remains REVIEW");
 });
 const {graph,errors}=buildGraph(process.cwd());
+test("known Vietnamese Hub-versus-guide pages do not become false competing-intent alarms",()=>{
+ const distinct=[["VI-H03","VI-S05"],["VI-H03","VI-S04"],["VI-H02","VI-H03"]];
+ for(const [a,b] of distinct)assert.ok(!graph.review_pairs.some(p=>[p.a,p.b].includes(a)&&[p.a,p.b].includes(b)),a+" vs "+b+" is a false positive");
+});
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
 const copyRepo=()=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),"global-graph-"));
