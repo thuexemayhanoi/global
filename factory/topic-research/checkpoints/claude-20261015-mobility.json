@@ -7,25 +7,25 @@
   "branch": "research/claude-20261015-mobility",
   "batch_session": "research-claude-20261015-mobility",
   "created_at": "2026-10-15T09:33:24.963Z",
-  "updated_at": "2026-10-15T20:26:21.478Z",
-  "base_main_sha": "2a2157fae146bcfc704343699cef6bb18a3a0568",
-  "last_commit_sha": "c9ca0bafe1113618e90f3e9175649a1b57219021",
+  "updated_at": "2026-10-15T20:59:50.220Z",
+  "base_main_sha": "77472d89c3b46685814d816ee76080e87f7b8ff4",
+  "last_commit_sha": "947a74617b028aeae04288d559c632d39b8151e3",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 260,
-    "qa_pass": 260,
+    "researched": 270,
+    "qa_pass": 270,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 250,
+    "pushed": 260,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
       "en": 53,
-      "de": 44,
+      "de": 54,
       "fr": 23,
       "es": 22,
       "nl": 20,
@@ -37,14 +37,14 @@
     },
     "domains": {
       "transportation-mobility": 10,
-      "motorbike-rental": 10,
-      "traffic-law-safety": 240
+      "motorbike-rental": 13,
+      "traffic-law-safety": 247
     }
   },
   "last_batch": {
-    "seq": 26,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0026.json",
-    "sha256": "74ff127bbd1927af789f193c32c61cd5bacc84dcc3f99e4f2d4c4b190211560e",
+    "seq": 27,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0027.json",
+    "sha256": "96ea445315730f6438e9d26b2bece34fd9a33e7c73d40ecf4727e7183ff0bf78",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -2829,8 +2829,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility-0026.json",
       "sha256": "74ff127bbd1927af789f193c32c61cd5bacc84dcc3f99e4f2d4c4b190211560e",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "809966898496bad472d00f62e681cb7d41b0b7be",
       "researched_on": "2026-10-15",
       "topics": [
         {
@@ -2841,7 +2841,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::handzeichen verkehrspolizei vietnam bedeutung",
-          "ta_id": null
+          "ta_id": "TA-DE-0059"
         },
         {
           "ref": "de:drogen-medikamente-roller-vietnam",
@@ -2851,7 +2851,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::drogen am steuer vietnam roller strafe",
-          "ta_id": null
+          "ta_id": "TA-DE-0060"
         },
         {
           "ref": "de:tiere-auf-der-strasse-vietnam-roller",
@@ -2861,7 +2861,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::tiere auf der straße vietnam roller",
-          "ta_id": null
+          "ta_id": "TA-DE-0061"
         },
         {
           "ref": "de:langsam-fahren-pflicht-vietnam-roller",
@@ -2871,7 +2871,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::wo muss man in vietnam langsam fahren roller",
-          "ta_id": null
+          "ta_id": "TA-DE-0062"
         },
         {
           "ref": "de:fahrbahnmarkierungen-vietnam-roller",
@@ -2881,7 +2881,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::fahrbahnmarkierungen vietnam bedeutung",
-          "ta_id": null
+          "ta_id": "TA-DE-0063"
         },
         {
           "ref": "en:traffic-police-hand-signals-vietnam",
@@ -2891,7 +2891,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-city",
           "key": "en::traffic police hand signals in vietnam",
-          "ta_id": null
+          "ta_id": "TA-EN-0070"
         },
         {
           "ref": "en:drugs-and-medication-riding-vietnam",
@@ -2901,7 +2901,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-city",
           "key": "en::riding a motorbike on drugs in vietnam penalty",
-          "ta_id": null
+          "ta_id": "TA-EN-0071"
         },
         {
           "ref": "en:animals-on-the-road-vietnam-motorbike",
@@ -2911,7 +2911,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-city",
           "key": "en::animals on the road in vietnam motorbike",
-          "ta_id": null
+          "ta_id": "TA-EN-0072"
         },
         {
           "ref": "en:where-you-must-slow-down-vietnam",
@@ -2921,7 +2921,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-city",
           "key": "en::where do you have to slow down in vietnam",
-          "ta_id": null
+          "ta_id": "TA-EN-0073"
         },
         {
           "ref": "en:road-markings-vietnam-motorbike",
@@ -2931,14 +2931,125 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-city",
           "key": "en::road markings in vietnam meaning",
+          "ta_id": "TA-EN-0074"
+        }
+      ]
+    },
+    {
+      "seq": 27,
+      "file": "factory/topic-research/batches/claude-20261015-mobility-0027.json",
+      "sha256": "96ea445315730f6438e9d26b2bece34fd9a33e7c73d40ecf4727e7183ff0bf78",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-15",
+      "topics": [
+        {
+          "ref": "de:richtig-bremsen-roller-vietnam",
+          "locale": "de",
+          "slug": "richtig-bremsen-roller-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::roller richtig bremsen vorderbremse hinterbremse",
+          "ta_id": null
+        },
+        {
+          "ref": "de:kurven-serpentinen-roller-fahren-vietnam",
+          "locale": "de",
+          "slug": "kurven-serpentinen-roller-fahren-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::kurven fahren roller serpentinen tipps",
+          "ta_id": null
+        },
+        {
+          "ref": "de:beifahrer-roller-vietnam-tipps",
+          "locale": "de",
+          "slug": "beifahrer-roller-vietnam-tipps",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::beifahrer roller vietnam tipps",
+          "ta_id": null
+        },
+        {
+          "ref": "de:unfall-beobachtet-zeugen-pflichten-vietnam",
+          "locale": "de",
+          "slug": "unfall-beobachtet-zeugen-pflichten-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::unfall beobachtet vietnam was tun",
+          "ta_id": null
+        },
+        {
+          "ref": "de:muedigkeit-pausen-rollertour-vietnam",
+          "locale": "de",
+          "slug": "muedigkeit-pausen-rollertour-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::rollertour vietnam pausen mudigkeit",
+          "ta_id": null
+        },
+        {
+          "ref": "de:erste-fahrt-automatikroller-uebungsplan",
+          "locale": "de",
+          "slug": "erste-fahrt-automatikroller-uebungsplan",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-transmission",
+          "key": "de::automatikroller fahren lernen anfanger",
+          "ta_id": null
+        },
+        {
+          "ref": "de:elektroroller-reichweite-laden-vietnam",
+          "locale": "de",
+          "slug": "elektroroller-reichweite-laden-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-power",
+          "key": "de::elektroroller vietnam reichweite laden",
+          "ta_id": null
+        },
+        {
+          "ref": "de:schlagloecher-schotter-steinschlag-roller-vietnam",
+          "locale": "de",
+          "slug": "schlagloecher-schotter-steinschlag-roller-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-weather",
+          "key": "de::schlaglocher schotter roller vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:lkw-busse-toter-winkel-roller-vietnam",
+          "locale": "de",
+          "slug": "lkw-busse-toter-winkel-roller-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::toter winkel lkw roller vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:smart-key-mietroller-honda",
+          "locale": "de",
+          "slug": "smart-key-mietroller-honda",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-models",
+          "key": "de::smart key roller honda bedienung",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 27,
-    "file": "factory/topic-research/batches/claude-20261015-mobility-0027.json",
+    "seq": 28,
+    "file": "factory/topic-research/batches/claude-20261015-mobility-0028.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -2957,13 +3068,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-15T17:11:50.534Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 3,
-      "topics": 10,
-      "sha256": "2ed47ccdf64e0429657a4cc4996845b994a2404af4563a60c8be9a4ea8e75f20"
-    },
     {
       "at": "2026-10-15T17:13:21.166Z",
       "event": "BATCH_COMMITTED",
@@ -3128,6 +3232,13 @@
       "seq": 26,
       "topics": 10,
       "sha256": "74ff127bbd1927af789f193c32c61cd5bacc84dcc3f99e4f2d4c4b190211560e"
+    },
+    {
+      "at": "2026-10-15T20:59:50.220Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 27,
+      "topics": 10,
+      "sha256": "96ea445315730f6438e9d26b2bece34fd9a33e7c73d40ecf4727e7183ff0bf78"
     }
   ]
 }
