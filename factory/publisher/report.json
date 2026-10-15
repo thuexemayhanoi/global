@@ -3,33 +3,11 @@
   "ledger_revision": 58,
   "stage": "RAMP",
   "counts": {
-    "APPROVED_BY_POLICY": 3,
+    "APPROVED_BY_POLICY": 1,
     "REJECTED": 94,
     "WAIT_PARENT": 5
   },
   "items": [
-    {
-      "id": "ES-H02",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "be33cfd7ac7348d38cc3e6d299af5b56bc4ba9f145669832899353f474ff5b20",
-      "source_commit": "04574e632c8117a0838adbc8b2c6e3cc90030d1b",
-      "details": []
-    },
-    {
-      "id": "VI-H02",
-      "decision": "APPROVED_BY_POLICY",
-      "failed": [],
-      "writer": "W2",
-      "session": "w2-live",
-      "branch": "writer/w2-live",
-      "source_sha256": "134aabc6d57bdedd3ee92c7e56f687f70dc0c5062bac31c1fca8fd3ad20a9700",
-      "source_commit": "04574e632c8117a0838adbc8b2c6e3cc90030d1b",
-      "details": []
-    },
     {
       "id": "DE-H03",
       "decision": "APPROVED_BY_POLICY",
@@ -541,7 +519,6 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
         "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
@@ -552,7 +529,6 @@
       "source_commit": "f3fe97d44e3902813e8bf30f86b89d271b79456c",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «1.000.000 a 3.000.000 VND»",
-        "G2_PARENT_PUBLISHED: ES-H02 is IDEA",
         "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: Cuanto más largo es el alquiler, mayor es el riesgo de la tienda y mayor la fianza. La página de precios de XeThienTri describe como garantí",
         "G3_OFFICIAL_EVIDENCE: 3 hard legal statement(s) lack an inline official citation: El seguro obligatorio acompaña siempre al vehículo, no al conductor, y debe cubrir el periodo completo de alquiler. Según Gia đình và Xã hội | Más allá de lo habitual, un contrato "
       ]
@@ -660,8 +636,7 @@
       "id": "VI-S03",
       "decision": "REJECTED",
       "failed": [
-        "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED"
+        "G1_DRAFT_QA"
       ],
       "writer": "W1",
       "session": "w1-vibe-20261014",
@@ -669,8 +644,7 @@
       "source_sha256": "3da6e7a377e04ab748a4faeaf4021f838e498b7278cc5a9adee3d98458387f49",
       "source_commit": "427dfdcf1f07c254c7cdb51162c8bf32c38ee15e",
       "details": [
-        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same paragraph «150.000–200.000 đồng»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same pa",
-        "G2_PARENT_PUBLISHED: VI-H02 is IDEA"
+        "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same paragraph «150.000–200.000 đồng»; Fact guard UNSOURCED_AMOUNT in sources[0].title: Currency amount without an inline source in the same pa"
       ]
     },
     {
@@ -729,7 +703,6 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
         "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
@@ -740,7 +713,6 @@
       "source_commit": "074204cf19fd4809ba767db6ef0a5624ef3c1c77",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «30.000 VND»",
-        "G2_PARENT_PUBLISHED: ES-H02 is IDEA",
         "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: La política de MOTOGO muestra cómo se redactan estas cláusulas en la práctica: los daños graves por culpa del cliente se reparan con piezas ",
         "G3_OFFICIAL_EVIDENCE: 5 hard legal statement(s) lack an inline official citation: El artículo 328 del Código Civil vietnamita de 2015, comentado en la revista del Tribunal Supremo Popular, define las arras como la entrega  | - Momento de la devolución: inmediata"
       ]
@@ -849,7 +821,6 @@
       "decision": "REJECTED",
       "failed": [
         "G1_DRAFT_QA",
-        "G2_PARENT_PUBLISHED",
         "G3_PRICE_EVIDENCE",
         "G3_OFFICIAL_EVIDENCE"
       ],
@@ -860,7 +831,6 @@
       "source_commit": "074204cf19fd4809ba767db6ef0a5624ef3c1c77",
       "details": [
         "G1_DRAFT_QA: Fact guard UNSOURCED_AMOUNT in body_markdown: Currency amount without an inline source in the same paragraph «15.000–30.000 đồng»",
-        "G2_PARENT_PUBLISHED: VI-H02 is IDEA",
         "G3_PRICE_EVIDENCE: 1 monetary paragraph(s) lack citations to dated declared HTTPS sources: Chính sách của MOTOGO cho thấy cách các điều khoản này được viết trên thực tế: hư hỏng nặng do lỗi người thuê phải thay phụ tùng chính hãng,",
         "G3_OFFICIAL_EVIDENCE: 1 hard legal statement(s) lack an inline official citation: Với người Việt, pháp luật cũng đã siết việc cơ sở kinh doanh giữ giấy tờ tùy thân của khách. Theo báo Lao Động, từ ngày 15/12/2025 Nghị định"
       ]

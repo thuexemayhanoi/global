@@ -172,6 +172,17 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T07:55:11.491Z"
+    },
+    {
+      "id": "DE-H03",
+      "locale": "de",
+      "url": "/de/topics/fuehrerschein-und-vertrag/",
+      "role": "HUB",
+      "stage": "RAMP",
+      "at": "2026-10-15T07:55:29.690Z",
+      "source_sha256": "ff9b5f1d659294a5242d4e0a7101a0ca9a7447937bbfbcf8be94ea0667663b78",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -330,6 +341,13 @@
         "VI-H02"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T07:55:29.690Z",
+      "ids": [
+        "DE-H03"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -342,7 +360,7 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 3,
+    "APPROVED_BY_POLICY": 1,
     "REJECTED": 94,
     "WAIT_PARENT": 5
   }
