@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 65,
+  "clean_runs": 67,
   "published": [
     {
       "id": "NL-H01",
@@ -1804,6 +1804,42 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T17:17:38.968Z"
+    },
+    {
+      "id": "ZH-S09",
+      "locale": "zh",
+      "url": "/zh/guides/zhongguo-jiazhao-yuenan/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:27:38.698Z",
+      "source_sha256": "c3223f4fd682c0d6a6918475c08bbb7fe0c7e8f2c6c37f93669d1b79913956a3",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T17:28:48.052Z"
+    },
+    {
+      "id": "ZH-S10",
+      "locale": "zh",
+      "url": "/zh/guides/huanling-yuenan-jiazhao/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:27:38.698Z",
+      "source_sha256": "518c865a6eff435f7dc97d557d80756c6538c1f5e8ded46677f62e1dcb16b94e",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T17:28:48.052Z"
+    },
+    {
+      "id": "FR-S10",
+      "locale": "fr",
+      "url": "/fr/guides/permis-b-formation-125/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T17:29:09.052Z",
+      "source_sha256": "cb006067a719770971b8d2fed45a778e5b4103c29d78623aea1059bc0e2ea9b5",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-15T17:30:20.793Z"
     }
   ],
   "runs": [
@@ -3091,16 +3127,47 @@
         "NL-S11"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:27:38.698Z",
+      "ids": [
+        "ZH-S09",
+        "ZH-S10"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T17:28:48.052Z",
+      "ids": [
+        "ZH-S09",
+        "ZH-S10"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T17:29:09.052Z",
+      "ids": [
+        "FR-S10"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-15T17:30:20.793Z",
+      "ids": [
+        "FR-S10"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-15T17:17:38.968Z",
+    "at": "2026-10-15T17:30:20.793Z",
     "ids": [
-      "KO-S11",
-      "NL-S11"
+      "FR-S10"
     ],
-    "commit": "d9c298a8094c52d3c3f9089203733f196d3fb251",
-    "live_seconds": 62
+    "commit": "877ec7793bda19dcb4b76912b3aad8c7ccff70ec",
+    "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
