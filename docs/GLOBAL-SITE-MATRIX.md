@@ -12,15 +12,15 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
-| Matrix rows (295) | 96 | 19 | 0 | 180 |
-| Topical candidates (56) | 0 | 0 | 0 | 56 |
+| Matrix rows (321) | 96 | 19 | 0 | 206 |
+| Topical candidates (30) | 0 | 0 | 0 | 30 |
 | Silos (330) | 56 | 10 | 0 | 117 |
 
 Knowledge graph: 42 entities, 1406 typed edges (hreflang_equivalent 190, about 710, contains 296, has_silo 160, has_hub 40, has_pillar 10).
 
 ## REVIEW — competing intents
 
-No unjustified high-overlap pair across 295 Matrix rows and 56 candidates (query similarity ≥ 0.66, or ≥ 0.5 within the same silo and intent; published text Jaccard ≥ 0.5). Parent/child Hub overlaps are expected and justified pairs carry a written `distinct_from` reason.
+No unjustified high-overlap pair across 321 Matrix rows and 30 candidates (query similarity ≥ 0.66, or ≥ 0.5 within the same silo and intent; published text Jaccard ≥ 0.5). Parent/child Hub overlaps are expected and justified pairs carry a written `distinct_from` reason.
 
 ## UPGRADE — live pages below targets
 
@@ -56,20 +56,20 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | vc-transmission | consideration | informational | – | I2 CREATE | I2 CREATE | P1 I1 KEEP | I2 CREATE | P1 I1 KEEP | P1 I1 KEEP | I2 CREATE | P1 I1 KEEP | P1 I1 KEEP | I2 CREATE |
 | vc-power | consideration | informational | – | I2 CREATE | I2 CREATE | P1 I1 KEEP | I2 CREATE | P1 I1 KEEP | P1 I1 KEEP | I2 CREATE | P1 I1 KEEP | P1 I1 KEEP | I2 CREATE |
-| vc-models | consideration | commercial | – | I1 CREATE | I1 C1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
-| vc-trip-fit | consideration | informational | – | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE |
+| vc-models | consideration | commercial | – | I1 CREATE | I2 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
+| vc-trip-fit | consideration | informational | – | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
 | rc-period | consideration | commercial | Pillar FAQ ×10 | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP |
 | rc-deposit | decision | commercial | Pillar FAQ ×10 | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP |
-| rc-extras | decision | commercial | – | I2 CREATE | I1 C1 CREATE | I2 CREATE | I1 C1 CREATE | I2 CREATE | I2 CREATE | I1 C1 CREATE | I2 CREATE | I2 CREATE | I2 CREATE |
+| rc-extras | decision | commercial | – | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE |
 | dc-licence | decision | informational | Pillar FAQ ×10 | P2 KEEP | I3 CREATE | P2 KEEP | P2 I1 KEEP | I2 CREATE | P2 KEEP | P1 I2 KEEP | I2 CREATE | P2 KEEP | P2 KEEP |
-| dc-contract | decision | informational | – | P1 C1 KEEP | I1 C1 CREATE | P1 C1 KEEP | P1 C1 KEEP | I1 C1 CREATE | P1 C1 KEEP | P1 C1 KEEP | I1 C1 CREATE | P1 C1 KEEP | P1 C1 KEEP |
+| dc-contract | decision | informational | – | P1 I1 KEEP | I2 CREATE | P1 I1 KEEP | P1 I1 KEEP | I2 CREATE | P1 I1 KEEP | P1 I1 KEEP | I2 CREATE | P1 I1 KEEP | P1 I1 KEEP |
 | dc-insurance | decision | informational | – | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
 | dc-papers | riding | informational | – | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
 | ss-pickup (reserved: CHECKLIST) | pickup | informational | – | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE |
-| ss-weather | riding | local | – | I1 C1 CREATE | P1 KEEP | P1 KEEP | I1 CREATE | P1 KEEP | P1 KEEP | I1 CREATE | P1 KEEP | P1 KEEP | I1 CREATE |
+| ss-weather | riding | local | – | I2 CREATE | P1 KEEP | P1 KEEP | I1 CREATE | P1 KEEP | P1 KEEP | I1 CREATE | P1 KEEP | P1 KEEP | I1 CREATE |
 | ss-incidents | riding | informational | – | I3 CREATE | P1 I2 KEEP | P1 I2 KEEP | I3 CREATE | P1 I2 KEEP | P1 I2 KEEP | I3 CREATE | P1 I2 KEEP | P1 I2 KEEP | I3 CREATE |
 | ss-gear | riding | informational | – | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE | I1 CREATE |
-| ss-city | riding | local | – | I2 C1 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE |
+| ss-city | riding | local | – | I3 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE |
 | rt-northern-loops (proposed Hub) | planning | local | – | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE |
 | rt-day-trips (proposed Hub) | planning | local | – | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE | C1 CREATE |
 | travel-neighborhoods (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
@@ -95,10 +95,10 @@ Published / planned (IDEA + drafts) / candidates per stage.
 | Stage | vi | en | de | fr | es | nl | zh | pt | ko | ja |
 |---|---|---|---|---|---|---|---|---|---|---|
 | awareness | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
-| consideration | 1 / 6 / 1 | 1 / 6 / 2 | 3 / 4 / 1 | 1 / 6 / 1 | 3 / 4 / 1 | 3 / 4 / 1 | 1 / 6 / 1 | 3 / 4 / 1 | 3 / 4 / 1 | 1 / 6 / 1 |
-| decision | 4 / 4 / 1 | 1 / 7 / 2 | 4 / 4 / 1 | 4 / 4 / 2 | 1 / 7 / 1 | 4 / 4 / 1 | 3 / 5 / 2 | 1 / 7 / 1 | 4 / 4 / 1 | 4 / 4 / 1 |
+| consideration | 1 / 7 / 0 | 1 / 8 / 0 | 3 / 5 / 0 | 1 / 7 / 0 | 3 / 5 / 0 | 3 / 5 / 0 | 1 / 7 / 0 | 3 / 5 / 0 | 3 / 5 / 0 | 1 / 7 / 0 |
+| decision | 4 / 5 / 0 | 1 / 9 / 0 | 4 / 5 / 0 | 4 / 6 / 0 | 1 / 8 / 0 | 4 / 5 / 0 | 3 / 7 / 0 | 1 / 8 / 0 | 4 / 5 / 0 | 4 / 5 / 0 |
 | pickup | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
-| riding | 0 / 8 / 2 | 2 / 6 / 0 | 2 / 6 / 0 | 0 / 8 / 0 | 2 / 6 / 0 | 2 / 6 / 0 | 0 / 8 / 0 | 2 / 6 / 0 | 2 / 6 / 0 | 0 / 8 / 0 |
+| riding | 0 / 10 / 0 | 2 / 6 / 0 | 2 / 6 / 0 | 0 / 8 / 0 | 2 / 6 / 0 | 2 / 6 / 0 | 0 / 8 / 0 | 2 / 6 / 0 | 2 / 6 / 0 | 0 / 8 / 0 |
 | return | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 |
 | planning | 0 / 0 / 2 | 0 / 0 / 12 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 |
 
@@ -108,16 +108,16 @@ Every locale checklist also covers the consideration → decision → pickup →
 
 | Locale | Rows | Published | Protected drafts | Planned | Candidates | Published depth OK |
 |---|---|---|---|---|---|---|
-| vi | 29 | 9 | 0 | 20 | 6 | 89% |
-| en | 29 | 8 | 0 | 21 | 16 | 75% |
-| de | 29 | 15 | 0 | 14 | 4 | 87% |
-| fr | 29 | 9 | 0 | 20 | 5 | 78% |
-| es | 29 | 11 | 0 | 18 | 4 | 82% |
-| nl | 29 | 15 | 0 | 14 | 4 | 87% |
-| zh | 29 | 8 | 0 | 21 | 5 | 75% |
-| pt | 29 | 11 | 0 | 18 | 4 | 82% |
-| ko | 29 | 15 | 0 | 14 | 4 | 87% |
-| ja | 29 | 9 | 0 | 20 | 4 | 78% |
+| vi | 33 | 9 | 0 | 24 | 2 | 89% |
+| en | 33 | 8 | 0 | 25 | 12 | 75% |
+| de | 31 | 15 | 0 | 16 | 2 | 87% |
+| fr | 32 | 9 | 0 | 23 | 2 | 78% |
+| es | 31 | 11 | 0 | 20 | 2 | 82% |
+| nl | 31 | 15 | 0 | 16 | 2 | 87% |
+| zh | 32 | 8 | 0 | 24 | 2 | 75% |
+| pt | 31 | 11 | 0 | 20 | 2 | 82% |
+| ko | 31 | 15 | 0 | 16 | 2 | 87% |
+| ja | 31 | 9 | 0 | 22 | 2 | 78% |
 
 Live Writer states (CLAIMED/SUBMITTED) change on every autopilot commit and are not part of this file: run `node scripts/seo/topical-authority.mjs status`.
 
