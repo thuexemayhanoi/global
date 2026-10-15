@@ -7,35 +7,35 @@
   "branch": "research/claude-20261015-mobility2",
   "batch_session": "research-claude-20261015-mobility2",
   "created_at": "2026-10-15T23:01:23.660Z",
-  "updated_at": "2026-10-15T23:24:18.058Z",
-  "base_main_sha": "983c66f72b1fb4ba912e1ba6618df7c73740323f",
-  "last_commit_sha": "351a306baf717316c080954b9b37f954d4db5d7c",
+  "updated_at": "2026-10-15T23:38:36.307Z",
+  "base_main_sha": "fe98766dad93ec49b70a129ab1e48f93b28fa9f1",
+  "last_commit_sha": "ddb16e6d3ae4765d3bbd7ccaa978ced785f79c6e",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 20,
-    "qa_pass": 20,
+    "researched": 30,
+    "qa_pass": 30,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 10,
+    "pushed": 20,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "fr": 10,
+      "fr": 20,
       "es": 10
     },
     "domains": {
-      "traffic-law-safety": 17,
-      "motorbike-rental": 3
+      "traffic-law-safety": 24,
+      "motorbike-rental": 6
     }
   },
   "last_batch": {
-    "seq": 2,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0002.json",
-    "sha256": "0b2379504ac1f04147f10de68cd2d2cd707433aba93ff4bd2646ad02863d67bb",
+    "seq": 3,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0003.json",
+    "sha256": "b12647dfd7b6ef0bc91fa09f7ecd0a4db5828cc836016ffbf4ce94b343d91b12",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -156,8 +156,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility2-0002.json",
       "sha256": "0b2379504ac1f04147f10de68cd2d2cd707433aba93ff4bd2646ad02863d67bb",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "ddb16e6d3ae4765d3bbd7ccaa978ced785f79c6e",
       "researched_on": "2026-10-15",
       "topics": [
         {
@@ -168,7 +168,7 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-city",
           "key": "es::donde obliga la ley a reducir la velocidad en vietnam",
-          "ta_id": null
+          "ta_id": "TA-ES-0052"
         },
         {
           "ref": "es:marcas-viales-vietnam-moto",
@@ -178,7 +178,7 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-city",
           "key": "es::marcas viales en vietnam que significan",
-          "ta_id": null
+          "ta_id": "TA-ES-0053"
         },
         {
           "ref": "es:como-frenar-en-scooter-vietnam",
@@ -188,7 +188,7 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-city",
           "key": "es::como frenar bien en scooter freno delantero y trasero",
-          "ta_id": null
+          "ta_id": "TA-ES-0054"
         },
         {
           "ref": "es:curvas-cerradas-en-moto-vietnam",
@@ -198,7 +198,7 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-city",
           "key": "es::como tomar curvas cerradas en moto",
-          "ta_id": null
+          "ta_id": "TA-ES-0055"
         },
         {
           "ref": "es:ir-de-paquete-en-moto-vietnam",
@@ -208,7 +208,7 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-city",
           "key": "es::consejos para ir de paquete en moto en vietnam",
-          "ta_id": null
+          "ta_id": "TA-ES-0056"
         },
         {
           "ref": "es:testigo-de-un-accidente-de-trafico-vietnam",
@@ -218,7 +218,7 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-incidents",
           "key": "es::testigo de un accidente de trafico en vietnam",
-          "ta_id": null
+          "ta_id": "TA-ES-0057"
         },
         {
           "ref": "es:primera-vez-en-scooter-automatico",
@@ -228,7 +228,7 @@
           "parent_id": "ES-H01",
           "subcluster": "vc-transmission",
           "key": "es::primera vez en un scooter automatico plan de practica",
-          "ta_id": null
+          "ta_id": "TA-ES-0058"
         },
         {
           "ref": "es:moto-electrica-de-alquiler-autonomia-y-carga",
@@ -238,7 +238,7 @@
           "parent_id": "ES-H01",
           "subcluster": "vc-power",
           "key": "es::moto electrica de alquiler en vietnam autonomia y carga",
-          "ta_id": null
+          "ta_id": "TA-ES-0059"
         },
         {
           "ref": "es:baches-grava-desprendimientos-moto-vietnam",
@@ -248,7 +248,7 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-weather",
           "key": "es::ir en moto por baches y grava en vietnam",
-          "ta_id": null
+          "ta_id": "TA-ES-0060"
         },
         {
           "ref": "es:llave-inteligente-honda-smart-key",
@@ -258,14 +258,125 @@
           "parent_id": "ES-H01",
           "subcluster": "vc-models",
           "key": "es::como usar la llave inteligente honda smart key",
+          "ta_id": "TA-ES-0061"
+        }
+      ]
+    },
+    {
+      "seq": 3,
+      "file": "factory/topic-research/batches/claude-20261015-mobility2-0003.json",
+      "sha256": "b12647dfd7b6ef0bc91fa09f7ecd0a4db5828cc836016ffbf4ce94b343d91b12",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-15",
+      "topics": [
+        {
+          "ref": "fr:ou-ralentir-obligatoirement-vietnam",
+          "locale": "fr",
+          "slug": "ou-ralentir-obligatoirement-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::ou faut-il obligatoirement ralentir au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:bien-freiner-a-scooter",
+          "locale": "fr",
+          "slug": "bien-freiner-a-scooter",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::comment bien freiner a scooter frein avant et frein arriere",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:virages-en-epingle-moto-vietnam",
+          "locale": "fr",
+          "slug": "virages-en-epingle-moto-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::comment prendre les virages en epingle a moto",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:passager-scooter-vietnam-conseils",
+          "locale": "fr",
+          "slug": "passager-scooter-vietnam-conseils",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::conseils pour le passager d’un scooter au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:temoin-accident-de-la-route-vietnam",
+          "locale": "fr",
+          "slug": "temoin-accident-de-la-route-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::temoin d’un accident de la route au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:premiere-fois-scooter-automatique",
+          "locale": "fr",
+          "slug": "premiere-fois-scooter-automatique",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-transmission",
+          "key": "fr::premiere fois sur un scooter automatique plan d’entrainement",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:scooter-electrique-autonomie-recharge-vietnam",
+          "locale": "fr",
+          "slug": "scooter-electrique-autonomie-recharge-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-power",
+          "key": "fr::scooter electrique au vietnam autonomie et recharge",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:nids-de-poule-gravillons-scooter-vietnam",
+          "locale": "fr",
+          "slug": "nids-de-poule-gravillons-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-weather",
+          "key": "fr::rouler a scooter sur les nids-de-poule et les gravillons au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:angles-morts-camions-bus-scooter-vietnam",
+          "locale": "fr",
+          "slug": "angles-morts-camions-bus-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::angles morts des camions et des bus a scooter",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:smart-key-honda-scooter",
+          "locale": "fr",
+          "slug": "smart-key-honda-scooter",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-models",
+          "key": "fr::comment utiliser la smart key honda d’un scooter",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 3,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0003.json",
+    "seq": 4,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0004.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -291,6 +402,13 @@
       "seq": 2,
       "topics": 10,
       "sha256": "0b2379504ac1f04147f10de68cd2d2cd707433aba93ff4bd2646ad02863d67bb"
+    },
+    {
+      "at": "2026-10-15T23:38:36.307Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 3,
+      "topics": 10,
+      "sha256": "b12647dfd7b6ef0bc91fa09f7ecd0a4db5828cc836016ffbf4ce94b343d91b12"
     }
   ]
 }
