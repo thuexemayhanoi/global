@@ -114,6 +114,37 @@ test("research intake rejects invented metrics, missing evidence, new domains wi
  assert.ok(validateResearchBatch(batch([good],{purpose:"OTHER"}),{matrix,map,policy}).issues.some(i=>i.gate==="R1"));
 });
 
+test("six research-open domains accept research-only batches but never enter Writer Matrix before reviewed Hubs",()=>{
+ const pending=policy.domains.filter(d=>d.status==="RESEARCH_OPEN");
+ assert.equal(pending.length,6);
+ assert.equal(map.architecture.proposed_hubs.length,6);
+ assert.equal(policy.domains.filter(d=>d.status==="ACTIVE").length,2);
+ for(const d of pending){
+  const h=map.architecture.proposed_hubs.find(x=>x.id===d.clusters[0]);
+  assert.ok(h&&h.clusters.length>=2,d.id);
+  const c={...good,domain_id:d.id,parent_id:null,subcluster:h.clusters[0].id,
+   slug:"research-"+d.id+"-options",
+   primary_query:"independent visitor travel questions about "+d.label.toLowerCase()+" in vietnam",
+   working_title:"Independent Travel Planning for "+d.label+" in Vietnam",
+   intent_rationale:"Visitors researching this specific Vietnam travel domain need options, location context and realistic independent planning decisions rather than transactional bike booking.",
+   content_angle:"Distinct planning questions for independent visitors, grounded in sources and transport context, without imaginary rentals or reviews."};
+  const v=validateResearchBatch(batch([c]),{matrix,map,policy});
+  assert.equal(v.passed,true,JSON.stringify({domain:d.id,issues:v.issues}));
+  const ing=ingestResearch(batch([c]),{matrix,map,policy,source:"test.json",frozenUrls:frozen});
+  assert.equal(ing.added.length,1,JSON.stringify({domain:d.id,rejected:ing.rejected}));
+  const p=ing.map.locales.en.proposals.find(x=>x.candidate_id===ing.added[0].candidate_id);
+  assert.equal(p.status,"ARCHITECTURE_BLOCKED");
+  assert.equal(p.parent_id,null);
+  assert.equal(p.cluster,h.id);
+  const checked=validateTopicalMap({map:ing.map,matrix,frozenUrls:frozen});
+  assert.equal(checked.issues.filter(x=>x.id===p.candidate_id).length,0,JSON.stringify({domain:d.id,issues:checked.issues.filter(x=>x.id===p.candidate_id)}));
+  const refill=selectRefill({...ctx,map:ing.map,validation:checked});
+  assert.ok(!refill.selected.includes(p.candidate_id),"unparented research is not publishable or claimable");
+  assert.ok(validateResearchBatch(batch([{...c,parent_id:"EN-NOT-A-HUB"}]),{matrix,map,policy}).issues.some(x=>x.gate==="R3"));
+  assert.ok(validateResearchBatch(batch([{...c,domain_id:"motorbike-rental"}]),{matrix,map,policy}).issues.some(x=>x.gate==="R3"));
+ }
+});
+
 test("ingest assigns the next TA ID, registers references, passes T1–T10 and is replay-safe",()=>{
  const r=ingestResearch(batch([good]),{matrix,map,policy,source:"test.json",frozenUrls:frozen});
  assert.equal(r.added.length,1,JSON.stringify(r.rejected));
