@@ -748,6 +748,28 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T09:56:59.914Z"
+    },
+    {
+      "id": "KO-S03",
+      "locale": "ko",
+      "url": "/ko/guides/il-ju-wol/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:57:17.366Z",
+      "source_sha256": "ac8b44aceda9dbb9635f0c5d71760ea732b5ff60ecd04d3f42d2a100344cbb50",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "NL-S03",
+      "locale": "nl",
+      "url": "/nl/guides/dag-week-maand/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T09:57:17.366Z",
+      "source_sha256": "c6109f3cf748a316f2bd3cdf2e3edaa9dcce55d75b643e1f1b5090f6c9d558aa",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
@@ -1307,6 +1329,14 @@
         "DE-S03"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T09:57:17.366Z",
+      "ids": [
+        "KO-S03",
+        "NL-S03"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -1319,7 +1349,7 @@
     "live_seconds": 82
   },
   "queue": {
-    "WAIT_PARENT": 32,
+    "WAIT_PARENT": 30,
     "APPROVED_BY_POLICY": 25,
     "REJECTED": 11
   }
