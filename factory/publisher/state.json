@@ -3148,17 +3148,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-15T20:34:16.645Z"
+    },
+    {
+      "id": "EN-S48",
+      "locale": "en",
+      "url": "/en/guides/vietnam-driving-licence-points-system/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:34:48.112Z",
+      "source_sha256": "8d7c429f98a4d5349ea55b34d627154cd50ada1221dca898ec5efb0db2069255",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S49",
+      "locale": "en",
+      "url": "/en/guides/traffic-light-rules-vietnam-motorbike/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-15T20:34:48.112Z",
+      "source_sha256": "b31f6bbd0860c66a1d82337417ef21abdd5e5510475995a7519d7ac8997e81f7",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T10:08:41.446Z",
-      "ids": [
-        "DE-S08",
-        "EN-S08"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T10:09:49.071Z",
       "ids": [
@@ -4722,6 +4736,14 @@
         "EN-S47"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-15T20:34:48.112Z",
+      "ids": [
+        "EN-S48",
+        "EN-S49"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -4734,6 +4756,6 @@
     "live_seconds": 102
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 4
   }
 }
