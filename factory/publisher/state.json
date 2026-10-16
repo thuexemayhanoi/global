@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 248,
+  "clean_runs": 251,
   "published": [
     {
       "id": "NL-H01",
@@ -5810,7 +5810,8 @@
       "at": "2026-10-16T02:00:00.869Z",
       "source_sha256": "9311843ba18c31203ab67178ce5036234e01e4fd21df50824526d9fdd39a1dfb",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:01:16.539Z"
     },
     {
       "id": "KO-S49",
@@ -5821,49 +5822,59 @@
       "at": "2026-10-16T02:00:00.869Z",
       "source_sha256": "a72990dc5e63c13b084fc85aad61c714fad8e1431c6233bc2c5a2970b4b0a1bb",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:01:16.539Z"
+    },
+    {
+      "id": "KO-S50",
+      "locale": "ko",
+      "url": "/ko/guides/deowi-yeolsabyeong-otobai/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:01:34.253Z",
+      "source_sha256": "7636e97ed98f2a4f5fee35cd99cf387d8cfd02115054facc99b9a81ae9d69202",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:03:07.832Z"
+    },
+    {
+      "id": "KO-S51",
+      "locale": "ko",
+      "url": "/ko/guides/hanoi-daegi-oyeom-otobai/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:01:34.253Z",
+      "source_sha256": "42e185ca3c00d417ac433557d0a6ff1cb0c54397b41eb35f15a53d64e0274cad",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:03:07.832Z"
+    },
+    {
+      "id": "KO-S52",
+      "locale": "ko",
+      "url": "/ko/guides/beteunam-gingeup-jeonhwa-beonho/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:03:24.977Z",
+      "source_sha256": "6fbc13dafe1b3a80af9c6aea669f152989fb7da9dca5d4c7f30861265112eca1",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:04:38.900Z"
+    },
+    {
+      "id": "KO-S53",
+      "locale": "ko",
+      "url": "/ko/guides/sangil-gyohaeng-useon/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:03:24.977Z",
+      "source_sha256": "322ce511b8453004d7b85892332cf2307fbe1d3a656fc0dbfd1baf35079ceb87",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:04:38.900Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T21:38:13.801Z",
-      "ids": [
-        "EN-S70"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T21:41:11.400Z",
-      "ids": [
-        "ES-S27",
-        "ES-S28"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T21:42:24.204Z",
-      "ids": [
-        "ES-S27",
-        "ES-S28"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T21:43:31.800Z",
-      "ids": [
-        "ES-S30",
-        "ES-S31"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T21:44:44.811Z",
-      "ids": [
-        "ES-S30",
-        "ES-S31"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T21:46:52.976Z",
       "ids": [
@@ -7389,18 +7400,58 @@
         "KO-S49"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:01:16.539Z",
+      "ids": [
+        "KO-S48",
+        "KO-S49"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:01:34.253Z",
+      "ids": [
+        "KO-S50",
+        "KO-S51"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:03:07.832Z",
+      "ids": [
+        "KO-S50",
+        "KO-S51"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:03:24.977Z",
+      "ids": [
+        "KO-S52",
+        "KO-S53"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:04:38.900Z",
+      "ids": [
+        "KO-S52",
+        "KO-S53"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T01:59:44.203Z",
+    "at": "2026-10-16T02:04:38.900Z",
     "ids": [
-      "KO-S46",
-      "KO-S47"
+      "KO-S52",
+      "KO-S53"
     ],
-    "commit": "14521a41ac4c5a6af7b383e497594bfb7fc63dce",
-    "live_seconds": 61
+    "commit": "8d7a1d32c33673e1c0992ed278980c9b1a331845",
+    "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 4
   }
 }
