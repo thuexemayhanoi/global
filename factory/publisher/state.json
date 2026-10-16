@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 404,
+  "clean_runs": 405,
   "published": [
     {
       "id": "NL-H01",
@@ -9458,7 +9458,8 @@
       "at": "2026-10-16T10:05:27.951Z",
       "source_sha256": "a6708fa1249908168d54bdd8c8e1871f7403b8af4c1d4669df0c22182daf8206",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T10:06:50.931Z"
     },
     {
       "id": "VI-S81",
@@ -9469,18 +9470,11 @@
       "at": "2026-10-16T10:05:27.951Z",
       "source_sha256": "df0cadb94d7cb11926dc3fd4293a805189ade6b3b31335012b15f3f820407d2a",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T10:06:50.931Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T03:52:35.701Z",
-      "ids": [
-        "ZH-S30",
-        "ZH-S31"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T03:53:07.517Z",
       "ids": [
@@ -11072,16 +11066,24 @@
         "VI-S81"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T10:06:50.931Z",
+      "ids": [
+        "PT-S82",
+        "VI-S81"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T10:04:11.051Z",
+    "at": "2026-10-16T10:06:50.931Z",
     "ids": [
-      "JA-S81",
-      "KO-S81"
+      "PT-S82",
+      "VI-S81"
     ],
-    "commit": "35b04afda4b4e1ac8ee4888ca4e69f83d1252050",
-    "live_seconds": 82
+    "commit": "9a9876c14f5cccca14d9f5dca3df94a7f41eee92",
+    "live_seconds": 61
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
