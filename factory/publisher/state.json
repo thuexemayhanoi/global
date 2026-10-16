@@ -8272,17 +8272,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T06:06:58.408Z"
+    },
+    {
+      "id": "VI-S60",
+      "locale": "vi",
+      "url": "/vi/guides/di-xe-may-troi-nang-nong/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:07:24.996Z",
+      "source_sha256": "fe8dc30dc962ec7a646301e3f895f570a8be264d93dfb0b2d64e77e9df21523a",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "VI-S61",
+      "locale": "vi",
+      "url": "/vi/guides/o-nhiem-khong-khi-ha-noi-di-xe-may/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:07:24.996Z",
+      "source_sha256": "343bb0639d77d4ed6bfaf8872f7c353909f94547847d099c9258ab7ff981b53e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T02:13:01.874Z",
-      "ids": [
-        "NL-S31",
-        "NL-S32"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T02:13:59.681Z",
       "ids": [
@@ -9858,6 +9872,14 @@
         "PT-S75"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:07:24.996Z",
+      "ids": [
+        "VI-S60",
+        "VI-S61"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -9870,6 +9892,7 @@
     "live_seconds": 102
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 2,
+    "REJECTED": 6
   }
 }
