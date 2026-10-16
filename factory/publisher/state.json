@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 433,
+  "clean_runs": 435,
   "published": [
     {
       "id": "NL-H01",
@@ -10144,41 +10144,57 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T16:43:44.375Z"
+    },
+    {
+      "id": "ES-S21",
+      "locale": "es",
+      "url": "/es/guides/casco-normas-talla/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:44:08.518Z",
+      "source_sha256": "71fa951ab7ba9574efff14922abfca70ef30eaa6dda3baae498d3adaf1efe879",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:46:53.771Z"
+    },
+    {
+      "id": "FR-S22",
+      "locale": "fr",
+      "url": "/fr/guides/casque-normes-taille/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:44:08.518Z",
+      "source_sha256": "7f0771efa02f9560b7ef668a69f13c33fbe316ef98431c440d49d88115fdc9ac",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:46:53.771Z"
+    },
+    {
+      "id": "JA-S21",
+      "locale": "ja",
+      "url": "/ja/guides/helmet-kikaku/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:47:15.659Z",
+      "source_sha256": "591c9a5c8a034bcc52fd42a03cdf6d5e6abff79b7ff484b89aeb511ed23f27b1",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:49:22.067Z"
+    },
+    {
+      "id": "KO-S21",
+      "locale": "ko",
+      "url": "/ko/guides/helmet-gijun/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:47:15.659Z",
+      "source_sha256": "9b75bd1ed6d1fafb2a5a04fa8e1be56be6f1829ec07042093f4e3c61f33b6716",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:49:22.067Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T05:11:55.990Z",
-      "ids": [
-        "VI-S52",
-        "VI-S53"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T05:13:14.994Z",
-      "ids": [
-        "VI-S52",
-        "VI-S53"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T05:13:34.381Z",
-      "ids": [
-        "VI-S58",
-        "VI-S59"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T05:15:14.353Z",
-      "ids": [
-        "VI-S58",
-        "VI-S59"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T05:15:35.995Z",
       "ids": [
@@ -11746,16 +11762,48 @@
         "EN-S22"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T16:44:08.518Z",
+      "ids": [
+        "ES-S21",
+        "FR-S22"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T16:46:53.771Z",
+      "ids": [
+        "ES-S21",
+        "FR-S22"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T16:47:15.659Z",
+      "ids": [
+        "JA-S21",
+        "KO-S21"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T16:49:22.067Z",
+      "ids": [
+        "JA-S21",
+        "KO-S21"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T16:43:44.375Z",
+    "at": "2026-10-16T16:49:22.067Z",
     "ids": [
-      "DE-S21",
-      "EN-S22"
+      "JA-S21",
+      "KO-S21"
     ],
-    "commit": "419ce16b73f93bcf81b7a8f06833fd511cd53700",
-    "live_seconds": 102
+    "commit": "4f4287efbcf571ea66b28c39c3e72e8ab89c134f",
+    "live_seconds": 101
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
