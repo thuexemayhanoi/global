@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 261,
+  "clean_runs": 262,
   "published": [
     {
       "id": "NL-H01",
@@ -6112,31 +6112,55 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T02:22:27.116Z"
+    },
+    {
+      "id": "NL-S43",
+      "locale": "nl",
+      "url": "/nl/guides/afslaan-en-keren-scooter-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:22:46.435Z",
+      "source_sha256": "da0754f4eb0c4b611f209b8c06cd3676a575838643482b6040c7650c84b517f9",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:24:23.927Z"
+    },
+    {
+      "id": "NL-S44",
+      "locale": "nl",
+      "url": "/nl/guides/rijstrook-scooter-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:22:46.435Z",
+      "source_sha256": "af608d0705e7f0a7af72caca8738d2e39b455d1d1ad504a7c6017033dd883d83",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:24:23.927Z"
+    },
+    {
+      "id": "NL-S45",
+      "locale": "nl",
+      "url": "/nl/guides/minimumleeftijd-scooter-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:24:44.578Z",
+      "source_sha256": "6205a4a67a83577cedd041faa6bd2bf4a7913b99dde3e27389d43946560f4482",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "NL-S46",
+      "locale": "nl",
+      "url": "/nl/guides/verkeerslichten-vietnam-scooter/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:24:44.578Z",
+      "source_sha256": "defe0883c17bb305fb9abfc403024f52054cdc4d4285f619aa0dfeef2f6bddf2",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T22:07:12.529Z",
-      "ids": [
-        "ES-S36"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T22:08:25.485Z",
-      "ids": [
-        "ES-S36"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T22:14:18.311Z",
-      "ids": [
-        "ES-S37",
-        "ES-S38"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T22:15:32.122Z",
       "ids": [
@@ -7686,16 +7710,40 @@
         "NL-S42"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:22:46.435Z",
+      "ids": [
+        "NL-S43",
+        "NL-S44"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:24:23.927Z",
+      "ids": [
+        "NL-S43",
+        "NL-S44"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:24:44.578Z",
+      "ids": [
+        "NL-S45",
+        "NL-S46"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T02:22:27.116Z",
+    "at": "2026-10-16T02:24:23.927Z",
     "ids": [
-      "NL-S41",
-      "NL-S42"
+      "NL-S43",
+      "NL-S44"
     ],
-    "commit": "99a7989b0614f264104816faafe8289615be0f23",
-    "live_seconds": 41
+    "commit": "1deb46846bbb93086e7cd7d143ac5461e55509f8",
+    "live_seconds": 82
   },
   "queue": {
     "APPROVED_BY_POLICY": 4
