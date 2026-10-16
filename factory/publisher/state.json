@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 398,
+  "clean_runs": 399,
   "published": [
     {
       "id": "NL-H01",
@@ -9314,7 +9314,8 @@
       "at": "2026-10-16T09:44:02.249Z",
       "source_sha256": "3c1ac3b7956bebfb32ca0ec8f72bf2ae6779c72cada298bb2dc2d22193aa7a72",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T09:45:26.490Z"
     },
     {
       "id": "ZH-S79",
@@ -9325,26 +9326,33 @@
       "at": "2026-10-16T09:44:02.249Z",
       "source_sha256": "470c44258012301755fc71e0319730e1267823c4799931c9236b85dc2ac42091",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T09:45:26.490Z"
+    },
+    {
+      "id": "ZH-S80",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-diandong-zixingche-guiding/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T09:48:05.879Z",
+      "source_sha256": "4a7aae763303de9fe13c277403d0e58c488df8f925490fe4e49f89220eeb63c7",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S81",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-qi-zixingche-jiaotong-guize/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T09:48:05.879Z",
+      "source_sha256": "8d6c298f947f00ba892ea9b6bcd9988d603d313a97a1ffd13d77f489262c46fc",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T03:38:03.502Z",
-      "ids": [
-        "NL-S56",
-        "NL-S57"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T03:38:25.160Z",
-      "ids": [
-        "NL-S58",
-        "NL-S59"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T03:39:44.049Z",
       "ids": [
@@ -10926,16 +10934,32 @@
         "ZH-S79"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T09:45:26.490Z",
+      "ids": [
+        "ZH-S78",
+        "ZH-S79"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T09:48:05.879Z",
+      "ids": [
+        "ZH-S80",
+        "ZH-S81"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T09:42:56.000Z",
+    "at": "2026-10-16T09:45:26.490Z",
     "ids": [
-      "NL-S20",
-      "PT-S20"
+      "ZH-S78",
+      "ZH-S79"
     ],
-    "commit": "252501edefc9eb43fa88c24994004a70126ca46b",
-    "live_seconds": 61
+    "commit": "abaf37d2c1e6120b6c5ed1cf78ac0b41cae9744d",
+    "live_seconds": 62
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
