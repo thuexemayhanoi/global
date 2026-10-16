@@ -5320,17 +5320,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T00:51:34.622Z"
+    },
+    {
+      "id": "JA-S49",
+      "locale": "ja",
+      "url": "/ja/guides/koutsuu-ihan-bakkin-shiharai/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:51:51.987Z",
+      "source_sha256": "9cc06aeb83d161d6fb8d319b425c503f78cbb1739bc458681250d534192351e6",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S50",
+      "locale": "ja",
+      "url": "/ja/guides/atsusa-necchuushou-bike/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:51:51.987Z",
+      "source_sha256": "a6b8b7123eb184891ce6fa0f2731f1718e4158d24aa8ec9a7d8ff295d46799c2",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T20:40:01.038Z",
-      "ids": [
-        "DE-S64",
-        "EN-S43"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T20:41:12.561Z",
       "ids": [
@@ -6876,6 +6890,14 @@
         "JA-S48"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T00:51:51.987Z",
+      "ids": [
+        "JA-S49",
+        "JA-S50"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -6888,6 +6910,6 @@
     "live_seconds": 101
   },
   "queue": {
-    "APPROVED_BY_POLICY": 4
+    "APPROVED_BY_POLICY": 2
   }
 }
