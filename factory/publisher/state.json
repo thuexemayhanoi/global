@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 365,
+  "clean_runs": 367,
   "published": [
     {
       "id": "NL-H01",
@@ -8522,7 +8522,8 @@
       "at": "2026-10-16T06:53:31.801Z",
       "source_sha256": "e6ab9c302ff0b811f1d73b0c1318fa6f167d62653c5b38f31cbf4b5fd1fc1bb3",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:54:53.267Z"
     },
     {
       "id": "PT-S67",
@@ -8533,34 +8534,35 @@
       "at": "2026-10-16T06:53:31.801Z",
       "source_sha256": "f9c4cd94728a180eadaa118ad77e5e072e0af802d5b85e4fe6269ab3a33a791e",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:54:53.267Z"
+    },
+    {
+      "id": "KO-S69",
+      "locale": "ko",
+      "url": "/ko/guides/otobai-dwitjari-dongseungja-gaideu/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:55:47.069Z",
+      "source_sha256": "ce3957b6213e3fa56f9eb96479a82d58ce47f95d2ffff8d656317c204c58ce2c",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:57:03.431Z"
+    },
+    {
+      "id": "KO-S70",
+      "locale": "ko",
+      "url": "/ko/guides/gyotongsago-mokgyeokja-uimu/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:55:47.069Z",
+      "source_sha256": "a1d44f7ab60c24546867aade7f57c65ed878741b48daf3d1c426a1385b62553f",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:57:03.431Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T02:30:50.443Z",
-      "ids": [
-        "NL-S51",
-        "NL-S52"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:31:06.528Z",
-      "ids": [
-        "NL-S53",
-        "NL-S54"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:33:20.404Z",
-      "ids": [
-        "NL-S53",
-        "NL-S54"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T02:33:38.789Z",
       "ids": [
@@ -10120,15 +10122,39 @@
         "PT-S67"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:54:53.267Z",
+      "ids": [
+        "PT-S66",
+        "PT-S67"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:55:47.069Z",
+      "ids": [
+        "KO-S69",
+        "KO-S70"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:57:03.431Z",
+      "ids": [
+        "KO-S69",
+        "KO-S70"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T06:50:09.315Z",
+    "at": "2026-10-16T06:57:03.431Z",
     "ids": [
-      "KO-S67",
-      "KO-S68"
+      "KO-S69",
+      "KO-S70"
     ],
-    "commit": "4489c618f1bd54fa4d55856023d0481c87376012",
+    "commit": "8288b18e521e1291385e3614de2279aae3aa7e9b",
     "live_seconds": 61
   },
   "queue": {
