@@ -5296,17 +5296,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T00:49:21.155Z"
+    },
+    {
+      "id": "JA-S47",
+      "locale": "ja",
+      "url": "/ja/guides/menkyo-tensuu-seido/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:49:39.160Z",
+      "source_sha256": "81e24e731f8b4bce49f9d285f5aec24e0b9de075ef83763cff662983dcf221d1",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S48",
+      "locale": "ja",
+      "url": "/ja/guides/kamera-ihan-bakkin-rental/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:49:39.160Z",
+      "source_sha256": "c54f6659481f2d1118667c64f4f62c8dd9f1c95f04b1b35d7dcf38779259b262",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T20:36:19.018Z",
-      "ids": [
-        "EN-S50",
-        "EN-S51"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T20:37:31.157Z",
       "ids": [
@@ -6852,6 +6866,14 @@
         "JA-S46"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T00:49:39.160Z",
+      "ids": [
+        "JA-S47",
+        "JA-S48"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -6864,6 +6886,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 6
+    "APPROVED_BY_POLICY": 4
   }
 }
