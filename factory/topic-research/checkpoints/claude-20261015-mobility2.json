@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility2",
   "batch_session": "research-claude-20261015-mobility2",
   "created_at": "2026-10-15T23:01:23.660Z",
-  "updated_at": "2026-10-16T05:20:46.721Z",
-  "base_main_sha": "3717033540246663a600ae0151de1c627e127fed",
-  "last_commit_sha": "088c5b64dabdcade7e8cf1f34a269df05908c266",
+  "updated_at": "2026-10-16T05:31:01.021Z",
+  "base_main_sha": "364a6a5c193f004790b8eff470007b7a6a4f7e40",
+  "last_commit_sha": "635f37e6b6943aa68a643b49410d4fdfa57d0a5a",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 170,
-    "qa_pass": 170,
+    "researched": 180,
+    "qa_pass": 180,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 160,
+    "pushed": 170,
     "pending_push": 10
   },
   "coverage": {
@@ -31,19 +31,19 @@
       "ja": 22,
       "ko": 21,
       "zh": 21,
-      "pt": 22,
+      "pt": 32,
       "nl": 21,
       "vi": 20
     },
     "domains": {
-      "traffic-law-safety": 157,
-      "motorbike-rental": 13
+      "traffic-law-safety": 164,
+      "motorbike-rental": 16
     }
   },
   "last_batch": {
-    "seq": 17,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0017.json",
-    "sha256": "deef46ffa1d4b6c015bdb6bc5eb5c1cf68b80d5390ad9dd0a703ac3f88ed09ae",
+    "seq": 18,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0018.json",
+    "sha256": "62d86fbdb4f369cc3b2a4edee556795608c006f66dce9c81c14a7b2cdae12a9e",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -1829,8 +1829,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility2-0017.json",
       "sha256": "deef46ffa1d4b6c015bdb6bc5eb5c1cf68b80d5390ad9dd0a703ac3f88ed09ae",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "cb134b667a1e4839048d5748a35dd7226537def7",
       "researched_on": "2026-10-16",
       "topics": [
         {
@@ -1841,7 +1841,7 @@
           "parent_id": "NL-H04",
           "subcluster": "ss-city",
           "key": "nl::goed remmen met een scooter voorrem en achterrem",
-          "ta_id": null
+          "ta_id": "TA-NL-0061"
         },
         {
           "ref": "nl:haarspeldbochten-scooter-bergweg",
@@ -1851,7 +1851,7 @@
           "parent_id": "NL-H04",
           "subcluster": "ss-city",
           "key": "nl::haarspeldbochten rijden met een scooter tips",
-          "ta_id": null
+          "ta_id": "TA-NL-0062"
         },
         {
           "ref": "nl:duopassagier-achterop-scooter-tips",
@@ -1861,7 +1861,7 @@
           "parent_id": "NL-H04",
           "subcluster": "ss-city",
           "key": "nl::achterop een scooter zitten tips",
-          "ta_id": null
+          "ta_id": "TA-NL-0063"
         },
         {
           "ref": "nl:getuige-van-een-ongeluk-vietnam",
@@ -1871,7 +1871,7 @@
           "parent_id": "NL-H04",
           "subcluster": "ss-incidents",
           "key": "nl::getuige van een verkeersongeluk in vietnam wat doen",
-          "ta_id": null
+          "ta_id": "TA-NL-0064"
         },
         {
           "ref": "nl:hoeveel-uur-per-dag-scooter-rijden-vermoeidheid",
@@ -1881,7 +1881,7 @@
           "parent_id": "NL-H04",
           "subcluster": "ss-city",
           "key": "nl::hoeveel uur per dag scooter rijden vietnam",
-          "ta_id": null
+          "ta_id": "TA-NL-0065"
         },
         {
           "ref": "nl:eerste-keer-automaat-scooter-oefenen",
@@ -1891,7 +1891,7 @@
           "parent_id": "NL-H01",
           "subcluster": "vc-transmission",
           "key": "nl::eerste keer op een automaat scooter oefenen",
-          "ta_id": null
+          "ta_id": "TA-NL-0066"
         },
         {
           "ref": "nl:elektrische-scooter-actieradius-opladen-vietnam",
@@ -1901,7 +1901,7 @@
           "parent_id": "NL-H01",
           "subcluster": "vc-power",
           "key": "nl::elektrische scooter vietnam actieradius en opladen",
-          "ta_id": null
+          "ta_id": "TA-NL-0067"
         },
         {
           "ref": "nl:gaten-grind-wegdek-scooter-vietnam",
@@ -1911,7 +1911,7 @@
           "parent_id": "NL-H04",
           "subcluster": "ss-weather",
           "key": "nl::gaten in de weg en grind scooter vietnam",
-          "ta_id": null
+          "ta_id": "TA-NL-0068"
         },
         {
           "ref": "nl:dode-hoek-vrachtwagen-bus-scooter-vietnam",
@@ -1921,7 +1921,7 @@
           "parent_id": "NL-H04",
           "subcluster": "ss-city",
           "key": "nl::dode hoek vrachtwagen en bus scooter vietnam",
-          "ta_id": null
+          "ta_id": "TA-NL-0069"
         },
         {
           "ref": "nl:honda-smart-key-scooter-gebruiken",
@@ -1931,14 +1931,125 @@
           "parent_id": "NL-H01",
           "subcluster": "vc-models",
           "key": "nl::honda smart key scooter gebruiken",
+          "ta_id": "TA-NL-0070"
+        }
+      ]
+    },
+    {
+      "seq": 18,
+      "file": "factory/topic-research/batches/claude-20261015-mobility2-0018.json",
+      "sha256": "62d86fbdb4f369cc3b2a4edee556795608c006f66dce9c81c14a7b2cdae12a9e",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-16",
+      "topics": [
+        {
+          "ref": "pt:travar-scooter-travao-dianteiro-traseiro",
+          "locale": "pt",
+          "slug": "travar-scooter-travao-dianteiro-traseiro",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::como travar bem de scooter com o travao da frente e o de tras",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:curvas-apertadas-scooter-estrada-de-montanha",
+          "locale": "pt",
+          "slug": "curvas-apertadas-scooter-estrada-de-montanha",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::como fazer curvas apertadas de scooter na montanha",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:passageiro-de-scooter-dicas-e-regras",
+          "locale": "pt",
+          "slug": "passageiro-de-scooter-dicas-e-regras",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::como ir de passageiro numa scooter dicas",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:testemunha-de-acidente-vietname",
+          "locale": "pt",
+          "slug": "testemunha-de-acidente-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::testemunha de um acidente de viacao no vietname o que fazer",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:quantas-horas-por-dia-de-moto-cansaco",
+          "locale": "pt",
+          "slug": "quantas-horas-por-dia-de-moto-cansaco",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::quantas horas por dia andar de scooter no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:primeira-vez-scooter-automatica-treinar",
+          "locale": "pt",
+          "slug": "primeira-vez-scooter-automatica-treinar",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-transmission",
+          "key": "pt::primeira vez numa scooter automatica como treinar",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:scooter-eletrica-autonomia-carregar-vietname",
+          "locale": "pt",
+          "slug": "scooter-eletrica-autonomia-carregar-vietname",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-power",
+          "key": "pt::scooter eletrica no vietname autonomia e carregamento",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:buracos-gravilha-piso-degradado-scooter-vietname",
+          "locale": "pt",
+          "slug": "buracos-gravilha-piso-degradado-scooter-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-weather",
+          "key": "pt::buracos e gravilha na estrada de scooter no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:angulo-morto-camioes-autocarros-scooter-vietname",
+          "locale": "pt",
+          "slug": "angulo-morto-camioes-autocarros-scooter-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::angulo morto de camioes e autocarros de scooter no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:honda-smart-key-scooter-como-usar",
+          "locale": "pt",
+          "slug": "honda-smart-key-scooter-como-usar",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-models",
+          "key": "pt::como usar a honda smart key numa scooter",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 18,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0018.json",
+    "seq": 19,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0019.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -2069,6 +2180,13 @@
       "seq": 17,
       "topics": 10,
       "sha256": "deef46ffa1d4b6c015bdb6bc5eb5c1cf68b80d5390ad9dd0a703ac3f88ed09ae"
+    },
+    {
+      "at": "2026-10-16T05:31:01.021Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 18,
+      "topics": 10,
+      "sha256": "62d86fbdb4f369cc3b2a4edee556795608c006f66dce9c81c14a7b2cdae12a9e"
     }
   ]
 }
