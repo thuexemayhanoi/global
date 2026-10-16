@@ -10408,17 +10408,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T20:43:12.733Z"
+    },
+    {
+      "id": "VI-S68",
+      "locale": "vi",
+      "url": "/vi/guides/cach-vao-cua-gap-duong-deo-xe-may/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T20:43:45.563Z",
+      "source_sha256": "889f34ee3bbb1c5c175fd155dc4fd485b2d370319c61194efd96d9e4134da056",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S75",
+      "locale": "zh",
+      "url": "/zh/guides/dahuoche-dabache-mangqu-motuoche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T20:43:45.563Z",
+      "source_sha256": "eda1e6f1e955c24c042de238377a3e4e2f56824599961b97f5c6131653f39d9e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T05:39:22.109Z",
-      "ids": [
-        "ZH-S62",
-        "ZH-S63"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T05:40:45.004Z",
       "ids": [
@@ -12010,6 +12024,14 @@
         "VI-S67"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T20:43:45.563Z",
+      "ids": [
+        "VI-S68",
+        "ZH-S75"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -12022,6 +12044,6 @@
     "live_seconds": 63
   },
   "queue": {
-    "APPROVED_BY_POLICY": 4
+    "APPROVED_BY_POLICY": 2
   }
 }
