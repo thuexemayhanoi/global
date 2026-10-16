@@ -3595,6 +3595,63 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility2-0028.json@4e21c23a3cf3"
       },
       "matrix_id": "JA-S84"
+    },
+    {
+      "candidate_id": "TA-JA-0079",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-licence",
+      "slug": "bike-kashidashi-menkyo-bakkin-vietnam",
+      "primary_query": "ベトナム バイク 友人に貸す 免許",
+      "secondary_queries": [
+        "ベトナム バイク 貸した 所有者 罰金",
+        "ベトナム 借りたバイク 無免許",
+        "ベトナム レンタルバイク 友人 運転"
+      ],
+      "working_title": "ベトナムでバイクを人に貸すとき：免許の条件、所有者の罰金、押収",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Japanese-speaking couples and friends travelling or living together often share one motorbike or swap riders, and want to know whether someone else may ride their own, borrowed or rented bike, what licence that person needs and who is fined if the new rider does not qualify.",
+      "content_angle": "Explains the ban on handing a motor vehicle to someone who does not meet the legal conditions to ride it in Article 9(7) of Law 36/2024/QH15 and the rider conditions and papers in Article 56(1) (age, health and a valid licence with points left for the vehicle class, except moped riders, plus the registration certificate, licence and compulsory insurance certificate to carry); the owner's fine in Article 32(10) of Decree 168/2024/NĐ-CP for handing a motorbike to or letting it be ridden by someone who does not meet those conditions, including a rider whose licence is suspended (VND 8,000,000 to 10,000,000 for an individual owner, VND 16,000,000 to 20,000,000 for an organisation); the rider's own fines for riding without a valid licence, with a licence for the wrong class or with an International Driving Permit but without the national licence (Article 18(5): VND 2,000,000 to 4,000,000 up to 125 cm³ or 11 kW; Article 18(7): VND 6,000,000 to 8,000,000 above that); impoundment of the motorbike under Article 48(1)(i); and practical advice before letting a friend, relative or travel companion ride a borrowed or rented motorbike, such as checking their licence class and permit and what the agreement with the bike's owner allows.",
+      "entities": [
+        "法律36/2024/QH15第9条7項",
+        "法律36/2024/QH15第56条1項",
+        "政令168/2024/NĐ-CP第32条10項",
+        "政令168/2024/NĐ-CP第18条5項",
+        "政令168/2024/NĐ-CP第48条1項i号"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S05",
+          "reason": "JA-S05は日本の運転免許でベトナムのバイクに乗れるかを扱います。このテーマはバイクを他の人に運転させたときの免許の条件と、所有者と運転者の罰金を扱います。"
+        },
+        {
+          "id": "JA-S09",
+          "reason": "JA-S09は長期滞在者がベトナムの免許に切り替える手順を扱います。このテーマはバイクを貸す場面での所有者の責任と運転者の罰則を扱います。"
+        },
+        {
+          "id": "JA-S67",
+          "reason": "JA-S67は警察がバイクを押収できる違反全般を扱います。このテーマは所有者や借りた本人以外が運転する場合に絞って扱います。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0030.json@ac0a333e2fb3"
+      },
+      "matrix_id": "JA-S85"
     }
   ]
 }
