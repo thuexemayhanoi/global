@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 428,
+  "clean_runs": 430,
   "published": [
     {
       "id": "NL-H01",
@@ -10034,7 +10034,8 @@
       "at": "2026-10-16T16:28:01.628Z",
       "source_sha256": "85e4e3619bce44984ba90020b1af6ff89383fbe3915c2596812ba0627f4f35f4",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:29:46.021Z"
     },
     {
       "id": "KO-S86",
@@ -10045,34 +10046,35 @@
       "at": "2026-10-16T16:28:01.628Z",
       "source_sha256": "2c3179a6f8171121b046834e9a30fe518cff97df5e25414e9493cd1c9fa24ca9",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:29:46.021Z"
+    },
+    {
+      "id": "VI-S20",
+      "locale": "vi",
+      "url": "/vi/guides/dung-tich-110cc-125cc-150cc/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:30:34.002Z",
+      "source_sha256": "82b60a6172760fc313408013355f570baa6ef852fbeac8fb5e8f1c604ecd2414",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:32:17.901Z"
+    },
+    {
+      "id": "ZH-S21",
+      "locale": "zh",
+      "url": "/zh/guides/pailiang-xuanze/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:30:34.002Z",
+      "source_sha256": "6364ce6b5c5b2bc225fcda9c545de4d3f0ca3f201deff4bc8fb2daae4554211e",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:32:17.901Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T05:04:17.348Z",
-      "ids": [
-        "VI-S49",
-        "VI-S50"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T05:04:54.819Z",
-      "ids": [
-        "JA-S66",
-        "VI-S51"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T05:06:15.820Z",
-      "ids": [
-        "JA-S66",
-        "VI-S51"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T05:06:38.913Z",
       "ids": [
@@ -11648,16 +11650,40 @@
         "KO-S86"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T16:29:46.021Z",
+      "ids": [
+        "JA-S86",
+        "KO-S86"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T16:30:34.002Z",
+      "ids": [
+        "VI-S20",
+        "ZH-S21"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T16:32:17.901Z",
+      "ids": [
+        "VI-S20",
+        "ZH-S21"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T16:27:20.984Z",
+    "at": "2026-10-16T16:32:17.901Z",
     "ids": [
-      "ES-S78",
-      "FR-S90"
+      "VI-S20",
+      "ZH-S21"
     ],
-    "commit": "e9cbff6fa5b8b93b1cbe781ba66a6947f7a10fc7",
-    "live_seconds": 62
+    "commit": "23d70eecc3131cabd665dc126d3782e32592e195",
+    "live_seconds": 82
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
