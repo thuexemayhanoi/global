@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility2",
   "batch_session": "research-claude-20261015-mobility2",
   "created_at": "2026-10-15T23:01:23.660Z",
-  "updated_at": "2026-10-16T01:22:45.814Z",
-  "base_main_sha": "e46787f093b8ce7cb8c9553a411cba72e7c90ba2",
-  "last_commit_sha": "2a7b5801fda500207ca7bd541115a4f1dd42e9d5",
+  "updated_at": "2026-10-16T01:41:07.774Z",
+  "base_main_sha": "6aa57666269c3918c8ad753f372444efb214453d",
+  "last_commit_sha": "ff15b3b439fca238545e61fbb79f8522e8db431b",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 80,
-    "qa_pass": 80,
+    "researched": 90,
+    "qa_pass": 90,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 70,
+    "pushed": 80,
     "pending_push": 10
   },
   "coverage": {
@@ -30,17 +30,18 @@
       "de": 2,
       "ja": 20,
       "ko": 10,
-      "zh": 10
+      "zh": 10,
+      "pt": 10
     },
     "domains": {
-      "traffic-law-safety": 70,
+      "traffic-law-safety": 80,
       "motorbike-rental": 10
     }
   },
   "last_batch": {
-    "seq": 8,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0008.json",
-    "sha256": "31a97b2287598b8c9025582e4adede1098cc8b63f717b50b4727e1c38b5fcc31",
+    "seq": 9,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0009.json",
+    "sha256": "e1ef391f7afdc6b5f554be1644637c84226fd7098f3e0cf7b1666180590a4f15",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -827,8 +828,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility2-0008.json",
       "sha256": "31a97b2287598b8c9025582e4adede1098cc8b63f717b50b4727e1c38b5fcc31",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "ff15b3b439fca238545e61fbb79f8522e8db431b",
       "researched_on": "2026-10-16",
       "topics": [
         {
@@ -839,7 +840,7 @@
           "parent_id": "ZH-H03",
           "subcluster": "dc-licence",
           "key": "zh::越南驾照记分制度",
-          "ta_id": null
+          "ta_id": "TA-ZH-0040"
         },
         {
           "ref": "zh:yuenan-honglvdeng-guize",
@@ -849,7 +850,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南红绿灯规则 摩托车",
-          "ta_id": null
+          "ta_id": "TA-ZH-0041"
         },
         {
           "ref": "zh:yuenan-tielu-daokou-motuoche",
@@ -859,7 +860,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南铁路道口怎么过 摩托车",
-          "ta_id": null
+          "ta_id": "TA-ZH-0042"
         },
         {
           "ref": "zh:yuenan-jieban-qixing-motuoche",
@@ -869,7 +870,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南多人结伴骑摩托车注意事项",
-          "ta_id": null
+          "ta_id": "TA-ZH-0043"
         },
         {
           "ref": "zh:yuenan-dianziyan-fadan-zuche",
@@ -879,7 +880,7 @@
           "parent_id": "ZH-H03",
           "subcluster": "dc-contract",
           "key": "zh::越南电子眼罚单 租的摩托车谁来交",
-          "ta_id": null
+          "ta_id": "TA-ZH-0044"
         },
         {
           "ref": "zh:yuenan-jiaotong-fakuan-jiaona",
@@ -889,7 +890,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-incidents",
           "key": "zh::越南交通罚款怎么交",
-          "ta_id": null
+          "ta_id": "TA-ZH-0045"
         },
         {
           "ref": "zh:yuenan-gaowen-qi-motuoche",
@@ -899,7 +900,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-weather",
           "key": "zh::越南高温天气骑摩托车 防中暑",
-          "ta_id": null
+          "ta_id": "TA-ZH-0046"
         },
         {
           "ref": "zh:hanei-kongqi-wuran-qi-motuoche",
@@ -909,7 +910,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-weather",
           "key": "zh::河内空气污染 骑摩托车",
-          "ta_id": null
+          "ta_id": "TA-ZH-0047"
         },
         {
           "ref": "zh:yuenan-motuoche-tuoche-jinzhi",
@@ -919,7 +920,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-incidents",
           "key": "zh::越南摩托车能不能拖车或用脚推车",
-          "ta_id": null
+          "ta_id": "TA-ZH-0048"
         },
         {
           "ref": "zh:yuenan-motuoche-zuo-dulun",
@@ -929,14 +930,125 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南骑摩托车坐渡轮",
+          "ta_id": "TA-ZH-0049"
+        }
+      ]
+    },
+    {
+      "seq": 9,
+      "file": "factory/topic-research/batches/claude-20261015-mobility2-0009.json",
+      "sha256": "e1ef391f7afdc6b5f554be1644637c84226fd7098f3e0cf7b1666180590a4f15",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-16",
+      "topics": [
+        {
+          "ref": "pt:pontos-da-carta-de-conducao-vietname",
+          "locale": "pt",
+          "slug": "pontos-da-carta-de-conducao-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H03",
+          "subcluster": "dc-licence",
+          "key": "pt::sistema de pontos da carta de conducao no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:semaforos-vietname-moto",
+          "locale": "pt",
+          "slug": "semaforos-vietname-moto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::regras dos semaforos no vietname de moto",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:passagens-de-nivel-vietname-moto",
+          "locale": "pt",
+          "slug": "passagens-de-nivel-vietname-moto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::como atravessar uma passagem de nivel de moto no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:viajar-de-moto-em-grupo-vietname",
+          "locale": "pt",
+          "slug": "viajar-de-moto-em-grupo-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::viajar de moto em grupo no vietname regras",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:multa-por-camara-moto-alugada-vietname",
+          "locale": "pt",
+          "slug": "multa-por-camara-moto-alugada-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H03",
+          "subcluster": "dc-contract",
+          "key": "pt::multa por camara de transito com moto alugada no vietname quem paga",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:pagar-multa-de-transito-vietname",
+          "locale": "pt",
+          "slug": "pagar-multa-de-transito-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::como pagar uma multa de transito no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:moto-com-calor-extremo-vietname",
+          "locale": "pt",
+          "slug": "moto-com-calor-extremo-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-weather",
+          "key": "pt::andar de moto com muito calor no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:poluicao-do-ar-hanoi-moto",
+          "locale": "pt",
+          "slug": "poluicao-do-ar-hanoi-moto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-weather",
+          "key": "pt::poluicao do ar em hanoi andar de moto",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:rebocar-ou-empurrar-moto-vietname",
+          "locale": "pt",
+          "slug": "rebocar-ou-empurrar-moto-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::pode-se rebocar uma moto com outra moto no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:moto-no-ferry-vietname",
+          "locale": "pt",
+          "slug": "moto-no-ferry-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::levar a moto num ferry no vietname",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 9,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0009.json",
+    "seq": 10,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0010.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -1004,6 +1116,13 @@
       "seq": 8,
       "topics": 10,
       "sha256": "31a97b2287598b8c9025582e4adede1098cc8b63f717b50b4727e1c38b5fcc31"
+    },
+    {
+      "at": "2026-10-16T01:41:07.774Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 9,
+      "topics": 10,
+      "sha256": "e1ef391f7afdc6b5f554be1644637c84226fd7098f3e0cf7b1666180590a4f15"
     }
   ]
 }
