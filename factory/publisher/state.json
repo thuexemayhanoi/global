@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 430,
+  "clean_runs": 432,
   "published": [
     {
       "id": "NL-H01",
@@ -10082,7 +10082,8 @@
       "at": "2026-10-16T16:36:05.642Z",
       "source_sha256": "a38e1ac8e1d673ed04c66a5df77606e2a9102c8602a2e8371e8eaa6a91baf9a5",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:37:32.261Z"
     },
     {
       "id": "PT-S87",
@@ -10093,34 +10094,35 @@
       "at": "2026-10-16T16:36:05.642Z",
       "source_sha256": "cfeb21e347254be6645d0960b34f165cb2d7bd5ae7ca0744d89ade24bef46064",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:37:32.261Z"
+    },
+    {
+      "id": "VI-S86",
+      "locale": "vi",
+      "url": "/vi/guides/cho-cho-meo-bang-xe-may-quy-dinh/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:38:12.419Z",
+      "source_sha256": "c66a2edc7a166f38b0004cacccdb7a17e28177bfd3e86d9477f76866880e048d",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:39:59.399Z"
+    },
+    {
+      "id": "ZH-S87",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-qi-motuoche-dai-chongwu-guiding/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:38:12.419Z",
+      "source_sha256": "86cda28b14febb976da6d04b2cd170a8b78ce36a1e226d70d1310b433e524784",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:39:59.399Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T05:08:01.477Z",
-      "ids": [
-        "ZH-S46",
-        "ZH-S47"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T05:08:22.703Z",
-      "ids": [
-        "ZH-S48",
-        "ZH-S49"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T05:09:23.557Z",
-      "ids": [
-        "ZH-S48",
-        "ZH-S49"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T05:10:00.404Z",
       "ids": [
@@ -11696,16 +11698,40 @@
         "PT-S87"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T16:37:32.261Z",
+      "ids": [
+        "NL-S87",
+        "PT-S87"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T16:38:12.419Z",
+      "ids": [
+        "VI-S86",
+        "ZH-S87"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T16:39:59.399Z",
+      "ids": [
+        "VI-S86",
+        "ZH-S87"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T16:32:17.901Z",
+    "at": "2026-10-16T16:39:59.399Z",
     "ids": [
-      "VI-S20",
-      "ZH-S21"
+      "VI-S86",
+      "ZH-S87"
     ],
-    "commit": "23d70eecc3131cabd665dc126d3782e32592e195",
-    "live_seconds": 82
+    "commit": "308046d28190b9b0f9e4633bea0019917eef9a4c",
+    "live_seconds": 81
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
