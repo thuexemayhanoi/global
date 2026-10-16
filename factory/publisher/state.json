@@ -5416,17 +5416,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T00:58:53.872Z"
+    },
+    {
+      "id": "KO-S26",
+      "locale": "ko",
+      "url": "/ko/guides/clutch-motorbike-practice-before-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:06:27.523Z",
+      "source_sha256": "499a480756a15ea6526ab2ffc8109da1090cc61c33e9b63261bde79fa2939593",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S27",
+      "locale": "ko",
+      "url": "/ko/guides/vietnam-drink-riding-zero-limit/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:06:27.523Z",
+      "source_sha256": "872f30a7ae5ff1b48b4a7f938cd422a82ecda12e1469fc8d23bd7d3bdb546367",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T20:54:07.776Z",
-      "ids": [
-        "EN-S52",
-        "EN-S53"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T20:55:20.597Z",
       "ids": [
@@ -6974,6 +6988,14 @@
         "KO-S18"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T01:06:27.523Z",
+      "ids": [
+        "KO-S26",
+        "KO-S27"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -6985,5 +7007,7 @@
     "commit": "00a4d705d8e44feec8a5579a22482efabab0eda0",
     "live_seconds": 62
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 4
+  }
 }
