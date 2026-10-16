@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 399,
+  "clean_runs": 401,
   "published": [
     {
       "id": "NL-H01",
@@ -9338,7 +9338,8 @@
       "at": "2026-10-16T09:48:05.879Z",
       "source_sha256": "4a7aae763303de9fe13c277403d0e58c488df8f925490fe4e49f89220eeb63c7",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T09:49:24.502Z"
     },
     {
       "id": "ZH-S81",
@@ -9349,34 +9350,35 @@
       "at": "2026-10-16T09:48:05.879Z",
       "source_sha256": "8d6c298f947f00ba892ea9b6bcd9988d603d313a97a1ffd13d77f489262c46fc",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T09:49:24.502Z"
+    },
+    {
+      "id": "VI-S79",
+      "locale": "vi",
+      "url": "/vi/guides/xe-dap-dien-quy-dinh-mu-bao-hiem/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T09:49:46.896Z",
+      "source_sha256": "92689588855fd184aee8b103c29c380e809268e3f852fc970e8c9abf1c183ecb",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T09:51:08.271Z"
+    },
+    {
+      "id": "VI-S80",
+      "locale": "vi",
+      "url": "/vi/guides/quy-dinh-giao-thong-cho-xe-dap/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T09:49:46.896Z",
+      "source_sha256": "86e696e8c4994e49c573cdfe69ce1cf6178e523d74e50940ed771211e499ef5d",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T09:51:08.271Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T03:39:44.049Z",
-      "ids": [
-        "NL-S58",
-        "NL-S59"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T03:40:04.241Z",
-      "ids": [
-        "NL-S60",
-        "NL-S61"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T03:41:42.254Z",
-      "ids": [
-        "NL-S60",
-        "NL-S61"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T03:42:03.214Z",
       "ids": [
@@ -10950,18 +10952,40 @@
         "ZH-S81"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T09:49:24.502Z",
+      "ids": [
+        "ZH-S80",
+        "ZH-S81"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T09:49:46.896Z",
+      "ids": [
+        "VI-S79",
+        "VI-S80"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T09:51:08.271Z",
+      "ids": [
+        "VI-S79",
+        "VI-S80"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T09:45:26.490Z",
+    "at": "2026-10-16T09:51:08.271Z",
     "ids": [
-      "ZH-S78",
-      "ZH-S79"
+      "VI-S79",
+      "VI-S80"
     ],
-    "commit": "abaf37d2c1e6120b6c5ed1cf78ac0b41cae9744d",
+    "commit": "d7f33c3bbe131b9a96279eed030dd027b0ca14c0",
     "live_seconds": 62
   },
-  "queue": {
-    "APPROVED_BY_POLICY": 2
-  }
+  "queue": {}
 }
