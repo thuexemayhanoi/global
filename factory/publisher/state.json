@@ -7888,17 +7888,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T05:23:18.443Z"
+    },
+    {
+      "id": "ZH-S52",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-gaowen-qi-motuoche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:23:40.836Z",
+      "source_sha256": "d66dbc615fae29a77695eee3439dc32bf28c8264f61059a58f2a15bc88e523d8",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S53",
+      "locale": "zh",
+      "url": "/zh/guides/hanei-kongqi-wuran-qi-motuoche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:23:40.836Z",
+      "source_sha256": "a6fb77723aa120d317ef9532f6f3e1b33838584b25be9da7389e9fc1f3041882",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T01:35:29.482Z",
-      "ids": [
-        "KO-S30",
-        "KO-S31"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T01:36:44.663Z",
       "ids": [
@@ -9474,6 +9488,14 @@
         "ZH-S51"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:23:40.836Z",
+      "ids": [
+        "ZH-S52",
+        "ZH-S53"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -9486,6 +9508,6 @@
     "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 6
+    "APPROVED_BY_POLICY": 4
   }
 }
