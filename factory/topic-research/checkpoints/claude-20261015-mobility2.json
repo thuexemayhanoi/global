@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility2",
   "batch_session": "research-claude-20261015-mobility2",
   "created_at": "2026-10-15T23:01:23.660Z",
-  "updated_at": "2026-10-16T01:41:07.774Z",
-  "base_main_sha": "6aa57666269c3918c8ad753f372444efb214453d",
-  "last_commit_sha": "ff15b3b439fca238545e61fbb79f8522e8db431b",
+  "updated_at": "2026-10-16T03:08:44.039Z",
+  "base_main_sha": "fd0551f84b969040f08b2fad9b183559473c0464",
+  "last_commit_sha": "944874e25b91145906de80fec90016836991a01e",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 90,
-    "qa_pass": 90,
+    "researched": 100,
+    "qa_pass": 100,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 80,
+    "pushed": 90,
     "pending_push": 10
   },
   "coverage": {
@@ -31,17 +31,18 @@
       "ja": 20,
       "ko": 10,
       "zh": 10,
-      "pt": 10
+      "pt": 10,
+      "nl": 10
     },
     "domains": {
-      "traffic-law-safety": 80,
+      "traffic-law-safety": 90,
       "motorbike-rental": 10
     }
   },
   "last_batch": {
-    "seq": 9,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0009.json",
-    "sha256": "e1ef391f7afdc6b5f554be1644637c84226fd7098f3e0cf7b1666180590a4f15",
+    "seq": 10,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0010.json",
+    "sha256": "b911bf27048ebcd79cf9a64a95460441af7d97c5bdd3769bca0cef9ce3353ee3",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -939,8 +940,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility2-0009.json",
       "sha256": "e1ef391f7afdc6b5f554be1644637c84226fd7098f3e0cf7b1666180590a4f15",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "944874e25b91145906de80fec90016836991a01e",
       "researched_on": "2026-10-16",
       "topics": [
         {
@@ -951,7 +952,7 @@
           "parent_id": "PT-H03",
           "subcluster": "dc-licence",
           "key": "pt::sistema de pontos da carta de conducao no vietname",
-          "ta_id": null
+          "ta_id": "TA-PT-0040"
         },
         {
           "ref": "pt:semaforos-vietname-moto",
@@ -961,7 +962,7 @@
           "parent_id": "PT-H04",
           "subcluster": "ss-city",
           "key": "pt::regras dos semaforos no vietname de moto",
-          "ta_id": null
+          "ta_id": "TA-PT-0041"
         },
         {
           "ref": "pt:passagens-de-nivel-vietname-moto",
@@ -971,7 +972,7 @@
           "parent_id": "PT-H04",
           "subcluster": "ss-city",
           "key": "pt::como atravessar uma passagem de nivel de moto no vietname",
-          "ta_id": null
+          "ta_id": "TA-PT-0042"
         },
         {
           "ref": "pt:viajar-de-moto-em-grupo-vietname",
@@ -981,7 +982,7 @@
           "parent_id": "PT-H04",
           "subcluster": "ss-city",
           "key": "pt::viajar de moto em grupo no vietname regras",
-          "ta_id": null
+          "ta_id": "TA-PT-0043"
         },
         {
           "ref": "pt:multa-por-camara-moto-alugada-vietname",
@@ -991,7 +992,7 @@
           "parent_id": "PT-H03",
           "subcluster": "dc-contract",
           "key": "pt::multa por camara de transito com moto alugada no vietname quem paga",
-          "ta_id": null
+          "ta_id": "TA-PT-0044"
         },
         {
           "ref": "pt:pagar-multa-de-transito-vietname",
@@ -1001,7 +1002,7 @@
           "parent_id": "PT-H04",
           "subcluster": "ss-incidents",
           "key": "pt::como pagar uma multa de transito no vietname",
-          "ta_id": null
+          "ta_id": "TA-PT-0045"
         },
         {
           "ref": "pt:moto-com-calor-extremo-vietname",
@@ -1011,7 +1012,7 @@
           "parent_id": "PT-H04",
           "subcluster": "ss-weather",
           "key": "pt::andar de moto com muito calor no vietname",
-          "ta_id": null
+          "ta_id": "TA-PT-0046"
         },
         {
           "ref": "pt:poluicao-do-ar-hanoi-moto",
@@ -1021,7 +1022,7 @@
           "parent_id": "PT-H04",
           "subcluster": "ss-weather",
           "key": "pt::poluicao do ar em hanoi andar de moto",
-          "ta_id": null
+          "ta_id": "TA-PT-0047"
         },
         {
           "ref": "pt:rebocar-ou-empurrar-moto-vietname",
@@ -1031,7 +1032,7 @@
           "parent_id": "PT-H04",
           "subcluster": "ss-incidents",
           "key": "pt::pode-se rebocar uma moto com outra moto no vietname",
-          "ta_id": null
+          "ta_id": "TA-PT-0048"
         },
         {
           "ref": "pt:moto-no-ferry-vietname",
@@ -1041,14 +1042,125 @@
           "parent_id": "PT-H04",
           "subcluster": "ss-city",
           "key": "pt::levar a moto num ferry no vietname",
+          "ta_id": "TA-PT-0049"
+        }
+      ]
+    },
+    {
+      "seq": 10,
+      "file": "factory/topic-research/batches/claude-20261015-mobility2-0010.json",
+      "sha256": "b911bf27048ebcd79cf9a64a95460441af7d97c5bdd3769bca0cef9ce3353ee3",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-16",
+      "topics": [
+        {
+          "ref": "nl:noodnummers-vietnam",
+          "locale": "nl",
+          "slug": "noodnummers-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::noodnummers vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:smalle-bergweg-voorrang-scooter-vietnam",
+          "locale": "nl",
+          "slug": "smalle-bergweg-voorrang-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::smalle bergweg vietnam tegenligger voorrang scooter",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:zebrapad-voetgangers-scooter-vietnam",
+          "locale": "nl",
+          "slug": "zebrapad-voetgangers-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::zebrapad vietnam scooter voetgangers laten oversteken",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:veilige-afstand-scooter-vietnam",
+          "locale": "nl",
+          "slug": "veilige-afstand-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::veilige afstand houden scooter vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:tunnel-scooter-regels-vietnam",
+          "locale": "nl",
+          "slug": "tunnel-scooter-regels-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::tunnel vietnam scooter regels",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:ambulance-voorrang-geven-scooter-vietnam",
+          "locale": "nl",
+          "slug": "ambulance-voorrang-geven-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::ambulance voorrang geven scooter vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:handgebaren-verkeersagent-vietnam",
+          "locale": "nl",
+          "slug": "handgebaren-verkeersagent-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::handgebaren verkeersagent vietnam betekenis",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:dieren-op-de-weg-scooter-vietnam",
+          "locale": "nl",
+          "slug": "dieren-op-de-weg-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::dieren op de weg vietnam scooter",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:boete-scooter-zonder-spiegel-vietnam",
+          "locale": "nl",
+          "slug": "boete-scooter-zonder-spiegel-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H03",
+          "subcluster": "dc-contract",
+          "key": "nl::boete scooter zonder spiegel vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:drugs-en-scooter-rijden-vietnam",
+          "locale": "nl",
+          "slug": "drugs-en-scooter-rijden-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::drugs en scooter rijden in vietnam straf",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 10,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0010.json",
+    "seq": 11,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0011.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -1123,6 +1235,13 @@
       "seq": 9,
       "topics": 10,
       "sha256": "e1ef391f7afdc6b5f554be1644637c84226fd7098f3e0cf7b1666180590a4f15"
+    },
+    {
+      "at": "2026-10-16T03:08:44.039Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 10,
+      "topics": 10,
+      "sha256": "b911bf27048ebcd79cf9a64a95460441af7d97c5bdd3769bca0cef9ce3353ee3"
     }
   ]
 }
