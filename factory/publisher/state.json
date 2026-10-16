@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 377,
+  "clean_runs": 379,
   "published": [
     {
       "id": "NL-H01",
@@ -8810,7 +8810,8 @@
       "at": "2026-10-16T07:57:17.289Z",
       "source_sha256": "b71c244817c86f063f5b93e81b439a14da6c45fbcd1c6186ae20cdab94a1cc56",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:59:01.177Z"
     },
     {
       "id": "JA-S75",
@@ -8821,32 +8822,35 @@
       "at": "2026-10-16T07:57:17.289Z",
       "source_sha256": "585564a26844fc1027c6f05b3f9e72c2380888f3a4cfae1eb323ea86d7f0227c",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:59:01.177Z"
+    },
+    {
+      "id": "JA-S76",
+      "locale": "ja",
+      "url": "/ja/guides/truck-bus-shikaku-bike/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:59:48.996Z",
+      "source_sha256": "a6900ee2e9af8cfe1d24d41a1785feeaf54073079baf054c71677748a8334297",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T08:01:12.376Z"
+    },
+    {
+      "id": "JA-S77",
+      "locale": "ja",
+      "url": "/ja/guides/honda-smart-key-tsukaikata/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:59:48.996Z",
+      "source_sha256": "7ed671bf2bed3feccd1071c9aaf4356960c97b6792456836286251cff5291ec0",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T08:01:12.376Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T02:53:38.270Z",
-      "ids": [
-        "PT-S43",
-        "PT-S44"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:53:55.732Z",
-      "ids": [
-        "PT-S45"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:55:11.254Z",
-      "ids": [
-        "PT-S45"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T02:55:34.452Z",
       "ids": [
@@ -10410,15 +10414,39 @@
         "JA-S75"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T07:59:01.177Z",
+      "ids": [
+        "JA-S74",
+        "JA-S75"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T07:59:48.996Z",
+      "ids": [
+        "JA-S76",
+        "JA-S77"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T08:01:12.376Z",
+      "ids": [
+        "JA-S76",
+        "JA-S77"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T07:56:14.716Z",
+    "at": "2026-10-16T08:01:12.376Z",
     "ids": [
-      "JA-S72",
-      "JA-S73"
+      "JA-S76",
+      "JA-S77"
     ],
-    "commit": "e152b391c207fa9198dc831baf89d677a2e0ada2",
+    "commit": "d72c6d6241951a6ca4e6892c13036c19d1c53bc7",
     "live_seconds": 61
   },
   "queue": {
