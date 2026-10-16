@@ -3203,6 +3203,569 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility2-0021.json@eab467f4243b"
       },
       "matrix_id": "JA-S77"
+    },
+    {
+      "candidate_id": "TA-JA-0072",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "romen-hyouji-imi-vietnam",
+      "primary_query": "ベトナム 路面標示 意味",
+      "secondary_queries": [
+        "ベトナム 黄色 実線 はみ出し",
+        "ベトナム 停止線 信号 バイク",
+        "ベトナム 区画線 白 破線"
+      ],
+      "working_title": "ベトナムの路面標示の意味：黄色のセンターライン、停止線、横断歩道",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Japanese-speaking riders want to understand the yellow and white lines on Vietnamese roads, which ones they may cross and what the stop and give-way lines mean, because yellow centre lines carry a different meaning from the markings they know at home.",
+      "content_angle": "Explains the road markings in QCVN 41:2024/BGTVT (yellow centre lines 1.1 dashed, 1.2 solid, 1.3 double solid and 1.4 solid-dashed; white lane lines 2.1 and 2.2 and reserved-lane line 2.3; edge lines 3.1; hatched marking 4.1; stop line 7.1 with sign R.122; give-way line 7.2 with W.208 in its two forms; pedestrian crossing 7.3), the order of priority between police signals, lights, signs and markings in Article 11(2) of Law 36/2024/QH15, the temporary-sign rule in Article 11(12), the amber-light rule at the stop line in Article 11(4)(b), and the penalties in Article 7(1)(a), 7(3)(d) and 7(4)(c) of Decree 168/2024/NĐ-CP for not following markings, riding in the wrong lane and overtaking where it is forbidden.",
+      "entities": [
+        "QCVN 41:2024/BGTVT 付属書G",
+        "センターライン1.1〜1.4",
+        "停止線7.1",
+        "譲れ線7.2",
+        "横断歩道7.3",
+        "法律36/2024/QH15 第11条2項"
+      ],
+      "references": [
+        "rx-178d8fdf2864",
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S31",
+          "reason": "JA-S31はバイクで走る人が知っておくべき道路標識を紹介しています。このテーマは路面に描かれた線と標示だけを扱い、どの線を越えてよいかを説明します。"
+        },
+        {
+          "id": "JA-S44",
+          "reason": "JA-S44はバイクがどの車線を走り、どう車線変更するかを扱っています。このテーマは道路に引かれたそれぞれの線が何を意味するかを説明します。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0024.json@e4ce1681da8a"
+      },
+      "matrix_id": "JA-S78"
+    },
+    {
+      "candidate_id": "TA-JA-0073",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-power",
+      "slug": "denki-jitensha-rule-vietnam",
+      "primary_query": "ベトナム 電動自転車 ヘルメット",
+      "secondary_queries": [
+        "ベトナム 電動自転車 二人乗り",
+        "電動自転車と電動スクーターの違い ベトナム",
+        "ベトナム 電動自転車 罰金"
+      ],
+      "working_title": "ベトナムの電動自転車：ヘルメット、二人乗り、自転車と見なされない場合",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Japanese-speaking visitors, who know power-assisted bicycles from home, want to know whether a Vietnamese e-bike counts as a bicycle or a moped, whether a helmet is required and how many passengers it may carry.",
+      "content_angle": "Explains the legal definition of e-bikes in Article 34(2)(b) of Law 36/2024/QH15 (xe đạp máy, including xe đạp điện: motor assistance that cuts out when the rider stops pedalling or at 25 km/h) as non-motorised vehicles, the difference from a moped in Article 34(1)(g), why the licence duty of Article 56(1) does not reach e-bikes under Article 2(9), the fastened motorcycle helmet for rider and passenger in Article 31(3) and Article 9(4)(d)-(đ) of Decree 168/2024/NĐ-CP, the passenger limit of one, or two with a child under seven, in Article 31(1), the riding bans shared with motorbikes through Article 31(2) and 33(3), single-file riding and front and rear lights from 18:00 to 06:00 in Article 31(4), the expressway ban in Article 25(3), and the other penalties in Article 9 of Decree 168/2024/NĐ-CP.",
+      "entities": [
+        "xe đạp máy・xe đạp điện",
+        "法律36/2024/QH15 第34条2項b号",
+        "時速25kmまでのアシスト",
+        "法律36/2024/QH15 第31条",
+        "政令168/2024/NĐ-CP 第9条"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S74",
+          "reason": "JA-S74は電動スクーターの実際の航続距離と安全な充電を扱っています。このテーマはペダルを踏むと動く電動自転車の法的な位置づけと交通ルールを扱います。"
+        },
+        {
+          "id": "JA-S02",
+          "reason": "JA-S02は50ccスクーターと電動スクーターをレンタルの選択肢として比べています。このテーマは電動自転車に適用されるルールと、自転車と見なされる条件を説明します。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0024.json@e4ce1681da8a"
+      },
+      "matrix_id": "JA-S79"
+    },
+    {
+      "candidate_id": "TA-JA-0074",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "jitensha-koutsuu-rule-vietnam",
+      "primary_query": "ベトナム 自転車 ルール 罰金",
+      "secondary_queries": [
+        "ベトナム 自転車 交通ルール",
+        "ベトナム 自転車 夜 ライト",
+        "ホイアン 自転車 走り方"
+      ],
+      "working_title": "ベトナムで自転車に乗るときの交通ルールと罰金",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Japanese-speaking travellers who rent or borrow a bicycle in Hội An, Huế or Hanoi want to know the rules for cyclists in Vietnamese traffic: passengers, lights, riding side by side, loads and the fines cyclists face.",
+      "content_angle": "Explains the rules for bicycles as non-motorised vehicles under Law 36/2024/QH15 (Article 34(2)(a)): one passenger, or two with a child under seven (Article 31(1)), the riding bans shared with motorbikes through Article 31(2) and 33(3) and the passenger bans of Article 33(4), single file, cycle lanes and the rightmost lane (Article 31(4) and 13(3)), front and rear lights from 18:00 to 06:00 (Article 31(4)), load limits of one third of the bike's length, 1 m in front and behind and 0.4 m to each side (Article 31(5)), the expressway ban (Article 25(3)), the bicycle-crossing sign W.226 in QCVN 41:2024/BGTVT, and the cyclist penalties in Article 9 of Decree 168/2024/NĐ-CP (riding three abreast, umbrellas and phones, missing lights, too many passengers, traffic lights, wrong-way riding, alcohol, leaving an accident and entering an expressway).",
+      "entities": [
+        "xe thô sơ（非動力車）",
+        "法律36/2024/QH15 第31条",
+        "18時から6時までのライト",
+        "標識W.226",
+        "政令168/2024/NĐ-CP 第9条"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "rx-178d8fdf2864"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S11",
+          "reason": "JA-S11はバイクで初めて走る人に向けてハノイの交通の流れを説明しています。このテーマは自転車に乗る人だけに適用されるルールを、ライトから罰金まで扱います。"
+        },
+        {
+          "id": "JA-S41",
+          "reason": "JA-S41はバイクに何人まで乗れるかを扱っています。このテーマは普通の自転車の同乗者、ライト、罰金のルールを扱います。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0024.json@e4ce1681da8a"
+      },
+      "matrix_id": "JA-S80"
+    },
+    {
+      "candidate_id": "TA-JA-0075",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "bike-nimotsu-sekisai-rule-vietnam",
+      "primary_query": "ベトナム バイク 荷物 積載 制限",
+      "secondary_queries": [
+        "バイク 荷台 はみ出し ベトナム",
+        "バイク 大きな荷物 罰金 ベトナム",
+        "バックパック バイク 積み方"
+      ],
+      "working_title": "ベトナムでバイクに積める荷物：荷台からのはみ出し制限と罰金、積み方のコツ",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Japanese-speaking travellers starting a multi-day motorbike trip with a backpack want to know how much luggage Vietnamese law allows on a motorbike, how far it may stick out from the rack, whether the passenger may hold a large bag and how to strap it safely.",
+      "content_angle": "Explains the load limits for motorbikes and mopeds in Article 33(5) of Law 36/2024/QH15 (no more than 0.3 m beyond each side of the luggage rack and 0.5 m behind it as designed by the manufacturer, and a load no higher than 2 m above the road surface), the rider ban on carrying bulky items and loading beyond the limits in Article 33(3)(đ), the passenger ban on carrying bulky items in Article 33(4)(a), the matching penalties for the rider in Article 7(3)(e) and for the passenger in Article 12(5)(a) of Decree 168/2024/NĐ-CP, the 5 kg limit of the storage box stated in the Honda Wave Alpha owner's manual, and general advice on packing, strapping a backpack and balancing luggage on a small scooter.",
+      "entities": [
+        "法律36/2024/QH15第33条5項",
+        "荷台（giá đèo hàng）",
+        "政令168/2024/NĐ-CP第7条3項e号",
+        "政令168/2024/NĐ-CP第12条5項a号",
+        "ホンダWave Alpha取扱説明書"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "rx-55a0111fb012"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S25",
+          "reason": "JA-S25は二人乗りで荷物があるときに合う車両の選び方を扱います。このテーマはどのバイクにも適用される法律上の積載制限と、荷物の固定の仕方を扱います。"
+        },
+        {
+          "id": "JA-S41",
+          "reason": "JA-S41はバイクに何人まで乗れるかという人数のルールを扱います。このテーマは人ではなく荷物と貨物の大きさの制限を扱います。"
+        },
+        {
+          "id": "JA-S70",
+          "reason": "JA-S70は後ろに乗る人の座り方やつかまり方、守るべきルールを扱います。このテーマは運転者と同乗者が運べる荷物の量と、大きな荷物の罰金を扱います。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0026.json@d23fa298d27e"
+      },
+      "matrix_id": "JA-S81"
+    },
+    {
+      "candidate_id": "TA-JA-0076",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "bike-winker-rule-vietnam",
+      "primary_query": "ベトナム バイク ウインカー ルール",
+      "secondary_queries": [
+        "ベトナム 車線変更 ウインカー 罰金",
+        "バイク 右左折 合図 ベトナム",
+        "バイク 故障 ハザード ベトナム"
+      ],
+      "working_title": "ベトナムでのバイクのウインカー：右左折・車線変更・追い越し・ハザードのルール",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Japanese-speaking riders who see local riders turn and change lanes without indicating want to know when Vietnamese law requires a signal, how to signal when being overtaken or stopping, when hazard lights are required and what a forgotten indicator costs.",
+      "content_angle": "Explains the signalling duties of Law 36/2024/QH15: signal in advance before changing lanes, change only where permitted and one adjacent lane at a time, after checking a safe distance to vehicles ahead, behind and to the sides (Article 13(2)); before turning, observe, keep a safe distance from the vehicle behind, slow down, signal the turn and keep the indicator on throughout the turn, with arm signals for non-motorised vehicles without indicators (Article 15(2)), and give way to pedestrians, non-motorised vehicles and oncoming traffic when turning (Article 15(3)); the right indicator to let a vehicle overtake and the left indicator to show it is not yet safe (Article 14(4)); the headlight flash or horn plus the direction signal used throughout an overtake, and lights only between 22:00 and 05:00 in towns (Article 14(5)); signalling when pulling into or out of a stopping or parking place (Article 18(3)(a)); hazard lights or a warning sign behind a broken-down vehicle left on the carriageway (Article 18(7)); dipped headlights when turning at a junction (Article 20(2)(d)); and the penalties in Article 7 of Decree 168/2024/NĐ-CP for motorbike riders: overtaking without a signal (7(1)(b)) and changing lanes without a signal, at a non-permitted place, across more than one lane or, since Decree 238/2026/NĐ-CP, without a safe distance (7(1)(e)), both VND 200,000 to 400,000, high beam when turning at a junction (7(1)(h)), and turning without observing, slowing down or signalling continuously (7(3)(a), VND 600,000 to 800,000).",
+      "entities": [
+        "法律36/2024/QH15第13条2項",
+        "法律36/2024/QH15第15条2項",
+        "法律36/2024/QH15第18条7項",
+        "政令168/2024/NĐ-CP第7条3項a号",
+        "政令238/2026/NĐ-CP"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "rx-03cb19faf7d7"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S43",
+          "reason": "JA-S43は右左折やUターンが禁止されている場所を扱います。このテーマは右左折、車線変更、追い越し、停車のときにいつ、どう合図するかを扱います。"
+        },
+        {
+          "id": "JA-S44",
+          "reason": "JA-S44はバイクが走る車線と車線変更のルールを扱います。このテーマは追い越されるときの合図や故障時のハザードを含め、合図全体を扱います。"
+        },
+        {
+          "id": "JA-S42",
+          "reason": "JA-S42は左右どちらから追い越すかと追い越し禁止の場所を扱います。このテーマは操作ごとに必要な合図と、合図をしなかった場合の罰金を扱います。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0027.json@4148411487df"
+      },
+      "matrix_id": "JA-S82"
+    },
+    {
+      "candidate_id": "TA-JA-0077",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "bike-dakou-tebanashi-wheelie-vietnam",
+      "primary_query": "ベトナム バイク 蛇行運転 手放し 罰金",
+      "secondary_queries": [
+        "ベトナム ウィリー 罰金",
+        "ベトナム バイク 没収 違反",
+        "ベトナム バイク 空ぶかし"
+      ],
+      "working_title": "ベトナムでのバイクの蛇行運転・手放し運転・ウィリー：車両が没収される違反",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Japanese-speaking travellers who see riders weave through traffic, film themselves riding without hands or pull wheelies want to know what Vietnamese law says about these tricks, because the penalties include licence suspension and confiscation of the motorbike.",
+      "content_angle": "Explains the bans on illegal racing, weaving, zigzagging and continuous revving in Article 9(5) of Law 36/2024/QH15 and on letting go with both hands, riding on one wheel, sitting sideways, standing or lying on the bike, swapping riders while moving, turning backwards to steer, riding blindfolded and dragging the side stand on the road in Article 33(3)(d)-(e); the penalties in Article 7 of Decree 168/2024/NĐ-CP for motorbike riders: VND 8,000,000 to 10,000,000 for weaving or dragging the stand (7(9)(a)), riding in a group of two or more bikes above the speed limit (7(9)(b)), steering from behind the person in front except with a child under six in front (7(9)(h)), riding in a convoy that obstructs traffic without a permit (7(9)(i)) and continuous horn or revving in residential and hospital areas (7(9)(k)), each with licence suspension of 10 to 12 months (7(12)(b)); confiscation of the motorbike for riding with both hands off, steering with the feet, sitting sideways, lying on the seat, swapping riders while moving, turning backwards or riding blindfolded, wheelies and repeated weaving (7(11)), with licence suspension of 22 to 24 months (7(12)(c)); on-the-spot impoundment under Article 48(1); and general advice on filming, group rides and showing off on a rented motorbike.",
+      "entities": [
+        "法律36/2024/QH15第9条5項",
+        "法律36/2024/QH15第33条3項",
+        "政令168/2024/NĐ-CP第7条9項",
+        "政令168/2024/NĐ-CP第7条11項",
+        "政令168/2024/NĐ-CP第48条"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S58",
+          "reason": "JA-S58はグループツーリングと並走の禁止を扱います。このテーマは蛇行運転や手放し運転などの危険な乗り方と、車両没収まである罰則を扱います。"
+        },
+        {
+          "id": "JA-S28",
+          "reason": "JA-S28は道路の種類ごとの制限速度を扱います。このテーマは蛇行運転からウィリーまでの危険な運転と、その罰則を扱います。"
+        },
+        {
+          "id": "JA-S67",
+          "reason": "JA-S67は免許、書類、飲酒を理由に警察がバイクを押収する場合を扱います。このテーマはバイクそのものが没収される違反を扱います。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0027.json@4148411487df"
+      },
+      "matrix_id": "JA-S83"
+    },
+    {
+      "candidate_id": "TA-JA-0078",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "kodomo-bike-nisenori-vietnam",
+      "primary_query": "ベトナム バイク 子ども 乗せる ヘルメット",
+      "secondary_queries": [
+        "ベトナム 子ども バイク 前に乗せる",
+        "ベトナム 12歳未満 二人乗り",
+        "ベトナム 子ども ヘルメット 罰金"
+      ],
+      "working_title": "ベトナムで子どもをバイクに乗せるとき：ヘルメット、座る位置、12歳未満のルール",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Families living in or travelling through Vietnam see children riding between their parents on scooters and want to know what the law allows: how many children may ride, whether they need helmets, whether a small child may sit in front and what each mistake costs.",
+      "content_angle": "Explains the rules for carrying children on a motorbike under Law 36/2024/QH15: one passenger, or two when one of them is a child under 12 (Article 33(1)(c)); a fastened helmet that meets the national standard for the rider and every passenger (Article 33(2)); the passenger bans of Article 33(4) that also apply to children; the penalties in Decree 168/2024/NĐ-CP: VND 400,000 to 600,000 for carrying two people outside the exceptions (Article 7(2)(g)) and for carrying a passenger without a fastened motorcycle helmet, with an exception for children under six (Article 7(2)(i)), VND 600,000 to 800,000 and 2 licence points for carrying three or more people (Article 7(3)(b) and 7(13)(a)), VND 8,000,000 to 10,000,000 and licence suspension for steering from behind the person in front unless that person is a child under six sitting in front (Article 7(9)(h) and 7(12)(b)), and the passenger's own fine for riding without a helmet (Article 12(5)(b)); and general advice on child-sized helmets, where a small child sits, holding on, keeping legs away from the exhaust, heat, rain and short stages.",
+      "entities": [
+        "法律36/2024/QH15第33条1項c号",
+        "法律36/2024/QH15第33条2項",
+        "政令168/2024/NĐ-CP第7条2項i号",
+        "政令168/2024/NĐ-CP第7条9項h号",
+        "政令168/2024/NĐ-CP第12条5項b号"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S41",
+          "reason": "JA-S41はバイクに何人まで乗れるかと例外を扱います。このテーマは子どもの同乗者について、ヘルメット、小さな子どもの座る位置、子どもに関わる罰金を扱います。"
+        },
+        {
+          "id": "JA-S70",
+          "reason": "JA-S70は大人の同乗者の座り方やつかまり方を扱います。このテーマは子どもをバイクに乗せるときのルールと安全を扱います。"
+        },
+        {
+          "id": "JA-S33",
+          "reason": "JA-S33は大人がバイクに乗るときの服装を扱います。このテーマは子どものヘルメット義務と、子どもを乗せるときに法律が認めることを扱います。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0028.json@4e21c23a3cf3"
+      },
+      "matrix_id": "JA-S84"
+    },
+    {
+      "candidate_id": "TA-JA-0079",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-licence",
+      "slug": "bike-kashidashi-menkyo-bakkin-vietnam",
+      "primary_query": "ベトナム バイク 友人に貸す 免許",
+      "secondary_queries": [
+        "ベトナム バイク 貸した 所有者 罰金",
+        "ベトナム 借りたバイク 無免許",
+        "ベトナム レンタルバイク 友人 運転"
+      ],
+      "working_title": "ベトナムでバイクを人に貸すとき：免許の条件、所有者の罰金、押収",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Japanese-speaking couples and friends travelling or living together often share one motorbike or swap riders, and want to know whether someone else may ride their own, borrowed or rented bike, what licence that person needs and who is fined if the new rider does not qualify.",
+      "content_angle": "Explains the ban on handing a motor vehicle to someone who does not meet the legal conditions to ride it in Article 9(7) of Law 36/2024/QH15 and the rider conditions and papers in Article 56(1) (age, health and a valid licence with points left for the vehicle class, except moped riders, plus the registration certificate, licence and compulsory insurance certificate to carry); the owner's fine in Article 32(10) of Decree 168/2024/NĐ-CP for handing a motorbike to or letting it be ridden by someone who does not meet those conditions, including a rider whose licence is suspended (VND 8,000,000 to 10,000,000 for an individual owner, VND 16,000,000 to 20,000,000 for an organisation); the rider's own fines for riding without a valid licence, with a licence for the wrong class or with an International Driving Permit but without the national licence (Article 18(5): VND 2,000,000 to 4,000,000 up to 125 cm³ or 11 kW; Article 18(7): VND 6,000,000 to 8,000,000 above that); impoundment of the motorbike under Article 48(1)(i); and practical advice before letting a friend, relative or travel companion ride a borrowed or rented motorbike, such as checking their licence class and permit and what the agreement with the bike's owner allows.",
+      "entities": [
+        "法律36/2024/QH15第9条7項",
+        "法律36/2024/QH15第56条1項",
+        "政令168/2024/NĐ-CP第32条10項",
+        "政令168/2024/NĐ-CP第18条5項",
+        "政令168/2024/NĐ-CP第48条1項i号"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S05",
+          "reason": "JA-S05は日本の運転免許でベトナムのバイクに乗れるかを扱います。このテーマはバイクを他の人に運転させたときの免許の条件と、所有者と運転者の罰金を扱います。"
+        },
+        {
+          "id": "JA-S09",
+          "reason": "JA-S09は長期滞在者がベトナムの免許に切り替える手順を扱います。このテーマはバイクを貸す場面での所有者の責任と運転者の罰則を扱います。"
+        },
+        {
+          "id": "JA-S67",
+          "reason": "JA-S67は警察がバイクを押収できる違反全般を扱います。このテーマは所有者や借りた本人以外が運転する場合に絞って扱います。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0030.json@ac0a333e2fb3"
+      },
+      "matrix_id": "JA-S85"
+    },
+    {
+      "candidate_id": "TA-JA-0080",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "pet-bike-nosekata-vietnam",
+      "primary_query": "ベトナム バイク 犬 乗せる",
+      "secondary_queries": [
+        "ベトナム バイク ペットキャリー",
+        "ベトナム バイク 犬 散歩 罰金",
+        "ベトナム スクーター 猫 運ぶ"
+      ],
+      "working_title": "ベトナムでペットをバイクに乗せるとき：キャリー、リード、法律で禁止されていること",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Japanese-speaking expatriates and long-stay visitors who keep a dog or cat in Vietnam, and see locals carry animals on scooters, want to know whether a pet may ride on a motorbike, how it may be carried and what the law and the penalties say about leading an animal while riding.",
+      "content_angle": "Explains what Vietnamese law says about animals on a motorbike: the ban on leading animals while riding and on carrying bulky items in Article 33(3)(đ) of Law 36/2024/QH15, the passenger ban on carrying bulky items in Article 33(4)(a), and the load limits in Article 33(5) that a pet carrier strapped to the luggage rack must respect (0.3 m beyond each side of the rack, 0.5 m behind it, 2 m high, no weight figure); the matching penalties in Decree 168/2024/NĐ-CP (rider VND 600,000-800,000 under Article 7(3)(e), passenger VND 400,000-600,000 under Article 12(5)(a)); the fact that the law does not address an animal in a closed carrier as such; and practical carrier, heat and handling advice.",
+      "entities": [
+        "法律36/2024/QH15第33条3項đ号",
+        "法律36/2024/QH15第33条5項",
+        "政令168/2024/NĐ-CP第7条3項e号",
+        "政令168/2024/NĐ-CP第12条5項a号",
+        "ペットキャリー"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S81",
+          "reason": "JA-S81はバイクに積める荷物の量と固定の仕方を扱います。このテーマは動物を運ぶときの決まりとリスク、運転しながら動物を引いて歩かせる禁止を扱います。"
+        },
+        {
+          "id": "JA-S64",
+          "reason": "JA-S64は道路で出会う水牛や犬などの動物をどう避けるかを扱います。このテーマは自分のバイクに乗せて運ぶ動物を扱います。"
+        },
+        {
+          "id": "JA-S41",
+          "reason": "JA-S41はバイクに何人まで乗れるかを扱います。このテーマは法律上は乗員ではなく荷物として扱われるペットを扱います。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0031.json@6730091a587f"
+      },
+      "matrix_id": "JA-S86"
+    },
+    {
+      "candidate_id": "TA-JA-0081",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-papers",
+      "slug": "chuuko-bike-kounyuu-meigi-henkou-vietnam",
+      "primary_query": "ベトナム 中古バイク 購入 名義変更",
+      "secondary_queries": [
+        "ベトナム バイク 名義変更 罰金",
+        "ベトナム ブルーカード 他人名義",
+        "ベトナム バイク 売却 旅行者"
+      ],
+      "working_title": "ベトナムで中古バイクを買うとき：名義変更、ブルーカード、所有者の罰金",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Japanese-speaking backpackers and long-stay expatriates often buy a second-hand motorbike from another traveller for a north-south trip and ride on the seller's blue card; they want to know whether that is legal, what a transfer of registration involves and what the new owner, the seller and the rider each risk.",
+      "content_angle": "Explains what Vietnamese law requires when a motorbike changes hands: the conditions for registering a vehicle after a change of owner in Article 39(2) of Law 36/2024/QH15 (the certificate revoking the old registration and plate, proof of lawful ownership and of financial obligations), the revocation of the registration on a transfer of ownership in Article 39(6)(a) and the procedures set by the Minister of Public Security under Article 39(7); the owner's fines in Article 32 of Decree 168/2024/NĐ-CP for not completing the registration after a change of owner (32(3)(a), VND 800,000-1,000,000 for an individual) and for not completing the revocation procedure (32(8)(d), VND 4,000,000-6,000,000); the rider's fines for riding without a valid registration certificate (14(2)(a), VND 2,000,000-3,000,000) or without plates or with plates that do not match the certificate (14(3)(a), VND 4,000,000-6,000,000), confiscation for tampered frame or engine numbers (32(17)(a)) or where no proof of origin exists (14(5)(b)); and practical checks of frame and engine numbers against the certificate, without claiming which documents a foreign buyer must present, since that depends on Ministry of Public Security procedures.",
+      "entities": [
+        "法律36/2024/QH15第39条2項",
+        "法律36/2024/QH15第39条6項a号",
+        "政令168/2024/NĐ-CP第32条3項a号",
+        "政令168/2024/NĐ-CP第32条8項d号",
+        "政令168/2024/NĐ-CP第14条2項a号"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S13",
+          "reason": "JA-S13は借りたバイクで携帯すべき登録証などの書類を扱います。このテーマはバイクを売買したときに登録がどうなるか、名義変更をしないと誰が罰金を受けるかを扱います。"
+        },
+        {
+          "id": "JA-S67",
+          "reason": "JA-S67は警察がバイクを一時押収できるすべての場合を扱います。このテーマは購入後の名義変更と、書類やナンバープレートの不備による罰金と没収を扱います。"
+        },
+        {
+          "id": "JA-S85",
+          "reason": "JA-S85はバイクを人に貸すときの所有者の罰金を扱います。このテーマはバイクの所有者そのものが変わる場合を扱います。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0032.json@dd91b911f5b1"
+      },
+      "matrix_id": "JA-S87"
     }
   ]
 }
