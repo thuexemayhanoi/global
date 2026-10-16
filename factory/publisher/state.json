@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 418,
+  "clean_runs": 420,
   "published": [
     {
       "id": "NL-H01",
@@ -9794,7 +9794,8 @@
       "at": "2026-10-16T15:54:08.942Z",
       "source_sha256": "f71547187a256899eaa877d1cd944fc0279e9c24095032a54e78bda1275c57eb",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T15:55:36.112Z"
     },
     {
       "id": "KO-S85",
@@ -9805,34 +9806,35 @@
       "at": "2026-10-16T15:54:08.942Z",
       "source_sha256": "6cb6f67fc703254c73092f2d5b224f4f5c7c0af71c8ffafb3857b76949240219",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T15:55:36.112Z"
+    },
+    {
+      "id": "KO-S83",
+      "locale": "ko",
+      "url": "/ko/guides/otobai-gogye-unjeon-chaeryang-molsu-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T15:56:47.810Z",
+      "source_sha256": "64c318452da4020bcd28784bf734f48e7c310460ec4a89d9b60692743c81e024",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T15:58:11.833Z"
+    },
+    {
+      "id": "KO-S84",
+      "locale": "ko",
+      "url": "/ko/guides/otobai-aideul-taeugi-gyuchik-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T15:56:47.810Z",
+      "source_sha256": "fdc482b34527810d73c60a8fd1cf3916584f299bad6912c63b2e7ed68760eb43",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T15:58:11.833Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T04:35:51.759Z",
-      "ids": [
-        "PT-S62",
-        "PT-S63"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T04:38:32.348Z",
-      "ids": [
-        "KO-S56",
-        "KO-S57"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T04:40:12.283Z",
-      "ids": [
-        "KO-S56",
-        "KO-S57"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T04:40:32.839Z",
       "ids": [
@@ -11408,16 +11410,40 @@
         "KO-S85"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T15:55:36.112Z",
+      "ids": [
+        "JA-S85",
+        "KO-S85"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T15:56:47.810Z",
+      "ids": [
+        "KO-S83",
+        "KO-S84"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T15:58:11.833Z",
+      "ids": [
+        "KO-S83",
+        "KO-S84"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T15:51:19.180Z",
+    "at": "2026-10-16T15:58:11.833Z",
     "ids": [
-      "FR-S88",
-      "FR-S89"
+      "KO-S83",
+      "KO-S84"
     ],
-    "commit": "4d1cfce841a30df050f1e34094b4aad357ce7844",
-    "live_seconds": 62
+    "commit": "10b6e7eb1c5f98cd9d1b0850d9f928d16fd8c561",
+    "live_seconds": 61
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
