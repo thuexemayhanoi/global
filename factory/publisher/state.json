@@ -7456,17 +7456,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T04:41:51.374Z"
+    },
+    {
+      "id": "KO-S60",
+      "locale": "ko",
+      "url": "/ko/guides/saideumireo-eopseumyeon-beolgeum/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T04:47:59.450Z",
+      "source_sha256": "f5b60c8c7c928d0c345fde1e9297ce3afa7c8008b6dda7ed43ddc5d14eeac3c5",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S61",
+      "locale": "ko",
+      "url": "/ko/guides/mayak-unjeon-cheobeol/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T04:47:59.450Z",
+      "source_sha256": "c0f24b2817c105cba9a4c60a5f94b6efeb54b6efd26e953edbc3bf1be1ff240b",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T00:35:36.091Z",
-      "ids": [
-        "FR-S75",
-        "FR-S76"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T00:36:49.174Z",
       "ids": [
@@ -9042,6 +9056,14 @@
         "KO-S59"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T04:47:59.450Z",
+      "ids": [
+        "KO-S60",
+        "KO-S61"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -9053,5 +9075,7 @@
     "commit": "0d8f40890fb9efd3ee336192c486d536c51666d0",
     "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 2
+  }
 }
