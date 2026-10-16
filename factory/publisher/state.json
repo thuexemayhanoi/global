@@ -6352,17 +6352,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T02:40:22.531Z"
+    },
+    {
+      "id": "PT-S32",
+      "locale": "pt",
+      "url": "/pt/guides/andar-de-moto-em-hanoi-no-inverno/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:41:50.356Z",
+      "source_sha256": "d21a21238faa6021f95dadcc87438c80c50c3785f1f271fa5545c96fc93f3097",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "PT-S33",
+      "locale": "pt",
+      "url": "/pt/guides/que-roupa-levar-para-andar-de-moto-no-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:41:50.356Z",
+      "source_sha256": "68681e9c240c725a95e1664a0d7607f91d8b07146c3f21438ab75053a0521462",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T22:30:47.702Z",
-      "ids": [
-        "ES-S53",
-        "ES-S54"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T22:32:21.318Z",
       "ids": [
@@ -7932,6 +7946,14 @@
         "PT-S31"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:41:50.356Z",
+      "ids": [
+        "PT-S32",
+        "PT-S33"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -7943,5 +7965,7 @@
     "commit": "0129ba5f480b6339977f6c00b87b868a4f9c96b9",
     "live_seconds": 41
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 4
+  }
 }
