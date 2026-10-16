@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 401,
+  "clean_runs": 402,
   "published": [
     {
       "id": "NL-H01",
@@ -9386,7 +9386,8 @@
       "at": "2026-10-16T09:57:41.727Z",
       "source_sha256": "21b241195e3394e99140ce074c9450a886772139d04754dd5c2864a61fab4144",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T09:59:06.475Z"
     },
     {
       "id": "EN-S85",
@@ -9397,25 +9398,33 @@
       "at": "2026-10-16T09:57:41.727Z",
       "source_sha256": "8e1d89413e76278f148c294dc9c501ee0847689aa0b3a5671765211bb2ad6054",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T09:59:06.475Z"
+    },
+    {
+      "id": "FR-S85",
+      "locale": "fr",
+      "url": "/fr/guides/clignotant-scooter-vietnam-regles/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T09:59:54.663Z",
+      "source_sha256": "fbe1eba68ca1d745a8c0c94ab4e830e296a885d5210b0a5214d060d87fd52c9b",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "NL-S83",
+      "locale": "nl",
+      "url": "/nl/guides/richting-aangeven-scooter-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T09:59:54.663Z",
+      "source_sha256": "dd3a413283ed9e607037942723dac2ee3487edda62840e5ecb3109f9096a9a5a",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T03:43:22.395Z",
-      "ids": [
-        "NL-S62",
-        "NL-S63"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T03:43:43.084Z",
-      "ids": [
-        "NL-S64"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T03:45:04.022Z",
       "ids": [
@@ -10998,16 +11007,32 @@
         "EN-S85"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T09:59:06.475Z",
+      "ids": [
+        "DE-S84",
+        "EN-S85"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T09:59:54.663Z",
+      "ids": [
+        "FR-S85",
+        "NL-S83"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T09:51:08.271Z",
+    "at": "2026-10-16T09:59:06.475Z",
     "ids": [
-      "VI-S79",
-      "VI-S80"
+      "DE-S84",
+      "EN-S85"
     ],
-    "commit": "d7f33c3bbe131b9a96279eed030dd027b0ca14c0",
-    "live_seconds": 62
+    "commit": "4ad201006d9a0c1b55c3174aee71d0bf905b86d8",
+    "live_seconds": 61
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
