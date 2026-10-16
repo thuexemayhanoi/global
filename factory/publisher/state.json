@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 277,
+  "clean_runs": 279,
   "published": [
     {
       "id": "NL-H01",
@@ -6494,7 +6494,8 @@
       "at": "2026-10-16T02:52:21.453Z",
       "source_sha256": "22cdd7bb5abf18dfacfd4d1492fae64fa18786f7c481d257f88357781d8de658",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:53:38.270Z"
     },
     {
       "id": "PT-S44",
@@ -6505,40 +6506,45 @@
       "at": "2026-10-16T02:52:21.453Z",
       "source_sha256": "2dd2718eb8c47fd70862f5beb4bed55df9ec3c4e310ca6832d3e16c1a22b6a92",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:53:38.270Z"
+    },
+    {
+      "id": "PT-S45",
+      "locale": "pt",
+      "url": "/pt/guides/idade-minima-moto-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:53:55.732Z",
+      "source_sha256": "b6e68292bff0257d1990863e9a586347cdaf328b6da0926df364779f970cd7be",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:55:11.254Z"
+    },
+    {
+      "id": "PT-S46",
+      "locale": "pt",
+      "url": "/pt/guides/pontos-da-carta-de-conducao-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:55:34.452Z",
+      "source_sha256": "d5a5897208b6b6e89a43959072a20b7020c920ba8a04c16d9f139c5dc34c6bd2",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "PT-S47",
+      "locale": "pt",
+      "url": "/pt/guides/semaforos-vietname-moto/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:55:34.452Z",
+      "source_sha256": "0532dd57d9273ec53fb5f144ba68249c188866bea037b96085e828577c65c337",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T22:46:50.421Z",
-      "ids": [
-        "FR-S31",
-        "FR-S32"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T22:47:10.348Z",
-      "ids": [
-        "FR-S33"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T22:49:07.421Z",
-      "ids": [
-        "FR-S33"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T22:49:26.899Z",
-      "ids": [
-        "FR-S34",
-        "FR-S35"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T22:50:41.150Z",
       "ids": [
@@ -8088,15 +8094,45 @@
         "PT-S44"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:53:38.270Z",
+      "ids": [
+        "PT-S43",
+        "PT-S44"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:53:55.732Z",
+      "ids": [
+        "PT-S45"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:55:11.254Z",
+      "ids": [
+        "PT-S45"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:55:34.452Z",
+      "ids": [
+        "PT-S46",
+        "PT-S47"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T02:52:02.982Z",
+    "at": "2026-10-16T02:55:11.254Z",
     "ids": [
-      "PT-S42"
+      "PT-S45"
     ],
-    "commit": "f37e08f3a51ce402a3b171fb5d5a906b7028ff0f",
-    "live_seconds": 81
+    "commit": "4f506d556e12e61b7d07df39d5f43775594265a8",
+    "live_seconds": 62
   },
   "queue": {
     "APPROVED_BY_POLICY": 3
