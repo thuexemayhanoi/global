@@ -3455,6 +3455,60 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility2-0016.json@088c5b64dabd"
       },
       "matrix_id": "FR-S82"
+    },
+    {
+      "candidate_id": "TA-FR-0077",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "velo-au-vietnam-regles-amendes",
+      "primary_query": "faire du vélo au vietnam règles",
+      "secondary_queries": [
+        "amende cycliste vietnam",
+        "éclairage vélo obligatoire vietnam",
+        "circuler à vélo à hanoï"
+      ],
+      "working_title": "Faire du vélo au Vietnam : règles de circulation et amendes pour les cyclistes",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "French-speaking travellers who rent or borrow a bicycle in Vietnam want to know the traffic rules that apply to cyclists: passengers, lights, riding side by side, loads and the fines that cyclists face.",
+      "content_angle": "Explains the rules for bicycles as non-motorised vehicles under Law 36/2024/QH15: one passenger, or two with a child under seven (Article 31(1)), the riding bans shared with motorbikes through Article 31(2), single file, cycle lanes and front and rear lights from 18:00 to 06:00 (Article 31(4)), load limits of one third of the bike's length, 1 m in front and behind and 0.4 m to each side (Article 31(5)), the expressway ban (Article 25(3)), the bicycle-crossing sign W.226 in QCVN 41:2024/BGTVT, and the cyclist penalties in Article 9 of Decree 168/2024/NĐ-CP for riding three abreast, umbrellas, phones and missing lights.",
+      "entities": [
+        "xe thô sơ (véhicule non motorisé)",
+        "article 31 de la loi 36/2024/QH15",
+        "éclairage de 18 h à 6 h",
+        "panneau W.226",
+        "article 9 du décret 168/2024/NĐ-CP"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "rx-178d8fdf2864"
+      ],
+      "distinct_from": [
+        {
+          "id": "FR-S80",
+          "reason": "FR-S80 traite du vélo électrique, de son statut et du casque obligatoire. Ce sujet porte sur le vélo classique à pédales, ses règles de circulation et les amendes des cyclistes."
+        },
+        {
+          "id": "FR-S12",
+          "reason": "FR-S12 explique comment fonctionne le flux de la circulation à Hanoï en deux-roues motorisé. Ce sujet porte sur les règles propres aux cyclistes, de l'éclairage aux amendes."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0023.json@cbcca4743139"
+      },
+      "matrix_id": "FR-S83"
     }
   ]
 }
