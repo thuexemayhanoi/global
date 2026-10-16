@@ -3910,6 +3910,63 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility2-0031.json@6730091a587f"
       },
       "matrix_id": "FR-S90"
+    },
+    {
+      "candidate_id": "TA-FR-0085",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "traverser-la-rue-a-pied-vietnam-regles",
+      "primary_query": "traverser la rue à hanoï à pied",
+      "secondary_queries": [
+        "règles pour les piétons au vietnam",
+        "amende piéton vietnam",
+        "traverser la rue avec des enfants au vietnam"
+      ],
+      "working_title": "Traverser la rue à pied au Vietnam : règles pour les piétons, feux et amendes",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Visitors arriving in Hanoi or Ho Chi Minh City are struck by the streams of motorbikes and search for how to cross the street safely, whether crossing outside a marked crossing is fined and how to cross with children; the existing guides to zebra crossings answer the rider's duty to stop, not the pedestrian's own rules.",
+      "content_angle": "Explains what Vietnamese law expects from pedestrians: walking on the pavement, verge or pedestrian path, or close to the right-hand edge of the road where there is none (Article 30(1)(a) of Law 36/2024/QH15); crossing only at traffic lights, marked crossings, footbridges or underpasses and following their signals, or, where none exists, only after watching the oncoming vehicles and with a hand signal (Article 30(1)(b)); no climbing over medians or holding on to moving vehicles (Article 30(1)(c)); children under 7 crossing with an adult (Article 30(2)(a)); the pedestrian fines in Article 10 of Decree 168/2024/NĐ-CP (VND 150,000-250,000 for walking outside the permitted part of the road, crossing at the wrong place or without a hand signal, or ignoring lights, signs, markings or traffic officers; VND 400,000-600,000 for entering an expressway, carrying bulky items that obstruct traffic or holding on to a moving vehicle); and practical crossing technique in dense motorbike traffic.",
+      "entities": [
+        "article 30.1 de la loi 36/2024/QH15",
+        "article 30.2.a de la loi 36/2024/QH15",
+        "article 10.1 du décret 168/2024/NĐ-CP",
+        "article 10.2 du décret 168/2024/NĐ-CP",
+        "signe de la main pour traverser"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "FR-S62",
+          "reason": "FR-S62 explique quand le conducteur d'un scooter doit s'arrêter au passage piéton. Ce sujet explique les règles propres aux piétons : où marcher, où et comment traverser, et les amendes des piétons."
+        },
+        {
+          "id": "FR-S12",
+          "reason": "FR-S12 explique comment circuler en scooter dans le trafic de Hanoï. Ce sujet explique comment s'y déplacer à pied."
+        },
+        {
+          "id": "FR-S48",
+          "reason": "FR-S48 explique les feux de circulation pour les conducteurs de scooter. Ce sujet traite des feux et des signaux que doivent suivre les piétons."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0032.json@dd91b911f5b1"
+      },
+      "matrix_id": "FR-S91"
     }
   ]
 }
