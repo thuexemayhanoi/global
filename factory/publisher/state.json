@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 349,
+  "clean_runs": 351,
   "published": [
     {
       "id": "NL-H01",
@@ -8138,7 +8138,8 @@
       "at": "2026-10-16T05:52:11.537Z",
       "source_sha256": "adae25abf08592be8f12d7d6038cc03a0605c2f7bc167e4da87397ad8f4e5234",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:53:33.290Z"
     },
     {
       "id": "NL-S74",
@@ -8149,34 +8150,35 @@
       "at": "2026-10-16T05:52:11.537Z",
       "source_sha256": "5b3dfcb0e543fa042e795b6e39a5fc310ea4aeaed37c63665468918989ff8595",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:53:33.290Z"
+    },
+    {
+      "id": "NL-S75",
+      "locale": "nl",
+      "url": "/nl/guides/dode-hoek-vrachtwagen-bus-scooter-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:54:09.359Z",
+      "source_sha256": "080a76f9c565cd733e0acb3150b8738274b58d200d0b92922246151b4e39f3d5",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:55:31.529Z"
+    },
+    {
+      "id": "NL-S76",
+      "locale": "nl",
+      "url": "/nl/guides/honda-smart-key-scooter-gebruiken/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:54:09.359Z",
+      "source_sha256": "430ff87a0b74088cbb881d46f682cfc325f14998eb26ae756b60ccbde8c41a98",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:55:31.529Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T02:03:07.832Z",
-      "ids": [
-        "KO-S50",
-        "KO-S51"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:03:24.977Z",
-      "ids": [
-        "KO-S52",
-        "KO-S53"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:04:38.900Z",
-      "ids": [
-        "KO-S52",
-        "KO-S53"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T02:04:57.657Z",
       "ids": [
@@ -9736,15 +9738,39 @@
         "NL-S74"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:53:33.290Z",
+      "ids": [
+        "NL-S73",
+        "NL-S74"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:54:09.359Z",
+      "ids": [
+        "NL-S75",
+        "NL-S76"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:55:31.529Z",
+      "ids": [
+        "NL-S75",
+        "NL-S76"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T05:51:27.982Z",
+    "at": "2026-10-16T05:55:31.529Z",
     "ids": [
-      "NL-S71",
-      "NL-S72"
+      "NL-S75",
+      "NL-S76"
     ],
-    "commit": "24a16ede0e80f03beb7bb73a53dc89e9ed79b373",
+    "commit": "0224c609278578796be5b47868c825f012ecf6cb",
     "live_seconds": 62
   },
   "queue": {
