@@ -6700,17 +6700,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T03:16:35.156Z"
+    },
+    {
+      "id": "VI-S32",
+      "locale": "vi",
+      "url": "/vi/guides/bien-bao-cam-xe-may/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:16:52.360Z",
+      "source_sha256": "45655ba135568a7bc45c0222267af5e806c582938631db3fe53283df9d50ad02",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T23:09:04.924Z",
-      "ids": [
-        "FR-S50",
-        "FR-S51"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T23:09:58.850Z",
       "ids": [
@@ -8280,6 +8283,13 @@
         "VI-S31"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T03:16:52.360Z",
+      "ids": [
+        "VI-S32"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -8292,6 +8302,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 3
+    "APPROVED_BY_POLICY": 1
   }
 }
