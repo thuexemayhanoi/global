@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 336,
+  "clean_runs": 372,
   "published": [
     {
       "id": "NL-H01",
@@ -7826,7 +7826,8 @@
       "at": "2026-10-16T05:17:14.372Z",
       "source_sha256": "ec9ead0d7a7cb65d697149aaa2df513f51a2e384d09b68a8ba755f10aad72d00",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:19:34.498Z"
     },
     {
       "id": "VI-S63",
@@ -7837,578 +7838,851 @@
       "at": "2026-10-16T05:17:14.372Z",
       "source_sha256": "d4c7b84917df279e84bffde723efa797bcf22b503c5f93f2f9777cd8b31fb51e",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:19:34.498Z"
+    },
+    {
+      "id": "VI-S64",
+      "locale": "vi",
+      "url": "/vi/guides/keo-day-xe-may-bi-phat/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:19:55.295Z",
+      "source_sha256": "39b0a3b436ec8c17148e4454fc429b51a6cfdc4a8d1c753960f5899e425636db",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:21:13.158Z"
+    },
+    {
+      "id": "VI-S65",
+      "locale": "vi",
+      "url": "/vi/guides/di-xe-may-qua-pha-cau-phao/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:19:55.295Z",
+      "source_sha256": "07e91c402e3f2c111b8bd890996356561eb84eeeede6eb983ab57ca5e2b56de3",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:21:13.158Z"
+    },
+    {
+      "id": "ZH-S50",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-dianziyan-fadan-zuche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:21:36.945Z",
+      "source_sha256": "ae877024084ca15662d561f8d9abbe0c98407fa0452fe41ebd4f7fe7e3442365",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:23:18.443Z"
+    },
+    {
+      "id": "ZH-S51",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-jiaotong-fakuan-jiaona/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:21:36.945Z",
+      "source_sha256": "92aebe6d00c7b0f062bff1ef8fa345171e93e8a091d4e9ea20f42f7eb8d5bab0",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:23:18.443Z"
+    },
+    {
+      "id": "ZH-S52",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-gaowen-qi-motuoche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:23:40.836Z",
+      "source_sha256": "d66dbc615fae29a77695eee3439dc32bf28c8264f61059a58f2a15bc88e523d8",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:25:01.767Z"
+    },
+    {
+      "id": "ZH-S53",
+      "locale": "zh",
+      "url": "/zh/guides/hanei-kongqi-wuran-qi-motuoche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:23:40.836Z",
+      "source_sha256": "a6fb77723aa120d317ef9532f6f3e1b33838584b25be9da7389e9fc1f3041882",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:25:01.767Z"
+    },
+    {
+      "id": "ZH-S54",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-motuoche-tuoche-jinzhi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:25:21.841Z",
+      "source_sha256": "b1e31de025bc4e6392304accd67d9eb606307cfb9094d7a75a5a1e4efad40239",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:26:17.485Z"
+    },
+    {
+      "id": "ZH-S55",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-motuoche-zuo-dulun/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:25:21.841Z",
+      "source_sha256": "f7e77b206d41b6309d3eb59bcef004cfefc9efaf3e0a6ff6aa102be1ef05e77a",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:26:17.485Z"
+    },
+    {
+      "id": "ZH-S56",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-jinji-dianhua-haoma/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:29:35.234Z",
+      "source_sha256": "b184453d680665ce85d1fb31c7ecbecde1c85a091f140f7b953fe64059157010",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:30:57.672Z"
+    },
+    {
+      "id": "ZH-S57",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-shanlu-huiche-guize/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:29:35.234Z",
+      "source_sha256": "d7433f6aed771da0d014edd466cb2fc081ff176a902a537086dfd0ea8914f4af",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:30:57.672Z"
+    },
+    {
+      "id": "ZH-S58",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-banmaxian-lirang-xingren/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:34:34.184Z",
+      "source_sha256": "b2967aaddb2112633e837e7c1bc457b301001e5e120a9f541297511cdfcecfb2",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:35:50.471Z"
+    },
+    {
+      "id": "ZH-S59",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-motuoche-anquan-juli/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:34:34.184Z",
+      "source_sha256": "39175e87aa976cb84b744808f862cf1d387b8ec34e9edfc6649c83fd98dc0d18",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:35:50.471Z"
+    },
+    {
+      "id": "ZH-S60",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-suidao-motuoche-guize/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:37:08.243Z",
+      "source_sha256": "b87efcd81b2521d6ca46a7257109e5cf7346ee7317d32df47a84a09a1519b96f",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:38:06.633Z"
+    },
+    {
+      "id": "ZH-S61",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-rang-jiuhuche-motuoche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:37:08.243Z",
+      "source_sha256": "3b09aacf7ac66f1c85285c62f5eacc803858a65b0f363c2793c3928aba7d4256",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:38:06.633Z"
+    },
+    {
+      "id": "ZH-S62",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-jiaojing-shoushi-hanyi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:39:22.109Z",
+      "source_sha256": "720d45b08e7d4258bfa50c82b2d4fa7eb4a3c2c50e98116836e473706cea5909",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:40:45.004Z"
+    },
+    {
+      "id": "ZH-S63",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-daolu-dongwu-motuoche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:39:22.109Z",
+      "source_sha256": "f8a42db2c0c647fc012354cc82f4f492af79bf405e8fc138612334fd9887cff8",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:40:45.004Z"
+    },
+    {
+      "id": "VI-S66",
+      "locale": "vi",
+      "url": "/vi/guides/xe-may-bi-tam-giu-khi-nao/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:43:15.288Z",
+      "source_sha256": "1e32095c80f7f169800ce351305e418c1137c8ab32db3fcab7ed188a1352ffe8",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:44:14.931Z"
+    },
+    {
+      "id": "ZH-S64",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-motuoche-houshijing-fakuan/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:43:15.288Z",
+      "source_sha256": "eacb968a20820a7dfdeb53d12173a8a528af4de0aceab37684de1e941c8e8805",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:44:14.931Z"
+    },
+    {
+      "id": "NL-S67",
+      "locale": "nl",
+      "url": "/nl/guides/goed-remmen-scooter-voorrem-achterrem/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:45:51.032Z",
+      "source_sha256": "e6df2b28f16797f314d8682704e54566bf1aea29bed4d325d020f0c434a409de",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:47:14.535Z"
+    },
+    {
+      "id": "NL-S68",
+      "locale": "nl",
+      "url": "/nl/guides/haarspeldbochten-scooter-bergweg/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:45:51.032Z",
+      "source_sha256": "f0897ee9e39f96f5db026be640e8bb78c1da0fd4ff549a6a2b2ee193e71b0918",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:47:14.535Z"
+    },
+    {
+      "id": "NL-S69",
+      "locale": "nl",
+      "url": "/nl/guides/duopassagier-achterop-scooter-tips/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:47:56.580Z",
+      "source_sha256": "dba7742bf748f682b60cebbbd762b013674c644668bb02ab3e56eaf6cc4eaa77",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:49:17.250Z"
+    },
+    {
+      "id": "NL-S70",
+      "locale": "nl",
+      "url": "/nl/guides/getuige-van-een-ongeluk-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:47:56.580Z",
+      "source_sha256": "cfad17da4a1cc0050e2b56f72c92808940fd751961ef7fe70be7b09cfc63d74b",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:49:17.250Z"
+    },
+    {
+      "id": "NL-S71",
+      "locale": "nl",
+      "url": "/nl/guides/hoeveel-uur-per-dag-scooter-rijden-vermoeidheid/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:50:05.660Z",
+      "source_sha256": "6cda8b4114957ce1ad2a2d9c48251281740531ad6c87afb04d835ec6aa6735d0",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:51:27.982Z"
+    },
+    {
+      "id": "NL-S72",
+      "locale": "nl",
+      "url": "/nl/guides/eerste-keer-automaat-scooter-oefenen/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:50:05.660Z",
+      "source_sha256": "666c96f738bcbd280c363acfed556acf6a7eb906a61b8a0685196b5b564f3bee",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:51:27.982Z"
+    },
+    {
+      "id": "NL-S73",
+      "locale": "nl",
+      "url": "/nl/guides/elektrische-scooter-actieradius-opladen-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:52:11.537Z",
+      "source_sha256": "adae25abf08592be8f12d7d6038cc03a0605c2f7bc167e4da87397ad8f4e5234",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:53:33.290Z"
+    },
+    {
+      "id": "NL-S74",
+      "locale": "nl",
+      "url": "/nl/guides/gaten-grind-wegdek-scooter-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:52:11.537Z",
+      "source_sha256": "5b3dfcb0e543fa042e795b6e39a5fc310ea4aeaed37c63665468918989ff8595",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:53:33.290Z"
+    },
+    {
+      "id": "NL-S75",
+      "locale": "nl",
+      "url": "/nl/guides/dode-hoek-vrachtwagen-bus-scooter-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:54:09.359Z",
+      "source_sha256": "080a76f9c565cd733e0acb3150b8738274b58d200d0b92922246151b4e39f3d5",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:55:31.529Z"
+    },
+    {
+      "id": "NL-S76",
+      "locale": "nl",
+      "url": "/nl/guides/honda-smart-key-scooter-gebruiken/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:54:09.359Z",
+      "source_sha256": "430ff87a0b74088cbb881d46f682cfc325f14998eb26ae756b60ccbde8c41a98",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:55:31.529Z"
+    },
+    {
+      "id": "PT-S68",
+      "locale": "pt",
+      "url": "/pt/guides/travar-scooter-travao-dianteiro-traseiro/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:58:57.242Z",
+      "source_sha256": "4b4c44cd8f1b782f0d75fe8c110390449d4c21a4c4c18c543164641b60f555ca",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:00:17.144Z"
+    },
+    {
+      "id": "PT-S69",
+      "locale": "pt",
+      "url": "/pt/guides/curvas-apertadas-scooter-estrada-de-montanha/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:58:57.242Z",
+      "source_sha256": "095e65503131d3abb271c64ab84f374b75d1406c748ae82a75819e69e21cc9b2",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:00:17.144Z"
+    },
+    {
+      "id": "PT-S70",
+      "locale": "pt",
+      "url": "/pt/guides/passageiro-de-scooter-dicas-e-regras/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:00:48.206Z",
+      "source_sha256": "0db9b1009d5d434335be3b950600ad25c14f7886387b77624669b8ee7e1614e1",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:02:51.338Z"
+    },
+    {
+      "id": "PT-S71",
+      "locale": "pt",
+      "url": "/pt/guides/testemunha-de-acidente-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:00:48.206Z",
+      "source_sha256": "c388a001a8d57a0df8c33b75a88608b0f147a17d3c6e8e20028be65fcda407ed",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:02:51.338Z"
+    },
+    {
+      "id": "PT-S72",
+      "locale": "pt",
+      "url": "/pt/guides/quantas-horas-por-dia-de-moto-cansaco/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:03:19.691Z",
+      "source_sha256": "0173bbfa2469c25758201a2cd8243c015d0bc64e2f0730fe7213f64a966851cf",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:04:43.420Z"
+    },
+    {
+      "id": "PT-S73",
+      "locale": "pt",
+      "url": "/pt/guides/primeira-vez-scooter-automatica-treinar/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:03:19.691Z",
+      "source_sha256": "ce8f3a4213656243e34a8c3e1027b15c81a6e8322f5f8a76a25d0ac07d7aced9",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:04:43.420Z"
+    },
+    {
+      "id": "PT-S74",
+      "locale": "pt",
+      "url": "/pt/guides/scooter-eletrica-autonomia-carregar-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:05:02.798Z",
+      "source_sha256": "9a66eb1dc4099b4a87ebc0c8003eeeb0d266314e9d78e3e04b6aee100cef38e8",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:06:58.408Z"
+    },
+    {
+      "id": "PT-S75",
+      "locale": "pt",
+      "url": "/pt/guides/buracos-gravilha-piso-degradado-scooter-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:05:02.798Z",
+      "source_sha256": "53b1e4eedccc6de3f59411fe8d0431d4176475f368f66892f043075abeae5873",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:06:58.408Z"
+    },
+    {
+      "id": "VI-S60",
+      "locale": "vi",
+      "url": "/vi/guides/di-xe-may-troi-nang-nong/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:07:24.996Z",
+      "source_sha256": "fe8dc30dc962ec7a646301e3f895f570a8be264d93dfb0b2d64e77e9df21523a",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:09:07.814Z"
+    },
+    {
+      "id": "VI-S61",
+      "locale": "vi",
+      "url": "/vi/guides/o-nhiem-khong-khi-ha-noi-di-xe-may/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:07:24.996Z",
+      "source_sha256": "343bb0639d77d4ed6bfaf8872f7c353909f94547847d099c9258ab7ff981b53e",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:09:07.814Z"
+    },
+    {
+      "id": "PT-S76",
+      "locale": "pt",
+      "url": "/pt/guides/angulo-morto-camioes-autocarros-scooter-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:10:33.892Z",
+      "source_sha256": "f1a666315d943416f9ec4aae7ab0fa6c0972a18afeff2368e1a56a1128c269bd",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:11:49.688Z"
+    },
+    {
+      "id": "PT-S77",
+      "locale": "pt",
+      "url": "/pt/guides/honda-smart-key-scooter-como-usar/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:10:33.892Z",
+      "source_sha256": "48a07069ad1e60c1751a4db5c817123e071fcdcc360c3606b017ef3a2925fd98",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:11:49.688Z"
+    },
+    {
+      "id": "ZH-S65",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-dujia-chufa-motuoche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:12:09.130Z",
+      "source_sha256": "4c159d403ffb29bd5c95eec69180cd8f687c0ad72727916c5e246a868ebeb66b",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:13:49.001Z"
+    },
+    {
+      "id": "ZH-S66",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-motuoche-nixing-renxingdao/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:12:09.130Z",
+      "source_sha256": "01b0be451f5edbf5f345f5db098dd9ee355015e01b59e44626f7ba0a7cde398c",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:13:49.001Z"
+    },
+    {
+      "id": "ZH-S67",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-motuoche-shache-jiqiao/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:14:10.157Z",
+      "source_sha256": "c83652357c0bc31743047b026ace6e06aba7b2d676ac1432e685f78d9280c791",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:15:32.168Z"
+    },
+    {
+      "id": "ZH-S68",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-shanlu-jiwan-motuoche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:14:10.157Z",
+      "source_sha256": "2c28a0961f1f17dd24484b51ffd976c1972a9106046cbe1eae207f41e6350d6b",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:15:32.168Z"
+    },
+    {
+      "id": "DE-S82",
+      "locale": "de",
+      "url": "/de/guides/roller-sichergestellt-polizei-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:28:02.023Z",
+      "source_sha256": "07644206d7b4abce84d8adceab404a61031efcddf57550ff6ffeba5b0d11f49d",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:29:17.275Z"
+    },
+    {
+      "id": "EN-S83",
+      "locale": "en",
+      "url": "/en/guides/motorbike-impounded-by-police-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:28:02.023Z",
+      "source_sha256": "1ad05f5f267c938497ab0016e4335990a0cbc4b079cc23f5b08ef9ff5273fe59",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:29:17.275Z"
+    },
+    {
+      "id": "FR-S82",
+      "locale": "fr",
+      "url": "/fr/guides/scooter-fourriere-police-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:31:53.631Z",
+      "source_sha256": "a14cdf40944c5fcd7ce5312636ce647478521a1503c9d777b48616cf7cba0989",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:33:33.735Z"
+    },
+    {
+      "id": "NL-S66",
+      "locale": "nl",
+      "url": "/nl/guides/scooter-in-beslag-genomen-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:31:53.631Z",
+      "source_sha256": "1e46626a854b3478c9a8cf215fcd9bfd1439aa6c41a24d3135fa62b34f72566c",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:33:33.735Z"
+    },
+    {
+      "id": "JA-S67",
+      "locale": "ja",
+      "url": "/ja/guides/keisatsu-bike-ichiji-oushuu/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:37:20.587Z",
+      "source_sha256": "dcc153cfcbb2944d754f9569a1cc1439f289ae4bccf5479828aba43ae036a63a",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:38:44.692Z"
+    },
+    {
+      "id": "KO-S66",
+      "locale": "ko",
+      "url": "/ko/guides/sinhodeung-gyuchik-otobai/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:37:20.587Z",
+      "source_sha256": "d4d3a7eb3483a7fe0e63991bce5ab47bb119055bd2ed04629382bb50a8812db2",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:38:44.692Z"
+    },
+    {
+      "id": "ZH-S69",
+      "locale": "zh",
+      "url": "/zh/guides/motuoche-houzuo-chengke-zhuyi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:44:18.740Z",
+      "source_sha256": "53ee9c2b973ace952ddc8ff83613a0391e89278e75c91fb8f9be318c9bf23213",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:45:41.309Z"
+    },
+    {
+      "id": "ZH-S70",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-mudu-jiaotong-shigu/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:44:18.740Z",
+      "source_sha256": "09236b6164c18d9010dfa289f15e499c99e2a1bd95d0053ff94b1342c54cd0de",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:45:41.309Z"
+    },
+    {
+      "id": "ZH-S71",
+      "locale": "zh",
+      "url": "/zh/guides/motuoche-changtu-pilao-xiuxi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:46:22.611Z",
+      "source_sha256": "074e2df9e855aaf3e9d0118273774389a77ff95495cc899a53f43b105b55d9b3",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:47:38.908Z"
+    },
+    {
+      "id": "ZH-S72",
+      "locale": "zh",
+      "url": "/zh/guides/diyici-qi-zidongdang-tabanche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:46:22.611Z",
+      "source_sha256": "0f2794d7ecc13ae07b7788eac2786ab3ec99a820fbf14cf866c57250d2c95c1b",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:47:38.908Z"
+    },
+    {
+      "id": "KO-S67",
+      "locale": "ko",
+      "url": "/ko/guides/seukuteo-beureikeu-sayongbeop/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:48:48.277Z",
+      "source_sha256": "c0be011347414e9c661ced785f9c679f9886edb08f9d0ed4b76bb5ef8104bdff",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:50:09.315Z"
+    },
+    {
+      "id": "KO-S68",
+      "locale": "ko",
+      "url": "/ko/guides/sangil-geupkeobeu-otobai-juhaeng/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:48:48.277Z",
+      "source_sha256": "6289f986d4bc0004b9b239d577423eb6ef281d213bfa0ab8781e0a754652f1f9",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:50:09.315Z"
+    },
+    {
+      "id": "PT-S66",
+      "locale": "pt",
+      "url": "/pt/guides/moto-retida-pela-policia-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:53:31.801Z",
+      "source_sha256": "e6ab9c302ff0b811f1d73b0c1318fa6f167d62653c5b38f31cbf4b5fd1fc1bb3",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:54:53.267Z"
+    },
+    {
+      "id": "PT-S67",
+      "locale": "pt",
+      "url": "/pt/guides/sentido-proibido-passeio-moto-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:53:31.801Z",
+      "source_sha256": "f9c4cd94728a180eadaa118ad77e5e072e0af802d5b85e4fe6269ab3a33a791e",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:54:53.267Z"
+    },
+    {
+      "id": "KO-S69",
+      "locale": "ko",
+      "url": "/ko/guides/otobai-dwitjari-dongseungja-gaideu/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:55:47.069Z",
+      "source_sha256": "ce3957b6213e3fa56f9eb96479a82d58ce47f95d2ffff8d656317c204c58ce2c",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:57:03.431Z"
+    },
+    {
+      "id": "KO-S70",
+      "locale": "ko",
+      "url": "/ko/guides/gyotongsago-mokgyeokja-uimu/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:55:47.069Z",
+      "source_sha256": "a1d44f7ab60c24546867aade7f57c65ed878741b48daf3d1c426a1385b62553f",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:57:03.431Z"
+    },
+    {
+      "id": "KO-S71",
+      "locale": "ko",
+      "url": "/ko/guides/otobai-yeohaeng-piro-hyusik/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:58:18.926Z",
+      "source_sha256": "1e7717c6a3eef61242365f632a9c933cb979b81cc0ce50e0c1f7a4ffb9b58cb9",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:59:40.891Z"
+    },
+    {
+      "id": "KO-S72",
+      "locale": "ko",
+      "url": "/ko/guides/jadong-seukuteo-cheoeum-yeonseup/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:58:18.926Z",
+      "source_sha256": "44a134962d7639df9818c3dfbe61cd35e787039aeea85e4817189081771f02aa",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:59:40.891Z"
+    },
+    {
+      "id": "KO-S75",
+      "locale": "ko",
+      "url": "/ko/guides/teureok-beoseu-sagakjidae-otobai/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:19:11.623Z",
+      "source_sha256": "5bc7b3e9c182561e6fb964c9d72d88d6a67c8f6d735ca231cd49a3510b5825cd",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:21:37.497Z"
+    },
+    {
+      "id": "KO-S76",
+      "locale": "ko",
+      "url": "/ko/guides/honda-seumateuki-sayongbeop/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:19:11.623Z",
+      "source_sha256": "f37a56ee857f5c45b9c5a8ed3de1d28fadfe98cd23ef1b72102f6912279fb8b6",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:21:37.497Z"
+    },
+    {
+      "id": "JA-S19",
+      "locale": "ja",
+      "url": "/ja/guides/semi-auto-norikata/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:25:57.278Z",
+      "source_sha256": "82a38b5b5a0e38d8bbc347586081099621858481e107c8f28c06d8fac538aabd",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:27:20.580Z"
+    },
+    {
+      "id": "KO-S19",
+      "locale": "ko",
+      "url": "/ko/guides/banjadong-taneun-beop/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:25:57.278Z",
+      "source_sha256": "011f1915439d2cccc70ff0d6ab419915b10577722f4ed1b19dbad8155dbdc9d6",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:27:20.580Z"
+    },
+    {
+      "id": "NL-S19",
+      "locale": "nl",
+      "url": "/nl/guides/semi-automaat-rijden/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:29:31.093Z",
+      "source_sha256": "ccfa1af5bee0d23ccfa70b704203ba7170478355bcc997ac846e4072fe40371d",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:30:48.014Z"
+    },
+    {
+      "id": "PT-S19",
+      "locale": "pt",
+      "url": "/pt/guides/conduzir-semiautomatica/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:29:31.093Z",
+      "source_sha256": "72d540bc55024faea30069334530ed507cb12ce4ed17b00b958e7946583b1cca",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:30:48.014Z"
+    },
+    {
+      "id": "VI-S19",
+      "locale": "vi",
+      "url": "/vi/guides/thue-xe-con-tay/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:35:37.597Z",
+      "source_sha256": "095356f8a216d47ff2d1056e49776d441873218e75e28546d0053767eaf47190",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:36:58.177Z"
+    },
+    {
+      "id": "ZH-S20",
+      "locale": "zh",
+      "url": "/zh/guides/bandong-dang-qifa/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:35:37.597Z",
+      "source_sha256": "9d597ce89bdaa185070429e868e3b2aa0a8c3d073ee72155b9c40cdf80d50705",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:36:58.177Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T01:20:09.258Z",
-      "ids": [
-        "JA-S60",
-        "JA-S61"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T01:28:00.122Z",
-      "ids": [
-        "JA-S62",
-        "JA-S63"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T01:29:12.818Z",
-      "ids": [
-        "JA-S62",
-        "JA-S63"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T01:29:32.378Z",
-      "ids": [
-        "JA-S64",
-        "JA-S65"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T01:30:50.308Z",
-      "ids": [
-        "JA-S64",
-        "JA-S65"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T01:35:29.482Z",
-      "ids": [
-        "KO-S30",
-        "KO-S31"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T01:36:44.663Z",
-      "ids": [
-        "KO-S30",
-        "KO-S31"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T01:37:03.292Z",
-      "ids": [
-        "KO-S32",
-        "KO-S33"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T01:38:18.923Z",
-      "ids": [
-        "KO-S32",
-        "KO-S33"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T01:38:50.155Z",
-      "ids": [
-        "KO-S34",
-        "KO-S35"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T01:40:27.363Z",
-      "ids": [
-        "KO-S34",
-        "KO-S35"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T01:40:49.905Z",
-      "ids": [
-        "KO-S36",
-        "KO-S37"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T01:41:48.380Z",
-      "ids": [
-        "KO-S36",
-        "KO-S37"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T01:42:06.433Z",
-      "ids": [
-        "KO-S38",
-        "KO-S39"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T01:43:20.774Z",
-      "ids": [
-        "KO-S38",
-        "KO-S39"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T01:53:45.151Z",
-      "ids": [
-        "KO-S40",
-        "KO-S41"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T01:54:40.716Z",
-      "ids": [
-        "KO-S40",
-        "KO-S41"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T01:55:00.607Z",
-      "ids": [
-        "KO-S42",
-        "KO-S43"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T01:56:18.342Z",
-      "ids": [
-        "KO-S42",
-        "KO-S43"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T01:56:43.325Z",
-      "ids": [
-        "KO-S44",
-        "KO-S45"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T01:58:03.747Z",
-      "ids": [
-        "KO-S44",
-        "KO-S45"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T01:58:28.463Z",
-      "ids": [
-        "KO-S46",
-        "KO-S47"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T01:59:44.203Z",
-      "ids": [
-        "KO-S46",
-        "KO-S47"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:00:00.869Z",
-      "ids": [
-        "KO-S48",
-        "KO-S49"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:01:16.539Z",
-      "ids": [
-        "KO-S48",
-        "KO-S49"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:01:34.253Z",
-      "ids": [
-        "KO-S50",
-        "KO-S51"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:03:07.832Z",
-      "ids": [
-        "KO-S50",
-        "KO-S51"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:03:24.977Z",
-      "ids": [
-        "KO-S52",
-        "KO-S53"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:04:38.900Z",
-      "ids": [
-        "KO-S52",
-        "KO-S53"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:04:57.657Z",
-      "ids": [
-        "KO-S54",
-        "KO-S55"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:06:14.639Z",
-      "ids": [
-        "KO-S54",
-        "KO-S55"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:06:34.052Z",
-      "ids": [
-        "NL-S18",
-        "NL-S26"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:07:50.713Z",
-      "ids": [
-        "NL-S18",
-        "NL-S26"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:08:13.616Z",
-      "ids": [
-        "NL-S27",
-        "NL-S28"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:09:14.193Z",
-      "ids": [
-        "NL-S27",
-        "NL-S28"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:11:34.663Z",
-      "ids": [
-        "NL-S29",
-        "NL-S30"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:12:38.718Z",
-      "ids": [
-        "NL-S29",
-        "NL-S30"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:13:01.874Z",
-      "ids": [
-        "NL-S31",
-        "NL-S32"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:13:59.681Z",
-      "ids": [
-        "NL-S31",
-        "NL-S32"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:14:21.935Z",
-      "ids": [
-        "NL-S33",
-        "NL-S34"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:15:59.041Z",
-      "ids": [
-        "NL-S33",
-        "NL-S34"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:16:19.860Z",
-      "ids": [
-        "NL-S35",
-        "NL-S36"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:17:17.580Z",
-      "ids": [
-        "NL-S35",
-        "NL-S36"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:17:36.652Z",
-      "ids": [
-        "NL-S37",
-        "NL-S38"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:18:53.102Z",
-      "ids": [
-        "NL-S37",
-        "NL-S38"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:19:51.847Z",
-      "ids": [
-        "NL-S39",
-        "NL-S40"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:21:10.306Z",
-      "ids": [
-        "NL-S39",
-        "NL-S40"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:21:29.694Z",
-      "ids": [
-        "NL-S41",
-        "NL-S42"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:22:27.116Z",
-      "ids": [
-        "NL-S41",
-        "NL-S42"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:22:46.435Z",
-      "ids": [
-        "NL-S43",
-        "NL-S44"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:24:23.927Z",
-      "ids": [
-        "NL-S43",
-        "NL-S44"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:24:44.578Z",
-      "ids": [
-        "NL-S45",
-        "NL-S46"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:26:03.152Z",
-      "ids": [
-        "NL-S45",
-        "NL-S46"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:26:23.590Z",
-      "ids": [
-        "NL-S47",
-        "NL-S48"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:28:00.758Z",
-      "ids": [
-        "NL-S47",
-        "NL-S48"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:28:19.450Z",
-      "ids": [
-        "NL-S49",
-        "NL-S50"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:29:36.651Z",
-      "ids": [
-        "NL-S49",
-        "NL-S50"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:29:54.137Z",
-      "ids": [
-        "NL-S51",
-        "NL-S52"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:30:50.443Z",
-      "ids": [
-        "NL-S51",
-        "NL-S52"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:31:06.528Z",
-      "ids": [
-        "NL-S53",
-        "NL-S54"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:33:20.404Z",
-      "ids": [
-        "NL-S53",
-        "NL-S54"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:33:38.789Z",
-      "ids": [
-        "NL-S55",
-        "PT-S18"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:35:34.345Z",
-      "ids": [
-        "NL-S55",
-        "PT-S18"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:36:11.314Z",
-      "ids": [
-        "PT-S26",
-        "PT-S27"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:37:50.386Z",
-      "ids": [
-        "PT-S26",
-        "PT-S27"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:38:09.252Z",
-      "ids": [
-        "PT-S28",
-        "PT-S29"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:39:06.327Z",
-      "ids": [
-        "PT-S28",
-        "PT-S29"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:39:24.926Z",
-      "ids": [
-        "PT-S30",
-        "PT-S31"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:40:22.531Z",
-      "ids": [
-        "PT-S30",
-        "PT-S31"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:41:50.356Z",
-      "ids": [
-        "PT-S32",
-        "PT-S33"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:43:06.717Z",
-      "ids": [
-        "PT-S32",
-        "PT-S33"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T02:43:25.904Z",
       "ids": [
@@ -9424,18 +9698,586 @@
         "VI-S63"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:19:34.498Z",
+      "ids": [
+        "VI-S62",
+        "VI-S63"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:19:55.295Z",
+      "ids": [
+        "VI-S64",
+        "VI-S65"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:21:13.158Z",
+      "ids": [
+        "VI-S64",
+        "VI-S65"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:21:36.945Z",
+      "ids": [
+        "ZH-S50",
+        "ZH-S51"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:23:18.443Z",
+      "ids": [
+        "ZH-S50",
+        "ZH-S51"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:23:40.836Z",
+      "ids": [
+        "ZH-S52",
+        "ZH-S53"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:25:01.767Z",
+      "ids": [
+        "ZH-S52",
+        "ZH-S53"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:25:21.841Z",
+      "ids": [
+        "ZH-S54",
+        "ZH-S55"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:26:17.485Z",
+      "ids": [
+        "ZH-S54",
+        "ZH-S55"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:29:35.234Z",
+      "ids": [
+        "ZH-S56",
+        "ZH-S57"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:30:57.672Z",
+      "ids": [
+        "ZH-S56",
+        "ZH-S57"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:34:34.184Z",
+      "ids": [
+        "ZH-S58",
+        "ZH-S59"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:35:50.471Z",
+      "ids": [
+        "ZH-S58",
+        "ZH-S59"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:37:08.243Z",
+      "ids": [
+        "ZH-S60",
+        "ZH-S61"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:38:06.633Z",
+      "ids": [
+        "ZH-S60",
+        "ZH-S61"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:39:22.109Z",
+      "ids": [
+        "ZH-S62",
+        "ZH-S63"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:40:45.004Z",
+      "ids": [
+        "ZH-S62",
+        "ZH-S63"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:43:15.288Z",
+      "ids": [
+        "VI-S66",
+        "ZH-S64"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:44:14.931Z",
+      "ids": [
+        "VI-S66",
+        "ZH-S64"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:45:51.032Z",
+      "ids": [
+        "NL-S67",
+        "NL-S68"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:47:14.535Z",
+      "ids": [
+        "NL-S67",
+        "NL-S68"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:47:56.580Z",
+      "ids": [
+        "NL-S69",
+        "NL-S70"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:49:17.250Z",
+      "ids": [
+        "NL-S69",
+        "NL-S70"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:50:05.660Z",
+      "ids": [
+        "NL-S71",
+        "NL-S72"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:51:27.982Z",
+      "ids": [
+        "NL-S71",
+        "NL-S72"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:52:11.537Z",
+      "ids": [
+        "NL-S73",
+        "NL-S74"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:53:33.290Z",
+      "ids": [
+        "NL-S73",
+        "NL-S74"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:54:09.359Z",
+      "ids": [
+        "NL-S75",
+        "NL-S76"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:55:31.529Z",
+      "ids": [
+        "NL-S75",
+        "NL-S76"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:58:57.242Z",
+      "ids": [
+        "PT-S68",
+        "PT-S69"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:00:17.144Z",
+      "ids": [
+        "PT-S68",
+        "PT-S69"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:00:48.206Z",
+      "ids": [
+        "PT-S70",
+        "PT-S71"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:02:51.338Z",
+      "ids": [
+        "PT-S70",
+        "PT-S71"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:03:19.691Z",
+      "ids": [
+        "PT-S72",
+        "PT-S73"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:04:43.420Z",
+      "ids": [
+        "PT-S72",
+        "PT-S73"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:05:02.798Z",
+      "ids": [
+        "PT-S74",
+        "PT-S75"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:06:58.408Z",
+      "ids": [
+        "PT-S74",
+        "PT-S75"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:07:24.996Z",
+      "ids": [
+        "VI-S60",
+        "VI-S61"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:09:07.814Z",
+      "ids": [
+        "VI-S60",
+        "VI-S61"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:10:33.892Z",
+      "ids": [
+        "PT-S76",
+        "PT-S77"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:11:49.688Z",
+      "ids": [
+        "PT-S76",
+        "PT-S77"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:12:09.130Z",
+      "ids": [
+        "ZH-S65",
+        "ZH-S66"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:13:49.001Z",
+      "ids": [
+        "ZH-S65",
+        "ZH-S66"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:14:10.157Z",
+      "ids": [
+        "ZH-S67",
+        "ZH-S68"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:15:32.168Z",
+      "ids": [
+        "ZH-S67",
+        "ZH-S68"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:28:02.023Z",
+      "ids": [
+        "DE-S82",
+        "EN-S83"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:29:17.275Z",
+      "ids": [
+        "DE-S82",
+        "EN-S83"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:31:53.631Z",
+      "ids": [
+        "FR-S82",
+        "NL-S66"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:33:33.735Z",
+      "ids": [
+        "FR-S82",
+        "NL-S66"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:37:20.587Z",
+      "ids": [
+        "JA-S67",
+        "KO-S66"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:38:44.692Z",
+      "ids": [
+        "JA-S67",
+        "KO-S66"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:44:18.740Z",
+      "ids": [
+        "ZH-S69",
+        "ZH-S70"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:45:41.309Z",
+      "ids": [
+        "ZH-S69",
+        "ZH-S70"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:46:22.611Z",
+      "ids": [
+        "ZH-S71",
+        "ZH-S72"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:47:38.908Z",
+      "ids": [
+        "ZH-S71",
+        "ZH-S72"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:48:48.277Z",
+      "ids": [
+        "KO-S67",
+        "KO-S68"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:50:09.315Z",
+      "ids": [
+        "KO-S67",
+        "KO-S68"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:53:31.801Z",
+      "ids": [
+        "PT-S66",
+        "PT-S67"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:54:53.267Z",
+      "ids": [
+        "PT-S66",
+        "PT-S67"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:55:47.069Z",
+      "ids": [
+        "KO-S69",
+        "KO-S70"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:57:03.431Z",
+      "ids": [
+        "KO-S69",
+        "KO-S70"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:58:18.926Z",
+      "ids": [
+        "KO-S71",
+        "KO-S72"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:59:40.891Z",
+      "ids": [
+        "KO-S71",
+        "KO-S72"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T07:19:11.623Z",
+      "ids": [
+        "KO-S75",
+        "KO-S76"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T07:21:37.497Z",
+      "ids": [
+        "KO-S75",
+        "KO-S76"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T07:25:57.278Z",
+      "ids": [
+        "JA-S19",
+        "KO-S19"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T07:27:20.580Z",
+      "ids": [
+        "JA-S19",
+        "KO-S19"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T07:29:31.093Z",
+      "ids": [
+        "NL-S19",
+        "PT-S19"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T07:30:48.014Z",
+      "ids": [
+        "NL-S19",
+        "PT-S19"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T07:35:37.597Z",
+      "ids": [
+        "VI-S19",
+        "ZH-S20"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T07:36:58.177Z",
+      "ids": [
+        "VI-S19",
+        "ZH-S20"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T05:16:53.505Z",
+    "at": "2026-10-16T07:36:58.177Z",
     "ids": [
-      "VI-S54",
-      "VI-S55"
+      "VI-S19",
+      "ZH-S20"
     ],
-    "commit": "c884f02ad2036595e188619a0dec7ac2cb043a8d",
+    "commit": "f75f7cfde78beffd2119e3a602072831d34b1d5d",
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 8
+    "APPROVED_BY_POLICY": 2
   }
 }

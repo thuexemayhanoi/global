@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 381,
+  "revision": 440,
   "claims": [
     {
       "id": "ES-H01",
@@ -10511,10 +10511,12 @@
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
       "claim_id": "d2684c3d-d6ce-4a40-855e-fa225c9b8a48-claimed-365-VI-S60",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T04:56:23.395Z",
-      "updated_at": "2026-10-16T04:56:23.395Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T06:05:48.204Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "fe8dc30dc962ec7a646301e3f895f570a8be264d93dfb0b2d64e77e9df21523a",
+      "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221"
     },
     {
       "id": "VI-S61",
@@ -10522,10 +10524,12 @@
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
       "claim_id": "d2684c3d-d6ce-4a40-855e-fa225c9b8a48-claimed-365-VI-S61",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T04:56:23.395Z",
-      "updated_at": "2026-10-16T04:56:23.395Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T06:05:48.204Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "343bb0639d77d4ed6bfaf8872f7c353909f94547847d099c9258ab7ff981b53e",
+      "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221"
     },
     {
       "id": "VI-S62",
@@ -10637,10 +10641,12 @@
       "session": "w3-live",
       "branch": "writer/w3-live",
       "claim_id": "bb8a67dd-4004-49e6-9d79-fb5b92d448be-claimed-371-ZH-S56",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:04:39.956Z",
-      "updated_at": "2026-10-16T05:04:39.956Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T05:29:14.306Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "b184453d680665ce85d1fb31c7ecbecde1c85a091f140f7b953fe64059157010",
+      "source_commit": "dd01a7e1a193bb6b8c12dcbccca2abaea7f51e8e"
     },
     {
       "id": "ZH-S57",
@@ -10648,98 +10654,341 @@
       "session": "w3-live",
       "branch": "writer/w3-live",
       "claim_id": "bb8a67dd-4004-49e6-9d79-fb5b92d448be-claimed-371-ZH-S57",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:04:39.956Z",
-      "updated_at": "2026-10-16T05:04:39.956Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T05:29:14.306Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "d7433f6aed771da0d014edd466cb2fc081ff176a902a537086dfd0ea8914f4af",
+      "source_commit": "dd01a7e1a193bb6b8c12dcbccca2abaea7f51e8e"
     },
     {
       "id": "DE-S82",
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
       "claim_id": "ea866560-474e-4378-8a77-99bbd80aacb6-claimed-373-DE-S82",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:09:56.212Z",
-      "updated_at": "2026-10-16T05:09:56.212Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T06:27:45.322Z",
+      "phase": "REVISED_AWAITING_AUTO_QA",
+      "source_sha256": "07644206d7b4abce84d8adceab404a61031efcddf57550ff6ffeba5b0d11f49d",
+      "source_commit": "c78983d4fbab8bca95b4fc82452d27167ea4f270",
+      "handoffs": [
+        {
+          "writer": "W1",
+          "session": "w1-vibe-20261014",
+          "branch": "writer/w1-vibe-20261014",
+          "source_path": "factory/external-writers/inbox/W1/DE-S82.json",
+          "source_sha256": "44f2e35033bec585a5177bfd3be04d750427b4b77274def4ecc444e653a9f74b",
+          "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+          "to_writer": "W3",
+          "to_session": "w3-live",
+          "at": "2026-10-16T06:10:16.071Z"
+        }
+      ],
+      "source_path": "factory/external-writers/inbox/W3/revisions/DE-S82.r2.json",
+      "source_branch": "writer/w3-live",
+      "revisions": [
+        {
+          "source_sha256": "44f2e35033bec585a5177bfd3be04d750427b4b77274def4ecc444e653a9f74b",
+          "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+          "source_path": "factory/external-writers/inbox/W1/DE-S82.json",
+          "review_verdict": "QA_FAIL",
+          "repair_gates": [
+            "G3_OFFICIAL_EVIDENCE"
+          ],
+          "superseded_at": "2026-10-16T06:27:45.322Z"
+        }
+      ],
+      "revision": 2
     },
     {
       "id": "EN-S83",
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
       "claim_id": "ea866560-474e-4378-8a77-99bbd80aacb6-claimed-373-EN-S83",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:09:56.212Z",
-      "updated_at": "2026-10-16T05:09:56.212Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T06:27:45.322Z",
+      "phase": "REVISED_AWAITING_AUTO_QA",
+      "source_sha256": "1ad05f5f267c938497ab0016e4335990a0cbc4b079cc23f5b08ef9ff5273fe59",
+      "source_commit": "c78983d4fbab8bca95b4fc82452d27167ea4f270",
+      "handoffs": [
+        {
+          "writer": "W1",
+          "session": "w1-vibe-20261014",
+          "branch": "writer/w1-vibe-20261014",
+          "source_path": "factory/external-writers/inbox/W1/EN-S83.json",
+          "source_sha256": "b2e94e5a8d6520b13c5aaa64157f2c53dadbe14f051a6d4e3391dd5f69509dd7",
+          "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+          "to_writer": "W3",
+          "to_session": "w3-live",
+          "at": "2026-10-16T06:10:16.071Z"
+        }
+      ],
+      "source_path": "factory/external-writers/inbox/W3/revisions/EN-S83.r2.json",
+      "source_branch": "writer/w3-live",
+      "revisions": [
+        {
+          "source_sha256": "b2e94e5a8d6520b13c5aaa64157f2c53dadbe14f051a6d4e3391dd5f69509dd7",
+          "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+          "source_path": "factory/external-writers/inbox/W1/EN-S83.json",
+          "review_verdict": "QA_FAIL",
+          "repair_gates": [
+            "G3_OFFICIAL_EVIDENCE"
+          ],
+          "superseded_at": "2026-10-16T06:27:45.322Z"
+        }
+      ],
+      "revision": 2
     },
     {
       "id": "FR-S82",
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
       "claim_id": "ea866560-474e-4378-8a77-99bbd80aacb6-claimed-373-FR-S82",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:09:56.212Z",
-      "updated_at": "2026-10-16T05:09:56.212Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T06:31:36.472Z",
+      "phase": "REVISED_AWAITING_AUTO_QA",
+      "source_sha256": "a14cdf40944c5fcd7ce5312636ce647478521a1503c9d777b48616cf7cba0989",
+      "source_commit": "8c55fd7758aab54f97c137f871aefd71dbe77f4a",
+      "handoffs": [
+        {
+          "writer": "W1",
+          "session": "w1-vibe-20261014",
+          "branch": "writer/w1-vibe-20261014",
+          "source_path": "factory/external-writers/inbox/W1/FR-S82.json",
+          "source_sha256": "2339d42a1945e9490fdb45277d6051b4771e696838a602e6a3674e2aa2901553",
+          "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+          "to_writer": "W3",
+          "to_session": "w3-live",
+          "at": "2026-10-16T06:10:16.071Z"
+        }
+      ],
+      "source_path": "factory/external-writers/inbox/W3/revisions/FR-S82.r2.json",
+      "source_branch": "writer/w3-live",
+      "revisions": [
+        {
+          "source_sha256": "2339d42a1945e9490fdb45277d6051b4771e696838a602e6a3674e2aa2901553",
+          "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+          "source_path": "factory/external-writers/inbox/W1/FR-S82.json",
+          "review_verdict": "QA_FAIL",
+          "repair_gates": [
+            "G3_OFFICIAL_EVIDENCE"
+          ],
+          "superseded_at": "2026-10-16T06:31:36.472Z"
+        }
+      ],
+      "revision": 2
     },
     {
       "id": "JA-S67",
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
       "claim_id": "ea866560-474e-4378-8a77-99bbd80aacb6-claimed-373-JA-S67",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:09:56.212Z",
-      "updated_at": "2026-10-16T05:09:56.212Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T06:37:00.017Z",
+      "phase": "REVISED_AWAITING_AUTO_QA",
+      "source_sha256": "dcc153cfcbb2944d754f9569a1cc1439f289ae4bccf5479828aba43ae036a63a",
+      "source_commit": "c0337bbdf4e47877659a501ce2cf87f148483d3c",
+      "handoffs": [
+        {
+          "writer": "W1",
+          "session": "w1-vibe-20261014",
+          "branch": "writer/w1-vibe-20261014",
+          "source_path": "factory/external-writers/inbox/W1/JA-S67.json",
+          "source_sha256": "e7d19e2d8d0e1ad06b39d94ccf59dad2739141e896f02405d6c8f1deddcdf5b0",
+          "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+          "to_writer": "W3",
+          "to_session": "w3-live",
+          "at": "2026-10-16T06:10:16.071Z"
+        }
+      ],
+      "source_path": "factory/external-writers/inbox/W3/revisions/JA-S67.r2.json",
+      "source_branch": "writer/w3-live",
+      "revisions": [
+        {
+          "source_sha256": "e7d19e2d8d0e1ad06b39d94ccf59dad2739141e896f02405d6c8f1deddcdf5b0",
+          "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+          "source_path": "factory/external-writers/inbox/W1/JA-S67.json",
+          "review_verdict": "QA_FAIL",
+          "repair_gates": [
+            "G3_OFFICIAL_EVIDENCE"
+          ],
+          "superseded_at": "2026-10-16T06:37:00.017Z"
+        }
+      ],
+      "revision": 2
     },
     {
       "id": "KO-S66",
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
       "claim_id": "ea866560-474e-4378-8a77-99bbd80aacb6-claimed-373-KO-S66",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:09:56.212Z",
-      "updated_at": "2026-10-16T05:09:56.212Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T06:37:00.017Z",
+      "phase": "REVISED_AWAITING_AUTO_QA",
+      "source_sha256": "d4d3a7eb3483a7fe0e63991bce5ab47bb119055bd2ed04629382bb50a8812db2",
+      "source_commit": "c0337bbdf4e47877659a501ce2cf87f148483d3c",
+      "handoffs": [
+        {
+          "writer": "W1",
+          "session": "w1-vibe-20261014",
+          "branch": "writer/w1-vibe-20261014",
+          "source_path": "factory/external-writers/inbox/W1/KO-S66.json",
+          "source_sha256": "d00ebaca897a0e165827ddbe232807b16b17ba0cce6b5c03bca7824bf16d9aa9",
+          "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+          "to_writer": "W3",
+          "to_session": "w3-live",
+          "at": "2026-10-16T06:10:16.071Z"
+        }
+      ],
+      "source_path": "factory/external-writers/inbox/W3/revisions/KO-S66.r2.json",
+      "source_branch": "writer/w3-live",
+      "revisions": [
+        {
+          "source_sha256": "d00ebaca897a0e165827ddbe232807b16b17ba0cce6b5c03bca7824bf16d9aa9",
+          "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+          "source_path": "factory/external-writers/inbox/W1/KO-S66.json",
+          "review_verdict": "QA_FAIL",
+          "repair_gates": [
+            "G1_DRAFT_QA",
+            "G3_OFFICIAL_EVIDENCE"
+          ],
+          "superseded_at": "2026-10-16T06:37:00.017Z"
+        }
+      ],
+      "revision": 2
     },
     {
       "id": "NL-S66",
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
       "claim_id": "ea866560-474e-4378-8a77-99bbd80aacb6-claimed-373-NL-S66",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:09:56.212Z",
-      "updated_at": "2026-10-16T05:09:56.212Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T06:31:36.472Z",
+      "phase": "REVISED_AWAITING_AUTO_QA",
+      "source_sha256": "1e46626a854b3478c9a8cf215fcd9bfd1439aa6c41a24d3135fa62b34f72566c",
+      "source_commit": "8c55fd7758aab54f97c137f871aefd71dbe77f4a",
+      "handoffs": [
+        {
+          "writer": "W1",
+          "session": "w1-vibe-20261014",
+          "branch": "writer/w1-vibe-20261014",
+          "source_path": "factory/external-writers/inbox/W1/NL-S66.json",
+          "source_sha256": "5307a5c32d444967dac546b785bc07e7c9247f8f7869647b607259755f82a54d",
+          "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+          "to_writer": "W3",
+          "to_session": "w3-live",
+          "at": "2026-10-16T06:10:16.071Z"
+        }
+      ],
+      "source_path": "factory/external-writers/inbox/W3/revisions/NL-S66.r2.json",
+      "source_branch": "writer/w3-live",
+      "revisions": [
+        {
+          "source_sha256": "5307a5c32d444967dac546b785bc07e7c9247f8f7869647b607259755f82a54d",
+          "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+          "source_path": "factory/external-writers/inbox/W1/NL-S66.json",
+          "review_verdict": "QA_FAIL",
+          "repair_gates": [
+            "G3_OFFICIAL_EVIDENCE"
+          ],
+          "superseded_at": "2026-10-16T06:31:36.472Z"
+        }
+      ],
+      "revision": 2
     },
     {
       "id": "PT-S66",
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
       "claim_id": "ea866560-474e-4378-8a77-99bbd80aacb6-claimed-373-PT-S66",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:09:56.212Z",
-      "updated_at": "2026-10-16T05:09:56.212Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T06:53:12.404Z",
+      "phase": "REVISED_AWAITING_AUTO_QA",
+      "source_sha256": "e6ab9c302ff0b811f1d73b0c1318fa6f167d62653c5b38f31cbf4b5fd1fc1bb3",
+      "source_commit": "29111b74fa13147cb0ca9b20fa2477f7b037c78b",
+      "handoffs": [
+        {
+          "writer": "W1",
+          "session": "w1-vibe-20261014",
+          "branch": "writer/w1-vibe-20261014",
+          "source_path": "factory/external-writers/inbox/W1/PT-S66.json",
+          "source_sha256": "2f35e2774e6d5b3f84bb73f08d88fc0b277abfc5d5c38f4fa05ac9bf25f4cd1f",
+          "source_commit": "5a28bdf19c8c2cacec6198285b731fa42abd3949",
+          "to_writer": "W3",
+          "to_session": "w3-live",
+          "at": "2026-10-16T06:27:45.322Z"
+        }
+      ],
+      "source_path": "factory/external-writers/inbox/W3/revisions/PT-S66.r2.json",
+      "source_branch": "writer/w3-live",
+      "revisions": [
+        {
+          "source_sha256": "2f35e2774e6d5b3f84bb73f08d88fc0b277abfc5d5c38f4fa05ac9bf25f4cd1f",
+          "source_commit": "5a28bdf19c8c2cacec6198285b731fa42abd3949",
+          "source_path": "factory/external-writers/inbox/W1/PT-S66.json",
+          "review_verdict": "QA_FAIL",
+          "repair_gates": [
+            "G3_OFFICIAL_EVIDENCE"
+          ],
+          "superseded_at": "2026-10-16T06:53:12.404Z"
+        }
+      ],
+      "revision": 2
     },
     {
       "id": "PT-S67",
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
       "claim_id": "ea866560-474e-4378-8a77-99bbd80aacb6-claimed-373-PT-S67",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:09:56.212Z",
-      "updated_at": "2026-10-16T05:09:56.212Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T06:53:12.404Z",
+      "phase": "REVISED_AWAITING_AUTO_QA",
+      "source_sha256": "f9c4cd94728a180eadaa118ad77e5e072e0af802d5b85e4fe6269ab3a33a791e",
+      "source_commit": "29111b74fa13147cb0ca9b20fa2477f7b037c78b",
+      "handoffs": [
+        {
+          "writer": "W1",
+          "session": "w1-vibe-20261014",
+          "branch": "writer/w1-vibe-20261014",
+          "source_path": "factory/external-writers/inbox/W1/PT-S67.json",
+          "source_sha256": "b3178699c4ff774a0e4b5a59f471f05e18a072f59afb07bbf4110d06c3b7eb9d",
+          "source_commit": "5a28bdf19c8c2cacec6198285b731fa42abd3949",
+          "to_writer": "W3",
+          "to_session": "w3-live",
+          "at": "2026-10-16T06:27:45.322Z"
+        }
+      ],
+      "source_path": "factory/external-writers/inbox/W3/revisions/PT-S67.r2.json",
+      "source_branch": "writer/w3-live",
+      "revisions": [
+        {
+          "source_sha256": "b3178699c4ff774a0e4b5a59f471f05e18a072f59afb07bbf4110d06c3b7eb9d",
+          "source_commit": "5a28bdf19c8c2cacec6198285b731fa42abd3949",
+          "source_path": "factory/external-writers/inbox/W1/PT-S67.json",
+          "review_verdict": "QA_FAIL",
+          "repair_gates": [
+            "G3_OFFICIAL_EVIDENCE"
+          ],
+          "superseded_at": "2026-10-16T06:53:12.404Z"
+        }
+      ],
+      "revision": 2
     },
     {
       "id": "VI-S66",
@@ -10747,10 +10996,12 @@
       "session": "w3-live",
       "branch": "writer/w3-live",
       "claim_id": "e8c06511-0b23-4ec9-8d71-351c0fa36cf4-claimed-375-VI-S66",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:11:42.601Z",
-      "updated_at": "2026-10-16T05:11:42.601Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T05:42:56.883Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "1e32095c80f7f169800ce351305e418c1137c8ab32db3fcab7ed188a1352ffe8",
+      "source_commit": "60ce9154bcef48538a1189e4deb3c55cf68e72b7"
     },
     {
       "id": "ZH-S58",
@@ -10758,10 +11009,12 @@
       "session": "w3-live",
       "branch": "writer/w3-live",
       "claim_id": "e8c06511-0b23-4ec9-8d71-351c0fa36cf4-claimed-375-ZH-S58",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:11:42.601Z",
-      "updated_at": "2026-10-16T05:11:42.601Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T05:34:18.596Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "b2967aaddb2112633e837e7c1bc457b301001e5e120a9f541297511cdfcecfb2",
+      "source_commit": "d4c73c1a373402611771caac6703a96f93716052"
     },
     {
       "id": "ZH-S59",
@@ -10769,10 +11022,12 @@
       "session": "w3-live",
       "branch": "writer/w3-live",
       "claim_id": "19c9d44c-7e97-4274-a8d7-587e1491f2ec-claimed-377-ZH-S59",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:14:08.946Z",
-      "updated_at": "2026-10-16T05:14:08.946Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T05:34:18.596Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "39175e87aa976cb84b744808f862cf1d387b8ec34e9edfc6649c83fd98dc0d18",
+      "source_commit": "d4c73c1a373402611771caac6703a96f93716052"
     },
     {
       "id": "ZH-S60",
@@ -10780,10 +11035,12 @@
       "session": "w3-live",
       "branch": "writer/w3-live",
       "claim_id": "19c9d44c-7e97-4274-a8d7-587e1491f2ec-claimed-377-ZH-S60",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:14:08.946Z",
-      "updated_at": "2026-10-16T05:14:08.946Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T05:36:51.038Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "b87efcd81b2521d6ca46a7257109e5cf7346ee7317d32df47a84a09a1519b96f",
+      "source_commit": "967b9a8d2edaf15f64296d1986d45baeca07a7dd"
     },
     {
       "id": "ZH-S61",
@@ -10791,10 +11048,12 @@
       "session": "w3-live",
       "branch": "writer/w3-live",
       "claim_id": "4bf94f82-48ce-4da4-9f5e-618cf48c3390-claimed-379-ZH-S61",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:16:45.132Z",
-      "updated_at": "2026-10-16T05:16:45.132Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T05:36:51.038Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "3b09aacf7ac66f1c85285c62f5eacc803858a65b0f363c2793c3928aba7d4256",
+      "source_commit": "967b9a8d2edaf15f64296d1986d45baeca07a7dd"
     },
     {
       "id": "ZH-S62",
@@ -10802,10 +11061,12 @@
       "session": "w3-live",
       "branch": "writer/w3-live",
       "claim_id": "4bf94f82-48ce-4da4-9f5e-618cf48c3390-claimed-379-ZH-S62",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:16:45.132Z",
-      "updated_at": "2026-10-16T05:16:45.132Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T05:39:00.716Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "720d45b08e7d4258bfa50c82b2d4fa7eb4a3c2c50e98116836e473706cea5909",
+      "source_commit": "5dc19a19a8ae13e9e016c74578e2f2462a3409bd"
     },
     {
       "id": "ZH-S63",
@@ -10813,10 +11074,12 @@
       "session": "w3-live",
       "branch": "writer/w3-live",
       "claim_id": "d4bfba31-9c6a-4712-8434-e4fef1c28034-claimed-381-ZH-S63",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:18:24.399Z",
-      "updated_at": "2026-10-16T05:18:24.399Z",
-      "phase": "WRITING"
+      "updated_at": "2026-10-16T05:39:00.716Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "f8a42db2c0c647fc012354cc82f4f492af79bf405e8fc138612334fd9887cff8",
+      "source_commit": "5dc19a19a8ae13e9e016c74578e2f2462a3409bd"
     },
     {
       "id": "ZH-S64",
@@ -10824,9 +11087,777 @@
       "session": "w3-live",
       "branch": "writer/w3-live",
       "claim_id": "d4bfba31-9c6a-4712-8434-e4fef1c28034-claimed-381-ZH-S64",
-      "status": "CLAIMED",
+      "status": "SUBMITTED",
       "at": "2026-10-16T05:18:24.399Z",
-      "updated_at": "2026-10-16T05:18:24.399Z",
+      "updated_at": "2026-10-16T05:42:56.883Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "eacb968a20820a7dfdeb53d12173a8a528af4de0aceab37684de1e941c8e8805",
+      "source_commit": "60ce9154bcef48538a1189e4deb3c55cf68e72b7"
+    },
+    {
+      "id": "NL-S67",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "f5163e06-a0cb-493a-9ca2-4a0a3436345f-claimed-383-NL-S67",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:29:14.306Z",
+      "updated_at": "2026-10-16T05:45:30.531Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "e6df2b28f16797f314d8682704e54566bf1aea29bed4d325d020f0c434a409de",
+      "source_commit": "25045d0258c805717c4362e047849941ec017b80"
+    },
+    {
+      "id": "NL-S68",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "f5163e06-a0cb-493a-9ca2-4a0a3436345f-claimed-383-NL-S68",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:29:14.306Z",
+      "updated_at": "2026-10-16T05:45:30.531Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "f0897ee9e39f96f5db026be640e8bb78c1da0fd4ff549a6a2b2ee193e71b0918",
+      "source_commit": "25045d0258c805717c4362e047849941ec017b80"
+    },
+    {
+      "id": "NL-S69",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "155e1df2-fc49-4805-b737-41afffb0e1b6-claimed-385-NL-S69",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:34:18.596Z",
+      "updated_at": "2026-10-16T05:47:37.236Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "dba7742bf748f682b60cebbbd762b013674c644668bb02ab3e56eaf6cc4eaa77",
+      "source_commit": "2b1bed62ae24d1fb98949b68cc42842b7dd047bb"
+    },
+    {
+      "id": "NL-S70",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "155e1df2-fc49-4805-b737-41afffb0e1b6-claimed-385-NL-S70",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:34:18.596Z",
+      "updated_at": "2026-10-16T05:47:37.236Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "cfad17da4a1cc0050e2b56f72c92808940fd751961ef7fe70be7b09cfc63d74b",
+      "source_commit": "2b1bed62ae24d1fb98949b68cc42842b7dd047bb"
+    },
+    {
+      "id": "NL-S71",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "46802f88-f661-41db-abba-0812a6aff2b0-claimed-387-NL-S71",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:36:51.038Z",
+      "updated_at": "2026-10-16T05:49:45.322Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "6cda8b4114957ce1ad2a2d9c48251281740531ad6c87afb04d835ec6aa6735d0",
+      "source_commit": "5b93929fb23282ccacb659c136532d58199be7b0"
+    },
+    {
+      "id": "NL-S72",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "46802f88-f661-41db-abba-0812a6aff2b0-claimed-387-NL-S72",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:36:51.038Z",
+      "updated_at": "2026-10-16T05:49:45.322Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "666c96f738bcbd280c363acfed556acf6a7eb906a61b8a0685196b5b564f3bee",
+      "source_commit": "5b93929fb23282ccacb659c136532d58199be7b0"
+    },
+    {
+      "id": "NL-S73",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "d320ec64-e0d9-4598-8beb-94512475f611-claimed-389-NL-S73",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:39:00.716Z",
+      "updated_at": "2026-10-16T05:51:51.606Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "adae25abf08592be8f12d7d6038cc03a0605c2f7bc167e4da87397ad8f4e5234",
+      "source_commit": "e146a5237befecfa3c334ed0127db4525628be51"
+    },
+    {
+      "id": "NL-S74",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "d320ec64-e0d9-4598-8beb-94512475f611-claimed-389-NL-S74",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:39:00.716Z",
+      "updated_at": "2026-10-16T05:51:51.606Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "5b3dfcb0e543fa042e795b6e39a5fc310ea4aeaed37c63665468918989ff8595",
+      "source_commit": "e146a5237befecfa3c334ed0127db4525628be51"
+    },
+    {
+      "id": "NL-S75",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "275715a7-8bdb-46f2-97b8-422a8c0726d4-claimed-391-NL-S75",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:42:56.883Z",
+      "updated_at": "2026-10-16T05:53:50.384Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "080a76f9c565cd733e0acb3150b8738274b58d200d0b92922246151b4e39f3d5",
+      "source_commit": "96297843eeedc597677883fc23d1971f254397c6"
+    },
+    {
+      "id": "NL-S76",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "275715a7-8bdb-46f2-97b8-422a8c0726d4-claimed-391-NL-S76",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:42:56.883Z",
+      "updated_at": "2026-10-16T05:53:50.384Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "430ff87a0b74088cbb881d46f682cfc325f14998eb26ae756b60ccbde8c41a98",
+      "source_commit": "96297843eeedc597677883fc23d1971f254397c6"
+    },
+    {
+      "id": "PT-S68",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "7fde075e-78b1-42b7-9623-35cda005e9c9-claimed-393-PT-S68",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:45:30.531Z",
+      "updated_at": "2026-10-16T05:58:38.852Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "4b4c44cd8f1b782f0d75fe8c110390449d4c21a4c4c18c543164641b60f555ca",
+      "source_commit": "a29f5b711249f13661260d82c80955dbc504c61c"
+    },
+    {
+      "id": "PT-S69",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "7fde075e-78b1-42b7-9623-35cda005e9c9-claimed-393-PT-S69",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:45:30.531Z",
+      "updated_at": "2026-10-16T05:58:38.852Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "095e65503131d3abb271c64ab84f374b75d1406c748ae82a75819e69e21cc9b2",
+      "source_commit": "a29f5b711249f13661260d82c80955dbc504c61c"
+    },
+    {
+      "id": "PT-S70",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "82ac765d-8fea-4495-9874-b35048c28ba8-claimed-395-PT-S70",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:47:37.236Z",
+      "updated_at": "2026-10-16T06:00:17.117Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "0db9b1009d5d434335be3b950600ad25c14f7886387b77624669b8ee7e1614e1",
+      "source_commit": "24de7c9903ace2fcdc3f46f1bc15a61acc57310a"
+    },
+    {
+      "id": "PT-S71",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "82ac765d-8fea-4495-9874-b35048c28ba8-claimed-395-PT-S71",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:47:37.236Z",
+      "updated_at": "2026-10-16T06:00:17.117Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "c388a001a8d57a0df8c33b75a88608b0f147a17d3c6e8e20028be65fcda407ed",
+      "source_commit": "24de7c9903ace2fcdc3f46f1bc15a61acc57310a"
+    },
+    {
+      "id": "PT-S72",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "353432a4-ee5d-4b9c-a937-bbe012bfa61f-claimed-397-PT-S72",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:49:45.322Z",
+      "updated_at": "2026-10-16T06:02:24.154Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "0173bbfa2469c25758201a2cd8243c015d0bc64e2f0730fe7213f64a966851cf",
+      "source_commit": "2f7fc8ea64106f13dec61baff40909e3a4cdd1fb"
+    },
+    {
+      "id": "PT-S73",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "353432a4-ee5d-4b9c-a937-bbe012bfa61f-claimed-397-PT-S73",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:49:45.322Z",
+      "updated_at": "2026-10-16T06:02:24.154Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "ce8f3a4213656243e34a8c3e1027b15c81a6e8322f5f8a76a25d0ac07d7aced9",
+      "source_commit": "2f7fc8ea64106f13dec61baff40909e3a4cdd1fb"
+    },
+    {
+      "id": "PT-S74",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "455cd4ad-a58b-4bb9-8eab-480133c9e5e9-claimed-399-PT-S74",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:51:51.606Z",
+      "updated_at": "2026-10-16T06:04:10.059Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "9a66eb1dc4099b4a87ebc0c8003eeeb0d266314e9d78e3e04b6aee100cef38e8",
+      "source_commit": "f3d7c2d73a01af1c22ae828e8d381c25adb39d97"
+    },
+    {
+      "id": "PT-S75",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "455cd4ad-a58b-4bb9-8eab-480133c9e5e9-claimed-399-PT-S75",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:51:51.606Z",
+      "updated_at": "2026-10-16T06:04:10.059Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "53b1e4eedccc6de3f59411fe8d0431d4176475f368f66892f043075abeae5873",
+      "source_commit": "f3d7c2d73a01af1c22ae828e8d381c25adb39d97"
+    },
+    {
+      "id": "PT-S76",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "102764a7-c51e-4e80-af2b-3d81aae051ac-claimed-401-PT-S76",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:53:50.384Z",
+      "updated_at": "2026-10-16T06:10:16.071Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "f1a666315d943416f9ec4aae7ab0fa6c0972a18afeff2368e1a56a1128c269bd",
+      "source_commit": "32aa8dec80fce25a489383da42a25800052eae9a"
+    },
+    {
+      "id": "PT-S77",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "102764a7-c51e-4e80-af2b-3d81aae051ac-claimed-401-PT-S77",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:53:50.384Z",
+      "updated_at": "2026-10-16T06:10:16.071Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "48a07069ad1e60c1751a4db5c817123e071fcdcc360c3606b017ef3a2925fd98",
+      "source_commit": "32aa8dec80fce25a489383da42a25800052eae9a"
+    },
+    {
+      "id": "ZH-S65",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "093a884e-a0d8-4b4a-a4c0-627fbc939ebd-claimed-403-ZH-S65",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:58:38.852Z",
+      "updated_at": "2026-10-16T06:10:16.071Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "4c159d403ffb29bd5c95eec69180cd8f687c0ad72727916c5e246a868ebeb66b",
+      "source_commit": "32aa8dec80fce25a489383da42a25800052eae9a"
+    },
+    {
+      "id": "ZH-S66",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "093a884e-a0d8-4b4a-a4c0-627fbc939ebd-claimed-403-ZH-S66",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T05:58:38.852Z",
+      "updated_at": "2026-10-16T06:10:16.071Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "01b0be451f5edbf5f345f5db098dd9ee355015e01b59e44626f7ba0a7cde398c",
+      "source_commit": "32aa8dec80fce25a489383da42a25800052eae9a"
+    },
+    {
+      "id": "ZH-S67",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "46e33f4f-ab5d-46d3-a4de-d575ddc6e3e1-claimed-405-ZH-S67",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:00:17.117Z",
+      "updated_at": "2026-10-16T06:12:57.458Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "c83652357c0bc31743047b026ace6e06aba7b2d676ac1432e685f78d9280c791",
+      "source_commit": "259baa74595f70a78db45a4bf477af3e38bd6a49"
+    },
+    {
+      "id": "ZH-S68",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "46e33f4f-ab5d-46d3-a4de-d575ddc6e3e1-claimed-405-ZH-S68",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:00:17.117Z",
+      "updated_at": "2026-10-16T06:12:57.458Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "2c28a0961f1f17dd24484b51ffd976c1972a9106046cbe1eae207f41e6350d6b",
+      "source_commit": "259baa74595f70a78db45a4bf477af3e38bd6a49"
+    },
+    {
+      "id": "ZH-S69",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "b2f14b14-2688-4e08-ab71-eff45d55393c-claimed-407-ZH-S69",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:02:24.154Z",
+      "updated_at": "2026-10-16T06:43:57.518Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "53ee9c2b973ace952ddc8ff83613a0391e89278e75c91fb8f9be318c9bf23213",
+      "source_commit": "3cb44bdc95b2d00177a60ae600148413c6b29e87"
+    },
+    {
+      "id": "ZH-S70",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "b2f14b14-2688-4e08-ab71-eff45d55393c-claimed-407-ZH-S70",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:02:24.154Z",
+      "updated_at": "2026-10-16T06:43:57.518Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "09236b6164c18d9010dfa289f15e499c99e2a1bd95d0053ff94b1342c54cd0de",
+      "source_commit": "3cb44bdc95b2d00177a60ae600148413c6b29e87"
+    },
+    {
+      "id": "ZH-S71",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "91a37b7d-0cae-41a5-8317-58b0fd3c808c-claimed-409-ZH-S71",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:04:10.059Z",
+      "updated_at": "2026-10-16T06:46:03.215Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "074e2df9e855aaf3e9d0118273774389a77ff95495cc899a53f43b105b55d9b3",
+      "source_commit": "3aa09e813e521ddbf95117d28b273ce44ed3794b"
+    },
+    {
+      "id": "ZH-S72",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "91a37b7d-0cae-41a5-8317-58b0fd3c808c-claimed-409-ZH-S72",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:04:10.059Z",
+      "updated_at": "2026-10-16T06:46:03.215Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "0f2794d7ecc13ae07b7788eac2786ab3ec99a820fbf14cf866c57250d2c95c1b",
+      "source_commit": "3aa09e813e521ddbf95117d28b273ce44ed3794b"
+    },
+    {
+      "id": "ZH-S73",
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "claim_id": "f79ec1cb-b0b4-4e1d-9aad-36221b9029bf-claimed-411-ZH-S73",
+      "status": "CLAIMED",
+      "at": "2026-10-16T06:05:48.204Z",
+      "updated_at": "2026-10-16T06:05:48.204Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "ZH-S74",
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "claim_id": "f79ec1cb-b0b4-4e1d-9aad-36221b9029bf-claimed-411-ZH-S74",
+      "status": "CLAIMED",
+      "at": "2026-10-16T06:05:48.204Z",
+      "updated_at": "2026-10-16T06:05:48.204Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "ZH-S75",
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "claim_id": "f79ec1cb-b0b4-4e1d-9aad-36221b9029bf-claimed-411-ZH-S75",
+      "status": "CLAIMED",
+      "at": "2026-10-16T06:05:48.204Z",
+      "updated_at": "2026-10-16T06:05:48.204Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "ZH-S76",
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "claim_id": "f79ec1cb-b0b4-4e1d-9aad-36221b9029bf-claimed-411-ZH-S76",
+      "status": "CLAIMED",
+      "at": "2026-10-16T06:05:48.204Z",
+      "updated_at": "2026-10-16T06:05:48.204Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "DE-S19",
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "claim_id": "f79ec1cb-b0b4-4e1d-9aad-36221b9029bf-claimed-411-DE-S19",
+      "status": "CLAIMED",
+      "at": "2026-10-16T06:05:48.204Z",
+      "updated_at": "2026-10-16T06:05:48.204Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "EN-S20",
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "claim_id": "f79ec1cb-b0b4-4e1d-9aad-36221b9029bf-claimed-411-EN-S20",
+      "status": "CLAIMED",
+      "at": "2026-10-16T06:05:48.204Z",
+      "updated_at": "2026-10-16T06:05:48.204Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "ES-S19",
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "claim_id": "f79ec1cb-b0b4-4e1d-9aad-36221b9029bf-claimed-411-ES-S19",
+      "status": "CLAIMED",
+      "at": "2026-10-16T06:05:48.204Z",
+      "updated_at": "2026-10-16T06:05:48.204Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "FR-S20",
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "claim_id": "f79ec1cb-b0b4-4e1d-9aad-36221b9029bf-claimed-411-FR-S20",
+      "status": "CLAIMED",
+      "at": "2026-10-16T06:05:48.204Z",
+      "updated_at": "2026-10-16T06:05:48.204Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "KO-S67",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "168ac4ef-e3b6-4d20-a8a3-fae86e67601c-claimed-415-KO-S67",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:12:57.458Z",
+      "updated_at": "2026-10-16T06:48:28.731Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "c0be011347414e9c661ced785f9c679f9886edb08f9d0ed4b76bb5ef8104bdff",
+      "source_commit": "7d00745a8bdd8ff1ec2fd8cbb7a311b4ce3b6f68"
+    },
+    {
+      "id": "KO-S68",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "168ac4ef-e3b6-4d20-a8a3-fae86e67601c-claimed-415-KO-S68",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:12:57.458Z",
+      "updated_at": "2026-10-16T06:48:28.731Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "6289f986d4bc0004b9b239d577423eb6ef281d213bfa0ab8781e0a754652f1f9",
+      "source_commit": "7d00745a8bdd8ff1ec2fd8cbb7a311b4ce3b6f68"
+    },
+    {
+      "id": "KO-S69",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "168ac4ef-e3b6-4d20-a8a3-fae86e67601c-claimed-415-KO-S69",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:12:57.458Z",
+      "updated_at": "2026-10-16T06:55:31.126Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "ce3957b6213e3fa56f9eb96479a82d58ce47f95d2ffff8d656317c204c58ce2c",
+      "source_commit": "6e22656737d6544fbca4a637ee5943ecd851f1cb"
+    },
+    {
+      "id": "KO-S70",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "168ac4ef-e3b6-4d20-a8a3-fae86e67601c-claimed-415-KO-S70",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:12:57.458Z",
+      "updated_at": "2026-10-16T06:55:31.126Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "a1d44f7ab60c24546867aade7f57c65ed878741b48daf3d1c426a1385b62553f",
+      "source_commit": "6e22656737d6544fbca4a637ee5943ecd851f1cb"
+    },
+    {
+      "id": "KO-S71",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "168ac4ef-e3b6-4d20-a8a3-fae86e67601c-claimed-415-KO-S71",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:12:57.458Z",
+      "updated_at": "2026-10-16T06:57:58.624Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "1e7717c6a3eef61242365f632a9c933cb979b81cc0ce50e0c1f7a4ffb9b58cb9",
+      "source_commit": "c98394a4d4baf5c378650012263fef011326cd54"
+    },
+    {
+      "id": "KO-S72",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "168ac4ef-e3b6-4d20-a8a3-fae86e67601c-claimed-415-KO-S72",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:12:57.458Z",
+      "updated_at": "2026-10-16T06:57:58.624Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "44a134962d7639df9818c3dfbe61cd35e787039aeea85e4817189081771f02aa",
+      "source_commit": "c98394a4d4baf5c378650012263fef011326cd54"
+    },
+    {
+      "id": "KO-S73",
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "claim_id": "c467e7be-589a-41f4-8b7d-8906758ef89f-claimed-417-KO-S73",
+      "status": "CLAIMED",
+      "at": "2026-10-16T06:16:25.005Z",
+      "updated_at": "2026-10-16T06:16:25.005Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "KO-S74",
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "claim_id": "c467e7be-589a-41f4-8b7d-8906758ef89f-claimed-417-KO-S74",
+      "status": "CLAIMED",
+      "at": "2026-10-16T06:16:25.005Z",
+      "updated_at": "2026-10-16T06:16:25.005Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "KO-S75",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "3cfbac10-dbdb-4000-8ca9-73d76a0cf9f9-claimed-423-KO-S75",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:43:57.518Z",
+      "updated_at": "2026-10-16T07:18:46.071Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "5bc7b3e9c182561e6fb964c9d72d88d6a67c8f6d735ca231cd49a3510b5825cd",
+      "source_commit": "7aff893217ef5effc7105761629d980dced64696"
+    },
+    {
+      "id": "KO-S76",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "3cfbac10-dbdb-4000-8ca9-73d76a0cf9f9-claimed-423-KO-S76",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:43:57.518Z",
+      "updated_at": "2026-10-16T07:18:46.071Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "f37a56ee857f5c45b9c5a8ed3de1d28fadfe98cd23ef1b72102f6912279fb8b6",
+      "source_commit": "7aff893217ef5effc7105761629d980dced64696"
+    },
+    {
+      "id": "JA-S19",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "715fc00d-d86f-403b-acca-e84ee8a255d6-claimed-425-JA-S19",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:46:03.215Z",
+      "updated_at": "2026-10-16T07:25:37.765Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "82a38b5b5a0e38d8bbc347586081099621858481e107c8f28c06d8fac538aabd",
+      "source_commit": "a7eb126c8ec5111fdc3fd6a5958b49558a2aaab1"
+    },
+    {
+      "id": "KO-S19",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "715fc00d-d86f-403b-acca-e84ee8a255d6-claimed-425-KO-S19",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:46:03.215Z",
+      "updated_at": "2026-10-16T07:25:37.765Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "011f1915439d2cccc70ff0d6ab419915b10577722f4ed1b19dbad8155dbdc9d6",
+      "source_commit": "a7eb126c8ec5111fdc3fd6a5958b49558a2aaab1"
+    },
+    {
+      "id": "NL-S19",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "be9f6778-20ff-4b34-8764-20b96ba6a2ae-claimed-427-NL-S19",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:48:28.731Z",
+      "updated_at": "2026-10-16T07:29:13.767Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "ccfa1af5bee0d23ccfa70b704203ba7170478355bcc997ac846e4072fe40371d",
+      "source_commit": "7fa38f63c89832099122993dfd9e651f6810863f"
+    },
+    {
+      "id": "PT-S19",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "be9f6778-20ff-4b34-8764-20b96ba6a2ae-claimed-427-PT-S19",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:48:28.731Z",
+      "updated_at": "2026-10-16T07:29:13.767Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "72d540bc55024faea30069334530ed507cb12ce4ed17b00b958e7946583b1cca",
+      "source_commit": "7fa38f63c89832099122993dfd9e651f6810863f"
+    },
+    {
+      "id": "VI-S19",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "9c2e726e-8d0e-4511-9667-6673554b910e-claimed-430-VI-S19",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:55:31.126Z",
+      "updated_at": "2026-10-16T07:35:18.578Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "095356f8a216d47ff2d1056e49776d441873218e75e28546d0053767eaf47190",
+      "source_commit": "32a7f119597a08893d978f53a484eb2650834ca3"
+    },
+    {
+      "id": "ZH-S20",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "9c2e726e-8d0e-4511-9667-6673554b910e-claimed-430-ZH-S20",
+      "status": "SUBMITTED",
+      "at": "2026-10-16T06:55:31.126Z",
+      "updated_at": "2026-10-16T07:35:18.578Z",
+      "phase": "AWAITING_AUTOMATED_QA",
+      "source_sha256": "9d597ce89bdaa185070429e868e3b2aa0a8c3d073ee72155b9c40cdf80d50705",
+      "source_commit": "32a7f119597a08893d978f53a484eb2650834ca3"
+    },
+    {
+      "id": "DE-S20",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "8151b169-4537-4fe8-bcc9-2232d23719de-claimed-432-DE-S20",
+      "status": "CLAIMED",
+      "at": "2026-10-16T06:57:58.624Z",
+      "updated_at": "2026-10-16T06:57:58.624Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "EN-S21",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "8151b169-4537-4fe8-bcc9-2232d23719de-claimed-432-EN-S21",
+      "status": "CLAIMED",
+      "at": "2026-10-16T06:57:58.624Z",
+      "updated_at": "2026-10-16T06:57:58.624Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "JA-S68",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "37a24d20-0ce7-4852-8b91-9a3f47f1d09f-claimed-434-JA-S68",
+      "status": "CLAIMED",
+      "at": "2026-10-16T07:18:46.071Z",
+      "updated_at": "2026-10-16T07:18:46.071Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "JA-S69",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "37a24d20-0ce7-4852-8b91-9a3f47f1d09f-claimed-434-JA-S69",
+      "status": "CLAIMED",
+      "at": "2026-10-16T07:18:46.071Z",
+      "updated_at": "2026-10-16T07:18:46.071Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "JA-S70",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "a1ad002d-585c-46ab-8560-b82e014d6acb-claimed-436-JA-S70",
+      "status": "CLAIMED",
+      "at": "2026-10-16T07:25:37.765Z",
+      "updated_at": "2026-10-16T07:25:37.765Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "JA-S71",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "a1ad002d-585c-46ab-8560-b82e014d6acb-claimed-436-JA-S71",
+      "status": "CLAIMED",
+      "at": "2026-10-16T07:25:37.765Z",
+      "updated_at": "2026-10-16T07:25:37.765Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "JA-S72",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "e8ce2a65-457f-4266-92af-1171471fbefb-claimed-438-JA-S72",
+      "status": "CLAIMED",
+      "at": "2026-10-16T07:29:13.767Z",
+      "updated_at": "2026-10-16T07:29:13.767Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "JA-S73",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "e8ce2a65-457f-4266-92af-1171471fbefb-claimed-438-JA-S73",
+      "status": "CLAIMED",
+      "at": "2026-10-16T07:29:13.767Z",
+      "updated_at": "2026-10-16T07:29:13.767Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "JA-S74",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "5b0dd5a9-84fa-4cb1-9ca1-d935ee1ba071-claimed-440-JA-S74",
+      "status": "CLAIMED",
+      "at": "2026-10-16T07:35:18.578Z",
+      "updated_at": "2026-10-16T07:35:18.578Z",
+      "phase": "WRITING"
+    },
+    {
+      "id": "JA-S75",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
+      "claim_id": "5b0dd5a9-84fa-4cb1-9ca1-d935ee1ba071-claimed-440-JA-S75",
+      "status": "CLAIMED",
+      "at": "2026-10-16T07:35:18.578Z",
+      "updated_at": "2026-10-16T07:35:18.578Z",
       "phase": "WRITING"
     }
   ]
