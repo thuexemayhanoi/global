@@ -9376,17 +9376,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T09:51:08.271Z"
+    },
+    {
+      "id": "DE-S84",
+      "locale": "de",
+      "url": "/de/guides/blinker-roller-vietnam-regeln/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T09:57:41.727Z",
+      "source_sha256": "21b241195e3394e99140ce074c9450a886772139d04754dd5c2864a61fab4144",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S85",
+      "locale": "en",
+      "url": "/en/guides/motorbike-indicators-signalling-rules-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T09:57:41.727Z",
+      "source_sha256": "8e1d89413e76278f148c294dc9c501ee0847689aa0b3a5671765211bb2ad6054",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T03:42:03.214Z",
-      "ids": [
-        "NL-S62",
-        "NL-S63"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T03:43:22.395Z",
       "ids": [
@@ -10976,6 +10990,14 @@
         "VI-S80"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T09:57:41.727Z",
+      "ids": [
+        "DE-S84",
+        "EN-S85"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -10987,5 +11009,7 @@
     "commit": "d7f33c3bbe131b9a96279eed030dd027b0ca14c0",
     "live_seconds": 62
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 2
+  }
 }
