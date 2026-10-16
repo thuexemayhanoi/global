@@ -8440,17 +8440,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T06:38:44.692Z"
+    },
+    {
+      "id": "ZH-S69",
+      "locale": "zh",
+      "url": "/zh/guides/motuoche-houzuo-chengke-zhuyi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:44:18.740Z",
+      "source_sha256": "53ee9c2b973ace952ddc8ff83613a0391e89278e75c91fb8f9be318c9bf23213",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S70",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-mudu-jiaotong-shigu/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:44:18.740Z",
+      "source_sha256": "09236b6164c18d9010dfa289f15e499c99e2a1bd95d0053ff94b1342c54cd0de",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T02:24:44.578Z",
-      "ids": [
-        "NL-S45",
-        "NL-S46"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T02:26:03.152Z",
       "ids": [
@@ -10026,6 +10040,14 @@
         "KO-S66"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:44:18.740Z",
+      "ids": [
+        "ZH-S69",
+        "ZH-S70"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -10038,7 +10060,7 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2,
-    "REJECTED": 2
+    "REJECTED": 2,
+    "APPROVED_BY_POLICY": 2
   }
 }
