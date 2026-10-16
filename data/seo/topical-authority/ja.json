@@ -2560,6 +2560,60 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility2-0007.json@2a7b5801fda5"
       },
       "matrix_id": "JA-S65"
+    },
+    {
+      "candidate_id": "TA-JA-0060",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "yakubutsu-unten-bike-bakkin",
+      "primary_query": "ベトナム 薬物 運転 バイク 罰則",
+      "secondary_queries": [
+        "ベトナム 交通取り締まり 薬物検査",
+        "ベトナム 大麻 バイク 運転",
+        "ベトナム 薬物検査 拒否 罰金"
+      ],
+      "working_title": "ベトナムの薬物運転：禁止規定、検査と処分",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Japanese-speaking travellers know Vietnam has a zero-alcohol rule for riders but want to know how the law treats drugs and banned stimulants when riding, when riders are tested, what a positive test or a refusal costs and what to consider about medication.",
+      "content_angle": "Explains the ban on riding with drugs or banned stimulants in the body in Article 9(3) of Law 36/2024/QH15, testing at checks and after accidents under Articles 81 and 83, the penalties and the 22 to 24 month riding ban in Article 7 of Decree 168/2024/NĐ-CP (including refusing a test and the suspension of International Driving Permits under Article 5), the severe drug penalties described in the UK travel advice, and general advice on medication.",
+      "entities": [
+        "体内の薬物",
+        "道路交通秩序安全法第9条第3項",
+        "薬物検査",
+        "運転免許の使用停止",
+        "英国政府の渡航情報"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "en-fcdo-safety"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S27",
+          "reason": "JA-S27はベトナムの飲酒運転の基準とアルコールに関する罰金を扱います。このテーマは体内に薬物がある状態での運転の禁止、薬物検査、そしてはるかに重い処分を扱います。"
+        },
+        {
+          "id": "JA-S47",
+          "reason": "JA-S47はベトナムの運転免許の点数制度を説明します。このテーマは薬物を使用した状態での運転の禁止と、それに伴う罰金や免許の使用停止を扱います。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0015.json@d2b6a6a23500"
+      },
+      "matrix_id": "JA-S66"
     }
   ]
 }
