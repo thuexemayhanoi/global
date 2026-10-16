@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 309,
+  "clean_runs": 310,
   "published": [
     {
       "id": "NL-H01",
@@ -7168,33 +7168,55 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T03:59:34.858Z"
+    },
+    {
+      "id": "ZH-S27",
+      "locale": "zh",
+      "url": "/zh/guides/clutch-motorbike-practice-before-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:59:55.077Z",
+      "source_sha256": "ec54da7290fb17d65012a3ce702864bfa8ff1270e79a04dcc1929816070bbce3",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T04:01:39.094Z"
+    },
+    {
+      "id": "ZH-S28",
+      "locale": "zh",
+      "url": "/zh/guides/vietnam-drink-riding-zero-tolerance/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:59:55.077Z",
+      "source_sha256": "39a7b11592d9fac7fb8b58ab78081075ce6fc511bff3cb669ad2855d2d9e4dfc",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T04:01:39.094Z"
+    },
+    {
+      "id": "ZH-S32",
+      "locale": "zh",
+      "url": "/zh/guides/hanoi-winter-motorbike-riding/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T04:02:02.976Z",
+      "source_sha256": "6024a5a7fea336fcf5826265d9c477f6d84fe96fd803ab06387a2635527b1b7f",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S33",
+      "locale": "zh",
+      "url": "/zh/guides/vietnam-motorbike-trip-clothing/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T04:02:02.976Z",
+      "source_sha256": "d25a5ff157edfee91b833b581266689b6f80a453cf105cdadf38893a22f11c63",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T00:07:59.970Z",
-      "ids": [
-        "JA-S33",
-        "JA-S34"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T00:09:15.202Z",
-      "ids": [
-        "JA-S33",
-        "JA-S34"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T00:09:33.727Z",
-      "ids": [
-        "JA-S35",
-        "JA-S36"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T00:10:48.413Z",
       "ids": [
@@ -8750,18 +8772,42 @@
         "ZH-S19"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T03:59:55.077Z",
+      "ids": [
+        "ZH-S27",
+        "ZH-S28"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T04:01:39.094Z",
+      "ids": [
+        "ZH-S27",
+        "ZH-S28"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T04:02:02.976Z",
+      "ids": [
+        "ZH-S32",
+        "ZH-S33"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T03:59:34.858Z",
+    "at": "2026-10-16T04:01:39.094Z",
     "ids": [
-      "VI-S46",
-      "ZH-S19"
+      "ZH-S27",
+      "ZH-S28"
     ],
-    "commit": "e28013325615d1aa9e337d0235925fead635029e",
-    "live_seconds": 61
+    "commit": "71ee8bf5572c085926d6e2e3f2270fd34841d0d3",
+    "live_seconds": 83
   },
   "queue": {
-    "APPROVED_BY_POLICY": 4
+    "APPROVED_BY_POLICY": 2
   }
 }
