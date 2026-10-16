@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 373,
+  "clean_runs": 374,
   "published": [
     {
       "id": "NL-H01",
@@ -8714,7 +8714,8 @@
       "at": "2026-10-16T07:48:22.712Z",
       "source_sha256": "b78f3c1f64c9784d14986eee91d38032d5be1f1bd75b035922c7764146dc8cf9",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:49:47.500Z"
     },
     {
       "id": "ZH-S74",
@@ -8725,26 +8726,33 @@
       "at": "2026-10-16T07:48:22.712Z",
       "source_sha256": "bc565070157bd97d1b60633d48de065c8230a097b5e899aa91d0e9a24119afc4",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:49:47.500Z"
+    },
+    {
+      "id": "JA-S68",
+      "locale": "ja",
+      "url": "/ja/guides/scooter-brake-tsukaikata/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:50:48.650Z",
+      "source_sha256": "da39bb22a395fec514d2b64cfcd7ed6ac673276f78294bec86939dc15c44fe15",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S69",
+      "locale": "ja",
+      "url": "/ja/guides/yamamichi-kyuu-curve-hashirikata/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:50:48.650Z",
+      "source_sha256": "a2dfacf27ef89c49686b38bd92e80caf498ba9d4f1fd8405ed30a2ed944dd908",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T02:46:23.004Z",
-      "ids": [
-        "PT-S36",
-        "PT-S37"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:46:44.032Z",
-      "ids": [
-        "PT-S38",
-        "PT-S39"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T02:48:03.103Z",
       "ids": [
@@ -10312,16 +10320,32 @@
         "ZH-S74"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T07:49:47.500Z",
+      "ids": [
+        "ZH-S73",
+        "ZH-S74"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T07:50:48.650Z",
+      "ids": [
+        "JA-S68",
+        "JA-S69"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T07:42:11.341Z",
+    "at": "2026-10-16T07:49:47.500Z",
     "ids": [
-      "DE-S20",
-      "EN-S21"
+      "ZH-S73",
+      "ZH-S74"
     ],
-    "commit": "f147658bf9ed5b89a4019cab839fcd6a650a540a",
-    "live_seconds": 83
+    "commit": "862801c60d457da35e426d912d61c592efc919bb",
+    "live_seconds": 62
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
