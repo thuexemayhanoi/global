@@ -3146,6 +3146,64 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility2-0022.json@2f78a0a9234c"
       },
       "matrix_id": "VI-S76"
+    },
+    {
+      "candidate_id": "TA-VI-0071",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "nhung-noi-bat-buoc-giam-toc-do",
+      "primary_query": "những nơi phải giảm tốc độ khi đi xe máy",
+      "secondary_queries": [
+        "khi nào bắt buộc giảm tốc độ theo luật",
+        "không giảm tốc độ gây tai nạn phạt bao nhiêu",
+        "giảm tốc độ gần trường học chợ"
+      ],
+      "working_title": "Những nơi bắt buộc giảm tốc độ khi đi xe máy, kể cả khi chưa vượt tốc độ tối đa",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese-speaking riders who know the posted speed limits want to know in which places and situations the law requires them to watch, slow down or stop even below the limit, and what the penalty is if they do not and cause an accident.",
+      "content_angle": "Explains the duty to watch and slow down or stop in Article 12(3) of Law 36/2024/QH15 (pedestrian crossings, warning signs and obstacles, turns and poor visibility, junctions, railway crossings, narrow roads, bends and passes, narrow bridges and tunnels, schools, hospitals, markets, roadworks and accident scenes, animals, oncoming traffic and being overtaken, bus stops, oversized loads, priority vehicles, rain, fog and slippery surfaces, traffic checkpoints), what to do when being overtaken under Article 14(4), the warning signs W.224, W.225, W.227 and W.241 in QCVN 41:2024/BGTVT, why the posted limits in Circular 38/2024/TT-BGTVT do not replace this duty, and the penalties in Article 7 of Decree 168/2024/NĐ-CP for causing an accident by not slowing down (Article 7(10)(a) with 10 points under Article 7(13)(d)) and for entering a main road without slowing down and giving way (Article 7(6)(c)).",
+      "entities": [
+        "khoản 3 Điều 12 Luật 36/2024/QH15",
+        "biển W.224, W.225, W.227, W.241",
+        "Thông tư 38/2024/TT-BGTVT",
+        "điểm a khoản 10 Điều 7 Nghị định 168/2024/NĐ-CP"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-178d8fdf2864",
+        "rx-fbd928e9d7dd",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S30",
+          "reason": "VI-S30 giải thích tốc độ tối đa của xe máy trong và ngoài khu dân cư. Chủ đề này nói về những nơi luật buộc phải giảm tốc độ hoặc dừng lại dù chưa vượt tốc độ tối đa."
+        },
+        {
+          "id": "VI-S50",
+          "reason": "VI-S50 bàn về khoảng cách an toàn với xe phía trước tính bằng mét. Chủ đề này nói về các trường hợp ở khoản 3 Điều 12 phải quan sát, giảm tốc độ hoặc dừng lại."
+        },
+        {
+          "id": "VI-S49",
+          "reason": "VI-S49 chỉ nói về việc nhường đường cho người đi bộ ở vạch kẻ đường. Chủ đề này bao quát toàn bộ mười ba trường hợp bắt buộc giảm tốc độ, từ chợ, trường học đến trời mưa và đường đèo."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0024.json@e4ce1681da8a"
+      },
+      "matrix_id": "VI-S77"
     }
   ]
 }
