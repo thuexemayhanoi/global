@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 343,
+  "clean_runs": 344,
   "published": [
     {
       "id": "NL-H01",
@@ -7984,25 +7984,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T05:35:50.471Z"
+    },
+    {
+      "id": "ZH-S60",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-suidao-motuoche-guize/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:37:08.243Z",
+      "source_sha256": "b87efcd81b2521d6ca46a7257109e5cf7346ee7317d32df47a84a09a1519b96f",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:38:06.633Z"
+    },
+    {
+      "id": "ZH-S61",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-rang-jiuhuche-motuoche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:37:08.243Z",
+      "source_sha256": "3b09aacf7ac66f1c85285c62f5eacc803858a65b0f363c2793c3928aba7d4256",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:38:06.633Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T01:42:06.433Z",
-      "ids": [
-        "KO-S38",
-        "KO-S39"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T01:43:20.774Z",
-      "ids": [
-        "KO-S38",
-        "KO-S39"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T01:53:45.151Z",
       "ids": [
@@ -9570,16 +9578,32 @@
         "ZH-S59"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:37:08.243Z",
+      "ids": [
+        "ZH-S60",
+        "ZH-S61"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:38:06.633Z",
+      "ids": [
+        "ZH-S60",
+        "ZH-S61"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T05:35:50.471Z",
+    "at": "2026-10-16T05:38:06.633Z",
     "ids": [
-      "ZH-S58",
-      "ZH-S59"
+      "ZH-S60",
+      "ZH-S61"
     ],
-    "commit": "72638e11c604bc856b0d6acf9dc17c44624a7a62",
-    "live_seconds": 62
+    "commit": "90be7d0f47e3fca70570a42cd83ddfeab6c6fb8e",
+    "live_seconds": 43
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
