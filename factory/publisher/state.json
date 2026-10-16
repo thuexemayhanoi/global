@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 237,
+  "clean_runs": 239,
   "published": [
     {
       "id": "NL-H01",
@@ -5536,41 +5536,57 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T01:20:09.258Z"
+    },
+    {
+      "id": "JA-S62",
+      "locale": "ja",
+      "url": "/ja/guides/kinkyuu-sharyou-michi-yuzuru/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:28:00.122Z",
+      "source_sha256": "83b4483f7e2550d04f3e4de92bbc2da0c390b6b74741e783329094b7cd40268d",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T01:29:12.818Z"
+    },
+    {
+      "id": "JA-S63",
+      "locale": "ja",
+      "url": "/ja/guides/keisatsukan-te-shingou/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:28:00.122Z",
+      "source_sha256": "a5debda4f72a23a7392f68a8ec738e157c1a1fa7d30e94709d6d6d8e6f91eef2",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T01:29:12.818Z"
+    },
+    {
+      "id": "JA-S64",
+      "locale": "ja",
+      "url": "/ja/guides/douro-doubutsu-bike-chuui/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:29:32.378Z",
+      "source_sha256": "53847e7b0222a8116f271d078dab82ba67d2eb6558d2a4724e462b925ba7f6f1",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T01:30:50.308Z"
+    },
+    {
+      "id": "JA-S65",
+      "locale": "ja",
+      "url": "/ja/guides/seibi-furyou-bakkin-mirror/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:29:32.378Z",
+      "source_sha256": "6e7a86f74222b02b81f8b72dd35f67f14fa3a0adf454387cb34b2d4f39b56574",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T01:30:50.308Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T21:09:36.524Z",
-      "ids": [
-        "EN-S61",
-        "EN-S62"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T21:10:49.385Z",
-      "ids": [
-        "EN-S61",
-        "EN-S62"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T21:11:07.052Z",
-      "ids": [
-        "EN-S63",
-        "EN-S64"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T21:12:20.222Z",
-      "ids": [
-        "EN-S63",
-        "EN-S64"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T21:16:30.025Z",
       "ids": [
@@ -7096,16 +7112,48 @@
         "JA-S61"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T01:28:00.122Z",
+      "ids": [
+        "JA-S62",
+        "JA-S63"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T01:29:12.818Z",
+      "ids": [
+        "JA-S62",
+        "JA-S63"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T01:29:32.378Z",
+      "ids": [
+        "JA-S64",
+        "JA-S65"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T01:30:50.308Z",
+      "ids": [
+        "JA-S64",
+        "JA-S65"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T01:20:09.258Z",
+    "at": "2026-10-16T01:30:50.308Z",
     "ids": [
-      "JA-S60",
-      "JA-S61"
+      "JA-S64",
+      "JA-S65"
     ],
-    "commit": "2255fed052ec313736e78908f9eb45b62a8cffca",
-    "live_seconds": 41
+    "commit": "211d30c03a29b999e6556440baff89b85efc3018",
+    "live_seconds": 62
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
