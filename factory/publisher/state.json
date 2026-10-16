@@ -9664,17 +9664,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T10:57:43.524Z"
+    },
+    {
+      "id": "ES-S72",
+      "locale": "es",
+      "url": "/es/guides/moto-retenida-por-la-policia-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T15:38:23.745Z",
+      "source_sha256": "ee85f1a283abecce8b3fc9944f5acd12b0e728d519c30f0905b0403157a82fe3",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ES-S73",
+      "locale": "es",
+      "url": "/es/guides/equipaje-en-la-moto-vietnam-limites/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T15:38:23.745Z",
+      "source_sha256": "f868f413f54a085c06ebb9b2576fe8d3e93d791c1c5ee48e140b43dc471c128d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T04:09:31.247Z",
-      "ids": [
-        "ZH-S38",
-        "ZH-S39"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T04:10:46.551Z",
       "ids": [
@@ -11266,6 +11280,14 @@
         "ZH-S82"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T15:38:23.745Z",
+      "ids": [
+        "ES-S72",
+        "ES-S73"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -11277,5 +11299,7 @@
     "commit": "fa4f568048aef30ad62126857f8bb2fcf770eb9d",
     "live_seconds": 162
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 2
+  }
 }
