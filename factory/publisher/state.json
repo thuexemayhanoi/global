@@ -4984,17 +4984,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T00:15:22.312Z"
+    },
+    {
+      "id": "EN-S81",
+      "locale": "en",
+      "url": "/en/guides/e-bike-rules-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:20:59.438Z",
+      "source_sha256": "b7ac90803316f20ff49332e615b8394a15e3194a7af57ad2d0f26913f367446e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S82",
+      "locale": "en",
+      "url": "/en/guides/cycling-rules-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:20:59.438Z",
+      "source_sha256": "f870f4668782fe1d3ef8137f130e7900fa17f7b9fc6557f12858ba5676454d9e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T19:53:35.347Z",
-      "ids": [
-        "DE-S54",
-        "EN-S40"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T19:54:47.932Z",
       "ids": [
@@ -6532,6 +6546,14 @@
         "JA-S40"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T00:20:59.438Z",
+      "ids": [
+        "EN-S81",
+        "EN-S82"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -6542,5 +6564,7 @@
     "commit": "ce9c984bc1b9a4814ad2b82a9e07ebbd26e4f49e",
     "live_seconds": 42
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 2
+  }
 }
