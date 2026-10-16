@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 413,
+  "clean_runs": 414,
   "published": [
     {
       "id": "NL-H01",
@@ -9674,7 +9674,8 @@
       "at": "2026-10-16T15:38:23.745Z",
       "source_sha256": "ee85f1a283abecce8b3fc9944f5acd12b0e728d519c30f0905b0403157a82fe3",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T15:39:49.034Z"
     },
     {
       "id": "ES-S73",
@@ -9685,26 +9686,33 @@
       "at": "2026-10-16T15:38:23.745Z",
       "source_sha256": "f868f413f54a085c06ebb9b2576fe8d3e93d791c1c5ee48e140b43dc471c128d",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T15:39:49.034Z"
+    },
+    {
+      "id": "ES-S74",
+      "locale": "es",
+      "url": "/es/guides/intermitentes-moto-vietnam-normas/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T15:40:31.652Z",
+      "source_sha256": "1c31eadb714e1090402fd20204988f9d5640e8f216709cb380a292eda9d0a69a",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ES-S75",
+      "locale": "es",
+      "url": "/es/guides/moto-sin-manos-zigzag-confiscacion-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T15:40:31.652Z",
+      "source_sha256": "724bc9fbf33647889a7df23ad99295e20512811834cbfdf9fe945bf0a5f99b8d",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T04:10:46.551Z",
-      "ids": [
-        "ZH-S38",
-        "ZH-S39"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T04:15:16.604Z",
-      "ids": [
-        "PT-S56",
-        "PT-S57"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T04:16:30.137Z",
       "ids": [
@@ -11288,16 +11296,32 @@
         "ES-S73"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T15:39:49.034Z",
+      "ids": [
+        "ES-S72",
+        "ES-S73"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T15:40:31.652Z",
+      "ids": [
+        "ES-S74",
+        "ES-S75"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T10:57:43.524Z",
+    "at": "2026-10-16T15:39:49.034Z",
     "ids": [
-      "JA-S83",
-      "ZH-S82"
+      "ES-S72",
+      "ES-S73"
     ],
-    "commit": "fa4f568048aef30ad62126857f8bb2fcf770eb9d",
-    "live_seconds": 162
+    "commit": "a3ac839d5b1d1d9a7a53631bb491034ac96a5aaa",
+    "live_seconds": 62
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
