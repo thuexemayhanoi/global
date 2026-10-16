@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility2",
   "batch_session": "research-claude-20261015-mobility2",
   "created_at": "2026-10-15T23:01:23.660Z",
-  "updated_at": "2026-10-16T05:08:32.701Z",
-  "base_main_sha": "ff0b8088773e8597f842ef2e160348af63c99966",
-  "last_commit_sha": "d2b6a6a23500c7ba8d93f74af361a5eb09b85647",
+  "updated_at": "2026-10-16T05:20:46.721Z",
+  "base_main_sha": "3717033540246663a600ae0151de1c627e127fed",
+  "last_commit_sha": "088c5b64dabdcade7e8cf1f34a269df05908c266",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 160,
-    "qa_pass": 160,
+    "researched": 170,
+    "qa_pass": 170,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 150,
+    "pushed": 160,
     "pending_push": 10
   },
   "coverage": {
@@ -32,18 +32,18 @@
       "ko": 21,
       "zh": 21,
       "pt": 22,
-      "nl": 11,
+      "nl": 21,
       "vi": 20
     },
     "domains": {
-      "traffic-law-safety": 150,
-      "motorbike-rental": 10
+      "traffic-law-safety": 157,
+      "motorbike-rental": 13
     }
   },
   "last_batch": {
-    "seq": 16,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0016.json",
-    "sha256": "4cf43cf03787572ffb8d36cfe5d38da6887179eb848557ea6bfedb64b25fd4a8",
+    "seq": 17,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0017.json",
+    "sha256": "deef46ffa1d4b6c015bdb6bc5eb5c1cf68b80d5390ad9dd0a703ac3f88ed09ae",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -1718,8 +1718,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility2-0016.json",
       "sha256": "4cf43cf03787572ffb8d36cfe5d38da6887179eb848557ea6bfedb64b25fd4a8",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "088c5b64dabdcade7e8cf1f34a269df05908c266",
       "researched_on": "2026-10-16",
       "topics": [
         {
@@ -1730,7 +1730,7 @@
           "parent_id": "EN-H03",
           "subcluster": "dc-papers",
           "key": "en::motorbike impounded by police in vietnam",
-          "ta_id": null
+          "ta_id": "TA-EN-0087"
         },
         {
           "ref": "de:roller-sichergestellt-polizei-vietnam",
@@ -1740,7 +1740,7 @@
           "parent_id": "DE-H03",
           "subcluster": "dc-papers",
           "key": "de::roller von polizei sichergestellt vietnam",
-          "ta_id": null
+          "ta_id": "TA-DE-0076"
         },
         {
           "ref": "fr:scooter-fourriere-police-vietnam",
@@ -1750,7 +1750,7 @@
           "parent_id": "FR-H03",
           "subcluster": "dc-papers",
           "key": "fr::scooter mis en fourriere par la police au vietnam",
-          "ta_id": null
+          "ta_id": "TA-FR-0076"
         },
         {
           "ref": "nl:scooter-in-beslag-genomen-vietnam",
@@ -1760,7 +1760,7 @@
           "parent_id": "NL-H03",
           "subcluster": "dc-papers",
           "key": "nl::scooter in beslag genomen door politie vietnam",
-          "ta_id": null
+          "ta_id": "TA-NL-0060"
         },
         {
           "ref": "ja:keisatsu-bike-ichiji-oushuu",
@@ -1770,7 +1770,7 @@
           "parent_id": "JA-H03",
           "subcluster": "dc-papers",
           "key": "ja::ヘトナム ハイク 警察 押収",
-          "ta_id": null
+          "ta_id": "TA-JA-0061"
         },
         {
           "ref": "vi:xe-may-bi-tam-giu-khi-nao",
@@ -1780,7 +1780,7 @@
           "parent_id": "VI-H03",
           "subcluster": "dc-papers",
           "key": "vi::xe may bi tam giu khi nao",
-          "ta_id": null
+          "ta_id": "TA-VI-0060"
         },
         {
           "ref": "pt:moto-retida-pela-policia-vietname",
@@ -1790,7 +1790,7 @@
           "parent_id": "PT-H03",
           "subcluster": "dc-papers",
           "key": "pt::moto apreendida pela policia no vietname",
-          "ta_id": null
+          "ta_id": "TA-PT-0060"
         },
         {
           "ref": "pt:sentido-proibido-passeio-moto-vietname",
@@ -1800,7 +1800,7 @@
           "parent_id": "PT-H04",
           "subcluster": "ss-city",
           "key": "pt::andar em sentido proibido de moto no vietname multa",
-          "ta_id": null
+          "ta_id": "TA-PT-0061"
         },
         {
           "ref": "zh:yuenan-motuoche-nixing-renxingdao",
@@ -1810,7 +1810,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南骑摩托车逆行罚款",
-          "ta_id": null
+          "ta_id": "TA-ZH-0060"
         },
         {
           "ref": "ko:sinhodeung-gyuchik-otobai",
@@ -1820,14 +1820,125 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-city",
           "key": "ko::베트남 신호등 규칙 오토바이",
+          "ta_id": "TA-KO-0060"
+        }
+      ]
+    },
+    {
+      "seq": 17,
+      "file": "factory/topic-research/batches/claude-20261015-mobility2-0017.json",
+      "sha256": "deef46ffa1d4b6c015bdb6bc5eb5c1cf68b80d5390ad9dd0a703ac3f88ed09ae",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-16",
+      "topics": [
+        {
+          "ref": "nl:goed-remmen-scooter-voorrem-achterrem",
+          "locale": "nl",
+          "slug": "goed-remmen-scooter-voorrem-achterrem",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::goed remmen met een scooter voorrem en achterrem",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:haarspeldbochten-scooter-bergweg",
+          "locale": "nl",
+          "slug": "haarspeldbochten-scooter-bergweg",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::haarspeldbochten rijden met een scooter tips",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:duopassagier-achterop-scooter-tips",
+          "locale": "nl",
+          "slug": "duopassagier-achterop-scooter-tips",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::achterop een scooter zitten tips",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:getuige-van-een-ongeluk-vietnam",
+          "locale": "nl",
+          "slug": "getuige-van-een-ongeluk-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::getuige van een verkeersongeluk in vietnam wat doen",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:hoeveel-uur-per-dag-scooter-rijden-vermoeidheid",
+          "locale": "nl",
+          "slug": "hoeveel-uur-per-dag-scooter-rijden-vermoeidheid",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::hoeveel uur per dag scooter rijden vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:eerste-keer-automaat-scooter-oefenen",
+          "locale": "nl",
+          "slug": "eerste-keer-automaat-scooter-oefenen",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-transmission",
+          "key": "nl::eerste keer op een automaat scooter oefenen",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:elektrische-scooter-actieradius-opladen-vietnam",
+          "locale": "nl",
+          "slug": "elektrische-scooter-actieradius-opladen-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-power",
+          "key": "nl::elektrische scooter vietnam actieradius en opladen",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:gaten-grind-wegdek-scooter-vietnam",
+          "locale": "nl",
+          "slug": "gaten-grind-wegdek-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-weather",
+          "key": "nl::gaten in de weg en grind scooter vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:dode-hoek-vrachtwagen-bus-scooter-vietnam",
+          "locale": "nl",
+          "slug": "dode-hoek-vrachtwagen-bus-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::dode hoek vrachtwagen en bus scooter vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:honda-smart-key-scooter-gebruiken",
+          "locale": "nl",
+          "slug": "honda-smart-key-scooter-gebruiken",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-models",
+          "key": "nl::honda smart key scooter gebruiken",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 17,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0017.json",
+    "seq": 18,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0018.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -1951,6 +2062,13 @@
       "seq": 16,
       "topics": 10,
       "sha256": "4cf43cf03787572ffb8d36cfe5d38da6887179eb848557ea6bfedb64b25fd4a8"
+    },
+    {
+      "at": "2026-10-16T05:20:46.721Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 17,
+      "topics": 10,
+      "sha256": "deef46ffa1d4b6c015bdb6bc5eb5c1cf68b80d5390ad9dd0a703ac3f88ed09ae"
     }
   ]
 }
