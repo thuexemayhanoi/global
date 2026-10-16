@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 335,
+  "clean_runs": 336,
   "published": [
     {
       "id": "NL-H01",
@@ -7802,7 +7802,8 @@
       "at": "2026-10-16T05:15:35.995Z",
       "source_sha256": "2549408cccb89197a0acc28f8be28caf5bf925686091e5981ff97b66b612c71c",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:16:53.505Z"
     },
     {
       "id": "VI-S55",
@@ -7813,26 +7814,33 @@
       "at": "2026-10-16T05:15:35.995Z",
       "source_sha256": "d8cfdbbe83c7dd83c5ef6e9f81fd438cf12fc369285ee9471f0008284fa97e78",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:16:53.505Z"
+    },
+    {
+      "id": "VI-S62",
+      "locale": "vi",
+      "url": "/vi/guides/di-xe-may-qua-duong-ngang-duong-sat/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:17:14.372Z",
+      "source_sha256": "ec9ead0d7a7cb65d697149aaa2df513f51a2e384d09b68a8ba755f10aad72d00",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "VI-S63",
+      "locale": "vi",
+      "url": "/vi/guides/di-phuot-xe-may-theo-doan/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:17:14.372Z",
+      "source_sha256": "d4c7b84917df279e84bffde723efa797bcf22b503c5f93f2f9777cd8b31fb51e",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T01:18:54.755Z",
-      "ids": [
-        "JA-S58",
-        "JA-S59"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T01:19:13.884Z",
-      "ids": [
-        "JA-S60",
-        "JA-S61"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T01:20:09.258Z",
       "ids": [
@@ -9400,16 +9408,32 @@
         "VI-S55"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:16:53.505Z",
+      "ids": [
+        "VI-S54",
+        "VI-S55"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:17:14.372Z",
+      "ids": [
+        "VI-S62",
+        "VI-S63"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T05:15:14.353Z",
+    "at": "2026-10-16T05:16:53.505Z",
     "ids": [
-      "VI-S58",
-      "VI-S59"
+      "VI-S54",
+      "VI-S55"
     ],
-    "commit": "4c94e5c011a8150b38e47ac543d343de79e6b06d",
-    "live_seconds": 81
+    "commit": "c884f02ad2036595e188619a0dec7ac2cb043a8d",
+    "live_seconds": 62
   },
   "queue": {
     "APPROVED_BY_POLICY": 8
