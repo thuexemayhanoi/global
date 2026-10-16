@@ -5200,16 +5200,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T00:38:20.617Z"
+    },
+    {
+      "id": "FR-S80",
+      "locale": "fr",
+      "url": "/fr/guides/velo-electrique-regles-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:40:35.095Z",
+      "source_sha256": "3a63b43ad9a0458167b308ecf45c9508e9382fb230c42c45818773e79d7ef832",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S81",
+      "locale": "fr",
+      "url": "/fr/guides/fatigue-pauses-long-trajet-scooter-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:40:35.095Z",
+      "source_sha256": "73322f39aefe67f929767dd3ddfa634f4e1fa1b4c0cd946f759006ccbeb242cd",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T20:26:53.626Z",
-      "ids": [
-        "DE-S63"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T20:28:25.610Z",
       "ids": [
@@ -6754,6 +6769,14 @@
         "FR-S79"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T00:40:35.095Z",
+      "ids": [
+        "FR-S80",
+        "FR-S81"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -6765,5 +6788,7 @@
     "commit": "53aa15e0101149619d46a57c11e50ab0b79d2581",
     "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 2
+  }
 }
