@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 417,
+  "revision": 419,
   "claims": [
     {
       "id": "ES-H01",
@@ -10669,10 +10669,10 @@
       "claim_id": "ea866560-474e-4378-8a77-99bbd80aacb6-claimed-373-DE-S82",
       "status": "SUBMITTED",
       "at": "2026-10-16T05:09:56.212Z",
-      "updated_at": "2026-10-16T06:10:16.071Z",
-      "phase": "CROSS_WRITER_REPAIR_HANDOFF",
-      "source_sha256": "44f2e35033bec585a5177bfd3be04d750427b4b77274def4ecc444e653a9f74b",
-      "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+      "updated_at": "2026-10-16T06:27:45.322Z",
+      "phase": "REVISED_AWAITING_AUTO_QA",
+      "source_sha256": "07644206d7b4abce84d8adceab404a61031efcddf57550ff6ffeba5b0d11f49d",
+      "source_commit": "c78983d4fbab8bca95b4fc82452d27167ea4f270",
       "handoffs": [
         {
           "writer": "W1",
@@ -10686,8 +10686,21 @@
           "at": "2026-10-16T06:10:16.071Z"
         }
       ],
-      "source_path": "factory/external-writers/inbox/W1/DE-S82.json",
-      "source_branch": "writer/w1-vibe-20261014"
+      "source_path": "factory/external-writers/inbox/W3/revisions/DE-S82.r2.json",
+      "source_branch": "writer/w3-live",
+      "revisions": [
+        {
+          "source_sha256": "44f2e35033bec585a5177bfd3be04d750427b4b77274def4ecc444e653a9f74b",
+          "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+          "source_path": "factory/external-writers/inbox/W1/DE-S82.json",
+          "review_verdict": "QA_FAIL",
+          "repair_gates": [
+            "G3_OFFICIAL_EVIDENCE"
+          ],
+          "superseded_at": "2026-10-16T06:27:45.322Z"
+        }
+      ],
+      "revision": 2
     },
     {
       "id": "EN-S83",
@@ -10697,10 +10710,10 @@
       "claim_id": "ea866560-474e-4378-8a77-99bbd80aacb6-claimed-373-EN-S83",
       "status": "SUBMITTED",
       "at": "2026-10-16T05:09:56.212Z",
-      "updated_at": "2026-10-16T06:10:16.071Z",
-      "phase": "CROSS_WRITER_REPAIR_HANDOFF",
-      "source_sha256": "b2e94e5a8d6520b13c5aaa64157f2c53dadbe14f051a6d4e3391dd5f69509dd7",
-      "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+      "updated_at": "2026-10-16T06:27:45.322Z",
+      "phase": "REVISED_AWAITING_AUTO_QA",
+      "source_sha256": "1ad05f5f267c938497ab0016e4335990a0cbc4b079cc23f5b08ef9ff5273fe59",
+      "source_commit": "c78983d4fbab8bca95b4fc82452d27167ea4f270",
       "handoffs": [
         {
           "writer": "W1",
@@ -10714,8 +10727,21 @@
           "at": "2026-10-16T06:10:16.071Z"
         }
       ],
-      "source_path": "factory/external-writers/inbox/W1/EN-S83.json",
-      "source_branch": "writer/w1-vibe-20261014"
+      "source_path": "factory/external-writers/inbox/W3/revisions/EN-S83.r2.json",
+      "source_branch": "writer/w3-live",
+      "revisions": [
+        {
+          "source_sha256": "b2e94e5a8d6520b13c5aaa64157f2c53dadbe14f051a6d4e3391dd5f69509dd7",
+          "source_commit": "24282aed339b890b7f2482cdf8e462ba44e05221",
+          "source_path": "factory/external-writers/inbox/W1/EN-S83.json",
+          "review_verdict": "QA_FAIL",
+          "repair_gates": [
+            "G3_OFFICIAL_EVIDENCE"
+          ],
+          "superseded_at": "2026-10-16T06:27:45.322Z"
+        }
+      ],
+      "revision": 2
     },
     {
       "id": "FR-S82",
@@ -10831,29 +10857,59 @@
     },
     {
       "id": "PT-S66",
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
       "claim_id": "ea866560-474e-4378-8a77-99bbd80aacb6-claimed-373-PT-S66",
       "status": "SUBMITTED",
       "at": "2026-10-16T05:09:56.212Z",
-      "updated_at": "2026-10-16T06:16:25.005Z",
-      "phase": "AWAITING_AUTOMATED_QA",
+      "updated_at": "2026-10-16T06:27:45.322Z",
+      "phase": "CROSS_WRITER_REPAIR_HANDOFF",
       "source_sha256": "2f35e2774e6d5b3f84bb73f08d88fc0b277abfc5d5c38f4fa05ac9bf25f4cd1f",
-      "source_commit": "5a28bdf19c8c2cacec6198285b731fa42abd3949"
+      "source_commit": "5a28bdf19c8c2cacec6198285b731fa42abd3949",
+      "handoffs": [
+        {
+          "writer": "W1",
+          "session": "w1-vibe-20261014",
+          "branch": "writer/w1-vibe-20261014",
+          "source_path": "factory/external-writers/inbox/W1/PT-S66.json",
+          "source_sha256": "2f35e2774e6d5b3f84bb73f08d88fc0b277abfc5d5c38f4fa05ac9bf25f4cd1f",
+          "source_commit": "5a28bdf19c8c2cacec6198285b731fa42abd3949",
+          "to_writer": "W3",
+          "to_session": "w3-live",
+          "at": "2026-10-16T06:27:45.322Z"
+        }
+      ],
+      "source_path": "factory/external-writers/inbox/W1/PT-S66.json",
+      "source_branch": "writer/w1-vibe-20261014"
     },
     {
       "id": "PT-S67",
-      "writer": "W1",
-      "session": "w1-vibe-20261014",
-      "branch": "writer/w1-vibe-20261014",
+      "writer": "W3",
+      "session": "w3-live",
+      "branch": "writer/w3-live",
       "claim_id": "ea866560-474e-4378-8a77-99bbd80aacb6-claimed-373-PT-S67",
       "status": "SUBMITTED",
       "at": "2026-10-16T05:09:56.212Z",
-      "updated_at": "2026-10-16T06:16:25.005Z",
-      "phase": "AWAITING_AUTOMATED_QA",
+      "updated_at": "2026-10-16T06:27:45.322Z",
+      "phase": "CROSS_WRITER_REPAIR_HANDOFF",
       "source_sha256": "b3178699c4ff774a0e4b5a59f471f05e18a072f59afb07bbf4110d06c3b7eb9d",
-      "source_commit": "5a28bdf19c8c2cacec6198285b731fa42abd3949"
+      "source_commit": "5a28bdf19c8c2cacec6198285b731fa42abd3949",
+      "handoffs": [
+        {
+          "writer": "W1",
+          "session": "w1-vibe-20261014",
+          "branch": "writer/w1-vibe-20261014",
+          "source_path": "factory/external-writers/inbox/W1/PT-S67.json",
+          "source_sha256": "b3178699c4ff774a0e4b5a59f471f05e18a072f59afb07bbf4110d06c3b7eb9d",
+          "source_commit": "5a28bdf19c8c2cacec6198285b731fa42abd3949",
+          "to_writer": "W3",
+          "to_session": "w3-live",
+          "at": "2026-10-16T06:27:45.322Z"
+        }
+      ],
+      "source_path": "factory/external-writers/inbox/W1/PT-S67.json",
+      "source_branch": "writer/w1-vibe-20261014"
     },
     {
       "id": "VI-S66",
