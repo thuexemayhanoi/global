@@ -3204,6 +3204,172 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility2-0024.json@e4ce1681da8a"
       },
       "matrix_id": "VI-S77"
+    },
+    {
+      "candidate_id": "TA-VI-0072",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "vach-ke-duong-y-nghia-xe-may",
+      "primary_query": "vạch kẻ đường ý nghĩa",
+      "secondary_queries": [
+        "vạch vàng liền có được đè không",
+        "vạch dừng đèn đỏ xe máy",
+        "vạch trắng nét đứt chuyển làn"
+      ],
+      "working_title": "Vạch kẻ đường: ý nghĩa vạch vàng, vạch trắng, vạch dừng và vạch đi bộ khi đi xe máy",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese-speaking riders want to know what each yellow and white line on the road means, which ones they may cross or ride on, and how markings rank against police signals, lights and signs, because fines for wrong lanes and markings are common at checks.",
+      "content_angle": "Explains the road markings in QCVN 41:2024/BGTVT (yellow centre lines 1.1 dashed, 1.2 solid, 1.3 double solid and 1.4 solid-dashed; white lane lines 2.1 and 2.2 and reserved-lane line 2.3; edge lines 3.1; hatched marking 4.1; stop line 7.1 with sign R.122; give-way line 7.2 with W.208 in its two forms; pedestrian crossing 7.3), the order of priority between police signals, lights, signs and markings in Article 11(2) of Law 36/2024/QH15, the temporary-sign rule in Article 11(12), the amber-light rule at the stop line in Article 11(4)(b), and the penalties in Article 7 of Decree 168/2024/NĐ-CP for not following markings, riding in the wrong lane and overtaking where it is forbidden.",
+      "entities": [
+        "phụ lục G QCVN 41:2024/BGTVT",
+        "vạch tim đường 1.1 đến 1.4",
+        "vạch dừng xe 7.1",
+        "vạch nhường đường 7.2",
+        "vạch đi bộ qua đường 7.3",
+        "khoản 2 Điều 11 Luật 36/2024/QH15"
+      ],
+      "references": [
+        "rx-178d8fdf2864",
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S32",
+          "reason": "VI-S32 giới thiệu biển báo cấm và các biển báo người đi xe máy cần biết. Chủ đề này chỉ nói về các vạch sơn trên mặt đường và vạch nào được đè, được cắt qua."
+        },
+        {
+          "id": "VI-S43",
+          "reason": "VI-S43 bàn về việc xe máy đi làn nào và chuyển làn ra sao. Chủ đề này giải thích ý nghĩa của từng loại vạch kẻ trên đường."
+        },
+        {
+          "id": "VI-S49",
+          "reason": "VI-S49 chỉ nói về việc nhường đường cho người đi bộ tại vạch đi bộ qua đường. Chủ đề này bao quát toàn bộ hệ thống vạch kẻ đường, từ vạch tim đường đến vạch dừng."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0025.json@0cda2072046c"
+      },
+      "matrix_id": "VI-S78"
+    },
+    {
+      "candidate_id": "TA-VI-0073",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-power",
+      "slug": "xe-dap-dien-quy-dinh-mu-bao-hiem",
+      "primary_query": "luật xe đạp điện chở người đội mũ",
+      "secondary_queries": [
+        "xe đạp điện khác xe máy điện thế nào",
+        "xe đạp điện có phải đăng ký không",
+        "xe đạp điện bị phạt lỗi gì"
+      ],
+      "working_title": "Xe đạp điện: quy định đội mũ bảo hiểm, chở người và khi nào không còn là xe đạp",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese-speaking riders, including students and parents buying an e-bike for a teenager, want to know when an electric bicycle counts as a bicycle rather than a moped, whether a helmet is compulsory, how many people it may carry and which fines apply.",
+      "content_angle": "Explains the legal definition of e-bikes in Article 34(2)(b) of Law 36/2024/QH15 (xe đạp máy, including xe đạp điện: motor assistance that cuts out when the rider stops pedalling or at 25 km/h) as non-motorised vehicles, the difference from a moped in Article 34(1)(g), why the licence duty of Article 56(1) does not reach e-bikes under Article 2(9), the fastened motorcycle helmet for rider and passenger in Article 31(3) and Article 9(4)(d)-(đ) of Decree 168/2024/NĐ-CP, the passenger limit of one, or two with a child under seven, in Article 31(1), the riding bans shared with motorbikes through Article 31(2) and 33(3), single-file riding and front and rear lights from 18:00 to 06:00 in Article 31(4), the expressway ban in Article 25(3), the passenger fine for using an umbrella in Article 12(1) of the decree, and the other penalties in Article 9 of Decree 168/2024/NĐ-CP.",
+      "entities": [
+        "xe đạp máy và xe đạp điện",
+        "điểm b khoản 2 Điều 34 Luật 36/2024/QH15",
+        "trợ lực đến 25 km/h",
+        "Điều 31 Luật 36/2024/QH15",
+        "Điều 9 Nghị định 168/2024/NĐ-CP"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S73",
+          "reason": "VI-S73 nói về quãng đường thực tế và cách sạc an toàn của xe máy điện. Chủ đề này nói về địa vị pháp lý và quy tắc giao thông của xe đạp điện có trợ lực bàn đạp."
+        },
+        {
+          "id": "VI-S02",
+          "reason": "VI-S02 so sánh xe 50cc với xe điện như một lựa chọn thuê xe. Chủ đề này giải thích các quy định áp dụng cho xe đạp điện và khi nào nó được coi là xe đạp."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0025.json@0cda2072046c"
+      },
+      "matrix_id": "VI-S79"
+    },
+    {
+      "candidate_id": "TA-VI-0074",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "quy-dinh-giao-thong-cho-xe-dap",
+      "primary_query": "luật giao thông cho người đi xe đạp",
+      "secondary_queries": [
+        "đi xe đạp ban đêm phải có đèn không",
+        "đi xe đạp hàng ba bị phạt",
+        "xe đạp chở hai người có bị phạt"
+      ],
+      "working_title": "Đi xe đạp đúng luật: quy tắc giao thông và mức phạt dành cho người đi xe đạp",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese-speaking cyclists, from students riding to school to visitors cycling in Hội An, want a clear summary of the traffic rules and fines that apply to bicycles: passengers, lights, riding abreast, loads, umbrellas and phones.",
+      "content_angle": "Explains the rules for bicycles as non-motorised vehicles under Law 36/2024/QH15 (Article 34(2)(a)): one passenger, or two with a child under seven (Article 31(1)), the riding bans shared with motorbikes through Article 31(2) and 33(3) and the passenger bans of Article 33(4), single file, cycle lanes and the rightmost lane (Article 31(4) and 13(3)), front and rear lights from 18:00 to 06:00 (Article 31(4)), load limits of one third of the bike's length, 1 m in front and behind and 0.4 m to each side (Article 31(5)), the expressway ban (Article 25(3)), the bicycle-crossing sign W.226 in QCVN 41:2024/BGTVT, and the cyclist penalties in Article 9 of Decree 168/2024/NĐ-CP together with the passenger fines in Article 12(1) and 12(2)(đ).",
+      "entities": [
+        "xe thô sơ",
+        "Điều 31 Luật 36/2024/QH15",
+        "đèn hoặc báo hiệu từ 18 giờ đến 6 giờ",
+        "biển W.226",
+        "Điều 9 Nghị định 168/2024/NĐ-CP"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "rx-178d8fdf2864"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S11",
+          "reason": "VI-S11 hướng dẫn người đi xe máy chạy trong phố cổ và giờ cao điểm Hà Nội. Chủ đề này nói về các quy định riêng cho người đi xe đạp, từ đèn chiếu sáng đến mức phạt."
+        },
+        {
+          "id": "VI-S37",
+          "reason": "VI-S37 giải thích xe máy được chở mấy người và khi nào chở ba bị phạt. Chủ đề này nói về quy định chở người, đèn và mức phạt của xe đạp thông thường."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0025.json@0cda2072046c"
+      },
+      "matrix_id": "VI-S80"
     }
   ]
 }
