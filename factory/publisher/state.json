@@ -5824,17 +5824,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T02:01:16.539Z"
+    },
+    {
+      "id": "KO-S50",
+      "locale": "ko",
+      "url": "/ko/guides/deowi-yeolsabyeong-otobai/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:01:34.253Z",
+      "source_sha256": "7636e97ed98f2a4f5fee35cd99cf387d8cfd02115054facc99b9a81ae9d69202",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S51",
+      "locale": "ko",
+      "url": "/ko/guides/hanoi-daegi-oyeom-otobai/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:01:34.253Z",
+      "source_sha256": "42e185ca3c00d417ac433557d0a6ff1cb0c54397b41eb35f15a53d64e0274cad",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T21:41:11.400Z",
-      "ids": [
-        "ES-S27",
-        "ES-S28"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T21:42:24.204Z",
       "ids": [
@@ -7392,6 +7406,14 @@
         "KO-S49"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:01:34.253Z",
+      "ids": [
+        "KO-S50",
+        "KO-S51"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -7404,6 +7426,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 6
   }
 }
