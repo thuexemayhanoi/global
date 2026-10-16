@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 389,
+  "clean_runs": 391,
   "published": [
     {
       "id": "NL-H01",
@@ -9098,7 +9098,8 @@
       "at": "2026-10-16T08:57:58.120Z",
       "source_sha256": "4ff8ffa221b111db4be317dea2715412f101ea82efb8bcc762d3e61b9f906734",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T08:59:35.825Z"
     },
     {
       "id": "KO-S78",
@@ -9109,32 +9110,35 @@
       "at": "2026-10-16T08:57:58.120Z",
       "source_sha256": "1b0bc57cb5d32e4ed718ee6f09dbc6e07786e8f80cc8411d5a02ac7567fd6659",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T08:59:35.825Z"
+    },
+    {
+      "id": "JA-S79",
+      "locale": "ja",
+      "url": "/ja/guides/denki-jitensha-rule-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T09:00:30.350Z",
+      "source_sha256": "b0946e998cc79e28272163813e00063a6cf19081e3ee09a8a5acb9a283d87ad7",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T09:02:28.452Z"
+    },
+    {
+      "id": "JA-S80",
+      "locale": "ja",
+      "url": "/ja/guides/jitensha-koutsuu-rule-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T09:00:30.350Z",
+      "source_sha256": "468f8e577dbe1a2e80eaae76c3e61e1a9a6bb4a819e822cefce9e02837d57eb0",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T09:02:28.452Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T03:20:00.963Z",
-      "ids": [
-        "VI-S33",
-        "VI-S34"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T03:20:18.446Z",
-      "ids": [
-        "VI-S35"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T03:21:35.768Z",
-      "ids": [
-        "VI-S35"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T03:22:19.492Z",
       "ids": [
@@ -10708,16 +10712,40 @@
         "KO-S78"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T08:59:35.825Z",
+      "ids": [
+        "JA-S78",
+        "KO-S78"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T09:00:30.350Z",
+      "ids": [
+        "JA-S79",
+        "JA-S80"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T09:02:28.452Z",
+      "ids": [
+        "JA-S79",
+        "JA-S80"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T08:56:49.945Z",
+    "at": "2026-10-16T09:02:28.452Z",
     "ids": [
-      "ES-S20",
-      "FR-S21"
+      "JA-S79",
+      "JA-S80"
     ],
-    "commit": "896bae68a805b7f3c979c18f1690876dbff0607b",
-    "live_seconds": 62
+    "commit": "c202683cf28fdb11aa93db69d94ef6b8c7426fcf",
+    "live_seconds": 102
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
