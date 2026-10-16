@@ -5032,16 +5032,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T00:24:31.529Z"
+    },
+    {
+      "id": "ES-S68",
+      "locale": "es",
+      "url": "/es/guides/bicicleta-electrica-normas-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:26:53.718Z",
+      "source_sha256": "282613b56a1c61722bfd680a6a6deebecedc87afb2d3135a9662842576f97663",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ES-S69",
+      "locale": "es",
+      "url": "/es/guides/ir-en-bicicleta-por-vietnam-normas/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:26:53.718Z",
+      "source_sha256": "9bf1c01c5aed5ae0dda147c540beb8c99b3f923d9bd4f4f420be2713ae2b0e48",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T20:03:11.147Z",
-      "ids": [
-        "EN-S42"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T20:04:21.695Z",
       "ids": [
@@ -6580,6 +6595,14 @@
         "DE-S81"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T00:26:53.718Z",
+      "ids": [
+        "ES-S68",
+        "ES-S69"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -6591,5 +6614,7 @@
     "commit": "f07aa3b8cad02bf9ae7634082bba0bf0a15959ba",
     "live_seconds": 62
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 4
+  }
 }
