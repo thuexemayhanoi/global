@@ -4864,17 +4864,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T00:00:40.528Z"
+    },
+    {
+      "id": "JA-S31",
+      "locale": "ja",
+      "url": "/ja/guides/vietnam-road-signs-for-bikes/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:06:46.863Z",
+      "source_sha256": "845aded6fcd4499d6ec45c568e9cecd8c74be47951f7bfef836f191803e20665",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S32",
+      "locale": "ja",
+      "url": "/ja/guides/hanoi-winter-bike-riding/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:06:46.863Z",
+      "source_sha256": "1e813103a8ee7485cdd7288538d26fead20f0ddc49b30fc1632e24f8a989a2b3",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T19:25:51.280Z",
-      "ids": [
-        "EN-S35",
-        "EN-S36"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T19:27:23.132Z",
       "ids": [
@@ -6414,6 +6428,14 @@
         "JA-S30"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T00:06:46.863Z",
+      "ids": [
+        "JA-S31",
+        "JA-S32"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -6424,5 +6446,7 @@
     "commit": "8365c1efce592d0927ee1feaa921d24f4517e231",
     "live_seconds": 81
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 7
+  }
 }
