@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 360,
+  "clean_runs": 361,
   "published": [
     {
       "id": "NL-H01",
@@ -8392,25 +8392,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T06:29:17.275Z"
+    },
+    {
+      "id": "FR-S82",
+      "locale": "fr",
+      "url": "/fr/guides/scooter-fourriere-police-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:31:53.631Z",
+      "source_sha256": "a14cdf40944c5fcd7ce5312636ce647478521a1503c9d777b48616cf7cba0989",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:33:33.735Z"
+    },
+    {
+      "id": "NL-S66",
+      "locale": "nl",
+      "url": "/nl/guides/scooter-in-beslag-genomen-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:31:53.631Z",
+      "source_sha256": "1e46626a854b3478c9a8cf215fcd9bfd1439aa6c41a24d3135fa62b34f72566c",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:33:33.735Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T02:21:29.694Z",
-      "ids": [
-        "NL-S41",
-        "NL-S42"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:22:27.116Z",
-      "ids": [
-        "NL-S41",
-        "NL-S42"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T02:22:46.435Z",
       "ids": [
@@ -9978,19 +9986,35 @@
         "EN-S83"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:31:53.631Z",
+      "ids": [
+        "FR-S82",
+        "NL-S66"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:33:33.735Z",
+      "ids": [
+        "FR-S82",
+        "NL-S66"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T06:29:17.275Z",
+    "at": "2026-10-16T06:33:33.735Z",
     "ids": [
-      "DE-S82",
-      "EN-S83"
+      "FR-S82",
+      "NL-S66"
     ],
-    "commit": "bbbff2dda4a1c463dc19026edec9a02c63fd470e",
-    "live_seconds": 62
+    "commit": "e7b06e06c72794e73d0764ce8cf7e382704842e6",
+    "live_seconds": 81
   },
   "queue": {
     "APPROVED_BY_POLICY": 2,
-    "REJECTED": 6
+    "REJECTED": 4
   }
 }
