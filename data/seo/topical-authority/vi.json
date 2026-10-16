@@ -3543,6 +3543,63 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility2-0027.json@4148411487df"
       },
       "matrix_id": "VI-S83"
+    },
+    {
+      "candidate_id": "TA-VI-0078",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "cho-tre-em-bang-xe-may-quy-dinh",
+      "primary_query": "chở trẻ em bằng xe máy đội mũ bảo hiểm",
+      "secondary_queries": [
+        "trẻ em dưới 6 tuổi ngồi trước xe máy",
+        "chở hai trẻ em dưới 12 tuổi",
+        "không đội mũ bảo hiểm cho trẻ em có bị phạt"
+      ],
+      "working_title": "Chở trẻ em bằng xe máy: mũ bảo hiểm, chỗ ngồi và quy định với trẻ dưới 6 tuổi, dưới 12 tuổi",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese parents who take children to school by motorbike search for when a child counts toward the passenger limit, whether children must wear helmets, whether a small child may sit in front and what the fines are, because these questions come up every school day.",
+      "content_angle": "Explains the rules for carrying children on a motorbike under Law 36/2024/QH15: one passenger, or two when one of them is a child under 12 (Article 33(1)(c)); a fastened helmet that meets the national standard for the rider and every passenger (Article 33(2)); the passenger bans of Article 33(4) that also apply to children; the penalties in Decree 168/2024/NĐ-CP: VND 400,000 to 600,000 for carrying two people outside the exceptions (Article 7(2)(g)) and for carrying a passenger without a fastened motorcycle helmet, with an exception for children under six (Article 7(2)(i)), VND 600,000 to 800,000 and 2 licence points for carrying three or more people (Article 7(3)(b) and 7(13)(a)), VND 8,000,000 to 10,000,000 and licence suspension for steering from behind the person in front unless that person is a child under six sitting in front (Article 7(9)(h) and 7(12)(b)), and the passenger's own fine for riding without a helmet (Article 12(5)(b)); and general advice on child-sized helmets, where a small child sits, holding on, keeping legs away from the exhaust, heat, rain and short stages.",
+      "entities": [
+        "điểm c khoản 1 Điều 33 Luật 36/2024/QH15",
+        "khoản 2 Điều 33 Luật 36/2024/QH15",
+        "điểm i khoản 2 Điều 7 Nghị định 168/2024/NĐ-CP",
+        "điểm h khoản 9 Điều 7 Nghị định 168/2024/NĐ-CP",
+        "điểm b khoản 5 Điều 12 Nghị định 168/2024/NĐ-CP"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S37",
+          "reason": "VI-S37 trả lời câu hỏi xe máy chở 3 người có bị phạt không và các trường hợp được chở hai người. Chủ đề này nói về trẻ em là người được chở: mũ bảo hiểm, chỗ ngồi của trẻ nhỏ và các mức phạt liên quan."
+        },
+        {
+          "id": "VI-S69",
+          "reason": "VI-S69 hướng dẫn tư thế và quy định cho người lớn ngồi sau. Chủ đề này nói về quy định và cách chở trẻ em an toàn trên xe máy."
+        },
+        {
+          "id": "VI-S33",
+          "reason": "VI-S33 nói về đồ bảo hộ cho người lớn khi đi phượt. Chủ đề này nói về nghĩa vụ đội mũ bảo hiểm cho trẻ em và những gì luật cho phép khi chở trẻ."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0028.json@4e21c23a3cf3"
+      },
+      "matrix_id": "VI-S84"
     }
   ]
 }
