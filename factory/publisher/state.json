@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 239,
+  "clean_runs": 240,
   "published": [
     {
       "id": "NL-H01",
@@ -5584,32 +5584,55 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T01:30:50.308Z"
+    },
+    {
+      "id": "KO-S30",
+      "locale": "ko",
+      "url": "/ko/guides/vietnam-compulsory-motorbike-insurance/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:35:29.482Z",
+      "source_sha256": "ff95fb665145bea26380cfc205051a05b657d7dfee69629bf342669c23231033",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T01:36:44.663Z"
+    },
+    {
+      "id": "KO-S31",
+      "locale": "ko",
+      "url": "/ko/guides/vietnam-road-signs-for-riders/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:35:29.482Z",
+      "source_sha256": "c214433181b8afa71b8458eddfdd75576936d6a40f8f02fc1dc79bff0785e12c",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T01:36:44.663Z"
+    },
+    {
+      "id": "KO-S32",
+      "locale": "ko",
+      "url": "/ko/guides/hanoi-winter-motorbike-riding/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:37:03.292Z",
+      "source_sha256": "c76fa72e3056b5338fe2f90620876fac0c767cbda2d9a845894924e195e99ddb",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S33",
+      "locale": "ko",
+      "url": "/ko/guides/vietnam-motorbike-trip-clothing/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:37:03.292Z",
+      "source_sha256": "4e8ca76322d61709b91927dabddb32bcf7bdf560437191f75f74dc7e4013b8eb",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T21:16:30.025Z",
-      "ids": [
-        "DE-S70",
-        "DE-S71"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T21:17:41.553Z",
-      "ids": [
-        "DE-S70",
-        "DE-S71"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T21:17:58.167Z",
-      "ids": [
-        "DE-S72"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T21:19:10.062Z",
       "ids": [
@@ -7144,18 +7167,42 @@
         "JA-S65"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T01:35:29.482Z",
+      "ids": [
+        "KO-S30",
+        "KO-S31"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T01:36:44.663Z",
+      "ids": [
+        "KO-S30",
+        "KO-S31"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T01:37:03.292Z",
+      "ids": [
+        "KO-S32",
+        "KO-S33"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T01:30:50.308Z",
+    "at": "2026-10-16T01:36:44.663Z",
     "ids": [
-      "JA-S64",
-      "JA-S65"
+      "KO-S30",
+      "KO-S31"
     ],
-    "commit": "211d30c03a29b999e6556440baff89b85efc3018",
-    "live_seconds": 62
+    "commit": "38012dad0d3bf7a87520b69eaec09bda816ca88b",
+    "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 4
   }
 }
