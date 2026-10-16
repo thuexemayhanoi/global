@@ -5872,17 +5872,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T02:04:38.900Z"
+    },
+    {
+      "id": "KO-S54",
+      "locale": "ko",
+      "url": "/ko/guides/hoengdanbodo-bohaengja-useon/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:04:57.657Z",
+      "source_sha256": "18a4888636f6d41721e17e6bb706a1e2fdb8e523943ea6e22b3935fe0e4eaeaa",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S55",
+      "locale": "ko",
+      "url": "/ko/guides/anjeongeori-otobai/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:04:57.657Z",
+      "source_sha256": "867047d3fc36ceb0db872f2a6a0e529ee05961428e8caf6cf66d404f443df7bf",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T21:46:52.976Z",
-      "ids": [
-        "ES-S18",
-        "ES-S29"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T21:48:05.505Z",
       "ids": [
@@ -7440,6 +7454,14 @@
         "KO-S53"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:04:57.657Z",
+      "ids": [
+        "KO-S54",
+        "KO-S55"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -7452,6 +7474,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 4
+    "APPROVED_BY_POLICY": 2
   }
 }
