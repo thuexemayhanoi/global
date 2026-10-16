@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 322,
+  "clean_runs": 323,
   "published": [
     {
       "id": "NL-H01",
@@ -7490,7 +7490,8 @@
       "at": "2026-10-16T04:50:18.439Z",
       "source_sha256": "e38b3727378717b9a3a1edfabd6267b9a2ddebbc008cd47cf09444cc8ca09cc3",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T04:51:39.211Z"
     },
     {
       "id": "KO-S63",
@@ -7501,26 +7502,33 @@
       "at": "2026-10-16T04:50:18.439Z",
       "source_sha256": "a456e46ff8f6562dcf6e07244cc40bfa0849bb7bff4783886fa55774565e1f64",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T04:51:39.211Z"
+    },
+    {
+      "id": "KO-S64",
+      "locale": "ko",
+      "url": "/ko/guides/cheoldo-geonneolmok-otobai/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T04:52:20.786Z",
+      "source_sha256": "bb44a622519823281cfc6ef0cc9749167f7a8a6cef159d9c930beb56a25cf448",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S65",
+      "locale": "ko",
+      "url": "/ko/guides/geurup-raiding-gyuchik/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T04:52:20.786Z",
+      "source_sha256": "2a847d840c1208fd468b99f3c0a1a8da27fd8adafbc211de29f742c17d51e930",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T00:38:20.617Z",
-      "ids": [
-        "FR-S77",
-        "FR-S79"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T00:40:35.095Z",
-      "ids": [
-        "FR-S80",
-        "FR-S81"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T00:42:09.169Z",
       "ids": [
@@ -9088,15 +9096,31 @@
         "KO-S63"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T04:51:39.211Z",
+      "ids": [
+        "KO-S62",
+        "KO-S63"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T04:52:20.786Z",
+      "ids": [
+        "KO-S64",
+        "KO-S65"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T04:49:19.673Z",
+    "at": "2026-10-16T04:51:39.211Z",
     "ids": [
-      "KO-S60",
-      "KO-S61"
+      "KO-S62",
+      "KO-S63"
     ],
-    "commit": "a0e4a4581e01fc8def9a4b833b401126e1046bdb",
+    "commit": "196e81aee37b2a9b6b8da875d208b203e3df6eb4",
     "live_seconds": 62
   },
   "queue": {
