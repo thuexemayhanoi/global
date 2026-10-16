@@ -7696,17 +7696,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T05:08:01.477Z"
+    },
+    {
+      "id": "ZH-S48",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-tielu-daokou-motuoche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:08:22.703Z",
+      "source_sha256": "2d57293d3ba4cd3f19c04d08ff4d19ece5838285e7e29312897f08e14c04f23b",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S49",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-jieban-qixing-motuoche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:08:22.703Z",
+      "source_sha256": "29cfcf9747e84a73be9691cc154da7894f6ec152b1e41eaf1884f39716df8655",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T00:57:36.330Z",
-      "ids": [
-        "JA-S55",
-        "KO-S18"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T00:58:53.872Z",
       "ids": [
@@ -9282,6 +9296,14 @@
         "ZH-S47"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:08:22.703Z",
+      "ids": [
+        "ZH-S48",
+        "ZH-S49"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -9294,6 +9316,6 @@
     "live_seconds": 63
   },
   "queue": {
-    "APPROVED_BY_POLICY": 6
+    "APPROVED_BY_POLICY": 4
   }
 }
