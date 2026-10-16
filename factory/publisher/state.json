@@ -5488,17 +5488,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T01:17:29.140Z"
+    },
+    {
+      "id": "JA-S58",
+      "locale": "ja",
+      "url": "/ja/guides/group-touring-bike/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:17:56.930Z",
+      "source_sha256": "d8bf1cfad9d3a41a7ac61ef20b905a17dd32ba5abd8c81f0b051c6d79064ff3c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S59",
+      "locale": "ja",
+      "url": "/ja/guides/bike-kenin-kinshi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:17:56.930Z",
+      "source_sha256": "df43070fb6a41fff0b2da447c393e387ae06747a7b2776986714d416dc2fa29b",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T21:06:51.628Z",
-      "ids": [
-        "EN-S57",
-        "EN-S58"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T21:08:06.343Z",
       "ids": [
@@ -7048,6 +7062,14 @@
         "JA-S57"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T01:17:56.930Z",
+      "ids": [
+        "JA-S58",
+        "JA-S59"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -7060,6 +7082,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 6
+    "APPROVED_BY_POLICY": 4
   }
 }
