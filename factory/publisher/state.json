@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 388,
+  "clean_runs": 389,
   "published": [
     {
       "id": "NL-H01",
@@ -9064,23 +9064,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T08:46:56.161Z"
+    },
+    {
+      "id": "ES-S20",
+      "locale": "es",
+      "url": "/es/guides/cilindrada-110-125-150/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T08:55:28.880Z",
+      "source_sha256": "75e1a6a045deb27058792e864bfd53ab0f6af0bda9139fe0367e38e29ef2db8a",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T08:56:49.945Z"
+    },
+    {
+      "id": "FR-S21",
+      "locale": "fr",
+      "url": "/fr/guides/cylindree-110-125-150/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T08:55:28.880Z",
+      "source_sha256": "52bcc30ca6bf6c4f9578ffed3e0618467d2f8eea49dc0d1d2632eda83588cf84",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T08:56:49.945Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T03:16:52.360Z",
-      "ids": [
-        "VI-S32"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T03:18:05.118Z",
-      "ids": [
-        "VI-S32"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T03:18:23.706Z",
       "ids": [
@@ -10660,16 +10670,32 @@
         "ZH-S77"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T08:55:28.880Z",
+      "ids": [
+        "ES-S20",
+        "FR-S21"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T08:56:49.945Z",
+      "ids": [
+        "ES-S20",
+        "FR-S21"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T08:46:56.161Z",
+    "at": "2026-10-16T08:56:49.945Z",
     "ids": [
-      "VI-S76",
-      "ZH-S77"
+      "ES-S20",
+      "FR-S21"
     ],
-    "commit": "83563471fe1f2f062038bc552dace1b50688a6d1",
-    "live_seconds": 43
+    "commit": "896bae68a805b7f3c979c18f1690876dbff0607b",
+    "live_seconds": 62
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
