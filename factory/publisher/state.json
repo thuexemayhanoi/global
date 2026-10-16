@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 405,
+  "clean_runs": 407,
   "published": [
     {
       "id": "NL-H01",
@@ -9482,7 +9482,8 @@
       "at": "2026-10-16T10:19:44.859Z",
       "source_sha256": "012137f50b7f37769c4a0d5defbc361110f9660ad79f4f3ed003a48f849d8461",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T10:21:12.993Z"
     },
     {
       "id": "EN-S86",
@@ -9493,34 +9494,35 @@
       "at": "2026-10-16T10:19:44.859Z",
       "source_sha256": "913d047a36c393dadce69513b30f815098aaf349bfbe5866ac7762709c9561fb",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T10:21:12.993Z"
+    },
+    {
+      "id": "FR-S86",
+      "locale": "fr",
+      "url": "/fr/guides/rouler-sans-les-mains-scooter-vietnam-sanctions/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T10:22:23.064Z",
+      "source_sha256": "98019c979ca3640062db4a8db8c40d7ab2f782fd235a00d7044f4b3d373ee957",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T10:24:25.642Z"
+    },
+    {
+      "id": "NL-S84",
+      "locale": "nl",
+      "url": "/nl/guides/zonder-handen-stunten-scooter-vietnam-boete/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T10:22:23.064Z",
+      "source_sha256": "854b20a32f597194c3c759d3584561c097760ac80500217ceda6bb38b1b087dd",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T10:24:25.642Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T03:54:45.569Z",
-      "ids": [
-        "VI-S40",
-        "VI-S41"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T03:55:04.708Z",
-      "ids": [
-        "VI-S42",
-        "VI-S43"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T03:56:23.120Z",
-      "ids": [
-        "VI-S42",
-        "VI-S43"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T03:56:40.680Z",
       "ids": [
@@ -11096,16 +11098,40 @@
         "EN-S86"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T10:21:12.993Z",
+      "ids": [
+        "DE-S85",
+        "EN-S86"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T10:22:23.064Z",
+      "ids": [
+        "FR-S86",
+        "NL-S84"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T10:24:25.642Z",
+      "ids": [
+        "FR-S86",
+        "NL-S84"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T10:06:50.931Z",
+    "at": "2026-10-16T10:24:25.642Z",
     "ids": [
-      "PT-S82",
-      "VI-S81"
+      "FR-S86",
+      "NL-S84"
     ],
-    "commit": "9a9876c14f5cccca14d9f5dca3df94a7f41eee92",
-    "live_seconds": 61
+    "commit": "2de967ea7198c6d44801aee8aff2cb7da6f2a4fe",
+    "live_seconds": 102
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
