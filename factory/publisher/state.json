@@ -7552,17 +7552,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T04:55:55.333Z"
+    },
+    {
+      "id": "ZH-S42",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-motuoche-chaoche-guize/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T04:56:40.929Z",
+      "source_sha256": "dc0ca743c072744d1039516c567236a066f2a94341b3384fa5e417bf7c9738bb",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S43",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-motuoche-diaotou-guiding/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T04:56:40.929Z",
+      "source_sha256": "5d786adc82afeb2f55a60cebb3e5049121abab698be8dd80b9056bcfa4ae4748",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T00:44:49.922Z",
-      "ids": [
-        "JA-S43",
-        "JA-S44"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T00:45:45.179Z",
       "ids": [
@@ -9138,6 +9152,14 @@
         "PT-S65"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T04:56:40.929Z",
+      "ids": [
+        "ZH-S42",
+        "ZH-S43"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -9150,6 +9172,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 10
   }
 }
