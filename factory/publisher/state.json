@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 437,
+  "clean_runs": 439,
   "published": [
     {
       "id": "NL-H01",
@@ -10250,7 +10250,8 @@
       "at": "2026-10-16T16:56:24.862Z",
       "source_sha256": "04d0bf737d8f2397ef3ffecc0b6e2bc5ea2de1b37647da45fb87b5668251f1ca",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:57:54.766Z"
     },
     {
       "id": "KO-S87",
@@ -10261,34 +10262,35 @@
       "at": "2026-10-16T16:56:24.862Z",
       "source_sha256": "f31108ab87eb28e0f2d03f2e57832e026313b285c48b85728501a9828f554b3f",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:57:54.766Z"
+    },
+    {
+      "id": "NL-S88",
+      "locale": "nl",
+      "url": "/nl/guides/tweedehands-scooter-kopen-vietnam-overschrijven/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:58:47.801Z",
+      "source_sha256": "800283cb75a54a722443ac9c3a7c4b5b7963ef641ea4b266f5c22cd36d7ce8e3",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T17:00:11.064Z"
+    },
+    {
+      "id": "PT-S88",
+      "locale": "pt",
+      "url": "/pt/guides/comprar-moto-usada-vietname-registo/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:58:47.801Z",
+      "source_sha256": "04cf46f1b77132ac424d79b45e03ca31dc3e8c883969d548ae9439857c21fee7",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T17:00:11.064Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T05:21:13.158Z",
-      "ids": [
-        "VI-S64",
-        "VI-S65"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T05:21:36.945Z",
-      "ids": [
-        "ZH-S50",
-        "ZH-S51"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T05:23:18.443Z",
-      "ids": [
-        "ZH-S50",
-        "ZH-S51"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T05:23:40.836Z",
       "ids": [
@@ -11864,16 +11866,40 @@
         "KO-S87"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T16:57:54.766Z",
+      "ids": [
+        "JA-S87",
+        "KO-S87"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T16:58:47.801Z",
+      "ids": [
+        "NL-S88",
+        "PT-S88"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T17:00:11.064Z",
+      "ids": [
+        "NL-S88",
+        "PT-S88"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T16:55:32.366Z",
+    "at": "2026-10-16T17:00:11.064Z",
     "ids": [
-      "ES-S79",
-      "FR-S91"
+      "NL-S88",
+      "PT-S88"
     ],
-    "commit": "c5b24328257f3b910bc9901c007dc224c0f26c05",
-    "live_seconds": 61
+    "commit": "342174fbdb1cfe4189c847f25a6c93a136936744",
+    "live_seconds": 62
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
