@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 345,
+  "clean_runs": 346,
   "published": [
     {
       "id": "NL-H01",
@@ -8032,25 +8032,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T05:40:45.004Z"
+    },
+    {
+      "id": "VI-S66",
+      "locale": "vi",
+      "url": "/vi/guides/xe-may-bi-tam-giu-khi-nao/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:43:15.288Z",
+      "source_sha256": "1e32095c80f7f169800ce351305e418c1137c8ab32db3fcab7ed188a1352ffe8",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:44:14.931Z"
+    },
+    {
+      "id": "ZH-S64",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-motuoche-houshijing-fakuan/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:43:15.288Z",
+      "source_sha256": "eacb968a20820a7dfdeb53d12173a8a528af4de0aceab37684de1e941c8e8805",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:44:14.931Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T01:55:00.607Z",
-      "ids": [
-        "KO-S42",
-        "KO-S43"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T01:56:18.342Z",
-      "ids": [
-        "KO-S42",
-        "KO-S43"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T01:56:43.325Z",
       "ids": [
@@ -9618,16 +9626,32 @@
         "ZH-S63"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:43:15.288Z",
+      "ids": [
+        "VI-S66",
+        "ZH-S64"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:44:14.931Z",
+      "ids": [
+        "VI-S66",
+        "ZH-S64"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T05:40:45.004Z",
+    "at": "2026-10-16T05:44:14.931Z",
     "ids": [
-      "ZH-S62",
-      "ZH-S63"
+      "VI-S66",
+      "ZH-S64"
     ],
-    "commit": "76d9f86d19604427034d9f125b90fbcb64f5955c",
-    "live_seconds": 62
+    "commit": "d877940ba4937b2f5aeee5e8ec10c5ca8f107740",
+    "live_seconds": 42
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
