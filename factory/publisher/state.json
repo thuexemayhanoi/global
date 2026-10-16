@@ -4912,17 +4912,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T00:09:15.202Z"
+    },
+    {
+      "id": "JA-S35",
+      "locale": "ja",
+      "url": "/ja/guides/hanoi-bike-parking/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:09:33.727Z",
+      "source_sha256": "0cf35f3adadbbeba956cc13ccd4002914ed67802c3be14c755e3eae00f6eb19a",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S36",
+      "locale": "ja",
+      "url": "/ja/guides/vietnam-night-bike-riding/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:09:33.727Z",
+      "source_sha256": "0c6893181be2f6fdc20cf8ff31db623b833bc765fe5af6fa2a8b5748183bb77e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T19:30:52.991Z",
-      "ids": [
-        "DE-S46",
-        "DE-S47"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T19:32:44.821Z",
       "ids": [
@@ -6464,6 +6478,14 @@
         "JA-S34"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T00:09:33.727Z",
+      "ids": [
+        "JA-S35",
+        "JA-S36"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -6476,6 +6498,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 5
+    "APPROVED_BY_POLICY": 3
   }
 }
