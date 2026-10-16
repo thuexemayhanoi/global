@@ -2023,6 +2023,543 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility2-0005.json@1b84bc1d058c"
       },
       "matrix_id": "JA-S55"
+    },
+    {
+      "candidate_id": "TA-JA-0050",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "shingou-mikata-bike",
+      "primary_query": "ベトナム 信号の見方 バイク",
+      "secondary_queries": [
+        "ベトナム 黄色 点滅 信号",
+        "ベトナム 矢印信号 意味",
+        "ベトナム 信号無視 罰金"
+      ],
+      "working_title": "ベトナムの信号の見方：矢印信号、黄色の点滅、カウントダウンとバイクの罰金",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Japanese riders meet arrow signals, flashing yellow lights and countdown timers at Hanoi junctions and want to know exactly what each one allows, especially turning on an arrow or making a U-turn, and what running a light costs.",
+      "content_angle": "Explains Article 11(4) of Law 36/2024/QH15 (green, yellow, flashing yellow, red) and QCVN 41:2024/BGTVT Article 6 (green arrows that alone permit a movement, a left arrow that also permits a U-turn unless prohibited, countdown timers, the red cross signal), plus the Decree 168/2024/NĐ-CP penalty and licence point deduction for ignoring a traffic light in Article 7(7)(c) and 7(13)(b).",
+      "entities": [
+        "信号",
+        "黄色の点滅",
+        "矢印信号",
+        "カウントダウン表示",
+        "政令168/2024/NĐ-CP第7条7項c"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-178d8fdf2864",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S39",
+          "reason": "JA-S39は交差点とロータリーで車両どうしがどちらを優先するかを説明する。このテーマは信号の色や矢印、点滅、カウントダウン表示の意味と信号無視の罰金を説明する。"
+        },
+        {
+          "id": "JA-S31",
+          "reason": "JA-S31はよく見る道路標識を全体的に紹介する。このテーマは信号機の表示に絞り、矢印信号やUターンの可否まで詳しく説明する。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0007.json@2a7b5801fda5"
+      },
+      "matrix_id": "JA-S56"
+    },
+    {
+      "candidate_id": "TA-JA-0051",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "fumikiri-watarikata-bike",
+      "primary_query": "ベトナム 踏切 バイク 渡り方",
+      "secondary_queries": [
+        "ベトナム 踏切 一時停止",
+        "ベトナム 踏切 警報 赤色点滅",
+        "ハノイ 線路 バイク 注意"
+      ],
+      "working_title": "ベトナムでバイクで踏切を渡るとき：止まる場所、禁止事項、罰金",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Riders crossing railway lines in and around Hanoi want to know where to stop, what the warning signs and flashing lights mean, what is banned at and near level crossings, and what to do if the bike stalls on the track.",
+      "content_angle": "Explains the level-crossing duties in Article 24 of Law 36/2024/QH15 (give way to trains, stop at signals and barriers, what to do if a vehicle stalls on the track), the bans on overtaking, U-turns and stopping at or near level crossings in Articles 14(6), 15(4) and 18(4), the QCVN 41:2024/BGTVT warning signs W.210, W.211 and W.242 and the flashing red light, and the related penalties in Article 7 of Decree 168/2024/NĐ-CP.",
+      "entities": [
+        "踏切",
+        "道路交通秩序安全法第24条",
+        "警戒標識W.210とW.211",
+        "赤色の点滅灯",
+        "政令168/2024/NĐ-CP第7条"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-178d8fdf2864",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S39",
+          "reason": "JA-S39は交差点での優先順位を中心に説明し、踏切には短く触れるだけである。このテーマは踏切で止まる位置、警報、禁止事項、立ち往生したときの対応を詳しく説明する。"
+        },
+        {
+          "id": "JA-S11",
+          "reason": "JA-S11はハノイ市内の交通の流れを説明する。このテーマは鉄道の踏切を安全に渡るためのルールと罰金に絞って説明する。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0007.json@2a7b5801fda5"
+      },
+      "matrix_id": "JA-S57"
+    },
+    {
+      "candidate_id": "TA-JA-0052",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "group-touring-bike",
+      "primary_query": "ベトナム バイク グループ ツーリング 注意",
+      "secondary_queries": [
+        "ベトナム バイク 並走 禁止",
+        "ベトナム バイク 仲間と走る",
+        "ベトナム ツーリング 隊列"
+      ],
+      "working_title": "ベトナムのバイクのグループツーリング：並走の禁止と安全な走り方",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Friends travelling together on several rented motorbikes want to know how to ride as a group legally, since riding abreast, racing and speeding as a group are fined, and how to organise the ride so nobody gets lost or left behind.",
+      "content_angle": "Combines Article 33(3)(a) of Law 36/2024/QH15 (no riding abreast), Article 9(5) on weaving and racing, Article 12(1) and Article 11 of Circular 38/2024/TT-BGTVT on safe distances, the group-related penalties in Article 7 of Decree 168/2024/NĐ-CP (riding three or more abreast, group speeding in Article 7(9)(b)), and practical organisation of a group ride (leader, sweeper, meeting points, signals) as general advice.",
+      "entities": [
+        "グループ走行",
+        "並走の禁止",
+        "道路交通秩序安全法第33条3項a",
+        "車間距離",
+        "政令168/2024/NĐ-CP第7条"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "rx-fbd928e9d7dd"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S42",
+          "reason": "JA-S42は1台のバイクがほかの車両を追い越すときのルールを説明する。このテーマは複数台で一緒に走るときの並走の禁止、隊列、合流場所などの決め方を説明する。"
+        },
+        {
+          "id": "JA-S28",
+          "reason": "JA-S28は道路ごとの制限速度を説明する。このテーマはグループでの走行に関するルールと罰金、安全な組み立て方を説明する。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0007.json@2a7b5801fda5"
+      },
+      "matrix_id": "JA-S58"
+    },
+    {
+      "candidate_id": "TA-JA-0053",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "bike-kenin-kinshi",
+      "primary_query": "ベトナム バイク けん引 禁止",
+      "secondary_queries": [
+        "ベトナム バイク 足で押して走る",
+        "ベトナム 故障したバイク 運ぶ方法",
+        "ベトナム バイク 押し歩き"
+      ],
+      "working_title": "ベトナムでバイクをけん引したり足で押したりしてよい？禁止のルールと代わりの方法",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "When a rented bike breaks down, riders often see locals push it along with a foot from another scooter or tow it with a rope and wonder whether they may do the same, what it costs and what to do instead.",
+      "content_angle": "Explains the bans in Article 33(3)(đ) and 33(4)(c) of Law 36/2024/QH15 on riders using the bike to tow or push other vehicles and on passengers holding on to, towing or pushing them, the penalties in Article 7(3)(e) and (g) and 7(10)(b) of Decree 168/2024/NĐ-CP, the rules for a stopped broken-down vehicle in Article 18, and safe alternatives such as calling the rental shop or a repair service and the police number 113.",
+      "entities": [
+        "けん引の禁止",
+        "道路交通秩序安全法第33条3項đ",
+        "政令168/2024/NĐ-CP第7条3項g",
+        "故障車両",
+        "警察の緊急番号113"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "rx-955bdab4a0eb"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S08",
+          "reason": "JA-S08は借りたバイクが故障したときの全体的な対応を説明する。このテーマは故障したバイクをほかのバイクでけん引したり足で押したりすることの禁止と罰金を説明する。"
+        },
+        {
+          "id": "JA-S41",
+          "reason": "JA-S41は何人まで乗れるかと同乗者の禁止事項を説明する。このテーマは走行中にほかの車両を引いたり押したりする行為に絞って説明する。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0007.json@2a7b5801fda5"
+      },
+      "matrix_id": "JA-S59"
+    },
+    {
+      "candidate_id": "TA-JA-0054",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "ferry-bike-norikata",
+      "primary_query": "ベトナム フェリー バイク 乗り方",
+      "secondary_queries": [
+        "ベトナム 渡し船 バイク",
+        "ベトナム 浮き橋 バイク",
+        "メコン フェリー バイク"
+      ],
+      "working_title": "ベトナムでバイクごとフェリーに乗る方法：乗り降りのルールと注意点",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Riders on longer trips, for example in the Mekong delta or on islands, meet ferries and pontoon bridges and want to know how boarding works, whether the passenger may stay on the bike and what is banned on board.",
+      "content_angle": "Explains the ferry and pontoon-bridge rules in Article 23 of Law 36/2024/QH15 (queueing in order, following the instructions of the people directing traffic, only the rider staying on the vehicle while boarding, crossing and leaving, with exceptions for children, older and sick people), the bans on overtaking and stopping on pontoon bridges, the warning sign W.217 in QCVN 41:2024/BGTVT and the related penalties in Article 7 of Decree 168/2024/NĐ-CP.",
+      "entities": [
+        "フェリー",
+        "浮き橋",
+        "道路交通秩序安全法第23条",
+        "警戒標識W.217",
+        "政令168/2024/NĐ-CP第7条"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-178d8fdf2864",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S41",
+          "reason": "JA-S41はバイクに何人まで乗れるかを説明する。このテーマはフェリーと浮き橋で乗り降りするときの順番、運転者以外が降りる義務、船上での禁止事項を説明する。"
+        },
+        {
+          "id": "JA-S11",
+          "reason": "JA-S11はハノイ市内の交通の流れを説明する。このテーマは旅の途中で出会うフェリーと浮き橋の渡り方に絞って説明する。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0007.json@2a7b5801fda5"
+      },
+      "matrix_id": "JA-S60"
+    },
+    {
+      "candidate_id": "TA-JA-0055",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "tunnel-bike-soukou",
+      "primary_query": "ベトナム トンネル バイク 走行",
+      "secondary_queries": [
+        "ベトナム トンネル ライト 点灯",
+        "ハイヴァントンネル バイク",
+        "ベトナム トンネル 停車 禁止"
+      ],
+      "working_title": "ベトナムのトンネルをバイクで走るときのルール：ライト、停車禁止、故障時の対応",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Riders meet road tunnels on mountain and coastal routes and want to know which lights to use, what is banned inside, and what to do if the bike breaks down in a tunnel.",
+      "content_angle": "Explains the tunnel rules in Article 26 of Law 36/2024/QH15 (dipped headlights for motor vehicles, no stopping or parking, emergency bay or hazard lights and a warning sign plus informing the traffic police or tunnel operator after a breakdown), the overtaking, U-turn and reversing bans in tunnels in Articles 14(6), 15(4) and 16(2), Article 12(3) on slowing down, the warning sign W.240 in QCVN 41:2024/BGTVT and the related penalties in Article 7 of Decree 168/2024/NĐ-CP.",
+      "entities": [
+        "道路トンネル",
+        "道路交通秩序安全法第26条",
+        "ロービーム",
+        "警戒標識W.240",
+        "政令168/2024/NĐ-CP第7条"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-178d8fdf2864",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S36",
+          "reason": "JA-S36は夜間にライトを点灯する義務と夜の危険を説明する。このテーマはトンネルの中でのライト、停車の禁止、故障したときの対応に絞って説明する。"
+        },
+        {
+          "id": "JA-S43",
+          "reason": "JA-S43はUターンが禁止される場所の一覧を説明する。このテーマはトンネル特有のルールをまとめて説明する。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0007.json@2a7b5801fda5"
+      },
+      "matrix_id": "JA-S61"
+    },
+    {
+      "candidate_id": "TA-JA-0056",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "kinkyuu-sharyou-michi-yuzuru",
+      "primary_query": "ベトナム 緊急車両 道を譲る バイク",
+      "secondary_queries": [
+        "ベトナム 救急車 サイレン 優先",
+        "ベトナム 消防車 道を譲る",
+        "ベトナム 優先車両 罰金"
+      ],
+      "working_title": "ベトナムで救急車や消防車に道を譲る：緊急車両のルールとバイクの罰金",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Riders in dense Hanoi traffic hear sirens and want to know which vehicles have priority, how a scooter should make way when there is little room, whether they may follow an ambulance through a gap, and what obstructing one costs.",
+      "content_angle": "Explains Article 27 of Law 36/2024/QH15 as amended in 2025 (the order of priority vehicles, their light and siren signals, the duty to slow down, pull over to the right and give way, and the ban on following or overtaking them in an emergency), Article 12(3)(l), and the penalties for obstructing or not giving way to priority vehicles in Article 7 of Decree 168/2024/NĐ-CP, with practical advice for scooters in dense traffic.",
+      "entities": [
+        "優先車両",
+        "救急車",
+        "消防車",
+        "道路交通秩序安全法第27条",
+        "政令168/2024/NĐ-CP第7条7項đ"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S39",
+          "reason": "JA-S39は交差点での優先順位を中心に説明し、緊急車両には短く触れるだけである。このテーマはサイレンを鳴らす優先車両に道を譲る方法と罰金を詳しく説明する。"
+        },
+        {
+          "id": "JA-S40",
+          "reason": "JA-S40はクラクションを使ってよい場面を説明する。このテーマは救急車や消防車が近づいたときにバイクがどう道を空けるかを説明する。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0007.json@2a7b5801fda5"
+      },
+      "matrix_id": "JA-S62"
+    },
+    {
+      "candidate_id": "TA-JA-0057",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "keisatsukan-te-shingou",
+      "primary_query": "ベトナム 警察官 手信号",
+      "secondary_queries": [
+        "ベトナム 交通整理 合図 意味",
+        "ベトナム 警察 腕を上げる 止まれ",
+        "ベトナム 警察官 指示 信号 優先"
+      ],
+      "working_title": "ベトナムの交通警察官の手信号の意味：止まれ・進めの見分け方",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "At busy Hanoi junctions traffic police often direct traffic by hand, overriding the lights, and visitors want to know what each arm signal means for their direction and what ignoring one costs.",
+      "content_angle": "Explains the arm signals of people directing traffic in Article 11(3) of Law 36/2024/QH15 (arm raised vertically, arms extended horizontally, right arm extended forward) and what each means for traffic from each direction, the order of priority between traffic controllers, lights, signs and markings in Article 11(2), who may direct traffic under Article 2, and the penalty for not obeying a traffic controller in Article 7 of Decree 168/2024/NĐ-CP.",
+      "entities": [
+        "手信号",
+        "交通整理",
+        "道路交通秩序安全法第11条3項",
+        "警察官の指示の優先",
+        "政令168/2024/NĐ-CP第7条"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S14",
+          "reason": "JA-S14は交通警察に止められたときの流れと対応を説明する。このテーマは交差点で警察官が手で交通整理するときの合図の意味を説明する。"
+        },
+        {
+          "id": "JA-S39",
+          "reason": "JA-S39は交差点での優先順位を説明し、手信号は1つだけ紹介している。このテーマは3種類の手信号と、方向ごとに何をすべきかを詳しく説明する。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0007.json@2a7b5801fda5"
+      },
+      "matrix_id": "JA-S63"
+    },
+    {
+      "candidate_id": "TA-JA-0058",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "douro-doubutsu-bike-chuui",
+      "primary_query": "ベトナム 道路 動物 バイク 注意",
+      "secondary_queries": [
+        "ベトナム 牛 道路 バイク",
+        "ベトナム 野良犬 バイク",
+        "ベトナム 家畜 道路 減速"
+      ],
+      "working_title": "ベトナムの道路の動物に注意：牛や犬に出会ったときのバイクの走り方",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Outside the cities riders regularly meet buffalo, cows, dogs and chickens on or beside the road and want to know what the law requires when passing animals, what the warning signs mean and how to ride past them safely.",
+      "content_angle": "Explains Article 12(3)(g) of Law 36/2024/QH15 on slowing down where animals are on or beside the road, Article 32 on people leading animals and animal-drawn vehicles, Article 20(1), the warning signs W.230 and W.231 in QCVN 41:2024/BGTVT, and the penalties in Articles 7 and 11 of Decree 168/2024/NĐ-CP, plus general advice on passing animals at low speed.",
+      "entities": [
+        "道路上の動物",
+        "家畜",
+        "道路交通秩序安全法第32条",
+        "警戒標識W.230とW.231",
+        "政令168/2024/NĐ-CP"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-178d8fdf2864",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S36",
+          "reason": "JA-S36は夜間のライトと夜の危険を説明する。このテーマは昼夜を問わず道路上や道端の動物に出会ったときの走り方とルールを説明する。"
+        },
+        {
+          "id": "JA-S11",
+          "reason": "JA-S11はハノイ市内の交通の流れを説明する。このテーマは主に郊外や山道で出会う家畜や犬への対処を説明する。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0007.json@2a7b5801fda5"
+      },
+      "matrix_id": "JA-S64"
+    },
+    {
+      "candidate_id": "TA-JA-0059",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-contract",
+      "slug": "seibi-furyou-bakkin-mirror",
+      "primary_query": "ベトナム バイク ミラー なし 罰金",
+      "secondary_queries": [
+        "ベトナム バイク 整備不良 罰金",
+        "ベトナム ウインカー 故障 罰金",
+        "ベトナム バイク ナンバープレート なし"
+      ],
+      "working_title": "ベトナムでバイクのミラーやライトが壊れていたら：整備不良の罰金と出発前の確認",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Renters are surprised that the rider, not the shop, is fined at a check for a missing mirror or a broken light, indicator, horn or brake, and want to know which defects are fined and what to check at pickup.",
+      "content_angle": "Explains the vehicle-condition penalties for motorbikes in Article 14 of Decree 168/2024/NĐ-CP (missing left mirror, faulty lights, indicators, horn or brakes, unsuitable tyres, missing registration plate), the technical requirements in Articles 34 and 35 of Law 36/2024/QH15 and the papers to carry under Article 56, and what renters should check and document at pickup so that equipment defects are fixed before riding.",
+      "entities": [
+        "整備不良",
+        "左側のミラー",
+        "政令168/2024/NĐ-CP第14条",
+        "道路交通秩序安全法第35条",
+        "出発前の確認"
+      ],
+      "references": [
+        "rx-9eedca8b8111",
+        "rx-3e70e89030b8"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S08",
+          "reason": "JA-S08は走行中に借りたバイクが故障したときの対応を説明する。このテーマはミラーやライトなどの装備の不備で運転者が受ける罰金と、出発前の確認を説明する。"
+        },
+        {
+          "id": "JA-S13",
+          "reason": "JA-S13は運転時に携帯する書類を説明する。このテーマは書類ではなく車両の装備の状態と、その不備に対する罰金を説明する。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0007.json@2a7b5801fda5"
+      },
+      "matrix_id": "JA-S65"
     }
   ]
 }
