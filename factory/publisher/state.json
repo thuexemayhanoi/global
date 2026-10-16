@@ -7024,17 +7024,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T03:45:04.022Z"
+    },
+    {
+      "id": "NL-S65",
+      "locale": "nl",
+      "url": "/nl/guides/drugs-en-scooter-rijden-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:46:22.687Z",
+      "source_sha256": "208bfb71bb9084388df966ecaad1a7d2f8fb3772bc1bca838d0531afa670eff4",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S29",
+      "locale": "zh",
+      "url": "/zh/guides/vietnam-motorbike-speed-limits/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:46:22.687Z",
+      "source_sha256": "e99505bf004c3970f17a55870149da44eda868bf6325b47e30d38cbc7a3f18a4",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T23:51:51.258Z",
-      "ids": [
-        "ES-S62",
-        "ES-S63"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T23:53:04.237Z",
       "ids": [
@@ -8604,6 +8618,14 @@
         "NL-S64"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T03:46:22.687Z",
+      "ids": [
+        "NL-S65",
+        "ZH-S29"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -8614,5 +8636,7 @@
     "commit": "b2aefaf9328d8a569bc64f1b7fbcb4b539cfd34a",
     "live_seconds": 62
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 2
+  }
 }
