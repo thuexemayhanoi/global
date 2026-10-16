@@ -1,31 +1,47 @@
 {
   "version": 2,
-  "ledger_revision": 578,
+  "ledger_revision": 580,
   "stage": "CONTINUOUS",
   "counts": {
+    "REJECTED": 1,
     "APPROVED_BY_POLICY": 2
   },
   "items": [
     {
-      "id": "ES-S19",
+      "id": "ZH-S75",
+      "decision": "REJECTED",
+      "failed": [
+        "G3_SENSITIVE_SOURCES"
+      ],
+      "writer": "W1",
+      "session": "w1-vibe-20261014",
+      "branch": "writer/w1-vibe-20261014",
+      "source_sha256": "23c1d0240bec36e7a68f5c9861e79d8350aa077ef810c5c3241b65074d9526b6",
+      "source_commit": "9a1a145d1ecbcb43a019d33b62a7d1c6664a2040",
+      "details": [
+        "G3_SENSITIVE_SOURCES: LEGAL/SAFETY topic must cite at least one declared dated official source inline"
+      ]
+    },
+    {
+      "id": "ZH-S76",
       "decision": "APPROVED_BY_POLICY",
       "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "19ec6ecd0c2d06afffa65bb69a869bf162235d496893c74374a75c1fb703b4a9",
-      "source_commit": "f87dee478fc31ed713dfd4087ec82056154d7dcc",
+      "source_sha256": "012c8795aa7ddcbac84a43c659965d8ca66564c1d350f070ba32a726a5c80937",
+      "source_commit": "9a1a145d1ecbcb43a019d33b62a7d1c6664a2040",
       "details": []
     },
     {
-      "id": "FR-S20",
+      "id": "KO-S73",
       "decision": "APPROVED_BY_POLICY",
       "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "4f20a8fbb0c4bce32e6c18d37fb9d0c914a1f2b8f9a8dfd0dc44ffb652989fb4",
-      "source_commit": "f87dee478fc31ed713dfd4087ec82056154d7dcc",
+      "source_sha256": "1e1ef199d55d1c10b8e7ee373a47d2780a8a51c93273004706ea41cd4135a500",
+      "source_commit": "9a1a145d1ecbcb43a019d33b62a7d1c6664a2040",
       "details": []
     }
   ]

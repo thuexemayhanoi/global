@@ -10360,17 +10360,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T20:13:43.269Z"
+    },
+    {
+      "id": "KO-S73",
+      "locale": "ko",
+      "url": "/ko/guides/jeongi-seukuteo-juhaenggeori-chungjeon/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T20:14:52.126Z",
+      "source_sha256": "1e1ef199d55d1c10b8e7ee373a47d2780a8a51c93273004706ea41cd4135a500",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S76",
+      "locale": "zh",
+      "url": "/zh/guides/bentian-smart-key-shiyong/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T20:14:52.126Z",
+      "source_sha256": "012c8795aa7ddcbac84a43c659965d8ca66564c1d350f070ba32a726a5c80937",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T05:34:34.184Z",
-      "ids": [
-        "ZH-S58",
-        "ZH-S59"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T05:35:50.471Z",
       "ids": [
@@ -11962,6 +11976,14 @@
         "FR-S20"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T20:14:52.126Z",
+      "ids": [
+        "KO-S73",
+        "ZH-S76"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -11974,6 +11996,7 @@
     "live_seconds": 82
   },
   "queue": {
+    "REJECTED": 1,
     "APPROVED_BY_POLICY": 2
   }
 }
