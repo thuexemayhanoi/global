@@ -5848,17 +5848,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T02:03:07.832Z"
+    },
+    {
+      "id": "KO-S52",
+      "locale": "ko",
+      "url": "/ko/guides/beteunam-gingeup-jeonhwa-beonho/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:03:24.977Z",
+      "source_sha256": "6fbc13dafe1b3a80af9c6aea669f152989fb7da9dca5d4c7f30861265112eca1",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S53",
+      "locale": "ko",
+      "url": "/ko/guides/sangil-gyohaeng-useon/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:03:24.977Z",
+      "source_sha256": "322ce511b8453004d7b85892332cf2307fbe1d3a656fc0dbfd1baf35079ceb87",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T21:43:31.800Z",
-      "ids": [
-        "ES-S30",
-        "ES-S31"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T21:44:44.811Z",
       "ids": [
@@ -7416,6 +7430,14 @@
         "KO-S51"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:03:24.977Z",
+      "ids": [
+        "KO-S52",
+        "KO-S53"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -7428,6 +7450,6 @@
     "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 6
+    "APPROVED_BY_POLICY": 4
   }
 }
