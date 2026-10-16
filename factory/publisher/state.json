@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 251,
+  "clean_runs": 254,
   "published": [
     {
       "id": "NL-H01",
@@ -5882,7 +5882,8 @@
       "at": "2026-10-16T02:04:57.657Z",
       "source_sha256": "18a4888636f6d41721e17e6bb706a1e2fdb8e523943ea6e22b3935fe0e4eaeaa",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:06:14.639Z"
     },
     {
       "id": "KO-S55",
@@ -5893,48 +5894,59 @@
       "at": "2026-10-16T02:04:57.657Z",
       "source_sha256": "867047d3fc36ceb0db872f2a6a0e529ee05961428e8caf6cf66d404f443df7bf",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:06:14.639Z"
+    },
+    {
+      "id": "NL-S18",
+      "locale": "nl",
+      "url": "/nl/guides/honda-wave-vision-air-blade/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:06:34.052Z",
+      "source_sha256": "aef32fe971e14a63cbe5e1450f1fc6d095b879c58bbc4421290a2b975e586b70",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:07:50.713Z"
+    },
+    {
+      "id": "NL-S26",
+      "locale": "nl",
+      "url": "/nl/guides/motor-met-koppeling-leren-rijden-voor-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:06:34.052Z",
+      "source_sha256": "79907f00ce0912418c795e4a4420abf95ab8f8a2c8b93578499cce656baa8270",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:07:50.713Z"
+    },
+    {
+      "id": "NL-S27",
+      "locale": "nl",
+      "url": "/nl/guides/alcohol-en-scooter-rijden-in-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:08:13.616Z",
+      "source_sha256": "c258a8737131104265c87cb3f22fe539b48b9a9e12fb46a49d572e7869b1e60e",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:09:14.193Z"
+    },
+    {
+      "id": "NL-S28",
+      "locale": "nl",
+      "url": "/nl/guides/maximumsnelheid-motor-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:08:13.616Z",
+      "source_sha256": "cc112a3917949226763ce06f98c2e69d1e5c282ad06d490231ae19e4df81ccb2",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:09:14.193Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T21:48:05.505Z",
-      "ids": [
-        "ES-S18",
-        "ES-S29"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T21:48:28.647Z",
-      "ids": [
-        "ES-S26"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T21:49:41.640Z",
-      "ids": [
-        "ES-S26"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T21:51:28.122Z",
-      "ids": [
-        "EN-S71",
-        "EN-S72"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T21:52:43.211Z",
-      "ids": [
-        "EN-S71",
-        "EN-S72"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T21:53:02.787Z",
       "ids": [
@@ -7462,18 +7474,56 @@
         "KO-S55"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:06:14.639Z",
+      "ids": [
+        "KO-S54",
+        "KO-S55"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:06:34.052Z",
+      "ids": [
+        "NL-S18",
+        "NL-S26"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:07:50.713Z",
+      "ids": [
+        "NL-S18",
+        "NL-S26"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:08:13.616Z",
+      "ids": [
+        "NL-S27",
+        "NL-S28"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:09:14.193Z",
+      "ids": [
+        "NL-S27",
+        "NL-S28"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T02:04:38.900Z",
+    "at": "2026-10-16T02:09:14.193Z",
     "ids": [
-      "KO-S52",
-      "KO-S53"
+      "NL-S27",
+      "NL-S28"
     ],
-    "commit": "8d7a1d32c33673e1c0992ed278980c9b1a331845",
-    "live_seconds": 62
+    "commit": "95e6288da63c62ccc82910c8f849fc9fe72741f2",
+    "live_seconds": 42
   },
-  "queue": {
-    "APPROVED_BY_POLICY": 2
-  }
+  "queue": {}
 }
