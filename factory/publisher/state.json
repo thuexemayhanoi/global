@@ -7096,17 +7096,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T03:54:45.569Z"
+    },
+    {
+      "id": "VI-S42",
+      "locale": "vi",
+      "url": "/vi/guides/quy-dinh-quay-dau-xe-may/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:55:04.708Z",
+      "source_sha256": "59551da6621e8e52a76feb8accfa5f5ee82f4c5b8683673115a3f09087d5f27e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "VI-S43",
+      "locale": "vi",
+      "url": "/vi/guides/xe-may-di-lan-nao/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:55:04.708Z",
+      "source_sha256": "bab620c1e2a4a860c56d4f04e659dace33c34a390ff2235c88bb7657b4dd9494",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T23:57:23.950Z",
-      "ids": [
-        "JA-S28",
-        "JA-S29"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T23:58:38.269Z",
       "ids": [
@@ -8676,6 +8690,14 @@
         "VI-S41"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T03:55:04.708Z",
+      "ids": [
+        "VI-S42",
+        "VI-S43"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -8688,6 +8710,6 @@
     "live_seconds": 81
   },
   "queue": {
-    "APPROVED_BY_POLICY": 10
+    "APPROVED_BY_POLICY": 8
   }
 }
