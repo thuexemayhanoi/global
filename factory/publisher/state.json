@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 435,
+  "clean_runs": 436,
   "published": [
     {
       "id": "NL-H01",
@@ -10192,25 +10192,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T16:49:22.067Z"
+    },
+    {
+      "id": "DE-S90",
+      "locale": "de",
+      "url": "/de/guides/strasse-ueberqueren-vietnam-fussgaenger-regeln/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:50:47.639Z",
+      "source_sha256": "5cc1935aa8d1dca3f96649cf831ae6982e211498ddd39b65f50ae31dc5bf4355",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:52:15.950Z"
+    },
+    {
+      "id": "EN-S91",
+      "locale": "en",
+      "url": "/en/guides/crossing-the-street-in-vietnam-pedestrian-rules/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:50:47.639Z",
+      "source_sha256": "050e2e5828cbcfcff1a8aec6647b20ce3e42b255f86f49fb123b9ddfac6db9f6",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:52:15.950Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T05:15:35.995Z",
-      "ids": [
-        "VI-S54",
-        "VI-S55"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T05:16:53.505Z",
-      "ids": [
-        "VI-S54",
-        "VI-S55"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T05:17:14.372Z",
       "ids": [
@@ -11794,16 +11802,32 @@
         "KO-S21"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T16:50:47.639Z",
+      "ids": [
+        "DE-S90",
+        "EN-S91"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T16:52:15.950Z",
+      "ids": [
+        "DE-S90",
+        "EN-S91"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T16:49:22.067Z",
+    "at": "2026-10-16T16:52:15.950Z",
     "ids": [
-      "JA-S21",
-      "KO-S21"
+      "DE-S90",
+      "EN-S91"
     ],
-    "commit": "4f4287efbcf571ea66b28c39c3e72e8ab89c134f",
-    "live_seconds": 101
+    "commit": "0822ba29803f0573693748d5193f18dafcccaf8a",
+    "live_seconds": 62
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
