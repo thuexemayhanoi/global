@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility2",
   "batch_session": "research-claude-20261015-mobility2",
   "created_at": "2026-10-15T23:01:23.660Z",
-  "updated_at": "2026-10-16T06:07:23.546Z",
-  "base_main_sha": "a7c528b822c9d1f583df0d99ea4205bf8ede85b7",
-  "last_commit_sha": "a1dc0b8b792c51b5659ad4ba0664e219c4af616f",
+  "updated_at": "2026-10-16T07:01:16.378Z",
+  "base_main_sha": "39658a86e016b2d19fbae7a718032d0d6542de85",
+  "last_commit_sha": "0f3ce5f69fe921524811ba94c28c299b38ce70ab",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 200,
-    "qa_pass": 200,
+    "researched": 210,
+    "qa_pass": 210,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 190,
+    "pushed": 200,
     "pending_push": 10
   },
   "coverage": {
@@ -28,7 +28,7 @@
       "es": 14,
       "en": 3,
       "de": 3,
-      "ja": 22,
+      "ja": 32,
       "ko": 31,
       "zh": 31,
       "pt": 32,
@@ -36,14 +36,14 @@
       "vi": 20
     },
     "domains": {
-      "traffic-law-safety": 178,
-      "motorbike-rental": 22
+      "traffic-law-safety": 185,
+      "motorbike-rental": 25
     }
   },
   "last_batch": {
-    "seq": 20,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0020.json",
-    "sha256": "1f252d8f8f46b87966403a63ddd6195516a449fd19d8b60ef988ba7e50096c0a",
+    "seq": 21,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0021.json",
+    "sha256": "b390bd5aeaf36fc6c9c799cad4f18c75f42bfde760cdb101bfe9b6c4d5cc5f02",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -2162,8 +2162,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility2-0020.json",
       "sha256": "1f252d8f8f46b87966403a63ddd6195516a449fd19d8b60ef988ba7e50096c0a",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "6f43d1e74f6bac5f67f5e1dcd9acd4ea590711d1",
       "researched_on": "2026-10-16",
       "topics": [
         {
@@ -2174,7 +2174,7 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-city",
           "key": "ko::스쿠터 앞브레이크 뒷브레이크 사용법",
-          "ta_id": null
+          "ta_id": "TA-KO-0061"
         },
         {
           "ref": "ko:sangil-geupkeobeu-otobai-juhaeng",
@@ -2184,7 +2184,7 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-city",
           "key": "ko::산길 급커브 오토바이 타는 법",
-          "ta_id": null
+          "ta_id": "TA-KO-0062"
         },
         {
           "ref": "ko:otobai-dwitjari-dongseungja-gaideu",
@@ -2194,7 +2194,7 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-city",
           "key": "ko::오토바이 뒷자리 동승자 주의사항",
-          "ta_id": null
+          "ta_id": "TA-KO-0063"
         },
         {
           "ref": "ko:gyotongsago-mokgyeokja-uimu",
@@ -2204,7 +2204,7 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-incidents",
           "key": "ko::베트남 교통사고 목격하면 해야 할 일",
-          "ta_id": null
+          "ta_id": "TA-KO-0064"
         },
         {
           "ref": "ko:otobai-yeohaeng-piro-hyusik",
@@ -2214,7 +2214,7 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-city",
           "key": "ko::오토바이 하루 몇 시간 타는 게 적당한가",
-          "ta_id": null
+          "ta_id": "TA-KO-0065"
         },
         {
           "ref": "ko:jadong-seukuteo-cheoeum-yeonseup",
@@ -2224,7 +2224,7 @@
           "parent_id": "KO-H01",
           "subcluster": "vc-transmission",
           "key": "ko::스쿠터 처음 타는 법 연습",
-          "ta_id": null
+          "ta_id": "TA-KO-0066"
         },
         {
           "ref": "ko:jeongi-seukuteo-juhaenggeori-chungjeon",
@@ -2234,7 +2234,7 @@
           "parent_id": "KO-H01",
           "subcluster": "vc-power",
           "key": "ko::베트남 전기 스쿠터 주행거리와 충전",
-          "ta_id": null
+          "ta_id": "TA-KO-0067"
         },
         {
           "ref": "ko:pain-gil-jagal-otobai-juhaeng",
@@ -2244,7 +2244,7 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-weather",
           "key": "ko::베트남 비포장 자갈길 오토바이 주행",
-          "ta_id": null
+          "ta_id": "TA-KO-0068"
         },
         {
           "ref": "ko:teureok-beoseu-sagakjidae-otobai",
@@ -2254,7 +2254,7 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-city",
           "key": "ko::트럭 버스 사각지대 오토바이",
-          "ta_id": null
+          "ta_id": "TA-KO-0069"
         },
         {
           "ref": "ko:honda-seumateuki-sayongbeop",
@@ -2264,14 +2264,125 @@
           "parent_id": "KO-H01",
           "subcluster": "vc-models",
           "key": "ko::혼다 스마트키 사용법",
+          "ta_id": "TA-KO-0070"
+        }
+      ]
+    },
+    {
+      "seq": 21,
+      "file": "factory/topic-research/batches/claude-20261015-mobility2-0021.json",
+      "sha256": "b390bd5aeaf36fc6c9c799cad4f18c75f42bfde760cdb101bfe9b6c4d5cc5f02",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-16",
+      "topics": [
+        {
+          "ref": "ja:scooter-brake-tsukaikata",
+          "locale": "ja",
+          "slug": "scooter-brake-tsukaikata",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::スクーター フレーキ 前後 使い方",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:yamamichi-kyuu-curve-hashirikata",
+          "locale": "ja",
+          "slug": "yamamichi-kyuu-curve-hashirikata",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::山道 急カーフ ハイク 走り方",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:bike-koubu-zaseki-joushasha",
+          "locale": "ja",
+          "slug": "bike-koubu-zaseki-joushasha",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ハイク 後ろに乗る 注意 マナー",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:koutsuu-jiko-mokugeki-taiou",
+          "locale": "ja",
+          "slug": "koutsuu-jiko-mokugeki-taiou",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ヘトナム 交通事故 目撃 とうする",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:bike-touring-hirou-kyuukei",
+          "locale": "ja",
+          "slug": "bike-touring-hirou-kyuukei",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ハイク ツーリンク 1日 何時間 休憩",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hajimete-scooter-renshuu",
+          "locale": "ja",
+          "slug": "hajimete-scooter-renshuu",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-transmission",
+          "key": "ja::スクーター 初めて 乗り方 練習",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:denki-scooter-koukou-kyori-juuden",
+          "locale": "ja",
+          "slug": "denki-scooter-koukou-kyori-juuden",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-power",
+          "key": "ja::ヘトナム 電動スクーター 航続距離 充電",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:douro-ana-jari-bike",
+          "locale": "ja",
+          "slug": "douro-ana-jari-bike",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-weather",
+          "key": "ja::ヘトナム 道路 穴 砂利 ハイク",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:truck-bus-shikaku-bike",
+          "locale": "ja",
+          "slug": "truck-bus-shikaku-bike",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::トラック ハス 死角 ハイク",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:honda-smart-key-tsukaikata",
+          "locale": "ja",
+          "slug": "honda-smart-key-tsukaikata",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-models",
+          "key": "ja::ホンタ スマートキー 使い方 スクーター",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 21,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0021.json",
+    "seq": 22,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0022.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -2423,6 +2534,13 @@
       "seq": 20,
       "topics": 10,
       "sha256": "1f252d8f8f46b87966403a63ddd6195516a449fd19d8b60ef988ba7e50096c0a"
+    },
+    {
+      "at": "2026-10-16T07:01:16.378Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 21,
+      "topics": 10,
+      "sha256": "b390bd5aeaf36fc6c9c799cad4f18c75f42bfde760cdb101bfe9b6c4d5cc5f02"
     }
   ]
 }

@@ -1,0 +1,512 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261015-mobility2"
+  },
+  "researched_on": "2026-10-16",
+  "candidates": [
+    {
+      "search_intent": "informational",
+      "word_target": 1100,
+      "keyword_evidence": "NOT_VALIDATED",
+      "locale": "ja",
+      "subcluster": "ss-city",
+      "parent_id": "JA-H04",
+      "slug": "scooter-brake-tsukaikata",
+      "primary_query": "スクーター ブレーキ 前後 使い方",
+      "secondary_queries": [
+        "バイク 前ブレーキ 後ろブレーキ 割合",
+        "スクーター ABS 仕組み",
+        "バイク 急ブレーキ 練習"
+      ],
+      "entities": [
+        "前ブレーキと後ろブレーキ",
+        "前後連動ブレーキ",
+        "ABS",
+        "カーブでのブレーキ",
+        "オレゴン州オートバイマニュアル"
+      ],
+      "intent_rationale": "Japanese-speaking travellers who rent a scooter in Vietnam often ride rarely at home and want to know how to brake safely with the front and rear brakes, what combined braking and ABS do, and how to test the brakes before riding.",
+      "content_angle": "Explains the Oregon DMV motorcycle manual's braking guidance (use both brakes every time; the front brake can provide 70 percent or more of stopping power; squeeze smoothly rather than grab; reduce lean before braking harder in a curve; integrated systems link both brakes) and what Honda Vietnam says about ABS on the LEAD ABS, plus how to test the brakes at pickup.",
+      "working_title": "スクーターのブレーキの正しい使い方：前後ブレーキとABS",
+      "references": [
+        {
+          "url": "https://www.oregon.gov/odot/DMV/Pages/Online_Motorcycle_Moped_Manual/Section_4.aspx",
+          "title": "米国オレゴン州車両局：オートバイ・モペッド運転マニュアル第4章（車両の操作）（停止、連動ブレーキ）",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/san-pham/lead-abs?category=2",
+          "title": "ホンダベトナム：LEAD ABSモデルページ（ABS）",
+          "checked_on": "2026-10-15"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S55",
+          "reason": "JA-S55はベトナムの規則が前の車とどれだけ距離を取るよう求めているかを説明します。このテーマはブレーキ操作そのもの、つまり前後ブレーキの使い方、ABSの役割、急ブレーキの練習方法を扱います。"
+        },
+        {
+          "id": "JA-S07",
+          "reason": "JA-S07はハノイの雨の日にバイクに乗るときの注意点を案内します。このテーマは天候に関係なく必要なブレーキの基本操作と、出発前のブレーキの確認方法を扱います。"
+        }
+      ]
+    },
+    {
+      "search_intent": "informational",
+      "word_target": 1100,
+      "keyword_evidence": "NOT_VALIDATED",
+      "locale": "ja",
+      "subcluster": "ss-city",
+      "parent_id": "JA-H04",
+      "slug": "yamamichi-kyuu-curve-hashirikata",
+      "primary_query": "山道 急カーブ バイク 走り方",
+      "secondary_queries": [
+        "バイク コーナリング コツ",
+        "ベトナム北部 ヘアピンカーブ",
+        "ベトナム 危険なカーブ 標識"
+      ],
+      "entities": [
+        "コーナリング技術",
+        "視線の向け方",
+        "W.201とW.202の標識",
+        "法律36/2024/QH15第12条3項",
+        "オレゴン州オートバイマニュアル"
+      ],
+      "intent_rationale": "Japanese-speaking travellers heading to the northern mountain loops on a rented scooter want to know how to ride tight hairpin bends safely, what the dangerous-bend signs mean and what the law asks of riders on bends and passes.",
+      "content_angle": "Explains the Oregon DMV four-step turning technique (slow before the curve, look through it, roll on the throttle, press the handgrip to lean), the dangerous-bend warning signs W.201 and W.202 in QCVN 41:2024/BGTVT with the regulation's definition of a dangerous bend in lowland and mountain areas, and the duty in Article 12(3)(c) and (d) of Law 36/2024/QH15 to slow down at bends, passes and slopes.",
+      "working_title": "ベトナムの山道の急カーブをバイクで走るコツ：減速、視線、車体の傾け方",
+      "references": [
+        {
+          "url": "https://www.oregon.gov/odot/DMV/Pages/Online_Motorcycle_Moped_Manual/Section_4.aspx",
+          "title": "米国オレゴン州車両局：オートバイ・モペッド運転マニュアル第4章（車両の操作）（カーブ）",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/quy-chuan-qcvn-412024-bgtvt-bao-hieu-duong-bo-376856-d3.html",
+          "title": "LuatVietnam：道路標識に関する国家技術基準QCVN 41:2024/BGTVT（W.201、W.202の標識）",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "ベトナム政府ポータル：道路交通秩序安全法（法律36/2024/QH15）統合版（第12条）",
+          "checked_on": "2026-10-15"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S53",
+          "reason": "JA-S53は狭い山道で対向車とすれ違うときにどちらが譲るかを説明します。このテーマはカーブの中での走り方そのもの、つまり手前での減速、視線、アクセル、車体の傾け方を扱います。"
+        },
+        {
+          "id": "JA-S20",
+          "reason": "JA-S20は山道の旅に合う排気量の選び方を扱います。このテーマは車種ではなく、どの車両でも必要なカーブの走り方と危険なカーブの標識を説明します。"
+        }
+      ]
+    },
+    {
+      "search_intent": "informational",
+      "word_target": 1100,
+      "keyword_evidence": "NOT_VALIDATED",
+      "locale": "ja",
+      "subcluster": "ss-city",
+      "parent_id": "JA-H04",
+      "slug": "bike-koubu-zaseki-joushasha",
+      "primary_query": "バイク 後ろに乗る 注意 マナー",
+      "secondary_queries": [
+        "ベトナム バイク 同乗者 ルール",
+        "バイク 後部座席 どこを持つ",
+        "ベトナム 同乗者 ヘルメット 義務"
+      ],
+      "entities": [
+        "同乗者",
+        "法律36/2024/QH15第33条2項と4項",
+        "あごひもを締めたヘルメット",
+        "ステップ",
+        "政令168/2024/NĐ-CP第7条と第12条"
+      ],
+      "intent_rationale": "Japanese-speaking travellers who ride as a passenger behind a partner, a friend or a motorbike-taxi driver want to know how to sit, hold on and lean, which rules apply to passengers and who is fined when a passenger breaks them.",
+      "content_angle": "Combines the passenger duties in Article 33(2) and (4) of Law 36/2024/QH15 (fastened helmet; no bulky objects, umbrellas, holding on to or pushing other vehicles, standing on the seat or sitting on the handlebars) with both sets of penalties in Decree 168/2024/NĐ-CP, those for the passenger in Article 12(2)(d) and 12(5) and those for the rider in Article 7(1)(d), 7(2)(i) and 7(3)(e), plus practical guidance on posture, footrests, holding on and leaning with the rider.",
+      "working_title": "ベトナムでバイクの後ろに乗るとき：同乗者の乗り方と守るべきルール",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "ベトナム政府ポータル：道路交通秩序安全法（法律36/2024/QH15）統合版（第33条）",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "ベトナム政府政策ポータル：道路交通の行政違反処分に関する政令168/2024/NĐ-CP全文（第7条、第12条）",
+          "checked_on": "2026-10-15"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S41",
+          "reason": "JA-S41はベトナムでバイクに何人まで乗れるかという人数制限と例外を説明します。このテーマは後ろに乗る人の乗り方、つかまり方、カーブでの姿勢と、同乗者自身に科される罰金を扱います。"
+        },
+        {
+          "id": "JA-S25",
+          "reason": "JA-S25は二人乗りや荷物に向いた車種選びを扱います。このテーマは車種ではなく、後部座席に座る同乗者の行動とルールそのものを説明します。"
+        }
+      ]
+    },
+    {
+      "search_intent": "informational",
+      "word_target": 1100,
+      "keyword_evidence": "NOT_VALIDATED",
+      "locale": "ja",
+      "subcluster": "ss-incidents",
+      "parent_id": "JA-H04",
+      "slug": "koutsuu-jiko-mokugeki-taiou",
+      "primary_query": "ベトナム 交通事故 目撃 どうする",
+      "secondary_queries": [
+        "交通事故 目撃者 義務 ベトナム",
+        "事故現場 救護 通報 ベトナム",
+        "ベトナム 交通事故 証言"
+      ],
+      "entities": [
+        "目撃者",
+        "法律36/2024/QH15第80条",
+        "救急115と警察113",
+        "負傷者の救護",
+        "政令168/2024/NĐ-CP第12条6項"
+      ],
+      "intent_rationale": "Japanese-speaking travellers who ride in Vietnam sooner or later pass a crash and want to know whether they must stop, how to help without speaking Vietnamese, which numbers to call and what to do if the police ask for a statement.",
+      "content_angle": "Explains the duties of people present at an accident under Article 80(2) of Law 36/2024/QH15 (help the injured, notify the police, a medical facility or the local People's Committee, help protect the scene and the victim's property, give information on request), Article 80(3) on using vehicles involved only when no other transport exists, Article 80(4) on passing drivers taking injured people to emergency care, Article 81(1) on reporting, the fine in Article 12(6)(a) of Decree 168/2024/NĐ-CP for deliberately not helping an injured person when able, and the emergency numbers 113, 114 and 115.",
+      "working_title": "ベトナムで交通事故を目撃したら：法律が求めることとできること",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "ベトナム政府ポータル：道路交通秩序安全法（法律36/2024/QH15）統合版（第80条、第81条、第83条）",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/hoi-dap-phap-luat/111-113-114-115-la-so-dien-thoai-gi-138013545.html",
+          "title": "THƯ VIỆN PHÁP LUẬT：ベトナムの緊急電話番号111、113、114、115",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "ベトナム政府政策ポータル：道路交通の行政違反処分に関する政令168/2024/NĐ-CP全文（第12条）",
+          "checked_on": "2026-10-15"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S15",
+          "reason": "JA-S15は自分がバイク事故を起こしたり巻き込まれたりしたときの最初の対応を説明します。このテーマは事故の当事者ではなく、現場に居合わせた人と通りかかった人の義務とできることを扱います。"
+        },
+        {
+          "id": "JA-S52",
+          "reason": "JA-S52はベトナムの緊急電話番号の使い分けと通報のしかたを説明します。このテーマは事故現場での救護、現場と所持品の保護、警察への証言という目撃者の行動全体を扱います。"
+        }
+      ]
+    },
+    {
+      "search_intent": "informational",
+      "word_target": 1100,
+      "keyword_evidence": "NOT_VALIDATED",
+      "locale": "ja",
+      "subcluster": "ss-city",
+      "parent_id": "JA-H04",
+      "slug": "bike-touring-hirou-kyuukei",
+      "primary_query": "バイク ツーリング 1日 何時間 休憩",
+      "secondary_queries": [
+        "バイク 長距離 疲労 対策",
+        "ベトナム バイク旅 1日の距離",
+        "バイク 眠気 対処"
+      ],
+      "entities": [
+        "疲労",
+        "休憩の取り方",
+        "英国ハイウェイコード規則91",
+        "法律36/2024/QH15第12条2項",
+        "夜間走行を避ける計画"
+      ],
+      "intent_rationale": "Japanese-speaking travellers planning a multi-day scooter trip in Vietnam want to know how many hours a day are realistic, how often to rest and how to recognise fatigue before it becomes dangerous.",
+      "content_angle": "Uses the UK Highway Code rule 91 recommendations (do not start a journey tired, take a break of at least 15 minutes after every two hours, stop somewhere safe when sleepy) and the duty in Article 12(2) of Law 36/2024/QH15 to adapt speed to road, terrain, traffic and weather to show how to plan realistic daily stages, breaks and arrival before dark, without inventing distance norms.",
+      "working_title": "ベトナムのバイク旅は1日何時間が目安か：休憩と疲労への備え",
+      "references": [
+        {
+          "url": "https://www.gov.uk/guidance/the-highway-code/rules-for-drivers-and-motorcyclists-89-to-102",
+          "title": "GOV.UK：英国ハイウェイコード 運転者・二輪車の規則89〜102（規則91、疲労）（規則91）",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "ベトナム政府ポータル：道路交通秩序安全法（法律36/2024/QH15）統合版（第12条）",
+          "checked_on": "2026-10-15"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S50",
+          "reason": "JA-S50は暑さの中でのバイク旅と熱中症の予防を扱います。このテーマは季節に関係なく、1日の走行時間の組み立て方、休憩の頻度、疲労のサインを説明します。"
+        },
+        {
+          "id": "JA-S36",
+          "reason": "JA-S36はベトナムでの夜間走行のライトの規則と注意点を説明します。このテーマは暗くなる前に到着できるよう1日の行程と休憩を計画する方法を扱います。"
+        }
+      ]
+    },
+    {
+      "search_intent": "informational",
+      "word_target": 1100,
+      "keyword_evidence": "NOT_VALIDATED",
+      "locale": "ja",
+      "subcluster": "vc-transmission",
+      "parent_id": "JA-H01",
+      "slug": "hajimete-scooter-renshuu",
+      "primary_query": "スクーター 初めて 乗り方 練習",
+      "secondary_queries": [
+        "オートマ スクーター 初心者 練習",
+        "バイク 8の字 練習",
+        "スクーター 発進 停止 練習"
+      ],
+      "entities": [
+        "初心者の練習計画",
+        "英国のCBT講習",
+        "8の字走行とUターン",
+        "急停止",
+        "ホンダ Vision"
+      ],
+      "intent_rationale": "Japanese-speaking travellers who have never ridden an automatic scooter want a safe step-by-step plan to practise before riding in Vietnamese traffic.",
+      "content_angle": "Builds a step-by-step practice plan for a quiet, empty area based on the UK compulsory basic training syllabus (element B: controls, stands, wheeling the machine; element C: moving off, slow control, braking, turning, U-turns, emergency stop) and applies it to the controls of a typical automatic rental scooter as described in Honda Vietnam's Vision owner's manual.",
+      "working_title": "オートマスクーターに初めて乗る人のための練習プラン",
+      "references": [
+        {
+          "url": "https://www.gov.uk/guidance/compulsory-basic-training-cbt-syllabus-and-guidance-notes/element-b-practical-on-site-training",
+          "title": "GOV.UK：二輪車の義務的基礎講習（CBT）要素B、構内実習",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://www.gov.uk/guidance/compulsory-basic-training-cbt-syllabus-and-guidance-notes/element-c-practical-on-site-riding",
+          "title": "GOV.UK：二輪車の義務的基礎講習（CBT）要素C、構内走行",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/vax6VIxISbzWmEpEfkZX.pdf",
+          "title": "ホンダベトナム：Vision取扱説明書（PDF）",
+          "checked_on": "2026-10-15"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S01",
+          "reason": "JA-S01はマニュアル車とオートマのスクーターのどちらを選ぶかを比較します。このテーマは選んだ後、オートマのスクーターに初めて乗るときの具体的な練習の順番を説明します。"
+        },
+        {
+          "id": "JA-S26",
+          "reason": "JA-S26はクラッチ付きバイクの乗り方を旅行前に練習する方法を扱います。このテーマはクラッチのないオートマのスクーターの発進、低速走行、停止、8の字、Uターン、急停止の練習を扱います。"
+        }
+      ]
+    },
+    {
+      "search_intent": "informational",
+      "word_target": 1100,
+      "keyword_evidence": "NOT_VALIDATED",
+      "locale": "ja",
+      "subcluster": "vc-power",
+      "parent_id": "JA-H01",
+      "slug": "denki-scooter-koukou-kyori-juuden",
+      "primary_query": "ベトナム 電動スクーター 航続距離 充電",
+      "secondary_queries": [
+        "VinFast 電動バイク 充電 方法",
+        "電動スクーター 充電 火災 注意",
+        "電動バイク 実際の走行距離"
+      ],
+      "entities": [
+        "航続距離",
+        "充電",
+        "VinFast Evo200",
+        "充電時の火災予防",
+        "ベトナム消防警察"
+      ],
+      "intent_rationale": "Japanese-speaking travellers considering an electric scooter in Vietnam want to know how far it really goes, how long charging takes and how to charge it safely in a hotel or rental room.",
+      "content_angle": "Uses VinFast's published Evo200 specifications (range measured at 30 km/h with one 65 kg rider and lower figures at higher speeds; charging times by charger type) to explain why real-world range is lower, and the fire police and Ministry of Public Security advice on safe charging (manufacturer charger, let the battery cool after riding, do not charge overnight or unattended, dry and ventilated place away from flammable material).",
+      "working_title": "ベトナムの電動スクーター：実際の航続距離と安全な充電",
+      "references": [
+        {
+          "url": "https://vinfastauto.com/vn_vi/thong-so-ky-thuat-evo200",
+          "title": "VinFast：Evo200の仕様",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://vinfastauto.com/vn_vi/huong-dan-sac-xe-vinfast-evo-200",
+          "title": "VinFast：Evo200の充電方法",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://canhsatpccc.gov.vn/vi/news/huong-dan-cong-dong/an-toan-phong-chong-chay-khi-sac-xe-dien-614",
+          "title": "ベトナム消防警察：電動車充電時の火災安全",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://bocongan.gov.vn/bai-viet/khuyen-cao-nguoi-dan-cac-ky-nang-phong-chong-chay-no-khi-sac-xe-dien-d22-t35817",
+          "title": "ベトナム公安省：電動車充電時の火災・爆発予防の呼びかけ",
+          "checked_on": "2026-10-15"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S02",
+          "reason": "JA-S02はレンタルで50ccスクーターと電動スクーターのどちらを選ぶかを比較します。このテーマは電動スクーターを実際に使うときの問題、つまり実際にどこまで走れるかと安全な充電方法を扱います。"
+        },
+        {
+          "id": "JA-S20",
+          "reason": "JA-S20は山道の旅に必要な排気量と出力の選び方を扱います。このテーマは電動スクーターの航続距離の考え方と充電時の注意点を説明します。"
+        }
+      ]
+    },
+    {
+      "search_intent": "informational",
+      "word_target": 1100,
+      "keyword_evidence": "NOT_VALIDATED",
+      "locale": "ja",
+      "subcluster": "ss-weather",
+      "parent_id": "JA-H04",
+      "slug": "douro-ana-jari-bike",
+      "primary_query": "ベトナム 道路 穴 砂利 バイク",
+      "secondary_queries": [
+        "バイク 悪路 走り方",
+        "ベトナム 落石注意 標識",
+        "スピードバンプ スクーター 越え方"
+      ],
+      "entities": [
+        "荒れた路面",
+        "W.221とW.222の標識",
+        "W.228の標識",
+        "法律36/2024/QH15第12条3項",
+        "砂利と落石"
+      ],
+      "intent_rationale": "Japanese-speaking travellers riding outside Hanoi meet potholes, gravel, speed bumps and landslide debris and want to know what the warning signs mean, what the law expects and how to ride over loose or damaged surfaces.",
+      "content_angle": "Explains the QCVN 41:2024/BGTVT warning signs for uneven roads and speed bumps (W.221a and W.221b), slippery roads (W.222a), rockfall, flying gravel and weak roadbeds (W.228a to W.228d), the duty in Article 12(3)(b) and (m) of Law 36/2024/QH15 to slow down at obstacles and on slippery, muddy or debris-covered roads, and practical technique for crossing loose or damaged surfaces.",
+      "working_title": "道路の穴、砂利、落石：バイクで安全に通り抜ける方法",
+      "references": [
+        {
+          "url": "https://luatvietnam.vn/giao-thong/quy-chuan-qcvn-412024-bgtvt-bao-hieu-duong-bo-376856-d3.html",
+          "title": "LuatVietnam：道路標識に関する国家技術基準QCVN 41:2024/BGTVT（W.221、W.222、W.228の標識）",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "ベトナム政府ポータル：道路交通秩序安全法（法律36/2024/QH15）統合版（第12条）",
+          "checked_on": "2026-10-15"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S07",
+          "reason": "JA-S07はハノイの雨の日や冠水した道をバイクで走るときの注意点を扱います。このテーマは晴れた日にも出会う道路の穴、砂利、スピードバンプ、落石を扱います。"
+        },
+        {
+          "id": "JA-S31",
+          "reason": "JA-S31はベトナムの道路標識を全般的に紹介します。このテーマは荒れた路面そのものと、そこをバイクで安全に通り抜ける技術を説明します。"
+        }
+      ]
+    },
+    {
+      "search_intent": "informational",
+      "word_target": 1100,
+      "keyword_evidence": "NOT_VALIDATED",
+      "locale": "ja",
+      "subcluster": "ss-city",
+      "parent_id": "JA-H04",
+      "slug": "truck-bus-shikaku-bike",
+      "primary_query": "トラック バス 死角 バイク",
+      "secondary_queries": [
+        "大型トラック 横 バイク 危険",
+        "大型車 巻き込み 右折 ベトナム",
+        "バイク トラック 追い越し 注意"
+      ],
+      "entities": [
+        "死角",
+        "大型車",
+        "英国ハイウェイコード規則221",
+        "法律36/2024/QH15第12条3項",
+        "通達38/2024/TT-BGTVT"
+      ],
+      "intent_rationale": "Japanese-speaking travellers riding among trucks, buses and coaches on Vietnamese national roads want to know where drivers of large vehicles cannot see them and how to keep out of those zones, remembering that traffic keeps to the right in Vietnam.",
+      "content_angle": "Combines the Highway Code rule 221 warning that drivers of large vehicles may not see a road user following closely and need extra room to turn, the duty in Article 12(3)(h) and (k) of Law 36/2024/QH15 to slow down when being overtaken and when meeting oversized or dangerous-goods transports, and the safe-distance rules of Circular 38/2024/TT-BGTVT.",
+      "working_title": "トラックとバスの死角：ベトナムでバイクを安全に走らせるために",
+      "references": [
+        {
+          "url": "https://www.gov.uk/guidance/the-highway-code/road-users-requiring-extra-care-204-to-225",
+          "title": "GOV.UK：英国ハイウェイコード 特に注意が必要な道路利用者の規則204〜225（規則221、大型車）（規則221）",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "ベトナム政府ポータル：道路交通秩序安全法（法律36/2024/QH15）統合版（第12条）",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/thong-tu-38-2024-tt-bgtvt-toc-do-khoang-cach-an-toan-cua-xe-may-chuyen-dung-tham-gia-giao-thong-375831-d1.html",
+          "title": "LuatVietnam：車両の速度と安全距離に関する通達38/2024/TT-BGTVT（第11条）",
+          "checked_on": "2026-10-15"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S55",
+          "reason": "JA-S55は前の車との法定の車間距離を説明します。このテーマはトラックとバスの死角と、大型車の横や後ろでとどまってはいけない位置を扱います。"
+        },
+        {
+          "id": "JA-S42",
+          "reason": "JA-S42はベトナムの追い越しのルールを説明します。このテーマは追い越さないときにも重要な、大型車の周りでの見え方と位置取りを扱います。"
+        }
+      ]
+    },
+    {
+      "search_intent": "informational",
+      "word_target": 1100,
+      "keyword_evidence": "NOT_VALIDATED",
+      "locale": "ja",
+      "subcluster": "vc-models",
+      "parent_id": "JA-H01",
+      "slug": "honda-smart-key-tsukaikata",
+      "primary_query": "ホンダ スマートキー 使い方 スクーター",
+      "secondary_queries": [
+        "スクーター スマートキー エンジンのかけ方",
+        "スマートキー 電池切れ スクーター",
+        "ホンダ スマートキー シートの開け方"
+      ],
+      "entities": [
+        "ホンダ スマートキー",
+        "始動と施錠",
+        "リモコンの電池",
+        "非常用キー",
+        "ホンダ Air Blade取扱説明書"
+      ],
+      "intent_rationale": "Japanese-speaking travellers who rent a recent Honda scooter receive a keyless smart key and want to know how to start it, open the seat and lock it, and what to do if the fob stops working.",
+      "content_angle": "Explains how the Honda Smart Key works on common rental scooters according to Honda Vietnam's owner's manual and Smart Key FAQ (start, seat and lock functions; the system may not work properly when the fob battery is weak; an emergency key and emergency procedure exist but are meant for the dealer or owner), and what renters should ask the shop at pickup, without giving repair instructions.",
+      "working_title": "レンタルスクーターのホンダ スマートキー：始動、シートの開け方、施錠",
+      "references": [
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category_tab=smart-key&category_child=tu-van-su-dung-xe-may",
+          "title": "ホンダベトナム：スマートキーのよくある質問",
+          "checked_on": "2026-10-15"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/NC8346r3AExXZtAvFuMG.pdf",
+          "title": "ホンダベトナム：Air Blade取扱説明書（PDF）",
+          "checked_on": "2026-10-15"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S18",
+          "reason": "JA-S18はホンダのWave、Vision、Air Bladeといったレンタル車種を比べます。このテーマはキーのいらないスマートキーの使い方と、リモコンが反応しないときにすることだけを説明します。"
+        },
+        {
+          "id": "JA-S08",
+          "reason": "JA-S08はレンタルバイクが故障したときの対処を説明します。このテーマはスマートキーの日常の使い方、つまり始動、シートの開け方、施錠を扱います。"
+        }
+      ]
+    }
+  ]
+}
