@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 331,
+  "clean_runs": 332,
   "published": [
     {
       "id": "NL-H01",
@@ -7696,25 +7696,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T05:08:01.477Z"
+    },
+    {
+      "id": "ZH-S48",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-tielu-daokou-motuoche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:08:22.703Z",
+      "source_sha256": "2d57293d3ba4cd3f19c04d08ff4d19ece5838285e7e29312897f08e14c04f23b",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:09:23.557Z"
+    },
+    {
+      "id": "ZH-S49",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-jieban-qixing-motuoche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:08:22.703Z",
+      "source_sha256": "29cfcf9747e84a73be9691cc154da7894f6ec152b1e41eaf1884f39716df8655",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T05:09:23.557Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T00:57:36.330Z",
-      "ids": [
-        "JA-S55",
-        "KO-S18"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T00:58:53.872Z",
-      "ids": [
-        "JA-S55",
-        "KO-S18"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T01:06:27.523Z",
       "ids": [
@@ -9282,18 +9290,34 @@
         "ZH-S47"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:08:22.703Z",
+      "ids": [
+        "ZH-S48",
+        "ZH-S49"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T05:09:23.557Z",
+      "ids": [
+        "ZH-S48",
+        "ZH-S49"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T05:08:01.477Z",
+    "at": "2026-10-16T05:09:23.557Z",
     "ids": [
-      "ZH-S46",
-      "ZH-S47"
+      "ZH-S48",
+      "ZH-S49"
     ],
-    "commit": "e118af6e4547c46fd5044a95a6f3bfeb952f89fc",
-    "live_seconds": 63
+    "commit": "59827cde926798845b817ce700ccb3948a8d385e",
+    "live_seconds": 42
   },
   "queue": {
-    "APPROVED_BY_POLICY": 6
+    "APPROVED_BY_POLICY": 4
   }
 }
