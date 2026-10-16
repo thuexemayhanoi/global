@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 266,
+  "clean_runs": 267,
   "published": [
     {
       "id": "NL-H01",
@@ -6232,25 +6232,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T02:30:50.443Z"
+    },
+    {
+      "id": "NL-S53",
+      "locale": "nl",
+      "url": "/nl/guides/scooter-rijden-bij-hitte-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:31:06.528Z",
+      "source_sha256": "0b2f8bc44c769ec73442330ab487961c142de784d2babb9a62716e80f8eb5839",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:33:20.404Z"
+    },
+    {
+      "id": "NL-S54",
+      "locale": "nl",
+      "url": "/nl/guides/luchtvervuiling-hanoi-scooter/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:31:06.528Z",
+      "source_sha256": "429a43ab0c9a037ed22ccb8a336117d6107b49fcf342db09f38696b8a925b7e5",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:33:20.404Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T22:20:01.923Z",
-      "ids": [
-        "ES-S45",
-        "ES-S46"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T22:21:13.156Z",
-      "ids": [
-        "ES-S45",
-        "ES-S46"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T22:21:59.431Z",
       "ids": [
@@ -7808,18 +7816,34 @@
         "NL-S52"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:31:06.528Z",
+      "ids": [
+        "NL-S53",
+        "NL-S54"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:33:20.404Z",
+      "ids": [
+        "NL-S53",
+        "NL-S54"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T02:30:50.443Z",
+    "at": "2026-10-16T02:33:20.404Z",
     "ids": [
-      "NL-S51",
-      "NL-S52"
+      "NL-S53",
+      "NL-S54"
     ],
-    "commit": "bfeb9c6d8eda0b833279a3568f0a4dc0b4c07483",
-    "live_seconds": 41
+    "commit": "75ac263ff0c91437c50fc6afe478e27ad23444df",
+    "live_seconds": 122
   },
   "queue": {
-    "APPROVED_BY_POLICY": 4
+    "APPROVED_BY_POLICY": 2
   }
 }
