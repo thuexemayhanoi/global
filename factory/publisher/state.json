@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 409,
+  "clean_runs": 410,
   "published": [
     {
       "id": "NL-H01",
@@ -9568,25 +9568,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T10:40:38.429Z"
+    },
+    {
+      "id": "PT-S83",
+      "locale": "pt",
+      "url": "/pt/guides/piscas-moto-vietname-regras/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T10:42:48.824Z",
+      "source_sha256": "cf181338a086d83a948d694dfbbc9debc0bb2180137a544d9823a3466ec6ae21",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T10:44:32.151Z"
+    },
+    {
+      "id": "VI-S82",
+      "locale": "vi",
+      "url": "/vi/guides/loi-khong-xi-nhan-xe-may/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T10:42:48.824Z",
+      "source_sha256": "5f126660b259f19cd1e5bdae3692f9955eecb806123d37376ea61b84b5a26a9b",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T10:44:32.151Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T03:59:55.077Z",
-      "ids": [
-        "ZH-S27",
-        "ZH-S28"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T04:01:39.094Z",
-      "ids": [
-        "ZH-S27",
-        "ZH-S28"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T04:02:02.976Z",
       "ids": [
@@ -11170,16 +11178,32 @@
         "JA-S84"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T10:42:48.824Z",
+      "ids": [
+        "PT-S83",
+        "VI-S82"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T10:44:32.151Z",
+      "ids": [
+        "PT-S83",
+        "VI-S82"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T10:40:38.429Z",
+    "at": "2026-10-16T10:44:32.151Z",
     "ids": [
-      "FR-S87",
-      "JA-S84"
+      "PT-S83",
+      "VI-S82"
     ],
-    "commit": "7d1fa11ed73cec9f99ec5b636085d32683baf96f",
-    "live_seconds": 41
+    "commit": "a86cfb5500e0196aa1e44b6e99a48634eb04fec6",
+    "live_seconds": 81
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
