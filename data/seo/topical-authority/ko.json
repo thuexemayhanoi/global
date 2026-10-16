@@ -2563,6 +2563,60 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility2-0013.json@8852e3d66088"
       },
       "matrix_id": "KO-S65"
+    },
+    {
+      "candidate_id": "TA-KO-0060",
+      "locale": "ko",
+      "role": "SUPPORT",
+      "parent_id": "KO-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "sinhodeung-gyuchik-otobai",
+      "primary_query": "베트남 신호등 규칙 오토바이",
+      "secondary_queries": [
+        "베트남 노란불 점멸 의미",
+        "베트남 화살표 신호 유턴",
+        "베트남 신호위반 벌금 오토바이"
+      ],
+      "working_title": "베트남 신호등 규칙: 오토바이가 알아야 할 노란불·빨간불·화살표 신호",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Korean-speaking riders meet traffic lights with arrows, countdown timers and flashing yellow in Hanoi and want to know exactly what each light means for a motorbike, when they may still turn, and what running a light costs.",
+      "content_angle": "Explains Article 11(2) and 11(4) of Law 36/2024/QH15 (order of precedence; green, yellow, flashing yellow, red) and QCVN 41:2024/BGTVT Article 6 (green arrows that alone permit a movement, a left arrow that also permits a U-turn unless prohibited, countdown timers, the red cross signal, lane-control lights), plus the Decree 168/2024/NĐ-CP penalty and licence point deduction for ignoring a traffic light in Article 7(7)(c) and 7(13)(b).",
+      "entities": [
+        "교통 신호등",
+        "노란불 점멸",
+        "화살표 신호",
+        "남은 시간 표시",
+        "정령 168/2024/NĐ-CP 제7조 7항 c"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-178d8fdf2864",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "KO-S39",
+          "reason": "KO-S39는 신호등이 없는 교차로와 회전교차로의 통행 우선순위를 다룹니다. 이 주제는 신호등의 각 색깔과 화살표 신호가 오토바이에 무엇을 뜻하는지, 신호 위반의 벌금을 다룹니다."
+        },
+        {
+          "id": "KO-S31",
+          "reason": "KO-S31은 도로 표지판 전반을 소개합니다. 이 주제는 표지판이 아닌 교통 신호등과 그 우선순위, 노란불 점멸과 화살표 신호만을 다룹니다."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0016.json@088c5b64dabd"
+      },
+      "matrix_id": "KO-S66"
     }
   ]
 }

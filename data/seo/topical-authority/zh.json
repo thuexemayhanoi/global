@@ -2536,6 +2536,60 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility2-0014.json@5f37463f9c48"
       },
       "matrix_id": "ZH-S65"
+    },
+    {
+      "candidate_id": "TA-ZH-0060",
+      "locale": "zh",
+      "role": "SUPPORT",
+      "parent_id": "ZH-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "yuenan-motuoche-nixing-renxingdao",
+      "primary_query": "越南骑摩托车逆行罚款",
+      "secondary_queries": [
+        "越南摩托车上人行道罚款",
+        "越南单行道标志",
+        "河内老城区单行道"
+      ],
+      "working_title": "越南骑摩托车逆行和上人行道：单行道标志与罚款",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Chinese-speaking travellers riding in Hanoi's Old Quarter meet many one-way streets and see locals riding against them or along the pavement, and want to know what the signs mean, what the law allows and what riding the wrong way or on the pavement costs.",
+      "content_angle": "Explains the No entry sign P.102 and the One-way road signs I.407 (a, b, c) in QCVN 41:2024/BGTVT, with the two-way traffic sign W.204 marking where one-way traffic ends, Article 77(1) of Law 36/2024/QH15 (pavements are for pedestrians) and Article 33(3)(b) (riders may not enter parts of the road reserved for pedestrians and other vehicles), and the Decree 168/2024/NĐ-CP Article 7(7)(a) fine with the licence point deduction in Article 7(13)(a) for riding against a one-way street or on the pavement, except crossing it to enter a building.",
+      "entities": [
+        "单行道",
+        "P.102禁止驶入标志",
+        "I.407单行道标志",
+        "《道路交通秩序与安全法》第33条第3款b点",
+        "第168/2024/NĐ-CP号议定第7条第7款a点"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "rx-178d8fdf2864"
+      ],
+      "distinct_from": [
+        {
+          "id": "ZH-S44",
+          "reason": "ZH-S44说明在有多条车道的道路上摩托车应该走哪条车道。本主题讲单行道、禁止驶入标志，以及逆行和在人行道上骑车的罚款。"
+        },
+        {
+          "id": "ZH-S31",
+          "reason": "ZH-S31概括介绍常见的交通标志。本主题专门讲单行道和人行道，以及逆行和上人行道骑车的处罚。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0016.json@088c5b64dabd"
+      },
+      "matrix_id": "ZH-S66"
     }
   ]
 }
