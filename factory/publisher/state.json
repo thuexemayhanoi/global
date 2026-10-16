@@ -5464,17 +5464,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T01:09:14.745Z"
+    },
+    {
+      "id": "JA-S56",
+      "locale": "ja",
+      "url": "/ja/guides/shingou-mikata-bike/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:16:12.425Z",
+      "source_sha256": "c35d0e3b63aae05c1b0b63bd04b8d65410f22ac8e67080f2e1d756cbbc43ab73",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S57",
+      "locale": "ja",
+      "url": "/ja/guides/fumikiri-watarikata-bike/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:16:12.425Z",
+      "source_sha256": "cc9720b9d3adc6d3ddc6beca57facae7cae2d3a33f8201f9c696376a190c1239",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T21:03:43.577Z",
-      "ids": [
-        "EN-S55",
-        "EN-S56"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T21:06:33.780Z",
       "ids": [
@@ -7024,6 +7038,14 @@
         "KO-S29"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T01:16:12.425Z",
+      "ids": [
+        "JA-S56",
+        "JA-S57"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -7036,6 +7058,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 6
   }
 }
