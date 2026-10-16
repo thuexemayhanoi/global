@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 370,
+  "clean_runs": 371,
   "published": [
     {
       "id": "NL-H01",
@@ -8632,25 +8632,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T07:27:20.580Z"
+    },
+    {
+      "id": "NL-S19",
+      "locale": "nl",
+      "url": "/nl/guides/semi-automaat-rijden/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:29:31.093Z",
+      "source_sha256": "ccfa1af5bee0d23ccfa70b704203ba7170478355bcc997ac846e4072fe40371d",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:30:48.014Z"
+    },
+    {
+      "id": "PT-S19",
+      "locale": "pt",
+      "url": "/pt/guides/conduzir-semiautomatica/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:29:31.093Z",
+      "source_sha256": "72d540bc55024faea30069334530ed507cb12ce4ed17b00b958e7946583b1cca",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:30:48.014Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T02:39:24.926Z",
-      "ids": [
-        "PT-S30",
-        "PT-S31"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:40:22.531Z",
-      "ids": [
-        "PT-S30",
-        "PT-S31"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T02:41:50.356Z",
       "ids": [
@@ -10218,15 +10226,31 @@
         "KO-S19"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T07:29:31.093Z",
+      "ids": [
+        "NL-S19",
+        "PT-S19"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T07:30:48.014Z",
+      "ids": [
+        "NL-S19",
+        "PT-S19"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T07:27:20.580Z",
+    "at": "2026-10-16T07:30:48.014Z",
     "ids": [
-      "JA-S19",
-      "KO-S19"
+      "NL-S19",
+      "PT-S19"
     ],
-    "commit": "5cb3986bcdfdd3577693a76c1ec2568d07dc67db",
+    "commit": "d621d3d947fad29da0adb7b9552d570672fd0660",
     "live_seconds": 62
   },
   "queue": {
