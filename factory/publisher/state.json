@@ -5344,17 +5344,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T00:53:08.019Z"
+    },
+    {
+      "id": "JA-S51",
+      "locale": "ja",
+      "url": "/ja/guides/hanoi-taiki-osen-bike/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:53:43.298Z",
+      "source_sha256": "96d2281f7f4070e0374c18ae4ee5884e1816507567297b00e3823eca8be630f5",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S52",
+      "locale": "ja",
+      "url": "/ja/guides/vietnam-kinkyuu-denwa-bangou/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:53:43.298Z",
+      "source_sha256": "23cfcfec4a4666c7ea778a54cb461042f8720276b702a024d1da01dcf0df85c6",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T20:45:51.929Z",
-      "ids": [
-        "DE-S65",
-        "DE-S66"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T20:47:03.729Z",
       "ids": [
@@ -6900,6 +6914,14 @@
         "JA-S50"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T00:53:43.298Z",
+      "ids": [
+        "JA-S51",
+        "JA-S52"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -6912,6 +6934,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 4
   }
 }
