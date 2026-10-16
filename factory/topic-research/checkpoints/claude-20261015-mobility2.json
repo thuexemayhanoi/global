@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility2",
   "batch_session": "research-claude-20261015-mobility2",
   "created_at": "2026-10-15T23:01:23.660Z",
-  "updated_at": "2026-10-16T03:53:03.936Z",
-  "base_main_sha": "3ba6d8eec1f771bab322075bb272e0cbd7f58b0b",
-  "last_commit_sha": "15ea3aec53fa546469da7b2ce4d08ebd2a342586",
+  "updated_at": "2026-10-16T03:56:58.630Z",
+  "base_main_sha": "85ffc39bdb7ffdb6dbcf425d02185cae23cf6e29",
+  "last_commit_sha": "d97983ef0579635f1f28ae79956db5c3c0d74e37",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 110,
-    "qa_pass": 110,
+    "researched": 120,
+    "qa_pass": 120,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 100,
+    "pushed": 110,
     "pending_push": 10
   },
   "coverage": {
@@ -32,17 +32,18 @@
       "ko": 10,
       "zh": 10,
       "pt": 20,
-      "nl": 10
+      "nl": 10,
+      "vi": 10
     },
     "domains": {
-      "traffic-law-safety": 100,
+      "traffic-law-safety": 110,
       "motorbike-rental": 10
     }
   },
   "last_batch": {
-    "seq": 11,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0011.json",
-    "sha256": "4fa6971c9fddc1526161002f918e1b88e8704e959338e2fdd77dcb6ed7d4c0b8",
+    "seq": 12,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0012.json",
+    "sha256": "e2c774afd66e7ef9e5299328963a7fff1fa5674f005fb82db410a3ff0170a943",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -1162,8 +1163,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility2-0011.json",
       "sha256": "4fa6971c9fddc1526161002f918e1b88e8704e959338e2fdd77dcb6ed7d4c0b8",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "ec91dcdcbe7bb88f4ce8b81ca0a03273d8a74ece",
       "researched_on": "2026-10-16",
       "topics": [
         {
@@ -1267,11 +1268,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 12,
+      "file": "factory/topic-research/batches/claude-20261015-mobility2-0012.json",
+      "sha256": "e2c774afd66e7ef9e5299328963a7fff1fa5674f005fb82db410a3ff0170a943",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-16",
+      "topics": [
+        {
+          "ref": "vi:so-dien-thoai-khan-cap-113-114-115",
+          "locale": "vi",
+          "slug": "so-dien-thoai-khan-cap-113-114-115",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::so dien thoai khan cap 113 114 115",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:duong-deo-hep-nhuong-duong-xe-may",
+          "locale": "vi",
+          "slug": "duong-deo-hep-nhuong-duong-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::duong deo hep xe nao phai nhuong duong",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:nhuong-duong-nguoi-di-bo-vach-ke",
+          "locale": "vi",
+          "slug": "nhuong-duong-nguoi-di-bo-vach-ke",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::nhuong duong cho nguoi di bo qua vach ke duong",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:khoang-cach-an-toan-xe-may",
+          "locale": "vi",
+          "slug": "khoang-cach-an-toan-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::khoang cach an toan khi di xe may",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:di-xe-may-qua-ham-duong-bo",
+          "locale": "vi",
+          "slug": "di-xe-may-qua-ham-duong-bo",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::di xe may qua ham duong bo can luu y gi",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:nhuong-duong-xe-uu-tien",
+          "locale": "vi",
+          "slug": "nhuong-duong-xe-uu-tien",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::nhuong duong cho xe uu tien khi di xe may",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:hieu-lenh-nguoi-dieu-khien-giao-thong",
+          "locale": "vi",
+          "slug": "hieu-lenh-nguoi-dieu-khien-giao-thong",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::hieu lenh cua nguoi dieu khien giao thong",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:vat-nuoi-tren-duong-di-xe-may",
+          "locale": "vi",
+          "slug": "vat-nuoi-tren-duong-di-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::gap vat nuoi tren duong khi di xe may",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:xe-may-khong-co-guong-bi-phat",
+          "locale": "vi",
+          "slug": "xe-may-khong-co-guong-bi-phat",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-contract",
+          "key": "vi::xe may khong co guong bi phat bao nhieu",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:di-xe-may-duong-tinh-ma-tuy",
+          "locale": "vi",
+          "slug": "di-xe-may-duong-tinh-ma-tuy",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::di xe may duong tinh voi ma tuy bi phat the nao",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 12,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0012.json",
+    "seq": 13,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0013.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -1360,6 +1472,13 @@
       "seq": 11,
       "topics": 10,
       "sha256": "4fa6971c9fddc1526161002f918e1b88e8704e959338e2fdd77dcb6ed7d4c0b8"
+    },
+    {
+      "at": "2026-10-16T03:56:58.630Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 12,
+      "topics": 10,
+      "sha256": "e2c774afd66e7ef9e5299328963a7fff1fa5674f005fb82db410a3ff0170a943"
     }
   ]
 }
