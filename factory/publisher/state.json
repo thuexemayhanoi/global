@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 224,
+  "clean_runs": 226,
   "published": [
     {
       "id": "NL-H01",
@@ -5224,41 +5224,57 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T00:42:09.169Z"
+    },
+    {
+      "id": "JA-S41",
+      "locale": "ja",
+      "url": "/ja/guides/passenger-limit-motorbike-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:43:38.759Z",
+      "source_sha256": "40ea3e4d71c02aaa56d7466ed51c8652a79159b19e20dfb9387394fbc79e3b18",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T00:44:33.547Z"
+    },
+    {
+      "id": "JA-S42",
+      "locale": "ja",
+      "url": "/ja/guides/overtaking-rule-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:43:38.759Z",
+      "source_sha256": "622869c64ad5e3aa236b4f561c75acd0e907315d6e96527c12108aedd6046525",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T00:44:33.547Z"
+    },
+    {
+      "id": "JA-S43",
+      "locale": "ja",
+      "url": "/ja/guides/u-turn-rule-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:44:49.922Z",
+      "source_sha256": "9b7139ecf52e130921383d1dd3e31a1605a7d7fe85a9a4df0c7eef2cf28c528a",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T00:45:45.179Z"
+    },
+    {
+      "id": "JA-S44",
+      "locale": "ja",
+      "url": "/ja/guides/lane-rule-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:44:49.922Z",
+      "source_sha256": "39858ef583bc89a140e1305e5f204d727f5ee0f16b309e1fc2488b7c22669236",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T00:45:45.179Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T20:30:48.657Z",
-      "ids": [
-        "EN-S44",
-        "EN-S45"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T20:32:03.541Z",
-      "ids": [
-        "EN-S44",
-        "EN-S45"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T20:32:22.713Z",
-      "ids": [
-        "EN-S46",
-        "EN-S47"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T20:34:16.645Z",
-      "ids": [
-        "EN-S46",
-        "EN-S47"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T20:34:48.112Z",
       "ids": [
@@ -6780,16 +6796,48 @@
         "FR-S81"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T00:43:38.759Z",
+      "ids": [
+        "JA-S41",
+        "JA-S42"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T00:44:33.547Z",
+      "ids": [
+        "JA-S41",
+        "JA-S42"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T00:44:49.922Z",
+      "ids": [
+        "JA-S43",
+        "JA-S44"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T00:45:45.179Z",
+      "ids": [
+        "JA-S43",
+        "JA-S44"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T00:42:09.169Z",
+    "at": "2026-10-16T00:45:45.179Z",
     "ids": [
-      "FR-S80",
-      "FR-S81"
+      "JA-S43",
+      "JA-S44"
     ],
-    "commit": "e6145c6711cbf04ed5b06a2d30bdb3cfe5472abb",
-    "live_seconds": 82
+    "commit": "2cdf7c78154102935b353aad9a328fa281c70fae",
+    "live_seconds": 42
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
