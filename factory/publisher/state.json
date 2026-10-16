@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 387,
+  "clean_runs": 388,
   "published": [
     {
       "id": "NL-H01",
@@ -9040,25 +9040,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T08:42:20.158Z"
+    },
+    {
+      "id": "VI-S76",
+      "locale": "vi",
+      "url": "/vi/guides/cach-dung-smartkey-xe-tay-ga-honda/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T08:45:52.156Z",
+      "source_sha256": "ea666f95a810dbbc78293bd1217b2e0d594fcc65d98b27f394c00564c0791dd8",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T08:46:56.161Z"
+    },
+    {
+      "id": "ZH-S77",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-jiaojing-kouche-qingkuang/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T08:45:52.156Z",
+      "source_sha256": "5aeb8f3830d31b33561cc65db1f678fba0ab0f9172d68c98a32418e9b6dd2c7d",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T08:46:56.161Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T03:15:16.994Z",
-      "ids": [
-        "VI-S30",
-        "VI-S31"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T03:16:35.156Z",
-      "ids": [
-        "VI-S30",
-        "VI-S31"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T03:16:52.360Z",
       "ids": [
@@ -10636,16 +10644,32 @@
         "VI-S75"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T08:45:52.156Z",
+      "ids": [
+        "VI-S76",
+        "ZH-S77"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T08:46:56.161Z",
+      "ids": [
+        "VI-S76",
+        "ZH-S77"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T08:42:20.158Z",
+    "at": "2026-10-16T08:46:56.161Z",
     "ids": [
-      "VI-S74",
-      "VI-S75"
+      "VI-S76",
+      "ZH-S77"
     ],
-    "commit": "d08ec278b9ceb880332719afd023a7a481c112b3",
-    "live_seconds": 81
+    "commit": "83563471fe1f2f062038bc552dace1b50688a6d1",
+    "live_seconds": 43
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
