@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 426,
+  "clean_runs": 427,
   "published": [
     {
       "id": "NL-H01",
@@ -9986,7 +9986,8 @@
       "at": "2026-10-16T16:23:41.496Z",
       "source_sha256": "d91390c59f82c7cd103d6644170ec3d74018be344e642bc36c992a90726beb9e",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:25:09.430Z"
     },
     {
       "id": "EN-S90",
@@ -9997,26 +9998,33 @@
       "at": "2026-10-16T16:23:41.496Z",
       "source_sha256": "4400e4e2605dbbbc3032fa8d5c8889dd32b0264d2d4b527a49b86bc9a7c8c326",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:25:09.430Z"
+    },
+    {
+      "id": "ES-S78",
+      "locale": "es",
+      "url": "/es/guides/perro-o-gato-en-moto-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:25:53.146Z",
+      "source_sha256": "868113ff57db67a6f201f6872d1b2fd2f1edc669626610ac3c1c4943b844230b",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S90",
+      "locale": "fr",
+      "url": "/fr/guides/acheter-moto-occasion-vietnam-carte-grise/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:25:53.146Z",
+      "source_sha256": "e1c7495f4bb8ee53ec43a7ecfa82a8ab17361a8164367d63dbdca4cb2dfc510c",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T05:00:08.341Z",
-      "ids": [
-        "ZH-S44",
-        "ZH-S45"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T05:00:30.998Z",
-      "ids": [
-        "VI-S47",
-        "VI-S48"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T05:02:12.686Z",
       "ids": [
@@ -11600,16 +11608,32 @@
         "EN-S90"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T16:25:09.430Z",
+      "ids": [
+        "DE-S89",
+        "EN-S90"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T16:25:53.146Z",
+      "ids": [
+        "ES-S78",
+        "FR-S90"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T16:21:00.970Z",
+    "at": "2026-10-16T16:25:09.430Z",
     "ids": [
-      "ZH-S85",
-      "ZH-S86"
+      "DE-S89",
+      "EN-S90"
     ],
-    "commit": "79b653a4f337767898865a61e3e105411017c270",
-    "live_seconds": 61
+    "commit": "b924963d53d86c2a4813f2e9b19def14de163934",
+    "live_seconds": 62
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
