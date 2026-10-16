@@ -10384,17 +10384,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T20:23:21.125Z"
+    },
+    {
+      "id": "KO-S74",
+      "locale": "ko",
+      "url": "/ko/guides/pain-gil-jagal-otobai-juhaeng/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T20:41:52.415Z",
+      "source_sha256": "d743b15063df171b559006ed9ffb806bfb0750b252de1b010a196676142537e7",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "VI-S67",
+      "locale": "vi",
+      "url": "/vi/guides/cach-phanh-xe-tay-ga-dung-cach/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T20:41:52.415Z",
+      "source_sha256": "368d428b6996f6c2d214598e9b455a5ecbdb552e89ca7cdf4fe2bb3b1c355262",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T05:37:08.243Z",
-      "ids": [
-        "ZH-S60",
-        "ZH-S61"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T05:38:06.633Z",
       "ids": [
@@ -11986,6 +12000,14 @@
         "ZH-S76"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T20:41:52.415Z",
+      "ids": [
+        "KO-S74",
+        "VI-S67"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -11998,6 +12020,6 @@
     "live_seconds": 484
   },
   "queue": {
-    "REJECTED": 4
+    "APPROVED_BY_POLICY": 4
   }
 }
