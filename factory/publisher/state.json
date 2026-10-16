@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 362,
+  "clean_runs": 363,
   "published": [
     {
       "id": "NL-H01",
@@ -8450,7 +8450,8 @@
       "at": "2026-10-16T06:44:18.740Z",
       "source_sha256": "53ee9c2b973ace952ddc8ff83613a0391e89278e75c91fb8f9be318c9bf23213",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:45:41.309Z"
     },
     {
       "id": "ZH-S70",
@@ -8461,26 +8462,33 @@
       "at": "2026-10-16T06:44:18.740Z",
       "source_sha256": "09236b6164c18d9010dfa289f15e499c99e2a1bd95d0053ff94b1342c54cd0de",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:45:41.309Z"
+    },
+    {
+      "id": "ZH-S71",
+      "locale": "zh",
+      "url": "/zh/guides/motuoche-changtu-pilao-xiuxi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:46:22.611Z",
+      "source_sha256": "074e2df9e855aaf3e9d0118273774389a77ff95495cc899a53f43b105b55d9b3",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S72",
+      "locale": "zh",
+      "url": "/zh/guides/diyici-qi-zidongdang-tabanche/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:46:22.611Z",
+      "source_sha256": "0f2794d7ecc13ae07b7788eac2786ab3ec99a820fbf14cf866c57250d2c95c1b",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T02:26:03.152Z",
-      "ids": [
-        "NL-S45",
-        "NL-S46"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:26:23.590Z",
-      "ids": [
-        "NL-S47",
-        "NL-S48"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T02:28:00.758Z",
       "ids": [
@@ -10048,15 +10056,31 @@
         "ZH-S70"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:45:41.309Z",
+      "ids": [
+        "ZH-S69",
+        "ZH-S70"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:46:22.611Z",
+      "ids": [
+        "ZH-S71",
+        "ZH-S72"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T06:38:44.692Z",
+    "at": "2026-10-16T06:45:41.309Z",
     "ids": [
-      "JA-S67",
-      "KO-S66"
+      "ZH-S69",
+      "ZH-S70"
     ],
-    "commit": "f64e8f7d7b1efab88bab8d699d10ea2d762d8b58",
+    "commit": "9110ca1a527df32f41bfb01a341e9accfb5daa31",
     "live_seconds": 62
   },
   "queue": {
