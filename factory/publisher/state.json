@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 220,
+  "clean_runs": 223,
   "published": [
     {
       "id": "NL-H01",
@@ -5138,7 +5138,8 @@
       "at": "2026-10-16T00:34:06.851Z",
       "source_sha256": "d7283f2acdb3d3d9ec18b43b22aa46adf8cc5c23c63012ee20aacca535568de2",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T00:35:19.761Z"
     },
     {
       "id": "FR-S78",
@@ -5149,49 +5150,59 @@
       "at": "2026-10-16T00:34:06.851Z",
       "source_sha256": "36024067c1a7391cd28b25a039102bc18b2d53cd998e98b578d2c8932c8b5ca3",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T00:35:19.761Z"
+    },
+    {
+      "id": "FR-S75",
+      "locale": "fr",
+      "url": "/fr/guides/premiere-fois-scooter-automatique/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:35:36.091Z",
+      "source_sha256": "5ebb5db6551c741c8c50d1eee6115db408372b3ea67d712bfbca40dfa6b3fb03",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T00:36:49.174Z"
+    },
+    {
+      "id": "FR-S76",
+      "locale": "fr",
+      "url": "/fr/guides/scooter-electrique-autonomie-recharge-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:35:36.091Z",
+      "source_sha256": "21fa35fee7fcebb1b8687b2c2b2a933fc7d4f987bbc032fc08c9a1d926a58c4f",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T00:36:49.174Z"
+    },
+    {
+      "id": "FR-S77",
+      "locale": "fr",
+      "url": "/fr/guides/nids-de-poule-gravillons-scooter-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:37:06.028Z",
+      "source_sha256": "c3e1c1aaacbc6ed5a3eb272cc7795111eacf27d8e209fb7e84e43382e1094ca7",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T00:38:20.617Z"
+    },
+    {
+      "id": "FR-S79",
+      "locale": "fr",
+      "url": "/fr/guides/smart-key-honda-scooter/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:37:06.028Z",
+      "source_sha256": "7c6fa8cf56dc5338ae58f0ccd8aaef2c07cd17d97a19cf9be5f9be6e1344b007",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T00:38:20.617Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T20:21:13.148Z",
-      "ids": [
-        "DE-S58"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T20:23:57.405Z",
-      "ids": [
-        "DE-S59",
-        "DE-S60"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T20:25:08.643Z",
-      "ids": [
-        "DE-S59",
-        "DE-S60"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T20:25:25.615Z",
-      "ids": [
-        "DE-S61",
-        "DE-S62"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T20:26:36.724Z",
-      "ids": [
-        "DE-S61",
-        "DE-S62"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T20:26:53.626Z",
       "ids": [
@@ -6703,18 +6714,56 @@
         "FR-S78"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T00:35:19.761Z",
+      "ids": [
+        "FR-S74",
+        "FR-S78"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T00:35:36.091Z",
+      "ids": [
+        "FR-S75",
+        "FR-S76"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T00:36:49.174Z",
+      "ids": [
+        "FR-S75",
+        "FR-S76"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T00:37:06.028Z",
+      "ids": [
+        "FR-S77",
+        "FR-S79"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T00:38:20.617Z",
+      "ids": [
+        "FR-S77",
+        "FR-S79"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T00:33:48.755Z",
+    "at": "2026-10-16T00:38:20.617Z",
     "ids": [
-      "FR-S72",
-      "FR-S73"
+      "FR-S77",
+      "FR-S79"
     ],
-    "commit": "87db9b3a062ef2762123b29a50d0d1cc70a368e8",
-    "live_seconds": 82
+    "commit": "53aa15e0101149619d46a57c11e50ab0b79d2581",
+    "live_seconds": 61
   },
-  "queue": {
-    "APPROVED_BY_POLICY": 2
-  }
+  "queue": {}
 }
