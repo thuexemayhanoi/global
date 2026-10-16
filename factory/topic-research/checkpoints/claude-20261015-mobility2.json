@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility2",
   "batch_session": "research-claude-20261015-mobility2",
   "created_at": "2026-10-15T23:01:23.660Z",
-  "updated_at": "2026-10-16T04:28:20.535Z",
-  "base_main_sha": "bcaf5387a54216d8a192082e715a342538a4ca90",
-  "last_commit_sha": "8852e3d660882e29533dc7253a7644560fdaf0c4",
+  "updated_at": "2026-10-16T04:44:18.087Z",
+  "base_main_sha": "aeebb1fe26ab801dccea2a20c27cd8810d6a6285",
+  "last_commit_sha": "5f37463f9c483a4d49ee44379f9261a7294e2b14",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 140,
-    "qa_pass": 140,
+    "researched": 150,
+    "qa_pass": 150,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 130,
+    "pushed": 140,
     "pending_push": 10
   },
   "coverage": {
@@ -28,22 +28,22 @@
       "es": 14,
       "en": 2,
       "de": 2,
-      "ja": 20,
+      "ja": 21,
       "ko": 20,
       "zh": 20,
       "pt": 20,
       "nl": 10,
-      "vi": 10
+      "vi": 19
     },
     "domains": {
-      "traffic-law-safety": 130,
+      "traffic-law-safety": 140,
       "motorbike-rental": 10
     }
   },
   "last_batch": {
-    "seq": 14,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0014.json",
-    "sha256": "49019f2d094457809f3b1c494c2cbe0597f74d949826d773b20911d93c54420f",
+    "seq": 15,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0015.json",
+    "sha256": "2558de817171b3176aecfe4acc5db9bc636063439444981857b25027a6eb0e67",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -1496,8 +1496,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility2-0014.json",
       "sha256": "49019f2d094457809f3b1c494c2cbe0597f74d949826d773b20911d93c54420f",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "5f37463f9c483a4d49ee44379f9261a7294e2b14",
       "researched_on": "2026-10-16",
       "topics": [
         {
@@ -1508,7 +1508,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-incidents",
           "key": "zh::越南紧急电话号码",
-          "ta_id": null
+          "ta_id": "TA-ZH-0050"
         },
         {
           "ref": "zh:yuenan-shanlu-huiche-guize",
@@ -1518,7 +1518,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南山路会车 摩托车",
-          "ta_id": null
+          "ta_id": "TA-ZH-0051"
         },
         {
           "ref": "zh:yuenan-banmaxian-lirang-xingren",
@@ -1528,7 +1528,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南斑马线礼让行人 摩托车",
-          "ta_id": null
+          "ta_id": "TA-ZH-0052"
         },
         {
           "ref": "zh:yuenan-motuoche-anquan-juli",
@@ -1538,7 +1538,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南摩托车安全距离",
-          "ta_id": null
+          "ta_id": "TA-ZH-0053"
         },
         {
           "ref": "zh:yuenan-suidao-motuoche-guize",
@@ -1548,7 +1548,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南隧道骑摩托车规则",
-          "ta_id": null
+          "ta_id": "TA-ZH-0054"
         },
         {
           "ref": "zh:yuenan-rang-jiuhuche-motuoche",
@@ -1558,7 +1558,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南给救护车让行 摩托车",
-          "ta_id": null
+          "ta_id": "TA-ZH-0055"
         },
         {
           "ref": "zh:yuenan-jiaojing-shoushi-hanyi",
@@ -1568,7 +1568,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南交警手势含义",
-          "ta_id": null
+          "ta_id": "TA-ZH-0056"
         },
         {
           "ref": "zh:yuenan-daolu-dongwu-motuoche",
@@ -1578,7 +1578,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南道路上的牛 摩托车",
-          "ta_id": null
+          "ta_id": "TA-ZH-0057"
         },
         {
           "ref": "zh:yuenan-motuoche-houshijing-fakuan",
@@ -1588,7 +1588,7 @@
           "parent_id": "ZH-H03",
           "subcluster": "dc-contract",
           "key": "zh::越南摩托车没有后视镜罚款",
-          "ta_id": null
+          "ta_id": "TA-ZH-0058"
         },
         {
           "ref": "zh:yuenan-dujia-chufa-motuoche",
@@ -1598,14 +1598,125 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-city",
           "key": "zh::越南毒驾处罚 摩托车",
+          "ta_id": "TA-ZH-0059"
+        }
+      ]
+    },
+    {
+      "seq": 15,
+      "file": "factory/topic-research/batches/claude-20261015-mobility2-0015.json",
+      "sha256": "2558de817171b3176aecfe4acc5db9bc636063439444981857b25027a6eb0e67",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-16",
+      "topics": [
+        {
+          "ref": "vi:di-nguoc-chieu-tren-via-he-xe-may",
+          "locale": "vi",
+          "slug": "di-nguoc-chieu-tren-via-he-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::di nguoc chieu xe may phat bao nhieu",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:tru-diem-giay-phep-lai-xe-may",
+          "locale": "vi",
+          "slug": "tru-diem-giay-phep-lai-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-licence",
+          "key": "vi::tru diem giay phep lai xe may",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:nop-phat-vi-pham-giao-thong-truc-tuyen",
+          "locale": "vi",
+          "slug": "nop-phat-vi-pham-giao-thong-truc-tuyen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::nop phat vi pham giao thong online",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:di-xe-may-troi-nang-nong",
+          "locale": "vi",
+          "slug": "di-xe-may-troi-nang-nong",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-weather",
+          "key": "vi::di xe may troi nang nong",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:o-nhiem-khong-khi-ha-noi-di-xe-may",
+          "locale": "vi",
+          "slug": "o-nhiem-khong-khi-ha-noi-di-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-weather",
+          "key": "vi::o nhiem khong khi ha noi di xe may",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:di-xe-may-qua-duong-ngang-duong-sat",
+          "locale": "vi",
+          "slug": "di-xe-may-qua-duong-ngang-duong-sat",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::di xe may qua duong ngang duong sat",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:di-phuot-xe-may-theo-doan",
+          "locale": "vi",
+          "slug": "di-phuot-xe-may-theo-doan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::di phuot xe may theo doan",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:keo-day-xe-may-bi-phat",
+          "locale": "vi",
+          "slug": "keo-day-xe-may-bi-phat",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::dung chan day xe may bi phat",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:di-xe-may-qua-pha-cau-phao",
+          "locale": "vi",
+          "slug": "di-xe-may-qua-pha-cau-phao",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::di xe may qua pha",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:yakubutsu-unten-bike-bakkin",
+          "locale": "ja",
+          "slug": "yakubutsu-unten-bike-bakkin",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナム 薬物 運転 ハイク 罰則",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 15,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0015.json",
+    "seq": 16,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0016.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -1715,6 +1826,13 @@
       "seq": 14,
       "topics": 10,
       "sha256": "49019f2d094457809f3b1c494c2cbe0597f74d949826d773b20911d93c54420f"
+    },
+    {
+      "at": "2026-10-16T04:44:18.087Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 15,
+      "topics": 10,
+      "sha256": "2558de817171b3176aecfe4acc5db9bc636063439444981857b25027a6eb0e67"
     }
   ]
 }
