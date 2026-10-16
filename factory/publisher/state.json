@@ -7240,17 +7240,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T04:05:03.152Z"
+    },
+    {
+      "id": "ZH-S36",
+      "locale": "zh",
+      "url": "/zh/guides/vietnam-night-riding-lights/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T04:06:57.038Z",
+      "source_sha256": "467900b9a8c2ca16e8dea8ec67c24997b921a26c3ec404ed2bc8ec109f17432a",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S37",
+      "locale": "zh",
+      "url": "/zh/guides/vietnam-phone-while-riding/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T04:06:57.038Z",
+      "source_sha256": "1fda9605a2deb1a15e1728d09cac50c190d9b0c48b094310b0cd2752c78fcd00",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T00:13:10.125Z",
-      "ids": [
-        "JA-S38",
-        "JA-S39"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T00:14:05.056Z",
       "ids": [
@@ -8824,6 +8838,14 @@
         "ZH-S35"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T04:06:57.038Z",
+      "ids": [
+        "ZH-S36",
+        "ZH-S37"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -8835,5 +8857,7 @@
     "commit": "02fa26e03ec2e4000818d4ecf6955068f814008f",
     "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 2
+  }
 }
