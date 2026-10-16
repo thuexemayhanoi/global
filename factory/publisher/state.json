@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 287,
+  "clean_runs": 288,
   "published": [
     {
       "id": "NL-H01",
@@ -6676,31 +6676,44 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T03:10:29.415Z"
+    },
+    {
+      "id": "VI-S30",
+      "locale": "vi",
+      "url": "/vi/guides/toc-do-toi-da-xe-may/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:15:16.994Z",
+      "source_sha256": "ae7ec5068421f33f06fb7b07804613c24c72aaed346545b0e50b2fb6842a9ba4",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T03:16:35.156Z"
+    },
+    {
+      "id": "VI-S31",
+      "locale": "vi",
+      "url": "/vi/guides/thi-bang-lai-xe-may-a1-can-gi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:15:16.994Z",
+      "source_sha256": "aa4561ea15ad5c06d8674fc3a00a6c7339b3831e45ef7a8ec9319c10423c0f3a",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T03:16:35.156Z"
+    },
+    {
+      "id": "VI-S32",
+      "locale": "vi",
+      "url": "/vi/guides/bien-bao-cam-xe-may/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:16:52.360Z",
+      "source_sha256": "45655ba135568a7bc45c0222267af5e806c582938631db3fe53283df9d50ad02",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T23:06:49.006Z",
-      "ids": [
-        "FR-S49"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T23:08:21.967Z",
-      "ids": [
-        "FR-S49"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T23:09:04.924Z",
-      "ids": [
-        "FR-S50",
-        "FR-S51"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T23:09:58.850Z",
       "ids": [
@@ -8254,15 +8267,41 @@
         "VI-S29"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T03:15:16.994Z",
+      "ids": [
+        "VI-S30",
+        "VI-S31"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T03:16:35.156Z",
+      "ids": [
+        "VI-S30",
+        "VI-S31"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T03:16:52.360Z",
+      "ids": [
+        "VI-S32"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T03:10:29.415Z",
+    "at": "2026-10-16T03:16:35.156Z",
     "ids": [
-      "VI-S29"
+      "VI-S30",
+      "VI-S31"
     ],
-    "commit": "fd0551f84b969040f08b2fad9b183559473c0464",
-    "live_seconds": 122
+    "commit": "2451bafe79cd98b61d985d273ce7fd8a942a28ed",
+    "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
