@@ -3203,6 +3203,168 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility2-0021.json@eab467f4243b"
       },
       "matrix_id": "JA-S77"
+    },
+    {
+      "candidate_id": "TA-JA-0072",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "romen-hyouji-imi-vietnam",
+      "primary_query": "ベトナム 路面標示 意味",
+      "secondary_queries": [
+        "ベトナム 黄色 実線 はみ出し",
+        "ベトナム 停止線 信号 バイク",
+        "ベトナム 区画線 白 破線"
+      ],
+      "working_title": "ベトナムの路面標示の意味：黄色のセンターライン、停止線、横断歩道",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Japanese-speaking riders want to understand the yellow and white lines on Vietnamese roads, which ones they may cross and what the stop and give-way lines mean, because yellow centre lines carry a different meaning from the markings they know at home.",
+      "content_angle": "Explains the road markings in QCVN 41:2024/BGTVT (yellow centre lines 1.1 dashed, 1.2 solid, 1.3 double solid and 1.4 solid-dashed; white lane lines 2.1 and 2.2 and reserved-lane line 2.3; edge lines 3.1; hatched marking 4.1; stop line 7.1 with sign R.122; give-way line 7.2 with W.208 in its two forms; pedestrian crossing 7.3), the order of priority between police signals, lights, signs and markings in Article 11(2) of Law 36/2024/QH15, the temporary-sign rule in Article 11(12), the amber-light rule at the stop line in Article 11(4)(b), and the penalties in Article 7(1)(a), 7(3)(d) and 7(4)(c) of Decree 168/2024/NĐ-CP for not following markings, riding in the wrong lane and overtaking where it is forbidden.",
+      "entities": [
+        "QCVN 41:2024/BGTVT 付属書G",
+        "センターライン1.1〜1.4",
+        "停止線7.1",
+        "譲れ線7.2",
+        "横断歩道7.3",
+        "法律36/2024/QH15 第11条2項"
+      ],
+      "references": [
+        "rx-178d8fdf2864",
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S31",
+          "reason": "JA-S31はバイクで走る人が知っておくべき道路標識を紹介しています。このテーマは路面に描かれた線と標示だけを扱い、どの線を越えてよいかを説明します。"
+        },
+        {
+          "id": "JA-S44",
+          "reason": "JA-S44はバイクがどの車線を走り、どう車線変更するかを扱っています。このテーマは道路に引かれたそれぞれの線が何を意味するかを説明します。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0024.json@e4ce1681da8a"
+      },
+      "matrix_id": "JA-S78"
+    },
+    {
+      "candidate_id": "TA-JA-0073",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-power",
+      "slug": "denki-jitensha-rule-vietnam",
+      "primary_query": "ベトナム 電動自転車 ヘルメット",
+      "secondary_queries": [
+        "ベトナム 電動自転車 二人乗り",
+        "電動自転車と電動スクーターの違い ベトナム",
+        "ベトナム 電動自転車 罰金"
+      ],
+      "working_title": "ベトナムの電動自転車：ヘルメット、二人乗り、自転車と見なされない場合",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Japanese-speaking visitors, who know power-assisted bicycles from home, want to know whether a Vietnamese e-bike counts as a bicycle or a moped, whether a helmet is required and how many passengers it may carry.",
+      "content_angle": "Explains the legal definition of e-bikes in Article 34(2)(b) of Law 36/2024/QH15 (xe đạp máy, including xe đạp điện: motor assistance that cuts out when the rider stops pedalling or at 25 km/h) as non-motorised vehicles, the difference from a moped in Article 34(1)(g), why the licence duty of Article 56(1) does not reach e-bikes under Article 2(9), the fastened motorcycle helmet for rider and passenger in Article 31(3) and Article 9(4)(d)-(đ) of Decree 168/2024/NĐ-CP, the passenger limit of one, or two with a child under seven, in Article 31(1), the riding bans shared with motorbikes through Article 31(2) and 33(3), single-file riding and front and rear lights from 18:00 to 06:00 in Article 31(4), the expressway ban in Article 25(3), and the other penalties in Article 9 of Decree 168/2024/NĐ-CP.",
+      "entities": [
+        "xe đạp máy・xe đạp điện",
+        "法律36/2024/QH15 第34条2項b号",
+        "時速25kmまでのアシスト",
+        "法律36/2024/QH15 第31条",
+        "政令168/2024/NĐ-CP 第9条"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S74",
+          "reason": "JA-S74は電動スクーターの実際の航続距離と安全な充電を扱っています。このテーマはペダルを踏むと動く電動自転車の法的な位置づけと交通ルールを扱います。"
+        },
+        {
+          "id": "JA-S02",
+          "reason": "JA-S02は50ccスクーターと電動スクーターをレンタルの選択肢として比べています。このテーマは電動自転車に適用されるルールと、自転車と見なされる条件を説明します。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0024.json@e4ce1681da8a"
+      },
+      "matrix_id": "JA-S79"
+    },
+    {
+      "candidate_id": "TA-JA-0074",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "jitensha-koutsuu-rule-vietnam",
+      "primary_query": "ベトナム 自転車 ルール 罰金",
+      "secondary_queries": [
+        "ベトナム 自転車 交通ルール",
+        "ベトナム 自転車 夜 ライト",
+        "ホイアン 自転車 走り方"
+      ],
+      "working_title": "ベトナムで自転車に乗るときの交通ルールと罰金",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Japanese-speaking travellers who rent or borrow a bicycle in Hội An, Huế or Hanoi want to know the rules for cyclists in Vietnamese traffic: passengers, lights, riding side by side, loads and the fines cyclists face.",
+      "content_angle": "Explains the rules for bicycles as non-motorised vehicles under Law 36/2024/QH15 (Article 34(2)(a)): one passenger, or two with a child under seven (Article 31(1)), the riding bans shared with motorbikes through Article 31(2) and 33(3) and the passenger bans of Article 33(4), single file, cycle lanes and the rightmost lane (Article 31(4) and 13(3)), front and rear lights from 18:00 to 06:00 (Article 31(4)), load limits of one third of the bike's length, 1 m in front and behind and 0.4 m to each side (Article 31(5)), the expressway ban (Article 25(3)), the bicycle-crossing sign W.226 in QCVN 41:2024/BGTVT, and the cyclist penalties in Article 9 of Decree 168/2024/NĐ-CP (riding three abreast, umbrellas and phones, missing lights, too many passengers, traffic lights, wrong-way riding, alcohol, leaving an accident and entering an expressway).",
+      "entities": [
+        "xe thô sơ（非動力車）",
+        "法律36/2024/QH15 第31条",
+        "18時から6時までのライト",
+        "標識W.226",
+        "政令168/2024/NĐ-CP 第9条"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "rx-178d8fdf2864"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S11",
+          "reason": "JA-S11はバイクで初めて走る人に向けてハノイの交通の流れを説明しています。このテーマは自転車に乗る人だけに適用されるルールを、ライトから罰金まで扱います。"
+        },
+        {
+          "id": "JA-S41",
+          "reason": "JA-S41はバイクに何人まで乗れるかを扱っています。このテーマは普通の自転車の同乗者、ライト、罰金のルールを扱います。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0024.json@e4ce1681da8a"
+      },
+      "matrix_id": "JA-S80"
     }
   ]
 }
