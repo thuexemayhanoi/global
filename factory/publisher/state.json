@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 375,
+  "clean_runs": 376,
   "published": [
     {
       "id": "NL-H01",
@@ -8762,7 +8762,8 @@
       "at": "2026-10-16T07:52:54.419Z",
       "source_sha256": "e2001f588ce7183d1521f98d88d5e19d7b3513e9c6bebbb87eeb1e2085e4349a",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:54:31.975Z"
     },
     {
       "id": "JA-S71",
@@ -8773,25 +8774,33 @@
       "at": "2026-10-16T07:52:54.419Z",
       "source_sha256": "8720f4b822fdf21de33525ec85ed8390bc0a3adc413f3fbf0aefcef86f064feb",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T07:54:31.975Z"
+    },
+    {
+      "id": "JA-S72",
+      "locale": "ja",
+      "url": "/ja/guides/bike-touring-hirou-kyuukei/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:54:52.387Z",
+      "source_sha256": "0a682b5af511a56280e2cc4ad0b1b5aea668911c730532757a238ea41293a74b",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S73",
+      "locale": "ja",
+      "url": "/ja/guides/hajimete-scooter-renshuu/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T07:54:52.387Z",
+      "source_sha256": "3205d37c851455070cb0077513d5d96523fe9d736f800dbc0b4f16f0a80c8614",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T02:50:10.605Z",
-      "ids": [
-        "PT-S40",
-        "PT-S41"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:50:28.136Z",
-      "ids": [
-        "PT-S42"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T02:52:02.982Z",
       "ids": [
@@ -10360,15 +10369,31 @@
         "JA-S71"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T07:54:31.975Z",
+      "ids": [
+        "JA-S70",
+        "JA-S71"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T07:54:52.387Z",
+      "ids": [
+        "JA-S72",
+        "JA-S73"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T07:52:32.355Z",
+    "at": "2026-10-16T07:54:31.975Z",
     "ids": [
-      "JA-S68",
-      "JA-S69"
+      "JA-S70",
+      "JA-S71"
     ],
-    "commit": "9f6d81ef0b48685201c66c78f8a84f6a2b45c668",
+    "commit": "44389e07bd22c5d50f8b65ef01f939a2d5d86033",
     "live_seconds": 82
   },
   "queue": {
