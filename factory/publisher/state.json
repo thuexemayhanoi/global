@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 427,
+  "clean_runs": 428,
   "published": [
     {
       "id": "NL-H01",
@@ -10010,7 +10010,8 @@
       "at": "2026-10-16T16:25:53.146Z",
       "source_sha256": "868113ff57db67a6f201f6872d1b2fd2f1edc669626610ac3c1c4943b844230b",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:27:20.984Z"
     },
     {
       "id": "FR-S90",
@@ -10021,26 +10022,33 @@
       "at": "2026-10-16T16:25:53.146Z",
       "source_sha256": "e1c7495f4bb8ee53ec43a7ecfa82a8ab17361a8164367d63dbdca4cb2dfc510c",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:27:20.984Z"
+    },
+    {
+      "id": "JA-S86",
+      "locale": "ja",
+      "url": "/ja/guides/pet-bike-nosekata-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:28:01.628Z",
+      "source_sha256": "85e4e3619bce44984ba90020b1af6ff89383fbe3915c2596812ba0627f4f35f4",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S86",
+      "locale": "ko",
+      "url": "/ko/guides/otobai-banryeodongmul-taeugi-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:28:01.628Z",
+      "source_sha256": "2c3179a6f8171121b046834e9a30fe518cff97df5e25414e9493cd1c9fa24ca9",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T05:02:12.686Z",
-      "ids": [
-        "VI-S47",
-        "VI-S48"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T05:02:37.323Z",
-      "ids": [
-        "VI-S49",
-        "VI-S50"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T05:04:17.348Z",
       "ids": [
@@ -11624,15 +11632,31 @@
         "FR-S90"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T16:27:20.984Z",
+      "ids": [
+        "ES-S78",
+        "FR-S90"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T16:28:01.628Z",
+      "ids": [
+        "JA-S86",
+        "KO-S86"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T16:25:09.430Z",
+    "at": "2026-10-16T16:27:20.984Z",
     "ids": [
-      "DE-S89",
-      "EN-S90"
+      "ES-S78",
+      "FR-S90"
     ],
-    "commit": "b924963d53d86c2a4813f2e9b19def14de163934",
+    "commit": "e9cbff6fa5b8b93b1cbe781ba66a6947f7a10fc7",
     "live_seconds": 62
   },
   "queue": {
