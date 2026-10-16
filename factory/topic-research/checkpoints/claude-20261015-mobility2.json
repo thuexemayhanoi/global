@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility2",
   "batch_session": "research-claude-20261015-mobility2",
   "created_at": "2026-10-15T23:01:23.660Z",
-  "updated_at": "2026-10-16T00:16:02.674Z",
-  "base_main_sha": "0df6e3301ecb4af7cc75180ccdd878f2ff28bca1",
-  "last_commit_sha": "d1e91dc7d92b53f79488d8237af1cd547f460b4c",
+  "updated_at": "2026-10-16T00:38:01.294Z",
+  "base_main_sha": "53aa15e0101149619d46a57c11e50ab0b79d2581",
+  "last_commit_sha": "1b84bc1d058c771e41b028bf5888d6f554473be9",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 50,
-    "qa_pass": 50,
+    "researched": 60,
+    "qa_pass": 60,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 40,
+    "pushed": 50,
     "pending_push": 10
   },
   "coverage": {
@@ -28,17 +28,18 @@
       "es": 14,
       "en": 2,
       "de": 2,
-      "ja": 10
+      "ja": 10,
+      "ko": 10
     },
     "domains": {
-      "traffic-law-safety": 40,
+      "traffic-law-safety": 50,
       "motorbike-rental": 10
     }
   },
   "last_batch": {
-    "seq": 5,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0005.json",
-    "sha256": "f9460f83a6ae14eaa0ff4fdf0a1070deba3d250c25569474ff93bc5bf851aad4",
+    "seq": 6,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0006.json",
+    "sha256": "efbf4f20c34d4aa7802ca6fe3c35f83cc1f6c5f153c3303c99972db5fa39e40f",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -492,8 +493,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility2-0005.json",
       "sha256": "f9460f83a6ae14eaa0ff4fdf0a1070deba3d250c25569474ff93bc5bf851aad4",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "1b84bc1d058c771e41b028bf5888d6f554473be9",
       "researched_on": "2026-10-16",
       "topics": [
         {
@@ -504,7 +505,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::ヘトナム ハイク 逆走 罰金",
-          "ta_id": null
+          "ta_id": "TA-JA-0040"
         },
         {
           "ref": "ja:menkyo-tensuu-seido",
@@ -514,7 +515,7 @@
           "parent_id": "JA-H03",
           "subcluster": "dc-licence",
           "key": "ja::ヘトナム 免許 点数制度",
-          "ta_id": null
+          "ta_id": "TA-JA-0041"
         },
         {
           "ref": "ja:kamera-ihan-bakkin-rental",
@@ -524,7 +525,7 @@
           "parent_id": "JA-H03",
           "subcluster": "dc-contract",
           "key": "ja::ヘトナム 交通違反 カメラ 罰金",
-          "ta_id": null
+          "ta_id": "TA-JA-0042"
         },
         {
           "ref": "ja:koutsuu-ihan-bakkin-shiharai",
@@ -534,7 +535,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-incidents",
           "key": "ja::ヘトナム 交通違反 罰金 支払い方法",
-          "ta_id": null
+          "ta_id": "TA-JA-0043"
         },
         {
           "ref": "ja:atsusa-necchuushou-bike",
@@ -544,7 +545,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-weather",
           "key": "ja::ヘトナム ハイク 暑さ 熱中症",
-          "ta_id": null
+          "ta_id": "TA-JA-0044"
         },
         {
           "ref": "ja:hanoi-taiki-osen-bike",
@@ -554,7 +555,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-weather",
           "key": "ja::ハノイ 大気汚染 ハイク 対策",
-          "ta_id": null
+          "ta_id": "TA-JA-0045"
         },
         {
           "ref": "ja:vietnam-kinkyuu-denwa-bangou",
@@ -564,7 +565,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-incidents",
           "key": "ja::ヘトナム 緊急 電話番号",
-          "ta_id": null
+          "ta_id": "TA-JA-0046"
         },
         {
           "ref": "ja:yamamichi-surechigai-yuusen",
@@ -574,7 +575,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::ヘトナム 山道 ハイク すれ違い 優先",
-          "ta_id": null
+          "ta_id": "TA-JA-0047"
         },
         {
           "ref": "ja:oudan-hodou-hokousha-yuusen",
@@ -584,7 +585,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::ヘトナム 横断歩道 ハイク 歩行者 優先",
-          "ta_id": null
+          "ta_id": "TA-JA-0048"
         },
         {
           "ref": "ja:shakan-kyori-bike",
@@ -594,14 +595,125 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::ヘトナム ハイク 車間距離",
+          "ta_id": "TA-JA-0049"
+        }
+      ]
+    },
+    {
+      "seq": 6,
+      "file": "factory/topic-research/batches/claude-20261015-mobility2-0006.json",
+      "sha256": "efbf4f20c34d4aa7802ca6fe3c35f83cc1f6c5f153c3303c99972db5fa39e40f",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-16",
+      "topics": [
+        {
+          "ref": "ko:ilbangtonghaeng-yeokjuhaeng-indo",
+          "locale": "ko",
+          "slug": "ilbangtonghaeng-yeokjuhaeng-indo",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::베트남 오토바이 역주행 벌금",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:myeonheo-beoljeom-jedo",
+          "locale": "ko",
+          "slug": "myeonheo-beoljeom-jedo",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H03",
+          "subcluster": "dc-licence",
+          "key": "ko::베트남 운전면허 벌점 제도",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:gyotong-wiban-kamera-beolgeum",
+          "locale": "ko",
+          "slug": "gyotong-wiban-kamera-beolgeum",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H03",
+          "subcluster": "dc-contract",
+          "key": "ko::베트남 교통위반 카메라 벌금",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:gyotong-beolgeum-nabbu",
+          "locale": "ko",
+          "slug": "gyotong-beolgeum-nabbu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::베트남 교통 벌금 납부 방법",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:deowi-yeolsabyeong-otobai",
+          "locale": "ko",
+          "slug": "deowi-yeolsabyeong-otobai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-weather",
+          "key": "ko::베트남 오토바이 더위 열사병",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-daegi-oyeom-otobai",
+          "locale": "ko",
+          "slug": "hanoi-daegi-oyeom-otobai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-weather",
+          "key": "ko::하노이 대기오염 오토바이 운전",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-gingeup-jeonhwa-beonho",
+          "locale": "ko",
+          "slug": "beteunam-gingeup-jeonhwa-beonho",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::베트남 긴급 전화번호",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:sangil-gyohaeng-useon",
+          "locale": "ko",
+          "slug": "sangil-gyohaeng-useon",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::베트남 산길 오토바이 교행",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hoengdanbodo-bohaengja-useon",
+          "locale": "ko",
+          "slug": "hoengdanbodo-bohaengja-useon",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::베트남 횡단보도 오토바이 보행자 우선",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:anjeongeori-otobai",
+          "locale": "ko",
+          "slug": "anjeongeori-otobai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::베트남 오토바이 안전거리",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 6,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0006.json",
+    "seq": 7,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0007.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -648,6 +760,13 @@
       "seq": 5,
       "topics": 10,
       "sha256": "f9460f83a6ae14eaa0ff4fdf0a1070deba3d250c25569474ff93bc5bf851aad4"
+    },
+    {
+      "at": "2026-10-16T00:38:01.294Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 6,
+      "topics": 10,
+      "sha256": "efbf4f20c34d4aa7802ca6fe3c35f83cc1f6c5f153c3303c99972db5fa39e40f"
     }
   ]
 }
