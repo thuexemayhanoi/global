@@ -1539,6 +1539,1077 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility-0023.json@01d9c0f4cedd"
       },
       "matrix_id": "VI-S46"
+    },
+    {
+      "candidate_id": "TA-VI-0041",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "so-dien-thoai-khan-cap-113-114-115",
+      "primary_query": "số điện thoại khẩn cấp 113 114 115",
+      "secondary_queries": [
+        "gọi cấp cứu 115 khi tai nạn xe máy",
+        "báo công an 113 khi va chạm giao thông",
+        "số cứu hỏa cứu nạn cứu hộ 114"
+      ],
+      "working_title": "Số điện thoại khẩn cấp 113, 114, 115: gọi khi nào và nói gì khi đi xe máy",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese-speaking riders, including people who rent a motorbike in Hanoi, want to know which emergency number to call for police, fire and ambulance, what to say on the phone, and what the law expects from people involved in or present at a road accident.",
+      "content_angle": "Lists the national hotlines 113 (police), 114 (fire and rescue), 115 (medical emergency) and 111 (child protection) as described by THƯ VIỆN PHÁP LUẬT, explains the duties of people involved in or present at a road accident under Article 80 of Law 36/2024/QH15 (stop, keep the scene, help the injured, report, stay), and gives practical advice on describing the location and which contacts to save before riding.",
+      "entities": [
+        "113 công an",
+        "114 cứu hỏa, cứu nạn, cứu hộ",
+        "115 cấp cứu y tế",
+        "111 bảo vệ trẻ em",
+        "Điều 80 Luật 36/2024/QH15"
+      ],
+      "references": [
+        "rx-955bdab4a0eb",
+        "rx-3e70e89030b8"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S15",
+          "reason": "VI-S15 hướng dẫn các bước xử lý khi va chạm lúc đi xe máy thuê. Chủ đề này chỉ nói về các số khẩn cấp 113, 114, 115, khi nào gọi số nào và cách mô tả vị trí, kể cả khi không có tai nạn."
+        },
+        {
+          "id": "VI-S08",
+          "reason": "VI-S08 nói về xe thuê bị hỏng giữa đường và cách liên hệ cửa hàng. Chủ đề này nói về các số khẩn cấp chính thức của công an, cứu hỏa và cấp cứu."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0012.json@f6c72b538b4d"
+      },
+      "matrix_id": "VI-S47"
+    },
+    {
+      "candidate_id": "TA-VI-0042",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "duong-deo-hep-nhuong-duong-xe-may",
+      "primary_query": "đường đèo hẹp xe nào phải nhường đường",
+      "secondary_queries": [
+        "xe xuống dốc nhường xe lên dốc",
+        "biển P.132 nhường đường cho xe đi ngược chiều",
+        "đi xe máy đường đèo cần lưu ý gì"
+      ],
+      "working_title": "Đi xe máy đường đèo hẹp: xe nào phải nhường, cấm vượt và dừng đỗ ở đâu",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Riders heading for the northern mountain passes want to know who must give way when meeting oncoming traffic on narrow roads and slopes, where overtaking, U-turns and stopping are banned, and how to park safely on a slope.",
+      "content_angle": "Explains the rules for passing oncoming traffic in Article 17 of Law 36/2024/QH15 (on a narrow road the vehicle nearer a passing place pulls in, the downhill vehicle gives way to the uphill one, the vehicle facing an obstacle gives way), the sign P.132 giving priority to oncoming traffic, Article 12(3) on slowing down at passes and slopes, the overtaking, U-turn and stopping bans on bends and slopes in Articles 14(6), 15(4) and 18(4), the horn sign R.309 in QCVN 41:2024/BGTVT and the penalties in Article 7 of Decree 168/2024/NĐ-CP.",
+      "entities": [
+        "Điều 17 Luật 36/2024/QH15",
+        "xe xuống dốc nhường xe lên dốc",
+        "chỗ tránh xe",
+        "biển P.132",
+        "biển R.309"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-178d8fdf2864",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S20",
+          "reason": "VI-S20 giúp chọn dung tích xe 125cc hay 150cc khi đi đèo. Chủ đề này giải thích quy tắc tránh xe, nhường đường, cấm vượt và dừng đỗ trên đường đèo hẹp."
+        },
+        {
+          "id": "VI-S39",
+          "reason": "VI-S39 nói về quy tắc nhường đường tại ngã tư và vòng xuyến. Chủ đề này nói về việc tránh xe đi ngược chiều trên đường hẹp, đường dốc, nơi xe lên dốc được ưu tiên."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0012.json@f6c72b538b4d"
+      },
+      "matrix_id": "VI-S48"
+    },
+    {
+      "candidate_id": "TA-VI-0043",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "nhuong-duong-nguoi-di-bo-vach-ke",
+      "primary_query": "nhường đường cho người đi bộ qua vạch kẻ đường",
+      "secondary_queries": [
+        "không nhường đường người đi bộ phạt bao nhiêu",
+        "rẽ không nhường người đi bộ bị phạt",
+        "dừng xe trên vạch kẻ đường cho người đi bộ"
+      ],
+      "working_title": "Nhường đường cho người đi bộ: khi nào xe máy phải giảm tốc hoặc dừng lại",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Riders in Hanoi see pedestrians crossing between motorbikes and want to know exactly when the law requires a motorbike to slow down or stop for people on a crossing, what applies at green lights and when turning, and what not giving way costs.",
+      "content_angle": "Explains the rules for riders at pedestrian crossings in Law 36/2024/QH15 (Article 11(4) on green lights with pedestrians still crossing, Article 12(3)(a) on slowing down, Article 30 on pedestrians, the overtaking and U-turn bans at crossings in Articles 14(6) and 15(4), no stopping on crossings in Article 18(4)), the warning sign W.224 and information sign I.423 in QCVN 41:2024/BGTVT, and the penalties for not giving way to pedestrians in Article 7 of Decree 168/2024/NĐ-CP.",
+      "entities": [
+        "vạch kẻ đường cho người đi bộ",
+        "điểm a khoản 3 Điều 12 Luật 36/2024/QH15",
+        "Điều 30 về người đi bộ",
+        "biển W.224",
+        "biển I.423"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-178d8fdf2864",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S39",
+          "reason": "VI-S39 nói về quy tắc nhường đường giữa các phương tiện tại ngã tư và vòng xuyến. Chủ đề này chỉ nói về người đi bộ qua đường và khi nào xe máy phải giảm tốc hoặc dừng lại."
+        },
+        {
+          "id": "VI-S45",
+          "reason": "VI-S45 giải thích ý nghĩa của đèn tín hiệu giao thông. Chủ đề này giải thích nghĩa vụ với người đi bộ đang qua đường, cả khi có và không có đèn tín hiệu."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0012.json@f6c72b538b4d"
+      },
+      "matrix_id": "VI-S49"
+    },
+    {
+      "candidate_id": "TA-VI-0044",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "khoang-cach-an-toan-xe-may",
+      "primary_query": "khoảng cách an toàn khi đi xe máy",
+      "secondary_queries": [
+        "khoảng cách an toàn ở tốc độ 60 km/h",
+        "giữ khoảng cách khi trời mưa đi xe máy",
+        "không giữ khoảng cách an toàn phạt bao nhiêu"
+      ],
+      "working_title": "Khoảng cách an toàn khi đi xe máy: bao nhiêu mét là đúng luật",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Riders used to tight city traffic want to know what distance the rules actually require between them and the vehicle ahead at different speeds and in bad weather, and what not keeping it costs.",
+      "content_angle": "Explains the safe-distance rules in Article 12 of Law 36/2024/QH15 and Article 11 of Circular 38/2024/TT-BGTVT (35 metres at 60 km/h, 55 metres up to 80 km/h, a reasonable distance below 60 km/h, more in rain, fog and on passes), the distance rules when overtaking and turning, the sign P.121 in QCVN 41:2024/BGTVT and the penalties for not keeping a safe distance in Article 7 of Decree 168/2024/NĐ-CP, with practical advice for city traffic.",
+      "entities": [
+        "khoảng cách an toàn",
+        "Điều 11 Thông tư 38/2024/TT-BGTVT",
+        "35 mét ở tốc độ 60 km/h",
+        "Điều 12 Luật 36/2024/QH15",
+        "biển P.121"
+      ],
+      "references": [
+        "rx-fbd928e9d7dd",
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S30",
+          "reason": "VI-S30 giải thích tốc độ tối đa của xe máy trong và ngoài khu dân cư. Chủ đề này nói về khoảng cách bắt buộc với xe phía trước ở từng tốc độ và khi thời tiết xấu."
+        },
+        {
+          "id": "VI-S41",
+          "reason": "VI-S41 nói về quy định vượt xe khi đi xe máy. Chủ đề này nói về khoảng cách cần giữ khi đi sau xe khác và mức phạt khi bám quá sát."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0012.json@f6c72b538b4d"
+      },
+      "matrix_id": "VI-S50"
+    },
+    {
+      "candidate_id": "TA-VI-0045",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "di-xe-may-qua-ham-duong-bo",
+      "primary_query": "đi xe máy qua hầm đường bộ cần lưu ý gì",
+      "secondary_queries": [
+        "xe máy vào hầm phải bật đèn gì",
+        "dừng xe trong hầm đường bộ bị phạt bao nhiêu",
+        "xe hỏng trong hầm đường bộ phải làm gì"
+      ],
+      "working_title": "Đi xe máy qua hầm đường bộ: bật đèn, cấm dừng và xử lý khi xe hỏng",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Riders on longer trips pass through road tunnels and city underpasses and want to know the specific tunnel rules (lights, no stopping, overtaking, U-turns or reversing) and what to do if the bike breaks down inside.",
+      "content_angle": "Explains the tunnel rules in Article 26 of Law 36/2024/QH15 (dipped headlights, no stopping or parking, the emergency stopping procedure), the overtaking, U-turn and reversing bans in tunnels in Articles 14(6), 15(4) and 16(2), the warning sign W.240 in QCVN 41:2024/BGTVT and the penalties in Article 7 of Decree 168/2024/NĐ-CP, with practical advice on glare and visors.",
+      "entities": [
+        "hầm đường bộ",
+        "Điều 26 Luật 36/2024/QH15",
+        "đèn chiếu gần",
+        "vị trí dừng xe khẩn cấp",
+        "biển W.240"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-178d8fdf2864",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S35",
+          "reason": "VI-S35 nói về những lưu ý khi đi xe máy ban đêm và việc dùng đèn trong bóng tối. Chủ đề này nói về quy tắc riêng trong hầm đường bộ như bật đèn chiếu gần, cấm dừng và xử lý khi xe hỏng."
+        },
+        {
+          "id": "VI-S38",
+          "reason": "VI-S38 giải thích vì sao xe máy không được đi vào đường cao tốc. Chủ đề này nói về hầm trên các tuyến đường thông thường mà xe máy được phép đi qua."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0012.json@f6c72b538b4d"
+      },
+      "matrix_id": "VI-S51"
+    },
+    {
+      "candidate_id": "TA-VI-0046",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "nhuong-duong-xe-uu-tien",
+      "primary_query": "nhường đường cho xe ưu tiên khi đi xe máy",
+      "secondary_queries": [
+        "thứ tự xe ưu tiên qua ngã tư",
+        "đèn ưu tiên màu đỏ màu xanh nghĩa là gì",
+        "không nhường đường xe ưu tiên phạt bao nhiêu"
+      ],
+      "working_title": "Nhường đường xe ưu tiên khi đi xe máy: xe cứu thương, cứu hỏa và công an",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Riders hear sirens in dense traffic and want to know which vehicles have priority and in what order, what the colours of priority lights mean after the 2026 amendment, how to make way safely on a motorbike and what obstructing them costs.",
+      "content_angle": "Explains the priority vehicles and their order at junctions in Article 27 of Law 36/2024/QH15 (as amended by Law 118/2025/QH15 from 1 July 2026: red lights for fire engines and ambulances, blue and red for police, military and procuracy vehicles, blue for dyke-protection and rescue vehicles), the duty to slow down, keep right or stop in Article 27(5), the related duties in Articles 12(3) and 14(6), and the penalties for obstructing priority vehicles in Article 7 of Decree 168/2024/NĐ-CP.",
+      "entities": [
+        "xe ưu tiên",
+        "Điều 27 Luật 36/2024/QH15",
+        "tín hiệu đèn ưu tiên",
+        "đi sát lề đường bên phải",
+        "Điều 7 Nghị định 168/2024/NĐ-CP"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S39",
+          "reason": "VI-S39 nói về quy tắc nhường đường giữa các xe thông thường tại ngã tư và vòng xuyến. Chủ đề này nói về xe cứu thương, cứu hỏa, công an có tín hiệu ưu tiên và cách nhường đường cho các xe này."
+        },
+        {
+          "id": "VI-S40",
+          "reason": "VI-S40 nói về việc bấm còi xe máy vào ban đêm. Chủ đề này nói về việc phải làm gì khi nghe còi hoặc thấy đèn của xe ưu tiên."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0012.json@f6c72b538b4d"
+      },
+      "matrix_id": "VI-S52"
+    },
+    {
+      "candidate_id": "TA-VI-0047",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "hieu-lenh-nguoi-dieu-khien-giao-thong",
+      "primary_query": "hiệu lệnh của người điều khiển giao thông",
+      "secondary_queries": [
+        "tay phải giơ thẳng đứng nghĩa là gì",
+        "hiệu lệnh cảnh sát giao thông và đèn tín hiệu cái nào ưu tiên",
+        "không chấp hành hiệu lệnh người điều khiển giao thông phạt bao nhiêu"
+      ],
+      "working_title": "Hiệu lệnh của người điều khiển giao thông: ba tư thế tay và thứ tự ưu tiên",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Riders meet traffic police directing junctions by hand and want to know what each arm signal means, why the officer's instruction overrides the traffic light and what ignoring it costs.",
+      "content_angle": "Explains who may direct traffic under Article 2(10) of Law 36/2024/QH15, the order of precedence of signals in Article 11(2) (officer before lights, signs and markings), the three arm signals in Article 11(3) and how to read your own position in relation to the officer, the ban in Article 9(4), and the penalties for ignoring an officer's instructions in Article 7 of Decree 168/2024/NĐ-CP.",
+      "entities": [
+        "người điều khiển giao thông",
+        "khoản 3 Điều 11 Luật 36/2024/QH15",
+        "tay phải giơ thẳng đứng",
+        "hai tay dang ngang",
+        "điểm d khoản 7 Điều 7 Nghị định 168/2024/NĐ-CP"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S45",
+          "reason": "VI-S45 giải thích quy định về đèn tín hiệu giao thông cho xe máy. Chủ đề này giải thích các tư thế tay của người điều khiển giao thông, vốn được ưu tiên hơn đèn tín hiệu."
+        },
+        {
+          "id": "VI-S14",
+          "reason": "VI-S14 nói về việc bị cảnh sát giao thông dừng xe và cần xuất trình giấy tờ gì. Chủ đề này nói về người điều khiển giao thông dùng tay để phân luồng tại nút giao."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0012.json@f6c72b538b4d"
+      },
+      "matrix_id": "VI-S53"
+    },
+    {
+      "candidate_id": "TA-VI-0048",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "vat-nuoi-tren-duong-di-xe-may",
+      "primary_query": "gặp vật nuôi trên đường khi đi xe máy",
+      "secondary_queries": [
+        "biển báo gia súc W.230 nghĩa là gì",
+        "dắt chó khi đi xe máy có bị phạt không",
+        "thả rông trâu bò trên đường bị phạt"
+      ],
+      "working_title": "Gặp trâu bò, chó, gà trên đường khi đi xe máy: luật nói gì và đi thế nào cho an toàn",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Riders leaving the city meet buffalo, cows, dogs and poultry on rural roads and want to know what the law asks of riders and of people leading animals, what the warning signs mean and how to pass animals safely.",
+      "content_angle": "Explains the duty to slow down or stop for animals on or beside the road in Article 12(3)(g) of Law 36/2024/QH15, the rules for people leading animals in Article 32, the warning signs W.230 and W.231 in QCVN 41:2024/BGTVT, the penalties in Articles 7 and 11 of Decree 168/2024/NĐ-CP (including leading an animal from a moving motorbike), and practical advice for passing different animals and riding at dusk.",
+      "entities": [
+        "vật nuôi đi trên đường",
+        "điểm g khoản 3 Điều 12 Luật 36/2024/QH15",
+        "Điều 32 về dẫn dắt vật nuôi",
+        "biển W.230",
+        "biển W.231"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-178d8fdf2864",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S32",
+          "reason": "VI-S32 giải thích các biển báo cấm xe máy. Chủ đề này nói về vật nuôi đi trên đường hoặc chăn thả ven đường và cách đi xe máy qua an toàn."
+        },
+        {
+          "id": "VI-S11",
+          "reason": "VI-S11 hướng dẫn đi xe máy trong phố cổ Hà Nội giờ cao điểm. Chủ đề này nói về các tuyến đường nông thôn, miền núi, nơi trâu bò và gia súc hay đi trên đường."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0012.json@f6c72b538b4d"
+      },
+      "matrix_id": "VI-S54"
+    },
+    {
+      "candidate_id": "TA-VI-0049",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-contract",
+      "slug": "xe-may-khong-co-guong-bi-phat",
+      "primary_query": "xe máy không có gương bị phạt bao nhiêu",
+      "secondary_queries": [
+        "xe máy thuê hỏng xi nhan bị phạt ai chịu",
+        "điều kiện kỹ thuật của xe máy khi tham gia giao thông",
+        "biển số xe máy bị cong mờ bị phạt"
+      ],
+      "working_title": "Xe máy không có gương bị phạt bao nhiêu: lỗi kỹ thuật người lái phải chịu",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "People who rent a motorbike are often handed bikes with a missing mirror or a dead indicator and want to know who is fined at a police check, what each defect costs and how to check the bike at pickup.",
+      "content_angle": "Explains that Article 14 of Decree 168/2024/NĐ-CP addresses the rider for a motorbike's technical condition (horn, lights, indicators, left mirror and brakes; registration certificate, exhaust and horn standard; number plate), the vehicle conditions in Article 35 and the papers to carry in Article 56 of Law 36/2024/QH15, electric scooters under Article 34, and a five-minute pickup check.",
+      "entities": [
+        "gương chiếu hậu bên trái",
+        "Điều 14 Nghị định 168/2024/NĐ-CP",
+        "đèn và xi nhan",
+        "còi và phanh",
+        "Điều 35 Luật 36/2024/QH15"
+      ],
+      "references": [
+        "rx-9eedca8b8111",
+        "rx-3e70e89030b8"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S17",
+          "reason": "VI-S17 nói về các chi phí phát sinh khi thuê xe máy. Chủ đề này nói về mức phạt khi xe thiếu hoặc hỏng gương, đèn, còi, phanh và những gì cần kiểm tra khi nhận xe."
+        },
+        {
+          "id": "VI-S14",
+          "reason": "VI-S14 nói về việc bị cảnh sát giao thông dừng xe và các giấy tờ cần xuất trình. Chủ đề này nói riêng về điều kiện kỹ thuật của xe và mức phạt cho từng lỗi kỹ thuật."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0012.json@f6c72b538b4d"
+      },
+      "matrix_id": "VI-S55"
+    },
+    {
+      "candidate_id": "TA-VI-0050",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "di-xe-may-duong-tinh-ma-tuy",
+      "primary_query": "đi xe máy dương tính với ma túy bị phạt thế nào",
+      "secondary_queries": [
+        "từ chối kiểm tra ma túy khi lái xe bị phạt",
+        "tước bằng lái do ma túy bao lâu",
+        "xét nghiệm ma túy sau tai nạn giao thông"
+      ],
+      "working_title": "Đi xe máy dương tính với ma túy: mức phạt, tước bằng lái và xét nghiệm",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Riders know the zero-alcohol rule but want to know how the law treats drugs and banned stimulants when riding, when riders are tested, what a positive test or a refusal costs and how long the licence is suspended.",
+      "content_angle": "Explains the ban on riding with drugs or banned stimulants in the body in Article 9(3) of Law 36/2024/QH15, testing at checks and after accidents under Articles 9(4), 81(3) and 83(2), the penalties and the 22 to 24 month licence suspension in Article 7 of Decree 168/2024/NĐ-CP (including refusing a test), and general advice on medication.",
+      "entities": [
+        "chất ma túy trong cơ thể",
+        "khoản 3 Điều 9 Luật 36/2024/QH15",
+        "kiểm tra chất ma túy",
+        "tước quyền sử dụng giấy phép lái xe",
+        "Điều 81 và 83 Luật 36/2024/QH15"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S29",
+          "reason": "VI-S29 giải thích quy định về nồng độ cồn khi đi xe máy và mức phạt. Chủ đề này nói về chất ma túy trong cơ thể, việc kiểm tra ma túy và hậu quả nặng hơn."
+        },
+        {
+          "id": "VI-S14",
+          "reason": "VI-S14 nói về việc bị cảnh sát giao thông dừng xe và các giấy tờ cần mang. Chủ đề này nói riêng về lệnh cấm điều khiển xe khi trong cơ thể có chất ma túy."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0012.json@f6c72b538b4d"
+      },
+      "matrix_id": "VI-S56"
+    },
+    {
+      "candidate_id": "TA-VI-0051",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "di-nguoc-chieu-tren-via-he-xe-may",
+      "primary_query": "đi ngược chiều xe máy phạt bao nhiêu",
+      "secondary_queries": [
+        "đi xe máy trên vỉa hè bị phạt",
+        "biển cấm đi ngược chiều P.102",
+        "đường một chiều phố cổ Hà Nội"
+      ],
+      "working_title": "Đi xe máy ngược chiều và trên vỉa hè: biển báo đường một chiều và mức phạt",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese-speaking riders who rent a motorbike in Hanoi's Old Quarter meet many one-way streets and see others riding against them or along the pavement, and want to know what the signs mean, what the law allows and what riding the wrong way or on the pavement costs.",
+      "content_angle": "Explains the No entry sign P.102 and the One-way road signs I.407 (a, b, c) in QCVN 41:2024/BGTVT, with the two-way traffic sign W.204 marking where one-way traffic ends, Article 77(1) of Law 36/2024/QH15 (pavements are for pedestrians) and Article 33(3)(b) (riders may not enter parts of the road reserved for pedestrians and other vehicles), and the Decree 168/2024/NĐ-CP Article 7(7)(a) fine with the licence point deduction in Article 7(13)(a) for riding against a one-way street or on the pavement, except crossing it to enter a building.",
+      "entities": [
+        "đường một chiều",
+        "biển P.102 cấm đi ngược chiều",
+        "biển I.407 đường một chiều",
+        "điểm b khoản 3 Điều 33 Luật 36/2024/QH15",
+        "điểm a khoản 7 Điều 7 Nghị định 168/2024/NĐ-CP"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "rx-178d8fdf2864"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S43",
+          "reason": "VI-S43 giải thích xe máy phải đi làn nào trên đường có nhiều làn. Chủ đề này nói về đường một chiều, biển cấm đi ngược chiều và mức phạt khi đi ngược chiều hoặc đi trên vỉa hè."
+        },
+        {
+          "id": "VI-S32",
+          "reason": "VI-S32 giới thiệu các biển báo cấm xe máy nói chung. Chủ đề này tập trung vào đường một chiều, vỉa hè và hành vi đi ngược chiều của người đi xe máy."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0015.json@d2b6a6a23500"
+      },
+      "matrix_id": "VI-S57"
+    },
+    {
+      "candidate_id": "TA-VI-0052",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-licence",
+      "slug": "tru-diem-giay-phep-lai-xe-may",
+      "primary_query": "trừ điểm giấy phép lái xe máy",
+      "secondary_queries": [
+        "giấy phép lái xe có bao nhiêu điểm",
+        "bị trừ hết điểm bằng lái thì sao",
+        "phục hồi điểm giấy phép lái xe"
+      ],
+      "working_title": "Trừ điểm giấy phép lái xe máy: số điểm, lỗi bị trừ và cách phục hồi",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese-speaking riders who rent motorbikes have heard that licences now carry points and want to know how many points a licence has, which motorbike offences deduct how many, how points are restored and what happens when all points are lost.",
+      "content_angle": "Explains Article 58 of Law 36/2024/QH15 (12 points per licence recorded in the national database, full restoration after 12 months without deductions, no riding once all points are lost and a knowledge test after at least six months to restore them), the 2, 4, 6 and 10 point deductions for motorbike offences in Article 7(13) of Decree 168/2024/NĐ-CP, how deductions are recorded under Article 50, and the temporary withdrawal of the right to use an International Driving Permit under Article 5(1)(g).",
+      "entities": [
+        "điểm của giấy phép lái xe",
+        "Điều 58 Luật 36/2024/QH15",
+        "khoản 13 Điều 7 Nghị định 168/2024/NĐ-CP",
+        "cơ sở dữ liệu quốc gia",
+        "tạm dừng quyền sử dụng giấy phép lái xe quốc tế"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S46",
+          "reason": "VI-S46 giải thích ai chịu trách nhiệm khi xe máy thuê bị phạt nguội qua camera. Chủ đề này giải thích hệ thống điểm của giấy phép lái xe, các lỗi bị trừ điểm và cách phục hồi điểm."
+        },
+        {
+          "id": "VI-S05",
+          "reason": "VI-S05 nói về loại giấy phép lái xe cần có khi thuê xe máy. Chủ đề này nói về điểm của giấy phép lái xe, bị trừ bao nhiêu điểm và điều gì xảy ra khi bị trừ hết điểm."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0015.json@d2b6a6a23500"
+      },
+      "matrix_id": "VI-S58"
+    },
+    {
+      "candidate_id": "TA-VI-0053",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "nop-phat-vi-pham-giao-thong-truc-tuyen",
+      "primary_query": "nộp phạt vi phạm giao thông online",
+      "secondary_queries": [
+        "thời hạn nộp phạt vi phạm giao thông",
+        "nộp phạt qua cổng dịch vụ công quốc gia",
+        "chậm nộp phạt giao thông bị gì"
+      ],
+      "working_title": "Nộp phạt vi phạm giao thông online: thời hạn, cách nộp và nhận lại giấy tờ",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese-speaking riders who receive a traffic fine decision while riding a rented motorbike want to know the payment deadline, how to pay online without returning to the police station, what late payment costs and how held papers are returned.",
+      "content_angle": "Explains the 10-day payment deadline in Article 73 of the Law on Handling Administrative Violations as presented by THƯ VIỆN PHÁP LUẬT, online payment through the National Public Service Portal as described by LuatVietnam (finding the decision, paying by bank, return of held papers by post or collection), the daily late-payment surcharge and enforcement described by the Hà Tĩnh provincial portal, and practical tips for keeping receipts, without claims about roadside cash payment.",
+      "entities": [
+        "quyết định xử phạt",
+        "thời hạn 10 ngày",
+        "Cổng Dịch vụ công quốc gia",
+        "tiền chậm nộp phạt",
+        "nhận lại giấy tờ bị tạm giữ"
+      ],
+      "references": [
+        "rx-d8b89af1b175",
+        "rx-b23f83ed2944",
+        "rx-51229a8d86d2"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S46",
+          "reason": "VI-S46 giải thích ai phải chịu khi xe máy thuê bị phạt nguội. Chủ đề này giải thích thời hạn nộp phạt, cách nộp trực tuyến qua Cổng Dịch vụ công và cách nhận lại giấy tờ bị tạm giữ."
+        },
+        {
+          "id": "VI-S14",
+          "reason": "VI-S14 giải thích cần xuất trình giấy tờ gì khi bị cảnh sát giao thông dừng xe. Chủ đề này nói về việc nộp tiền phạt sau khi đã có quyết định xử phạt."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0015.json@d2b6a6a23500"
+      },
+      "matrix_id": "VI-S59"
+    },
+    {
+      "candidate_id": "TA-VI-0054",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-weather",
+      "slug": "di-xe-may-troi-nang-nong",
+      "primary_query": "đi xe máy trời nắng nóng",
+      "secondary_queries": [
+        "say nắng khi đi xe máy",
+        "đi xe máy mùa hè cần chuẩn bị gì",
+        "dấu hiệu sốc nhiệt"
+      ],
+      "working_title": "Đi xe máy trời nắng nóng: lịch trình, nghỉ ngơi và dấu hiệu sốc nhiệt",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese-speaking riders planning motorbike trips around Hanoi and the north in the hot months want to know how heat affects riders, how to plan riding times and breaks, and which warning signs of heat illness mean they must stop and get help.",
+      "content_angle": "Uses the WHO fact sheet on heat and health (heat stress and accident risk, heatstroke as a medical emergency, avoiding the hottest hours, shade, regular drinking, light clothing, vulnerable groups) to plan riding times, breaks and warning signs, together with the helmet duty in Article 33(2) of Law 36/2024/QH15, which also applies in the heat.",
+      "entities": [
+        "nắng nóng",
+        "sốc nhiệt",
+        "thông tin của WHO về nắng nóng và sức khỏe",
+        "uống nước",
+        "nghĩa vụ đội mũ bảo hiểm"
+      ],
+      "references": [
+        "rx-194f3653ddf1",
+        "rx-2086e94130bd",
+        "rx-3e70e89030b8"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S33",
+          "reason": "VI-S33 giới thiệu đồ bảo hộ nên mang khi đi phượt bằng xe máy. Chủ đề này nói về tác động của nắng nóng lên người lái, cách chọn giờ đi, nghỉ ngơi và dấu hiệu sốc nhiệt."
+        },
+        {
+          "id": "VI-S07",
+          "reason": "VI-S07 giải thích cách đi xe máy ở Hà Nội khi trời mưa. Chủ đề này giải thích cách đi xe máy an toàn khi trời nắng nóng gay gắt."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0015.json@d2b6a6a23500"
+      },
+      "matrix_id": "VI-S60"
+    },
+    {
+      "candidate_id": "TA-VI-0055",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-weather",
+      "slug": "o-nhiem-khong-khi-ha-noi-di-xe-may",
+      "primary_query": "ô nhiễm không khí hà nội đi xe máy",
+      "secondary_queries": [
+        "chỉ số AQI hà nội hôm nay",
+        "bụi mịn PM2.5 khi đi xe máy",
+        "đi xe máy khi không khí ô nhiễm"
+      ],
+      "working_title": "Ô nhiễm không khí Hà Nội khi đi xe máy: đọc chỉ số AQI và giảm phơi nhiễm",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese-speaking riders in Hanoi see AQI warnings in the cooler months and want to know how to read the official air-quality index, what the levels mean for riders and how to reduce exposure on bad days.",
+      "content_angle": "Explains Hanoi's official air-quality portal (AQI bands with health advice for healthy and sensitive groups), the WHO Viet Nam FAQ on air pollution, PM2.5 and reducing exposure during acute episodes, and practical riding choices such as timing and route, without claiming that any particular mask gives a specific level of protection.",
+      "entities": [
+        "chỉ số chất lượng không khí AQI",
+        "bụi mịn PM2.5",
+        "Cổng thông tin quan trắc môi trường Thủ đô",
+        "Văn phòng WHO tại Việt Nam"
+      ],
+      "references": [
+        "rx-5a73e4ea55b8",
+        "rx-b6342ef38055"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S12",
+          "reason": "VI-S12 giải thích quy định hạn chế xe máy xăng trong vùng phát thải thấp Vành đai 1. Chủ đề này giải thích cách đọc chỉ số AQI và giảm phơi nhiễm bụi mịn khi đi xe máy ở Hà Nội."
+        },
+        {
+          "id": "VI-S11",
+          "reason": "VI-S11 nói về cách đi xe máy trong phố cổ Hà Nội vào giờ cao điểm. Chủ đề này nói về chất lượng không khí và sức khỏe của người đi xe máy."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0015.json@d2b6a6a23500"
+      },
+      "matrix_id": "VI-S61"
+    },
+    {
+      "candidate_id": "TA-VI-0056",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "di-xe-may-qua-duong-ngang-duong-sat",
+      "primary_query": "đi xe máy qua đường ngang đường sắt",
+      "secondary_queries": [
+        "đèn đỏ nhấp nháy ở đường ngang",
+        "biển báo giao nhau với đường sắt",
+        "dừng xe trên đường sắt bị phạt"
+      ],
+      "working_title": "Đi xe máy qua đường ngang đường sắt: biển báo, đèn tín hiệu và hành vi bị cấm",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese-speaking riders in Hanoi and on trips north cross the railway at many level crossings, some without barriers, and want to know how to cross safely, what the signs and flashing lights mean and what is banned near the tracks.",
+      "content_angle": "Explains the level-crossing duties in Article 24 of Law 36/2024/QH15 (stop at signals, bells and barriers; stop and look at unguarded crossings; what to do if a vehicle stalls on the track), the bans on overtaking, U-turns, reversing and stopping at or near level crossings in Articles 14(6), 15(4), 16(2) and 18(4), the QCVN 41:2024/BGTVT warning signs W.210, W.211 and W.242 and the alternating flashing red light, and the related penalties in Article 7 of Decree 168/2024/NĐ-CP.",
+      "entities": [
+        "đường ngang",
+        "Điều 24 Luật 36/2024/QH15",
+        "biển W.210 và W.211",
+        "đèn đỏ nhấp nháy luân phiên",
+        "Điều 7 Nghị định 168/2024/NĐ-CP"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-178d8fdf2864",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S39",
+          "reason": "VI-S39 giải thích quy tắc nhường đường ở ngã tư và vòng xuyến giữa các đường bộ. Chủ đề này giải thích cách đi qua chỗ đường bộ giao nhau với đường sắt và nhường cho tàu hỏa."
+        },
+        {
+          "id": "VI-S45",
+          "reason": "VI-S45 giải thích ý nghĩa của đèn tín hiệu giao thông ở ngã tư. Chủ đề này nói về biển báo, đèn đỏ nhấp nháy và rào chắn ở đường ngang đường sắt."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0015.json@d2b6a6a23500"
+      },
+      "matrix_id": "VI-S62"
+    },
+    {
+      "candidate_id": "TA-VI-0057",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "di-phuot-xe-may-theo-doan",
+      "primary_query": "đi phượt xe máy theo đoàn",
+      "secondary_queries": [
+        "đi xe máy hàng ba bị phạt",
+        "kinh nghiệm đi phượt theo nhóm",
+        "đi xe máy dàn hàng ngang"
+      ],
+      "working_title": "Đi phượt xe máy theo đoàn: quy định cần nhớ và cách tổ chức an toàn",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese-speaking groups of friends who rent several motorbikes for a trip want to know the rules for riding together, such as the ban on riding abreast and the penalties for group speeding, and how to organise a group ride safely.",
+      "content_angle": "Combines Article 33(3)(a) of Law 36/2024/QH15 (no riding abreast), Article 9(5) on weaving and racing, Article 12(1) and Article 11 of Circular 38/2024/TT-BGTVT on safe distances, Article 18(4)-(5) on where to stop, the group-related penalties in Article 7 of Decree 168/2024/NĐ-CP (riding three or more abreast in 7(3)(k), group speeding, convoys obstructing traffic and weaving in 7(9)(a), (b) and (i) with licence suspension in 7(12)(b)), and practical organisation of a group ride as general advice.",
+      "entities": [
+        "đi theo đoàn",
+        "cấm đi hàng ngang",
+        "điểm a khoản 3 Điều 33 Luật 36/2024/QH15",
+        "khoảng cách an toàn",
+        "điểm k khoản 3 Điều 7 Nghị định 168/2024/NĐ-CP"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "rx-fbd928e9d7dd"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S37",
+          "reason": "VI-S37 giải thích một xe máy được chở mấy người. Chủ đề này giải thích các quy định khi nhiều xe máy đi cùng nhau thành đoàn, như cấm đi hàng ngang và giữ khoảng cách."
+        },
+        {
+          "id": "VI-S33",
+          "reason": "VI-S33 giới thiệu đồ bảo hộ cần mang khi đi phượt. Chủ đề này nói về luật giao thông và cách tổ chức khi đi phượt theo đoàn nhiều xe."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0015.json@d2b6a6a23500"
+      },
+      "matrix_id": "VI-S63"
+    },
+    {
+      "candidate_id": "TA-VI-0058",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-incidents",
+      "slug": "keo-day-xe-may-bi-phat",
+      "primary_query": "dùng chân đẩy xe máy bị phạt",
+      "secondary_queries": [
+        "kéo xe máy bằng xe khác có bị phạt",
+        "đẩy xe hộ người khác bằng chân",
+        "xe máy chết máy giữa đường phải làm gì"
+      ],
+      "working_title": "Dùng chân đẩy hay kéo xe máy hỏng có bị phạt: quy định và cách xử lý",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese-speaking riders whose rented motorbike breaks down often see others pushing a broken bike with a foot from another moving bike, and want to know whether towing or pushing is allowed, what it costs and what to do instead.",
+      "content_angle": "Explains the bans in Article 33(3)(đ) and 33(4)(c) of Law 36/2024/QH15 on riders using the bike to tow or push other vehicles and on passengers holding on to, towing or pushing them, the penalties in Article 7(3)(e) and (g) of Decree 168/2024/NĐ-CP, the rules for a stopped broken-down vehicle in Articles 18(5), 18(7) and 26(2), and safe alternatives such as calling the rental shop, pushing on foot or a repair service, with the police number 113 for accidents.",
+      "entities": [
+        "cấm kéo, đẩy xe",
+        "điểm đ khoản 3 Điều 33 Luật 36/2024/QH15",
+        "điểm g khoản 3 Điều 7 Nghị định 168/2024/NĐ-CP",
+        "xe gặp sự cố",
+        "số điện thoại 113"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111",
+        "rx-955bdab4a0eb"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S08",
+          "reason": "VI-S08 hướng dẫn liên hệ cửa hàng và sửa chữa khi xe máy thuê bị hỏng giữa đường. Chủ đề này giải thích việc dùng xe khác kéo hoặc dùng chân đẩy xe có bị cấm không và mức phạt."
+        },
+        {
+          "id": "VI-S37",
+          "reason": "VI-S37 giải thích số người được chở trên xe máy. Chủ đề này giải thích quy định cấm người lái và người ngồi sau kéo, đẩy xe khác."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0015.json@d2b6a6a23500"
+      },
+      "matrix_id": "VI-S64"
+    },
+    {
+      "candidate_id": "TA-VI-0059",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "di-xe-may-qua-pha-cau-phao",
+      "primary_query": "đi xe máy qua phà",
+      "secondary_queries": [
+        "đi xe máy qua cầu phao",
+        "quy định lên xuống phà",
+        "biển báo bến phà W.217"
+      ],
+      "working_title": "Đi xe máy qua phà và cầu phao: thứ tự lên xuống và quy định cần biết",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese-speaking riders on trips through the Red River Delta and to the islands meet car ferries and pontoon bridges and want to know the boarding order, where to stop and how to ride on and off safely.",
+      "content_angle": "Explains the ferry and pontoon-bridge rules in Article 23 of Law 36/2024/QH15 (queueing and priority order, only the rider staying on the vehicle while boarding, crossing and leaving with exceptions for children, pregnant, older, disabled and sick people, vehicles board first and pedestrians land first, single file on pontoon bridges), the precedence of traffic controllers in Articles 2(10) and 11(2), the bans on overtaking and stopping on bridges, the warning sign W.217 and the two-colour lights in QCVN 41:2024/BGTVT, and the penalty for ignoring a traffic controller in Article 7(7)(d) of Decree 168/2024/NĐ-CP.",
+      "entities": [
+        "phà",
+        "cầu phao",
+        "Điều 23 Luật 36/2024/QH15",
+        "biển W.217 bến phà",
+        "người điều khiển giao thông"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-178d8fdf2864",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S39",
+          "reason": "VI-S39 giải thích thứ tự nhường đường ở ngã tư và vòng xuyến. Chủ đề này giải thích thứ tự xếp hàng, lên phà, xuống phà và đi qua cầu phao bằng xe máy."
+        },
+        {
+          "id": "VI-S11",
+          "reason": "VI-S11 hướng dẫn đi xe máy trong phố cổ Hà Nội giờ cao điểm. Chủ đề này chỉ nói về việc qua sông bằng phà và cầu phao trên các chuyến đi xa."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0015.json@d2b6a6a23500"
+      },
+      "matrix_id": "VI-S65"
+    },
+    {
+      "candidate_id": "TA-VI-0060",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-papers",
+      "slug": "xe-may-bi-tam-giu-khi-nao",
+      "primary_query": "xe máy bị tạm giữ khi nào",
+      "secondary_queries": [
+        "không có bằng lái có bị tạm giữ xe không",
+        "không mang giấy tờ xe bị tạm giữ không",
+        "xe thuê bị tạm giữ ai chịu chi phí"
+      ],
+      "working_title": "Khi nào xe máy bị tạm giữ: bằng lái, giấy tờ, nồng độ cồn và chi phí",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Vietnamese-speaking travellers who rent a motorbike in Vietnam hear of bikes being impounded at police checks and want to know which offences allow police to keep the bike, what happens if they cannot show their papers on the spot, who pays the costs and what to do next with the rental shop.",
+      "content_angle": "Explains when police may impound (tạm giữ) a motorbike under Article 48 of Decree 168/2024/NĐ-CP: impoundment before a penalty decision for listed offences, among them riding without a valid licence or with an International Driving Permit but without the national licence (Article 18(5)), riding without a registration certificate or with plate problems (Article 14(2)(a)-(b) and 14(3)(a)), any alcohol level, drugs or refusing a test (Article 7(6)(a), 7(8)(b), 7(9)) and entering an expressway (Article 7(7)(b)); impoundment of vehicle and papers to secure enforcement (Article 48(2)); what happens when papers cannot be shown at a check, including documents integrated in the electronic identification account and the appointment deadline (Article 48(3)); costs borne by the owner (Article 48(4)); the papers to carry under Article 56 of Law 36/2024/QH15; and practical steps for renters such as calling the shop and keeping the violation record, without stating impoundment durations.",
+      "entities": [
+        "tạm giữ phương tiện",
+        "Điều 48 Nghị định 168/2024/NĐ-CP",
+        "điều khiển xe không có giấy phép lái xe",
+        "không xuất trình được giấy tờ",
+        "Điều 56 Luật 36/2024/QH15"
+      ],
+      "references": [
+        "rx-9eedca8b8111",
+        "rx-3e70e89030b8"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S14",
+          "reason": "VI-S14 hướng dẫn chung khi bị cảnh sát giao thông dừng xe và giấy tờ cần xuất trình. Chủ đề này giải thích khi nào chiếc xe bị tạm giữ theo Điều 48 Nghị định 168/2024/NĐ-CP."
+        },
+        {
+          "id": "VI-S13",
+          "reason": "VI-S13 liệt kê giấy tờ cần mang khi đi xe thuê. Chủ đề này giải thích hậu quả khi thiếu giấy tờ hoặc bằng lái: xe bị tạm giữ và ai phải chịu chi phí."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0016.json@088c5b64dabd"
+      },
+      "matrix_id": "VI-S66"
     }
   ]
 }
