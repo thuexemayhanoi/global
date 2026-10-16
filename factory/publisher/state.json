@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 379,
+  "clean_runs": 380,
   "published": [
     {
       "id": "NL-H01",
@@ -8848,25 +8848,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T08:01:12.376Z"
+    },
+    {
+      "id": "FR-S83",
+      "locale": "fr",
+      "url": "/fr/guides/velo-au-vietnam-regles-amendes/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T08:08:09.652Z",
+      "source_sha256": "5a5e5c78f48e9825c0bbf343a564c354cee6f1f050b1eca1fb399c63ceb9348d",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T08:09:28.585Z"
+    },
+    {
+      "id": "KO-S77",
+      "locale": "ko",
+      "url": "/ko/guides/beteunam-otobai-ilsi-apsu/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T08:08:09.652Z",
+      "source_sha256": "3854d723ccb3437b3cb0ae20f73f99fab80bbd071391cbe195c7949697509e3e",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T08:09:28.585Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T02:55:34.452Z",
-      "ids": [
-        "PT-S46",
-        "PT-S47"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:56:34.771Z",
-      "ids": [
-        "PT-S46",
-        "PT-S47"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T02:56:56.176Z",
       "ids": [
@@ -10438,15 +10446,31 @@
         "JA-S77"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T08:08:09.652Z",
+      "ids": [
+        "FR-S83",
+        "KO-S77"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T08:09:28.585Z",
+      "ids": [
+        "FR-S83",
+        "KO-S77"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T08:01:12.376Z",
+    "at": "2026-10-16T08:09:28.585Z",
     "ids": [
-      "JA-S76",
-      "JA-S77"
+      "FR-S83",
+      "KO-S77"
     ],
-    "commit": "d72c6d6241951a6ca4e6892c13036c19d1c53bc7",
+    "commit": "63a2d57fd741101b2b377271949a2825acee66f1",
     "live_seconds": 61
   },
   "queue": {
