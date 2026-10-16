@@ -6868,17 +6868,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T03:32:48.069Z"
+    },
+    {
+      "id": "DE-S31",
+      "locale": "de",
+      "url": "/de/guides/verkehrszeichen-vietnam-rollerfahrer/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:33:06.991Z",
+      "source_sha256": "8a3afca46fb913584bfeed773721bc51886c36603fa2fc9d1a1ab564097a65ad",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S32",
+      "locale": "de",
+      "url": "/de/guides/rollerfahren-hanoi-im-winter/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:33:06.991Z",
+      "source_sha256": "ae2bdf5091b4cbd6f17f404dd9cfb6fc778f1aa8ac9280e18d41f5aa8e0ace32",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T23:33:46.653Z",
-      "ids": [
-        "FR-S65",
-        "FR-S66"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T23:34:41.845Z",
       "ids": [
@@ -8446,6 +8460,14 @@
         "DE-S30"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T03:33:06.991Z",
+      "ids": [
+        "DE-S31",
+        "DE-S32"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -8458,6 +8480,6 @@
     "live_seconds": 121
   },
   "queue": {
-    "APPROVED_BY_POLICY": 9
+    "APPROVED_BY_POLICY": 7
   }
 }
