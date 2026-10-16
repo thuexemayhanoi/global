@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 422,
+  "clean_runs": 423,
   "published": [
     {
       "id": "NL-H01",
@@ -9880,25 +9880,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T16:03:18.096Z"
+    },
+    {
+      "id": "PT-S86",
+      "locale": "pt",
+      "url": "/pt/guides/emprestar-a-moto-vietname-carta-multa/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:10:51.607Z",
+      "source_sha256": "1ea22c96f35c06e0d2fcb83663d95efb9c8c47c8f03c20b434bef0711dee6d08",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:12:10.381Z"
+    },
+    {
+      "id": "VI-S85",
+      "locale": "vi",
+      "url": "/vi/guides/giao-xe-cho-nguoi-khong-du-dieu-kien-bi-phat/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T16:10:51.607Z",
+      "source_sha256": "98c18548b13e9371475ea879cc29e3be9670ce6c2377a82bd26561162d578792",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T16:12:10.381Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T04:50:18.439Z",
-      "ids": [
-        "KO-S62",
-        "KO-S63"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T04:51:39.211Z",
-      "ids": [
-        "KO-S62",
-        "KO-S63"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T04:52:20.786Z",
       "ids": [
@@ -11482,16 +11490,32 @@
         "PT-S85"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T16:10:51.607Z",
+      "ids": [
+        "PT-S86",
+        "VI-S85"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T16:12:10.381Z",
+      "ids": [
+        "PT-S86",
+        "VI-S85"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T16:03:18.096Z",
+    "at": "2026-10-16T16:12:10.381Z",
     "ids": [
-      "PT-S84",
-      "PT-S85"
+      "PT-S86",
+      "VI-S85"
     ],
-    "commit": "5ec4afad272d32daab5b86a7fe66cadd02219786",
-    "live_seconds": 62
+    "commit": "912638185f5a0529b4a1e60ea662bb6d3b109e55",
+    "live_seconds": 61
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
