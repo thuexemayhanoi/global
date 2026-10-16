@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 359,
+  "clean_runs": 360,
   "published": [
     {
       "id": "NL-H01",
@@ -8368,25 +8368,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T06:15:32.168Z"
+    },
+    {
+      "id": "DE-S82",
+      "locale": "de",
+      "url": "/de/guides/roller-sichergestellt-polizei-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:28:02.023Z",
+      "source_sha256": "07644206d7b4abce84d8adceab404a61031efcddf57550ff6ffeba5b0d11f49d",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:29:17.275Z"
+    },
+    {
+      "id": "EN-S83",
+      "locale": "en",
+      "url": "/en/guides/motorbike-impounded-by-police-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:28:02.023Z",
+      "source_sha256": "1ad05f5f267c938497ab0016e4335990a0cbc4b079cc23f5b08ef9ff5273fe59",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:29:17.275Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T02:19:51.847Z",
-      "ids": [
-        "NL-S39",
-        "NL-S40"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:21:10.306Z",
-      "ids": [
-        "NL-S39",
-        "NL-S40"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T02:21:29.694Z",
       "ids": [
@@ -9954,18 +9962,35 @@
         "ZH-S68"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:28:02.023Z",
+      "ids": [
+        "DE-S82",
+        "EN-S83"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:29:17.275Z",
+      "ids": [
+        "DE-S82",
+        "EN-S83"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T06:15:32.168Z",
+    "at": "2026-10-16T06:29:17.275Z",
     "ids": [
-      "ZH-S67",
-      "ZH-S68"
+      "DE-S82",
+      "EN-S83"
     ],
-    "commit": "78cc70f5e476e482169b27d93ce023c35c388b20",
+    "commit": "bbbff2dda4a1c463dc19026edec9a02c63fd470e",
     "live_seconds": 62
   },
   "queue": {
-    "REJECTED": 8
+    "APPROVED_BY_POLICY": 2,
+    "REJECTED": 6
   }
 }
