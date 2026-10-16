@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 284,
+  "clean_runs": 287,
   "published": [
     {
       "id": "NL-H01",
@@ -6638,50 +6638,47 @@
       "at": "2026-10-16T03:04:33.139Z",
       "source_sha256": "6b811548002cf09991d99d5cd85fc84860de714f3d847b05666b1928c6c7f1f4",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T03:05:49.549Z"
+    },
+    {
+      "id": "VI-S18",
+      "locale": "vi",
+      "url": "/vi/guides/wave-vision-air-blade-lead/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:06:11.276Z",
+      "source_sha256": "6d519bc77bd6176a4b7b86475699596bb024a647a8519d5e388e6ad2b9aa0526",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T03:07:47.516Z"
+    },
+    {
+      "id": "VI-S28",
+      "locale": "vi",
+      "url": "/vi/guides/cach-di-xe-con-tay-cho-nguoi-moi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:06:11.276Z",
+      "source_sha256": "065127f6ca2285a487cb402c0265246765857d7e04c28e52d3a43474b2d6e14f",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T03:07:47.516Z"
+    },
+    {
+      "id": "VI-S29",
+      "locale": "vi",
+      "url": "/vi/guides/nong-do-con-khi-di-xe-may/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:08:07.642Z",
+      "source_sha256": "bf59fa96b60d762cb1b1822a448f10ea46cf759d13b28a30c426c15f53016163",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T03:10:29.415Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T22:59:26.166Z",
-      "ids": [
-        "FR-S43",
-        "FR-S44"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T22:59:49.182Z",
-      "ids": [
-        "FR-S45",
-        "FR-S46"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T23:01:02.317Z",
-      "ids": [
-        "FR-S45",
-        "FR-S46"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T23:05:15.209Z",
-      "ids": [
-        "FR-S47",
-        "FR-S48"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T23:06:29.972Z",
-      "ids": [
-        "FR-S47",
-        "FR-S48"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T23:06:49.006Z",
       "ids": [
@@ -8220,16 +8217,52 @@
         "PT-S55"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T03:05:49.549Z",
+      "ids": [
+        "PT-S55"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T03:06:11.276Z",
+      "ids": [
+        "VI-S18",
+        "VI-S28"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T03:07:47.516Z",
+      "ids": [
+        "VI-S18",
+        "VI-S28"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T03:08:07.642Z",
+      "ids": [
+        "VI-S29"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T03:10:29.415Z",
+      "ids": [
+        "VI-S29"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T03:04:09.523Z",
+    "at": "2026-10-16T03:10:29.415Z",
     "ids": [
-      "PT-S53",
-      "PT-S54"
+      "VI-S29"
     ],
-    "commit": "1bc6752fc6f3316938e29e01136e56321a79e907",
-    "live_seconds": 82
+    "commit": "fd0551f84b969040f08b2fad9b183559473c0464",
+    "live_seconds": 122
   },
   "queue": {
     "APPROVED_BY_POLICY": 1
