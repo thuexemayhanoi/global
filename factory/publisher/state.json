@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 263,
+  "clean_runs": 266,
   "published": [
     {
       "id": "NL-H01",
@@ -6170,7 +6170,8 @@
       "at": "2026-10-16T02:26:23.590Z",
       "source_sha256": "eda8b6b9c547493e818259730b40bf821986e4b92327addb5569de53601fbbd8",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:28:00.758Z"
     },
     {
       "id": "NL-S48",
@@ -6181,50 +6182,59 @@
       "at": "2026-10-16T02:26:23.590Z",
       "source_sha256": "78653fbcaf337ff8d6ce5b524b14a205af0183a7a426bef1738e5b257971c530",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:28:00.758Z"
+    },
+    {
+      "id": "NL-S49",
+      "locale": "nl",
+      "url": "/nl/guides/spoorwegovergang-scooter-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:28:19.450Z",
+      "source_sha256": "392be174b98dca4b8d4ede64a2bbb5c298098cb8f87438a7cea99214ab188792",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:29:36.651Z"
+    },
+    {
+      "id": "NL-S50",
+      "locale": "nl",
+      "url": "/nl/guides/in-groep-scooter-rijden-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:28:19.450Z",
+      "source_sha256": "8bf85f4000a20a22e40a3a90b77bf3b73987d05209498e6b7c5e479ef34e64ca",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:29:36.651Z"
+    },
+    {
+      "id": "NL-S51",
+      "locale": "nl",
+      "url": "/nl/guides/flitsboete-huurscooter-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:29:54.137Z",
+      "source_sha256": "e88b9da037f7f734f4a80053ab7084f95fb2c285d61754e706ca76006d5ee195",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:30:50.443Z"
+    },
+    {
+      "id": "NL-S52",
+      "locale": "nl",
+      "url": "/nl/guides/verkeersboete-betalen-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:29:54.137Z",
+      "source_sha256": "44dd42e4c9644068d376e07755d83b17bce47124a4a677a6cda70c303f996dd4",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:30:50.443Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T22:16:45.075Z",
-      "ids": [
-        "ES-S39",
-        "ES-S40"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T22:17:01.314Z",
-      "ids": [
-        "ES-S41",
-        "ES-S42"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T22:18:33.286Z",
-      "ids": [
-        "ES-S41",
-        "ES-S42"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T22:18:51.157Z",
-      "ids": [
-        "ES-S43",
-        "ES-S44"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T22:19:44.878Z",
-      "ids": [
-        "ES-S43",
-        "ES-S44"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T22:20:01.923Z",
       "ids": [
@@ -7758,18 +7768,58 @@
         "NL-S48"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:28:00.758Z",
+      "ids": [
+        "NL-S47",
+        "NL-S48"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:28:19.450Z",
+      "ids": [
+        "NL-S49",
+        "NL-S50"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:29:36.651Z",
+      "ids": [
+        "NL-S49",
+        "NL-S50"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:29:54.137Z",
+      "ids": [
+        "NL-S51",
+        "NL-S52"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:30:50.443Z",
+      "ids": [
+        "NL-S51",
+        "NL-S52"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T02:26:03.152Z",
+    "at": "2026-10-16T02:30:50.443Z",
     "ids": [
-      "NL-S45",
-      "NL-S46"
+      "NL-S51",
+      "NL-S52"
     ],
-    "commit": "786acd0dcd81ed38f3769fb916a993e95195d514",
-    "live_seconds": 62
+    "commit": "bfeb9c6d8eda0b833279a3568f0a4dc0b4c07483",
+    "live_seconds": 41
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 4
   }
 }
