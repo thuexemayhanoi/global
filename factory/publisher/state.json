@@ -5560,17 +5560,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T01:29:12.818Z"
+    },
+    {
+      "id": "JA-S64",
+      "locale": "ja",
+      "url": "/ja/guides/douro-doubutsu-bike-chuui/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:29:32.378Z",
+      "source_sha256": "53847e7b0222a8116f271d078dab82ba67d2eb6558d2a4724e462b925ba7f6f1",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S65",
+      "locale": "ja",
+      "url": "/ja/guides/seibi-furyou-bakkin-mirror/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:29:32.378Z",
+      "source_sha256": "6e7a86f74222b02b81f8b72dd35f67f14fa3a0adf454387cb34b2d4f39b56574",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T21:11:07.052Z",
-      "ids": [
-        "EN-S63",
-        "EN-S64"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T21:12:20.222Z",
       "ids": [
@@ -7120,6 +7134,14 @@
         "JA-S63"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T01:29:32.378Z",
+      "ids": [
+        "JA-S64",
+        "JA-S65"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -7132,6 +7154,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 4
+    "APPROVED_BY_POLICY": 2
   }
 }
