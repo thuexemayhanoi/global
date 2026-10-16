@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 385,
+  "clean_runs": 386,
   "published": [
     {
       "id": "NL-H01",
@@ -8992,25 +8992,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T08:36:24.971Z"
+    },
+    {
+      "id": "VI-S72",
+      "locale": "vi",
+      "url": "/vi/guides/tap-di-xe-tay-ga-cho-nguoi-moi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T08:38:01.085Z",
+      "source_sha256": "da37731ec4b2a0f603304e6c92fdd27d802639e679e787af96b104c6d09fe52f",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T08:39:23.207Z"
+    },
+    {
+      "id": "VI-S73",
+      "locale": "vi",
+      "url": "/vi/guides/xe-may-dien-quang-duong-thuc-te-sac-an-toan/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T08:38:01.085Z",
+      "source_sha256": "5fdc21b32d31e9abefb941854f9fd558e5e097a3dbd295fedd9fac0e28347697",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T08:39:23.207Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T03:06:11.276Z",
-      "ids": [
-        "VI-S18",
-        "VI-S28"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T03:07:47.516Z",
-      "ids": [
-        "VI-S18",
-        "VI-S28"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T03:08:07.642Z",
       "ids": [
@@ -10586,16 +10594,32 @@
         "VI-S71"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T08:38:01.085Z",
+      "ids": [
+        "VI-S72",
+        "VI-S73"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T08:39:23.207Z",
+      "ids": [
+        "VI-S72",
+        "VI-S73"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T08:36:24.971Z",
+    "at": "2026-10-16T08:39:23.207Z",
     "ids": [
-      "VI-S70",
-      "VI-S71"
+      "VI-S72",
+      "VI-S73"
     ],
-    "commit": "683a254fb487ca47edec0ed121578a6e5b4b0ce7",
-    "live_seconds": 62
+    "commit": "5c9f5440538af6c33e85f4e89a20f1f79851afa7",
+    "live_seconds": 61
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
