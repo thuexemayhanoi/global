@@ -6748,17 +6748,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T03:21:35.768Z"
+    },
+    {
+      "id": "VI-S36",
+      "locale": "vi",
+      "url": "/vi/guides/dung-dien-thoai-khi-di-xe-may/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:22:19.492Z",
+      "source_sha256": "9667ab262e51bb0bd12ad25a5a89d1d981a95ab270880897ca7f095c2d01589b",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "VI-S37",
+      "locale": "vi",
+      "url": "/vi/guides/xe-may-cho-3-nguoi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:22:19.492Z",
+      "source_sha256": "ffbf6ea8795e889e8180cf12b31c4e6b5d11b33b16fb91f6f85d73727b55a282",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T23:14:46.017Z",
-      "ids": [
-        "FR-S55",
-        "FR-S56"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T23:16:02.569Z",
       "ids": [
@@ -8326,6 +8340,14 @@
         "VI-S35"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T03:22:19.492Z",
+      "ids": [
+        "VI-S36",
+        "VI-S37"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -8336,5 +8358,7 @@
     "commit": "5979f982c9f7af540005e7796e1234e79f1d1db5",
     "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 4
+  }
 }
