@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 354,
+  "clean_runs": 356,
   "published": [
     {
       "id": "NL-H01",
@@ -8248,41 +8248,57 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T06:04:43.420Z"
+    },
+    {
+      "id": "PT-S74",
+      "locale": "pt",
+      "url": "/pt/guides/scooter-eletrica-autonomia-carregar-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:05:02.798Z",
+      "source_sha256": "9a66eb1dc4099b4a87ebc0c8003eeeb0d266314e9d78e3e04b6aee100cef38e8",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:06:58.408Z"
+    },
+    {
+      "id": "PT-S75",
+      "locale": "pt",
+      "url": "/pt/guides/buracos-gravilha-piso-degradado-scooter-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:05:02.798Z",
+      "source_sha256": "53b1e4eedccc6de3f59411fe8d0431d4176475f368f66892f043075abeae5873",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:06:58.408Z"
+    },
+    {
+      "id": "VI-S60",
+      "locale": "vi",
+      "url": "/vi/guides/di-xe-may-troi-nang-nong/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:07:24.996Z",
+      "source_sha256": "fe8dc30dc962ec7a646301e3f895f570a8be264d93dfb0b2d64e77e9df21523a",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:09:07.814Z"
+    },
+    {
+      "id": "VI-S61",
+      "locale": "vi",
+      "url": "/vi/guides/o-nhiem-khong-khi-ha-noi-di-xe-may/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:07:24.996Z",
+      "source_sha256": "343bb0639d77d4ed6bfaf8872f7c353909f94547847d099c9258ab7ff981b53e",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:09:07.814Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T02:11:34.663Z",
-      "ids": [
-        "NL-S29",
-        "NL-S30"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:12:38.718Z",
-      "ids": [
-        "NL-S29",
-        "NL-S30"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:13:01.874Z",
-      "ids": [
-        "NL-S31",
-        "NL-S32"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T02:13:59.681Z",
-      "ids": [
-        "NL-S31",
-        "NL-S32"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T02:14:21.935Z",
       "ids": [
@@ -9834,18 +9850,51 @@
         "PT-S73"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:05:02.798Z",
+      "ids": [
+        "PT-S74",
+        "PT-S75"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:06:58.408Z",
+      "ids": [
+        "PT-S74",
+        "PT-S75"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:07:24.996Z",
+      "ids": [
+        "VI-S60",
+        "VI-S61"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:09:07.814Z",
+      "ids": [
+        "VI-S60",
+        "VI-S61"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T06:04:43.420Z",
+    "at": "2026-10-16T06:09:07.814Z",
     "ids": [
-      "PT-S72",
-      "PT-S73"
+      "VI-S60",
+      "VI-S61"
     ],
-    "commit": "b195110154e01eada152b083cf710e77de1fa0d9",
-    "live_seconds": 62
+    "commit": "cbfb29665780a88d057614e30db5ed42e0f35f46",
+    "live_seconds": 81
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 2,
+    "REJECTED": 6
   }
 }
