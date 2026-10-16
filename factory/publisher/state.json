@@ -5368,17 +5368,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T00:54:58.664Z"
+    },
+    {
+      "id": "JA-S53",
+      "locale": "ja",
+      "url": "/ja/guides/yamamichi-surechigai-yuusen/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:55:21.315Z",
+      "source_sha256": "85213f6cc6b28ea802c4aaf8360903d78613d7d373344c8b9b740056801894e2",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S54",
+      "locale": "ja",
+      "url": "/ja/guides/oudan-hodou-hokousha-yuusen/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:55:21.315Z",
+      "source_sha256": "3fd8b1ddcf85f9a77cc92fb731be1d1bd66fd13ae49236df6b4c16ebf5f3a64c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T20:50:23.415Z",
-      "ids": [
-        "DE-S67",
-        "DE-S68"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T20:51:37.407Z",
       "ids": [
@@ -6924,6 +6938,14 @@
         "JA-S52"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T00:55:21.315Z",
+      "ids": [
+        "JA-S53",
+        "JA-S54"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -6936,6 +6958,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 4
+    "APPROVED_BY_POLICY": 2
   }
 }
