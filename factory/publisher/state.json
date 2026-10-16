@@ -10312,17 +10312,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T17:05:35.629Z"
+    },
+    {
+      "id": "DE-S19",
+      "locale": "de",
+      "url": "/de/guides/halbautomatik-fahren/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T20:10:03.708Z",
+      "source_sha256": "2edfd1d4761f84d7b0387cb202c1c96974fd33804a593e545f0acf874ec94866",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S20",
+      "locale": "en",
+      "url": "/en/guides/how-to-ride-semi-automatic-motorbike/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T20:10:03.708Z",
+      "source_sha256": "5c8d5002988e42c0a6480a7c6f08bf7733e8a50e5cb4ac04ed26de26ca0a50eb",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T05:25:21.841Z",
-      "ids": [
-        "ZH-S54",
-        "ZH-S55"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T05:26:17.485Z",
       "ids": [
@@ -11914,6 +11928,14 @@
         "ZH-S88"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T20:10:03.708Z",
+      "ids": [
+        "DE-S19",
+        "EN-S20"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -11925,5 +11947,7 @@
     "commit": "2d6347250858c7f6134aaf948ab83fbaff871dc8",
     "live_seconds": 62
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 4
+  }
 }
