@@ -3652,6 +3652,63 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility2-0030.json@ac0a333e2fb3"
       },
       "matrix_id": "JA-S85"
+    },
+    {
+      "candidate_id": "TA-JA-0080",
+      "locale": "ja",
+      "role": "SUPPORT",
+      "parent_id": "JA-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "pet-bike-nosekata-vietnam",
+      "primary_query": "ベトナム バイク 犬 乗せる",
+      "secondary_queries": [
+        "ベトナム バイク ペットキャリー",
+        "ベトナム バイク 犬 散歩 罰金",
+        "ベトナム スクーター 猫 運ぶ"
+      ],
+      "working_title": "ベトナムでペットをバイクに乗せるとき：キャリー、リード、法律で禁止されていること",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Japanese-speaking expatriates and long-stay visitors who keep a dog or cat in Vietnam, and see locals carry animals on scooters, want to know whether a pet may ride on a motorbike, how it may be carried and what the law and the penalties say about leading an animal while riding.",
+      "content_angle": "Explains what Vietnamese law says about animals on a motorbike: the ban on leading animals while riding and on carrying bulky items in Article 33(3)(đ) of Law 36/2024/QH15, the passenger ban on carrying bulky items in Article 33(4)(a), and the load limits in Article 33(5) that a pet carrier strapped to the luggage rack must respect (0.3 m beyond each side of the rack, 0.5 m behind it, 2 m high, no weight figure); the matching penalties in Decree 168/2024/NĐ-CP (rider VND 600,000-800,000 under Article 7(3)(e), passenger VND 400,000-600,000 under Article 12(5)(a)); the fact that the law does not address an animal in a closed carrier as such; and practical carrier, heat and handling advice.",
+      "entities": [
+        "法律36/2024/QH15第33条3項đ号",
+        "法律36/2024/QH15第33条5項",
+        "政令168/2024/NĐ-CP第7条3項e号",
+        "政令168/2024/NĐ-CP第12条5項a号",
+        "ペットキャリー"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S81",
+          "reason": "JA-S81はバイクに積める荷物の量と固定の仕方を扱います。このテーマは動物を運ぶときの決まりとリスク、運転しながら動物を引いて歩かせる禁止を扱います。"
+        },
+        {
+          "id": "JA-S64",
+          "reason": "JA-S64は道路で出会う水牛や犬などの動物をどう避けるかを扱います。このテーマは自分のバイクに乗せて運ぶ動物を扱います。"
+        },
+        {
+          "id": "JA-S41",
+          "reason": "JA-S41はバイクに何人まで乗れるかを扱います。このテーマは法律上は乗員ではなく荷物として扱われるペットを扱います。"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-16",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0031.json@6730091a587f"
+      },
+      "matrix_id": "JA-S86"
     }
   ]
 }
