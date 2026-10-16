@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility2",
   "batch_session": "research-claude-20261015-mobility2",
   "created_at": "2026-10-15T23:01:23.660Z",
-  "updated_at": "2026-10-16T07:01:16.378Z",
-  "base_main_sha": "39658a86e016b2d19fbae7a718032d0d6542de85",
-  "last_commit_sha": "0f3ce5f69fe921524811ba94c28c299b38ce70ab",
+  "updated_at": "2026-10-16T07:03:38.454Z",
+  "base_main_sha": "205e4e825690428a4701f2cf1bb10a7fc187f622",
+  "last_commit_sha": "eab467f4243b89945ca24152839232aa8da93fc0",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 210,
-    "qa_pass": 210,
+    "researched": 220,
+    "qa_pass": 220,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 200,
+    "pushed": 210,
     "pending_push": 10
   },
   "coverage": {
@@ -33,17 +33,17 @@
       "zh": 31,
       "pt": 32,
       "nl": 21,
-      "vi": 20
+      "vi": 30
     },
     "domains": {
-      "traffic-law-safety": 185,
-      "motorbike-rental": 25
+      "traffic-law-safety": 192,
+      "motorbike-rental": 28
     }
   },
   "last_batch": {
-    "seq": 21,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0021.json",
-    "sha256": "b390bd5aeaf36fc6c9c799cad4f18c75f42bfde760cdb101bfe9b6c4d5cc5f02",
+    "seq": 22,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0022.json",
+    "sha256": "d954008d6f793fa7e0083e07ec40e92c9fce88817a5c93248a83b7a40a632abf",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -2273,8 +2273,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility2-0021.json",
       "sha256": "b390bd5aeaf36fc6c9c799cad4f18c75f42bfde760cdb101bfe9b6c4d5cc5f02",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "eab467f4243b89945ca24152839232aa8da93fc0",
       "researched_on": "2026-10-16",
       "topics": [
         {
@@ -2285,7 +2285,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::スクーター フレーキ 前後 使い方",
-          "ta_id": null
+          "ta_id": "TA-JA-0062"
         },
         {
           "ref": "ja:yamamichi-kyuu-curve-hashirikata",
@@ -2295,7 +2295,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::山道 急カーフ ハイク 走り方",
-          "ta_id": null
+          "ta_id": "TA-JA-0063"
         },
         {
           "ref": "ja:bike-koubu-zaseki-joushasha",
@@ -2305,7 +2305,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::ハイク 後ろに乗る 注意 マナー",
-          "ta_id": null
+          "ta_id": "TA-JA-0064"
         },
         {
           "ref": "ja:koutsuu-jiko-mokugeki-taiou",
@@ -2315,7 +2315,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-incidents",
           "key": "ja::ヘトナム 交通事故 目撃 とうする",
-          "ta_id": null
+          "ta_id": "TA-JA-0065"
         },
         {
           "ref": "ja:bike-touring-hirou-kyuukei",
@@ -2325,7 +2325,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::ハイク ツーリンク 1日 何時間 休憩",
-          "ta_id": null
+          "ta_id": "TA-JA-0066"
         },
         {
           "ref": "ja:hajimete-scooter-renshuu",
@@ -2335,7 +2335,7 @@
           "parent_id": "JA-H01",
           "subcluster": "vc-transmission",
           "key": "ja::スクーター 初めて 乗り方 練習",
-          "ta_id": null
+          "ta_id": "TA-JA-0067"
         },
         {
           "ref": "ja:denki-scooter-koukou-kyori-juuden",
@@ -2345,7 +2345,7 @@
           "parent_id": "JA-H01",
           "subcluster": "vc-power",
           "key": "ja::ヘトナム 電動スクーター 航続距離 充電",
-          "ta_id": null
+          "ta_id": "TA-JA-0068"
         },
         {
           "ref": "ja:douro-ana-jari-bike",
@@ -2355,7 +2355,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-weather",
           "key": "ja::ヘトナム 道路 穴 砂利 ハイク",
-          "ta_id": null
+          "ta_id": "TA-JA-0069"
         },
         {
           "ref": "ja:truck-bus-shikaku-bike",
@@ -2365,7 +2365,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::トラック ハス 死角 ハイク",
-          "ta_id": null
+          "ta_id": "TA-JA-0070"
         },
         {
           "ref": "ja:honda-smart-key-tsukaikata",
@@ -2375,14 +2375,125 @@
           "parent_id": "JA-H01",
           "subcluster": "vc-models",
           "key": "ja::ホンタ スマートキー 使い方 スクーター",
+          "ta_id": "TA-JA-0071"
+        }
+      ]
+    },
+    {
+      "seq": 22,
+      "file": "factory/topic-research/batches/claude-20261015-mobility2-0022.json",
+      "sha256": "d954008d6f793fa7e0083e07ec40e92c9fce88817a5c93248a83b7a40a632abf",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-16",
+      "topics": [
+        {
+          "ref": "vi:cach-phanh-xe-tay-ga-dung-cach",
+          "locale": "vi",
+          "slug": "cach-phanh-xe-tay-ga-dung-cach",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::cach phanh xe tay ga dung cach",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:cach-vao-cua-gap-duong-deo-xe-may",
+          "locale": "vi",
+          "slug": "cach-vao-cua-gap-duong-deo-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::cach di xe may qua cua tay ao deo",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:nguoi-ngoi-sau-xe-may-can-luu-y",
+          "locale": "vi",
+          "slug": "nguoi-ngoi-sau-xe-may-can-luu-y",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::ngoi sau xe may can luu y gi",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:chung-kien-tai-nan-giao-thong-lam-gi",
+          "locale": "vi",
+          "slug": "chung-kien-tai-nan-giao-thong-lam-gi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::chung kien tai nan giao thong phai lam gi",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:di-phuot-xe-may-mot-ngay-bao-nhieu-tieng",
+          "locale": "vi",
+          "slug": "di-phuot-xe-may-mot-ngay-bao-nhieu-tieng",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::di phuot xe may mot ngay bao nhieu tieng",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:tap-di-xe-tay-ga-cho-nguoi-moi",
+          "locale": "vi",
+          "slug": "tap-di-xe-tay-ga-cho-nguoi-moi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-transmission",
+          "key": "vi::tap di xe tay ga cho nguoi moi",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:xe-may-dien-quang-duong-thuc-te-sac-an-toan",
+          "locale": "vi",
+          "slug": "xe-may-dien-quang-duong-thuc-te-sac-an-toan",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-power",
+          "key": "vi::xe may dien di duoc bao nhieu km sac",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:di-xe-may-qua-duong-xau-o-ga-soi-da",
+          "locale": "vi",
+          "slug": "di-xe-may-qua-duong-xau-o-ga-soi-da",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-weather",
+          "key": "vi::di xe may qua duong xau o ga soi da",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:diem-mu-xe-tai-xe-buyt-xe-may",
+          "locale": "vi",
+          "slug": "diem-mu-xe-tai-xe-buyt-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::diem mu xe tai xe buyt khi di xe may",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:cach-dung-smartkey-xe-tay-ga-honda",
+          "locale": "vi",
+          "slug": "cach-dung-smartkey-xe-tay-ga-honda",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-models",
+          "key": "vi::cach dung smartkey xe honda",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 22,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0022.json",
+    "seq": 23,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0023.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -2541,6 +2652,13 @@
       "seq": 21,
       "topics": 10,
       "sha256": "b390bd5aeaf36fc6c9c799cad4f18c75f42bfde760cdb101bfe9b6c4d5cc5f02"
+    },
+    {
+      "at": "2026-10-16T07:03:38.454Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 22,
+      "topics": 10,
+      "sha256": "d954008d6f793fa7e0083e07ec40e92c9fce88817a5c93248a83b7a40a632abf"
     }
   ]
 }
