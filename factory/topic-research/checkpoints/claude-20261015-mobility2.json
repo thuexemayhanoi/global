@@ -7,43 +7,43 @@
   "branch": "research/claude-20261015-mobility2",
   "batch_session": "research-claude-20261015-mobility2",
   "created_at": "2026-10-15T23:01:23.660Z",
-  "updated_at": "2026-10-16T07:03:38.454Z",
-  "base_main_sha": "205e4e825690428a4701f2cf1bb10a7fc187f622",
-  "last_commit_sha": "eab467f4243b89945ca24152839232aa8da93fc0",
+  "updated_at": "2026-10-16T07:46:54.786Z",
+  "base_main_sha": "8813d70ee7b3373c479a7ed3f0d4f96ca31d65c3",
+  "last_commit_sha": "2dba8bd49c0e27cba7637c6909ab6996507522e7",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 220,
-    "qa_pass": 220,
+    "researched": 230,
+    "qa_pass": 230,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 210,
+    "pushed": 220,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "fr": 23,
+      "fr": 24,
       "es": 14,
       "en": 3,
       "de": 3,
       "ja": 32,
-      "ko": 31,
-      "zh": 31,
-      "pt": 32,
-      "nl": 21,
+      "ko": 32,
+      "zh": 32,
+      "pt": 34,
+      "nl": 26,
       "vi": 30
     },
     "domains": {
-      "traffic-law-safety": 192,
-      "motorbike-rental": 28
+      "traffic-law-safety": 201,
+      "motorbike-rental": 29
     }
   },
   "last_batch": {
-    "seq": 22,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0022.json",
-    "sha256": "d954008d6f793fa7e0083e07ec40e92c9fce88817a5c93248a83b7a40a632abf",
+    "seq": 23,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0023.json",
+    "sha256": "c5aeb4650f88fda9dbedaedaecc25c3b2a4b9f234e7369f5057198fadd3404ec",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -2384,8 +2384,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility2-0022.json",
       "sha256": "d954008d6f793fa7e0083e07ec40e92c9fce88817a5c93248a83b7a40a632abf",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "2f78a0a9234ca0ae869411d5485f1e6f9d1e6dfe",
       "researched_on": "2026-10-16",
       "topics": [
         {
@@ -2396,7 +2396,7 @@
           "parent_id": "VI-H04",
           "subcluster": "ss-city",
           "key": "vi::cach phanh xe tay ga dung cach",
-          "ta_id": null
+          "ta_id": "TA-VI-0061"
         },
         {
           "ref": "vi:cach-vao-cua-gap-duong-deo-xe-may",
@@ -2406,7 +2406,7 @@
           "parent_id": "VI-H04",
           "subcluster": "ss-city",
           "key": "vi::cach di xe may qua cua tay ao deo",
-          "ta_id": null
+          "ta_id": "TA-VI-0062"
         },
         {
           "ref": "vi:nguoi-ngoi-sau-xe-may-can-luu-y",
@@ -2416,7 +2416,7 @@
           "parent_id": "VI-H04",
           "subcluster": "ss-city",
           "key": "vi::ngoi sau xe may can luu y gi",
-          "ta_id": null
+          "ta_id": "TA-VI-0063"
         },
         {
           "ref": "vi:chung-kien-tai-nan-giao-thong-lam-gi",
@@ -2426,7 +2426,7 @@
           "parent_id": "VI-H04",
           "subcluster": "ss-incidents",
           "key": "vi::chung kien tai nan giao thong phai lam gi",
-          "ta_id": null
+          "ta_id": "TA-VI-0064"
         },
         {
           "ref": "vi:di-phuot-xe-may-mot-ngay-bao-nhieu-tieng",
@@ -2436,7 +2436,7 @@
           "parent_id": "VI-H04",
           "subcluster": "ss-city",
           "key": "vi::di phuot xe may mot ngay bao nhieu tieng",
-          "ta_id": null
+          "ta_id": "TA-VI-0065"
         },
         {
           "ref": "vi:tap-di-xe-tay-ga-cho-nguoi-moi",
@@ -2446,7 +2446,7 @@
           "parent_id": "VI-H01",
           "subcluster": "vc-transmission",
           "key": "vi::tap di xe tay ga cho nguoi moi",
-          "ta_id": null
+          "ta_id": "TA-VI-0066"
         },
         {
           "ref": "vi:xe-may-dien-quang-duong-thuc-te-sac-an-toan",
@@ -2456,7 +2456,7 @@
           "parent_id": "VI-H01",
           "subcluster": "vc-power",
           "key": "vi::xe may dien di duoc bao nhieu km sac",
-          "ta_id": null
+          "ta_id": "TA-VI-0067"
         },
         {
           "ref": "vi:di-xe-may-qua-duong-xau-o-ga-soi-da",
@@ -2466,7 +2466,7 @@
           "parent_id": "VI-H04",
           "subcluster": "ss-weather",
           "key": "vi::di xe may qua duong xau o ga soi da",
-          "ta_id": null
+          "ta_id": "TA-VI-0068"
         },
         {
           "ref": "vi:diem-mu-xe-tai-xe-buyt-xe-may",
@@ -2476,7 +2476,7 @@
           "parent_id": "VI-H04",
           "subcluster": "ss-city",
           "key": "vi::diem mu xe tai xe buyt khi di xe may",
-          "ta_id": null
+          "ta_id": "TA-VI-0069"
         },
         {
           "ref": "vi:cach-dung-smartkey-xe-tay-ga-honda",
@@ -2486,14 +2486,125 @@
           "parent_id": "VI-H01",
           "subcluster": "vc-models",
           "key": "vi::cach dung smartkey xe honda",
+          "ta_id": "TA-VI-0070"
+        }
+      ]
+    },
+    {
+      "seq": 23,
+      "file": "factory/topic-research/batches/claude-20261015-mobility2-0023.json",
+      "sha256": "c5aeb4650f88fda9dbedaedaecc25c3b2a4b9f234e7369f5057198fadd3404ec",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-16",
+      "topics": [
+        {
+          "ref": "nl:waar-vaart-minderen-verplicht-vietnam",
+          "locale": "nl",
+          "slug": "waar-vaart-minderen-verplicht-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::waar moet je vaart minderen in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:wegmarkeringen-vietnam-betekenis",
+          "locale": "nl",
+          "slug": "wegmarkeringen-vietnam-betekenis",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::wegmarkeringen vietnam betekenis",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:e-bike-regels-vietnam-helm",
+          "locale": "nl",
+          "slug": "e-bike-regels-vietnam-helm",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-power",
+          "key": "nl::e-bike vietnam regels helm",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:fietsen-in-vietnam-verkeersregels",
+          "locale": "nl",
+          "slug": "fietsen-in-vietnam-verkeersregels",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::fietsen in vietnam verkeersregels",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:veerpont-pontonbrug-scooter-vietnam",
+          "locale": "nl",
+          "slug": "veerpont-pontonbrug-scooter-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::scooter op veerpont vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:onde-abrandar-moto-vietname",
+          "locale": "pt",
+          "slug": "onde-abrandar-moto-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::quando abrandar de moto no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:marcas-rodoviarias-vietname-moto",
+          "locale": "pt",
+          "slug": "marcas-rodoviarias-vietname-moto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::marcas rodoviarias vietname significado",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:velo-au-vietnam-regles-amendes",
+          "locale": "fr",
+          "slug": "velo-au-vietnam-regles-amendes",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::faire du velo au vietnam regles",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-ilsi-apsu",
+          "locale": "ko",
+          "slug": "beteunam-otobai-ilsi-apsu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H03",
+          "subcluster": "dc-papers",
+          "key": "ko::베트남 오토바이 압수되는 경우",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-jiaojing-kouche-qingkuang",
+          "locale": "zh",
+          "slug": "yuenan-jiaojing-kouche-qingkuang",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H03",
+          "subcluster": "dc-papers",
+          "key": "zh::越南摩托车什么情况会被扣车",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 23,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0023.json",
+    "seq": 24,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0024.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -2659,6 +2770,13 @@
       "seq": 22,
       "topics": 10,
       "sha256": "d954008d6f793fa7e0083e07ec40e92c9fce88817a5c93248a83b7a40a632abf"
+    },
+    {
+      "at": "2026-10-16T07:46:54.786Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 23,
+      "topics": 10,
+      "sha256": "c5aeb4650f88fda9dbedaedaecc25c3b2a4b9f234e7369f5057198fadd3404ec"
     }
   ]
 }
