@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 307,
+  "clean_runs": 309,
   "published": [
     {
       "id": "NL-H01",
@@ -7130,7 +7130,8 @@
       "at": "2026-10-16T03:56:40.680Z",
       "source_sha256": "4ab450f4ae8478deba823df771d018c2745972bbc12c14c00e697a21830cd347",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T03:57:55.087Z"
     },
     {
       "id": "VI-S45",
@@ -7141,33 +7142,35 @@
       "at": "2026-10-16T03:56:40.680Z",
       "source_sha256": "2786015ac64790250301eab04d8f246334cc664ab68391e9b62b438fea986612",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T03:57:55.087Z"
+    },
+    {
+      "id": "VI-S46",
+      "locale": "vi",
+      "url": "/vi/guides/xe-may-thue-bi-phat-nguoi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:58:14.303Z",
+      "source_sha256": "9b5ea6c91e4b411abf62df1b8c1fb3c185380ab050c9d779cc40a91a80aa2e82",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T03:59:34.858Z"
+    },
+    {
+      "id": "ZH-S19",
+      "locale": "zh",
+      "url": "/zh/guides/bentian-chexing/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:58:14.303Z",
+      "source_sha256": "b476d1a482c0235d11d00a0c830fe9a5a7ea28d7cc41a24231edfad33b62ccdf",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T03:59:34.858Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T00:00:40.528Z",
-      "ids": [
-        "JA-S30"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T00:06:46.863Z",
-      "ids": [
-        "JA-S31",
-        "JA-S32"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T00:07:40.731Z",
-      "ids": [
-        "JA-S31",
-        "JA-S32"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T00:07:59.970Z",
       "ids": [
@@ -8723,18 +8726,42 @@
         "VI-S45"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T03:57:55.087Z",
+      "ids": [
+        "VI-S44",
+        "VI-S45"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T03:58:14.303Z",
+      "ids": [
+        "VI-S46",
+        "ZH-S19"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T03:59:34.858Z",
+      "ids": [
+        "VI-S46",
+        "ZH-S19"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T03:56:23.120Z",
+    "at": "2026-10-16T03:59:34.858Z",
     "ids": [
-      "VI-S42",
-      "VI-S43"
+      "VI-S46",
+      "ZH-S19"
     ],
-    "commit": "fbb395245ab639e80c6b8c9f9a6928393ee00268",
+    "commit": "e28013325615d1aa9e337d0235925fead635029e",
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 6
+    "APPROVED_BY_POLICY": 4
   }
 }
