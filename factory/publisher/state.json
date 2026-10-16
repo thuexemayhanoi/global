@@ -5512,17 +5512,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T01:18:54.755Z"
+    },
+    {
+      "id": "JA-S60",
+      "locale": "ja",
+      "url": "/ja/guides/ferry-bike-norikata/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:19:13.884Z",
+      "source_sha256": "6bdcf8c080e815e53fe40c5de23397c4ce204a8c8ba0741031cc3f6f180270bb",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "JA-S61",
+      "locale": "ja",
+      "url": "/ja/guides/tunnel-bike-soukou/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:19:13.884Z",
+      "source_sha256": "f4847c99e3081de97bb1583321aff79bf3964a6113454914f2e8c266ef2594d7",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T21:08:24.826Z",
-      "ids": [
-        "EN-S59",
-        "EN-S60"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T21:09:18.428Z",
       "ids": [
@@ -7072,6 +7086,14 @@
         "JA-S59"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T01:19:13.884Z",
+      "ids": [
+        "JA-S60",
+        "JA-S61"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -7084,6 +7106,6 @@
     "live_seconds": 42
   },
   "queue": {
-    "APPROVED_BY_POLICY": 4
+    "APPROVED_BY_POLICY": 2
   }
 }
