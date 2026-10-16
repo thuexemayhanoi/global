@@ -3684,6 +3684,112 @@
         "source": "factory/topic-research/batches/claude-20261015-mobility-0028.json@28fbfcb1f596"
       },
       "matrix_id": "EN-S80"
+    },
+    {
+      "candidate_id": "TA-EN-0085",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-power",
+      "slug": "e-bike-rules-vietnam",
+      "primary_query": "e-bike rules in vietnam helmet and passengers",
+      "secondary_queries": [
+        "do you need a helmet on an electric bicycle in vietnam",
+        "electric bicycle or electric moped vietnam law",
+        "can you ride an e-bike without a licence in vietnam"
+      ],
+      "working_title": "E-Bike Rules in Vietnam: Helmet, Passengers and When It Counts as a Moped",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Visitors meet pedal-assisted e-bikes in Vietnamese towns and often assume they are licence-free toys without rules, while Vietnamese law treats them as non-motorised vehicles with a compulsory motorbike helmet, passenger limits and their own penalties, and separates them from throttle e-mopeds that fall under moped rules.",
+      "content_angle": "Explains the legal definition of e-bikes (xe đạp máy, including xe đạp điện: pedal assistance that cuts out when the rider stops pedalling or at 25 km/h) in Article 34(2)(b) of Law 36/2024/QH15 and how it differs from electric mopeds in Article 34(1)(g), the compulsory motorbike helmet with fastened strap for e-bike riders and passengers in Article 31(3), the passenger limit in Article 31(1), the riding bans shared with motorbikes through Article 31(2), single-file riding and lights from 18:00 to 06:00 in Article 31(4), the expressway ban in Article 25(3), and the matching penalties for e-bike riders in Article 9 of Decree 168/2024/NĐ-CP.",
+      "entities": [
+        "xe đạp điện",
+        "pedal assistance",
+        "Article 31 of Law 36/2024/QH15",
+        "motorbike helmet",
+        "Decree 168/2024/NĐ-CP"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "EN-S77",
+          "reason": "EN-S77 covers range and charging of a rented electric scooter; this topic covers the legal rules for pedal-assisted e-bikes as non-motorised vehicles."
+        },
+        {
+          "id": "EN-S02",
+          "reason": "EN-S02 compares 50cc scooters and electric scooters as rental choices; this topic explains how the law classifies e-bikes and the helmet and passenger rules for them."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-15",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0004.json@d1e91dc7d92b"
+      },
+      "matrix_id": "EN-S81"
+    },
+    {
+      "candidate_id": "TA-EN-0086",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "cycling-rules-vietnam",
+      "primary_query": "cycling in vietnam traffic rules for bicycles",
+      "secondary_queries": [
+        "bicycle fines in vietnam",
+        "riding a bike at night in vietnam lights",
+        "how many people can ride a bicycle in vietnam"
+      ],
+      "working_title": "Cycling in Vietnam: Traffic Rules and Fines for Bicycles",
+      "search_intent": "informational",
+      "word_target": 1100,
+      "priority": 50,
+      "intent_rationale": "Many travellers explore Vietnamese towns and countryside by bicycle and do not know that cyclists have their own duties under Vietnamese traffic law, from passenger limits and night lights to bans on riding three abreast, umbrellas and phones, or what breaking them costs.",
+      "content_angle": "Explains the traffic rules for bicycles as non-motorised vehicles under Law 36/2024/QH15: the passenger limit of one, or two with a child under seven (Article 31(1)), the riding bans shared with motorbikes such as umbrellas and holding on to other vehicles via Article 31(2), single-file riding, cycle lanes and lights from 18:00 to 06:00 (Article 31(4)), load limits (Article 31(5)) and the expressway ban (Article 25(3)), with the graded cyclist penalties in Article 9 of Decree 168/2024/NĐ-CP for lights, traffic signals, wrong-way riding and alcohol.",
+      "entities": [
+        "bicycles",
+        "non-motorised vehicles",
+        "Article 31 of Law 36/2024/QH15",
+        "bicycle lights",
+        "Decree 168/2024/NĐ-CP"
+      ],
+      "references": [
+        "rx-3e70e89030b8",
+        "rx-9eedca8b8111"
+      ],
+      "distinct_from": [
+        {
+          "id": "EN-S12",
+          "reason": "EN-S12 explains Hanoi traffic for first-time motorbike riders; this topic explains the separate legal duties and fines for people riding bicycles."
+        },
+        {
+          "id": "EN-S65",
+          "reason": "EN-S65 covers one-way streets and pavements for motorbikes; this topic covers the full set of rules for cyclists, from passengers to lights."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261015-mobility2",
+        "researched_on": "2026-10-15",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261015-mobility2-0004.json@d1e91dc7d92b"
+      },
+      "matrix_id": "EN-S82"
     }
   ]
 }
