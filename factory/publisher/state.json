@@ -7912,17 +7912,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T05:25:01.767Z"
+    },
+    {
+      "id": "ZH-S54",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-motuoche-tuoche-jinzhi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:25:21.841Z",
+      "source_sha256": "b1e31de025bc4e6392304accd67d9eb606307cfb9094d7a75a5a1e4efad40239",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S55",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-motuoche-zuo-dulun/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T05:25:21.841Z",
+      "source_sha256": "f7e77b206d41b6309d3eb59bcef004cfefc9efaf3e0a6ff6aa102be1ef05e77a",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T01:37:03.292Z",
-      "ids": [
-        "KO-S32",
-        "KO-S33"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T01:38:18.923Z",
       "ids": [
@@ -9498,6 +9512,14 @@
         "ZH-S53"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T05:25:21.841Z",
+      "ids": [
+        "ZH-S54",
+        "ZH-S55"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -9510,6 +9532,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 4
+    "APPROVED_BY_POLICY": 2
   }
 }
