@@ -6844,17 +6844,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T03:30:10.568Z"
+    },
+    {
+      "id": "DE-S29",
+      "locale": "de",
+      "url": "/de/guides/vietnamesischer-motorradfuehrerschein-fuer-auslaender/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:30:30.880Z",
+      "source_sha256": "cfa8bbc8610b90ca5269d8bac271a0bca84ac8671b26efd140b52c55f5135e99",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S30",
+      "locale": "de",
+      "url": "/de/guides/pflicht-haftpflichtversicherung-roller-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T03:30:30.880Z",
+      "source_sha256": "dd1b79008d875b358bdd28ccc605c749657ff43e92fce68a31d29b8a6995c4a3",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T23:32:15.209Z",
-      "ids": [
-        "FR-S63",
-        "FR-S64"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T23:33:28.033Z",
       "ids": [
@@ -8422,6 +8436,14 @@
         "DE-S28"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T03:30:30.880Z",
+      "ids": [
+        "DE-S29",
+        "DE-S30"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -8434,6 +8456,6 @@
     "live_seconds": 42
   },
   "queue": {
-    "APPROVED_BY_POLICY": 11
+    "APPROVED_BY_POLICY": 9
   }
 }
