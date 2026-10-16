@@ -5752,16 +5752,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T01:56:18.342Z"
+    },
+    {
+      "id": "KO-S44",
+      "locale": "ko",
+      "url": "/ko/guides/lane-rules-motorbike-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:56:43.325Z",
+      "source_sha256": "b7c98ad09e0437a20c45c3cf2af90b35dd0b048d5dc9aea3488d91417f968731",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S45",
+      "locale": "ko",
+      "url": "/ko/guides/minimum-age-motorbike-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T01:56:43.325Z",
+      "source_sha256": "08012960a067c4c65574198a6c46d6d033533e7632a02599a61c07ebfafcdffa",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T21:30:19.093Z",
-      "ids": [
-        "DE-S79"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T21:31:50.470Z",
       "ids": [
@@ -7316,6 +7331,14 @@
         "KO-S43"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T01:56:43.325Z",
+      "ids": [
+        "KO-S44",
+        "KO-S45"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -7328,6 +7351,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 8
+    "APPROVED_BY_POLICY": 6
   }
 }
