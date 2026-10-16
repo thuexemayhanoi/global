@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 272,
+  "clean_runs": 274,
   "published": [
     {
       "id": "NL-H01",
@@ -6386,7 +6386,8 @@
       "at": "2026-10-16T02:43:25.904Z",
       "source_sha256": "973f095eb963f607915615237ffc80893080e2a3637b71b658faaf241b851adf",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:44:43.882Z"
     },
     {
       "id": "PT-S35",
@@ -6397,40 +6398,57 @@
       "at": "2026-10-16T02:43:25.904Z",
       "source_sha256": "9eb8f9e0e3249b72de30b18769fb2d312a45186e0ebb9071e8ac05e0f174a2dc",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:44:43.882Z"
+    },
+    {
+      "id": "PT-S36",
+      "locale": "pt",
+      "url": "/pt/guides/conduzir-moto-a-noite-no-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:45:04.246Z",
+      "source_sha256": "b6bf98a29462c0b1f3a87bc65aee7a4195cbc9f46d98c766b77693d528ce4ed9",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:46:23.004Z"
+    },
+    {
+      "id": "PT-S37",
+      "locale": "pt",
+      "url": "/pt/guides/telemovel-a-conduzir-moto-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:45:04.246Z",
+      "source_sha256": "70fd0f9c8f760e359d93e54c80ac77c9a62ec2f9ca19a2c44ffe822667b81fdb",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:46:23.004Z"
+    },
+    {
+      "id": "PT-S38",
+      "locale": "pt",
+      "url": "/pt/guides/quantas-pessoas-numa-moto-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:46:44.032Z",
+      "source_sha256": "fb7902ac32e8d7ea3b8adee8ace91d2757ce86e6160e02156e9d61be2a9d4c6a",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "PT-S39",
+      "locale": "pt",
+      "url": "/pt/guides/prioridade-cruzamentos-rotundas-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:46:44.032Z",
+      "source_sha256": "324f9c61c18da0d8adf3495aeea08606768eb81d6e5452cd034062f8901d8983",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T22:33:51.059Z",
-      "ids": [
-        "ES-S55",
-        "ES-S56"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T22:34:09.453Z",
-      "ids": [
-        "ES-S57"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T22:35:22.759Z",
-      "ids": [
-        "ES-S57"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T22:39:07.540Z",
-      "ids": [
-        "FR-S19",
-        "FR-S27"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T22:40:20.772Z",
       "ids": [
@@ -7978,15 +7996,47 @@
         "PT-S35"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:44:43.882Z",
+      "ids": [
+        "PT-S34",
+        "PT-S35"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:45:04.246Z",
+      "ids": [
+        "PT-S36",
+        "PT-S37"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:46:23.004Z",
+      "ids": [
+        "PT-S36",
+        "PT-S37"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:46:44.032Z",
+      "ids": [
+        "PT-S38",
+        "PT-S39"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T02:43:06.717Z",
+    "at": "2026-10-16T02:46:23.004Z",
     "ids": [
-      "PT-S32",
-      "PT-S33"
+      "PT-S36",
+      "PT-S37"
     ],
-    "commit": "6566469756d6a4d0595dbc065cbf0b0c58f4d0bc",
+    "commit": "ed37e93873ecc0045818dd94b7857a8d752a215e",
     "live_seconds": 62
   },
   "queue": {
