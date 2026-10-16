@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 392,
+  "clean_runs": 394,
   "published": [
     {
       "id": "NL-H01",
@@ -9170,7 +9170,8 @@
       "at": "2026-10-16T09:15:09.246Z",
       "source_sha256": "11e102878e5c825ba6994bfd092cb456c8b5c6b913b34e674ffd398a0bdcfbf2",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T09:17:12.858Z"
     },
     {
       "id": "EN-S84",
@@ -9181,34 +9182,35 @@
       "at": "2026-10-16T09:15:09.246Z",
       "source_sha256": "03e252522aae610f34ec61e9c721e2ced4728c9be7ab35eb36712492e9623200",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T09:17:12.858Z"
+    },
+    {
+      "id": "FR-S84",
+      "locale": "fr",
+      "url": "/fr/guides/bagages-scooter-vietnam-limites/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T09:17:53.176Z",
+      "source_sha256": "e046ba159457539ab984d969582aabc16c400bc9de7b8852572bec531c142b71",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T09:19:38.911Z"
+    },
+    {
+      "id": "NL-S82",
+      "locale": "nl",
+      "url": "/nl/guides/bagage-op-de-scooter-vietnam-regels/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T09:17:53.176Z",
+      "source_sha256": "cf95107b950af50a27b2a231a253e327568742c4a715093cfef81d99864bb650",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T09:19:38.911Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T03:24:34.972Z",
-      "ids": [
-        "VI-S38",
-        "VI-S39"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T03:27:31.401Z",
-      "ids": [
-        "DE-S18",
-        "DE-S26"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T03:28:49.287Z",
-      "ids": [
-        "DE-S18",
-        "DE-S26"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T03:29:16.368Z",
       "ids": [
@@ -10782,16 +10784,40 @@
         "EN-S84"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T09:17:12.858Z",
+      "ids": [
+        "DE-S83",
+        "EN-S84"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T09:17:53.176Z",
+      "ids": [
+        "FR-S84",
+        "NL-S82"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T09:19:38.911Z",
+      "ids": [
+        "FR-S84",
+        "NL-S82"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T09:07:17.577Z",
+    "at": "2026-10-16T09:19:38.911Z",
     "ids": [
-      "KO-S79",
-      "KO-S80"
+      "FR-S84",
+      "NL-S82"
     ],
-    "commit": "4b161c4546d192e5298f009ae39a45a64e0f2ba9",
-    "live_seconds": 62
+    "commit": "13ea04439296784de1216b4308ae409b04c09c78",
+    "live_seconds": 82
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
