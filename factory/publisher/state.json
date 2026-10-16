@@ -7576,17 +7576,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T04:57:59.756Z"
+    },
+    {
+      "id": "ZH-S44",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-motuoche-chedao/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T04:58:27.877Z",
+      "source_sha256": "0008b7140c9235a479770402fe522926b53406a3c47f70bbc79b873e3d602c32",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "ZH-S45",
+      "locale": "zh",
+      "url": "/zh/guides/yuenan-qi-motuoche-zuidi-nianling/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T04:58:27.877Z",
+      "source_sha256": "95e2347191e285d4ec839b9135c2f666729d25661dd25c061a0575e1ca86a8de",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T00:48:08.334Z",
-      "ids": [
-        "JA-S45",
-        "JA-S46"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T00:49:21.155Z",
       "ids": [
@@ -9162,6 +9176,14 @@
         "ZH-S43"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T04:58:27.877Z",
+      "ids": [
+        "ZH-S44",
+        "ZH-S45"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -9174,6 +9196,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 10
+    "APPROVED_BY_POLICY": 8
   }
 }
