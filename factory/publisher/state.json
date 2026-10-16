@@ -5104,17 +5104,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T00:31:10.151Z"
+    },
+    {
+      "id": "FR-S72",
+      "locale": "fr",
+      "url": "/fr/guides/virages-en-epingle-moto-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:32:12.796Z",
+      "source_sha256": "d5610359858c4b9afbbbeba110b74ab13399b2cb497c179cc61af0b013504321",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S73",
+      "locale": "fr",
+      "url": "/fr/guides/passager-scooter-vietnam-conseils/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T00:32:12.796Z",
+      "source_sha256": "33138acfee21269c5f850075af9f160cd85a9c41d2ae4e6e87baf8deaea2d01b",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T20:17:11.061Z",
-      "ids": [
-        "DE-S56",
-        "DE-S57"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-15T20:19:41.464Z",
       "ids": [
@@ -6656,6 +6670,14 @@
         "FR-S71"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T00:32:12.796Z",
+      "ids": [
+        "FR-S72",
+        "FR-S73"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -6667,5 +6689,7 @@
     "commit": "3204ec67e8629cdf77bdb55e502020e025770018",
     "live_seconds": 62
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 4
+  }
 }
