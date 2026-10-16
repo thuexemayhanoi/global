@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 274,
+  "clean_runs": 276,
   "published": [
     {
       "id": "NL-H01",
@@ -6434,7 +6434,8 @@
       "at": "2026-10-16T02:46:44.032Z",
       "source_sha256": "fb7902ac32e8d7ea3b8adee8ace91d2757ce86e6160e02156e9d61be2a9d4c6a",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:48:03.103Z"
     },
     {
       "id": "PT-S39",
@@ -6445,34 +6446,35 @@
       "at": "2026-10-16T02:46:44.032Z",
       "source_sha256": "324f9c61c18da0d8adf3495aeea08606768eb81d6e5452cd034062f8901d8983",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:48:03.103Z"
+    },
+    {
+      "id": "PT-S40",
+      "locale": "pt",
+      "url": "/pt/guides/moto-na-autoestrada-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:48:33.969Z",
+      "source_sha256": "f65c5951fb65ae67383ffcb3ea3c01d6e78857eb06441d1dda8c122241e49555",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:50:10.605Z"
+    },
+    {
+      "id": "PT-S41",
+      "locale": "pt",
+      "url": "/pt/guides/buzina-moto-vietname-regras/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T02:48:33.969Z",
+      "source_sha256": "182818724f957c3d67c0e5b7b1f9c78e821b4522982f6ee76551e12496d81c90",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T02:50:10.605Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-15T22:40:20.772Z",
-      "ids": [
-        "FR-S19",
-        "FR-S27"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-15T22:40:38.337Z",
-      "ids": [
-        "FR-S28",
-        "FR-S29"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-15T22:41:50.075Z",
-      "ids": [
-        "FR-S28",
-        "FR-S29"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-15T22:42:08.142Z",
       "ids": [
@@ -8028,18 +8030,42 @@
         "PT-S39"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:48:03.103Z",
+      "ids": [
+        "PT-S38",
+        "PT-S39"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T02:48:33.969Z",
+      "ids": [
+        "PT-S40",
+        "PT-S41"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T02:50:10.605Z",
+      "ids": [
+        "PT-S40",
+        "PT-S41"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T02:46:23.004Z",
+    "at": "2026-10-16T02:50:10.605Z",
     "ids": [
-      "PT-S36",
-      "PT-S37"
+      "PT-S40",
+      "PT-S41"
     ],
-    "commit": "ed37e93873ecc0045818dd94b7857a8d752a215e",
-    "live_seconds": 62
+    "commit": "8df35e94e002ba9053ff39a36b0843df142ac3cf",
+    "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 3
   }
 }
