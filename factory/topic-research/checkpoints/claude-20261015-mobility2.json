@@ -7,19 +7,19 @@
   "branch": "research/claude-20261015-mobility2",
   "batch_session": "research-claude-20261015-mobility2",
   "created_at": "2026-10-15T23:01:23.660Z",
-  "updated_at": "2026-10-16T00:49:42.634Z",
-  "base_main_sha": "46a49a230e22cd8cceeaa22c4cb8971ac0e3f8d6",
-  "last_commit_sha": "cb680f61c20e671865192447e1b9fa39d9c57633",
+  "updated_at": "2026-10-16T01:22:45.814Z",
+  "base_main_sha": "e46787f093b8ce7cb8c9553a411cba72e7c90ba2",
+  "last_commit_sha": "2a7b5801fda500207ca7bd541115a4f1dd42e9d5",
   "contract": {
     "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 70,
-    "qa_pass": 70,
+    "researched": 80,
+    "qa_pass": 80,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 60,
+    "pushed": 70,
     "pending_push": 10
   },
   "coverage": {
@@ -29,17 +29,18 @@
       "en": 2,
       "de": 2,
       "ja": 20,
-      "ko": 10
+      "ko": 10,
+      "zh": 10
     },
     "domains": {
-      "traffic-law-safety": 60,
+      "traffic-law-safety": 70,
       "motorbike-rental": 10
     }
   },
   "last_batch": {
-    "seq": 7,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0007.json",
-    "sha256": "3eccad2d1b0ef9ecec2eb3f5540c004dc75b7a9faa12ee4876caa9ced0059a59",
+    "seq": 8,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0008.json",
+    "sha256": "31a97b2287598b8c9025582e4adede1098cc8b63f717b50b4727e1c38b5fcc31",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -715,8 +716,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility2-0007.json",
       "sha256": "3eccad2d1b0ef9ecec2eb3f5540c004dc75b7a9faa12ee4876caa9ced0059a59",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "2a7b5801fda500207ca7bd541115a4f1dd42e9d5",
       "researched_on": "2026-10-16",
       "topics": [
         {
@@ -727,7 +728,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::ヘトナム 信号の見方 ハイク",
-          "ta_id": null
+          "ta_id": "TA-JA-0050"
         },
         {
           "ref": "ja:fumikiri-watarikata-bike",
@@ -737,7 +738,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::ヘトナム 踏切 ハイク 渡り方",
-          "ta_id": null
+          "ta_id": "TA-JA-0051"
         },
         {
           "ref": "ja:group-touring-bike",
@@ -747,7 +748,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::ヘトナム ハイク クルーフ ツーリンク 注意",
-          "ta_id": null
+          "ta_id": "TA-JA-0052"
         },
         {
           "ref": "ja:bike-kenin-kinshi",
@@ -757,7 +758,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-incidents",
           "key": "ja::ヘトナム ハイク けん引 禁止",
-          "ta_id": null
+          "ta_id": "TA-JA-0053"
         },
         {
           "ref": "ja:ferry-bike-norikata",
@@ -767,7 +768,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::ヘトナム フェリー ハイク 乗り方",
-          "ta_id": null
+          "ta_id": "TA-JA-0054"
         },
         {
           "ref": "ja:tunnel-bike-soukou",
@@ -777,7 +778,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::ヘトナム トンネル ハイク 走行",
-          "ta_id": null
+          "ta_id": "TA-JA-0055"
         },
         {
           "ref": "ja:kinkyuu-sharyou-michi-yuzuru",
@@ -787,7 +788,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::ヘトナム 緊急車両 道を譲る ハイク",
-          "ta_id": null
+          "ta_id": "TA-JA-0056"
         },
         {
           "ref": "ja:keisatsukan-te-shingou",
@@ -797,7 +798,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::ヘトナム 警察官 手信号",
-          "ta_id": null
+          "ta_id": "TA-JA-0057"
         },
         {
           "ref": "ja:douro-doubutsu-bike-chuui",
@@ -807,7 +808,7 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-city",
           "key": "ja::ヘトナム 道路 動物 ハイク 注意",
-          "ta_id": null
+          "ta_id": "TA-JA-0058"
         },
         {
           "ref": "ja:seibi-furyou-bakkin-mirror",
@@ -817,14 +818,125 @@
           "parent_id": "JA-H03",
           "subcluster": "dc-contract",
           "key": "ja::ヘトナム ハイク ミラー なし 罰金",
+          "ta_id": "TA-JA-0059"
+        }
+      ]
+    },
+    {
+      "seq": 8,
+      "file": "factory/topic-research/batches/claude-20261015-mobility2-0008.json",
+      "sha256": "31a97b2287598b8c9025582e4adede1098cc8b63f717b50b4727e1c38b5fcc31",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-16",
+      "topics": [
+        {
+          "ref": "zh:yuenan-jiazhao-jifen-zhidu",
+          "locale": "zh",
+          "slug": "yuenan-jiazhao-jifen-zhidu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H03",
+          "subcluster": "dc-licence",
+          "key": "zh::越南驾照记分制度",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-honglvdeng-guize",
+          "locale": "zh",
+          "slug": "yuenan-honglvdeng-guize",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南红绿灯规则 摩托车",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-tielu-daokou-motuoche",
+          "locale": "zh",
+          "slug": "yuenan-tielu-daokou-motuoche",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南铁路道口怎么过 摩托车",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-jieban-qixing-motuoche",
+          "locale": "zh",
+          "slug": "yuenan-jieban-qixing-motuoche",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南多人结伴骑摩托车注意事项",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-dianziyan-fadan-zuche",
+          "locale": "zh",
+          "slug": "yuenan-dianziyan-fadan-zuche",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H03",
+          "subcluster": "dc-contract",
+          "key": "zh::越南电子眼罚单 租的摩托车谁来交",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-jiaotong-fakuan-jiaona",
+          "locale": "zh",
+          "slug": "yuenan-jiaotong-fakuan-jiaona",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::越南交通罚款怎么交",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-gaowen-qi-motuoche",
+          "locale": "zh",
+          "slug": "yuenan-gaowen-qi-motuoche",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-weather",
+          "key": "zh::越南高温天气骑摩托车 防中暑",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanei-kongqi-wuran-qi-motuoche",
+          "locale": "zh",
+          "slug": "hanei-kongqi-wuran-qi-motuoche",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-weather",
+          "key": "zh::河内空气污染 骑摩托车",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-motuoche-tuoche-jinzhi",
+          "locale": "zh",
+          "slug": "yuenan-motuoche-tuoche-jinzhi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::越南摩托车能不能拖车或用脚推车",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-motuoche-zuo-dulun",
+          "locale": "zh",
+          "slug": "yuenan-motuoche-zuo-dulun",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南骑摩托车坐渡轮",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 8,
-    "file": "factory/topic-research/batches/claude-20261015-mobility2-0008.json",
+    "seq": 9,
+    "file": "factory/topic-research/batches/claude-20261015-mobility2-0009.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -885,6 +997,13 @@
       "seq": 7,
       "topics": 10,
       "sha256": "3eccad2d1b0ef9ecec2eb3f5540c004dc75b7a9faa12ee4876caa9ced0059a59"
+    },
+    {
+      "at": "2026-10-16T01:22:45.814Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 8,
+      "topics": 10,
+      "sha256": "31a97b2287598b8c9025582e4adede1098cc8b63f717b50b4727e1c38b5fcc31"
     }
   ]
 }
