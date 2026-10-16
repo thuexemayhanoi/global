@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 351,
+  "clean_runs": 352,
   "published": [
     {
       "id": "NL-H01",
@@ -8186,7 +8186,8 @@
       "at": "2026-10-16T05:58:57.242Z",
       "source_sha256": "4b4c44cd8f1b782f0d75fe8c110390449d4c21a4c4c18c543164641b60f555ca",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:00:17.144Z"
     },
     {
       "id": "PT-S69",
@@ -8197,26 +8198,33 @@
       "at": "2026-10-16T05:58:57.242Z",
       "source_sha256": "095e65503131d3abb271c64ab84f374b75d1406c748ae82a75819e69e21cc9b2",
       "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-16T06:00:17.144Z"
+    },
+    {
+      "id": "PT-S70",
+      "locale": "pt",
+      "url": "/pt/guides/passageiro-de-scooter-dicas-e-regras/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:00:48.206Z",
+      "source_sha256": "0db9b1009d5d434335be3b950600ad25c14f7886387b77624669b8ee7e1614e1",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "PT-S71",
+      "locale": "pt",
+      "url": "/pt/guides/testemunha-de-acidente-vietname/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-16T06:00:48.206Z",
+      "source_sha256": "c388a001a8d57a0df8c33b75a88608b0f147a17d3c6e8e20028be65fcda407ed",
+      "review_sha256": null,
       "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T02:06:14.639Z",
-      "ids": [
-        "KO-S54",
-        "KO-S55"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T02:06:34.052Z",
-      "ids": [
-        "NL-S18",
-        "NL-S26"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T02:07:50.713Z",
       "ids": [
@@ -9784,16 +9792,32 @@
         "PT-S69"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-16T06:00:17.144Z",
+      "ids": [
+        "PT-S68",
+        "PT-S69"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-16T06:00:48.206Z",
+      "ids": [
+        "PT-S70",
+        "PT-S71"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-16T05:55:31.529Z",
+    "at": "2026-10-16T06:00:17.144Z",
     "ids": [
-      "NL-S75",
-      "NL-S76"
+      "PT-S68",
+      "PT-S69"
     ],
-    "commit": "0224c609278578796be5b47868c825f012ecf6cb",
-    "live_seconds": 62
+    "commit": "ada5c83f4fb220efac927779f5e868294199a2fd",
+    "live_seconds": 61
   },
   "queue": {
     "APPROVED_BY_POLICY": 2
