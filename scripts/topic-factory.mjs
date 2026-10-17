@@ -77,7 +77,7 @@ function cmdStatus(o){
  const slots=optional("factory/external-writers/slots.json",null);
  if(o.markdown){
   if(typeof o.markdown!=="string"||!/^docs\/[A-Z0-9-]+\.md$/.test(o.markdown))throw Error("--markdown must be docs/<NAME>.md");
-  fs.writeFileSync(path.join(ROOT,o.markdown),dashboardMarkdown(status,{publisher,refill,rejectedTotal:refill.rejected.length,queue,slots,ledger:c.ledger}));
+  fs.writeFileSync(path.join(ROOT,o.markdown),dashboardMarkdown(status,{policy:c.policy,publisher,refill,rejectedTotal:refill.rejected.length,queue,slots,ledger:c.ledger}));
  }
  const {byLocale,byWriter,...queueSummary}=queue;
  const out={mode:"READ_ONLY",...status,queue,refill:{selected:refill.selected.length,research_needed:refill.research_needed,locales:refill.locales,rejected:refill.rejected.length}};
