@@ -12,11 +12,11 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
-| Matrix rows (951) | 881 | 19 | 4 | 47 |
+| Matrix rows (961) | 881 | 19 | 4 | 57 |
 | Topical candidates (30) | 0 | 0 | 0 | 30 |
 | Silos (330) | 138 | 12 | 0 | 33 |
 
-Knowledge graph: 42 entities, 2036 typed edges (hreflang_equivalent 190, about 710, contains 926, has_silo 160, has_hub 40, has_pillar 10).
+Knowledge graph: 42 entities, 2046 typed edges (hreflang_equivalent 190, about 710, contains 936, has_silo 160, has_hub 40, has_pillar 10).
 
 ## REVIEW — competing intents
 
@@ -62,7 +62,7 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 | vc-transmission | consideration | informational | – | P4 KEEP | P4 KEEP | P4 KEEP | P4 KEEP | P4 KEEP | P4 KEEP | P4 KEEP | P4 KEEP | P4 KEEP | P4 KEEP |
 | vc-power | consideration | informational | – | P4 KEEP | P4 KEEP | P4 KEEP | P4 KEEP | P4 KEEP | P4 KEEP | P4 KEEP | P4 KEEP | P4 KEEP | P4 KEEP |
 | vc-models | consideration | commercial | – | P2 KEEP | P2 I1 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P2 KEEP |
-| vc-trip-fit | consideration | informational | – | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE | I2 CREATE |
+| vc-trip-fit | consideration | informational | – | I3 CREATE | I3 CREATE | I3 CREATE | I3 CREATE | I3 CREATE | I3 CREATE | I3 CREATE | I3 CREATE | I3 CREATE | I3 CREATE |
 | rc-period | consideration | commercial | Pillar FAQ ×10 | P2 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P1 I1 KEEP | P1 I1 KEEP |
 | rc-deposit | decision | commercial | Pillar FAQ ×10 | P2 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P2 KEEP |
 | rc-extras | decision | commercial | – | P1 I1 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P2 KEEP | P2 KEEP |
@@ -100,7 +100,7 @@ Published / planned (IDEA + drafts) / candidates per stage.
 | Stage | vi | en | de | fr | es | nl | zh | pt | ko | ja |
 |---|---|---|---|---|---|---|---|---|---|---|
 | awareness | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
-| consideration | 12 / 2 / 0 | 11 / 4 / 0 | 11 / 3 / 0 | 11 / 3 / 0 | 11 / 3 / 0 | 12 / 2 / 0 | 12 / 2 / 0 | 12 / 2 / 0 | 11 / 3 / 0 | 11 / 3 / 0 |
+| consideration | 12 / 3 / 0 | 11 / 5 / 0 | 11 / 4 / 0 | 11 / 4 / 0 | 11 / 4 / 0 | 12 / 3 / 0 | 12 / 3 / 0 | 12 / 3 / 0 | 11 / 4 / 0 | 11 / 4 / 0 |
 | decision | 13 / 2 / 0 | 16 / 1 / 0 | 16 / 1 / 0 | 17 / 1 / 0 | 15 / 1 / 0 | 14 / 2 / 0 | 14 / 2 / 0 | 14 / 2 / 0 | 15 / 1 / 0 | 15 / 1 / 0 |
 | pickup | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
 | riding | 56 / 3 / 0 | 60 / 0 / 0 | 60 / 0 / 0 | 60 / 0 / 0 | 50 / 0 / 0 | 58 / 1 / 0 | 58 / 1 / 0 | 58 / 1 / 0 | 58 / 0 / 0 | 58 / 0 / 0 |
@@ -113,16 +113,16 @@ Every locale checklist also covers the consideration → decision → pickup →
 
 | Locale | Rows | Published | Protected drafts | Planned | Candidates | Published depth OK |
 |---|---|---|---|---|---|---|
-| vi | 94 | 87 | 0 | 7 | 2 | 99% |
-| en | 98 | 93 | 0 | 5 | 12 | 98% |
-| de | 97 | 93 | 0 | 4 | 2 | 98% |
-| fr | 98 | 94 | 0 | 4 | 2 | 98% |
-| es | 86 | 82 | 0 | 4 | 2 | 95% |
-| nl | 95 | 90 | 0 | 5 | 2 | 96% |
-| zh | 95 | 90 | 0 | 5 | 2 | 98% |
-| pt | 95 | 90 | 0 | 5 | 2 | 98% |
-| ko | 94 | 90 | 0 | 4 | 2 | 98% |
-| ja | 94 | 90 | 0 | 4 | 2 | 98% |
+| vi | 95 | 87 | 0 | 8 | 2 | 99% |
+| en | 99 | 93 | 0 | 6 | 12 | 98% |
+| de | 98 | 93 | 0 | 5 | 2 | 98% |
+| fr | 99 | 94 | 0 | 5 | 2 | 98% |
+| es | 87 | 82 | 0 | 5 | 2 | 95% |
+| nl | 96 | 90 | 0 | 6 | 2 | 96% |
+| zh | 96 | 90 | 0 | 6 | 2 | 98% |
+| pt | 96 | 90 | 0 | 6 | 2 | 98% |
+| ko | 95 | 90 | 0 | 5 | 2 | 98% |
+| ja | 95 | 90 | 0 | 5 | 2 | 98% |
 
 Live Writer states (CLAIMED/SUBMITTED) change on every autopilot commit and are not part of this file: run `node scripts/seo/topical-authority.mjs status`.
 

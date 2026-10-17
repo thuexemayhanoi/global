@@ -3809,6 +3809,57 @@
         "source": "factory/topic-research/batches/research-seat-height-20261017-b01.json@499299211fbc"
       },
       "matrix_id": "KO-S88"
+    },
+    {
+      "candidate_id": "TA-KO-0083",
+      "locale": "ko",
+      "role": "SUPPORT",
+      "parent_id": "KO-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-trip-fit",
+      "slug": "hanoi-scooter-underseat-helmet-raincoat",
+      "primary_query": "하노이 스쿠터 시트 아래 헬멧 우비 수납 가능 여부",
+      "secondary_queries": [
+        "스쿠터 헬멧 보관함 25리터 크기",
+        "혼다 리드 야마하 프리고 수납공간 비교"
+      ],
+      "working_title": "하노이 스쿠터 시트 아래에 헬멧과 우비가 모두 들어갈까?",
+      "search_intent": "informational",
+      "word_target": 1700,
+      "priority": 50,
+      "intent_rationale": "하노이에서 스쿠터를 이용하는 사람은 주차 후 헬멧과 우비를 잠금식 수납공간에 넣을 수 있는지 확인하려고 합니다. 주행 중 짐 적재 허용량과는 다른 실사용 공간의 크기가 검색 의도입니다.",
+      "content_angle": "제조사가 공개한 수납 용적, 공간 형태, 헬멧 크기와 우비를 접은 부피를 비교합니다. 승객과 짐을 함께 싣는 법률 글이나 적재량 설명은 반복하지 않습니다.",
+      "entities": [
+        "under-seat storage",
+        "helmet",
+        "raincoat",
+        "Hanoi"
+      ],
+      "references": [
+        "rx-9d5599364acd",
+        "rx-fad35a8e4286"
+      ],
+      "distinct_from": [
+        {
+          "id": "KO-S25",
+          "reason": "Existing guide covers external carried luggage and/or passenger load during a moving journey; this research instead covers enclosed under-seat storage while the scooter is parked and how helmet shape fits the compartment."
+        },
+        {
+          "id": "KO-S81",
+          "reason": "Existing guide covers external carried luggage and/or passenger load during a moving journey; this research instead covers enclosed under-seat storage while the scooter is parked and how helmet shape fits the compartment."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "chatgpt",
+        "session": "20261017",
+        "researched_on": "2026-10-17",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/research-underseat-storage-20261017-b02.json@6f6a3116a0cf"
+      },
+      "matrix_id": "KO-S89"
     }
   ]
 }
