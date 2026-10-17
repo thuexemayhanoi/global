@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "ledger_revision": 592,
+  "ledger_revision": 593,
   "stage": "CONTINUOUS",
   "counts": {
-    "REJECTED": 6
+    "REJECTED": 5,
+    "APPROVED_BY_POLICY": 1
   },
   "items": [
     {
@@ -76,18 +77,14 @@
     },
     {
       "id": "EN-S24",
-      "decision": "REJECTED",
-      "failed": [
-        "G4_EDITORIAL"
-      ],
+      "decision": "APPROVED_BY_POLICY",
+      "failed": [],
       "writer": "W1",
       "session": "w1-vibe-20261014",
       "branch": "writer/w1-vibe-20261014",
-      "source_sha256": "30650a8b52c7890e28ac576b465c84a141823f28c02854a503e0bcb676f0a9b8",
-      "source_commit": "f756cce43f83e0d592016c5268111b37cac6c055",
-      "details": [
-        "G4_EDITORIAL: E6 internal links: link to the locale Pillar or checklist in context"
-      ]
+      "source_sha256": "72751e1efcb55ae5fe52991da94e7766825f8ea4e1bab846f5420087a477a0ee",
+      "source_commit": "4922d263b467ea3fb01e01db93fe2ac0d7bde2f6",
+      "details": []
     },
     {
       "id": "ES-S23",

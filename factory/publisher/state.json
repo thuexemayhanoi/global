@@ -10480,17 +10480,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-16T21:57:35.208Z"
+    },
+    {
+      "id": "EN-S24",
+      "locale": "en",
+      "url": "/en/guides/refuelling-ron92-ron95/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-17T07:37:20.124Z",
+      "source_sha256": "72751e1efcb55ae5fe52991da94e7766825f8ea4e1bab846f5420087a477a0ee",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T05:50:05.660Z",
-      "ids": [
-        "NL-S71",
-        "NL-S72"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T05:51:27.982Z",
       "ids": [
@@ -12078,6 +12081,13 @@
         "DE-S23"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-17T07:37:20.124Z",
+      "ids": [
+        "EN-S24"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -12089,6 +12099,7 @@
     "live_seconds": 61
   },
   "queue": {
-    "REJECTED": 6
+    "REJECTED": 5,
+    "APPROVED_BY_POLICY": 1
   }
 }
