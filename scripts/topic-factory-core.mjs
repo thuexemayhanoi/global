@@ -416,7 +416,7 @@ export function publicationQueue({matrix,ledger,report=null,state=null}){
   stage:state?.stage||null,paused:state?.paused??null,pause_reason:state?.pause_reason||null,
   last_successful_deployment:state?.last_successful_deployment||null};
 }
-export function dashboardMarkdown(status,{publisher=null,refill=null,rejectedTotal=0,queue=null,slots=null,ledger=null}={}){
+export function dashboardMarkdown(status,{policy=null,publisher=null,refill=null,rejectedTotal=0,queue=null,slots=null,ledger=null}={}){
  const L=status.locales,t=status.totals;
  const row=(code,s)=>"| "+code+" | "+s.target+" | "+s.published+" | "+s.submitted+" | "+s.claimed+" | "+s.review+" | "+s.ready+" | "+s.proposed+" | "+s.blocked+" | "+s.remaining+" | "+s.refill+" |";
  const sources="claims ledger revision "+status.ledger_revision+(queue?", publisher report of ledger revision "+(queue.report_ledger_revision??"none")+", publisher state":"");
@@ -466,5 +466,21 @@ export function dashboardMarkdown(status,{publisher=null,refill=null,rejectedTot
  if(refill)out.push("## Topic refill","",
   "- Gate-clean PROPOSED candidates the next standing-policy refill would promote to IDEA (≤50 per run): "+refill.selected.length,
   "- Locales whose READY deficit is larger than the researched candidates available (more research needed): "+(refill.research_needed.join(", ")||"none"),"");
+ if(policy?.refill){
+  const threshold=policy.refill.ready_threshold,goal=policy.refill.ready_target;
+  const needs=Object.entries(L).filter(([,s])=>s.ready<threshold&&s.remaining>0)
+   .sort(([a,x],[b,y])=>x.ready-y.ready||a.localeCompare(b));
+  out.push("## AI research demand — external research sessions","",
+   "- Trigger: READY below **"+threshold+" per locale**. Target: **"+goal+" per locale**, subject to existing SEO, topical architecture, duplicate and source gates.",
+   "- Current READY: **"+t.ready+" across 10 locales**; "+needs.length+" locale(s) need research. GitHub Actions does not generate topics or run AI models.",
+   "- Only researched gate-clean PROPOSED topics may be promoted by Topic Factory. ARCHITECTURE_BLOCKED topics cannot be claimed by Writers.","",
+   "| Priority | Locale | READY | Gap to "+threshold+" | Gap to "+goal+" | Eligible PROPOSED |",
+   "|---:|---|---:|---:|---:|---:|",
+   ...needs.map(([code,s],i)=>"| "+(i+1)+" | "+code+" | "+s.ready+" | "+Math.min(s.remaining,Math.max(0,threshold-s.ready))+" | "+Math.min(s.remaining,Math.max(0,goal-s.ready))+" | "+(refill.locales?.[code]?.eligible||0)+" |"),
+   "",
+   "**Next action for an ACTIVE AI agent:** follow `docs/AI-RESEARCH-REFILL.md`. Research real native-language, nonduplicate topics with verified sources in batches of 10 on a separate `research/<agent>-<session>` branch. A green Topic Research QA push triggers automatic Topic Factory ingest/refill; do not edit a Writer branch or Matrix directly.",
+   "",
+   "**Eight-domain rule:** Research both ACTIVE and six RESEARCH_OPEN domains. The new domains need a separately reviewed Hub architecture PR with eight distinct supporting candidates per locale before READY promotion.","");
+ }
  return out.join("\n")+"\n";
 }
