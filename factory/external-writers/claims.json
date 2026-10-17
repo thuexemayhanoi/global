@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": 592,
+  "revision": 593,
   "claims": [
     {
       "id": "ES-H01",
@@ -13791,10 +13791,24 @@
       "claim_id": "18ecbc92-c7fd-41ff-82b4-3266b923348b-claimed-580-EN-S24",
       "status": "SUBMITTED",
       "at": "2026-10-16T20:14:31.351Z",
-      "updated_at": "2026-10-16T21:04:31.239Z",
-      "phase": "AWAITING_AUTOMATED_QA",
-      "source_sha256": "30650a8b52c7890e28ac576b465c84a141823f28c02854a503e0bcb676f0a9b8",
-      "source_commit": "f756cce43f83e0d592016c5268111b37cac6c055"
+      "updated_at": "2026-10-17T07:36:59.420Z",
+      "phase": "REVISED_AWAITING_AUTO_QA",
+      "source_sha256": "72751e1efcb55ae5fe52991da94e7766825f8ea4e1bab846f5420087a477a0ee",
+      "source_commit": "4922d263b467ea3fb01e01db93fe2ac0d7bde2f6",
+      "revisions": [
+        {
+          "source_sha256": "30650a8b52c7890e28ac576b465c84a141823f28c02854a503e0bcb676f0a9b8",
+          "source_commit": "f756cce43f83e0d592016c5268111b37cac6c055",
+          "review_verdict": "QA_FAIL",
+          "repair_gates": [
+            "G4_EDITORIAL"
+          ],
+          "superseded_at": "2026-10-17T07:36:59.420Z"
+        }
+      ],
+      "source_path": "factory/external-writers/inbox/W1/revisions/EN-S24.r2.json",
+      "source_branch": "writer/w1-vibe-20261014",
+      "revision": 2
     },
     {
       "id": "ES-S23",
