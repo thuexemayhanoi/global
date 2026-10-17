@@ -95,3 +95,26 @@ Each VI–JA cell is a researched topic still outside the Matrix (PROPOSED or AR
 - Gate-clean PROPOSED candidates the next standing-policy refill would promote to IDEA (≤50 per run): 0
 - Locales whose READY deficit is larger than the researched candidates available (more research needed): vi, en, de, fr, es, nl, zh, pt, ko, ja
 
+## AI research demand — external research sessions
+
+- Trigger: READY below **100 per locale**. Target: **250 per locale**, subject to existing SEO, topical architecture, duplicate and source gates.
+- Current READY: **17 across 10 locales**; 10 locale(s) need research. GitHub Actions does not generate topics or run AI models.
+- Only researched gate-clean PROPOSED topics may be promoted by Topic Factory. ARCHITECTURE_BLOCKED topics cannot be claimed by Writers.
+
+| Priority | Locale | READY | Gap to 100 | Gap to 250 | Eligible PROPOSED |
+|---:|---|---:|---:|---:|---:|
+| 1 | de | 1 | 99 | 249 | 0 |
+| 2 | es | 1 | 99 | 249 | 0 |
+| 3 | fr | 1 | 99 | 249 | 0 |
+| 4 | ja | 1 | 99 | 249 | 0 |
+| 5 | ko | 1 | 99 | 249 | 0 |
+| 6 | en | 2 | 98 | 248 | 0 |
+| 7 | nl | 2 | 98 | 248 | 0 |
+| 8 | pt | 2 | 98 | 248 | 0 |
+| 9 | zh | 2 | 98 | 248 | 0 |
+| 10 | vi | 4 | 96 | 246 | 0 |
+
+**Next action for an ACTIVE AI agent:** follow `docs/AI-RESEARCH-REFILL.md`. Research real native-language, nonduplicate topics with verified sources in batches of 10 on a separate `research/<agent>-<session>` branch. A green Topic Research QA push triggers automatic Topic Factory ingest/refill; do not edit a Writer branch or Matrix directly.
+
+**Eight-domain rule:** Research both ACTIVE and six RESEARCH_OPEN domains. The new domains need a separately reviewed Hub architecture PR with eight distinct supporting candidates per locale before READY promotion.
+
