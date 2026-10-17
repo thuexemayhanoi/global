@@ -47,6 +47,17 @@ test("status counts are disjoint and remaining = target - accepted per locale",(
  assert.doesNotMatch(md,/(ranking|traffic|search volume)\s*[:=]\s*\d/i);
 });
 
+test("research demand dashboard prioritizes real per-locale deficits without claiming AI generation",()=>{
+ const s=factoryStatus(ctx),plan=selectRefill({...ctx,validation});
+ const md=dashboardMarkdown(s,{policy,refill:plan});
+ assert.match(md,/AI research demand — external research sessions/);
+ assert.match(md,/READY below \*\*100 per locale\*\*/);
+ assert.match(md,/250 per locale/);
+ assert.match(md,/GitHub Actions does not generate topics/);
+ assert.match(md,/ARCHITECTURE_BLOCKED/);
+ assert.match(md,/research\//);
+});
+
 test("domain research dashboard separates staged candidates from Matrix and reports all ten locales",()=>{
  const d=domainResearchCoverage({matrix,map,policy});
  assert.equal(d.length,8);
