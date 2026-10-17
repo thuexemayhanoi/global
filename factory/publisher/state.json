@@ -10492,17 +10492,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-17T07:38:25.536Z"
+    },
+    {
+      "id": "NL-S22",
+      "locale": "nl",
+      "url": "/nl/guides/langdurig-huren/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-17T07:57:05.199Z",
+      "source_sha256": "a59d6fbc157d56bb894fd8703e3e3d12b1d1815c8d4790fbb867a6e80a03bf3a",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "PT-S22",
+      "locale": "pt",
+      "url": "/pt/guides/aluguer-longa-duracao/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-17T07:57:05.199Z",
+      "source_sha256": "6f11f5ce2e37df9f1bc73301724b4180afe85b16c8b4a4fa7796c181d32dfb61",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T05:52:11.537Z",
-      "ids": [
-        "NL-S73",
-        "NL-S74"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T05:53:33.290Z",
       "ids": [
@@ -12088,6 +12102,14 @@
         "EN-S24"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-17T07:57:05.199Z",
+      "ids": [
+        "NL-S22",
+        "PT-S22"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -12099,7 +12121,6 @@
     "live_seconds": 41
   },
   "queue": {
-    "REJECTED": 5,
-    "APPROVED_BY_POLICY": 1
+    "APPROVED_BY_POLICY": 5
   }
 }
