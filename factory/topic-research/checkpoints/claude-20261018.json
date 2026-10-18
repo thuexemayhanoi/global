@@ -7,42 +7,42 @@
   "branch": "research/claude-20261018",
   "batch_session": "research-claude-20261018",
   "created_at": "2026-10-18T07:10:00.197Z",
-  "updated_at": "2026-10-18T07:11:25.400Z",
-  "base_main_sha": "5c04925d926dd8491adcfe6ad3962123bfcc3867",
-  "last_commit_sha": "0da636c12c11b8623449f46dca1b0019144f4c25",
+  "updated_at": "2026-10-18T07:13:44.066Z",
+  "base_main_sha": "3f17f5bf8829224ed1875247f2bbd016a4a7455a",
+  "last_commit_sha": "46318b44d2d7b0e90a332936305ceb70b02d1dee",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 20,
-    "qa_pass": 20,
+    "researched": 30,
+    "qa_pass": 30,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 10,
+    "pushed": 20,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 2,
-      "en": 2,
-      "de": 2,
-      "fr": 2,
-      "es": 2,
-      "nl": 2,
-      "zh": 2,
-      "pt": 2,
-      "ko": 2,
-      "ja": 2
+      "vi": 3,
+      "en": 3,
+      "de": 3,
+      "fr": 3,
+      "es": 3,
+      "nl": 3,
+      "zh": 3,
+      "pt": 3,
+      "ko": 3,
+      "ja": 3
     },
     "domains": {
-      "motorbike-rental": 20
+      "motorbike-rental": 30
     }
   },
   "last_batch": {
-    "seq": 2,
-    "file": "factory/topic-research/batches/claude-20261018-0002.json",
-    "sha256": "f43376b71b928899fb1bb94f8a5dbad4184870e54e1e9a2426904780d5a27de0",
+    "seq": 3,
+    "file": "factory/topic-research/batches/claude-20261018-0003.json",
+    "sha256": "28ca869ca8438e2bacadc9949481f2910c772fc8a376d277486b4fc08bf4b21d",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -163,8 +163,8 @@
       "file": "factory/topic-research/batches/claude-20261018-0002.json",
       "sha256": "f43376b71b928899fb1bb94f8a5dbad4184870e54e1e9a2426904780d5a27de0",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "46318b44d2d7b0e90a332936305ceb70b02d1dee",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -175,7 +175,7 @@
           "parent_id": "VI-H01",
           "subcluster": "vc-trip-fit",
           "key": "vi::xe tay ga do day binh di duoc bao nhieu km",
-          "ta_id": null
+          "ta_id": "TA-VI-0086"
         },
         {
           "ref": "en:how-far-a-scooter-goes-on-a-full-tank",
@@ -185,7 +185,7 @@
           "parent_id": "EN-H01",
           "subcluster": "vc-trip-fit",
           "key": "en::how far can a scooter go on a full tank in vietnam",
-          "ta_id": null
+          "ta_id": "TA-EN-0100"
         },
         {
           "ref": "de:roller-reichweite-volltank-vietnam",
@@ -195,7 +195,7 @@
           "parent_id": "DE-H01",
           "subcluster": "vc-trip-fit",
           "key": "de::wie weit kommt ein roller mit einer tankfullung in vietnam",
-          "ta_id": null
+          "ta_id": "TA-DE-0089"
         },
         {
           "ref": "fr:autonomie-scooter-plein-vietnam",
@@ -205,7 +205,7 @@
           "parent_id": "FR-H01",
           "subcluster": "vc-trip-fit",
           "key": "fr::quelle autonomie pour un scooter avec un plein d'essence au vietnam",
-          "ta_id": null
+          "ta_id": "TA-FR-0090"
         },
         {
           "ref": "es:autonomia-scooter-deposito-lleno",
@@ -215,7 +215,7 @@
           "parent_id": "ES-H01",
           "subcluster": "vc-trip-fit",
           "key": "es::cuantos kilometros hace un scooter con el deposito lleno en vietnam",
-          "ta_id": null
+          "ta_id": "TA-ES-0078"
         },
         {
           "ref": "nl:actieradius-scooter-volle-tank",
@@ -225,7 +225,7 @@
           "parent_id": "NL-H01",
           "subcluster": "vc-trip-fit",
           "key": "nl::hoe ver kom je met een volle tank op een scooter in vietnam",
-          "ta_id": null
+          "ta_id": "TA-NL-0087"
         },
         {
           "ref": "zh:tabanche-jiaman-you-neng-pao-duoyuan",
@@ -235,7 +235,7 @@
           "parent_id": "ZH-H01",
           "subcluster": "vc-trip-fit",
           "key": "zh::踏板车加满一箱油能跑多远",
-          "ta_id": null
+          "ta_id": "TA-ZH-0087"
         },
         {
           "ref": "pt:autonomia-scooter-deposito-cheio",
@@ -245,7 +245,7 @@
           "parent_id": "PT-H01",
           "subcluster": "vc-trip-fit",
           "key": "pt::quantos quilometros faz uma scooter com o deposito cheio no vietname",
-          "ta_id": null
+          "ta_id": "TA-PT-0087"
         },
         {
           "ref": "ko:seukuteo-gadeuk-jueyu-juhaeng-geori",
@@ -255,7 +255,7 @@
           "parent_id": "KO-H01",
           "subcluster": "vc-trip-fit",
           "key": "ko::스쿠터 기름 가득 넣으면 몇 km 가나요",
-          "ta_id": null
+          "ta_id": "TA-KO-0086"
         },
         {
           "ref": "ja:scooter-mantan-kouzoku-kyori",
@@ -265,14 +265,125 @@
           "parent_id": "JA-H01",
           "subcluster": "vc-trip-fit",
           "key": "ja::スクーター 満タン 何キロ走る ヘトナム",
+          "ta_id": "TA-JA-0086"
+        }
+      ]
+    },
+    {
+      "seq": 3,
+      "file": "factory/topic-research/batches/claude-20261018-0003.json",
+      "sha256": "28ca869ca8438e2bacadc9949481f2910c772fc8a376d277486b4fc08bf4b21d",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:cac-dong-xe-yamaha-janus-grande-sirius-exciter",
+          "locale": "vi",
+          "slug": "cac-dong-xe-yamaha-janus-grande-sirius-exciter",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-models",
+          "key": "vi::yamaha janus, grande, sirius va exciter khac nhau the nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:yamaha-janus-grande-sirius-exciter-types",
+          "locale": "en",
+          "slug": "yamaha-janus-grande-sirius-exciter-types",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-models",
+          "key": "en::yamaha janus vs grande vs sirius vs exciter differences",
+          "ta_id": null
+        },
+        {
+          "ref": "de:yamaha-janus-grande-sirius-exciter-unterschiede",
+          "locale": "de",
+          "slug": "yamaha-janus-grande-sirius-exciter-unterschiede",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-models",
+          "key": "de::yamaha janus, grande, sirius und exciter unterschiede",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:yamaha-janus-grande-sirius-exciter-differences",
+          "locale": "fr",
+          "slug": "yamaha-janus-grande-sirius-exciter-differences",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-models",
+          "key": "fr::differences entre yamaha janus, grande, sirius et exciter",
+          "ta_id": null
+        },
+        {
+          "ref": "es:yamaha-janus-grande-sirius-exciter-diferencias",
+          "locale": "es",
+          "slug": "yamaha-janus-grande-sirius-exciter-diferencias",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-models",
+          "key": "es::diferencias entre yamaha janus, grande, sirius y exciter",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:yamaha-janus-grande-sirius-exciter-verschillen",
+          "locale": "nl",
+          "slug": "yamaha-janus-grande-sirius-exciter-verschillen",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-models",
+          "key": "nl::verschil tussen yamaha janus, grande, sirius en exciter",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yamaha-janus-grande-sirius-exciter-qubie",
+          "locale": "zh",
+          "slug": "yamaha-janus-grande-sirius-exciter-qubie",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-models",
+          "key": "zh::雅马哈janus、grande、sirius和exciter有什么区别",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:yamaha-janus-grande-sirius-exciter-diferencas",
+          "locale": "pt",
+          "slug": "yamaha-janus-grande-sirius-exciter-diferencas",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-models",
+          "key": "pt::diferencas entre yamaha janus, grande, sirius e exciter",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:yamaha-janus-grande-sirius-exciter-chai",
+          "locale": "ko",
+          "slug": "yamaha-janus-grande-sirius-exciter-chai",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-models",
+          "key": "ko::야마하 야누스 그란데 시리우스 익사이터 차이",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:yamaha-janus-grande-sirius-exciter-chigai",
+          "locale": "ja",
+          "slug": "yamaha-janus-grande-sirius-exciter-chigai",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-models",
+          "key": "ja::ヤマハ シャヌス クランテ シリウス エキサイター 違い",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 3,
-    "file": "factory/topic-research/batches/claude-20261018-0003.json",
+    "seq": 4,
+    "file": "factory/topic-research/batches/claude-20261018-0004.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -291,6 +402,13 @@
       "seq": 2,
       "topics": 10,
       "sha256": "f43376b71b928899fb1bb94f8a5dbad4184870e54e1e9a2426904780d5a27de0"
+    },
+    {
+      "at": "2026-10-18T07:13:44.066Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 3,
+      "topics": 10,
+      "sha256": "28ca869ca8438e2bacadc9949481f2910c772fc8a376d277486b4fc08bf4b21d"
     }
   ]
 }
