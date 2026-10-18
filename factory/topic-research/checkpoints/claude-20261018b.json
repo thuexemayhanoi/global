@@ -7,45 +7,45 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:42:30.921Z",
+  "updated_at": "2026-10-18T23:42:36.556Z",
   "base_main_sha": "ee8da2c695e81a0ced3d1c9e6279976a214b1058",
-  "last_commit_sha": "51b15cb9f272c5377bf9e1e4b3fcde259161a1d6",
+  "last_commit_sha": "513c4a9fb40267f8674bec1e093a32714d8ef9c6",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 190,
-    "qa_pass": 190,
+    "researched": 200,
+    "qa_pass": 200,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 180,
+    "pushed": 190,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 20,
-      "de": 20,
-      "fr": 20,
-      "es": 20,
-      "nl": 20,
-      "pt": 20,
-      "zh": 20,
-      "ko": 20,
-      "ja": 20,
-      "en": 10
+      "vi": 21,
+      "de": 21,
+      "fr": 21,
+      "es": 21,
+      "nl": 21,
+      "pt": 21,
+      "zh": 21,
+      "ko": 21,
+      "ja": 21,
+      "en": 11
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
-      "hanoi-vietnam-travel": 20
+      "hanoi-vietnam-travel": 30
     }
   },
   "last_batch": {
-    "seq": 19,
-    "file": "factory/topic-research/batches/claude-20261018b-0019.json",
-    "sha256": "6624ee6f9bcd6edd4019fa6056cc1719e62163c01a164cf0cef3fe2adaace00d",
+    "seq": 20,
+    "file": "factory/topic-research/batches/claude-20261018b-0020.json",
+    "sha256": "8ee442179865adf005e3254834bddb7e665ab9a4579657c733517a5e5d9f23e0",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -2053,8 +2053,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0019.json",
       "sha256": "6624ee6f9bcd6edd4019fa6056cc1719e62163c01a164cf0cef3fe2adaace00d",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "513c4a9fb40267f8674bec1e093a32714d8ef9c6",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -2158,11 +2158,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 20,
+      "file": "factory/topic-research/batches/claude-20261018b-0020.json",
+      "sha256": "8ee442179865adf005e3254834bddb7e665ab9a4579657c733517a5e5d9f23e0",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:ha-noi-dip-tet-nguyen-dan",
+          "locale": "vi",
+          "slug": "ha-noi-dip-tet-nguyen-dan",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "vi::ha noi dip tet nguyen dan co gi mo cua",
+          "ta_id": null
+        },
+        {
+          "ref": "en:hanoi-during-tet-what-is-open",
+          "locale": "en",
+          "slug": "hanoi-during-tet-what-is-open",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "en::what is open in hanoi during tet",
+          "ta_id": null
+        },
+        {
+          "ref": "de:hanoi-waehrend-tet-was-hat-offen",
+          "locale": "de",
+          "slug": "hanoi-waehrend-tet-was-hat-offen",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "de::was in hanoi wahrend tet geoffnet ist",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:hanoi-pendant-le-tet-ce-qui-est-ouvert",
+          "locale": "fr",
+          "slug": "hanoi-pendant-le-tet-ce-qui-est-ouvert",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "fr::hanoi pendant le tet ce qui est ouvert",
+          "ta_id": null
+        },
+        {
+          "ref": "es:hanoi-durante-el-tet-que-esta-abierto",
+          "locale": "es",
+          "slug": "hanoi-durante-el-tet-que-esta-abierto",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "es::que esta abierto en hanoi durante el tet",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:hanoi-tijdens-tet-wat-is-open",
+          "locale": "nl",
+          "slug": "hanoi-tijdens-tet-wat-is-open",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "nl::wat is open in hanoi tijdens tet",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-chunjie-qijian-yingye",
+          "locale": "zh",
+          "slug": "hanoi-chunjie-qijian-yingye",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "zh::越南春节期间河内什么开门",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:hanoi-durante-o-tet-o-que-esta-aberto",
+          "locale": "pt",
+          "slug": "hanoi-durante-o-tet-o-que-esta-aberto",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "pt::o que esta aberto em hanoi durante o tet",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-tet-yeonhyu-yeongeop",
+          "locale": "ko",
+          "slug": "hanoi-tet-yeonhyu-yeongeop",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "ko::베트남 설 연휴 하노이 문 여는 곳",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-no-tet-eigyo-jokyo",
+          "locale": "ja",
+          "slug": "hanoi-no-tet-eigyo-jokyo",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "ja::テト期間中のハノイて開いている場所",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 20,
-    "file": "factory/topic-research/batches/claude-20261018b-0020.json",
+    "seq": 21,
+    "file": "factory/topic-research/batches/claude-20261018b-0021.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -2300,6 +2411,13 @@
       "seq": 19,
       "topics": 10,
       "sha256": "6624ee6f9bcd6edd4019fa6056cc1719e62163c01a164cf0cef3fe2adaace00d"
+    },
+    {
+      "at": "2026-10-18T23:42:36.556Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 20,
+      "topics": 10,
+      "sha256": "8ee442179865adf005e3254834bddb7e665ab9a4579657c733517a5e5d9f23e0"
     }
   ]
 }
