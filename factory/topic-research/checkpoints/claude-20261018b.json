@@ -7,19 +7,19 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T14:18:47.309Z",
+  "updated_at": "2026-10-18T14:18:52.981Z",
   "base_main_sha": "f147ede4e56500e966a04604ed2dffda8150cc7c",
-  "last_commit_sha": "d8567b612bc868aa6bb52f23f6d0c6c2a295e4df",
+  "last_commit_sha": "2ded767cf0d5bda5e9f23e9b32255beb7db66d4e",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 50,
-    "qa_pass": 50,
+    "researched": 60,
+    "qa_pass": 60,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 40,
+    "pushed": 50,
     "pending_push": 10
   },
   "coverage": {
@@ -28,16 +28,17 @@
       "de": 10,
       "fr": 10,
       "es": 10,
-      "nl": 10
+      "nl": 10,
+      "pt": 10
     },
     "domains": {
-      "transportation-mobility": 50
+      "transportation-mobility": 60
     }
   },
   "last_batch": {
-    "seq": 5,
-    "file": "factory/topic-research/batches/claude-20261018b-0005.json",
-    "sha256": "92691f0212cf5efae8e236079a340afe62b2dd8af2c12cbd55587cebff348db2",
+    "seq": 6,
+    "file": "factory/topic-research/batches/claude-20261018b-0006.json",
+    "sha256": "f18d00005e9d632eac1c67aaf5f295164f2f835b378fc2d26f3d52cb3b5a7d65",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -491,8 +492,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0005.json",
       "sha256": "92691f0212cf5efae8e236079a340afe62b2dd8af2c12cbd55587cebff348db2",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "2ded767cf0d5bda5e9f23e9b32255beb7db66d4e",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -596,11 +597,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 6,
+      "file": "factory/topic-research/batches/claude-20261018b-0006.json",
+      "sha256": "f18d00005e9d632eac1c67aaf5f295164f2f835b378fc2d26f3d52cb3b5a7d65",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "pt:metro-hanoi-linha-2a-cat-linh-ha-dong-estacoes-bilhetes",
+          "locale": "pt",
+          "slug": "metro-hanoi-linha-2a-cat-linh-ha-dong-estacoes-bilhetes",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "pt::metro de hanoi linha 2a cat linh ha dong estacoes e bilhetes",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:metro-hanoi-linha-3-nhon-cau-giay-troco-elevado",
+          "locale": "pt",
+          "slug": "metro-hanoi-linha-3-nhon-cau-giay-troco-elevado",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "pt::metro de hanoi linha 3 nhon cau giay troco elevado",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:como-andar-de-autocarro-em-hanoi-linhas-pagamento-sem-dinheiro",
+          "locale": "pt",
+          "slug": "como-andar-de-autocarro-em-hanoi-linhas-pagamento-sem-dinheiro",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "pt::como andar de autocarro em hanoi linhas pagamento aplicacao",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:autocarros-eletricos-vinbus-hanoi-linhas-e-rede",
+          "locale": "pt",
+          "slug": "autocarros-eletricos-vinbus-hanoi-linhas-e-rede",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "pt::autocarros eletricos vinbus hanoi linhas",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:aeroporto-noi-bai-ao-bairro-antigo-de-hanoi-de-autocarro",
+          "locale": "pt",
+          "slug": "aeroporto-noi-bai-ao-bairro-antigo-de-hanoi-de-autocarro",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-last-mile",
+          "key": "pt::do aeroporto de noi bai ao bairro antigo de hanoi de autocarro",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:estacoes-de-autocarros-longa-distancia-hanoi-qual-serve-cada-regiao",
+          "locale": "pt",
+          "slug": "estacoes-de-autocarros-longa-distancia-hanoi-qual-serve-cada-regiao",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "pt::estacoes de autocarros de longa distancia de hanoi qual serve cada regiao",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:comboio-de-hanoi-para-sapa-comboio-noturno-lao-cai",
+          "locale": "pt",
+          "slug": "comboio-de-hanoi-para-sapa-comboio-noturno-lao-cai",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "pt::comboio de hanoi para sapa",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:comboio-de-hanoi-para-ninh-binh-duracao-estacao-tam-coc",
+          "locale": "pt",
+          "slug": "comboio-de-hanoi-para-ninh-binh-duracao-estacao-tam-coc",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "pt::comboio de hanoi para ninh binh",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:autocarro-de-hanoi-para-ha-long-linha-regular-e-limusina",
+          "locale": "pt",
+          "slug": "autocarro-de-hanoi-para-ha-long-linha-regular-e-limusina",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "pt::autocarro de hanoi para ha long",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:aplicacoes-de-transporte-hanoi-grab-xanh-sm-be-comparacao",
+          "locale": "pt",
+          "slug": "aplicacoes-de-transporte-hanoi-grab-xanh-sm-be-comparacao",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-last-mile",
+          "key": "pt::aplicacoes de transporte privado em hanoi grab xanh sm be comparacao",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 6,
-    "file": "factory/topic-research/batches/claude-20261018b-0006.json",
+    "seq": 7,
+    "file": "factory/topic-research/batches/claude-20261018b-0007.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -640,6 +752,13 @@
       "seq": 5,
       "topics": 10,
       "sha256": "92691f0212cf5efae8e236079a340afe62b2dd8af2c12cbd55587cebff348db2"
+    },
+    {
+      "at": "2026-10-18T14:18:52.981Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 6,
+      "topics": 10,
+      "sha256": "f18d00005e9d632eac1c67aaf5f295164f2f835b378fc2d26f3d52cb3b5a7d65"
     }
   ]
 }
