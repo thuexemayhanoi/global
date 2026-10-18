@@ -7,43 +7,43 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T14:28:57.848Z",
-  "base_main_sha": "b7afe3d1ebedddd96bfaa88b5af7eb2e6cc64e7a",
-  "last_commit_sha": "658fa9eb427f0dd983b604c9183dc799018cdf94",
+  "updated_at": "2026-10-18T14:32:00.028Z",
+  "base_main_sha": "7a2fe41f1964993fa099e23366b69727fa98766f",
+  "last_commit_sha": "8b23ccb2e444529768014e38ad07c55ea781986e",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 100,
-    "qa_pass": 100,
+    "researched": 110,
+    "qa_pass": 110,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 90,
+    "pushed": 100,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 11,
-      "de": 11,
-      "fr": 11,
-      "es": 11,
-      "nl": 11,
-      "pt": 11,
-      "zh": 11,
-      "ko": 11,
-      "ja": 11,
-      "en": 1
+      "vi": 12,
+      "de": 12,
+      "fr": 12,
+      "es": 12,
+      "nl": 12,
+      "pt": 12,
+      "zh": 12,
+      "ko": 12,
+      "ja": 12,
+      "en": 2
     },
     "domains": {
       "transportation-mobility": 90,
-      "traffic-law-safety": 10
+      "traffic-law-safety": 20
     }
   },
   "last_batch": {
-    "seq": 10,
-    "file": "factory/topic-research/batches/claude-20261018b-0010.json",
-    "sha256": "0e4ff0c1e3b34926bca4848da68a0b059e5699a05d20ce1feef3ca5c87bbc7af",
+    "seq": 11,
+    "file": "factory/topic-research/batches/claude-20261018b-0011.json",
+    "sha256": "513df16bbc98d63806a245cf1a0145268b8f7b794fc3df8344751978f10b0258",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -1052,8 +1052,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0010.json",
       "sha256": "0e4ff0c1e3b34926bca4848da68a0b059e5699a05d20ce1feef3ca5c87bbc7af",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "8b23ccb2e444529768014e38ad07c55ea781986e",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -1064,7 +1064,7 @@
           "parent_id": "VI-H04",
           "subcluster": "ss-weather",
           "key": "vi::di xe may qua duong ngap nuoc o ha noi",
-          "ta_id": null
+          "ta_id": "TA-VI-0104"
         },
         {
           "ref": "en:riding-scooter-through-flooded-hanoi-streets",
@@ -1074,7 +1074,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-weather",
           "key": "en::riding a scooter through flooded streets in hanoi",
-          "ta_id": null
+          "ta_id": "TA-EN-0108"
         },
         {
           "ref": "de:roller-durch-ueberflutete-strassen-hanoi",
@@ -1084,7 +1084,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-weather",
           "key": "de::mit dem roller durch uberflutete straßen in hanoi fahren",
-          "ta_id": null
+          "ta_id": "TA-DE-0107"
         },
         {
           "ref": "fr:scooter-rues-inondees-hanoi-que-faire",
@@ -1094,7 +1094,7 @@
           "parent_id": "FR-H04",
           "subcluster": "ss-weather",
           "key": "fr::rouler en scooter dans des rues inondees a hanoi",
-          "ta_id": null
+          "ta_id": "TA-FR-0108"
         },
         {
           "ref": "es:scooter-calles-inundadas-hanoi-que-hacer",
@@ -1104,7 +1104,7 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-weather",
           "key": "es::circular en scooter por calles inundadas en hanoi",
-          "ta_id": null
+          "ta_id": "TA-ES-0096"
         },
         {
           "ref": "nl:scooter-overstroomde-straten-hanoi-wat-doen",
@@ -1114,7 +1114,7 @@
           "parent_id": "NL-H04",
           "subcluster": "ss-weather",
           "key": "nl::met een scooter door overstroomde straten in hanoi",
-          "ta_id": null
+          "ta_id": "TA-NL-0105"
         },
         {
           "ref": "zh:hanoi-jishui-lukuang-qi-tabanche-zenmeban",
@@ -1124,7 +1124,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-weather",
           "key": "zh::河内暴雨积水路段骑踏板车怎么办",
-          "ta_id": null
+          "ta_id": "TA-ZH-0105"
         },
         {
           "ref": "pt:scooter-ruas-alagadas-hanoi-o-que-fazer",
@@ -1134,7 +1134,7 @@
           "parent_id": "PT-H04",
           "subcluster": "ss-weather",
           "key": "pt::andar de scooter em ruas alagadas em hanoi",
-          "ta_id": null
+          "ta_id": "TA-PT-0105"
         },
         {
           "ref": "ko:hanoi-chimsu-doro-seukuteo-taneun-beop",
@@ -1144,7 +1144,7 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-weather",
           "key": "ko::하노이 침수된 도로에서 스쿠터 타는 법",
-          "ta_id": null
+          "ta_id": "TA-KO-0104"
         },
         {
           "ref": "ja:hanoi-kansui-michi-sukuuta-hashirikata",
@@ -1154,14 +1154,125 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-weather",
           "key": "ja::ハノイ 冠水した道 スクーター 走り方",
+          "ta_id": "TA-JA-0104"
+        }
+      ]
+    },
+    {
+      "seq": 11,
+      "file": "factory/topic-research/batches/claude-20261018b-0011.json",
+      "sha256": "513df16bbc98d63806a245cf1a0145268b8f7b794fc3df8344751978f10b0258",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:mua-bao-o-mien-bac-viet-nam-di-xe-may-can-luu-y",
+          "locale": "vi",
+          "slug": "mua-bao-o-mien-bac-viet-nam-di-xe-may-can-luu-y",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-weather",
+          "key": "vi::mua bao o mien bac viet nam di xe may can luu y gi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:typhoon-season-northern-vietnam-riding-decisions",
+          "locale": "en",
+          "slug": "typhoon-season-northern-vietnam-riding-decisions",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-weather",
+          "key": "en::typhoon season northern vietnam riding a motorbike",
+          "ta_id": null
+        },
+        {
+          "ref": "de:taifunsaison-nordvietnam-roller-fahren",
+          "locale": "de",
+          "slug": "taifunsaison-nordvietnam-roller-fahren",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-weather",
+          "key": "de::taifunsaison nordvietnam motorroller fahren",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:saison-des-typhons-nord-vietnam-scooter",
+          "locale": "fr",
+          "slug": "saison-des-typhons-nord-vietnam-scooter",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-weather",
+          "key": "fr::saison des typhons nord du vietnam rouler a scooter",
+          "ta_id": null
+        },
+        {
+          "ref": "es:temporada-de-tifones-norte-vietnam-moto",
+          "locale": "es",
+          "slug": "temporada-de-tifones-norte-vietnam-moto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-weather",
+          "key": "es::temporada de tifones norte de vietnam conducir moto",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:tyfoonseizoen-noord-vietnam-scooter-rijden",
+          "locale": "nl",
+          "slug": "tyfoonseizoen-noord-vietnam-scooter-rijden",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-weather",
+          "key": "nl::tyfoonseizoen noord-vietnam scooter rijden",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-beibu-taifengji-qi-motuoche-zhuyi",
+          "locale": "zh",
+          "slug": "yuenan-beibu-taifengji-qi-motuoche-zhuyi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-weather",
+          "key": "zh::越南北部台风季骑摩托车注意什么",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:epoca-dos-tufoes-norte-vietname-moto",
+          "locale": "pt",
+          "slug": "epoca-dos-tufoes-norte-vietname-moto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-weather",
+          "key": "pt::epoca dos tufoes norte do vietname andar de moto",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-bukbu-taepungcheol-otobai",
+          "locale": "ko",
+          "slug": "beteunam-bukbu-taepungcheol-otobai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-weather",
+          "key": "ko::베트남 북부 태풍철 오토바이 타도 되나",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-hokubu-taifu-shizun-baiku-unten",
+          "locale": "ja",
+          "slug": "betonamu-hokubu-taifu-shizun-baiku-unten",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-weather",
+          "key": "ja::ヘトナム北部 台風シースン ハイク 運転",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 11,
-    "file": "factory/topic-research/batches/claude-20261018b-0011.json",
+    "seq": 12,
+    "file": "factory/topic-research/batches/claude-20261018b-0012.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -1236,6 +1347,13 @@
       "seq": 10,
       "topics": 10,
       "sha256": "0e4ff0c1e3b34926bca4848da68a0b059e5699a05d20ce1feef3ca5c87bbc7af"
+    },
+    {
+      "at": "2026-10-18T14:32:00.028Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 11,
+      "topics": 10,
+      "sha256": "513df16bbc98d63806a245cf1a0145268b8f7b794fc3df8344751978f10b0258"
     }
   ]
 }
