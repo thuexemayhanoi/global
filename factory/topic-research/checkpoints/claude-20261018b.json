@@ -7,45 +7,45 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:46:24.839Z",
+  "updated_at": "2026-10-18T23:46:31.812Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "e71423490e8d86aa0172adfc7bc4b81c7dbe591d",
+  "last_commit_sha": "4eb88797c9bee254eadc81a0ee942d54be617c03",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 260,
-    "qa_pass": 260,
+    "researched": 270,
+    "qa_pass": 270,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 250,
+    "pushed": 260,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 27,
-      "de": 27,
-      "fr": 27,
-      "es": 27,
-      "nl": 27,
-      "pt": 27,
-      "zh": 27,
-      "ko": 27,
-      "ja": 27,
-      "en": 17
+      "vi": 28,
+      "de": 28,
+      "fr": 28,
+      "es": 28,
+      "nl": 28,
+      "pt": 28,
+      "zh": 28,
+      "ko": 28,
+      "ja": 28,
+      "en": 18
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
-      "hanoi-vietnam-travel": 90
+      "hanoi-vietnam-travel": 100
     }
   },
   "last_batch": {
-    "seq": 26,
-    "file": "factory/topic-research/batches/claude-20261018b-0026.json",
-    "sha256": "eaa70733d319cbbb46271ee9c34bc9f6b1f3fb5c7df3638504774294a3023982",
+    "seq": 27,
+    "file": "factory/topic-research/batches/claude-20261018b-0027.json",
+    "sha256": "3581828d567a49af1dd179c620c681910a9cd77f15d926fd1b7df39e30a5b585",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -2830,8 +2830,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0026.json",
       "sha256": "eaa70733d319cbbb46271ee9c34bc9f6b1f3fb5c7df3638504774294a3023982",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "4eb88797c9bee254eadc81a0ee942d54be617c03",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -2935,23 +2935,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 27,
+      "file": "factory/topic-research/batches/claude-20261018b-0027.json",
+      "sha256": "3581828d567a49af1dd179c620c681910a9cd77f15d926fd1b7df39e30a5b585",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:tham-quan-lang-chu-tich-ho-chi-minh",
+          "locale": "vi",
+          "slug": "tham-quan-lang-chu-tich-ho-chi-minh",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "vi::tham quan lang chu tich ho chi minh gio mo cua",
+          "ta_id": null
+        },
+        {
+          "ref": "en:visit-ho-chi-minh-mausoleum-hours-closures",
+          "locale": "en",
+          "slug": "visit-ho-chi-minh-mausoleum-hours-closures",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "en::visiting the ho chi minh mausoleum hours",
+          "ta_id": null
+        },
+        {
+          "ref": "de:ho-chi-minh-mausoleum-besuch-zeiten-schliessung",
+          "locale": "de",
+          "slug": "ho-chi-minh-mausoleum-besuch-zeiten-schliessung",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "de::besuch des ho-chi-minh-mausoleums offnungszeiten",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:visiter-le-mausolee-de-ho-chi-minh",
+          "locale": "fr",
+          "slug": "visiter-le-mausolee-de-ho-chi-minh",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "fr::visiter le mausolee de ho chi minh horaires",
+          "ta_id": null
+        },
+        {
+          "ref": "es:visitar-el-mausoleo-de-ho-chi-minh",
+          "locale": "es",
+          "slug": "visitar-el-mausoleo-de-ho-chi-minh",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "es::visitar el mausoleo de ho chi minh horarios",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:bezoek-aan-het-ho-chi-minh-mausoleum",
+          "locale": "nl",
+          "slug": "bezoek-aan-het-ho-chi-minh-mausoleum",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "nl::bezoek aan het ho chi minh-mausoleum openingstijden",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:canguan-humingling-kaifang-shijian",
+          "locale": "zh",
+          "slug": "canguan-humingling-kaifang-shijian",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "zh::参观胡志明陵开放时间",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:visitar-o-mausoleu-de-ho-chi-minh",
+          "locale": "pt",
+          "slug": "visitar-o-mausoleu-de-ho-chi-minh",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "pt::visitar o mausoleu de ho chi minh horarios",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hochimin-myo-bangmun-unyeong-sigan",
+          "locale": "ko",
+          "slug": "hochimin-myo-bangmun-unyeong-sigan",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "ko::호찌민 묘 방문 운영 시간",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hochimin-byo-kengaku-kaikan-jikan",
+          "locale": "ja",
+          "slug": "hochimin-byo-kengaku-kaikan-jikan",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "ja::ホーチミン廟の見学と開館時間",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 27,
-    "file": "factory/topic-research/batches/claude-20261018b-0027.json",
+    "seq": 28,
+    "file": "factory/topic-research/batches/claude-20261018b-0028.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T14:14:10.041Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 2,
-      "topics": 10,
-      "sha256": "03f044d7f5c0b724042dbdee53a0837a86cd8a4fe9f45bf6304b284146bc8db0"
-    },
     {
       "at": "2026-10-18T14:16:43.324Z",
       "event": "BATCH_COMMITTED",
@@ -3119,6 +3223,13 @@
       "seq": 26,
       "topics": 10,
       "sha256": "eaa70733d319cbbb46271ee9c34bc9f6b1f3fb5c7df3638504774294a3023982"
+    },
+    {
+      "at": "2026-10-18T23:46:31.812Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 27,
+      "topics": 10,
+      "sha256": "3581828d567a49af1dd179c620c681910a9cd77f15d926fd1b7df39e30a5b585"
     }
   ]
 }
