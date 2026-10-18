@@ -7,44 +7,44 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:23:05.997Z",
-  "base_main_sha": "fea60760c0c10cbca7fc1e9f13cc3fc0419dcbef",
-  "last_commit_sha": "0a844a740bbba6ae4c5fb0237d3a268c94638289",
+  "updated_at": "2026-10-18T23:24:41.283Z",
+  "base_main_sha": "3f5372444762e7a03a469ea2821138bf03c078b2",
+  "last_commit_sha": "4549dd0853a2bec093d8502687efa294304e0d63",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 120,
-    "qa_pass": 120,
+    "researched": 130,
+    "qa_pass": 130,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 110,
+    "pushed": 120,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 13,
-      "de": 13,
-      "fr": 13,
-      "es": 13,
-      "nl": 13,
-      "pt": 13,
-      "zh": 13,
-      "ko": 13,
-      "ja": 13,
-      "en": 3
+      "vi": 14,
+      "de": 14,
+      "fr": 14,
+      "es": 14,
+      "nl": 14,
+      "pt": 14,
+      "zh": 14,
+      "ko": 14,
+      "ja": 14,
+      "en": 4
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
-      "road-trips-routes": 10
+      "road-trips-routes": 20
     }
   },
   "last_batch": {
-    "seq": 12,
-    "file": "factory/topic-research/batches/claude-20261018b-0012.json",
-    "sha256": "f7d24cde0de7cc7dbdb93b44442eaaf7d5fdcc84111bad77d10fca2ccf0e254f",
+    "seq": 13,
+    "file": "factory/topic-research/batches/claude-20261018b-0013.json",
+    "sha256": "6b369ea9fd75f5e38efcdeafaa406b3bda6cb43a76bbeac77376ccb4bc73e6c2",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -1275,8 +1275,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0012.json",
       "sha256": "f7d24cde0de7cc7dbdb93b44442eaaf7d5fdcc84111bad77d10fca2ccf0e254f",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "4549dd0853a2bec093d8502687efa294304e0d63",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -1287,7 +1287,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "vi::di xe may tu ha noi den vuon quoc gia ba vi",
-          "ta_id": null
+          "ta_id": "TA-VI-0106"
         },
         {
           "ref": "en:hanoi-to-ba-vi-national-park-by-motorbike",
@@ -1297,7 +1297,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "en::hanoi to ba vi national park by motorbike",
-          "ta_id": null
+          "ta_id": "TA-EN-0110"
         },
         {
           "ref": "de:hanoi-zum-ba-vi-nationalpark-mit-dem-roller",
@@ -1307,7 +1307,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "de::von hanoi zum ba-vi-nationalpark mit dem motorroller",
-          "ta_id": null
+          "ta_id": "TA-DE-0109"
         },
         {
           "ref": "fr:hanoi-parc-national-ba-vi-a-scooter",
@@ -1317,7 +1317,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "fr::de hanoi au parc national de ba vi a scooter",
-          "ta_id": null
+          "ta_id": "TA-FR-0110"
         },
         {
           "ref": "es:hanoi-parque-nacional-ba-vi-en-moto",
@@ -1327,7 +1327,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "es::de hanoi al parque nacional de ba vi en moto",
-          "ta_id": null
+          "ta_id": "TA-ES-0098"
         },
         {
           "ref": "nl:hanoi-nationaal-park-ba-vi-met-de-scooter",
@@ -1337,7 +1337,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "nl::van hanoi naar nationaal park ba vi met de scooter",
-          "ta_id": null
+          "ta_id": "TA-NL-0107"
         },
         {
           "ref": "zh:hanoi-qi-motuoche-dao-bawei-guojia-gongyuan",
@@ -1347,7 +1347,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "zh::从河内骑摩托车去巴维国家公园",
-          "ta_id": null
+          "ta_id": "TA-ZH-0107"
         },
         {
           "ref": "pt:hanoi-parque-nacional-ba-vi-de-moto",
@@ -1357,7 +1357,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "pt::de hanoi ao parque nacional de ba vi de moto",
-          "ta_id": null
+          "ta_id": "TA-PT-0107"
         },
         {
           "ref": "ko:hanoi-babi-gungnipgongwon-otobai-gagi",
@@ -1367,7 +1367,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "ko::하노이에서 바비 국립공원 오토바이로 가기",
-          "ta_id": null
+          "ta_id": "TA-KO-0106"
         },
         {
           "ref": "ja:hanoi-kara-bavi-kokuritsu-koen-baiku",
@@ -1377,14 +1377,125 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "ja::ハノイからハウィ国立公園 ハイクて行く方法",
+          "ta_id": "TA-JA-0106"
+        }
+      ]
+    },
+    {
+      "seq": 13,
+      "file": "factory/topic-research/batches/claude-20261018b-0013.json",
+      "sha256": "6b369ea9fd75f5e38efcdeafaa406b3bda6cb43a76bbeac77376ccb4bc73e6c2",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:ha-noi-den-chua-huong-bang-xe-may",
+          "locale": "vi",
+          "slug": "ha-noi-den-chua-huong-bang-xe-may",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "vi::di xe may tu ha noi den chua huong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:hanoi-to-perfume-pagoda-by-motorbike",
+          "locale": "en",
+          "slug": "hanoi-to-perfume-pagoda-by-motorbike",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "en::hanoi to perfume pagoda by motorbike",
+          "ta_id": null
+        },
+        {
+          "ref": "de:hanoi-zur-parfuempagode-mit-dem-roller",
+          "locale": "de",
+          "slug": "hanoi-zur-parfuempagode-mit-dem-roller",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "de::von hanoi zur parfumpagode mit dem roller",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:hanoi-pagode-des-parfums-a-scooter",
+          "locale": "fr",
+          "slug": "hanoi-pagode-des-parfums-a-scooter",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "fr::de hanoi a la pagode des parfums a scooter",
+          "ta_id": null
+        },
+        {
+          "ref": "es:hanoi-pagoda-del-perfume-en-moto",
+          "locale": "es",
+          "slug": "hanoi-pagoda-del-perfume-en-moto",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "es::de hanoi a la pagoda del perfume en moto",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:hanoi-parfumpagode-met-de-scooter",
+          "locale": "nl",
+          "slug": "hanoi-parfumpagode-met-de-scooter",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "nl::van hanoi naar de parfumpagode met de scooter",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-qi-motuoche-dao-xiangsi",
+          "locale": "zh",
+          "slug": "hanoi-qi-motuoche-dao-xiangsi",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "zh::从河内骑摩托车去香寺 chua huong",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:hanoi-pagode-do-perfume-de-moto",
+          "locale": "pt",
+          "slug": "hanoi-pagode-do-perfume-de-moto",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "pt::de hanoi ao pagode do perfume de moto",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-hyangsawon-otobai-gagi",
+          "locale": "ko",
+          "slug": "hanoi-hyangsawon-otobai-gagi",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "ko::하노이 향사원 오토바이 당일치기",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-kara-kouji-baiku-de-iku",
+          "locale": "ja",
+          "slug": "hanoi-kara-kouji-baiku-de-iku",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "ja::ハノイから香寺 ハイクて行く方法",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 13,
-    "file": "factory/topic-research/batches/claude-20261018b-0013.json",
+    "seq": 14,
+    "file": "factory/topic-research/batches/claude-20261018b-0014.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -1473,6 +1584,13 @@
       "seq": 12,
       "topics": 10,
       "sha256": "f7d24cde0de7cc7dbdb93b44442eaaf7d5fdcc84111bad77d10fca2ccf0e254f"
+    },
+    {
+      "at": "2026-10-18T23:24:41.283Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 13,
+      "topics": 10,
+      "sha256": "6b369ea9fd75f5e38efcdeafaa406b3bda6cb43a76bbeac77376ccb4bc73e6c2"
     }
   ]
 }
