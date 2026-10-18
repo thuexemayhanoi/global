@@ -7,19 +7,19 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T14:22:41.388Z",
+  "updated_at": "2026-10-18T14:22:47.380Z",
   "base_main_sha": "f3f8529a7b1db79c2bbab7ea72c9bc35ff048529",
-  "last_commit_sha": "bc16d831696d60825ce602ff79efa3c7bff1f16f",
+  "last_commit_sha": "363beb003409fa6d69ef117552d64f0b015aa88b",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 70,
-    "qa_pass": 70,
+    "researched": 80,
+    "qa_pass": 80,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 60,
+    "pushed": 70,
     "pending_push": 10
   },
   "coverage": {
@@ -30,16 +30,17 @@
       "es": 10,
       "nl": 10,
       "pt": 10,
-      "zh": 10
+      "zh": 10,
+      "ko": 10
     },
     "domains": {
-      "transportation-mobility": 70
+      "transportation-mobility": 80
     }
   },
   "last_batch": {
-    "seq": 7,
-    "file": "factory/topic-research/batches/claude-20261018b-0007.json",
-    "sha256": "83706db981724da208607b9dd950caf990ab940e1f93159a225563c38192d6b4",
+    "seq": 8,
+    "file": "factory/topic-research/batches/claude-20261018b-0008.json",
+    "sha256": "2921fbefd1c54244f14046c20fa932f68dea0adcde40d016f313f134798f5ba8",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -715,8 +716,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0007.json",
       "sha256": "83706db981724da208607b9dd950caf990ab940e1f93159a225563c38192d6b4",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "363beb003409fa6d69ef117552d64f0b015aa88b",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -820,11 +821,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 8,
+      "file": "factory/topic-research/batches/claude-20261018b-0008.json",
+      "sha256": "2921fbefd1c54244f14046c20fa932f68dea0adcde40d016f313f134798f5ba8",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "ko:hanoi-jihacheol-2a-hoseon-yeok-tiket-iyongbeop",
+          "locale": "ko",
+          "slug": "hanoi-jihacheol-2a-hoseon-yeok-tiket-iyongbeop",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "ko::하노이 지하철 2a호선 깟린 하동 역과 티켓",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-jihacheol-3-hoseon-gogagugan-nhon-cau-giay",
+          "locale": "ko",
+          "slug": "hanoi-jihacheol-3-hoseon-gogagugan-nhon-cau-giay",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "ko::하노이 지하철 3호선 고가 구간 nhon cau giay",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-sinaebeoseu-taneun-beop-noseon-gyeolje",
+          "locale": "ko",
+          "slug": "hanoi-sinaebeoseu-taneun-beop-noseon-gyeolje",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "ko::하노이 시내버스 타는 법 노선 결제 앱",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-binbeoseu-jeongibeoseu-noseon",
+          "locale": "ko",
+          "slug": "hanoi-binbeoseu-jeongibeoseu-noseon",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "ko::하노이 빈버스 전기버스 노선",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:noibai-gonghang-hanoi-gusigaji-beoseu",
+          "locale": "ko",
+          "slug": "noibai-gonghang-hanoi-gusigaji-beoseu",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-last-mile",
+          "key": "ko::노이바이 공항에서 하노이 구시가지 버스",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-jangeori-beoseuteominal-eoneu-teominal",
+          "locale": "ko",
+          "slug": "hanoi-jangeori-beoseuteominal-eoneu-teominal",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "ko::하노이 장거리 버스터미널 어느 터미널이 어디로 가나",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-sapa-gicha-taneun-beop-yahaengyeolcha",
+          "locale": "ko",
+          "slug": "hanoi-sapa-gicha-taneun-beop-yahaengyeolcha",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "ko::하노이에서 사파 기차 타는 법",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-ninbin-gicha-taneun-beop-sososhigan",
+          "locale": "ko",
+          "slug": "hanoi-ninbin-gicha-taneun-beop-sososhigan",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "ko::하노이에서 닌빈 기차 타는 법",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-halong-beoseu-taneun-beop-limujin-baen",
+          "locale": "ko",
+          "slug": "hanoi-halong-beoseu-taneun-beop-limujin-baen",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "ko::하노이에서 하롱 버스 타는 법",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-taeksi-aep-grab-xanh-sm-be-bigyo",
+          "locale": "ko",
+          "slug": "hanoi-taeksi-aep-grab-xanh-sm-be-bigyo",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-last-mile",
+          "key": "ko::하노이 택시 앱 grab xanh sm be 비교",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 8,
-    "file": "factory/topic-research/batches/claude-20261018b-0008.json",
+    "seq": 9,
+    "file": "factory/topic-research/batches/claude-20261018b-0009.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -878,6 +990,13 @@
       "seq": 7,
       "topics": 10,
       "sha256": "83706db981724da208607b9dd950caf990ab940e1f93159a225563c38192d6b4"
+    },
+    {
+      "at": "2026-10-18T14:22:47.380Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 8,
+      "topics": 10,
+      "sha256": "2921fbefd1c54244f14046c20fa932f68dea0adcde40d016f313f134798f5ba8"
     }
   ]
 }
