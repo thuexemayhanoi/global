@@ -7,45 +7,46 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:46:31.812Z",
+  "updated_at": "2026-10-18T23:52:25.599Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "4eb88797c9bee254eadc81a0ee942d54be617c03",
+  "last_commit_sha": "13184659c51f38f08c3fe73edacbaebb13bf5c0e",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 270,
-    "qa_pass": 270,
+    "researched": 280,
+    "qa_pass": 280,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 260,
+    "pushed": 270,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 28,
-      "de": 28,
-      "fr": 28,
-      "es": 28,
-      "nl": 28,
-      "pt": 28,
-      "zh": 28,
-      "ko": 28,
-      "ja": 28,
-      "en": 18
+      "vi": 29,
+      "de": 29,
+      "fr": 29,
+      "es": 29,
+      "nl": 29,
+      "pt": 29,
+      "zh": 29,
+      "ko": 29,
+      "ja": 29,
+      "en": 19
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
-      "hanoi-vietnam-travel": 100
+      "hanoi-vietnam-travel": 100,
+      "destinations-experiences": 10
     }
   },
   "last_batch": {
-    "seq": 27,
-    "file": "factory/topic-research/batches/claude-20261018b-0027.json",
-    "sha256": "3581828d567a49af1dd179c620c681910a9cd77f15d926fd1b7df39e30a5b585",
+    "seq": 28,
+    "file": "factory/topic-research/batches/claude-20261018b-0028.json",
+    "sha256": "accc49fdf1af2244bcf094094ffb7f6e0606156917c1fe30bc717a3d2ce3ca8e",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -2941,8 +2942,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0027.json",
       "sha256": "3581828d567a49af1dd179c620c681910a9cd77f15d926fd1b7df39e30a5b585",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "13184659c51f38f08c3fe73edacbaebb13bf5c0e",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -3046,23 +3047,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 28,
+      "file": "factory/topic-research/batches/claude-20261018b-0028.json",
+      "sha256": "accc49fdf1af2244bcf094094ffb7f6e0606156917c1fe30bc717a3d2ce3ca8e",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:hoang-thanh-thang-long-di-san-unesco",
+          "locale": "vi",
+          "slug": "hoang-thanh-thang-long-di-san-unesco",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "vi::tham quan hoang thanh thang long di san unesco",
+          "ta_id": null
+        },
+        {
+          "ref": "en:thang-long-imperial-citadel-hanoi-unesco",
+          "locale": "en",
+          "slug": "thang-long-imperial-citadel-hanoi-unesco",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "en::visiting the imperial citadel of thang long hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "de:kaiserliche-zitadelle-thang-long-hanoi",
+          "locale": "de",
+          "slug": "kaiserliche-zitadelle-thang-long-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "de::besuch der kaiserlichen zitadelle von thang long",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:citadelle-imperiale-de-thang-long-hanoi",
+          "locale": "fr",
+          "slug": "citadelle-imperiale-de-thang-long-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "fr::visiter la citadelle imperiale de thang long",
+          "ta_id": null
+        },
+        {
+          "ref": "es:ciudadela-imperial-de-thang-long-hanoi",
+          "locale": "es",
+          "slug": "ciudadela-imperial-de-thang-long-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "es::visitar la ciudadela imperial de thang long",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:keizerlijke-citadel-van-thang-long-hanoi",
+          "locale": "nl",
+          "slug": "keizerlijke-citadel-van-thang-long-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "nl::bezoek aan de keizerlijke citadel van thang long",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-shenglong-huangcheng-youlan",
+          "locale": "zh",
+          "slug": "hanoi-shenglong-huangcheng-youlan",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "zh::参观河内升龙皇城世界遗产",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:cidadela-imperial-de-thang-long-hanoi",
+          "locale": "pt",
+          "slug": "cidadela-imperial-de-thang-long-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "pt::visitar a cidadela imperial de thang long",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:tanglong-hwangseong-hanoi-yunesko",
+          "locale": "ko",
+          "slug": "tanglong-hwangseong-hanoi-yunesko",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "ko::탕롱 황성 하노이 방문",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-tanron-koujo-kengaku",
+          "locale": "ja",
+          "slug": "hanoi-tanron-koujo-kengaku",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "ja::ハノイのタンロン皇城の見ところ",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 28,
-    "file": "factory/topic-research/batches/claude-20261018b-0028.json",
+    "seq": 29,
+    "file": "factory/topic-research/batches/claude-20261018b-0029.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T14:16:43.324Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 3,
-      "topics": 10,
-      "sha256": "e0764c4d88443e2f4d1406147cfc6f253f1e212680c0579187888d8602d15d09"
-    },
     {
       "at": "2026-10-18T14:16:48.953Z",
       "event": "BATCH_COMMITTED",
@@ -3230,6 +3335,13 @@
       "seq": 27,
       "topics": 10,
       "sha256": "3581828d567a49af1dd179c620c681910a9cd77f15d926fd1b7df39e30a5b585"
+    },
+    {
+      "at": "2026-10-18T23:52:25.599Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 28,
+      "topics": 10,
+      "sha256": "accc49fdf1af2244bcf094094ffb7f6e0606156917c1fe30bc717a3d2ce3ca8e"
     }
   ]
 }
