@@ -4828,6 +4828,48 @@
         "source": "factory/topic-research/batches/claude-20261018b-0011.json@0a844a740bbb"
       },
       "matrix_id": "KO-S101"
+    },
+    {
+      "candidate_id": "TA-KO-0106",
+      "locale": "ko",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-day-trips",
+      "slug": "hanoi-babi-gungnipgongwon-otobai-gagi",
+      "primary_query": "하노이에서 바비 국립공원 오토바이로 가기",
+      "secondary_queries": [
+        "바비 국립공원 하노이 당일치기 오토바이",
+        "Thang Long 대로 오토바이 통행 가능 여부",
+        "바비 산길 안개 운전"
+      ],
+      "working_title": "하노이에서 바비 국립공원까지 오토바이로: 경로, 산길과 출발 전에 확인할 것",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "하노이 도심에서 하루 일정으로 다녀오려는 라이더는 바비까지 얼마나 걸리는지, 어떤 길이 오토바이에 맞는지, 산길이 얼마나 어려운지, 출발 전에 국립공원에 무엇을 확인해야 하는지 알아봅니다.",
+      "content_angle": "여정 순서대로 따라갑니다. Thang Long 대로 주변에서 오토바이가 다닐 수 있는 길을 가리는 일부터 오르막, 안개, 공원이 공지한 운영 시간까지, 공원 공식 사이트와 확인한 여행 안내만을 근거로 합니다.",
+      "entities": [
+        "바비 국립공원",
+        "Thang Long 대로",
+        "32번 국도",
+        "Vua 봉"
+      ],
+      "references": [
+        "rx-26e88b8621d8",
+        "rx-c563d95e9b7c",
+        "rx-a71738d99a5b"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0012.json@4549dd0853a2"
+      }
     }
   ]
 }
