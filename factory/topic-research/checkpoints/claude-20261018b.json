@@ -7,46 +7,46 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:52:41.097Z",
+  "updated_at": "2026-10-18T23:52:49.094Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "0ea66362987cbdafcbaa3e4f0064270a46e5d598",
+  "last_commit_sha": "e85475e324a28c51beca0e3bd8b1aaafd5955a68",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 300,
-    "qa_pass": 300,
+    "researched": 310,
+    "qa_pass": 310,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 290,
+    "pushed": 300,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 31,
-      "de": 31,
-      "fr": 31,
-      "es": 31,
-      "nl": 31,
-      "pt": 31,
-      "zh": 31,
-      "ko": 31,
-      "ja": 31,
-      "en": 21
+      "vi": 32,
+      "de": 32,
+      "fr": 32,
+      "es": 32,
+      "nl": 32,
+      "pt": 32,
+      "zh": 32,
+      "ko": 32,
+      "ja": 32,
+      "en": 22
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
-      "destinations-experiences": 30
+      "destinations-experiences": 40
     }
   },
   "last_batch": {
-    "seq": 30,
-    "file": "factory/topic-research/batches/claude-20261018b-0030.json",
-    "sha256": "fe4625768e3ecfbe9881aed69bc5f73423bcaf831f892fb1ec1c1a24d8e2bb90",
+    "seq": 31,
+    "file": "factory/topic-research/batches/claude-20261018b-0031.json",
+    "sha256": "e09ca8f4dec6198aed45b8aad824f8d8779b5bb89257ddaa0338c4be3193d749",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -3275,8 +3275,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0030.json",
       "sha256": "fe4625768e3ecfbe9881aed69bc5f73423bcaf831f892fb1ec1c1a24d8e2bb90",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "e85475e324a28c51beca0e3bd8b1aaafd5955a68",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -3380,23 +3380,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 31,
+      "file": "factory/topic-research/batches/claude-20261018b-0031.json",
+      "sha256": "e09ca8f4dec6198aed45b8aad824f8d8779b5bb89257ddaa0338c4be3193d749",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:lang-gom-bat-trang-tham-quan-lam-gom",
+          "locale": "vi",
+          "slug": "lang-gom-bat-trang-tham-quan-lam-gom",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "vi::tham quan lang gom bat trang tu ha noi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:bat-trang-ceramic-village-visit-from-hanoi",
+          "locale": "en",
+          "slug": "bat-trang-ceramic-village-visit-from-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "en::visiting bat trang ceramic village from hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "de:keramikdorf-bat-trang-besuch-ab-hanoi",
+          "locale": "de",
+          "slug": "keramikdorf-bat-trang-besuch-ab-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "de::besuch des keramikdorfs bat trang ab hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:village-de-ceramique-de-bat-trang-visite-depuis-hanoi",
+          "locale": "fr",
+          "slug": "village-de-ceramique-de-bat-trang-visite-depuis-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "fr::visiter le village de ceramique de bat trang depuis hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "es:pueblo-de-ceramica-de-bat-trang-visita-desde-hanoi",
+          "locale": "es",
+          "slug": "pueblo-de-ceramica-de-bat-trang-visita-desde-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "es::visitar el pueblo de ceramica de bat trang desde hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:keramiekdorp-bat-trang-bezoek-vanuit-hanoi",
+          "locale": "nl",
+          "slug": "keramiekdorp-bat-trang-bezoek-vanuit-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "nl::keramiekdorp bat trang bezoeken vanuit hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:bat-trang-taoci-cun-cong-hanoi-canguan",
+          "locale": "zh",
+          "slug": "bat-trang-taoci-cun-cong-hanoi-canguan",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "zh::从河内参观钵场陶瓷村",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:aldeia-de-ceramica-de-bat-trang-visita-a-partir-de-hanoi",
+          "locale": "pt",
+          "slug": "aldeia-de-ceramica-de-bat-trang-visita-a-partir-de-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "pt::visitar a aldeia de ceramica de bat trang a partir de hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:bat-trang-dojagi-maeul-hanoi-bangmun",
+          "locale": "ko",
+          "slug": "bat-trang-dojagi-maeul-hanoi-bangmun",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "ko::하노이에서 밧짱 도자기 마을 가기",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-kara-batchan-togei-mura-kengaku",
+          "locale": "ja",
+          "slug": "hanoi-kara-batchan-togei-mura-kengaku",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "ja::ハノイからハッチャン陶器村へ行く方法",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 31,
-    "file": "factory/topic-research/batches/claude-20261018b-0031.json",
+    "seq": 32,
+    "file": "factory/topic-research/batches/claude-20261018b-0032.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T14:18:52.981Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 6,
-      "topics": 10,
-      "sha256": "f18d00005e9d632eac1c67aaf5f295164f2f835b378fc2d26f3d52cb3b5a7d65"
-    },
     {
       "at": "2026-10-18T14:22:41.388Z",
       "event": "BATCH_COMMITTED",
@@ -3564,6 +3668,13 @@
       "seq": 30,
       "topics": 10,
       "sha256": "fe4625768e3ecfbe9881aed69bc5f73423bcaf831f892fb1ec1c1a24d8e2bb90"
+    },
+    {
+      "at": "2026-10-18T23:52:49.094Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 31,
+      "topics": 10,
+      "sha256": "e09ca8f4dec6198aed45b8aad824f8d8779b5bb89257ddaa0338c4be3193d749"
     }
   ]
 }
