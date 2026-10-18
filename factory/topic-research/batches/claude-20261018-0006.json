@@ -1,0 +1,522 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018"
+  },
+  "researched_on": "2026-10-18",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H01",
+      "subcluster": "vc-models",
+      "slug": "lop-khong-sam-va-lop-co-sam-xe-may",
+      "primary_query": "lốp không săm và lốp có săm xe máy khác nhau thế nào khi bị thủng",
+      "secondary_queries": [
+        "làm sao biết xe máy dùng lốp không săm",
+        "lốp không săm bị đinh có đi tiếp được không"
+      ],
+      "entities": [
+        "lốp không săm",
+        "lốp có săm",
+        "Honda LEAD",
+        "Yamaha Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Người đi xe máy đường dài muốn biết xe mình dùng lốp không săm hay lốp có săm, vì hai loại xử lý khác nhau khi cán phải đinh: một loại có thể vá tạm để đi chậm tới tiệm, loại kia thường xẹp nhanh và phải thay săm.",
+      "content_angle": "Giải thích cách nhận biết loại lốp qua thông số và sách hướng dẫn của hãng, khác biệt khi bị thủng và giới hạn tốc độ sau khi vá tạm, không thay cho bài xử lý xe hỏng giữa đường.",
+      "working_title": "Lốp không săm hay lốp có săm: xe của bạn dùng loại nào và khác gì khi bị thủng?",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/mIYsZV2Cp2ZXQbVe9hKt.pdf",
+          "title": "Honda Vietnam: LEAD 125 owner's manual, tubeless-only tyres, emergency repair kit and 50 km/h limit after a temporary repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam: Vision owner's manual, puncture section and temporary tubeless repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch tyres with inner tubes",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/so-sanh-yamaha-janus-va-yamaha-janus-125-hoan-toan-moi",
+          "title": "Yamaha Motor Vietnam: new Janus 125 moves to tubeless tyres",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S08",
+          "reason": "Bài VI-S08 hướng dẫn các bước khi xe thuê hỏng giữa đường; bài này giải thích hai loại lốp và cách nhận biết trước khi đi."
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H01",
+      "subcluster": "vc-models",
+      "slug": "tubeless-vs-tube-motorbike-tyres-vietnam",
+      "primary_query": "tubeless vs inner tube motorbike tyres what happens with a puncture",
+      "secondary_queries": [
+        "how to tell if a scooter has tubeless tyres",
+        "can you ride on a tubeless tyre with a nail in it"
+      ],
+      "entities": [
+        "tubeless tyre",
+        "inner tube",
+        "Honda LEAD",
+        "Yamaha Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Riders planning longer trips want to know whether their bike runs tubeless tyres or inner tubes, because the two behave differently after picking up a nail: one can be plugged to limp slowly to a shop, the other usually deflates fast and needs a new tube.",
+      "content_angle": "Explains how to identify the tyre type from manufacturer specifications and manuals, how punctures differ and the speed limit Honda sets after a temporary repair, without duplicating the breakdown steps page.",
+      "working_title": "Tubeless or Inner-Tube Tyres: Which Does Your Bike Have and Why It Matters for Punctures",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/mIYsZV2Cp2ZXQbVe9hKt.pdf",
+          "title": "Honda Vietnam: LEAD 125 owner's manual, tubeless-only tyres, emergency repair kit and 50 km/h limit after a temporary repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam: Vision owner's manual, puncture section and temporary tubeless repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch tyres with inner tubes",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/so-sanh-yamaha-janus-va-yamaha-janus-125-hoan-toan-moi",
+          "title": "Yamaha Motor Vietnam: new Janus 125 moves to tubeless tyres",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "EN-S08",
+          "reason": "EN-S08 covers the steps when a rental bike breaks down; this page explains the two tyre types and how to recognise them before a trip."
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H01",
+      "subcluster": "vc-models",
+      "slug": "schlauchlos-oder-schlauchreifen-motorrad-vietnam",
+      "primary_query": "schlauchlose Reifen oder Schlauchreifen am Roller bei einer Reifenpanne",
+      "secondary_queries": [
+        "woran erkenne ich schlauchlose Reifen am Roller",
+        "mit Nagel im schlauchlosen Reifen weiterfahren"
+      ],
+      "entities": [
+        "schlauchloser Reifen",
+        "Schlauchreifen",
+        "Honda LEAD",
+        "Yamaha Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Wer längere Touren plant, will wissen, ob das Fahrzeug schlauchlose Reifen oder Schlauchreifen hat, denn nach einem Nagel verhalten sie sich anders: Der eine lässt sich provisorisch abdichten, der andere verliert meist schnell Luft und braucht einen neuen Schlauch.",
+      "content_angle": "Erklärt, wie man den Reifentyp aus Herstellerangaben und Bedienungsanleitung erkennt, wie sich Pannen unterscheiden und welches Tempolimit Honda nach einer Notreparatur nennt, ohne die Pannenschritte zu wiederholen.",
+      "working_title": "Schlauchlos oder mit Schlauch: Welche Reifen hat Ihr Roller und was heißt das bei einer Panne?",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/mIYsZV2Cp2ZXQbVe9hKt.pdf",
+          "title": "Honda Vietnam: LEAD 125 owner's manual, tubeless-only tyres, emergency repair kit and 50 km/h limit after a temporary repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam: Vision owner's manual, puncture section and temporary tubeless repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch tyres with inner tubes",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/so-sanh-yamaha-janus-va-yamaha-janus-125-hoan-toan-moi",
+          "title": "Yamaha Motor Vietnam: new Janus 125 moves to tubeless tyres",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "DE-S08",
+          "reason": "DE-S08 beschreibt das Vorgehen bei einer Panne mit dem Mietroller; diese Seite erklärt die beiden Reifentypen und wie man sie vor der Fahrt erkennt."
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H01",
+      "subcluster": "vc-models",
+      "slug": "pneu-tubeless-ou-chambre-a-air-scooter-vietnam",
+      "primary_query": "pneu tubeless ou avec chambre à air sur un scooter en cas de crevaison",
+      "secondary_queries": [
+        "comment savoir si un scooter a des pneus tubeless",
+        "rouler avec un clou dans un pneu tubeless"
+      ],
+      "entities": [
+        "pneu tubeless",
+        "chambre à air",
+        "Honda LEAD",
+        "Yamaha Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Avant un long trajet, on veut savoir si son deux-roues a des pneus tubeless ou à chambre à air, car ils réagissent différemment après un clou : l'un peut être réparé provisoirement pour rouler doucement jusqu'à un atelier, l'autre se dégonfle vite.",
+      "content_angle": "Explique comment reconnaître le type de pneu grâce aux fiches et manuels du constructeur, en quoi les crevaisons diffèrent et quelle vitesse Honda fixe après une réparation provisoire, sans reprendre la page sur les pannes.",
+      "working_title": "Pneu tubeless ou chambre à air : lequel équipe votre deux-roues et que change une crevaison ?",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/mIYsZV2Cp2ZXQbVe9hKt.pdf",
+          "title": "Honda Vietnam: LEAD 125 owner's manual, tubeless-only tyres, emergency repair kit and 50 km/h limit after a temporary repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam: Vision owner's manual, puncture section and temporary tubeless repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch tyres with inner tubes",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/so-sanh-yamaha-janus-va-yamaha-janus-125-hoan-toan-moi",
+          "title": "Yamaha Motor Vietnam: new Janus 125 moves to tubeless tyres",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "FR-S08",
+          "reason": "FR-S08 décrit quoi faire en cas de panne du scooter loué ; cette page explique les deux types de pneus et comment les reconnaître avant de partir."
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H01",
+      "subcluster": "vc-models",
+      "slug": "neumatico-sin-camara-o-con-camara-moto-vietnam",
+      "primary_query": "neumático sin cámara o con cámara en la moto cuando hay un pinchazo",
+      "secondary_queries": [
+        "cómo saber si un scooter lleva neumáticos sin cámara",
+        "se puede circular con un clavo en un neumático sin cámara"
+      ],
+      "entities": [
+        "neumático sin cámara",
+        "cámara de aire",
+        "Honda LEAD",
+        "Yamaha Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quien prepara rutas largas quiere saber si su moto lleva neumáticos sin cámara o con cámara, porque reaccionan distinto tras pisar un clavo: uno admite una reparación provisional para llegar despacio a un taller y el otro suele desinflarse rápido.",
+      "content_angle": "Explica cómo identificar el tipo de neumático con las fichas y manuales del fabricante, cómo cambia un pinchazo y qué límite de velocidad fija Honda tras una reparación provisional, sin repetir la página de averías.",
+      "working_title": "Neumático sin cámara o con cámara: cuál lleva tu moto y qué cambia en un pinchazo",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/mIYsZV2Cp2ZXQbVe9hKt.pdf",
+          "title": "Honda Vietnam: LEAD 125 owner's manual, tubeless-only tyres, emergency repair kit and 50 km/h limit after a temporary repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam: Vision owner's manual, puncture section and temporary tubeless repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch tyres with inner tubes",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/so-sanh-yamaha-janus-va-yamaha-janus-125-hoan-toan-moi",
+          "title": "Yamaha Motor Vietnam: new Janus 125 moves to tubeless tyres",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "ES-S08",
+          "reason": "ES-S08 explica qué hacer si la moto alquilada se avería; esta página explica los dos tipos de neumático y cómo reconocerlos antes de salir."
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H01",
+      "subcluster": "vc-models",
+      "slug": "tubeless-of-binnenband-scooter-vietnam",
+      "primary_query": "tubeless banden of banden met binnenband op een scooter bij een lekke band",
+      "secondary_queries": [
+        "hoe zie je of een scooter tubeless banden heeft",
+        "doorrijden met een spijker in een tubeless band"
+      ],
+      "entities": [
+        "tubeless band",
+        "binnenband",
+        "Honda LEAD",
+        "Yamaha Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Wie langere ritten plant, wil weten of de scooter tubeless banden of banden met binnenband heeft, want na een spijker gedragen ze zich anders: de ene kun je tijdelijk dichten om rustig naar een werkplaats te rijden, de andere loopt meestal snel leeg.",
+      "content_angle": "Legt uit hoe je het bandtype herkent aan de specificaties en handleiding van de fabrikant, hoe een lekke band verschilt en welke maximumsnelheid Honda noemt na een noodreparatie, zonder de pechpagina te herhalen.",
+      "working_title": "Tubeless of binnenband: welke banden heeft je scooter en wat betekent dat bij een lekke band?",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/mIYsZV2Cp2ZXQbVe9hKt.pdf",
+          "title": "Honda Vietnam: LEAD 125 owner's manual, tubeless-only tyres, emergency repair kit and 50 km/h limit after a temporary repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam: Vision owner's manual, puncture section and temporary tubeless repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch tyres with inner tubes",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/so-sanh-yamaha-janus-va-yamaha-janus-125-hoan-toan-moi",
+          "title": "Yamaha Motor Vietnam: new Janus 125 moves to tubeless tyres",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "NL-S08",
+          "reason": "NL-S08 geeft het stappenplan bij pech met een gehuurde scooter; deze pagina legt de twee bandtypes uit en hoe je ze vooraf herkent."
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H01",
+      "subcluster": "vc-models",
+      "slug": "motuoche-zhenkongtai-he-neitai-qubie",
+      "primary_query": "摩托车真空胎和有内胎的轮胎扎钉后有什么区别",
+      "secondary_queries": [
+        "怎么看踏板车是不是真空胎",
+        "真空胎扎了钉子还能继续骑吗"
+      ],
+      "entities": [
+        "真空胎",
+        "内胎",
+        "本田 LEAD",
+        "雅马哈 Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "准备长途骑行的人想知道自己的车用的是真空胎还是带内胎的轮胎，因为扎到钉子后两者表现不同：真空胎往往可以临时补好慢慢骑到修车店，带内胎的轮胎通常很快漏气，需要换内胎。",
+      "content_angle": "根据厂家参数和使用说明书讲解如何辨认轮胎类型、两种轮胎扎胎后的区别，以及本田规定的临时修补后限速，不重复车辆故障处理页的内容。",
+      "working_title": "真空胎还是有内胎：你的摩托车用哪种轮胎，扎胎后有什么不同？",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/mIYsZV2Cp2ZXQbVe9hKt.pdf",
+          "title": "Honda Vietnam: LEAD 125 owner's manual, tubeless-only tyres, emergency repair kit and 50 km/h limit after a temporary repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam: Vision owner's manual, puncture section and temporary tubeless repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch tyres with inner tubes",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/so-sanh-yamaha-janus-va-yamaha-janus-125-hoan-toan-moi",
+          "title": "Yamaha Motor Vietnam: new Janus 125 moves to tubeless tyres",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "ZH-S08",
+          "reason": "ZH-S08讲租来的摩托车途中故障时的处理步骤；本页讲两种轮胎的区别以及出发前如何辨认。"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H01",
+      "subcluster": "vc-models",
+      "slug": "pneu-sem-camara-ou-com-camara-mota-vietname",
+      "primary_query": "pneu sem câmara ou com câmara de ar na mota quando há um furo",
+      "secondary_queries": [
+        "como saber se uma scooter tem pneus sem câmara",
+        "dá para andar com um prego num pneu sem câmara"
+      ],
+      "entities": [
+        "pneu sem câmara",
+        "câmara de ar",
+        "Honda LEAD",
+        "Yamaha Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quem planeia viagens longas quer saber se a mota tem pneus sem câmara ou com câmara de ar, porque reagem de forma diferente depois de apanhar um prego: um admite uma reparação provisória para seguir devagar até uma oficina, o outro costuma esvaziar depressa.",
+      "content_angle": "Explica como identificar o tipo de pneu pelas fichas e manuais do fabricante, como muda um furo e qual o limite de velocidade que a Honda indica depois de uma reparação provisória, sem repetir a página das avarias.",
+      "working_title": "Pneu sem câmara ou com câmara de ar: qual tem a sua mota e o que muda num furo?",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/mIYsZV2Cp2ZXQbVe9hKt.pdf",
+          "title": "Honda Vietnam: LEAD 125 owner's manual, tubeless-only tyres, emergency repair kit and 50 km/h limit after a temporary repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam: Vision owner's manual, puncture section and temporary tubeless repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch tyres with inner tubes",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/so-sanh-yamaha-janus-va-yamaha-janus-125-hoan-toan-moi",
+          "title": "Yamaha Motor Vietnam: new Janus 125 moves to tubeless tyres",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "PT-S08",
+          "reason": "PT-S08 explica o que fazer numa avaria da mota alugada; esta página explica os dois tipos de pneu e como os reconhecer antes de partir."
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H01",
+      "subcluster": "vc-models",
+      "slug": "tyubeuriseu-tyubeu-taieo-otobai-chai",
+      "primary_query": "오토바이 튜브리스 타이어와 튜브 타이어 펑크 났을 때 차이",
+      "secondary_queries": [
+        "스쿠터 튜브리스 타이어인지 확인하는 법",
+        "튜브리스 타이어에 못이 박혀도 계속 달릴 수 있나"
+      ],
+      "entities": [
+        "튜브리스 타이어",
+        "튜브 타이어",
+        "혼다 리드",
+        "야마하 시리우스"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "장거리 주행을 계획하는 여행자는 자신의 오토바이가 튜브리스 타이어인지 튜브 타이어인지 알고 싶어 한다. 못을 밟은 뒤 하나는 임시로 막고 천천히 정비소까지 갈 수 있지만 다른 하나는 대개 빠르게 바람이 빠지기 때문이다.",
+      "content_angle": "제조사 제원과 사용설명서로 타이어 종류를 확인하는 법, 펑크 시 차이, 혼다가 임시 수리 후 제시하는 제한 속도를 설명하며 고장 대처 페이지를 반복하지 않는다.",
+      "working_title": "튜브리스 vs 튜브 타이어: 내 오토바이는 어느 쪽이고 펑크 때 무엇이 다를까?",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/mIYsZV2Cp2ZXQbVe9hKt.pdf",
+          "title": "Honda Vietnam: LEAD 125 owner's manual, tubeless-only tyres, emergency repair kit and 50 km/h limit after a temporary repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam: Vision owner's manual, puncture section and temporary tubeless repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch tyres with inner tubes",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/so-sanh-yamaha-janus-va-yamaha-janus-125-hoan-toan-moi",
+          "title": "Yamaha Motor Vietnam: new Janus 125 moves to tubeless tyres",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "KO-S08",
+          "reason": "KO-S08은 렌트 오토바이가 고장 났을 때의 대처 순서를 다루고, 이 페이지는 두 타이어 종류와 출발 전 구별법을 다룬다."
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H01",
+      "subcluster": "vc-models",
+      "slug": "tubeless-tube-tire-bike-chigai",
+      "primary_query": "バイク チューブレスタイヤ チューブタイヤ パンク 違い",
+      "secondary_queries": [
+        "スクーター チューブレスかどうか 見分け方",
+        "チューブレスタイヤ 釘が刺さったまま 走れる"
+      ],
+      "entities": [
+        "チューブレスタイヤ",
+        "チューブタイヤ",
+        "ホンダ リード",
+        "ヤマハ シリウス"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "長距離ツーリングを計画する人は、自分のバイクがチューブレスタイヤかチューブタイヤかを知りたい。釘を踏んだあと、一方は応急修理でゆっくり修理店まで走れるが、もう一方はたいてい空気が急に抜けるからだ。",
+      "content_angle": "メーカーの諸元と取扱説明書からタイヤの種類を見分ける方法、パンク時の違い、ホンダが応急修理後に定める速度上限を説明し、故障時の対応ページとは重複させない。",
+      "working_title": "チューブレスかチューブタイヤか：あなたのバイクはどちら？パンク時に何が違う？",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/mIYsZV2Cp2ZXQbVe9hKt.pdf",
+          "title": "Honda Vietnam: LEAD 125 owner's manual, tubeless-only tyres, emergency repair kit and 50 km/h limit after a temporary repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam: Vision owner's manual, puncture section and temporary tubeless repair",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch tyres with inner tubes",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/so-sanh-yamaha-janus-va-yamaha-janus-125-hoan-toan-moi",
+          "title": "Yamaha Motor Vietnam: new Janus 125 moves to tubeless tyres",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S08",
+          "reason": "JA-S08はレンタルバイクが故障したときの対応手順を扱い、本ページは二種類のタイヤの違いと出発前の見分け方を扱う。"
+        }
+      ]
+    }
+  ]
+}

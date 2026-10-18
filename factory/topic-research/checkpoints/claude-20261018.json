@@ -7,42 +7,42 @@
   "branch": "research/claude-20261018",
   "batch_session": "research-claude-20261018",
   "created_at": "2026-10-18T07:10:00.197Z",
-  "updated_at": "2026-10-18T07:17:11.092Z",
+  "updated_at": "2026-10-18T07:17:20.710Z",
   "base_main_sha": "a31ee7899f6512791db9852601d95017353c67c7",
-  "last_commit_sha": "9cae983c7916048c5cfca7b544ae66c37ee12270",
+  "last_commit_sha": "87e603aa867b2a51b12dd78c0f623aa2059d3305",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 50,
-    "qa_pass": 50,
+    "researched": 60,
+    "qa_pass": 60,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 40,
+    "pushed": 50,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 5,
-      "en": 5,
-      "de": 5,
-      "fr": 5,
-      "es": 5,
-      "nl": 5,
-      "zh": 5,
-      "pt": 5,
-      "ko": 5,
-      "ja": 5
+      "vi": 6,
+      "en": 6,
+      "de": 6,
+      "fr": 6,
+      "es": 6,
+      "nl": 6,
+      "zh": 6,
+      "pt": 6,
+      "ko": 6,
+      "ja": 6
     },
     "domains": {
-      "motorbike-rental": 50
+      "motorbike-rental": 60
     }
   },
   "last_batch": {
-    "seq": 5,
-    "file": "factory/topic-research/batches/claude-20261018-0005.json",
-    "sha256": "ae2090e769ef4f6705f0029ac54b5eea7870a40c919ec76177ec3c27721497e9",
+    "seq": 6,
+    "file": "factory/topic-research/batches/claude-20261018-0006.json",
+    "sha256": "010649ec940519829ee49a9823766d9e20da9ef32a2b13beefa64ce24b98899e",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -496,8 +496,8 @@
       "file": "factory/topic-research/batches/claude-20261018-0005.json",
       "sha256": "ae2090e769ef4f6705f0029ac54b5eea7870a40c919ec76177ec3c27721497e9",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "87e603aa867b2a51b12dd78c0f623aa2059d3305",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -601,11 +601,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 6,
+      "file": "factory/topic-research/batches/claude-20261018-0006.json",
+      "sha256": "010649ec940519829ee49a9823766d9e20da9ef32a2b13beefa64ce24b98899e",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:lop-khong-sam-va-lop-co-sam-xe-may",
+          "locale": "vi",
+          "slug": "lop-khong-sam-va-lop-co-sam-xe-may",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-models",
+          "key": "vi::lop khong sam va lop co sam xe may khac nhau the nao khi bi thung",
+          "ta_id": null
+        },
+        {
+          "ref": "en:tubeless-vs-tube-motorbike-tyres-vietnam",
+          "locale": "en",
+          "slug": "tubeless-vs-tube-motorbike-tyres-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-models",
+          "key": "en::tubeless vs inner tube motorbike tyres what happens with a puncture",
+          "ta_id": null
+        },
+        {
+          "ref": "de:schlauchlos-oder-schlauchreifen-motorrad-vietnam",
+          "locale": "de",
+          "slug": "schlauchlos-oder-schlauchreifen-motorrad-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-models",
+          "key": "de::schlauchlose reifen oder schlauchreifen am roller bei einer reifenpanne",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:pneu-tubeless-ou-chambre-a-air-scooter-vietnam",
+          "locale": "fr",
+          "slug": "pneu-tubeless-ou-chambre-a-air-scooter-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-models",
+          "key": "fr::pneu tubeless ou avec chambre a air sur un scooter en cas de crevaison",
+          "ta_id": null
+        },
+        {
+          "ref": "es:neumatico-sin-camara-o-con-camara-moto-vietnam",
+          "locale": "es",
+          "slug": "neumatico-sin-camara-o-con-camara-moto-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-models",
+          "key": "es::neumatico sin camara o con camara en la moto cuando hay un pinchazo",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:tubeless-of-binnenband-scooter-vietnam",
+          "locale": "nl",
+          "slug": "tubeless-of-binnenband-scooter-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-models",
+          "key": "nl::tubeless banden of banden met binnenband op een scooter bij een lekke band",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:motuoche-zhenkongtai-he-neitai-qubie",
+          "locale": "zh",
+          "slug": "motuoche-zhenkongtai-he-neitai-qubie",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-models",
+          "key": "zh::摩托车真空胎和有内胎的轮胎扎钉后有什么区别",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:pneu-sem-camara-ou-com-camara-mota-vietname",
+          "locale": "pt",
+          "slug": "pneu-sem-camara-ou-com-camara-mota-vietname",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-models",
+          "key": "pt::pneu sem camara ou com camara de ar na mota quando ha um furo",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:tyubeuriseu-tyubeu-taieo-otobai-chai",
+          "locale": "ko",
+          "slug": "tyubeuriseu-tyubeu-taieo-otobai-chai",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-models",
+          "key": "ko::오토바이 튜브리스 타이어와 튜브 타이어 펑크 났을 때 차이",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:tubeless-tube-tire-bike-chigai",
+          "locale": "ja",
+          "slug": "tubeless-tube-tire-bike-chigai",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-models",
+          "key": "ja::ハイク チューフレスタイヤ チューフタイヤ ハンク 違い",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 6,
-    "file": "factory/topic-research/batches/claude-20261018-0006.json",
+    "seq": 7,
+    "file": "factory/topic-research/batches/claude-20261018-0007.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -645,6 +756,13 @@
       "seq": 5,
       "topics": 10,
       "sha256": "ae2090e769ef4f6705f0029ac54b5eea7870a40c919ec76177ec3c27721497e9"
+    },
+    {
+      "at": "2026-10-18T07:17:20.710Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 6,
+      "topics": 10,
+      "sha256": "010649ec940519829ee49a9823766d9e20da9ef32a2b13beefa64ce24b98899e"
     }
   ]
 }
