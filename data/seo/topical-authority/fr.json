@@ -4099,6 +4099,49 @@
         "source": "factory/topic-research/batches/research-idle-stop-20261017-b03.json@4e0cfc4fb4db"
       },
       "matrix_id": "FR-S94"
+    },
+    {
+      "candidate_id": "TA-FR-0089",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "voyants-tableau-de-bord-scooter-signification",
+      "primary_query": "signification des voyants du tableau de bord d'un scooter",
+      "secondary_queries": [
+        "voyant moteur allumé sur un scooter en roulant",
+        "voyant de vidange sur un scooter Honda"
+      ],
+      "working_title": "Voyants du tableau de bord d'un scooter : lesquels imposent de s'arrêter ?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Un voyageur qui conduit un scooter qu'il ne connaît pas voit un symbole s'allumer au compteur et veut savoir s'il s'agit d'une panne qui impose de s'arrêter ou d'une simple information comme la clé intelligente ou l'arrêt au ralenti.",
+      "content_angle": "Classe les voyants par niveau d'urgence à partir des manuels du propriétaire de Honda Vietnam et indique la conduite à tenir pour chacun, sans pousser à réparer soi-même.",
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "PGM-FI",
+        "ABS",
+        "Yamaha"
+      ],
+      "references": [
+        "rx-52dd28082ea0",
+        "rx-5111e5c1ae6d",
+        "rx-29f4ec4cc6b7"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0001.json@0da636c12c11"
+      },
+      "matrix_id": "FR-S95"
     }
   ]
 }
