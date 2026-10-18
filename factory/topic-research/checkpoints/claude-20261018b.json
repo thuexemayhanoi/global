@@ -7,45 +7,45 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:44:39.089Z",
+  "updated_at": "2026-10-18T23:46:17.895Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "94a540b93b7ece9caf07711cea47a596b9b75753",
+  "last_commit_sha": "fd3d064fbbfb269d6f074d5f6cde5d6db48f30ad",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 240,
-    "qa_pass": 240,
+    "researched": 250,
+    "qa_pass": 250,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 230,
+    "pushed": 240,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 25,
-      "de": 25,
-      "fr": 25,
-      "es": 25,
-      "nl": 25,
-      "pt": 25,
-      "zh": 25,
-      "ko": 25,
-      "ja": 25,
-      "en": 15
+      "vi": 26,
+      "de": 26,
+      "fr": 26,
+      "es": 26,
+      "nl": 26,
+      "pt": 26,
+      "zh": 26,
+      "ko": 26,
+      "ja": 26,
+      "en": 16
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
-      "hanoi-vietnam-travel": 70
+      "hanoi-vietnam-travel": 80
     }
   },
   "last_batch": {
-    "seq": 24,
-    "file": "factory/topic-research/batches/claude-20261018b-0024.json",
-    "sha256": "dab8601c750d90eaad4cd87cb01d2b69d392b1845fd1500777593ec3685f7d92",
+    "seq": 25,
+    "file": "factory/topic-research/batches/claude-20261018b-0025.json",
+    "sha256": "ffdbaf921fa22bf53dc3f76e37a2e92deb4ea91bba437759bcd31bebadf24228",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -2608,8 +2608,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0024.json",
       "sha256": "dab8601c750d90eaad4cd87cb01d2b69d392b1845fd1500777593ec3685f7d92",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "fd3d064fbbfb269d6f074d5f6cde5d6db48f30ad",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -2713,11 +2713,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 25,
+      "file": "factory/topic-research/batches/claude-20261018b-0025.json",
+      "sha256": "ffdbaf921fa22bf53dc3f76e37a2e92deb4ea91bba437759bcd31bebadf24228",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:ho-tay-tay-ho-di-quanh-ho-ha-noi",
+          "locale": "vi",
+          "slug": "ho-tay-tay-ho-di-quanh-ho-ha-noi",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "vi::di choi quanh ho tay ha noi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:west-lake-tay-ho-hanoi-things-to-do",
+          "locale": "en",
+          "slug": "west-lake-tay-ho-hanoi-things-to-do",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "en::things to do around west lake hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "de:westsee-hanoi-tay-ho-rund-um-den-see",
+          "locale": "de",
+          "slug": "westsee-hanoi-tay-ho-rund-um-den-see",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "de::rund um den westsee in hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:lac-de-l-ouest-hanoi-tay-ho",
+          "locale": "fr",
+          "slug": "lac-de-l-ouest-hanoi-tay-ho",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "fr::autour du lac de l'ouest a hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "es:lago-oeste-de-hanoi-tay-ho",
+          "locale": "es",
+          "slug": "lago-oeste-de-hanoi-tay-ho",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "es::alrededor del lago del oeste de hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:west-lake-hanoi-tay-ho",
+          "locale": "nl",
+          "slug": "west-lake-hanoi-tay-ho",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "nl::rond het west lake in hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-xihu-huanhu-youwan",
+          "locale": "zh",
+          "slug": "hanoi-xihu-huanhu-youwan",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "zh::河内西湖环湖游玩",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:lago-oeste-de-hanoi-tay-ho",
+          "locale": "pt",
+          "slug": "lago-oeste-de-hanoi-tay-ho",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "pt::a volta do lago oeste de hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-seoho-hosu-juwi-dullobogi",
+          "locale": "ko",
+          "slug": "hanoi-seoho-hosu-juwi-dullobogi",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "ko::하노이 서호 주변 둘러보기",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-seiko-shuhen-no-sugoshikata",
+          "locale": "ja",
+          "slug": "hanoi-seiko-shuhen-no-sugoshikata",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "ja::ハノイの西湖周辺の過こし方",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 25,
-    "file": "factory/topic-research/batches/claude-20261018b-0025.json",
+    "seq": 26,
+    "file": "factory/topic-research/batches/claude-20261018b-0026.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -2890,6 +3001,13 @@
       "seq": 24,
       "topics": 10,
       "sha256": "dab8601c750d90eaad4cd87cb01d2b69d392b1845fd1500777593ec3685f7d92"
+    },
+    {
+      "at": "2026-10-18T23:46:17.895Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 25,
+      "topics": 10,
+      "sha256": "ffdbaf921fa22bf53dc3f76e37a2e92deb4ea91bba437759bcd31bebadf24228"
     }
   ]
 }
