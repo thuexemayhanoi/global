@@ -7,45 +7,45 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:42:36.556Z",
+  "updated_at": "2026-10-18T23:42:42.699Z",
   "base_main_sha": "ee8da2c695e81a0ced3d1c9e6279976a214b1058",
-  "last_commit_sha": "513c4a9fb40267f8674bec1e093a32714d8ef9c6",
+  "last_commit_sha": "328d74ae43919088019ee90932fa6491abf09a1e",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 200,
-    "qa_pass": 200,
+    "researched": 210,
+    "qa_pass": 210,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 190,
+    "pushed": 200,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 21,
-      "de": 21,
-      "fr": 21,
-      "es": 21,
-      "nl": 21,
-      "pt": 21,
-      "zh": 21,
-      "ko": 21,
-      "ja": 21,
-      "en": 11
+      "vi": 22,
+      "de": 22,
+      "fr": 22,
+      "es": 22,
+      "nl": 22,
+      "pt": 22,
+      "zh": 22,
+      "ko": 22,
+      "ja": 22,
+      "en": 12
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
-      "hanoi-vietnam-travel": 30
+      "hanoi-vietnam-travel": 40
     }
   },
   "last_batch": {
-    "seq": 20,
-    "file": "factory/topic-research/batches/claude-20261018b-0020.json",
-    "sha256": "8ee442179865adf005e3254834bddb7e665ab9a4579657c733517a5e5d9f23e0",
+    "seq": 21,
+    "file": "factory/topic-research/batches/claude-20261018b-0021.json",
+    "sha256": "3af48c3b795a65780d22a3f604bbe65996db2338ea6e57a9afb9c6b69fa0e61e",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -2164,8 +2164,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0020.json",
       "sha256": "8ee442179865adf005e3254834bddb7e665ab9a4579657c733517a5e5d9f23e0",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "328d74ae43919088019ee90932fa6491abf09a1e",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -2269,11 +2269,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 21,
+      "file": "factory/topic-research/batches/claude-20261018b-0021.json",
+      "sha256": "3af48c3b795a65780d22a3f604bbe65996db2338ea6e57a9afb9c6b69fa0e61e",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:trung-thu-o-ha-noi-pho-hang-ma",
+          "locale": "vi",
+          "slug": "trung-thu-o-ha-noi-pho-hang-ma",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "vi::tet trung thu o ha noi di dau choi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:mid-autumn-festival-in-hanoi-hang-ma",
+          "locale": "en",
+          "slug": "mid-autumn-festival-in-hanoi-hang-ma",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "en::mid-autumn festival in hanoi where to go",
+          "ta_id": null
+        },
+        {
+          "ref": "de:mittherbstfest-in-hanoi-hang-ma",
+          "locale": "de",
+          "slug": "mittherbstfest-in-hanoi-hang-ma",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "de::mittherbstfest in hanoi wohin gehen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:fete-de-la-mi-automne-a-hanoi-hang-ma",
+          "locale": "fr",
+          "slug": "fete-de-la-mi-automne-a-hanoi-hang-ma",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "fr::fete de la mi-automne a hanoi ou aller",
+          "ta_id": null
+        },
+        {
+          "ref": "es:festival-del-medio-otono-en-hanoi-hang-ma",
+          "locale": "es",
+          "slug": "festival-del-medio-otono-en-hanoi-hang-ma",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "es::festival del medio otono en hanoi adonde ir",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:midherfstfeest-in-hanoi-hang-ma",
+          "locale": "nl",
+          "slug": "midherfstfeest-in-hanoi-hang-ma",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "nl::midherfstfeest in hanoi waar naartoe",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-zhongqiujie-hang-ma-jie",
+          "locale": "zh",
+          "slug": "hanoi-zhongqiujie-hang-ma-jie",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "zh::河内中秋节去哪里玩",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:festival-do-meio-outono-em-hanoi-hang-ma",
+          "locale": "pt",
+          "slug": "festival-do-meio-outono-em-hanoi-hang-ma",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "pt::festival do meio outono em hanoi onde ir",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-jungchuseol-hang-ma-geori",
+          "locale": "ko",
+          "slug": "hanoi-jungchuseol-hang-ma-geori",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "ko::하노이 중추절 어디 갈까",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-chushusetsu-hang-ma-dori",
+          "locale": "ja",
+          "slug": "hanoi-chushusetsu-hang-ma-dori",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "ja::ハノイの中秋節はとこへ行く",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 21,
-    "file": "factory/topic-research/batches/claude-20261018b-0021.json",
+    "seq": 22,
+    "file": "factory/topic-research/batches/claude-20261018b-0022.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -2418,6 +2529,13 @@
       "seq": 20,
       "topics": 10,
       "sha256": "8ee442179865adf005e3254834bddb7e665ab9a4579657c733517a5e5d9f23e0"
+    },
+    {
+      "at": "2026-10-18T23:42:42.699Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 21,
+      "topics": 10,
+      "sha256": "3af48c3b795a65780d22a3f604bbe65996db2338ea6e57a9afb9c6b69fa0e61e"
     }
   ]
 }
