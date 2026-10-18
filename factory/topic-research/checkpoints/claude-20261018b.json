@@ -7,33 +7,34 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T14:12:47.475Z",
-  "base_main_sha": "ac6fd1469e4db95184cb11db02d783ec82dbade3",
-  "last_commit_sha": "ac6fd1469e4db95184cb11db02d783ec82dbade3",
+  "updated_at": "2026-10-18T14:14:10.041Z",
+  "base_main_sha": "be617da99183962969b79f92fbe6cf214e818397",
+  "last_commit_sha": "45b7f5c5e9b64a1ebdaa148e3560a9b5af496ad8",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 10,
-    "qa_pass": 10,
+    "researched": 20,
+    "qa_pass": 20,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 0,
+    "pushed": 10,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 10
+      "vi": 10,
+      "de": 10
     },
     "domains": {
-      "transportation-mobility": 10
+      "transportation-mobility": 20
     }
   },
   "last_batch": {
-    "seq": 1,
-    "file": "factory/topic-research/batches/claude-20261018b-0001.json",
-    "sha256": "3a0d26cfa72c0b190493ec44dbdc06868f40a7e101f78b9aba0ba1d33b5a9656",
+    "seq": 2,
+    "file": "factory/topic-research/batches/claude-20261018b-0002.json",
+    "sha256": "03f044d7f5c0b724042dbdee53a0837a86cd8a4fe9f45bf6304b284146bc8db0",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -43,8 +44,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0001.json",
       "sha256": "3a0d26cfa72c0b190493ec44dbdc06868f40a7e101f78b9aba0ba1d33b5a9656",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "45b7f5c5e9b64a1ebdaa148e3560a9b5af496ad8",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -55,7 +56,7 @@
           "parent_id": null,
           "subcluster": "mob-urban-transit",
           "key": "vi::tau dien cat linh ha dong cac ga va loai ve",
-          "ta_id": null
+          "ta_id": "TA-VI-0094"
         },
         {
           "ref": "vi:metro-nhon-ga-ha-noi-doan-tren-cao-dang-chay",
@@ -65,7 +66,7 @@
           "parent_id": null,
           "subcluster": "mob-urban-transit",
           "key": "vi::metro nhon ga ha noi doan tren cao",
-          "ta_id": null
+          "ta_id": "TA-VI-0095"
         },
         {
           "ref": "vi:cach-di-xe-buyt-o-ha-noi-thanh-toan-khong-tien-mat",
@@ -75,7 +76,7 @@
           "parent_id": null,
           "subcluster": "mob-urban-transit",
           "key": "vi::cach di xe buyt o ha noi cho nguoi moi",
-          "ta_id": null
+          "ta_id": "TA-VI-0096"
         },
         {
           "ref": "vi:xe-buyt-dien-vinbus-ha-noi-cac-tuyen-chinh",
@@ -85,7 +86,7 @@
           "parent_id": null,
           "subcluster": "mob-urban-transit",
           "key": "vi::xe buyt dien vinbus ha noi cac tuyen",
-          "ta_id": null
+          "ta_id": "TA-VI-0097"
         },
         {
           "ref": "vi:tu-san-bay-noi-bai-ve-pho-co-bang-xe-buyt",
@@ -95,7 +96,7 @@
           "parent_id": null,
           "subcluster": "mob-last-mile",
           "key": "vi::tu san bay noi bai ve pho co bang xe buyt",
-          "ta_id": null
+          "ta_id": "TA-VI-0098"
         },
         {
           "ref": "vi:ben-xe-khach-duong-dai-o-ha-noi-ben-nao-di-huong-nao",
@@ -105,7 +106,7 @@
           "parent_id": null,
           "subcluster": "mob-intercity",
           "key": "vi::cac ben xe khach duong dai o ha noi",
-          "ta_id": null
+          "ta_id": "TA-VI-0099"
         },
         {
           "ref": "vi:di-tau-tu-ha-noi-len-sa-pa-tau-dem-den-lao-cai",
@@ -115,7 +116,7 @@
           "parent_id": null,
           "subcluster": "mob-intercity",
           "key": "vi::di tau tu ha noi len sapa",
-          "ta_id": null
+          "ta_id": "TA-VI-0100"
         },
         {
           "ref": "vi:di-tau-tu-ha-noi-den-ninh-binh-thoi-gian-ga-den",
@@ -125,7 +126,7 @@
           "parent_id": null,
           "subcluster": "mob-intercity",
           "key": "vi::di tau tu ha noi den ninh binh",
-          "ta_id": null
+          "ta_id": "TA-VI-0101"
         },
         {
           "ref": "vi:di-xe-khach-tu-ha-noi-den-ha-long-xe-tuyen-limousine",
@@ -135,7 +136,7 @@
           "parent_id": null,
           "subcluster": "mob-intercity",
           "key": "vi::di xe khach tu ha noi den ha long",
-          "ta_id": null
+          "ta_id": "TA-VI-0102"
         },
         {
           "ref": "vi:ung-dung-goi-xe-o-ha-noi-grab-xanh-sm-be",
@@ -145,14 +146,125 @@
           "parent_id": null,
           "subcluster": "mob-last-mile",
           "key": "vi::ung dung goi xe o ha noi cho khach nuoc ngoai",
+          "ta_id": "TA-VI-0103"
+        }
+      ]
+    },
+    {
+      "seq": 2,
+      "file": "factory/topic-research/batches/claude-20261018b-0002.json",
+      "sha256": "03f044d7f5c0b724042dbdee53a0837a86cd8a4fe9f45bf6304b284146bc8db0",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "de:hanoi-metro-linie-2a-cat-linh-ha-dong-stationen-tickets",
+          "locale": "de",
+          "slug": "hanoi-metro-linie-2a-cat-linh-ha-dong-stationen-tickets",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "de::hanoi metro linie 2a cat linh ha dong stationen und tickets",
+          "ta_id": null
+        },
+        {
+          "ref": "de:hanoi-metro-linie-3-nhon-cau-giay-hochbahnabschnitt",
+          "locale": "de",
+          "slug": "hanoi-metro-linie-3-nhon-cau-giay-hochbahnabschnitt",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "de::hanoi metro linie 3 nhon cau giay hochbahnabschnitt",
+          "ta_id": null
+        },
+        {
+          "ref": "de:mit-dem-bus-in-hanoi-fahren-linien-bezahlung-apps",
+          "locale": "de",
+          "slug": "mit-dem-bus-in-hanoi-fahren-linien-bezahlung-apps",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "de::mit dem bus in hanoi fahren linien bezahlung app",
+          "ta_id": null
+        },
+        {
+          "ref": "de:elektrobusse-vinbus-hanoi-linien-und-anbindung",
+          "locale": "de",
+          "slug": "elektrobusse-vinbus-hanoi-linien-und-anbindung",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "de::elektrobusse vinbus hanoi linien",
+          "ta_id": null
+        },
+        {
+          "ref": "de:flughafen-noi-bai-in-die-altstadt-von-hanoi-mit-dem-bus",
+          "locale": "de",
+          "slug": "flughafen-noi-bai-in-die-altstadt-von-hanoi-mit-dem-bus",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-last-mile",
+          "key": "de::flughafen noi bai altstadt hanoi mit dem bus",
+          "ta_id": null
+        },
+        {
+          "ref": "de:fernbusbahnhoefe-in-hanoi-welcher-bahnhof-wohin",
+          "locale": "de",
+          "slug": "fernbusbahnhoefe-in-hanoi-welcher-bahnhof-wohin",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "de::fernbusbahnhofe in hanoi welcher bahnhof wohin",
+          "ta_id": null
+        },
+        {
+          "ref": "de:mit-dem-zug-von-hanoi-nach-sapa-nachtzug-lao-cai",
+          "locale": "de",
+          "slug": "mit-dem-zug-von-hanoi-nach-sapa-nachtzug-lao-cai",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "de::mit dem zug von hanoi nach sapa",
+          "ta_id": null
+        },
+        {
+          "ref": "de:mit-dem-zug-von-hanoi-nach-ninh-binh-fahrzeit-bahnhof",
+          "locale": "de",
+          "slug": "mit-dem-zug-von-hanoi-nach-ninh-binh-fahrzeit-bahnhof",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "de::mit dem zug von hanoi nach ninh binh",
+          "ta_id": null
+        },
+        {
+          "ref": "de:mit-dem-bus-von-hanoi-nach-ha-long-linienbus-limousine",
+          "locale": "de",
+          "slug": "mit-dem-bus-von-hanoi-nach-ha-long-linienbus-limousine",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "de::mit dem bus von hanoi nach ha long",
+          "ta_id": null
+        },
+        {
+          "ref": "de:fahrdienst-apps-in-hanoi-grab-xanh-sm-be-vergleich",
+          "locale": "de",
+          "slug": "fahrdienst-apps-in-hanoi-grab-xanh-sm-be-vergleich",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-last-mile",
+          "key": "de::fahrdienst apps hanoi grab xanh sm be vergleich",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 2,
-    "file": "factory/topic-research/batches/claude-20261018b-0002.json",
+    "seq": 3,
+    "file": "factory/topic-research/batches/claude-20261018b-0003.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -164,6 +276,13 @@
       "seq": 1,
       "topics": 10,
       "sha256": "3a0d26cfa72c0b190493ec44dbdc06868f40a7e101f78b9aba0ba1d33b5a9656"
+    },
+    {
+      "at": "2026-10-18T14:14:10.041Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 2,
+      "topics": 10,
+      "sha256": "03f044d7f5c0b724042dbdee53a0837a86cd8a4fe9f45bf6304b284146bc8db0"
     }
   ]
 }
