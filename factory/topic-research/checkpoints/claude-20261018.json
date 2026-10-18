@@ -7,42 +7,42 @@
   "branch": "research/claude-20261018",
   "batch_session": "research-claude-20261018",
   "created_at": "2026-10-18T07:10:00.197Z",
-  "updated_at": "2026-10-18T07:13:44.066Z",
+  "updated_at": "2026-10-18T07:13:53.733Z",
   "base_main_sha": "3f17f5bf8829224ed1875247f2bbd016a4a7455a",
-  "last_commit_sha": "46318b44d2d7b0e90a332936305ceb70b02d1dee",
+  "last_commit_sha": "c840b2292cef6e7208f9ceaf3cec18b16610383d",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 30,
-    "qa_pass": 30,
+    "researched": 40,
+    "qa_pass": 40,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 20,
+    "pushed": 30,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 3,
-      "en": 3,
-      "de": 3,
-      "fr": 3,
-      "es": 3,
-      "nl": 3,
-      "zh": 3,
-      "pt": 3,
-      "ko": 3,
-      "ja": 3
+      "vi": 4,
+      "en": 4,
+      "de": 4,
+      "fr": 4,
+      "es": 4,
+      "nl": 4,
+      "zh": 4,
+      "pt": 4,
+      "ko": 4,
+      "ja": 4
     },
     "domains": {
-      "motorbike-rental": 30
+      "motorbike-rental": 40
     }
   },
   "last_batch": {
-    "seq": 3,
-    "file": "factory/topic-research/batches/claude-20261018-0003.json",
-    "sha256": "28ca869ca8438e2bacadc9949481f2910c772fc8a376d277486b4fc08bf4b21d",
+    "seq": 4,
+    "file": "factory/topic-research/batches/claude-20261018-0004.json",
+    "sha256": "c09b8a120111cbdf5e56a9d749f6d9363783c6ffd2fc7512c44fd7fe2be4133c",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -274,8 +274,8 @@
       "file": "factory/topic-research/batches/claude-20261018-0003.json",
       "sha256": "28ca869ca8438e2bacadc9949481f2910c772fc8a376d277486b4fc08bf4b21d",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "c840b2292cef6e7208f9ceaf3cec18b16610383d",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -379,11 +379,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 4,
+      "file": "factory/topic-research/batches/claude-20261018-0004.json",
+      "sha256": "c09b8a120111cbdf5e56a9d749f6d9363783c6ffd2fc7512c44fd7fe2be4133c",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:phanh-dong-co-xe-ga-va-xe-so-khi-do-deo",
+          "locale": "vi",
+          "slug": "phanh-dong-co-xe-ga-va-xe-so-khi-do-deo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-transmission",
+          "key": "vi::do deo bang xe tay ga hay xe so an toan hon",
+          "ta_id": null
+        },
+        {
+          "ref": "en:engine-braking-scooter-vs-semi-automatic-descents",
+          "locale": "en",
+          "slug": "engine-braking-scooter-vs-semi-automatic-descents",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-transmission",
+          "key": "en::engine braking on an automatic scooter vs a semi-automatic going downhill",
+          "ta_id": null
+        },
+        {
+          "ref": "de:motorbremse-roller-oder-halbautomatik-gefaelle",
+          "locale": "de",
+          "slug": "motorbremse-roller-oder-halbautomatik-gefaelle",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-transmission",
+          "key": "de::motorbremse beim automatikroller oder halbautomatik bergab",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:frein-moteur-scooter-ou-semi-automatique-descente",
+          "locale": "fr",
+          "slug": "frein-moteur-scooter-ou-semi-automatique-descente",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-transmission",
+          "key": "fr::frein moteur en descente scooter automatique ou moto semi-automatique",
+          "ta_id": null
+        },
+        {
+          "ref": "es:freno-motor-scooter-o-semiautomatica-bajadas",
+          "locale": "es",
+          "slug": "freno-motor-scooter-o-semiautomatica-bajadas",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-transmission",
+          "key": "es::freno motor en bajadas scooter automatico o moto semiautomatica",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:motorrem-scooter-of-semi-automaat-afdaling",
+          "locale": "nl",
+          "slug": "motorrem-scooter-of-semi-automaat-afdaling",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-transmission",
+          "key": "nl::motorrem bij een automatische scooter of semi-automaat bergaf",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:xiapo-fadongji-zhidong-tabanche-wanliangche",
+          "locale": "zh",
+          "slug": "xiapo-fadongji-zhidong-tabanche-wanliangche",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-transmission",
+          "key": "zh::长下坡骑踏板车还是弯梁车更安全 发动机制动",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:travao-motor-scooter-ou-semiautomatica-descidas",
+          "locale": "pt",
+          "slug": "travao-motor-scooter-ou-semiautomatica-descidas",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-transmission",
+          "key": "pt::travao motor nas descidas scooter automatica ou mota semiautomatica",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:naerimak-enjin-beureikeu-seukuteo-ban-jadong",
+          "locale": "ko",
+          "slug": "naerimak-enjin-beureikeu-seukuteo-ban-jadong",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-transmission",
+          "key": "ko::긴 내리막 엔진 브레이크 스쿠터와 반자동 오토바이 차이",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:kudarizaka-engine-brake-scooter-han-jidou",
+          "locale": "ja",
+          "slug": "kudarizaka-engine-brake-scooter-han-jidou",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-transmission",
+          "key": "ja::長い下り坂 エンシンフレーキ スクーター 半自動 違い",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 4,
-    "file": "factory/topic-research/batches/claude-20261018-0004.json",
+    "seq": 5,
+    "file": "factory/topic-research/batches/claude-20261018-0005.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -409,6 +520,13 @@
       "seq": 3,
       "topics": 10,
       "sha256": "28ca869ca8438e2bacadc9949481f2910c772fc8a376d277486b4fc08bf4b21d"
+    },
+    {
+      "at": "2026-10-18T07:13:53.733Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 4,
+      "topics": 10,
+      "sha256": "c09b8a120111cbdf5e56a9d749f6d9363783c6ffd2fc7512c44fd7fe2be4133c"
     }
   ]
 }
