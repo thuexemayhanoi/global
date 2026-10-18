@@ -7,45 +7,45 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:46:17.895Z",
+  "updated_at": "2026-10-18T23:46:24.839Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "fd3d064fbbfb269d6f074d5f6cde5d6db48f30ad",
+  "last_commit_sha": "e71423490e8d86aa0172adfc7bc4b81c7dbe591d",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 250,
-    "qa_pass": 250,
+    "researched": 260,
+    "qa_pass": 260,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 240,
+    "pushed": 250,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 26,
-      "de": 26,
-      "fr": 26,
-      "es": 26,
-      "nl": 26,
-      "pt": 26,
-      "zh": 26,
-      "ko": 26,
-      "ja": 26,
-      "en": 16
+      "vi": 27,
+      "de": 27,
+      "fr": 27,
+      "es": 27,
+      "nl": 27,
+      "pt": 27,
+      "zh": 27,
+      "ko": 27,
+      "ja": 27,
+      "en": 17
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
-      "hanoi-vietnam-travel": 80
+      "hanoi-vietnam-travel": 90
     }
   },
   "last_batch": {
-    "seq": 25,
-    "file": "factory/topic-research/batches/claude-20261018b-0025.json",
-    "sha256": "ffdbaf921fa22bf53dc3f76e37a2e92deb4ea91bba437759bcd31bebadf24228",
+    "seq": 26,
+    "file": "factory/topic-research/batches/claude-20261018b-0026.json",
+    "sha256": "eaa70733d319cbbb46271ee9c34bc9f6b1f3fb5c7df3638504774294a3023982",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -2719,8 +2719,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0025.json",
       "sha256": "ffdbaf921fa22bf53dc3f76e37a2e92deb4ea91bba437759bcd31bebadf24228",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "e71423490e8d86aa0172adfc7bc4b81c7dbe591d",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -2824,23 +2824,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 26,
+      "file": "factory/topic-research/batches/claude-20261018b-0026.json",
+      "sha256": "eaa70733d319cbbb46271ee9c34bc9f6b1f3fb5c7df3638504774294a3023982",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:quy-tac-ung-xu-khi-tham-chua-den",
+          "locale": "vi",
+          "slug": "quy-tac-ung-xu-khi-tham-chua-den",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "vi::quy tac ung xu khi di chua den o viet nam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:vietnam-temple-and-pagoda-etiquette",
+          "locale": "en",
+          "slug": "vietnam-temple-and-pagoda-etiquette",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "en::temple and pagoda etiquette in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:tempel-und-pagoden-etikette-in-vietnam",
+          "locale": "de",
+          "slug": "tempel-und-pagoden-etikette-in-vietnam",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "de::tempel- und pagoden-etikette in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:etiquette-dans-les-temples-et-pagodes-du-vietnam",
+          "locale": "fr",
+          "slug": "etiquette-dans-les-temples-et-pagodes-du-vietnam",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "fr::etiquette dans les temples et pagodes au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:etiqueta-en-templos-y-pagodas-de-vietnam",
+          "locale": "es",
+          "slug": "etiqueta-en-templos-y-pagodas-de-vietnam",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "es::etiqueta en templos y pagodas de vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:etiquette-in-tempels-en-pagodes-in-vietnam",
+          "locale": "nl",
+          "slug": "etiquette-in-tempels-en-pagodes-in-vietnam",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "nl::etiquette in tempels en pagodes in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-simiao-baota-liyi",
+          "locale": "zh",
+          "slug": "yuenan-simiao-baota-liyi",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "zh::越南寺庙和佛塔参拜礼仪",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:etiqueta-em-templos-e-pagodes-do-vietname",
+          "locale": "pt",
+          "slug": "etiqueta-em-templos-e-pagodes-do-vietname",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "pt::etiqueta em templos e pagodes do vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-sawon-sachal-yejeol",
+          "locale": "ko",
+          "slug": "beteunam-sawon-sachal-yejeol",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "ko::베트남 사원과 불교 사찰 예절",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-jiin-to-pagoda-no-reigi",
+          "locale": "ja",
+          "slug": "betonamu-jiin-to-pagoda-no-reigi",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-etiquette",
+          "key": "ja::ヘトナムの寺院とハコタのマナー",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 26,
-    "file": "factory/topic-research/batches/claude-20261018b-0026.json",
+    "seq": 27,
+    "file": "factory/topic-research/batches/claude-20261018b-0027.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T14:12:47.475Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 1,
-      "topics": 10,
-      "sha256": "3a0d26cfa72c0b190493ec44dbdc06868f40a7e101f78b9aba0ba1d33b5a9656"
-    },
     {
       "at": "2026-10-18T14:14:10.041Z",
       "event": "BATCH_COMMITTED",
@@ -3008,6 +3112,13 @@
       "seq": 25,
       "topics": 10,
       "sha256": "ffdbaf921fa22bf53dc3f76e37a2e92deb4ea91bba437759bcd31bebadf24228"
+    },
+    {
+      "at": "2026-10-18T23:46:24.839Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 26,
+      "topics": 10,
+      "sha256": "eaa70733d319cbbb46271ee9c34bc9f6b1f3fb5c7df3638504774294a3023982"
     }
   ]
 }
