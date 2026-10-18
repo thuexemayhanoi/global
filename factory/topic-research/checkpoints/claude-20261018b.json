@@ -7,46 +7,46 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:52:57.296Z",
+  "updated_at": "2026-10-18T23:56:51.419Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "2480118bea88911246202b8ff169c4ad183ac8fd",
+  "last_commit_sha": "1285057efda5790da73b7063c14245c5e4d10eb6",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 320,
-    "qa_pass": 320,
+    "researched": 330,
+    "qa_pass": 330,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 310,
+    "pushed": 320,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 33,
-      "de": 33,
-      "fr": 33,
-      "es": 33,
-      "nl": 33,
-      "pt": 33,
-      "zh": 33,
-      "ko": 33,
-      "ja": 33,
-      "en": 23
+      "vi": 34,
+      "de": 34,
+      "fr": 34,
+      "es": 34,
+      "nl": 34,
+      "pt": 34,
+      "zh": 34,
+      "ko": 34,
+      "ja": 34,
+      "en": 24
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
-      "destinations-experiences": 50
+      "destinations-experiences": 60
     }
   },
   "last_batch": {
-    "seq": 32,
-    "file": "factory/topic-research/batches/claude-20261018b-0032.json",
-    "sha256": "54037d1f10c6044fd36f9f3b17036908ae6068d59ec954dfc51831b2e8c6b95e",
+    "seq": 33,
+    "file": "factory/topic-research/batches/claude-20261018b-0033.json",
+    "sha256": "03cca7267fc5cd6a0a6b09ddb64a8c5c40d7532acfe985d7839a59aef6feef43",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -3497,8 +3497,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0032.json",
       "sha256": "54037d1f10c6044fd36f9f3b17036908ae6068d59ec954dfc51831b2e8c6b95e",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "1285057efda5790da73b7063c14245c5e4d10eb6",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -3602,23 +3602,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 33,
+      "file": "factory/topic-research/batches/claude-20261018b-0033.json",
+      "sha256": "03cca7267fc5cd6a0a6b09ddb64a8c5c40d7532acfe985d7839a59aef6feef43",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:quan-the-danh-thang-trang-an-di-san-unesco",
+          "locale": "vi",
+          "slug": "quan-the-danh-thang-trang-an-di-san-unesco",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "vi::tham quan quan the danh thang trang an di san unesco",
+          "ta_id": null
+        },
+        {
+          "ref": "en:trang-an-landscape-complex-unesco-visit",
+          "locale": "en",
+          "slug": "trang-an-landscape-complex-unesco-visit",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "en::visiting the trang an landscape complex unesco site",
+          "ta_id": null
+        },
+        {
+          "ref": "de:trang-an-landschaftskomplex-unesco-besuch",
+          "locale": "de",
+          "slug": "trang-an-landschaftskomplex-unesco-besuch",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "de::besuch des trang-an-landschaftskomplexes unesco-welterbe",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:complexe-paysager-de-trang-an-unesco-visite",
+          "locale": "fr",
+          "slug": "complexe-paysager-de-trang-an-unesco-visite",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "fr::visiter le complexe paysager de trang an site unesco",
+          "ta_id": null
+        },
+        {
+          "ref": "es:complejo-paisajistico-de-trang-an-unesco-visita",
+          "locale": "es",
+          "slug": "complejo-paisajistico-de-trang-an-unesco-visita",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "es::visitar el complejo paisajistico de trang an sitio unesco",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:landschapscomplex-trang-an-unesco-bezoek",
+          "locale": "nl",
+          "slug": "landschapscomplex-trang-an-unesco-bezoek",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "nl::bezoek aan het landschapscomplex trang an unesco-site",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:changan-mingsheng-qun-unesco-canguan",
+          "locale": "zh",
+          "slug": "changan-mingsheng-qun-unesco-canguan",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "zh::参观长安名胜群世界遗产",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:complexo-paisagistico-de-trang-an-unesco-visita",
+          "locale": "pt",
+          "slug": "complexo-paisagistico-de-trang-an-unesco-visita",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "pt::visitar o complexo paisagistico de trang an sitio unesco",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:jjangan-gyeonggwan-danji-yunesko-bangmun",
+          "locale": "ko",
+          "slug": "jjangan-gyeonggwan-danji-yunesko-bangmun",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "ko::짱안 경관 단지 유네스코 방문",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:chan-an-keikan-fukugotai-yunesuko-kengaku",
+          "locale": "ja",
+          "slug": "chan-an-keikan-fukugotai-yunesuko-kengaku",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "ja::チャンアン景観複合体の見学カイト",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 33,
-    "file": "factory/topic-research/batches/claude-20261018b-0033.json",
+    "seq": 34,
+    "file": "factory/topic-research/batches/claude-20261018b-0034.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T14:22:47.380Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 8,
-      "topics": 10,
-      "sha256": "2921fbefd1c54244f14046c20fa932f68dea0adcde40d016f313f134798f5ba8"
-    },
     {
       "at": "2026-10-18T14:22:53.678Z",
       "event": "BATCH_COMMITTED",
@@ -3786,6 +3890,13 @@
       "seq": 32,
       "topics": 10,
       "sha256": "54037d1f10c6044fd36f9f3b17036908ae6068d59ec954dfc51831b2e8c6b95e"
+    },
+    {
+      "at": "2026-10-18T23:56:51.419Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 33,
+      "topics": 10,
+      "sha256": "03cca7267fc5cd6a0a6b09ddb64a8c5c40d7532acfe985d7839a59aef6feef43"
     }
   ]
 }
