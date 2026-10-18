@@ -7,42 +7,42 @@
   "branch": "research/claude-20261018",
   "batch_session": "research-claude-20261018",
   "created_at": "2026-10-18T07:10:00.197Z",
-  "updated_at": "2026-10-18T07:10:00.197Z",
-  "base_main_sha": "aa3d1a92585077b5b107b62aeca9988c6a1c1f65",
-  "last_commit_sha": "aa3d1a92585077b5b107b62aeca9988c6a1c1f65",
+  "updated_at": "2026-10-18T07:11:25.400Z",
+  "base_main_sha": "5c04925d926dd8491adcfe6ad3962123bfcc3867",
+  "last_commit_sha": "0da636c12c11b8623449f46dca1b0019144f4c25",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 10,
-    "qa_pass": 10,
+    "researched": 20,
+    "qa_pass": 20,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 0,
+    "pushed": 10,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 1,
-      "en": 1,
-      "de": 1,
-      "fr": 1,
-      "es": 1,
-      "nl": 1,
-      "zh": 1,
-      "pt": 1,
-      "ko": 1,
-      "ja": 1
+      "vi": 2,
+      "en": 2,
+      "de": 2,
+      "fr": 2,
+      "es": 2,
+      "nl": 2,
+      "zh": 2,
+      "pt": 2,
+      "ko": 2,
+      "ja": 2
     },
     "domains": {
-      "motorbike-rental": 10
+      "motorbike-rental": 20
     }
   },
   "last_batch": {
-    "seq": 1,
-    "file": "factory/topic-research/batches/claude-20261018-0001.json",
-    "sha256": "d6f4f0f94d34cb105da4734ef545fac0e848a27a72feee2cab8010a1b9bc64e1",
+    "seq": 2,
+    "file": "factory/topic-research/batches/claude-20261018-0002.json",
+    "sha256": "f43376b71b928899fb1bb94f8a5dbad4184870e54e1e9a2426904780d5a27de0",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -52,8 +52,8 @@
       "file": "factory/topic-research/batches/claude-20261018-0001.json",
       "sha256": "d6f4f0f94d34cb105da4734ef545fac0e848a27a72feee2cab8010a1b9bc64e1",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "0da636c12c11b8623449f46dca1b0019144f4c25",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -64,7 +64,7 @@
           "parent_id": "VI-H01",
           "subcluster": "vc-models",
           "key": "vi::y nghia cac den bao tren dong ho xe tay ga",
-          "ta_id": null
+          "ta_id": "TA-VI-0085"
         },
         {
           "ref": "en:scooter-dashboard-warning-lights-explained",
@@ -74,7 +74,7 @@
           "parent_id": "EN-H01",
           "subcluster": "vc-models",
           "key": "en::what do the warning lights on a scooter dashboard mean",
-          "ta_id": null
+          "ta_id": "TA-EN-0099"
         },
         {
           "ref": "de:warnleuchten-roller-cockpit-bedeutung",
@@ -84,7 +84,7 @@
           "parent_id": "DE-H01",
           "subcluster": "vc-models",
           "key": "de::warnleuchten im roller-cockpit bedeutung",
-          "ta_id": null
+          "ta_id": "TA-DE-0088"
         },
         {
           "ref": "fr:voyants-tableau-de-bord-scooter-signification",
@@ -94,7 +94,7 @@
           "parent_id": "FR-H01",
           "subcluster": "vc-models",
           "key": "fr::signification des voyants du tableau de bord d'un scooter",
-          "ta_id": null
+          "ta_id": "TA-FR-0089"
         },
         {
           "ref": "es:testigos-cuadro-scooter-significado",
@@ -104,7 +104,7 @@
           "parent_id": "ES-H01",
           "subcluster": "vc-models",
           "key": "es::que significan los testigos del cuadro de un scooter",
-          "ta_id": null
+          "ta_id": "TA-ES-0077"
         },
         {
           "ref": "nl:waarschuwingslampjes-scooter-dashboard-betekenis",
@@ -114,7 +114,7 @@
           "parent_id": "NL-H01",
           "subcluster": "vc-models",
           "key": "nl::betekenis van de waarschuwingslampjes op een scooterdashboard",
-          "ta_id": null
+          "ta_id": "TA-NL-0086"
         },
         {
           "ref": "zh:tabanche-yibiaopan-gaojingdeng",
@@ -124,7 +124,7 @@
           "parent_id": "ZH-H01",
           "subcluster": "vc-models",
           "key": "zh::踏板车仪表盘警告灯是什么意思",
-          "ta_id": null
+          "ta_id": "TA-ZH-0086"
         },
         {
           "ref": "pt:luzes-avisadoras-painel-scooter",
@@ -134,7 +134,7 @@
           "parent_id": "PT-H01",
           "subcluster": "vc-models",
           "key": "pt::o que significam as luzes avisadoras no painel de uma scooter",
-          "ta_id": null
+          "ta_id": "TA-PT-0086"
         },
         {
           "ref": "ko:seukuteo-gyegipan-gyeonggodeung",
@@ -144,7 +144,7 @@
           "parent_id": "KO-H01",
           "subcluster": "vc-models",
           "key": "ko::스쿠터 계기판 경고등 의미",
-          "ta_id": null
+          "ta_id": "TA-KO-0085"
         },
         {
           "ref": "ja:scooter-meter-keikokutou",
@@ -154,14 +154,125 @@
           "parent_id": "JA-H01",
           "subcluster": "vc-models",
           "key": "ja::スクーター メーター 警告灯 意味",
+          "ta_id": "TA-JA-0085"
+        }
+      ]
+    },
+    {
+      "seq": 2,
+      "file": "factory/topic-research/batches/claude-20261018-0002.json",
+      "sha256": "f43376b71b928899fb1bb94f8a5dbad4184870e54e1e9a2426904780d5a27de0",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:xe-tay-ga-day-binh-di-duoc-bao-xa",
+          "locale": "vi",
+          "slug": "xe-tay-ga-day-binh-di-duoc-bao-xa",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "vi::xe tay ga do day binh di duoc bao nhieu km",
+          "ta_id": null
+        },
+        {
+          "ref": "en:how-far-a-scooter-goes-on-a-full-tank",
+          "locale": "en",
+          "slug": "how-far-a-scooter-goes-on-a-full-tank",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "en::how far can a scooter go on a full tank in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:roller-reichweite-volltank-vietnam",
+          "locale": "de",
+          "slug": "roller-reichweite-volltank-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "de::wie weit kommt ein roller mit einer tankfullung in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:autonomie-scooter-plein-vietnam",
+          "locale": "fr",
+          "slug": "autonomie-scooter-plein-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "fr::quelle autonomie pour un scooter avec un plein d'essence au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:autonomia-scooter-deposito-lleno",
+          "locale": "es",
+          "slug": "autonomia-scooter-deposito-lleno",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "es::cuantos kilometros hace un scooter con el deposito lleno en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:actieradius-scooter-volle-tank",
+          "locale": "nl",
+          "slug": "actieradius-scooter-volle-tank",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "nl::hoe ver kom je met een volle tank op een scooter in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:tabanche-jiaman-you-neng-pao-duoyuan",
+          "locale": "zh",
+          "slug": "tabanche-jiaman-you-neng-pao-duoyuan",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "zh::踏板车加满一箱油能跑多远",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:autonomia-scooter-deposito-cheio",
+          "locale": "pt",
+          "slug": "autonomia-scooter-deposito-cheio",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "pt::quantos quilometros faz uma scooter com o deposito cheio no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:seukuteo-gadeuk-jueyu-juhaeng-geori",
+          "locale": "ko",
+          "slug": "seukuteo-gadeuk-jueyu-juhaeng-geori",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ko::스쿠터 기름 가득 넣으면 몇 km 가나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:scooter-mantan-kouzoku-kyori",
+          "locale": "ja",
+          "slug": "scooter-mantan-kouzoku-kyori",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ja::スクーター 満タン 何キロ走る ヘトナム",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 2,
-    "file": "factory/topic-research/batches/claude-20261018-0002.json",
+    "seq": 3,
+    "file": "factory/topic-research/batches/claude-20261018-0003.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -173,6 +284,13 @@
       "seq": 1,
       "topics": 10,
       "sha256": "d6f4f0f94d34cb105da4734ef545fac0e848a27a72feee2cab8010a1b9bc64e1"
+    },
+    {
+      "at": "2026-10-18T07:11:25.400Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 2,
+      "topics": 10,
+      "sha256": "f43376b71b928899fb1bb94f8a5dbad4184870e54e1e9a2426904780d5a27de0"
     }
   ]
 }
