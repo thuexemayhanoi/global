@@ -7,43 +7,44 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T14:32:00.028Z",
-  "base_main_sha": "7a2fe41f1964993fa099e23366b69727fa98766f",
-  "last_commit_sha": "8b23ccb2e444529768014e38ad07c55ea781986e",
+  "updated_at": "2026-10-18T23:23:05.997Z",
+  "base_main_sha": "fea60760c0c10cbca7fc1e9f13cc3fc0419dcbef",
+  "last_commit_sha": "0a844a740bbba6ae4c5fb0237d3a268c94638289",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 110,
-    "qa_pass": 110,
+    "researched": 120,
+    "qa_pass": 120,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 100,
+    "pushed": 110,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 12,
-      "de": 12,
-      "fr": 12,
-      "es": 12,
-      "nl": 12,
-      "pt": 12,
-      "zh": 12,
-      "ko": 12,
-      "ja": 12,
-      "en": 2
+      "vi": 13,
+      "de": 13,
+      "fr": 13,
+      "es": 13,
+      "nl": 13,
+      "pt": 13,
+      "zh": 13,
+      "ko": 13,
+      "ja": 13,
+      "en": 3
     },
     "domains": {
       "transportation-mobility": 90,
-      "traffic-law-safety": 20
+      "traffic-law-safety": 20,
+      "road-trips-routes": 10
     }
   },
   "last_batch": {
-    "seq": 11,
-    "file": "factory/topic-research/batches/claude-20261018b-0011.json",
-    "sha256": "513df16bbc98d63806a245cf1a0145268b8f7b794fc3df8344751978f10b0258",
+    "seq": 12,
+    "file": "factory/topic-research/batches/claude-20261018b-0012.json",
+    "sha256": "f7d24cde0de7cc7dbdb93b44442eaaf7d5fdcc84111bad77d10fca2ccf0e254f",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -1163,8 +1164,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0011.json",
       "sha256": "513df16bbc98d63806a245cf1a0145268b8f7b794fc3df8344751978f10b0258",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "0a844a740bbba6ae4c5fb0237d3a268c94638289",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -1175,7 +1176,7 @@
           "parent_id": "VI-H04",
           "subcluster": "ss-weather",
           "key": "vi::mua bao o mien bac viet nam di xe may can luu y gi",
-          "ta_id": null
+          "ta_id": "TA-VI-0105"
         },
         {
           "ref": "en:typhoon-season-northern-vietnam-riding-decisions",
@@ -1185,7 +1186,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-weather",
           "key": "en::typhoon season northern vietnam riding a motorbike",
-          "ta_id": null
+          "ta_id": "TA-EN-0109"
         },
         {
           "ref": "de:taifunsaison-nordvietnam-roller-fahren",
@@ -1195,7 +1196,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-weather",
           "key": "de::taifunsaison nordvietnam motorroller fahren",
-          "ta_id": null
+          "ta_id": "TA-DE-0108"
         },
         {
           "ref": "fr:saison-des-typhons-nord-vietnam-scooter",
@@ -1205,7 +1206,7 @@
           "parent_id": "FR-H04",
           "subcluster": "ss-weather",
           "key": "fr::saison des typhons nord du vietnam rouler a scooter",
-          "ta_id": null
+          "ta_id": "TA-FR-0109"
         },
         {
           "ref": "es:temporada-de-tifones-norte-vietnam-moto",
@@ -1215,7 +1216,7 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-weather",
           "key": "es::temporada de tifones norte de vietnam conducir moto",
-          "ta_id": null
+          "ta_id": "TA-ES-0097"
         },
         {
           "ref": "nl:tyfoonseizoen-noord-vietnam-scooter-rijden",
@@ -1225,7 +1226,7 @@
           "parent_id": "NL-H04",
           "subcluster": "ss-weather",
           "key": "nl::tyfoonseizoen noord-vietnam scooter rijden",
-          "ta_id": null
+          "ta_id": "TA-NL-0106"
         },
         {
           "ref": "zh:yuenan-beibu-taifengji-qi-motuoche-zhuyi",
@@ -1235,7 +1236,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-weather",
           "key": "zh::越南北部台风季骑摩托车注意什么",
-          "ta_id": null
+          "ta_id": "TA-ZH-0106"
         },
         {
           "ref": "pt:epoca-dos-tufoes-norte-vietname-moto",
@@ -1245,7 +1246,7 @@
           "parent_id": "PT-H04",
           "subcluster": "ss-weather",
           "key": "pt::epoca dos tufoes norte do vietname andar de moto",
-          "ta_id": null
+          "ta_id": "TA-PT-0106"
         },
         {
           "ref": "ko:beteunam-bukbu-taepungcheol-otobai",
@@ -1255,7 +1256,7 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-weather",
           "key": "ko::베트남 북부 태풍철 오토바이 타도 되나",
-          "ta_id": null
+          "ta_id": "TA-KO-0105"
         },
         {
           "ref": "ja:betonamu-hokubu-taifu-shizun-baiku-unten",
@@ -1265,14 +1266,125 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-weather",
           "key": "ja::ヘトナム北部 台風シースン ハイク 運転",
+          "ta_id": "TA-JA-0105"
+        }
+      ]
+    },
+    {
+      "seq": 12,
+      "file": "factory/topic-research/batches/claude-20261018b-0012.json",
+      "sha256": "f7d24cde0de7cc7dbdb93b44442eaaf7d5fdcc84111bad77d10fca2ccf0e254f",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:ha-noi-den-vuon-quoc-gia-ba-vi-bang-xe-may",
+          "locale": "vi",
+          "slug": "ha-noi-den-vuon-quoc-gia-ba-vi-bang-xe-may",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "vi::di xe may tu ha noi den vuon quoc gia ba vi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:hanoi-to-ba-vi-national-park-by-motorbike",
+          "locale": "en",
+          "slug": "hanoi-to-ba-vi-national-park-by-motorbike",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "en::hanoi to ba vi national park by motorbike",
+          "ta_id": null
+        },
+        {
+          "ref": "de:hanoi-zum-ba-vi-nationalpark-mit-dem-roller",
+          "locale": "de",
+          "slug": "hanoi-zum-ba-vi-nationalpark-mit-dem-roller",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "de::von hanoi zum ba-vi-nationalpark mit dem motorroller",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:hanoi-parc-national-ba-vi-a-scooter",
+          "locale": "fr",
+          "slug": "hanoi-parc-national-ba-vi-a-scooter",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "fr::de hanoi au parc national de ba vi a scooter",
+          "ta_id": null
+        },
+        {
+          "ref": "es:hanoi-parque-nacional-ba-vi-en-moto",
+          "locale": "es",
+          "slug": "hanoi-parque-nacional-ba-vi-en-moto",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "es::de hanoi al parque nacional de ba vi en moto",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:hanoi-nationaal-park-ba-vi-met-de-scooter",
+          "locale": "nl",
+          "slug": "hanoi-nationaal-park-ba-vi-met-de-scooter",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "nl::van hanoi naar nationaal park ba vi met de scooter",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-qi-motuoche-dao-bawei-guojia-gongyuan",
+          "locale": "zh",
+          "slug": "hanoi-qi-motuoche-dao-bawei-guojia-gongyuan",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "zh::从河内骑摩托车去巴维国家公园",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:hanoi-parque-nacional-ba-vi-de-moto",
+          "locale": "pt",
+          "slug": "hanoi-parque-nacional-ba-vi-de-moto",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "pt::de hanoi ao parque nacional de ba vi de moto",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-babi-gungnipgongwon-otobai-gagi",
+          "locale": "ko",
+          "slug": "hanoi-babi-gungnipgongwon-otobai-gagi",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "ko::하노이에서 바비 국립공원 오토바이로 가기",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-kara-bavi-kokuritsu-koen-baiku",
+          "locale": "ja",
+          "slug": "hanoi-kara-bavi-kokuritsu-koen-baiku",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-day-trips",
+          "key": "ja::ハノイからハウィ国立公園 ハイクて行く方法",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 12,
-    "file": "factory/topic-research/batches/claude-20261018b-0012.json",
+    "seq": 13,
+    "file": "factory/topic-research/batches/claude-20261018b-0013.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -1354,6 +1466,13 @@
       "seq": 11,
       "topics": 10,
       "sha256": "513df16bbc98d63806a245cf1a0145268b8f7b794fc3df8344751978f10b0258"
+    },
+    {
+      "at": "2026-10-18T23:23:05.997Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 12,
+      "topics": 10,
+      "sha256": "f7d24cde0de7cc7dbdb93b44442eaaf7d5fdcc84111bad77d10fca2ccf0e254f"
     }
   ]
 }
