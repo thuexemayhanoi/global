@@ -7,43 +7,43 @@
   "branch": "research/claude-20261018",
   "batch_session": "research-claude-20261018",
   "created_at": "2026-10-18T07:10:00.197Z",
-  "updated_at": "2026-10-18T07:20:16.003Z",
+  "updated_at": "2026-10-18T07:20:35.285Z",
   "base_main_sha": "d5cf6826f196e716f2a696375b993593d434dc28",
-  "last_commit_sha": "46cf5dba787a34f970854cbce109c31c5f86c2ac",
+  "last_commit_sha": "d35fbb92d8467e45442f261f612af4c8c2ed0f46",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 70,
-    "qa_pass": 70,
+    "researched": 80,
+    "qa_pass": 80,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 60,
+    "pushed": 70,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 7,
-      "en": 7,
-      "de": 7,
-      "fr": 7,
-      "es": 7,
-      "nl": 7,
-      "zh": 7,
-      "pt": 7,
-      "ko": 7,
-      "ja": 7
+      "vi": 8,
+      "en": 8,
+      "de": 8,
+      "fr": 8,
+      "es": 8,
+      "nl": 8,
+      "zh": 8,
+      "pt": 8,
+      "ko": 8,
+      "ja": 8
     },
     "domains": {
       "motorbike-rental": 60,
-      "traffic-law-safety": 10
+      "traffic-law-safety": 20
     }
   },
   "last_batch": {
-    "seq": 7,
-    "file": "factory/topic-research/batches/claude-20261018-0007.json",
-    "sha256": "a7fd01493796e1f54c393eb7f10a8f16c9d076d30ff5829bc8de0329cc4829a1",
+    "seq": 8,
+    "file": "factory/topic-research/batches/claude-20261018-0008.json",
+    "sha256": "ad93bbf4db9b39ba98c69dcbbf7d3f6982c824d7056f202d4a3df1c551214e91",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -719,8 +719,8 @@
       "file": "factory/topic-research/batches/claude-20261018-0007.json",
       "sha256": "a7fd01493796e1f54c393eb7f10a8f16c9d076d30ff5829bc8de0329cc4829a1",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "d35fbb92d8467e45442f261f612af4c8c2ed0f46",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -824,11 +824,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 8,
+      "file": "factory/topic-research/batches/claude-20261018-0008.json",
+      "sha256": "ad93bbf4db9b39ba98c69dcbbf7d3f6982c824d7056f202d4a3df1c551214e91",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:di-xe-may-o-ha-noi-dip-tet",
+          "locale": "vi",
+          "slug": "di-xe-may-o-ha-noi-dip-tet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::di xe may o ha noi dip tet can luu y gi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:riding-a-motorbike-in-hanoi-during-tet",
+          "locale": "en",
+          "slug": "riding-a-motorbike-in-hanoi-during-tet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::riding a motorbike in hanoi during tet what to expect",
+          "ta_id": null
+        },
+        {
+          "ref": "de:rollerfahren-in-hanoi-zum-tet-fest",
+          "locale": "de",
+          "slug": "rollerfahren-in-hanoi-zum-tet-fest",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::rollerfahren in hanoi wahrend tet worauf achten",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:rouler-en-scooter-a-hanoi-pendant-le-tet",
+          "locale": "fr",
+          "slug": "rouler-en-scooter-a-hanoi-pendant-le-tet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::rouler en scooter a hanoi pendant le tet a quoi s'attendre",
+          "ta_id": null
+        },
+        {
+          "ref": "es:conducir-moto-en-hanoi-durante-el-tet",
+          "locale": "es",
+          "slug": "conducir-moto-en-hanoi-durante-el-tet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::conducir moto en hanoi durante el tet que esperar",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:scooterrijden-in-hanoi-tijdens-tet",
+          "locale": "nl",
+          "slug": "scooterrijden-in-hanoi-tijdens-tet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::scooterrijden in hanoi tijdens tet waar moet je op letten",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanei-chunjie-qi-motuoche-zhuyi-shixiang",
+          "locale": "zh",
+          "slug": "hanei-chunjie-qi-motuoche-zhuyi-shixiang",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南春节期间在河内骑摩托车要注意什么",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:andar-de-mota-em-hanoi-durante-o-tet",
+          "locale": "pt",
+          "slug": "andar-de-mota-em-hanoi-durante-o-tet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::andar de mota em hanoi durante o tet o que esperar",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-tet-otobai-unjeon-juui",
+          "locale": "ko",
+          "slug": "hanoi-tet-otobai-unjeon-juui",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::하노이 뗏 기간 오토바이 운전 주의사항",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-tet-bike-chuui",
+          "locale": "ja",
+          "slug": "hanoi-tet-bike-chuui",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ハノイ テト ハイク 運転 注意",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 8,
-    "file": "factory/topic-research/batches/claude-20261018-0008.json",
+    "seq": 9,
+    "file": "factory/topic-research/batches/claude-20261018-0009.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -882,6 +993,13 @@
       "seq": 7,
       "topics": 10,
       "sha256": "a7fd01493796e1f54c393eb7f10a8f16c9d076d30ff5829bc8de0329cc4829a1"
+    },
+    {
+      "at": "2026-10-18T07:20:35.285Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 8,
+      "topics": 10,
+      "sha256": "ad93bbf4db9b39ba98c69dcbbf7d3f6982c824d7056f202d4a3df1c551214e91"
     }
   ]
 }
