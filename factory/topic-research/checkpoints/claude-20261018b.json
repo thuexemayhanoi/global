@@ -7,44 +7,44 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:27:37.873Z",
-  "base_main_sha": "be1ef1bf154e0acd9dda4e379a43a35a0f6b9af3",
-  "last_commit_sha": "ae463831e0b1ae5f42c4e1eb5cfe4fbd9349f709",
+  "updated_at": "2026-10-18T23:31:44.031Z",
+  "base_main_sha": "65ebb28819c68d2ee3dc42a9433d32b28087924d",
+  "last_commit_sha": "c56443675168d7045af013b1f99e10cfd9796927",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 150,
-    "qa_pass": 150,
+    "researched": 160,
+    "qa_pass": 160,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 140,
+    "pushed": 150,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 16,
-      "de": 16,
-      "fr": 16,
-      "es": 16,
-      "nl": 16,
-      "pt": 16,
-      "zh": 16,
-      "ko": 16,
-      "ja": 16,
-      "en": 6
+      "vi": 17,
+      "de": 17,
+      "fr": 17,
+      "es": 17,
+      "nl": 17,
+      "pt": 17,
+      "zh": 17,
+      "ko": 17,
+      "ja": 17,
+      "en": 7
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
-      "road-trips-routes": 40
+      "road-trips-routes": 50
     }
   },
   "last_batch": {
-    "seq": 15,
-    "file": "factory/topic-research/batches/claude-20261018b-0015.json",
-    "sha256": "bf56aa34ad696f4af3ee6820839e1cbbddfba653c9410d689216464f0f22b730",
+    "seq": 16,
+    "file": "factory/topic-research/batches/claude-20261018b-0016.json",
+    "sha256": "d5a6d13b5725d16f697e49af3994e7da0cd379cc6d0bb2f77acfcd2ccbabf2ad",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -1608,8 +1608,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0015.json",
       "sha256": "bf56aa34ad696f4af3ee6820839e1cbbddfba653c9410d689216464f0f22b730",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "c56443675168d7045af013b1f99e10cfd9796927",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -1620,7 +1620,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "vi::di xe may tu ha noi len tam dao",
-          "ta_id": null
+          "ta_id": "TA-VI-0109"
         },
         {
           "ref": "en:hanoi-to-tam-dao-by-motorbike",
@@ -1630,7 +1630,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "en::hanoi to tam dao by motorbike",
-          "ta_id": null
+          "ta_id": "TA-EN-0113"
         },
         {
           "ref": "de:hanoi-nach-tam-dao-mit-dem-roller",
@@ -1640,7 +1640,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "de::von hanoi nach tam dao mit dem motorroller",
-          "ta_id": null
+          "ta_id": "TA-DE-0112"
         },
         {
           "ref": "fr:hanoi-tam-dao-a-scooter",
@@ -1650,7 +1650,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "fr::de hanoi a tam dao a scooter",
-          "ta_id": null
+          "ta_id": "TA-FR-0113"
         },
         {
           "ref": "es:hanoi-tam-dao-en-moto",
@@ -1660,7 +1660,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "es::de hanoi a tam dao en moto",
-          "ta_id": null
+          "ta_id": "TA-ES-0101"
         },
         {
           "ref": "nl:hanoi-tam-dao-met-de-scooter",
@@ -1670,7 +1670,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "nl::van hanoi naar tam dao met de scooter",
-          "ta_id": null
+          "ta_id": "TA-NL-0110"
         },
         {
           "ref": "zh:hanoi-qi-motuoche-dao-sandao",
@@ -1680,7 +1680,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "zh::从河内骑摩托车去三岛 tam dao",
-          "ta_id": null
+          "ta_id": "TA-ZH-0110"
         },
         {
           "ref": "pt:hanoi-tam-dao-de-moto",
@@ -1690,7 +1690,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "pt::de hanoi a tam dao de moto",
-          "ta_id": null
+          "ta_id": "TA-PT-0110"
         },
         {
           "ref": "ko:hanoi-ttamdao-otobai-gagi",
@@ -1700,7 +1700,7 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "ko::하노이에서 땀다오 오토바이로 가기",
-          "ta_id": null
+          "ta_id": "TA-KO-0109"
         },
         {
           "ref": "ja:hanoi-kara-tamudao-baiku-de-iku",
@@ -1710,14 +1710,125 @@
           "parent_id": null,
           "subcluster": "rt-day-trips",
           "key": "ja::ハノイからタムタオへハイクて行く方法",
+          "ta_id": "TA-JA-0109"
+        }
+      ]
+    },
+    {
+      "seq": 16,
+      "file": "factory/topic-research/batches/claude-20261018b-0016.json",
+      "sha256": "d5a6d13b5725d16f697e49af3994e7da0cd379cc6d0bb2f77acfcd2ccbabf2ad",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:ha-noi-den-mai-chau-pu-luong-bang-xe-may",
+          "locale": "vi",
+          "slug": "ha-noi-den-mai-chau-pu-luong-bang-xe-may",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-northern-loops",
+          "key": "vi::di xe may tu ha noi den mai chau pu luong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:hanoi-to-mai-chau-and-pu-luong-by-motorbike",
+          "locale": "en",
+          "slug": "hanoi-to-mai-chau-and-pu-luong-by-motorbike",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-northern-loops",
+          "key": "en::hanoi to mai chau and pu luong by motorbike",
+          "ta_id": null
+        },
+        {
+          "ref": "de:hanoi-nach-mai-chau-und-pu-luong-mit-dem-roller",
+          "locale": "de",
+          "slug": "hanoi-nach-mai-chau-und-pu-luong-mit-dem-roller",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-northern-loops",
+          "key": "de::von hanoi nach mai chau und pu luong mit dem motorroller",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:hanoi-mai-chau-pu-luong-a-scooter",
+          "locale": "fr",
+          "slug": "hanoi-mai-chau-pu-luong-a-scooter",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-northern-loops",
+          "key": "fr::de hanoi a mai chau et pu luong a scooter",
+          "ta_id": null
+        },
+        {
+          "ref": "es:hanoi-mai-chau-pu-luong-en-moto",
+          "locale": "es",
+          "slug": "hanoi-mai-chau-pu-luong-en-moto",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-northern-loops",
+          "key": "es::de hanoi a mai chau y pu luong en moto",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:hanoi-mai-chau-pu-luong-met-de-scooter",
+          "locale": "nl",
+          "slug": "hanoi-mai-chau-pu-luong-met-de-scooter",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-northern-loops",
+          "key": "nl::van hanoi naar mai chau en pu luong met de scooter",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-qi-motuoche-dao-mai-chau-pu-luong",
+          "locale": "zh",
+          "slug": "hanoi-qi-motuoche-dao-mai-chau-pu-luong",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-northern-loops",
+          "key": "zh::从河内骑摩托车去 mai chau 和 pu luong 的路线",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:hanoi-mai-chau-pu-luong-de-moto",
+          "locale": "pt",
+          "slug": "hanoi-mai-chau-pu-luong-de-moto",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-northern-loops",
+          "key": "pt::de hanoi a mai chau e pu luong de moto",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-maijjeou-pureong-otobai-gagi",
+          "locale": "ko",
+          "slug": "hanoi-maijjeou-pureong-otobai-gagi",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-northern-loops",
+          "key": "ko::하노이에서 마이쩌우 푸르엉 오토바이로 가기",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-kara-maichau-puruon-baiku-de-iku",
+          "locale": "ja",
+          "slug": "hanoi-kara-maichau-puruon-baiku-de-iku",
+          "domain_id": "road-trips-routes",
+          "parent_id": null,
+          "subcluster": "rt-northern-loops",
+          "key": "ja::ハノイからマイチャウとフールオンへハイクて行く方法",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 16,
-    "file": "factory/topic-research/batches/claude-20261018b-0016.json",
+    "seq": 17,
+    "file": "factory/topic-research/batches/claude-20261018b-0017.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -1827,6 +1938,13 @@
       "seq": 15,
       "topics": 10,
       "sha256": "bf56aa34ad696f4af3ee6820839e1cbbddfba653c9410d689216464f0f22b730"
+    },
+    {
+      "at": "2026-10-18T23:31:44.031Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 16,
+      "topics": 10,
+      "sha256": "d5a6d13b5725d16f697e49af3994e7da0cd379cc6d0bb2f77acfcd2ccbabf2ad"
     }
   ]
 }
