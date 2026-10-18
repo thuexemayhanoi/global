@@ -7,46 +7,46 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:57:10.972Z",
+  "updated_at": "2026-10-18T23:58:15.262Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "d01fbb169a9b2720d38dc7e41f413a69b1571d6f",
+  "last_commit_sha": "d0d2d2dbffd6d0c6595d9769d7ab851c8d42f8af",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 350,
-    "qa_pass": 350,
+    "researched": 360,
+    "qa_pass": 360,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 340,
+    "pushed": 350,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 36,
-      "de": 36,
-      "fr": 36,
-      "es": 36,
-      "nl": 36,
-      "pt": 36,
-      "zh": 36,
-      "ko": 36,
-      "ja": 36,
-      "en": 26
+      "vi": 37,
+      "de": 37,
+      "fr": 37,
+      "es": 37,
+      "nl": 37,
+      "pt": 37,
+      "zh": 37,
+      "ko": 37,
+      "ja": 37,
+      "en": 27
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
-      "destinations-experiences": 80
+      "destinations-experiences": 90
     }
   },
   "last_batch": {
-    "seq": 35,
-    "file": "factory/topic-research/batches/claude-20261018b-0035.json",
-    "sha256": "55c38f9360ee487c0b3cb818df87829cfb87c867665132c0a9847d3ac1d5dd18",
+    "seq": 36,
+    "file": "factory/topic-research/batches/claude-20261018b-0036.json",
+    "sha256": "75dccf21a8e6a355edaaaa7400e93f588f1a2b13534b46a95968bbd3b4adf480",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -3830,8 +3830,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0035.json",
       "sha256": "55c38f9360ee487c0b3cb818df87829cfb87c867665132c0a9847d3ac1d5dd18",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "d0d2d2dbffd6d0c6595d9769d7ab851c8d42f8af",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -3935,23 +3935,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 36,
+      "file": "factory/topic-research/batches/claude-20261018b-0036.json",
+      "sha256": "75dccf21a8e6a355edaaaa7400e93f588f1a2b13534b46a95968bbd3b4adf480",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:vuon-quoc-gia-cuc-phuong-tham-quan",
+          "locale": "vi",
+          "slug": "vuon-quoc-gia-cuc-phuong-tham-quan",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "vi::tham quan vuon quoc gia cuc phuong tu ha noi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:cuc-phuong-national-park-visit-from-hanoi",
+          "locale": "en",
+          "slug": "cuc-phuong-national-park-visit-from-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "en::visiting cuc phuong national park from hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "de:cuc-phuong-nationalpark-besuch-ab-hanoi",
+          "locale": "de",
+          "slug": "cuc-phuong-nationalpark-besuch-ab-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "de::besuch des cuc-phuong-nationalparks ab hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:parc-national-de-cuc-phuong-visite-depuis-hanoi",
+          "locale": "fr",
+          "slug": "parc-national-de-cuc-phuong-visite-depuis-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "fr::visiter le parc national de cuc phuong depuis hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "es:parque-nacional-cuc-phuong-visita-desde-hanoi",
+          "locale": "es",
+          "slug": "parque-nacional-cuc-phuong-visita-desde-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "es::visitar el parque nacional cuc phuong desde hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:cuc-phuong-nationaal-park-bezoek-vanuit-hanoi",
+          "locale": "nl",
+          "slug": "cuc-phuong-nationaal-park-bezoek-vanuit-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "nl::cuc phuong nationaal park bezoeken vanuit hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:juefang-guojia-gongyuan-cong-hanoi-canguan",
+          "locale": "zh",
+          "slug": "juefang-guojia-gongyuan-cong-hanoi-canguan",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "zh::从河内参观菊芳国家公园",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:parque-nacional-de-cuc-phuong-visita-a-partir-de-hanoi",
+          "locale": "pt",
+          "slug": "parque-nacional-de-cuc-phuong-visita-a-partir-de-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "pt::visitar o parque nacional de cuc phuong a partir de hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:kukpeong-gungnip-gongwon-hanoi-bangmun",
+          "locale": "ko",
+          "slug": "kukpeong-gungnip-gongwon-hanoi-bangmun",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "ko::하노이에서 꾹프엉 국립공원 가기",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-kara-kukkuhon-kokuritsu-koen",
+          "locale": "ja",
+          "slug": "hanoi-kara-kukkuhon-kokuritsu-koen",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "ja::ハノイからクックフォン国立公園へ行く方法",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 36,
-    "file": "factory/topic-research/batches/claude-20261018b-0036.json",
+    "seq": 37,
+    "file": "factory/topic-research/batches/claude-20261018b-0037.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T14:32:00.028Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 11,
-      "topics": 10,
-      "sha256": "513df16bbc98d63806a245cf1a0145268b8f7b794fc3df8344751978f10b0258"
-    },
     {
       "at": "2026-10-18T23:23:05.997Z",
       "event": "BATCH_COMMITTED",
@@ -4119,6 +4223,13 @@
       "seq": 35,
       "topics": 10,
       "sha256": "55c38f9360ee487c0b3cb818df87829cfb87c867665132c0a9847d3ac1d5dd18"
+    },
+    {
+      "at": "2026-10-18T23:58:15.262Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 36,
+      "topics": 10,
+      "sha256": "75dccf21a8e6a355edaaaa7400e93f588f1a2b13534b46a95968bbd3b4adf480"
     }
   ]
 }
