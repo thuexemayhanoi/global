@@ -7,46 +7,46 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:52:33.127Z",
+  "updated_at": "2026-10-18T23:52:41.097Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "297d2251ca51624cba9fe403b9621329c7470ea9",
+  "last_commit_sha": "0ea66362987cbdafcbaa3e4f0064270a46e5d598",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 290,
-    "qa_pass": 290,
+    "researched": 300,
+    "qa_pass": 300,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 280,
+    "pushed": 290,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 30,
-      "de": 30,
-      "fr": 30,
-      "es": 30,
-      "nl": 30,
-      "pt": 30,
-      "zh": 30,
-      "ko": 30,
-      "ja": 30,
-      "en": 20
+      "vi": 31,
+      "de": 31,
+      "fr": 31,
+      "es": 31,
+      "nl": 31,
+      "pt": 31,
+      "zh": 31,
+      "ko": 31,
+      "ja": 31,
+      "en": 21
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
-      "destinations-experiences": 20
+      "destinations-experiences": 30
     }
   },
   "last_batch": {
-    "seq": 29,
-    "file": "factory/topic-research/batches/claude-20261018b-0029.json",
-    "sha256": "bd7771b30cda3622236ff2c40721c0f25df024df280178d306a938a6ce5c5b82",
+    "seq": 30,
+    "file": "factory/topic-research/batches/claude-20261018b-0030.json",
+    "sha256": "fe4625768e3ecfbe9881aed69bc5f73423bcaf831f892fb1ec1c1a24d8e2bb90",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -3164,8 +3164,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0029.json",
       "sha256": "bd7771b30cda3622236ff2c40721c0f25df024df280178d306a938a6ce5c5b82",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "0ea66362987cbdafcbaa3e4f0064270a46e5d598",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -3269,23 +3269,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 30,
+      "file": "factory/topic-research/batches/claude-20261018b-0030.json",
+      "sha256": "fe4625768e3ecfbe9881aed69bc5f73423bcaf831f892fb1ec1c1a24d8e2bb90",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:xem-mua-roi-nuoc-nha-hat-thang-long",
+          "locale": "vi",
+          "slug": "xem-mua-roi-nuoc-nha-hat-thang-long",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "vi::xem mua roi nuoc o nha hat mua roi thang long",
+          "ta_id": null
+        },
+        {
+          "ref": "en:hanoi-water-puppet-show-thang-long-theatre",
+          "locale": "en",
+          "slug": "hanoi-water-puppet-show-thang-long-theatre",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "en::water puppet show in hanoi thang long theatre",
+          "ta_id": null
+        },
+        {
+          "ref": "de:wasserpuppentheater-hanoi-thang-long",
+          "locale": "de",
+          "slug": "wasserpuppentheater-hanoi-thang-long",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "de::wasserpuppentheater in hanoi thang long besuch",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:marionnettes-sur-l-eau-hanoi-theatre-thang-long",
+          "locale": "fr",
+          "slug": "marionnettes-sur-l-eau-hanoi-theatre-thang-long",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "fr::spectacle de marionnettes sur l'eau a hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "es:marionetas-de-agua-hanoi-teatro-thang-long",
+          "locale": "es",
+          "slug": "marionetas-de-agua-hanoi-teatro-thang-long",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "es::espectaculo de marionetas de agua en hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:waterpoppenspel-hanoi-thang-long-theater",
+          "locale": "nl",
+          "slug": "waterpoppenspel-hanoi-thang-long-theater",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "nl::waterpoppenspel in hanoi thang long theater",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-shuishang-muouxi-shenglong-juyuan",
+          "locale": "zh",
+          "slug": "hanoi-shuishang-muouxi-shenglong-juyuan",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "zh::河内水上木偶戏升龙木偶剧院",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:marionetas-de-agua-hanoi-teatro-thang-long",
+          "locale": "pt",
+          "slug": "marionetas-de-agua-hanoi-teatro-thang-long",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "pt::espetaculo de marionetas de agua em hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-susang-inhyeonggeuk-tanglong",
+          "locale": "ko",
+          "slug": "hanoi-susang-inhyeonggeuk-tanglong",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "ko::하노이 수상 인형극 탕롱 극장",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-suijo-ningyogeki-tanron-gekijo",
+          "locale": "ja",
+          "slug": "hanoi-suijo-ningyogeki-tanron-gekijo",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "ja::ハノイの水上人形劇タンロン劇場",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 30,
-    "file": "factory/topic-research/batches/claude-20261018b-0030.json",
+    "seq": 31,
+    "file": "factory/topic-research/batches/claude-20261018b-0031.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T14:18:47.309Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 5,
-      "topics": 10,
-      "sha256": "92691f0212cf5efae8e236079a340afe62b2dd8af2c12cbd55587cebff348db2"
-    },
     {
       "at": "2026-10-18T14:18:52.981Z",
       "event": "BATCH_COMMITTED",
@@ -3453,6 +3557,13 @@
       "seq": 29,
       "topics": 10,
       "sha256": "bd7771b30cda3622236ff2c40721c0f25df024df280178d306a938a6ce5c5b82"
+    },
+    {
+      "at": "2026-10-18T23:52:41.097Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 30,
+      "topics": 10,
+      "sha256": "fe4625768e3ecfbe9881aed69bc5f73423bcaf831f892fb1ec1c1a24d8e2bb90"
     }
   ]
 }
