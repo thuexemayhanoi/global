@@ -1,0 +1,522 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018"
+  },
+  "researched_on": "2026-10-18",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "co-banh-va-khoang-sang-gam-xe-tay-ga-xe-so",
+      "primary_query": "bánh 14 inch và bánh 17 inch xe máy khác nhau thế nào khi đi đường xấu",
+      "secondary_queries": [
+        "khoảng sáng gầm xe tay ga có thấp không",
+        "xe số hay xe tay ga đi đường đất ổ gà tốt hơn"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "Honda Blade",
+        "Yamaha Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Người định chạy xe máy về vùng quê hoặc lên núi thấy xe tay ga có bánh nhỏ, gầm thấp còn xe số bánh lớn hơn, và muốn biết khác biệt đó có ảnh hưởng thật đến việc đi qua ổ gà, đường đất hay không trước khi chọn xe.",
+      "content_angle": "So sánh cỡ bánh và khoảng sáng gầm của các mẫu xe phổ biến bằng thông số chính hãng, giải thích ý nghĩa khi chọn xe cho đường xấu, còn kỹ thuật lái qua ổ gà đã có ở bài riêng.",
+      "working_title": "Bánh xe và khoảng sáng gầm: xe tay ga hay xe số hợp với đường quê, đường núi?",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22vision%22%5D&version=103&category=2",
+          "title": "Honda Vietnam: Vision versions compared, 14-inch and 16-inch front wheels, 152-175 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22air-blade-160125%22%5D&version=85&category=2",
+          "title": "Honda Vietnam: Air Blade 160/125 specifications, 14-inch wheels and 141-142 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/san-pham/blade?category=1",
+          "title": "Honda Vietnam: Blade underbone specifications, 17-inch wheels and 141 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch wheels and 155 mm ground clearance",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S74",
+          "reason": "Bài VI-S74 dạy kỹ thuật lái qua ổ gà, sỏi đá; bài này giúp chọn xe theo cỡ bánh và khoảng sáng gầm trước chuyến đi."
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "wheel-size-ground-clearance-scooter-vs-underbone",
+      "primary_query": "14 inch scooter wheels vs 17 inch underbone wheels on rough roads",
+      "secondary_queries": [
+        "scooter ground clearance for rural roads in vietnam",
+        "is a scooter or semi-automatic better on dirt roads"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "Honda Blade",
+        "Yamaha Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Riders heading for villages or mountain roads notice that scooters have small wheels and low floors while semi-automatics have taller wheels, and want to know whether that really matters on potholes and dirt before choosing a bike.",
+      "content_angle": "Compares wheel size and ground clearance of common models using official specifications and explains what they mean when choosing a bike for rough roads; riding technique over potholes is covered on a separate page.",
+      "working_title": "Wheel Size and Ground Clearance: Scooter or Semi-Automatic for Rural and Mountain Roads?",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22vision%22%5D&version=103&category=2",
+          "title": "Honda Vietnam: Vision versions compared, 14-inch and 16-inch front wheels, 152-175 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22air-blade-160125%22%5D&version=85&category=2",
+          "title": "Honda Vietnam: Air Blade 160/125 specifications, 14-inch wheels and 141-142 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/san-pham/blade?category=1",
+          "title": "Honda Vietnam: Blade underbone specifications, 17-inch wheels and 141 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch wheels and 155 mm ground clearance",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "EN-S78",
+          "reason": "EN-S78 teaches how to ride over potholes and gravel; this page helps choose the bike by wheel size and ground clearance before the trip."
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "radgroesse-bodenfreiheit-roller-oder-halbautomatik",
+      "primary_query": "14-Zoll-Rollerräder oder 17-Zoll-Räder auf schlechten Straßen",
+      "secondary_queries": [
+        "Bodenfreiheit Roller für Landstraßen in Vietnam",
+        "Roller oder Halbautomatik besser auf Schotterwegen"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "Honda Blade",
+        "Yamaha Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Wer aufs Land oder in die Berge fahren will, sieht, dass Roller kleine Räder und wenig Bodenfreiheit haben, halbautomatische Mopeds dagegen größere Räder, und möchte wissen, ob das bei Schlaglöchern und Schotter wirklich zählt.",
+      "content_angle": "Vergleicht Radgröße und Bodenfreiheit gängiger Modelle anhand offizieller Datenblätter und erklärt, was das für die Fahrzeugwahl bedeutet; die Fahrtechnik auf schlechten Straßen steht auf einer eigenen Seite.",
+      "working_title": "Radgröße und Bodenfreiheit: Roller oder Halbautomatik für Land- und Bergstraßen?",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22vision%22%5D&version=103&category=2",
+          "title": "Honda Vietnam: Vision versions compared, 14-inch and 16-inch front wheels, 152-175 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22air-blade-160125%22%5D&version=85&category=2",
+          "title": "Honda Vietnam: Air Blade 160/125 specifications, 14-inch wheels and 141-142 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/san-pham/blade?category=1",
+          "title": "Honda Vietnam: Blade underbone specifications, 17-inch wheels and 141 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch wheels and 155 mm ground clearance",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "DE-S77",
+          "reason": "DE-S77 erklärt die Fahrtechnik bei Schlaglöchern und Schotter; diese Seite hilft, das Fahrzeug vor der Tour nach Radgröße und Bodenfreiheit zu wählen."
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "taille-roues-garde-au-sol-scooter-ou-semi-automatique",
+      "primary_query": "roues de 14 pouces ou de 17 pouces sur routes abîmées",
+      "secondary_queries": [
+        "garde au sol d'un scooter sur les routes rurales du Vietnam",
+        "scooter ou moto semi-automatique sur piste en terre"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "Honda Blade",
+        "Yamaha Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Avant de partir vers les villages ou la montagne, on remarque que les scooters ont de petites roues et une garde au sol faible, alors que les semi-automatiques ont des roues plus hautes, et l'on veut savoir si cela compte vraiment sur les nids-de-poule.",
+      "content_angle": "Compare la taille des roues et la garde au sol de modèles courants d'après les fiches officielles et explique ce que cela change dans le choix du véhicule ; la technique de conduite sur route abîmée fait l'objet d'une autre page.",
+      "working_title": "Taille des roues et garde au sol : scooter ou semi-automatique pour les routes de campagne et de montagne ?",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22vision%22%5D&version=103&category=2",
+          "title": "Honda Vietnam: Vision versions compared, 14-inch and 16-inch front wheels, 152-175 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22air-blade-160125%22%5D&version=85&category=2",
+          "title": "Honda Vietnam: Air Blade 160/125 specifications, 14-inch wheels and 141-142 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/san-pham/blade?category=1",
+          "title": "Honda Vietnam: Blade underbone specifications, 17-inch wheels and 141 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch wheels and 155 mm ground clearance",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "FR-S77",
+          "reason": "FR-S77 explique comment rouler sur les nids-de-poule et les gravillons ; cette page aide à choisir le véhicule selon la taille des roues et la garde au sol avant de partir."
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "tamano-rueda-altura-libre-scooter-o-semiautomatica",
+      "primary_query": "ruedas de 14 pulgadas o de 17 pulgadas en carreteras en mal estado",
+      "secondary_queries": [
+        "altura libre al suelo de un scooter en carreteras rurales de Vietnam",
+        "scooter o semiautomática para caminos de tierra"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "Honda Blade",
+        "Yamaha Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quien va a ir a pueblos o a la montaña ve que los scooters tienen ruedas pequeñas y poca altura libre, mientras que las semiautomáticas tienen ruedas más grandes, y quiere saber si eso importa de verdad en baches y tierra antes de elegir.",
+      "content_angle": "Compara el tamaño de rueda y la altura libre al suelo de modelos habituales con fichas oficiales y explica qué supone al elegir moto para carreteras malas; la técnica de conducción sobre baches está en otra página.",
+      "working_title": "Tamaño de rueda y altura libre: ¿scooter o semiautomática para carreteras rurales y de montaña?",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22vision%22%5D&version=103&category=2",
+          "title": "Honda Vietnam: Vision versions compared, 14-inch and 16-inch front wheels, 152-175 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22air-blade-160125%22%5D&version=85&category=2",
+          "title": "Honda Vietnam: Air Blade 160/125 specifications, 14-inch wheels and 141-142 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/san-pham/blade?category=1",
+          "title": "Honda Vietnam: Blade underbone specifications, 17-inch wheels and 141 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch wheels and 155 mm ground clearance",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "ES-S66",
+          "reason": "ES-S66 enseña a conducir sobre baches y grava; esta página ayuda a elegir la moto por tamaño de rueda y altura libre antes del viaje."
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "wielmaat-bodemvrijheid-scooter-of-semi-automaat",
+      "primary_query": "scooterwielen van 14 inch of wielen van 17 inch op slechte wegen",
+      "secondary_queries": [
+        "bodemvrijheid van een scooter op plattelandswegen in Vietnam",
+        "scooter of semi-automaat beter op onverharde wegen"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "Honda Blade",
+        "Yamaha Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Wie naar dorpen of de bergen wil, ziet dat scooters kleine wielen en weinig bodemvrijheid hebben en semi-automaten grotere wielen, en wil weten of dat bij gaten en onverharde stukken echt uitmaakt voordat je kiest.",
+      "content_angle": "Vergelijkt wielmaat en bodemvrijheid van gangbare modellen op basis van officiële specificaties en legt uit wat dat betekent voor je keuze; de rijtechniek op slecht wegdek staat op een aparte pagina.",
+      "working_title": "Wielmaat en bodemvrijheid: scooter of semi-automaat voor plattelands- en bergwegen?",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22vision%22%5D&version=103&category=2",
+          "title": "Honda Vietnam: Vision versions compared, 14-inch and 16-inch front wheels, 152-175 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22air-blade-160125%22%5D&version=85&category=2",
+          "title": "Honda Vietnam: Air Blade 160/125 specifications, 14-inch wheels and 141-142 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/san-pham/blade?category=1",
+          "title": "Honda Vietnam: Blade underbone specifications, 17-inch wheels and 141 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch wheels and 155 mm ground clearance",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "NL-S74",
+          "reason": "NL-S74 legt uit hoe je over gaten en grind rijdt; deze pagina helpt het voertuig vooraf te kiezen op wielmaat en bodemvrijheid."
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "lungu-chicun-lidi-jianxi-tabanche-wanliangche",
+      "primary_query": "14寸踏板车轮和17寸弯梁车轮走烂路有什么区别",
+      "secondary_queries": [
+        "踏板车离地间隙低吗 越南乡村路",
+        "土路坑洼路段骑踏板车还是弯梁车好"
+      ],
+      "entities": [
+        "本田 Vision",
+        "本田 Air Blade",
+        "本田 Blade",
+        "雅马哈 Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "打算骑车去越南乡村或山区的人会发现踏板车轮子小、离地间隙低，而弯梁车轮子更大，想在选车前弄清这种差别在坑洼路、土路上是否真的有影响，以免选错车型。",
+      "content_angle": "用官方参数对比常见车型的轮径和离地间隙，并说明这些数据对选择烂路用车意味着什么；坑洼路面的骑行技巧另有专页。",
+      "working_title": "轮径和离地间隙：跑乡村和山路该选踏板车还是弯梁车？",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22vision%22%5D&version=103&category=2",
+          "title": "Honda Vietnam: Vision versions compared, 14-inch and 16-inch front wheels, 152-175 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22air-blade-160125%22%5D&version=85&category=2",
+          "title": "Honda Vietnam: Air Blade 160/125 specifications, 14-inch wheels and 141-142 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/san-pham/blade?category=1",
+          "title": "Honda Vietnam: Blade underbone specifications, 17-inch wheels and 141 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch wheels and 155 mm ground clearance",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "ZH-S74",
+          "reason": "ZH-S74讲的是如何骑车通过坑洼和碎石路；本页帮助读者出发前按轮径和离地间隙选择车型。"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "tamanho-roda-altura-ao-solo-scooter-ou-semiautomatica",
+      "primary_query": "rodas de 14 polegadas ou de 17 polegadas em estradas degradadas",
+      "secondary_queries": [
+        "altura ao solo de uma scooter nas estradas rurais do Vietname",
+        "scooter ou semiautomática em caminhos de terra"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "Honda Blade",
+        "Yamaha Sirius"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quem vai para aldeias ou para a montanha repara que as scooters têm rodas pequenas e pouca altura ao solo e as semiautomáticas têm rodas maiores, e quer saber se isso faz mesmo diferença em buracos e terra antes de escolher.",
+      "content_angle": "Compara o tamanho das rodas e a altura ao solo de modelos comuns com base nas fichas oficiais e explica o que isso muda na escolha; a técnica de condução em piso degradado está noutra página.",
+      "working_title": "Tamanho da roda e altura ao solo: scooter ou semiautomática para estradas rurais e de montanha?",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22vision%22%5D&version=103&category=2",
+          "title": "Honda Vietnam: Vision versions compared, 14-inch and 16-inch front wheels, 152-175 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22air-blade-160125%22%5D&version=85&category=2",
+          "title": "Honda Vietnam: Air Blade 160/125 specifications, 14-inch wheels and 141-142 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/san-pham/blade?category=1",
+          "title": "Honda Vietnam: Blade underbone specifications, 17-inch wheels and 141 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch wheels and 155 mm ground clearance",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "PT-S75",
+          "reason": "PT-S75 ensina a atravessar buracos e gravilha; esta página ajuda a escolher a mota pelo tamanho da roda e pela altura ao solo antes da viagem."
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "bakwi-keugi-choejeo-jisango-seukuteo-ban-jadong",
+      "primary_query": "14인치 스쿠터 바퀴와 17인치 바퀴 비포장길 차이",
+      "secondary_queries": [
+        "스쿠터 최저 지상고 베트남 시골길",
+        "흙길에는 스쿠터와 반자동 중 무엇이 좋을까"
+      ],
+      "entities": [
+        "혼다 비전",
+        "혼다 에어블레이드",
+        "혼다 블레이드",
+        "야마하 시리우스"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "베트남 시골이나 산길로 가려는 여행자는 스쿠터는 바퀴가 작고 지상고가 낮으며 반자동은 바퀴가 크다는 것을 보고, 그 차이가 움푹 파인 길이나 흙길에서 실제로 중요한지 차종을 고르기 전에 알고 싶어 한다.",
+      "content_angle": "공식 제원으로 흔한 차종의 바퀴 크기와 최저 지상고를 비교하고 험한 길용 차량을 고를 때 무엇을 뜻하는지 설명한다. 험한 길 주행 기술은 별도 페이지에서 다룬다.",
+      "working_title": "바퀴 크기와 최저 지상고: 시골길·산길에는 스쿠터와 반자동 중 무엇이 맞을까?",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22vision%22%5D&version=103&category=2",
+          "title": "Honda Vietnam: Vision versions compared, 14-inch and 16-inch front wheels, 152-175 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22air-blade-160125%22%5D&version=85&category=2",
+          "title": "Honda Vietnam: Air Blade 160/125 specifications, 14-inch wheels and 141-142 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/san-pham/blade?category=1",
+          "title": "Honda Vietnam: Blade underbone specifications, 17-inch wheels and 141 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch wheels and 155 mm ground clearance",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "KO-S74",
+          "reason": "KO-S74는 패인 길과 자갈길을 지나가는 주행 요령을 다루고, 이 페이지는 출발 전에 바퀴 크기와 지상고로 차종을 고르는 법을 다룬다."
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "wheel-size-saitei-chijoukou-scooter-gear-tsuki",
+      "primary_query": "14インチ スクーター 17インチ ギア付き 悪路 違い",
+      "secondary_queries": [
+        "スクーター 最低地上高 ベトナム 田舎道",
+        "未舗装路 スクーターとギア付き どっち"
+      ],
+      "entities": [
+        "ホンダ ビジョン",
+        "ホンダ エアブレード",
+        "ホンダ ブレード",
+        "ヤマハ シリウス"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "ベトナムの田舎道や山道へ行く予定の人は、スクーターはホイールが小さく最低地上高が低い一方、ギア付きのビジネスバイクはホイールが大きいことに気づき、その差が穴ぼこや未舗装路で本当に影響するのかを車種選びの前に知りたい。",
+      "content_angle": "公式諸元で代表的な車種のホイールサイズと最低地上高を比較し、悪路向けの車種選びで何を意味するかを説明する。悪路の走り方は別ページで扱う。",
+      "working_title": "ホイールサイズと最低地上高：田舎道・山道にはスクーターとギア付きのどちらが合う？",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22vision%22%5D&version=103&category=2",
+          "title": "Honda Vietnam: Vision versions compared, 14-inch and 16-inch front wheels, 152-175 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/so-sanh?sp=%5B%22air-blade-160125%22%5D&version=85&category=2",
+          "title": "Honda Vietnam: Air Blade 160/125 specifications, 14-inch wheels and 141-142 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://www.honda.com.vn/xe-may/san-pham/blade?category=1",
+          "title": "Honda Vietnam: Blade underbone specifications, 17-inch wheels and 141 mm ground clearance",
+          "checked_on": "2026-10-18"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/xe/sirius-fi-phien-ban-phanh-co-mau-moi-2025-bsaf",
+          "title": "Yamaha Motor Vietnam: Sirius FI specifications, 17-inch wheels and 155 mm ground clearance",
+          "checked_on": "2026-10-18"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "JA-S75",
+          "reason": "JA-S75は穴ぼこや砂利道の走り方を扱い、本ページは出発前にホイールサイズと最低地上高で車種を選ぶ方法を扱う。"
+        }
+      ]
+    }
+  ]
+}
