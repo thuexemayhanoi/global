@@ -3646,6 +3646,104 @@
         "source": "factory/topic-research/batches/claude-20261018-0004.json@9cae983c7916"
       },
       "matrix_id": "ES-S86"
+    },
+    {
+      "candidate_id": "TA-ES-0081",
+      "locale": "es",
+      "role": "SUPPORT",
+      "parent_id": "ES-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-trip-fit",
+      "slug": "tamano-rueda-altura-libre-scooter-o-semiautomatica",
+      "primary_query": "ruedas de 14 pulgadas o de 17 pulgadas en carreteras en mal estado",
+      "secondary_queries": [
+        "altura libre al suelo de un scooter en carreteras rurales de Vietnam",
+        "scooter o semiautomática para caminos de tierra"
+      ],
+      "working_title": "Tamaño de rueda y altura libre: ¿scooter o semiautomática para carreteras rurales y de montaña?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Quien va a ir a pueblos o a la montaña ve que los scooters tienen ruedas pequeñas y poca altura libre, mientras que las semiautomáticas tienen ruedas más grandes, y quiere saber si eso importa de verdad en baches y tierra antes de elegir.",
+      "content_angle": "Compara el tamaño de rueda y la altura libre al suelo de modelos habituales con fichas oficiales y explica qué supone al elegir moto para carreteras malas; la técnica de conducción sobre baches está en otra página.",
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "Honda Blade",
+        "Yamaha Sirius"
+      ],
+      "references": [
+        "rx-38defba222bd",
+        "rx-f30b81052bef",
+        "rx-dca2465a9a74",
+        "rx-e61e53fafb8b"
+      ],
+      "distinct_from": [
+        {
+          "id": "ES-S66",
+          "reason": "ES-S66 enseña a conducir sobre baches y grava; esta página ayuda a elegir la moto por tamaño de rueda y altura libre antes del viaje."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0005.json@46cf5dba787a"
+      },
+      "matrix_id": "ES-S87"
+    },
+    {
+      "candidate_id": "TA-ES-0082",
+      "locale": "es",
+      "role": "SUPPORT",
+      "parent_id": "ES-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "neumatico-sin-camara-o-con-camara-moto-vietnam",
+      "primary_query": "neumático sin cámara o con cámara en la moto cuando hay un pinchazo",
+      "secondary_queries": [
+        "cómo saber si un scooter lleva neumáticos sin cámara",
+        "se puede circular con un clavo en un neumático sin cámara"
+      ],
+      "working_title": "Neumático sin cámara o con cámara: cuál lleva tu moto y qué cambia en un pinchazo",
+      "search_intent": "informational",
+      "word_target": 1400,
+      "priority": 50,
+      "intent_rationale": "Quien prepara rutas largas quiere saber si su moto lleva neumáticos sin cámara o con cámara, porque reaccionan distinto tras pisar un clavo: uno admite una reparación provisional para llegar despacio a un taller y el otro suele desinflarse rápido.",
+      "content_angle": "Explica cómo identificar el tipo de neumático con las fichas y manuales del fabricante, cómo cambia un pinchazo y qué límite de velocidad fija Honda tras una reparación provisional, sin repetir la página de averías.",
+      "entities": [
+        "neumático sin cámara",
+        "cámara de aire",
+        "Honda LEAD",
+        "Yamaha Sirius"
+      ],
+      "references": [
+        "rx-275724dbe8f7",
+        "rx-52dd28082ea0",
+        "rx-e61e53fafb8b",
+        "rx-9e02e0d05cee"
+      ],
+      "distinct_from": [
+        {
+          "id": "ES-S08",
+          "reason": "ES-S08 explica qué hacer si la moto alquilada se avería; esta página explica los dos tipos de neumático y cómo reconocerlos antes de salir."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0006.json@46cf5dba787a"
+      },
+      "matrix_id": "ES-S88"
     }
   ]
 }

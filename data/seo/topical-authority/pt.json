@@ -4143,6 +4143,104 @@
         "source": "factory/topic-research/batches/claude-20261018-0004.json@9cae983c7916"
       },
       "matrix_id": "PT-S95"
+    },
+    {
+      "candidate_id": "TA-PT-0090",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-trip-fit",
+      "slug": "tamanho-roda-altura-ao-solo-scooter-ou-semiautomatica",
+      "primary_query": "rodas de 14 polegadas ou de 17 polegadas em estradas degradadas",
+      "secondary_queries": [
+        "altura ao solo de uma scooter nas estradas rurais do Vietname",
+        "scooter ou semiautomática em caminhos de terra"
+      ],
+      "working_title": "Tamanho da roda e altura ao solo: scooter ou semiautomática para estradas rurais e de montanha?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Quem vai para aldeias ou para a montanha repara que as scooters têm rodas pequenas e pouca altura ao solo e as semiautomáticas têm rodas maiores, e quer saber se isso faz mesmo diferença em buracos e terra antes de escolher.",
+      "content_angle": "Compara o tamanho das rodas e a altura ao solo de modelos comuns com base nas fichas oficiais e explica o que isso muda na escolha; a técnica de condução em piso degradado está noutra página.",
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "Honda Blade",
+        "Yamaha Sirius"
+      ],
+      "references": [
+        "rx-38defba222bd",
+        "rx-f30b81052bef",
+        "rx-dca2465a9a74",
+        "rx-e61e53fafb8b"
+      ],
+      "distinct_from": [
+        {
+          "id": "PT-S75",
+          "reason": "PT-S75 ensina a atravessar buracos e gravilha; esta página ajuda a escolher a mota pelo tamanho da roda e pela altura ao solo antes da viagem."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0005.json@46cf5dba787a"
+      },
+      "matrix_id": "PT-S96"
+    },
+    {
+      "candidate_id": "TA-PT-0091",
+      "locale": "pt",
+      "role": "SUPPORT",
+      "parent_id": "PT-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "pneu-sem-camara-ou-com-camara-mota-vietname",
+      "primary_query": "pneu sem câmara ou com câmara de ar na mota quando há um furo",
+      "secondary_queries": [
+        "como saber se uma scooter tem pneus sem câmara",
+        "dá para andar com um prego num pneu sem câmara"
+      ],
+      "working_title": "Pneu sem câmara ou com câmara de ar: qual tem a sua mota e o que muda num furo?",
+      "search_intent": "informational",
+      "word_target": 1400,
+      "priority": 50,
+      "intent_rationale": "Quem planeia viagens longas quer saber se a mota tem pneus sem câmara ou com câmara de ar, porque reagem de forma diferente depois de apanhar um prego: um admite uma reparação provisória para seguir devagar até uma oficina, o outro costuma esvaziar depressa.",
+      "content_angle": "Explica como identificar o tipo de pneu pelas fichas e manuais do fabricante, como muda um furo e qual o limite de velocidade que a Honda indica depois de uma reparação provisória, sem repetir a página das avarias.",
+      "entities": [
+        "pneu sem câmara",
+        "câmara de ar",
+        "Honda LEAD",
+        "Yamaha Sirius"
+      ],
+      "references": [
+        "rx-275724dbe8f7",
+        "rx-52dd28082ea0",
+        "rx-e61e53fafb8b",
+        "rx-9e02e0d05cee"
+      ],
+      "distinct_from": [
+        {
+          "id": "PT-S08",
+          "reason": "PT-S08 explica o que fazer numa avaria da mota alugada; esta página explica os dois tipos de pneu e como os reconhecer antes de partir."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0006.json@46cf5dba787a"
+      },
+      "matrix_id": "PT-S97"
     }
   ]
 }

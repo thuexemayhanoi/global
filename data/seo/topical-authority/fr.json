@@ -4276,6 +4276,104 @@
         "source": "factory/topic-research/batches/claude-20261018-0004.json@9cae983c7916"
       },
       "matrix_id": "FR-S98"
+    },
+    {
+      "candidate_id": "TA-FR-0093",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-trip-fit",
+      "slug": "taille-roues-garde-au-sol-scooter-ou-semi-automatique",
+      "primary_query": "roues de 14 pouces ou de 17 pouces sur routes abîmées",
+      "secondary_queries": [
+        "garde au sol d'un scooter sur les routes rurales du Vietnam",
+        "scooter ou moto semi-automatique sur piste en terre"
+      ],
+      "working_title": "Taille des roues et garde au sol : scooter ou semi-automatique pour les routes de campagne et de montagne ?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Avant de partir vers les villages ou la montagne, on remarque que les scooters ont de petites roues et une garde au sol faible, alors que les semi-automatiques ont des roues plus hautes, et l'on veut savoir si cela compte vraiment sur les nids-de-poule.",
+      "content_angle": "Compare la taille des roues et la garde au sol de modèles courants d'après les fiches officielles et explique ce que cela change dans le choix du véhicule ; la technique de conduite sur route abîmée fait l'objet d'une autre page.",
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "Honda Blade",
+        "Yamaha Sirius"
+      ],
+      "references": [
+        "rx-38defba222bd",
+        "rx-f30b81052bef",
+        "rx-dca2465a9a74",
+        "rx-e61e53fafb8b"
+      ],
+      "distinct_from": [
+        {
+          "id": "FR-S77",
+          "reason": "FR-S77 explique comment rouler sur les nids-de-poule et les gravillons ; cette page aide à choisir le véhicule selon la taille des roues et la garde au sol avant de partir."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0005.json@46cf5dba787a"
+      },
+      "matrix_id": "FR-S99"
+    },
+    {
+      "candidate_id": "TA-FR-0094",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "pneu-tubeless-ou-chambre-a-air-scooter-vietnam",
+      "primary_query": "pneu tubeless ou avec chambre à air sur un scooter en cas de crevaison",
+      "secondary_queries": [
+        "comment savoir si un scooter a des pneus tubeless",
+        "rouler avec un clou dans un pneu tubeless"
+      ],
+      "working_title": "Pneu tubeless ou chambre à air : lequel équipe votre deux-roues et que change une crevaison ?",
+      "search_intent": "informational",
+      "word_target": 1400,
+      "priority": 50,
+      "intent_rationale": "Avant un long trajet, on veut savoir si son deux-roues a des pneus tubeless ou à chambre à air, car ils réagissent différemment après un clou : l'un peut être réparé provisoirement pour rouler doucement jusqu'à un atelier, l'autre se dégonfle vite.",
+      "content_angle": "Explique comment reconnaître le type de pneu grâce aux fiches et manuels du constructeur, en quoi les crevaisons diffèrent et quelle vitesse Honda fixe après une réparation provisoire, sans reprendre la page sur les pannes.",
+      "entities": [
+        "pneu tubeless",
+        "chambre à air",
+        "Honda LEAD",
+        "Yamaha Sirius"
+      ],
+      "references": [
+        "rx-275724dbe8f7",
+        "rx-52dd28082ea0",
+        "rx-e61e53fafb8b",
+        "rx-9e02e0d05cee"
+      ],
+      "distinct_from": [
+        {
+          "id": "FR-S08",
+          "reason": "FR-S08 décrit quoi faire en cas de panne du scooter loué ; cette page explique les deux types de pneus et comment les reconnaître avant de partir."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0006.json@46cf5dba787a"
+      },
+      "matrix_id": "FR-S100"
     }
   ]
 }

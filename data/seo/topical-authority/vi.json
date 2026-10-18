@@ -4076,6 +4076,104 @@
         "source": "factory/topic-research/batches/claude-20261018-0004.json@9cae983c7916"
       },
       "matrix_id": "VI-S94"
+    },
+    {
+      "candidate_id": "TA-VI-0089",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-trip-fit",
+      "slug": "co-banh-va-khoang-sang-gam-xe-tay-ga-xe-so",
+      "primary_query": "bánh 14 inch và bánh 17 inch xe máy khác nhau thế nào khi đi đường xấu",
+      "secondary_queries": [
+        "khoảng sáng gầm xe tay ga có thấp không",
+        "xe số hay xe tay ga đi đường đất ổ gà tốt hơn"
+      ],
+      "working_title": "Bánh xe và khoảng sáng gầm: xe tay ga hay xe số hợp với đường quê, đường núi?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Người định chạy xe máy về vùng quê hoặc lên núi thấy xe tay ga có bánh nhỏ, gầm thấp còn xe số bánh lớn hơn, và muốn biết khác biệt đó có ảnh hưởng thật đến việc đi qua ổ gà, đường đất hay không trước khi chọn xe.",
+      "content_angle": "So sánh cỡ bánh và khoảng sáng gầm của các mẫu xe phổ biến bằng thông số chính hãng, giải thích ý nghĩa khi chọn xe cho đường xấu, còn kỹ thuật lái qua ổ gà đã có ở bài riêng.",
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "Honda Blade",
+        "Yamaha Sirius"
+      ],
+      "references": [
+        "rx-38defba222bd",
+        "rx-f30b81052bef",
+        "rx-dca2465a9a74",
+        "rx-e61e53fafb8b"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S74",
+          "reason": "Bài VI-S74 dạy kỹ thuật lái qua ổ gà, sỏi đá; bài này giúp chọn xe theo cỡ bánh và khoảng sáng gầm trước chuyến đi."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0005.json@46cf5dba787a"
+      },
+      "matrix_id": "VI-S95"
+    },
+    {
+      "candidate_id": "TA-VI-0090",
+      "locale": "vi",
+      "role": "SUPPORT",
+      "parent_id": "VI-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "lop-khong-sam-va-lop-co-sam-xe-may",
+      "primary_query": "lốp không săm và lốp có săm xe máy khác nhau thế nào khi bị thủng",
+      "secondary_queries": [
+        "làm sao biết xe máy dùng lốp không săm",
+        "lốp không săm bị đinh có đi tiếp được không"
+      ],
+      "working_title": "Lốp không săm hay lốp có săm: xe của bạn dùng loại nào và khác gì khi bị thủng?",
+      "search_intent": "informational",
+      "word_target": 1400,
+      "priority": 50,
+      "intent_rationale": "Người đi xe máy đường dài muốn biết xe mình dùng lốp không săm hay lốp có săm, vì hai loại xử lý khác nhau khi cán phải đinh: một loại có thể vá tạm để đi chậm tới tiệm, loại kia thường xẹp nhanh và phải thay săm.",
+      "content_angle": "Giải thích cách nhận biết loại lốp qua thông số và sách hướng dẫn của hãng, khác biệt khi bị thủng và giới hạn tốc độ sau khi vá tạm, không thay cho bài xử lý xe hỏng giữa đường.",
+      "entities": [
+        "lốp không săm",
+        "lốp có săm",
+        "Honda LEAD",
+        "Yamaha Sirius"
+      ],
+      "references": [
+        "rx-275724dbe8f7",
+        "rx-52dd28082ea0",
+        "rx-e61e53fafb8b",
+        "rx-9e02e0d05cee"
+      ],
+      "distinct_from": [
+        {
+          "id": "VI-S08",
+          "reason": "Bài VI-S08 hướng dẫn các bước khi xe thuê hỏng giữa đường; bài này giải thích hai loại lốp và cách nhận biết trước khi đi."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0006.json@46cf5dba787a"
+      },
+      "matrix_id": "VI-S96"
     }
   ]
 }

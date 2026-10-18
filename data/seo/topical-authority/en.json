@@ -4610,6 +4610,104 @@
         "source": "factory/topic-research/batches/claude-20261018-0004.json@9cae983c7916"
       },
       "matrix_id": "EN-S98"
+    },
+    {
+      "candidate_id": "TA-EN-0103",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-trip-fit",
+      "slug": "wheel-size-ground-clearance-scooter-vs-underbone",
+      "primary_query": "14 inch scooter wheels vs 17 inch underbone wheels on rough roads",
+      "secondary_queries": [
+        "scooter ground clearance for rural roads in vietnam",
+        "is a scooter or semi-automatic better on dirt roads"
+      ],
+      "working_title": "Wheel Size and Ground Clearance: Scooter or Semi-Automatic for Rural and Mountain Roads?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Riders heading for villages or mountain roads notice that scooters have small wheels and low floors while semi-automatics have taller wheels, and want to know whether that really matters on potholes and dirt before choosing a bike.",
+      "content_angle": "Compares wheel size and ground clearance of common models using official specifications and explains what they mean when choosing a bike for rough roads; riding technique over potholes is covered on a separate page.",
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "Honda Blade",
+        "Yamaha Sirius"
+      ],
+      "references": [
+        "rx-38defba222bd",
+        "rx-f30b81052bef",
+        "rx-dca2465a9a74",
+        "rx-e61e53fafb8b"
+      ],
+      "distinct_from": [
+        {
+          "id": "EN-S78",
+          "reason": "EN-S78 teaches how to ride over potholes and gravel; this page helps choose the bike by wheel size and ground clearance before the trip."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0005.json@46cf5dba787a"
+      },
+      "matrix_id": "EN-S99"
+    },
+    {
+      "candidate_id": "TA-EN-0104",
+      "locale": "en",
+      "role": "SUPPORT",
+      "parent_id": "EN-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "tubeless-vs-tube-motorbike-tyres-vietnam",
+      "primary_query": "tubeless vs inner tube motorbike tyres what happens with a puncture",
+      "secondary_queries": [
+        "how to tell if a scooter has tubeless tyres",
+        "can you ride on a tubeless tyre with a nail in it"
+      ],
+      "working_title": "Tubeless or Inner-Tube Tyres: Which Does Your Bike Have and Why It Matters for Punctures",
+      "search_intent": "informational",
+      "word_target": 1400,
+      "priority": 50,
+      "intent_rationale": "Riders planning longer trips want to know whether their bike runs tubeless tyres or inner tubes, because the two behave differently after picking up a nail: one can be plugged to limp slowly to a shop, the other usually deflates fast and needs a new tube.",
+      "content_angle": "Explains how to identify the tyre type from manufacturer specifications and manuals, how punctures differ and the speed limit Honda sets after a temporary repair, without duplicating the breakdown steps page.",
+      "entities": [
+        "tubeless tyre",
+        "inner tube",
+        "Honda LEAD",
+        "Yamaha Sirius"
+      ],
+      "references": [
+        "rx-275724dbe8f7",
+        "rx-52dd28082ea0",
+        "rx-e61e53fafb8b",
+        "rx-9e02e0d05cee"
+      ],
+      "distinct_from": [
+        {
+          "id": "EN-S08",
+          "reason": "EN-S08 covers the steps when a rental bike breaks down; this page explains the two tyre types and how to recognise them before a trip."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0006.json@46cf5dba787a"
+      },
+      "matrix_id": "EN-S100"
     }
   ]
 }

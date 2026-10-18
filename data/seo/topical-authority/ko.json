@@ -4078,6 +4078,104 @@
         "source": "factory/topic-research/batches/claude-20261018-0004.json@9cae983c7916"
       },
       "matrix_id": "KO-S94"
+    },
+    {
+      "candidate_id": "TA-KO-0089",
+      "locale": "ko",
+      "role": "SUPPORT",
+      "parent_id": "KO-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-trip-fit",
+      "slug": "bakwi-keugi-choejeo-jisango-seukuteo-ban-jadong",
+      "primary_query": "14인치 스쿠터 바퀴와 17인치 바퀴 비포장길 차이",
+      "secondary_queries": [
+        "스쿠터 최저 지상고 베트남 시골길",
+        "흙길에는 스쿠터와 반자동 중 무엇이 좋을까"
+      ],
+      "working_title": "바퀴 크기와 최저 지상고: 시골길·산길에는 스쿠터와 반자동 중 무엇이 맞을까?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "베트남 시골이나 산길로 가려는 여행자는 스쿠터는 바퀴가 작고 지상고가 낮으며 반자동은 바퀴가 크다는 것을 보고, 그 차이가 움푹 파인 길이나 흙길에서 실제로 중요한지 차종을 고르기 전에 알고 싶어 한다.",
+      "content_angle": "공식 제원으로 흔한 차종의 바퀴 크기와 최저 지상고를 비교하고 험한 길용 차량을 고를 때 무엇을 뜻하는지 설명한다. 험한 길 주행 기술은 별도 페이지에서 다룬다.",
+      "entities": [
+        "혼다 비전",
+        "혼다 에어블레이드",
+        "혼다 블레이드",
+        "야마하 시리우스"
+      ],
+      "references": [
+        "rx-38defba222bd",
+        "rx-f30b81052bef",
+        "rx-dca2465a9a74",
+        "rx-e61e53fafb8b"
+      ],
+      "distinct_from": [
+        {
+          "id": "KO-S74",
+          "reason": "KO-S74는 패인 길과 자갈길을 지나가는 주행 요령을 다루고, 이 페이지는 출발 전에 바퀴 크기와 지상고로 차종을 고르는 법을 다룬다."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0005.json@46cf5dba787a"
+      },
+      "matrix_id": "KO-S95"
+    },
+    {
+      "candidate_id": "TA-KO-0090",
+      "locale": "ko",
+      "role": "SUPPORT",
+      "parent_id": "KO-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "tyubeuriseu-tyubeu-taieo-otobai-chai",
+      "primary_query": "오토바이 튜브리스 타이어와 튜브 타이어 펑크 났을 때 차이",
+      "secondary_queries": [
+        "스쿠터 튜브리스 타이어인지 확인하는 법",
+        "튜브리스 타이어에 못이 박혀도 계속 달릴 수 있나"
+      ],
+      "working_title": "튜브리스 vs 튜브 타이어: 내 오토바이는 어느 쪽이고 펑크 때 무엇이 다를까?",
+      "search_intent": "informational",
+      "word_target": 1400,
+      "priority": 50,
+      "intent_rationale": "장거리 주행을 계획하는 여행자는 자신의 오토바이가 튜브리스 타이어인지 튜브 타이어인지 알고 싶어 한다. 못을 밟은 뒤 하나는 임시로 막고 천천히 정비소까지 갈 수 있지만 다른 하나는 대개 빠르게 바람이 빠지기 때문이다.",
+      "content_angle": "제조사 제원과 사용설명서로 타이어 종류를 확인하는 법, 펑크 시 차이, 혼다가 임시 수리 후 제시하는 제한 속도를 설명하며 고장 대처 페이지를 반복하지 않는다.",
+      "entities": [
+        "튜브리스 타이어",
+        "튜브 타이어",
+        "혼다 리드",
+        "야마하 시리우스"
+      ],
+      "references": [
+        "rx-275724dbe8f7",
+        "rx-52dd28082ea0",
+        "rx-e61e53fafb8b",
+        "rx-9e02e0d05cee"
+      ],
+      "distinct_from": [
+        {
+          "id": "KO-S08",
+          "reason": "KO-S08은 렌트 오토바이가 고장 났을 때의 대처 순서를 다루고, 이 페이지는 두 타이어 종류와 출발 전 구별법을 다룬다."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0006.json@46cf5dba787a"
+      },
+      "matrix_id": "KO-S96"
     }
   ]
 }
