@@ -7,46 +7,46 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:56:51.419Z",
+  "updated_at": "2026-10-18T23:57:01.018Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "1285057efda5790da73b7063c14245c5e4d10eb6",
+  "last_commit_sha": "ca1fe78de6105f66148b95341dcc4b2a696754cb",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 330,
-    "qa_pass": 330,
+    "researched": 340,
+    "qa_pass": 340,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 320,
+    "pushed": 330,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 34,
-      "de": 34,
-      "fr": 34,
-      "es": 34,
-      "nl": 34,
-      "pt": 34,
-      "zh": 34,
-      "ko": 34,
-      "ja": 34,
-      "en": 24
+      "vi": 35,
+      "de": 35,
+      "fr": 35,
+      "es": 35,
+      "nl": 35,
+      "pt": 35,
+      "zh": 35,
+      "ko": 35,
+      "ja": 35,
+      "en": 25
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
-      "destinations-experiences": 60
+      "destinations-experiences": 70
     }
   },
   "last_batch": {
-    "seq": 33,
-    "file": "factory/topic-research/batches/claude-20261018b-0033.json",
-    "sha256": "03cca7267fc5cd6a0a6b09ddb64a8c5c40d7532acfe985d7839a59aef6feef43",
+    "seq": 34,
+    "file": "factory/topic-research/batches/claude-20261018b-0034.json",
+    "sha256": "0ae3c4974b54deac55c36d78e2f6b662cb8a31a4ed97d12c010c5d5279ac41c4",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -3608,8 +3608,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0033.json",
       "sha256": "03cca7267fc5cd6a0a6b09ddb64a8c5c40d7532acfe985d7839a59aef6feef43",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "ca1fe78de6105f66148b95341dcc4b2a696754cb",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -3713,23 +3713,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 34,
+      "file": "factory/topic-research/batches/claude-20261018b-0034.json",
+      "sha256": "0ae3c4974b54deac55c36d78e2f6b662cb8a31a4ed97d12c010c5d5279ac41c4",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:vinh-ha-long-va-vinh-lan-ha-khac-nhau",
+          "locale": "vi",
+          "slug": "vinh-ha-long-va-vinh-lan-ha-khac-nhau",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "vi::vinh ha long va vinh lan ha khac nhau the nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:ha-long-bay-vs-lan-ha-bay-unesco-extension",
+          "locale": "en",
+          "slug": "ha-long-bay-vs-lan-ha-bay-unesco-extension",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "en::ha long bay vs lan ha bay difference",
+          "ta_id": null
+        },
+        {
+          "ref": "de:halong-bucht-und-lan-ha-bucht-unterschiede",
+          "locale": "de",
+          "slug": "halong-bucht-und-lan-ha-bucht-unterschiede",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "de::halong-bucht und lan-ha-bucht unterschiede",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:baie-d-ha-long-et-baie-de-lan-ha-differences",
+          "locale": "fr",
+          "slug": "baie-d-ha-long-et-baie-de-lan-ha-differences",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "fr::baie d'ha long et baie de lan ha differences",
+          "ta_id": null
+        },
+        {
+          "ref": "es:bahia-de-ha-long-y-bahia-de-lan-ha-diferencias",
+          "locale": "es",
+          "slug": "bahia-de-ha-long-y-bahia-de-lan-ha-diferencias",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "es::bahia de ha long y bahia de lan ha diferencias",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:baai-van-ha-long-en-lan-ha-verschillen",
+          "locale": "nl",
+          "slug": "baai-van-ha-long-en-lan-ha-verschillen",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "nl::baai van ha long en lan ha baai verschillen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:xialong-wan-yu-lanxia-wan-qubie",
+          "locale": "zh",
+          "slug": "xialong-wan-yu-lanxia-wan-qubie",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "zh::下龙湾和兰霞湾的区别",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:baia-de-ha-long-e-baia-de-lan-ha-diferencas",
+          "locale": "pt",
+          "slug": "baia-de-ha-long-e-baia-de-lan-ha-diferencas",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "pt::baia de ha long e baia de lan ha diferencas",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:halong-bei-wa-lanha-bei-chai",
+          "locale": "ko",
+          "slug": "halong-bei-wa-lanha-bei-chai",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "ko::하롱베이와 란하베이 차이",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:harong-wan-to-ranha-wan-no-chigai",
+          "locale": "ja",
+          "slug": "harong-wan-to-ranha-wan-no-chigai",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "ja::ハロン湾とランハ湾の違い",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 34,
-    "file": "factory/topic-research/batches/claude-20261018b-0034.json",
+    "seq": 35,
+    "file": "factory/topic-research/batches/claude-20261018b-0035.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T14:22:53.678Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 9,
-      "topics": 10,
-      "sha256": "f5c6666c3e3d22928a76470da3ba15e14b7342e5a215d219f714133fac884a4c"
-    },
     {
       "at": "2026-10-18T14:28:57.848Z",
       "event": "BATCH_COMMITTED",
@@ -3897,6 +4001,13 @@
       "seq": 33,
       "topics": 10,
       "sha256": "03cca7267fc5cd6a0a6b09ddb64a8c5c40d7532acfe985d7839a59aef6feef43"
+    },
+    {
+      "at": "2026-10-18T23:57:01.018Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 34,
+      "topics": 10,
+      "sha256": "0ae3c4974b54deac55c36d78e2f6b662cb8a31a4ed97d12c010c5d5279ac41c4"
     }
   ]
 }
