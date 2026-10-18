@@ -7,34 +7,35 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T14:14:10.041Z",
-  "base_main_sha": "be617da99183962969b79f92fbe6cf214e818397",
-  "last_commit_sha": "45b7f5c5e9b64a1ebdaa148e3560a9b5af496ad8",
+  "updated_at": "2026-10-18T14:16:43.324Z",
+  "base_main_sha": "94ea529dd9c6b2634cfc2aff9574a91f5a79191a",
+  "last_commit_sha": "d078eaad73c35795ab5700a469829ee1ceb7f5bd",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 20,
-    "qa_pass": 20,
+    "researched": 30,
+    "qa_pass": 30,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 10,
+    "pushed": 20,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
       "vi": 10,
-      "de": 10
+      "de": 10,
+      "fr": 10
     },
     "domains": {
-      "transportation-mobility": 20
+      "transportation-mobility": 30
     }
   },
   "last_batch": {
-    "seq": 2,
-    "file": "factory/topic-research/batches/claude-20261018b-0002.json",
-    "sha256": "03f044d7f5c0b724042dbdee53a0837a86cd8a4fe9f45bf6304b284146bc8db0",
+    "seq": 3,
+    "file": "factory/topic-research/batches/claude-20261018b-0003.json",
+    "sha256": "e0764c4d88443e2f4d1406147cfc6f253f1e212680c0579187888d8602d15d09",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -155,8 +156,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0002.json",
       "sha256": "03f044d7f5c0b724042dbdee53a0837a86cd8a4fe9f45bf6304b284146bc8db0",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "d078eaad73c35795ab5700a469829ee1ceb7f5bd",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -167,7 +168,7 @@
           "parent_id": null,
           "subcluster": "mob-urban-transit",
           "key": "de::hanoi metro linie 2a cat linh ha dong stationen und tickets",
-          "ta_id": null
+          "ta_id": "TA-DE-0097"
         },
         {
           "ref": "de:hanoi-metro-linie-3-nhon-cau-giay-hochbahnabschnitt",
@@ -177,7 +178,7 @@
           "parent_id": null,
           "subcluster": "mob-urban-transit",
           "key": "de::hanoi metro linie 3 nhon cau giay hochbahnabschnitt",
-          "ta_id": null
+          "ta_id": "TA-DE-0098"
         },
         {
           "ref": "de:mit-dem-bus-in-hanoi-fahren-linien-bezahlung-apps",
@@ -187,7 +188,7 @@
           "parent_id": null,
           "subcluster": "mob-urban-transit",
           "key": "de::mit dem bus in hanoi fahren linien bezahlung app",
-          "ta_id": null
+          "ta_id": "TA-DE-0099"
         },
         {
           "ref": "de:elektrobusse-vinbus-hanoi-linien-und-anbindung",
@@ -197,7 +198,7 @@
           "parent_id": null,
           "subcluster": "mob-urban-transit",
           "key": "de::elektrobusse vinbus hanoi linien",
-          "ta_id": null
+          "ta_id": "TA-DE-0100"
         },
         {
           "ref": "de:flughafen-noi-bai-in-die-altstadt-von-hanoi-mit-dem-bus",
@@ -207,7 +208,7 @@
           "parent_id": null,
           "subcluster": "mob-last-mile",
           "key": "de::flughafen noi bai altstadt hanoi mit dem bus",
-          "ta_id": null
+          "ta_id": "TA-DE-0101"
         },
         {
           "ref": "de:fernbusbahnhoefe-in-hanoi-welcher-bahnhof-wohin",
@@ -217,7 +218,7 @@
           "parent_id": null,
           "subcluster": "mob-intercity",
           "key": "de::fernbusbahnhofe in hanoi welcher bahnhof wohin",
-          "ta_id": null
+          "ta_id": "TA-DE-0102"
         },
         {
           "ref": "de:mit-dem-zug-von-hanoi-nach-sapa-nachtzug-lao-cai",
@@ -227,7 +228,7 @@
           "parent_id": null,
           "subcluster": "mob-intercity",
           "key": "de::mit dem zug von hanoi nach sapa",
-          "ta_id": null
+          "ta_id": "TA-DE-0103"
         },
         {
           "ref": "de:mit-dem-zug-von-hanoi-nach-ninh-binh-fahrzeit-bahnhof",
@@ -237,7 +238,7 @@
           "parent_id": null,
           "subcluster": "mob-intercity",
           "key": "de::mit dem zug von hanoi nach ninh binh",
-          "ta_id": null
+          "ta_id": "TA-DE-0104"
         },
         {
           "ref": "de:mit-dem-bus-von-hanoi-nach-ha-long-linienbus-limousine",
@@ -247,7 +248,7 @@
           "parent_id": null,
           "subcluster": "mob-intercity",
           "key": "de::mit dem bus von hanoi nach ha long",
-          "ta_id": null
+          "ta_id": "TA-DE-0105"
         },
         {
           "ref": "de:fahrdienst-apps-in-hanoi-grab-xanh-sm-be-vergleich",
@@ -257,14 +258,125 @@
           "parent_id": null,
           "subcluster": "mob-last-mile",
           "key": "de::fahrdienst apps hanoi grab xanh sm be vergleich",
+          "ta_id": "TA-DE-0106"
+        }
+      ]
+    },
+    {
+      "seq": 3,
+      "file": "factory/topic-research/batches/claude-20261018b-0003.json",
+      "sha256": "e0764c4d88443e2f4d1406147cfc6f253f1e212680c0579187888d8602d15d09",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "fr:metro-hanoi-ligne-2a-cat-linh-ha-dong-stations-billets",
+          "locale": "fr",
+          "slug": "metro-hanoi-ligne-2a-cat-linh-ha-dong-stations-billets",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "fr::metro de hanoi ligne 2a cat linh ha dong stations et billets",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:metro-hanoi-ligne-3-nhon-cau-giay-troncon-aerien",
+          "locale": "fr",
+          "slug": "metro-hanoi-ligne-3-nhon-cau-giay-troncon-aerien",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "fr::metro de hanoi ligne 3 nhon cau giay troncon aerien",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:prendre-le-bus-a-hanoi-lignes-paiement-sans-especes",
+          "locale": "fr",
+          "slug": "prendre-le-bus-a-hanoi-lignes-paiement-sans-especes",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "fr::prendre le bus a hanoi lignes paiement application",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:bus-electriques-vinbus-hanoi-lignes-et-reseau",
+          "locale": "fr",
+          "slug": "bus-electriques-vinbus-hanoi-lignes-et-reseau",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "fr::bus electriques vinbus hanoi lignes",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:aeroport-noi-bai-vers-le-vieux-quartier-de-hanoi-en-bus",
+          "locale": "fr",
+          "slug": "aeroport-noi-bai-vers-le-vieux-quartier-de-hanoi-en-bus",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-last-mile",
+          "key": "fr::aeroport de noi bai vieux quartier de hanoi en bus",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:gares-routieres-longue-distance-hanoi-laquelle-pour-quelle-region",
+          "locale": "fr",
+          "slug": "gares-routieres-longue-distance-hanoi-laquelle-pour-quelle-region",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "fr::gares routieres longue distance de hanoi laquelle pour quelle region",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:train-de-hanoi-a-sapa-train-de-nuit-lao-cai",
+          "locale": "fr",
+          "slug": "train-de-hanoi-a-sapa-train-de-nuit-lao-cai",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "fr::train de hanoi a sapa",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:train-de-hanoi-a-ninh-binh-duree-gare-tam-coc",
+          "locale": "fr",
+          "slug": "train-de-hanoi-a-ninh-binh-duree-gare-tam-coc",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "fr::train de hanoi a ninh binh",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:bus-de-hanoi-a-ha-long-car-de-ligne-et-limousine",
+          "locale": "fr",
+          "slug": "bus-de-hanoi-a-ha-long-car-de-ligne-et-limousine",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "fr::bus de hanoi a ha long",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:applications-vtc-hanoi-grab-xanh-sm-be-comparatif",
+          "locale": "fr",
+          "slug": "applications-vtc-hanoi-grab-xanh-sm-be-comparatif",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-last-mile",
+          "key": "fr::applications de vtc a hanoi grab xanh sm be comparatif",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 3,
-    "file": "factory/topic-research/batches/claude-20261018b-0003.json",
+    "seq": 4,
+    "file": "factory/topic-research/batches/claude-20261018b-0004.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -283,6 +395,13 @@
       "seq": 2,
       "topics": 10,
       "sha256": "03f044d7f5c0b724042dbdee53a0837a86cd8a4fe9f45bf6304b284146bc8db0"
+    },
+    {
+      "at": "2026-10-18T14:16:43.324Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 3,
+      "topics": 10,
+      "sha256": "e0764c4d88443e2f4d1406147cfc6f253f1e212680c0579187888d8602d15d09"
     }
   ]
 }
