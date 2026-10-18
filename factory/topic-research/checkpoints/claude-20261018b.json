@@ -7,46 +7,46 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:52:49.094Z",
+  "updated_at": "2026-10-18T23:52:57.296Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "e85475e324a28c51beca0e3bd8b1aaafd5955a68",
+  "last_commit_sha": "2480118bea88911246202b8ff169c4ad183ac8fd",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 310,
-    "qa_pass": 310,
+    "researched": 320,
+    "qa_pass": 320,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 300,
+    "pushed": 310,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 32,
-      "de": 32,
-      "fr": 32,
-      "es": 32,
-      "nl": 32,
-      "pt": 32,
-      "zh": 32,
-      "ko": 32,
-      "ja": 32,
-      "en": 22
+      "vi": 33,
+      "de": 33,
+      "fr": 33,
+      "es": 33,
+      "nl": 33,
+      "pt": 33,
+      "zh": 33,
+      "ko": 33,
+      "ja": 33,
+      "en": 23
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
-      "destinations-experiences": 40
+      "destinations-experiences": 50
     }
   },
   "last_batch": {
-    "seq": 31,
-    "file": "factory/topic-research/batches/claude-20261018b-0031.json",
-    "sha256": "e09ca8f4dec6198aed45b8aad824f8d8779b5bb89257ddaa0338c4be3193d749",
+    "seq": 32,
+    "file": "factory/topic-research/batches/claude-20261018b-0032.json",
+    "sha256": "54037d1f10c6044fd36f9f3b17036908ae6068d59ec954dfc51831b2e8c6b95e",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -3386,8 +3386,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0031.json",
       "sha256": "e09ca8f4dec6198aed45b8aad824f8d8779b5bb89257ddaa0338c4be3193d749",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "2480118bea88911246202b8ff169c4ad183ac8fd",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -3491,23 +3491,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 32,
+      "file": "factory/topic-research/batches/claude-20261018b-0032.json",
+      "sha256": "54037d1f10c6044fd36f9f3b17036908ae6068d59ec954dfc51831b2e8c6b95e",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:lang-co-duong-lam-son-tay-tham-quan",
+          "locale": "vi",
+          "slug": "lang-co-duong-lam-son-tay-tham-quan",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "vi::tham quan lang co duong lam son tay",
+          "ta_id": null
+        },
+        {
+          "ref": "en:duong-lam-ancient-village-visit-from-hanoi",
+          "locale": "en",
+          "slug": "duong-lam-ancient-village-visit-from-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "en::visiting duong lam ancient village from hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "de:altes-dorf-duong-lam-besuch-ab-hanoi",
+          "locale": "de",
+          "slug": "altes-dorf-duong-lam-besuch-ab-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "de::besuch des alten dorfes duong lam ab hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:village-ancien-de-duong-lam-visite-depuis-hanoi",
+          "locale": "fr",
+          "slug": "village-ancien-de-duong-lam-visite-depuis-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "fr::visiter le village ancien de duong lam depuis hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "es:aldea-antigua-de-duong-lam-visita-desde-hanoi",
+          "locale": "es",
+          "slug": "aldea-antigua-de-duong-lam-visita-desde-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "es::visitar la aldea antigua de duong lam desde hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:oude-dorp-duong-lam-bezoek-vanuit-hanoi",
+          "locale": "nl",
+          "slug": "oude-dorp-duong-lam-bezoek-vanuit-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "nl::het oude dorp duong lam bezoeken vanuit hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:tanglin-gucun-cong-hanoi-canguan",
+          "locale": "zh",
+          "slug": "tanglin-gucun-cong-hanoi-canguan",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "zh::从河内参观唐林古村",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:aldeia-antiga-de-duong-lam-visita-a-partir-de-hanoi",
+          "locale": "pt",
+          "slug": "aldeia-antiga-de-duong-lam-visita-a-partir-de-hanoi",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "pt::visitar a aldeia antiga de duong lam a partir de hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:deuongram-gochon-hanoi-bangmun",
+          "locale": "ko",
+          "slug": "deuongram-gochon-hanoi-bangmun",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "ko::하노이에서 드엉람 고대 마을 가기",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-kara-duonram-kosonn-kengaku",
+          "locale": "ja",
+          "slug": "hanoi-kara-duonram-kosonn-kengaku",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-northern",
+          "key": "ja::ハノイからトゥオンラム古村へ行く方法",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 32,
-    "file": "factory/topic-research/batches/claude-20261018b-0032.json",
+    "seq": 33,
+    "file": "factory/topic-research/batches/claude-20261018b-0033.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T14:22:41.388Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 7,
-      "topics": 10,
-      "sha256": "83706db981724da208607b9dd950caf990ab940e1f93159a225563c38192d6b4"
-    },
     {
       "at": "2026-10-18T14:22:47.380Z",
       "event": "BATCH_COMMITTED",
@@ -3675,6 +3779,13 @@
       "seq": 31,
       "topics": 10,
       "sha256": "e09ca8f4dec6198aed45b8aad824f8d8779b5bb89257ddaa0338c4be3193d749"
+    },
+    {
+      "at": "2026-10-18T23:52:57.296Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 32,
+      "topics": 10,
+      "sha256": "54037d1f10c6044fd36f9f3b17036908ae6068d59ec954dfc51831b2e8c6b95e"
     }
   ]
 }
