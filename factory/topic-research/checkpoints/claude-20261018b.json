@@ -7,45 +7,45 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:44:32.795Z",
+  "updated_at": "2026-10-18T23:44:39.089Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "ece244d725fcaa538eb6c2f7819e071a1b8e6cdf",
+  "last_commit_sha": "94a540b93b7ece9caf07711cea47a596b9b75753",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 230,
-    "qa_pass": 230,
+    "researched": 240,
+    "qa_pass": 240,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 220,
+    "pushed": 230,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 24,
-      "de": 24,
-      "fr": 24,
-      "es": 24,
-      "nl": 24,
-      "pt": 24,
-      "zh": 24,
-      "ko": 24,
-      "ja": 24,
-      "en": 14
+      "vi": 25,
+      "de": 25,
+      "fr": 25,
+      "es": 25,
+      "nl": 25,
+      "pt": 25,
+      "zh": 25,
+      "ko": 25,
+      "ja": 25,
+      "en": 15
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
-      "hanoi-vietnam-travel": 60
+      "hanoi-vietnam-travel": 70
     }
   },
   "last_batch": {
-    "seq": 23,
-    "file": "factory/topic-research/batches/claude-20261018b-0023.json",
-    "sha256": "deda28a5349ed1e640571ac34b48a27323f45a2956c42efe29203759da4596cf",
+    "seq": 24,
+    "file": "factory/topic-research/batches/claude-20261018b-0024.json",
+    "sha256": "dab8601c750d90eaad4cd87cb01d2b69d392b1845fd1500777593ec3685f7d92",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -2497,8 +2497,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0023.json",
       "sha256": "deda28a5349ed1e640571ac34b48a27323f45a2956c42efe29203759da4596cf",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "94a540b93b7ece9caf07711cea47a596b9b75753",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -2602,11 +2602,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 24,
+      "file": "factory/topic-research/batches/claude-20261018b-0024.json",
+      "sha256": "dab8601c750d90eaad4cd87cb01d2b69d392b1845fd1500777593ec3685f7d92",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:khu-pho-phap-nha-hat-lon-ha-noi",
+          "locale": "vi",
+          "slug": "khu-pho-phap-nha-hat-lon-ha-noi",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "vi::khu pho phap va nha hat lon ha noi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:hanoi-french-quarter-and-opera-house",
+          "locale": "en",
+          "slug": "hanoi-french-quarter-and-opera-house",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "en::hanoi french quarter and opera house",
+          "ta_id": null
+        },
+        {
+          "ref": "de:hanoi-franzoesisches-viertel-opernhaus",
+          "locale": "de",
+          "slug": "hanoi-franzoesisches-viertel-opernhaus",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "de::franzosisches viertel und opernhaus in hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:quartier-francais-et-opera-de-hanoi",
+          "locale": "fr",
+          "slug": "quartier-francais-et-opera-de-hanoi",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "fr::quartier francais et opera de hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "es:barrio-frances-y-opera-de-hanoi",
+          "locale": "es",
+          "slug": "barrio-frances-y-opera-de-hanoi",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "es::barrio frances y opera de hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:frans-kwartier-en-opera-van-hanoi",
+          "locale": "nl",
+          "slug": "frans-kwartier-en-opera-van-hanoi",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "nl::frans kwartier en opera van hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-faguo-qu-yu-da-juyuan",
+          "locale": "zh",
+          "slug": "hanoi-faguo-qu-yu-da-juyuan",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "zh::河内法国区与河内大剧院",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:bairro-frances-e-opera-de-hanoi",
+          "locale": "pt",
+          "slug": "bairro-frances-e-opera-de-hanoi",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "pt::bairro frances e opera de hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-peurangseu-jigu-opera-hauseu",
+          "locale": "ko",
+          "slug": "hanoi-peurangseu-jigu-opera-hauseu",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "ko::하노이 프랑스 지구와 오페라 하우스",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-furansu-chiku-to-opera-hausu",
+          "locale": "ja",
+          "slug": "hanoi-furansu-chiku-to-opera-hausu",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "ja::ハノイのフランス街とオヘラハウス",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 24,
-    "file": "factory/topic-research/batches/claude-20261018b-0024.json",
+    "seq": 25,
+    "file": "factory/topic-research/batches/claude-20261018b-0025.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -2772,6 +2883,13 @@
       "seq": 23,
       "topics": 10,
       "sha256": "deda28a5349ed1e640571ac34b48a27323f45a2956c42efe29203759da4596cf"
+    },
+    {
+      "at": "2026-10-18T23:44:39.089Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 24,
+      "topics": 10,
+      "sha256": "dab8601c750d90eaad4cd87cb01d2b69d392b1845fd1500777593ec3685f7d92"
     }
   ]
 }
