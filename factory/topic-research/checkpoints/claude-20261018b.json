@@ -7,46 +7,46 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:57:01.018Z",
+  "updated_at": "2026-10-18T23:57:10.972Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "ca1fe78de6105f66148b95341dcc4b2a696754cb",
+  "last_commit_sha": "d01fbb169a9b2720d38dc7e41f413a69b1571d6f",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 340,
-    "qa_pass": 340,
+    "researched": 350,
+    "qa_pass": 350,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 330,
+    "pushed": 340,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 35,
-      "de": 35,
-      "fr": 35,
-      "es": 35,
-      "nl": 35,
-      "pt": 35,
-      "zh": 35,
-      "ko": 35,
-      "ja": 35,
-      "en": 25
+      "vi": 36,
+      "de": 36,
+      "fr": 36,
+      "es": 36,
+      "nl": 36,
+      "pt": 36,
+      "zh": 36,
+      "ko": 36,
+      "ja": 36,
+      "en": 26
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
-      "destinations-experiences": 70
+      "destinations-experiences": 80
     }
   },
   "last_batch": {
-    "seq": 34,
-    "file": "factory/topic-research/batches/claude-20261018b-0034.json",
-    "sha256": "0ae3c4974b54deac55c36d78e2f6b662cb8a31a4ed97d12c010c5d5279ac41c4",
+    "seq": 35,
+    "file": "factory/topic-research/batches/claude-20261018b-0035.json",
+    "sha256": "55c38f9360ee487c0b3cb818df87829cfb87c867665132c0a9847d3ac1d5dd18",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -3719,8 +3719,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0034.json",
       "sha256": "0ae3c4974b54deac55c36d78e2f6b662cb8a31a4ed97d12c010c5d5279ac41c4",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "d01fbb169a9b2720d38dc7e41f413a69b1571d6f",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -3824,23 +3824,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 35,
+      "file": "factory/topic-research/batches/claude-20261018b-0035.json",
+      "sha256": "55c38f9360ee487c0b3cb818df87829cfb87c867665132c0a9847d3ac1d5dd18",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:mu-cang-chai-ruong-bac-thang-theo-mua",
+          "locale": "vi",
+          "slug": "mu-cang-chai-ruong-bac-thang-theo-mua",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "vi::ruong bac thang mu cang chai theo mua",
+          "ta_id": null
+        },
+        {
+          "ref": "en:mu-cang-chai-rice-terraces-by-season",
+          "locale": "en",
+          "slug": "mu-cang-chai-rice-terraces-by-season",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "en::mu cang chai rice terraces by season",
+          "ta_id": null
+        },
+        {
+          "ref": "de:mu-cang-chai-reisterrassen-nach-jahreszeit",
+          "locale": "de",
+          "slug": "mu-cang-chai-reisterrassen-nach-jahreszeit",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "de::reisterrassen von mu cang chai nach jahreszeit",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:rizieres-en-terrasses-de-mu-cang-chai-par-saison",
+          "locale": "fr",
+          "slug": "rizieres-en-terrasses-de-mu-cang-chai-par-saison",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "fr::rizieres en terrasses de mu cang chai par saison",
+          "ta_id": null
+        },
+        {
+          "ref": "es:arrozales-en-terrazas-de-mu-cang-chai-por-temporada",
+          "locale": "es",
+          "slug": "arrozales-en-terrazas-de-mu-cang-chai-por-temporada",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "es::arrozales en terrazas de mu cang chai por temporada",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:rijstterrassen-van-mu-cang-chai-per-seizoen",
+          "locale": "nl",
+          "slug": "rijstterrassen-van-mu-cang-chai-per-seizoen",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "nl::rijstterrassen van mu cang chai per seizoen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:mu-cang-chai-titian-sijijing",
+          "locale": "zh",
+          "slug": "mu-cang-chai-titian-sijijing",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "zh::木江柴梯田四季景色",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:terracos-de-arroz-de-mu-cang-chai-por-epoca",
+          "locale": "pt",
+          "slug": "terracos-de-arroz-de-mu-cang-chai-por-epoca",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "pt::terracos de arroz de mu cang chai por epoca",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:mukkangchai-gyedanshik-non-gyejeol",
+          "locale": "ko",
+          "slug": "mukkangchai-gyedanshik-non-gyejeol",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "ko::무깡짜이 계단식 논 계절별",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:mukanchai-tanada-kisetsu-betsu",
+          "locale": "ja",
+          "slug": "mukanchai-tanada-kisetsu-betsu",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "ja::ムカンチャイの棚田を季節別に見る",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 35,
-    "file": "factory/topic-research/batches/claude-20261018b-0035.json",
+    "seq": 36,
+    "file": "factory/topic-research/batches/claude-20261018b-0036.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T14:28:57.848Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 10,
-      "topics": 10,
-      "sha256": "0e4ff0c1e3b34926bca4848da68a0b059e5699a05d20ce1feef3ca5c87bbc7af"
-    },
     {
       "at": "2026-10-18T14:32:00.028Z",
       "event": "BATCH_COMMITTED",
@@ -4008,6 +4112,13 @@
       "seq": 34,
       "topics": 10,
       "sha256": "0ae3c4974b54deac55c36d78e2f6b662cb8a31a4ed97d12c010c5d5279ac41c4"
+    },
+    {
+      "at": "2026-10-18T23:57:10.972Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 35,
+      "topics": 10,
+      "sha256": "55c38f9360ee487c0b3cb818df87829cfb87c867665132c0a9847d3ac1d5dd18"
     }
   ]
 }
