@@ -7,19 +7,19 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T14:22:47.380Z",
+  "updated_at": "2026-10-18T14:22:53.678Z",
   "base_main_sha": "f3f8529a7b1db79c2bbab7ea72c9bc35ff048529",
-  "last_commit_sha": "363beb003409fa6d69ef117552d64f0b015aa88b",
+  "last_commit_sha": "518e538134d56f86b8ea7a9dd5f36c485303a159",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 80,
-    "qa_pass": 80,
+    "researched": 90,
+    "qa_pass": 90,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 70,
+    "pushed": 80,
     "pending_push": 10
   },
   "coverage": {
@@ -31,16 +31,17 @@
       "nl": 10,
       "pt": 10,
       "zh": 10,
-      "ko": 10
+      "ko": 10,
+      "ja": 10
     },
     "domains": {
-      "transportation-mobility": 80
+      "transportation-mobility": 90
     }
   },
   "last_batch": {
-    "seq": 8,
-    "file": "factory/topic-research/batches/claude-20261018b-0008.json",
-    "sha256": "2921fbefd1c54244f14046c20fa932f68dea0adcde40d016f313f134798f5ba8",
+    "seq": 9,
+    "file": "factory/topic-research/batches/claude-20261018b-0009.json",
+    "sha256": "f5c6666c3e3d22928a76470da3ba15e14b7342e5a215d219f714133fac884a4c",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -827,8 +828,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0008.json",
       "sha256": "2921fbefd1c54244f14046c20fa932f68dea0adcde40d016f313f134798f5ba8",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "518e538134d56f86b8ea7a9dd5f36c485303a159",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -932,11 +933,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 9,
+      "file": "factory/topic-research/batches/claude-20261018b-0009.json",
+      "sha256": "f5c6666c3e3d22928a76470da3ba15e14b7342e5a215d219f714133fac884a4c",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "ja:hanoi-metro-2a-gosen-eki-chiketto-noribakata",
+          "locale": "ja",
+          "slug": "hanoi-metro-2a-gosen-eki-chiketto-noribakata",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "ja::ハノイ メトロ 2a号線 駅とチケットの買い方",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-metro-3-gosen-kokaku-kukan-nhon-cau-giay",
+          "locale": "ja",
+          "slug": "hanoi-metro-3-gosen-kokaku-kukan-nhon-cau-giay",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "ja::ハノイ メトロ 3号線 高架区間 nhon cau giay",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-rosen-basu-noribakata-shiharai-apuri",
+          "locale": "ja",
+          "slug": "hanoi-rosen-basu-noribakata-shiharai-apuri",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "ja::ハノイ 路線ハス 乗り方 支払い アフリ",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-binbasu-denki-basu-rosen",
+          "locale": "ja",
+          "slug": "hanoi-binbasu-denki-basu-rosen",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-urban-transit",
+          "key": "ja::ハノイ ヒンハス 電気ハス 路線",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:noibai-kuko-kyutaun-basu-de-iku",
+          "locale": "ja",
+          "slug": "noibai-kuko-kyutaun-basu-de-iku",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-last-mile",
+          "key": "ja::ノイハイ空港から旧市街 ハスて行く方法",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-chokyori-basu-taminaru-dokoyuki",
+          "locale": "ja",
+          "slug": "hanoi-chokyori-basu-taminaru-dokoyuki",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "ja::ハノイ 長距離ハスターミナル とのターミナルかとこ行き",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-kara-sapa-densha-yako-ressha-laocai",
+          "locale": "ja",
+          "slug": "hanoi-kara-sapa-densha-yako-ressha-laocai",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "ja::ハノイからサハへ電車て行く方法",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-kara-ninbin-densha-shoyo-jikan-eki",
+          "locale": "ja",
+          "slug": "hanoi-kara-ninbin-densha-shoyo-jikan-eki",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "ja::ハノイからニンヒンへ電車て行く方法",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-kara-harong-basu-rosen-rimujin-ban",
+          "locale": "ja",
+          "slug": "hanoi-kara-harong-basu-rosen-rimujin-ban",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-intercity",
+          "key": "ja::ハノイからハロンへハスて行く方法",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-haisha-apuri-grab-xanh-sm-be-hikaku",
+          "locale": "ja",
+          "slug": "hanoi-haisha-apuri-grab-xanh-sm-be-hikaku",
+          "domain_id": "transportation-mobility",
+          "parent_id": null,
+          "subcluster": "mob-last-mile",
+          "key": "ja::ハノイ 配車アフリ grab xanh sm be 比較",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 9,
-    "file": "factory/topic-research/batches/claude-20261018b-0009.json",
+    "seq": 10,
+    "file": "factory/topic-research/batches/claude-20261018b-0010.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -997,6 +1109,13 @@
       "seq": 8,
       "topics": 10,
       "sha256": "2921fbefd1c54244f14046c20fa932f68dea0adcde40d016f313f134798f5ba8"
+    },
+    {
+      "at": "2026-10-18T14:22:53.678Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 9,
+      "topics": 10,
+      "sha256": "f5c6666c3e3d22928a76470da3ba15e14b7342e5a215d219f714133fac884a4c"
     }
   ]
 }
