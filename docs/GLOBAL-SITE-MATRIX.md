@@ -13,10 +13,10 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
 | Matrix rows (1061) | 881 | 19 | 4 | 157 |
-| Topical candidates (40) | 0 | 0 | 0 | 40 |
-| Silos (330) | 138 | 12 | 0 | 36 |
+| Topical candidates (50) | 0 | 0 | 0 | 50 |
+| Silos (330) | 138 | 12 | 0 | 39 |
 
-Knowledge graph: 42 entities, 2156 typed edges (hreflang_equivalent 190, about 710, contains 1046, has_silo 160, has_hub 40, has_pillar 10).
+Knowledge graph: 42 entities, 2166 typed edges (hreflang_equivalent 190, about 710, contains 1056, has_silo 160, has_hub 40, has_pillar 10).
 
 ## REVIEW — competing intents
 
@@ -80,9 +80,9 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 | travel-neighborhoods (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
 | travel-seasons (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
 | travel-etiquette (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
-| mob-urban-transit (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
-| mob-intercity (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
-| mob-last-mile (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
+| mob-urban-transit (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
+| mob-intercity (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
+| mob-last-mile (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
 | dest-northern (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
 | dest-local (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
 | dest-landscapes (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
@@ -105,7 +105,7 @@ Published / planned (IDEA + drafts) / candidates per stage.
 | pickup | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
 | riding | 56 / 6 / 0 | 60 / 3 / 0 | 60 / 3 / 0 | 60 / 3 / 0 | 50 / 3 / 0 | 58 / 4 / 0 | 58 / 4 / 0 | 58 / 4 / 0 | 58 / 3 / 0 | 58 / 3 / 0 |
 | return | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 |
-| planning | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 |
+| planning | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 | 0 / 0 / 2 |
 
 Every locale checklist also covers the consideration → decision → pickup → riding → return steps in short sections; that is breadth, not depth (see UPGRADE). `return` (deposit refund, late return) has no dedicated page and is answered inside the deposit and extra-cost silos rather than a separate silo. Transactional booking intent is deliberately not targeted: /global is an independent guide (owner positioning decision).
 
@@ -115,7 +115,7 @@ Every locale checklist also covers the consideration → decision → pickup →
 |---|---|---|---|---|---|---|
 | vi | 105 | 87 | 0 | 18 | 12 | 99% |
 | en | 109 | 93 | 0 | 16 | 12 | 98% |
-| de | 108 | 93 | 0 | 15 | 2 | 98% |
+| de | 108 | 93 | 0 | 15 | 12 | 98% |
 | fr | 109 | 94 | 0 | 15 | 2 | 98% |
 | es | 97 | 82 | 0 | 15 | 2 | 95% |
 | nl | 106 | 90 | 0 | 16 | 2 | 96% |
