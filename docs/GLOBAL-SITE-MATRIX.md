@@ -13,19 +13,21 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
 | Matrix rows (1061) | 881 | 19 | 4 | 157 |
-| Topical candidates (90) | 0 | 0 | 0 | 90 |
-| Silos (330) | 138 | 12 | 0 | 51 |
+| Topical candidates (120) | 0 | 0 | 4 | 116 |
+| Silos (330) | 138 | 12 | 0 | 60 |
 
-Knowledge graph: 42 entities, 2206 typed edges (hreflang_equivalent 190, about 710, contains 1096, has_silo 160, has_hub 40, has_pillar 10).
+Knowledge graph: 42 entities, 2236 typed edges (hreflang_equivalent 190, about 710, contains 1126, has_silo 160, has_hub 40, has_pillar 10).
 
 ## REVIEW — competing intents
 
-2 pair(s); showing up to 2.
+4 pair(s); showing up to 4.
 
 | A | B | Score | Basis |
 |---|---|---|---|
+| TA-KO-0100 | TA-KO-0101 | 0.6 | query |
 | ES-S05 | ES-S38 | 0.5 | query |
 | NL-S11 | NL-S68 | 0.5 | query |
+| TA-JA-0100 | TA-JA-0101 | 0.5 | query |
 
 ## UPGRADE — live pages below targets
 
@@ -80,9 +82,9 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 | travel-neighborhoods (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
 | travel-seasons (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
 | travel-etiquette (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
-| mob-urban-transit (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | ∅ GAP | C4 CREATE | ∅ GAP | ∅ GAP |
-| mob-intercity (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | ∅ GAP | C4 CREATE | ∅ GAP | ∅ GAP |
-| mob-last-mile (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | ∅ GAP | C2 CREATE | ∅ GAP | ∅ GAP |
+| mob-urban-transit (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
+| mob-intercity (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
+| mob-last-mile (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
 | dest-northern (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
 | dest-local (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
 | dest-landscapes (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
@@ -105,7 +107,7 @@ Published / planned (IDEA + drafts) / candidates per stage.
 | pickup | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
 | riding | 56 / 6 / 0 | 60 / 3 / 0 | 60 / 3 / 0 | 60 / 3 / 0 | 50 / 3 / 0 | 58 / 4 / 0 | 58 / 4 / 0 | 58 / 4 / 0 | 58 / 3 / 0 | 58 / 3 / 0 |
 | return | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 |
-| planning | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 2 | 0 / 0 / 12 | 0 / 0 / 2 | 0 / 0 / 2 |
+| planning | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 12 | 0 / 0 / 12 |
 
 Every locale checklist also covers the consideration → decision → pickup → riding → return steps in short sections; that is breadth, not depth (see UPGRADE). `return` (deposit refund, late return) has no dedicated page and is answered inside the deposit and extra-cost silos rather than a separate silo. Transactional booking intent is deliberately not targeted: /global is an independent guide (owner positioning decision).
 
@@ -119,10 +121,10 @@ Every locale checklist also covers the consideration → decision → pickup →
 | fr | 109 | 94 | 0 | 15 | 12 | 98% |
 | es | 97 | 82 | 0 | 15 | 12 | 95% |
 | nl | 106 | 90 | 0 | 16 | 12 | 96% |
-| zh | 106 | 90 | 0 | 16 | 2 | 98% |
+| zh | 106 | 90 | 0 | 16 | 12 | 98% |
 | pt | 106 | 90 | 0 | 16 | 12 | 98% |
-| ko | 105 | 90 | 0 | 15 | 2 | 98% |
-| ja | 105 | 90 | 0 | 15 | 2 | 98% |
+| ko | 105 | 90 | 0 | 15 | 12 | 98% |
+| ja | 105 | 90 | 0 | 15 | 12 | 98% |
 
 Live Writer states (CLAIMED/SUBMITTED) change on every autopilot commit and are not part of this file: run `node scripts/seo/topical-authority.mjs status`.
 
