@@ -7,46 +7,46 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:58:15.262Z",
+  "updated_at": "2026-10-18T23:58:25.544Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "d0d2d2dbffd6d0c6595d9769d7ab851c8d42f8af",
+  "last_commit_sha": "113b66783673e203af46117d91d411c54cc50b26",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 360,
-    "qa_pass": 360,
+    "researched": 370,
+    "qa_pass": 370,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 350,
+    "pushed": 360,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 37,
-      "de": 37,
-      "fr": 37,
-      "es": 37,
-      "nl": 37,
-      "pt": 37,
-      "zh": 37,
-      "ko": 37,
-      "ja": 37,
-      "en": 27
+      "vi": 38,
+      "de": 38,
+      "fr": 38,
+      "es": 38,
+      "nl": 38,
+      "pt": 38,
+      "zh": 38,
+      "ko": 38,
+      "ja": 38,
+      "en": 28
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
-      "destinations-experiences": 90
+      "destinations-experiences": 100
     }
   },
   "last_batch": {
-    "seq": 36,
-    "file": "factory/topic-research/batches/claude-20261018b-0036.json",
-    "sha256": "75dccf21a8e6a355edaaaa7400e93f588f1a2b13534b46a95968bbd3b4adf480",
+    "seq": 37,
+    "file": "factory/topic-research/batches/claude-20261018b-0037.json",
+    "sha256": "a4f3479e8b0f274f33f589a7696132d2eedb573358b8387df10ce98fe9fd73c2",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -3941,8 +3941,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0036.json",
       "sha256": "75dccf21a8e6a355edaaaa7400e93f588f1a2b13534b46a95968bbd3b4adf480",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "113b66783673e203af46117d91d411c54cc50b26",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -4046,23 +4046,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 37,
+      "file": "factory/topic-research/batches/claude-20261018b-0037.json",
+      "sha256": "a4f3479e8b0f274f33f589a7696132d2eedb573358b8387df10ce98fe9fd73c2",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:vuon-quoc-gia-ba-be-ho-ba-be",
+          "locale": "vi",
+          "slug": "vuon-quoc-gia-ba-be-ho-ba-be",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "vi::tham quan vuon quoc gia ba be va ho ba be",
+          "ta_id": null
+        },
+        {
+          "ref": "en:ba-be-national-park-and-lake-visit",
+          "locale": "en",
+          "slug": "ba-be-national-park-and-lake-visit",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "en::visiting ba be national park and lake",
+          "ta_id": null
+        },
+        {
+          "ref": "de:ba-be-nationalpark-und-see-besuch",
+          "locale": "de",
+          "slug": "ba-be-nationalpark-und-see-besuch",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "de::besuch des ba-be-nationalparks und des ba-be-sees",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:parc-national-de-ba-be-et-lac-visite",
+          "locale": "fr",
+          "slug": "parc-national-de-ba-be-et-lac-visite",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "fr::visiter le parc national de ba be et son lac",
+          "ta_id": null
+        },
+        {
+          "ref": "es:parque-nacional-ba-be-y-lago-visita",
+          "locale": "es",
+          "slug": "parque-nacional-ba-be-y-lago-visita",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "es::visitar el parque nacional ba be y su lago",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:nationaal-park-ba-be-en-meer-bezoek",
+          "locale": "nl",
+          "slug": "nationaal-park-ba-be-en-meer-bezoek",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "nl::nationaal park ba be en het ba be-meer bezoeken",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:babe-guojia-gongyuan-yu-hu-canguan",
+          "locale": "zh",
+          "slug": "babe-guojia-gongyuan-yu-hu-canguan",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "zh::参观巴贝国家公园和巴贝湖",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:parque-nacional-de-ba-be-e-lago-visita",
+          "locale": "pt",
+          "slug": "parque-nacional-de-ba-be-e-lago-visita",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "pt::visitar o parque nacional de ba be e o seu lago",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:babe-gungnip-gongwon-hosu-bangmun",
+          "locale": "ko",
+          "slug": "babe-gungnip-gongwon-hosu-bangmun",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "ko::바베 국립공원과 바베 호수 방문",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:babe-kokuritsu-koen-to-ko-hoomon",
+          "locale": "ja",
+          "slug": "babe-kokuritsu-koen-to-ko-hoomon",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-landscapes",
+          "key": "ja::ハヘ国立公園とハヘ湖の訪問カイト",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 37,
-    "file": "factory/topic-research/batches/claude-20261018b-0037.json",
+    "seq": 38,
+    "file": "factory/topic-research/batches/claude-20261018b-0038.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:23:05.997Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 12,
-      "topics": 10,
-      "sha256": "f7d24cde0de7cc7dbdb93b44442eaaf7d5fdcc84111bad77d10fca2ccf0e254f"
-    },
     {
       "at": "2026-10-18T23:24:41.283Z",
       "event": "BATCH_COMMITTED",
@@ -4230,6 +4334,13 @@
       "seq": 36,
       "topics": 10,
       "sha256": "75dccf21a8e6a355edaaaa7400e93f588f1a2b13534b46a95968bbd3b4adf480"
+    },
+    {
+      "at": "2026-10-18T23:58:25.544Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 37,
+      "topics": 10,
+      "sha256": "a4f3479e8b0f274f33f589a7696132d2eedb573358b8387df10ce98fe9fd73c2"
     }
   ]
 }
