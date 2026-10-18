@@ -7,45 +7,45 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:42:25.220Z",
+  "updated_at": "2026-10-18T23:42:30.921Z",
   "base_main_sha": "ee8da2c695e81a0ced3d1c9e6279976a214b1058",
-  "last_commit_sha": "a1f2b62382743ff5db7c76f5c201f7249e8b286b",
+  "last_commit_sha": "51b15cb9f272c5377bf9e1e4b3fcde259161a1d6",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 180,
-    "qa_pass": 180,
+    "researched": 190,
+    "qa_pass": 190,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 170,
+    "pushed": 180,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 19,
-      "de": 19,
-      "fr": 19,
-      "es": 19,
-      "nl": 19,
-      "pt": 19,
-      "zh": 19,
-      "ko": 19,
-      "ja": 19,
-      "en": 9
+      "vi": 20,
+      "de": 20,
+      "fr": 20,
+      "es": 20,
+      "nl": 20,
+      "pt": 20,
+      "zh": 20,
+      "ko": 20,
+      "ja": 20,
+      "en": 10
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
-      "hanoi-vietnam-travel": 10
+      "hanoi-vietnam-travel": 20
     }
   },
   "last_batch": {
-    "seq": 18,
-    "file": "factory/topic-research/batches/claude-20261018b-0018.json",
-    "sha256": "1446a7bb873d06c6b56ceafc970eb734d954c551e3fec3b3223bfda68a8d33cc",
+    "seq": 19,
+    "file": "factory/topic-research/batches/claude-20261018b-0019.json",
+    "sha256": "6624ee6f9bcd6edd4019fa6056cc1719e62163c01a164cf0cef3fe2adaace00d",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -1942,8 +1942,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0018.json",
       "sha256": "1446a7bb873d06c6b56ceafc970eb734d954c551e3fec3b3223bfda68a8d33cc",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "51b15cb9f272c5377bf9e1e4b3fcde259161a1d6",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -2047,11 +2047,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 19,
+      "file": "factory/topic-research/batches/claude-20261018b-0019.json",
+      "sha256": "6624ee6f9bcd6edd4019fa6056cc1719e62163c01a164cf0cef3fe2adaace00d",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:ha-noi-mua-dong-mac-gi",
+          "locale": "vi",
+          "slug": "ha-noi-mua-dong-mac-gi",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "vi::di ha noi mua dong mac gi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:hanoi-winter-what-to-wear",
+          "locale": "en",
+          "slug": "hanoi-winter-what-to-wear",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "en::what to wear in hanoi in winter",
+          "ta_id": null
+        },
+        {
+          "ref": "de:hanoi-im-winter-was-anziehen",
+          "locale": "de",
+          "slug": "hanoi-im-winter-was-anziehen",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "de::was man im winter in hanoi anzieht",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:hanoi-en-hiver-que-porter",
+          "locale": "fr",
+          "slug": "hanoi-en-hiver-que-porter",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "fr::que porter a hanoi en hiver",
+          "ta_id": null
+        },
+        {
+          "ref": "es:hanoi-en-invierno-que-ponerse",
+          "locale": "es",
+          "slug": "hanoi-en-invierno-que-ponerse",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "es::que ponerse en hanoi en invierno",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:hanoi-in-de-winter-wat-aantrekken",
+          "locale": "nl",
+          "slug": "hanoi-in-de-winter-wat-aantrekken",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "nl::wat aantrekken in hanoi in de winter",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-dongtian-chuan-shenme",
+          "locale": "zh",
+          "slug": "hanoi-dongtian-chuan-shenme",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "zh::冬天去河内穿什么",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:hanoi-no-inverno-o-que-vestir",
+          "locale": "pt",
+          "slug": "hanoi-no-inverno-o-que-vestir",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "pt::o que vestir em hanoi no inverno",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-gyeoul-otcharim",
+          "locale": "ko",
+          "slug": "hanoi-gyeoul-otcharim",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "ko::하노이 겨울 옷차림",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-no-fuyu-no-fukusou",
+          "locale": "ja",
+          "slug": "hanoi-no-fuyu-no-fukusou",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-seasons",
+          "key": "ja::ハノイの冬の服装",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 19,
-    "file": "factory/topic-research/batches/claude-20261018b-0019.json",
+    "seq": 20,
+    "file": "factory/topic-research/batches/claude-20261018b-0020.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -2182,6 +2293,13 @@
       "seq": 18,
       "topics": 10,
       "sha256": "1446a7bb873d06c6b56ceafc970eb734d954c551e3fec3b3223bfda68a8d33cc"
+    },
+    {
+      "at": "2026-10-18T23:42:30.921Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 19,
+      "topics": 10,
+      "sha256": "6624ee6f9bcd6edd4019fa6056cc1719e62163c01a164cf0cef3fe2adaace00d"
     }
   ]
 }
