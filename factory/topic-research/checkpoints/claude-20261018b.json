@@ -7,45 +7,45 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:44:26.838Z",
+  "updated_at": "2026-10-18T23:44:32.795Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "c3acf391066df72cfeea31bb325af8ecdbf926b7",
+  "last_commit_sha": "ece244d725fcaa538eb6c2f7819e071a1b8e6cdf",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 220,
-    "qa_pass": 220,
+    "researched": 230,
+    "qa_pass": 230,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 210,
+    "pushed": 220,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 23,
-      "de": 23,
-      "fr": 23,
-      "es": 23,
-      "nl": 23,
-      "pt": 23,
-      "zh": 23,
-      "ko": 23,
-      "ja": 23,
-      "en": 13
+      "vi": 24,
+      "de": 24,
+      "fr": 24,
+      "es": 24,
+      "nl": 24,
+      "pt": 24,
+      "zh": 24,
+      "ko": 24,
+      "ja": 24,
+      "en": 14
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
-      "hanoi-vietnam-travel": 50
+      "hanoi-vietnam-travel": 60
     }
   },
   "last_batch": {
-    "seq": 22,
-    "file": "factory/topic-research/batches/claude-20261018b-0022.json",
-    "sha256": "ede60ccf1a9d5b0ffda70ed234d2f60f5efd6bf5eb01a1b75e799882ae734b41",
+    "seq": 23,
+    "file": "factory/topic-research/batches/claude-20261018b-0023.json",
+    "sha256": "deda28a5349ed1e640571ac34b48a27323f45a2956c42efe29203759da4596cf",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -2386,8 +2386,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0022.json",
       "sha256": "ede60ccf1a9d5b0ffda70ed234d2f60f5efd6bf5eb01a1b75e799882ae734b41",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "ece244d725fcaa538eb6c2f7819e071a1b8e6cdf",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -2491,11 +2491,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 23,
+      "file": "factory/topic-research/batches/claude-20261018b-0023.json",
+      "sha256": "deda28a5349ed1e640571ac34b48a27323f45a2956c42efe29203759da4596cf",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:36-pho-phuong-pho-co-ha-noi-ten-pho-hang",
+          "locale": "vi",
+          "slug": "36-pho-phuong-pho-co-ha-noi-ten-pho-hang",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "vi::36 pho phuong ha noi ten pho hang",
+          "ta_id": null
+        },
+        {
+          "ref": "en:hanoi-old-quarter-36-streets-guild-names",
+          "locale": "en",
+          "slug": "hanoi-old-quarter-36-streets-guild-names",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "en::hanoi old quarter 36 streets names",
+          "ta_id": null
+        },
+        {
+          "ref": "de:hanoi-altstadt-36-strassen-hang-namen",
+          "locale": "de",
+          "slug": "hanoi-altstadt-36-strassen-hang-namen",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "de::altstadt hanoi 36 straßen namen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:vieux-quartier-de-hanoi-36-rues-noms-hang",
+          "locale": "fr",
+          "slug": "vieux-quartier-de-hanoi-36-rues-noms-hang",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "fr::vieux quartier de hanoi 36 rues noms",
+          "ta_id": null
+        },
+        {
+          "ref": "es:casco-antiguo-de-hanoi-36-calles-nombres-hang",
+          "locale": "es",
+          "slug": "casco-antiguo-de-hanoi-36-calles-nombres-hang",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "es::casco antiguo de hanoi 36 calles nombres",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:oude-kwartier-hanoi-36-straten-hang-namen",
+          "locale": "nl",
+          "slug": "oude-kwartier-hanoi-36-straten-hang-namen",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "nl::oude kwartier hanoi 36 straten namen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-gu-jiequ-sanshiliu-hang-jie",
+          "locale": "zh",
+          "slug": "hanoi-gu-jiequ-sanshiliu-hang-jie",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "zh::河内古街区三十六行街名称",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:bairro-antigo-de-hanoi-36-ruas-nomes-hang",
+          "locale": "pt",
+          "slug": "bairro-antigo-de-hanoi-36-ruas-nomes-hang",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "pt::bairro antigo de hanoi 36 ruas nomes",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-gusigaji-36-geori-hang-ireum",
+          "locale": "ko",
+          "slug": "hanoi-gusigaji-36-geori-hang-ireum",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "ko::하노이 구시가지 36거리 이름",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-kyushigai-36-dori-hang-no-namae",
+          "locale": "ja",
+          "slug": "hanoi-kyushigai-36-dori-hang-no-namae",
+          "domain_id": "hanoi-vietnam-travel",
+          "parent_id": null,
+          "subcluster": "travel-neighborhoods",
+          "key": "ja::ハノイ旧市街36通りの名前",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 23,
-    "file": "factory/topic-research/batches/claude-20261018b-0023.json",
+    "seq": 24,
+    "file": "factory/topic-research/batches/claude-20261018b-0024.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -2654,6 +2765,13 @@
       "seq": 22,
       "topics": 10,
       "sha256": "ede60ccf1a9d5b0ffda70ed234d2f60f5efd6bf5eb01a1b75e799882ae734b41"
+    },
+    {
+      "at": "2026-10-18T23:44:32.795Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 23,
+      "topics": 10,
+      "sha256": "deda28a5349ed1e640571ac34b48a27323f45a2956c42efe29203759da4596cf"
     }
   ]
 }
