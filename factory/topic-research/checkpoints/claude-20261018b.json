@@ -7,46 +7,46 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:52:25.599Z",
+  "updated_at": "2026-10-18T23:52:33.127Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "13184659c51f38f08c3fe73edacbaebb13bf5c0e",
+  "last_commit_sha": "297d2251ca51624cba9fe403b9621329c7470ea9",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 280,
-    "qa_pass": 280,
+    "researched": 290,
+    "qa_pass": 290,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 270,
+    "pushed": 280,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 29,
-      "de": 29,
-      "fr": 29,
-      "es": 29,
-      "nl": 29,
-      "pt": 29,
-      "zh": 29,
-      "ko": 29,
-      "ja": 29,
-      "en": 19
+      "vi": 30,
+      "de": 30,
+      "fr": 30,
+      "es": 30,
+      "nl": 30,
+      "pt": 30,
+      "zh": 30,
+      "ko": 30,
+      "ja": 30,
+      "en": 20
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
-      "destinations-experiences": 10
+      "destinations-experiences": 20
     }
   },
   "last_batch": {
-    "seq": 28,
-    "file": "factory/topic-research/batches/claude-20261018b-0028.json",
-    "sha256": "accc49fdf1af2244bcf094094ffb7f6e0606156917c1fe30bc717a3d2ce3ca8e",
+    "seq": 29,
+    "file": "factory/topic-research/batches/claude-20261018b-0029.json",
+    "sha256": "bd7771b30cda3622236ff2c40721c0f25df024df280178d306a938a6ce5c5b82",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -3053,8 +3053,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0028.json",
       "sha256": "accc49fdf1af2244bcf094094ffb7f6e0606156917c1fe30bc717a3d2ce3ca8e",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "297d2251ca51624cba9fe403b9621329c7470ea9",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -3158,23 +3158,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 29,
+      "file": "factory/topic-research/batches/claude-20261018b-0029.json",
+      "sha256": "bd7771b30cda3622236ff2c40721c0f25df024df280178d306a938a6ce5c5b82",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-18",
+      "topics": [
+        {
+          "ref": "vi:van-mieu-quoc-tu-giam-tham-quan",
+          "locale": "vi",
+          "slug": "van-mieu-quoc-tu-giam-tham-quan",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "vi::tham quan van mieu quoc tu giam ha noi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:temple-of-literature-hanoi-visit-guide",
+          "locale": "en",
+          "slug": "temple-of-literature-hanoi-visit-guide",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "en::visiting the temple of literature hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "de:literaturtempel-hanoi-besuch",
+          "locale": "de",
+          "slug": "literaturtempel-hanoi-besuch",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "de::besuch des literaturtempels in hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:temple-de-la-litterature-hanoi-visite",
+          "locale": "fr",
+          "slug": "temple-de-la-litterature-hanoi-visite",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "fr::visiter le temple de la litterature a hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "es:templo-de-la-literatura-hanoi-visita",
+          "locale": "es",
+          "slug": "templo-de-la-literatura-hanoi-visita",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "es::visitar el templo de la literatura en hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:tempel-van-de-literatuur-hanoi-bezoek",
+          "locale": "nl",
+          "slug": "tempel-van-de-literatuur-hanoi-bezoek",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "nl::bezoek aan de tempel van de literatuur in hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-wenmiao-guozijian-canguan",
+          "locale": "zh",
+          "slug": "hanoi-wenmiao-guozijian-canguan",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "zh::参观河内文庙国子监",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:templo-da-literatura-hanoi-visita",
+          "locale": "pt",
+          "slug": "templo-da-literatura-hanoi-visita",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "pt::visitar o templo da literatura em hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-munmyo-gukjagam-bangmun",
+          "locale": "ko",
+          "slug": "hanoi-munmyo-gukjagam-bangmun",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "ko::하노이 문묘 국자감 방문",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-bunbyo-kokushikan-kengaku",
+          "locale": "ja",
+          "slug": "hanoi-bunbyo-kokushikan-kengaku",
+          "domain_id": "destinations-experiences",
+          "parent_id": null,
+          "subcluster": "dest-local",
+          "key": "ja::ハノイの文廟の見学カイト",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 29,
-    "file": "factory/topic-research/batches/claude-20261018b-0029.json",
+    "seq": 30,
+    "file": "factory/topic-research/batches/claude-20261018b-0030.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T14:16:48.953Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 4,
-      "topics": 10,
-      "sha256": "dae57ff856454f1c4fe24e82c69fb2ffa2aa583496e3441c091bc76632857c3a"
-    },
     {
       "at": "2026-10-18T14:18:47.309Z",
       "event": "BATCH_COMMITTED",
@@ -3342,6 +3446,13 @@
       "seq": 28,
       "topics": 10,
       "sha256": "accc49fdf1af2244bcf094094ffb7f6e0606156917c1fe30bc717a3d2ce3ca8e"
+    },
+    {
+      "at": "2026-10-18T23:52:33.127Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 29,
+      "topics": 10,
+      "sha256": "bd7771b30cda3622236ff2c40721c0f25df024df280178d306a938a6ce5c5b82"
     }
   ]
 }
