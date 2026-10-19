@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-19T00:11:20.721Z",
+  "updated_at": "2026-10-19T00:20:47.702Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "97e16720d2c57c59f9a72d07b256f18397f233da",
+  "last_commit_sha": "2c7f3b24fa7aeaacb0aca24d3e20604a15d65d11",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 450,
-    "qa_pass": 450,
+    "researched": 460,
+    "qa_pass": 460,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 440,
+    "pushed": 450,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 46,
-      "de": 46,
-      "fr": 46,
-      "es": 46,
-      "nl": 46,
-      "pt": 46,
-      "zh": 46,
-      "ko": 46,
-      "ja": 46,
-      "en": 36
+      "vi": 47,
+      "de": 47,
+      "fr": 47,
+      "es": 47,
+      "nl": 47,
+      "pt": 47,
+      "zh": 47,
+      "ko": 47,
+      "ja": 47,
+      "en": 37
     },
     "domains": {
       "transportation-mobility": 90,
@@ -41,13 +41,14 @@
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
-      "travel-planning": 80
+      "travel-planning": 80,
+      "electric-mobility": 10
     }
   },
   "last_batch": {
-    "seq": 45,
-    "file": "factory/topic-research/batches/claude-20261018b-0045.json",
-    "sha256": "1b6b0f3aac1930ef48ea45cfb500190f8d951dbb6063712c248661c264578951",
+    "seq": 46,
+    "file": "factory/topic-research/batches/claude-20261018b-0046.json",
+    "sha256": "f0c83814cb855664e6dcf85f7a0775c49396f8e8f57dbb62cf7662421c8e3162",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -4941,8 +4942,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0045.json",
       "sha256": "1b6b0f3aac1930ef48ea45cfb500190f8d951dbb6063712c248661c264578951",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "2c7f3b24fa7aeaacb0aca24d3e20604a15d65d11",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -5046,23 +5047,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 46,
+      "file": "factory/topic-research/batches/claude-20261018b-0046.json",
+      "sha256": "f0c83814cb855664e6dcf85f7a0775c49396f8e8f57dbb62cf7662421c8e3162",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:doi-pin-xe-may-dien-o-viet-nam-hoat-dong-the-nao",
+          "locale": "vi",
+          "slug": "doi-pin-xe-may-dien-o-viet-nam-hoat-dong-the-nao",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "vi::doi pin xe may dien o viet nam hoat dong the nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:battery-swapping-electric-scooters-vietnam-explained",
+          "locale": "en",
+          "slug": "battery-swapping-electric-scooters-vietnam-explained",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "en::how battery swapping for electric scooters works in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:batteriewechsel-elektroroller-vietnam-erklaert",
+          "locale": "de",
+          "slug": "batteriewechsel-elektroroller-vietnam-erklaert",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "de::wie der batteriewechsel bei elektrorollern in vietnam funktioniert",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:echange-de-batteries-scooters-electriques-vietnam",
+          "locale": "fr",
+          "slug": "echange-de-batteries-scooters-electriques-vietnam",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "fr::comment fonctionne l'echange de batteries des scooters electriques au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:intercambio-de-baterias-scooters-electricos-vietnam",
+          "locale": "es",
+          "slug": "intercambio-de-baterias-scooters-electricos-vietnam",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "es::como funciona el intercambio de baterias de los scooters electricos en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:accuwissel-elektrische-scooters-vietnam-uitgelegd",
+          "locale": "nl",
+          "slug": "accuwissel-elektrische-scooters-vietnam-uitgelegd",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "nl::hoe het wisselen van accu's bij elektrische scooters in vietnam werkt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-dianji-motuoche-huandian-yunzuo",
+          "locale": "zh",
+          "slug": "yuenan-dianji-motuoche-huandian-yunzuo",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "zh::越南电动摩托车换电是怎么运作的",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:troca-de-baterias-scooters-eletricas-vietname",
+          "locale": "pt",
+          "slug": "troca-de-baterias-scooters-eletricas-vietname",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "pt::como funciona a troca de baterias das scooters eletricas no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-jeongi-seukuteo-baeteori-gyohwan",
+          "locale": "ko",
+          "slug": "beteunam-jeongi-seukuteo-baeteori-gyohwan",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "ko::베트남 전기 스쿠터 배터리 교환 방식",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-denki-sukuta-batteri-kokan",
+          "locale": "ja",
+          "slug": "betonamu-denki-sukuta-batteri-kokan",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "ja::ヘトナムの電動スクーターのハッテリー交換の仕組み",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 46,
-    "file": "factory/topic-research/batches/claude-20261018b-0046.json",
+    "seq": 47,
+    "file": "factory/topic-research/batches/claude-20261018b-0047.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:42:42.699Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 21,
-      "topics": 10,
-      "sha256": "3af48c3b795a65780d22a3f604bbe65996db2338ea6e57a9afb9c6b69fa0e61e"
-    },
     {
       "at": "2026-10-18T23:44:26.838Z",
       "event": "BATCH_COMMITTED",
@@ -5230,6 +5335,13 @@
       "seq": 45,
       "topics": 10,
       "sha256": "1b6b0f3aac1930ef48ea45cfb500190f8d951dbb6063712c248661c264578951"
+    },
+    {
+      "at": "2026-10-19T00:20:47.702Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 46,
+      "topics": 10,
+      "sha256": "f0c83814cb855664e6dcf85f7a0775c49396f8e8f57dbb62cf7662421c8e3162"
     }
   ]
 }
