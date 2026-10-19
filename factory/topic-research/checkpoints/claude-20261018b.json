@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-19T00:20:47.702Z",
+  "updated_at": "2026-10-19T00:21:02.090Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "2c7f3b24fa7aeaacb0aca24d3e20604a15d65d11",
+  "last_commit_sha": "ab5d5cb88835860a6654242614a43a6b375c519c",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 460,
-    "qa_pass": 460,
+    "researched": 470,
+    "qa_pass": 470,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 450,
+    "pushed": 460,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 47,
-      "de": 47,
-      "fr": 47,
-      "es": 47,
-      "nl": 47,
-      "pt": 47,
-      "zh": 47,
-      "ko": 47,
-      "ja": 47,
-      "en": 37
+      "vi": 48,
+      "de": 48,
+      "fr": 48,
+      "es": 48,
+      "nl": 48,
+      "pt": 48,
+      "zh": 48,
+      "ko": 48,
+      "ja": 48,
+      "en": 38
     },
     "domains": {
       "transportation-mobility": 90,
@@ -42,13 +42,13 @@
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
       "travel-planning": 80,
-      "electric-mobility": 10
+      "electric-mobility": 20
     }
   },
   "last_batch": {
-    "seq": 46,
-    "file": "factory/topic-research/batches/claude-20261018b-0046.json",
-    "sha256": "f0c83814cb855664e6dcf85f7a0775c49396f8e8f57dbb62cf7662421c8e3162",
+    "seq": 47,
+    "file": "factory/topic-research/batches/claude-20261018b-0047.json",
+    "sha256": "be41dc10e230dca720ca36a2137eb277febb5d99111d3131e90c1beb5fc4dc29",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -5053,8 +5053,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0046.json",
       "sha256": "f0c83814cb855664e6dcf85f7a0775c49396f8e8f57dbb62cf7662421c8e3162",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "ab5d5cb88835860a6654242614a43a6b375c519c",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -5158,23 +5158,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 47,
+      "file": "factory/topic-research/batches/claude-20261018b-0047.json",
+      "sha256": "be41dc10e230dca720ca36a2137eb277febb5d99111d3131e90c1beb5fc4dc29",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:sac-xe-may-dien-o-chung-cu-ha-noi-quy-dinh-tram-sac",
+          "locale": "vi",
+          "slug": "sac-xe-may-dien-o-chung-cu-ha-noi-quy-dinh-tram-sac",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "vi::sac xe may dien o chung cu ha noi quy dinh va tram sac cong cong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:charging-electric-scooters-hanoi-apartments-public-stations",
+          "locale": "en",
+          "slug": "charging-electric-scooters-hanoi-apartments-public-stations",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "en::charging an electric scooter in a hanoi apartment building and public charging stations",
+          "ta_id": null
+        },
+        {
+          "ref": "de:elektroroller-laden-hanoi-wohnhaus-oeffentliche-stationen",
+          "locale": "de",
+          "slug": "elektroroller-laden-hanoi-wohnhaus-oeffentliche-stationen",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "de::elektroroller laden in hanoi im wohnhaus und an offentlichen ladestationen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:recharger-scooter-electrique-hanoi-immeubles-stations-publiques",
+          "locale": "fr",
+          "slug": "recharger-scooter-electrique-hanoi-immeubles-stations-publiques",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "fr::recharger un scooter electrique dans un immeuble de hanoi et stations publiques",
+          "ta_id": null
+        },
+        {
+          "ref": "es:cargar-scooter-electrico-hanoi-edificios-estaciones-publicas",
+          "locale": "es",
+          "slug": "cargar-scooter-electrico-hanoi-edificios-estaciones-publicas",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "es::cargar un scooter electrico en un edificio de hanoi y estaciones publicas",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:elektrische-scooter-laden-hanoi-appartementen-openbare-stations",
+          "locale": "nl",
+          "slug": "elektrische-scooter-laden-hanoi-appartementen-openbare-stations",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "nl::een elektrische scooter opladen in een appartementsgebouw in hanoi en openbare laadstations",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-gongyu-dianji-motuoche-chongdian-guiding",
+          "locale": "zh",
+          "slug": "hanoi-gongyu-dianji-motuoche-chongdian-guiding",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "zh::河内公寓楼里给电动摩托车充电的规定与公共充电站",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:carregar-scooter-eletrica-hanoi-edificios-estacoes-publicas",
+          "locale": "pt",
+          "slug": "carregar-scooter-eletrica-hanoi-edificios-estacoes-publicas",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "pt::carregar uma scooter eletrica num predio de hanoi e estacoes publicas",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-apateu-jeongi-obaibai-chungjeon-gyujeong",
+          "locale": "ko",
+          "slug": "hanoi-apateu-jeongi-obaibai-chungjeon-gyujeong",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "ko::하노이 아파트에서 전기 오토바이 충전 규정과 공공 충전소",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-apato-denki-baiku-juden-ruru",
+          "locale": "ja",
+          "slug": "hanoi-apato-denki-baiku-juden-ruru",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-infrastructure",
+          "key": "ja::ハノイのマンションての電動ハイクの充電ルールと公共充電所",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 47,
-    "file": "factory/topic-research/batches/claude-20261018b-0047.json",
+    "seq": 48,
+    "file": "factory/topic-research/batches/claude-20261018b-0048.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:44:26.838Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 22,
-      "topics": 10,
-      "sha256": "ede60ccf1a9d5b0ffda70ed234d2f60f5efd6bf5eb01a1b75e799882ae734b41"
-    },
     {
       "at": "2026-10-18T23:44:32.795Z",
       "event": "BATCH_COMMITTED",
@@ -5342,6 +5446,13 @@
       "seq": 46,
       "topics": 10,
       "sha256": "f0c83814cb855664e6dcf85f7a0775c49396f8e8f57dbb62cf7662421c8e3162"
+    },
+    {
+      "at": "2026-10-19T00:21:02.090Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 47,
+      "topics": 10,
+      "sha256": "be41dc10e230dca720ca36a2137eb277febb5d99111d3131e90c1beb5fc4dc29"
     }
   ]
 }
