@@ -73,6 +73,8 @@ jobs:
           node scripts/seo/audit-ai-search.mjs --out reports/ai-search-audit.json
       - name: Autonomous SEO engineer (read-only QA and reports)
         run: node scripts/seo/engine.mjs --locale de --count 2
+      - name: Review 2 multilingual pilot drafts without publishing
+        run: node scripts/seo/validate-pilots.mjs
       - name: Archive audit reports
         if: always()
         uses: actions/upload-artifact@v4
