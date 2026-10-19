@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-19T00:21:29.914Z",
+  "updated_at": "2026-10-19T00:38:22.551Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "6cc240298b2d08d171145fe60a5b1c47ebe825b5",
+  "last_commit_sha": "cf2249a51a590bc1dea15337b6b41ddf2ce019b1",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 490,
-    "qa_pass": 490,
+    "researched": 500,
+    "qa_pass": 500,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 480,
+    "pushed": 490,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 50,
-      "de": 50,
-      "fr": 50,
-      "es": 50,
-      "nl": 50,
-      "pt": 50,
-      "zh": 50,
-      "ko": 50,
-      "ja": 50,
-      "en": 40
+      "vi": 51,
+      "de": 51,
+      "fr": 51,
+      "es": 51,
+      "nl": 51,
+      "pt": 51,
+      "zh": 51,
+      "ko": 51,
+      "ja": 51,
+      "en": 41
     },
     "domains": {
       "transportation-mobility": 90,
@@ -42,13 +42,13 @@
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
       "travel-planning": 80,
-      "electric-mobility": 40
+      "electric-mobility": 50
     }
   },
   "last_batch": {
-    "seq": 49,
-    "file": "factory/topic-research/batches/claude-20261018b-0049.json",
-    "sha256": "0539d7df1b4ab585c522c4995964b86f2cb2c1fd2bef69afd9e894f7207a7878",
+    "seq": 50,
+    "file": "factory/topic-research/batches/claude-20261018b-0050.json",
+    "sha256": "0d232bede43f919767923606af4846f99120e6c37b9da88c38790649308ecaf3",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -5386,8 +5386,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0049.json",
       "sha256": "0539d7df1b4ab585c522c4995964b86f2cb2c1fd2bef69afd9e894f7207a7878",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "cf2249a51a590bc1dea15337b6b41ddf2ce019b1",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -5491,23 +5491,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 50,
+      "file": "factory/topic-research/batches/claude-20261018b-0050.json",
+      "sha256": "0d232bede43f919767923606af4846f99120e6c37b9da88c38790649308ecaf3",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:quy-chuan-ac-quy-dong-co-xe-may-dien-tu-9-10-2026",
+          "locale": "vi",
+          "slug": "quy-chuan-ac-quy-dong-co-xe-may-dien-tu-9-10-2026",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "vi::quy chuan moi ve ac quy va dong co xe may dien tu 9/10/2026",
+          "ta_id": null
+        },
+        {
+          "ref": "en:electric-motorbike-battery-motor-standards-october-2026",
+          "locale": "en",
+          "slug": "electric-motorbike-battery-motor-standards-october-2026",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "en::electric motorbike battery and motor standards qcvn 30 qcvn 31 from october 2026",
+          "ta_id": null
+        },
+        {
+          "ref": "de:elektromotorrad-batterie-motor-normen-oktober-2026",
+          "locale": "de",
+          "slug": "elektromotorrad-batterie-motor-normen-oktober-2026",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "de::elektromotorrad batterie und motor normen qcvn 30 und qcvn 31 ab oktober 2026",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:normes-batterie-moteur-motos-electriques-vietnam-octobre-2026",
+          "locale": "fr",
+          "slug": "normes-batterie-moteur-motos-electriques-vietnam-octobre-2026",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "fr::normes batterie et moteur des motos electriques au vietnam a partir d'octobre 2026",
+          "ta_id": null
+        },
+        {
+          "ref": "es:normas-bateria-motor-motos-electricas-vietnam-octubre-2026",
+          "locale": "es",
+          "slug": "normas-bateria-motor-motos-electricas-vietnam-octubre-2026",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "es::normas de bateria y motor de las motos electricas en vietnam desde octubre de 2026",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:normen-accu-motor-elektrische-motoren-vietnam-oktober-2026",
+          "locale": "nl",
+          "slug": "normen-accu-motor-elektrische-motoren-vietnam-oktober-2026",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "nl::normen voor accu en motor van elektrische motoren in vietnam vanaf oktober 2026",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-diandong-motuoche-dianchi-dianji-biaozhun-2026-10",
+          "locale": "zh",
+          "slug": "yuenan-diandong-motuoche-dianchi-dianji-biaozhun-2026-10",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "zh::越南电动摩托车电池和电机新标准 2026年10月起",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:normas-bateria-motor-motos-eletricas-vietname-outubro-2026",
+          "locale": "pt",
+          "slug": "normas-bateria-motor-motos-eletricas-vietname-outubro-2026",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "pt::normas de bateria e motor das motos eletricas no vietname a partir de outubro de 2026",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-jeongi-obaibai-baeteori-moteo-gijun-2026-10",
+          "locale": "ko",
+          "slug": "beteunam-jeongi-obaibai-baeteori-moteo-gijun-2026-10",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "ko::베트남 전기 오토바이 배터리 모터 신규 기준 2026년 10월부터",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-denki-baiku-batteri-moota-kijun-2026-10",
+          "locale": "ja",
+          "slug": "betonamu-denki-baiku-batteri-moota-kijun-2026-10",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "ja::ヘトナムの電動ハイクのハッテリーとモーターの新基準 2026年10月から",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 50,
-    "file": "factory/topic-research/batches/claude-20261018b-0050.json",
+    "seq": 51,
+    "file": "factory/topic-research/batches/claude-20261018b-0051.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:46:17.895Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 25,
-      "topics": 10,
-      "sha256": "ffdbaf921fa22bf53dc3f76e37a2e92deb4ea91bba437759bcd31bebadf24228"
-    },
     {
       "at": "2026-10-18T23:46:24.839Z",
       "event": "BATCH_COMMITTED",
@@ -5675,6 +5779,13 @@
       "seq": 49,
       "topics": 10,
       "sha256": "0539d7df1b4ab585c522c4995964b86f2cb2c1fd2bef69afd9e894f7207a7878"
+    },
+    {
+      "at": "2026-10-19T00:38:22.551Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 50,
+      "topics": 10,
+      "sha256": "0d232bede43f919767923606af4846f99120e6c37b9da88c38790649308ecaf3"
     }
   ]
 }
