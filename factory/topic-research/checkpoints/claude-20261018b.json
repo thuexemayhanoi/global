@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-19T00:38:40.279Z",
+  "updated_at": "2026-10-19T00:38:55.766Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "1cb89506ef86db201f2b4d2acc219e73a8e00b95",
+  "last_commit_sha": "1294dd64071651a817dfda6e7d109dc0663aea14",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 510,
-    "qa_pass": 510,
+    "researched": 520,
+    "qa_pass": 520,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 500,
+    "pushed": 510,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 52,
-      "de": 52,
-      "fr": 52,
-      "es": 52,
-      "nl": 52,
-      "pt": 52,
-      "zh": 52,
-      "ko": 52,
-      "ja": 52,
-      "en": 42
+      "vi": 53,
+      "de": 53,
+      "fr": 53,
+      "es": 53,
+      "nl": 53,
+      "pt": 53,
+      "zh": 53,
+      "ko": 53,
+      "ja": 53,
+      "en": 43
     },
     "domains": {
       "transportation-mobility": 90,
@@ -42,13 +42,13 @@
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
       "travel-planning": 80,
-      "electric-mobility": 60
+      "electric-mobility": 70
     }
   },
   "last_batch": {
-    "seq": 51,
-    "file": "factory/topic-research/batches/claude-20261018b-0051.json",
-    "sha256": "f0fea6de97811286b609d3dbea7fe5459a993131c04f36d2feb15399e4259957",
+    "seq": 52,
+    "file": "factory/topic-research/batches/claude-20261018b-0052.json",
+    "sha256": "8e72173d344a2214cf0bd6371f32015fea4ea452c0f359544ee610d58cbcad00",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -5608,8 +5608,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0051.json",
       "sha256": "f0fea6de97811286b609d3dbea7fe5459a993131c04f36d2feb15399e4259957",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "1294dd64071651a817dfda6e7d109dc0663aea14",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -5713,23 +5713,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 52,
+      "file": "factory/topic-research/batches/claude-20261018b-0052.json",
+      "sha256": "8e72173d344a2214cf0bd6371f32015fea4ea452c0f359544ee610d58cbcad00",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:xe-may-dien-honda-icon-e-cuv-e-uc3-pin-va-noi-ban",
+          "locale": "vi",
+          "slug": "xe-may-dien-honda-icon-e-cuv-e-uc3-pin-va-noi-ban",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "vi::xe may dien honda icon e: cuv e: uc3 tuy chon pin va noi ban",
+          "ta_id": null
+        },
+        {
+          "ref": "en:honda-electric-scooters-vietnam-icon-e-cuv-e-uc3",
+          "locale": "en",
+          "slug": "honda-electric-scooters-vietnam-icon-e-cuv-e-uc3",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "en::honda electric scooters in vietnam icon e: cuv e: uc3 battery options",
+          "ta_id": null
+        },
+        {
+          "ref": "de:honda-elektroroller-vietnam-icon-e-cuv-e-uc3",
+          "locale": "de",
+          "slug": "honda-elektroroller-vietnam-icon-e-cuv-e-uc3",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "de::honda elektroroller in vietnam icon e: cuv e: uc3 batterieoptionen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:scooters-electriques-honda-vietnam-icon-e-cuv-e-uc3",
+          "locale": "fr",
+          "slug": "scooters-electriques-honda-vietnam-icon-e-cuv-e-uc3",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "fr::scooters electriques honda au vietnam icon e: cuv e: uc3 options de batterie",
+          "ta_id": null
+        },
+        {
+          "ref": "es:scooters-electricos-honda-vietnam-icon-e-cuv-e-uc3",
+          "locale": "es",
+          "slug": "scooters-electricos-honda-vietnam-icon-e-cuv-e-uc3",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "es::scooters electricos honda en vietnam icon e: cuv e: uc3 opciones de bateria",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:honda-elektrische-scooters-vietnam-icon-e-cuv-e-uc3",
+          "locale": "nl",
+          "slug": "honda-elektrische-scooters-vietnam-icon-e-cuv-e-uc3",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "nl::honda elektrische scooters in vietnam icon e: cuv e: uc3 accuopties",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:honda-dianji-motuoche-yuenan-icon-e-cuv-e-uc3",
+          "locale": "zh",
+          "slug": "honda-dianji-motuoche-yuenan-icon-e-cuv-e-uc3",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "zh::本田越南电动摩托车 icon e: cuv e: uc3 电池方案与销售城市",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:scooters-eletricas-honda-vietname-icon-e-cuv-e-uc3",
+          "locale": "pt",
+          "slug": "scooters-eletricas-honda-vietname-icon-e-cuv-e-uc3",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "pt::scooters eletricas honda no vietname icon e: cuv e: uc3 opcoes de bateria",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:honda-jeongi-obaibai-beteunam-icon-e-cuv-e-uc3",
+          "locale": "ko",
+          "slug": "honda-jeongi-obaibai-beteunam-icon-e-cuv-e-uc3",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "ko::혼다 베트남 전기 스쿠터 icon e: cuv e: uc3 배터리 방식과 판매 도시",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:honda-denki-sukuta-betonamu-icon-e-cuv-e-uc3",
+          "locale": "ja",
+          "slug": "honda-denki-sukuta-betonamu-icon-e-cuv-e-uc3",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "ja::ホンタ ヘトナムの電動スクーター icon e: cuv e: uc3 ハッテリー方式と販売都市",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 52,
-    "file": "factory/topic-research/batches/claude-20261018b-0052.json",
+    "seq": 53,
+    "file": "factory/topic-research/batches/claude-20261018b-0053.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:46:31.812Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 27,
-      "topics": 10,
-      "sha256": "3581828d567a49af1dd179c620c681910a9cd77f15d926fd1b7df39e30a5b585"
-    },
     {
       "at": "2026-10-18T23:52:25.599Z",
       "event": "BATCH_COMMITTED",
@@ -5897,6 +6001,13 @@
       "seq": 51,
       "topics": 10,
       "sha256": "f0fea6de97811286b609d3dbea7fe5459a993131c04f36d2feb15399e4259957"
+    },
+    {
+      "at": "2026-10-19T00:38:55.766Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 52,
+      "topics": 10,
+      "sha256": "8e72173d344a2214cf0bd6371f32015fea4ea452c0f359544ee610d58cbcad00"
     }
   ]
 }
