@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-19T00:39:27.271Z",
+  "updated_at": "2026-10-19T00:39:43.767Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "259874644e4737d5e2a8273243fd3e92cec2cf27",
+  "last_commit_sha": "de72f05642084c452342fbe325c2c901f9071fc3",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 540,
-    "qa_pass": 540,
+    "researched": 550,
+    "qa_pass": 550,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 530,
+    "pushed": 540,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 55,
-      "de": 55,
-      "fr": 55,
-      "es": 55,
-      "nl": 55,
-      "pt": 55,
-      "zh": 55,
-      "ko": 55,
-      "ja": 55,
-      "en": 45
+      "vi": 56,
+      "de": 56,
+      "fr": 56,
+      "es": 56,
+      "nl": 56,
+      "pt": 56,
+      "zh": 56,
+      "ko": 56,
+      "ja": 56,
+      "en": 46
     },
     "domains": {
       "transportation-mobility": 90,
@@ -42,13 +42,13 @@
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
       "travel-planning": 80,
-      "electric-mobility": 90
+      "electric-mobility": 100
     }
   },
   "last_batch": {
-    "seq": 54,
-    "file": "factory/topic-research/batches/claude-20261018b-0054.json",
-    "sha256": "268d39c7fa215b641eb6252067762d448bb77b9f35377da9d0e6e2350fe9a8ab",
+    "seq": 55,
+    "file": "factory/topic-research/batches/claude-20261018b-0055.json",
+    "sha256": "0bbef7ef3c1226bd03da53d40482b2f836797cad1086a4c245d119c0ecf9cb6e",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -5941,8 +5941,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0054.json",
       "sha256": "268d39c7fa215b641eb6252067762d448bb77b9f35377da9d0e6e2350fe9a8ab",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "de72f05642084c452342fbe325c2c901f9071fc3",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -6046,23 +6046,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 55,
+      "file": "factory/topic-research/batches/claude-20261018b-0055.json",
+      "sha256": "0bbef7ef3c1226bd03da53d40482b2f836797cad1086a4c245d119c0ecf9cb6e",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:pin-xe-may-dien-het-han-tai-che-quy-dinh-viet-nam",
+          "locale": "vi",
+          "slug": "pin-xe-may-dien-het-han-tai-che-quy-dinh-viet-nam",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "vi::quy dinh tai che pin xe may dien het han o viet nam trach nhiem cua nha san xuat",
+          "ta_id": null
+        },
+        {
+          "ref": "en:electric-scooter-battery-recycling-rules-vietnam",
+          "locale": "en",
+          "slug": "electric-scooter-battery-recycling-rules-vietnam",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "en::electric scooter battery recycling rules in vietnam extended producer responsibility",
+          "ta_id": null
+        },
+        {
+          "ref": "de:elektroroller-batterien-recycling-regeln-vietnam",
+          "locale": "de",
+          "slug": "elektroroller-batterien-recycling-regeln-vietnam",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "de::recycling von elektroroller-batterien in vietnam regeln und herstellerverantwortung",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:recyclage-des-batteries-de-scooters-electriques-vietnam",
+          "locale": "fr",
+          "slug": "recyclage-des-batteries-de-scooters-electriques-vietnam",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "fr::recyclage des batteries de scooters electriques au vietnam regles et responsabilite des producteurs",
+          "ta_id": null
+        },
+        {
+          "ref": "es:reciclaje-baterias-scooters-electricos-vietnam-normas",
+          "locale": "es",
+          "slug": "reciclaje-baterias-scooters-electricos-vietnam-normas",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "es::reciclaje de baterias de scooters electricos en vietnam normas y responsabilidad del productor",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:recycling-accus-elektrische-scooters-vietnam-regels",
+          "locale": "nl",
+          "slug": "recycling-accus-elektrische-scooters-vietnam-regels",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "nl::recycling van accu's van elektrische scooters in vietnam regels en producentenverantwoordelijkheid",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-diandong-motuoche-dianchi-huishou-guiding",
+          "locale": "zh",
+          "slug": "yuenan-diandong-motuoche-dianchi-huishou-guiding",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "zh::越南电动摩托车电池回收规定 生产者责任延伸",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:reciclagem-baterias-scooters-eletricas-vietname-regras",
+          "locale": "pt",
+          "slug": "reciclagem-baterias-scooters-eletricas-vietname-regras",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "pt::reciclagem de baterias de scooters eletricas no vietname regras e responsabilidade do produtor",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-jeongi-obaibai-baeteori-jaehwaryong-gyujeong",
+          "locale": "ko",
+          "slug": "beteunam-jeongi-obaibai-baeteori-jaehwaryong-gyujeong",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "ko::베트남 전기 오토바이 배터리 재활용 규정 생산자 책임",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-denki-baiku-batteri-risaikuru-kisoku",
+          "locale": "ja",
+          "slug": "betonamu-denki-baiku-batteri-risaikuru-kisoku",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "ja::ヘトナムの電動ハイク用ハッテリーのリサイクル規則と生産者責任",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 55,
-    "file": "factory/topic-research/batches/claude-20261018b-0055.json",
+    "seq": 56,
+    "file": "factory/topic-research/batches/claude-20261018b-0056.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:52:41.097Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 30,
-      "topics": 10,
-      "sha256": "fe4625768e3ecfbe9881aed69bc5f73423bcaf831f892fb1ec1c1a24d8e2bb90"
-    },
     {
       "at": "2026-10-18T23:52:49.094Z",
       "event": "BATCH_COMMITTED",
@@ -6230,6 +6334,13 @@
       "seq": 54,
       "topics": 10,
       "sha256": "268d39c7fa215b641eb6252067762d448bb77b9f35377da9d0e6e2350fe9a8ab"
+    },
+    {
+      "at": "2026-10-19T00:39:43.767Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 55,
+      "topics": 10,
+      "sha256": "0bbef7ef3c1226bd03da53d40482b2f836797cad1086a4c245d119c0ecf9cb6e"
     }
   ]
 }
