@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-19T00:10:54.580Z",
+  "updated_at": "2026-10-19T00:11:07.520Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "d6a700a699c34c0bbe016910a7ce3547dd23de30",
+  "last_commit_sha": "3b325c5bbb722203a192bfd5e2a8ccd6e020a6f9",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 430,
-    "qa_pass": 430,
+    "researched": 440,
+    "qa_pass": 440,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 420,
+    "pushed": 430,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 44,
-      "de": 44,
-      "fr": 44,
-      "es": 44,
-      "nl": 44,
-      "pt": 44,
-      "zh": 44,
-      "ko": 44,
-      "ja": 44,
-      "en": 34
+      "vi": 45,
+      "de": 45,
+      "fr": 45,
+      "es": 45,
+      "nl": 45,
+      "pt": 45,
+      "zh": 45,
+      "ko": 45,
+      "ja": 45,
+      "en": 35
     },
     "domains": {
       "transportation-mobility": 90,
@@ -41,13 +41,13 @@
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
-      "travel-planning": 60
+      "travel-planning": 70
     }
   },
   "last_batch": {
-    "seq": 43,
-    "file": "factory/topic-research/batches/claude-20261018b-0043.json",
-    "sha256": "ad7b1a903964e57ae1cc2c8253d2bf99382bfb8c9f33e619b3d518cabcefdca3",
+    "seq": 44,
+    "file": "factory/topic-research/batches/claude-20261018b-0044.json",
+    "sha256": "ad08eeb6e97c1aacbb2af23e7307485229e8c2fb0867d5a8fe7e7c1b1f15b01e",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -4719,8 +4719,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0043.json",
       "sha256": "ad7b1a903964e57ae1cc2c8253d2bf99382bfb8c9f33e619b3d518cabcefdca3",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "3b325c5bbb722203a192bfd5e2a8ccd6e020a6f9",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -4824,23 +4824,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 44,
+      "file": "factory/topic-research/batches/claude-20261018b-0044.json",
+      "sha256": "ad08eeb6e97c1aacbb2af23e7307485229e8c2fb0867d5a8fe7e7c1b1f15b01e",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:mot-tuan-o-mien-bac-bang-tau-va-xe-khach",
+          "locale": "vi",
+          "slug": "mot-tuan-o-mien-bac-bang-tau-va-xe-khach",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "vi::lich trinh mot tuan o mien bac bang tau va xe khach",
+          "ta_id": null
+        },
+        {
+          "ref": "en:one-week-northern-vietnam-by-train-and-bus",
+          "locale": "en",
+          "slug": "one-week-northern-vietnam-by-train-and-bus",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "en::one week in northern vietnam by train and bus",
+          "ta_id": null
+        },
+        {
+          "ref": "de:eine-woche-nordvietnam-mit-zug-und-bus",
+          "locale": "de",
+          "slug": "eine-woche-nordvietnam-mit-zug-und-bus",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "de::eine woche nordvietnam mit zug und bus",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:une-semaine-dans-le-nord-du-vietnam-train-et-bus",
+          "locale": "fr",
+          "slug": "une-semaine-dans-le-nord-du-vietnam-train-et-bus",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "fr::une semaine dans le nord du vietnam en train et en bus",
+          "ta_id": null
+        },
+        {
+          "ref": "es:una-semana-en-el-norte-de-vietnam-tren-y-autobus",
+          "locale": "es",
+          "slug": "una-semana-en-el-norte-de-vietnam-tren-y-autobus",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "es::una semana en el norte de vietnam en tren y autobus",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:een-week-noord-vietnam-met-trein-en-bus",
+          "locale": "nl",
+          "slug": "een-week-noord-vietnam-met-trein-en-bus",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "nl::een week in noord-vietnam met trein en bus",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-beibu-yizhou-huoche-changtu-bashi",
+          "locale": "zh",
+          "slug": "yuenan-beibu-yizhou-huoche-changtu-bashi",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "zh::越南北部一周行程乘火车和长途巴士",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:uma-semana-no-norte-do-vietname-comboio-e-autocarro",
+          "locale": "pt",
+          "slug": "uma-semana-no-norte-do-vietname-comboio-e-autocarro",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "pt::uma semana no norte do vietname de comboio e autocarro",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-bukbu-ilju-gicha-beoseu",
+          "locale": "ko",
+          "slug": "beteunam-bukbu-ilju-gicha-beoseu",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "ko::베트남 북부 일주일 기차와 버스 여행",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:kita-betonamu-isshukan-ressha-basu",
+          "locale": "ja",
+          "slug": "kita-betonamu-isshukan-ressha-basu",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "ja::北ヘトナム1週間 列車とハスの旅",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 44,
-    "file": "factory/topic-research/batches/claude-20261018b-0044.json",
+    "seq": 45,
+    "file": "factory/topic-research/batches/claude-20261018b-0045.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:42:30.921Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 19,
-      "topics": 10,
-      "sha256": "6624ee6f9bcd6edd4019fa6056cc1719e62163c01a164cf0cef3fe2adaace00d"
-    },
     {
       "at": "2026-10-18T23:42:36.556Z",
       "event": "BATCH_COMMITTED",
@@ -5008,6 +5112,13 @@
       "seq": 43,
       "topics": 10,
       "sha256": "ad7b1a903964e57ae1cc2c8253d2bf99382bfb8c9f33e619b3d518cabcefdca3"
+    },
+    {
+      "at": "2026-10-19T00:11:07.520Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 44,
+      "topics": 10,
+      "sha256": "ad08eeb6e97c1aacbb2af23e7307485229e8c2fb0867d5a8fe7e7c1b1f15b01e"
     }
   ]
 }
