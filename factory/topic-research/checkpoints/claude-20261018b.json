@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-19T00:07:01.715Z",
+  "updated_at": "2026-10-19T00:10:54.580Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "1d95981c6b4de97fa85bed3d3f81d4a933e7f34a",
+  "last_commit_sha": "d6a700a699c34c0bbe016910a7ce3547dd23de30",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 420,
-    "qa_pass": 420,
+    "researched": 430,
+    "qa_pass": 430,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 410,
+    "pushed": 420,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 43,
-      "de": 43,
-      "fr": 43,
-      "es": 43,
-      "nl": 43,
-      "pt": 43,
-      "zh": 43,
-      "ko": 43,
-      "ja": 43,
-      "en": 33
+      "vi": 44,
+      "de": 44,
+      "fr": 44,
+      "es": 44,
+      "nl": 44,
+      "pt": 44,
+      "zh": 44,
+      "ko": 44,
+      "ja": 44,
+      "en": 34
     },
     "domains": {
       "transportation-mobility": 90,
@@ -41,13 +41,13 @@
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
-      "travel-planning": 50
+      "travel-planning": 60
     }
   },
   "last_batch": {
-    "seq": 42,
-    "file": "factory/topic-research/batches/claude-20261018b-0042.json",
-    "sha256": "36f2ae00b0b22c807340e9c88bf8a74c7304e51c6dedbc475d0b66c99fec7d38",
+    "seq": 43,
+    "file": "factory/topic-research/batches/claude-20261018b-0043.json",
+    "sha256": "ad7b1a903964e57ae1cc2c8253d2bf99382bfb8c9f33e619b3d518cabcefdca3",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -4608,8 +4608,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0042.json",
       "sha256": "36f2ae00b0b22c807340e9c88bf8a74c7304e51c6dedbc475d0b66c99fec7d38",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "d6a700a699c34c0bbe016910a7ce3547dd23de30",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -4713,23 +4713,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 43,
+      "file": "factory/topic-research/batches/claude-20261018b-0043.json",
+      "sha256": "ad7b1a903964e57ae1cc2c8253d2bf99382bfb8c9f33e619b3d518cabcefdca3",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:ba-ngay-o-ha-noi-lich-trinh-lan-dau",
+          "locale": "vi",
+          "slug": "ba-ngay-o-ha-noi-lich-trinh-lan-dau",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "vi::lich trinh 3 ngay o ha noi cho nguoi den lan dau",
+          "ta_id": null
+        },
+        {
+          "ref": "en:three-days-in-hanoi-first-visit-itinerary",
+          "locale": "en",
+          "slug": "three-days-in-hanoi-first-visit-itinerary",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "en::3 days in hanoi first visit itinerary",
+          "ta_id": null
+        },
+        {
+          "ref": "de:drei-tage-in-hanoi-erster-besuch-reiseplan",
+          "locale": "de",
+          "slug": "drei-tage-in-hanoi-erster-besuch-reiseplan",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "de::3 tage in hanoi erster besuch reiseplan",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:trois-jours-a-hanoi-premiere-visite-itineraire",
+          "locale": "fr",
+          "slug": "trois-jours-a-hanoi-premiere-visite-itineraire",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "fr::3 jours a hanoi premiere visite itineraire",
+          "ta_id": null
+        },
+        {
+          "ref": "es:tres-dias-en-hanoi-primera-visita-itinerario",
+          "locale": "es",
+          "slug": "tres-dias-en-hanoi-primera-visita-itinerario",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "es::3 dias en hanoi primera visita itinerario",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:drie-dagen-in-hanoi-eerste-bezoek-reisplan",
+          "locale": "nl",
+          "slug": "drie-dagen-in-hanoi-eerste-bezoek-reisplan",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "nl::3 dagen in hanoi eerste bezoek reisplan",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-sanri-xingcheng-shouci-fangwen",
+          "locale": "zh",
+          "slug": "hanoi-sanri-xingcheng-shouci-fangwen",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "zh::河内三日行程首次到访安排",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:tres-dias-em-hanoi-primeira-visita-itinerario",
+          "locale": "pt",
+          "slug": "tres-dias-em-hanoi-primeira-visita-itinerario",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "pt::3 dias em hanoi primeira visita itinerario",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-3il-ilyeong-cheot-bangmun",
+          "locale": "ko",
+          "slug": "hanoi-3il-ilyeong-cheot-bangmun",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "ko::하노이 3일 일정 첫 방문 코스",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-3nichikan-hatsu-hoomon-nittei",
+          "locale": "ja",
+          "slug": "hanoi-3nichikan-hatsu-hoomon-nittei",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-itineraries",
+          "key": "ja::ハノイ3日間の初めての旅の日程",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 43,
-    "file": "factory/topic-research/batches/claude-20261018b-0043.json",
+    "seq": 44,
+    "file": "factory/topic-research/batches/claude-20261018b-0044.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:42:25.220Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 18,
-      "topics": 10,
-      "sha256": "1446a7bb873d06c6b56ceafc970eb734d954c551e3fec3b3223bfda68a8d33cc"
-    },
     {
       "at": "2026-10-18T23:42:30.921Z",
       "event": "BATCH_COMMITTED",
@@ -4897,6 +5001,13 @@
       "seq": 42,
       "topics": 10,
       "sha256": "36f2ae00b0b22c807340e9c88bf8a74c7304e51c6dedbc475d0b66c99fec7d38"
+    },
+    {
+      "at": "2026-10-19T00:10:54.580Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 43,
+      "topics": 10,
+      "sha256": "ad7b1a903964e57ae1cc2c8253d2bf99382bfb8c9f33e619b3d518cabcefdca3"
     }
   ]
 }
