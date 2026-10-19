@@ -7,46 +7,47 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-18T23:58:25.544Z",
+  "updated_at": "2026-10-19T00:04:44.213Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "113b66783673e203af46117d91d411c54cc50b26",
+  "last_commit_sha": "fccb7726fb161ff2aa4ba46f6e45805f3c2d5007",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 370,
-    "qa_pass": 370,
+    "researched": 380,
+    "qa_pass": 380,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 360,
+    "pushed": 370,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 38,
-      "de": 38,
-      "fr": 38,
-      "es": 38,
-      "nl": 38,
-      "pt": 38,
-      "zh": 38,
-      "ko": 38,
-      "ja": 38,
-      "en": 28
+      "vi": 39,
+      "de": 39,
+      "fr": 39,
+      "es": 39,
+      "nl": 39,
+      "pt": 39,
+      "zh": 39,
+      "ko": 39,
+      "ja": 39,
+      "en": 29
     },
     "domains": {
       "transportation-mobility": 90,
       "traffic-law-safety": 20,
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
-      "destinations-experiences": 100
+      "destinations-experiences": 100,
+      "travel-planning": 10
     }
   },
   "last_batch": {
-    "seq": 37,
-    "file": "factory/topic-research/batches/claude-20261018b-0037.json",
-    "sha256": "a4f3479e8b0f274f33f589a7696132d2eedb573358b8387df10ce98fe9fd73c2",
+    "seq": 38,
+    "file": "factory/topic-research/batches/claude-20261018b-0038.json",
+    "sha256": "217461778206bd4ac720993660d38a3c5b87804d50737a9df5841a97eb05f931",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -4052,8 +4053,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0037.json",
       "sha256": "a4f3479e8b0f274f33f589a7696132d2eedb573358b8387df10ce98fe9fd73c2",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "fccb7726fb161ff2aa4ba46f6e45805f3c2d5007",
       "researched_on": "2026-10-18",
       "topics": [
         {
@@ -4157,23 +4158,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 38,
+      "file": "factory/topic-research/batches/claude-20261018b-0038.json",
+      "sha256": "217461778206bd4ac720993660d38a3c5b87804d50737a9df5841a97eb05f931",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:xin-e-visa-viet-nam-cong-chinh-thuc",
+          "locale": "vi",
+          "slug": "xin-e-visa-viet-nam-cong-chinh-thuc",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "vi::cach xin e-visa viet nam tren cong chinh thuc",
+          "ta_id": null
+        },
+        {
+          "ref": "en:vietnam-e-visa-official-portal-how-to-apply",
+          "locale": "en",
+          "slug": "vietnam-e-visa-official-portal-how-to-apply",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "en::how to apply for a vietnam e-visa on the official portal",
+          "ta_id": null
+        },
+        {
+          "ref": "de:vietnam-e-visa-offizielles-portal-beantragen",
+          "locale": "de",
+          "slug": "vietnam-e-visa-offizielles-portal-beantragen",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "de::vietnam e-visum auf dem offiziellen portal beantragen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:e-visa-vietnam-portail-officiel-demande",
+          "locale": "fr",
+          "slug": "e-visa-vietnam-portail-officiel-demande",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "fr::demander un e-visa vietnam sur le portail officiel",
+          "ta_id": null
+        },
+        {
+          "ref": "es:e-visa-vietnam-portal-oficial-solicitud",
+          "locale": "es",
+          "slug": "e-visa-vietnam-portal-oficial-solicitud",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "es::como solicitar el e-visa de vietnam en el portal oficial",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:vietnam-e-visum-officieel-portaal-aanvragen",
+          "locale": "nl",
+          "slug": "vietnam-e-visum-officieel-portaal-aanvragen",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "nl::vietnam e-visum aanvragen via het officiele portaal",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-dianzi-qianzheng-guanfang-shenqing",
+          "locale": "zh",
+          "slug": "yuenan-dianzi-qianzheng-guanfang-shenqing",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "zh::越南电子签证官方网站申请方法",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:e-visa-vietname-portal-oficial-pedido",
+          "locale": "pt",
+          "slug": "e-visa-vietname-portal-oficial-pedido",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "pt::pedir o e-visa do vietname no portal oficial",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-jeonja-bija-gongsik-saiteu-sincheong",
+          "locale": "ko",
+          "slug": "beteunam-jeonja-bija-gongsik-saiteu-sincheong",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "ko::베트남 전자비자 공식 사이트 신청 방법",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-denshi-biza-koshiki-saito-moshikomi",
+          "locale": "ja",
+          "slug": "betonamu-denshi-biza-koshiki-saito-moshikomi",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "ja::ヘトナムの電子ヒサを公式サイトて申請する方法",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 38,
-    "file": "factory/topic-research/batches/claude-20261018b-0038.json",
+    "seq": 39,
+    "file": "factory/topic-research/batches/claude-20261018b-0039.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:24:41.283Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 13,
-      "topics": 10,
-      "sha256": "6b369ea9fd75f5e38efcdeafaa406b3bda6cb43a76bbeac77376ccb4bc73e6c2"
-    },
     {
       "at": "2026-10-18T23:26:10.269Z",
       "event": "BATCH_COMMITTED",
@@ -4341,6 +4446,13 @@
       "seq": 37,
       "topics": 10,
       "sha256": "a4f3479e8b0f274f33f589a7696132d2eedb573358b8387df10ce98fe9fd73c2"
+    },
+    {
+      "at": "2026-10-19T00:04:44.213Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 38,
+      "topics": 10,
+      "sha256": "217461778206bd4ac720993660d38a3c5b87804d50737a9df5841a97eb05f931"
     }
   ]
 }
