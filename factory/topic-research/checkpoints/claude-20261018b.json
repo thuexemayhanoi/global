@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-19T00:39:11.511Z",
+  "updated_at": "2026-10-19T00:39:27.271Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "8e44146a96f39c2b2cc3b811b9173886a938f0bf",
+  "last_commit_sha": "259874644e4737d5e2a8273243fd3e92cec2cf27",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 530,
-    "qa_pass": 530,
+    "researched": 540,
+    "qa_pass": 540,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 520,
+    "pushed": 530,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 54,
-      "de": 54,
-      "fr": 54,
-      "es": 54,
-      "nl": 54,
-      "pt": 54,
-      "zh": 54,
-      "ko": 54,
-      "ja": 54,
-      "en": 44
+      "vi": 55,
+      "de": 55,
+      "fr": 55,
+      "es": 55,
+      "nl": 55,
+      "pt": 55,
+      "zh": 55,
+      "ko": 55,
+      "ja": 55,
+      "en": 45
     },
     "domains": {
       "transportation-mobility": 90,
@@ -42,13 +42,13 @@
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
       "travel-planning": 80,
-      "electric-mobility": 80
+      "electric-mobility": 90
     }
   },
   "last_batch": {
-    "seq": 53,
-    "file": "factory/topic-research/batches/claude-20261018b-0053.json",
-    "sha256": "10ffe0dd23370d742ff83b8b57a9cc7c9090622e6b872ef2b7f512a0072571eb",
+    "seq": 54,
+    "file": "factory/topic-research/batches/claude-20261018b-0054.json",
+    "sha256": "268d39c7fa215b641eb6252067762d448bb77b9f35377da9d0e6e2350fe9a8ab",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -5830,8 +5830,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0053.json",
       "sha256": "10ffe0dd23370d742ff83b8b57a9cc7c9090622e6b872ef2b7f512a0072571eb",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "259874644e4737d5e2a8273243fd3e92cec2cf27",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -5935,23 +5935,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 54,
+      "file": "factory/topic-research/batches/claude-20261018b-0054.json",
+      "sha256": "268d39c7fa215b641eb6252067762d448bb77b9f35377da9d0e6e2350fe9a8ab",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:thuong-hieu-xe-may-dien-viet-nam-dat-bike-yadea-pega-selex",
+          "locale": "vi",
+          "slug": "thuong-hieu-xe-may-dien-viet-nam-dat-bike-yadea-pega-selex",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "vi::cac thuong hieu xe may dien o viet nam ngoai vinfast va honda dat bike yadea pega selex",
+          "ta_id": null
+        },
+        {
+          "ref": "en:electric-motorbike-brands-vietnam-dat-bike-yadea-pega-selex",
+          "locale": "en",
+          "slug": "electric-motorbike-brands-vietnam-dat-bike-yadea-pega-selex",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "en::electric motorbike brands in vietnam dat bike yadea pega selex compared",
+          "ta_id": null
+        },
+        {
+          "ref": "de:elektromotorrad-marken-vietnam-dat-bike-yadea-pega-selex",
+          "locale": "de",
+          "slug": "elektromotorrad-marken-vietnam-dat-bike-yadea-pega-selex",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "de::elektromotorrad marken in vietnam neben vinfast und honda dat bike yadea pega selex",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:marques-de-motos-electriques-vietnam-dat-bike-yadea-pega-selex",
+          "locale": "fr",
+          "slug": "marques-de-motos-electriques-vietnam-dat-bike-yadea-pega-selex",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "fr::marques de motos electriques au vietnam hors vinfast et honda dat bike yadea pega selex",
+          "ta_id": null
+        },
+        {
+          "ref": "es:marcas-de-motos-electricas-vietnam-dat-bike-yadea-pega-selex",
+          "locale": "es",
+          "slug": "marcas-de-motos-electricas-vietnam-dat-bike-yadea-pega-selex",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "es::marcas de motos electricas en vietnam ademas de vinfast y honda dat bike yadea pega selex",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:merken-elektrische-motoren-vietnam-dat-bike-yadea-pega-selex",
+          "locale": "nl",
+          "slug": "merken-elektrische-motoren-vietnam-dat-bike-yadea-pega-selex",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "nl::merken van elektrische motoren in vietnam naast vinfast en honda dat bike yadea pega selex",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-diandong-motuoche-pinpai-dat-bike-yadea-pega-selex",
+          "locale": "zh",
+          "slug": "yuenan-diandong-motuoche-pinpai-dat-bike-yadea-pega-selex",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "zh::越南电动摩托车品牌 除vinfast和本田外 dat bike 雅迪 pega selex",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:marcas-de-motos-eletricas-vietname-dat-bike-yadea-pega-selex",
+          "locale": "pt",
+          "slug": "marcas-de-motos-eletricas-vietname-dat-bike-yadea-pega-selex",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "pt::marcas de motos eletricas no vietname alem de vinfast e honda dat bike yadea pega selex",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-jeongi-obaibai-beurendeu-dat-bike-yadea-pega-selex",
+          "locale": "ko",
+          "slug": "beteunam-jeongi-obaibai-beurendeu-dat-bike-yadea-pega-selex",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "ko::베트남 전기 오토바이 브랜드 빈패스트 혼다 외 dat bike yadea pega selex",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-denki-baiku-burando-dat-bike-yadea-pega-selex",
+          "locale": "ja",
+          "slug": "betonamu-denki-baiku-burando-dat-bike-yadea-pega-selex",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "ja::ヘトナムの電動ハイクフラント ヒンファストとホンタ以外 dat bike ヤティア pega selex",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 54,
-    "file": "factory/topic-research/batches/claude-20261018b-0054.json",
+    "seq": 55,
+    "file": "factory/topic-research/batches/claude-20261018b-0055.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:52:33.127Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 29,
-      "topics": 10,
-      "sha256": "bd7771b30cda3622236ff2c40721c0f25df024df280178d306a938a6ce5c5b82"
-    },
     {
       "at": "2026-10-18T23:52:41.097Z",
       "event": "BATCH_COMMITTED",
@@ -6119,6 +6223,13 @@
       "seq": 53,
       "topics": 10,
       "sha256": "10ffe0dd23370d742ff83b8b57a9cc7c9090622e6b872ef2b7f512a0072571eb"
+    },
+    {
+      "at": "2026-10-19T00:39:27.271Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 54,
+      "topics": 10,
+      "sha256": "268d39c7fa215b641eb6252067762d448bb77b9f35377da9d0e6e2350fe9a8ab"
     }
   ]
 }
