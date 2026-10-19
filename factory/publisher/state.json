@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 452,
+  "clean_runs": 453,
   "published": [
     {
       "id": "NL-H01",
@@ -10552,25 +10552,33 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-17T08:01:51.404Z"
+    },
+    {
+      "id": "DE-S91",
+      "locale": "de",
+      "url": "/de/guides/roller-sitzhoehe-kleine-fahrer-hanoi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-19T09:37:51.957Z",
+      "source_sha256": "c8974f143121b2a0e6effb212e6a36054716a255e63565effe82bf694dd2c193",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-19T09:39:13.458Z"
+    },
+    {
+      "id": "DE-S92",
+      "locale": "de",
+      "url": "/de/guides/roller-helmfach-helm-regenjacke-hanoi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-19T09:37:51.957Z",
+      "source_sha256": "38889c6348d2d1ccf65e32b1d71c3e8a932804f49e87415fdb30767f76bb7d41",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-19T09:39:13.458Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T06:00:48.206Z",
-      "ids": [
-        "PT-S70",
-        "PT-S71"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T06:02:51.338Z",
-      "ids": [
-        "PT-S70",
-        "PT-S71"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T06:03:19.691Z",
       "ids": [
@@ -12146,15 +12154,34 @@
         "ES-S23"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-19T09:37:51.957Z",
+      "ids": [
+        "DE-S91",
+        "DE-S92"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-19T09:39:13.458Z",
+      "ids": [
+        "DE-S91",
+        "DE-S92"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-17T08:01:51.404Z",
+    "at": "2026-10-19T09:39:13.458Z",
     "ids": [
-      "ES-S23"
+      "DE-S91",
+      "DE-S92"
     ],
-    "commit": "ff1eff3ee3ce46417b85c563f6cc2bc3aa441201",
-    "live_seconds": 41
+    "commit": "45e1a312e42b7244825e100f8ff93bcd523d9b1f",
+    "live_seconds": 62
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 7
+  }
 }
