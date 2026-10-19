@@ -4099,6 +4099,1363 @@
         "source": "factory/topic-research/batches/research-idle-stop-20261017-b03.json@4e0cfc4fb4db"
       },
       "matrix_id": "FR-S94"
+    },
+    {
+      "candidate_id": "TA-FR-0089",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "voyants-tableau-de-bord-scooter-signification",
+      "primary_query": "signification des voyants du tableau de bord d'un scooter",
+      "secondary_queries": [
+        "voyant moteur allumé sur un scooter en roulant",
+        "voyant de vidange sur un scooter Honda"
+      ],
+      "working_title": "Voyants du tableau de bord d'un scooter : lesquels imposent de s'arrêter ?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Un voyageur qui conduit un scooter qu'il ne connaît pas voit un symbole s'allumer au compteur et veut savoir s'il s'agit d'une panne qui impose de s'arrêter ou d'une simple information comme la clé intelligente ou l'arrêt au ralenti.",
+      "content_angle": "Classe les voyants par niveau d'urgence à partir des manuels du propriétaire de Honda Vietnam et indique la conduite à tenir pour chacun, sans pousser à réparer soi-même.",
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "PGM-FI",
+        "ABS",
+        "Yamaha"
+      ],
+      "references": [
+        "rx-52dd28082ea0",
+        "rx-5111e5c1ae6d",
+        "rx-29f4ec4cc6b7"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0001.json@0da636c12c11"
+      },
+      "matrix_id": "FR-S95"
+    },
+    {
+      "candidate_id": "TA-FR-0090",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-trip-fit",
+      "slug": "autonomie-scooter-plein-vietnam",
+      "primary_query": "quelle autonomie pour un scooter avec un plein d'essence au Vietnam",
+      "secondary_queries": [
+        "jauge d'essence du scooter dans le rouge combien de km",
+        "prévoir les pleins pour un road trip à moto depuis Hanoï"
+      ],
+      "working_title": "Autonomie d'un scooter avec un plein : prévoir ses arrêts carburant hors de Hanoï",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Avant de quitter Hanoï à deux-roues, on veut savoir combien de kilomètres permet un plein et jusqu'où l'on peut encore rouler quand l'aiguille entre dans le rouge, pour ne pas tomber en panne sèche loin d'une station.",
+      "content_angle": "Montre comment estimer l'autonomie à partir de la capacité du réservoir et de la consommation publiée par le constructeur et l'autorité d'homologation, avec une marge pour les bagages, les cols et les bouchons.",
+      "entities": [
+        "Honda Vision",
+        "Honda Wave RSX",
+        "Yamaha Janus",
+        "Vietnam Register"
+      ],
+      "references": [
+        "rx-ce2835c28b6d",
+        "rx-7195a20e68c1",
+        "rx-9e02e0d05cee",
+        "rx-857748cab21c"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0002.json@46318b44d2d7"
+      },
+      "matrix_id": "FR-S96"
+    },
+    {
+      "candidate_id": "TA-FR-0091",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "yamaha-janus-grande-sirius-exciter-differences",
+      "primary_query": "différences entre Yamaha Janus, Grande, Sirius et Exciter",
+      "secondary_queries": [
+        "la Yamaha Exciter est-elle une moto à embrayage",
+        "Yamaha Janus ou Grande pour débuter au Vietnam"
+      ],
+      "working_title": "Yamaha Janus, Grande, Sirius et Exciter : quel type de deux-roues se cache derrière chaque nom ?",
+      "search_intent": "informational",
+      "word_target": 1600,
+      "priority": 50,
+      "intent_rationale": "Les voyageurs entendent les noms Janus, Grande, Sirius ou Exciter sans savoir s'il s'agit d'un scooter automatique, d'une petite moto semi-automatique ou d'une moto à embrayage, et ne peuvent donc pas juger si le modèle convient à leur niveau.",
+      "content_angle": "Présente les familles Yamaha courantes au Vietnam par type de véhicule et façon de conduire, d'après les fiches techniques de Yamaha Vietnam, sans prix ni promesse de disponibilité.",
+      "entities": [
+        "Yamaha Janus",
+        "Yamaha Grande",
+        "Yamaha Sirius",
+        "Yamaha Exciter"
+      ],
+      "references": [
+        "rx-01de6e36eca0",
+        "rx-e61e53fafb8b",
+        "rx-b74f9adda216",
+        "rx-da5555ad89ab"
+      ],
+      "distinct_from": [
+        {
+          "id": "FR-S19",
+          "reason": "FR-S19 présente les familles Honda (Wave, Vision, Air Blade) ; cette page traite seulement des familles Yamaha et de leur type de transmission."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0003.json@9cae983c7916"
+      },
+      "matrix_id": "FR-S97"
+    },
+    {
+      "candidate_id": "TA-FR-0092",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-transmission",
+      "slug": "frein-moteur-scooter-ou-semi-automatique-descente",
+      "primary_query": "frein moteur en descente scooter automatique ou moto semi-automatique",
+      "secondary_queries": [
+        "un scooter automatique a-t-il un frein moteur",
+        "pourquoi les freins de scooter chauffent dans les longues descentes"
+      ],
+      "working_title": "Frein moteur dans les longues descentes : scooter automatique ou semi-automatique en montagne ?",
+      "search_intent": "informational",
+      "word_target": 1600,
+      "priority": 50,
+      "intent_rationale": "Avant un voyage dans les montagnes du nord du Vietnam, on hésite entre un scooter automatique et une moto semi-automatique, car on entend dire qu'un scooter ne peut pas rétrograder pour retenir sa vitesse et que ses freins chauffent dans les longues descentes.",
+      "content_angle": "Explique la différence mécanique entre l'embrayage centrifuge d'un scooter et la boîte à vitesses d'une moto semi-automatique en descente, pour choisir le véhicule adapté à un itinéraire avec de longs cols.",
+      "entities": [
+        "transmission CVT",
+        "frein moteur",
+        "Tam Dao",
+        "échauffement des freins"
+      ],
+      "references": [
+        "rx-d9ed2cb0ba9c",
+        "rx-95b7c0ac1b4a",
+        "rx-6e79b425496a"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0004.json@9cae983c7916"
+      },
+      "matrix_id": "FR-S98"
+    },
+    {
+      "candidate_id": "TA-FR-0093",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-trip-fit",
+      "slug": "taille-roues-garde-au-sol-scooter-ou-semi-automatique",
+      "primary_query": "roues de 14 pouces ou de 17 pouces sur routes abîmées",
+      "secondary_queries": [
+        "garde au sol d'un scooter sur les routes rurales du Vietnam",
+        "scooter ou moto semi-automatique sur piste en terre"
+      ],
+      "working_title": "Taille des roues et garde au sol : scooter ou semi-automatique pour les routes de campagne et de montagne ?",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Avant de partir vers les villages ou la montagne, on remarque que les scooters ont de petites roues et une garde au sol faible, alors que les semi-automatiques ont des roues plus hautes, et l'on veut savoir si cela compte vraiment sur les nids-de-poule.",
+      "content_angle": "Compare la taille des roues et la garde au sol de modèles courants d'après les fiches officielles et explique ce que cela change dans le choix du véhicule ; la technique de conduite sur route abîmée fait l'objet d'une autre page.",
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "Honda Blade",
+        "Yamaha Sirius"
+      ],
+      "references": [
+        "rx-38defba222bd",
+        "rx-f30b81052bef",
+        "rx-dca2465a9a74",
+        "rx-e61e53fafb8b"
+      ],
+      "distinct_from": [
+        {
+          "id": "FR-S77",
+          "reason": "FR-S77 explique comment rouler sur les nids-de-poule et les gravillons ; cette page aide à choisir le véhicule selon la taille des roues et la garde au sol avant de partir."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0005.json@46cf5dba787a"
+      },
+      "matrix_id": "FR-S99"
+    },
+    {
+      "candidate_id": "TA-FR-0094",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H01",
+      "cluster": "vehicle-choice",
+      "subcluster": "vc-models",
+      "slug": "pneu-tubeless-ou-chambre-a-air-scooter-vietnam",
+      "primary_query": "pneu tubeless ou avec chambre à air sur un scooter en cas de crevaison",
+      "secondary_queries": [
+        "comment savoir si un scooter a des pneus tubeless",
+        "rouler avec un clou dans un pneu tubeless"
+      ],
+      "working_title": "Pneu tubeless ou chambre à air : lequel équipe votre deux-roues et que change une crevaison ?",
+      "search_intent": "informational",
+      "word_target": 1400,
+      "priority": 50,
+      "intent_rationale": "Avant un long trajet, on veut savoir si son deux-roues a des pneus tubeless ou à chambre à air, car ils réagissent différemment après un clou : l'un peut être réparé provisoirement pour rouler doucement jusqu'à un atelier, l'autre se dégonfle vite.",
+      "content_angle": "Explique comment reconnaître le type de pneu grâce aux fiches et manuels du constructeur, en quoi les crevaisons diffèrent et quelle vitesse Honda fixe après une réparation provisoire, sans reprendre la page sur les pannes.",
+      "entities": [
+        "pneu tubeless",
+        "chambre à air",
+        "Honda LEAD",
+        "Yamaha Sirius"
+      ],
+      "references": [
+        "rx-275724dbe8f7",
+        "rx-52dd28082ea0",
+        "rx-e61e53fafb8b",
+        "rx-9e02e0d05cee"
+      ],
+      "distinct_from": [
+        {
+          "id": "FR-S08",
+          "reason": "FR-S08 décrit quoi faire en cas de panne du scooter loué ; cette page explique les deux types de pneus et comment les reconnaître avant de partir."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0006.json@46cf5dba787a"
+      },
+      "matrix_id": "FR-S100"
+    },
+    {
+      "candidate_id": "TA-FR-0095",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "traverser-le-fleuve-rouge-a-hanoi-en-scooter",
+      "primary_query": "quel pont prendre pour traverser le fleuve Rouge à Hanoï en scooter",
+      "secondary_queries": [
+        "peut-on passer le pont Long Bien à scooter",
+        "ponts de Hanoï fermés aux deux-roues pendant les crues"
+      ],
+      "working_title": "Traverser le fleuve Rouge à Hanoï en scooter : les ponts et leurs fermetures temporaires",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Ceux qui vont pour la première fois du centre de Hanoï vers Long Bien, Gia Lam ou Dong Anh à deux-roues ne savent pas quel pont emprunter sur le fleuve Rouge, lesquels sont encombrés ou venteux et lesquels ferment lors des crues ou des essais de charge.",
+      "content_angle": "Présente les franchissements du fleuve Rouge du point de vue d'un conducteur de deux-roues, la lecture des panneaux d'interdiction à l'entrée des ponts et les fermetures temporaires rapportées par la presse, sans affirmer de règles non sourcées.",
+      "entities": [
+        "Red River",
+        "Long Bien Bridge",
+        "Chuong Duong Bridge",
+        "Vinh Tuy Bridge",
+        "Thanh Tri Bridge"
+      ],
+      "references": [
+        "rx-58ce090b18e7",
+        "rx-5a251f6802e0",
+        "rx-292741ab96db"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0007.json@78dc49b17ea1"
+      },
+      "matrix_id": "FR-S101"
+    },
+    {
+      "candidate_id": "TA-FR-0096",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-city",
+      "slug": "rouler-en-scooter-a-hanoi-pendant-le-tet",
+      "primary_query": "rouler en scooter à Hanoï pendant le Têt à quoi s'attendre",
+      "secondary_queries": [
+        "routes fermées à Hanoï le soir du réveillon pour les feux d'artifice",
+        "les rues de Hanoï sont-elles vides pendant le Têt"
+      ],
+      "working_title": "Rouler en scooter à Hanoï pendant le Têt : routes fermées, rues vides et contrôles d’alcool",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Les voyageurs qui passent le Nouvel An lunaire à Hanoï veulent savoir comment la circulation change avant et après le réveillon, quels soirs les rues ferment pour les feux d'artifice et pourquoi la police multiplie les contrôles d'alcoolémie.",
+      "content_angle": "Résume ce qui arrive habituellement à la circulation de Hanoï pendant le Têt d'après les avis de déviation et les conseils de la police publiés dans la presse, et invite à vérifier l'avis de l'année en cours plutôt qu'un calendrier figé.",
+      "entities": [
+        "Tet",
+        "Lunar New Year",
+        "New Year's Eve fireworks",
+        "Hanoi Traffic Police"
+      ],
+      "references": [
+        "rx-66f389c2d74f",
+        "rx-9828096a9285",
+        "rx-f73749aa661f"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0008.json@78dc49b17ea1"
+      },
+      "matrix_id": "FR-S102"
+    },
+    {
+      "candidate_id": "TA-FR-0097",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-papers",
+      "slug": "presenter-permis-et-papiers-du-scooter-sur-vneid",
+      "primary_query": "présenter son permis de conduire sur VNeID au Vietnam",
+      "secondary_queries": [
+        "un étranger peut-il utiliser VNeID lors d'un contrôle de police",
+        "VNeTraffic remplace-t-il le permis papier"
+      ],
+      "working_title": "Présenter son permis et ses papiers sur VNeID : qui peut le faire et quand le papier reste nécessaire",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Les conducteurs veulent savoir s'ils peuvent se contenter de leur téléphone et montrer permis et papiers du véhicule sur VNeID lors d'un contrôle, et si les touristes qui roulent avec un permis étranger et un permis international peuvent faire de même.",
+      "content_angle": "Explique la base légale de la présentation de documents via un compte d'identification électronique, les documents intégrables et pourquoi les touristes au permis étranger doivent garder des papiers, à partir de sources du ministère de la Sécurité publique.",
+      "entities": [
+        "VNeID",
+        "VNeTraffic",
+        "loi 36/2024/QH15",
+        "décret 69/2024/ND-CP"
+      ],
+      "references": [
+        "rx-dc75272172a9",
+        "rx-05f36928e963",
+        "rx-833625cd73a1",
+        "rx-7af6687eda11"
+      ],
+      "distinct_from": [
+        {
+          "id": "FR-S14",
+          "reason": "FR-S14 liste les papiers à avoir sur soi ; cette page traite uniquement de la présentation numérique via VNeID et de ses limites pour les étrangers."
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018-0009.json@e5425e6f8de5"
+      },
+      "matrix_id": "FR-S103"
+    },
+    {
+      "candidate_id": "TA-FR-0098",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "transport-mobility",
+      "subcluster": "mob-urban-transit",
+      "slug": "metro-hanoi-ligne-2a-cat-linh-ha-dong-stations-billets",
+      "primary_query": "métro de Hanoï ligne 2A Cat Linh Ha Dong stations et billets",
+      "secondary_queries": [
+        "stations du métro Cat Linh Ha Dong",
+        "billet journée métro Hanoï",
+        "comment prendre le métro à Hanoï"
+      ],
+      "working_title": "Métro de Hanoï, ligne 2A (Cat Linh–Ha Dong) : stations, billets et conseils pour les visiteurs",
+      "search_intent": "informational",
+      "word_target": 1600,
+      "priority": 50,
+      "intent_rationale": "Les visiteurs logés à Dong Da ou à Ha Dong, ou curieux de tester la première ligne de métro du Vietnam, cherchent les stations desservies, la façon d'acheter un billet et l'intérêt de la ligne pour visiter l'ouest de Hanoï.",
+      "content_angle": "Un tour station par station pour les voyageurs qui ne lisent pas le vietnamien : quels arrêts sont proches des sites, en quoi les types de billets diffèrent et quand la ligne bat le taxi, avec un rappel de vérifier les tarifs en vigueur auprès de l'exploitant.",
+      "entities": [
+        "Métro de Hanoï",
+        "Ligne 2A",
+        "Cat Linh",
+        "Ha Dong",
+        "Yen Nghia"
+      ],
+      "references": [
+        "rx-92101cdc292c",
+        "rx-37e73e6382d0",
+        "rx-79845491e4cc"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0003.json@d8567b612bc8"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0099",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "transport-mobility",
+      "subcluster": "mob-urban-transit",
+      "slug": "metro-hanoi-ligne-3-nhon-cau-giay-troncon-aerien",
+      "primary_query": "métro de Hanoï ligne 3 Nhon Cau Giay tronçon aérien",
+      "secondary_queries": [
+        "station Nhon métro Hanoï gare de Hanoï",
+        "ligne 3 métro Hanoï tronçon souterrain ouverture",
+        "le métro de Hanoï va-t-il jusqu'à Cau Giay"
+      ],
+      "working_title": "Métro de Hanoï, ligne 3 (Nhon–Cau Giay) : ce qui circule aujourd'hui et ce qui reste à construire",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Ceux qui se rendent à Cau Giay, à Nam Tu Liem ou dans le quartier universitaire veulent savoir si la ligne 3 circule déjà, quelles stations aériennes sont ouvertes et ce qu'il reste à construire jusqu'à la gare de Hanoï.",
+      "content_angle": "Sépare le tronçon aérien qui transporte déjà des voyageurs du tronçon souterrain encore en chantier, pour que le lecteur s'organise selon ce qui fonctionne vraiment et sache quelles annonces officielles suivre.",
+      "entities": [
+        "Métro de Hanoï",
+        "Ligne 3",
+        "Nhon",
+        "Cau Giay",
+        "Gare de Hanoï"
+      ],
+      "references": [
+        "rx-0ca5313b64ac",
+        "rx-f182ca79e8d9",
+        "rx-53927038735c",
+        "rx-37e73e6382d0"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0003.json@d8567b612bc8"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0100",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "transport-mobility",
+      "subcluster": "mob-urban-transit",
+      "slug": "prendre-le-bus-a-hanoi-lignes-paiement-sans-especes",
+      "primary_query": "prendre le bus à Hanoï lignes paiement application",
+      "secondary_queries": [
+        "réseau de bus de Hanoï pour touristes",
+        "payer le bus à Hanoï par QR code ou carte",
+        "application horaires bus Hanoï"
+      ],
+      "working_title": "Prendre le bus à Hanoï : trouver sa ligne, payer sans espèces et applications utiles",
+      "search_intent": "informational",
+      "word_target": 1600,
+      "priority": 50,
+      "intent_rationale": "Les voyageurs économes et les séjours longs cherchent comment fonctionnent les bus urbains de Hanoï : trouver la bonne ligne, payer à la montée, lire des panneaux d'arrêt en vietnamien et savoir quelle application indique l'arrivée du bus.",
+      "content_angle": "Suit un trajet réaliste d'arrêt en arrêt, explique le paiement sans espèces dans les bus subventionnés d'après l'annonce de Transerco et signale quand la barrière de la langue ou l'heure de pointe rendent un autre mode plus pratique.",
+      "entities": [
+        "Transerco",
+        "Réseau de bus de Hanoï",
+        "Tim Buyt",
+        "Carte de transport de Hanoï"
+      ],
+      "references": [
+        "rx-eee6771cad88",
+        "rx-b65e9e8771d0"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0003.json@d8567b612bc8"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0101",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "transport-mobility",
+      "subcluster": "mob-urban-transit",
+      "slug": "bus-electriques-vinbus-hanoi-lignes-et-reseau",
+      "primary_query": "bus électriques VinBus Hanoï lignes",
+      "secondary_queries": [
+        "bus électrique Ocean Park My Dinh",
+        "ligne E03 VinBus Hanoï",
+        "le ticket de bus ordinaire est-il valable sur VinBus"
+      ],
+      "working_title": "Les bus électriques VinBus à Hanoï : où ils vont et comment ils s'intègrent au réseau urbain",
+      "search_intent": "informational",
+      "word_target": 1300,
+      "priority": 50,
+      "intent_rationale": "Les habitants des nouveaux quartiers et les visiteurs qui y logent cherchent quelles lignes électriques VinBus les relient au centre de Hanoï, à quelle fréquence les bus passent et si les tickets de bus ordinaires y sont valables.",
+      "content_angle": "Place les lignes électriques à côté du réseau de bus ordinaire, explique leur place dans la billettique de la ville et rappelle de revérifier les numéros de ligne, qui ont pu changer depuis le lancement.",
+      "entities": [
+        "VinBus",
+        "Bus électrique",
+        "Vinhomes Ocean Park",
+        "My Dinh"
+      ],
+      "references": [
+        "rx-3c009ad2ffa9",
+        "rx-1493305fbcc0",
+        "rx-013b4f53a1de"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0003.json@d8567b612bc8"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0102",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "transport-mobility",
+      "subcluster": "mob-last-mile",
+      "slug": "aeroport-noi-bai-vers-le-vieux-quartier-de-hanoi-en-bus",
+      "primary_query": "aéroport de Noi Bai vieux quartier de Hanoï en bus",
+      "secondary_queries": [
+        "bus 86 aéroport de Hanoï",
+        "bus express aéroport Noi Bai centre-ville",
+        "bus publics depuis l'aéroport de Hanoï"
+      ],
+      "working_title": "De l'aéroport de Noi Bai au Vieux Quartier de Hanoï en bus : bus express et lignes urbaines comparés",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Les voyageurs tout juste arrivés qui veulent rejoindre le Vieux Quartier sans taxi comparent quel bus part de quel terminal, combien de temps il met, comment payer et où il s'arrête dans le centre.",
+      "content_angle": "Compare le bus express aux lignes urbaines plus lentes selon le terminal, la durée, la place pour les bagages et la disponibilité tard le soir, et explique comment vérifier l'horaire en vigueur avant l'atterrissage.",
+      "entities": [
+        "Aéroport de Noi Bai",
+        "Bus 86",
+        "Vieux Quartier",
+        "Gare de Hanoï"
+      ],
+      "references": [
+        "rx-4f111cd705c6",
+        "rx-0151482b1c10",
+        "rx-edbc19874e23"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0003.json@d8567b612bc8"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0103",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "transport-mobility",
+      "subcluster": "mob-intercity",
+      "slug": "gares-routieres-longue-distance-hanoi-laquelle-pour-quelle-region",
+      "primary_query": "gares routières longue distance de Hanoï laquelle pour quelle région",
+      "secondary_queries": [
+        "gare routière My Dinh destinations",
+        "gare routière Giap Bat",
+        "nouvelle gare routière Yen So Hanoï"
+      ],
+      "working_title": "Gares routières longue distance de Hanoï : laquelle pour quelle région, dont la nouvelle gare de Yen So",
+      "search_intent": "informational",
+      "word_target": 1400,
+      "priority": 50,
+      "intent_rationale": "Qui réserve un car interurbain ou un bus-couchette doit savoir de laquelle des gares routières de Hanoï part sa ligne, comment la rejoindre depuis le centre et combien de temps prévoir pour ce trajet.",
+      "content_angle": "Une carte des gares routières par région desservie, avec l'accès en bus urbain ou en taxi et le réflexe de faire confirmer le point de départ par le transporteur, car les lignes interurbaines sont en cours de redistribution entre Giap Bat, Nuoc Ngam et la gare de Yen So ouverte en octobre 2026.",
+      "entities": [
+        "Gare routière de My Dinh",
+        "Gare routière de Giap Bat",
+        "Gare routière de Nuoc Ngam",
+        "Gare routière de Gia Lam",
+        "Gare routière de Yen So"
+      ],
+      "references": [
+        "rx-42e17aa5f861",
+        "rx-a114dbadaa86"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0003.json@d8567b612bc8"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0104",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "transport-mobility",
+      "subcluster": "mob-intercity",
+      "slug": "train-de-hanoi-a-sapa-train-de-nuit-lao-cai",
+      "primary_query": "train de Hanoï à Sapa",
+      "secondary_queries": [
+        "train de nuit Hanoï Lao Cai",
+        "de la gare de Lao Cai à Sapa",
+        "couchette train Hanoï Lao Cai"
+      ],
+      "working_title": "Train de Hanoï à Sapa : le train de nuit pour Lao Cai et le dernier tronçon jusqu'à la station",
+      "search_intent": "informational",
+      "word_target": 1700,
+      "priority": 50,
+      "intent_rationale": "Les voyageurs qui veulent rejoindre Sapa sans longue route en car cherchent comment fonctionne le train de nuit pour Lao Cai, quelles voitures existent, combien de temps à l'avance réserver et comment monter de la gare de Lao Cai jusqu'à la station.",
+      "content_angle": "Traite le voyage en deux étapes, rail puis route, explique la différence entre les voitures de la compagnie nationale et les voitures touristiques haut de gamme exploitées par des opérateurs privés, et liste les vérifications avant de réserver car les horaires varient selon la saison.",
+      "entities": [
+        "Gare de Lao Cai",
+        "Sapa",
+        "Vietnam Railways",
+        "Gare de Hanoï"
+      ],
+      "references": [
+        "rx-e9f1f19f77a1",
+        "rx-665e3f54e7e0",
+        "rx-f9d9d33cd37d",
+        "rx-265e7b919b17"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0003.json@d8567b612bc8"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0105",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "transport-mobility",
+      "subcluster": "mob-intercity",
+      "slug": "train-de-hanoi-a-ninh-binh-duree-gare-tam-coc",
+      "primary_query": "train de Hanoï à Ninh Binh",
+      "secondary_queries": [
+        "gare de Ninh Binh à Tam Coc distance",
+        "durée du train Hanoï Ninh Binh",
+        "Ninh Binh en train ou en bus depuis Hanoï"
+      ],
+      "working_title": "Train de Hanoï à Ninh Binh : durées, gare d'arrivée et trajet jusqu'à Tam Coc et Trang An",
+      "search_intent": "informational",
+      "word_target": 1400,
+      "priority": 50,
+      "intent_rationale": "Les visiteurs d'un jour comme ceux qui dorment sur place hésitent entre le train et le bus touristique pour Ninh Binh et doivent connaître les durées, la bonne gare et le moyen de rejoindre Tam Coc ou Trang An depuis la gare de Ninh Binh.",
+      "content_angle": "Se concentre sur le point que les pages de circuits négligent : la gare se trouve à plusieurs kilomètres de Tam Coc et de Trang An, donc l'article associe les horaires de train à des solutions de correspondance réalistes et à une règle simple pour choisir entre train et car.",
+      "entities": [
+        "Gare de Ninh Binh",
+        "Tam Coc",
+        "Trang An",
+        "Chemin de fer Nord–Sud"
+      ],
+      "references": [
+        "rx-833baea77e54",
+        "rx-a57fa678685e",
+        "rx-64c0ff97d360",
+        "rx-265e7b919b17"
+      ],
+      "distinct_from": [
+        {
+          "id": "TA-FR-0020",
+          "reason": "TA-FR-0020 traite l'excursion d'une journée en scooter conduit soi-même ; ce guide porte sur le voyage en train, les horaires, la gare d'arrivée et la correspondance jusqu'à Tam Coc."
+        }
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0003.json@d8567b612bc8"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0106",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "transport-mobility",
+      "subcluster": "mob-intercity",
+      "slug": "bus-de-hanoi-a-ha-long-car-de-ligne-et-limousine",
+      "primary_query": "bus de Hanoï à Ha Long",
+      "secondary_queries": [
+        "limousine Hanoï Ha Long",
+        "gare routière de Bai Chay",
+        "durée Hanoï Ha Long par l'autoroute"
+      ],
+      "working_title": "En bus de Hanoï à Ha Long : car de ligne, minibus limousine et durées réelles du trajet",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Les voyageurs qui réservent une croisière dans la baie d'Ha Long ou un hôtel comparent car de ligne, minibus limousine et navette de croisière, et veulent des durées réalistes maintenant que l'autoroute raccourcit la route.",
+      "content_angle": "Compare les cars de ligne au départ des gares de Hanoï avec les minibus limousine porte à porte selon le lieu de prise en charge, la durée et le point de dépose à Bai Chay ou Tuan Chau, et explique quoi vérifier quand la croisière inclut sa propre navette.",
+      "entities": [
+        "Ha Long",
+        "Gare routière de Bai Chay",
+        "Autoroute Hanoï–Ha Long",
+        "Quang Ninh"
+      ],
+      "references": [
+        "rx-a9be7bcd7724",
+        "rx-4ac2e853efff",
+        "rx-59bc3d0859c0"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0003.json@d8567b612bc8"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0107",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "transport-mobility",
+      "subcluster": "mob-last-mile",
+      "slug": "applications-vtc-hanoi-grab-xanh-sm-be-comparatif",
+      "primary_query": "applications de VTC à Hanoï Grab Xanh SM Be comparatif",
+      "secondary_queries": [
+        "Grab ou Xanh SM à Hanoï",
+        "application Be moto-taxi Vietnam",
+        "appli de taxi à Hanoï sans numéro vietnamien"
+      ],
+      "working_title": "Applications de VTC à Hanoï : Grab, Xanh SM et Be comparés pour les visiteurs",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Les nouveaux arrivants veulent savoir quelles applications de VTC fonctionnent à Hanoï pour les voitures et les moto-taxis, en quoi elles diffèrent pour le paiement et la couverture, et quoi configurer avant d'arriver sans numéro vietnamien.",
+      "content_angle": "Compare les trois applications principales sur les points pratiques pour les étrangers (inscription, cartes étrangères, espèces, moto ou voiture, trajets vers l'aéroport) plutôt que sur les parts de marché, avec des mises en garde datées sur des promotions qui changent vite.",
+      "entities": [
+        "Grab",
+        "Xanh SM",
+        "Be",
+        "Moto-taxi"
+      ],
+      "references": [
+        "rx-ec92a38f3371",
+        "rx-399044399e9b",
+        "rx-652827dbd946"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0003.json@d8567b612bc8"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0108",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-weather",
+      "slug": "scooter-rues-inondees-hanoi-que-faire",
+      "primary_query": "rouler en scooter dans des rues inondées à Hanoï",
+      "secondary_queries": [
+        "scooter calé dans l'eau que faire",
+        "traverser une route inondée à moto Vietnam",
+        "moteur noyé scooter signes"
+      ],
+      "working_title": "Rouler en scooter dans les rues inondées de Hanoï : hauteur d'eau, moteur noyé et gestes à suivre",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Les visiteurs surpris par une averse soudaine à Hanoï doivent décider si une rue inondée est praticable en scooter, comment traverser une eau peu profonde sans caler et quoi faire si le moteur s'arrête dans l'eau.",
+      "content_angle": "Transforme les consignes des constructeurs et de la presse en une suite de décisions : évaluer la hauteur d'eau par rapport à l'échappement, garder un gaz régulier, pousser sans redémarrer un moteur noyé, puis le faire vérifier en atelier.",
+      "entities": [
+        "Hanoï",
+        "rues inondées",
+        "pot d'échappement",
+        "moteur noyé"
+      ],
+      "references": [
+        "rx-2df503bea972",
+        "rx-664153966ac1",
+        "rx-404148d176ac",
+        "rx-ebcd384a2a6f"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0010.json@8b23ccb2e444"
+      },
+      "matrix_id": "FR-S104"
+    },
+    {
+      "candidate_id": "TA-FR-0109",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": "FR-H04",
+      "cluster": "safety-support",
+      "subcluster": "ss-weather",
+      "slug": "saison-des-typhons-nord-vietnam-scooter",
+      "primary_query": "saison des typhons nord du Vietnam rouler à scooter",
+      "secondary_queries": [
+        "rouler en scooter à Hanoï pendant un typhon",
+        "quand est la saison des typhons au nord du Vietnam",
+        "alerte tempête Vietnam centre national de prévision"
+      ],
+      "working_title": "Saison des typhons dans le nord du Vietnam : alertes météo, décisions à scooter et plan de voyage",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Les voyageurs qui prévoient de rouler autour de Hanoï et dans les provinces du nord en saison des tempêtes doivent savoir que des tempêtes lointaines peuvent encore apporter pluies fortes et inondations, comment les alertes sont émises et quand reporter une sortie.",
+      "content_angle": "Transforme les alertes du centre national de prévision et l'avis saisonnier de l'ambassade des États-Unis en une routine courte : suivre les bulletins officiels, éviter rues inondées et cols de montagne à l'approche d'une tempête et changer le plan plutôt que de s'obstiner.",
+      "entities": [
+        "Nord du Vietnam",
+        "typhon",
+        "Centre national de prévision hydrométéorologique",
+        "Hanoï"
+      ],
+      "references": [
+        "rx-ce710621a81e",
+        "rx-1f9c9a84bfd3",
+        "rx-07dfe3b61452",
+        "rx-e7edfc86c8b0"
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0011.json@0a844a740bbb"
+      },
+      "matrix_id": "FR-S105"
+    },
+    {
+      "candidate_id": "TA-FR-0110",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-day-trips",
+      "slug": "hanoi-parc-national-ba-vi-a-scooter",
+      "primary_query": "de Hanoï au parc national de Ba Vi à scooter",
+      "secondary_queries": [
+        "parc national de Ba Vi excursion d'une journée depuis Hanoï scooter",
+        "les scooters peuvent-ils rouler sur le boulevard Thang Long",
+        "route de Ba Vi brouillard conduite"
+      ],
+      "working_title": "De Hanoï au parc national de Ba Vi à scooter : itinéraire, route de montagne et vérifications avant le départ",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Les conducteurs qui envisagent une escapade d'une journée hors du centre de Hanoï veulent savoir combien de temps prend le trajet jusqu'à Ba Vi, quelles routes conviennent à un scooter, si la route de montagne est difficile et ce qu'il faut vérifier auprès du parc avant de partir.",
+      "content_angle": "Suit le trajet dans l'ordre, de l'identification des voies du boulevard Thang Long ouvertes aux deux-roues à la montée, au brouillard et aux horaires annoncés par le parc, en s'appuyant seulement sur le site officiel du parc et sur des guides de voyage vérifiés.",
+      "entities": [
+        "Parc national de Ba Vi",
+        "Boulevard Thang Long",
+        "Route nationale 32",
+        "Pic du Roi"
+      ],
+      "references": [
+        "rx-26e88b8621d8",
+        "rx-c563d95e9b7c",
+        "rx-a71738d99a5b"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0012.json@4549dd0853a2"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0111",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-day-trips",
+      "slug": "hanoi-pagode-des-parfums-a-scooter",
+      "primary_query": "de Hanoï à la pagode des Parfums à scooter",
+      "secondary_queries": [
+        "pagode des Parfums excursion d'une journée depuis Hanoï scooter",
+        "pagode Huong période de fête circulation",
+        "comment aller à l'embarcadère de Ben Duc depuis Hanoï"
+      ],
+      "working_title": "De Hanoï à la pagode des Parfums à scooter : route vers Ben Duc, affluence des fêtes et traversée en barque",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Les conducteurs qui envisagent une journée à la pagode des Parfums veulent savoir quelle distance la sépare du centre de Hanoï, comment la route et l'affluence de la période des fêtes pèsent sur un trajet en scooter et où se place la traversée en barque à Ben Duc.",
+      "content_angle": "Organise la journée autour du trajet en scooter et du transfert jusqu'à l'embarcadère, en rappelant que la fête court du sixième jour du premier mois lunaire jusqu'au troisième mois et que Hanoï reconnaît le complexe de Huong Son comme destination touristique de niveau municipal, d'après des sources vérifiées.",
+      "entities": [
+        "Pagode des Parfums",
+        "Huong Son",
+        "Embarcadère de Ben Duc",
+        "Ruisseau Yen",
+        "My Duc"
+      ],
+      "references": [
+        "rx-43673cf9a4ba",
+        "rx-66202fa60e82",
+        "rx-1aaa7d343a21"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0013.json@16e826f97966"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0112",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-northern-loops",
+      "slug": "hanoi-cao-bang-cascade-ban-gioc-a-moto",
+      "primary_query": "de Hanoï à Cao Bang et à la cascade de Ban Gioc à moto",
+      "secondary_queries": [
+        "boucle de Cao Bang depuis Hanoï à moto",
+        "cascade de Ban Gioc itinéraire moto combien de jours",
+        "géoparc Non Nuoc Cao Bang route"
+      ],
+      "working_title": "De Hanoï à Cao Bang et à la cascade de Ban Gioc à moto : options d'itinéraire à travers le géoparc",
+      "search_intent": "informational",
+      "word_target": 1600,
+      "priority": 50,
+      "intent_rationale": "Les motards expérimentés qui regardent au-delà de la boucle de Ha Giang se demandent à quelle distance de Hanoï se trouve Cao Bang, quels itinéraires mènent à la cascade de Ban Gioc et combien de jours demande réellement une traversée du géoparc.",
+      "content_angle": "Construit l'itinéraire à partir de ce que la page de l'UNESCO et la presse récente confirment sur la région, puis liste ce qu'il faut vérifier auprès de l'office de tourisme provincial avant de rouler, de l'état des routes et de la météo aux éventuelles exigences en zone frontalière.",
+      "entities": [
+        "Cao Bang",
+        "Cascade de Ban Gioc",
+        "Géoparc mondial UNESCO de Non Nuoc Cao Bang",
+        "Lac de Ba Be"
+      ],
+      "references": [
+        "rx-07d9f263afed",
+        "rx-2ef6cacf2bde",
+        "rx-6b22d1b4c416"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0014.json@ae463831e0b1"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0113",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-day-trips",
+      "slug": "hanoi-tam-dao-a-scooter",
+      "primary_query": "de Hanoï à Tam Dao à scooter",
+      "secondary_queries": [
+        "route de montagne de Tam Dao scooter brouillard",
+        "excursion d'une journée à Tam Dao depuis Hanoï à scooter",
+        "dans quelle province se trouve Tam Dao maintenant"
+      ],
+      "working_title": "De Hanoï à Tam Dao à scooter : itinéraire par Vinh Yen, montée en montagne et conduite dans le brouillard",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Les conducteurs en quête d'une escapade fraîche à moins d'une journée de Hanoï demandent à quelle distance se trouve Tam Dao, quelle route mène à la montée, à quel point le dernier tronçon est brumeux et raide et de quelle province relève désormais la zone après la fusion de 2025.",
+      "content_angle": "Sépare la longue approche routière de la montée en montagne, appuie la description sur l'autorité nationale du tourisme et les dépêches de l'Agence vietnamienne d'information et indique le changement administratif confirmé lors de la réorganisation des unités administratives en 2025.",
+      "entities": [
+        "Tam Dao",
+        "Vinh Yen",
+        "Route nationale 2",
+        "Province de Phu Tho"
+      ],
+      "references": [
+        "rx-f3c3c910bde8",
+        "rx-855e2f7caa62",
+        "rx-abf5155e3f87",
+        "rx-493f238b25be"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0015.json@c56443675168"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0114",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-northern-loops",
+      "slug": "hanoi-mai-chau-pu-luong-a-scooter",
+      "primary_query": "de Hanoï à Mai Chau et Pu Luong à scooter",
+      "secondary_queries": [
+        "boucle Mai Chau Pu Luong à scooter depuis Hanoï",
+        "col de Thung Khe scooter Mai Chau",
+        "dans quelle province se trouvent Mai Chau et Pu Luong"
+      ],
+      "working_title": "De Hanoï à Mai Chau et Pu Luong à scooter : itinéraires de deux et trois jours et cols de montagne",
+      "search_intent": "informational",
+      "word_target": 1600,
+      "priority": 50,
+      "intent_rationale": "Les conducteurs en quête d'une courte boucle de montagne depuis Hanoï demandent à quelle distance se trouvent Mai Chau et Pu Luong, comment se découpe d'ordinaire un trajet de deux ou trois jours, quelle est la difficulté des cols et de quelle province relève chaque lieu après la fusion de 2025.",
+      "content_angle": "Présente des variantes de deux et trois jours le long de la route nationale 6, traite le col de Thung Khe et l'approche de Pu Luong comme les passages exigeants et s'appuie sur le site national du tourisme, l'Agence vietnamienne d'information et des guides régionaux pour préciser que Mai Chau relève désormais de Phu Tho tandis que Pu Luong reste à Thanh Hoa.",
+      "entities": [
+        "Mai Chau",
+        "Réserve naturelle de Pu Luong",
+        "Route nationale 6",
+        "Col de Thung Khe"
+      ],
+      "references": [
+        "rx-af2c019e27a8",
+        "rx-7db35de0bf80",
+        "rx-040fa2df6cd1",
+        "rx-043d9353d8e1"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0016.json@a1f2b6238274"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0115",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "routes-trips",
+      "subcluster": "rt-northern-loops",
+      "slug": "hanoi-sa-pa-a-scooter-sans-autoroute",
+      "primary_query": "de Hanoï à Sa Pa à scooter sans autoroute",
+      "secondary_queries": [
+        "les scooters peuvent-ils prendre l'autoroute Hanoï Lao Cai",
+        "itinéraire Hanoï Sa Pa à scooter route nationale",
+        "col de Tram Ton O Quy Ho scooter"
+      ],
+      "working_title": "De Hanoï à Sa Pa à scooter : l'autoroute interdite, routes nationales de remplacement et col de Tram Ton",
+      "search_intent": "informational",
+      "word_target": 1700,
+      "priority": 50,
+      "intent_rationale": "Les conducteurs qui veulent rejoindre Sa Pa depuis Hanoï doivent savoir que les deux-roues motorisés sont interdits sur les autoroutes, de sorte que la voie rapide vers le nord est exclue, quelles routes nationales emprunter à la place et quelle difficulté présente le dernier col.",
+      "content_angle": "Part de la règle elle-même, appuyée sur la loi sur l'ordre et la sécurité routière et un compte rendu de contrôle de 2026, puis trace les routes nationales de remplacement et le col de Tram Ton, et s'appuie sur le portail provincial de Lao Cai pour les noms après la fusion ; tout chiffre doit être revérifié le jour du départ.",
+      "entities": [
+        "Sa Pa",
+        "Autoroute Hanoï–Lao Cai",
+        "Col de Tram Ton (O Quy Ho)",
+        "Province de Lao Cai"
+      ],
+      "references": [
+        "rx-eb1a0ccc1384",
+        "rx-f2db8c18482c",
+        "rx-5b71b4389f63",
+        "rx-8e4da123146f"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0017.json@a1f2b6238274"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0116",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "travel-guides",
+      "subcluster": "travel-seasons",
+      "slug": "meteo-hanoi-mois-par-mois",
+      "primary_query": "météo à Hanoï mois par mois",
+      "secondary_queries": [
+        "climat de Hanoï quatre saisons",
+        "quand pleut-il à Hanoï",
+        "température moyenne Hanoï par mois",
+        "saison des pluies Hanoï"
+      ],
+      "working_title": "Météo à Hanoï mois par mois : températures, pluie, humidité et ressenti de chaque saison",
+      "search_intent": "informational",
+      "word_target": 1600,
+      "priority": 50,
+      "intent_rationale": "Les voyageurs qui préparent un séjour à Hanoï veulent savoir quelle chaleur, quel froid et quelle pluie attendent chaque mois pour choisir leurs dates, préparer leurs bagages et éviter les semaines les plus lourdes ou les plus pluvieuses.",
+      "content_angle": "Construit un tableau mois par mois à partir des moyennes climatiques publiées d'une station météo et du portail national du tourisme, puis décrit chaque saison par son ressenti dans la rue (froid humide, crachin, chaleur moite) plutôt que par de simples chiffres.",
+      "entities": [
+        "Hanoï",
+        "climat subtropical humide",
+        "saison des pluies",
+        "mousson du nord-est"
+      ],
+      "references": [
+        "rx-96f32751b393",
+        "rx-90643ef6a563",
+        "rx-c983f144155b",
+        "rx-df7e82ac43ec"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0018.json@c3acf391066d"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0117",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "travel-guides",
+      "subcluster": "travel-seasons",
+      "slug": "hanoi-en-hiver-que-porter",
+      "primary_query": "que porter à Hanoï en hiver",
+      "secondary_queries": [
+        "quel froid fait-il à Hanoï en hiver",
+        "mois le plus froid à Hanoï",
+        "crachin à Hanoï en février",
+        "valise pour Hanoï en décembre et janvier"
+      ],
+      "working_title": "Que porter à Hanoï en hiver : froid humide, crachin et superposition des couches de décembre à février",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Les visiteurs qui arrivent entre décembre et février sont souvent surpris par un froid humide, des bâtiments non chauffés et de longues périodes de crachin, et demandent que porter, que mettre dans la valise et quel temps il fait vraiment.",
+      "content_angle": "Explique pourquoi les chiffres du thermomètre paraissent doux alors que la journée semble plus froide, en s'appuyant sur le portail national du tourisme et des descriptions climatiques encyclopédiques, puis montre pourquoi superposer les couches vaut mieux qu'un gros manteau.",
+      "entities": [
+        "Hanoï",
+        "mousson du nord-est",
+        "crachin",
+        "froid humide"
+      ],
+      "references": [
+        "rx-96f32751b393",
+        "rx-90643ef6a563",
+        "rx-c983f144155b"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0019.json@c3acf391066d"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0118",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "travel-guides",
+      "subcluster": "travel-seasons",
+      "slug": "hanoi-pendant-le-tet-ce-qui-est-ouvert",
+      "primary_query": "Hanoï pendant le Têt ce qui est ouvert",
+      "secondary_queries": [
+        "Hanoï Nouvel An lunaire ce qui ferme",
+        "dates des congés du Têt 2027 au Vietnam",
+        "se déplacer à Hanoï pendant le Têt",
+        "marchés aux fleurs de Hanoï avant le Têt"
+      ],
+      "working_title": "Hanoï pendant le Têt : congé officiel, ce qui reste ouvert ou fermé et le rythme avant et après la fête",
+      "search_intent": "informational",
+      "word_target": 1700,
+      "priority": 50,
+      "intent_rationale": "Les visiteurs qui séjournent à Hanoï ou y passent autour du Têt veulent savoir combien de temps dure le congé officiel, quels commerces, restaurants et transports fonctionnent encore et quand la ville est la plus animée.",
+      "content_angle": "S'appuie sur l'avis de congés 2027 du ministère de l'Intérieur et sur la presse de référence pour distinguer la pause du secteur public des trois options laissées aux entreprises, puis décrit comment le rythme de la ville change avant et après le Têt.",
+      "entities": [
+        "Têt",
+        "Hanoï",
+        "jour férié",
+        "marché aux fleurs"
+      ],
+      "references": [
+        "rx-a1f928fbcf20",
+        "rx-23003ff3f63e",
+        "rx-366c76f559e9"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0020.json@c3acf391066d"
+      }
+    },
+    {
+      "candidate_id": "TA-FR-0119",
+      "locale": "fr",
+      "role": "SUPPORT",
+      "parent_id": null,
+      "cluster": "travel-guides",
+      "subcluster": "travel-seasons",
+      "slug": "fete-de-la-mi-automne-a-hanoi-hang-ma",
+      "primary_query": "fête de la mi-automne à Hanoï où aller",
+      "secondary_queries": [
+        "rue Hang Ma lanternes mi-automne",
+        "jouets traditionnels de la mi-automne Hanoï",
+        "fête de la mi-automne vieux quartier Hanoï",
+        "danse du lion mi-automne Hanoï"
+      ],
+      "working_title": "Fête de la mi-automne à Hanoï : rue Hang Ma, lanternes, danses du lion et où aller le soir",
+      "search_intent": "informational",
+      "word_target": 1500,
+      "priority": 50,
+      "intent_rationale": "Les visiteurs présents à Hanoï pour la fête de la mi-automne veulent savoir quel jour elle tombe, quelles rues visiter pour les lanternes, les jouets et les danses du lion et où les soirées sont les plus animées.",
+      "content_angle": "Recoupe le portail national du tourisme, des dépêches de l'agence vietnamienne d'information et la presse internationale pour décrire la rue Hang Ma et le vieux quartier avant la pleine lune et précise que la date suit le calendrier lunaire et change chaque année.",
+      "entities": [
+        "Tet Trung Thu",
+        "rue Hang Ma",
+        "vieux quartier",
+        "danse du lion"
+      ],
+      "references": [
+        "rx-1d96a3d524ed",
+        "rx-3d43a834a5f4",
+        "rx-a6232add5549",
+        "rx-133ea5395fa7"
+      ],
+      "status": "ARCHITECTURE_BLOCKED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261018b",
+        "researched_on": "2026-10-18",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261018b-0021.json@c3acf391066d"
+      }
     }
   ]
 }
