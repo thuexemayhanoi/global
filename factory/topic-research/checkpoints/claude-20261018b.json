@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-19T00:04:55.041Z",
+  "updated_at": "2026-10-19T00:05:06.270Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "2c017596c5d96aa15ba0971855d3c52f11fb434d",
+  "last_commit_sha": "d8d0dafa91477b2bfbc19dcfa0072b1af5023e0b",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 390,
-    "qa_pass": 390,
+    "researched": 400,
+    "qa_pass": 400,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 380,
+    "pushed": 390,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 40,
-      "de": 40,
-      "fr": 40,
-      "es": 40,
-      "nl": 40,
-      "pt": 40,
-      "zh": 40,
-      "ko": 40,
-      "ja": 40,
-      "en": 30
+      "vi": 41,
+      "de": 41,
+      "fr": 41,
+      "es": 41,
+      "nl": 41,
+      "pt": 41,
+      "zh": 41,
+      "ko": 41,
+      "ja": 41,
+      "en": 31
     },
     "domains": {
       "transportation-mobility": 90,
@@ -41,13 +41,13 @@
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
-      "travel-planning": 20
+      "travel-planning": 30
     }
   },
   "last_batch": {
-    "seq": 39,
-    "file": "factory/topic-research/batches/claude-20261018b-0039.json",
-    "sha256": "1bcb0efc862c6b765a57f16784859c1e4d9a817c5c404675ef434937e16fb53f",
+    "seq": 40,
+    "file": "factory/topic-research/batches/claude-20261018b-0040.json",
+    "sha256": "4e554a43a6a96218e1890143a32a7674f24a2276ef415e31f35ffde1c249ac4a",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -4275,8 +4275,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0039.json",
       "sha256": "1bcb0efc862c6b765a57f16784859c1e4d9a817c5c404675ef434937e16fb53f",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "d8d0dafa91477b2bfbc19dcfa0072b1af5023e0b",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -4380,23 +4380,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 40,
+      "file": "factory/topic-research/batches/claude-20261018b-0040.json",
+      "sha256": "4e554a43a6a96218e1890143a32a7674f24a2276ef415e31f35ffde1c249ac4a",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:lich-nghi-le-viet-nam-2027-ke-hoach-du-lich",
+          "locale": "vi",
+          "slug": "lich-nghi-le-viet-nam-2027-ke-hoach-du-lich",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "vi::lich nghi le viet nam nam 2027 len ke hoach du lich",
+          "ta_id": null
+        },
+        {
+          "ref": "en:vietnam-public-holidays-2027-trip-planning",
+          "locale": "en",
+          "slug": "vietnam-public-holidays-2027-trip-planning",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "en::vietnam public holidays 2027 trip planning",
+          "ta_id": null
+        },
+        {
+          "ref": "de:feiertage-vietnam-2027-reiseplanung",
+          "locale": "de",
+          "slug": "feiertage-vietnam-2027-reiseplanung",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "de::feiertage in vietnam 2027 reiseplanung",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:jours-feries-vietnam-2027-planifier-voyage",
+          "locale": "fr",
+          "slug": "jours-feries-vietnam-2027-planifier-voyage",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "fr::jours feries au vietnam en 2027 planifier un voyage",
+          "ta_id": null
+        },
+        {
+          "ref": "es:feriados-vietnam-2027-planificar-viaje",
+          "locale": "es",
+          "slug": "feriados-vietnam-2027-planificar-viaje",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "es::feriados en vietnam 2027 planificar un viaje",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:feestdagen-vietnam-2027-reis-plannen",
+          "locale": "nl",
+          "slug": "feestdagen-vietnam-2027-reis-plannen",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "nl::feestdagen in vietnam 2027 reis plannen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-2027-fadingjiari-lvyou-anpai",
+          "locale": "zh",
+          "slug": "yuenan-2027-fadingjiari-lvyou-anpai",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "zh::越南2027年法定假期旅行安排",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:feriados-vietname-2027-planear-viagem",
+          "locale": "pt",
+          "slug": "feriados-vietname-2027-planear-viagem",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "pt::feriados no vietname em 2027 planear uma viagem",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-2027-gonghyuil-yeohaeng-gyehoek",
+          "locale": "ko",
+          "slug": "beteunam-2027-gonghyuil-yeohaeng-gyehoek",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "ko::베트남 2027년 공휴일 여행 계획",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-2027nen-kyujitsu-ryoko-keikaku",
+          "locale": "ja",
+          "slug": "betonamu-2027nen-kyujitsu-ryoko-keikaku",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "ja::ヘトナムの2027年の祝日と旅行計画",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 40,
-    "file": "factory/topic-research/batches/claude-20261018b-0040.json",
+    "seq": 41,
+    "file": "factory/topic-research/batches/claude-20261018b-0041.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:27:37.873Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 15,
-      "topics": 10,
-      "sha256": "bf56aa34ad696f4af3ee6820839e1cbbddfba653c9410d689216464f0f22b730"
-    },
     {
       "at": "2026-10-18T23:31:44.031Z",
       "event": "BATCH_COMMITTED",
@@ -4564,6 +4668,13 @@
       "seq": 39,
       "topics": 10,
       "sha256": "1bcb0efc862c6b765a57f16784859c1e4d9a817c5c404675ef434937e16fb53f"
+    },
+    {
+      "at": "2026-10-19T00:05:06.270Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 40,
+      "topics": 10,
+      "sha256": "4e554a43a6a96218e1890143a32a7674f24a2276ef415e31f35ffde1c249ac4a"
     }
   ]
 }
