@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-19T00:21:02.090Z",
+  "updated_at": "2026-10-19T00:21:15.605Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "ab5d5cb88835860a6654242614a43a6b375c519c",
+  "last_commit_sha": "16984e27c025709168eb0eb698f1b08a542c9c45",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 470,
-    "qa_pass": 470,
+    "researched": 480,
+    "qa_pass": 480,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 460,
+    "pushed": 470,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 48,
-      "de": 48,
-      "fr": 48,
-      "es": 48,
-      "nl": 48,
-      "pt": 48,
-      "zh": 48,
-      "ko": 48,
-      "ja": 48,
-      "en": 38
+      "vi": 49,
+      "de": 49,
+      "fr": 49,
+      "es": 49,
+      "nl": 49,
+      "pt": 49,
+      "zh": 49,
+      "ko": 49,
+      "ja": 49,
+      "en": 39
     },
     "domains": {
       "transportation-mobility": 90,
@@ -42,13 +42,13 @@
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
       "travel-planning": 80,
-      "electric-mobility": 20
+      "electric-mobility": 30
     }
   },
   "last_batch": {
-    "seq": 47,
-    "file": "factory/topic-research/batches/claude-20261018b-0047.json",
-    "sha256": "be41dc10e230dca720ca36a2137eb277febb5d99111d3131e90c1beb5fc4dc29",
+    "seq": 48,
+    "file": "factory/topic-research/batches/claude-20261018b-0048.json",
+    "sha256": "6f40dcdafc81ae5793e0931bbb0669ea66fede3f05519a8eeb023482090ee5d6",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -5164,8 +5164,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0047.json",
       "sha256": "be41dc10e230dca720ca36a2137eb277febb5d99111d3131e90c1beb5fc4dc29",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "16984e27c025709168eb0eb698f1b08a542c9c45",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -5269,23 +5269,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 48,
+      "file": "factory/topic-research/batches/claude-20261018b-0048.json",
+      "sha256": "6f40dcdafc81ae5793e0931bbb0669ea66fede3f05519a8eeb023482090ee5d6",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:xe-may-dien-vinfast-cac-dong-theo-pin-va-giay-phep-lai",
+          "locale": "vi",
+          "slug": "xe-may-dien-vinfast-cac-dong-theo-pin-va-giay-phep-lai",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "vi::cac dong xe may dien vinfast theo loai pin va yeu cau bang lai",
+          "ta_id": null
+        },
+        {
+          "ref": "en:vinfast-electric-scooter-lineup-explained",
+          "locale": "en",
+          "slug": "vinfast-electric-scooter-lineup-explained",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "en::vinfast electric scooter lineup battery swap and licence rules",
+          "ta_id": null
+        },
+        {
+          "ref": "de:vinfast-elektroroller-modelle-erklaert",
+          "locale": "de",
+          "slug": "vinfast-elektroroller-modelle-erklaert",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "de::vinfast elektroroller modelle batteriewechsel und fuhrerscheinregeln",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:scooters-electriques-vinfast-gamme-expliquee",
+          "locale": "fr",
+          "slug": "scooters-electriques-vinfast-gamme-expliquee",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "fr::gamme de scooters electriques vinfast batterie echangeable et regles de permis",
+          "ta_id": null
+        },
+        {
+          "ref": "es:scooters-electricos-vinfast-gama-explicada",
+          "locale": "es",
+          "slug": "scooters-electricos-vinfast-gama-explicada",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "es::gama de scooters electricos vinfast intercambio de bateria y normas de carne",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:vinfast-elektrische-scooters-modellen-uitgelegd",
+          "locale": "nl",
+          "slug": "vinfast-elektrische-scooters-modellen-uitgelegd",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "nl::vinfast elektrische scooters modellen accuwissel en rijbewijsregels",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:vinfast-dianji-motuoche-chanpinxian-jieshao",
+          "locale": "zh",
+          "slug": "vinfast-dianji-motuoche-chanpinxian-jieshao",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "zh::vinfast电动摩托车产品线电池与驾照要求",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:scooters-eletricas-vinfast-gama-explicada",
+          "locale": "pt",
+          "slug": "scooters-eletricas-vinfast-gama-explicada",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "pt::gama de scooters eletricas vinfast troca de bateria e regras de carta",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:binpaseuteu-jeongi-seukuteo-laineop",
+          "locale": "ko",
+          "slug": "binpaseuteu-jeongi-seukuteo-laineop",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "ko::빈패스트 전기 스쿠터 라인업 배터리와 면허 요건",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:binfasuto-denki-sukuta-rainappu",
+          "locale": "ja",
+          "slug": "binfasuto-denki-sukuta-rainappu",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "ja::ヒンファストの電動スクーターのラインナッフと免許の要件",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 48,
-    "file": "factory/topic-research/batches/claude-20261018b-0048.json",
+    "seq": 49,
+    "file": "factory/topic-research/batches/claude-20261018b-0049.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:44:32.795Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 23,
-      "topics": 10,
-      "sha256": "deda28a5349ed1e640571ac34b48a27323f45a2956c42efe29203759da4596cf"
-    },
     {
       "at": "2026-10-18T23:44:39.089Z",
       "event": "BATCH_COMMITTED",
@@ -5453,6 +5557,13 @@
       "seq": 47,
       "topics": 10,
       "sha256": "be41dc10e230dca720ca36a2137eb277febb5d99111d3131e90c1beb5fc4dc29"
+    },
+    {
+      "at": "2026-10-19T00:21:15.605Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 48,
+      "topics": 10,
+      "sha256": "6f40dcdafc81ae5793e0931bbb0669ea66fede3f05519a8eeb023482090ee5d6"
     }
   ]
 }
