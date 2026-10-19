@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-19T00:21:15.605Z",
+  "updated_at": "2026-10-19T00:21:29.914Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "16984e27c025709168eb0eb698f1b08a542c9c45",
+  "last_commit_sha": "6cc240298b2d08d171145fe60a5b1c47ebe825b5",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 480,
-    "qa_pass": 480,
+    "researched": 490,
+    "qa_pass": 490,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 470,
+    "pushed": 480,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 49,
-      "de": 49,
-      "fr": 49,
-      "es": 49,
-      "nl": 49,
-      "pt": 49,
-      "zh": 49,
-      "ko": 49,
-      "ja": 49,
-      "en": 39
+      "vi": 50,
+      "de": 50,
+      "fr": 50,
+      "es": 50,
+      "nl": 50,
+      "pt": 50,
+      "zh": 50,
+      "ko": 50,
+      "ja": 50,
+      "en": 40
     },
     "domains": {
       "transportation-mobility": 90,
@@ -42,13 +42,13 @@
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
       "travel-planning": 80,
-      "electric-mobility": 30
+      "electric-mobility": 40
     }
   },
   "last_batch": {
-    "seq": 48,
-    "file": "factory/topic-research/batches/claude-20261018b-0048.json",
-    "sha256": "6f40dcdafc81ae5793e0931bbb0669ea66fede3f05519a8eeb023482090ee5d6",
+    "seq": 49,
+    "file": "factory/topic-research/batches/claude-20261018b-0049.json",
+    "sha256": "0539d7df1b4ab585c522c4995964b86f2cb2c1fd2bef69afd9e894f7207a7878",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -5275,8 +5275,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0048.json",
       "sha256": "6f40dcdafc81ae5793e0931bbb0669ea66fede3f05519a8eeb023482090ee5d6",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "6cc240298b2d08d171145fe60a5b1c47ebe825b5",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -5380,23 +5380,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 49,
+      "file": "factory/topic-research/batches/claude-20261018b-0049.json",
+      "sha256": "0539d7df1b4ab585c522c4995964b86f2cb2c1fd2bef69afd9e894f7207a7878",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:xe-may-dien-co-can-bang-lai-o-viet-nam",
+          "locale": "vi",
+          "slug": "xe-may-dien-co-can-bang-lai-o-viet-nam",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "vi::xe may dien co can bang lai o viet nam khong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:do-electric-motorbikes-need-a-licence-in-vietnam",
+          "locale": "en",
+          "slug": "do-electric-motorbikes-need-a-licence-in-vietnam",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "en::do electric motorbikes need a licence in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:brauchen-elektromotorraeder-in-vietnam-einen-fuehrerschein",
+          "locale": "de",
+          "slug": "brauchen-elektromotorraeder-in-vietnam-einen-fuehrerschein",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "de::brauchen elektromotorrader in vietnam einen fuhrerschein",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:les-motos-electriques-exigent-elles-un-permis-au-vietnam",
+          "locale": "fr",
+          "slug": "les-motos-electriques-exigent-elles-un-permis-au-vietnam",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "fr::les motos electriques exigent-elles un permis au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:las-motos-electricas-necesitan-carne-en-vietnam",
+          "locale": "es",
+          "slug": "las-motos-electricas-necesitan-carne-en-vietnam",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "es::las motos electricas necesitan carne de conducir en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:hebben-elektrische-motoren-in-vietnam-een-rijbewijs-nodig",
+          "locale": "nl",
+          "slug": "hebben-elektrische-motoren-in-vietnam-een-rijbewijs-nodig",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "nl::hebben elektrische motoren in vietnam een rijbewijs nodig",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-dianji-motuoche-xuyao-jiazhao-ma",
+          "locale": "zh",
+          "slug": "yuenan-dianji-motuoche-xuyao-jiazhao-ma",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "zh::越南电动摩托车需要驾照吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:as-motos-eletricas-precisam-de-carta-no-vietname",
+          "locale": "pt",
+          "slug": "as-motos-eletricas-precisam-de-carta-no-vietname",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "pt::as motos eletricas precisam de carta de conducao no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-jeongi-obaibai-myeonheo-pilyo",
+          "locale": "ko",
+          "slug": "beteunam-jeongi-obaibai-myeonheo-pilyo",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "ko::베트남 전기 오토바이 운전면허 필요한가",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-denki-baiku-menkyo-hitsuyo",
+          "locale": "ja",
+          "slug": "betonamu-denki-baiku-menkyo-hitsuyo",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-choice",
+          "key": "ja::ヘトナムの電動ハイクに運転免許は必要か",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 49,
-    "file": "factory/topic-research/batches/claude-20261018b-0049.json",
+    "seq": 50,
+    "file": "factory/topic-research/batches/claude-20261018b-0050.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:44:39.089Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 24,
-      "topics": 10,
-      "sha256": "dab8601c750d90eaad4cd87cb01d2b69d392b1845fd1500777593ec3685f7d92"
-    },
     {
       "at": "2026-10-18T23:46:17.895Z",
       "event": "BATCH_COMMITTED",
@@ -5564,6 +5668,13 @@
       "seq": 48,
       "topics": 10,
       "sha256": "6f40dcdafc81ae5793e0931bbb0669ea66fede3f05519a8eeb023482090ee5d6"
+    },
+    {
+      "at": "2026-10-19T00:21:29.914Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 49,
+      "topics": 10,
+      "sha256": "0539d7df1b4ab585c522c4995964b86f2cb2c1fd2bef69afd9e894f7207a7878"
     }
   ]
 }
