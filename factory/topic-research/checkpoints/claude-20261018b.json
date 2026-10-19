@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-19T00:38:55.766Z",
+  "updated_at": "2026-10-19T00:39:11.511Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "1294dd64071651a817dfda6e7d109dc0663aea14",
+  "last_commit_sha": "8e44146a96f39c2b2cc3b811b9173886a938f0bf",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 520,
-    "qa_pass": 520,
+    "researched": 530,
+    "qa_pass": 530,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 510,
+    "pushed": 520,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 53,
-      "de": 53,
-      "fr": 53,
-      "es": 53,
-      "nl": 53,
-      "pt": 53,
-      "zh": 53,
-      "ko": 53,
-      "ja": 53,
-      "en": 43
+      "vi": 54,
+      "de": 54,
+      "fr": 54,
+      "es": 54,
+      "nl": 54,
+      "pt": 54,
+      "zh": 54,
+      "ko": 54,
+      "ja": 54,
+      "en": 44
     },
     "domains": {
       "transportation-mobility": 90,
@@ -42,13 +42,13 @@
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
       "travel-planning": 80,
-      "electric-mobility": 70
+      "electric-mobility": 80
     }
   },
   "last_batch": {
-    "seq": 52,
-    "file": "factory/topic-research/batches/claude-20261018b-0052.json",
-    "sha256": "8e72173d344a2214cf0bd6371f32015fea4ea452c0f359544ee610d58cbcad00",
+    "seq": 53,
+    "file": "factory/topic-research/batches/claude-20261018b-0053.json",
+    "sha256": "10ffe0dd23370d742ff83b8b57a9cc7c9090622e6b872ef2b7f512a0072571eb",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -5719,8 +5719,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0052.json",
       "sha256": "8e72173d344a2214cf0bd6371f32015fea4ea452c0f359544ee610d58cbcad00",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "8e44146a96f39c2b2cc3b811b9173886a938f0bf",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -5824,23 +5824,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 53,
+      "file": "factory/topic-research/batches/claude-20261018b-0053.json",
+      "sha256": "10ffe0dd23370d742ff83b8b57a9cc7c9090622e6b872ef2b7f512a0072571eb",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:kiem-dinh-khi-thai-xe-may-ha-noi-tu-1-7-2027",
+          "locale": "vi",
+          "slug": "kiem-dinh-khi-thai-xe-may-ha-noi-tu-1-7-2027",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "vi::kiem dinh khi thai xe may o ha noi tu 1/7/2027 ap dung cho ai",
+          "ta_id": null
+        },
+        {
+          "ref": "en:motorbike-emissions-testing-hanoi-july-2027",
+          "locale": "en",
+          "slug": "motorbike-emissions-testing-hanoi-july-2027",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "en::motorbike emissions testing in hanoi from july 2027 who is covered",
+          "ta_id": null
+        },
+        {
+          "ref": "de:abgasuntersuchung-motorraeder-hanoi-juli-2027",
+          "locale": "de",
+          "slug": "abgasuntersuchung-motorraeder-hanoi-juli-2027",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "de::abgasprufung fur motorrader in hanoi ab juli 2027 wer betroffen ist",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:controle-des-emissions-motos-hanoi-juillet-2027",
+          "locale": "fr",
+          "slug": "controle-des-emissions-motos-hanoi-juillet-2027",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "fr::controle des emissions des motos a hanoi a partir de juillet 2027 qui est concerne",
+          "ta_id": null
+        },
+        {
+          "ref": "es:control-de-emisiones-motos-hanoi-julio-2027",
+          "locale": "es",
+          "slug": "control-de-emisiones-motos-hanoi-julio-2027",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "es::control de emisiones de las motos en hanoi desde julio de 2027 quien esta afectado",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:uitlaatgassencontrole-motoren-hanoi-juli-2027",
+          "locale": "nl",
+          "slug": "uitlaatgassencontrole-motoren-hanoi-juli-2027",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "nl::uitlaatgassencontrole voor motoren in hanoi vanaf juli 2027 wie valt eronder",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-motuoche-paifang-jiance-2027-nian-7-yue",
+          "locale": "zh",
+          "slug": "hanoi-motuoche-paifang-jiance-2027-nian-7-yue",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "zh::河内摩托车排放检测 2027年7月起 适用对象",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:controlo-de-emissoes-motos-hanoi-julho-2027",
+          "locale": "pt",
+          "slug": "controlo-de-emissoes-motos-hanoi-julho-2027",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "pt::controlo de emissoes das motos em hanoi a partir de julho de 2027 quem e abrangido",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-obaibai-baegigas-geomsa-2027-nyeon-7-wol",
+          "locale": "ko",
+          "slug": "hanoi-obaibai-baegigas-geomsa-2027-nyeon-7-wol",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "ko::하노이 오토바이 배기가스 검사 2027년 7월부터 적용 대상",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-baiku-haishutsugasu-kensa-2027-nen-7-gatsu",
+          "locale": "ja",
+          "slug": "hanoi-baiku-haishutsugasu-kensa-2027-nen-7-gatsu",
+          "domain_id": "electric-mobility",
+          "parent_id": null,
+          "subcluster": "electric-sustainability",
+          "key": "ja::ハノイのハイク排カス検査 2027年7月から 対象となる人",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 53,
-    "file": "factory/topic-research/batches/claude-20261018b-0053.json",
+    "seq": 54,
+    "file": "factory/topic-research/batches/claude-20261018b-0054.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:52:25.599Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 28,
-      "topics": 10,
-      "sha256": "accc49fdf1af2244bcf094094ffb7f6e0606156917c1fe30bc717a3d2ce3ca8e"
-    },
     {
       "at": "2026-10-18T23:52:33.127Z",
       "event": "BATCH_COMMITTED",
@@ -6008,6 +6112,13 @@
       "seq": 52,
       "topics": 10,
       "sha256": "8e72173d344a2214cf0bd6371f32015fea4ea452c0f359544ee610d58cbcad00"
+    },
+    {
+      "at": "2026-10-19T00:39:11.511Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 53,
+      "topics": 10,
+      "sha256": "10ffe0dd23370d742ff83b8b57a9cc7c9090622e6b872ef2b7f512a0072571eb"
     }
   ]
 }
