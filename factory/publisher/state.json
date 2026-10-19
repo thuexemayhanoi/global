@@ -10648,17 +10648,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-19T09:45:17.012Z"
+    },
+    {
+      "id": "ES-S82",
+      "locale": "es",
+      "url": "/es/guides/funcion-start-stop-scooter-semaforo-hanoi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-19T09:45:40.795Z",
+      "source_sha256": "28392dcd765bdce0ec16c4ea692b2d40b3f1b1eafd97db9f9fdc5e722ce0a740",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S92",
+      "locale": "fr",
+      "url": "/fr/guides/hauteur-selle-scooter-petite-taille-hanoi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-19T09:45:40.795Z",
+      "source_sha256": "7a65fe202e1917a7187487bb24ce93fd69e9d63785a002af11b4dc24a3ef7069",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T06:10:33.892Z",
-      "ids": [
-        "PT-S76",
-        "PT-S77"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T06:11:49.688Z",
       "ids": [
@@ -12242,6 +12256,14 @@
         "ES-S81"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-19T09:45:40.795Z",
+      "ids": [
+        "ES-S82",
+        "FR-S92"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -12254,6 +12276,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 4
+    "APPROVED_BY_POLICY": 2
   }
 }
