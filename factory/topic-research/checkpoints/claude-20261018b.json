@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-19T00:05:06.270Z",
+  "updated_at": "2026-10-19T00:06:50.075Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "d8d0dafa91477b2bfbc19dcfa0072b1af5023e0b",
+  "last_commit_sha": "c18897f1ac09f9f77fa02402944c2f07f6f0092b",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 400,
-    "qa_pass": 400,
+    "researched": 410,
+    "qa_pass": 410,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 390,
+    "pushed": 400,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 41,
-      "de": 41,
-      "fr": 41,
-      "es": 41,
-      "nl": 41,
-      "pt": 41,
-      "zh": 41,
-      "ko": 41,
-      "ja": 41,
-      "en": 31
+      "vi": 42,
+      "de": 42,
+      "fr": 42,
+      "es": 42,
+      "nl": 42,
+      "pt": 42,
+      "zh": 42,
+      "ko": 42,
+      "ja": 42,
+      "en": 32
     },
     "domains": {
       "transportation-mobility": 90,
@@ -41,13 +41,13 @@
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
-      "travel-planning": 30
+      "travel-planning": 40
     }
   },
   "last_batch": {
-    "seq": 40,
-    "file": "factory/topic-research/batches/claude-20261018b-0040.json",
-    "sha256": "4e554a43a6a96218e1890143a32a7674f24a2276ef415e31f35ffde1c249ac4a",
+    "seq": 41,
+    "file": "factory/topic-research/batches/claude-20261018b-0041.json",
+    "sha256": "7b11b8350a4c05a26383964607944bbf6c0b6d8c886b3be1b27f6959ec1f4ba4",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -4386,8 +4386,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0040.json",
       "sha256": "4e554a43a6a96218e1890143a32a7674f24a2276ef415e31f35ffde1c249ac4a",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "c18897f1ac09f9f77fa02402944c2f07f6f0092b",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -4491,23 +4491,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 41,
+      "file": "factory/topic-research/batches/claude-20261018b-0041.json",
+      "sha256": "7b11b8350a4c05a26383964607944bbf6c0b6d8c886b3be1b27f6959ec1f4ba4",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:chuan-bi-suc-khoe-truoc-khi-den-viet-nam",
+          "locale": "vi",
+          "slug": "chuan-bi-suc-khoe-truoc-khi-den-viet-nam",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "vi::chuan bi suc khoe truoc chuyen du lich viet nam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:vietnam-travel-health-preparation-vaccines",
+          "locale": "en",
+          "slug": "vietnam-travel-health-preparation-vaccines",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "en::travel health preparation for vietnam vaccines",
+          "ta_id": null
+        },
+        {
+          "ref": "de:gesundheitsvorsorge-vietnam-reise-impfungen",
+          "locale": "de",
+          "slug": "gesundheitsvorsorge-vietnam-reise-impfungen",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "de::gesundheitsvorsorge fur die vietnam-reise impfungen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:preparation-sante-voyage-vietnam-vaccins",
+          "locale": "fr",
+          "slug": "preparation-sante-voyage-vietnam-vaccins",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "fr::preparation sante avant un voyage au vietnam vaccins",
+          "ta_id": null
+        },
+        {
+          "ref": "es:preparacion-de-salud-viaje-vietnam-vacunas",
+          "locale": "es",
+          "slug": "preparacion-de-salud-viaje-vietnam-vacunas",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "es::preparacion de salud antes de viajar a vietnam vacunas",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:gezondheidsvoorbereiding-vietnam-reis-vaccinaties",
+          "locale": "nl",
+          "slug": "gezondheidsvoorbereiding-vietnam-reis-vaccinaties",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "nl::gezondheidsvoorbereiding voor een reis naar vietnam vaccinaties",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-lvxing-jiankang-zhunbei-yimiao",
+          "locale": "zh",
+          "slug": "yuenan-lvxing-jiankang-zhunbei-yimiao",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "zh::去越南旅行前的健康准备和疫苗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:preparacao-de-saude-viagem-vietname-vacinas",
+          "locale": "pt",
+          "slug": "preparacao-de-saude-viagem-vietname-vacinas",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "pt::preparacao de saude antes de viajar para o vietname vacinas",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-yeohaeng-geongang-junbi-baeksin",
+          "locale": "ko",
+          "slug": "beteunam-yeohaeng-geongang-junbi-baeksin",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "ko::베트남 여행 전 건강 준비와 예방접종",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-ryoko-mae-kenko-junbi-wakuchin",
+          "locale": "ja",
+          "slug": "betonamu-ryoko-mae-kenko-junbi-wakuchin",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-logistics",
+          "key": "ja::ヘトナム旅行前の健康準備とワクチン",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 41,
-    "file": "factory/topic-research/batches/claude-20261018b-0041.json",
+    "seq": 42,
+    "file": "factory/topic-research/batches/claude-20261018b-0042.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:31:44.031Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 16,
-      "topics": 10,
-      "sha256": "d5a6d13b5725d16f697e49af3994e7da0cd379cc6d0bb2f77acfcd2ccbabf2ad"
-    },
     {
       "at": "2026-10-18T23:31:52.744Z",
       "event": "BATCH_COMMITTED",
@@ -4675,6 +4779,13 @@
       "seq": 40,
       "topics": 10,
       "sha256": "4e554a43a6a96218e1890143a32a7674f24a2276ef415e31f35ffde1c249ac4a"
+    },
+    {
+      "at": "2026-10-19T00:06:50.075Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 41,
+      "topics": 10,
+      "sha256": "7b11b8350a4c05a26383964607944bbf6c0b6d8c886b3be1b27f6959ec1f4ba4"
     }
   ]
 }
