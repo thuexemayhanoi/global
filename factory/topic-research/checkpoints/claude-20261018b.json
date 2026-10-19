@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-19T00:11:07.520Z",
+  "updated_at": "2026-10-19T00:11:20.721Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "3b325c5bbb722203a192bfd5e2a8ccd6e020a6f9",
+  "last_commit_sha": "97e16720d2c57c59f9a72d07b256f18397f233da",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 440,
-    "qa_pass": 440,
+    "researched": 450,
+    "qa_pass": 450,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 430,
+    "pushed": 440,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 45,
-      "de": 45,
-      "fr": 45,
-      "es": 45,
-      "nl": 45,
-      "pt": 45,
-      "zh": 45,
-      "ko": 45,
-      "ja": 45,
-      "en": 35
+      "vi": 46,
+      "de": 46,
+      "fr": 46,
+      "es": 46,
+      "nl": 46,
+      "pt": 46,
+      "zh": 46,
+      "ko": 46,
+      "ja": 46,
+      "en": 36
     },
     "domains": {
       "transportation-mobility": 90,
@@ -41,13 +41,13 @@
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
-      "travel-planning": 70
+      "travel-planning": 80
     }
   },
   "last_batch": {
-    "seq": 44,
-    "file": "factory/topic-research/batches/claude-20261018b-0044.json",
-    "sha256": "ad08eeb6e97c1aacbb2af23e7307485229e8c2fb0867d5a8fe7e7c1b1f15b01e",
+    "seq": 45,
+    "file": "factory/topic-research/batches/claude-20261018b-0045.json",
+    "sha256": "1b6b0f3aac1930ef48ea45cfb500190f8d951dbb6063712c248661c264578951",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -4830,8 +4830,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0044.json",
       "sha256": "ad08eeb6e97c1aacbb2af23e7307485229e8c2fb0867d5a8fe7e7c1b1f15b01e",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "97e16720d2c57c59f9a72d07b256f18397f233da",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -4935,23 +4935,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 45,
+      "file": "factory/topic-research/batches/claude-20261018b-0045.json",
+      "sha256": "1b6b0f3aac1930ef48ea45cfb500190f8d951dbb6063712c248661c264578951",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:du-tru-chi-phi-chuyen-di-ha-noi-gia-chinh-thuc",
+          "locale": "vi",
+          "slug": "du-tru-chi-phi-chuyen-di-ha-noi-gia-chinh-thuc",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "vi::du tru chi phi chuyen di ha noi kiem tra gia chinh thuc",
+          "ta_id": null
+        },
+        {
+          "ref": "en:hanoi-trip-budget-official-price-pages",
+          "locale": "en",
+          "slug": "hanoi-trip-budget-official-price-pages",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "en::hanoi trip budget official price pages to check",
+          "ta_id": null
+        },
+        {
+          "ref": "de:hanoi-reisebudget-offizielle-preisseiten",
+          "locale": "de",
+          "slug": "hanoi-reisebudget-offizielle-preisseiten",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "de::hanoi reisebudget offizielle preisseiten prufen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:budget-voyage-hanoi-pages-de-prix-officielles",
+          "locale": "fr",
+          "slug": "budget-voyage-hanoi-pages-de-prix-officielles",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "fr::budget d'un voyage a hanoi pages de prix officielles",
+          "ta_id": null
+        },
+        {
+          "ref": "es:presupuesto-viaje-hanoi-paginas-de-precios-oficiales",
+          "locale": "es",
+          "slug": "presupuesto-viaje-hanoi-paginas-de-precios-oficiales",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "es::presupuesto de un viaje a hanoi paginas de precios oficiales",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:reisbudget-hanoi-officiele-prijspaginas",
+          "locale": "nl",
+          "slug": "reisbudget-hanoi-officiele-prijspaginas",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "nl::reisbudget voor hanoi officiele prijspagina's controleren",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-lvxing-yusuan-guanfang-jiage-yemian",
+          "locale": "zh",
+          "slug": "hanoi-lvxing-yusuan-guanfang-jiage-yemian",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "zh::河内旅行预算官方价格页面核对",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:orcamento-viagem-hanoi-paginas-de-precos-oficiais",
+          "locale": "pt",
+          "slug": "orcamento-viagem-hanoi-paginas-de-precos-oficiais",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "pt::orcamento de uma viagem a hanoi paginas de precos oficiais",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-yeohaeng-yesan-gongsik-gagyeok-peiji",
+          "locale": "ko",
+          "slug": "hanoi-yeohaeng-yesan-gongsik-gagyeok-peiji",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "ko::하노이 여행 예산 공식 가격 페이지 확인",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-ryoko-yosan-koshiki-kakaku-peji",
+          "locale": "ja",
+          "slug": "hanoi-ryoko-yosan-koshiki-kakaku-peji",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "ja::ハノイ旅行の予算と公式の料金ヘーシの確認",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 45,
-    "file": "factory/topic-research/batches/claude-20261018b-0045.json",
+    "seq": 46,
+    "file": "factory/topic-research/batches/claude-20261018b-0046.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:42:36.556Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 20,
-      "topics": 10,
-      "sha256": "8ee442179865adf005e3254834bddb7e665ab9a4579657c733517a5e5d9f23e0"
-    },
     {
       "at": "2026-10-18T23:42:42.699Z",
       "event": "BATCH_COMMITTED",
@@ -5119,6 +5223,13 @@
       "seq": 44,
       "topics": 10,
       "sha256": "ad08eeb6e97c1aacbb2af23e7307485229e8c2fb0867d5a8fe7e7c1b1f15b01e"
+    },
+    {
+      "at": "2026-10-19T00:11:20.721Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 45,
+      "topics": 10,
+      "sha256": "1b6b0f3aac1930ef48ea45cfb500190f8d951dbb6063712c248661c264578951"
     }
   ]
 }

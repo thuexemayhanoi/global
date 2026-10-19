@@ -1,0 +1,492 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-19",
+  "candidates": [
+    {
+      "locale": "vi",
+      "domain_id": "travel-planning",
+      "parent_id": null,
+      "subcluster": "plan-budget",
+      "slug": "du-tru-chi-phi-chuyen-di-ha-noi-gia-chinh-thuc",
+      "primary_query": "dự trù chi phí chuyến đi Hà Nội kiểm tra giá chính thức",
+      "secondary_queries": [
+        "chi phí đi Hà Nội gồm những khoản nào",
+        "giá vé metro Hà Nội xem ở đâu chính thức",
+        "lệ phí e-visa trên cổng chính thức",
+        "giá vé xe buýt điện tử Hà Nội"
+      ],
+      "entities": [
+        "chi phí du lịch",
+        "Hà Nội Metro",
+        "vé điện tử xe buýt",
+        "lệ phí thị thực"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Du khách muốn lập ngân sách cho chuyến đi Hà Nội mà không dựa vào số liệu cũ, cần biết khoản nào có trang giá chính thức, khoản nào biến động, kiểm tra ở đâu và cập nhật thế nào.",
+      "content_angle": "Lập bản đồ các khoản chi có nguồn giá chính thức (bảng lệ phí e-visa, trang giá vé Hà Nội Metro, thông báo vé điện tử xe buýt, trang đặt vé nhà hát) và các khoản không có, đồng thời yêu cầu không nêu số tiền nếu không có nguồn ghi ngày.",
+      "working_title": "Dự trù chi phí chuyến đi Hà Nội: khoản nào có trang giá chính thức và cách kiểm tra mà không tin số cũ",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://evisa.gov.vn/",
+          "title": "Vietnam National Electronic Visa system (Immigration Department): e-visa fee information",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://metrohanoi.vn/afc-tickets/metro-fares-1",
+          "title": "Hanoi Metro: Ticket prices of the Hanoi Metro lines",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://transerco.com.vn/vi/tin-buyt/trien-khai-ve-dien-tu-lien-thong-doi-voi-toan-bo-he-thong-vthkcc-bang-xe-buyt-co-tro-gia-tu-ngay-2562026.html",
+          "title": "Transerco: Interoperable e-tickets across the subsidised bus system from 25 June 2026",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://nhahatmuaroithanglong.vn/en/ticket-book/",
+          "title": "Thang Long Water Puppet Theatre: Ticket book",
+          "checked_on": "2026-10-19"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "domain_id": "travel-planning",
+      "parent_id": null,
+      "subcluster": "plan-budget",
+      "slug": "hanoi-trip-budget-official-price-pages",
+      "primary_query": "hanoi trip budget official price pages to check",
+      "secondary_queries": [
+        "what costs should i budget for a hanoi trip",
+        "where to find official hanoi metro fares",
+        "vietnam e-visa fee official page",
+        "hanoi bus e-ticket fares"
+      ],
+      "entities": [
+        "trip budget",
+        "Hanoi Metro",
+        "bus e-ticket",
+        "visa fee"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Visitors want to budget a Hanoi trip without relying on stale figures and need to know which costs have an official price page, which fluctuate, where to check and how to keep the numbers current.",
+      "content_angle": "Maps the costs that have an official price source (the e-visa fee table, the Hanoi Metro fare page, the bus e-ticket notice, the theatre's booking page) and those that do not, and tells the Writer to state no amounts without a dated source.",
+      "working_title": "Budgeting a Hanoi Trip: Which Costs Have Official Price Pages and How to Check Them Without Stale Numbers",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://evisa.gov.vn/",
+          "title": "Vietnam National Electronic Visa system (Immigration Department): e-visa fee information",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://metrohanoi.vn/afc-tickets/metro-fares-1",
+          "title": "Hanoi Metro: Ticket prices of the Hanoi Metro lines",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://transerco.com.vn/vi/tin-buyt/trien-khai-ve-dien-tu-lien-thong-doi-voi-toan-bo-he-thong-vthkcc-bang-xe-buyt-co-tro-gia-tu-ngay-2562026.html",
+          "title": "Transerco: Interoperable e-tickets across the subsidised bus system from 25 June 2026",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://nhahatmuaroithanglong.vn/en/ticket-book/",
+          "title": "Thang Long Water Puppet Theatre: Ticket book",
+          "checked_on": "2026-10-19"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "domain_id": "travel-planning",
+      "parent_id": null,
+      "subcluster": "plan-budget",
+      "slug": "hanoi-reisebudget-offizielle-preisseiten",
+      "primary_query": "Hanoi Reisebudget offizielle Preisseiten prüfen",
+      "secondary_queries": [
+        "welche Kosten für eine Hanoi-Reise einplanen",
+        "wo gibt es offizielle Fahrpreise der Hanoi Metro",
+        "offizielle Seite Gebühr Vietnam E-Visum",
+        "E-Ticket Bus Hanoi Fahrpreise"
+      ],
+      "entities": [
+        "Reisebudget",
+        "Hanoi Metro",
+        "Bus-E-Ticket",
+        "Visumgebühr"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Besucher wollen ein Budget für eine Hanoi-Reise aufstellen, ohne sich auf veraltete Zahlen zu verlassen, und müssen wissen, welche Kosten eine offizielle Preisseite haben, welche schwanken, wo man nachsieht und wie man die Zahlen aktuell hält.",
+      "content_angle": "Ordnet die Kosten, für die es eine offizielle Preisquelle gibt (Gebührentabelle des E-Visums, Fahrpreisseite der Hanoi Metro, Mitteilung zum Bus-E-Ticket, Buchungsseite des Theaters), und die ohne und verlangt, keine Beträge ohne datierte Quelle zu nennen.",
+      "working_title": "Reisebudget für Hanoi: welche Kosten offizielle Preisseiten haben und wie man sie ohne veraltete Zahlen prüft",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://evisa.gov.vn/",
+          "title": "Vietnam National Electronic Visa system (Immigration Department): e-visa fee information",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://metrohanoi.vn/afc-tickets/metro-fares-1",
+          "title": "Hanoi Metro: Ticket prices of the Hanoi Metro lines",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://transerco.com.vn/vi/tin-buyt/trien-khai-ve-dien-tu-lien-thong-doi-voi-toan-bo-he-thong-vthkcc-bang-xe-buyt-co-tro-gia-tu-ngay-2562026.html",
+          "title": "Transerco: Interoperable e-tickets across the subsidised bus system from 25 June 2026",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://nhahatmuaroithanglong.vn/en/ticket-book/",
+          "title": "Thang Long Water Puppet Theatre: Ticket book",
+          "checked_on": "2026-10-19"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "domain_id": "travel-planning",
+      "parent_id": null,
+      "subcluster": "plan-budget",
+      "slug": "budget-voyage-hanoi-pages-de-prix-officielles",
+      "primary_query": "budget d'un voyage à Hanoï pages de prix officielles",
+      "secondary_queries": [
+        "quels coûts prévoir pour un voyage à Hanoï",
+        "où trouver les tarifs officiels du métro de Hanoï",
+        "page officielle des frais de l'e-visa Vietnam",
+        "tarifs du e-ticket de bus à Hanoï"
+      ],
+      "entities": [
+        "budget de voyage",
+        "métro de Hanoï",
+        "e-ticket de bus",
+        "frais de visa"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Les visiteurs veulent établir un budget pour Hanoï sans se fier à des chiffres périmés et doivent savoir quels coûts disposent d'une page de prix officielle, lesquels fluctuent, où vérifier et comment garder les chiffres à jour.",
+      "content_angle": "Cartographie les coûts qui ont une source de prix officielle (barème de frais de l'e-visa, page des tarifs du métro de Hanoï, avis sur le e-ticket de bus, page de réservation du théâtre) et ceux qui n'en ont pas, et demande de n'indiquer aucun montant sans source datée.",
+      "working_title": "Budget d'un voyage à Hanoï : quels coûts ont une page de prix officielle et comment les vérifier",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://evisa.gov.vn/",
+          "title": "Vietnam National Electronic Visa system (Immigration Department): e-visa fee information",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://metrohanoi.vn/afc-tickets/metro-fares-1",
+          "title": "Hanoi Metro: Ticket prices of the Hanoi Metro lines",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://transerco.com.vn/vi/tin-buyt/trien-khai-ve-dien-tu-lien-thong-doi-voi-toan-bo-he-thong-vthkcc-bang-xe-buyt-co-tro-gia-tu-ngay-2562026.html",
+          "title": "Transerco: Interoperable e-tickets across the subsidised bus system from 25 June 2026",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://nhahatmuaroithanglong.vn/en/ticket-book/",
+          "title": "Thang Long Water Puppet Theatre: Ticket book",
+          "checked_on": "2026-10-19"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "domain_id": "travel-planning",
+      "parent_id": null,
+      "subcluster": "plan-budget",
+      "slug": "presupuesto-viaje-hanoi-paginas-de-precios-oficiales",
+      "primary_query": "presupuesto de un viaje a Hanói páginas de precios oficiales",
+      "secondary_queries": [
+        "qué costes presupuestar para un viaje a Hanói",
+        "dónde ver las tarifas oficiales del metro de Hanói",
+        "página oficial de tasas del e-visa de Vietnam",
+        "tarifas del e-ticket de autobús en Hanói"
+      ],
+      "entities": [
+        "presupuesto de viaje",
+        "metro de Hanói",
+        "e-ticket de autobús",
+        "tasa de visado"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Los visitantes quieren presupuestar un viaje a Hanói sin fiarse de cifras anticuadas y necesitan saber qué costes tienen una página de precios oficial, cuáles fluctúan, dónde comprobarlos y cómo mantener las cifras al día.",
+      "content_angle": "Cartografía los costes que tienen una fuente de precios oficial (tabla de tasas del e-visa, página de tarifas del metro de Hanói, aviso del e-ticket de autobús, página de reservas del teatro) y los que no, y pide no indicar importes sin una fuente fechada.",
+      "working_title": "Presupuesto de un viaje a Hanói: qué costes tienen página de precios oficial y cómo comprobarlos",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://evisa.gov.vn/",
+          "title": "Vietnam National Electronic Visa system (Immigration Department): e-visa fee information",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://metrohanoi.vn/afc-tickets/metro-fares-1",
+          "title": "Hanoi Metro: Ticket prices of the Hanoi Metro lines",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://transerco.com.vn/vi/tin-buyt/trien-khai-ve-dien-tu-lien-thong-doi-voi-toan-bo-he-thong-vthkcc-bang-xe-buyt-co-tro-gia-tu-ngay-2562026.html",
+          "title": "Transerco: Interoperable e-tickets across the subsidised bus system from 25 June 2026",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://nhahatmuaroithanglong.vn/en/ticket-book/",
+          "title": "Thang Long Water Puppet Theatre: Ticket book",
+          "checked_on": "2026-10-19"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "domain_id": "travel-planning",
+      "parent_id": null,
+      "subcluster": "plan-budget",
+      "slug": "reisbudget-hanoi-officiele-prijspaginas",
+      "primary_query": "reisbudget voor Hanoi officiële prijspagina's controleren",
+      "secondary_queries": [
+        "welke kosten begroten voor een reis naar Hanoi",
+        "waar vind je de officiële tarieven van de metro van Hanoi",
+        "officiële pagina kosten Vietnam e-visum",
+        "tarieven e-ticket bus Hanoi"
+      ],
+      "entities": [
+        "reisbudget",
+        "metro van Hanoi",
+        "e-ticket bus",
+        "visumkosten"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Bezoekers willen een budget voor Hanoi opstellen zonder op verouderde cijfers te vertrouwen en moeten weten welke kosten een officiële prijspagina hebben, welke schommelen, waar je kijkt en hoe je de cijfers actueel houdt.",
+      "content_angle": "Brengt de kosten in kaart waarvoor een officiële prijsbron bestaat (tarieventabel van het e-visum, tariefpagina van de metro van Hanoi, bericht over het bus-e-ticket, boekingspagina van het theater) en de kosten zonder, en vraagt geen bedragen te noemen zonder gedateerde bron.",
+      "working_title": "Reisbudget voor Hanoi: welke kosten officiële prijspagina's hebben en hoe je ze controleert",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://evisa.gov.vn/",
+          "title": "Vietnam National Electronic Visa system (Immigration Department): e-visa fee information",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://metrohanoi.vn/afc-tickets/metro-fares-1",
+          "title": "Hanoi Metro: Ticket prices of the Hanoi Metro lines",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://transerco.com.vn/vi/tin-buyt/trien-khai-ve-dien-tu-lien-thong-doi-voi-toan-bo-he-thong-vthkcc-bang-xe-buyt-co-tro-gia-tu-ngay-2562026.html",
+          "title": "Transerco: Interoperable e-tickets across the subsidised bus system from 25 June 2026",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://nhahatmuaroithanglong.vn/en/ticket-book/",
+          "title": "Thang Long Water Puppet Theatre: Ticket book",
+          "checked_on": "2026-10-19"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "domain_id": "travel-planning",
+      "parent_id": null,
+      "subcluster": "plan-budget",
+      "slug": "hanoi-lvxing-yusuan-guanfang-jiage-yemian",
+      "primary_query": "河内旅行预算官方价格页面核对",
+      "secondary_queries": [
+        "河内旅行预算要考虑哪些费用",
+        "河内地铁官方票价在哪里查",
+        "越南电子签证收费官方页面",
+        "河内公交电子票票价"
+      ],
+      "entities": [
+        "旅行预算",
+        "河内地铁",
+        "公交电子票",
+        "签证费用"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "游客想为河内之行做预算，又不想依赖过时的数字，需要知道哪些费用有官方价格页面、哪些会浮动、到哪里去核对，以及怎样让数字保持最新，避免按旧价格估算后到现场才发现对不上。",
+      "content_angle": "梳理哪些费用有官方价格来源（电子签证收费表、河内地铁票价页面、公交电子票通知、剧院订票页面）、哪些没有，并要求没有带日期的来源时不要写出具体金额。",
+      "working_title": "河内旅行预算：哪些费用有官方价格页面，以及怎样避开过时数字来核对",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://evisa.gov.vn/",
+          "title": "Vietnam National Electronic Visa system (Immigration Department): e-visa fee information",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://metrohanoi.vn/afc-tickets/metro-fares-1",
+          "title": "Hanoi Metro: Ticket prices of the Hanoi Metro lines",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://transerco.com.vn/vi/tin-buyt/trien-khai-ve-dien-tu-lien-thong-doi-voi-toan-bo-he-thong-vthkcc-bang-xe-buyt-co-tro-gia-tu-ngay-2562026.html",
+          "title": "Transerco: Interoperable e-tickets across the subsidised bus system from 25 June 2026",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://nhahatmuaroithanglong.vn/en/ticket-book/",
+          "title": "Thang Long Water Puppet Theatre: Ticket book",
+          "checked_on": "2026-10-19"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "domain_id": "travel-planning",
+      "parent_id": null,
+      "subcluster": "plan-budget",
+      "slug": "orcamento-viagem-hanoi-paginas-de-precos-oficiais",
+      "primary_query": "orçamento de uma viagem a Hanói páginas de preços oficiais",
+      "secondary_queries": [
+        "que custos orçamentar para uma viagem a Hanói",
+        "onde ver as tarifas oficiais do metro de Hanói",
+        "página oficial das taxas do e-visa do Vietname",
+        "tarifas do e-ticket de autocarro em Hanói"
+      ],
+      "entities": [
+        "orçamento de viagem",
+        "metro de Hanói",
+        "e-ticket de autocarro",
+        "taxa de visto"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Os visitantes querem orçamentar uma viagem a Hanói sem confiar em números desatualizados e precisam de saber que custos têm uma página de preços oficial, quais oscilam, onde verificar e como manter os números atualizados.",
+      "content_angle": "Mapeia os custos que têm uma fonte de preços oficial (tabela de taxas do e-visa, página de tarifas do metro de Hanói, aviso do e-ticket de autocarro, página de reservas do teatro) e os que não têm, e pede para não indicar montantes sem fonte datada.",
+      "working_title": "Orçamento de uma viagem a Hanói: que custos têm página de preços oficial e como os verificar",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://evisa.gov.vn/",
+          "title": "Vietnam National Electronic Visa system (Immigration Department): e-visa fee information",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://metrohanoi.vn/afc-tickets/metro-fares-1",
+          "title": "Hanoi Metro: Ticket prices of the Hanoi Metro lines",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://transerco.com.vn/vi/tin-buyt/trien-khai-ve-dien-tu-lien-thong-doi-voi-toan-bo-he-thong-vthkcc-bang-xe-buyt-co-tro-gia-tu-ngay-2562026.html",
+          "title": "Transerco: Interoperable e-tickets across the subsidised bus system from 25 June 2026",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://nhahatmuaroithanglong.vn/en/ticket-book/",
+          "title": "Thang Long Water Puppet Theatre: Ticket book",
+          "checked_on": "2026-10-19"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "domain_id": "travel-planning",
+      "parent_id": null,
+      "subcluster": "plan-budget",
+      "slug": "hanoi-yeohaeng-yesan-gongsik-gagyeok-peiji",
+      "primary_query": "하노이 여행 예산 공식 가격 페이지 확인",
+      "secondary_queries": [
+        "하노이 여행 예산에 넣을 항목",
+        "하노이 지하철 공식 요금 확인",
+        "베트남 전자비자 수수료 공식 페이지",
+        "하노이 버스 전자 승차권 요금"
+      ],
+      "entities": [
+        "여행 예산",
+        "하노이 지하철",
+        "버스 전자 승차권",
+        "비자 수수료"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "방문객은 오래된 숫자에 기대지 않고 하노이 여행 예산을 세우려 하며, 어떤 비용에 공식 가격 페이지가 있는지, 어떤 비용이 변동하는지, 어디서 확인하고 숫자를 어떻게 최신으로 유지하는지 알아야 합니다.",
+      "content_angle": "공식 가격 출처가 있는 비용(전자비자 수수료표, 하노이 지하철 요금 페이지, 버스 전자 승차권 공지, 극장 예매 페이지)과 없는 비용을 정리하고, 날짜가 적힌 출처 없이는 금액을 적지 말도록 요구합니다.",
+      "working_title": "하노이 여행 예산: 공식 가격 페이지가 있는 비용과 오래된 숫자 없이 확인하는 방법",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://evisa.gov.vn/",
+          "title": "Vietnam National Electronic Visa system (Immigration Department): e-visa fee information",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://metrohanoi.vn/afc-tickets/metro-fares-1",
+          "title": "Hanoi Metro: Ticket prices of the Hanoi Metro lines",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://transerco.com.vn/vi/tin-buyt/trien-khai-ve-dien-tu-lien-thong-doi-voi-toan-bo-he-thong-vthkcc-bang-xe-buyt-co-tro-gia-tu-ngay-2562026.html",
+          "title": "Transerco: Interoperable e-tickets across the subsidised bus system from 25 June 2026",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://nhahatmuaroithanglong.vn/en/ticket-book/",
+          "title": "Thang Long Water Puppet Theatre: Ticket book",
+          "checked_on": "2026-10-19"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "domain_id": "travel-planning",
+      "parent_id": null,
+      "subcluster": "plan-budget",
+      "slug": "hanoi-ryoko-yosan-koshiki-kakaku-peji",
+      "primary_query": "ハノイ旅行の予算と公式の料金ページの確認",
+      "secondary_queries": [
+        "ハノイ旅行 予算 項目",
+        "ハノイメトロ 公式 運賃",
+        "ベトナム 電子ビザ 手数料 公式ページ",
+        "ハノイ バス 電子チケット 運賃"
+      ],
+      "entities": [
+        "旅行予算",
+        "ハノイメトロ",
+        "バスの電子チケット",
+        "ビザ手数料"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "旅行者は、古い数字に頼らずにハノイ旅行の予算を立てたいと考え、どの費用に公式の料金ページがあるのか、どれが変動するのか、どこで確認し、数字をどう最新に保つのかを知る必要があります。",
+      "content_angle": "公式の料金出典がある費用（電子ビザの手数料表、ハノイメトロの運賃ページ、バスの電子チケットの告知、劇場の予約ページ）とない費用を整理し、日付付きの出典なしに金額を書かないよう求めます。",
+      "working_title": "ハノイ旅行の予算：公式の料金ページがある費用と、古い数字に頼らない確認方法",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://evisa.gov.vn/",
+          "title": "Vietnam National Electronic Visa system (Immigration Department): e-visa fee information",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://metrohanoi.vn/afc-tickets/metro-fares-1",
+          "title": "Hanoi Metro: Ticket prices of the Hanoi Metro lines",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://transerco.com.vn/vi/tin-buyt/trien-khai-ve-dien-tu-lien-thong-doi-voi-toan-bo-he-thong-vthkcc-bang-xe-buyt-co-tro-gia-tu-ngay-2562026.html",
+          "title": "Transerco: Interoperable e-tickets across the subsidised bus system from 25 June 2026",
+          "checked_on": "2026-10-19"
+        },
+        {
+          "url": "https://nhahatmuaroithanglong.vn/en/ticket-book/",
+          "title": "Thang Long Water Puppet Theatre: Ticket book",
+          "checked_on": "2026-10-19"
+        }
+      ]
+    }
+  ]
+}
