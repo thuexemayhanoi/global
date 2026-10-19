@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-19T00:06:50.075Z",
+  "updated_at": "2026-10-19T00:07:01.715Z",
   "base_main_sha": "509070571c1a3c66bb57eb25942ab33806c1d040",
-  "last_commit_sha": "c18897f1ac09f9f77fa02402944c2f07f6f0092b",
+  "last_commit_sha": "1d95981c6b4de97fa85bed3d3f81d4a933e7f34a",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 410,
-    "qa_pass": 410,
+    "researched": 420,
+    "qa_pass": 420,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 400,
+    "pushed": 410,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 42,
-      "de": 42,
-      "fr": 42,
-      "es": 42,
-      "nl": 42,
-      "pt": 42,
-      "zh": 42,
-      "ko": 42,
-      "ja": 42,
-      "en": 32
+      "vi": 43,
+      "de": 43,
+      "fr": 43,
+      "es": 43,
+      "nl": 43,
+      "pt": 43,
+      "zh": 43,
+      "ko": 43,
+      "ja": 43,
+      "en": 33
     },
     "domains": {
       "transportation-mobility": 90,
@@ -41,13 +41,13 @@
       "road-trips-routes": 60,
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
-      "travel-planning": 40
+      "travel-planning": 50
     }
   },
   "last_batch": {
-    "seq": 41,
-    "file": "factory/topic-research/batches/claude-20261018b-0041.json",
-    "sha256": "7b11b8350a4c05a26383964607944bbf6c0b6d8c886b3be1b27f6959ec1f4ba4",
+    "seq": 42,
+    "file": "factory/topic-research/batches/claude-20261018b-0042.json",
+    "sha256": "36f2ae00b0b22c807340e9c88bf8a74c7304e51c6dedbc475d0b66c99fec7d38",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -4497,8 +4497,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0041.json",
       "sha256": "7b11b8350a4c05a26383964607944bbf6c0b6d8c886b3be1b27f6959ec1f4ba4",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "1d95981c6b4de97fa85bed3d3f81d4a933e7f34a",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -4602,23 +4602,127 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 42,
+      "file": "factory/topic-research/batches/claude-20261018b-0042.json",
+      "sha256": "36f2ae00b0b22c807340e9c88bf8a74c7304e51c6dedbc475d0b66c99fec7d38",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-19",
+      "topics": [
+        {
+          "ref": "vi:thanh-toan-khi-du-lich-viet-nam-tien-mat-the-qr",
+          "locale": "vi",
+          "slug": "thanh-toan-khi-du-lich-viet-nam-tien-mat-the-qr",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "vi::thanh toan khi du lich viet nam tien mat the va ma qr",
+          "ta_id": null
+        },
+        {
+          "ref": "en:paying-in-vietnam-cash-cards-cross-border-qr",
+          "locale": "en",
+          "slug": "paying-in-vietnam-cash-cards-cross-border-qr",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "en::paying in vietnam as a tourist cash cards and qr codes",
+          "ta_id": null
+        },
+        {
+          "ref": "de:bezahlen-in-vietnam-bargeld-karte-qr-code",
+          "locale": "de",
+          "slug": "bezahlen-in-vietnam-bargeld-karte-qr-code",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "de::bezahlen in vietnam als tourist bargeld karte und qr-code",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:payer-au-vietnam-especes-cartes-qr-transfrontalier",
+          "locale": "fr",
+          "slug": "payer-au-vietnam-especes-cartes-qr-transfrontalier",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "fr::payer au vietnam en touriste especes cartes et codes qr",
+          "ta_id": null
+        },
+        {
+          "ref": "es:pagar-en-vietnam-efectivo-tarjetas-qr-transfronterizo",
+          "locale": "es",
+          "slug": "pagar-en-vietnam-efectivo-tarjetas-qr-transfronterizo",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "es::pagar en vietnam como turista efectivo tarjetas y codigos qr",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:betalen-in-vietnam-contant-pinpas-qr-grensoverschrijdend",
+          "locale": "nl",
+          "slug": "betalen-in-vietnam-contant-pinpas-qr-grensoverschrijdend",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "nl::betalen in vietnam als toerist contant pinpas en qr-codes",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-lvyou-zhifu-xianjin-yinhangka-erweima",
+          "locale": "zh",
+          "slug": "yuenan-lvyou-zhifu-xianjin-yinhangka-erweima",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "zh::在越南旅行怎么付款现金银行卡和二维码",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:pagar-no-vietname-dinheiro-cartoes-qr-transfronteirico",
+          "locale": "pt",
+          "slug": "pagar-no-vietname-dinheiro-cartoes-qr-transfronteirico",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "pt::pagar no vietname como turista dinheiro cartoes e codigos qr",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-yeohaeng-gyeolje-hyeongeum-kadeu-qr",
+          "locale": "ko",
+          "slug": "beteunam-yeohaeng-gyeolje-hyeongeum-kadeu-qr",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "ko::베트남 여행 결제 현금 카드 qr 코드",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-ryoko-shiharai-genkin-kado-qr",
+          "locale": "ja",
+          "slug": "betonamu-ryoko-shiharai-genkin-kado-qr",
+          "domain_id": "travel-planning",
+          "parent_id": null,
+          "subcluster": "plan-budget",
+          "key": "ja::ヘトナム旅行の支払い方法 現金 カート qrコート",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 42,
-    "file": "factory/topic-research/batches/claude-20261018b-0042.json",
+    "seq": 43,
+    "file": "factory/topic-research/batches/claude-20261018b-0043.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
   "unresolved": [],
   "history": [
-    {
-      "at": "2026-10-18T23:31:52.744Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 17,
-      "topics": 10,
-      "sha256": "29dff6b1b7cc15b48ca62971c63b9f68b7ee25f82fa4e1b9f9ae7eaef9d9a382"
-    },
     {
       "at": "2026-10-18T23:42:25.220Z",
       "event": "BATCH_COMMITTED",
@@ -4786,6 +4890,13 @@
       "seq": 41,
       "topics": 10,
       "sha256": "7b11b8350a4c05a26383964607944bbf6c0b6d8c886b3be1b27f6959ec1f4ba4"
+    },
+    {
+      "at": "2026-10-19T00:07:01.715Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 42,
+      "topics": 10,
+      "sha256": "36f2ae00b0b22c807340e9c88bf8a74c7304e51c6dedbc475d0b66c99fec7d38"
     }
   ]
 }
