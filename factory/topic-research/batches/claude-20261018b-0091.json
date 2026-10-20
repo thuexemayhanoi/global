@@ -1,0 +1,562 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H04",
+      "subcluster": "ss-incidents",
+      "slug": "xe-tay-ga-de-khong-no-kiem-tra-gi-truoc-khi-goi-tho",
+      "primary_query": "xe tay ga đề không nổ phải kiểm tra gì trước khi gọi thợ",
+      "secondary_queries": [
+        "xe ga chưa gạt chân chống nghiêng lên thì không đề được",
+        "xe tay ga phải bóp phanh sau mới đề được",
+        "bấm nút đề chỉ nghe tiếng tạch tạch máy không quay",
+        "xe đề quay nhưng không nổ máy đèn PGM-FI sáng",
+        "có kích bình ắc quy xe máy bằng bình ô tô được không"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "công tắc chân chống nghiêng",
+        "đèn báo lỗi PGM-FI (MIL)",
+        "sách hướng dẫn sử dụng Honda Việt Nam",
+        "Yamaha Motor Việt Nam"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Người thuê hoặc mượn xe tay ga mà bấm nút đề không thấy phản ứng, hoặc đề quay nhưng máy không nổ, muốn có danh sách ngắn những việc tự xem theo đúng thứ tự nhà sản xuất hướng dẫn, trước khi gọi chủ xe hay thợ.",
+      "content_angle": "Đọc các trang khởi động và mục «động cơ không khởi động» trong sách hướng dẫn sử dụng của Honda Việt Nam cho Vision và Air Blade (công tắc ngắt máy khi hạ chân chống nghiêng, mô tơ đề chỉ chạy khi bóp tay phanh sau và gạt chân chống lên, tay ga đóng hoàn toàn, đèn báo lỗi PGM-FI, lưu ý về Idling Stop và bình điện yếu, cầu chì và cực bình điện), phần hỏi đáp của Honda Việt Nam về công tắc chân chống và hao điện bình, lời khuyên không kích bình bằng bình ô tô trong sách Wave Alpha và bài của Yamaha Motor Việt Nam tháng 9/2026 về các nguyên nhân. Các sách Honda đã đọc không liệt kê công tắc ngắt máy riêng, nên người viết phải xem sách của đúng mẫu xe trước khi nhắc đến, chỉ trích thời gian chờ và độ mở ga từ sách đó, để lỗi khóa thông minh cho bài riêng về khóa thông minh và nhắc người đọc dừng lại gọi cửa hàng khi đèn cảnh báo vẫn sáng.",
+      "working_title": "Xe tay ga đề không nổ: chân chống nghiêng, tay phanh sau, xăng và bình điện cần xem trước",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, starting sequence, side-stand cut-off, rear-brake start condition and the engine-does-not-start pages",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/November2025/yGA1ooMcYBDaX4NEkfnH.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, November 2025 upload): Air Blade 160 and 125, starter works only with the rear brake lever squeezed and the side stand up",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, starter, fuse and battery troubleshooting and the advice not to jump-start from a car battery",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): all current Honda scooters have a side-stand switch; a parked battery keeps draining, more so with a smart key or alarm",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, with the side-stand sensor, the injection lamp, the battery and fuel",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H04",
+      "subcluster": "ss-incidents",
+      "slug": "scooter-will-not-start-what-to-check",
+      "primary_query": "scooter won't start what to check before calling for help",
+      "secondary_queries": [
+        "scooter starter does nothing with the side stand down",
+        "why does my scooter only start when I squeeze the brake",
+        "scooter clicks but engine won't turn over battery",
+        "scooter turns over but won't fire fuel injection warning light",
+        "can I jump start a scooter with a car battery"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "side-stand cut-off switch",
+        "PGM-FI warning lamp",
+        "Honda Vietnam owner's manual",
+        "Yamaha Motor Vietnam"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Riders whose scooter does nothing, or only cranks, when they press the starter want a short list of what to check themselves, in the order the makers give it, before they phone the shop or flag down a mechanic.",
+      "content_angle": "Reads the start-up and 'engine does not start' pages of Honda Vietnam's owner's manuals for the Vision and Air Blade (side-stand cut-off, starter enabled only with the rear brake lever squeezed, throttle closed, injection-fault lamp, idle-stop and low-battery notes, fuse and battery terminals), Honda Vietnam's FAQ on the side-stand switch and battery drain, the Wave Alpha manual's advice against jump-starting from a car battery and Yamaha Motor Vietnam's September 2026 article on causes. The Honda manuals reviewed list no engine cut-off switch, so the Writer must check the model's own manual before naming one, quote waiting times and throttle openings only from it, leave smart-key faults to the existing smart-key article and tell readers to stop and call the shop when a warning lamp stays lit.",
+      "working_title": "Scooter Won't Start: Side-Stand Cut-Off, Brake Lever, Fuel and Battery Checks to Make First",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, starting sequence, side-stand cut-off, rear-brake start condition and the engine-does-not-start pages",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/November2025/yGA1ooMcYBDaX4NEkfnH.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, November 2025 upload): Air Blade 160 and 125, starter works only with the rear brake lever squeezed and the side stand up",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, starter, fuse and battery troubleshooting and the advice not to jump-start from a car battery",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): all current Honda scooters have a side-stand switch; a parked battery keeps draining, more so with a smart key or alarm",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, with the side-stand sensor, the injection lamp, the battery and fuel",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H04",
+      "subcluster": "ss-incidents",
+      "slug": "roller-springt-nicht-an-was-zuerst-pruefen",
+      "primary_query": "Roller springt nicht an was zuerst prüfen",
+      "secondary_queries": [
+        "Roller Seitenständer unten Anlasser reagiert nicht",
+        "Roller startet nur mit gezogener Hinterradbremse",
+        "Anlasser klackt Roller dreht nicht durch Batterie",
+        "Roller dreht durch springt aber nicht an Einspritzung Warnlampe",
+        "Roller mit Autobatterie Starthilfe geben"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "Seitenständer-Schalter",
+        "PGM-FI-Warnlampe",
+        "Bedienungsanleitung Honda Vietnam",
+        "Yamaha Motor Vietnam"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Fahrer, deren Roller beim Druck auf den Starterknopf nichts tut oder nur durchdreht, wollen kurz und in der Reihenfolge der Hersteller wissen, was sie selbst prüfen können, bevor sie beim Verleih anrufen oder einen Mechaniker holen.",
+      "content_angle": "Liest die Startseiten und den Abschnitt »Motor springt nicht an« in den Bedienungsanleitungen von Honda Vietnam für Vision und Air Blade (Seitenständer-Abschaltung, Anlasser nur bei gezogenem Hinterradbremshebel und hochgeklapptem Ständer, geschlossener Gasgriff, Einspritz-Störungslampe, Hinweise zu Idling Stop und schwacher Batterie, Sicherung und Batteriepole), die FAQ von Honda Vietnam zum Seitenständerschalter und zur Batterieentladung, den Rat der Wave-Alpha-Anleitung, keine Starthilfe mit einer Autobatterie zu geben, und den Yamaha-Artikel vom September 2026 zu den Ursachen. Die geprüften Honda-Anleitungen nennen keinen Motor-Aus-Schalter (Kill-Switch); der Autor muss deshalb erst in der Anleitung des konkreten Modells nachsehen, bevor er einen nennt, Wartezeiten und Gasgriff-Öffnungen nur von dort zitieren, Smart-Key-Störungen dem bestehenden Smart-Key-Artikel überlassen und Lesern raten, bei dauerhaft leuchtender Warnlampe anzuhalten und den Verleih anzurufen.",
+      "working_title": "Roller springt nicht an: Seitenständer, Bremshebel, Sprit und Batterie zuerst prüfen",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, starting sequence, side-stand cut-off, rear-brake start condition and the engine-does-not-start pages",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/November2025/yGA1ooMcYBDaX4NEkfnH.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, November 2025 upload): Air Blade 160 and 125, starter works only with the rear brake lever squeezed and the side stand up",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, starter, fuse and battery troubleshooting and the advice not to jump-start from a car battery",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): all current Honda scooters have a side-stand switch; a parked battery keeps draining, more so with a smart key or alarm",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, with the side-stand sensor, the injection lamp, the battery and fuel",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H04",
+      "subcluster": "ss-incidents",
+      "slug": "scooter-ne-demarre-pas-que-verifier-avant-d-appeler",
+      "primary_query": "scooter qui ne démarre pas que vérifier avant d'appeler le loueur",
+      "secondary_queries": [
+        "scooter ne démarre pas avec la béquille latérale baissée",
+        "scooter qui ne démarre que si on serre le frein arrière",
+        "démarreur qui claque scooter ne tourne pas batterie",
+        "le démarreur tourne mais le scooter ne démarre pas voyant d'injection",
+        "démarrer un scooter avec la batterie d'une voiture"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "contacteur de béquille latérale",
+        "voyant d'injection PGM-FI",
+        "manuel d'utilisation Honda Vietnam",
+        "Yamaha Motor Vietnam"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Les conducteurs dont le scooter ne réagit pas ou tourne sans démarrer veulent une courte liste de vérifications à faire eux-mêmes, dans l'ordre indiqué par les constructeurs, avant d'appeler le loueur ou un mécanicien.",
+      "content_angle": "S'appuie sur les pages de démarrage et la rubrique « le moteur ne démarre pas » des manuels d'utilisation de Honda Vietnam pour le Vision et l'Air Blade (coupure par la béquille latérale, démarreur actif seulement quand le levier de frein arrière est serré et la béquille relevée, poignée des gaz fermée, voyant de défaut d'injection, notes sur l'Idling Stop et la batterie faible, fusible et bornes), sur la FAQ de Honda Vietnam au sujet du contacteur de béquille et de la décharge de la batterie, sur le conseil du manuel de la Wave Alpha de ne pas démarrer avec la batterie d'une voiture et sur l'article de Yamaha Motor Vietnam de septembre 2026 sur les causes. Les manuels Honda consultés ne mentionnent aucun coupe-circuit moteur ; l'auteur doit donc consulter le manuel du modèle avant d'en parler, ne citer délais et ouverture des gaz que d'après lui, laisser les pannes de clé intelligente à l'article existant sur la clé intelligente et inviter le lecteur à s'arrêter et à appeler le loueur si un voyant reste allumé.",
+      "working_title": "Scooter qui ne démarre pas : béquille latérale, frein arrière, carburant et batterie à vérifier d'abord",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, starting sequence, side-stand cut-off, rear-brake start condition and the engine-does-not-start pages",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/November2025/yGA1ooMcYBDaX4NEkfnH.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, November 2025 upload): Air Blade 160 and 125, starter works only with the rear brake lever squeezed and the side stand up",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, starter, fuse and battery troubleshooting and the advice not to jump-start from a car battery",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): all current Honda scooters have a side-stand switch; a parked battery keeps draining, more so with a smart key or alarm",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, with the side-stand sensor, the injection lamp, the battery and fuel",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H04",
+      "subcluster": "ss-incidents",
+      "slug": "moto-automatica-no-arranca-que-revisar-antes-de-llamar",
+      "primary_query": "la moto automática no arranca qué revisar antes de llamar al taller",
+      "secondary_queries": [
+        "scooter no arranca con el caballete lateral bajado",
+        "la moto solo arranca si aprieto el freno trasero",
+        "el motor de arranque hace clic pero no gira batería",
+        "el motor de arranque gira pero no enciende testigo de inyección",
+        "arrancar un scooter con la batería de un coche"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "sensor del caballete lateral",
+        "testigo de inyección PGM-FI",
+        "manual de usuario de Honda Vietnam",
+        "Yamaha Motor Vietnam"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Los conductores cuyo scooter no reacciona al pulsar el arranque, o solo da vueltas sin encender, quieren una lista corta de lo que pueden comprobar ellos mismos, en el orden que dan los fabricantes, antes de llamar al taller o a un mecánico.",
+      "content_angle": "Se apoya en las páginas de arranque y en el apartado «el motor no arranca» de los manuales de Honda Vietnam para el Vision y el Air Blade (corte por el caballete lateral, motor de arranque activo solo con la maneta del freno trasero apretada y el caballete subido, puño del acelerador cerrado, testigo de fallo de inyección, notas sobre el Idling Stop y la batería débil, fusible y bornes), en las preguntas frecuentes de Honda Vietnam sobre el interruptor del caballete y la descarga de la batería, en el consejo del manual de la Wave Alpha de no arrancar con la batería de un coche y en el artículo de Yamaha Motor Vietnam de septiembre de 2026 sobre las causas. Los manuales de Honda revisados no incluyen interruptor de paro del motor, así que el redactor debe mirar el manual del modelo concreto antes de nombrarlo, citar tiempos de espera y aperturas del acelerador solo de ahí, dejar los fallos de la llave inteligente para el artículo existente y avisar al lector de que debe parar y llamar al taller si un testigo sigue encendido.",
+      "working_title": "La moto automática no arranca: caballete lateral, maneta de freno, combustible y batería primero",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, starting sequence, side-stand cut-off, rear-brake start condition and the engine-does-not-start pages",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/November2025/yGA1ooMcYBDaX4NEkfnH.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, November 2025 upload): Air Blade 160 and 125, starter works only with the rear brake lever squeezed and the side stand up",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, starter, fuse and battery troubleshooting and the advice not to jump-start from a car battery",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): all current Honda scooters have a side-stand switch; a parked battery keeps draining, more so with a smart key or alarm",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, with the side-stand sensor, the injection lamp, the battery and fuel",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H04",
+      "subcluster": "ss-incidents",
+      "slug": "scooter-start-niet-wat-controleren-voordat-je-belt",
+      "primary_query": "scooter start niet wat controleren voordat je belt",
+      "secondary_queries": [
+        "scooter start niet met de zijstandaard naar beneden",
+        "scooter start alleen als ik de achterrem inknijp",
+        "startmotor klikt maar scooter draait niet door accu",
+        "startmotor draait maar scooter slaat niet aan storingslampje injectie",
+        "scooter starten met een autoaccu"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "zijstandaardschakelaar",
+        "PGM-FI-storingslampje",
+        "handleiding Honda Vietnam",
+        "Yamaha Motor Vietnam"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Rijders van wie de scooter niets doet of alleen doorslaat als ze op de startknop drukken, willen kort en in de volgorde van de fabrikanten weten wat ze zelf kunnen nakijken voordat ze de verhuurder bellen of een monteur zoeken.",
+      "content_angle": "Leunt op de startpagina's en de rubriek 'motor start niet' in de handleidingen van Honda Vietnam voor de Vision en de Air Blade (uitschakeling via de zijstandaard, startmotor alleen actief met de achterrem ingeknepen en de standaard omhoog, gashendel dicht, injectiestoringslampje, opmerkingen over Idling Stop en een zwakke accu, zekering en accupolen), op de FAQ van Honda Vietnam over de zijstandaardschakelaar en het leeglopen van de accu, op het advies in de handleiding van de Wave Alpha om niet met een autoaccu te starten en op het artikel van Yamaha Motor Vietnam van september 2026 over de oorzaken. De geraadpleegde Honda-handleidingen noemen geen stopschakelaar voor de motor; de schrijver moet dus eerst de handleiding van het exacte model raadplegen voordat hij er een noemt, wachttijden en gasopeningen alleen daaruit citeren, storingen aan de smart key aan het bestaande smart-key-artikel overlaten en lezers laten stoppen en de verhuurder bellen als een waarschuwingslampje blijft branden.",
+      "working_title": "Scooter start niet: zijstandaard, remhendel, brandstof en accu als eerste nakijken",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, starting sequence, side-stand cut-off, rear-brake start condition and the engine-does-not-start pages",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/November2025/yGA1ooMcYBDaX4NEkfnH.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, November 2025 upload): Air Blade 160 and 125, starter works only with the rear brake lever squeezed and the side stand up",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, starter, fuse and battery troubleshooting and the advice not to jump-start from a car battery",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): all current Honda scooters have a side-stand switch; a parked battery keeps draining, more so with a smart key or alarm",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, with the side-stand sensor, the injection lamp, the battery and fuel",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H04",
+      "subcluster": "ss-incidents",
+      "slug": "tabanche-qidong-bu-liao-xian-jiancha-shenme",
+      "primary_query": "踏板摩托车启动不了先检查什么",
+      "secondary_queries": [
+        "踏板车边撑放下就无法启动",
+        "踏板车要捏住后刹把才能启动",
+        "按启动按钮只听到咔嗒声发动机不转",
+        "启动机在转但发动机着不了车故障灯亮",
+        "摩托车能用汽车电瓶搭电启动吗"
+      ],
+      "entities": [
+        "本田 Vision",
+        "本田 Air Blade",
+        "边撑断电开关",
+        "PGM-FI 故障灯",
+        "本田越南使用说明书",
+        "雅马哈越南"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "在越南租到踏板摩托车后，按启动按钮没有反应，或者启动机在转但发动机着不了车时，骑手想知道自己能按什么顺序先检查哪些地方，再决定要不要打电话给车行或找修车师傅。",
+      "content_angle": "依据本田越南官方使用说明书中 Vision 和 Air Blade 的启动页面与“发动机无法启动”部分（放下边撑即切断发动机、只有捏住后刹把且边撑收起时启动机才工作、油门完全关闭、PGM-FI 故障灯、怠速熄火系统与电瓶电量低的提示、保险丝和电瓶接线柱），结合本田越南常见问题中关于边撑开关与电瓶自放电的说明、Wave Alpha 说明书中不要用汽车电瓶搭电的建议，以及雅马哈越南2026年9月关于启动故障原因的文章。已查看的本田说明书都没有列出独立的发动机熄火开关，因此撰稿人在提到它之前必须先查具体车型的说明书，等待时间和油门开度只能引用说明书，智能钥匙故障留给已有的智能钥匙文章，并提醒读者故障灯一直亮着时应停下并联系车行。",
+      "working_title": "踏板摩托车启动不了：边撑、后刹把、油量和电瓶要先检查",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, starting sequence, side-stand cut-off, rear-brake start condition and the engine-does-not-start pages",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/November2025/yGA1ooMcYBDaX4NEkfnH.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, November 2025 upload): Air Blade 160 and 125, starter works only with the rear brake lever squeezed and the side stand up",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, starter, fuse and battery troubleshooting and the advice not to jump-start from a car battery",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): all current Honda scooters have a side-stand switch; a parked battery keeps draining, more so with a smart key or alarm",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, with the side-stand sensor, the injection lamp, the battery and fuel",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H04",
+      "subcluster": "ss-incidents",
+      "slug": "scooter-nao-arranca-o-que-verificar-antes-de-pedir-ajuda",
+      "primary_query": "scooter não arranca o que verificar antes de pedir ajuda",
+      "secondary_queries": [
+        "scooter não arranca com o descanso lateral em baixo",
+        "a mota só arranca se apertar o travão traseiro",
+        "motor de arranque faz clique mas não roda bateria",
+        "o motor de arranque roda mas a scooter não pega luz da injeção",
+        "arrancar uma scooter com a bateria de um carro"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Air Blade",
+        "interruptor do descanso lateral",
+        "luz de avaria PGM-FI",
+        "manual de utilizador da Honda Vietname",
+        "Yamaha Motor Vietname"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quem tem uma scooter que não reage ao carregar no arranque, ou que só dá voltas sem pegar, quer uma lista curta do que pode verificar por si, pela ordem que os fabricantes indicam, antes de ligar para a loja ou chamar um mecânico.",
+      "content_angle": "Baseia-se nas páginas de arranque e na secção «o motor não arranca» dos manuais da Honda Vietname para o Vision e o Air Blade (corte pelo descanso lateral, motor de arranque só ativo com a manete do travão traseiro apertada e o descanso subido, punho do acelerador fechado, luz de avaria da injeção, notas sobre o Idling Stop e a bateria fraca, fusível e terminais), nas perguntas frequentes da Honda Vietname sobre o interruptor do descanso e a descarga da bateria, no conselho do manual da Wave Alpha de não arrancar com a bateria de um carro e no artigo da Yamaha Motor Vietname de setembro de 2026 sobre as causas. Os manuais da Honda consultados não indicam um interruptor de paragem do motor; o redator deve por isso ver o manual do modelo concreto antes de o mencionar, citar tempos de espera e aberturas do acelerador só dele, deixar as avarias da chave inteligente para o artigo existente e avisar o leitor de que deve parar e ligar à loja se uma luz de aviso continuar acesa.",
+      "working_title": "Scooter não arranca: descanso lateral, manete do travão, combustível e bateria a verificar primeiro",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, starting sequence, side-stand cut-off, rear-brake start condition and the engine-does-not-start pages",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/November2025/yGA1ooMcYBDaX4NEkfnH.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, November 2025 upload): Air Blade 160 and 125, starter works only with the rear brake lever squeezed and the side stand up",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, starter, fuse and battery troubleshooting and the advice not to jump-start from a car battery",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): all current Honda scooters have a side-stand switch; a parked battery keeps draining, more so with a smart key or alarm",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, with the side-stand sensor, the injection lamp, the battery and fuel",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H04",
+      "subcluster": "ss-incidents",
+      "slug": "seukuteo-sidongi-an-geollil-ttae-meonjeo-hwaginhal-geot",
+      "primary_query": "스쿠터 시동이 안 걸릴 때 먼저 확인할 것",
+      "secondary_queries": [
+        "스쿠터 사이드 스탠드를 내리면 시동이 안 걸리나",
+        "스쿠터 브레이크 레버를 잡아야 시동이 걸리는 이유",
+        "시동 버튼을 누르면 딸깍 소리만 나고 안 돌아감 배터리",
+        "셀모터는 도는데 시동이 안 걸림 연료 분사 경고등",
+        "스쿠터를 자동차 배터리로 점프 시동 해도 되나"
+      ],
+      "entities": [
+        "혼다 비전",
+        "혼다 에어블레이드",
+        "사이드 스탠드 스위치",
+        "PGM-FI 경고등",
+        "혼다 베트남 사용 설명서",
+        "야마하 모터 베트남"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "베트남에서 렌털한 스쿠터의 시동 버튼을 눌러도 반응이 없거나 셀모터만 돌고 시동이 걸리지 않을 때, 렌털 업체나 정비사를 부르기 전에 제조사가 안내하는 순서대로 스스로 확인할 항목을 알고 싶어 합니다.",
+      "content_angle": "혼다 베트남이 제공하는 Vision과 Air Blade 사용 설명서의 시동 절차와 ‘엔진이 시동되지 않을 때’ 항목(사이드 스탠드를 내리면 엔진이 꺼지는 장치, 뒤 브레이크 레버를 잡고 스탠드를 올렸을 때만 셀모터가 작동한다는 설명, 스로틀 완전 닫힘, PGM-FI 경고등, 아이들링 스톱과 배터리 약화 주의, 퓨즈와 배터리 단자), 사이드 스탠드 스위치와 배터리 방전에 관한 혼다 베트남 FAQ, 자동차 배터리로 점프 시동을 걸지 말라는 Wave Alpha 설명서의 권고, 원인을 정리한 2026년 9월 야마하 모터 베트남 기사를 바탕으로 합니다. 확인한 혼다 설명서에는 별도의 엔진 정지 스위치가 나오지 않으므로, 집필자는 해당 모델의 설명서를 먼저 확인한 뒤에야 언급해야 하고, 대기 시간과 스로틀 개도는 그 설명서에서만 인용하며, 스마트 키 문제는 기존 스마트 키 글에 맡기고, 경고등이 계속 켜져 있으면 멈춰서 업체에 연락하라고 안내해야 합니다.",
+      "working_title": "스쿠터 시동이 안 걸릴 때: 사이드 스탠드, 브레이크 레버, 연료, 배터리부터 확인하기",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, starting sequence, side-stand cut-off, rear-brake start condition and the engine-does-not-start pages",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/November2025/yGA1ooMcYBDaX4NEkfnH.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, November 2025 upload): Air Blade 160 and 125, starter works only with the rear brake lever squeezed and the side stand up",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, starter, fuse and battery troubleshooting and the advice not to jump-start from a car battery",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): all current Honda scooters have a side-stand switch; a parked battery keeps draining, more so with a smart key or alarm",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, with the side-stand sensor, the injection lamp, the battery and fuel",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H04",
+      "subcluster": "ss-incidents",
+      "slug": "sukuta-enjin-ga-kakaranai-saki-ni-kakunin-suru-koto",
+      "primary_query": "スクーター エンジンがかからない 先に確認すること",
+      "secondary_queries": [
+        "スクーター サイドスタンドを下ろしたままだとエンジンがかからない",
+        "スクーター ブレーキレバーを握らないとセルが回らない",
+        "セルボタンを押してもカチカチ音だけ バッテリー",
+        "セルは回るのにエンジンがかからない 燃料噴射 警告灯",
+        "スクーターを車のバッテリーでジャンプスタートしてよいか"
+      ],
+      "entities": [
+        "ホンダ ビジョン",
+        "ホンダ エアブレード",
+        "サイドスタンドスイッチ",
+        "PGM-FI 警告灯",
+        "ホンダ・ベトナム 取扱説明書",
+        "ヤマハ・モーター・ベトナム"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "ベトナムでレンタルしたスクーターのセルボタンを押しても反応がない、またはセルは回るのにエンジンがかからないとき、レンタル店や整備士に電話する前に、メーカーが示す順序で自分で確認できることを知りたい人が多くいます。",
+      "content_angle": "ホンダ・ベトナムのVisionとAir Bladeの取扱説明書にある始動の手順と「エンジンがかからない」の項目（サイドスタンドを下ろすとエンジンが止まる仕組み、リヤブレーキレバーを握りスタンドを上げたときだけセルが回ること、スロットル全閉、PGM-FI警告灯、アイドリングストップとバッテリー低下に関する注意、ヒューズとバッテリー端子）、サイドスタンドスイッチとバッテリー上がりに関するホンダ・ベトナムのFAQ、車のバッテリーでのジャンプスタートを勧めないWave Alpha説明書の記述、原因をまとめたヤマハ・モーター・ベトナムの2026年9月の記事を基にします。確認したホンダの説明書には独立したエンジン停止スイッチは出てこないため、執筆者はそのモデルの説明書を確認してから触れ、待ち時間やスロットル開度はその説明書からのみ引用し、スマートキーの不具合は既存のスマートキー記事に任せ、警告灯が点いたままのときは止まってレンタル店に連絡するよう案内してください。",
+      "working_title": "スクーターのエンジンがかからない時：サイドスタンド・ブレーキレバー・燃料・バッテリーを先に確認",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, starting sequence, side-stand cut-off, rear-brake start condition and the engine-does-not-start pages",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/November2025/yGA1ooMcYBDaX4NEkfnH.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, November 2025 upload): Air Blade 160 and 125, starter works only with the rear brake lever squeezed and the side stand up",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, starter, fuse and battery troubleshooting and the advice not to jump-start from a car battery",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): all current Honda scooters have a side-stand switch; a parked battery keeps draining, more so with a smart key or alarm",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, with the side-stand sensor, the injection lamp, the battery and fuel",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}
