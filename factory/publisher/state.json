@@ -10792,17 +10792,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-20T09:34:38.628Z"
+    },
+    {
+      "id": "JA-S24",
+      "locale": "ja",
+      "url": "/ja/guides/kizu-tounan-sekinin/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-20T09:35:09.492Z",
+      "source_sha256": "93d03e780d2c597a8cfd19e9c5b1d2437b2c39aaeab4523f3c552fd7080271f7",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "KO-S24",
+      "locale": "ko",
+      "url": "/ko/guides/pason-donan-chaegim/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-20T09:35:09.492Z",
+      "source_sha256": "dbb98899150ccc911db300366e8ed570c82b922043adaf354f239d0da30ca1f9",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T06:44:18.740Z",
-      "ids": [
-        "ZH-S69",
-        "ZH-S70"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T06:45:41.309Z",
       "ids": [
@@ -12386,6 +12400,14 @@
         "FR-S25"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-20T09:35:09.492Z",
+      "ids": [
+        "JA-S24",
+        "KO-S24"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -12398,6 +12420,6 @@
     "live_seconds": 62
   },
   "queue": {
-    "APPROVED_BY_POLICY": 4
+    "APPROVED_BY_POLICY": 2
   }
 }
