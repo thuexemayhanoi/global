@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T21:31:05.805Z",
+  "updated_at": "2026-10-20T21:33:00.402Z",
   "base_main_sha": "c21cab37733fc2c6a41700500a8718edf9cd510f",
-  "last_commit_sha": "a8853b02867a60203076b5446f05f4e5b168e5a5",
+  "last_commit_sha": "0519071b25a771353b24eae602fc02f77b627351",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1820,
-    "qa_pass": 1820,
+    "researched": 1830,
+    "qa_pass": 1830,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1810,
+    "pushed": 1820,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 183,
-      "de": 183,
-      "fr": 183,
-      "es": 183,
-      "nl": 183,
-      "pt": 183,
-      "zh": 183,
-      "ko": 183,
-      "ja": 183,
-      "en": 173
+      "vi": 184,
+      "de": 184,
+      "fr": 184,
+      "es": 184,
+      "nl": 184,
+      "pt": 184,
+      "zh": 184,
+      "ko": 184,
+      "ja": 184,
+      "en": 174
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 801,
+      "traffic-law-safety": 811,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 182,
-    "file": "factory/topic-research/batches/claude-20261018b-0182.json",
-    "sha256": "02f483dbc688b934006735e04d77e63ba920e13ce259b85836c90c879cd708a5",
+    "seq": 183,
+    "file": "factory/topic-research/batches/claude-20261018b-0183.json",
+    "sha256": "df3a710d11958c5742a698efe992452f275ce4773b0651c17e5a2b8459bb350b",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -20150,8 +20150,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0182.json",
       "sha256": "02f483dbc688b934006735e04d77e63ba920e13ce259b85836c90c879cd708a5",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "0519071b25a771353b24eae602fc02f77b627351",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -20255,11 +20255,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 183,
+      "file": "factory/topic-research/batches/claude-20261018b-0183.json",
+      "sha256": "df3a710d11958c5742a698efe992452f275ce4773b0651c17e5a2b8459bb350b",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:gui-xe-may-ngoai-vanh-dai-1-ha-noi-xe-buyt-mien-phi-xe-dap-cong-cong-ve-dien-tu",
+          "locale": "vi",
+          "slug": "gui-xe-may-ngoai-vanh-dai-1-ha-noi-xe-buyt-mien-phi-xe-dap-cong-cong-ve-dien-tu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::gui xe may ngoai vanh dai 1 ha noi roi di xe buyt mien phi vao trung tam duoc khong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:park-outside-ring-road-1-hanoi-fare-waived-buses-public-bikes-e-ticket-refund",
+          "locale": "en",
+          "slug": "park-outside-ring-road-1-hanoi-fare-waived-buses-public-bikes-e-ticket-refund",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::can i park my motorbike outside hanoi ring road 1 and take the free bus",
+          "ta_id": null
+        },
+        {
+          "ref": "de:roller-ausserhalb-ring-1-hanoi-parken-fahrpreisfreie-busse-leihraeder-e-ticket",
+          "locale": "de",
+          "slug": "roller-ausserhalb-ring-1-hanoi-parken-fahrpreisfreie-busse-leihraeder-e-ticket",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::kann ich meinen roller außerhalb des ersten rings in hanoi parken und den kostenlosen bus nehmen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:garer-scooter-hors-ceinture-1-hanoi-bus-tarif-supprime-velos-publics-e-ticket",
+          "locale": "fr",
+          "slug": "garer-scooter-hors-ceinture-1-hanoi-bus-tarif-supprime-velos-publics-e-ticket",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::puis-je garer mon scooter en dehors de la ceinture 1 de hanoi et prendre le bus gratuit",
+          "ta_id": null
+        },
+        {
+          "ref": "es:aparcar-moto-fuera-anillo-1-hanoi-autobuses-sin-tarifa-bicicletas-billete",
+          "locale": "es",
+          "slug": "aparcar-moto-fuera-anillo-1-hanoi-autobuses-sin-tarifa-bicicletas-billete",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::puedo aparcar mi moto fuera del anillo 1 de hanoi y coger el autobus gratis",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:scooter-buiten-ringweg-1-hanoi-parkeren-bussen-zonder-tarief-fietsen-e-ticket",
+          "locale": "nl",
+          "slug": "scooter-buiten-ringweg-1-hanoi-parkeren-bussen-zonder-tarief-fietsen-e-ticket",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::kan ik mijn scooter buiten ringweg 1 van hanoi parkeren en de gratis bus nemen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-hanoi-huan-1-wai-tingche-mianshou-piaojia-gongjiao-zixingche-dianzi-piao",
+          "locale": "zh",
+          "slug": "yuenan-hanoi-huan-1-wai-tingche-mianshou-piaojia-gongjiao-zixingche-dianzi-piao",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::把摩托车停在河内一环路外再坐免费公交进市区可以吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:estacionar-mota-fora-anel-1-hanoi-autocarros-sem-tarifa-bicicletas-bilhete",
+          "locale": "pt",
+          "slug": "estacionar-mota-fora-anel-1-hanoi-autocarros-sem-tarifa-bicicletas-bilhete",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::posso estacionar a minha mota fora do anel 1 de hanoi e apanhar o autocarro gratis",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-1beon-ringroad-bakke-juchahagi-yogeum-myeonje-beoseu-jajeongeo-jeonja-pyo",
+          "locale": "ko",
+          "slug": "hanoi-1beon-ringroad-bakke-juchahagi-yogeum-myeonje-beoseu-jajeongeo-jeonja-pyo",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::오토바이를 하노이 1번 순환도로 밖에 세우고 무료 버스를 타도 되나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-ichi-gou-kanjosen-no-soto-chusha-unchin-menjo-basu-jitensha-denshi-ken",
+          "locale": "ja",
+          "slug": "hanoi-ichi-gou-kanjosen-no-soto-chusha-unchin-menjo-basu-jitensha-denshi-ken",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ハノイの1号環状線の外にハイクを止めて無料ハスに乗ってもよいか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 183,
-    "file": "factory/topic-research/batches/claude-20261018b-0183.json",
+    "seq": 184,
+    "file": "factory/topic-research/batches/claude-20261018b-0184.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -20272,13 +20383,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:36:47.390Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 158,
-      "topics": 10,
-      "sha256": "0b58b94e81ff635ce945d7cd11262df23463eaca3d40803176a5c1aca744a48b"
-    },
     {
       "at": "2026-10-20T20:38:41.856Z",
       "event": "BATCH_COMMITTED",
@@ -20446,6 +20550,13 @@
       "seq": 182,
       "topics": 10,
       "sha256": "02f483dbc688b934006735e04d77e63ba920e13ce259b85836c90c879cd708a5"
+    },
+    {
+      "at": "2026-10-20T21:33:00.402Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 183,
+      "topics": 10,
+      "sha256": "df3a710d11958c5742a698efe992452f275ce4773b0651c17e5a2b8459bb350b"
     }
   ]
 }
