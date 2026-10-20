@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:55:38.032Z",
+  "updated_at": "2026-10-20T10:56:44.216Z",
   "base_main_sha": "2b81c61739dbf22f12c3a10c150d1e448d4e68e5",
-  "last_commit_sha": "55d9934b10edbc03ab02d94dcf919463c1d693b1",
+  "last_commit_sha": "de29281c5939689fb7406f133797f01cb2382211",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1280,
-    "qa_pass": 1280,
+    "researched": 1290,
+    "qa_pass": 1290,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1270,
+    "pushed": 1280,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 129,
-      "de": 129,
-      "fr": 129,
-      "es": 129,
-      "nl": 129,
-      "pt": 129,
-      "zh": 129,
-      "ko": 129,
-      "ja": 129,
-      "en": 119
+      "vi": 130,
+      "de": 130,
+      "fr": 130,
+      "es": 130,
+      "nl": 130,
+      "pt": 130,
+      "zh": 130,
+      "ko": 130,
+      "ja": 130,
+      "en": 120
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 400,
+      "traffic-law-safety": 410,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 128,
-    "file": "factory/topic-research/batches/claude-20261018b-0128.json",
-    "sha256": "9528c7dec4a1dadff4ea3b8e3e57266e0ad636bb0e3528cdfe8911d8b64e1491",
+    "seq": 129,
+    "file": "factory/topic-research/batches/claude-20261018b-0129.json",
+    "sha256": "9c8d4a0e3f61abd2da9d370bf6b07930ef75fadabb3abdd7e736d78491304113",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -14156,8 +14156,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0128.json",
       "sha256": "9528c7dec4a1dadff4ea3b8e3e57266e0ad636bb0e3528cdfe8911d8b64e1491",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "de29281c5939689fb7406f133797f01cb2382211",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -14261,11 +14261,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 129,
+      "file": "factory/topic-research/batches/claude-20261018b-0129.json",
+      "sha256": "9c8d4a0e3f61abd2da9d370bf6b07930ef75fadabb3abdd7e736d78491304113",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:luat-duong-bo-nghia-vu-cua-hang-cho-thue-xe-may",
+          "locale": "vi",
+          "slug": "luat-duong-bo-nghia-vu-cua-hang-cho-thue-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-contract",
+          "key": "vi::cua hang cho thue xe may co bat buoc kiem tra bang lai va ky hop dong khong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:road-law-duties-of-motorbike-rental-shops-vietnam",
+          "locale": "en",
+          "slug": "road-law-duties-of-motorbike-rental-shops-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H03",
+          "subcluster": "dc-contract",
+          "key": "en::do motorbike rental shops in vietnam have to check my licence and sign a contract",
+          "ta_id": null
+        },
+        {
+          "ref": "de:strassengesetz-pflichten-rollerverleih-vietnam",
+          "locale": "de",
+          "slug": "strassengesetz-pflichten-rollerverleih-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H03",
+          "subcluster": "dc-contract",
+          "key": "de::muss ein rollerverleih in vietnam meinen fuhrerschein prufen und einen vertrag abschließen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:obligations-loueur-scooter-loi-routes-vietnam",
+          "locale": "fr",
+          "slug": "obligations-loueur-scooter-loi-routes-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H03",
+          "subcluster": "dc-contract",
+          "key": "fr::un loueur de scooters au vietnam doit-il verifier mon permis et faire signer un contrat",
+          "ta_id": null
+        },
+        {
+          "ref": "es:obligaciones-alquiler-motos-ley-de-carreteras-vietnam",
+          "locale": "es",
+          "slug": "obligaciones-alquiler-motos-ley-de-carreteras-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H03",
+          "subcluster": "dc-contract",
+          "key": "es::un negocio de alquiler de motos en vietnam tiene que comprobar mi carne y firmar un contrato",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:wegenwet-verplichtingen-scooterverhuurder-vietnam",
+          "locale": "nl",
+          "slug": "wegenwet-verplichtingen-scooterverhuurder-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H03",
+          "subcluster": "dc-contract",
+          "key": "nl::moet een scooterverhuurder in vietnam mijn rijbewijs controleren en een contract opmaken",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-daolufa-motuoche-zulin-dianjia-yiwu",
+          "locale": "zh",
+          "slug": "yuenan-daolufa-motuoche-zulin-dianjia-yiwu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H03",
+          "subcluster": "dc-contract",
+          "key": "zh::越南租摩托车的店必须查驾照并签合同吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:obrigacoes-aluguer-mota-lei-das-estradas-vietname",
+          "locale": "pt",
+          "slug": "obrigacoes-aluguer-mota-lei-das-estradas-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H03",
+          "subcluster": "dc-contract",
+          "key": "pt::uma loja de aluguer de motas no vietname tem de verificar a minha carta e assinar um contrato",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-daeyeo-eopche-doro-beop-uimu",
+          "locale": "ko",
+          "slug": "beteunam-otobai-daeyeo-eopche-doro-beop-uimu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H03",
+          "subcluster": "dc-contract",
+          "key": "ko::베트남 오토바이 대여점은 운전면허를 확인하고 계약서를 써야 하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-rental-doroho-jigyosha-gimu",
+          "locale": "ja",
+          "slug": "betonamu-baiku-rental-doroho-jigyosha-gimu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H03",
+          "subcluster": "dc-contract",
+          "key": "ja::ヘトナムのハイクレンタル店は免許の確認と契約書の作成か義務てすか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 129,
-    "file": "factory/topic-research/batches/claude-20261018b-0129.json",
+    "seq": 130,
+    "file": "factory/topic-research/batches/claude-20261018b-0130.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -14278,13 +14389,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T10:03:41.341Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 104,
-      "topics": 10,
-      "sha256": "3312847925495d70947a9c82d45d3b0f227eb3d2b549ee9e659fd8f3860325f8"
-    },
     {
       "at": "2026-10-20T10:04:30.129Z",
       "event": "BATCH_COMMITTED",
@@ -14452,6 +14556,13 @@
       "seq": 128,
       "topics": 10,
       "sha256": "9528c7dec4a1dadff4ea3b8e3e57266e0ad636bb0e3528cdfe8911d8b64e1491"
+    },
+    {
+      "at": "2026-10-20T10:56:44.216Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 129,
+      "topics": 10,
+      "sha256": "9c8d4a0e3f61abd2da9d370bf6b07930ef75fadabb3abdd7e736d78491304113"
     }
   ]
 }
