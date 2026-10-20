@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T04:56:04.811Z",
+  "updated_at": "2026-10-20T04:56:31.503Z",
   "base_main_sha": "343b27b62a058042c99fa454f719d8493263023b",
-  "last_commit_sha": "7a82556ff64280485f977c6db3e2e59037e69da9",
+  "last_commit_sha": "129803169990cbc42e20a9a44c3b5da39984bc47",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 810,
-    "qa_pass": 810,
+    "researched": 820,
+    "qa_pass": 820,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 800,
+    "pushed": 810,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 82,
-      "de": 82,
-      "fr": 82,
-      "es": 82,
-      "nl": 82,
-      "pt": 82,
-      "zh": 82,
-      "ko": 82,
-      "ja": 82,
-      "en": 72
+      "vi": 83,
+      "de": 83,
+      "fr": 83,
+      "es": 83,
+      "nl": 83,
+      "pt": 83,
+      "zh": 83,
+      "ko": 83,
+      "ja": 83,
+      "en": 73
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 160,
+      "traffic-law-safety": 170,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -46,9 +46,9 @@
     }
   },
   "last_batch": {
-    "seq": 81,
-    "file": "factory/topic-research/batches/claude-20261018b-0081.json",
-    "sha256": "d21c36de4f2b878300293b3792ffad10bf4419ce7d842e13a6850fce704b3155",
+    "seq": 82,
+    "file": "factory/topic-research/batches/claude-20261018b-0082.json",
+    "sha256": "a5c8992b5458adda697de1537cdf43316f433708fd011877a2cbbd7d2d78543c",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -8938,8 +8938,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0081.json",
       "sha256": "d21c36de4f2b878300293b3792ffad10bf4419ce7d842e13a6850fce704b3155",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "129803169990cbc42e20a9a44c3b5da39984bc47",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -9043,11 +9043,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 82,
+      "file": "factory/topic-research/batches/claude-20261018b-0082.json",
+      "sha256": "a5c8992b5458adda697de1537cdf43316f433708fd011877a2cbbd7d2d78543c",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:va-cham-giao-thong-nhe-tu-thoa-thuan-hay-goi-cong-an",
+          "locale": "vi",
+          "slug": "va-cham-giao-thong-nhe-tu-thoa-thuan-hay-goi-cong-an",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::va cham giao thong nhe khi di xe may tu thoa thuan hay phai goi cong an",
+          "ta_id": null
+        },
+        {
+          "ref": "en:minor-motorbike-collision-vietnam-settle-or-call-police",
+          "locale": "en",
+          "slug": "minor-motorbike-collision-vietnam-settle-or-call-police",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::minor motorbike accident in vietnam call the police or settle on the spot",
+          "ta_id": null
+        },
+        {
+          "ref": "de:leichter-motorradunfall-vietnam-polizei-rufen-oder-vor-ort-einigen",
+          "locale": "de",
+          "slug": "leichter-motorradunfall-vietnam-polizei-rufen-oder-vor-ort-einigen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::leichter motorradunfall in vietnam polizei rufen oder vor ort einigen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:accrochage-moto-vietnam-regler-sur-place-ou-appeler-la-police",
+          "locale": "fr",
+          "slug": "accrochage-moto-vietnam-regler-sur-place-ou-appeler-la-police",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::accrochage a moto au vietnam appeler la police ou regler a l'amiable sur place",
+          "ta_id": null
+        },
+        {
+          "ref": "es:choque-leve-moto-vietnam-arreglar-en-el-sitio-o-llamar-a-la-policia",
+          "locale": "es",
+          "slug": "choque-leve-moto-vietnam-arreglar-en-el-sitio-o-llamar-a-la-policia",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::accidente leve de moto en vietnam llamar a la policia o arreglarlo en el sitio",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:kleine-aanrijding-motor-vietnam-ter-plekke-regelen-of-politie-bellen",
+          "locale": "nl",
+          "slug": "kleine-aanrijding-motor-vietnam-ter-plekke-regelen-of-politie-bellen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::kleine aanrijding met een motor in vietnam politie bellen of ter plekke regelen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-motuoche-qingwei-pengzhuang-baojing-haishi-sijie",
+          "locale": "zh",
+          "slug": "yuenan-motuoche-qingwei-pengzhuang-baojing-haishi-sijie",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::越南骑摩托车轻微碰撞 报警还是当场私了",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:pequeno-acidente-de-mota-vietname-resolver-no-local-ou-chamar-a-policia",
+          "locale": "pt",
+          "slug": "pequeno-acidente-de-mota-vietname-resolver-no-local-ou-chamar-a-policia",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::pequeno acidente de mota no vietname chamar a policia ou resolver no local",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-obaibai-gyeongmihan-jeopchok-sago-gyeongchal-hyeonjang-habui",
+          "locale": "ko",
+          "slug": "beteunam-obaibai-gyeongmihan-jeopchok-sago-gyeongchal-hyeonjang-habui",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::베트남 오토바이 경미한 접촉사고 경찰 부르기 현장 합의",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-karui-sesshoku-jiko-keisatsu-jidan",
+          "locale": "ja",
+          "slug": "betonamu-baiku-karui-sesshoku-jiko-keisatsu-jidan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ヘトナム ハイク 軽い接触事故 警察を呼ふか現場て示談",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 82,
-    "file": "factory/topic-research/batches/claude-20261018b-0082.json",
+    "seq": 83,
+    "file": "factory/topic-research/batches/claude-20261018b-0083.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -9060,13 +9171,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:13:29.786Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 57,
-      "topics": 10,
-      "sha256": "c5a5901b74a9f93a8a002cf2f886fcf0ceed922ef2f17cd111672357910b4072"
-    },
     {
       "at": "2026-10-20T04:13:37.856Z",
       "event": "BATCH_COMMITTED",
@@ -9234,6 +9338,13 @@
       "seq": 81,
       "topics": 10,
       "sha256": "d21c36de4f2b878300293b3792ffad10bf4419ce7d842e13a6850fce704b3155"
+    },
+    {
+      "at": "2026-10-20T04:56:31.503Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 82,
+      "topics": 10,
+      "sha256": "a5c8992b5458adda697de1537cdf43316f433708fd011877a2cbbd7d2d78543c"
     }
   ]
 }
