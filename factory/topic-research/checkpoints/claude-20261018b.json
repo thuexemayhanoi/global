@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T04:56:57.246Z",
+  "updated_at": "2026-10-20T04:57:11.129Z",
   "base_main_sha": "343b27b62a058042c99fa454f719d8493263023b",
-  "last_commit_sha": "38883369914d4507e10a9528d3a30a21c9edd181",
+  "last_commit_sha": "5ce5247393bb1e45acb085106099ef89652a88ba",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 840,
-    "qa_pass": 840,
+    "researched": 850,
+    "qa_pass": 850,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 830,
+    "pushed": 840,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 85,
-      "de": 85,
-      "fr": 85,
-      "es": 85,
-      "nl": 85,
-      "pt": 85,
-      "zh": 85,
-      "ko": 85,
-      "ja": 85,
-      "en": 75
+      "vi": 86,
+      "de": 86,
+      "fr": 86,
+      "es": 86,
+      "nl": 86,
+      "pt": 86,
+      "zh": 86,
+      "ko": 86,
+      "ja": 86,
+      "en": 76
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 190,
+      "traffic-law-safety": 200,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -46,9 +46,9 @@
     }
   },
   "last_batch": {
-    "seq": 84,
-    "file": "factory/topic-research/batches/claude-20261018b-0084.json",
-    "sha256": "13105eb164e62b9c69eef8dcae4f0694df4d70aeadd434a4f86cb8516cb2be71",
+    "seq": 85,
+    "file": "factory/topic-research/batches/claude-20261018b-0085.json",
+    "sha256": "44e9b24d1fb478a3b52524ef4cb3f0b196afbc8ae9e73c8bc3fb327e4d735b50",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -9271,8 +9271,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0084.json",
       "sha256": "13105eb164e62b9c69eef8dcae4f0694df4d70aeadd434a4f86cb8516cb2be71",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "5ce5247393bb1e45acb085106099ef89652a88ba",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -9376,11 +9376,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 85,
+      "file": "factory/topic-research/batches/claude-20261018b-0085.json",
+      "sha256": "44e9b24d1fb478a3b52524ef4cb3f0b196afbc8ae9e73c8bc3fb327e4d735b50",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:nguoi-nuoc-ngoai-tai-nan-giao-thong-tam-hoan-xuat-canh-viet-nam",
+          "locale": "vi",
+          "slug": "nguoi-nuoc-ngoai-tai-nan-giao-thong-tam-hoan-xuat-canh-viet-nam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::nguoi nuoc ngoai gap tai nan giao thong o viet nam co bi tam hoan xuat canh khong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:foreigner-road-accident-vietnam-exit-ban-leave-country",
+          "locale": "en",
+          "slug": "foreigner-road-accident-vietnam-exit-ban-leave-country",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::can a foreigner be stopped from leaving vietnam after a road accident",
+          "ta_id": null
+        },
+        {
+          "ref": "de:ausreisesperre-nach-unfall-in-vietnam-reisehinweise-und-gesetz",
+          "locale": "de",
+          "slug": "ausreisesperre-nach-unfall-in-vietnam-reisehinweise-und-gesetz",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::kann man nach einem verkehrsunfall in vietnam an der ausreise gehindert werden",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:interdiction-de-quitter-le-vietnam-apres-accident-de-la-route",
+          "locale": "fr",
+          "slug": "interdiction-de-quitter-le-vietnam-apres-accident-de-la-route",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::peut-on etre empeche de quitter le vietnam apres un accident de la route",
+          "ta_id": null
+        },
+        {
+          "ref": "es:prohibicion-de-salir-de-vietnam-tras-accidente-de-trafico",
+          "locale": "es",
+          "slug": "prohibicion-de-salir-de-vietnam-tras-accidente-de-trafico",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::pueden impedirte salir de vietnam despues de un accidente de trafico",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:uitreisverbod-na-verkeersongeluk-in-vietnam-reisadvies-en-wet",
+          "locale": "nl",
+          "slug": "uitreisverbod-na-verkeersongeluk-in-vietnam-reisadvies-en-wet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::kun je na een verkeersongeluk in vietnam worden tegengehouden bij het verlaten van het land",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-jiaotong-shigu-hou-xianzhi-chujing",
+          "locale": "zh",
+          "slug": "yuenan-jiaotong-shigu-hou-xianzhi-chujing",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::在越南发生交通事故后会被限制出境吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:proibicao-de-sair-do-vietname-apos-acidente-de-viacao",
+          "locale": "pt",
+          "slug": "proibicao-de-sair-do-vietname-apos-acidente-de-viacao",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::um estrangeiro pode ser impedido de sair do vietname depois de um acidente de viacao",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-gyotong-sago-hu-chulguk-geumji-yeohaeng-gyeongbo",
+          "locale": "ko",
+          "slug": "beteunam-gyotong-sago-hu-chulguk-geumji-yeohaeng-gyeongbo",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::베트남 교통사고 후 출국 금지 당할 수 있나",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-kotsu-jiko-go-shukkoku-kinshi-watokojoho",
+          "locale": "ja",
+          "slug": "betonamu-kotsu-jiko-go-shukkoku-kinshi-watokojoho",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ヘトナムて交通事故を起こすと出国てきなくなるのか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 85,
-    "file": "factory/topic-research/batches/claude-20261018b-0085.json",
+    "seq": 86,
+    "file": "factory/topic-research/batches/claude-20261018b-0086.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -9393,13 +9504,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:13:55.740Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 60,
-      "topics": 10,
-      "sha256": "fbf17543f4de95729e970e31201f8dcb71d744bca1954d3603fe93afbe878406"
-    },
     {
       "at": "2026-10-20T04:14:05.243Z",
       "event": "BATCH_COMMITTED",
@@ -9567,6 +9671,13 @@
       "seq": 84,
       "topics": 10,
       "sha256": "13105eb164e62b9c69eef8dcae4f0694df4d70aeadd434a4f86cb8516cb2be71"
+    },
+    {
+      "at": "2026-10-20T04:57:11.129Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 85,
+      "topics": 10,
+      "sha256": "44e9b24d1fb478a3b52524ef4cb3f0b196afbc8ae9e73c8bc3fb327e4d735b50"
     }
   ]
 }
