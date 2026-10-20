@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T20:47:38.875Z",
+  "updated_at": "2026-10-20T20:47:59.632Z",
   "base_main_sha": "5160debc109578bd2bfc6a9313e10412c24482a7",
-  "last_commit_sha": "90712e439cc1de6576b0a750c1bfb625a6b83f13",
+  "last_commit_sha": "0c724c2c16c6e4059ce4d955284afaba3c589b7d",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1600,
-    "qa_pass": 1600,
+    "researched": 1610,
+    "qa_pass": 1610,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1590,
+    "pushed": 1600,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 161,
-      "de": 161,
-      "fr": 161,
-      "es": 161,
-      "nl": 161,
-      "pt": 161,
-      "zh": 161,
-      "ko": 161,
-      "ja": 161,
-      "en": 151
+      "vi": 162,
+      "de": 162,
+      "fr": 162,
+      "es": 162,
+      "nl": 162,
+      "pt": 162,
+      "zh": 162,
+      "ko": 162,
+      "ja": 162,
+      "en": 152
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 290
+      "motorbike-rental": 300
     }
   },
   "last_batch": {
-    "seq": 160,
-    "file": "factory/topic-research/batches/claude-20261018b-0160.json",
-    "sha256": "83fa79bb63944b94d17781932906dc60589bc72f81c91a0b77238b0d095d676e",
+    "seq": 161,
+    "file": "factory/topic-research/batches/claude-20261018b-0161.json",
+    "sha256": "52832cd03399fac92152d1c6ed33bbae737166935e0409d5f32fd76fa89290de",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -17708,8 +17708,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0160.json",
       "sha256": "83fa79bb63944b94d17781932906dc60589bc72f81c91a0b77238b0d095d676e",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "0c724c2c16c6e4059ce4d955284afaba3c589b7d",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -17813,11 +17813,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 161,
+      "file": "factory/topic-research/batches/claude-20261018b-0161.json",
+      "sha256": "52832cd03399fac92152d1c6ed33bbae737166935e0409d5f32fd76fa89290de",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:hoc-lai-xe-may-co-giup-nguoi-moi-an-toan-hon-khong-cochrane-va-nghien-cuu",
+          "locale": "vi",
+          "slug": "hoc-lai-xe-may-co-giup-nguoi-moi-an-toan-hon-khong-cochrane-va-nghien-cuu",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-transmission",
+          "key": "vi::hoc lai xe may co giup nguoi moi di an toan hon khong va nhung thang dau di xe may nguy hiem den muc nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:riding-lessons-first-timer-safer-cochrane-review-and-novice-rider-studies",
+          "locale": "en",
+          "slug": "riding-lessons-first-timer-safer-cochrane-review-and-novice-rider-studies",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-transmission",
+          "key": "en::do motorcycle riding lessons reduce crashes for beginners and how risky is the first year of riding",
+          "ta_id": null
+        },
+        {
+          "ref": "de:fahrstunden-fuer-roller-anfaenger-sicherer-cochrane-uebersicht-und-studien",
+          "locale": "de",
+          "slug": "fahrstunden-fuer-roller-anfaenger-sicherer-cochrane-uebersicht-und-studien",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-transmission",
+          "key": "de::senken fahrstunden bei motorrad-anfangern die unfalle und wie riskant ist das erste jahr auf dem roller",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:cours-de-conduite-moto-scooter-debutant-plus-sur-cochrane-et-etudes-novices",
+          "locale": "fr",
+          "slug": "cours-de-conduite-moto-scooter-debutant-plus-sur-cochrane-et-etudes-novices",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-transmission",
+          "key": "fr::les cours de conduite a moto reduisent-ils les accidents des debutants et la premiere annee est-elle risquee",
+          "ta_id": null
+        },
+        {
+          "ref": "es:clases-de-conduccion-moto-principiante-mas-seguro-cochrane-y-estudios-de-novatos",
+          "locale": "es",
+          "slug": "clases-de-conduccion-moto-principiante-mas-seguro-cochrane-y-estudios-de-novatos",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-transmission",
+          "key": "es::las clases de conduccion reducen los accidentes de los principiantes en moto y que riesgo tiene el primer ano",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:rijlessen-scooter-beginner-veiliger-cochrane-overzicht-en-studies-over-beginners",
+          "locale": "nl",
+          "slug": "rijlessen-scooter-beginner-veiliger-cochrane-overzicht-en-studies-over-beginners",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-transmission",
+          "key": "nl::verminderen rijlessen op de motor ongevallen bij beginners en hoe riskant is het eerste jaar",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-qi-motuoche-xinshou-xue-che-shifou-gengan-quan-cochrane-yu-xinshou-yanjiu",
+          "locale": "zh",
+          "slug": "yuenan-qi-motuoche-xinshou-xue-che-shifou-gengan-quan-cochrane-yu-xinshou-yanjiu",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-transmission",
+          "key": "zh::新手学骑摩托车上课能减少事故吗 刚开始骑的头几个月有多危险",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:aulas-de-conducao-mota-principiante-mais-seguro-cochrane-e-estudos-de-novatos",
+          "locale": "pt",
+          "slug": "aulas-de-conducao-mota-principiante-mais-seguro-cochrane-e-estudos-de-novatos",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-transmission",
+          "key": "pt::as aulas de conducao de mota reduzem os acidentes dos principiantes e quao arriscado e o primeiro ano",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-choboja-unjeon-gyoyuk-deo-anjeon-cochrane-sin-gyeongnyeok-yeongu",
+          "locale": "ko",
+          "slug": "beteunam-otobai-choboja-unjeon-gyoyuk-deo-anjeon-cochrane-sin-gyeongnyeok-yeongu",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-transmission",
+          "key": "ko::오토바이 운전 교육을 받으면 초보자의 사고가 줄고 첫 1년은 얼마나 위험한가요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-shoshinsha-kosyu-anzen-cochrane-shoshinsha-kenkyu-jiko",
+          "locale": "ja",
+          "slug": "betonamu-baiku-shoshinsha-kosyu-anzen-cochrane-shoshinsha-kenkyu-jiko",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-transmission",
+          "key": "ja::ハイクの運転講習は初心者の事故を減らしますか 最初の1年はとれくらい危険てすか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 161,
-    "file": "factory/topic-research/batches/claude-20261018b-0161.json",
+    "seq": 162,
+    "file": "factory/topic-research/batches/claude-20261018b-0162.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -17830,13 +17941,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T19:27:12.965Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 136,
-      "topics": 10,
-      "sha256": "282aa896ea7ed2ed925718fc296e87f58a88cfdd5ca9e42063e9d053b7f2db70"
-    },
     {
       "at": "2026-10-20T19:32:22.617Z",
       "event": "BATCH_COMMITTED",
@@ -18004,6 +18108,13 @@
       "seq": 160,
       "topics": 10,
       "sha256": "83fa79bb63944b94d17781932906dc60589bc72f81c91a0b77238b0d095d676e"
+    },
+    {
+      "at": "2026-10-20T20:47:59.632Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 161,
+      "topics": 10,
+      "sha256": "52832cd03399fac92152d1c6ed33bbae737166935e0409d5f32fd76fa89290de"
     }
   ]
 }
