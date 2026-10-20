@@ -4,6 +4,9 @@ import {scanPacket,scanText} from "./seo/fact-guard-core.mjs";
 import {loadTopicalMap} from "./seo/topical-authority-core.mjs";
 
 const SITE="https://global.rentbikehanoi.com";
+export const BRAND="Vietnam Two-Wheel Guide";
+// Site-wide social preview image (the root hero illustration); article packets carry no cover images yet.
+export const SOCIAL_IMAGE={path:"/hero-hanoi.webp",width:1600,height:900};
 const esc=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const localeCodes=new Set(["vi","en","de","fr","es","nl","zh","pt","ko","ja"]);
 const topicStatus=new Set(["IDEA","RESEARCHED","DRAFT","QA_APPROVED","PUBLISHED"]);
@@ -212,7 +215,13 @@ export function topicLinks(row,matrix,topical,code,ix=rowsIndex(matrix)){
  }
  if(row.role==="SUPPORT"){
   const own=siloOf(row);
-  const sib=under(row.parent_id).sort((a,b)=>(siloOf(a)===own?0:1)-(siloOf(b)===own?0:1)||order(a,b)).slice(0,6);
+  // Cyclic window over the Hub's published guides ordered silo-major (silo, then priority): each guide links the
+  // six that follow it, so every guide receives six inbound sibling links and most of them stay in its own silo,
+  // instead of the whole Hub pointing at its first six rows.
+  const cycle=(ix.pubSupport.get(row.parent_id)||[]).filter(r=>r.locale===code).sort((a,b)=>siloOf(a).localeCompare(siloOf(b))||order(a,b));
+  const at=cycle.findIndex(r=>r.id===row.id);
+  const ring=(at<0?cycle:cycle.slice(at+1).concat(cycle.slice(0,at))).filter(r=>r.id!==row.id);
+  const sib=(at<0?[...ring.filter(r=>siloOf(r)===own),...ring.filter(r=>siloOf(r)!==own)]:ring).slice(0,6);
   return sib.length?'<section class="topic-guides topic-guides--siblings"><h2>'+esc(L[1])+'</h2><ul>'+sib.map(item).join("")+'</ul></section>':"";
  }
  return "";
@@ -220,13 +229,24 @@ export function topicLinks(row,matrix,topical,code,ix=rowsIndex(matrix)){
 export function renderArticle(packet,locale,row,matrix,topical=null,ix=rowsIndex(matrix)){
  const htmlLang=locale.htmlLang||locale.code,url=SITE+row.url;
  const parent=ix.byId.get(row.parent_id);
- const parentURL=parent?.status==="PUBLISHED"?parent.url:"/"+locale.code+"/";
+ const home="/"+locale.code+"/";
+ const parentURL=parent?.status==="PUBLISHED"?parent.url:home;
  const parentLabel=parent?.status==="PUBLISHED"?parent.working_title:locale.name;
- const data={"@context":"https://schema.org","@graph":[{"@type":"Article","headline":packet.title,"description":packet.meta_description,"inLanguage":htmlLang,"mainEntityOfPage":url,"author":{"@type":"Organization","name":"Vietnam Two-Wheel Guide"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":locale.name,"item":SITE+"/"+locale.code+"/"},{"@type":"ListItem","position":2,"name":parentLabel,"item":SITE+parentURL},{"@type":"ListItem","position":3,"name":packet.title,"item":url}]}]};
+ // A Hub's parent is the locale Pillar itself, so its trail is Global › Language › Hub; a guide's is Language › Hub › Guide.
+ // Either way no URL appears twice in the BreadcrumbList.
+ const trail=parentURL===home?[{name:"Global",url:"/"},{name:locale.name,url:home}]:[{name:locale.name,url:home},{name:parentLabel,url:parentURL}];
+ const crumbs=trail.map((c,i)=>({"@type":"ListItem","position":i+1,"name":c.name,"item":SITE+c.url})).concat([{"@type":"ListItem","position":trail.length+1,"name":packet.title,"item":url}]);
+ const org={"@type":"Organization","name":BRAND,"url":SITE+"/about/"};
+ const article={"@type":"Article","headline":packet.title,"description":packet.meta_description,"inLanguage":htmlLang,"mainEntityOfPage":url,"isPartOf":{"@type":"WebSite","name":BRAND,"url":SITE+"/"},"author":org,"publisher":{...org,"logo":{"@type":"ImageObject","url":SITE+"/assets/favicon.svg"}}};
+ // The publication record's approval timestamp is the only dated event the repository holds for a page; no edit history is invented.
+ if(packet.publication?.approved_at){article.datePublished=packet.publication.approved_at;article.dateModified=packet.publication.approved_at;}
+ const data={"@context":"https://schema.org","@graph":[article,{"@type":"BreadcrumbList","itemListElement":crumbs}]};
  const sources=packet.sources.map(s=>'<li><a href="'+esc(s.url)+'" rel="noopener noreferrer">'+esc(s.title)+'</a></li>').join("");
  const cover=packet.cover_image?'<figure><img src="'+esc(packet.cover_image)+'" alt="'+esc(packet.cover_alt)+'" loading="lazy" decoding="async"><figcaption>'+esc(packet.image_credit)+'</figcaption></figure>':"";
  const json=JSON.stringify(data).replace(/</g,"\\u003c");
- return '<!doctype html>\n<html lang="'+esc(htmlLang)+'"><head>\n<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<title>'+esc(packet.title)+'</title>\n<meta name="description" content="'+esc(packet.meta_description)+'">\n<link rel="canonical" href="'+esc(url)+'">\n<meta property="og:type" content="article"><meta property="og:title" content="'+esc(packet.title)+'"><meta property="og:description" content="'+esc(packet.meta_description)+'"><meta property="og:url" content="'+esc(url)+'">\n<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">\n<script type="application/ld+json">'+json+'</script>\n</head><body><a class="skip" href="#main">Skip to content</a><main id="main"><div class="container"><nav class="crumb" aria-label="Breadcrumb"><a href="/'+esc(locale.code)+'/">'+esc(locale.name)+'</a> <span aria-hidden="true">›</span> <a href="'+esc(parentURL)+'">'+esc(parentLabel)+'</a></nav><article class="article"><h1>'+esc(packet.h1)+'</h1><p class="article-lead">'+esc(packet.meta_description)+'</p>'+cover+'<div class="article-copy">'+renderMarkdown(packet.body_markdown)+'</div>'+topicLinks(row,matrix,topical,locale.code,ix)+'<section class="article-references"><h2>'+esc((ARTICLE_LABELS[locale.code]||ARTICLE_LABELS.en)[2])+'</h2><ol>'+sources+'</ol></section>'+(packet.publication?'<p class="article-provenance">'+esc(AI_DISCLOSURE[locale.code]||AI_DISCLOSURE.en)+'</p>':'')+'<p><a href="'+esc(parentURL)+'">← '+esc(parentLabel)+'</a></p></article></div></main></body></html>\n';
+ const social='<meta property="og:site_name" content="'+esc(BRAND)+'"><meta property="og:image" content="'+SITE+SOCIAL_IMAGE.path+'"><meta property="og:image:width" content="'+SOCIAL_IMAGE.width+'"><meta property="og:image:height" content="'+SOCIAL_IMAGE.height+'">\n<meta name="twitter:card" content="summary_large_image">';
+ const crumbNav=trail.map(c=>'<a href="'+esc(c.url)+'">'+esc(c.name)+'</a>').join(' <span aria-hidden="true">›</span> ');
+ return '<!doctype html>\n<html lang="'+esc(htmlLang)+'"><head>\n<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<title>'+esc(packet.title)+'</title>\n<meta name="description" content="'+esc(packet.meta_description)+'">\n<link rel="canonical" href="'+esc(url)+'">\n<meta property="og:type" content="article"><meta property="og:title" content="'+esc(packet.title)+'"><meta property="og:description" content="'+esc(packet.meta_description)+'"><meta property="og:url" content="'+esc(url)+'">\n'+social+'\n<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">\n<script type="application/ld+json">'+json+'</script>\n</head><body><a class="skip" href="#main">Skip to content</a><main id="main"><div class="container"><nav class="crumb" aria-label="Breadcrumb">'+crumbNav+'</nav><article class="article"><h1>'+esc(packet.h1)+'</h1><p class="article-lead">'+esc(packet.meta_description)+'</p>'+cover+'<div class="article-copy">'+renderMarkdown(packet.body_markdown)+'</div>'+topicLinks(row,matrix,topical,locale.code,ix)+'<section class="article-references"><h2>'+esc((ARTICLE_LABELS[locale.code]||ARTICLE_LABELS.en)[2])+'</h2><ol>'+sources+'</ol></section>'+(packet.publication?'<p class="article-provenance">'+esc(AI_DISCLOSURE[locale.code]||AI_DISCLOSURE.en)+'</p>':'')+'<p><a href="'+esc(parentURL)+'">← '+esc(parentLabel)+'</a></p></article></div></main></body></html>\n';
 }
 export function generateApprovedArticles(root,matrix,locales){
  const dir=path.join(root,"content/articles");
