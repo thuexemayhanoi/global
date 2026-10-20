@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:15:56.106Z",
+  "updated_at": "2026-10-20T10:16:10.311Z",
   "base_main_sha": "d1a521e81cdad57a514df615979caa00b41cc3a5",
-  "last_commit_sha": "66943ff1e0d63d297220460068e5982fa3f97c4a",
+  "last_commit_sha": "7867e170ae3e576aef5969ef3e35e70070dcedbe",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1100,
-    "qa_pass": 1100,
+    "researched": 1110,
+    "qa_pass": 1110,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1090,
+    "pushed": 1100,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 111,
-      "de": 111,
-      "fr": 111,
-      "es": 111,
-      "nl": 111,
-      "pt": 111,
-      "zh": 111,
-      "ko": 111,
-      "ja": 111,
-      "en": 101
+      "vi": 112,
+      "de": 112,
+      "fr": 112,
+      "es": 112,
+      "nl": 112,
+      "pt": 112,
+      "zh": 112,
+      "ko": 112,
+      "ja": 112,
+      "en": 102
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 120
+      "motorbike-rental": 130
     }
   },
   "last_batch": {
-    "seq": 110,
-    "file": "factory/topic-research/batches/claude-20261018b-0110.json",
-    "sha256": "02a5682e52c4b0c4bc074ffe145419f1aee16180408eb01e60a2222a626b604e",
+    "seq": 111,
+    "file": "factory/topic-research/batches/claude-20261018b-0111.json",
+    "sha256": "b7ec6011f81602213751b3b3d80b33d49ebf9a57a65dc7794fcd09ee81bd3509",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -12158,8 +12158,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0110.json",
       "sha256": "02a5682e52c4b0c4bc074ffe145419f1aee16180408eb01e60a2222a626b604e",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "7867e170ae3e576aef5969ef3e35e70070dcedbe",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -12263,11 +12263,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 111,
+      "file": "factory/topic-research/batches/claude-20261018b-0111.json",
+      "sha256": "b7ec6011f81602213751b3b3d80b33d49ebf9a57a65dc7794fcd09ee81bd3509",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:honda-super-cub-c125-ct125-yamaha-pg-1-xe-so-kieu-cub",
+          "locale": "vi",
+          "slug": "honda-super-cub-c125-ct125-yamaha-pg-1-xe-so-kieu-cub",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-models",
+          "key": "vi::honda super cub c125 ct125 yamaha pg-1 khac nhau the nao xe so kieu cub",
+          "ta_id": null
+        },
+        {
+          "ref": "en:honda-super-cub-c125-ct125-yamaha-pg-1-cub-style-semi-automatics",
+          "locale": "en",
+          "slug": "honda-super-cub-c125-ct125-yamaha-pg-1-cub-style-semi-automatics",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-models",
+          "key": "en::honda super cub c125 vs ct125 vs yamaha pg-1 differences",
+          "ta_id": null
+        },
+        {
+          "ref": "de:honda-super-cub-c125-ct125-yamaha-pg-1-cub-halbautomaten",
+          "locale": "de",
+          "slug": "honda-super-cub-c125-ct125-yamaha-pg-1-cub-halbautomaten",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-models",
+          "key": "de::honda super cub c125 ct125 yamaha pg-1 unterschiede halbautomatik im cub-stil",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:honda-super-cub-c125-ct125-yamaha-pg-1-semi-automatiques-type-cub",
+          "locale": "fr",
+          "slug": "honda-super-cub-c125-ct125-yamaha-pg-1-semi-automatiques-type-cub",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-models",
+          "key": "fr::honda super cub c125 ct125 yamaha pg-1 differences semi-automatiques type cub",
+          "ta_id": null
+        },
+        {
+          "ref": "es:honda-super-cub-c125-ct125-yamaha-pg-1-semiautomaticas-tipo-cub",
+          "locale": "es",
+          "slug": "honda-super-cub-c125-ct125-yamaha-pg-1-semiautomaticas-tipo-cub",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-models",
+          "key": "es::honda super cub c125 ct125 yamaha pg-1 diferencias semiautomaticas tipo cub",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:honda-super-cub-c125-ct125-yamaha-pg-1-halfautomaten-cub-stijl",
+          "locale": "nl",
+          "slug": "honda-super-cub-c125-ct125-yamaha-pg-1-halfautomaten-cub-stijl",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-models",
+          "key": "nl::honda super cub c125 ct125 yamaha pg-1 verschillen halfautomaten in cub-stijl",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:honda-super-cub-c125-ct125-yamaha-pg-1-cub-banzidong-qubie",
+          "locale": "zh",
+          "slug": "honda-super-cub-c125-ct125-yamaha-pg-1-cub-banzidong-qubie",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-models",
+          "key": "zh::本田 super cub c125 ct125 雅马哈 pg-1 区别 cub 式半自动摩托车",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:honda-super-cub-c125-ct125-yamaha-pg-1-semiautomaticas-estilo-cub",
+          "locale": "pt",
+          "slug": "honda-super-cub-c125-ct125-yamaha-pg-1-semiautomaticas-estilo-cub",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-models",
+          "key": "pt::honda super cub c125 ct125 yamaha pg-1 diferencas semiautomaticas ao estilo cub",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:honda-super-cub-c125-ct125-yamaha-pg-1-cub-chai-myeonheo",
+          "locale": "ko",
+          "slug": "honda-super-cub-c125-ct125-yamaha-pg-1-cub-chai-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-models",
+          "key": "ko::혼다 슈퍼커브 c125 ct125 야마하 pg-1 차이 커브형 세미오토",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:honda-super-cub-c125-ct125-yamaha-pg-1-cub-kei-menkyo",
+          "locale": "ja",
+          "slug": "honda-super-cub-c125-ct125-yamaha-pg-1-cub-kei-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-models",
+          "key": "ja::ホンタ スーハーカフc125 ct125 ヤマハ pg-1 の違い カフ系セミオートマ",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 111,
-    "file": "factory/topic-research/batches/claude-20261018b-0111.json",
+    "seq": 112,
+    "file": "factory/topic-research/batches/claude-20261018b-0112.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -12280,13 +12391,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T05:04:05.026Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 86,
-      "topics": 10,
-      "sha256": "3fc10418500e6429a625d8aa2df77765dbe020d1240d49ed745ef4bcb50ecc99"
-    },
     {
       "at": "2026-10-20T05:16:20.663Z",
       "event": "BATCH_COMMITTED",
@@ -12454,6 +12558,13 @@
       "seq": 110,
       "topics": 10,
       "sha256": "02a5682e52c4b0c4bc074ffe145419f1aee16180408eb01e60a2222a626b604e"
+    },
+    {
+      "at": "2026-10-20T10:16:10.311Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 111,
+      "topics": 10,
+      "sha256": "b7ec6011f81602213751b3b3d80b33d49ebf9a57a65dc7794fcd09ee81bd3509"
     }
   ]
 }
