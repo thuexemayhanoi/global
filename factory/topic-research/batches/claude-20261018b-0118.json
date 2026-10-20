@@ -1,0 +1,542 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H04",
+      "subcluster": "ss-city",
+      "slug": "di-xe-may-sang-hom-sau-khi-uong-ruou-bia-con-nong-do-con-khong",
+      "primary_query": "uống bia tối hôm trước sáng hôm sau đi xe máy có bị phạt nồng độ cồn không",
+      "secondary_queries": [
+        "uống bia bao lâu thì được đi xe máy ở Việt Nam",
+        "thổi nồng độ cồn sáng hôm sau còn dương tính không",
+        "uống cà phê hay tắm nước lạnh có giải rượu được không",
+        "Bộ Y tế nói gì về chờ 24 giờ sau khi uống rượu bia mới lái xe"
+      ],
+      "entities": [
+        "Luật số 36/2024/QH15",
+        "Nghị định 168/2024/NĐ-CP",
+        "Bộ Y tế",
+        "nồng độ cồn trong hơi thở",
+        "đơn vị cồn"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Du khách uống bia buổi tối muốn biết sáng hôm sau có đi xe máy được không, cồn thực sự mất bao lâu để ra khỏi cơ thể và liệu máy đo nồng độ cồn trên đường còn phát hiện được dưới quy định bằng 0 của Việt Nam hay không.",
+      "content_angle": "Kết hợp quy định cấm có nồng độ cồn trong Luật 36/2024/QH15 bản hợp nhất và Nghị định 168/2024/NĐ-CP (đã dùng trong bài hiện có về uống rượu bia khi lái xe, bài này phải dẫn sang chứ không lặp lại) với giải thích của Vụ Pháp chế Bộ Y tế, do báo 24h đưa và được trạm y tế đăng lại, rằng không có con số chính xác cho mọi người, gan thường chuyển hóa khoảng một đơn vị cồn mỗi giờ và cần thêm một đến hai giờ nữa, còn hơi thở vẫn có thể dương tính sau nhiều giờ, cùng lời khuyên của Drinkaware (Anh) rằng chỉ thời gian mới đào thải cồn, cà phê và tắm nước lạnh không giúp ích, và giải thích của NIAAA về chuyển hóa cồn. Người viết không được đưa ra thời gian chờ an toàn, máy tính hay công thức, phải nói rằng quy định bằng 0 không chừa biên độ và lựa chọn an toàn nhất là không lái xe sau khi uống, không nêu mức phạt và giữ giọng thực tế: dùng cách đi lại khác vào sáng hôm sau.",
+      "working_title": "Đi xe máy sáng hôm sau khi uống bia ở Việt Nam: cồn ở lại bao lâu và vì sao quy định bằng 0 không chừa biên độ",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://tytphuonglongtruong.medinet.gov.vn/pcthrb/bo-y-te-noi-gi-ve-thong-tin-it-nhat-24h-sau-khi-uong-ruou-bia-moi-duoc-lai-xe-cmobile17011-217402.aspx",
+          "title": "Provincial health station portal (medinet.gov.vn, repost of a Bao 24h article): Ministry of Health legal department on how long alcohol takes to clear, with no single figure for everyone, and breath tests that can still detect alcohol after many hours",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.drinkaware.co.uk/facts/information-about-alcohol/alcohol-and-the-law/drink-driving/can-i-drive-the-morning-after-drinking-alcohol",
+          "title": "Drinkaware (UK, reviewed 23 December 2024): can I drive the morning after drinking, about one unit an hour, nothing speeds it up, if not sure do not drive",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.niaaa.nih.gov/publications/alcohol-metabolism",
+          "title": "US NIAAA: alcohol metabolism, how the liver breaks down ethanol and why individuals differ",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government portal: consolidated text of the Law on Road Traffic Order and Safety (Law 36/2024/QH15), the ban on driving with alcohol in the body",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government policy portal: full text of Decree 168/2024/NĐ-CP on road traffic penalties (alcohol offences for motorcycle riders)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H04",
+      "subcluster": "ss-city",
+      "slug": "riding-morning-after-drinking-vietnam-zero-alcohol-breath-test",
+      "primary_query": "can I ride a motorbike in Vietnam the morning after drinking",
+      "secondary_queries": [
+        "how long after drinking can you ride a motorbike in Vietnam",
+        "can a police breath test show alcohol the morning after in Vietnam",
+        "does coffee or a cold shower sober you up before riding",
+        "what did the Ministry of Health say about waiting 24 hours before driving"
+      ],
+      "entities": [
+        "Law 36/2024/QH15",
+        "Decree 168/2024/NĐ-CP",
+        "Ministry of Health",
+        "breath alcohol concentration",
+        "alcohol unit"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Travellers who had beers the night before wonder whether they can ride the next morning, how long alcohol really takes to leave the body and whether a roadside breath test could still detect it under Vietnam's zero-alcohol rule.",
+      "content_angle": "Combines the ban on alcohol in the body in the consolidated Law 36/2024/QH15 and Decree 168/2024/NĐ-CP (already used in the existing drink-riding guide, which this one must link rather than repeat) with the Ministry of Health legal department's explanation, reported by Bao 24h and reposted on a provincial health-station site, that there is no exact figure for everyone, that the liver clears roughly one unit an hour with one to two hours more and that breath can still test positive after many hours, with Drinkaware's UK advice that only time removes alcohol and coffee or cold showers do not help, and NIAAA's explanation of alcohol metabolism. The Writer must not give a safe waiting time, calculator or formula, must say that the zero rule leaves no margin and that the safest choice is not to ride after drinking, must not quote fines and should keep a practical tone: use another way to travel the next morning.",
+      "working_title": "Riding the Morning After a Night Out in Vietnam: How Long Alcohol Stays and Why the Zero Rule Leaves No Margin",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://tytphuonglongtruong.medinet.gov.vn/pcthrb/bo-y-te-noi-gi-ve-thong-tin-it-nhat-24h-sau-khi-uong-ruou-bia-moi-duoc-lai-xe-cmobile17011-217402.aspx",
+          "title": "Provincial health station portal (medinet.gov.vn, repost of a Bao 24h article): Ministry of Health legal department on how long alcohol takes to clear, with no single figure for everyone, and breath tests that can still detect alcohol after many hours",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.drinkaware.co.uk/facts/information-about-alcohol/alcohol-and-the-law/drink-driving/can-i-drive-the-morning-after-drinking-alcohol",
+          "title": "Drinkaware (UK, reviewed 23 December 2024): can I drive the morning after drinking, about one unit an hour, nothing speeds it up, if not sure do not drive",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.niaaa.nih.gov/publications/alcohol-metabolism",
+          "title": "US NIAAA: alcohol metabolism, how the liver breaks down ethanol and why individuals differ",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government portal: consolidated text of the Law on Road Traffic Order and Safety (Law 36/2024/QH15), the ban on driving with alcohol in the body",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government policy portal: full text of Decree 168/2024/NĐ-CP on road traffic penalties (alcohol offences for motorcycle riders)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H04",
+      "subcluster": "ss-city",
+      "slug": "roller-fahren-am-morgen-nach-dem-trinken-vietnam-restalkohol-atemtest",
+      "primary_query": "darf ich am Morgen nach dem Biertrinken in Vietnam Roller fahren",
+      "secondary_queries": [
+        "wie lange nach dem Trinken darf man in Vietnam Roller fahren",
+        "kann ein Atemtest der Polizei am nächsten Morgen noch Alkohol zeigen",
+        "hilft Kaffee oder kalte Dusche gegen Restalkohol vor dem Rollerfahren",
+        "was sagt das Gesundheitsministerium Vietnams zu 24 Stunden warten"
+      ],
+      "entities": [
+        "Gesetz 36/2024/QH15",
+        "Dekret 168/2024/NĐ-CP",
+        "Gesundheitsministerium",
+        "Atemalkoholkonzentration",
+        "Alkoholeinheit"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Reisende, die abends Bier getrunken haben, fragen sich, ob sie am nächsten Morgen Roller fahren dürfen, wie lange Alkohol den Körper wirklich braucht und ob ein Atemtest am Straßenrand ihn unter Vietnams Nullpromillegrenze noch nachweisen könnte.",
+      "content_angle": "Verbindet das Verbot von Alkohol im Körper im konsolidierten Gesetz 36/2024/QH15 und im Dekret 168/2024/NĐ-CP (bereits im vorhandenen Ratgeber zum Trinken und Fahren genutzt, auf den dieser Beitrag verlinken statt ihn zu wiederholen muss) mit der Erklärung der Rechtsabteilung des Gesundheitsministeriums, berichtet von Bao 24h und auf einem Provinz-Gesundheitsportal nachgedruckt, dass es keine feste Zahl für alle gibt, die Leber etwa eine Alkoholeinheit pro Stunde abbaut und ein bis zwei Stunden mehr braucht und dass die Atemluft nach vielen Stunden noch positiv sein kann, mit dem Rat von Drinkaware (Großbritannien), dass nur Zeit Alkohol abbaut und Kaffee oder kalte Duschen nicht helfen, und der Erklärung der NIAAA zum Alkoholstoffwechsel. Der Autor darf keine sichere Wartezeit, keinen Rechner und keine Formel nennen, muss sagen, dass die Nullgrenze keinen Spielraum lässt und dass es am sichersten ist, nach dem Trinken nicht zu fahren, darf keine Bußgelder nennen und soll praktisch bleiben: am nächsten Morgen anders unterwegs sein.",
+      "working_title": "Rollerfahren am Morgen nach dem Trinken in Vietnam: Wie lange Alkohol bleibt und was die Nullgrenze heißt",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://tytphuonglongtruong.medinet.gov.vn/pcthrb/bo-y-te-noi-gi-ve-thong-tin-it-nhat-24h-sau-khi-uong-ruou-bia-moi-duoc-lai-xe-cmobile17011-217402.aspx",
+          "title": "Provincial health station portal (medinet.gov.vn, repost of a Bao 24h article): Ministry of Health legal department on how long alcohol takes to clear, with no single figure for everyone, and breath tests that can still detect alcohol after many hours",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.drinkaware.co.uk/facts/information-about-alcohol/alcohol-and-the-law/drink-driving/can-i-drive-the-morning-after-drinking-alcohol",
+          "title": "Drinkaware (UK, reviewed 23 December 2024): can I drive the morning after drinking, about one unit an hour, nothing speeds it up, if not sure do not drive",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.niaaa.nih.gov/publications/alcohol-metabolism",
+          "title": "US NIAAA: alcohol metabolism, how the liver breaks down ethanol and why individuals differ",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government portal: consolidated text of the Law on Road Traffic Order and Safety (Law 36/2024/QH15), the ban on driving with alcohol in the body",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government policy portal: full text of Decree 168/2024/NĐ-CP on road traffic penalties (alcohol offences for motorcycle riders)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H04",
+      "subcluster": "ss-city",
+      "slug": "conduire-un-scooter-le-lendemain-apres-avoir-bu-vietnam-alcootest",
+      "primary_query": "peut-on rouler en scooter au Vietnam le lendemain d'une soirée arrosée",
+      "secondary_queries": [
+        "combien de temps attendre après avoir bu pour conduire un scooter au Vietnam",
+        "un éthylotest de la police peut-il encore être positif le lendemain matin",
+        "le café ou une douche froide font-ils baisser l'alcool avant de rouler",
+        "que dit le ministère de la Santé vietnamien sur attendre 24 heures"
+      ],
+      "entities": [
+        "loi 36/2024/QH15",
+        "décret 168/2024/NĐ-CP",
+        "ministère de la Santé",
+        "alcool dans l'air expiré",
+        "unité d'alcool"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Les voyageurs qui ont bu de la bière la veille se demandent s'ils peuvent rouler le lendemain matin, combien de temps l'alcool met réellement à quitter le corps et si un éthylotest au bord de la route pourrait encore le déceler sous la règle de tolérance zéro du Vietnam.",
+      "content_angle": "Associe l'interdiction de l'alcool dans l'organisme du texte consolidé de la loi 36/2024/QH15 et du décret 168/2024/NĐ-CP (déjà utilisés dans le guide existant sur boire et conduire, que ce guide doit citer au lieu de le répéter) à l'explication du service juridique du ministère de la Santé, rapportée par Bao 24h et reprise sur un portail sanitaire provincial : il n'existe pas de chiffre exact pour tout le monde, le foie élimine environ une unité par heure avec une à deux heures de plus, et l'air expiré peut rester positif après de nombreuses heures ; puis au conseil de Drinkaware (Royaume-Uni) selon lequel seul le temps élimine l'alcool, le café et la douche froide n'y changeant rien, et à l'explication de la NIAAA sur le métabolisme de l'alcool. Le rédacteur ne doit donner ni délai sûr, ni calculateur, ni formule, doit dire que la tolérance zéro ne laisse aucune marge et que le plus sûr est de ne pas rouler après avoir bu, ne citer aucune amende et rester pratique : voyager autrement le lendemain matin.",
+      "working_title": "Scooter au Vietnam le lendemain d'une soirée : combien de temps l'alcool reste et ce que dit la règle zéro",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://tytphuonglongtruong.medinet.gov.vn/pcthrb/bo-y-te-noi-gi-ve-thong-tin-it-nhat-24h-sau-khi-uong-ruou-bia-moi-duoc-lai-xe-cmobile17011-217402.aspx",
+          "title": "Provincial health station portal (medinet.gov.vn, repost of a Bao 24h article): Ministry of Health legal department on how long alcohol takes to clear, with no single figure for everyone, and breath tests that can still detect alcohol after many hours",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.drinkaware.co.uk/facts/information-about-alcohol/alcohol-and-the-law/drink-driving/can-i-drive-the-morning-after-drinking-alcohol",
+          "title": "Drinkaware (UK, reviewed 23 December 2024): can I drive the morning after drinking, about one unit an hour, nothing speeds it up, if not sure do not drive",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.niaaa.nih.gov/publications/alcohol-metabolism",
+          "title": "US NIAAA: alcohol metabolism, how the liver breaks down ethanol and why individuals differ",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government portal: consolidated text of the Law on Road Traffic Order and Safety (Law 36/2024/QH15), the ban on driving with alcohol in the body",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government policy portal: full text of Decree 168/2024/NĐ-CP on road traffic penalties (alcohol offences for motorcycle riders)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H04",
+      "subcluster": "ss-city",
+      "slug": "conducir-moto-la-manana-despues-de-beber-vietnam-alcohol-cero",
+      "primary_query": "puedo conducir una moto en Vietnam la mañana después de beber cerveza",
+      "secondary_queries": [
+        "cuánto hay que esperar después de beber para conducir una moto en Vietnam",
+        "puede la prueba de alcoholemia de la policía dar positivo a la mañana siguiente",
+        "el café o una ducha fría eliminan el alcohol antes de conducir",
+        "qué dice el Ministerio de Salud de Vietnam sobre esperar 24 horas"
+      ],
+      "entities": [
+        "Ley 36/2024/QH15",
+        "Decreto 168/2024/NĐ-CP",
+        "Ministerio de Salud",
+        "alcohol en aire espirado",
+        "unidad de bebida"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Los viajeros que bebieron cerveza la noche anterior se preguntan si pueden conducir la mañana siguiente, cuánto tarda de verdad el alcohol en salir del cuerpo y si una prueba de alcoholemia en carretera aún podría detectarlo con la norma de alcohol cero de Vietnam.",
+      "content_angle": "Combina la prohibición de alcohol en el organismo del texto consolidado de la Ley 36/2024/QH15 y del Decreto 168/2024/NĐ-CP (ya usados en la guía existente sobre beber y conducir, a la que esta debe remitir en lugar de repetirla) con la explicación del servicio jurídico del Ministerio de Salud, recogida por Bao 24h y reproducida en un portal sanitario provincial: no existe una cifra exacta para cada persona, el hígado elimina aproximadamente una unidad por hora y necesita una o dos horas más, y el aire espirado puede seguir dando positivo tras muchas horas; y con el consejo de Drinkaware (Reino Unido) de que solo el tiempo elimina el alcohol y el café o la ducha fría no ayudan, y la explicación del NIAAA sobre el metabolismo del alcohol. El redactor no debe dar un tiempo de espera seguro, calculadora ni fórmula, debe decir que la norma de cero no deja margen y que lo más seguro es no conducir tras beber, no citar sanciones y mantener un tono práctico: desplazarse de otra manera a la mañana siguiente.",
+      "working_title": "Conducir moto en Vietnam la mañana después de beber: cuánto tarda el alcohol y qué implica el cero",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://tytphuonglongtruong.medinet.gov.vn/pcthrb/bo-y-te-noi-gi-ve-thong-tin-it-nhat-24h-sau-khi-uong-ruou-bia-moi-duoc-lai-xe-cmobile17011-217402.aspx",
+          "title": "Provincial health station portal (medinet.gov.vn, repost of a Bao 24h article): Ministry of Health legal department on how long alcohol takes to clear, with no single figure for everyone, and breath tests that can still detect alcohol after many hours",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.drinkaware.co.uk/facts/information-about-alcohol/alcohol-and-the-law/drink-driving/can-i-drive-the-morning-after-drinking-alcohol",
+          "title": "Drinkaware (UK, reviewed 23 December 2024): can I drive the morning after drinking, about one unit an hour, nothing speeds it up, if not sure do not drive",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.niaaa.nih.gov/publications/alcohol-metabolism",
+          "title": "US NIAAA: alcohol metabolism, how the liver breaks down ethanol and why individuals differ",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government portal: consolidated text of the Law on Road Traffic Order and Safety (Law 36/2024/QH15), the ban on driving with alcohol in the body",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government policy portal: full text of Decree 168/2024/NĐ-CP on road traffic penalties (alcohol offences for motorcycle riders)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H04",
+      "subcluster": "ss-city",
+      "slug": "scooter-rijden-ochtend-na-het-drinken-vietnam-nul-alcohol-blaastest",
+      "primary_query": "mag ik de ochtend na het drinken scooter rijden in Vietnam",
+      "secondary_queries": [
+        "hoe lang na het drinken mag je scooter rijden in Vietnam",
+        "kan een blaastest van de politie de volgende ochtend nog alcohol tonen",
+        "helpen koffie of een koude douche tegen restalcohol voor het rijden",
+        "wat zegt het Vietnamese ministerie van Volksgezondheid over 24 uur wachten"
+      ],
+      "entities": [
+        "Wet 36/2024/QH15",
+        "Decreet 168/2024/NĐ-CP",
+        "ministerie van Volksgezondheid",
+        "alcohol in uitgeademde lucht",
+        "alcoholeenheid"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Reizigers die de avond ervoor bier dronken, vragen zich af of ze de volgende ochtend mogen rijden, hoe lang alcohol echt nodig heeft om het lichaam te verlaten en of een blaastest langs de weg het onder Vietnams nuldrempel nog kan aantonen.",
+      "content_angle": "Combineert het verbod op alcohol in het lichaam in de geconsolideerde Wet 36/2024/QH15 en Decreet 168/2024/NĐ-CP (al gebruikt in de bestaande gids over drinken en rijden, waarnaar dit artikel moet verwijzen in plaats van die te herhalen) met de uitleg van de juridische afdeling van het ministerie van Volksgezondheid, gemeld door Bao 24h en overgenomen op een provinciaal gezondheidsportaal: er is geen exact getal voor iedereen, de lever breekt ongeveer één eenheid per uur af en heeft nog een tot twee uur nodig, en de adem kan na vele uren nog positief zijn; met het advies van Drinkaware (VK) dat alleen tijd alcohol verwijdert en koffie of een koude douche niet helpen, en de uitleg van NIAAA over alcoholmetabolisme. De schrijver mag geen veilige wachttijd, rekenmachine of formule geven, moet zeggen dat de nuldrempel geen marge laat en dat niet rijden na het drinken het veiligst is, noemt geen boetes en blijft praktisch: de volgende ochtend op een andere manier reizen.",
+      "working_title": "Scooter rijden de ochtend na het drinken in Vietnam: hoe lang alcohol blijft en wat de nuldrempel betekent",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://tytphuonglongtruong.medinet.gov.vn/pcthrb/bo-y-te-noi-gi-ve-thong-tin-it-nhat-24h-sau-khi-uong-ruou-bia-moi-duoc-lai-xe-cmobile17011-217402.aspx",
+          "title": "Provincial health station portal (medinet.gov.vn, repost of a Bao 24h article): Ministry of Health legal department on how long alcohol takes to clear, with no single figure for everyone, and breath tests that can still detect alcohol after many hours",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.drinkaware.co.uk/facts/information-about-alcohol/alcohol-and-the-law/drink-driving/can-i-drive-the-morning-after-drinking-alcohol",
+          "title": "Drinkaware (UK, reviewed 23 December 2024): can I drive the morning after drinking, about one unit an hour, nothing speeds it up, if not sure do not drive",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.niaaa.nih.gov/publications/alcohol-metabolism",
+          "title": "US NIAAA: alcohol metabolism, how the liver breaks down ethanol and why individuals differ",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government portal: consolidated text of the Law on Road Traffic Order and Safety (Law 36/2024/QH15), the ban on driving with alcohol in the body",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government policy portal: full text of Decree 168/2024/NĐ-CP on road traffic penalties (alcohol offences for motorcycle riders)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H04",
+      "subcluster": "ss-city",
+      "slug": "yuenan-qianyiwan-hejiu-di-erzao-qi-motuoche-jiujing-jiance",
+      "primary_query": "在越南前一晚喝了啤酒第二天早上能骑摩托车吗",
+      "secondary_queries": [
+        "在越南喝酒后隔多久才能骑摩托车",
+        "越南警察的呼气酒精检测第二天早上还会呈阳性吗",
+        "喝咖啡或冲冷水澡能让酒精代谢更快吗",
+        "越南卫生部怎么说喝酒后要等24小时才能开车"
+      ],
+      "entities": [
+        "第36/2024/QH15号法律",
+        "第168/2024/NĐ-CP号议定",
+        "越南卫生部",
+        "呼气酒精浓度",
+        "酒精单位"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "前一晚喝过啤酒的游客想知道第二天早上能不能骑摩托车，酒精到底要多久才能排出体外，以及在越南零酒精的规定下路边的呼气检测是否还能测出来。",
+      "content_angle": "结合第36/2024/QH15号法律合并文本和第168/2024/NĐ-CP号议定中关于体内含酒精禁止驾驶的规定（现有的酒后骑行指南已使用这些来源，本文须链接而不是重复），越南卫生部法制司的解释（由Bao 24h报道并被省级卫生站点转载）——并没有适用于所有人的精确数字，肝脏大约每小时代谢一个酒精单位、还需要一到两个小时，呼气检测在很多小时之后仍可能呈阳性——以及英国Drinkaware的建议（只有时间才能排出酒精，咖啡和冷水澡没有用）和美国NIAAA对酒精代谢的说明。撰稿人不得给出安全等待时间、计算器或公式，必须说明零酒精规定没有余地、最安全的做法是喝酒后不骑车，不写罚款，并保持实用的语气：第二天早上换一种出行方式。",
+      "working_title": "在越南前一晚喝酒后第二天早上骑摩托车：酒精会留多久，为什么零酒精规定不留余地",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://tytphuonglongtruong.medinet.gov.vn/pcthrb/bo-y-te-noi-gi-ve-thong-tin-it-nhat-24h-sau-khi-uong-ruou-bia-moi-duoc-lai-xe-cmobile17011-217402.aspx",
+          "title": "Provincial health station portal (medinet.gov.vn, repost of a Bao 24h article): Ministry of Health legal department on how long alcohol takes to clear, with no single figure for everyone, and breath tests that can still detect alcohol after many hours",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.drinkaware.co.uk/facts/information-about-alcohol/alcohol-and-the-law/drink-driving/can-i-drive-the-morning-after-drinking-alcohol",
+          "title": "Drinkaware (UK, reviewed 23 December 2024): can I drive the morning after drinking, about one unit an hour, nothing speeds it up, if not sure do not drive",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.niaaa.nih.gov/publications/alcohol-metabolism",
+          "title": "US NIAAA: alcohol metabolism, how the liver breaks down ethanol and why individuals differ",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government portal: consolidated text of the Law on Road Traffic Order and Safety (Law 36/2024/QH15), the ban on driving with alcohol in the body",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government policy portal: full text of Decree 168/2024/NĐ-CP on road traffic penalties (alcohol offences for motorcycle riders)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H04",
+      "subcluster": "ss-city",
+      "slug": "andar-de-mota-na-manha-seguinte-a-beber-vietname-alcool-zero-teste",
+      "primary_query": "posso andar de mota no Vietname na manhã seguinte a beber cerveja",
+      "secondary_queries": [
+        "quanto tempo esperar depois de beber para andar de mota no Vietname",
+        "o teste de alcoolemia da polícia pode dar positivo na manhã seguinte",
+        "o café ou um duche frio eliminam o álcool antes de conduzir",
+        "o que diz o Ministério da Saúde do Vietname sobre esperar 24 horas"
+      ],
+      "entities": [
+        "Lei 36/2024/QH15",
+        "Decreto 168/2024/NĐ-CP",
+        "Ministério da Saúde",
+        "álcool no ar expirado",
+        "unidade de álcool"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Os viajantes que beberam cerveja na véspera perguntam-se se podem andar de mota na manhã seguinte, quanto tempo o álcool leva realmente a sair do corpo e se um teste de alcoolemia na estrada ainda o poderia detetar com a regra de álcool zero do Vietname.",
+      "content_angle": "Junta a proibição de álcool no organismo do texto consolidado da Lei 36/2024/QH15 e do Decreto 168/2024/NĐ-CP (já usados no guia existente sobre beber e conduzir, para o qual este guia deve remeter em vez de o repetir) à explicação do serviço jurídico do Ministério da Saúde, divulgada pelo Bao 24h e reproduzida num portal de saúde provincial: não há um número exato para qualquer pessoa, o fígado elimina cerca de uma unidade por hora e precisa de mais uma a duas horas, e o ar expirado pode continuar positivo após muitas horas; e ao conselho da Drinkaware (Reino Unido) de que só o tempo elimina o álcool, sem ajuda do café ou do duche frio, e à explicação do NIAAA sobre o metabolismo do álcool. O redator não deve dar um tempo de espera seguro, calculadora nem fórmula, deve dizer que a regra de zero não deixa margem e que o mais seguro é não conduzir depois de beber, não citar coimas e manter um tom prático: deslocar-se de outra forma na manhã seguinte.",
+      "working_title": "Andar de mota no Vietname na manhã seguinte a beber: quanto tempo o álcool fica e o que significa o zero",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://tytphuonglongtruong.medinet.gov.vn/pcthrb/bo-y-te-noi-gi-ve-thong-tin-it-nhat-24h-sau-khi-uong-ruou-bia-moi-duoc-lai-xe-cmobile17011-217402.aspx",
+          "title": "Provincial health station portal (medinet.gov.vn, repost of a Bao 24h article): Ministry of Health legal department on how long alcohol takes to clear, with no single figure for everyone, and breath tests that can still detect alcohol after many hours",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.drinkaware.co.uk/facts/information-about-alcohol/alcohol-and-the-law/drink-driving/can-i-drive-the-morning-after-drinking-alcohol",
+          "title": "Drinkaware (UK, reviewed 23 December 2024): can I drive the morning after drinking, about one unit an hour, nothing speeds it up, if not sure do not drive",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.niaaa.nih.gov/publications/alcohol-metabolism",
+          "title": "US NIAAA: alcohol metabolism, how the liver breaks down ethanol and why individuals differ",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government portal: consolidated text of the Law on Road Traffic Order and Safety (Law 36/2024/QH15), the ban on driving with alcohol in the body",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government policy portal: full text of Decree 168/2024/NĐ-CP on road traffic penalties (alcohol offences for motorcycle riders)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H04",
+      "subcluster": "ss-city",
+      "slug": "beteunam-sulhu-daeum-nal-achim-otobai-unjeon-jeonyok-matsin-sul-eumju-cheukjeong",
+      "primary_query": "베트남에서 전날 밤 맥주를 마셨다면 다음 날 아침 오토바이를 타도 되나요",
+      "secondary_queries": [
+        "베트남에서 술을 마신 뒤 얼마나 지나야 오토바이를 탈 수 있나요",
+        "다음 날 아침 경찰 음주 측정에서 알코올이 나올 수 있나요",
+        "커피나 찬물 샤워로 술이 빨리 깨나요",
+        "베트남 보건부는 술 마신 뒤 24시간 기다리라는 말에 대해 뭐라고 했나요"
+      ],
+      "entities": [
+        "법률 36/2024/QH15",
+        "시행령 168/2024/NĐ-CP",
+        "베트남 보건부",
+        "호흡 알코올 농도",
+        "알코올 단위"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "전날 밤 맥주를 마신 여행자는 다음 날 아침 오토바이를 타도 되는지, 알코올이 몸에서 빠지는 데 실제로 얼마나 걸리는지, 베트남의 제로 알코올 규정 아래 길가 음주 측정에서 여전히 검출될 수 있는지 알고 싶어 합니다.",
+      "content_angle": "법률 36/2024/QH15 통합본과 시행령 168/2024/NĐ-CP의 체내 알코올 운전 금지 규정(기존 음주 운전 가이드에서 이미 쓴 것이므로 이 글은 반복하지 말고 연결해야 함)을, Bao 24h가 보도하고 성 단위 보건소 포털이 다시 실은 보건부 법제국의 설명, 즉 모든 사람에게 맞는 정확한 수치는 없고 간이 대략 시간당 한 단위를 분해하며 1~2시간이 더 필요하고 호흡 측정은 여러 시간 뒤에도 양성일 수 있다는 내용, 그리고 시간만이 알코올을 없애며 커피나 찬물 샤워는 도움이 되지 않는다는 영국 Drinkaware의 조언과 미국 NIAAA의 알코올 대사 설명과 함께 다룹니다. 작성자는 안전한 대기 시간, 계산기, 공식을 제시하지 않고, 제로 규정은 여유가 없으며 술을 마신 뒤에는 타지 않는 것이 가장 안전하다고 말하고, 과태료는 쓰지 않으며, 다음 날 아침에는 다른 이동 수단을 쓰라는 실용적인 어조를 유지해야 합니다.",
+      "working_title": "베트남에서 술 마신 다음 날 아침 오토바이 타기: 알코올이 남는 시간과 제로 규정에 여유가 없는 이유",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://tytphuonglongtruong.medinet.gov.vn/pcthrb/bo-y-te-noi-gi-ve-thong-tin-it-nhat-24h-sau-khi-uong-ruou-bia-moi-duoc-lai-xe-cmobile17011-217402.aspx",
+          "title": "Provincial health station portal (medinet.gov.vn, repost of a Bao 24h article): Ministry of Health legal department on how long alcohol takes to clear, with no single figure for everyone, and breath tests that can still detect alcohol after many hours",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.drinkaware.co.uk/facts/information-about-alcohol/alcohol-and-the-law/drink-driving/can-i-drive-the-morning-after-drinking-alcohol",
+          "title": "Drinkaware (UK, reviewed 23 December 2024): can I drive the morning after drinking, about one unit an hour, nothing speeds it up, if not sure do not drive",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.niaaa.nih.gov/publications/alcohol-metabolism",
+          "title": "US NIAAA: alcohol metabolism, how the liver breaks down ethanol and why individuals differ",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government portal: consolidated text of the Law on Road Traffic Order and Safety (Law 36/2024/QH15), the ban on driving with alcohol in the body",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government policy portal: full text of Decree 168/2024/NĐ-CP on road traffic penalties (alcohol offences for motorcycle riders)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H04",
+      "subcluster": "ss-city",
+      "slug": "betonamu-nomikai-no-yokuasa-baiku-unten-sakeno-nokori-kensa",
+      "primary_query": "ベトナムで前の晩にビールを飲んだ翌朝バイクに乗ってよいのか",
+      "secondary_queries": [
+        "ベトナムで飲酒後どのくらい待てばバイクに乗れるか",
+        "翌朝の警察の呼気検査でアルコールが検出されることはあるか",
+        "コーヒーや冷たいシャワーでアルコールは抜けるか",
+        "ベトナム保健省は飲酒後24時間待つことについて何と言っているか"
+      ],
+      "entities": [
+        "法律36/2024/QH15",
+        "政令168/2024/NĐ-CP",
+        "ベトナム保健省",
+        "呼気アルコール濃度",
+        "アルコール単位"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "前の晩にビールを飲んだ旅行者は、翌朝バイクに乗ってよいのか、アルコールが体から抜けるのに実際どのくらいかかるのか、ベトナムのゼロ基準のもとで路上の呼気検査にまだ検出されるのかを知りたがります。",
+      "content_angle": "法律36/2024/QH15の統合版と政令168/2024/NĐ-CPにある体内にアルコールがある状態での運転禁止（既存の飲酒運転ガイドで使われているため、本稿はそれを繰り返さずリンクする）を、Bao 24hが報じ省の保健所ポータルが再掲した保健省法制局の説明、つまり全員に当てはまる正確な数字はなく、肝臓は1時間に約1単位を分解してさらに1〜2時間かかり、呼気は何時間も後に陽性になり得るという内容、そして時間だけがアルコールを取り除きコーヒーや冷たいシャワーは役に立たないという英国Drinkawareの助言と、米国NIAAAのアルコール代謝の説明とあわせて扱います。執筆者は安全な待ち時間、計算機、計算式を示さず、ゼロ基準には余裕がなく飲んだ後に乗らないのが最も安全だと述べ、罰金額は書かず、翌朝は別の移動手段を使うという実用的な語り口を保つ必要があります。",
+      "working_title": "ベトナムで飲んだ翌朝にバイクに乗る：アルコールが残る時間とゼロ基準に余裕がない理由",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://tytphuonglongtruong.medinet.gov.vn/pcthrb/bo-y-te-noi-gi-ve-thong-tin-it-nhat-24h-sau-khi-uong-ruou-bia-moi-duoc-lai-xe-cmobile17011-217402.aspx",
+          "title": "Provincial health station portal (medinet.gov.vn, repost of a Bao 24h article): Ministry of Health legal department on how long alcohol takes to clear, with no single figure for everyone, and breath tests that can still detect alcohol after many hours",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.drinkaware.co.uk/facts/information-about-alcohol/alcohol-and-the-law/drink-driving/can-i-drive-the-morning-after-drinking-alcohol",
+          "title": "Drinkaware (UK, reviewed 23 December 2024): can I drive the morning after drinking, about one unit an hour, nothing speeds it up, if not sure do not drive",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.niaaa.nih.gov/publications/alcohol-metabolism",
+          "title": "US NIAAA: alcohol metabolism, how the liver breaks down ethanol and why individuals differ",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government portal: consolidated text of the Law on Road Traffic Order and Safety (Law 36/2024/QH15), the ban on driving with alcohol in the body",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government policy portal: full text of Decree 168/2024/NĐ-CP on road traffic penalties (alcohol offences for motorcycle riders)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}
