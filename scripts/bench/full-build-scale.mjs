@@ -55,8 +55,10 @@ for(const h of hubs){
  n++;
 }
 const counters={};
+// Synthetic IDs continue after the highest real ID of the locale, so they never collide with live Matrix rows (DE-S101 is real today).
+const lastId=code=>Math.max(100,...matrix.rows.filter(r=>r.locale===code).map(r=>Number(r.id.match(/-S(\d+)$/)?.[1]||0)));
 for(const h of hubs)for(let k=0;k<perHub&&n<N;k++){
- const code=h.locale,U=code.toUpperCase();counters[code]=(counters[code]||100)+1;
+ const code=h.locale,U=code.toUpperCase();counters[code]=(counters[code]||lastId(code))+1;
  const id=U+"-S"+counters[code],row={id,locale:code,url:"/"+code+"/guides/bench-"+counters[code]+"/",role:"SUPPORT",cluster:h.cluster,parent_id:h.id,
   primary_query:"bench "+createHash("sha1").update(id).digest("hex").slice(0,14).replace(/[0-9]/g,d=>"ghijklmnop"[d]),working_title:"Benchmark topic "+counters[code]+" "+code,search_intent:"informational",status:"PUBLISHED",serp_evidence:"NOT_VALIDATED",source_verification:"NOT_STARTED",priority:90};
  matrix.rows.push(row);board.entries.push({id,writer:["W1","W2","W3"][n%3],url:row.url,locale:code,role:"SUPPORT",parent_id:h.id,cluster:h.cluster});

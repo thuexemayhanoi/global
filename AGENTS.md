@@ -22,6 +22,13 @@ Topic Factory → Shared Topic Queue → W1/W2/W3 → Writer QA ─┬─ FAIL b
 6. **Publish Queue**: APPROVED_BY_POLICY drafts. The **Auto Publisher** (`auto-publisher.yml`) publishes at most **2 NEW URLs per run** (stage caps PILOT 2/locale → RAMP 10 → CONTINUOUS), runs every build, SEO and fact gate, deploys, and starts the next pair only after **Live QA PASS**. A failing draft never blocks other eligible drafts.
 7. **Live QA verdicts**: PASS → record, then dispatch the next pair. FAIL (production serves something wrong) → revert the publish commit and PAUSE. INCONCLUSIVE (the QA tool or the network could not decide) → PAUSE without rollback; an unverified publication is re-checked before anything new is staged. A pause is lifted only by a confirmed `resume` dispatch with a reason. **Nothing auto-resumes.**
 
+### Research refill obligation for ACTIVE external AI sessions (owner-approved 2026-10-17)
+
+- Read the fresh `main` dashboard before each new batch. Standing policy is **READY < 100 / locale** and **250 READY target / locale**; these are per-language limits, not actual researched counts.
+- Complete your own QA repair tickets and claimed drafts first. When `RESEARCH_NEEDED`, also conduct genuine web-backed topic research using a **separate** `research/<agent>-<session>` branch and `docs/AI-RESEARCH-REFILL.md` (10 verified topics at a time). Never put research batches in a Writer branch; never change other Writer claims.
+- Cover all eight topical domains. Six new domains are ARCHITECTURE_BLOCKED until a reviewed Hub architecture PR meets the existing eight-distinct-supporting-candidate requirement; do not claim those research proposals are READY.
+- Topic Research QA → trusted Topic Factory ingest → standing-policy refill is automatic after an AI research push. No model is connected to GitHub Actions, so nothing researches new topics if all external AI sessions are offline. No bypass of source, topical or duplicate checks.
+
 ### Mandatory rules
 
 - **GitHub Actions is not an AI Writer.** No model API, SDK, key, endpoint, self-hosted or open-source model, and no prose generation in Actions (`tests/no-ai-api.test.mjs`). Text is written or repaired only by an ACTIVE external Writer session; when no session is active, nothing gets written or repaired. Never claim that the system writes 24/7.
