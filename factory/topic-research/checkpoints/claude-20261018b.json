@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T21:15:11.028Z",
+  "updated_at": "2026-10-20T21:15:32.193Z",
   "base_main_sha": "70bf4c585d3cb8996dd9cb64399736a4a7e3b0bd",
-  "last_commit_sha": "97bd63723fee2ea27f082ea7bb40f3e7d6a877d7",
+  "last_commit_sha": "78a4edf2cd4a4bcd7991dc443e7003bcff823c3d",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1740,
-    "qa_pass": 1740,
+    "researched": 1750,
+    "qa_pass": 1750,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1730,
+    "pushed": 1740,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 175,
-      "de": 175,
-      "fr": 175,
-      "es": 175,
-      "nl": 175,
-      "pt": 175,
-      "zh": 175,
-      "ko": 175,
-      "ja": 175,
-      "en": 165
+      "vi": 176,
+      "de": 176,
+      "fr": 176,
+      "es": 176,
+      "nl": 176,
+      "pt": 176,
+      "zh": 176,
+      "ko": 176,
+      "ja": 176,
+      "en": 166
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 730,
+      "traffic-law-safety": 740,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 174,
-    "file": "factory/topic-research/batches/claude-20261018b-0174.json",
-    "sha256": "4cd9ad0b13424ff3e277ea9c1ecc95f4151674bc7d914746d89931ca5f28ff84",
+    "seq": 175,
+    "file": "factory/topic-research/batches/claude-20261018b-0175.json",
+    "sha256": "5c5b44896f4ce42660d57f3cd319abd3e63f804b67fa346b1874ae7894adc08a",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -19262,8 +19262,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0174.json",
       "sha256": "4cd9ad0b13424ff3e277ea9c1ecc95f4151674bc7d914746d89931ca5f28ff84",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "78a4edf2cd4a4bcd7991dc443e7003bcff823c3d",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -19367,11 +19367,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 175,
+      "file": "factory/topic-research/batches/claude-20261018b-0175.json",
+      "sha256": "5c5b44896f4ce42660d57f3cd319abd3e63f804b67fa346b1874ae7894adc08a",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:khai-bao-tam-tru-khach-nuoc-ngoai-o-nha-rieng-he-thong-moi-bo-cong-an",
+          "locale": "vi",
+          "slug": "khai-bao-tam-tru-khach-nuoc-ngoai-o-nha-rieng-he-thong-moi-bo-cong-an",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::chu nha khai bao tam tru cho khach nuoc ngoai o nha rieng tren he thong moi cua bo cong an",
+          "ta_id": null
+        },
+        {
+          "ref": "en:us-step-enrollment-vietnam-trip-what-the-embassy-can-and-cannot-promise",
+          "locale": "en",
+          "slug": "us-step-enrollment-vietnam-trip-what-the-embassy-can-and-cannot-promise",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::should i enroll in step before traveling to vietnam as a us citizen",
+          "ta_id": null
+        },
+        {
+          "ref": "de:elefand-krisenvorsorgeliste-vietnam-reise-was-der-eintrag-leistet",
+          "locale": "de",
+          "slug": "elefand-krisenvorsorgeliste-vietnam-reise-was-der-eintrag-leistet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::muss ich mich vor einer vietnam-reise in die krisenvorsorgeliste elefand eintragen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:fil-d-ariane-voyage-vietnam-alertes-personne-a-prevenir-et-limites",
+          "locale": "fr",
+          "slug": "fil-d-ariane-voyage-vietnam-alertes-personne-a-prevenir-et-limites",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::faut-il s'inscrire sur fil d'ariane avant de partir au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:registro-de-viajeros-exteriores-viaje-a-vietnam-que-datos-pide",
+          "locale": "es",
+          "slug": "registro-de-viajeros-exteriores-viaje-a-vietnam-que-datos-pide",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::registro de viajeros de exteriores antes de un viaje a vietnam como inscribirse",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:informatieservice-buitenlandse-zaken-reisapp-vietnam-wat-u-krijgt-en-wat-niet",
+          "locale": "nl",
+          "slug": "informatieservice-buitenlandse-zaken-reisapp-vietnam-wat-u-krijgt-en-wat-niet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::moet ik me aanmelden bij de informatieservice buitenlandse zaken voor vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:zhongguo-lingshi-app-haiwai-gongmin-dengji-yuenan-xingqian-nengdao-shenme",
+          "locale": "zh",
+          "slug": "zhongguo-lingshi-app-haiwai-gongmin-dengji-yuenan-xingqian-nengdao-shenme",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::赴越南旅游前要不要在中国领事app做海外公民登记",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:registo-viajante-viagem-ao-vietname-o-que-a-app-faz-e-o-que-nao-promete",
+          "locale": "pt",
+          "slug": "registo-viajante-viagem-ao-vietname-o-que-a-app-faz-e-o-que-nao-promete",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::registo viajante vietname e obrigatorio e como se faz o registo da viagem",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:donghaeng-deungnok-beteunam-yeohaeng-jeon-yeongsajoryeok-ui-hangye",
+          "locale": "ko",
+          "slug": "donghaeng-deungnok-beteunam-yeohaeng-jeon-yeongsajoryeok-ui-hangye",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::베트남 가기 전에 해외여행등록제 동행 등록해야 하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:tabireji-betonamu-toko-mae-touroku-todoku-joho-to-yakusoku-sarenai-koto",
+          "locale": "ja",
+          "slug": "tabireji-betonamu-toko-mae-touroku-todoku-joho-to-yakusoku-sarenai-koto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ヘトナム旅行の前にたひレシに登録する必要はある",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 175,
-    "file": "factory/topic-research/batches/claude-20261018b-0175.json",
+    "seq": 176,
+    "file": "factory/topic-research/batches/claude-20261018b-0176.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -19384,13 +19495,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:11:15.777Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 150,
-      "topics": 10,
-      "sha256": "2ff8d142ab92b02c8cdc98a6ee88874b82029fd47a11830340a12037c17efdf4"
-    },
     {
       "at": "2026-10-20T20:15:28.474Z",
       "event": "BATCH_COMMITTED",
@@ -19558,6 +19662,13 @@
       "seq": 174,
       "topics": 10,
       "sha256": "4cd9ad0b13424ff3e277ea9c1ecc95f4151674bc7d914746d89931ca5f28ff84"
+    },
+    {
+      "at": "2026-10-20T21:15:32.193Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 175,
+      "topics": 10,
+      "sha256": "5c5b44896f4ce42660d57f3cd319abd3e63f804b67fa346b1874ae7894adc08a"
     }
   ]
 }
