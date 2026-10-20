@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T04:55:50.518Z",
+  "updated_at": "2026-10-20T04:56:04.811Z",
   "base_main_sha": "343b27b62a058042c99fa454f719d8493263023b",
-  "last_commit_sha": "84e00f809f9f46675943094baaeea5229dc92f8d",
+  "last_commit_sha": "7a82556ff64280485f977c6db3e2e59037e69da9",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 800,
-    "qa_pass": 800,
+    "researched": 810,
+    "qa_pass": 810,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 790,
+    "pushed": 800,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 81,
-      "de": 81,
-      "fr": 81,
-      "es": 81,
-      "nl": 81,
-      "pt": 81,
-      "zh": 81,
-      "ko": 81,
-      "ja": 81,
-      "en": 71
+      "vi": 82,
+      "de": 82,
+      "fr": 82,
+      "es": 82,
+      "nl": 82,
+      "pt": 82,
+      "zh": 82,
+      "ko": 82,
+      "ja": 82,
+      "en": 72
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 150,
+      "traffic-law-safety": 160,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -46,9 +46,9 @@
     }
   },
   "last_batch": {
-    "seq": 80,
-    "file": "factory/topic-research/batches/claude-20261018b-0080.json",
-    "sha256": "a3dcac36d9c19ce65a2520fb2d4440c3c92167ec8a24d506a33767192b2f9117",
+    "seq": 81,
+    "file": "factory/topic-research/batches/claude-20261018b-0081.json",
+    "sha256": "d21c36de4f2b878300293b3792ffad10bf4419ce7d842e13a6850fce704b3155",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -8827,8 +8827,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0080.json",
       "sha256": "a3dcac36d9c19ce65a2520fb2d4440c3c92167ec8a24d506a33767192b2f9117",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "7a82556ff64280485f977c6db3e2e59037e69da9",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -8932,11 +8932,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 81,
+      "file": "factory/topic-research/batches/claude-20261018b-0081.json",
+      "sha256": "d21c36de4f2b878300293b3792ffad10bf4419ce7d842e13a6850fce704b3155",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:ban-sao-ho-chieu-bang-lai-tiem-thue-xe-bao-ve-du-lieu-ca-nhan",
+          "locale": "vi",
+          "slug": "ban-sao-ho-chieu-bang-lai-tiem-thue-xe-bao-ve-du-lieu-ca-nhan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-papers",
+          "key": "vi::tiem thue xe may giu ban sao ho chieu va bang lai theo luat bao ve du lieu ca nhan",
+          "ta_id": null
+        },
+        {
+          "ref": "en:rental-shop-passport-licence-copies-vietnam-personal-data-law",
+          "locale": "en",
+          "slug": "rental-shop-passport-licence-copies-vietnam-personal-data-law",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H03",
+          "subcluster": "dc-papers",
+          "key": "en::rental shop copy of my passport and driving licence vietnam personal data protection law",
+          "ta_id": null
+        },
+        {
+          "ref": "de:passkopie-fuehrerscheinkopie-motorradverleih-vietnam-datenschutz",
+          "locale": "de",
+          "slug": "passkopie-fuehrerscheinkopie-motorradverleih-vietnam-datenschutz",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H03",
+          "subcluster": "dc-papers",
+          "key": "de::motorradverleih vietnam kopie von reisepass und fuhrerschein datenschutzgesetz",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:copies-passeport-permis-loueur-moto-vietnam-donnees-personnelles",
+          "locale": "fr",
+          "slug": "copies-passeport-permis-loueur-moto-vietnam-donnees-personnelles",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H03",
+          "subcluster": "dc-papers",
+          "key": "fr::loueur de motos au vietnam copie du passeport et du permis loi sur la protection des donnees personnelles",
+          "ta_id": null
+        },
+        {
+          "ref": "es:copias-pasaporte-carne-alquiler-moto-vietnam-proteccion-de-datos",
+          "locale": "es",
+          "slug": "copias-pasaporte-carne-alquiler-moto-vietnam-proteccion-de-datos",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H03",
+          "subcluster": "dc-papers",
+          "key": "es::copia del pasaporte y del carne en una tienda de alquiler de motos en vietnam ley de proteccion de datos",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:kopie-paspoort-rijbewijs-motorverhuur-vietnam-gegevensbescherming",
+          "locale": "nl",
+          "slug": "kopie-paspoort-rijbewijs-motorverhuur-vietnam-gegevensbescherming",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H03",
+          "subcluster": "dc-papers",
+          "key": "nl::motorverhuurder vietnam kopie van paspoort en rijbewijs wet persoonsgegevens",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-zuche-dian-huzhao-jiazhao-fuyinjian-geren-shuju-baohu",
+          "locale": "zh",
+          "slug": "yuenan-zuche-dian-huzhao-jiazhao-fuyinjian-geren-shuju-baohu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H03",
+          "subcluster": "dc-papers",
+          "key": "zh::越南租摩托车时租车店保留护照和驾照复印件符合个人数据保护法吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:copias-passaporte-carta-aluguer-mota-vietname-protecao-de-dados",
+          "locale": "pt",
+          "slug": "copias-passaporte-carta-aluguer-mota-vietname-protecao-de-dados",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H03",
+          "subcluster": "dc-papers",
+          "key": "pt::copia do passaporte e da carta de conducao numa loja de aluguer de motas no vietname lei de protecao de dados",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-obaibai-daeyeo-yeogwon-myeonheo-sabon-gaeinjeongbo-bohobeop",
+          "locale": "ko",
+          "slug": "beteunam-obaibai-daeyeo-yeogwon-myeonheo-sabon-gaeinjeongbo-bohobeop",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H03",
+          "subcluster": "dc-papers",
+          "key": "ko::베트남 오토바이 렌털 업체가 여권과 면허 사본을 보관해도 되나 개인정보보호법",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-rental-pasupoto-menkyo-kopi-kojin-joho-hogo-ho",
+          "locale": "ja",
+          "slug": "betonamu-baiku-rental-pasupoto-menkyo-kopi-kojin-joho-hogo-ho",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H03",
+          "subcluster": "dc-papers",
+          "key": "ja::ヘトナムのハイクレンタル店かハスホートと免許証のコヒーを保管してよいか 個人テータ保護法",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 81,
-    "file": "factory/topic-research/batches/claude-20261018b-0081.json",
+    "seq": 82,
+    "file": "factory/topic-research/batches/claude-20261018b-0082.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -8949,13 +9060,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:13:17.464Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 56,
-      "topics": 10,
-      "sha256": "8adef5c55058e332b4e72e45f0c094fc69e0e901f47452de3aa00f027c666ebc"
-    },
     {
       "at": "2026-10-20T04:13:29.786Z",
       "event": "BATCH_COMMITTED",
@@ -9123,6 +9227,13 @@
       "seq": 80,
       "topics": 10,
       "sha256": "a3dcac36d9c19ce65a2520fb2d4440c3c92167ec8a24d506a33767192b2f9117"
+    },
+    {
+      "at": "2026-10-20T04:56:04.811Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 81,
+      "topics": 10,
+      "sha256": "d21c36de4f2b878300293b3792ffad10bf4419ce7d842e13a6850fce704b3155"
     }
   ]
 }
