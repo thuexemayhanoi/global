@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:00:43.662Z",
+  "updated_at": "2026-10-20T10:03:41.341Z",
   "base_main_sha": "35c3196f5c3a760adb2641c95d0feaaefe7c0687",
-  "last_commit_sha": "f1dd13214cb4b37933be03b27bb332db1ca75bd4",
+  "last_commit_sha": "23b596227b6c64658e7b8a75f6c7df9030719ef1",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1030,
-    "qa_pass": 1030,
+    "researched": 1040,
+    "qa_pass": 1040,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1020,
+    "pushed": 1030,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 104,
-      "de": 104,
-      "fr": 104,
-      "es": 104,
-      "nl": 104,
-      "pt": 104,
-      "zh": 104,
-      "ko": 104,
-      "ja": 104,
-      "en": 94
+      "vi": 105,
+      "de": 105,
+      "fr": 105,
+      "es": 105,
+      "nl": 105,
+      "pt": 105,
+      "zh": 105,
+      "ko": 105,
+      "ja": 105,
+      "en": 95
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 270,
+      "traffic-law-safety": 280,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 103,
-    "file": "factory/topic-research/batches/claude-20261018b-0103.json",
-    "sha256": "a1bcd5f992422b5db0b4f2723779c8220af403a63292cecfaa6fbc1da17da7c0",
+    "seq": 104,
+    "file": "factory/topic-research/batches/claude-20261018b-0104.json",
+    "sha256": "3312847925495d70947a9c82d45d3b0f227eb3d2b549ee9e659fd8f3860325f8",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -11381,8 +11381,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0103.json",
       "sha256": "a1bcd5f992422b5db0b4f2723779c8220af403a63292cecfaa6fbc1da17da7c0",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "23b596227b6c64658e7b8a75f6c7df9030719ef1",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -11486,11 +11486,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 104,
+      "file": "factory/topic-research/batches/claude-20261018b-0104.json",
+      "sha256": "3312847925495d70947a9c82d45d3b0f227eb3d2b549ee9e659fd8f3860325f8",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:xe-may-cho-thue-gan-dinh-vi-gps-luat-bao-ve-du-lieu-ca-nhan",
+          "locale": "vi",
+          "slug": "xe-may-cho-thue-gan-dinh-vi-gps-luat-bao-ve-du-lieu-ca-nhan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-contract",
+          "key": "vi::cua hang cho thue xe may co duoc gan dinh vi gps theo doi khach khong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:gps-tracker-rental-motorbike-vietnam-location-data-law",
+          "locale": "en",
+          "slug": "gps-tracker-rental-motorbike-vietnam-location-data-law",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H03",
+          "subcluster": "dc-contract",
+          "key": "en::can a rental shop in vietnam track my motorbike with a gps tracker",
+          "ta_id": null
+        },
+        {
+          "ref": "de:gps-tracker-mietmotorroller-vietnam-standortdaten-datenschutzgesetz",
+          "locale": "de",
+          "slug": "gps-tracker-mietmotorroller-vietnam-standortdaten-datenschutzgesetz",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H03",
+          "subcluster": "dc-contract",
+          "key": "de::darf ein vermieter in vietnam meinen mietroller per gps-tracker orten",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:traceur-gps-scooter-location-vietnam-donnees-de-localisation",
+          "locale": "fr",
+          "slug": "traceur-gps-scooter-location-vietnam-donnees-de-localisation",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H03",
+          "subcluster": "dc-contract",
+          "key": "fr::un loueur peut-il suivre mon scooter par gps au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:rastreador-gps-moto-alquiler-vietnam-datos-de-ubicacion",
+          "locale": "es",
+          "slug": "rastreador-gps-moto-alquiler-vietnam-datos-de-ubicacion",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H03",
+          "subcluster": "dc-contract",
+          "key": "es::puede una tienda de alquiler rastrear mi moto con gps en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:gps-tracker-huurscooter-vietnam-locatiegegevens-privacywet",
+          "locale": "nl",
+          "slug": "gps-tracker-huurscooter-vietnam-locatiegegevens-privacywet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H03",
+          "subcluster": "dc-contract",
+          "key": "nl::mag een verhuurder in vietnam mijn huurscooter volgen met een gps-tracker",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-chuzu-motuoche-gps-dingwei-weizhi-shuju-falv",
+          "locale": "zh",
+          "slug": "yuenan-chuzu-motuoche-gps-dingwei-weizhi-shuju-falv",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H03",
+          "subcluster": "dc-contract",
+          "key": "zh::越南租摩托车的店家可以用gps定位追踪我吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:rastreador-gps-mota-aluguer-vietname-dados-de-localizacao",
+          "locale": "pt",
+          "slug": "rastreador-gps-mota-aluguer-vietname-dados-de-localizacao",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H03",
+          "subcluster": "dc-contract",
+          "key": "pt::uma loja de aluguer pode seguir a minha mota por gps no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-orto-bai-daeyeo-gps-wichi-deiteo-gaeinjeongbo-beop",
+          "locale": "ko",
+          "slug": "beteunam-orto-bai-daeyeo-gps-wichi-deiteo-gaeinjeongbo-beop",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H03",
+          "subcluster": "dc-contract",
+          "key": "ko::베트남 오토바이 렌탈 업체가 gps로 위치를 추적해도 되나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-rental-baiku-gps-ichi-data-kojin-data-hogo-ho",
+          "locale": "ja",
+          "slug": "betonamu-rental-baiku-gps-ichi-data-kojin-data-hogo-ho",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H03",
+          "subcluster": "dc-contract",
+          "key": "ja::ヘトナムのレンタルハイク店はgpsて位置を追跡してよいのか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 104,
-    "file": "factory/topic-research/batches/claude-20261018b-0104.json",
+    "seq": 105,
+    "file": "factory/topic-research/batches/claude-20261018b-0105.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -11503,13 +11614,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:55:39.656Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 79,
-      "topics": 10,
-      "sha256": "b38c9a11198b382583e6c3e2e422d622cbd547dc7732a35750deeab0ad5ad2e6"
-    },
     {
       "at": "2026-10-20T04:55:50.518Z",
       "event": "BATCH_COMMITTED",
@@ -11677,6 +11781,13 @@
       "seq": 103,
       "topics": 10,
       "sha256": "a1bcd5f992422b5db0b4f2723779c8220af403a63292cecfaa6fbc1da17da7c0"
+    },
+    {
+      "at": "2026-10-20T10:03:41.341Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 104,
+      "topics": 10,
+      "sha256": "3312847925495d70947a9c82d45d3b0f227eb3d2b549ee9e659fd8f3860325f8"
     }
   ]
 }
