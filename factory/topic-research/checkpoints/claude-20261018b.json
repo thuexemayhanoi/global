@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T04:13:55.740Z",
+  "updated_at": "2026-10-20T04:14:05.243Z",
   "base_main_sha": "dc7b8b5561cd3c609cd8b644cbee6c13bbbee548",
-  "last_commit_sha": "3f6e5302c1aa7ae17b60c31a5f7ca772ca1e0f59",
+  "last_commit_sha": "62c567c72f26e54fe2aa0f9ebc7cffbeea2633aa",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 600,
-    "qa_pass": 600,
+    "researched": 610,
+    "qa_pass": 610,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 590,
+    "pushed": 600,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 61,
-      "de": 61,
-      "fr": 61,
-      "es": 61,
-      "nl": 61,
-      "pt": 61,
-      "zh": 61,
-      "ko": 61,
-      "ja": 61,
-      "en": 51
+      "vi": 62,
+      "de": 62,
+      "fr": 62,
+      "es": 62,
+      "nl": 62,
+      "pt": 62,
+      "zh": 62,
+      "ko": 62,
+      "ja": 62,
+      "en": 52
     },
     "domains": {
       "transportation-mobility": 90,
-      "traffic-law-safety": 60,
+      "traffic-law-safety": 70,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
@@ -46,9 +46,9 @@
     }
   },
   "last_batch": {
-    "seq": 60,
-    "file": "factory/topic-research/batches/claude-20261018b-0060.json",
-    "sha256": "fbf17543f4de95729e970e31201f8dcb71d744bca1954d3603fe93afbe878406",
+    "seq": 61,
+    "file": "factory/topic-research/batches/claude-20261018b-0061.json",
+    "sha256": "23ea5b59feeb08767d9b84e18c07a058ba3ba7765be9e07c9f7f9fe6c2758b08",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -6607,8 +6607,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0060.json",
       "sha256": "fbf17543f4de95729e970e31201f8dcb71d744bca1954d3603fe93afbe878406",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "62c567c72f26e54fe2aa0f9ebc7cffbeea2633aa",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -6712,11 +6712,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 61,
+      "file": "factory/topic-research/batches/claude-20261018b-0061.json",
+      "sha256": "23ea5b59feeb08767d9b84e18c07a058ba3ba7765be9e07c9f7f9fe6c2758b08",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:yeu-cau-boi-thuong-bao-hiem-bat-buoc-xe-may-sau-tai-nan",
+          "locale": "vi",
+          "slug": "yeu-cau-boi-thuong-bao-hiem-bat-buoc-xe-may-sau-tai-nan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-insurance",
+          "key": "vi::cach yeu cau boi thuong bao hiem bat buoc xe may sau tai nan o viet nam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:claiming-compulsory-motorbike-insurance-vietnam",
+          "locale": "en",
+          "slug": "claiming-compulsory-motorbike-insurance-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H03",
+          "subcluster": "dc-insurance",
+          "key": "en::how to claim compulsory motorbike insurance after an accident in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:pflichtversicherung-motorrad-vietnam-schaden-melden",
+          "locale": "de",
+          "slug": "pflichtversicherung-motorrad-vietnam-schaden-melden",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H03",
+          "subcluster": "dc-insurance",
+          "key": "de::pflichtversicherung motorrad vietnam nach einem unfall schaden geltend machen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:indemnisation-assurance-obligatoire-moto-vietnam-accident",
+          "locale": "fr",
+          "slug": "indemnisation-assurance-obligatoire-moto-vietnam-accident",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H03",
+          "subcluster": "dc-insurance",
+          "key": "fr::comment demander une indemnisation a l'assurance obligatoire d'une moto apres un accident au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:reclamar-seguro-obligatorio-moto-vietnam-accidente",
+          "locale": "es",
+          "slug": "reclamar-seguro-obligatorio-moto-vietnam-accidente",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H03",
+          "subcluster": "dc-insurance",
+          "key": "es::como reclamar el seguro obligatorio de una moto tras un accidente en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:verplichte-motorverzekering-vietnam-schade-claimen",
+          "locale": "nl",
+          "slug": "verplichte-motorverzekering-vietnam-schade-claimen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H03",
+          "subcluster": "dc-insurance",
+          "key": "nl::verplichte motorverzekering vietnam schade claimen na een ongeluk",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-motuoche-qiangzhi-baoxian-peichang-shenqing",
+          "locale": "zh",
+          "slug": "yuenan-motuoche-qiangzhi-baoxian-peichang-shenqing",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H03",
+          "subcluster": "dc-insurance",
+          "key": "zh::越南摩托车事故后如何申请强制保险理赔",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:reclamar-seguro-obrigatorio-mota-vietname-acidente",
+          "locale": "pt",
+          "slug": "reclamar-seguro-obrigatorio-mota-vietname-acidente",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H03",
+          "subcluster": "dc-insurance",
+          "key": "pt::como reclamar o seguro obrigatorio de uma mota apos um acidente no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-obaibai-uimu-boheom-cheonggu-bangbeop",
+          "locale": "ko",
+          "slug": "beteunam-obaibai-uimu-boheom-cheonggu-bangbeop",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H03",
+          "subcluster": "dc-insurance",
+          "key": "ko::베트남 오토바이 사고 후 의무보험 보상 청구하는 방법",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-gimu-hoken-seikyu-hoho",
+          "locale": "ja",
+          "slug": "betonamu-baiku-gimu-hoken-seikyu-hoho",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H03",
+          "subcluster": "dc-insurance",
+          "key": "ja::ヘトナムてハイク事故後に自賠責保険を請求する方法",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 61,
-    "file": "factory/topic-research/batches/claude-20261018b-0061.json",
+    "seq": 62,
+    "file": "factory/topic-research/batches/claude-20261018b-0062.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -6729,13 +6840,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-18T23:58:25.544Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 37,
-      "topics": 10,
-      "sha256": "a4f3479e8b0f274f33f589a7696132d2eedb573358b8387df10ce98fe9fd73c2"
-    },
     {
       "at": "2026-10-19T00:04:44.213Z",
       "event": "BATCH_COMMITTED",
@@ -6900,6 +7004,13 @@
       "seq": 60,
       "topics": 10,
       "sha256": "fbf17543f4de95729e970e31201f8dcb71d744bca1954d3603fe93afbe878406"
+    },
+    {
+      "at": "2026-10-20T04:14:05.243Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 61,
+      "topics": 10,
+      "sha256": "23ea5b59feeb08767d9b84e18c07a058ba3ba7765be9e07c9f7f9fe6c2758b08"
     }
   ]
 }
