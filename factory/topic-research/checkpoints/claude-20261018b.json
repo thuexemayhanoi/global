@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:55:04.255Z",
+  "updated_at": "2026-10-20T10:55:14.552Z",
   "base_main_sha": "2b81c61739dbf22f12c3a10c150d1e448d4e68e5",
-  "last_commit_sha": "e0353c33860aa102e9c13a8264b054359d3b9f1e",
+  "last_commit_sha": "dd246be81cf26678edef1edecb36644be3820940",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1250,
-    "qa_pass": 1250,
+    "researched": 1260,
+    "qa_pass": 1260,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1240,
+    "pushed": 1250,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 126,
-      "de": 126,
-      "fr": 126,
-      "es": 126,
-      "nl": 126,
-      "pt": 126,
-      "zh": 126,
-      "ko": 126,
-      "ja": 126,
-      "en": 116
+      "vi": 127,
+      "de": 127,
+      "fr": 127,
+      "es": 127,
+      "nl": 127,
+      "pt": 127,
+      "zh": 127,
+      "ko": 127,
+      "ja": 127,
+      "en": 117
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 190
+      "motorbike-rental": 200
     }
   },
   "last_batch": {
-    "seq": 125,
-    "file": "factory/topic-research/batches/claude-20261018b-0125.json",
-    "sha256": "1d352664880356dee6c26efefef97ef564086032a457e17cda9a4af839098c76",
+    "seq": 126,
+    "file": "factory/topic-research/batches/claude-20261018b-0126.json",
+    "sha256": "a07a56f1762169a6c32ba07603f19c10bec4815ba8e9e6e6eb6de9ba1fd3e402",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -13823,8 +13823,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0125.json",
       "sha256": "1d352664880356dee6c26efefef97ef564086032a457e17cda9a4af839098c76",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "dd246be81cf26678edef1edecb36644be3820940",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -13928,11 +13928,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 126,
+      "file": "factory/topic-research/batches/claude-20261018b-0126.json",
+      "sha256": "a07a56f1762169a6c32ba07603f19c10bec4815ba8e9e6e6eb6de9ba1fd3e402",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:sym-kymco-xe-50cc-125cc-150cc-khac-nhau-bang-lai",
+          "locale": "vi",
+          "slug": "sym-kymco-xe-50cc-125cc-150cc-khac-nhau-bang-lai",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-models",
+          "key": "vi::xe sym va kymco 50cc 125cc 150cc khac nhau the nao va co can bang lai khong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:sym-kymco-50cc-125cc-150cc-licence-class",
+          "locale": "en",
+          "slug": "sym-kymco-50cc-125cc-150cc-licence-class",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-models",
+          "key": "en::sym vs kymco scooters in vietnam 50cc 125cc 150cc licence needed",
+          "ta_id": null
+        },
+        {
+          "ref": "de:sym-kymco-roller-50-125-150-ccm-fuehrerschein",
+          "locale": "de",
+          "slug": "sym-kymco-roller-50-125-150-ccm-fuehrerschein",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-models",
+          "key": "de::sym und kymco roller in vietnam mit 50 ccm, 125 ccm und 150 ccm und notiger fuhrerschein",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:sym-kymco-scooters-50-125-150-cm3-permis",
+          "locale": "fr",
+          "slug": "sym-kymco-scooters-50-125-150-cm3-permis",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-models",
+          "key": "fr::scooters sym et kymco au vietnam de 50 cm3, 125 cm3 et 150 cm3 et permis necessaire",
+          "ta_id": null
+        },
+        {
+          "ref": "es:sym-kymco-scooters-50-125-150-cc-carne",
+          "locale": "es",
+          "slug": "sym-kymco-scooters-50-125-150-cc-carne",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-models",
+          "key": "es::scooters sym y kymco en vietnam de 50 cc, 125 cc y 150 cc y que carne hace falta",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:sym-kymco-scooters-50-125-150-cc-rijbewijs",
+          "locale": "nl",
+          "slug": "sym-kymco-scooters-50-125-150-cc-rijbewijs",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-models",
+          "key": "nl::sym en kymco scooters in vietnam van 50 cc, 125 cc en 150 cc en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:sym-kymco-50-125-150cc-jiashi",
+          "locale": "zh",
+          "slug": "sym-kymco-50-125-150cc-jiashi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-models",
+          "key": "zh::sym 与 kymco 踏板车 50cc 125cc 150cc 区别 越南需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:sym-kymco-scooters-50-125-150-cc-carta",
+          "locale": "pt",
+          "slug": "sym-kymco-scooters-50-125-150-cc-carta",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-models",
+          "key": "pt::scooters sym e kymco no vietname de 50 cc, 125 cc e 150 cc e que carta e preciso",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:sym-kymco-50-125-150cc-myeonheo",
+          "locale": "ko",
+          "slug": "sym-kymco-50-125-150cc-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-models",
+          "key": "ko::sym kymco 스쿠터 50cc 125cc 150cc 차이와 베트남에서 필요한 면허",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:sym-kymco-50-125-150cc-menkyo",
+          "locale": "ja",
+          "slug": "sym-kymco-50-125-150cc-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-models",
+          "key": "ja::sym kymco スクーター 50cc 125cc 150cc の違いとヘトナムて必要な免許",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 126,
-    "file": "factory/topic-research/batches/claude-20261018b-0126.json",
+    "seq": 127,
+    "file": "factory/topic-research/batches/claude-20261018b-0127.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -13945,13 +14056,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T09:47:44.401Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 101,
-      "topics": 10,
-      "sha256": "0e87084dc099ce18eb4b79e99e52ceebe87d25d4b33648e6a25a1aac299d04d6"
-    },
     {
       "at": "2026-10-20T09:47:54.608Z",
       "event": "BATCH_COMMITTED",
@@ -14119,6 +14223,13 @@
       "seq": 125,
       "topics": 10,
       "sha256": "1d352664880356dee6c26efefef97ef564086032a457e17cda9a4af839098c76"
+    },
+    {
+      "at": "2026-10-20T10:55:14.552Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 126,
+      "topics": 10,
+      "sha256": "a07a56f1762169a6c32ba07603f19c10bec4815ba8e9e6e6eb6de9ba1fd3e402"
     }
   ]
 }
