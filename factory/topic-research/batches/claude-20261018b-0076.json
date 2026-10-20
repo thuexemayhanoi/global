@@ -1,0 +1,702 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H04",
+      "subcluster": "ss-weather",
+      "slug": "canh-bao-lu-quet-sat-lo-dat-duong-mien-nui-phia-bac",
+      "primary_query": "xem cảnh báo lũ quét sạt lở đất trước khi đi xe máy lên vùng núi phía Bắc",
+      "secondary_queries": [
+        "bản tin cảnh báo lũ quét sạt lở đất của Trung tâm Dự báo khí tượng thủy văn quốc gia",
+        "mùa mưa đi Hà Giang bằng xe máy sau mưa lớn có an toàn không",
+        "quốc lộ 4D Sa Pa sạt lở đã thông xe chưa",
+        "gặp ngầm tràn nước chảy xiết đi xe máy có qua được không",
+        "cấp độ rủi ro thiên tai do lũ quét sạt lở đất nghĩa là gì"
+      ],
+      "entities": [
+        "Trung tâm Dự báo khí tượng thủy văn quốc gia",
+        "Cục Đường bộ Việt Nam",
+        "quốc lộ 6",
+        "quốc lộ 4D",
+        "Quyết định 18/2021/QĐ-TTg"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Người đi xe máy lên Hà Giang, Sa Pa, Mai Châu hay Cao Bằng vào mùa mưa muốn biết làm sao nhận ra mưa lớn đã khiến lũ quét hoặc sạt lở đất dễ xảy ra, nên xem cảnh báo và bản tin giao thông chính thức nào, và khi nào nên hoãn hoặc quay lại.",
+      "content_angle": "Giải thích các bản tin cảnh báo lũ quét, sạt lở đất riêng của Trung tâm Dự báo khí tượng thủy văn quốc gia và bản đồ cảnh báo thời gian thực của trung tâm này, các cấp độ rủi ro thiên tai theo Quyết định 18/2021/QĐ-TTg, và cách Cục Đường bộ Việt Nam cùng Bộ Xây dựng yêu cầu các đơn vị đặt rào chắn, biển cảnh báo, phân luồng và không cho người, phương tiện đi qua điểm sạt lở, ngầm tràn khi nguy hiểm, dựa trên các tin tháng 7 và tháng 8/2026 về quốc lộ bị chặn và công văn của Bộ Xây dựng tháng 10/2026; bài cũng lưu ý vụ sạt lở tháng 12/2025 trên đèo Thung Khe, quốc lộ 6, làm một người đi xe máy thiệt mạng, xảy ra khi chỉ ghi nhận mưa nhỏ, nên không có cảnh báo không có nghĩa là taluy an toàn. Người viết chỉ nêu ngưỡng lượng mưa và định nghĩa cấp độ từ văn bản quyết định sau khi xác nhận còn hiệu lực, và không hứa một tuyến đường đang thông.",
+      "working_title": "Cảnh báo lũ quét và sạt lở đất trên đường miền núi phía Bắc: cách đọc bản tin chính thức trước khi đi xe máy",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://nchmf.gov.vn/kttvsite/vi-VN/1/tin-canh-bao-lu-quet-sat-lo-dat-sut-lun-dat-do-mua-lu-hoac-dong-chay-tren-khu-vuc-cac-tinh-quang-ninh-va-thanh-hoa-post54056.html",
+          "title": "National Centre for Hydro-Meteorological Forecasting (listing of 15 September 2026): its dedicated flash-flood, landslide and ground-subsidence warning bulletins for Son La, Phu Tho, Lao Cai, Quang Ninh and other provinces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luquetsatlo.nchmf.gov.vn/",
+          "title": "National Centre for Hydro-Meteorological Forecasting: real-time flash-flood and landslide warning information system with rainfall layers and medium, high and very high warning levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=203152",
+          "title": "Government legal portal: Decision 18/2021/QD-TTg of 22 April 2021, effective 1 July 2021, on forecasting, warning and communicating natural disasters and disaster risk levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnamnews.vn/society/1785156/landslides-floods-disrupt-traffic-across-northern-region.html",
+          "title": "Viet Nam News (9 July 2026): Vietnam Road Administration on landslides and floods blocking National Highway 6 and other northern routes, with closures, barricades and diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.vov.vn/en/society/heavy-rain-triggers-landslides-disrupts-roads-across-northern-vietnam-post1326721.vov",
+          "title": "VOV English (23 August 2026): prolonged rain brings landslides and floods to northern roads, with Road Administration crews on 24-hour standby, warning signs and barriers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://moc.gov.vn/Images/editor/files/Nam%202026/BXD_15811-BXD-VT%26ATGT_05102026.pdf",
+          "title": "Ministry of Construction letter (file dated 5 October 2026): instructs road bodies to guard spillways, deep floodwater and landslide sites and not let people and vehicles through when unsafe (written for the central-region rains)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/khoanh-khac-dat-da-do-ap-vui-lap-5-nguoi-tren-quoc-lo-6-20251214181304195.htm",
+          "title": "Dan Tri (15 December 2025): landslide at the Thung Khe pass on National Highway 6 that killed three people including a motorcyclist, with only light rain recorded at the nearest station",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophutho.vn/khac-phuc-diem-sat-lo-tren-deo-thung-khe-bao-dam-an-toan-quoc-lo-6-244656.htm",
+          "title": "Bao Phu Tho (24 December 2025): repair work and five remaining high-risk landslide spots on the Thung Khe pass after the 14 December landslide, which happened without rain",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H04",
+      "subcluster": "ss-weather",
+      "slug": "landslide-and-flash-flood-warnings-northern-vietnam-roads",
+      "primary_query": "how to check landslide and flash flood warnings before riding in northern Vietnam",
+      "secondary_queries": [
+        "Vietnam flash flood and landslide warning bulletin National Centre for Hydro-Meteorological Forecasting",
+        "Ha Giang loop landslides after heavy rain is it safe to ride",
+        "is the road open after a landslide on National Highway 4D Sa Pa",
+        "crossing a flooded spillway or stream on a motorbike in northern Vietnam",
+        "what do the flash flood and landslide risk levels mean in Vietnam"
+      ],
+      "entities": [
+        "National Centre for Hydro-Meteorological Forecasting",
+        "Vietnam Road Administration",
+        "National Highway 6",
+        "National Highway 4D",
+        "Decision 18/2021/QD-TTg"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Riders heading to Ha Giang, Sa Pa, Mai Chau or Cao Bang in the rainy season ask how to tell whether heavy rain has made landslides or flash floods likely, which official warnings and road bulletins to check, and when the sensible decision is to postpone or turn back.",
+      "content_angle": "Explains the National Centre for Hydro-Meteorological Forecasting's dedicated flash-flood and landslide bulletins and its real-time warning map, the risk levels defined in Decision 18/2021/QD-TTg, and how the Vietnam Road Administration and the Ministry of Construction tell road units to post barriers and warnings, divert traffic and keep people and vehicles away from landslide sites and flooded spillways, using the July and August 2026 reports of blocked national highways and the Ministry of Construction's letter of October 2026; it also notes that the December 2025 landslide at the Thung Khe pass on National Highway 6, in which a motorcyclist died, happened when only light rain had been recorded, so the absence of a warning does not clear a slope. The Writer must give rainfall thresholds and level definitions only from the decision text after confirming it is still in force, and must not promise that any road is open.",
+      "working_title": "Landslide and Flash-Flood Warnings on Northern Mountain Roads: How to Read Them Before You Ride",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://nchmf.gov.vn/kttvsite/vi-VN/1/tin-canh-bao-lu-quet-sat-lo-dat-sut-lun-dat-do-mua-lu-hoac-dong-chay-tren-khu-vuc-cac-tinh-quang-ninh-va-thanh-hoa-post54056.html",
+          "title": "National Centre for Hydro-Meteorological Forecasting (listing of 15 September 2026): its dedicated flash-flood, landslide and ground-subsidence warning bulletins for Son La, Phu Tho, Lao Cai, Quang Ninh and other provinces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luquetsatlo.nchmf.gov.vn/",
+          "title": "National Centre for Hydro-Meteorological Forecasting: real-time flash-flood and landslide warning information system with rainfall layers and medium, high and very high warning levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=203152",
+          "title": "Government legal portal: Decision 18/2021/QD-TTg of 22 April 2021, effective 1 July 2021, on forecasting, warning and communicating natural disasters and disaster risk levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnamnews.vn/society/1785156/landslides-floods-disrupt-traffic-across-northern-region.html",
+          "title": "Viet Nam News (9 July 2026): Vietnam Road Administration on landslides and floods blocking National Highway 6 and other northern routes, with closures, barricades and diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.vov.vn/en/society/heavy-rain-triggers-landslides-disrupts-roads-across-northern-vietnam-post1326721.vov",
+          "title": "VOV English (23 August 2026): prolonged rain brings landslides and floods to northern roads, with Road Administration crews on 24-hour standby, warning signs and barriers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://moc.gov.vn/Images/editor/files/Nam%202026/BXD_15811-BXD-VT%26ATGT_05102026.pdf",
+          "title": "Ministry of Construction letter (file dated 5 October 2026): instructs road bodies to guard spillways, deep floodwater and landslide sites and not let people and vehicles through when unsafe (written for the central-region rains)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/khoanh-khac-dat-da-do-ap-vui-lap-5-nguoi-tren-quoc-lo-6-20251214181304195.htm",
+          "title": "Dan Tri (15 December 2025): landslide at the Thung Khe pass on National Highway 6 that killed three people including a motorcyclist, with only light rain recorded at the nearest station",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophutho.vn/khac-phuc-diem-sat-lo-tren-deo-thung-khe-bao-dam-an-toan-quoc-lo-6-244656.htm",
+          "title": "Bao Phu Tho (24 December 2025): repair work and five remaining high-risk landslide spots on the Thung Khe pass after the 14 December landslide, which happened without rain",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H04",
+      "subcluster": "ss-weather",
+      "slug": "erdrutsch-und-sturzflut-warnungen-bergstrassen-nordvietnam",
+      "primary_query": "Erdrutsch und Sturzflut Warnungen vor der Motorradfahrt in Nordvietnam prüfen",
+      "secondary_queries": [
+        "Warnung vor Sturzfluten und Erdrutschen Vietnam Nationales Zentrum für hydrometeorologische Vorhersage",
+        "Ha Giang Loop Erdrutsche nach Starkregen mit dem Motorrad fahren",
+        "ist die Straße nach einem Erdrutsch offen Nationalstraße 4D Sa Pa",
+        "überflutete Furt oder Bach mit dem Motorrad queren Nordvietnam",
+        "was bedeuten die Risikostufen für Sturzfluten und Erdrutsche in Vietnam"
+      ],
+      "entities": [
+        "Nationales Zentrum für hydrometeorologische Vorhersage",
+        "Straßenverwaltung Vietnams",
+        "Nationalstraße 6",
+        "Nationalstraße 4D",
+        "Beschluss 18/2021/QĐ-TTg"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Wer in der Regenzeit mit dem Motorrad nach Ha Giang, Sa Pa, Mai Chau oder Cao Bang fährt, fragt sich, woran man erkennt, dass Starkregen Erdrutsche oder Sturzfluten wahrscheinlich gemacht hat, welche offiziellen Warnungen und Straßenmeldungen man prüfen sollte und wann Verschieben oder Umkehren vernünftig ist.",
+      "content_angle": "Erklärt die eigenen Bulletins des Nationalen Zentrums für hydrometeorologische Vorhersage zu Sturzfluten und Erdrutschen samt seiner Echtzeit-Warnkarte, die Risikostufen nach Beschluss 18/2021/QĐ-TTg und wie die Straßenverwaltung Vietnams und das Bauministerium die Straßeneinheiten anweisen, Absperrungen und Warnschilder aufzustellen, den Verkehr umzuleiten und Menschen und Fahrzeuge von Erdrutschstellen und überfluteten Furten fernzuhalten, gestützt auf die Meldungen vom Juli und August 2026 über blockierte Nationalstraßen und das Schreiben des Bauministeriums vom Oktober 2026; außerdem weist er darauf hin, dass der Erdrutsch vom Dezember 2025 am Thung-Khe-Pass der Nationalstraße 6, bei dem ein Motorradfahrer starb, bei nur leichtem gemessenem Regen geschah und eine Prognose ohne Warnung einen Hang daher nicht freigibt. Der Autor darf Niederschlagsschwellen und Stufendefinitionen nur aus dem Beschlusstext nennen, nachdem er geprüft hat, dass dieser noch gilt, und darf nicht versprechen, dass eine Straße offen ist.",
+      "working_title": "Warnungen vor Erdrutschen und Sturzfluten auf Bergstraßen in Nordvietnam: So liest man sie vor der Fahrt",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://nchmf.gov.vn/kttvsite/vi-VN/1/tin-canh-bao-lu-quet-sat-lo-dat-sut-lun-dat-do-mua-lu-hoac-dong-chay-tren-khu-vuc-cac-tinh-quang-ninh-va-thanh-hoa-post54056.html",
+          "title": "National Centre for Hydro-Meteorological Forecasting (listing of 15 September 2026): its dedicated flash-flood, landslide and ground-subsidence warning bulletins for Son La, Phu Tho, Lao Cai, Quang Ninh and other provinces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luquetsatlo.nchmf.gov.vn/",
+          "title": "National Centre for Hydro-Meteorological Forecasting: real-time flash-flood and landslide warning information system with rainfall layers and medium, high and very high warning levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=203152",
+          "title": "Government legal portal: Decision 18/2021/QD-TTg of 22 April 2021, effective 1 July 2021, on forecasting, warning and communicating natural disasters and disaster risk levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnamnews.vn/society/1785156/landslides-floods-disrupt-traffic-across-northern-region.html",
+          "title": "Viet Nam News (9 July 2026): Vietnam Road Administration on landslides and floods blocking National Highway 6 and other northern routes, with closures, barricades and diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.vov.vn/en/society/heavy-rain-triggers-landslides-disrupts-roads-across-northern-vietnam-post1326721.vov",
+          "title": "VOV English (23 August 2026): prolonged rain brings landslides and floods to northern roads, with Road Administration crews on 24-hour standby, warning signs and barriers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://moc.gov.vn/Images/editor/files/Nam%202026/BXD_15811-BXD-VT%26ATGT_05102026.pdf",
+          "title": "Ministry of Construction letter (file dated 5 October 2026): instructs road bodies to guard spillways, deep floodwater and landslide sites and not let people and vehicles through when unsafe (written for the central-region rains)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/khoanh-khac-dat-da-do-ap-vui-lap-5-nguoi-tren-quoc-lo-6-20251214181304195.htm",
+          "title": "Dan Tri (15 December 2025): landslide at the Thung Khe pass on National Highway 6 that killed three people including a motorcyclist, with only light rain recorded at the nearest station",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophutho.vn/khac-phuc-diem-sat-lo-tren-deo-thung-khe-bao-dam-an-toan-quoc-lo-6-244656.htm",
+          "title": "Bao Phu Tho (24 December 2025): repair work and five remaining high-risk landslide spots on the Thung Khe pass after the 14 December landslide, which happened without rain",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H04",
+      "subcluster": "ss-weather",
+      "slug": "alertes-glissements-de-terrain-crues-eclair-nord-vietnam",
+      "primary_query": "alertes glissements de terrain et crues éclair à vérifier avant de rouler à moto dans le nord du Vietnam",
+      "secondary_queries": [
+        "bulletin d'alerte crues éclair et glissements de terrain Vietnam Centre national de prévision hydrométéorologique",
+        "boucle de Ha Giang glissements de terrain après de fortes pluies à moto",
+        "la route est-elle rouverte après un glissement de terrain route nationale 4D Sa Pa",
+        "traverser un radier submergé ou un ruisseau à moto dans le nord du Vietnam",
+        "que signifient les niveaux de risque crues éclair et glissements de terrain au Vietnam"
+      ],
+      "entities": [
+        "Centre national de prévision hydrométéorologique",
+        "Administration routière du Vietnam",
+        "route nationale 6",
+        "route nationale 4D",
+        "décision 18/2021/QĐ-TTg"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Les motards qui se rendent à Ha Giang, Sa Pa, Mai Chau ou Cao Bang pendant la saison des pluies se demandent comment savoir si de fortes pluies ont rendu probables des glissements de terrain ou des crues éclair, quelles alertes officielles et quels bulletins routiers consulter et quand il est raisonnable de reporter ou de faire demi-tour.",
+      "content_angle": "Explique les bulletins d'alerte du Centre national de prévision hydrométéorologique consacrés aux crues éclair et aux glissements de terrain et sa carte d'alerte en temps réel, les niveaux de risque définis par la décision 18/2021/QĐ-TTg et la façon dont l'Administration routière du Vietnam et le ministère de la Construction demandent aux unités routières de poser des barrières et des panneaux, de dévier la circulation et d'écarter personnes et véhicules des glissements et des radiers submergés, d'après les reportages de juillet et août 2026 sur des routes nationales coupées et la lettre du ministère de la Construction d'octobre 2026 ; il rappelle aussi que le glissement de décembre 2025 au col de Thung Khe, sur la route nationale 6, où un motard est mort, s'est produit alors que seule une faible pluie avait été enregistrée : une prévision sans alerte ne garantit donc pas qu'un talus soit sûr. L'auteur ne doit citer seuils de pluie et définitions de niveaux que d'après le texte de la décision, après avoir vérifié qu'elle est toujours en vigueur, et ne jamais promettre qu'une route est ouverte.",
+      "working_title": "Glissements de terrain et crues éclair au nord du Vietnam : lire les alertes officielles avant de rouler",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://nchmf.gov.vn/kttvsite/vi-VN/1/tin-canh-bao-lu-quet-sat-lo-dat-sut-lun-dat-do-mua-lu-hoac-dong-chay-tren-khu-vuc-cac-tinh-quang-ninh-va-thanh-hoa-post54056.html",
+          "title": "National Centre for Hydro-Meteorological Forecasting (listing of 15 September 2026): its dedicated flash-flood, landslide and ground-subsidence warning bulletins for Son La, Phu Tho, Lao Cai, Quang Ninh and other provinces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luquetsatlo.nchmf.gov.vn/",
+          "title": "National Centre for Hydro-Meteorological Forecasting: real-time flash-flood and landslide warning information system with rainfall layers and medium, high and very high warning levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=203152",
+          "title": "Government legal portal: Decision 18/2021/QD-TTg of 22 April 2021, effective 1 July 2021, on forecasting, warning and communicating natural disasters and disaster risk levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnamnews.vn/society/1785156/landslides-floods-disrupt-traffic-across-northern-region.html",
+          "title": "Viet Nam News (9 July 2026): Vietnam Road Administration on landslides and floods blocking National Highway 6 and other northern routes, with closures, barricades and diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.vov.vn/en/society/heavy-rain-triggers-landslides-disrupts-roads-across-northern-vietnam-post1326721.vov",
+          "title": "VOV English (23 August 2026): prolonged rain brings landslides and floods to northern roads, with Road Administration crews on 24-hour standby, warning signs and barriers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://moc.gov.vn/Images/editor/files/Nam%202026/BXD_15811-BXD-VT%26ATGT_05102026.pdf",
+          "title": "Ministry of Construction letter (file dated 5 October 2026): instructs road bodies to guard spillways, deep floodwater and landslide sites and not let people and vehicles through when unsafe (written for the central-region rains)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/khoanh-khac-dat-da-do-ap-vui-lap-5-nguoi-tren-quoc-lo-6-20251214181304195.htm",
+          "title": "Dan Tri (15 December 2025): landslide at the Thung Khe pass on National Highway 6 that killed three people including a motorcyclist, with only light rain recorded at the nearest station",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophutho.vn/khac-phuc-diem-sat-lo-tren-deo-thung-khe-bao-dam-an-toan-quoc-lo-6-244656.htm",
+          "title": "Bao Phu Tho (24 December 2025): repair work and five remaining high-risk landslide spots on the Thung Khe pass after the 14 December landslide, which happened without rain",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H04",
+      "subcluster": "ss-weather",
+      "slug": "avisos-deslizamientos-crecidas-repentinas-norte-de-vietnam",
+      "primary_query": "avisos de deslizamientos de tierra y crecidas repentinas antes de ir en moto por el norte de Vietnam",
+      "secondary_queries": [
+        "boletín de alerta de crecidas repentinas y deslizamientos Vietnam Centro Nacional de Predicción Hidrometeorológica",
+        "ruta de Ha Giang deslizamientos tras lluvias fuertes en moto",
+        "está abierta la carretera tras un deslizamiento carretera nacional 4D Sa Pa",
+        "cruzar un vado inundado o un arroyo en moto en el norte de Vietnam",
+        "qué significan los niveles de riesgo de crecidas repentinas y deslizamientos en Vietnam"
+      ],
+      "entities": [
+        "Centro Nacional de Predicción Hidrometeorológica",
+        "Administración de Carreteras de Vietnam",
+        "carretera nacional 6",
+        "carretera nacional 4D",
+        "decisión 18/2021/QĐ-TTg"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Los moteros que van a Ha Giang, Sa Pa, Mai Chau o Cao Bang en la estación de lluvias se preguntan cómo saber si las lluvias intensas han hecho probables deslizamientos de tierra o crecidas repentinas, qué avisos oficiales y partes de carreteras conviene consultar y cuándo lo sensato es aplazar el viaje o dar media vuelta.",
+      "content_angle": "Explica los boletines del Centro Nacional de Predicción Hidrometeorológica dedicados a crecidas repentinas y deslizamientos de tierra y su mapa de alertas en tiempo real, los niveles de riesgo definidos en la decisión 18/2021/QĐ-TTg y cómo la Administración de Carreteras de Vietnam y el Ministerio de Construcción piden a las unidades viales colocar barreras y señales, desviar el tráfico y mantener a personas y vehículos lejos de los deslizamientos y de los vados inundados, a partir de las noticias de julio y agosto de 2026 sobre carreteras nacionales cortadas y de la carta del Ministerio de Construcción de octubre de 2026; también recuerda que el deslizamiento de diciembre de 2025 en el puerto de Thung Khe, en la carretera nacional 6, donde murió un motorista, ocurrió cuando solo se había registrado lluvia débil, de modo que una previsión sin aviso no garantiza que un talud sea seguro. El redactor debe dar umbrales de lluvia y definiciones de niveles solo del texto de la decisión, tras comprobar que sigue en vigor, y no prometer nunca que una carretera está abierta.",
+      "working_title": "Deslizamientos y crecidas repentinas en el norte de Vietnam: cómo leer los avisos oficiales antes de salir",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://nchmf.gov.vn/kttvsite/vi-VN/1/tin-canh-bao-lu-quet-sat-lo-dat-sut-lun-dat-do-mua-lu-hoac-dong-chay-tren-khu-vuc-cac-tinh-quang-ninh-va-thanh-hoa-post54056.html",
+          "title": "National Centre for Hydro-Meteorological Forecasting (listing of 15 September 2026): its dedicated flash-flood, landslide and ground-subsidence warning bulletins for Son La, Phu Tho, Lao Cai, Quang Ninh and other provinces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luquetsatlo.nchmf.gov.vn/",
+          "title": "National Centre for Hydro-Meteorological Forecasting: real-time flash-flood and landslide warning information system with rainfall layers and medium, high and very high warning levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=203152",
+          "title": "Government legal portal: Decision 18/2021/QD-TTg of 22 April 2021, effective 1 July 2021, on forecasting, warning and communicating natural disasters and disaster risk levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnamnews.vn/society/1785156/landslides-floods-disrupt-traffic-across-northern-region.html",
+          "title": "Viet Nam News (9 July 2026): Vietnam Road Administration on landslides and floods blocking National Highway 6 and other northern routes, with closures, barricades and diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.vov.vn/en/society/heavy-rain-triggers-landslides-disrupts-roads-across-northern-vietnam-post1326721.vov",
+          "title": "VOV English (23 August 2026): prolonged rain brings landslides and floods to northern roads, with Road Administration crews on 24-hour standby, warning signs and barriers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://moc.gov.vn/Images/editor/files/Nam%202026/BXD_15811-BXD-VT%26ATGT_05102026.pdf",
+          "title": "Ministry of Construction letter (file dated 5 October 2026): instructs road bodies to guard spillways, deep floodwater and landslide sites and not let people and vehicles through when unsafe (written for the central-region rains)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/khoanh-khac-dat-da-do-ap-vui-lap-5-nguoi-tren-quoc-lo-6-20251214181304195.htm",
+          "title": "Dan Tri (15 December 2025): landslide at the Thung Khe pass on National Highway 6 that killed three people including a motorcyclist, with only light rain recorded at the nearest station",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophutho.vn/khac-phuc-diem-sat-lo-tren-deo-thung-khe-bao-dam-an-toan-quoc-lo-6-244656.htm",
+          "title": "Bao Phu Tho (24 December 2025): repair work and five remaining high-risk landslide spots on the Thung Khe pass after the 14 December landslide, which happened without rain",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H04",
+      "subcluster": "ss-weather",
+      "slug": "waarschuwingen-aardverschuiving-overstroming-noord-vietnam",
+      "primary_query": "waarschuwingen aardverschuiving en plotselinge overstroming Noord-Vietnam motor controleren",
+      "secondary_queries": [
+        "bulletin plotselinge overstroming en aardverschuiving Vietnam Nationaal Centrum voor Hydrometeorologische Voorspellingen",
+        "Ha Giang loop aardverschuivingen na zware regen op de motor",
+        "is de weg open na een aardverschuiving nationale weg 4D Sa Pa",
+        "een overstroomde doorwaadbare plek of beek oversteken met de motor in Noord-Vietnam",
+        "wat betekenen de risiconiveaus voor plotselinge overstromingen en aardverschuivingen in Vietnam"
+      ],
+      "entities": [
+        "Nationaal Centrum voor Hydrometeorologische Voorspellingen",
+        "Vietnamese wegenautoriteit",
+        "nationale weg 6",
+        "nationale weg 4D",
+        "besluit 18/2021/QĐ-TTg"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Wie in het regenseizoen met de motor naar Ha Giang, Sa Pa, Mai Chau of Cao Bang rijdt, vraagt zich af hoe je merkt dat zware regen aardverschuivingen of plotselinge overstromingen waarschijnlijk heeft gemaakt, welke officiële waarschuwingen en wegberichten je moet bekijken en wanneer uitstellen of omkeren verstandig is.",
+      "content_angle": "Legt uit hoe de bulletins van het Nationale Centrum voor Hydrometeorologische Voorspellingen over plotselinge overstromingen en aardverschuivingen en zijn realtime waarschuwingskaart werken, welke risiconiveaus besluit 18/2021/QĐ-TTg definieert en hoe de Vietnamese wegenautoriteit en het ministerie van Bouw wegbeheerders opdragen barrières en waarschuwingsborden te plaatsen, verkeer om te leiden en mensen en voertuigen weg te houden van aardverschuivingen en overstroomde doorwaadbare delen, op basis van de berichten van juli en augustus 2026 over geblokkeerde nationale wegen en de brief van het ministerie van Bouw van oktober 2026; ook wordt vermeld dat de aardverschuiving van december 2025 bij de Thung Khe-pas op nationale weg 6, waarbij een motorrijder omkwam, plaatsvond toen slechts lichte regen was geregistreerd, zodat een voorspelling zonder waarschuwing een helling niet veilig verklaart. De schrijver mag regendrempels en niveaudefinities alleen uit de besluittekst noemen nadat is gecontroleerd dat het nog geldt, en mag nooit beloven dat een weg open is.",
+      "working_title": "Aardverschuivingen en plotselinge overstromingen in Noord-Vietnam: zo lees je de waarschuwingen",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://nchmf.gov.vn/kttvsite/vi-VN/1/tin-canh-bao-lu-quet-sat-lo-dat-sut-lun-dat-do-mua-lu-hoac-dong-chay-tren-khu-vuc-cac-tinh-quang-ninh-va-thanh-hoa-post54056.html",
+          "title": "National Centre for Hydro-Meteorological Forecasting (listing of 15 September 2026): its dedicated flash-flood, landslide and ground-subsidence warning bulletins for Son La, Phu Tho, Lao Cai, Quang Ninh and other provinces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luquetsatlo.nchmf.gov.vn/",
+          "title": "National Centre for Hydro-Meteorological Forecasting: real-time flash-flood and landslide warning information system with rainfall layers and medium, high and very high warning levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=203152",
+          "title": "Government legal portal: Decision 18/2021/QD-TTg of 22 April 2021, effective 1 July 2021, on forecasting, warning and communicating natural disasters and disaster risk levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnamnews.vn/society/1785156/landslides-floods-disrupt-traffic-across-northern-region.html",
+          "title": "Viet Nam News (9 July 2026): Vietnam Road Administration on landslides and floods blocking National Highway 6 and other northern routes, with closures, barricades and diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.vov.vn/en/society/heavy-rain-triggers-landslides-disrupts-roads-across-northern-vietnam-post1326721.vov",
+          "title": "VOV English (23 August 2026): prolonged rain brings landslides and floods to northern roads, with Road Administration crews on 24-hour standby, warning signs and barriers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://moc.gov.vn/Images/editor/files/Nam%202026/BXD_15811-BXD-VT%26ATGT_05102026.pdf",
+          "title": "Ministry of Construction letter (file dated 5 October 2026): instructs road bodies to guard spillways, deep floodwater and landslide sites and not let people and vehicles through when unsafe (written for the central-region rains)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/khoanh-khac-dat-da-do-ap-vui-lap-5-nguoi-tren-quoc-lo-6-20251214181304195.htm",
+          "title": "Dan Tri (15 December 2025): landslide at the Thung Khe pass on National Highway 6 that killed three people including a motorcyclist, with only light rain recorded at the nearest station",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophutho.vn/khac-phuc-diem-sat-lo-tren-deo-thung-khe-bao-dam-an-toan-quoc-lo-6-244656.htm",
+          "title": "Bao Phu Tho (24 December 2025): repair work and five remaining high-risk landslide spots on the Thung Khe pass after the 14 December landslide, which happened without rain",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H04",
+      "subcluster": "ss-weather",
+      "slug": "yuenan-beibu-shanhong-huapo-yujing-motuoche",
+      "primary_query": "骑摩托车去越南北部山区前怎么查山洪和滑坡预警",
+      "secondary_queries": [
+        "越南 山洪 滑坡 预警 国家水文气象预报中心",
+        "河江环线 暴雨后 滑坡 骑摩托车安全吗",
+        "沙巴 4D号国道 滑坡后 通车了吗",
+        "漫水路段 过溪 摩托车 越南北部",
+        "越南山洪滑坡风险等级是什么意思"
+      ],
+      "entities": [
+        "国家水文气象预报中心",
+        "越南公路管理局",
+        "6号国道",
+        "4D号国道",
+        "第18/2021/QĐ-TTg号决定"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "雨季骑摩托车去河江、沙巴、Mai Chau或高平的人想知道，怎样判断暴雨已让山洪或滑坡变得可能，该看哪些官方预警和道路通报，以及什么时候应当推迟出发或掉头。",
+      "content_angle": "说明国家水文气象预报中心专门发布的山洪与滑坡预警通报及其实时预警地图、第18/2021/QĐ-TTg号决定规定的风险等级，以及越南公路管理局和建设部如何要求道路单位设置路障和警示牌、分流交通，并在危险时不让人和车辆通过滑坡点和漫水路段，依据2026年7月和8月有关国道被阻断的报道以及建设部2026年10月的函件；同时提醒，2025年12月6号国道 Thung Khe 山口的滑坡造成一名摩托车骑行者死亡，当时只记录到小雨，所以没有预警并不等于边坡安全。撰稿人只能在确认该决定仍然有效后，从决定文本中引用降雨阈值和等级定义，也不能承诺某条道路已通车。",
+      "working_title": "越南北部山路的山洪与滑坡预警：出发前怎样读懂官方通报",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://nchmf.gov.vn/kttvsite/vi-VN/1/tin-canh-bao-lu-quet-sat-lo-dat-sut-lun-dat-do-mua-lu-hoac-dong-chay-tren-khu-vuc-cac-tinh-quang-ninh-va-thanh-hoa-post54056.html",
+          "title": "National Centre for Hydro-Meteorological Forecasting (listing of 15 September 2026): its dedicated flash-flood, landslide and ground-subsidence warning bulletins for Son La, Phu Tho, Lao Cai, Quang Ninh and other provinces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luquetsatlo.nchmf.gov.vn/",
+          "title": "National Centre for Hydro-Meteorological Forecasting: real-time flash-flood and landslide warning information system with rainfall layers and medium, high and very high warning levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=203152",
+          "title": "Government legal portal: Decision 18/2021/QD-TTg of 22 April 2021, effective 1 July 2021, on forecasting, warning and communicating natural disasters and disaster risk levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnamnews.vn/society/1785156/landslides-floods-disrupt-traffic-across-northern-region.html",
+          "title": "Viet Nam News (9 July 2026): Vietnam Road Administration on landslides and floods blocking National Highway 6 and other northern routes, with closures, barricades and diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.vov.vn/en/society/heavy-rain-triggers-landslides-disrupts-roads-across-northern-vietnam-post1326721.vov",
+          "title": "VOV English (23 August 2026): prolonged rain brings landslides and floods to northern roads, with Road Administration crews on 24-hour standby, warning signs and barriers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://moc.gov.vn/Images/editor/files/Nam%202026/BXD_15811-BXD-VT%26ATGT_05102026.pdf",
+          "title": "Ministry of Construction letter (file dated 5 October 2026): instructs road bodies to guard spillways, deep floodwater and landslide sites and not let people and vehicles through when unsafe (written for the central-region rains)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/khoanh-khac-dat-da-do-ap-vui-lap-5-nguoi-tren-quoc-lo-6-20251214181304195.htm",
+          "title": "Dan Tri (15 December 2025): landslide at the Thung Khe pass on National Highway 6 that killed three people including a motorcyclist, with only light rain recorded at the nearest station",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophutho.vn/khac-phuc-diem-sat-lo-tren-deo-thung-khe-bao-dam-an-toan-quoc-lo-6-244656.htm",
+          "title": "Bao Phu Tho (24 December 2025): repair work and five remaining high-risk landslide spots on the Thung Khe pass after the 14 December landslide, which happened without rain",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H04",
+      "subcluster": "ss-weather",
+      "slug": "avisos-deslizamentos-cheias-repentinas-norte-do-vietname",
+      "primary_query": "avisos de deslizamentos de terras e cheias repentinas antes de ir de mota no norte do Vietname",
+      "secondary_queries": [
+        "boletim de alerta de cheias repentinas e deslizamentos Vietname Centro Nacional de Previsão Hidrometeorológica",
+        "circuito de Ha Giang deslizamentos depois de chuva forte de mota",
+        "a estrada está aberta depois de um deslizamento estrada nacional 4D Sa Pa",
+        "atravessar um vau inundado ou uma ribeira de mota no norte do Vietname",
+        "o que significam os níveis de risco de cheias repentinas e deslizamentos no Vietname"
+      ],
+      "entities": [
+        "Centro Nacional de Previsão Hidrometeorológica",
+        "Administração Rodoviária do Vietname",
+        "estrada nacional 6",
+        "estrada nacional 4D",
+        "decisão 18/2021/QĐ-TTg"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Os motociclistas que vão a Ha Giang, Sa Pa, Mai Chau ou Cao Bang na estação das chuvas perguntam como saber se a chuva forte tornou prováveis deslizamentos de terras ou cheias repentinas, que avisos oficiais e boletins rodoviários consultar e quando é sensato adiar a viagem ou voltar para trás.",
+      "content_angle": "Explica os boletins do Centro Nacional de Previsão Hidrometeorológica sobre cheias repentinas e deslizamentos de terras e o seu mapa de alertas em tempo real, os níveis de risco definidos na decisão 18/2021/QĐ-TTg e a forma como a Administração Rodoviária do Vietname e o Ministério da Construção mandam as unidades rodoviárias colocar barreiras e sinais, desviar o tráfego e afastar pessoas e veículos dos deslizamentos e dos vaus inundados, com base nas notícias de julho e agosto de 2026 sobre estradas nacionais cortadas e na carta do Ministério da Construção de outubro de 2026; lembra também que o deslizamento de dezembro de 2025 no passo de Thung Khe, na estrada nacional 6, em que morreu um motociclista, ocorreu quando só tinha sido registada chuva fraca, pelo que uma previsão sem aviso não garante que uma encosta seja segura. O redator deve dar limiares de chuva e definições de níveis apenas do texto da decisão, depois de confirmar que continua em vigor, e nunca prometer que uma estrada está aberta.",
+      "working_title": "Deslizamentos de terras e cheias repentinas no norte do Vietname: como ler os avisos oficiais antes de partir",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://nchmf.gov.vn/kttvsite/vi-VN/1/tin-canh-bao-lu-quet-sat-lo-dat-sut-lun-dat-do-mua-lu-hoac-dong-chay-tren-khu-vuc-cac-tinh-quang-ninh-va-thanh-hoa-post54056.html",
+          "title": "National Centre for Hydro-Meteorological Forecasting (listing of 15 September 2026): its dedicated flash-flood, landslide and ground-subsidence warning bulletins for Son La, Phu Tho, Lao Cai, Quang Ninh and other provinces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luquetsatlo.nchmf.gov.vn/",
+          "title": "National Centre for Hydro-Meteorological Forecasting: real-time flash-flood and landslide warning information system with rainfall layers and medium, high and very high warning levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=203152",
+          "title": "Government legal portal: Decision 18/2021/QD-TTg of 22 April 2021, effective 1 July 2021, on forecasting, warning and communicating natural disasters and disaster risk levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnamnews.vn/society/1785156/landslides-floods-disrupt-traffic-across-northern-region.html",
+          "title": "Viet Nam News (9 July 2026): Vietnam Road Administration on landslides and floods blocking National Highway 6 and other northern routes, with closures, barricades and diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.vov.vn/en/society/heavy-rain-triggers-landslides-disrupts-roads-across-northern-vietnam-post1326721.vov",
+          "title": "VOV English (23 August 2026): prolonged rain brings landslides and floods to northern roads, with Road Administration crews on 24-hour standby, warning signs and barriers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://moc.gov.vn/Images/editor/files/Nam%202026/BXD_15811-BXD-VT%26ATGT_05102026.pdf",
+          "title": "Ministry of Construction letter (file dated 5 October 2026): instructs road bodies to guard spillways, deep floodwater and landslide sites and not let people and vehicles through when unsafe (written for the central-region rains)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/khoanh-khac-dat-da-do-ap-vui-lap-5-nguoi-tren-quoc-lo-6-20251214181304195.htm",
+          "title": "Dan Tri (15 December 2025): landslide at the Thung Khe pass on National Highway 6 that killed three people including a motorcyclist, with only light rain recorded at the nearest station",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophutho.vn/khac-phuc-diem-sat-lo-tren-deo-thung-khe-bao-dam-an-toan-quoc-lo-6-244656.htm",
+          "title": "Bao Phu Tho (24 December 2025): repair work and five remaining high-risk landslide spots on the Thung Khe pass after the 14 December landslide, which happened without rain",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H04",
+      "subcluster": "ss-weather",
+      "slug": "beteunam-bukbu-sansataeng-dolbal-hongsu-gyeongbo",
+      "primary_query": "베트남 북부 산악 지역 오토바이 여행 전 산사태 돌발 홍수 경보 확인하는 방법",
+      "secondary_queries": [
+        "베트남 돌발 홍수 산사태 경보 국가수문기상예보센터",
+        "하장 루프 폭우 뒤 산사태 오토바이 타도 안전한지",
+        "사파 국도 4D 산사태 뒤 도로 개통 여부",
+        "물에 잠긴 낮은 다리나 개울을 오토바이로 건너도 되는지 베트남 북부",
+        "베트남 돌발 홍수 산사태 위험 등급 의미"
+      ],
+      "entities": [
+        "국가수문기상예보센터",
+        "베트남 도로청",
+        "국도 6호선",
+        "국도 4D",
+        "결정 18/2021/QĐ-TTg"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "우기에 하장, 사파, 마이쩌우, 까오방으로 오토바이를 타고 가는 여행자는 폭우로 산사태나 돌발 홍수가 일어날 가능성이 커졌는지 어떻게 알 수 있는지, 어떤 공식 경보와 도로 정보를 확인해야 하는지, 언제 일정을 미루거나 되돌아가는 것이 현명한지 궁금해합니다.",
+      "content_angle": "국가수문기상예보센터가 따로 내는 돌발 홍수·산사태 경보 속보와 실시간 경보 지도, 결정 18/2021/QĐ-TTg가 정한 위험 등급, 그리고 베트남 도로청과 건설부가 도로 관리 부서에 방책과 경고 표지를 세우고 교통을 우회시키며 산사태 지점과 물에 잠긴 월류 구간에서 사람과 차량을 막도록 지시하는 방식을 2026년 7월과 8월의 국도 차단 보도와 2026년 10월 건설부 공문을 근거로 설명합니다. 또 오토바이 운전자가 숨진 2025년 12월 국도 6호선 Thung Khe 고개 산사태가 약한 비만 기록된 상황에서 일어났으므로, 경보가 없다고 비탈이 안전한 것은 아니라는 점도 짚습니다. 작성자는 강우 기준과 등급 정의를 결정 본문에서만 인용하되 아직 유효한지 먼저 확인하고, 어떤 도로가 열려 있다고 장담해서는 안 됩니다.",
+      "working_title": "베트남 북부 산악 도로의 산사태·돌발 홍수 경보: 출발 전에 읽는 방법",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://nchmf.gov.vn/kttvsite/vi-VN/1/tin-canh-bao-lu-quet-sat-lo-dat-sut-lun-dat-do-mua-lu-hoac-dong-chay-tren-khu-vuc-cac-tinh-quang-ninh-va-thanh-hoa-post54056.html",
+          "title": "National Centre for Hydro-Meteorological Forecasting (listing of 15 September 2026): its dedicated flash-flood, landslide and ground-subsidence warning bulletins for Son La, Phu Tho, Lao Cai, Quang Ninh and other provinces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luquetsatlo.nchmf.gov.vn/",
+          "title": "National Centre for Hydro-Meteorological Forecasting: real-time flash-flood and landslide warning information system with rainfall layers and medium, high and very high warning levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=203152",
+          "title": "Government legal portal: Decision 18/2021/QD-TTg of 22 April 2021, effective 1 July 2021, on forecasting, warning and communicating natural disasters and disaster risk levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnamnews.vn/society/1785156/landslides-floods-disrupt-traffic-across-northern-region.html",
+          "title": "Viet Nam News (9 July 2026): Vietnam Road Administration on landslides and floods blocking National Highway 6 and other northern routes, with closures, barricades and diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.vov.vn/en/society/heavy-rain-triggers-landslides-disrupts-roads-across-northern-vietnam-post1326721.vov",
+          "title": "VOV English (23 August 2026): prolonged rain brings landslides and floods to northern roads, with Road Administration crews on 24-hour standby, warning signs and barriers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://moc.gov.vn/Images/editor/files/Nam%202026/BXD_15811-BXD-VT%26ATGT_05102026.pdf",
+          "title": "Ministry of Construction letter (file dated 5 October 2026): instructs road bodies to guard spillways, deep floodwater and landslide sites and not let people and vehicles through when unsafe (written for the central-region rains)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/khoanh-khac-dat-da-do-ap-vui-lap-5-nguoi-tren-quoc-lo-6-20251214181304195.htm",
+          "title": "Dan Tri (15 December 2025): landslide at the Thung Khe pass on National Highway 6 that killed three people including a motorcyclist, with only light rain recorded at the nearest station",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophutho.vn/khac-phuc-diem-sat-lo-tren-deo-thung-khe-bao-dam-an-toan-quoc-lo-6-244656.htm",
+          "title": "Bao Phu Tho (24 December 2025): repair work and five remaining high-risk landslide spots on the Thung Khe pass after the 14 December landslide, which happened without rain",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H04",
+      "subcluster": "ss-weather",
+      "slug": "betonamu-hokubu-doshakuzure-teppomizu-keiho",
+      "primary_query": "ベトナム北部の山岳地帯をバイクで走る前に土砂崩れと鉄砲水の警報を確認する方法",
+      "secondary_queries": [
+        "ベトナム 鉄砲水 土砂崩れ 警報 国家水文気象予報センター",
+        "ハザン ループ 大雨のあと 土砂崩れ バイクで走って大丈夫か",
+        "サパ 国道4D 土砂崩れ後 通行できるか",
+        "冠水した渡渉部や小川をバイクで渡る ベトナム北部",
+        "ベトナムの鉄砲水・土砂崩れのリスクレベルの意味"
+      ],
+      "entities": [
+        "国家水文気象予報センター",
+        "ベトナム道路局",
+        "国道6号",
+        "国道4D",
+        "決定18/2021/QĐ-TTg"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "雨季にハザン、サパ、マイチャウ、カオバンへバイクで向かう旅行者は、大雨で土砂崩れや鉄砲水が起きやすくなったかどうかをどう見分けるのか、どの公的な警報や道路情報を確認すべきか、いつ出発を延期したり引き返したりするのが賢明かを知りたがります。",
+      "content_angle": "国家水文気象予報センターが別枠で出す鉄砲水・土砂崩れ警報の速報とリアルタイムの警報地図、決定18/2021/QĐ-TTgが定めるリスクレベル、そしてベトナム道路局と建設省が道路管理部門にバリケードと警告標識の設置、交通の迂回、土砂崩れ箇所や冠水した渡渉部への人と車両の立ち入り阻止を指示するやり方を、2026年7月・8月の国道遮断の報道と2026年10月の建設省の通達に基づいて説明します。あわせて、バイクの運転者が亡くなった2025年12月の国道6号 Thung Khe 峠の土砂崩れは弱い雨しか記録されていないときに起きており、警報が出ていないことは斜面の安全を意味しないと指摘します。執筆者は降雨の基準値とレベルの定義を決定の本文からのみ、現在も有効であることを確認したうえで引用し、道路が通行可能だと約束してはいけません。",
+      "working_title": "ベトナム北部の山道の土砂崩れ・鉄砲水警報：出発前に読み解くには",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://nchmf.gov.vn/kttvsite/vi-VN/1/tin-canh-bao-lu-quet-sat-lo-dat-sut-lun-dat-do-mua-lu-hoac-dong-chay-tren-khu-vuc-cac-tinh-quang-ninh-va-thanh-hoa-post54056.html",
+          "title": "National Centre for Hydro-Meteorological Forecasting (listing of 15 September 2026): its dedicated flash-flood, landslide and ground-subsidence warning bulletins for Son La, Phu Tho, Lao Cai, Quang Ninh and other provinces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luquetsatlo.nchmf.gov.vn/",
+          "title": "National Centre for Hydro-Meteorological Forecasting: real-time flash-flood and landslide warning information system with rainfall layers and medium, high and very high warning levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=203152",
+          "title": "Government legal portal: Decision 18/2021/QD-TTg of 22 April 2021, effective 1 July 2021, on forecasting, warning and communicating natural disasters and disaster risk levels",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnamnews.vn/society/1785156/landslides-floods-disrupt-traffic-across-northern-region.html",
+          "title": "Viet Nam News (9 July 2026): Vietnam Road Administration on landslides and floods blocking National Highway 6 and other northern routes, with closures, barricades and diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.vov.vn/en/society/heavy-rain-triggers-landslides-disrupts-roads-across-northern-vietnam-post1326721.vov",
+          "title": "VOV English (23 August 2026): prolonged rain brings landslides and floods to northern roads, with Road Administration crews on 24-hour standby, warning signs and barriers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://moc.gov.vn/Images/editor/files/Nam%202026/BXD_15811-BXD-VT%26ATGT_05102026.pdf",
+          "title": "Ministry of Construction letter (file dated 5 October 2026): instructs road bodies to guard spillways, deep floodwater and landslide sites and not let people and vehicles through when unsafe (written for the central-region rains)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/khoanh-khac-dat-da-do-ap-vui-lap-5-nguoi-tren-quoc-lo-6-20251214181304195.htm",
+          "title": "Dan Tri (15 December 2025): landslide at the Thung Khe pass on National Highway 6 that killed three people including a motorcyclist, with only light rain recorded at the nearest station",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophutho.vn/khac-phuc-diem-sat-lo-tren-deo-thung-khe-bao-dam-an-toan-quoc-lo-6-244656.htm",
+          "title": "Bao Phu Tho (24 December 2025): repair work and five remaining high-risk landslide spots on the Thung Khe pass after the 14 December landslide, which happened without rain",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}

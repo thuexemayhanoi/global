@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T04:52:06.696Z",
+  "updated_at": "2026-10-20T04:52:16.107Z",
   "base_main_sha": "343b27b62a058042c99fa454f719d8493263023b",
-  "last_commit_sha": "c06431be0179b4990a6673185439217629553ee1",
+  "last_commit_sha": "8a446b49c4846d0382b852e8bcd7820ca9a58db0",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 750,
-    "qa_pass": 750,
+    "researched": 760,
+    "qa_pass": 760,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 740,
+    "pushed": 750,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 76,
-      "de": 76,
-      "fr": 76,
-      "es": 76,
-      "nl": 76,
-      "pt": 76,
-      "zh": 76,
-      "ko": 76,
-      "ja": 76,
-      "en": 66
+      "vi": 77,
+      "de": 77,
+      "fr": 77,
+      "es": 77,
+      "nl": 77,
+      "pt": 77,
+      "zh": 77,
+      "ko": 77,
+      "ja": 77,
+      "en": 67
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 100,
+      "traffic-law-safety": 110,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -46,9 +46,9 @@
     }
   },
   "last_batch": {
-    "seq": 75,
-    "file": "factory/topic-research/batches/claude-20261018b-0075.json",
-    "sha256": "3640cdf69c38f5ceea5f7f906f1c83b448b09441f872d41654705e2bc61319fa",
+    "seq": 76,
+    "file": "factory/topic-research/batches/claude-20261018b-0076.json",
+    "sha256": "20c22500caebcd0fa326a8d40b42239f96f44ea7134d1e0917189234e9546ecf",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -8272,8 +8272,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0075.json",
       "sha256": "3640cdf69c38f5ceea5f7f906f1c83b448b09441f872d41654705e2bc61319fa",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "8a446b49c4846d0382b852e8bcd7820ca9a58db0",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -8377,11 +8377,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 76,
+      "file": "factory/topic-research/batches/claude-20261018b-0076.json",
+      "sha256": "20c22500caebcd0fa326a8d40b42239f96f44ea7134d1e0917189234e9546ecf",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:canh-bao-lu-quet-sat-lo-dat-duong-mien-nui-phia-bac",
+          "locale": "vi",
+          "slug": "canh-bao-lu-quet-sat-lo-dat-duong-mien-nui-phia-bac",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-weather",
+          "key": "vi::xem canh bao lu quet sat lo dat truoc khi di xe may len vung nui phia bac",
+          "ta_id": null
+        },
+        {
+          "ref": "en:landslide-and-flash-flood-warnings-northern-vietnam-roads",
+          "locale": "en",
+          "slug": "landslide-and-flash-flood-warnings-northern-vietnam-roads",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-weather",
+          "key": "en::how to check landslide and flash flood warnings before riding in northern vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:erdrutsch-und-sturzflut-warnungen-bergstrassen-nordvietnam",
+          "locale": "de",
+          "slug": "erdrutsch-und-sturzflut-warnungen-bergstrassen-nordvietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-weather",
+          "key": "de::erdrutsch und sturzflut warnungen vor der motorradfahrt in nordvietnam prufen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:alertes-glissements-de-terrain-crues-eclair-nord-vietnam",
+          "locale": "fr",
+          "slug": "alertes-glissements-de-terrain-crues-eclair-nord-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-weather",
+          "key": "fr::alertes glissements de terrain et crues eclair a verifier avant de rouler a moto dans le nord du vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:avisos-deslizamientos-crecidas-repentinas-norte-de-vietnam",
+          "locale": "es",
+          "slug": "avisos-deslizamientos-crecidas-repentinas-norte-de-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-weather",
+          "key": "es::avisos de deslizamientos de tierra y crecidas repentinas antes de ir en moto por el norte de vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:waarschuwingen-aardverschuiving-overstroming-noord-vietnam",
+          "locale": "nl",
+          "slug": "waarschuwingen-aardverschuiving-overstroming-noord-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-weather",
+          "key": "nl::waarschuwingen aardverschuiving en plotselinge overstroming noord-vietnam motor controleren",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-beibu-shanhong-huapo-yujing-motuoche",
+          "locale": "zh",
+          "slug": "yuenan-beibu-shanhong-huapo-yujing-motuoche",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-weather",
+          "key": "zh::骑摩托车去越南北部山区前怎么查山洪和滑坡预警",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:avisos-deslizamentos-cheias-repentinas-norte-do-vietname",
+          "locale": "pt",
+          "slug": "avisos-deslizamentos-cheias-repentinas-norte-do-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-weather",
+          "key": "pt::avisos de deslizamentos de terras e cheias repentinas antes de ir de mota no norte do vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-bukbu-sansataeng-dolbal-hongsu-gyeongbo",
+          "locale": "ko",
+          "slug": "beteunam-bukbu-sansataeng-dolbal-hongsu-gyeongbo",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-weather",
+          "key": "ko::베트남 북부 산악 지역 오토바이 여행 전 산사태 돌발 홍수 경보 확인하는 방법",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-hokubu-doshakuzure-teppomizu-keiho",
+          "locale": "ja",
+          "slug": "betonamu-hokubu-doshakuzure-teppomizu-keiho",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-weather",
+          "key": "ja::ヘトナム北部の山岳地帯をハイクて走る前に土砂崩れと鉄砲水の警報を確認する方法",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 76,
-    "file": "factory/topic-research/batches/claude-20261018b-0076.json",
+    "seq": 77,
+    "file": "factory/topic-research/batches/claude-20261018b-0077.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -8394,13 +8505,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-19T00:38:55.766Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 52,
-      "topics": 10,
-      "sha256": "8e72173d344a2214cf0bd6371f32015fea4ea452c0f359544ee610d58cbcad00"
-    },
     {
       "at": "2026-10-19T00:39:11.511Z",
       "event": "BATCH_COMMITTED",
@@ -8565,6 +8669,13 @@
       "seq": 75,
       "topics": 10,
       "sha256": "3640cdf69c38f5ceea5f7f906f1c83b448b09441f872d41654705e2bc61319fa"
+    },
+    {
+      "at": "2026-10-20T04:52:16.107Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 76,
+      "topics": 10,
+      "sha256": "20c22500caebcd0fa326a8d40b42239f96f44ea7134d1e0917189234e9546ecf"
     }
   ]
 }
