@@ -297,7 +297,10 @@ test("scale: 10 locales x 1000 synthetic candidates are deduplicated and selecte
   }
  }
  const t0=Date.now();
- const sel=selectRefill({...stockCtx,map:big,validation:{issues:[]},limit:50});
+ // Live READY levels decide how many locales are in need of a refill today, and a single locale cannot supply 50
+ // near-identical synthetic topics. Putting every locale in need keeps this a test of the cap and the budget only.
+ const needy={...policy,refill:{...policy.refill,ready_threshold:1e6,ready_target:1e6+1}};
+ const sel=selectRefill({...stockCtx,policy:needy,map:big,validation:{issues:[]},limit:50});
  const ms=Date.now()-t0;
  assert.equal(n,10000);
  assert.equal(sel.selected.length,50);
