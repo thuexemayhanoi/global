@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T20:48:31.812Z",
+  "updated_at": "2026-10-20T20:48:47.565Z",
   "base_main_sha": "5160debc109578bd2bfc6a9313e10412c24482a7",
-  "last_commit_sha": "6f1a3d49dd260c7055f29051c785ee5f64c74b53",
+  "last_commit_sha": "97619ac10429fe07999127e265ce01c416b22a75",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1620,
-    "qa_pass": 1620,
+    "researched": 1630,
+    "qa_pass": 1630,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1610,
+    "pushed": 1620,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 163,
-      "de": 163,
-      "fr": 163,
-      "es": 163,
-      "nl": 163,
-      "pt": 163,
-      "zh": 163,
-      "ko": 163,
-      "ja": 163,
-      "en": 153
+      "vi": 164,
+      "de": 164,
+      "fr": 164,
+      "es": 164,
+      "nl": 164,
+      "pt": 164,
+      "zh": 164,
+      "ko": 164,
+      "ja": 164,
+      "en": 154
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 660,
+      "traffic-law-safety": 670,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 162,
-    "file": "factory/topic-research/batches/claude-20261018b-0162.json",
-    "sha256": "20920e128c080eaa72609e40bb86d2f0e4688adb9aed969b862f298562f7b121",
+    "seq": 163,
+    "file": "factory/topic-research/batches/claude-20261018b-0163.json",
+    "sha256": "f4354e25f58f4abb523076013ee82f8681307bbde5dcec3b20ad7c671506a702",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -17930,8 +17930,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0162.json",
       "sha256": "20920e128c080eaa72609e40bb86d2f0e4688adb9aed969b862f298562f7b121",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "97619ac10429fe07999127e265ce01c416b22a75",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -18035,11 +18035,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 163,
+      "file": "factory/topic-research/batches/claude-20261018b-0163.json",
+      "sha256": "f4354e25f58f4abb523076013ee82f8681307bbde5dcec3b20ad7c671506a702",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:bien-mui-ten-r301-cam-re-p123-cam-di-thang-p136-p139-vong-xuyen-r303-xe-may",
+          "locale": "vi",
+          "slug": "bien-mui-ten-r301-cam-re-p123-cam-di-thang-p136-p139-vong-xuyen-r303-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::bien mui ten xanh va bien mui ten gach cheo do nghia la gi voi xe may o viet nam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:arrow-signs-vietnam-r301-must-follow-p123-no-turn-p136-p139-roundabout-r303",
+          "locale": "en",
+          "slug": "arrow-signs-vietnam-r301-must-follow-p123-no-turn-p136-p139-roundabout-r303",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::what do the blue arrow sign and the crossed-out arrow signs mean for a motorbike in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:pfeilschilder-vietnam-r301-p123-p136-p139-fahrtrichtung-verbote-kreisel-r303",
+          "locale": "de",
+          "slug": "pfeilschilder-vietnam-r301-p123-p136-p139-fahrtrichtung-verbote-kreisel-r303",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::was bedeuten die blauen pfeilschilder und die durchgestrichenen pfeile fur ein motorrad in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:panneaux-fleche-vietnam-r301-p123-p136-p139-sens-oblige-interdictions-r303",
+          "locale": "fr",
+          "slug": "panneaux-fleche-vietnam-r301-p123-p136-p139-sens-oblige-interdictions-r303",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::que signifient les panneaux a fleche bleue et a fleche barree pour une moto au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:senales-flecha-vietnam-r301-p123-p136-p139-sentido-obligatorio-prohibido-r303",
+          "locale": "es",
+          "slug": "senales-flecha-vietnam-r301-p123-p136-p139-sentido-obligatorio-prohibido-r303",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::que significan las senales de flecha azul y de flecha tachada para una moto en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:pijlborden-vietnam-r301-verplichte-richting-p123-p136-p139-verboden-rotonde-r303",
+          "locale": "nl",
+          "slug": "pijlborden-vietnam-r301-verplichte-richting-p123-p136-p139-verboden-rotonde-r303",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::wat betekenen de blauwe pijlborden en de doorgestreepte pijlborden voor een motor in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-jiantou-biaozhi-r301-p123-p136-p139-huandao-r303-motuoche",
+          "locale": "zh",
+          "slug": "yuenan-jiantou-biaozhi-r301-p123-p136-p139-huandao-r303-motuoche",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南蓝色箭头标志和带红斜杠的箭头标志对摩托车是什么意思",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:sinais-seta-vietname-r301-p123-p136-p139-sentido-obrigatorio-proibicoes-r303",
+          "locale": "pt",
+          "slug": "sinais-seta-vietname-r301-p123-p136-p139-sentido-obrigatorio-proibicoes-r303",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::o que significam os sinais de seta azul e de seta riscada para uma mota no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-hwasalpyo-pyojipan-r301-p123-p136-p139-hoejeon-gyocha-ro-r303-otobai",
+          "locale": "ko",
+          "slug": "beteunam-hwasalpyo-pyojipan-r301-p123-p136-p139-hoejeon-gyocha-ro-r303-otobai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::베트남에서 파란 화살표 표지판과 빨간 사선이 그어진 화살표 표지판은 오토바이에게 무슨 뜻인가요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-yajirushi-hyoshiki-r301-p123-p136-p139-kanjo-kosaten-r303-baiku",
+          "locale": "ja",
+          "slug": "betonamu-yajirushi-hyoshiki-r301-p123-p136-p139-kanjo-kosaten-r303-baiku",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナムの青い矢印の標識と赤い斜線の入った矢印の標識はハイクにとって何を意味するのか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 163,
-    "file": "factory/topic-research/batches/claude-20261018b-0163.json",
+    "seq": 164,
+    "file": "factory/topic-research/batches/claude-20261018b-0164.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -18052,13 +18163,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T19:34:54.706Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 138,
-      "topics": 10,
-      "sha256": "bcbccd0488aa28b21c68a0d73d57e9980ba748db82eece7623e66b9d18ba55e7"
-    },
     {
       "at": "2026-10-20T19:38:32.527Z",
       "event": "BATCH_COMMITTED",
@@ -18226,6 +18330,13 @@
       "seq": 162,
       "topics": 10,
       "sha256": "20920e128c080eaa72609e40bb86d2f0e4688adb9aed969b862f298562f7b121"
+    },
+    {
+      "at": "2026-10-20T20:48:47.565Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 163,
+      "topics": 10,
+      "sha256": "f4354e25f58f4abb523076013ee82f8681307bbde5dcec3b20ad7c671506a702"
     }
   ]
 }
