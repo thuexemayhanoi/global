@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T09:36:19.790Z",
-  "base_main_sha": "fdab4caa9d203c3b8cd3eefbac6733bdf1bbb69d",
-  "last_commit_sha": "3da7888c05fd83a6fd408647ad663a68b1230bea",
+  "updated_at": "2026-10-20T09:40:29.305Z",
+  "base_main_sha": "680e862e2f149a4a5eef2a978366fafc3d9f5f53",
+  "last_commit_sha": "3a75142f1bc080ccfddf956b24cbf03be6fd47f1",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 980,
-    "qa_pass": 980,
+    "researched": 990,
+    "qa_pass": 990,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 970,
+    "pushed": 980,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 99,
-      "de": 99,
-      "fr": 99,
-      "es": 99,
-      "nl": 99,
-      "pt": 99,
-      "zh": 99,
-      "ko": 99,
-      "ja": 99,
-      "en": 89
+      "vi": 100,
+      "de": 100,
+      "fr": 100,
+      "es": 100,
+      "nl": 100,
+      "pt": 100,
+      "zh": 100,
+      "ko": 100,
+      "ja": 100,
+      "en": 90
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 230,
+      "traffic-law-safety": 240,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 98,
-    "file": "factory/topic-research/batches/claude-20261018b-0098.json",
-    "sha256": "71b0276dacf2e2a9a254577ca881245e5f90d1edd5724c8217edb167e89b2827",
+    "seq": 99,
+    "file": "factory/topic-research/batches/claude-20261018b-0099.json",
+    "sha256": "f79da53f1f5af56c4e52e10f27e15c519b026af1f0409b6f474c6cbf471d6fae",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -10826,8 +10826,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0098.json",
       "sha256": "71b0276dacf2e2a9a254577ca881245e5f90d1edd5724c8217edb167e89b2827",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "3a75142f1bc080ccfddf956b24cbf03be6fd47f1",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -10931,11 +10931,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 99,
+      "file": "factory/topic-research/batches/claude-20261018b-0099.json",
+      "sha256": "f79da53f1f5af56c4e52e10f27e15c519b026af1f0409b6f474c6cbf471d6fae",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:ao-mua-cam-o-xe-may-viet-nam-che-bien-so-dung-xe",
+          "locale": "vi",
+          "slug": "ao-mua-cam-o-xe-may-viet-nam-che-bien-so-dung-xe",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-gear",
+          "key": "vi::di xe may cam o co bi phat khong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:rain-gear-motorbike-vietnam-umbrella-ban-poncho-stopping",
+          "locale": "en",
+          "slug": "rain-gear-motorbike-vietnam-umbrella-ban-poncho-stopping",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-gear",
+          "key": "en::is it illegal to use an umbrella on a motorbike in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:regenschutz-motorroller-vietnam-schirmverbot-kennzeichen-anhalten",
+          "locale": "de",
+          "slug": "regenschutz-motorroller-vietnam-schirmverbot-kennzeichen-anhalten",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-gear",
+          "key": "de::ist ein regenschirm auf dem motorroller in vietnam verboten",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:tenue-pluie-scooter-vietnam-parapluie-plaque-arret",
+          "locale": "fr",
+          "slug": "tenue-pluie-scooter-vietnam-parapluie-plaque-arret",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-gear",
+          "key": "fr::est-il interdit d'utiliser un parapluie a scooter au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:ropa-lluvia-moto-vietnam-paraguas-matricula-parar",
+          "locale": "es",
+          "slug": "ropa-lluvia-moto-vietnam-paraguas-matricula-parar",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-gear",
+          "key": "es::esta prohibido usar paraguas en moto en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:regenkleding-scooter-vietnam-paraplu-kenteken-stoppen",
+          "locale": "nl",
+          "slug": "regenkleding-scooter-vietnam-paraplu-kenteken-stoppen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-gear",
+          "key": "nl::is een paraplu op een scooter in vietnam verboden",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:zai-yuenan-qi-motuo-yuju-jinzhi-chansan-yupi-zhedang-chepai",
+          "locale": "zh",
+          "slug": "zai-yuenan-qi-motuo-yuju-jinzhi-chansan-yupi-zhedang-chepai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-gear",
+          "key": "zh::在越南骑摩托车撑伞违法吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:roupa-chuva-mota-vietname-guarda-chuva-matricula-parar",
+          "locale": "pt",
+          "slug": "roupa-chuva-mota-vietname-guarda-chuva-matricula-parar",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-gear",
+          "key": "pt::e proibido usar guarda-chuva de mota no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-orto-bai-ubi-usan-geumji-beonhopan-meomchugi",
+          "locale": "ko",
+          "slug": "beteunam-orto-bai-ubi-usan-geumji-beonhopan-meomchugi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-gear",
+          "key": "ko::베트남에서 오토바이를 타면서 우산을 쓰면 불법인가요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-amagu-kasa-kinshi-nanba-tomaru-basho",
+          "locale": "ja",
+          "slug": "betonamu-baiku-amagu-kasa-kinshi-nanba-tomaru-basho",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-gear",
+          "key": "ja::ヘトナムてハイクに乗りなから傘をさすのは違法か",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 99,
-    "file": "factory/topic-research/batches/claude-20261018b-0099.json",
+    "seq": 100,
+    "file": "factory/topic-research/batches/claude-20261018b-0100.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -10948,13 +11059,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:51:28.112Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 74,
-      "topics": 10,
-      "sha256": "e8b8dc6be8146af636b3dc614cadea57082d309e23cfb8634fa0de8096cb3365"
-    },
     {
       "at": "2026-10-20T04:52:06.696Z",
       "event": "BATCH_COMMITTED",
@@ -11122,6 +11226,13 @@
       "seq": 98,
       "topics": 10,
       "sha256": "71b0276dacf2e2a9a254577ca881245e5f90d1edd5724c8217edb167e89b2827"
+    },
+    {
+      "at": "2026-10-20T09:40:29.305Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 99,
+      "topics": 10,
+      "sha256": "f79da53f1f5af56c4e52e10f27e15c519b026af1f0409b6f474c6cbf471d6fae"
     }
   ]
 }
