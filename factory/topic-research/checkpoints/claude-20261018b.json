@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T09:27:28.601Z",
+  "updated_at": "2026-10-20T09:27:39.102Z",
   "base_main_sha": "52903def7f84a8aca00745959c46bf9721b0a5a6",
-  "last_commit_sha": "f13ca4d355e275187e4809f430f0bb65505bd3d7",
+  "last_commit_sha": "525c10f3bd05a9520ae80663a4923e6b8afdcbe6",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 940,
-    "qa_pass": 940,
+    "researched": 950,
+    "qa_pass": 950,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 930,
+    "pushed": 940,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 95,
-      "de": 95,
-      "fr": 95,
-      "es": 95,
-      "nl": 95,
-      "pt": 95,
-      "zh": 95,
-      "ko": 95,
-      "ja": 95,
-      "en": 85
+      "vi": 96,
+      "de": 96,
+      "fr": 96,
+      "es": 96,
+      "nl": 96,
+      "pt": 96,
+      "zh": 96,
+      "ko": 96,
+      "ja": 96,
+      "en": 86
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 70
+      "motorbike-rental": 80
     }
   },
   "last_batch": {
-    "seq": 94,
-    "file": "factory/topic-research/batches/claude-20261018b-0094.json",
-    "sha256": "c7db3920df7d76b509e449a087f630a27036eb9d7982e90101856e9d96b2f7ff",
+    "seq": 95,
+    "file": "factory/topic-research/batches/claude-20261018b-0095.json",
+    "sha256": "d1ef0e57fb97250db4dbc78919751cc45e83757351700ccfc051fe40673e3d46",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -10382,8 +10382,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0094.json",
       "sha256": "c7db3920df7d76b509e449a087f630a27036eb9d7982e90101856e9d96b2f7ff",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "525c10f3bd05a9520ae80663a4923e6b8afdcbe6",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -10487,11 +10487,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 95,
+      "file": "factory/topic-research/batches/claude-20261018b-0095.json",
+      "sha256": "d1ef0e57fb97250db4dbc78919751cc45e83757351700ccfc051fe40673e3d46",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:khoi-dong-honda-wave-alpha-le-gio-can-khoi-dong-van-xang",
+          "locale": "vi",
+          "slug": "khoi-dong-honda-wave-alpha-le-gio-can-khoi-dong-van-xang",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-models",
+          "key": "vi::cach khoi dong xe wave alpha le gio can khoi dong van xang",
+          "ta_id": null
+        },
+        {
+          "ref": "en:start-honda-wave-alpha-choke-kick-start-fuel-valve",
+          "locale": "en",
+          "slug": "start-honda-wave-alpha-choke-kick-start-fuel-valve",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-models",
+          "key": "en::how to start a honda wave alpha choke kick start and fuel valve",
+          "ta_id": null
+        },
+        {
+          "ref": "de:honda-wave-alpha-starten-choke-kickstarter-benzinhahn",
+          "locale": "de",
+          "slug": "honda-wave-alpha-starten-choke-kickstarter-benzinhahn",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-models",
+          "key": "de::honda wave alpha starten choke kickstarter und benzinhahn",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:demarrer-honda-wave-alpha-starter-kick-robinet-d-essence",
+          "locale": "fr",
+          "slug": "demarrer-honda-wave-alpha-starter-kick-robinet-d-essence",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-models",
+          "key": "fr::demarrer une honda wave alpha starter kick et robinet d'essence",
+          "ta_id": null
+        },
+        {
+          "ref": "es:arrancar-honda-wave-alpha-estarter-pedal-llave-gasolina",
+          "locale": "es",
+          "slug": "arrancar-honda-wave-alpha-estarter-pedal-llave-gasolina",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-models",
+          "key": "es::como arrancar una honda wave alpha estarter pedal de arranque y llave de gasolina",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:honda-wave-alpha-starten-choke-trapstarter-benzinekraan",
+          "locale": "nl",
+          "slug": "honda-wave-alpha-starten-choke-trapstarter-benzinekraan",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-models",
+          "key": "nl::honda wave alpha starten choke trapstarter en benzinekraan",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:bentian-wave-alpha-qidong-zufengmen-jiaota-youkaiguan",
+          "locale": "zh",
+          "slug": "bentian-wave-alpha-qidong-zufengmen-jiaota-youkaiguan",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-models",
+          "key": "zh::本田 wave alpha 怎么启动 阻风门 脚踏启动 油开关",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:arrancar-honda-wave-alpha-afogador-pedal-torneira",
+          "locale": "pt",
+          "slug": "arrancar-honda-wave-alpha-afogador-pedal-torneira",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-models",
+          "key": "pt::como arrancar uma honda wave alpha afogador pedal de arranque e torneira da gasolina",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:honda-weibeu-alpa-sidong-geoneun-beop-chokeu-kikseutateo",
+          "locale": "ko",
+          "slug": "honda-weibeu-alpa-sidong-geoneun-beop-chokeu-kikseutateo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-models",
+          "key": "ko::혼다 웨이브 알파 시동 거는 법 초크 킥스타터 연료 밸브",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:honda-weibu-arufa-enjin-no-kakekata-choku-kikku",
+          "locale": "ja",
+          "slug": "honda-weibu-arufa-enjin-no-kakekata-choku-kikku",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-models",
+          "key": "ja::ホンタ ウェーフアルファ エンシンのかけ方 チョーク キックスタート 燃料コック",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 95,
-    "file": "factory/topic-research/batches/claude-20261018b-0095.json",
+    "seq": 96,
+    "file": "factory/topic-research/batches/claude-20261018b-0096.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -10504,13 +10615,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:45:48.443Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 70,
-      "topics": 10,
-      "sha256": "aebdcb3617b776c5bf8579d00b2c44ff263861427e69c0b2c51ec01189e84121"
-    },
     {
       "at": "2026-10-20T04:48:10.592Z",
       "event": "BATCH_COMMITTED",
@@ -10678,6 +10782,13 @@
       "seq": 94,
       "topics": 10,
       "sha256": "c7db3920df7d76b509e449a087f630a27036eb9d7982e90101856e9d96b2f7ff"
+    },
+    {
+      "at": "2026-10-20T09:27:39.102Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 95,
+      "topics": 10,
+      "sha256": "d1ef0e57fb97250db4dbc78919751cc45e83757351700ccfc051fe40673e3d46"
     }
   ]
 }

@@ -1,0 +1,562 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H01",
+      "subcluster": "vc-models",
+      "slug": "khoi-dong-honda-wave-alpha-le-gio-can-khoi-dong-van-xang",
+      "primary_query": "cách khởi động xe Wave Alpha le gió cần khởi động van xăng",
+      "secondary_queries": [
+        "xe Wave Alpha khó nổ buổi sáng trời lạnh le gió",
+        "cách đạp cần khởi động xe số đúng cách",
+        "van xăng xe máy vị trí ON OFF dùng để làm gì",
+        "xe Wave Alpha bị ngộp xăng đề không nổ",
+        "xe chế hòa khí và xe phun xăng điện tử khác nhau thế nào khi khởi động"
+      ],
+      "entities": [
+        "Honda Wave Alpha",
+        "cần le gió",
+        "van xăng",
+        "cần khởi động",
+        "bộ chế hòa khí",
+        "sách hướng dẫn sử dụng Honda Việt Nam"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Người thuê xe số Wave Alpha gặp chiếc xe có van xăng, cần le gió và cần khởi động mà nhiều du khách chưa từng dùng, nên cần quy trình khởi động mà sách hướng dẫn của hãng chỉ ra.",
+      "content_angle": "Theo các trang khởi động trong sách hướng dẫn sử dụng Wave Alpha (van xăng ở vị trí ON, bật khóa điện, về số N và đèn báo N sáng, cần le gió, nút đề hoặc cần khởi động, các bước riêng cho thời tiết nóng và buổi sáng lạnh, và các bước khi động cơ không nổ), kết hợp phần hỏi đáp của Honda Việt Nam về khó nổ khi trời lạnh và le gió, giáo trình đào tạo CBT của chính phủ Anh (GOV.UK) liệt kê le gió, van xăng và cần khởi động trong các bộ phận điều khiển phải biết và yêu cầu kiểm tra xăng đã mở và xe đã về số N trước khi nổ máy, và bài của Yamaha Motor Việt Nam về nguyên nhân xe không nổ, đối chiếu với sách Vision, nơi xe tay ga phun xăng điện tử nổ máy theo cùng một quy trình dù nóng hay nguội và không có le gió. Người viết phải hỏi xem xe thuê là loại chế hòa khí hay phun xăng, chỉ trích nhiệt độ, thời gian và độ mở ga từ sách của đúng mẫu xe, nói thêm rằng hỏi đáp của Honda còn nhắc đến loại xe có van xăng tự động cần thêm thời gian để nổ lại sau khi cạn xăng, và để việc chẩn đoán xe tay ga cho bài riêng về xe tay ga không nổ.",
+      "working_title": "Khởi động xe chế hòa khí như Honda Wave Alpha: van xăng, le gió, cần khởi động và buổi sáng lạnh",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, two-way fuel valve, neutral lamp, choke lever, kick-start lever, hot and cold start steps and the engine-does-not-start steps",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): a cold engine starts badly and runs unevenly, so engage the choke and release it once the engine runs evenly; bikes with an automatic fuel valve need time to restart after running dry",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, a fuel-injected scooter started the same way hot or cold, with an injection-fault lamp and no choke",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gov.uk/guidance/compulsory-basic-training-cbt-syllabus-and-guidance-notes/element-b-practical-on-site-training",
+          "title": "GOV.UK (DVSA compulsory basic training syllabus, element B): choke, fuel tap and kick starter among the controls a rider must know, and checking fuel is on and the bike is in neutral before starting",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, including draining the carburettor float bowl and waiting for the injection lamp on injected models",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H01",
+      "subcluster": "vc-models",
+      "slug": "start-honda-wave-alpha-choke-kick-start-fuel-valve",
+      "primary_query": "how to start a honda wave alpha choke kick start and fuel valve",
+      "secondary_queries": [
+        "honda wave alpha won't start on a cold morning choke",
+        "how to use the kick starter on a semi automatic motorbike",
+        "what does the fuel valve on a motorbike do on and off",
+        "honda wave alpha flooded engine won't start",
+        "carburettor or fuel injection motorbike difference when starting"
+      ],
+      "entities": [
+        "Honda Wave Alpha",
+        "choke lever",
+        "fuel valve",
+        "kick-start lever",
+        "carburettor",
+        "Honda Vietnam owner's manual"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Riders who rent a basic semi-automatic such as the Honda Wave Alpha meet a fuel valve, a choke lever and a kick-start lever that many visitors have never used, and they want the start-up routine the manual gives.",
+      "content_angle": "Follows the Wave Alpha owner's manual start-up pages (fuel valve on, ignition on, neutral lamp, choke lever, electric starter or kick-start lever, separate steps for hot weather and cold mornings, and the steps when the engine does not start) with Honda Vietnam's FAQ on cold starts and the choke, the UK government's CBT syllabus on GOV.UK, which lists choke, fuel tap and kick starter among the controls a rider must know and asks for fuel on and neutral before starting, and Yamaha Motor Vietnam's article on the causes of a bike that will not start, set against the Vision manual, where a fuel-injected scooter starts the same way hot or cold with no choke. The Writer must check whether the rented bike is a carburettor or an injected model, quote temperatures, timings and throttle openings only from the model's manual, mention that Honda's FAQ also describes bikes with an automatic fuel valve that need extra time to restart after running dry, and leave scooter diagnosis to the separate scooter-will-not-start article.",
+      "working_title": "Starting a Carburettor Bike Like the Honda Wave Alpha: Fuel Valve, Choke, Kick-Start and Cold Mornings",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, two-way fuel valve, neutral lamp, choke lever, kick-start lever, hot and cold start steps and the engine-does-not-start steps",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): a cold engine starts badly and runs unevenly, so engage the choke and release it once the engine runs evenly; bikes with an automatic fuel valve need time to restart after running dry",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, a fuel-injected scooter started the same way hot or cold, with an injection-fault lamp and no choke",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gov.uk/guidance/compulsory-basic-training-cbt-syllabus-and-guidance-notes/element-b-practical-on-site-training",
+          "title": "GOV.UK (DVSA compulsory basic training syllabus, element B): choke, fuel tap and kick starter among the controls a rider must know, and checking fuel is on and the bike is in neutral before starting",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, including draining the carburettor float bowl and waiting for the injection lamp on injected models",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H01",
+      "subcluster": "vc-models",
+      "slug": "honda-wave-alpha-starten-choke-kickstarter-benzinhahn",
+      "primary_query": "Honda Wave Alpha starten Choke Kickstarter und Benzinhahn",
+      "secondary_queries": [
+        "Honda Wave Alpha springt morgens bei Kälte nicht an Choke",
+        "Kickstarter am Halbautomatik Motorrad richtig benutzen",
+        "wozu dient der Benzinhahn am Motorrad auf und zu",
+        "Honda Wave Alpha abgesoffen springt nicht an",
+        "Vergaser oder Einspritzung Unterschied beim Starten"
+      ],
+      "entities": [
+        "Honda Wave Alpha",
+        "Chokehebel",
+        "Benzinhahn",
+        "Kickstarter",
+        "Vergaser",
+        "Bedienungsanleitung Honda Vietnam"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Mieter einer Honda Wave Alpha treffen auf ein Motorrad mit Benzinhahn, Chokehebel und Kickstarter, das viele Besucher noch nie bedient haben, und suchen die Startroutine, die das Handbuch vorgibt.",
+      "content_angle": "Folgt den Startseiten der Wave-Alpha-Anleitung (Benzinhahn auf, Zündung an, Leerlaufstellung mit Kontrollleuchte N, Chokehebel, E-Starter oder Kickstarter, eigene Schritte für heißes Wetter und kalte Morgen sowie die Schritte, wenn der Motor nicht anspringt), der FAQ von Honda Vietnam zu Kaltstart und Choke, dem CBT-Ausbildungsplan der britischen Regierung auf GOV.UK, der Choke, Benzinhahn und Kickstarter zu den Bedienelementen zählt, die ein Fahrer kennen muss, und verlangt, vor dem Start Benzinzufuhr und Leerlaufstellung zu prüfen, sowie dem Yamaha-Artikel zu den Ursachen eines Motors, der nicht anspringt, im Vergleich zur Vision-Anleitung, in der ein Einspritz-Roller heiß wie kalt gleich und ohne Choke startet. Der Autor muss klären, ob das Mietmotorrad ein Vergaser- oder ein Einspritzmodell ist, Temperaturen, Zeiten und Gasgriff-Öffnungen nur aus der Anleitung des Modells zitieren, erwähnen, dass die FAQ auch Motorräder mit automatischem Benzinhahn beschreibt, die nach leergefahrenem Tank etwas Zeit zum Neustart brauchen, und die Roller-Diagnose dem eigenen Artikel zum nicht startenden Roller überlassen.",
+      "working_title": "Vergaser-Motorrad starten wie die Honda Wave Alpha: Benzinhahn, Choke, Kickstarter und kalte Morgen",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, two-way fuel valve, neutral lamp, choke lever, kick-start lever, hot and cold start steps and the engine-does-not-start steps",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): a cold engine starts badly and runs unevenly, so engage the choke and release it once the engine runs evenly; bikes with an automatic fuel valve need time to restart after running dry",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, a fuel-injected scooter started the same way hot or cold, with an injection-fault lamp and no choke",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gov.uk/guidance/compulsory-basic-training-cbt-syllabus-and-guidance-notes/element-b-practical-on-site-training",
+          "title": "GOV.UK (DVSA compulsory basic training syllabus, element B): choke, fuel tap and kick starter among the controls a rider must know, and checking fuel is on and the bike is in neutral before starting",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, including draining the carburettor float bowl and waiting for the injection lamp on injected models",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H01",
+      "subcluster": "vc-models",
+      "slug": "demarrer-honda-wave-alpha-starter-kick-robinet-d-essence",
+      "primary_query": "démarrer une Honda Wave Alpha starter kick et robinet d'essence",
+      "secondary_queries": [
+        "Honda Wave Alpha ne démarre pas le matin à froid starter",
+        "comment utiliser le kick sur une moto semi-automatique",
+        "à quoi sert le robinet d'essence d'une moto ouvert fermé",
+        "Honda Wave Alpha noyée ne démarre pas",
+        "différence carburateur injection au démarrage d'une moto"
+      ],
+      "entities": [
+        "Honda Wave Alpha",
+        "levier de starter",
+        "robinet d'essence",
+        "kick de démarrage",
+        "carburateur",
+        "manuel d'utilisation Honda Vietnam"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Les conducteurs qui louent une moto semi-automatique simple comme la Honda Wave Alpha découvrent un robinet d'essence, un levier de starter et un kick que beaucoup de visiteurs n'ont jamais utilisés, et veulent la routine de démarrage donnée par le manuel.",
+      "content_angle": "Suit les pages de démarrage du manuel de la Wave Alpha (robinet d'essence ouvert, contact mis, voyant de point mort, levier de starter, démarreur électrique ou kick, étapes distinctes par temps chaud et par matin froid, et marche à suivre quand le moteur ne démarre pas), la FAQ de Honda Vietnam sur les démarrages à froid et le starter, le programme de formation CBT du gouvernement britannique (GOV.UK), qui range starter, robinet d'essence et kick parmi les commandes à connaître et demande de vérifier l'arrivée d'essence et le point mort avant de démarrer, et l'article de Yamaha Motor Vietnam sur les causes d'une moto qui ne démarre pas, en contraste avec le manuel du Vision, où un scooter à injection démarre de la même façon à chaud comme à froid, sans starter. L'auteur doit vérifier si la moto louée est à carburateur ou à injection, ne citer températures, durées et ouvertures des gaz que d'après le manuel du modèle, signaler que la FAQ évoque aussi des motos à robinet d'essence automatique qui demandent un certain temps pour redémarrer après une panne sèche et laisser le diagnostic des scooters à l'article sur le scooter qui ne démarre pas.",
+      "working_title": "Démarrer une moto à carburateur comme la Honda Wave Alpha : robinet d'essence, starter, kick et matins froids",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, two-way fuel valve, neutral lamp, choke lever, kick-start lever, hot and cold start steps and the engine-does-not-start steps",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): a cold engine starts badly and runs unevenly, so engage the choke and release it once the engine runs evenly; bikes with an automatic fuel valve need time to restart after running dry",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, a fuel-injected scooter started the same way hot or cold, with an injection-fault lamp and no choke",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gov.uk/guidance/compulsory-basic-training-cbt-syllabus-and-guidance-notes/element-b-practical-on-site-training",
+          "title": "GOV.UK (DVSA compulsory basic training syllabus, element B): choke, fuel tap and kick starter among the controls a rider must know, and checking fuel is on and the bike is in neutral before starting",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, including draining the carburettor float bowl and waiting for the injection lamp on injected models",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H01",
+      "subcluster": "vc-models",
+      "slug": "arrancar-honda-wave-alpha-estarter-pedal-llave-gasolina",
+      "primary_query": "cómo arrancar una Honda Wave Alpha estárter pedal de arranque y llave de gasolina",
+      "secondary_queries": [
+        "Honda Wave Alpha no arranca por la mañana con frío estárter",
+        "cómo usar el pedal de arranque de una moto semiautomática",
+        "para qué sirve la llave de paso de gasolina de una moto",
+        "Honda Wave Alpha ahogada no arranca",
+        "diferencia entre carburador e inyección al arrancar una moto"
+      ],
+      "entities": [
+        "Honda Wave Alpha",
+        "palanca del estárter",
+        "llave de paso de gasolina",
+        "pedal de arranque",
+        "carburador",
+        "manual de usuario de Honda Vietnam"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quienes alquilan una moto semiautomática sencilla como la Honda Wave Alpha se encuentran con una llave de gasolina, una palanca de estárter y un pedal de arranque que muchos visitantes nunca han usado, y quieren la rutina de arranque que da el manual.",
+      "content_angle": "Sigue las páginas de arranque del manual de la Wave Alpha (llave de gasolina abierta, contacto, testigo de punto muerto, palanca del estárter, arranque eléctrico o pedal, pasos distintos para tiempo caluroso y mañanas frías, y qué hacer si el motor no arranca), las preguntas frecuentes de Honda Vietnam sobre arranques en frío y estárter, el programa de formación CBT del Gobierno británico (GOV.UK), que incluye estárter, llave de gasolina y pedal de arranque entre los mandos que el conductor debe conocer y pide comprobar el paso de gasolina y el punto muerto antes de arrancar, y el artículo de Yamaha Motor Vietnam sobre las causas de una moto que no arranca, en contraste con el manual del Vision, donde un scooter con inyección arranca igual en caliente que en frío y sin estárter. El redactor debe comprobar si la moto alquilada es de carburador o de inyección, citar temperaturas, tiempos y aperturas del acelerador solo del manual del modelo, mencionar que las preguntas frecuentes también describen motos con llave de gasolina automática que necesitan algo de tiempo para volver a arrancar tras quedarse sin combustible y dejar el diagnóstico de scooters para el artículo sobre el scooter que no arranca.",
+      "working_title": "Arrancar una moto de carburador como la Honda Wave Alpha: gasolina, estárter, pedal y mañanas frías",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, two-way fuel valve, neutral lamp, choke lever, kick-start lever, hot and cold start steps and the engine-does-not-start steps",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): a cold engine starts badly and runs unevenly, so engage the choke and release it once the engine runs evenly; bikes with an automatic fuel valve need time to restart after running dry",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, a fuel-injected scooter started the same way hot or cold, with an injection-fault lamp and no choke",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gov.uk/guidance/compulsory-basic-training-cbt-syllabus-and-guidance-notes/element-b-practical-on-site-training",
+          "title": "GOV.UK (DVSA compulsory basic training syllabus, element B): choke, fuel tap and kick starter among the controls a rider must know, and checking fuel is on and the bike is in neutral before starting",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, including draining the carburettor float bowl and waiting for the injection lamp on injected models",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H01",
+      "subcluster": "vc-models",
+      "slug": "honda-wave-alpha-starten-choke-trapstarter-benzinekraan",
+      "primary_query": "Honda Wave Alpha starten choke trapstarter en benzinekraan",
+      "secondary_queries": [
+        "Honda Wave Alpha start niet op een koude ochtend choke",
+        "trapstarter gebruiken op een halfautomatische motor",
+        "waarvoor dient de benzinekraan van een motor open dicht",
+        "Honda Wave Alpha verzopen start niet",
+        "verschil carburateur en injectie bij het starten van een motor"
+      ],
+      "entities": [
+        "Honda Wave Alpha",
+        "chokehendel",
+        "benzinekraan",
+        "trapstarter",
+        "carburateur",
+        "handleiding Honda Vietnam"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Huurders van een eenvoudige halfautomaat zoals de Honda Wave Alpha vinden een benzinekraan, een chokehendel en een trapstarter die veel bezoekers nooit hebben gebruikt, en willen de startroutine uit de handleiding.",
+      "content_angle": "Volgt de startpagina's van de Wave Alpha-handleiding (benzinekraan open, contact aan, vrijlooplampje, chokehendel, elektrische starter of trapstarter, aparte stappen voor warm weer en koude ochtenden en de stappen als de motor niet aanslaat), de FAQ van Honda Vietnam over koud starten en de choke, het CBT-opleidingsprogramma van de Britse overheid (GOV.UK), dat choke, benzinekraan en trapstarter tot de bediening rekent die een rijder moet kennen en vraagt vóór het starten te controleren of de brandstof open staat en de motor in vrij staat, en het artikel van Yamaha Motor Vietnam over oorzaken van een motor die niet start, tegenover de Vision-handleiding, waar een scooter met injectie warm en koud op dezelfde manier start zonder choke. De schrijver moet nagaan of de huurmotor een carburateur- of injectiemodel is, temperaturen, tijden en gasopeningen alleen uit de handleiding van het model citeren, vermelden dat de FAQ ook motoren met een automatische benzinekraan beschrijft die na een leeggereden tank even tijd nodig hebben om weer aan te slaan, en de scooterdiagnose aan het aparte artikel over de scooter die niet start overlaten.",
+      "working_title": "Een carburateurmotor starten zoals de Honda Wave Alpha: benzinekraan, choke, trapstarter, koude ochtend",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, two-way fuel valve, neutral lamp, choke lever, kick-start lever, hot and cold start steps and the engine-does-not-start steps",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): a cold engine starts badly and runs unevenly, so engage the choke and release it once the engine runs evenly; bikes with an automatic fuel valve need time to restart after running dry",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, a fuel-injected scooter started the same way hot or cold, with an injection-fault lamp and no choke",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gov.uk/guidance/compulsory-basic-training-cbt-syllabus-and-guidance-notes/element-b-practical-on-site-training",
+          "title": "GOV.UK (DVSA compulsory basic training syllabus, element B): choke, fuel tap and kick starter among the controls a rider must know, and checking fuel is on and the bike is in neutral before starting",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, including draining the carburettor float bowl and waiting for the injection lamp on injected models",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H01",
+      "subcluster": "vc-models",
+      "slug": "bentian-wave-alpha-qidong-zufengmen-jiaota-youkaiguan",
+      "primary_query": "本田 Wave Alpha 怎么启动 阻风门 脚踏启动 油开关",
+      "secondary_queries": [
+        "Wave Alpha 冷天早上打不着火 阻风门怎么用",
+        "半自动摩托车脚踏启动杆怎么用",
+        "摩托车油开关开和关有什么用",
+        "Wave Alpha 淹缸了启动不了",
+        "化油器和电喷摩托车启动方式有什么不同"
+      ],
+      "entities": [
+        "本田 Wave Alpha",
+        "阻风门拉杆",
+        "油开关",
+        "脚踏启动杆",
+        "化油器",
+        "本田越南使用说明书"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "租半自动摩托车的人遇到本田 Wave Alpha 这类带油开关、阻风门拉杆和脚踏启动杆的车，而许多游客从没用过这些，所以想知道说明书给出的启动步骤。",
+      "content_angle": "依据 Wave Alpha 使用说明书的启动页面（油开关打开、点火开关打开、空挡指示灯、阻风门拉杆、电启动或脚踏启动杆、热天与冷天早晨的不同步骤，以及发动机启动不了时的处理步骤），结合本田越南常见问题中关于冷天难启动和阻风门的说明、英国政府 CBT 培训大纲（GOV.UK）把阻风门、油开关和脚踏启动杆列为骑手必须认识的操控装置并要求启动前确认油路已开、车在空挡，以及雅马哈越南关于摩托车打不着火原因的文章，并与 Vision 说明书对照——电喷踏板车无论热车冷车都按同一流程启动，没有阻风门。撰稿人必须先确认租到的车是化油器还是电喷车型，温度、时间和油门开度只能引用该车型的说明书，补充说明本田常见问题还提到带自动油开关的车在油箱跑空后需要一些时间才能重新启动，踏板车的故障排查留给专门的踏板车无法启动文章。",
+      "working_title": "化油器摩托车怎么启动（以本田 Wave Alpha 为例）：油开关、阻风门、脚踏杆和冷天早晨",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, two-way fuel valve, neutral lamp, choke lever, kick-start lever, hot and cold start steps and the engine-does-not-start steps",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): a cold engine starts badly and runs unevenly, so engage the choke and release it once the engine runs evenly; bikes with an automatic fuel valve need time to restart after running dry",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, a fuel-injected scooter started the same way hot or cold, with an injection-fault lamp and no choke",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gov.uk/guidance/compulsory-basic-training-cbt-syllabus-and-guidance-notes/element-b-practical-on-site-training",
+          "title": "GOV.UK (DVSA compulsory basic training syllabus, element B): choke, fuel tap and kick starter among the controls a rider must know, and checking fuel is on and the bike is in neutral before starting",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, including draining the carburettor float bowl and waiting for the injection lamp on injected models",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H01",
+      "subcluster": "vc-models",
+      "slug": "arrancar-honda-wave-alpha-afogador-pedal-torneira",
+      "primary_query": "como arrancar uma Honda Wave Alpha afogador pedal de arranque e torneira da gasolina",
+      "secondary_queries": [
+        "Honda Wave Alpha não arranca de manhã com frio afogador",
+        "como usar o pedal de arranque de uma mota semiautomática",
+        "para que serve a torneira da gasolina de uma mota",
+        "Honda Wave Alpha afogada não arranca",
+        "diferença entre carburador e injeção ao arrancar uma mota"
+      ],
+      "entities": [
+        "Honda Wave Alpha",
+        "alavanca do afogador",
+        "torneira da gasolina",
+        "pedal de arranque",
+        "carburador",
+        "manual de utilizador da Honda Vietname"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quem aluga uma mota semiautomática simples como a Honda Wave Alpha encontra uma torneira da gasolina, uma alavanca do afogador e um pedal de arranque que muitos visitantes nunca usaram, e quer a rotina de arranque que o manual indica.",
+      "content_angle": "Segue as páginas de arranque do manual da Wave Alpha (torneira da gasolina aberta, ignição ligada, luz de ponto morto, alavanca do afogador, arranque elétrico ou pedal, passos distintos para tempo quente e manhãs frias e o que fazer quando o motor não pega), as perguntas frequentes da Honda Vietname sobre arranques a frio e o afogador, o programa de formação CBT do Governo britânico (GOV.UK), que inclui afogador, torneira da gasolina e pedal de arranque entre os comandos que o condutor deve conhecer e pede para confirmar a gasolina aberta e o ponto morto antes de arrancar, e o artigo da Yamaha Motor Vietname sobre as causas de uma mota que não arranca, em contraste com o manual do Vision, em que uma scooter com injeção arranca da mesma forma a quente e a frio, sem afogador. O redator deve confirmar se a mota alugada é de carburador ou de injeção, citar temperaturas, tempos e aberturas do acelerador só do manual do modelo, referir que as perguntas frequentes também descrevem motas com torneira da gasolina automática que precisam de algum tempo para voltar a arrancar depois de ficarem sem combustível e deixar o diagnóstico das scooters para o artigo sobre a scooter que não arranca.",
+      "working_title": "Arrancar uma mota de carburador como a Honda Wave Alpha: torneira, afogador, pedal e manhãs frias",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, two-way fuel valve, neutral lamp, choke lever, kick-start lever, hot and cold start steps and the engine-does-not-start steps",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): a cold engine starts badly and runs unevenly, so engage the choke and release it once the engine runs evenly; bikes with an automatic fuel valve need time to restart after running dry",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, a fuel-injected scooter started the same way hot or cold, with an injection-fault lamp and no choke",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gov.uk/guidance/compulsory-basic-training-cbt-syllabus-and-guidance-notes/element-b-practical-on-site-training",
+          "title": "GOV.UK (DVSA compulsory basic training syllabus, element B): choke, fuel tap and kick starter among the controls a rider must know, and checking fuel is on and the bike is in neutral before starting",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, including draining the carburettor float bowl and waiting for the injection lamp on injected models",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H01",
+      "subcluster": "vc-models",
+      "slug": "honda-weibeu-alpa-sidong-geoneun-beop-chokeu-kikseutateo",
+      "primary_query": "혼다 웨이브 알파 시동 거는 법 초크 킥스타터 연료 밸브",
+      "secondary_queries": [
+        "웨이브 알파 추운 아침 시동 안 걸림 초크",
+        "세미 오토 오토바이 킥 스타터 사용법",
+        "오토바이 연료 밸브 ON OFF 역할",
+        "웨이브 알파 연료가 넘쳐 시동이 안 걸릴 때",
+        "카뷰레터와 인젝션 오토바이 시동 방법 차이"
+      ],
+      "entities": [
+        "혼다 웨이브 알파",
+        "초크 레버",
+        "연료 밸브",
+        "킥 스타터",
+        "카뷰레터",
+        "혼다 베트남 사용 설명서"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "웨이브 알파 같은 기본형 세미 오토 오토바이를 빌리면 연료 밸브, 초크 레버, 킥 스타터를 만나게 되는데 많은 여행자가 써 본 적이 없어서, 설명서가 알려 주는 시동 순서를 알고 싶어 합니다.",
+      "content_angle": "Wave Alpha 사용 설명서의 시동 페이지(연료 밸브 열기, 키 ON, 중립 표시등, 초크 레버, 셀 스타터 또는 킥 스타터, 더운 날씨와 추운 아침의 별도 절차, 시동이 걸리지 않을 때의 절차), 추운 날씨의 시동 불량과 초크를 다룬 혼다 베트남 FAQ, 초크·연료 밸브·킥 스타터를 라이더가 알아야 할 조작 장치로 꼽고 시동 전에 연료가 열려 있는지와 중립인지 확인하라고 하는 영국 정부 CBT 교육 지침(GOV.UK), 시동이 안 걸리는 원인을 다룬 야마하 모터 베트남 기사를 바탕으로 하고, 연료 분사식 스쿠터가 더울 때나 추울 때나 같은 순서로 초크 없이 시동되는 Vision 설명서와 대비합니다. 집필자는 빌린 오토바이가 카뷰레터식인지 인젝션식인지 먼저 확인하고, 온도·시간·스로틀 개도는 해당 모델 설명서에서만 인용하며, 자동 연료 밸브가 달린 오토바이는 연료가 바닥난 뒤 다시 시동이 걸릴 때까지 시간이 걸린다는 혼다 FAQ의 설명을 덧붙이고, 스쿠터 진단은 별도의 스쿠터 시동 불량 글에 맡겨야 합니다.",
+      "working_title": "카뷰레터 오토바이 시동 거는 법, 혼다 웨이브 알파 기준: 연료 밸브, 초크, 킥스타터, 추운 아침",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, two-way fuel valve, neutral lamp, choke lever, kick-start lever, hot and cold start steps and the engine-does-not-start steps",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): a cold engine starts badly and runs unevenly, so engage the choke and release it once the engine runs evenly; bikes with an automatic fuel valve need time to restart after running dry",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, a fuel-injected scooter started the same way hot or cold, with an injection-fault lamp and no choke",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gov.uk/guidance/compulsory-basic-training-cbt-syllabus-and-guidance-notes/element-b-practical-on-site-training",
+          "title": "GOV.UK (DVSA compulsory basic training syllabus, element B): choke, fuel tap and kick starter among the controls a rider must know, and checking fuel is on and the bike is in neutral before starting",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, including draining the carburettor float bowl and waiting for the injection lamp on injected models",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H01",
+      "subcluster": "vc-models",
+      "slug": "honda-weibu-arufa-enjin-no-kakekata-choku-kikku",
+      "primary_query": "ホンダ ウェーブアルファ エンジンのかけ方 チョーク キックスタート 燃料コック",
+      "secondary_queries": [
+        "ウェーブアルファ 寒い朝 エンジンかからない チョーク",
+        "セミオートマ バイク キックスターターの使い方",
+        "バイクの燃料コック ON OFF 役割",
+        "ウェーブアルファ かぶり エンジンかからない",
+        "キャブレター車とインジェクション車のエンジンのかけ方の違い"
+      ],
+      "entities": [
+        "ホンダ ウェーブアルファ",
+        "チョークレバー",
+        "燃料コック",
+        "キックスターター",
+        "キャブレター",
+        "ホンダ・ベトナム 取扱説明書"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "ウェーブアルファのような基本的なセミオートマのバイクを借りると、燃料コック、チョークレバー、キックスターターに出会いますが、多くの旅行者は使ったことがなく、説明書が示すエンジンのかけ方を知りたがります。",
+      "content_angle": "Wave Alphaの取扱説明書にある始動のページ（燃料コックを開く、キーON、ニュートラル表示灯、チョークレバー、セルスターターまたはキックスターター、暑い日と寒い朝それぞれの手順、エンジンがかからないときの手順）、寒い時の始動不良とチョークを扱うホンダ・ベトナムのFAQ、チョーク・燃料コック・キックスターターを乗り手が知るべき操作類に挙げ、始動前に燃料が開いていてニュートラルであることを確認するよう求める英国政府のCBT教習指針（GOV.UK）、エンジンがかからない原因を扱うヤマハ・モーター・ベトナムの記事を基にし、燃料噴射式のスクーターが暑い時も寒い時も同じ手順でチョークなしにかかるVisionの説明書と対比します。執筆者は借りたバイクがキャブレター式かインジェクション式かを確認し、温度・時間・スロットル開度はそのモデルの説明書からのみ引用し、自動燃料コック付きのバイクはガス欠の後に再始動まで時間がかかるというホンダのFAQの説明を添え、スクーターの原因調べは別のスクーターのエンジンがかからない記事に任せてください。",
+      "working_title": "キャブレター車のエンジンのかけ方（ホンダ ウェーブアルファの場合）：燃料コック・チョーク・キック・寒い朝",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, two-way fuel valve, neutral lamp, choke lever, kick-start lever, hot and cold start steps and the engine-does-not-start steps",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): a cold engine starts badly and runs unevenly, so engage the choke and release it once the engine runs evenly; bikes with an automatic fuel valve need time to restart after running dry",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, a fuel-injected scooter started the same way hot or cold, with an injection-fault lamp and no choke",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gov.uk/guidance/compulsory-basic-training-cbt-syllabus-and-guidance-notes/element-b-practical-on-site-training",
+          "title": "GOV.UK (DVSA compulsory basic training syllabus, element B): choke, fuel tap and kick starter among the controls a rider must know, and checking fuel is on and the bike is in neutral before starting",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://yamaha-motor.com.vn/tin-tuc/nguyen-nhan-va-cach-khac-phuc-xe-may-de-khong-no-hieu-qua/",
+          "title": "Yamaha Motor Vietnam (14 September 2026): causes of a motorbike that will not start, including draining the carburettor float bowl and waiting for the injection lamp on injected models",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}
