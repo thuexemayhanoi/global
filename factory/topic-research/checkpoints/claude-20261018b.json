@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:52:59.437Z",
+  "updated_at": "2026-10-20T10:54:53.669Z",
   "base_main_sha": "c41661a730b1a217ef9ca918f44ffc91176098cb",
-  "last_commit_sha": "e8709ac125f7c4c0a237fa0b95a059a19c9c1213",
+  "last_commit_sha": "e16f3f0a8ca89f140565c50c8a08e979193da6e7",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1230,
-    "qa_pass": 1230,
+    "researched": 1240,
+    "qa_pass": 1240,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1220,
+    "pushed": 1230,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 124,
-      "de": 124,
-      "fr": 124,
-      "es": 124,
-      "nl": 124,
-      "pt": 124,
-      "zh": 124,
-      "ko": 124,
-      "ja": 124,
-      "en": 114
+      "vi": 125,
+      "de": 125,
+      "fr": 125,
+      "es": 125,
+      "nl": 125,
+      "pt": 125,
+      "zh": 125,
+      "ko": 125,
+      "ja": 125,
+      "en": 115
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 170
+      "motorbike-rental": 180
     }
   },
   "last_batch": {
-    "seq": 123,
-    "file": "factory/topic-research/batches/claude-20261018b-0123.json",
-    "sha256": "6cb92d4370ceca547b09218e223cadf4988be61c899db1809277d1e3c0a62c21",
+    "seq": 124,
+    "file": "factory/topic-research/batches/claude-20261018b-0124.json",
+    "sha256": "9e316ff3931ba928995b37fe523f1f40a728b1d202c26400681fb4d2331cc41c",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -13601,8 +13601,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0123.json",
       "sha256": "6cb92d4370ceca547b09218e223cadf4988be61c899db1809277d1e3c0a62c21",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "e16f3f0a8ca89f140565c50c8a08e979193da6e7",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -13706,11 +13706,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 124,
+      "file": "factory/topic-research/batches/claude-20261018b-0124.json",
+      "sha256": "9e316ff3931ba928995b37fe523f1f40a728b1d202c26400681fb4d2331cc41c",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:royal-enfield-hunter-350-classic-350-himalayan-450-bang-lai-hang-a",
+          "locale": "vi",
+          "slug": "royal-enfield-hunter-350-classic-350-himalayan-450-bang-lai-hang-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-models",
+          "key": "vi::royal enfield hunter 350 classic 350 himalayan 450 khac nhau the nao va can bang lai hang nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:royal-enfield-hunter-350-classic-350-himalayan-450-licence-class",
+          "locale": "en",
+          "slug": "royal-enfield-hunter-350-classic-350-himalayan-450-licence-class",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-models",
+          "key": "en::royal enfield hunter 350 vs classic 350 vs himalayan 450 differences",
+          "ta_id": null
+        },
+        {
+          "ref": "de:royal-enfield-hunter-350-classic-350-himalayan-450-fuehrerscheinklasse-a",
+          "locale": "de",
+          "slug": "royal-enfield-hunter-350-classic-350-himalayan-450-fuehrerscheinklasse-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-models",
+          "key": "de::royal enfield hunter 350 classic 350 himalayan 450 unterschiede und notige fuhrerscheinklasse",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:royal-enfield-hunter-350-classic-350-himalayan-450-differences-permis-a",
+          "locale": "fr",
+          "slug": "royal-enfield-hunter-350-classic-350-himalayan-450-differences-permis-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-models",
+          "key": "fr::royal enfield hunter 350 classic 350 himalayan 450 differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:royal-enfield-hunter-350-classic-350-himalayan-450-diferencias-carne-a",
+          "locale": "es",
+          "slug": "royal-enfield-hunter-350-classic-350-himalayan-450-diferencias-carne-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-models",
+          "key": "es::royal enfield hunter 350 classic 350 himalayan 450 diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:royal-enfield-hunter-350-classic-350-himalayan-450-rijbewijs-a",
+          "locale": "nl",
+          "slug": "royal-enfield-hunter-350-classic-350-himalayan-450-rijbewijs-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-models",
+          "key": "nl::royal enfield hunter 350 classic 350 himalayan 450 verschillen en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:royal-enfield-hunter-350-classic-350-himalayan-450-jiashi-a-lei",
+          "locale": "zh",
+          "slug": "royal-enfield-hunter-350-classic-350-himalayan-450-jiashi-a-lei",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-models",
+          "key": "zh::皇家恩菲尔德 hunter 350 classic 350 himalayan 450 区别 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:royal-enfield-hunter-350-classic-350-himalayan-450-diferencas-carta-a",
+          "locale": "pt",
+          "slug": "royal-enfield-hunter-350-classic-350-himalayan-450-diferencas-carta-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-models",
+          "key": "pt::royal enfield hunter 350 classic 350 himalayan 450 diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:royal-enfield-hunter-350-classic-350-himalayan-450-chai-myeonheo",
+          "locale": "ko",
+          "slug": "royal-enfield-hunter-350-classic-350-himalayan-450-chai-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-models",
+          "key": "ko::로열 엔필드 hunter 350 classic 350 himalayan 450 차이와 필요한 면허",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:royal-enfield-hunter-350-classic-350-himalayan-450-chigai-menkyo",
+          "locale": "ja",
+          "slug": "royal-enfield-hunter-350-classic-350-himalayan-450-chigai-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-models",
+          "key": "ja::ロイヤルエンフィールト hunter 350 classic 350 himalayan 450 の違いと必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 124,
-    "file": "factory/topic-research/batches/claude-20261018b-0124.json",
+    "seq": 125,
+    "file": "factory/topic-research/batches/claude-20261018b-0125.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -13723,13 +13834,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T09:40:29.305Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 99,
-      "topics": 10,
-      "sha256": "f79da53f1f5af56c4e52e10f27e15c519b026af1f0409b6f474c6cbf471d6fae"
-    },
     {
       "at": "2026-10-20T09:47:21.751Z",
       "event": "BATCH_COMMITTED",
@@ -13897,6 +14001,13 @@
       "seq": 123,
       "topics": 10,
       "sha256": "6cb92d4370ceca547b09218e223cadf4988be61c899db1809277d1e3c0a62c21"
+    },
+    {
+      "at": "2026-10-20T10:54:53.669Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 124,
+      "topics": 10,
+      "sha256": "9e316ff3931ba928995b37fe523f1f40a728b1d202c26400681fb4d2331cc41c"
     }
   ]
 }
