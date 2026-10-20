@@ -69,6 +69,8 @@ test("domain research dashboard separates staged candidates from Matrix and repo
  }
  const opened=d.filter(x=>x.status==="RESEARCH_OPEN");
  assert.equal(opened.length,6);
+ // Real research may already be staged for this domain, so the injected candidate is asserted as a delta.
+ const before=d.find(x=>x.id==="hanoi-vietnam-travel");
  const demo=structuredClone(map);
  const enHub=demo.architecture.proposed_hubs.find(x=>x.id==="travel-guides");
  const existing=demo.locales.en.proposals[0];
@@ -76,10 +78,10 @@ test("domain research dashboard separates staged candidates from Matrix and repo
   cluster:enHub.id,subcluster:enHub.clusters[0].id,status:"ARCHITECTURE_BLOCKED"});
  const next=domainResearchCoverage({matrix,map:demo,policy});
  const travel=next.find(x=>x.id==="hanoi-vietnam-travel");
- assert.equal(travel.by_locale.en.architecture_blocked,1);
- assert.equal(travel.by_locale.en.research,1);
- assert.equal(travel.by_locale.vi.architecture_blocked,0);
- assert.equal(travel.locales_with_eight_candidates,0);
+ assert.equal(travel.by_locale.en.architecture_blocked,before.by_locale.en.architecture_blocked+1);
+ assert.equal(travel.by_locale.en.research,before.by_locale.en.research+1);
+ assert.equal(travel.by_locale.vi.architecture_blocked,before.by_locale.vi.architecture_blocked);
+ assert.equal(travel.locales_with_eight_candidates,before.locales_with_eight_candidates+(before.by_locale.en.architecture_blocked===7?1:0));
  assert.match(dashboardMarkdown({...factoryStatus(ctx),domains:next},{}),/Research intake by domain and language/);
  assert.match(dashboardMarkdown({...factoryStatus(ctx),domains:next},{}),/Travel Guides/);
 });
