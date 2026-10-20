@@ -1,0 +1,556 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H04",
+      "subcluster": "ss-city",
+      "slug": "di-xe-may-quanh-ho-hoan-kiem-toi-cuoi-tuan",
+      "primary_query": "tối cuối tuần xe máy có được vào phố đi bộ hồ Hoàn Kiếm không",
+      "secondary_queries": [
+        "phố đi bộ hồ Hoàn Kiếm cấm xe máy từ mấy giờ",
+        "gửi xe máy ở đâu gần phố đi bộ hồ Gươm cuối tuần",
+        "vùng phát thải thấp Hoàn Kiếm khu vực 1 cấm xe tối thứ Sáu thứ Bảy Chủ nhật",
+        "đi xe máy qua phố cổ tối cuối tuần đi đường nào để tránh khu cấm",
+        "xe buýt miễn phí trong Vành đai 1 gửi xe rồi đi bộ ra hồ"
+      ],
+      "entities": [
+        "hồ Hoàn Kiếm",
+        "phố cổ Hà Nội",
+        "Sở Xây dựng Hà Nội",
+        "vùng phát thải thấp trong Vành đai 1",
+        "phố đi bộ"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Người đi xe máy định ra hồ Hoàn Kiếm vào tối thứ Sáu, thứ Bảy hoặc Chủ nhật cần biết những tuyến phố nào cấm xe máy và vào giờ nào, lực lượng chức năng chặn ở đầu phố ra sao và có thể gửi xe ở đâu rồi đi bộ ra hồ.",
+      "content_angle": "Dựa trên phương án tổ chức giao thông giai đoạn 1 của đề án vùng phát thải thấp do Sở Xây dựng Hà Nội ban hành (Cổng thông tin Chính phủ, VnExpress, Báo Nhân Dân): khu vực 1 quanh hồ và phố cổ cấm xe mô tô, xe gắn máy và ô tô từ 19 giờ đến 24 giờ các tối thứ Sáu, thứ Bảy, Chủ nhật, có chốt ở đầu phố và tuần tra nhắc xuống xe dắt bộ; thành phố còn công bố các điểm trông giữ xe, trạm xe đạp công cộng và miễn vé xe buýt trợ giá trong Vành đai 1 đến hết 30/6/2027. Người viết phải đối chiếu các nguồn (có nguồn nêu 11 tuyến phố, một nguồn nêu 12 tuyến), xem điểm gửi xe nào nằm trong khu bị cấm, coi các bãi đỗ trung chuyển là dự kiến nếu chưa xác nhận và nêu thay đổi sau khi giai đoạn 1 kết thúc ngày 31/12/2026.",
+      "working_title": "Đi xe máy quanh hồ Hoàn Kiếm tối cuối tuần: các tuyến phố cấm, điểm gửi xe và cách vào khu phố đi bộ",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://thanglong.chinhphu.vn/ha-noi-mien-phi-xe-buyt-bo-tri-220-diem-gui-xe-trong-vung-phat-thai-thap-103260701085847009.htm",
+          "title": "Government portal, Thang Long (1 July 2026): Hanoi Department of Construction plan for pilot phase 1, Zone 1 closure 19:00-24:00 Friday to Sunday, parking points, public bicycles and subsidised buses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/ha-noi-thi-diem-vung-phat-thai-thap-tai-vung-loi-hoan-kiem-5085660.html",
+          "title": "VnExpress (15 June 2026): Hanoi People's Council adopts the low-emission zone scheme; the 11 streets bounding Zone 1, the weekend ban and the three phases",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nhandan.vn/dong-thuan-buoc-dau-khi-thuc-hien-vung-phat-thai-thap-post973748.html",
+          "title": "Nhan Dan (6 July 2026): first days of the pilot, checkpoints at street entrances, patrols asking riders to dismount, a list naming 12 streets, parking and bicycle figures",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ha-noi-cong-bo-cac-diem-do-xe-de-thuc-hien-vung-phat-thai-thap-tu-1-7-d52145.html",
+          "title": "VOV Giao thong (26 April 2026): list of existing parking points around the Hoan Kiem Lake core published in the city's low-emission zone report",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://e.vnexpress.net/news/news/traffic/hanoi-makes-buses-free-for-a-year-as-it-opens-vietnam-s-first-low-emission-zone-5092225.html",
+          "title": "VnExpress International (2 July 2026): the low-emission zone opens, Zone 1 and Zone 2 rules, signage on Hang Bac Street, parking, bicycle stations and subsidised buses free to 30 June 2027",
+          "checked_on": "2026-10-20"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "TA-VI-0116",
+          "reason": "The queued travel-neighborhoods topic is a visitor guide to the walking street (hours, streets, night market, crowds); this topic is rider logistics for a motorbike: the closure at street entrances, parking points and bicycle or bus alternatives under the low-emission zone pilot."
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H04",
+      "subcluster": "ss-city",
+      "slug": "riding-around-hoan-kiem-lake-weekend-evenings",
+      "primary_query": "can you ride a motorbike in the Hoan Kiem walking street at weekends",
+      "secondary_queries": [
+        "Hoan Kiem walking street which streets are closed to motorbikes Friday to Sunday",
+        "where to park a motorbike near Hoan Kiem Lake on a weekend evening",
+        "Hoan Kiem walking street hours motorbike ban evening to midnight",
+        "Hoan Kiem low-emission zone pilot what riders must do",
+        "can I push my motorbike through the Hoan Kiem walking street"
+      ],
+      "entities": [
+        "Hoan Kiem Lake",
+        "Hanoi Old Quarter",
+        "Hanoi Department of Construction",
+        "low-emission zone within Ring Road 1",
+        "weekend walking street"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Riders who plan an evening around Hoan Kiem Lake on a Friday, Saturday or Sunday want to know which streets are closed to motorbikes and when, how the closure is applied at the street entrances, and where they can leave a bike and still reach the lake on foot.",
+      "content_angle": "Builds on the Hanoi Department of Construction's traffic plan for phase 1 of the low-emission zone pilot, as reported by the Government portal, VnExpress and Nhan Dan: Zone 1 around the lake and the Old Quarter is closed to motorbikes, mopeds and cars from 19:00 to 24:00 on Fridays, Saturdays and Sundays, with checkpoints at the street entrances and patrols asking riders to dismount and push; the city also lists parking points, public bicycle stations and subsidised buses that are free inside Ring Road 1 until 30 June 2027. The Writer must reconcile the sources (some name 11 bounding streets, one names 12), check which listed parking spots lie inside the closed zone, treat the planned park-and-ride sites as plans until confirmed, and say what changes when phase 1 ends on 31 December 2026.",
+      "working_title": "Riding Around Hoan Kiem Lake on Weekend Evenings: Closed Streets, Parking Points and Other Ways In",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://thanglong.chinhphu.vn/ha-noi-mien-phi-xe-buyt-bo-tri-220-diem-gui-xe-trong-vung-phat-thai-thap-103260701085847009.htm",
+          "title": "Government portal, Thang Long (1 July 2026): Hanoi Department of Construction plan for pilot phase 1, Zone 1 closure 19:00-24:00 Friday to Sunday, parking points, public bicycles and subsidised buses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/ha-noi-thi-diem-vung-phat-thai-thap-tai-vung-loi-hoan-kiem-5085660.html",
+          "title": "VnExpress (15 June 2026): Hanoi People's Council adopts the low-emission zone scheme; the 11 streets bounding Zone 1, the weekend ban and the three phases",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nhandan.vn/dong-thuan-buoc-dau-khi-thuc-hien-vung-phat-thai-thap-post973748.html",
+          "title": "Nhan Dan (6 July 2026): first days of the pilot, checkpoints at street entrances, patrols asking riders to dismount, a list naming 12 streets, parking and bicycle figures",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ha-noi-cong-bo-cac-diem-do-xe-de-thuc-hien-vung-phat-thai-thap-tu-1-7-d52145.html",
+          "title": "VOV Giao thong (26 April 2026): list of existing parking points around the Hoan Kiem Lake core published in the city's low-emission zone report",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://e.vnexpress.net/news/news/traffic/hanoi-makes-buses-free-for-a-year-as-it-opens-vietnam-s-first-low-emission-zone-5092225.html",
+          "title": "VnExpress International (2 July 2026): the low-emission zone opens, Zone 1 and Zone 2 rules, signage on Hang Bac Street, parking, bicycle stations and subsidised buses free to 30 June 2027",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H04",
+      "subcluster": "ss-city",
+      "slug": "mit-dem-motorrad-um-den-hoan-kiem-see-am-wochenende",
+      "primary_query": "Hoan-Kiem-See am Wochenende mit dem Motorrad Fußgängerzone Sperrzeiten",
+      "secondary_queries": [
+        "welche Straßen um den Hoan-Kiem-See sind am Wochenende für Motorräder gesperrt",
+        "Motorrad parken in der Nähe des Hoan-Kiem-Sees am Wochenende",
+        "Fußgängerzone Hanoi Altstadt Freitag bis Sonntag abends Motorroller",
+        "Niedrigemissionszone Hoan Kiem Pilotphase Regeln für Motorradfahrer"
+      ],
+      "entities": [
+        "Hoan-Kiem-See",
+        "Altstadt von Hanoi",
+        "Bauamt Hanoi",
+        "Niedrigemissionszone innerhalb der Ringstraße 1",
+        "Fußgängerzone"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Wer an einem Freitag-, Samstag- oder Sonntagabend am Hoan-Kiem-See unterwegs sein will, möchte wissen, welche Straßen für Motorräder gesperrt sind und ab wann, wie die Sperre an den Straßeneingängen umgesetzt wird und wo man das Motorrad abstellen und zu Fuß zum See gehen kann.",
+      "content_angle": "Baut auf dem Verkehrsplan des Bauamts Hanoi für Phase 1 des Pilotprojekts der Niedrigemissionszone auf, wie ihn das Regierungsportal, VnExpress und Nhan Dan beschreiben: Zone 1 um den See und die Altstadt ist freitags, samstags und sonntags von 19 bis 24 Uhr für Motorräder, Mopeds und Autos gesperrt, mit Kontrollposten an den Straßeneingängen und Streifen, die Fahrer zum Absteigen und Schieben auffordern; die Stadt nennt zudem Parkplätze, öffentliche Fahrradstationen und bis zum 30. Juni 2027 kostenlose subventionierte Busse innerhalb der Ringstraße 1. Der Autor muss die Quellen abgleichen (manche nennen 11 Begrenzungsstraßen, eine nennt 12), prüfen, welche aufgelisteten Parkplätze innerhalb der gesperrten Zone liegen, die geplanten Park-and-Ride-Anlagen bis zur Bestätigung als Planung behandeln und sagen, was sich nach dem Ende von Phase 1 am 31. Dezember 2026 ändert.",
+      "working_title": "Mit dem Motorrad um den Hoan-Kiem-See am Wochenende: Gesperrte Straßen, Parkplätze und andere Wege hinein",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://thanglong.chinhphu.vn/ha-noi-mien-phi-xe-buyt-bo-tri-220-diem-gui-xe-trong-vung-phat-thai-thap-103260701085847009.htm",
+          "title": "Government portal, Thang Long (1 July 2026): Hanoi Department of Construction plan for pilot phase 1, Zone 1 closure 19:00-24:00 Friday to Sunday, parking points, public bicycles and subsidised buses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/ha-noi-thi-diem-vung-phat-thai-thap-tai-vung-loi-hoan-kiem-5085660.html",
+          "title": "VnExpress (15 June 2026): Hanoi People's Council adopts the low-emission zone scheme; the 11 streets bounding Zone 1, the weekend ban and the three phases",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nhandan.vn/dong-thuan-buoc-dau-khi-thuc-hien-vung-phat-thai-thap-post973748.html",
+          "title": "Nhan Dan (6 July 2026): first days of the pilot, checkpoints at street entrances, patrols asking riders to dismount, a list naming 12 streets, parking and bicycle figures",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ha-noi-cong-bo-cac-diem-do-xe-de-thuc-hien-vung-phat-thai-thap-tu-1-7-d52145.html",
+          "title": "VOV Giao thong (26 April 2026): list of existing parking points around the Hoan Kiem Lake core published in the city's low-emission zone report",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://e.vnexpress.net/news/news/traffic/hanoi-makes-buses-free-for-a-year-as-it-opens-vietnam-s-first-low-emission-zone-5092225.html",
+          "title": "VnExpress International (2 July 2026): the low-emission zone opens, Zone 1 and Zone 2 rules, signage on Hang Bac Street, parking, bicycle stations and subsidised buses free to 30 June 2027",
+          "checked_on": "2026-10-20"
+        }
+      ],
+      "distinct_from": [
+        {
+          "id": "TA-DE-0119",
+          "reason": "The queued travel-neighborhoods topic is a visitor guide to the walking street (hours, streets, night market, crowds); this topic is rider logistics for a motorbike: the closure at street entrances, parking points and bicycle or bus alternatives under the low-emission zone pilot."
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H04",
+      "subcluster": "ss-city",
+      "slug": "a-moto-autour-du-lac-hoan-kiem-le-week-end",
+      "primary_query": "moto autour du lac Hoan Kiem le week-end rues interdites et stationnement",
+      "secondary_queries": [
+        "rues piétonnes du lac Hoan Kiem motos interdites vendredi samedi dimanche",
+        "où garer sa moto près du lac Hoan Kiem le week-end",
+        "zone à faibles émissions Hoan Kiem phase pilote règles pour les motards",
+        "peut-on rouler à moto dans le Vieux Quartier de Hanoï le soir du week-end"
+      ],
+      "entities": [
+        "lac Hoan Kiem",
+        "Vieux Quartier de Hanoï",
+        "département de la construction de Hanoï",
+        "zone à faibles émissions de l'anneau 1",
+        "rues piétonnes"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Les motards qui veulent passer une soirée de vendredi, samedi ou dimanche autour du lac Hoan Kiem cherchent à savoir quelles rues sont fermées aux motos et à partir de quand, comment la fermeture est appliquée aux entrées des rues et où laisser la moto avant de rejoindre le lac à pied.",
+      "content_angle": "S'appuie sur le plan de circulation du département de la construction de Hanoï pour la phase 1 de la zone à faibles émissions pilote, tel que rapporté par le portail du gouvernement, VnExpress et Nhan Dan : la zone 1 autour du lac et du Vieux Quartier est fermée aux motos, cyclomoteurs et voitures de 19 h à 24 h les vendredis, samedis et dimanches, avec des postes de contrôle aux entrées des rues et des patrouilles qui demandent aux motards de descendre et de pousser ; la ville publie aussi des points de stationnement, des stations de vélos publics et des bus subventionnés gratuits dans l'anneau 1 jusqu'au 30 juin 2027. L'auteur doit concilier les sources (certaines citent 11 rues limitrophes, une en cite 12), vérifier quels parkings listés se trouvent dans la zone fermée, traiter les parcs relais prévus comme des projets tant qu'ils ne sont pas confirmés et dire ce qui change à la fin de la phase 1, le 31 décembre 2026.",
+      "working_title": "À moto autour du lac Hoan Kiem le week-end : rues fermées, stationnement et autres façons d'y accéder",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://thanglong.chinhphu.vn/ha-noi-mien-phi-xe-buyt-bo-tri-220-diem-gui-xe-trong-vung-phat-thai-thap-103260701085847009.htm",
+          "title": "Government portal, Thang Long (1 July 2026): Hanoi Department of Construction plan for pilot phase 1, Zone 1 closure 19:00-24:00 Friday to Sunday, parking points, public bicycles and subsidised buses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/ha-noi-thi-diem-vung-phat-thai-thap-tai-vung-loi-hoan-kiem-5085660.html",
+          "title": "VnExpress (15 June 2026): Hanoi People's Council adopts the low-emission zone scheme; the 11 streets bounding Zone 1, the weekend ban and the three phases",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nhandan.vn/dong-thuan-buoc-dau-khi-thuc-hien-vung-phat-thai-thap-post973748.html",
+          "title": "Nhan Dan (6 July 2026): first days of the pilot, checkpoints at street entrances, patrols asking riders to dismount, a list naming 12 streets, parking and bicycle figures",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ha-noi-cong-bo-cac-diem-do-xe-de-thuc-hien-vung-phat-thai-thap-tu-1-7-d52145.html",
+          "title": "VOV Giao thong (26 April 2026): list of existing parking points around the Hoan Kiem Lake core published in the city's low-emission zone report",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://e.vnexpress.net/news/news/traffic/hanoi-makes-buses-free-for-a-year-as-it-opens-vietnam-s-first-low-emission-zone-5092225.html",
+          "title": "VnExpress International (2 July 2026): the low-emission zone opens, Zone 1 and Zone 2 rules, signage on Hang Bac Street, parking, bicycle stations and subsidised buses free to 30 June 2027",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H04",
+      "subcluster": "ss-city",
+      "slug": "en-moto-por-el-lago-hoan-kiem-fin-de-semana",
+      "primary_query": "ir en moto al lago Hoan Kiem el fin de semana calles cerradas y aparcamiento",
+      "secondary_queries": [
+        "calles peatonales del lago Hoan Kiem motos prohibidas de viernes a domingo",
+        "dónde aparcar la moto cerca del lago Hoan Kiem el fin de semana",
+        "zona de bajas emisiones Hoan Kiem fase piloto normas para motoristas",
+        "se puede circular en moto por el casco antiguo de Hanói por la noche del fin de semana"
+      ],
+      "entities": [
+        "lago Hoan Kiem",
+        "casco antiguo de Hanói",
+        "departamento de construcción de Hanói",
+        "zona de bajas emisiones de la ronda 1",
+        "calles peatonales"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Los moteros que quieren pasar una tarde de viernes, sábado o domingo junto al lago Hoan Kiem necesitan saber qué calles están cerradas a las motos y desde qué hora, cómo se aplica el cierre en las entradas de las calles y dónde dejar la moto para llegar al lago a pie.",
+      "content_angle": "Parte del plan de tráfico del departamento de construcción de Hanói para la fase 1 de la zona de bajas emisiones piloto, tal como lo describen el portal del Gobierno, VnExpress y Nhan Dan: la zona 1 alrededor del lago y del casco antiguo está cerrada a motos, ciclomotores y coches de 19:00 a 24:00 los viernes, sábados y domingos, con controles en las entradas de las calles y patrullas que piden a los conductores bajarse y empujar; la ciudad también publica puntos de aparcamiento, estaciones de bicicletas públicas y autobuses subvencionados gratuitos dentro de la ronda 1 hasta el 30 de junio de 2027. El redactor debe conciliar las fuentes (unas citan 11 calles perimetrales, otra cita 12), comprobar qué aparcamientos de la lista quedan dentro de la zona cerrada, tratar los aparcamientos disuasorios previstos como proyectos mientras no se confirmen y decir qué cambia cuando termine la fase 1 el 31 de diciembre de 2026.",
+      "working_title": "En moto por el lago Hoan Kiem en las noches de fin de semana: calles cerradas, aparcamiento y alternativas",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://thanglong.chinhphu.vn/ha-noi-mien-phi-xe-buyt-bo-tri-220-diem-gui-xe-trong-vung-phat-thai-thap-103260701085847009.htm",
+          "title": "Government portal, Thang Long (1 July 2026): Hanoi Department of Construction plan for pilot phase 1, Zone 1 closure 19:00-24:00 Friday to Sunday, parking points, public bicycles and subsidised buses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/ha-noi-thi-diem-vung-phat-thai-thap-tai-vung-loi-hoan-kiem-5085660.html",
+          "title": "VnExpress (15 June 2026): Hanoi People's Council adopts the low-emission zone scheme; the 11 streets bounding Zone 1, the weekend ban and the three phases",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nhandan.vn/dong-thuan-buoc-dau-khi-thuc-hien-vung-phat-thai-thap-post973748.html",
+          "title": "Nhan Dan (6 July 2026): first days of the pilot, checkpoints at street entrances, patrols asking riders to dismount, a list naming 12 streets, parking and bicycle figures",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ha-noi-cong-bo-cac-diem-do-xe-de-thuc-hien-vung-phat-thai-thap-tu-1-7-d52145.html",
+          "title": "VOV Giao thong (26 April 2026): list of existing parking points around the Hoan Kiem Lake core published in the city's low-emission zone report",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://e.vnexpress.net/news/news/traffic/hanoi-makes-buses-free-for-a-year-as-it-opens-vietnam-s-first-low-emission-zone-5092225.html",
+          "title": "VnExpress International (2 July 2026): the low-emission zone opens, Zone 1 and Zone 2 rules, signage on Hang Bac Street, parking, bicycle stations and subsidised buses free to 30 June 2027",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H04",
+      "subcluster": "ss-city",
+      "slug": "met-de-motor-rond-het-hoan-kiem-meer-in-het-weekend",
+      "primary_query": "met de motor naar het Hoan Kiem-meer in het weekend welke straten dicht",
+      "secondary_queries": [
+        "voetgangersstraten rond het Hoan Kiem-meer motoren verboden vrijdag tot zondag",
+        "waar de motor parkeren bij het Hoan Kiem-meer in het weekend",
+        "lage-emissiezone Hoan Kiem proef regels voor motorrijders",
+        "mag je met de motor door de oude wijk van Hanoi op weekendavonden"
+      ],
+      "entities": [
+        "Hoan Kiem-meer",
+        "oude wijk van Hanoi",
+        "bouwdepartement van Hanoi",
+        "lage-emissiezone binnen Ring 1",
+        "voetgangersstraten"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Wie op een vrijdag-, zaterdag- of zondagavond rond het Hoan Kiem-meer wil zijn, wil weten welke straten voor motoren dicht zijn en vanaf wanneer, hoe de afsluiting bij de straatingangen wordt toegepast en waar je de motor kunt laten staan om te voet naar het meer te gaan.",
+      "content_angle": "Bouwt voort op het verkeersplan van het bouwdepartement van Hanoi voor fase 1 van de proef met een lage-emissiezone, zoals gemeld door het regeringsportaal, VnExpress en Nhan Dan: zone 1 rond het meer en de oude wijk is op vrijdag, zaterdag en zondag van 19:00 tot 24:00 gesloten voor motoren, bromfietsen en auto's, met controleposten bij de straatingangen en patrouilles die bestuurders vragen af te stappen en te duwen; de stad noemt ook parkeerplaatsen, openbare fietsstations en gesubsidieerde bussen die binnen Ring 1 tot 30 juni 2027 gratis zijn. De schrijver moet de bronnen met elkaar verzoenen (sommige noemen 11 begrenzende straten, één noemt er 12), nagaan welke genoemde parkeerplekken binnen de afgesloten zone liggen, de geplande park-and-ridelocaties als plannen behandelen zolang ze niet bevestigd zijn en zeggen wat er verandert wanneer fase 1 op 31 december 2026 eindigt.",
+      "working_title": "Met de motor rond het Hoan Kiem-meer in het weekend: afgesloten straten, parkeren en andere routes",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://thanglong.chinhphu.vn/ha-noi-mien-phi-xe-buyt-bo-tri-220-diem-gui-xe-trong-vung-phat-thai-thap-103260701085847009.htm",
+          "title": "Government portal, Thang Long (1 July 2026): Hanoi Department of Construction plan for pilot phase 1, Zone 1 closure 19:00-24:00 Friday to Sunday, parking points, public bicycles and subsidised buses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/ha-noi-thi-diem-vung-phat-thai-thap-tai-vung-loi-hoan-kiem-5085660.html",
+          "title": "VnExpress (15 June 2026): Hanoi People's Council adopts the low-emission zone scheme; the 11 streets bounding Zone 1, the weekend ban and the three phases",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nhandan.vn/dong-thuan-buoc-dau-khi-thuc-hien-vung-phat-thai-thap-post973748.html",
+          "title": "Nhan Dan (6 July 2026): first days of the pilot, checkpoints at street entrances, patrols asking riders to dismount, a list naming 12 streets, parking and bicycle figures",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ha-noi-cong-bo-cac-diem-do-xe-de-thuc-hien-vung-phat-thai-thap-tu-1-7-d52145.html",
+          "title": "VOV Giao thong (26 April 2026): list of existing parking points around the Hoan Kiem Lake core published in the city's low-emission zone report",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://e.vnexpress.net/news/news/traffic/hanoi-makes-buses-free-for-a-year-as-it-opens-vietnam-s-first-low-emission-zone-5092225.html",
+          "title": "VnExpress International (2 July 2026): the low-emission zone opens, Zone 1 and Zone 2 rules, signage on Hang Bac Street, parking, bicycle stations and subsidised buses free to 30 June 2027",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H04",
+      "subcluster": "ss-city",
+      "slug": "zhoumo-wanshang-qi-motuoche-huanjian-hu",
+      "primary_query": "周末晚上骑摩托车去还剑湖步行街可以吗",
+      "secondary_queries": [
+        "还剑湖步行街 周五到周日 哪些街道禁止摩托车",
+        "还剑湖附近 周末晚上 摩托车 停在哪里",
+        "还剑湖步行街 禁行时间 晚上7点到午夜",
+        "河内低排放区试点 骑摩托车要注意什么"
+      ],
+      "entities": [
+        "还剑湖",
+        "河内老城区",
+        "河内市建设厅",
+        "一号环线内低排放区",
+        "周末步行街"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "打算在周五、周六或周日晚上去还剑湖一带的骑行者想知道，哪些街道在什么时间禁止摩托车通行，入口处是怎样执行的，以及车可以停在哪里再步行去湖边。",
+      "content_angle": "依据河内市建设厅为低排放区试点第一阶段制定的交通方案（政府门户网站、VnExpress和人民报均有报道）：湖区和老城区的一区在周五、周六、周日19:00至24:00禁止摩托车、轻便摩托车和汽车通行，街口设有检查点，巡逻人员会请骑行者下车推行；市里还公布了停车点、公共自行车站，以及一号环线内至2027年6月30日免票的补贴公交。撰稿人需要核对各来源（有的列出11条边界街道，有一家列出12条），确认清单中的停车点哪些位于禁行区内，把规划中的换乘停车场在得到确认之前当作计划来写，并说明第一阶段于2026年12月31日结束后会有什么变化。",
+      "working_title": "周末晚上骑摩托车去还剑湖：哪些街道禁行、在哪里停车以及其他前往方式",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://thanglong.chinhphu.vn/ha-noi-mien-phi-xe-buyt-bo-tri-220-diem-gui-xe-trong-vung-phat-thai-thap-103260701085847009.htm",
+          "title": "Government portal, Thang Long (1 July 2026): Hanoi Department of Construction plan for pilot phase 1, Zone 1 closure 19:00-24:00 Friday to Sunday, parking points, public bicycles and subsidised buses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/ha-noi-thi-diem-vung-phat-thai-thap-tai-vung-loi-hoan-kiem-5085660.html",
+          "title": "VnExpress (15 June 2026): Hanoi People's Council adopts the low-emission zone scheme; the 11 streets bounding Zone 1, the weekend ban and the three phases",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nhandan.vn/dong-thuan-buoc-dau-khi-thuc-hien-vung-phat-thai-thap-post973748.html",
+          "title": "Nhan Dan (6 July 2026): first days of the pilot, checkpoints at street entrances, patrols asking riders to dismount, a list naming 12 streets, parking and bicycle figures",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ha-noi-cong-bo-cac-diem-do-xe-de-thuc-hien-vung-phat-thai-thap-tu-1-7-d52145.html",
+          "title": "VOV Giao thong (26 April 2026): list of existing parking points around the Hoan Kiem Lake core published in the city's low-emission zone report",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://e.vnexpress.net/news/news/traffic/hanoi-makes-buses-free-for-a-year-as-it-opens-vietnam-s-first-low-emission-zone-5092225.html",
+          "title": "VnExpress International (2 July 2026): the low-emission zone opens, Zone 1 and Zone 2 rules, signage on Hang Bac Street, parking, bicycle stations and subsidised buses free to 30 June 2027",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H04",
+      "subcluster": "ss-city",
+      "slug": "de-mota-no-lago-hoan-kiem-ao-fim-de-semana",
+      "primary_query": "ir de mota ao lago Hoan Kiem ao fim de semana ruas fechadas e estacionamento",
+      "secondary_queries": [
+        "ruas pedonais do lago Hoan Kiem motas proibidas de sexta a domingo",
+        "onde estacionar a mota perto do lago Hoan Kiem ao fim de semana",
+        "zona de baixas emissões Hoan Kiem fase piloto regras para motociclistas",
+        "posso andar de mota no bairro antigo de Hanói à noite ao fim de semana"
+      ],
+      "entities": [
+        "lago Hoan Kiem",
+        "bairro antigo de Hanói",
+        "departamento de construção de Hanói",
+        "zona de baixas emissões da circular 1",
+        "ruas pedonais"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Os motociclistas que querem passar uma noite de sexta, sábado ou domingo junto ao lago Hoan Kiem precisam de saber que ruas estão fechadas às motas e a partir de que hora, como o encerramento é aplicado nas entradas das ruas e onde deixar a mota antes de seguir a pé até ao lago.",
+      "content_angle": "Parte do plano de trânsito do departamento de construção de Hanói para a fase 1 da zona de baixas emissões piloto, tal como o descrevem o portal do Governo, o VnExpress e o Nhan Dan: a zona 1 em redor do lago e do bairro antigo está fechada a motas, ciclomotores e automóveis das 19:00 às 24:00 às sextas, sábados e domingos, com postos de controlo nas entradas das ruas e patrulhas que pedem aos condutores para descer e empurrar; a cidade publica também pontos de estacionamento, estações de bicicletas públicas e autocarros subsidiados gratuitos dentro da circular 1 até 30 de junho de 2027. O redator deve conciliar as fontes (umas indicam 11 ruas limítrofes, outra indica 12), verificar que parques da lista ficam dentro da zona fechada, tratar os parques dissuasores previstos como planos enquanto não forem confirmados e dizer o que muda quando a fase 1 terminar a 31 de dezembro de 2026.",
+      "working_title": "De mota no lago Hoan Kiem ao fim de semana: ruas fechadas, estacionamento e outras formas de chegar",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://thanglong.chinhphu.vn/ha-noi-mien-phi-xe-buyt-bo-tri-220-diem-gui-xe-trong-vung-phat-thai-thap-103260701085847009.htm",
+          "title": "Government portal, Thang Long (1 July 2026): Hanoi Department of Construction plan for pilot phase 1, Zone 1 closure 19:00-24:00 Friday to Sunday, parking points, public bicycles and subsidised buses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/ha-noi-thi-diem-vung-phat-thai-thap-tai-vung-loi-hoan-kiem-5085660.html",
+          "title": "VnExpress (15 June 2026): Hanoi People's Council adopts the low-emission zone scheme; the 11 streets bounding Zone 1, the weekend ban and the three phases",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nhandan.vn/dong-thuan-buoc-dau-khi-thuc-hien-vung-phat-thai-thap-post973748.html",
+          "title": "Nhan Dan (6 July 2026): first days of the pilot, checkpoints at street entrances, patrols asking riders to dismount, a list naming 12 streets, parking and bicycle figures",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ha-noi-cong-bo-cac-diem-do-xe-de-thuc-hien-vung-phat-thai-thap-tu-1-7-d52145.html",
+          "title": "VOV Giao thong (26 April 2026): list of existing parking points around the Hoan Kiem Lake core published in the city's low-emission zone report",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://e.vnexpress.net/news/news/traffic/hanoi-makes-buses-free-for-a-year-as-it-opens-vietnam-s-first-low-emission-zone-5092225.html",
+          "title": "VnExpress International (2 July 2026): the low-emission zone opens, Zone 1 and Zone 2 rules, signage on Hang Bac Street, parking, bicycle stations and subsidised buses free to 30 June 2027",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H04",
+      "subcluster": "ss-city",
+      "slug": "juman-jeonyeok-hoankiem-hosu-otobai",
+      "primary_query": "주말 저녁 호안끼엠 호수 보행자 거리 오토바이 통행 주차",
+      "secondary_queries": [
+        "호안끼엠 호수 보행자 거리 금요일부터 일요일 오토바이 통제 거리",
+        "주말 저녁 호안끼엠 호수 근처 오토바이 주차 장소",
+        "호안끼엠 보행자 거리 오토바이 금지 시간 저녁부터 자정",
+        "하노이 저배출구역 시범 오토바이 운전자가 알아야 할 점"
+      ],
+      "entities": [
+        "호안끼엠 호수",
+        "하노이 구시가지",
+        "하노이시 건설국",
+        "1번 순환도로 안 저배출구역",
+        "주말 보행자 거리"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "금요일, 토요일, 일요일 저녁에 호안끼엠 호수 주변을 찾으려는 라이더는 어떤 거리가 몇 시부터 오토바이에게 막히는지, 거리 입구에서 통제가 어떻게 이뤄지는지, 어디에 오토바이를 세우고 호수까지 걸어갈 수 있는지 알고 싶어 합니다.",
+      "content_angle": "정부 포털, VnExpress, Nhan Dan 신문이 전한 하노이시 건설국의 저배출구역 시범 1단계 교통 계획을 바탕으로 합니다. 호수와 구시가지를 둘러싼 1구역은 금·토·일 19시부터 24시까지 오토바이, 모페드, 자동차의 통행이 금지되고, 거리 입구에 검문 지점이 있으며 순찰 인력이 운전자에게 내려서 끌고 가라고 안내합니다. 시는 주차 지점, 공공자전거 정거장, 2027년 6월 30일까지 무료인 보조금 지원 버스도 공개했습니다. 작성자는 출처 사이의 차이(경계 거리를 11개로 적은 곳이 있고 12개로 적은 곳이 하나 있습니다)를 맞추고, 목록의 주차 지점 중 통제 구역 안에 있는 곳을 확인하며, 계획 단계인 환승 주차장은 확인되기 전까지 계획으로만 다루고, 1단계가 2026년 12월 31일에 끝난 뒤 무엇이 바뀌는지 밝혀야 합니다.",
+      "working_title": "주말 저녁 호안끼엠 호수 주변에서 오토바이 타기: 통제되는 거리, 주차 지점, 다른 접근 방법",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://thanglong.chinhphu.vn/ha-noi-mien-phi-xe-buyt-bo-tri-220-diem-gui-xe-trong-vung-phat-thai-thap-103260701085847009.htm",
+          "title": "Government portal, Thang Long (1 July 2026): Hanoi Department of Construction plan for pilot phase 1, Zone 1 closure 19:00-24:00 Friday to Sunday, parking points, public bicycles and subsidised buses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/ha-noi-thi-diem-vung-phat-thai-thap-tai-vung-loi-hoan-kiem-5085660.html",
+          "title": "VnExpress (15 June 2026): Hanoi People's Council adopts the low-emission zone scheme; the 11 streets bounding Zone 1, the weekend ban and the three phases",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nhandan.vn/dong-thuan-buoc-dau-khi-thuc-hien-vung-phat-thai-thap-post973748.html",
+          "title": "Nhan Dan (6 July 2026): first days of the pilot, checkpoints at street entrances, patrols asking riders to dismount, a list naming 12 streets, parking and bicycle figures",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ha-noi-cong-bo-cac-diem-do-xe-de-thuc-hien-vung-phat-thai-thap-tu-1-7-d52145.html",
+          "title": "VOV Giao thong (26 April 2026): list of existing parking points around the Hoan Kiem Lake core published in the city's low-emission zone report",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://e.vnexpress.net/news/news/traffic/hanoi-makes-buses-free-for-a-year-as-it-opens-vietnam-s-first-low-emission-zone-5092225.html",
+          "title": "VnExpress International (2 July 2026): the low-emission zone opens, Zone 1 and Zone 2 rules, signage on Hang Bac Street, parking, bicycle stations and subsidised buses free to 30 June 2027",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H04",
+      "subcluster": "ss-city",
+      "slug": "shumatsu-no-yoru-hoankiem-ko-baiku",
+      "primary_query": "週末の夜 ホアンキエム湖 歩行者天国 バイク 通行止め 駐車",
+      "secondary_queries": [
+        "ホアンキエム湖 歩行者天国 金曜から日曜 バイク 通行止めの通り",
+        "週末の夜 ホアンキエム湖の近く バイク 駐車場所",
+        "ホアンキエム 歩行者天国 バイク禁止 時間 夜から深夜",
+        "ハノイ 低排出ゾーン 試行 バイクの運転者が知っておくこと"
+      ],
+      "entities": [
+        "ホアンキエム湖",
+        "ハノイ旧市街",
+        "ハノイ市建設局",
+        "環状1号線内の低排出ゾーン",
+        "週末の歩行者天国"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "金曜・土曜・日曜の夜にホアンキエム湖周辺へ行こうとするライダーは、どの通りが何時からバイク通行止めになるのか、通りの入口でどのように規制が行われるのか、どこにバイクを置いて湖まで歩けるのかを知りたがります。",
+      "content_angle": "政府ポータル、VnExpress、ニャンザン紙が伝えるハノイ市建設局の低排出ゾーン試行第1段階の交通計画を土台にします。湖と旧市街を囲む第1ゾーンは、金・土・日の19時から24時までバイク、原付、自動車の通行が禁止され、通りの入口に検問所があり、巡回要員が運転者に降りて押して歩くよう呼びかけています。市は駐車場所、公共自転車ステーション、2027年6月30日まで無料の補助金付きバスも公表しています。執筆者は情報源の違い（境界の通りを11本とするものがあり、12本とするものが1つあります）を突き合わせ、一覧の駐車場所のうち通行止めの区域内にあるものを確認し、計画段階のパークアンドライド用地は確認できるまで計画として扱い、第1段階が2026年12月31日に終わったあとに何が変わるかを書いてください。",
+      "working_title": "週末の夜のホアンキエム湖周辺でバイクを使う：通行止めの通り、駐車場所、ほかの行き方",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://thanglong.chinhphu.vn/ha-noi-mien-phi-xe-buyt-bo-tri-220-diem-gui-xe-trong-vung-phat-thai-thap-103260701085847009.htm",
+          "title": "Government portal, Thang Long (1 July 2026): Hanoi Department of Construction plan for pilot phase 1, Zone 1 closure 19:00-24:00 Friday to Sunday, parking points, public bicycles and subsidised buses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/ha-noi-thi-diem-vung-phat-thai-thap-tai-vung-loi-hoan-kiem-5085660.html",
+          "title": "VnExpress (15 June 2026): Hanoi People's Council adopts the low-emission zone scheme; the 11 streets bounding Zone 1, the weekend ban and the three phases",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nhandan.vn/dong-thuan-buoc-dau-khi-thuc-hien-vung-phat-thai-thap-post973748.html",
+          "title": "Nhan Dan (6 July 2026): first days of the pilot, checkpoints at street entrances, patrols asking riders to dismount, a list naming 12 streets, parking and bicycle figures",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ha-noi-cong-bo-cac-diem-do-xe-de-thuc-hien-vung-phat-thai-thap-tu-1-7-d52145.html",
+          "title": "VOV Giao thong (26 April 2026): list of existing parking points around the Hoan Kiem Lake core published in the city's low-emission zone report",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://e.vnexpress.net/news/news/traffic/hanoi-makes-buses-free-for-a-year-as-it-opens-vietnam-s-first-low-emission-zone-5092225.html",
+          "title": "VnExpress International (2 July 2026): the low-emission zone opens, Zone 1 and Zone 2 rules, signage on Hang Bac Street, parking, bicycle stations and subsidised buses free to 30 June 2027",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}

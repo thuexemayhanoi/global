@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T04:51:20.194Z",
+  "updated_at": "2026-10-20T04:51:28.112Z",
   "base_main_sha": "343b27b62a058042c99fa454f719d8493263023b",
-  "last_commit_sha": "b36d87b7ecf930d4e33ed8c17b3c56c13670584d",
+  "last_commit_sha": "c6453d0935a357f5ae6cb113526fb9e4f5961024",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 730,
-    "qa_pass": 730,
+    "researched": 740,
+    "qa_pass": 740,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 720,
+    "pushed": 730,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 74,
-      "de": 74,
-      "fr": 74,
-      "es": 74,
-      "nl": 74,
-      "pt": 74,
-      "zh": 74,
-      "ko": 74,
-      "ja": 74,
-      "en": 64
+      "vi": 75,
+      "de": 75,
+      "fr": 75,
+      "es": 75,
+      "nl": 75,
+      "pt": 75,
+      "zh": 75,
+      "ko": 75,
+      "ja": 75,
+      "en": 65
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 80,
+      "traffic-law-safety": 90,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -46,9 +46,9 @@
     }
   },
   "last_batch": {
-    "seq": 73,
-    "file": "factory/topic-research/batches/claude-20261018b-0073.json",
-    "sha256": "b0b83db0e7f4abe4de645468320e8e74174e01742d94bf50ce4369b3ec9ddb76",
+    "seq": 74,
+    "file": "factory/topic-research/batches/claude-20261018b-0074.json",
+    "sha256": "e8b8dc6be8146af636b3dc614cadea57082d309e23cfb8634fa0de8096cb3365",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -8050,8 +8050,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0073.json",
       "sha256": "b0b83db0e7f4abe4de645468320e8e74174e01742d94bf50ce4369b3ec9ddb76",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "c6453d0935a357f5ae6cb113526fb9e4f5961024",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -8155,11 +8155,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 74,
+      "file": "factory/topic-research/batches/claude-20261018b-0074.json",
+      "sha256": "e8b8dc6be8146af636b3dc614cadea57082d309e23cfb8634fa0de8096cb3365",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:di-xe-may-quanh-ho-hoan-kiem-toi-cuoi-tuan",
+          "locale": "vi",
+          "slug": "di-xe-may-quanh-ho-hoan-kiem-toi-cuoi-tuan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::toi cuoi tuan xe may co duoc vao pho di bo ho hoan kiem khong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:riding-around-hoan-kiem-lake-weekend-evenings",
+          "locale": "en",
+          "slug": "riding-around-hoan-kiem-lake-weekend-evenings",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::can you ride a motorbike in the hoan kiem walking street at weekends",
+          "ta_id": null
+        },
+        {
+          "ref": "de:mit-dem-motorrad-um-den-hoan-kiem-see-am-wochenende",
+          "locale": "de",
+          "slug": "mit-dem-motorrad-um-den-hoan-kiem-see-am-wochenende",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::hoan-kiem-see am wochenende mit dem motorrad fußgangerzone sperrzeiten",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:a-moto-autour-du-lac-hoan-kiem-le-week-end",
+          "locale": "fr",
+          "slug": "a-moto-autour-du-lac-hoan-kiem-le-week-end",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::moto autour du lac hoan kiem le week-end rues interdites et stationnement",
+          "ta_id": null
+        },
+        {
+          "ref": "es:en-moto-por-el-lago-hoan-kiem-fin-de-semana",
+          "locale": "es",
+          "slug": "en-moto-por-el-lago-hoan-kiem-fin-de-semana",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::ir en moto al lago hoan kiem el fin de semana calles cerradas y aparcamiento",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:met-de-motor-rond-het-hoan-kiem-meer-in-het-weekend",
+          "locale": "nl",
+          "slug": "met-de-motor-rond-het-hoan-kiem-meer-in-het-weekend",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::met de motor naar het hoan kiem-meer in het weekend welke straten dicht",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:zhoumo-wanshang-qi-motuoche-huanjian-hu",
+          "locale": "zh",
+          "slug": "zhoumo-wanshang-qi-motuoche-huanjian-hu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::周末晚上骑摩托车去还剑湖步行街可以吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:de-mota-no-lago-hoan-kiem-ao-fim-de-semana",
+          "locale": "pt",
+          "slug": "de-mota-no-lago-hoan-kiem-ao-fim-de-semana",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::ir de mota ao lago hoan kiem ao fim de semana ruas fechadas e estacionamento",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:juman-jeonyeok-hoankiem-hosu-otobai",
+          "locale": "ko",
+          "slug": "juman-jeonyeok-hoankiem-hosu-otobai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::주말 저녁 호안끼엠 호수 보행자 거리 오토바이 통행 주차",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:shumatsu-no-yoru-hoankiem-ko-baiku",
+          "locale": "ja",
+          "slug": "shumatsu-no-yoru-hoankiem-ko-baiku",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::週末の夜 ホアンキエム湖 歩行者天国 ハイク 通行止め 駐車",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 74,
-    "file": "factory/topic-research/batches/claude-20261018b-0074.json",
+    "seq": 75,
+    "file": "factory/topic-research/batches/claude-20261018b-0075.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -8172,13 +8283,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-19T00:38:22.551Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 50,
-      "topics": 10,
-      "sha256": "0d232bede43f919767923606af4846f99120e6c37b9da88c38790649308ecaf3"
-    },
     {
       "at": "2026-10-19T00:38:40.279Z",
       "event": "BATCH_COMMITTED",
@@ -8343,6 +8447,13 @@
       "seq": 73,
       "topics": 10,
       "sha256": "b0b83db0e7f4abe4de645468320e8e74174e01742d94bf50ce4369b3ec9ddb76"
+    },
+    {
+      "at": "2026-10-20T04:51:28.112Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 74,
+      "topics": 10,
+      "sha256": "e8b8dc6be8146af636b3dc614cadea57082d309e23cfb8634fa0de8096cb3365"
     }
   ]
 }
