@@ -12,11 +12,11 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
-| Matrix rows (1751) | 899 | 19 | 23 | 810 |
+| Matrix rows (1761) | 899 | 19 | 23 | 820 |
 | Topical candidates (690) | 0 | 0 | 12 | 678 |
 | Silos (330) | 138 | 16 | 0 | 176 |
 
-Knowledge graph: 42 entities, 3496 typed edges (hreflang_equivalent 190, about 710, contains 2386, has_silo 160, has_hub 40, has_pillar 10).
+Knowledge graph: 42 entities, 3506 typed edges (hreflang_equivalent 190, about 710, contains 2396, has_silo 160, has_hub 40, has_pillar 10).
 
 ## REVIEW — competing intents
 
@@ -78,7 +78,7 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | vc-transmission | consideration | informational | – | P4 I1 KEEP | P4 I1 KEEP | P4 I1 KEEP | P4 I1 KEEP | P4 I1 KEEP | P4 I1 KEEP | P4 I1 KEEP | P4 I1 KEEP | P4 I1 KEEP | P4 I1 KEEP |
 | vc-power | consideration | informational | – | P4 I3 KEEP | P4 I3 KEEP | P4 I3 KEEP | P4 I3 KEEP | P4 I3 KEEP | P4 I3 KEEP | P4 I3 KEEP | P4 I3 KEEP | P4 I3 KEEP | P4 I3 KEEP |
-| vc-models | consideration | commercial | – | P2 I15 KEEP | P3 I15 KEEP | P5 I12 KEEP | P2 I15 KEEP | P3 I14 KEEP | P2 I15 KEEP | P2 I15 KEEP | P2 I15 KEEP | P2 I15 KEEP | P2 I15 KEEP |
+| vc-models | consideration | commercial | – | P2 I16 KEEP | P3 I16 KEEP | P5 I13 KEEP | P2 I16 KEEP | P3 I15 KEEP | P2 I16 KEEP | P2 I16 KEEP | P2 I16 KEEP | P2 I16 KEEP | P2 I16 KEEP |
 | vc-trip-fit | consideration | informational | – | I8 CREATE | P2 I6 KEEP | P2 I6 KEEP | P1 I7 KEEP | P2 I6 KEEP | I8 CREATE | I8 CREATE | I8 CREATE | I8 CREATE | I8 CREATE |
 | rc-period | consideration | commercial | Pillar FAQ ×10 | P2 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P1 I1 KEEP | P1 I1 KEEP |
 | rc-deposit | decision | commercial | Pillar FAQ ×10 | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP |
@@ -117,7 +117,7 @@ Published / planned (IDEA + drafts) / candidates per stage.
 | Stage | vi | en | de | fr | es | nl | zh | pt | ko | ja |
 |---|---|---|---|---|---|---|---|---|---|---|
 | awareness | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
-| consideration | 12 / 27 / 0 | 14 / 26 / 0 | 16 / 23 / 0 | 12 / 27 / 0 | 14 / 25 / 0 | 12 / 27 / 0 | 12 / 27 / 0 | 12 / 27 / 0 | 11 / 28 / 0 | 11 / 28 / 0 |
+| consideration | 12 / 28 / 0 | 14 / 27 / 0 | 16 / 24 / 0 | 12 / 28 / 0 | 14 / 26 / 0 | 12 / 28 / 0 | 12 / 28 / 0 | 12 / 28 / 0 | 11 / 29 / 0 | 11 / 29 / 0 |
 | decision | 14 / 18 / 0 | 17 / 17 / 0 | 17 / 17 / 0 | 18 / 17 / 0 | 16 / 17 / 0 | 15 / 18 / 0 | 15 / 18 / 0 | 15 / 18 / 0 | 16 / 17 / 0 | 16 / 17 / 0 |
 | pickup | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
 | riding | 56 / 41 / 0 | 60 / 38 / 0 | 60 / 38 / 0 | 60 / 38 / 0 | 50 / 38 / 0 | 58 / 39 / 0 | 58 / 39 / 0 | 58 / 39 / 0 | 58 / 38 / 0 | 58 / 38 / 0 |
@@ -130,16 +130,16 @@ Every locale checklist also covers the consideration → decision → pickup →
 
 | Locale | Rows | Published | Protected drafts | Planned | Candidates | Published depth OK |
 |---|---|---|---|---|---|---|
-| vi | 174 | 88 | 0 | 86 | 69 | 98% |
-| en | 178 | 97 | 0 | 81 | 69 | 96% |
-| de | 177 | 99 | 0 | 78 | 69 | 98% |
-| fr | 178 | 96 | 0 | 82 | 69 | 98% |
-| es | 166 | 86 | 0 | 80 | 69 | 95% |
-| nl | 175 | 91 | 0 | 84 | 69 | 96% |
-| zh | 175 | 91 | 0 | 84 | 69 | 98% |
-| pt | 175 | 91 | 0 | 84 | 69 | 98% |
-| ko | 174 | 91 | 0 | 83 | 69 | 98% |
-| ja | 174 | 91 | 0 | 83 | 69 | 97% |
+| vi | 175 | 88 | 0 | 87 | 69 | 98% |
+| en | 179 | 97 | 0 | 82 | 69 | 96% |
+| de | 178 | 99 | 0 | 79 | 69 | 98% |
+| fr | 179 | 96 | 0 | 83 | 69 | 98% |
+| es | 167 | 86 | 0 | 81 | 69 | 95% |
+| nl | 176 | 91 | 0 | 85 | 69 | 96% |
+| zh | 176 | 91 | 0 | 85 | 69 | 98% |
+| pt | 176 | 91 | 0 | 85 | 69 | 98% |
+| ko | 175 | 91 | 0 | 84 | 69 | 98% |
+| ja | 175 | 91 | 0 | 84 | 69 | 97% |
 
 Live Writer states (CLAIMED/SUBMITTED) change on every autopilot commit and are not part of this file: run `node scripts/seo/topical-authority.mjs status`.
 
