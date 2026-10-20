@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:57:29.438Z",
+  "updated_at": "2026-10-20T10:57:46.967Z",
   "base_main_sha": "2b81c61739dbf22f12c3a10c150d1e448d4e68e5",
-  "last_commit_sha": "874fbfc84f1101c749f36ed3a737e14b70d3435c",
+  "last_commit_sha": "78036e59b7adaf6db969ed53bb6e8f1819162221",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1320,
-    "qa_pass": 1320,
+    "researched": 1330,
+    "qa_pass": 1330,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1310,
+    "pushed": 1320,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 133,
-      "de": 133,
-      "fr": 133,
-      "es": 133,
-      "nl": 133,
-      "pt": 133,
-      "zh": 133,
-      "ko": 133,
-      "ja": 133,
-      "en": 123
+      "vi": 134,
+      "de": 134,
+      "fr": 134,
+      "es": 134,
+      "nl": 134,
+      "pt": 134,
+      "zh": 134,
+      "ko": 134,
+      "ja": 134,
+      "en": 124
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 440,
+      "traffic-law-safety": 450,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 132,
-    "file": "factory/topic-research/batches/claude-20261018b-0132.json",
-    "sha256": "f0f302fa7f767cd62fa757c172906084f3fba8c206fa346ab86fa0f4fc5358c6",
+    "seq": 133,
+    "file": "factory/topic-research/batches/claude-20261018b-0133.json",
+    "sha256": "dc57c4ee851823200ed13531b6927142499523e85bbfef663250c021b8693ce7",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -14600,8 +14600,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0132.json",
       "sha256": "f0f302fa7f767cd62fa757c172906084f3fba8c206fa346ab86fa0f4fc5358c6",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "78036e59b7adaf6db969ed53bb6e8f1819162221",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -14705,11 +14705,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 133,
+      "file": "factory/topic-research/batches/claude-20261018b-0133.json",
+      "sha256": "dc57c4ee851823200ed13531b6927142499523e85bbfef663250c021b8693ce7",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:thanh-toan-khong-dung-tien-mat-gui-xe-may-ha-noi-ke-hoach-198-du-thao",
+          "locale": "vi",
+          "slug": "thanh-toan-khong-dung-tien-mat-gui-xe-may-ha-noi-ke-hoach-198-du-thao",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::gui xe may o ha noi co thanh toan bang ma qr duoc khong hay chi tien mat",
+          "ta_id": null
+        },
+        {
+          "ref": "en:hanoi-motorbike-parking-cashless-payment-plan-198-draft-decision",
+          "locale": "en",
+          "slug": "hanoi-motorbike-parking-cashless-payment-plan-198-draft-decision",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::can you pay for motorbike parking in hanoi by qr code or only cash",
+          "ta_id": null
+        },
+        {
+          "ref": "de:hanoi-motorrad-parken-bargeldlos-bezahlen-plan-198-entwurf",
+          "locale": "de",
+          "slug": "hanoi-motorrad-parken-bargeldlos-bezahlen-plan-198-entwurf",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::kann man in hanoi den parkplatz fur den roller per qr-code bezahlen oder nur bar",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:hanoi-stationnement-moto-paiement-sans-especes-plan-198-projet",
+          "locale": "fr",
+          "slug": "hanoi-stationnement-moto-paiement-sans-especes-plan-198-projet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::peut-on payer le stationnement d'une moto a hanoi par qr code ou seulement en especes",
+          "ta_id": null
+        },
+        {
+          "ref": "es:hanoi-aparcar-moto-pago-sin-efectivo-plan-198-borrador",
+          "locale": "es",
+          "slug": "hanoi-aparcar-moto-pago-sin-efectivo-plan-198-borrador",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::se puede pagar el aparcamiento de una moto en hanoi con codigo qr o solo en efectivo",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:hanoi-scooter-parkeren-contactloos-betalen-plan-198-ontwerp",
+          "locale": "nl",
+          "slug": "hanoi-scooter-parkeren-contactloos-betalen-plan-198-ontwerp",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::kun je in hanoi het parkeergeld voor een scooter met een qr-code betalen of alleen contant",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-motuoche-tingche-wuxianjin-zhifu-jihua-198-juedingcaoan",
+          "locale": "zh",
+          "slug": "hanoi-motuoche-tingche-wuxianjin-zhifu-jihua-198-juedingcaoan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::河内摩托车停车费可以扫码支付还是只能用现金",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:hanoi-estacionar-mota-pagamento-sem-numerario-plano-198-projeto",
+          "locale": "pt",
+          "slug": "hanoi-estacionar-mota-pagamento-sem-numerario-plano-198-projeto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::pode-se pagar o estacionamento de uma mota em hanoi com codigo qr ou so em dinheiro",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-otobai-jucha-hyeongeum-eopsi-gyeolje-gyehoek-198-chogan",
+          "locale": "ko",
+          "slug": "hanoi-otobai-jucha-hyeongeum-eopsi-gyeolje-gyehoek-198-chogan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::하노이 오토바이 주차비를 qr코드로 낼 수 있나요 현금만 되나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-baiku-chusha-cashless-shiharai-keikaku-198-soan",
+          "locale": "ja",
+          "slug": "hanoi-baiku-chusha-cashless-shiharai-keikaku-198-soan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ハノイのハイク駐輪料金はqrコートて払えますか、現金たけてすか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 133,
-    "file": "factory/topic-research/batches/claude-20261018b-0133.json",
+    "seq": 134,
+    "file": "factory/topic-research/batches/claude-20261018b-0134.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -14722,13 +14833,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T10:09:41.108Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 108,
-      "topics": 10,
-      "sha256": "766b1f9557a18f86cdd734aec4eb2eb31dd81bdd55d4fad1407ce8a2e8e005ba"
-    },
     {
       "at": "2026-10-20T10:15:42.185Z",
       "event": "BATCH_COMMITTED",
@@ -14896,6 +15000,13 @@
       "seq": 132,
       "topics": 10,
       "sha256": "f0f302fa7f767cd62fa757c172906084f3fba8c206fa346ab86fa0f4fc5358c6"
+    },
+    {
+      "at": "2026-10-20T10:57:46.967Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 133,
+      "topics": 10,
+      "sha256": "dc57c4ee851823200ed13531b6927142499523e85bbfef663250c021b8693ce7"
     }
   ]
 }
