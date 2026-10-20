@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:55:26.592Z",
+  "updated_at": "2026-10-20T10:55:38.032Z",
   "base_main_sha": "2b81c61739dbf22f12c3a10c150d1e448d4e68e5",
-  "last_commit_sha": "e2ebc99d29a3c4f0b82a25264558675c01f73a50",
+  "last_commit_sha": "55d9934b10edbc03ab02d94dcf919463c1d693b1",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1270,
-    "qa_pass": 1270,
+    "researched": 1280,
+    "qa_pass": 1280,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1260,
+    "pushed": 1270,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 128,
-      "de": 128,
-      "fr": 128,
-      "es": 128,
-      "nl": 128,
-      "pt": 128,
-      "zh": 128,
-      "ko": 128,
-      "ja": 128,
-      "en": 118
+      "vi": 129,
+      "de": 129,
+      "fr": 129,
+      "es": 129,
+      "nl": 129,
+      "pt": 129,
+      "zh": 129,
+      "ko": 129,
+      "ja": 129,
+      "en": 119
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 210
+      "motorbike-rental": 220
     }
   },
   "last_batch": {
-    "seq": 127,
-    "file": "factory/topic-research/batches/claude-20261018b-0127.json",
-    "sha256": "ffd3cc1f65737a77b9ad5b6fb6eb56ca38506d4f1bc639de12f5867c9600949f",
+    "seq": 128,
+    "file": "factory/topic-research/batches/claude-20261018b-0128.json",
+    "sha256": "9528c7dec4a1dadff4ea3b8e3e57266e0ad636bb0e3528cdfe8911d8b64e1491",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -14045,8 +14045,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0127.json",
       "sha256": "ffd3cc1f65737a77b9ad5b6fb6eb56ca38506d4f1bc639de12f5867c9600949f",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "55d9934b10edbc03ab02d94dcf919463c1d693b1",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -14150,11 +14150,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 128,
+      "file": "factory/topic-research/batches/claude-20261018b-0128.json",
+      "sha256": "9528c7dec4a1dadff4ea3b8e3e57266e0ad636bb0e3528cdfe8911d8b64e1491",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:honda-rebel-500-cl500-cb500-hornet-gb350s-khac-nhau-bang-lai-hang-a",
+          "locale": "vi",
+          "slug": "honda-rebel-500-cl500-cb500-hornet-gb350s-khac-nhau-bang-lai-hang-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-power",
+          "key": "vi::honda rebel 500 cl500 cb500 hornet gb350s khac nhau the nao va can bang lai hang nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:honda-rebel-500-cl500-cb500-hornet-gb350s-differences-licence-class",
+          "locale": "en",
+          "slug": "honda-rebel-500-cl500-cb500-hornet-gb350s-differences-licence-class",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-power",
+          "key": "en::honda rebel 500 vs cl500 vs cb500 hornet vs gb350s differences vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:honda-rebel-500-cl500-cb500-hornet-gb350s-unterschiede-klasse-a",
+          "locale": "de",
+          "slug": "honda-rebel-500-cl500-cb500-hornet-gb350s-unterschiede-klasse-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-power",
+          "key": "de::honda rebel 500 cl500 cb500 hornet gb350s unterschiede und notige fuhrerscheinklasse",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:honda-rebel-500-cl500-cb500-hornet-gb350s-differences-permis-a",
+          "locale": "fr",
+          "slug": "honda-rebel-500-cl500-cb500-hornet-gb350s-differences-permis-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-power",
+          "key": "fr::honda rebel 500 cl500 cb500 hornet gb350s differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:honda-rebel-500-cl500-cb500-hornet-gb350s-diferencias-carne-a",
+          "locale": "es",
+          "slug": "honda-rebel-500-cl500-cb500-hornet-gb350s-diferencias-carne-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-power",
+          "key": "es::honda rebel 500 cl500 cb500 hornet gb350s diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:honda-rebel-500-cl500-cb500-hornet-gb350s-verschillen-rijbewijs-a",
+          "locale": "nl",
+          "slug": "honda-rebel-500-cl500-cb500-hornet-gb350s-verschillen-rijbewijs-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-power",
+          "key": "nl::honda rebel 500 cl500 cb500 hornet gb350s verschillen en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:honda-rebel-500-cl500-cb500-hornet-gb350s-qubie-jiashi-a-lei",
+          "locale": "zh",
+          "slug": "honda-rebel-500-cl500-cb500-hornet-gb350s-qubie-jiashi-a-lei",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-power",
+          "key": "zh::本田 rebel 500 cl500 cb500 hornet gb350s 区别 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:honda-rebel-500-cl500-cb500-hornet-gb350s-diferencas-carta-a",
+          "locale": "pt",
+          "slug": "honda-rebel-500-cl500-cb500-hornet-gb350s-diferencas-carta-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-power",
+          "key": "pt::honda rebel 500 cl500 cb500 hornet gb350s diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:honda-rebel-500-cl500-cb500-hornet-gb350s-chai-myeonheo",
+          "locale": "ko",
+          "slug": "honda-rebel-500-cl500-cb500-hornet-gb350s-chai-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-power",
+          "key": "ko::혼다 rebel 500 cl500 cb500 hornet gb350s 차이와 필요한 면허",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:honda-rebel-500-cl500-cb500-hornet-gb350s-chigai-menkyo",
+          "locale": "ja",
+          "slug": "honda-rebel-500-cl500-cb500-hornet-gb350s-chigai-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-power",
+          "key": "ja::ホンタ rebel 500 cl500 cb500 hornet gb350s の違いと必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 128,
-    "file": "factory/topic-research/batches/claude-20261018b-0128.json",
+    "seq": 129,
+    "file": "factory/topic-research/batches/claude-20261018b-0129.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -14167,13 +14278,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T10:00:43.662Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 103,
-      "topics": 10,
-      "sha256": "a1bcd5f992422b5db0b4f2723779c8220af403a63292cecfaa6fbc1da17da7c0"
-    },
     {
       "at": "2026-10-20T10:03:41.341Z",
       "event": "BATCH_COMMITTED",
@@ -14341,6 +14445,13 @@
       "seq": 127,
       "topics": 10,
       "sha256": "ffd3cc1f65737a77b9ad5b6fb6eb56ca38506d4f1bc639de12f5867c9600949f"
+    },
+    {
+      "at": "2026-10-20T10:55:38.032Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 128,
+      "topics": 10,
+      "sha256": "9528c7dec4a1dadff4ea3b8e3e57266e0ad636bb0e3528cdfe8911d8b64e1491"
     }
   ]
 }
