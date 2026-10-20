@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T20:15:28.474Z",
+  "updated_at": "2026-10-20T20:16:32.641Z",
   "base_main_sha": "0db5beb8e0ef9b554d29d65ed8f2680392432589",
-  "last_commit_sha": "03e46cc1cba375d5c057f8fe8c77b36f29d3df6b",
+  "last_commit_sha": "ac7ed660e9765f0c2ed7c962d5fb4b1d6846db5d",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1510,
-    "qa_pass": 1510,
+    "researched": 1520,
+    "qa_pass": 1520,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1500,
+    "pushed": 1510,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 152,
-      "de": 152,
-      "fr": 152,
-      "es": 152,
-      "nl": 152,
-      "pt": 152,
-      "zh": 152,
-      "ko": 152,
-      "ja": 152,
-      "en": 142
+      "vi": 153,
+      "de": 153,
+      "fr": 153,
+      "es": 153,
+      "nl": 153,
+      "pt": 153,
+      "zh": 153,
+      "ko": 153,
+      "ja": 153,
+      "en": 143
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 270
+      "motorbike-rental": 280
     }
   },
   "last_batch": {
-    "seq": 151,
-    "file": "factory/topic-research/batches/claude-20261018b-0151.json",
-    "sha256": "78314f0f39361cdd7fc18ab5ca518b9bd24cb44998a3c77e83d175514bb93a81",
+    "seq": 152,
+    "file": "factory/topic-research/batches/claude-20261018b-0152.json",
+    "sha256": "9ef018ae299d060a4dd75aeabc6b1d431d8a9d8a9b1bfe2d0977257c1e8620a6",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -16709,8 +16709,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0151.json",
       "sha256": "78314f0f39361cdd7fc18ab5ca518b9bd24cb44998a3c77e83d175514bb93a81",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "ac7ed660e9765f0c2ed7c962d5fb4b1d6846db5d",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -16814,11 +16814,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 152,
+      "file": "factory/topic-research/batches/claude-20261018b-0152.json",
+      "sha256": "9ef018ae299d060a4dd75aeabc6b1d431d8a9d8a9b1bfe2d0977257c1e8620a6",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:yamaha-mt-03-yzf-r3-mt-07-yzf-r7-khac-nhau-bang-lai-hang-a",
+          "locale": "vi",
+          "slug": "yamaha-mt-03-yzf-r3-mt-07-yzf-r7-khac-nhau-bang-lai-hang-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-models",
+          "key": "vi::yamaha mt-03 r3 mt-07 r7 khac nhau the nao va can bang lai hang nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:yamaha-mt-03-yzf-r3-mt-07-yzf-r7-differences-licence-class",
+          "locale": "en",
+          "slug": "yamaha-mt-03-yzf-r3-mt-07-yzf-r7-differences-licence-class",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-models",
+          "key": "en::yamaha mt-03 vs r3 vs mt-07 vs r7 differences",
+          "ta_id": null
+        },
+        {
+          "ref": "de:yamaha-mt-03-yzf-r3-mt-07-yzf-r7-unterschiede-klasse-a",
+          "locale": "de",
+          "slug": "yamaha-mt-03-yzf-r3-mt-07-yzf-r7-unterschiede-klasse-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-models",
+          "key": "de::yamaha mt-03 r3 mt-07 r7 unterschiede und notige fuhrerscheinklasse",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:yamaha-mt-03-yzf-r3-mt-07-yzf-r7-differences-permis-a",
+          "locale": "fr",
+          "slug": "yamaha-mt-03-yzf-r3-mt-07-yzf-r7-differences-permis-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-models",
+          "key": "fr::yamaha mt-03 r3 mt-07 r7 differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:yamaha-mt-03-yzf-r3-mt-07-yzf-r7-diferencias-carne-a",
+          "locale": "es",
+          "slug": "yamaha-mt-03-yzf-r3-mt-07-yzf-r7-diferencias-carne-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-models",
+          "key": "es::yamaha mt-03 r3 mt-07 r7 diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:yamaha-mt-03-yzf-r3-mt-07-yzf-r7-verschillen-rijbewijs-a",
+          "locale": "nl",
+          "slug": "yamaha-mt-03-yzf-r3-mt-07-yzf-r7-verschillen-rijbewijs-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-models",
+          "key": "nl::yamaha mt-03 r3 mt-07 r7 verschillen en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yamaha-mt-03-yzf-r3-mt-07-yzf-r7-qubie-jiazhao-a-lei",
+          "locale": "zh",
+          "slug": "yamaha-mt-03-yzf-r3-mt-07-yzf-r7-qubie-jiazhao-a-lei",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-models",
+          "key": "zh::雅马哈 mt-03 r3 mt-07 r7 区别 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:yamaha-mt-03-yzf-r3-mt-07-yzf-r7-diferencas-carta-a",
+          "locale": "pt",
+          "slug": "yamaha-mt-03-yzf-r3-mt-07-yzf-r7-diferencas-carta-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-models",
+          "key": "pt::yamaha mt-03 r3 mt-07 r7 diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:yamaha-mt-03-yzf-r3-mt-07-yzf-r7-chai-myeonheo",
+          "locale": "ko",
+          "slug": "yamaha-mt-03-yzf-r3-mt-07-yzf-r7-chai-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-models",
+          "key": "ko::야마하 mt-03 r3 mt-07 r7 차이와 필요한 면허",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:yamaha-mt-03-yzf-r3-mt-07-yzf-r7-chigai-menkyo",
+          "locale": "ja",
+          "slug": "yamaha-mt-03-yzf-r3-mt-07-yzf-r7-chigai-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-models",
+          "key": "ja::ヤマハ mt-03 r3 mt-07 r7 の違いと必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 152,
-    "file": "factory/topic-research/batches/claude-20261018b-0152.json",
+    "seq": 153,
+    "file": "factory/topic-research/batches/claude-20261018b-0153.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -16831,13 +16942,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T10:55:26.592Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 127,
-      "topics": 10,
-      "sha256": "ffd3cc1f65737a77b9ad5b6fb6eb56ca38506d4f1bc639de12f5867c9600949f"
-    },
     {
       "at": "2026-10-20T10:55:38.032Z",
       "event": "BATCH_COMMITTED",
@@ -17005,6 +17109,13 @@
       "seq": 151,
       "topics": 10,
       "sha256": "78314f0f39361cdd7fc18ab5ca518b9bd24cb44998a3c77e83d175514bb93a81"
+    },
+    {
+      "at": "2026-10-20T20:16:32.641Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 152,
+      "topics": 10,
+      "sha256": "9ef018ae299d060a4dd75aeabc6b1d431d8a9d8a9b1bfe2d0977257c1e8620a6"
     }
   ]
 }
