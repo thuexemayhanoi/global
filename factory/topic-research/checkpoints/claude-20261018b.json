@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:04:30.129Z",
+  "updated_at": "2026-10-20T10:04:52.232Z",
   "base_main_sha": "35c3196f5c3a760adb2641c95d0feaaefe7c0687",
-  "last_commit_sha": "26ff5ec7b63083350eb01452f0e99a355ece9dcd",
+  "last_commit_sha": "e3db7278f4647e8e4ccbd2461e905b878c56c76b",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1050,
-    "qa_pass": 1050,
+    "researched": 1060,
+    "qa_pass": 1060,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1040,
+    "pushed": 1050,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 106,
-      "de": 106,
-      "fr": 106,
-      "es": 106,
-      "nl": 106,
-      "pt": 106,
-      "zh": 106,
-      "ko": 106,
-      "ja": 106,
-      "en": 96
+      "vi": 107,
+      "de": 107,
+      "fr": 107,
+      "es": 107,
+      "nl": 107,
+      "pt": 107,
+      "zh": 107,
+      "ko": 107,
+      "ja": 107,
+      "en": 97
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 290,
+      "traffic-law-safety": 300,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 105,
-    "file": "factory/topic-research/batches/claude-20261018b-0105.json",
-    "sha256": "2f048ff0d4e3f04d4ba22359940bb93dba010aab77e1d8f34d8b09226b0525df",
+    "seq": 106,
+    "file": "factory/topic-research/batches/claude-20261018b-0106.json",
+    "sha256": "f0e666342ed50b51e0860c10fb9bf1a6354ce09a39027a69f90f55163a321a2d",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -11603,8 +11603,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0105.json",
       "sha256": "2f048ff0d4e3f04d4ba22359940bb93dba010aab77e1d8f34d8b09226b0525df",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "e3db7278f4647e8e4ccbd2461e905b878c56c76b",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -11708,11 +11708,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 106,
+      "file": "factory/topic-research/batches/claude-20261018b-0106.json",
+      "sha256": "f0e666342ed50b51e0860c10fb9bf1a6354ce09a39027a69f90f55163a321a2d",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:viet-kieu-my-ve-nuoc-di-xe-may-khac-luat-california",
+          "locale": "vi",
+          "slug": "viet-kieu-my-ve-nuoc-di-xe-may-khac-luat-california",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::viet kieu my ve nuoc di xe may luat giao thong khac california the nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:uk-australia-riders-keep-right-vietnam-road-rules",
+          "locale": "en",
+          "slug": "uk-australia-riders-keep-right-vietnam-road-rules",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::riding on the right in vietnam when you drive on the left uk australia",
+          "ta_id": null
+        },
+        {
+          "ref": "de:roller-vietnam-hupe-licht-promille-deutsche-regeln",
+          "locale": "de",
+          "slug": "roller-vietnam-hupe-licht-promille-deutsche-regeln",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::roller fahren vietnam unterschiede zu deutschland hupe licht promille",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:moto-vietnam-casque-gants-gilet-equipement-france",
+          "locale": "fr",
+          "slug": "moto-vietnam-casque-gants-gilet-equipement-france",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::equipement obligatoire moto en france et au vietnam casque gants gilet",
+          "ta_id": null
+        },
+        {
+          "ref": "es:moto-espana-vietnam-alcohol-casco-luces-dgt",
+          "locale": "es",
+          "slug": "moto-espana-vietnam-alcohol-casco-luces-dgt",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::diferencias normas de trafico moto espana vietnam alcohol casco luces",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:snorfiets-brommer-gewoonten-vietnam-helm-fietspad",
+          "locale": "nl",
+          "slug": "snorfiets-brommer-gewoonten-vietnam-helm-fietspad",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::snorfiets of brommer gewoonten in vietnam helm fietspad alcohol verschil",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-qi-motuoche-guonei-jiaogui-chayi-hongdeng-youzhuan",
+          "locale": "zh",
+          "slug": "yuenan-qi-motuoche-guonei-jiaogui-chayi-hongdeng-youzhuan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南骑摩托车 和国内交规的区别 红灯右转 车道 载小孩",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:mota-vietname-codigo-da-estrada-passageiros-buzina-capacete",
+          "locale": "pt",
+          "slug": "mota-vietname-codigo-da-estrada-passageiros-buzina-capacete",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::regras de mota em portugal e no vietname passageiros buzina capacete alcool",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-hangug-gwa-dareun-jeom-hoengdanbodo-uhoejeon",
+          "locale": "ko",
+          "slug": "beteunam-otobai-hangug-gwa-dareun-jeom-hoengdanbodo-uhoejeon",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::베트남 오토바이 운전 한국과 다른 점 횡단보도 일시정지 우회전 안전모",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-nihon-no-genzuki-rule-chigai-nidankai-migi-oresetsu",
+          "locale": "ja",
+          "slug": "betonamu-baiku-nihon-no-genzuki-rule-chigai-nidankai-migi-oresetsu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナム ハイク 日本との交通ルールの違い 二段階右折 30キロ 二人乗り",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 106,
-    "file": "factory/topic-research/batches/claude-20261018b-0106.json",
+    "seq": 107,
+    "file": "factory/topic-research/batches/claude-20261018b-0107.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -11725,13 +11836,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:56:04.811Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 81,
-      "topics": 10,
-      "sha256": "d21c36de4f2b878300293b3792ffad10bf4419ce7d842e13a6850fce704b3155"
-    },
     {
       "at": "2026-10-20T04:56:31.503Z",
       "event": "BATCH_COMMITTED",
@@ -11899,6 +12003,13 @@
       "seq": 105,
       "topics": 10,
       "sha256": "2f048ff0d4e3f04d4ba22359940bb93dba010aab77e1d8f34d8b09226b0525df"
+    },
+    {
+      "at": "2026-10-20T10:04:52.232Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 106,
+      "topics": 10,
+      "sha256": "f0e666342ed50b51e0860c10fb9bf1a6354ce09a39027a69f90f55163a321a2d"
     }
   ]
 }
