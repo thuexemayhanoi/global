@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T04:13:46.286Z",
+  "updated_at": "2026-10-20T04:13:55.740Z",
   "base_main_sha": "dc7b8b5561cd3c609cd8b644cbee6c13bbbee548",
-  "last_commit_sha": "781c05553aec1f0b187aefc701ff533e1278af46",
+  "last_commit_sha": "3f6e5302c1aa7ae17b60c31a5f7ca772ca1e0f59",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 590,
-    "qa_pass": 590,
+    "researched": 600,
+    "qa_pass": 600,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 580,
+    "pushed": 590,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 60,
-      "de": 60,
-      "fr": 60,
-      "es": 60,
-      "nl": 60,
-      "pt": 60,
-      "zh": 60,
-      "ko": 60,
-      "ja": 60,
-      "en": 50
+      "vi": 61,
+      "de": 61,
+      "fr": 61,
+      "es": 61,
+      "nl": 61,
+      "pt": 61,
+      "zh": 61,
+      "ko": 61,
+      "ja": 61,
+      "en": 51
     },
     "domains": {
       "transportation-mobility": 90,
-      "traffic-law-safety": 50,
+      "traffic-law-safety": 60,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
@@ -46,9 +46,9 @@
     }
   },
   "last_batch": {
-    "seq": 59,
-    "file": "factory/topic-research/batches/claude-20261018b-0059.json",
-    "sha256": "8586e6ddb70503b23c0855a648c776fa3e7a0628bcb30dd73e5f501e390ecd1c",
+    "seq": 60,
+    "file": "factory/topic-research/batches/claude-20261018b-0060.json",
+    "sha256": "fbf17543f4de95729e970e31201f8dcb71d744bca1954d3603fe93afbe878406",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -6496,8 +6496,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0059.json",
       "sha256": "8586e6ddb70503b23c0855a648c776fa3e7a0628bcb30dd73e5f501e390ecd1c",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "3f6e5302c1aa7ae17b60c31a5f7ca772ca1e0f59",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -6601,11 +6601,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 60,
+      "file": "factory/topic-research/batches/claude-20261018b-0060.json",
+      "sha256": "fbf17543f4de95729e970e31201f8dcb71d744bca1954d3603fe93afbe878406",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:cap-cuu-o-ha-noi-sau-tai-nan-xe-may",
+          "locale": "vi",
+          "slug": "cap-cuu-o-ha-noi-sau-tai-nan-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::cap cuu o ha noi sau tai nan xe may danh cho nguoi nuoc ngoai",
+          "ta_id": null
+        },
+        {
+          "ref": "en:hanoi-emergency-rooms-after-a-motorbike-accident",
+          "locale": "en",
+          "slug": "hanoi-emergency-rooms-after-a-motorbike-accident",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::hanoi emergency rooms for foreigners after a motorbike accident",
+          "ta_id": null
+        },
+        {
+          "ref": "de:notaufnahme-hanoi-nach-motorradunfall",
+          "locale": "de",
+          "slug": "notaufnahme-hanoi-nach-motorradunfall",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::notaufnahme in hanoi fur auslander nach einem motorradunfall",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:urgences-a-hanoi-apres-un-accident-de-moto",
+          "locale": "fr",
+          "slug": "urgences-a-hanoi-apres-un-accident-de-moto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::urgences a hanoi pour les etrangers apres un accident de moto",
+          "ta_id": null
+        },
+        {
+          "ref": "es:urgencias-en-hanoi-tras-un-accidente-de-moto",
+          "locale": "es",
+          "slug": "urgencias-en-hanoi-tras-un-accidente-de-moto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::urgencias en hanoi para extranjeros tras un accidente de moto",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:spoedeisende-hulp-hanoi-na-een-motorongeluk",
+          "locale": "nl",
+          "slug": "spoedeisende-hulp-hanoi-na-een-motorongeluk",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::spoedeisende hulp in hanoi voor buitenlanders na een motorongeluk",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-motuoche-shigu-hou-de-jizhen",
+          "locale": "zh",
+          "slug": "hanoi-motuoche-shigu-hou-de-jizhen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::河内摩托车事故后外国人急诊去哪里",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:urgencias-em-hanoi-apos-um-acidente-de-mota",
+          "locale": "pt",
+          "slug": "urgencias-em-hanoi-apos-um-acidente-de-mota",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::urgencias em hanoi para estrangeiros apos um acidente de mota",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-obaibai-sago-hu-eungeupsil",
+          "locale": "ko",
+          "slug": "hanoi-obaibai-sago-hu-eungeupsil",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::하노이 오토바이 사고 후 외국인 응급실",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-baiku-jiko-go-kyukyu",
+          "locale": "ja",
+          "slug": "hanoi-baiku-jiko-go-kyukyu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ハノイてハイク事故に遭った外国人の救急外来",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 60,
-    "file": "factory/topic-research/batches/claude-20261018b-0060.json",
+    "seq": 61,
+    "file": "factory/topic-research/batches/claude-20261018b-0061.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -6618,13 +6729,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-18T23:58:15.262Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 36,
-      "topics": 10,
-      "sha256": "75dccf21a8e6a355edaaaa7400e93f588f1a2b13534b46a95968bbd3b4adf480"
-    },
     {
       "at": "2026-10-18T23:58:25.544Z",
       "event": "BATCH_COMMITTED",
@@ -6789,6 +6893,13 @@
       "seq": 59,
       "topics": 10,
       "sha256": "8586e6ddb70503b23c0855a648c776fa3e7a0628bcb30dd73e5f501e390ecd1c"
+    },
+    {
+      "at": "2026-10-20T04:13:55.740Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 60,
+      "topics": 10,
+      "sha256": "fbf17543f4de95729e970e31201f8dcb71d744bca1954d3603fe93afbe878406"
     }
   ]
 }
