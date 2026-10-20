@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T05:04:05.026Z",
-  "base_main_sha": "343b27b62a058042c99fa454f719d8493263023b",
-  "last_commit_sha": "f0e9e58091c1bc072b0de85723a1d7c625d3a401",
+  "updated_at": "2026-10-20T05:16:20.663Z",
+  "base_main_sha": "2e57d8907ace700d93a2d1582573966bc3d96426",
+  "last_commit_sha": "8b259f4a5f2c22cf13084847459dc064d573c7f2",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 860,
-    "qa_pass": 860,
+    "researched": 870,
+    "qa_pass": 870,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 850,
+    "pushed": 860,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 87,
-      "de": 87,
-      "fr": 87,
-      "es": 87,
-      "nl": 87,
-      "pt": 87,
-      "zh": 87,
-      "ko": 87,
-      "ja": 87,
-      "en": 77
+      "vi": 88,
+      "de": 88,
+      "fr": 88,
+      "es": 88,
+      "nl": 88,
+      "pt": 88,
+      "zh": 88,
+      "ko": 88,
+      "ja": 88,
+      "en": 78
     },
     "domains": {
       "transportation-mobility": 100,
@@ -42,13 +42,14 @@
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
       "travel-planning": 120,
-      "electric-mobility": 100
+      "electric-mobility": 100,
+      "motorbike-rental": 10
     }
   },
   "last_batch": {
-    "seq": 86,
-    "file": "factory/topic-research/batches/claude-20261018b-0086.json",
-    "sha256": "3fc10418500e6429a625d8aa2df77765dbe020d1240d49ed745ef4bcb50ecc99",
+    "seq": 87,
+    "file": "factory/topic-research/batches/claude-20261018b-0087.json",
+    "sha256": "ceb0a8b46ae3fa11a2f673524aa74f1c3be5c8654b2d678604833043d7f5260b",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -9493,8 +9494,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0086.json",
       "sha256": "3fc10418500e6429a625d8aa2df77765dbe020d1240d49ed745ef4bcb50ecc99",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "8b259f4a5f2c22cf13084847459dc064d573c7f2",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -9598,11 +9599,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 87,
+      "file": "factory/topic-research/batches/claude-20261018b-0087.json",
+      "sha256": "ceb0a8b46ae3fa11a2f673524aa74f1c3be5c8654b2d678604833043d7f5260b",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:xe-ga-tai-trong-toi-da-nguoi-nang-can-nguoi-cao",
+          "locale": "vi",
+          "slug": "xe-ga-tai-trong-toi-da-nguoi-nang-can-nguoi-cao",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "vi::xe ga cho duoc toi da bao nhieu kg tinh ca nguoi lai va nguoi ngoi sau",
+          "ta_id": null
+        },
+        {
+          "ref": "en:scooter-maximum-load-heavier-or-taller-riders",
+          "locale": "en",
+          "slug": "scooter-maximum-load-heavier-or-taller-riders",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "en::scooter weight limit for heavier riders in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:roller-hoechstzuladung-schwere-und-grosse-fahrer",
+          "locale": "de",
+          "slug": "roller-hoechstzuladung-schwere-und-grosse-fahrer",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "de::roller gewichtsgrenze fur schwere fahrer und beifahrer in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:scooter-charge-maximale-pilotes-lourds-ou-grands",
+          "locale": "fr",
+          "slug": "scooter-charge-maximale-pilotes-lourds-ou-grands",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "fr::charge maximale d'un scooter pour un pilote lourd ou grand au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:scooter-carga-maxima-conductores-pesados-o-altos",
+          "locale": "es",
+          "slug": "scooter-carga-maxima-conductores-pesados-o-altos",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "es::peso maximo de un scooter para conductores pesados en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:scooter-maximale-belading-zware-of-lange-rijders",
+          "locale": "nl",
+          "slug": "scooter-maximale-belading-zware-of-lange-rijders",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "nl::maximaal gewicht scooter voor zware bestuurders in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:tabanche-zuida-zaizhong-tizhong-da-shencai-gao",
+          "locale": "zh",
+          "slug": "tabanche-zuida-zaizhong-tizhong-da-shencai-gao",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "zh::越南踏板摩托车的最大载重是多少,体重较大的人能骑吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:scooter-carga-maxima-condutores-pesados-ou-altos",
+          "locale": "pt",
+          "slug": "scooter-carga-maxima-condutores-pesados-ou-altos",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "pt::peso maximo de uma scooter para condutores pesados no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-seukuteo-choedae-jeokjae-mugae-mugeoun-keun-raideo",
+          "locale": "ko",
+          "slug": "beteunam-seukuteo-choedae-jeokjae-mugae-mugeoun-keun-raideo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ko::베트남 스쿠터 최대 적재 중량 체중이 많이 나가는 사람도 탈 수 있나",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-sukuta-saidai-sekisai-juryo-omoi-takai-raida",
+          "locale": "ja",
+          "slug": "betonamu-sukuta-saidai-sekisai-juryo-omoi-takai-raida",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ja::ヘトナムのスクーターの最大積載量 体重か重い人や背か高い人ても乗れるか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 87,
-    "file": "factory/topic-research/batches/claude-20261018b-0087.json",
+    "seq": 88,
+    "file": "factory/topic-research/batches/claude-20261018b-0088.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -9615,13 +9727,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:23:04.963Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 62,
-      "topics": 10,
-      "sha256": "a6e991d8c7f750db08414d7aaf11f4bfbc1448849fbab24f5caa267c74296cc2"
-    },
     {
       "at": "2026-10-20T04:24:55.495Z",
       "event": "BATCH_COMMITTED",
@@ -9789,6 +9894,13 @@
       "seq": 86,
       "topics": 10,
       "sha256": "3fc10418500e6429a625d8aa2df77765dbe020d1240d49ed745ef4bcb50ecc99"
+    },
+    {
+      "at": "2026-10-20T05:16:20.663Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 87,
+      "topics": 10,
+      "sha256": "ceb0a8b46ae3fa11a2f673524aa74f1c3be5c8654b2d678604833043d7f5260b"
     }
   ]
 }
