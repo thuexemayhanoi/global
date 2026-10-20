@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T09:27:08.474Z",
+  "updated_at": "2026-10-20T09:27:18.309Z",
   "base_main_sha": "52903def7f84a8aca00745959c46bf9721b0a5a6",
-  "last_commit_sha": "f7111aff10051b5ca847e345793b4366b9ce2417",
+  "last_commit_sha": "1ac872be65a4b39eca59a2d31fa829667403aa4d",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 920,
-    "qa_pass": 920,
+    "researched": 930,
+    "qa_pass": 930,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 910,
+    "pushed": 920,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 93,
-      "de": 93,
-      "fr": 93,
-      "es": 93,
-      "nl": 93,
-      "pt": 93,
-      "zh": 93,
-      "ko": 93,
-      "ja": 93,
-      "en": 83
+      "vi": 94,
+      "de": 94,
+      "fr": 94,
+      "es": 94,
+      "nl": 94,
+      "pt": 94,
+      "zh": 94,
+      "ko": 94,
+      "ja": 94,
+      "en": 84
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 50
+      "motorbike-rental": 60
     }
   },
   "last_batch": {
-    "seq": 92,
-    "file": "factory/topic-research/batches/claude-20261018b-0092.json",
-    "sha256": "203c5fae08142492049751018aac700d1f518f4485ebe9f66869140fd2d13c11",
+    "seq": 93,
+    "file": "factory/topic-research/batches/claude-20261018b-0093.json",
+    "sha256": "8374efe7b24ca8d012baa50140f2e18b9954488d67ebf47083e63bb51b5d4c7b",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -10160,8 +10160,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0092.json",
       "sha256": "203c5fae08142492049751018aac700d1f518f4485ebe9f66869140fd2d13c11",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "1ac872be65a4b39eca59a2d31fa829667403aa4d",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -10265,11 +10265,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 93,
+      "file": "factory/topic-research/batches/claude-20261018b-0093.json",
+      "sha256": "8374efe7b24ca8d012baa50140f2e18b9954488d67ebf47083e63bb51b5d4c7b",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:ap-suat-lop-va-do-mon-lop-xe-tay-ga-cach-kiem-tra",
+          "locale": "vi",
+          "slug": "ap-suat-lop-va-do-mon-lop-xe-tay-ga-cach-kiem-tra",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "vi::cach kiem tra ap suat lop va do mon lop xe tay ga",
+          "ta_id": null
+        },
+        {
+          "ref": "en:scooter-tyre-pressure-and-wear-how-to-check",
+          "locale": "en",
+          "slug": "scooter-tyre-pressure-and-wear-how-to-check",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "en::how to check scooter tyre pressure and tyre wear",
+          "ta_id": null
+        },
+        {
+          "ref": "de:reifendruck-und-reifenverschleiss-am-roller-pruefen",
+          "locale": "de",
+          "slug": "reifendruck-und-reifenverschleiss-am-roller-pruefen",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "de::reifendruck beim roller prufen und reifenverschleiß erkennen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:pression-des-pneus-et-usure-scooter-comment-verifier",
+          "locale": "fr",
+          "slug": "pression-des-pneus-et-usure-scooter-comment-verifier",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "fr::pression des pneus de scooter comment verifier et reperer l'usure",
+          "ta_id": null
+        },
+        {
+          "ref": "es:presion-y-desgaste-de-los-neumaticos-del-scooter",
+          "locale": "es",
+          "slug": "presion-y-desgaste-de-los-neumaticos-del-scooter",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "es::presion de los neumaticos del scooter como comprobarla y ver el desgaste",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:bandenspanning-en-bandenslijtage-scooter-controleren",
+          "locale": "nl",
+          "slug": "bandenspanning-en-bandenslijtage-scooter-controleren",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "nl::bandenspanning scooter controleren en slijtage herkennen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:tabanche-taiya-yu-luntai-mosun-jiancha-fangfa",
+          "locale": "zh",
+          "slug": "tabanche-taiya-yu-luntai-mosun-jiancha-fangfa",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "zh::踏板车胎压怎么看 轮胎磨损怎么判断",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:pressao-e-desgaste-dos-pneus-da-scooter-como-verificar",
+          "locale": "pt",
+          "slug": "pressao-e-desgaste-dos-pneus-da-scooter-como-verificar",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "pt::pressao dos pneus da scooter como verificar e ver o desgaste",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:seukuteo-taieo-gonggiap-mit-mamo-hwagin-bangbeop",
+          "locale": "ko",
+          "slug": "seukuteo-taieo-gonggiap-mit-mamo-hwagin-bangbeop",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ko::스쿠터 타이어 공기압 확인 방법과 마모 상태 보는 법",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:sukuta-taiya-kuukiatsu-to-mamou-no-kakunin-hoho",
+          "locale": "ja",
+          "slug": "sukuta-taiya-kuukiatsu-to-mamou-no-kakunin-hoho",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ja::スクーター タイヤ空気圧 確認方法と摩耗の見分け方",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 93,
-    "file": "factory/topic-research/batches/claude-20261018b-0093.json",
+    "seq": 94,
+    "file": "factory/topic-research/batches/claude-20261018b-0094.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -10282,13 +10393,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:36:43.646Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 68,
-      "topics": 10,
-      "sha256": "3e76d6264e887b83bb096d317e5158ea5949462ee2fa0eafd43f9c2aa5f22a6c"
-    },
     {
       "at": "2026-10-20T04:39:14.100Z",
       "event": "BATCH_COMMITTED",
@@ -10456,6 +10560,13 @@
       "seq": 92,
       "topics": 10,
       "sha256": "203c5fae08142492049751018aac700d1f518f4485ebe9f66869140fd2d13c11"
+    },
+    {
+      "at": "2026-10-20T09:27:18.309Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 93,
+      "topics": 10,
+      "sha256": "8374efe7b24ca8d012baa50140f2e18b9954488d67ebf47083e63bb51b5d4c7b"
     }
   ]
 }

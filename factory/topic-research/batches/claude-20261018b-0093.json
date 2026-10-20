@@ -1,0 +1,562 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "ap-suat-lop-va-do-mon-lop-xe-tay-ga-cach-kiem-tra",
+      "primary_query": "cách kiểm tra áp suất lốp và độ mòn lốp xe tay ga",
+      "secondary_queries": [
+        "áp suất lốp xe tay ga khi chở thêm người và hành lý",
+        "nhãn áp suất lốp dán ở đâu trên xe Honda",
+        "nên đo áp suất lốp khi lốp nguội hay nóng",
+        "dấu hiệu lốp xe máy bị mòn cần thay",
+        "lốp xe tay ga non hơi phải làm gì"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Wave Alpha",
+        "nhãn thông tin lốp",
+        "dấu chỉ thị độ mòn gai lốp (TWI)",
+        "sách hướng dẫn sử dụng Honda Việt Nam",
+        "NHTSA"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Người thuê xe tay ga muốn biết áp suất lốp đúng là bao nhiêu, có đổi khi chở thêm người hay hành lý không, và làm sao tự nhận ra lốp non hơi hoặc đã mòn trước một chuyến đi dài hơn.",
+      "content_angle": "Dùng các trang về lốp trong sách hướng dẫn sử dụng của Honda Việt Nam cho Vision và Wave Alpha (nhãn áp suất lốp nguội, đo ít nhất mỗi tháng một lần và bất cứ khi nào thấy lốp non hơi, luôn đo khi lốp nguội, vết cắt và chỗ phồng, dấu chỉ thị độ mòn; nhãn của Wave Alpha ghi áp suất lốp sau cao hơn khi chở thêm người còn nhãn của Vision ghi cùng một mức cho cả hai trường hợp), cùng phần hỏi đáp của Honda Việt Nam về lốp quá non hoặc quá căng, lời khuyên của NHTSA nên đo áp suất và độ sâu gai trước mỗi chuyến đi và điều chỉnh áp suất lốp cùng hệ thống treo khi chở hàng, và khuyến cáo đo bằng đồng hồ mỗi tuần của RoSPA. Các nguồn khác nhau về tần suất (mỗi tháng, mỗi tuần, trước mỗi chuyến đi) nên người viết phải ghi rõ từng nguồn kèm ngày, chỉ nêu áp suất theo nhãn hoặc sách của đúng mẫu xe, và để chuyện lốp có săm hay không săm cho bài riêng về lốp không săm.",
+      "working_title": "Áp suất và độ mòn lốp xe tay ga: cách đo khi lốp nguội, đọc nhãn và điều chỉnh khi chở thêm người",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, cold-pressure label, pressure check at least monthly, damage and wear-indicator checks, tubeless tyres only",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, pressure label with a higher rear figure for rider plus passenger, tube-type tyres, wear indicator",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): what under-inflated and over-inflated tyres do to braking, grip, heat and tyre life",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nhtsa.gov/road-safety/motorcycles",
+          "title": "NHTSA (US road-safety agency), Motorcycle Safety page citing 2024 data: check tyre pressure and tread before every ride, adjust tyre pressure and suspension for cargo",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.rospa.com/road-safety/road-safety-projects/novice-riders/preparing-your-bike",
+          "title": "RoSPA (UK), Prepare your bike: motorcycle tyres feel stiff so low pressure is hard to see, weekly gauge check, wear indicators, cuts and bulges",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "scooter-tyre-pressure-and-wear-how-to-check",
+      "primary_query": "how to check scooter tyre pressure and tyre wear",
+      "secondary_queries": [
+        "scooter tyre pressure with a passenger and luggage",
+        "where is the tyre pressure label on a Honda scooter",
+        "should scooter tyre pressure be checked cold",
+        "how to tell if a scooter tyre is worn out",
+        "scooter tyre looks soft what to do"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Wave Alpha",
+        "tyre pressure label",
+        "tyre wear indicator (TWI)",
+        "Honda Vietnam owner's manual",
+        "NHTSA"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Renters ask what pressure a scooter's tyres should have, whether it changes with a passenger or luggage, and how to spot a soft or worn tyre themselves before a longer ride.",
+      "content_angle": "Uses the tyre pages of Honda Vietnam's Vision and Wave Alpha manuals (cold-pressure label, pressure check at least monthly and whenever a tyre looks soft, always cold, cuts and bulges, wear indicator; the Wave Alpha label gives a higher rear figure for rider plus passenger while the Vision label gives the same figures for both) with Honda Vietnam's FAQ on under- and over-inflation, NHTSA's advice to check pressure and tread before every ride and to adjust tyre pressure and suspension for cargo, and RoSPA's weekly gauge check. The sources differ on how often to check (monthly, weekly, every ride), so the Writer must cite each with its date, quote pressures only from the model's own label or manual, and leave tube versus tubeless to the existing tubeless article.",
+      "working_title": "Scooter Tyre Pressure and Wear: How to Check Them Cold, Read the Label and Adjust for a Passenger",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, cold-pressure label, pressure check at least monthly, damage and wear-indicator checks, tubeless tyres only",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, pressure label with a higher rear figure for rider plus passenger, tube-type tyres, wear indicator",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): what under-inflated and over-inflated tyres do to braking, grip, heat and tyre life",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nhtsa.gov/road-safety/motorcycles",
+          "title": "NHTSA (US road-safety agency), Motorcycle Safety page citing 2024 data: check tyre pressure and tread before every ride, adjust tyre pressure and suspension for cargo",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.rospa.com/road-safety/road-safety-projects/novice-riders/preparing-your-bike",
+          "title": "RoSPA (UK), Prepare your bike: motorcycle tyres feel stiff so low pressure is hard to see, weekly gauge check, wear indicators, cuts and bulges",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "reifendruck-und-reifenverschleiss-am-roller-pruefen",
+      "primary_query": "Reifendruck beim Roller prüfen und Reifenverschleiß erkennen",
+      "secondary_queries": [
+        "Reifendruck Roller mit Beifahrer und Gepäck",
+        "wo steht der Reifendruck auf dem Aufkleber am Honda Roller",
+        "Reifendruck kalt oder warm messen beim Roller",
+        "woran erkenne ich abgefahrene Rollerreifen",
+        "Rollerreifen zu wenig Luft was tun"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Wave Alpha",
+        "Reifendruck-Aufkleber",
+        "Verschleißanzeige (TWI)",
+        "Bedienungsanleitung Honda Vietnam",
+        "NHTSA"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Mieter fragen, welchen Reifendruck ihr Roller braucht, ob er sich mit Sozius oder Gepäck ändert und wie sie weiche oder abgefahrene Reifen vor einer längeren Fahrt selbst erkennen.",
+      "content_angle": "Nutzt die Reifenseiten der Honda-Vietnam-Anleitungen für Vision und Wave Alpha (Aufkleber mit dem Druck bei kalten Reifen, Kontrolle mindestens monatlich und immer, wenn ein Reifen weich wirkt, stets kalt messen, Schnitte und Beulen, Verschleißmarke; das Wave-Alpha-Etikett nennt mit Sozius einen höheren Hinterraddruck, das Vision-Etikett für beide Fälle dieselben Werte) sowie die FAQ von Honda Vietnam zu zu niedrigem und zu hohem Druck, den Rat der NHTSA, Druck und Profil vor jeder Fahrt zu prüfen und Reifendruck und Federung an die Zuladung anzupassen, und die wöchentliche Messung mit dem Manometer bei RoSPA. Die Quellen nennen unterschiedliche Abstände (monatlich, wöchentlich, vor jeder Fahrt); der Autor muss jede mit Datum zitieren, Werte nur vom Etikett oder aus der Anleitung des konkreten Modells übernehmen und Schlauch- gegen schlauchlose Reifen dem bestehenden Artikel dazu überlassen.",
+      "working_title": "Reifendruck und Profil am Roller: kalt messen, das Etikett lesen und für Sozius und Gepäck anpassen",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, cold-pressure label, pressure check at least monthly, damage and wear-indicator checks, tubeless tyres only",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, pressure label with a higher rear figure for rider plus passenger, tube-type tyres, wear indicator",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): what under-inflated and over-inflated tyres do to braking, grip, heat and tyre life",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nhtsa.gov/road-safety/motorcycles",
+          "title": "NHTSA (US road-safety agency), Motorcycle Safety page citing 2024 data: check tyre pressure and tread before every ride, adjust tyre pressure and suspension for cargo",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.rospa.com/road-safety/road-safety-projects/novice-riders/preparing-your-bike",
+          "title": "RoSPA (UK), Prepare your bike: motorcycle tyres feel stiff so low pressure is hard to see, weekly gauge check, wear indicators, cuts and bulges",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "pression-des-pneus-et-usure-scooter-comment-verifier",
+      "primary_query": "pression des pneus de scooter comment vérifier et repérer l'usure",
+      "secondary_queries": [
+        "pression des pneus de scooter avec passager et bagages",
+        "où se trouve l'étiquette de pression des pneus sur un scooter Honda",
+        "vérifier la pression des pneus à froid sur un scooter",
+        "comment savoir si un pneu de scooter est usé",
+        "pneu de scooter mou que faire"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Wave Alpha",
+        "étiquette de pression des pneus",
+        "témoin d'usure (TWI)",
+        "manuel d'utilisation Honda Vietnam",
+        "NHTSA"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Les loueurs de scooter se demandent quelle pression leurs pneus doivent avoir, si elle change avec un passager ou des bagages et comment repérer eux-mêmes un pneu mou ou usé avant un trajet plus long.",
+      "content_angle": "Exploite les pages sur les pneus des manuels de Honda Vietnam pour le Vision et la Wave Alpha (étiquette de pression à froid, contrôle au moins une fois par mois et dès qu'un pneu semble mou, toujours à froid, coupures et hernies, témoin d'usure ; l'étiquette de la Wave Alpha donne une pression arrière plus élevée avec passager, celle du Vision les mêmes valeurs dans les deux cas), la FAQ de Honda Vietnam sur le sous-gonflage et le surgonflage, le conseil de la NHTSA de contrôler pression et sculptures avant chaque sortie et d'adapter pression et suspension à la charge, et le contrôle hebdomadaire au manomètre de la RoSPA. Les sources divergent sur la fréquence (mensuelle, hebdomadaire, avant chaque sortie) ; l'auteur doit donc citer chacune avec sa date, ne donner de pressions que d'après l'étiquette ou le manuel du modèle et laisser la question chambre à air ou tubeless à l'article existant sur le sujet.",
+      "working_title": "Pression et usure des pneus de scooter : mesurer à froid, lire l'étiquette et adapter pour un passager",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, cold-pressure label, pressure check at least monthly, damage and wear-indicator checks, tubeless tyres only",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, pressure label with a higher rear figure for rider plus passenger, tube-type tyres, wear indicator",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): what under-inflated and over-inflated tyres do to braking, grip, heat and tyre life",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nhtsa.gov/road-safety/motorcycles",
+          "title": "NHTSA (US road-safety agency), Motorcycle Safety page citing 2024 data: check tyre pressure and tread before every ride, adjust tyre pressure and suspension for cargo",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.rospa.com/road-safety/road-safety-projects/novice-riders/preparing-your-bike",
+          "title": "RoSPA (UK), Prepare your bike: motorcycle tyres feel stiff so low pressure is hard to see, weekly gauge check, wear indicators, cuts and bulges",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "presion-y-desgaste-de-los-neumaticos-del-scooter",
+      "primary_query": "presión de los neumáticos del scooter cómo comprobarla y ver el desgaste",
+      "secondary_queries": [
+        "presión de neumáticos del scooter con acompañante y equipaje",
+        "dónde está la etiqueta de presión de neumáticos en una Honda",
+        "medir la presión de los neumáticos en frío",
+        "cómo saber si el neumático de un scooter está gastado",
+        "neumático del scooter con poco aire qué hacer"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Wave Alpha",
+        "etiqueta de presión de neumáticos",
+        "indicador de desgaste (TWI)",
+        "manual de usuario de Honda Vietnam",
+        "NHTSA"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quienes alquilan un scooter se preguntan qué presión deben llevar los neumáticos, si cambia con acompañante o equipaje y cómo detectar por sí mismos una rueda blanda o gastada antes de un trayecto largo.",
+      "content_angle": "Se basa en las páginas sobre neumáticos de los manuales de Honda Vietnam para el Vision y la Wave Alpha (etiqueta de presión en frío, comprobación al menos una vez al mes y siempre que un neumático parezca blando, siempre en frío, cortes y bultos, indicador de desgaste; la etiqueta de la Wave Alpha da una presión trasera más alta con acompañante y la del Vision los mismos valores en ambos casos), en las preguntas frecuentes de Honda Vietnam sobre el inflado insuficiente y excesivo, en el consejo de la NHTSA de comprobar presión y dibujo antes de cada salida y ajustar presión y suspensión a la carga y en la medición semanal con manómetro de la RoSPA. Las fuentes difieren en la frecuencia (mensual, semanal, antes de cada salida), así que el redactor debe citar cada una con su fecha, dar presiones solo según la etiqueta o el manual del modelo y dejar la cuestión de cámara o tubeless para el artículo existente.",
+      "working_title": "Presión y desgaste de neumáticos de scooter: medir en frío, leer la etiqueta y ajustar con acompañante",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, cold-pressure label, pressure check at least monthly, damage and wear-indicator checks, tubeless tyres only",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, pressure label with a higher rear figure for rider plus passenger, tube-type tyres, wear indicator",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): what under-inflated and over-inflated tyres do to braking, grip, heat and tyre life",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nhtsa.gov/road-safety/motorcycles",
+          "title": "NHTSA (US road-safety agency), Motorcycle Safety page citing 2024 data: check tyre pressure and tread before every ride, adjust tyre pressure and suspension for cargo",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.rospa.com/road-safety/road-safety-projects/novice-riders/preparing-your-bike",
+          "title": "RoSPA (UK), Prepare your bike: motorcycle tyres feel stiff so low pressure is hard to see, weekly gauge check, wear indicators, cuts and bulges",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "bandenspanning-en-bandenslijtage-scooter-controleren",
+      "primary_query": "bandenspanning scooter controleren en slijtage herkennen",
+      "secondary_queries": [
+        "bandenspanning scooter met duopassagier en bagage",
+        "waar zit het bandenspanningsplaatje op een Honda scooter",
+        "bandenspanning koud meten scooter",
+        "hoe zie je dat een scooterband versleten is",
+        "scooterband staat zacht wat doen"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Wave Alpha",
+        "bandenspanningsplaatje",
+        "slijtage-indicator (TWI)",
+        "handleiding Honda Vietnam",
+        "NHTSA"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Huurders van een scooter vragen zich af welke bandenspanning hun banden nodig hebben, of die verandert met een duopassagier of bagage en hoe ze zelf een zachte of versleten band herkennen voor een langere rit.",
+      "content_angle": "Gebruikt de bandenpagina's in de handleidingen van Honda Vietnam voor de Vision en de Wave Alpha (plaatje met de spanning bij koude banden, controle minstens eens per maand en telkens als een band zacht lijkt, altijd koud meten, sneden en bulten, slijtage-indicator; het plaatje van de Wave Alpha geeft met duopassagier een hogere achterspanning, dat van de Vision in beide gevallen dezelfde waarden), de FAQ van Honda Vietnam over te zachte en te harde banden, het advies van de NHTSA om spanning en profiel voor elke rit te controleren en spanning en vering aan de lading aan te passen en de wekelijkse meting met een manometer bij RoSPA. De bronnen noemen verschillende intervallen (maandelijks, wekelijks, voor elke rit); de schrijver moet elke bron met datum citeren, waarden alleen van het plaatje of de handleiding van het exacte model overnemen en binnenband versus tubeless aan het bestaande artikel overlaten.",
+      "working_title": "Bandenspanning en slijtage van scooterbanden: koud meten, plaatje lezen en aanpassen voor een duo",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, cold-pressure label, pressure check at least monthly, damage and wear-indicator checks, tubeless tyres only",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, pressure label with a higher rear figure for rider plus passenger, tube-type tyres, wear indicator",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): what under-inflated and over-inflated tyres do to braking, grip, heat and tyre life",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nhtsa.gov/road-safety/motorcycles",
+          "title": "NHTSA (US road-safety agency), Motorcycle Safety page citing 2024 data: check tyre pressure and tread before every ride, adjust tyre pressure and suspension for cargo",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.rospa.com/road-safety/road-safety-projects/novice-riders/preparing-your-bike",
+          "title": "RoSPA (UK), Prepare your bike: motorcycle tyres feel stiff so low pressure is hard to see, weekly gauge check, wear indicators, cuts and bulges",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "tabanche-taiya-yu-luntai-mosun-jiancha-fangfa",
+      "primary_query": "踏板车胎压怎么看 轮胎磨损怎么判断",
+      "secondary_queries": [
+        "踏板车载人载行李胎压要调吗",
+        "本田踏板车胎压标签在哪里",
+        "胎压要在冷胎时测吗",
+        "怎么看摩托车轮胎磨损到极限",
+        "踏板车轮胎气不足怎么办"
+      ],
+      "entities": [
+        "本田 Vision",
+        "本田 Wave Alpha",
+        "胎压标签",
+        "磨损标记 (TWI)",
+        "本田越南使用说明书",
+        "NHTSA"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "在越南租踏板车的人想知道轮胎该打多少气、载人或带行李后要不要改，以及长途骑行之前怎样自己判断轮胎是不是偏软或者已经磨损，而不必先去问车行或修车师傅。",
+      "content_angle": "采用本田越南使用说明书中 Vision 和 Wave Alpha 的轮胎部分（冷胎胎压标签、至少每月测一次且轮胎看起来发软时随时测、始终在冷胎时测、割口和鼓包、磨损标记；Wave Alpha 的标签给出载人时更高的后轮胎压，Vision 的标签则两种情况数值相同），以及本田越南常见问题中关于胎压过低或过高的说明、美国 NHTSA 每次骑行前检查胎压和花纹深度并按载重调整胎压与悬架的建议、英国 RoSPA 每周用气压表测量的建议。各来源对检查频率说法不一（每月、每周、每次骑行前），撰稿人需分别注明来源和日期，胎压数值只能引用具体车型的标签或说明书，有内胎与无内胎的区别留给已有的无内胎轮胎文章。",
+      "working_title": "踏板车胎压与轮胎磨损：冷胎测量、看懂标签、载人时如何调整",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, cold-pressure label, pressure check at least monthly, damage and wear-indicator checks, tubeless tyres only",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, pressure label with a higher rear figure for rider plus passenger, tube-type tyres, wear indicator",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): what under-inflated and over-inflated tyres do to braking, grip, heat and tyre life",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nhtsa.gov/road-safety/motorcycles",
+          "title": "NHTSA (US road-safety agency), Motorcycle Safety page citing 2024 data: check tyre pressure and tread before every ride, adjust tyre pressure and suspension for cargo",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.rospa.com/road-safety/road-safety-projects/novice-riders/preparing-your-bike",
+          "title": "RoSPA (UK), Prepare your bike: motorcycle tyres feel stiff so low pressure is hard to see, weekly gauge check, wear indicators, cuts and bulges",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "pressao-e-desgaste-dos-pneus-da-scooter-como-verificar",
+      "primary_query": "pressão dos pneus da scooter como verificar e ver o desgaste",
+      "secondary_queries": [
+        "pressão dos pneus da scooter com passageiro e bagagem",
+        "onde está a etiqueta da pressão dos pneus numa Honda",
+        "medir a pressão dos pneus a frio",
+        "como saber se o pneu da scooter está gasto",
+        "pneu da scooter com pouco ar o que fazer"
+      ],
+      "entities": [
+        "Honda Vision",
+        "Honda Wave Alpha",
+        "etiqueta da pressão dos pneus",
+        "indicador de desgaste (TWI)",
+        "manual de utilizador da Honda Vietname",
+        "NHTSA"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quem aluga uma scooter pergunta que pressão devem ter os pneus, se muda com passageiro ou bagagem e como reconhecer por si um pneu mole ou gasto antes de um percurso mais longo.",
+      "content_angle": "Usa as páginas sobre pneus dos manuais da Honda Vietname para o Vision e a Wave Alpha (etiqueta da pressão a frio, verificação pelo menos uma vez por mês e sempre que um pneu pareça mole, sempre a frio, cortes e altos, indicador de desgaste; a etiqueta da Wave Alpha dá uma pressão traseira mais alta com passageiro e a do Vision os mesmos valores nos dois casos), as perguntas frequentes da Honda Vietname sobre pneus com pouco ou demasiado ar, o conselho da NHTSA de verificar pressão e rasto antes de cada saída e ajustar pressão e suspensão à carga e a medição semanal com manómetro da RoSPA. As fontes diferem quanto à frequência (mensal, semanal, antes de cada saída), pelo que o redator deve citar cada uma com a data, indicar pressões só pela etiqueta ou pelo manual do modelo e deixar a questão câmara de ar ou tubeless para o artigo existente.",
+      "working_title": "Pressão e desgaste dos pneus da scooter: medir a frio, ler a etiqueta e ajustar com passageiro",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, cold-pressure label, pressure check at least monthly, damage and wear-indicator checks, tubeless tyres only",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, pressure label with a higher rear figure for rider plus passenger, tube-type tyres, wear indicator",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): what under-inflated and over-inflated tyres do to braking, grip, heat and tyre life",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nhtsa.gov/road-safety/motorcycles",
+          "title": "NHTSA (US road-safety agency), Motorcycle Safety page citing 2024 data: check tyre pressure and tread before every ride, adjust tyre pressure and suspension for cargo",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.rospa.com/road-safety/road-safety-projects/novice-riders/preparing-your-bike",
+          "title": "RoSPA (UK), Prepare your bike: motorcycle tyres feel stiff so low pressure is hard to see, weekly gauge check, wear indicators, cuts and bulges",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "seukuteo-taieo-gonggiap-mit-mamo-hwagin-bangbeop",
+      "primary_query": "스쿠터 타이어 공기압 확인 방법과 마모 상태 보는 법",
+      "secondary_queries": [
+        "스쿠터 뒷사람 태우고 짐 실을 때 타이어 공기압",
+        "혼다 스쿠터 타이어 공기압 라벨 위치",
+        "타이어 공기압은 차가울 때 재야 하나",
+        "스쿠터 타이어 마모 한계 확인하는 법",
+        "스쿠터 타이어 바람이 빠졌을 때 어떻게 하나"
+      ],
+      "entities": [
+        "혼다 비전",
+        "혼다 웨이브 알파",
+        "타이어 공기압 라벨",
+        "마모 한계 표시 (TWI)",
+        "혼다 베트남 사용 설명서",
+        "NHTSA"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "스쿠터를 렌털하는 사람은 타이어 공기압이 얼마여야 하는지, 뒷사람이나 짐이 있으면 달라지는지, 장거리 주행 전에 물렁하거나 닳은 타이어를 스스로 알아보는 방법이 궁금합니다.",
+      "content_angle": "혼다 베트남 사용 설명서의 Vision과 Wave Alpha 타이어 항목(냉간 공기압 라벨, 최소 한 달에 한 번 그리고 타이어가 물러 보일 때마다 점검, 항상 차가울 때 측정, 베임과 부풀음, 마모 한계 표시; Wave Alpha 라벨은 뒷사람이 탈 때 더 높은 뒤 타이어 공기압을, Vision 라벨은 두 경우 모두 같은 수치를 표시)과 공기압이 너무 낮거나 높을 때를 다룬 혼다 베트남 FAQ, 매 주행 전 공기압과 트레드 깊이를 점검하고 짐에 맞춰 공기압과 서스펜션을 조정하라는 미국 NHTSA의 안내, 매주 게이지로 재라는 영국 RoSPA의 권고를 바탕으로 합니다. 출처마다 점검 주기가 다르므로(매월, 매주, 매 주행 전) 집필자는 각 출처를 날짜와 함께 인용하고, 공기압 수치는 해당 모델의 라벨이나 설명서에서만 가져오며, 튜브와 튜브리스의 차이는 기존 튜브리스 글에 맡겨야 합니다.",
+      "working_title": "스쿠터 타이어 공기압과 마모: 차가울 때 재는 법, 라벨 읽기, 뒷사람이 탈 때 조정하기",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, cold-pressure label, pressure check at least monthly, damage and wear-indicator checks, tubeless tyres only",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, pressure label with a higher rear figure for rider plus passenger, tube-type tyres, wear indicator",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): what under-inflated and over-inflated tyres do to braking, grip, heat and tyre life",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nhtsa.gov/road-safety/motorcycles",
+          "title": "NHTSA (US road-safety agency), Motorcycle Safety page citing 2024 data: check tyre pressure and tread before every ride, adjust tyre pressure and suspension for cargo",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.rospa.com/road-safety/road-safety-projects/novice-riders/preparing-your-bike",
+          "title": "RoSPA (UK), Prepare your bike: motorcycle tyres feel stiff so low pressure is hard to see, weekly gauge check, wear indicators, cuts and bulges",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H01",
+      "subcluster": "vc-trip-fit",
+      "slug": "sukuta-taiya-kuukiatsu-to-mamou-no-kakunin-hoho",
+      "primary_query": "スクーター タイヤ空気圧 確認方法と摩耗の見分け方",
+      "secondary_queries": [
+        "スクーター 二人乗り 荷物 タイヤ空気圧",
+        "ホンダ スクーター 空気圧 ラベル どこ",
+        "タイヤ空気圧は冷えている時に測るのか",
+        "スクーター タイヤ 摩耗 スリップサイン",
+        "スクーター タイヤ 空気が減っている時の対処"
+      ],
+      "entities": [
+        "ホンダ ビジョン",
+        "ホンダ ウェーブアルファ",
+        "空気圧ラベル",
+        "摩耗の目安 (TWI)",
+        "ホンダ・ベトナム 取扱説明書",
+        "NHTSA"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "スクーターを借りる人は、タイヤの空気圧がいくつであるべきか、二人乗りや荷物で変わるのか、長めの走行の前に柔らかいタイヤや摩耗したタイヤを自分で見分ける方法を知りたがります。",
+      "content_angle": "ホンダ・ベトナムの取扱説明書のVisionとWave Alphaのタイヤに関する項目（冷間時の空気圧ラベル、少なくとも月に1回およびタイヤが柔らかく見えるときの確認、必ず冷えた状態で測ること、切れ傷とふくらみ、摩耗の目安。Wave Alphaのラベルは二人乗り時に後輪の空気圧が高く、Visionのラベルは両方の場合で同じ数値）と、空気圧が低すぎる場合・高すぎる場合を説明したホンダ・ベトナムのFAQ、毎回の走行前に空気圧と溝の深さを確認し積載に合わせて空気圧とサスペンションを調整するよう勧める米NHTSAの案内、週に一度ゲージで測るよう勧める英RoSPAの助言を基にします。確認頻度は出典ごとに異なる（毎月、毎週、走行のたび）ため、執筆者は各出典を日付付きで引用し、空気圧の数値はそのモデルのラベルか説明書からのみ取り、チューブ入りとチューブレスの違いは既存のチューブレスの記事に任せてください。",
+      "working_title": "スクーターのタイヤ空気圧と摩耗：冷えた状態での測り方、ラベルの読み方、二人乗りでの調整",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/December2025/FgO9EU07CB768QM5Adl7.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, December 2025 upload): Vision, cold-pressure label, pressure check at least monthly, damage and wear-indicator checks, tubeless tyres only",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://cdn.honda.com.vn/motorbike-manual/September2025/P8qeKg7vdU5RIqpRvC4v.pdf",
+          "title": "Honda Vietnam (owner's manual PDF, September 2025 upload): Wave Alpha, pressure label with a higher rear figure for rider plus passenger, tube-type tyres, wear indicator",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.honda.com.vn/cau-hoi-thuong-gap?category=my-honda&category_tab=ket-noi-xe-sh150ish350i&search=X",
+          "title": "Honda Vietnam (FAQ page, undated): what under-inflated and over-inflated tyres do to braking, grip, heat and tyre life",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nhtsa.gov/road-safety/motorcycles",
+          "title": "NHTSA (US road-safety agency), Motorcycle Safety page citing 2024 data: check tyre pressure and tread before every ride, adjust tyre pressure and suspension for cargo",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.rospa.com/road-safety/road-safety-projects/novice-riders/preparing-your-bike",
+          "title": "RoSPA (UK), Prepare your bike: motorcycle tyres feel stiff so low pressure is hard to see, weekly gauge check, wear indicators, cuts and bulges",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}
