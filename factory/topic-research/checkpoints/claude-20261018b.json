@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T09:27:18.309Z",
+  "updated_at": "2026-10-20T09:27:28.601Z",
   "base_main_sha": "52903def7f84a8aca00745959c46bf9721b0a5a6",
-  "last_commit_sha": "1ac872be65a4b39eca59a2d31fa829667403aa4d",
+  "last_commit_sha": "f13ca4d355e275187e4809f430f0bb65505bd3d7",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 930,
-    "qa_pass": 930,
+    "researched": 940,
+    "qa_pass": 940,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 920,
+    "pushed": 930,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 94,
-      "de": 94,
-      "fr": 94,
-      "es": 94,
-      "nl": 94,
-      "pt": 94,
-      "zh": 94,
-      "ko": 94,
-      "ja": 94,
-      "en": 84
+      "vi": 95,
+      "de": 95,
+      "fr": 95,
+      "es": 95,
+      "nl": 95,
+      "pt": 95,
+      "zh": 95,
+      "ko": 95,
+      "ja": 95,
+      "en": 85
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 60
+      "motorbike-rental": 70
     }
   },
   "last_batch": {
-    "seq": 93,
-    "file": "factory/topic-research/batches/claude-20261018b-0093.json",
-    "sha256": "8374efe7b24ca8d012baa50140f2e18b9954488d67ebf47083e63bb51b5d4c7b",
+    "seq": 94,
+    "file": "factory/topic-research/batches/claude-20261018b-0094.json",
+    "sha256": "c7db3920df7d76b509e449a087f630a27036eb9d7982e90101856e9d96b2f7ff",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -10271,8 +10271,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0093.json",
       "sha256": "8374efe7b24ca8d012baa50140f2e18b9954488d67ebf47083e63bb51b5d4c7b",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "f13ca4d355e275187e4809f430f0bb65505bd3d7",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -10376,11 +10376,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 94,
+      "file": "factory/topic-research/batches/claude-20261018b-0094.json",
+      "sha256": "c7db3920df7d76b509e449a087f630a27036eb9d7982e90101856e9d96b2f7ff",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:nhot-nuoc-lam-mat-va-sen-xe-may-truoc-chuyen-di-dai",
+          "locale": "vi",
+          "slug": "nhot-nuoc-lam-mat-va-sen-xe-may-truoc-chuyen-di-dai",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-power",
+          "key": "vi::kiem tra nhot nuoc lam mat va sen xe may truoc chuyen di dai",
+          "ta_id": null
+        },
+        {
+          "ref": "en:scooter-oil-coolant-and-chain-before-a-long-ride",
+          "locale": "en",
+          "slug": "scooter-oil-coolant-and-chain-before-a-long-ride",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-power",
+          "key": "en::scooter engine oil coolant and chain what to check before a long ride",
+          "ta_id": null
+        },
+        {
+          "ref": "de:oel-kuehlmittel-und-kette-am-roller-vor-langer-fahrt",
+          "locale": "de",
+          "slug": "oel-kuehlmittel-und-kette-am-roller-vor-langer-fahrt",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-power",
+          "key": "de::motorol kuhlflussigkeit und kette am roller vor einer langen fahrt prufen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:huile-refroidissement-et-chaine-scooter-avant-long-trajet",
+          "locale": "fr",
+          "slug": "huile-refroidissement-et-chaine-scooter-avant-long-trajet",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-power",
+          "key": "fr::niveau d'huile liquide de refroidissement et chaine d'un scooter avant un long trajet",
+          "ta_id": null
+        },
+        {
+          "ref": "es:aceite-refrigerante-y-cadena-antes-de-un-viaje-largo",
+          "locale": "es",
+          "slug": "aceite-refrigerante-y-cadena-antes-de-un-viaje-largo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-power",
+          "key": "es::aceite refrigerante y cadena de una moto que revisar antes de un viaje largo",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:olie-koelvloeistof-en-ketting-scooter-voor-een-lange-rit",
+          "locale": "nl",
+          "slug": "olie-koelvloeistof-en-ketting-scooter-voor-een-lange-rit",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-power",
+          "key": "nl::motorolie koelvloeistof en ketting scooter controleren voor een lange rit",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:changtu-qixing-qian-jiyou-lengqueye-liantiao-jiancha",
+          "locale": "zh",
+          "slug": "changtu-qixing-qian-jiyou-lengqueye-liantiao-jiancha",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-power",
+          "key": "zh::长途骑行前机油冷却液和链条怎么检查",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:oleo-refrigeracao-e-corrente-antes-de-uma-viagem-longa",
+          "locale": "pt",
+          "slug": "oleo-refrigeracao-e-corrente-antes-de-uma-viagem-longa",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-power",
+          "key": "pt::oleo do motor liquido de refrigeracao e corrente da scooter antes de uma viagem longa",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:jangeori-raideoing-jeon-enjineoil-naenggaksu-cheain-hwagin",
+          "locale": "ko",
+          "slug": "jangeori-raideoing-jeon-enjineoil-naenggaksu-cheain-hwagin",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-power",
+          "key": "ko::장거리 라이딩 전 엔진오일 냉각수 체인 확인 방법",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:chokyori-soko-mae-enjin-oiru-reikyakusui-chen-kakunin",
+          "locale": "ja",
+          "slug": "chokyori-soko-mae-enjin-oiru-reikyakusui-chen-kakunin",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-power",
+          "key": "ja::長距離ツーリンク前のエンシンオイル 冷却水 チェーンの確認方法",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 94,
-    "file": "factory/topic-research/batches/claude-20261018b-0094.json",
+    "seq": 95,
+    "file": "factory/topic-research/batches/claude-20261018b-0095.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -10393,13 +10504,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:39:14.100Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 69,
-      "topics": 10,
-      "sha256": "b7461e223c5fc76a1904e4ffdcf60bc1aaa537f91c28bb11097ac0bfcc0a99f3"
-    },
     {
       "at": "2026-10-20T04:45:48.443Z",
       "event": "BATCH_COMMITTED",
@@ -10567,6 +10671,13 @@
       "seq": 93,
       "topics": 10,
       "sha256": "8374efe7b24ca8d012baa50140f2e18b9954488d67ebf47083e63bb51b5d4c7b"
+    },
+    {
+      "at": "2026-10-20T09:27:28.601Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 94,
+      "topics": 10,
+      "sha256": "c7db3920df7d76b509e449a087f630a27036eb9d7982e90101856e9d96b2f7ff"
     }
   ]
 }
