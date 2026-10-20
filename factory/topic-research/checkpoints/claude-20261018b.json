@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T20:54:45.976Z",
+  "updated_at": "2026-10-20T20:54:59.798Z",
   "base_main_sha": "99caecdd0a61d3a2c9c0115f6875240eb5aba688",
-  "last_commit_sha": "746b665abef14347fa2708caea54226574d79efe",
+  "last_commit_sha": "aabb3f9c685cfa0cde658723ebbe17b9c833d7ec",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1680,
-    "qa_pass": 1680,
+    "researched": 1690,
+    "qa_pass": 1690,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1670,
+    "pushed": 1680,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 169,
-      "de": 169,
-      "fr": 169,
-      "es": 169,
-      "nl": 169,
-      "pt": 169,
-      "zh": 169,
-      "ko": 169,
-      "ja": 169,
-      "en": 159
+      "vi": 170,
+      "de": 170,
+      "fr": 170,
+      "es": 170,
+      "nl": 170,
+      "pt": 170,
+      "zh": 170,
+      "ko": 170,
+      "ja": 170,
+      "en": 160
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 320
+      "motorbike-rental": 330
     }
   },
   "last_batch": {
-    "seq": 168,
-    "file": "factory/topic-research/batches/claude-20261018b-0168.json",
-    "sha256": "79aaedfb1da34e89a01924467d7f3f01b07c0e25883818b4798a1e3ae894b590",
+    "seq": 169,
+    "file": "factory/topic-research/batches/claude-20261018b-0169.json",
+    "sha256": "a138873249d1c706e1f43645de54549511b1423582d139c3ced9a1e25b0361c0",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -18596,8 +18596,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0168.json",
       "sha256": "79aaedfb1da34e89a01924467d7f3f01b07c0e25883818b4798a1e3ae894b590",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "aabb3f9c685cfa0cde658723ebbe17b9c833d7ec",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -18701,11 +18701,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 169,
+      "file": "factory/topic-research/batches/claude-20261018b-0169.json",
+      "sha256": "a138873249d1c706e1f43645de54549511b1423582d139c3ced9a1e25b0361c0",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-khac-nhau-bang-lai-hang-a",
+          "locale": "vi",
+          "slug": "yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-khac-nhau-bang-lai-hang-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-power",
+          "key": "vi::yamaha mt-09 xsr900 tracer 9 gt yzf-r9 khac nhau the nao va can bang lai hang nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-differences-licence-class",
+          "locale": "en",
+          "slug": "yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-differences-licence-class",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-power",
+          "key": "en::yamaha mt-09 vs xsr900 vs tracer 9 gt vs r9 differences",
+          "ta_id": null
+        },
+        {
+          "ref": "de:yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-unterschiede-klasse-a",
+          "locale": "de",
+          "slug": "yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-unterschiede-klasse-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-power",
+          "key": "de::yamaha mt-09 xsr900 tracer 9 gt yzf-r9 unterschiede und notige fuhrerscheinklasse",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-differences-permis-a",
+          "locale": "fr",
+          "slug": "yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-differences-permis-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-power",
+          "key": "fr::yamaha mt-09 xsr900 tracer 9 gt yzf-r9 differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-diferencias-carne-a",
+          "locale": "es",
+          "slug": "yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-diferencias-carne-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-power",
+          "key": "es::yamaha mt-09 xsr900 tracer 9 gt yzf-r9 diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-verschillen-rijbewijs-a",
+          "locale": "nl",
+          "slug": "yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-verschillen-rijbewijs-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-power",
+          "key": "nl::yamaha mt-09 xsr900 tracer 9 gt yzf-r9 verschillen en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-qubie-jiazhao-a-lei",
+          "locale": "zh",
+          "slug": "yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-qubie-jiazhao-a-lei",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-power",
+          "key": "zh::雅马哈 mt-09 xsr900 tracer 9 gt yzf-r9 区别 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-diferencas-carta-a",
+          "locale": "pt",
+          "slug": "yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-diferencas-carta-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-power",
+          "key": "pt::yamaha mt-09 xsr900 tracer 9 gt yzf-r9 diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-chai-myeonheo",
+          "locale": "ko",
+          "slug": "yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-chai-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-power",
+          "key": "ko::야마하 mt-09 xsr900 tracer 9 gt yzf-r9 차이와 필요한 면허",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-chigai-menkyo",
+          "locale": "ja",
+          "slug": "yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-chigai-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-power",
+          "key": "ja::ヤマハ mt-09 xsr900 tracer 9 gt yzf-r9 の違いと必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 169,
-    "file": "factory/topic-research/batches/claude-20261018b-0169.json",
+    "seq": 170,
+    "file": "factory/topic-research/batches/claude-20261018b-0170.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -18718,13 +18829,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T19:56:29.175Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 144,
-      "topics": 10,
-      "sha256": "570b0aba497a6154658f9192679b80fcbf43ea292c5a2c096c49ec620b77dcf8"
-    },
     {
       "at": "2026-10-20T19:58:59.195Z",
       "event": "BATCH_COMMITTED",
@@ -18892,6 +18996,13 @@
       "seq": 168,
       "topics": 10,
       "sha256": "79aaedfb1da34e89a01924467d7f3f01b07c0e25883818b4798a1e3ae894b590"
+    },
+    {
+      "at": "2026-10-20T20:54:59.798Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 169,
+      "topics": 10,
+      "sha256": "a138873249d1c706e1f43645de54549511b1423582d139c3ced9a1e25b0361c0"
     }
   ]
 }
