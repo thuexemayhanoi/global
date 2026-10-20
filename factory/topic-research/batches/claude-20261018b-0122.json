@@ -1,0 +1,612 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H04",
+      "subcluster": "ss-incidents",
+      "slug": "nga-xe-may-tray-xuoc-uon-van-bi-cho-can-benh-dai-khuyen-cao-y-te",
+      "primary_query": "ngã xe máy trầy xước có cần tiêm phòng uốn ván không và bị chó cắn thì xử trí thế nào",
+      "secondary_queries": [
+        "vết thương hở sau tai nạn xe máy khi nào cần tiêm huyết thanh kháng độc tố uốn ván",
+        "bị chó cắn rửa vết thương bằng xà phòng khoảng 15 phút rồi đến cơ sở y tế",
+        "vết trầy xước nhỏ có thể mắc uốn ván không bệnh viện Bệnh Nhiệt đới Trung ương khuyến cáo",
+        "vắc xin dại và huyết thanh kháng dại khác nhau thế nào CDC Hà Nội giải thích",
+        "du khách nước ngoài bị chó cắn ở Việt Nam đến cơ sở y tế nào để đánh giá nguy cơ dại"
+      ],
+      "entities": [
+        "CDC Hà Nội",
+        "Bệnh viện Bệnh Nhiệt đới Trung ương",
+        "Bộ Y tế",
+        "huyết thanh kháng độc tố uốn ván",
+        "vắc xin phòng dại",
+        "Tổ chức Y tế Thế giới (WHO)"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Người đi xe máy ở Việt Nam, kể cả khách nước ngoài do người Việt đón tiếp, muốn biết sau khi ngã trầy xước hoặc bị chó, mèo cắn thì cơ quan y tế khuyến cáo xử trí thế nào về uốn ván và bệnh dại, và khi nào phải đến cơ sở y tế ngay.",
+      "content_angle": "Chỉ trích dẫn khuyến cáo của cơ quan y tế, không đưa lời khuyên y khoa riêng. Về uốn ván: bài của Báo Sức khỏe và Đời sống ngày 05/08/2025 (ba bệnh nhân ở Phú Thọ, hai người bị ngã xe có vết thương hở, chỉ tự sơ cứu tại nhà, khoảng một tuần sau xuất hiện co cứng hàm và khó thở), bài ngày 26/12/2025 về Bệnh viện Bệnh Nhiệt đới Trung ương (khuyến cáo rửa sạch dưới vòi nước và đến cơ sở y tế để được tư vấn tiêm huyết thanh kháng uốn ván) và bài của trạm y tế phường 11 trên cổng medinet TP. Hồ Chí Minh ngày 24/08/2025 (ngày lấy từ danh sách tìm kiếm, nguồn ghi Bộ Y tế; vết trầy xước do ngã nằm trong các vết thương có thể nhiễm uốn ván). Về dại: bài của CDC Hà Nội (đăng 01/10/2026, số liệu đến tháng 8/2026) nêu rửa vết thương dưới vòi nước bằng xà phòng khoảng 15 phút, sau đó sát khuẩn và đến cơ sở y tế đánh giá nguy cơ, vắc xin và huyết thanh kháng dại có vai trò khác nhau, không đắp lá hay chờ xem con vật có dại không; bài ngày 04/08/2026 về CDC Huế cùng khuyến cáo không tự xử trí theo cách dân gian. Đối chiếu với tờ thông tin của WHO (rửa ít nhất 15 phút). Viện Pasteur TP.HCM có các trang về bệnh dại và uốn ván nhưng khi tra cứu chỉ đọc được qua địa chỉ http (bản https không truy cập được) nên không đưa vào danh sách nguồn; người viết nên tìm bản https hoặc văn bản gốc như Quyết định 1622/QĐ-BYT năm 2014 (có thể đã được thay thế). Phải ghi ngày từng trang, không nêu liều, lịch tiêm hay giá, và nếu dẫn số ca tử vong do dại thì ghi rõ năm và nguồn vì các nguồn công bố theo từng năm và từng thời điểm khác nhau.",
+      "working_title": "Ngã xe máy trầy xước hoặc bị chó cắn: khuyến cáo y tế về uốn ván và bệnh dại ở Việt Nam",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://hanoicdc.gov.vn/3084n/chu-dong-phong-benh-dai-vai-tro-cua-vac-xin-va-dieu-tri-du-phong-sau-phoi-nhiem.html",
+          "title": "Hanoi CDC (1 October 2026): rabies vaccine versus anti-rabies immunoglobulin, washing the wound about 15 minutes with soap, no folk remedies, do not wait to see whether the animal falls ill",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://suckhoedoisong.vn/chu-quan-voi-vet-thuong-ho-3-benh-nhan-suyt-tu-vong-do-uon-van-169250805095251624.htm",
+          "title": "Health and Life newspaper of the Ministry of Health (5 August 2025): three severe tetanus patients in Phu Tho, two after falling from a motorbike, wounds treated only at home",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://suckhoedoisong.vn/chu-quan-voi-vet-xuoc-nho-nhieu-benh-nhan-uon-van-phai-nhap-vien-tho-may-169251226065208799.htm",
+          "title": "Health and Life newspaper (26 December 2025): National Hospital for Tropical Diseases tetanus patients after small wounds, advice to wash under running water and see a health facility about tetanus antiserum",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://tytphuong11q6.medinet.gov.vn/chuyen-muc/chu-quan-voi-vet-thuong-nho-co-the-mac-uon-van-nguy-hiem-cmobile9236-243223.aspx",
+          "title": "Ward 11 health station on the Ho Chi Minh City medinet portal (24 August 2025 per the search listing, source given as the Ministry of Health): small wounds such as scrapes from falls can allow tetanus, what to do after an injury",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://suckhoedoisong.vn/nhieu-nguoi-phai-di-tiem-phong-dai-xu-tri-the-nao-khi-bi-cho-meo-can-169260803231706111.htm",
+          "title": "Health and Life newspaper (4 August 2026): Hue CDC on people seeking rabies vaccination after dog and cat bites and the wrong beliefs that delay care",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/rabies",
+          "title": "WHO fact sheet (no date shown, text cites 17 September 2026): rabies exposure categories, wound washing with water and soap for at least 15 minutes, post-exposure prophylaxis and pre-exposure vaccination",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H04",
+      "subcluster": "ss-incidents",
+      "slug": "road-rash-tetanus-rabies-animal-bite-vietnam-uk-travel-health-advice",
+      "primary_query": "do I need a tetanus booster and rabies vaccine before riding a motorbike in Vietnam",
+      "secondary_queries": [
+        "TravelHealthPro Vietnam tetanus booster if last dose was over ten years ago",
+        "NHS rabies bitten or scratched abroad wash with soap and water get medical help",
+        "UKHSA rabies information for travellers cycling running remote areas pre-exposure",
+        "road rash wound care abroad tetanus risk soil contaminated wound travel health UK",
+        "rabies vaccine before travel long stay over a month NHS travel clinic"
+      ],
+      "entities": [
+        "TravelHealthPro (NaTHNaC)",
+        "UK Health Security Agency",
+        "NHS",
+        "tetanus-diphtheria-polio booster",
+        "rabies post-exposure treatment",
+        "World Health Organization"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "UK riders heading to Vietnam want to know what UK travel-health sources actually say about tetanus boosters, cleaning wounds after a fall and rabies after a dog or monkey bite, so they can raise it with a clinician before they go.",
+      "content_angle": "Quote the agencies, never turn them into advice. TravelHealthPro's Vietnam page says travellers should thoroughly clean all wounds and seek medical attention for animal bites, burns or soil-contaminated wounds, recommends a tetanus-containing booster when going where medical facilities may be limited if the last dose was more than ten years ago, and recommends rabies pre-exposure vaccination for travellers going where post-exposure care is limited, planning higher-risk activities such as running or cycling or staying more than a month. The NHS rabies page (page last reviewed 3 August 2026) says to get medical help immediately after a bite or scratch abroad, even if vaccinated, and to wash the wound with soap and water. The UKHSA leaflet 'Rabies information for travellers' (published 9 July 2019, crown copyright 2024) says to wash and flush the area, seek care locally without waiting for the UK and contact a GP on return. The WHO fact sheets give the 15-minute washing figure and the tetanus background; the Hanoi CDC page is the Vietnam-side reference. None of these pages names motorbikes, so the Writer must say that 'cycling or running' is the nearest wording and must not claim that UK agencies single out riders. Date every page (TravelHealthPro shows no date), give no doses, schedules or costs, tell readers to speak to a clinician, and keep this article about wounds and bites for riders so it does not repeat the general health-preparation concept.",
+      "working_title": "Road Rash, Tetanus and Animal Bites in Vietnam: What UK Travel-Health Sources Say to Riders",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://travelhealthpro.org.uk/countries/vietnam",
+          "title": "TravelHealthPro, NaTHNaC (no date shown): Vietnam vaccine recommendations, tetanus and rabies sections, rabies pre-exposure vaccination for higher-risk activities and limited post-exposure care",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nhs.uk/conditions/rabies/",
+          "title": "NHS (page last reviewed 3 August 2026): rabies, get medical help immediately after a bite or scratch abroad, wash with soap and water, treatment, vaccination",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gov.uk/government/publications/rabies-risks-for-travellers/rabies-information-for-travellers",
+          "title": "UK Health Security Agency (published 9 July 2019): rabies information for travellers, actions before travel, while abroad and after an animal exposure",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/rabies",
+          "title": "WHO fact sheet (no date shown, text cites 17 September 2026): rabies exposure categories, wound washing with water and soap for at least 15 minutes, post-exposure prophylaxis and pre-exposure vaccination",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/tetanus",
+          "title": "WHO fact sheet (no date shown, text cites July 2026): how tetanus spores enter wounds, incubation, treatment and vaccination with tetanus-toxoid-containing vaccines",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hanoicdc.gov.vn/3084n/chu-dong-phong-benh-dai-vai-tro-cua-vac-xin-va-dieu-tri-du-phong-sau-phoi-nhiem.html",
+          "title": "Hanoi CDC (1 October 2026, Vietnamese): Vietnam side, rabies vaccine and rabies immunoglobulin after exposure, washing the wound for about 15 minutes, no folk remedies, do not wait to see whether the animal falls ill",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H04",
+      "subcluster": "ss-incidents",
+      "slug": "tetanus-tollwut-vietnam-sturz-hundebiss-rki-stiko-reisemedizin",
+      "primary_query": "Tetanus Auffrischung und Tollwut Impfung vor dem Rollerfahren in Vietnam RKI STIKO",
+      "secondary_queries": [
+        "RKI Ratgeber Tollwut Wundversorgung nach Biss sofort mit Wasser und Seifenlösung reinigen",
+        "STIKO DTG Reiseimpfungen 2026 Tetanus Verletzungen beim Motorradfahren",
+        "Tollwut Impfung Vietnam Langzeitaufenthalt besondere Exposition Auswärtiges Amt",
+        "Hundebiss im Ausland was tun Postexpositionsprophylaxe Tollwut Reisende",
+        "Tetanus Impfschutz nach Verletzung Wundklassen Impfstatus RKI-Ratgeber"
+      ],
+      "entities": [
+        "Robert Koch-Institut",
+        "Ständige Impfkommission (STIKO)",
+        "Deutsche Gesellschaft für Tropenmedizin, Reisemedizin und Globale Gesundheit (DTG)",
+        "Auswärtiges Amt",
+        "Tollwut-Postexpositionsprophylaxe",
+        "Tetanusprophylaxe"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Deutsche Rollerfahrer in Vietnam wollen wissen, was RKI, STIKO und DTG sowie das Auswärtige Amt zum Tetanusschutz nach Stürzen und zur Tollwut nach Tierbissen schreiben, damit sie ihren Impfstatus vor der Reise mit einer Ärztin oder einem Arzt klären können.",
+      "content_angle": "Zitiert die Behörden, statt zu beraten. Das Epidemiologische Bulletin 27/2026 (2. Juli 2026) von RKI/STIKO und DTG nennt unter Tetanus ausdrücklich Verletzungen auf Reisen, 'v. a. bei selten ausgeführten Freizeitaktivitäten wie Tauchen, Motorradfahren oder Klettern', und rät, immer auf einen bestehenden Tetanusschutz zu achten; für Tollwut gilt die Indikation für Reisende in Regionen mit Tollwut-Gefahr und erhöhter Expositionswahrscheinlichkeit, zum Beispiel durch streunende Hunde oder Fledermäuse. Der RKI-Ratgeber Tollwut (Stand 5. Februar 2026) beschreibt die Wundversorgung (sofort und ausgiebig mit Wasser und Seifenlösung reinigen, nicht ätzen oder nähen, an die Tetanusprophylaxe denken); der RKI-Ratgeber Tetanus (Stand 27. November 2018) die Wunden und den Impfstatus, nach denen eine Impfung nach Verletzung erwogen wird. Die Reise- und Sicherheitshinweise des Auswärtigen Amts für Vietnam empfehlen Tollwut bei Langzeitaufenthalt oder besonderer Exposition. Der Autor muss alle Daten nennen, die Länderinformationen und Karte 7 des Bulletins für Vietnam selbst prüfen (in dieser Recherche nicht gelesen), den alten Stand des Tetanus-Ratgebers kennzeichnen, keine Impfschemata, Dosen oder Preise nennen und zum Gespräch mit Ärztin, Arzt oder Reisemedizin raten.",
+      "working_title": "Tetanus und Tollwut für Rollerfahrer in Vietnam: Was RKI, STIKO und Auswärtiges Amt dazu sagen",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.rki.de/DE/Aktuelles/Publikationen/Epidemiologisches-Bulletin/2026/27_26.pdf?__blob=publicationFile",
+          "title": "Robert Koch-Institut, Epidemiologisches Bulletin 27/2026 (2 July 2026): STIKO and DTG recommendations on travel vaccination, tetanus after injuries on trips, rabies indication",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.rki.de/DE/Aktuelles/Publikationen/RKI-Ratgeber/Ratgeber/Ratgeber_Tollwut.html",
+          "title": "Robert Koch-Institut, RKI-Ratgeber Tollwut (status 5 February 2026): wound care after exposure, post-exposure prophylaxis, pre-exposure vaccination in Germany",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.rki.de/DE/Aktuelles/Publikationen/RKI-Ratgeber/Ratgeber/Ratgeber_Tetanus.html",
+          "title": "Robert Koch-Institut, RKI-Ratgeber Tetanus (status 27 November 2018): infection route, wounds, preventive measures after injury",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.auswaertiges-amt.de/de/reiseundsicherheit/vietnamsicherheit-217274",
+          "title": "Auswärtiges Amt (no date shown): Vietnam travel and security advice, health section, travel vaccinations including rabies for long stays or special exposure",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/rabies",
+          "title": "WHO fact sheet (no date shown, text cites 17 September 2026): rabies exposure categories, wound washing with water and soap for at least 15 minutes, post-exposure prophylaxis and pre-exposure vaccination",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hanoicdc.gov.vn/3084n/chu-dong-phong-benh-dai-vai-tro-cua-vac-xin-va-dieu-tri-du-phong-sau-phoi-nhiem.html",
+          "title": "Hanoi CDC (1 October 2026, Vietnamese): Vietnam side, rabies vaccine and rabies immunoglobulin after exposure, washing the wound for about 15 minutes, no folk remedies, do not wait to see whether the animal falls ill",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H04",
+      "subcluster": "ss-incidents",
+      "slug": "tetanos-rage-vietnam-chute-scooter-morsure-sante-publique-france-pasteur",
+      "primary_query": "rappel tétanos et vaccin contre la rage avant de rouler à moto ou en scooter au Vietnam",
+      "secondary_queries": [
+        "Institut Pasteur Vietnam vaccination rage séjour aventureux isolement géographique",
+        "France Diplomatie Vietnam santé rage endémique animaux errants morsure laver au savon",
+        "rappel dTcaP voyageur Santé publique France vérifier ses vaccins avant de partir",
+        "morsure ou griffure au Vietnam consulter en urgence même si la vaccination est à jour",
+        "plaie après une chute de scooter à l'étranger tétanos et vaccins à jour"
+      ],
+      "entities": [
+        "Institut Pasteur",
+        "Santé publique France",
+        "France Diplomatie",
+        "vaccin dTcaP",
+        "rage",
+        "médecine des voyages"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Les voyageurs français qui roulent à moto ou en scooter au Vietnam veulent savoir ce que Santé publique France, l'Institut Pasteur et France Diplomatie disent du tétanos après une chute et de la rage après une morsure, avant d'aller voir un médecin des voyages.",
+      "content_angle": "Cite les pages sans donner de conseil médical. La fiche Vietnam de l'Institut Pasteur (26 mai 2026) recommande la vaccination contre la rage pour les séjours prolongés ou aventureux avec un risque élevé de contact avec des animaux et/ou en situation d'isolement géographique ne permettant pas une prise en charge rapide. La page Santé de France Diplomatie (mise à jour le 15 septembre 2026) demande d'être à jour du calendrier vaccinal français dont le tétanos, indique que la rage est endémique au Vietnam, que la plus grande prudence est recommandée vis-à-vis des animaux errants, villes incluses, et qu'en cas de morsure, griffure ou léchage sur peau lésée il faut laver immédiatement à l'eau et au savon et consulter en urgence, même si la vaccination est à jour. Le communiqué de Santé publique France du 24 juillet 2026 rappelle de vérifier le rappel dTcaP et de consulter 4 à 6 semaines avant le départ. La fiche de l'OMS sur la rage donne la durée de lavage d'au moins 15 minutes et la page de la CDC de Hanoï sert de référence côté Vietnam. L'auteur doit dater chaque page, ne donner ni dose ni calendrier personnel, ne pas affirmer que ces organismes visent les motards (aucune des pages lues ne cite la moto ou le scooter) et renvoyer au médecin traitant ou à un centre de vaccinations internationales.",
+      "working_title": "Chute en scooter et morsure au Vietnam : ce que disent Santé publique France et l'Institut Pasteur",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.pasteur.fr/fr/votre-sante/voyages-et-sante/recommandations-sanitaires-par-pays/vietnam",
+          "title": "Institut Pasteur (26 May 2026): Vietnam country sheet, recommended vaccinations, rabies for prolonged or adventurous stays and geographic isolation",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/vietnam/conseils-aux-voyageurs-sante",
+          "title": "France Diplomatie (updated 15 September 2026): Vietnam health advice, French vaccine schedule including tetanus, rabies endemic, wash and seek urgent care after a bite or scratch",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.santepubliquefrance.fr/les-actualites/voyage-en-outre-mer-et-a-letranger-etes-vous-a-jour-de-vos-vaccins",
+          "title": "Santé publique France (24 July 2026): travelling in overseas territories and abroad, check vaccines, dTcaP booster, consult a doctor 4 to 6 weeks before departure",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/rabies",
+          "title": "WHO fact sheet (no date shown, text cites 17 September 2026): rabies exposure categories, wound washing with water and soap for at least 15 minutes, post-exposure prophylaxis and pre-exposure vaccination",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hanoicdc.gov.vn/3084n/chu-dong-phong-benh-dai-vai-tro-cua-vac-xin-va-dieu-tri-du-phong-sau-phoi-nhiem.html",
+          "title": "Hanoi CDC (1 October 2026, Vietnamese): Vietnam side, rabies vaccine and rabies immunoglobulin after exposure, washing the wound for about 15 minutes, no folk remedies, do not wait to see whether the animal falls ill",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H04",
+      "subcluster": "ss-incidents",
+      "slug": "tetanos-rabia-vietnam-caida-moto-mordedura-sanidad-exterior",
+      "primary_query": "vacuna del tétanos y de la rabia para viajar en moto por Vietnam según Sanidad Exterior",
+      "secondary_queries": [
+        "Ministerio de Sanidad consejos para el viajero tétanos accidente de vehículos motorizados",
+        "rabia mordedura de perro viaje a Vietnam qué hacer lavar la herida y acudir a un médico",
+        "centro de vacunación internacional cita antes de viajar a Vietnam",
+        "recomendaciones de viaje a Vietnam sanidad seguro médico y evacuación",
+        "vacuna antitetánica en adultos refuerzo para viajeros con heridas"
+      ],
+      "entities": [
+        "Ministerio de Sanidad",
+        "Sanidad Exterior",
+        "La salud también viaja",
+        "centros de vacunación internacional",
+        "Ministerio de Asuntos Exteriores",
+        "Organización Mundial de la Salud"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quienes viajan desde España y piensan recorrer Vietnam en moto o scooter quieren saber qué dice Sanidad Exterior sobre el tétanos después de una caída o un accidente y sobre la rabia tras una mordedura, y cuándo conviene pedir cita en un centro de vacunación internacional.",
+      "content_angle": "Cita sin dar consejo médico la página «Consejos para el viajero» del Ministerio de Sanidad (La salud también viaja): los viajeros deben estar protegidos frente al tétanos y cualquier herida, desde un pequeño corte a un accidente de vehículos motorizados, puede exponer a las esporas; la limpieza y desinfección de la herida debe ser concienzuda. Para la rabia, la ficha informativa de 2023 recomienda la vacunación previa a quienes realizan actividades al aire libre en zonas rurales o viajan a zonas con dificultad de acceso a profilaxis posexposición, y pide un lavado exhaustivo de la herida y valorar la inmunoglobulina; la ficha de tétanos y difteria de 2023 describe las heridas más peligrosas. Añade las Recomendaciones de viaje a Vietnam del Ministerio de Asuntos Exteriores (equipamiento hospitalario muy básico, seguro médico con evacuación), leídas en una copia archivada del 12/10/2026 porque la web real devuelve HTTP 403 a lectores automáticos; el autor debe abrirlas y datar cada cita. Las fichas de la OMS dan la duración mínima de lavado y la página de la CDC de Hanói es la referencia del lado vietnamita. No dar pautas, dosis ni precios, comprobar si hay una versión posterior de las fichas de 2023 y remitir al centro de vacunación internacional o al médico.",
+      "working_title": "Tétanos tras una caída en moto y rabia tras una mordedura en Vietnam: qué dice Sanidad Exterior",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.sanidad.gob.es/areas/sanidadExterior/laSaludTambienViaja/consejosSanitarios/consejosViajero.htm",
+          "title": "Ministerio de Sanidad, Sanidad Exterior (no date shown): advice for travellers, tetanus after any wound including motor vehicle accidents, rabies, consult an international vaccination centre",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.sanidad.gob.es/areas/sanidadExterior/laSaludTambienViaja/consejosSanitarios/docs/2023_RABIA_ULT_vf.pdf",
+          "title": "Ministerio de Sanidad, La salud también viaja (2023): traveller information sheet on rabies, who should be vaccinated, wound washing and post-exposure assessment",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.sanidad.gob.es/areas/sanidadExterior/laSaludTambienViaja/consejosSanitarios/docs/2023_Tetanos-Difteria_ULT_vf.pdf",
+          "title": "Ministerio de Sanidad, La salud también viaja (2023): traveller information sheet on tetanus and diphtheria, how tetanus is acquired and which wounds are most dangerous",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Detalle-recomendaciones-de-viaje.aspx?trc=vietnam",
+          "title": "Ministerio de Asuntos Exteriores (archived copy of 12 October 2026; live site returns HTTP 403): travel recommendations for Vietnam, health section, hospital infrastructure and medical insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/rabies",
+          "title": "WHO fact sheet (no date shown, text cites 17 September 2026): rabies exposure categories, wound washing with water and soap for at least 15 minutes, post-exposure prophylaxis and pre-exposure vaccination",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hanoicdc.gov.vn/3084n/chu-dong-phong-benh-dai-vai-tro-cua-vac-xin-va-dieu-tri-du-phong-sau-phoi-nhiem.html",
+          "title": "Hanoi CDC (1 October 2026, Vietnamese): Vietnam side, rabies vaccine and rabies immunoglobulin after exposure, washing the wound for about 15 minutes, no folk remedies, do not wait to see whether the animal falls ill",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H04",
+      "subcluster": "ss-incidents",
+      "slug": "tetanus-rabies-vietnam-val-scooter-hondenbeet-ggd-lcr-rivm",
+      "primary_query": "tetanus en rabiës vaccinatie voor scooter rijden in Vietnam advies van de GGD",
+      "secondary_queries": [
+        "GGD Reisvaccinaties Vietnam DTP difterie tetanus polio aanbevolen",
+        "rabiës beet of krab wond minimaal 15 minuten spoelen met water en zeep en ontsmetten",
+        "RIVM vragen en antwoorden hondsdolheid voor reizigers",
+        "alarmcentrale reisverzekering bellen na een dierenbeet ook als je gevaccineerd bent",
+        "tetanus extra vaccinatie bij een wond op reis volgens het RIVM"
+      ],
+      "entities": [
+        "GGD Reisvaccinaties",
+        "Landelijk Coördinatiecentrum Reizigersadvisering (LCR)",
+        "RIVM",
+        "DTP-vaccinatie",
+        "rabiës-immunoglobuline",
+        "NederlandWereldwijd"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Nederlandse scooterrijders in Vietnam willen weten wat GGD Reisvaccinaties, het LCR en het RIVM zeggen over tetanus na een val en over rabiës na een beet of krab, zodat ze hun vaccinatiestatus kunnen bespreken met een reizigersspreekuur.",
+      "content_angle": "Citeert de instanties zonder medisch advies. GGD Reisvaccinaties Vietnam beveelt DTP en hepatitis A aan en noemt rabiës onder de aanvullende adviezen die afhangen van medische geschiedenis, reisduur en activiteiten. De GGD-pagina over rabiës zegt: de wond minimaal 15 minuten spoelen met water en zeep en ontsmetten, direct de alarmcentrale van zorg- en reisverzekeraar bellen ook als je gevaccineerd bent, soms zijn antibiotica of een tetanusvaccinatie nodig en neem vaccinatiegegevens mee; zonder vaccinatie vooraf zijn antistoffen (RIG) nodig die in sommige landen moeilijk te krijgen zijn. De GGD-pagina over DTP, de RIVM-pagina over tetanus (waarin volwassenen die reizen of een verwonding oplopen soms extra tetanusvaccinaties nodig hebben) en de RIVM-pagina met vragen en antwoorden over hondsdolheid voor reizigers (wijzigingsdatum 12-08-2022; fietsers worden genoemd als groep met meer kans op een beet) vullen aan. De schrijver noemt de datum van elke pagina (de GGD-pagina's tonen 2012 als oorspronkelijke datum en het RIVM noemt het LCR als bron voor het actuele advies, dus de actuele LCR-richtlijn moet worden gecontroleerd), geeft geen schema's, dosering of prijzen en verwijst naar een reizigersspreekuur.",
+      "working_title": "Tetanus na een val en rabiës na een hondenbeet in Vietnam: wat de GGD, het LCR en het RIVM zeggen",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.ggdreisvaccinaties.nl/land/vietnam",
+          "title": "GGD Reisvaccinaties (original date 2012, page shows the travel advice changed 9 September 2026): Vietnam vaccination advice, DTP and hepatitis A recommended, rabies as an additional advice",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.ggdreisvaccinaties.nl/vaccinatie/rabies",
+          "title": "GGD Reisvaccinaties (original date 2012): rabies, wash the wound for at least 15 minutes, call the insurer's alarm centre, immunoglobulin, vaccination before travel",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.ggdreisvaccinaties.nl/vaccinatie/dtp-difterie-tetanus-en-polio",
+          "title": "GGD Reisvaccinaties (original date 2012): diphtheria, tetanus and polio vaccination for travellers and how long it protects",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.rivm.nl/tetanus",
+          "title": "RIVM (page dated 2011): tetanus, how people get it, travellers and people with a wound sometimes need an extra vaccination",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.rivm.nl/rabies/vragen-en-antwoorden-rabies-voor-reizigers",
+          "title": "RIVM (page dated 2018, changed 12 August 2022): questions and answers on rabies for travellers, bite prevention, what to do after a bite abroad, refers to the LCR",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hanoicdc.gov.vn/3084n/chu-dong-phong-benh-dai-vai-tro-cua-vac-xin-va-dieu-tri-du-phong-sau-phoi-nhiem.html",
+          "title": "Hanoi CDC (1 October 2026, Vietnamese): Vietnam side, rabies vaccine and rabies immunoglobulin after exposure, washing the wound for about 15 minutes, no folk remedies, do not wait to see whether the animal falls ill",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H04",
+      "subcluster": "ss-incidents",
+      "slug": "yuenan-motuoche-shuaishang-poshangfeng-kuangquanbing-zhongguo-jikong",
+      "primary_query": "去越南骑摩托车摔伤要不要打破伤风针 被狗咬了怎么处理狂犬病",
+      "secondary_queries": [
+        "狂犬病暴露预防处置工作规范 2023年版 伤口冲洗约15分钟",
+        "破伤风针是疫苗还是被动免疫制剂 中国疾控中心常见问答",
+        "旅行者 破伤风 暴露前免疫 持续暴露风险 每隔10年加强",
+        "出国旅游前 狂犬病 暴露前免疫 高风险国家和地区",
+        "在国外被狗咬伤 就医 回国后 接种疫苗 续种"
+      ],
+      "entities": [
+        "中国疾病预防控制中心",
+        "国家疾病预防控制局",
+        "狂犬病暴露预防处置工作规范（2023年版）",
+        "破伤风",
+        "狂犬病疫苗",
+        "世界卫生组织"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "准备到越南骑摩托车或长期旅居的中国游客，想知道摔伤后要不要处理破伤风，被狗或猫咬后怎么冲洗伤口并接种狂犬病疫苗，以及中国疾控部门对旅行者暴露前免疫是怎么表述的。",
+      "content_angle": "只引用官方表述，不给医疗建议。中国疾控中心“破伤风”常见问答（2026年6月22日）说明受伤后常说的“破伤风针”通常指被动免疫制剂（抗毒素或免疫球蛋白）而不是疫苗，伤口应尽早用流动清水或生理盐水充分冲洗，接触泥土等污染物、伤口窄而深或有异物时必须尽快到医院，并把既往没有全程免疫史（少于3剂）或免疫史不详的旅行者等高危人群列为建议尽早完成暴露前免疫的对象、对持续暴露风险者建议每隔10年加强1剂。国家疾控局综合司和国家卫生健康委办公厅《狂犬病暴露预防处置工作规范（2023年版）》（国疾控综传防发〔2023〕14号，2023年9月13日）规定暴露分级，用肥皂水和流动清水交替冲洗伤口约15分钟，计划前往狂犬病流行高风险国家和地区的人员也可进行暴露前免疫，并写明狂犬病疫苗与破伤风疫苗同时接种时的部位要求。WHO的狂犬病和破伤风概况介绍作国际对照，驻越南使馆2026年9月24日的提醒和河内CDC的页面分别给出越南方面的出行提示和狂犬病处置说明。作者必须写明每页日期，说明该规范针对的是中国境内的狂犬病预防处置门诊，不得把在越南就医的流程说成官方规定，不给剂量、程序或价格，并建议读者咨询医生或当地疾控门诊。",
+      "working_title": "越南骑摩托摔伤与被狗咬：中国疾控中心对破伤风和狂犬病的说明与国家疾控局处置规范",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.chinacdc.cn/jkyj/mygh02/ymkyfjb/psf/202606/t20260622_1837251.html",
+          "title": "Chinese Center for Disease Control and Prevention (22 June 2026): tetanus Q&A, tetanus shot versus vaccine, wound flushing, pre-exposure immunisation for travellers and other groups",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.ndcpa.gov.cn/jbkzzx/c100081/common/content/content_1715172596229992448.html",
+          "title": "National Disease Control and Prevention Administration and National Health Commission (13 September 2023): Work Standard for Rabies Exposure Prevention and Management, exposure grades, wound washing, pre-exposure immunisation",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vn.china-embassy.gov.cn/lsyw/202609/t20260924_12030715.htm",
+          "title": "Chinese Embassy in Vietnam (24 September 2026): holiday travel safety notice, common medicines, traffic safety, local emergency numbers and consular protection contacts",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/rabies",
+          "title": "WHO fact sheet (no date shown, text cites 17 September 2026): rabies exposure categories, wound washing with water and soap for at least 15 minutes, post-exposure prophylaxis and pre-exposure vaccination",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/tetanus",
+          "title": "WHO fact sheet (no date shown, text cites July 2026): how tetanus spores enter wounds, incubation, treatment and vaccination with tetanus-toxoid-containing vaccines",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hanoicdc.gov.vn/3084n/chu-dong-phong-benh-dai-vai-tro-cua-vac-xin-va-dieu-tri-du-phong-sau-phoi-nhiem.html",
+          "title": "Hanoi CDC (1 October 2026, Vietnamese): Vietnam side, rabies vaccine and rabies immunoglobulin after exposure, washing the wound for about 15 minutes, no folk remedies, do not wait to see whether the animal falls ill",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H04",
+      "subcluster": "ss-incidents",
+      "slug": "tetano-raiva-vietname-queda-mota-mordedura-dgs-sns24-portal-comunidades",
+      "primary_query": "reforço da vacina do tétano e vacina da raiva antes de andar de mota no Vietname",
+      "secondary_queries": [
+        "Programa Nacional de Vacinação tétano feridas potencialmente tetanogénicas Td imunoglobulina",
+        "consulta do viajante SNS 24 antes de viajar para o Vietname",
+        "mordedura de cão no estrangeiro lavar a ferida e procurar assistência médica raiva",
+        "Conselhos aos Viajantes Vietname acidentes rodoviários capacete seguro de viagem repatriação",
+        "norma da DGS sobre profilaxia da raiva revogada o que consultar agora"
+      ],
+      "entities": [
+        "Direção-Geral da Saúde",
+        "Programa Nacional de Vacinação",
+        "SNS 24",
+        "Portal das Comunidades Portuguesas",
+        "consulta do viajante",
+        "Organização Mundial da Saúde"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Os portugueses que vão andar de mota no Vietname querem saber o que a DGS, o SNS 24 e o Portal das Comunidades dizem sobre o reforço do tétano depois de uma queda ou ferida e sobre a raiva depois de uma mordedura, e como preparar a consulta do viajante.",
+      "content_angle": "Cita o Programa Nacional de Vacinação 2020 da DGS (setembro de 2020, cópia alojada pela Ordem dos Enfermeiros): feridas potencialmente tetanogénicas (por exemplo punctiformes, com corpos estranhos, contaminadas com solo ou estrume, fraturas expostas), limpeza cuidadosa e o quadro de vacina e imunoglobulina antitetânica segundo a história vacinal. Acrescenta a página Conselhos aos Viajantes do Vietname do Portal das Comunidades (22/09/2026: fazer a consulta do viajante, seguro de viagem com repatriação, capacete, acidentes rodoviários frequentes), excertos do SNS 24 sobre tétano e consulta do viajante (datados de 15/04/2025 e 31/03/2025; páginas dinâmicas em que só foram lidos excertos) e as fichas da OMS (lavar a ferida pelo menos 15 minutos). Atenção: a Norma 001/2025 da DGS sobre profilaxia da raiva aparece na página da DGS marcada como revogada e não foi encontrada a norma que a substitui, por isso o autor deve procurar a norma em vigor no site da DGS antes de citar qualquer esquema, datar cada página, confirmar se existe edição mais recente do Programa Nacional de Vacinação, não dar doses nem preços e remeter para o médico ou a consulta do viajante. A página da CDC de Hanói é a referência do lado vietnamita.",
+      "working_title": "Tétano após queda de mota e raiva após mordedura no Vietname: o que dizem a DGS e o SNS 24",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.ordemenfermeiros.pt/media/20070/pnv-2020-set-2020.pdf",
+          "title": "Direção-Geral da Saúde, Programa Nacional de Vacinação 2020 (September 2020, copy hosted by the Ordem dos Enfermeiros): tetanus, potentially tetanus-prone wounds and the vaccine and immunoglobulin table by vaccination history",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://portaldascomunidades.mne.gov.pt/pt/vai-viajar/conselhos-aos-viajantes/asia/vietname",
+          "title": "Portal das Comunidades Portuguesas (last updated 22 September 2026): travel advice for Vietnam, traveller consultation, road accidents, helmets, travel insurance with repatriation",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.sns24.gov.pt/pt/tema/doencas/doencas-infecciosas/tetano/",
+          "title": "SNS 24 (15 April 2025, search excerpt only because the page is dynamic): tetanus, vaccination in the national vaccination programme",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.sns24.gov.pt/pt/tema/prevencao-e-cuidados-de-saude/consulta-do-viajante/",
+          "title": "SNS 24 (31 March 2025, search excerpt only because the page is dynamic): traveller consultation, preventive measures before, during and after the trip",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/rabies",
+          "title": "WHO fact sheet (no date shown, text cites 17 September 2026): rabies exposure categories, wound washing with water and soap for at least 15 minutes, post-exposure prophylaxis and pre-exposure vaccination",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/tetanus",
+          "title": "WHO fact sheet (no date shown, text cites July 2026): how tetanus spores enter wounds, incubation, treatment and vaccination with tetanus-toxoid-containing vaccines",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hanoicdc.gov.vn/3084n/chu-dong-phong-benh-dai-vai-tro-cua-vac-xin-va-dieu-tri-du-phong-sau-phoi-nhiem.html",
+          "title": "Hanoi CDC (1 October 2026, Vietnamese): Vietnam side, rabies vaccine and rabies immunoglobulin after exposure, washing the wound for about 15 minutes, no folk remedies, do not wait to see whether the animal falls ill",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H04",
+      "subcluster": "ss-incidents",
+      "slug": "beteunam-otobai-pasangpung-gwanggyeonbyeong-jilbyeonggwallicheong",
+      "primary_query": "베트남 오토바이 타기 전 파상풍 광견병 예방접종 질병관리청 안내",
+      "secondary_queries": [
+        "해외여행 감염병 파상풍 접종력 있으면 10년마다 재접종 질병관리청",
+        "개에게 물렸을 때 비누와 흐르는 물로 씻고 의료기관 방문 국가건강정보포털",
+        "공수병 예방접종 한국희귀의약품센터 처방 순서 해외여행",
+        "여행건강알림e 베트남 감염병 예방접종 정보 확인",
+        "동물에게 물린 뒤 귀국 후 의료기관 방문 여행 후 주의사항"
+      ],
+      "entities": [
+        "질병관리청",
+        "국가건강정보포털",
+        "여행건강알림e",
+        "한국희귀의약품센터",
+        "파상풍",
+        "공수병(광견병)"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "베트남에서 오토바이를 타다 넘어져 다치거나 길거리 개에 물릴 수 있는 한국 여행자는 질병관리청이 파상풍과 광견병에 대해 어떤 예방접종과 응급처치를 안내하는지 출국 전에 확인하고 싶어 합니다.",
+      "content_angle": "질병관리청 국가건강정보포털의 해외여행 감염병 안내(파상풍은 접종력이 있으면 10년마다 재접종, 공수병은 신속한 의료서비스를 받기 어려운 광견병 발생 국가를 여행하며 동물과 접촉할 가능성이 있으면 예방접종 권고, 접종 순서는 종합병원 방문과 한국희귀의약품센터 연락 후 재방문)와 교상 안내(상처를 비누와 흐르는 물로 씻고 의료기관에서 파상풍 예방, 상처 소독, 항생제 치료, 광견병 예방 평가를 받는다, 파상풍 접종 후 10년이 넘었으면 의료기관 방문)를 그대로 인용하고, 2026년 10월 1일부터 통합 운영된 여행건강알림e(뉴시스 보도)에서 국가별 정보를 확인하는 경로를 안내합니다. 상처 세척 시간은 질병관리청 교상 안내가 출혈이 심하지 않을 때 5~10분, WHO 광견병 설명은 최소 15분으로 서로 다르므로 두 출처를 날짜와 함께 병기해야 합니다. 페이지 날짜가 보이지 않으므로 조회일을 적고, 하노이 CDC 페이지를 베트남 쪽 참고자료로 쓰되 예방접종 일정, 용량, 비용은 쓰지 말고 의료진 상담을 권하세요.",
+      "working_title": "베트남 오토바이 넘어짐과 개 물림: 질병관리청이 안내하는 파상풍·광견병 예방접종과 응급처치",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6257",
+          "title": "Korea Disease Control and Prevention Agency, national health information portal (no date shown): infectious diseases to watch when travelling abroad, tetanus booster every 10 years, rabies vaccination and where to get it",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5483",
+          "title": "Korea Disease Control and Prevention Agency, national health information portal (no date shown): animal and insect bites, first aid, tetanus and rabies assessment, pre-exposure vaccination for long visits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.newsis.com/view/NISX20261001_0003810500",
+          "title": "Newsis (1 October 2026): KDCA opens the integrated travel health site Travel Health Alert e with country information, vaccination information and prevention rules",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/rabies",
+          "title": "WHO fact sheet (no date shown, text cites 17 September 2026): rabies exposure categories, wound washing with water and soap for at least 15 minutes, post-exposure prophylaxis and pre-exposure vaccination",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/tetanus",
+          "title": "WHO fact sheet (no date shown, text cites July 2026): how tetanus spores enter wounds, incubation, treatment and vaccination with tetanus-toxoid-containing vaccines",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hanoicdc.gov.vn/3084n/chu-dong-phong-benh-dai-vai-tro-cua-vac-xin-va-dieu-tri-du-phong-sau-phoi-nhiem.html",
+          "title": "Hanoi CDC (1 October 2026, Vietnamese): Vietnam side, rabies vaccine and rabies immunoglobulin after exposure, washing the wound for about 15 minutes, no folk remedies, do not wait to see whether the animal falls ill",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H04",
+      "subcluster": "ss-incidents",
+      "slug": "betonamu-baiku-tento-inu-kamitsuki-hashofu-kyokenbyo-forth-gaimusho",
+      "primary_query": "ベトナム バイク 転倒 破傷風 狂犬病 予防接種 検疫所 FORTH 外務省",
+      "secondary_queries": [
+        "ベトナム 渡航 破傷風 狂犬病 推奨 ワクチン 外務省 安全対策基礎データ",
+        "狂犬病 咬まれたら 石鹸と流水で洗う 医師がWHO基準で判断",
+        "海外渡航のためのワクチン 破傷風 野外での活動が多い人 FORTH",
+        "ベトナム ワクチン 在庫 なくなる 渡航前に接種を検討",
+        "狂犬病 暴露前接種 基本3回 日本で接種できる医療機関 確認"
+      ],
+      "entities": [
+        "厚生労働省検疫所 FORTH",
+        "外務省 海外安全ホームページ",
+        "狂犬病ワクチン",
+        "破傷風ワクチン",
+        "在ベトナム日本国大使館",
+        "世界保健機関（WHO）"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "ベトナムでバイクに乗る日本人旅行者は、転倒による傷や路上の犬による咬傷に備えて、厚生労働省検疫所と外務省が破傷風と狂犬病についてどんな予防接種や受診を案内しているかを、出発前に確認したいと考えています。",
+      "content_angle": "外務省 海外安全ホームページの『ベトナム 安全対策基礎データ』（2026年3月13日更新）の医療情報（成人の推奨ワクチンに破傷風と狂犬病が含まれること、犬などに咬まれてもすぐに病院へ行けない地域へ行く人は予防接種を検討すること、ベトナムではワクチンの在庫がなくなることがあるため渡航前の接種を検討すること）と、FORTHの『狂犬病』ページ（咬まれたら石鹸と水でよく洗って消毒し、医師がWHOの基準でワクチンの要否を判断する、暴露前接種は基本3回で医療機関に事前確認が必要）、『海外渡航のためのワクチン』ページ（破傷風は野外での活動が多い人、狂犬病は医療アクセスがよくない地域へ行く人）、『ベトナム・カンボジア』ページ（ページ末尾の更新表示は平成24年で古い）を引用して並べます。WHOの狂犬病概況（洗浄は最低15分）とハノイCDCのページをベトナム側の参考資料として添え、日本の定期接種の記録は母子健康手帳などで確認できるというFORTHの記述にも触れます。狂犬病の死者数を書く場合は外務省ページの年と出典を併記し、ワクチンの日程・用量・費用には触れず、各ページの日付を明記して、医師や検疫所に相談するよう案内してください。",
+      "working_title": "ベトナムでバイク転倒・犬咬傷に備える：検疫所FORTHと外務省が案内する破傷風・狂犬病の予防接種と受診",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.anzen.mofa.go.jp/info/pcsafetymeasure_015.html",
+          "title": "Ministry of Foreign Affairs of Japan, Overseas Safety Homepage (updated 13 March 2026): Vietnam basic safety data, medical information, rabies, recommended adult vaccines including tetanus and rabies",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.forth.go.jp/moreinfo/topics/name47.html",
+          "title": "FORTH, Ministry of Health, Labour and Welfare quarantine stations (no date shown): rabies, wound washing, WHO categories, pre-exposure vaccination",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.forth.go.jp/moreinfo/topics/useful_vaccination.html",
+          "title": "FORTH (no date shown, sources last viewed June 2025): vaccines for overseas travel, who is recommended tetanus and rabies vaccination",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.forth.go.jp/destinations/country/vietnam_cambodia.html",
+          "title": "FORTH (page footer shows an update in 2012): Vietnam and Cambodia, recommended vaccinations, rabies vaccination rate of pet dogs, medical conditions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/rabies",
+          "title": "WHO fact sheet (no date shown, text cites 17 September 2026): rabies exposure categories, wound washing with water and soap for at least 15 minutes, post-exposure prophylaxis and pre-exposure vaccination",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hanoicdc.gov.vn/3084n/chu-dong-phong-benh-dai-vai-tro-cua-vac-xin-va-dieu-tri-du-phong-sau-phoi-nhiem.html",
+          "title": "Hanoi CDC (1 October 2026, Vietnamese): Vietnam side, rabies vaccine and rabies immunoglobulin after exposure, washing the wound for about 15 minutes, no folk remedies, do not wait to see whether the animal falls ill",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}
