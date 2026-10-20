@@ -13,10 +13,10 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
 | Matrix rows (1131) | 892 | 19 | 6 | 214 |
-| Topical candidates (630) | 0 | 0 | 10 | 620 |
+| Topical candidates (640) | 0 | 0 | 10 | 630 |
 | Silos (330) | 141 | 13 | 0 | 176 |
 
-Knowledge graph: 42 entities, 2816 typed edges (hreflang_equivalent 190, about 710, contains 1706, has_silo 160, has_hub 40, has_pillar 10).
+Knowledge graph: 42 entities, 2826 typed edges (hreflang_equivalent 190, about 710, contains 1716, has_silo 160, has_hub 40, has_pillar 10).
 
 ## REVIEW — competing intents
 
@@ -84,7 +84,7 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 | rt-northern-loops (proposed Hub) | planning | local | – | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE |
 | rt-day-trips (proposed Hub) | planning | local | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
 | travel-neighborhoods (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
-| travel-seasons (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
+| travel-seasons (proposed Hub) | planning | informational | – | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE |
 | travel-etiquette (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
 | mob-urban-transit (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
 | mob-intercity (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
@@ -111,7 +111,7 @@ Published / planned (IDEA + drafts) / candidates per stage.
 | pickup | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
 | riding | 56 / 12 / 0 | 60 / 9 / 0 | 60 / 9 / 0 | 60 / 9 / 0 | 50 / 9 / 0 | 58 / 10 / 0 | 58 / 10 / 0 | 58 / 10 / 0 | 58 / 9 / 0 | 58 / 9 / 0 |
 | return | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 |
-| planning | 0 / 0 / 63 | 0 / 0 / 63 | 0 / 0 / 63 | 0 / 0 / 63 | 0 / 0 / 63 | 0 / 0 / 63 | 0 / 0 / 63 | 0 / 0 / 63 | 0 / 0 / 63 | 0 / 0 / 63 |
+| planning | 0 / 0 / 64 | 0 / 0 / 64 | 0 / 0 / 64 | 0 / 0 / 64 | 0 / 0 / 64 | 0 / 0 / 64 | 0 / 0 / 64 | 0 / 0 / 64 | 0 / 0 / 64 | 0 / 0 / 64 |
 
 Every locale checklist also covers the consideration → decision → pickup → riding → return steps in short sections; that is breadth, not depth (see UPGRADE). `return` (deposit refund, late return) has no dedicated page and is answered inside the deposit and extra-cost silos rather than a separate silo. Transactional booking intent is deliberately not targeted: /global is an independent guide (owner positioning decision).
 
@@ -119,16 +119,16 @@ Every locale checklist also covers the consideration → decision → pickup →
 
 | Locale | Rows | Published | Protected drafts | Planned | Candidates | Published depth OK |
 |---|---|---|---|---|---|---|
-| vi | 112 | 87 | 0 | 25 | 63 | 99% |
-| en | 116 | 96 | 0 | 20 | 63 | 97% |
-| de | 115 | 98 | 0 | 17 | 63 | 98% |
-| fr | 116 | 95 | 0 | 21 | 63 | 98% |
-| es | 104 | 85 | 0 | 19 | 63 | 95% |
-| nl | 113 | 90 | 0 | 23 | 63 | 96% |
-| zh | 113 | 90 | 0 | 23 | 63 | 98% |
-| pt | 113 | 90 | 0 | 23 | 63 | 98% |
-| ko | 112 | 90 | 0 | 22 | 63 | 98% |
-| ja | 112 | 90 | 0 | 22 | 63 | 98% |
+| vi | 112 | 87 | 0 | 25 | 64 | 99% |
+| en | 116 | 96 | 0 | 20 | 64 | 97% |
+| de | 115 | 98 | 0 | 17 | 64 | 98% |
+| fr | 116 | 95 | 0 | 21 | 64 | 98% |
+| es | 104 | 85 | 0 | 19 | 64 | 95% |
+| nl | 113 | 90 | 0 | 23 | 64 | 96% |
+| zh | 113 | 90 | 0 | 23 | 64 | 98% |
+| pt | 113 | 90 | 0 | 23 | 64 | 98% |
+| ko | 112 | 90 | 0 | 22 | 64 | 98% |
+| ja | 112 | 90 | 0 | 22 | 64 | 98% |
 
 Live Writer states (CLAIMED/SUBMITTED) change on every autopilot commit and are not part of this file: run `node scripts/seo/topical-authority.mjs status`.
 
