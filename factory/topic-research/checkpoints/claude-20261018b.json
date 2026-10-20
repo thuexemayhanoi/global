@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T21:15:32.193Z",
+  "updated_at": "2026-10-20T21:15:45.598Z",
   "base_main_sha": "70bf4c585d3cb8996dd9cb64399736a4a7e3b0bd",
-  "last_commit_sha": "78a4edf2cd4a4bcd7991dc443e7003bcff823c3d",
+  "last_commit_sha": "7bbca3d912b821f17bd25a64ae1de77ce29b4734",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1750,
-    "qa_pass": 1750,
+    "researched": 1760,
+    "qa_pass": 1760,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1740,
+    "pushed": 1750,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 176,
-      "de": 176,
-      "fr": 176,
-      "es": 176,
-      "nl": 176,
-      "pt": 176,
-      "zh": 176,
-      "ko": 176,
-      "ja": 176,
-      "en": 166
+      "vi": 177,
+      "de": 177,
+      "fr": 177,
+      "es": 177,
+      "nl": 177,
+      "pt": 177,
+      "zh": 177,
+      "ko": 177,
+      "ja": 177,
+      "en": 167
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 740,
+      "traffic-law-safety": 750,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 175,
-    "file": "factory/topic-research/batches/claude-20261018b-0175.json",
-    "sha256": "5c5b44896f4ce42660d57f3cd319abd3e63f804b67fa346b1874ae7894adc08a",
+    "seq": 176,
+    "file": "factory/topic-research/batches/claude-20261018b-0176.json",
+    "sha256": "753d925d59dfdd443d12cb0f66087e86022a549c1ebc5345891e49c321cd4129",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -19373,8 +19373,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0175.json",
       "sha256": "5c5b44896f4ce42660d57f3cd319abd3e63f804b67fa346b1874ae7894adc08a",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "7bbca3d912b821f17bd25a64ae1de77ce29b4734",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -19478,11 +19478,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 176,
+      "file": "factory/topic-research/batches/claude-20261018b-0176.json",
+      "sha256": "753d925d59dfdd443d12cb0f66087e86022a549c1ebc5345891e49c321cd4129",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:cho-cat-khi-cat-phan-do-vet-thuong-huyet-thanh-khang-dai-theo-bo-y-te",
+          "locale": "vi",
+          "slug": "cho-cat-khi-cat-phan-do-vet-thuong-huyet-thanh-khang-dai-theo-bo-y-te",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::bi cho can khi can o viet nam xu ly vet thuong phan do khi nao can huyet thanh khang dai",
+          "ta_id": null
+        },
+        {
+          "ref": "en:dog-or-monkey-bite-in-vietnam-what-us-cdc-says-about-rabies-treatment",
+          "locale": "en",
+          "slug": "dog-or-monkey-bite-in-vietnam-what-us-cdc-says-about-rabies-treatment",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::what to do if bitten by a dog or monkey in vietnam rabies cdc advice",
+          "ta_id": null
+        },
+        {
+          "ref": "de:tollwut-hundebiss-vietnam-wundversorgung-behandlung-vor-ort-rki-aa",
+          "locale": "de",
+          "slug": "tollwut-hundebiss-vietnam-wundversorgung-behandlung-vor-ort-rki-aa",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::was tun nach einem hundebiss in vietnam wegen tollwut",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:morsure-chien-singe-vietnam-pasteur-france-diplomatie-sur-place-et-au-retour",
+          "locale": "fr",
+          "slug": "morsure-chien-singe-vietnam-pasteur-france-diplomatie-sur-place-et-au-retour",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::que faire apres une morsure de chien ou de singe au vietnam rage",
+          "ta_id": null
+        },
+        {
+          "ref": "es:mordedura-de-perro-o-mono-en-vietnam-que-dice-sanidad-exterior-rabia",
+          "locale": "es",
+          "slug": "mordedura-de-perro-o-mono-en-vietnam-que-dice-sanidad-exterior-rabia",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::que hacer si me muerde un perro o un mono en vietnam rabia",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:hondenbeet-of-apenbeet-vietnam-lcr-ggd-rivm-spoelen-antiserum",
+          "locale": "nl",
+          "slug": "hondenbeet-of-apenbeet-vietnam-lcr-ggd-rivm-spoelen-antiserum",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::gebeten door een hond of aap in vietnam rabies wat moet ik doen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-bei-gou-yao-hou-zhua-shang-kuangquanbing-baolu-chuzhi-zhongguo-guifan",
+          "locale": "zh",
+          "slug": "yuenan-bei-gou-yao-hou-zhua-shang-kuangquanbing-baolu-chuzhi-zhongguo-guifan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::在越南被狗咬伤或猴子抓伤后怎么处理 狂犬病暴露处置",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:mordedura-de-cao-ou-macaco-vietname-norma-dgs-profilaxia-no-regresso",
+          "locale": "pt",
+          "slug": "mordedura-de-cao-ou-macaco-vietname-norma-dgs-profilaxia-no-regresso",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::mordedura de cao ou macaco no vietname raiva o que fazer e como continuar em portugal",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-dongmul-gyosang-gongsubyeong-chuga-jeopjong-yeongsajoryeok-hangye",
+          "locale": "ko",
+          "slug": "beteunam-dongmul-gyosang-gongsubyeong-chuga-jeopjong-yeongsajoryeok-hangye",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::베트남에서 개나 원숭이에게 물렸을 때 공수병 예방접종 어떻게 하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-inu-saru-kamareta-kyokenbyo-kikoku-ji-kokunai-de-wakuchin-keizoku",
+          "locale": "ja",
+          "slug": "betonamu-inu-saru-kamareta-kyokenbyo-kikoku-ji-kokunai-de-wakuchin-keizoku",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ヘトナムて犬に咬まれた 狂犬病 帰国後 ワクチン 続き 検疫所",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 176,
-    "file": "factory/topic-research/batches/claude-20261018b-0176.json",
+    "seq": 177,
+    "file": "factory/topic-research/batches/claude-20261018b-0177.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -19495,13 +19606,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:15:28.474Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 151,
-      "topics": 10,
-      "sha256": "78314f0f39361cdd7fc18ab5ca518b9bd24cb44998a3c77e83d175514bb93a81"
-    },
     {
       "at": "2026-10-20T20:16:32.641Z",
       "event": "BATCH_COMMITTED",
@@ -19669,6 +19773,13 @@
       "seq": 175,
       "topics": 10,
       "sha256": "5c5b44896f4ce42660d57f3cd319abd3e63f804b67fa346b1874ae7894adc08a"
+    },
+    {
+      "at": "2026-10-20T21:15:45.598Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 176,
+      "topics": 10,
+      "sha256": "753d925d59dfdd443d12cb0f66087e86022a549c1ebc5345891e49c321cd4129"
     }
   ]
 }
