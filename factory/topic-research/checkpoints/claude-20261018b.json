@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T21:30:35.679Z",
+  "updated_at": "2026-10-20T21:30:50.402Z",
   "base_main_sha": "c21cab37733fc2c6a41700500a8718edf9cd510f",
-  "last_commit_sha": "c9ff73a1be63e7dd38f8ed4690caa83df962abee",
+  "last_commit_sha": "5d68bc2794f1901d0a422b07f3b49a22c1bdc07c",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1800,
-    "qa_pass": 1800,
+    "researched": 1810,
+    "qa_pass": 1810,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1790,
+    "pushed": 1800,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 181,
-      "de": 181,
-      "fr": 181,
-      "es": 181,
-      "nl": 181,
-      "pt": 181,
-      "zh": 181,
-      "ko": 181,
-      "ja": 181,
-      "en": 171
+      "vi": 182,
+      "de": 182,
+      "fr": 182,
+      "es": 182,
+      "nl": 182,
+      "pt": 182,
+      "zh": 182,
+      "ko": 182,
+      "ja": 182,
+      "en": 172
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 781,
+      "traffic-law-safety": 791,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 180,
-    "file": "factory/topic-research/batches/claude-20261018b-0180.json",
-    "sha256": "f5b2d45232f59c8f723630d2e2a0fe3dba9d9b46feffb39aad627d7be7b00dc2",
+    "seq": 181,
+    "file": "factory/topic-research/batches/claude-20261018b-0181.json",
+    "sha256": "d764a8566cfa283cc134de22507b84fcc838ee7bbb68c30c20e81ca7e28bb64b",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -19928,8 +19928,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0180.json",
       "sha256": "f5b2d45232f59c8f723630d2e2a0fe3dba9d9b46feffb39aad627d7be7b00dc2",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "5d68bc2794f1901d0a422b07f3b49a22c1bdc07c",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -20033,11 +20033,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 181,
+      "file": "factory/topic-research/batches/claude-20261018b-0181.json",
+      "sha256": "d764a8566cfa283cc134de22507b84fcc838ee7bbb68c30c20e81ca7e28bb64b",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:toc-do-va-muc-do-chan-thuong-xe-may-who-nghien-cuu-va-gioi-han-toc-do-viet-nam",
+          "locale": "vi",
+          "slug": "toc-do-va-muc-do-chan-thuong-xe-may-who-nghien-cuu-va-gioi-han-toc-do-viet-nam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::chay nhanh hon thi nguy co tai nan nang khi di xe may tang bao nhieu va gioi han toc do o viet nam la bao nhieu",
+          "ta_id": null
+        },
+        {
+          "ref": "en:speed-and-injury-on-a-motorbike-who-crash-studies-and-vietnam-speed-limits",
+          "locale": "en",
+          "slug": "speed-and-injury-on-a-motorbike-who-crash-studies-and-vietnam-speed-limits",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::how much does speed raise the risk of a serious crash on a motorbike and what are the speed limits in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:tempo-und-verletzungen-motorrad-who-unfallstudien-und-tempolimits-vietnam",
+          "locale": "de",
+          "slug": "tempo-und-verletzungen-motorrad-who-unfallstudien-und-tempolimits-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::wie stark erhoht hoheres tempo das risiko eines schweren unfalls auf dem roller und welche tempolimits gelten in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:vitesse-blessures-moto-oms-etudes-accidents-et-limites-vitesse-vietnam",
+          "locale": "fr",
+          "slug": "vitesse-blessures-moto-oms-etudes-accidents-et-limites-vitesse-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::de combien la vitesse augmente-t-elle le risque d'accident grave a moto ou en scooter et quelles sont les limites au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:velocidad-lesiones-moto-oms-estudios-accidentes-y-limites-velocidad-vietnam",
+          "locale": "es",
+          "slug": "velocidad-lesiones-moto-oms-estudios-accidentes-y-limites-velocidad-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::cuanto aumenta la velocidad el riesgo de un accidente grave en moto o scooter y que limites de velocidad hay en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:snelheid-en-letsel-op-de-motor-who-ongevalsstudies-en-snelheidslimieten-vietnam",
+          "locale": "nl",
+          "slug": "snelheid-en-letsel-op-de-motor-who-ongevalsstudies-en-snelheidslimieten-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::hoeveel verhoogt een hogere snelheid het risico op een zwaar ongeval op een scooter of motor en welke limieten gelden in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-motuoche-chesu-yu-sunshang-who-shigu-yanjiu-he-xiansu-guiding",
+          "locale": "zh",
+          "slug": "yuenan-motuoche-chesu-yu-sunshang-who-shigu-yanjiu-he-xiansu-guiding",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::骑摩托车车速越快严重事故风险增加多少 越南的限速是多少",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:velocidade-lesoes-mota-oms-estudos-acidentes-e-limites-velocidade-vietname",
+          "locale": "pt",
+          "slug": "velocidade-lesoes-mota-oms-estudos-acidentes-e-limites-velocidade-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::quanto aumenta a velocidade o risco de acidente grave de mota e quais sao os limites de velocidade no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-sokdo-busang-who-sago-yeongu-sokdo-jehan",
+          "locale": "ko",
+          "slug": "beteunam-otobai-sokdo-busang-who-sago-yeongu-sokdo-jehan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::오토바이는 속도가 빨라질수록 큰 사고 위험이 얼마나 커지나요 베트남의 제한 속도는 어떻게 되나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-supido-to-kega-who-jiko-kenkyu-to-sokudo-seigen",
+          "locale": "ja",
+          "slug": "betonamu-baiku-supido-to-kega-who-jiko-kenkyu-to-sokudo-seigen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::速度か上かるとハイクの重大事故のリスクはとれくらい高まりますか ヘトナムの制限速度は",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 181,
-    "file": "factory/topic-research/batches/claude-20261018b-0181.json",
+    "seq": 182,
+    "file": "factory/topic-research/batches/claude-20261018b-0182.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -20050,13 +20161,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:27:49.995Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 156,
-      "topics": 10,
-      "sha256": "98b094dc21b67ac73f6497989c758f10446d4596f8791c5fe5b62a8870434871"
-    },
     {
       "at": "2026-10-20T20:29:49.250Z",
       "event": "BATCH_COMMITTED",
@@ -20224,6 +20328,13 @@
       "seq": 180,
       "topics": 10,
       "sha256": "f5b2d45232f59c8f723630d2e2a0fe3dba9d9b46feffb39aad627d7be7b00dc2"
+    },
+    {
+      "at": "2026-10-20T21:30:50.402Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 181,
+      "topics": 10,
+      "sha256": "d764a8566cfa283cc134de22507b84fcc838ee7bbb68c30c20e81ca7e28bb64b"
     }
   ]
 }

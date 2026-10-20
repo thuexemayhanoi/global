@@ -1,0 +1,712 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H04",
+      "subcluster": "ss-city",
+      "slug": "toc-do-va-muc-do-chan-thuong-xe-may-who-nghien-cuu-va-gioi-han-toc-do-viet-nam",
+      "primary_query": "chạy nhanh hơn thì nguy cơ tai nạn nặng khi đi xe máy tăng bao nhiêu và giới hạn tốc độ ở Việt Nam là bao nhiêu",
+      "secondary_queries": [
+        "tốc độ trung bình tăng 1% thì nguy cơ tai nạn chết người tăng 4% có đúng không",
+        "nghiên cứu về tốc độ và mức độ chấn thương của người đi xe máy",
+        "tốc độ tối đa xe máy trong khu đông dân cư và ngoài khu đông dân cư theo Thông tư 38/2024",
+        "mô hình lũy thừa về tốc độ và tai nạn có đúng với đường phố nội đô không",
+        "xe tay ga 125cc là xe mô tô hay xe gắn máy khi tính giới hạn tốc độ"
+      ],
+      "entities": [
+        "Tổ chức Y tế Thế giới",
+        "Elvik 2018",
+        "Cameron và Elvik 2010",
+        "PubMed",
+        "Thông tư 38/2024/TT-BGTVT",
+        "Luật 36/2024/QH15"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Người đi xe máy ở Việt Nam nghe nói chạy nhanh thì nguy hiểm hơn và muốn biết nghiên cứu gắn bao nhiêu nguy cơ với tốc độ, con số 4% nổi tiếng có đúng cho đường phố không và luật đặt giới hạn tốc độ nào cho xe tay ga.",
+      "content_angle": "Dựa trên ba phân tích trên PubMed, hai nghiên cứu về xe máy, trang thông tin của WHO và các văn bản Việt Nam. WHO (trang không ghi ngày, đọc 20/10/2026): tốc độ trung bình tăng 1% thì nguy cơ tai nạn chết người tăng 4% và tai nạn nghiêm trọng tăng 3%. Elvik và cộng sự (Accid Anal Prev, 23/11/2018; phân tích gộp các nghiên cứu gần đây): mô hình lũy thừa và mô hình hàm mũ đều khớp rất tốt, và mối liên hệ giữa tốc độ và an toàn ở từng người lái giống như ở tốc độ trung bình của dòng xe. Cameron và Elvik (11/6/2010): các số mũ của Nilsson (bậc 4 cho tai nạn chết người, bậc 3 cho tai nạn nghiêm trọng, bậc 2 cho mọi tai nạn có người bị thương) rút ra từ việc đổi giới hạn tốc độ trên đường ngoài đô thị ở Thụy Điển, đúng với đường nông thôn và cao tốc nhưng không áp dụng thẳng cho đường trục đô thị, nên Writer không được coi con số 4% là lời hứa cho đường phố. Wu và cộng sự (Traffic Inj Prev, 23/2/2018; nghiên cứu bệnh chứng ở Pháp về tai nạn mất lái xe mô tô): nguy cơ tăng theo tốc độ, mô hình dùng bình phương tốc độ khớp hơn, và chạy trong cua làm nguy cơ mất lái gấp 3 lần. Prajongkha và Kanitpong (19/12/2025; va chạm đuôi xe ở Thái Lan): tốc độ trước va chạm cao hơn làm tăng xác suất tử vong. Không nghiên cứu nào đo xe tay ga trong phố Việt Nam. Quy định: Thông tư 38/2024/TT-BGTVT (hiệu lực 1/1/2025; khi không có biển) quy định xe mô tô trong khu đông dân cư tối đa 60 km/h trên đường đôi hoặc đường một chiều từ hai làn và 50 km/h trên đường hai chiều hoặc một làn, ngoài khu đông dân cư 70 và 60 km/h, còn xe gắn máy tối đa 40 km/h (theo Điều 34 Luật 36/2024/QH15, xe gắn máy là xe đến 50 cm3 hoặc 4 kW nên xe tay ga 110 đến 125 cm3 là xe mô tô); Điều 12 Luật yêu cầu tốc độ phù hợp điều kiện, kể cả thời tiết. Một bài báo ngày 1/2/2026 vẫn dẫn Nghị định 100/2019 đã bị thay thế khi nói về mức phạt, nên Writer dùng Nghị định 168/2024 đã sửa đổi, không ghi mức phạt và dẫn sang bài về giới hạn tốc độ đã có.",
+      "working_title": "Tốc độ và chấn thương khi đi xe máy: WHO và các nghiên cứu nói gì, và giới hạn tốc độ ở Việt Nam",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries",
+          "title": "World Health Organization (undated fact sheet read 20 October 2026): road traffic injuries, with the statement that every 1% increase in mean speed brings a 4% increase in fatal crash risk and a 3% increase in serious crash risk",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30472529/",
+          "title": "PubMed (Accid Anal Prev, 23 November 2018; DOI 10.1016/j.aap.2018.11.014): Elvik et al., meta-analysis of recent studies of speed and road safety, Power Model and Exponential Model, same relationship for individual drivers and mean traffic speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20728642/",
+          "title": "PubMed (Accid Anal Prev, 11 June 2010; DOI 10.1016/j.aap.2010.05.012): Cameron and Elvik, test of Nilsson's Power Model by road type, satisfactory for rural highways and freeways but not directly for urban arterial roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29185788/",
+          "title": "PubMed (Traffic Inj Prev, 23 February 2018; DOI 10.1080/15389588.2017.1410145): Wu et al., French case-control study of motorcycle loss-of-control crashes, risk rising with speed and tripled in a curve",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41417257/",
+          "title": "PubMed (Traffic Inj Prev, 19 December 2025; DOI 10.1080/15389588.2025.2587848): Prajongkha and Kanitpong, Thai study of motorcycle rear-end collisions where pre-impact speed raised the probability of a fatal outcome",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/38-bgtvt.pdf",
+          "title": "Government of Vietnam document portal (November 2024 folder): text of Circular 38/2024/TT-BGTVT on speed and safe distance, Articles 6 and 7 (limits for motorcycles and mopeds) and Article 12 (in force 1 January 2025, replacing Circular 31/2019)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nguoiquansat.vn/nguoi-di-xe-may-o-to-se-bi-phat-neu-khong-chap-hanh-quy-dinh-toc-do-khi-luu-thong-tren-duong-can-biet-de-thuc-hien-nghiem-chinh-271998.html",
+          "title": "Người Quan Sát (1 February 2026): explainer of the speed limits of Circular 38/2024/TT-BGTVT for motorcycles and mopeds, which still cites the replaced Decree 100/2019 for fines",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal: consolidated text 55/VBHN-VPQH of Law 36/2024/QH15 on road traffic order and safety, Article 12 on speed and Article 34 defining motorcycle and moped",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H04",
+      "subcluster": "ss-city",
+      "slug": "speed-and-injury-on-a-motorbike-who-crash-studies-and-vietnam-speed-limits",
+      "primary_query": "how much does speed raise the risk of a serious crash on a motorbike and what are the speed limits in Vietnam",
+      "secondary_queries": [
+        "does a 1% increase in speed really raise fatal crash risk by 4%",
+        "speed and injury severity for motorcycle riders studies",
+        "what is the speed limit for a motorbike in towns and outside towns in Vietnam",
+        "is the power model of speed and crashes valid for city streets",
+        "does a scooter of 125cc count as a motorcycle or a moped for speed limits in Vietnam"
+      ],
+      "entities": [
+        "World Health Organization",
+        "Elvik 2018 Power Model",
+        "Cameron and Elvik 2010",
+        "PubMed",
+        "Circular 38/2024/TT-BGTVT",
+        "Law 36/2024/QH15"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Riders in Vietnam hear that going faster is more dangerous and want to know how much risk studies attach to speed for motorcyclists, whether the famous 4% figure applies to city streets, and what limits Vietnamese law sets for a scooter.",
+      "content_angle": "Built on three PubMed-indexed analyses, two more motorcycle studies, the WHO fact sheet and the Vietnamese texts. WHO (undated, read 20 October 2026): every 1% rise in mean speed brings a 4% rise in fatal crash risk and 3% in serious crash risk. Elvik et al. (Accid Anal Prev, 23 November 2018; meta-analysis of recent studies): the Power Model and an Exponential Model fit very well and the link between speed and safety is the same for an individual driver as for mean traffic speed. Cameron and Elvik (11 June 2010): Nilsson's powers (4th for fatal crashes, 3rd for serious, 2nd for all injury crashes) came from Swedish rural speed-limit changes and fit rural highways and freeways but not directly urban arterial roads, so the Writer must not present the 4% as a promise for city streets. Wu et al. (Traffic Inj Prev, 23 February 2018; French case-control of motorcycle loss-of-control crashes): risk rose with speed, a model using the square of speed fit better, and riding in a curve tripled the risk of losing control. Prajongkha and Kanitpong (19 December 2025; Thai rear-end collisions): higher pre-impact speed raised the probability of a fatal outcome. None measured Vietnamese city scooters. Vietnam: Circular 38/2024/TT-BGTVT (in force 1 January 2025; where no sign says otherwise) sets for a motorcycle (xe mô tô) 60 km/h on divided or multi-lane one-way roads and 50 km/h on two-way or single-lane roads in built-up areas, 70 and 60 km/h outside, and 40 km/h for a moped (xe gắn máy, up to 50 cm3 or 4 kW under Law 36/2024/QH15 Article 34), so a 110 to 125 cm3 scooter is a motorcycle; Article 12 of the Law asks for speed suited to conditions including weather. A 1 February 2026 explainer still cites the replaced Decree 100/2019 for fines, so the Writer uses Decree 168/2024 as amended, names no fine and links the existing speed-limit article.",
+      "working_title": "Speed and Injury on a Motorbike: What WHO and Crash Studies Show and the Limits Vietnam Sets",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries",
+          "title": "World Health Organization (undated fact sheet read 20 October 2026): road traffic injuries, with the statement that every 1% increase in mean speed brings a 4% increase in fatal crash risk and a 3% increase in serious crash risk",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30472529/",
+          "title": "PubMed (Accid Anal Prev, 23 November 2018; DOI 10.1016/j.aap.2018.11.014): Elvik et al., meta-analysis of recent studies of speed and road safety, Power Model and Exponential Model, same relationship for individual drivers and mean traffic speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20728642/",
+          "title": "PubMed (Accid Anal Prev, 11 June 2010; DOI 10.1016/j.aap.2010.05.012): Cameron and Elvik, test of Nilsson's Power Model by road type, satisfactory for rural highways and freeways but not directly for urban arterial roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29185788/",
+          "title": "PubMed (Traffic Inj Prev, 23 February 2018; DOI 10.1080/15389588.2017.1410145): Wu et al., French case-control study of motorcycle loss-of-control crashes, risk rising with speed and tripled in a curve",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41417257/",
+          "title": "PubMed (Traffic Inj Prev, 19 December 2025; DOI 10.1080/15389588.2025.2587848): Prajongkha and Kanitpong, Thai study of motorcycle rear-end collisions where pre-impact speed raised the probability of a fatal outcome",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/38-bgtvt.pdf",
+          "title": "Government of Vietnam document portal (November 2024 folder): text of Circular 38/2024/TT-BGTVT on speed and safe distance, Articles 6 and 7 (limits for motorcycles and mopeds) and Article 12 (in force 1 January 2025, replacing Circular 31/2019)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nguoiquansat.vn/nguoi-di-xe-may-o-to-se-bi-phat-neu-khong-chap-hanh-quy-dinh-toc-do-khi-luu-thong-tren-duong-can-biet-de-thuc-hien-nghiem-chinh-271998.html",
+          "title": "Người Quan Sát (1 February 2026): explainer of the speed limits of Circular 38/2024/TT-BGTVT for motorcycles and mopeds, which still cites the replaced Decree 100/2019 for fines",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal: consolidated text 55/VBHN-VPQH of Law 36/2024/QH15 on road traffic order and safety, Article 12 on speed and Article 34 defining motorcycle and moped",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H04",
+      "subcluster": "ss-city",
+      "slug": "tempo-und-verletzungen-motorrad-who-unfallstudien-und-tempolimits-vietnam",
+      "primary_query": "wie stark erhöht höheres Tempo das Risiko eines schweren Unfalls auf dem Roller und welche Tempolimits gelten in Vietnam",
+      "secondary_queries": [
+        "erhöht ein Prozent mehr Durchschnittsgeschwindigkeit das Risiko tödlicher Unfälle wirklich um vier Prozent",
+        "Geschwindigkeit und Verletzungsschwere bei Motorradfahrern Studien",
+        "Höchstgeschwindigkeit für Motorräder innerorts und außerorts in Vietnam",
+        "gilt das Potenzmodell von Geschwindigkeit und Unfällen auch für Innenstädte",
+        "zählt ein Roller mit 125 ccm in Vietnam als Motorrad oder Moped beim Tempolimit"
+      ],
+      "entities": [
+        "Weltgesundheitsorganisation",
+        "Elvik 2018 Potenzmodell",
+        "Cameron und Elvik 2010",
+        "PubMed",
+        "Rundschreiben 38/2024/TT-BGTVT",
+        "Gesetz 36/2024/QH15"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Rollerfahrer in Vietnam hören, dass schneller fahren gefährlicher ist, und wollen wissen, wie viel Risiko Studien dem Tempo bei Motorradfahrern zuschreiben, ob die bekannte Zahl von vier Prozent auch für Stadtstraßen gilt und welche Limits das vietnamesische Recht für einen Roller setzt.",
+      "content_angle": "Gestützt auf drei PubMed-Analysen, zwei weitere Motorradstudien, das WHO-Faktenblatt und die vietnamesischen Texte. WHO (undatiert, gelesen am 20. Oktober 2026): jeder Anstieg der mittleren Geschwindigkeit um 1 % erhöht das Risiko tödlicher Unfälle um 4 % und schwerer Unfälle um 3 %. Elvik et al. (Accid Anal Prev, 23. November 2018; Metaanalyse jüngerer Studien): das Potenzmodell und ein Exponentialmodell passen sehr gut, und der Zusammenhang zwischen Tempo und Sicherheit gilt für den einzelnen Fahrer ebenso wie für die mittlere Verkehrsgeschwindigkeit. Cameron und Elvik (11. Juni 2010): Nilssons Exponenten (4 für tödliche, 3 für schwere, 2 für alle Unfälle mit Verletzten) stammen aus schwedischen Tempolimitänderungen außerorts und passen für Landstraßen und Autobahnen, aber nicht ohne Weiteres für städtische Hauptstraßen; der Writer darf die 4 % daher nicht als Versprechen für Stadtstraßen darstellen. Wu et al. (Traffic Inj Prev, 23. Februar 2018; französische Fall-Kontroll-Studie zu Kontrollverlust-Unfällen von Motorrädern): das Risiko stieg mit dem Tempo, ein Modell mit dem Quadrat der Geschwindigkeit passte besser, und Kurvenfahrt verdreifachte das Risiko eines Kontrollverlusts. Prajongkha und Kanitpong (19. Dezember 2025; thailändische Auffahrunfälle): höhere Geschwindigkeit vor dem Aufprall erhöhte die Wahrscheinlichkeit eines tödlichen Ausgangs. Keine Studie maß Roller im vietnamesischen Stadtverkehr. Vietnam: Rundschreiben 38/2024/TT-BGTVT (in Kraft seit 1. Januar 2025; ohne anderslautendes Schild) setzt für Motorräder (xe mô tô) innerorts 60 km/h auf Straßen mit Mittelstreifen oder mehrspurigen Einbahnstraßen und 50 km/h auf Zweirichtungs- oder einspurigen Straßen, außerorts 70 und 60 km/h, für Mopeds (xe gắn máy, nach Artikel 34 des Gesetzes 36/2024/QH15 bis 50 ccm oder 4 kW) 40 km/h; ein Roller mit 110 bis 125 ccm ist also ein Motorrad. Artikel 12 des Gesetzes verlangt eine den Bedingungen angepasste Geschwindigkeit, auch beim Wetter. Ein Bericht vom 1. Februar 2026 nennt für Bußgelder noch das ersetzte Dekret 100/2019; der Writer nutzt Dekret 168/2024 in geänderter Fassung, nennt kein Bußgeld und verlinkt den vorhandenen Artikel zu Tempolimits.",
+      "working_title": "Tempo und Verletzungen auf dem Roller: Was WHO und Studien zeigen und welche Limits Vietnam setzt",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries",
+          "title": "World Health Organization (undated fact sheet read 20 October 2026): road traffic injuries, with the statement that every 1% increase in mean speed brings a 4% increase in fatal crash risk and a 3% increase in serious crash risk",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30472529/",
+          "title": "PubMed (Accid Anal Prev, 23 November 2018; DOI 10.1016/j.aap.2018.11.014): Elvik et al., meta-analysis of recent studies of speed and road safety, Power Model and Exponential Model, same relationship for individual drivers and mean traffic speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20728642/",
+          "title": "PubMed (Accid Anal Prev, 11 June 2010; DOI 10.1016/j.aap.2010.05.012): Cameron and Elvik, test of Nilsson's Power Model by road type, satisfactory for rural highways and freeways but not directly for urban arterial roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29185788/",
+          "title": "PubMed (Traffic Inj Prev, 23 February 2018; DOI 10.1080/15389588.2017.1410145): Wu et al., French case-control study of motorcycle loss-of-control crashes, risk rising with speed and tripled in a curve",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41417257/",
+          "title": "PubMed (Traffic Inj Prev, 19 December 2025; DOI 10.1080/15389588.2025.2587848): Prajongkha and Kanitpong, Thai study of motorcycle rear-end collisions where pre-impact speed raised the probability of a fatal outcome",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/38-bgtvt.pdf",
+          "title": "Government of Vietnam document portal (November 2024 folder): text of Circular 38/2024/TT-BGTVT on speed and safe distance, Articles 6 and 7 (limits for motorcycles and mopeds) and Article 12 (in force 1 January 2025, replacing Circular 31/2019)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nguoiquansat.vn/nguoi-di-xe-may-o-to-se-bi-phat-neu-khong-chap-hanh-quy-dinh-toc-do-khi-luu-thong-tren-duong-can-biet-de-thuc-hien-nghiem-chinh-271998.html",
+          "title": "Người Quan Sát (1 February 2026): explainer of the speed limits of Circular 38/2024/TT-BGTVT for motorcycles and mopeds, which still cites the replaced Decree 100/2019 for fines",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal: consolidated text 55/VBHN-VPQH of Law 36/2024/QH15 on road traffic order and safety, Article 12 on speed and Article 34 defining motorcycle and moped",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H04",
+      "subcluster": "ss-city",
+      "slug": "vitesse-blessures-moto-oms-etudes-accidents-et-limites-vitesse-vietnam",
+      "primary_query": "de combien la vitesse augmente-t-elle le risque d'accident grave à moto ou en scooter et quelles sont les limites au Vietnam",
+      "secondary_queries": [
+        "une hausse de 1 % de la vitesse moyenne augmente-t-elle vraiment de 4 % le risque d'accident mortel",
+        "vitesse et gravité des blessures chez les motards études",
+        "vitesse maximale d'une moto en agglomération et hors agglomération au Vietnam",
+        "le modèle de puissance entre vitesse et accidents vaut-il pour les rues de ville",
+        "un scooter de 125 cm3 est-il une moto ou un cyclomoteur pour les limites de vitesse au Vietnam"
+      ],
+      "entities": [
+        "Organisation mondiale de la santé",
+        "Elvik 2018 modèle de puissance",
+        "Cameron et Elvik 2010",
+        "PubMed",
+        "circulaire 38/2024/TT-BGTVT",
+        "loi 36/2024/QH15"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Les motards au Vietnam entendent qu'aller plus vite est plus dangereux et veulent savoir quel risque les études attachent à la vitesse pour un motard, si le chiffre célèbre de 4 % vaut pour les rues d'une ville et quelles limites le droit vietnamien fixe à un scooter.",
+      "content_angle": "Fondé sur trois analyses de PubMed, deux autres études de motos, la fiche de l'OMS et les textes vietnamiens. OMS (page non datée lue le 20 octobre 2026) : chaque hausse de 1 % de la vitesse moyenne entraîne une hausse de 4 % du risque d'accident mortel et de 3 % de celui d'accident grave. Elvik et al. (Accid Anal Prev, 23 novembre 2018 ; méta-analyse d'études récentes) : le modèle de puissance et un modèle exponentiel s'ajustent très bien et le lien entre vitesse et sécurité est le même pour un conducteur que pour la vitesse moyenne du trafic. Cameron et Elvik (11 juin 2010) : les exposants de Nilsson (4 pour les accidents mortels, 3 pour les graves, 2 pour tous les accidents avec blessés) viennent de changements de limites en rase campagne en Suède et conviennent aux routes rurales et aux autoroutes mais pas directement aux artères urbaines ; le Writer ne doit donc pas présenter les 4 % comme une promesse pour les rues de ville. Wu et al. (Traffic Inj Prev, 23 février 2018 ; étude cas-témoins française des pertes de contrôle de motos) : le risque augmentait avec la vitesse, un modèle avec le carré de la vitesse s'ajustait mieux et rouler dans un virage triplait le risque de perte de contrôle. Prajongkha et Kanitpong (19 décembre 2025 ; collisions par l'arrière en Thaïlande) : une vitesse plus élevée avant le choc augmentait la probabilité d'issue mortelle. Aucune n'a mesuré des scooters en ville au Vietnam. Vietnam : la circulaire 38/2024/TT-BGTVT (en vigueur depuis le 1er janvier 2025 ; sauf panneau contraire) fixe pour une moto (xe mô tô) en agglomération 60 km/h sur route à chaussées séparées ou à plusieurs voies à sens unique et 50 km/h sur route à double sens ou à une seule voie, 70 et 60 km/h hors agglomération, et 40 km/h pour un cyclomoteur (xe gắn máy, jusqu'à 50 cm3 ou 4 kW selon l'article 34 de la loi 36/2024/QH15), donc un scooter de 110 à 125 cm3 est une moto ; l'article 12 de la loi demande une vitesse adaptée aux conditions, météo comprise. Un article du 1er février 2026 cite encore pour les amendes le décret 100/2019 remplacé : le Writer s'appuie sur le décret 168/2024 modifié, ne cite aucune amende et renvoie à l'article existant sur les limites de vitesse.",
+      "working_title": "Vitesse et blessures à moto : ce que disent l'OMS et les études, et les limites au Vietnam",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries",
+          "title": "World Health Organization (undated fact sheet read 20 October 2026): road traffic injuries, with the statement that every 1% increase in mean speed brings a 4% increase in fatal crash risk and a 3% increase in serious crash risk",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30472529/",
+          "title": "PubMed (Accid Anal Prev, 23 November 2018; DOI 10.1016/j.aap.2018.11.014): Elvik et al., meta-analysis of recent studies of speed and road safety, Power Model and Exponential Model, same relationship for individual drivers and mean traffic speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20728642/",
+          "title": "PubMed (Accid Anal Prev, 11 June 2010; DOI 10.1016/j.aap.2010.05.012): Cameron and Elvik, test of Nilsson's Power Model by road type, satisfactory for rural highways and freeways but not directly for urban arterial roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29185788/",
+          "title": "PubMed (Traffic Inj Prev, 23 February 2018; DOI 10.1080/15389588.2017.1410145): Wu et al., French case-control study of motorcycle loss-of-control crashes, risk rising with speed and tripled in a curve",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41417257/",
+          "title": "PubMed (Traffic Inj Prev, 19 December 2025; DOI 10.1080/15389588.2025.2587848): Prajongkha and Kanitpong, Thai study of motorcycle rear-end collisions where pre-impact speed raised the probability of a fatal outcome",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/38-bgtvt.pdf",
+          "title": "Government of Vietnam document portal (November 2024 folder): text of Circular 38/2024/TT-BGTVT on speed and safe distance, Articles 6 and 7 (limits for motorcycles and mopeds) and Article 12 (in force 1 January 2025, replacing Circular 31/2019)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nguoiquansat.vn/nguoi-di-xe-may-o-to-se-bi-phat-neu-khong-chap-hanh-quy-dinh-toc-do-khi-luu-thong-tren-duong-can-biet-de-thuc-hien-nghiem-chinh-271998.html",
+          "title": "Người Quan Sát (1 February 2026): explainer of the speed limits of Circular 38/2024/TT-BGTVT for motorcycles and mopeds, which still cites the replaced Decree 100/2019 for fines",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal: consolidated text 55/VBHN-VPQH of Law 36/2024/QH15 on road traffic order and safety, Article 12 on speed and Article 34 defining motorcycle and moped",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H04",
+      "subcluster": "ss-city",
+      "slug": "velocidad-lesiones-moto-oms-estudios-accidentes-y-limites-velocidad-vietnam",
+      "primary_query": "cuánto aumenta la velocidad el riesgo de un accidente grave en moto o scooter y qué límites de velocidad hay en Vietnam",
+      "secondary_queries": [
+        "un aumento del 1 % en la velocidad media sube de verdad un 4 % el riesgo de accidente mortal",
+        "velocidad y gravedad de las lesiones en motoristas estudios",
+        "velocidad máxima de una moto en zona urbana y fuera de ella en Vietnam",
+        "el modelo de potencia entre velocidad y accidentes vale para las calles de la ciudad",
+        "un scooter de 125 cc es moto o ciclomotor a efectos de los límites de velocidad en Vietnam"
+      ],
+      "entities": [
+        "Organización Mundial de la Salud",
+        "Elvik 2018 modelo de potencia",
+        "Cameron y Elvik 2010",
+        "PubMed",
+        "Circular 38/2024/TT-BGTVT",
+        "Ley 36/2024/QH15"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quienes van en moto por Vietnam oyen que ir más rápido es más peligroso y quieren saber cuánto riesgo atribuyen los estudios a la velocidad en motoristas, si la famosa cifra del 4 % vale para las calles de una ciudad y qué límites fija la ley vietnamita para un scooter.",
+      "content_angle": "Basado en tres análisis de PubMed, otros dos estudios de motos, la hoja informativa de la OMS y los textos vietnamitas. OMS (página sin fecha leída el 20 de octubre de 2026): cada aumento del 1 % en la velocidad media supone un aumento del 4 % en el riesgo de accidente mortal y del 3 % en el de accidente grave. Elvik et al. (Accid Anal Prev, 23 de noviembre de 2018; metaanálisis de estudios recientes): el modelo de potencia y un modelo exponencial se ajustan muy bien y la relación entre velocidad y seguridad es la misma para un conductor individual que para la velocidad media del tráfico. Cameron y Elvik (11 de junio de 2010): los exponentes de Nilsson (4 para accidentes mortales, 3 para graves, 2 para el conjunto de los accidentes con víctimas) salen de cambios de límites en carretera en Suecia y encajan en carreteras rurales y autopistas pero no directamente en arterias urbanas; el Writer no debe presentar el 4 % como una promesa para las calles de ciudad. Wu et al. (Traffic Inj Prev, 23 de febrero de 2018; estudio de casos y controles francés de pérdidas de control de motos): el riesgo aumentaba con la velocidad, un modelo con el cuadrado de la velocidad se ajustaba mejor y circular en una curva triplicaba el riesgo de perder el control. Prajongkha y Kanitpong (19 de diciembre de 2025; alcances por detrás en Tailandia): una velocidad mayor antes del impacto elevaba la probabilidad de desenlace mortal. Ninguno midió scooters en ciudades vietnamitas. Vietnam: la Circular 38/2024/TT-BGTVT (en vigor desde el 1 de enero de 2025; salvo que una señal diga otra cosa) fija para una moto (xe mô tô) en zona urbana 60 km/h en vías con mediana o de varios carriles en un sentido y 50 km/h en vías de doble sentido o de un solo carril, 70 y 60 km/h fuera de poblado, y 40 km/h para un ciclomotor (xe gắn máy, hasta 50 cm3 o 4 kW según el artículo 34 de la Ley 36/2024/QH15), así que un scooter de 110 a 125 cm3 es una moto; el artículo 12 de la Ley pide una velocidad adecuada a las condiciones, incluido el tiempo. Un artículo del 1 de febrero de 2026 aún cita para las multas el Decreto 100/2019 ya sustituido: el Writer usa el Decreto 168/2024 modificado, no cita multas y enlaza el artículo existente sobre límites de velocidad.",
+      "working_title": "Velocidad y lesiones en moto: qué dicen la OMS y los estudios, y los límites que fija Vietnam",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries",
+          "title": "World Health Organization (undated fact sheet read 20 October 2026): road traffic injuries, with the statement that every 1% increase in mean speed brings a 4% increase in fatal crash risk and a 3% increase in serious crash risk",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30472529/",
+          "title": "PubMed (Accid Anal Prev, 23 November 2018; DOI 10.1016/j.aap.2018.11.014): Elvik et al., meta-analysis of recent studies of speed and road safety, Power Model and Exponential Model, same relationship for individual drivers and mean traffic speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20728642/",
+          "title": "PubMed (Accid Anal Prev, 11 June 2010; DOI 10.1016/j.aap.2010.05.012): Cameron and Elvik, test of Nilsson's Power Model by road type, satisfactory for rural highways and freeways but not directly for urban arterial roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29185788/",
+          "title": "PubMed (Traffic Inj Prev, 23 February 2018; DOI 10.1080/15389588.2017.1410145): Wu et al., French case-control study of motorcycle loss-of-control crashes, risk rising with speed and tripled in a curve",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41417257/",
+          "title": "PubMed (Traffic Inj Prev, 19 December 2025; DOI 10.1080/15389588.2025.2587848): Prajongkha and Kanitpong, Thai study of motorcycle rear-end collisions where pre-impact speed raised the probability of a fatal outcome",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/38-bgtvt.pdf",
+          "title": "Government of Vietnam document portal (November 2024 folder): text of Circular 38/2024/TT-BGTVT on speed and safe distance, Articles 6 and 7 (limits for motorcycles and mopeds) and Article 12 (in force 1 January 2025, replacing Circular 31/2019)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nguoiquansat.vn/nguoi-di-xe-may-o-to-se-bi-phat-neu-khong-chap-hanh-quy-dinh-toc-do-khi-luu-thong-tren-duong-can-biet-de-thuc-hien-nghiem-chinh-271998.html",
+          "title": "Người Quan Sát (1 February 2026): explainer of the speed limits of Circular 38/2024/TT-BGTVT for motorcycles and mopeds, which still cites the replaced Decree 100/2019 for fines",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal: consolidated text 55/VBHN-VPQH of Law 36/2024/QH15 on road traffic order and safety, Article 12 on speed and Article 34 defining motorcycle and moped",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H04",
+      "subcluster": "ss-city",
+      "slug": "snelheid-en-letsel-op-de-motor-who-ongevalsstudies-en-snelheidslimieten-vietnam",
+      "primary_query": "hoeveel verhoogt een hogere snelheid het risico op een zwaar ongeval op een scooter of motor en welke limieten gelden in Vietnam",
+      "secondary_queries": [
+        "verhoogt 1 procent meer gemiddelde snelheid het risico op een dodelijk ongeval echt met 4 procent",
+        "snelheid en ernst van letsel bij motorrijders onderzoek",
+        "maximumsnelheid voor een motor binnen en buiten de bebouwde kom in Vietnam",
+        "geldt het machtsmodel van snelheid en ongevallen ook voor stadsstraten",
+        "is een scooter van 125 cc een motor of een bromfiets voor de snelheidslimiet in Vietnam"
+      ],
+      "entities": [
+        "Wereldgezondheidsorganisatie",
+        "Elvik 2018 machtsmodel",
+        "Cameron en Elvik 2010",
+        "PubMed",
+        "circulaire 38/2024/TT-BGTVT",
+        "wet 36/2024/QH15"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Scooterrijders in Vietnam horen dat sneller rijden gevaarlijker is en willen weten hoeveel risico onderzoek aan snelheid koppelt voor motorrijders, of het bekende getal van 4 procent ook voor stadsstraten geldt en welke limieten de Vietnamese wet voor een scooter stelt.",
+      "content_angle": "Gebaseerd op drie PubMed-analyses, twee andere motorstudies, het WHO-factsheet en de Vietnamese teksten. WHO (pagina zonder datum, gelezen op 20 oktober 2026): elke stijging van de gemiddelde snelheid met 1 % geeft 4 % meer kans op een dodelijk ongeval en 3 % meer op een ernstig ongeval. Elvik et al. (Accid Anal Prev, 23 november 2018; meta-analyse van recente studies): het machtsmodel en een exponentieel model passen zeer goed en het verband tussen snelheid en veiligheid is voor een individuele bestuurder hetzelfde als voor de gemiddelde verkeerssnelheid. Cameron en Elvik (11 juni 2010): de exponenten van Nilsson (4 voor dodelijke, 3 voor ernstige, 2 voor alle ongevallen met gewonden) komen uit Zweedse limietwijzigingen buiten de bebouwde kom en passen bij landelijke wegen en snelwegen maar niet zonder meer bij stedelijke hoofdwegen; de Writer mag de 4 % dus niet als belofte voor stadsstraten presenteren. Wu et al. (Traffic Inj Prev, 23 februari 2018; Franse patiënt-controlestudie van controleverlies bij motoren): het risico steeg met de snelheid, een model met het kwadraat van de snelheid paste beter en rijden in een bocht verdrievoudigde het risico op controleverlies. Prajongkha en Kanitpong (19 december 2025; Thaise kop-staartbotsingen): een hogere snelheid vóór de botsing verhoogde de kans op een dodelijke afloop. Geen enkele studie mat scooters in het Vietnamese stadsverkeer. Vietnam: circulaire 38/2024/TT-BGTVT (van kracht sinds 1 januari 2025; tenzij een bord anders zegt) stelt voor een motor (xe mô tô) binnen de bebouwde kom 60 km/u op gescheiden of meerstrooks eenrichtingswegen en 50 km/u op tweerichtings- of enkelstrooks wegen, daarbuiten 70 en 60 km/u, en 40 km/u voor een bromfiets (xe gắn máy, tot 50 cm3 of 4 kW volgens artikel 34 van wet 36/2024/QH15), dus een scooter van 110 tot 125 cm3 is een motor; artikel 12 van de wet vraagt een snelheid die past bij de omstandigheden, ook het weer. Een bericht van 1 februari 2026 noemt voor boetes nog het vervangen decreet 100/2019; de Writer gebruikt decreet 168/2024 in gewijzigde vorm, noemt geen boete en verwijst naar het bestaande artikel over snelheidslimieten.",
+      "working_title": "Snelheid en letsel op een scooter: wat de WHO en studies tonen en welke limieten Vietnam stelt",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries",
+          "title": "World Health Organization (undated fact sheet read 20 October 2026): road traffic injuries, with the statement that every 1% increase in mean speed brings a 4% increase in fatal crash risk and a 3% increase in serious crash risk",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30472529/",
+          "title": "PubMed (Accid Anal Prev, 23 November 2018; DOI 10.1016/j.aap.2018.11.014): Elvik et al., meta-analysis of recent studies of speed and road safety, Power Model and Exponential Model, same relationship for individual drivers and mean traffic speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20728642/",
+          "title": "PubMed (Accid Anal Prev, 11 June 2010; DOI 10.1016/j.aap.2010.05.012): Cameron and Elvik, test of Nilsson's Power Model by road type, satisfactory for rural highways and freeways but not directly for urban arterial roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29185788/",
+          "title": "PubMed (Traffic Inj Prev, 23 February 2018; DOI 10.1080/15389588.2017.1410145): Wu et al., French case-control study of motorcycle loss-of-control crashes, risk rising with speed and tripled in a curve",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41417257/",
+          "title": "PubMed (Traffic Inj Prev, 19 December 2025; DOI 10.1080/15389588.2025.2587848): Prajongkha and Kanitpong, Thai study of motorcycle rear-end collisions where pre-impact speed raised the probability of a fatal outcome",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/38-bgtvt.pdf",
+          "title": "Government of Vietnam document portal (November 2024 folder): text of Circular 38/2024/TT-BGTVT on speed and safe distance, Articles 6 and 7 (limits for motorcycles and mopeds) and Article 12 (in force 1 January 2025, replacing Circular 31/2019)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nguoiquansat.vn/nguoi-di-xe-may-o-to-se-bi-phat-neu-khong-chap-hanh-quy-dinh-toc-do-khi-luu-thong-tren-duong-can-biet-de-thuc-hien-nghiem-chinh-271998.html",
+          "title": "Người Quan Sát (1 February 2026): explainer of the speed limits of Circular 38/2024/TT-BGTVT for motorcycles and mopeds, which still cites the replaced Decree 100/2019 for fines",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal: consolidated text 55/VBHN-VPQH of Law 36/2024/QH15 on road traffic order and safety, Article 12 on speed and Article 34 defining motorcycle and moped",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H04",
+      "subcluster": "ss-city",
+      "slug": "yuenan-motuoche-chesu-yu-sunshang-who-shigu-yanjiu-he-xiansu-guiding",
+      "primary_query": "骑摩托车车速越快严重事故风险增加多少 越南的限速是多少",
+      "secondary_queries": [
+        "平均车速每提高1%致命事故风险真的增加4%吗",
+        "车速与摩托车骑手受伤严重程度的研究",
+        "越南摩托车在城区和城区以外的最高限速",
+        "车速与事故的幂模型适用于城市街道吗",
+        "125毫升的踏板车在越南算摩托车还是轻便摩托车 限速怎么算"
+      ],
+      "entities": [
+        "世界卫生组织",
+        "Elvik 2018 幂模型",
+        "Cameron和Elvik 2010",
+        "PubMed",
+        "第38/2024/TT-BGTVT号通知",
+        "第36/2024/QH15号法律"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "在越南骑摩托车或踏板车的人听说骑得越快越危险，想知道研究把多少风险与车速联系在一起，那个著名的4%数字是否适用于城市街道，以及越南法律给踏板车规定了什么限速。",
+      "content_angle": "依据三项PubMed分析、两项摩托车研究、世界卫生组织情况说明和越南的法律文本。世界卫生组织（页面无日期，2026年10月20日阅读）：平均车速每提高1%，致命事故风险增加4%，严重事故风险增加3%。Elvik等（Accid Anal Prev，2018年11月23日；对近年研究的荟萃分析）：幂模型和指数模型拟合都很好，车速与安全的关系对单个驾驶员与对交通平均车速是一样的。Cameron和Elvik（2010年6月11日）：Nilsson的指数（致命事故4次方，严重事故3次方，所有有伤亡事故2次方）来自瑞典郊外限速调整，适用于乡村公路和高速公路，但不能直接用于城市干道，所以Writer不得把4%说成对城市街道的承诺。Wu等（Traffic Inj Prev，2018年2月23日；法国对摩托车失控事故的病例对照研究）：风险随车速上升，用车速平方的模型拟合更好，弯道骑行使失控风险增至3倍。Prajongkha和Kanitpong（2025年12月19日；泰国追尾碰撞）：碰撞前车速更高使死亡概率升高。没有一项研究测量越南城市里的踏板车。越南：第38/2024/TT-BGTVT号通知（2025年1月1日起施行；无其他标志时）规定摩托车（xe mô tô）在城区内，有中央分隔带或单向两条以上车道的道路最高60公里/小时，双向或单车道道路50公里/小时，城区外分别为70和60公里/小时，轻便摩托车（xe gắn máy，按第36/2024/QH15号法律第34条为不超过50毫升或4千瓦）为40公里/小时，所以110至125毫升的踏板车属于摩托车；该法第12条要求车速适应路况和天气等条件。2026年2月1日的一篇报道在罚款上仍引用已被取代的第100/2019号议定，Writer应使用修订后的第168/2024号议定，不写罚款金额，并链接现有的限速文章。",
+      "working_title": "骑摩托车的车速与受伤：世界卫生组织和事故研究怎么说，越南规定了怎样的限速",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries",
+          "title": "World Health Organization (undated fact sheet read 20 October 2026): road traffic injuries, with the statement that every 1% increase in mean speed brings a 4% increase in fatal crash risk and a 3% increase in serious crash risk",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30472529/",
+          "title": "PubMed (Accid Anal Prev, 23 November 2018; DOI 10.1016/j.aap.2018.11.014): Elvik et al., meta-analysis of recent studies of speed and road safety, Power Model and Exponential Model, same relationship for individual drivers and mean traffic speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20728642/",
+          "title": "PubMed (Accid Anal Prev, 11 June 2010; DOI 10.1016/j.aap.2010.05.012): Cameron and Elvik, test of Nilsson's Power Model by road type, satisfactory for rural highways and freeways but not directly for urban arterial roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29185788/",
+          "title": "PubMed (Traffic Inj Prev, 23 February 2018; DOI 10.1080/15389588.2017.1410145): Wu et al., French case-control study of motorcycle loss-of-control crashes, risk rising with speed and tripled in a curve",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41417257/",
+          "title": "PubMed (Traffic Inj Prev, 19 December 2025; DOI 10.1080/15389588.2025.2587848): Prajongkha and Kanitpong, Thai study of motorcycle rear-end collisions where pre-impact speed raised the probability of a fatal outcome",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/38-bgtvt.pdf",
+          "title": "Government of Vietnam document portal (November 2024 folder): text of Circular 38/2024/TT-BGTVT on speed and safe distance, Articles 6 and 7 (limits for motorcycles and mopeds) and Article 12 (in force 1 January 2025, replacing Circular 31/2019)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nguoiquansat.vn/nguoi-di-xe-may-o-to-se-bi-phat-neu-khong-chap-hanh-quy-dinh-toc-do-khi-luu-thong-tren-duong-can-biet-de-thuc-hien-nghiem-chinh-271998.html",
+          "title": "Người Quan Sát (1 February 2026): explainer of the speed limits of Circular 38/2024/TT-BGTVT for motorcycles and mopeds, which still cites the replaced Decree 100/2019 for fines",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal: consolidated text 55/VBHN-VPQH of Law 36/2024/QH15 on road traffic order and safety, Article 12 on speed and Article 34 defining motorcycle and moped",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H04",
+      "subcluster": "ss-city",
+      "slug": "velocidade-lesoes-mota-oms-estudos-acidentes-e-limites-velocidade-vietname",
+      "primary_query": "quanto aumenta a velocidade o risco de acidente grave de mota e quais são os limites de velocidade no Vietname",
+      "secondary_queries": [
+        "um aumento de 1 % na velocidade média sobe mesmo 4 % o risco de acidente mortal",
+        "velocidade e gravidade das lesões nos motociclistas estudos",
+        "velocidade máxima de uma mota dentro e fora das localidades no Vietname",
+        "o modelo de potência entre velocidade e acidentes vale para as ruas da cidade",
+        "uma scooter de 125 cc é mota ou ciclomotor para os limites de velocidade no Vietname"
+      ],
+      "entities": [
+        "Organização Mundial da Saúde",
+        "Elvik 2018 modelo de potência",
+        "Cameron e Elvik 2010",
+        "PubMed",
+        "Circular 38/2024/TT-BGTVT",
+        "Lei 36/2024/QH15"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quem anda de mota no Vietname ouve dizer que ir mais depressa é mais perigoso e quer saber quanto risco os estudos associam à velocidade nos motociclistas, se o célebre número de 4 % vale para as ruas de uma cidade e que limites a lei vietnamita fixa para uma scooter.",
+      "content_angle": "Baseado em três análises do PubMed, outros dois estudos de motas, na ficha informativa da OMS e nos textos vietnamitas. OMS (página sem data lida a 20 de outubro de 2026): cada aumento de 1 % na velocidade média traz um aumento de 4 % no risco de acidente mortal e de 3 % no de acidente grave. Elvik et al. (Accid Anal Prev, 23 de novembro de 2018; meta-análise de estudos recentes): o modelo de potência e um modelo exponencial ajustam-se muito bem e a relação entre velocidade e segurança é a mesma para um condutor individual e para a velocidade média do tráfego. Cameron e Elvik (11 de junho de 2010): os expoentes de Nilsson (4 para acidentes mortais, 3 para graves, 2 para o conjunto dos acidentes com vítimas) vêm de alterações de limites fora das localidades na Suécia e servem para estradas rurais e autoestradas mas não diretamente para artérias urbanas; o Writer não deve apresentar os 4 % como uma promessa para as ruas da cidade. Wu et al. (Traffic Inj Prev, 23 de fevereiro de 2018; estudo francês de casos e controlos de perdas de controlo de motas): o risco subia com a velocidade, um modelo com o quadrado da velocidade ajustava-se melhor e circular numa curva triplicava o risco de perder o controlo. Prajongkha e Kanitpong (19 de dezembro de 2025; colisões traseiras na Tailândia): uma velocidade maior antes do impacto aumentava a probabilidade de desfecho mortal. Nenhum mediu scooters no trânsito urbano do Vietname. Vietname: a Circular 38/2024/TT-BGTVT (em vigor desde 1 de janeiro de 2025; salvo sinal em contrário) fixa para uma mota (xe mô tô) dentro das localidades 60 km/h em vias com separador ou de várias vias num sentido e 50 km/h em vias de dois sentidos ou de uma só via, 70 e 60 km/h fora delas, e 40 km/h para um ciclomotor (xe gắn máy, até 50 cm3 ou 4 kW segundo o artigo 34 da Lei 36/2024/QH15), pelo que uma scooter de 110 a 125 cm3 é uma mota; o artigo 12 da Lei pede uma velocidade adequada às condições, incluindo o tempo. Um artigo de 1 de fevereiro de 2026 ainda cita para as coimas o Decreto 100/2019 já substituído: o Writer usa o Decreto 168/2024 alterado, não cita coimas e remete para o artigo existente sobre limites de velocidade.",
+      "working_title": "Velocidade e lesões de mota: o que dizem a OMS e os estudos, e os limites do Vietname",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries",
+          "title": "World Health Organization (undated fact sheet read 20 October 2026): road traffic injuries, with the statement that every 1% increase in mean speed brings a 4% increase in fatal crash risk and a 3% increase in serious crash risk",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30472529/",
+          "title": "PubMed (Accid Anal Prev, 23 November 2018; DOI 10.1016/j.aap.2018.11.014): Elvik et al., meta-analysis of recent studies of speed and road safety, Power Model and Exponential Model, same relationship for individual drivers and mean traffic speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20728642/",
+          "title": "PubMed (Accid Anal Prev, 11 June 2010; DOI 10.1016/j.aap.2010.05.012): Cameron and Elvik, test of Nilsson's Power Model by road type, satisfactory for rural highways and freeways but not directly for urban arterial roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29185788/",
+          "title": "PubMed (Traffic Inj Prev, 23 February 2018; DOI 10.1080/15389588.2017.1410145): Wu et al., French case-control study of motorcycle loss-of-control crashes, risk rising with speed and tripled in a curve",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41417257/",
+          "title": "PubMed (Traffic Inj Prev, 19 December 2025; DOI 10.1080/15389588.2025.2587848): Prajongkha and Kanitpong, Thai study of motorcycle rear-end collisions where pre-impact speed raised the probability of a fatal outcome",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/38-bgtvt.pdf",
+          "title": "Government of Vietnam document portal (November 2024 folder): text of Circular 38/2024/TT-BGTVT on speed and safe distance, Articles 6 and 7 (limits for motorcycles and mopeds) and Article 12 (in force 1 January 2025, replacing Circular 31/2019)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nguoiquansat.vn/nguoi-di-xe-may-o-to-se-bi-phat-neu-khong-chap-hanh-quy-dinh-toc-do-khi-luu-thong-tren-duong-can-biet-de-thuc-hien-nghiem-chinh-271998.html",
+          "title": "Người Quan Sát (1 February 2026): explainer of the speed limits of Circular 38/2024/TT-BGTVT for motorcycles and mopeds, which still cites the replaced Decree 100/2019 for fines",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal: consolidated text 55/VBHN-VPQH of Law 36/2024/QH15 on road traffic order and safety, Article 12 on speed and Article 34 defining motorcycle and moped",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H04",
+      "subcluster": "ss-city",
+      "slug": "beteunam-otobai-sokdo-busang-who-sago-yeongu-sokdo-jehan",
+      "primary_query": "오토바이는 속도가 빨라질수록 큰 사고 위험이 얼마나 커지나요 베트남의 제한 속도는 어떻게 되나요",
+      "secondary_queries": [
+        "평균 속도가 1% 올라가면 치명적 사고 위험이 정말 4% 늘어나나요",
+        "오토바이 운전자의 속도와 부상 정도에 관한 연구",
+        "베트남에서 오토바이의 시가지와 시가지 밖 제한 속도",
+        "속도와 사고의 거듭제곱 모형이 도심 도로에도 맞나요",
+        "베트남에서 125cc 스쿠터는 제한 속도상 오토바이인가요 모페드인가요"
+      ],
+      "entities": [
+        "세계보건기구",
+        "Elvik 2018 거듭제곱 모형",
+        "Cameron과 Elvik 2010",
+        "PubMed",
+        "통달 38/2024/TT-BGTVT",
+        "법률 36/2024/QH15"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "베트남에서 오토바이를 타는 사람은 빠르게 달릴수록 위험하다는 말을 듣지만, 연구가 속도에 얼마나 큰 위험을 붙이는지, 유명한 4%라는 수치가 도심 도로에도 맞는지, 베트남 법이 스쿠터에 어떤 제한 속도를 두는지 알고 싶어 합니다.",
+      "content_angle": "PubMed의 분석 3건, 오토바이 연구 2건, WHO 팩트시트, 베트남 법령에 근거합니다. WHO(날짜 없는 페이지, 2026년 10월 20일 확인): 평균 속도가 1% 오를 때마다 치명적 사고 위험은 4%, 심각한 사고 위험은 3% 늘어납니다. Elvik 외(Accid Anal Prev, 2018년 11월 23일, 최근 연구의 메타분석): 거듭제곱 모형과 지수 모형이 모두 잘 맞고, 속도와 안전의 관계는 개별 운전자에서나 교통의 평균 속도에서나 같았습니다. Cameron과 Elvik(2010년 6월 11일): Nilsson의 지수(치명적 사고 4제곱, 심각한 사고 3제곱, 부상 사고 전체 2제곱)는 스웨덴의 교외 제한 속도 변경에서 나온 것으로 지방 도로와 고속도로에는 맞지만 도심 간선도로에는 그대로 적용하기 어려워, Writer는 4%를 도시 거리에 대한 약속처럼 쓰면 안 됩니다. Wu 외(Traffic Inj Prev, 2018년 2월 23일, 프랑스의 오토바이 조종 불능 사고 환자-대조군 연구): 위험은 속도에 따라 커졌고 속도의 제곱을 쓴 모형이 더 잘 맞았으며 커브 주행은 조종 불능 위험을 3배로 높였습니다. Prajongkha와 Kanitpong(2025년 12월 19일, 태국의 추돌 사고): 충돌 전 속도가 높을수록 사망 확률이 커졌습니다. 베트남 도시의 스쿠터를 측정한 연구는 없습니다. 베트남: 통달 38/2024/TT-BGTVT(2025년 1월 1일 시행, 표지판이 따로 없을 때)는 오토바이(xe mô tô)에 시가지 안에서 중앙분리대가 있거나 한 방향 2차로 이상인 도로 60km/h, 양방향 또는 1차로 도로 50km/h, 시가지 밖에서 70km/h와 60km/h를 두고, 모페드(xe gắn máy, 법률 36/2024/QH15 제34조상 50cc 또는 4kW 이하)는 40km/h이므로 110~125cc 스쿠터는 오토바이입니다. 법률 제12조는 날씨 등 조건에 맞는 속도를 요구합니다. 2026년 2월 1일 기사는 과태료를 아직 대체된 시행령 100/2019로 설명하므로 Writer는 개정된 시행령 168/2024를 쓰고 과태료 금액은 적지 않으며 기존 제한 속도 글로 연결합니다.",
+      "working_title": "오토바이의 속도와 부상: WHO와 사고 연구가 말하는 것, 그리고 베트남이 정한 제한 속도",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries",
+          "title": "World Health Organization (undated fact sheet read 20 October 2026): road traffic injuries, with the statement that every 1% increase in mean speed brings a 4% increase in fatal crash risk and a 3% increase in serious crash risk",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30472529/",
+          "title": "PubMed (Accid Anal Prev, 23 November 2018; DOI 10.1016/j.aap.2018.11.014): Elvik et al., meta-analysis of recent studies of speed and road safety, Power Model and Exponential Model, same relationship for individual drivers and mean traffic speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20728642/",
+          "title": "PubMed (Accid Anal Prev, 11 June 2010; DOI 10.1016/j.aap.2010.05.012): Cameron and Elvik, test of Nilsson's Power Model by road type, satisfactory for rural highways and freeways but not directly for urban arterial roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29185788/",
+          "title": "PubMed (Traffic Inj Prev, 23 February 2018; DOI 10.1080/15389588.2017.1410145): Wu et al., French case-control study of motorcycle loss-of-control crashes, risk rising with speed and tripled in a curve",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41417257/",
+          "title": "PubMed (Traffic Inj Prev, 19 December 2025; DOI 10.1080/15389588.2025.2587848): Prajongkha and Kanitpong, Thai study of motorcycle rear-end collisions where pre-impact speed raised the probability of a fatal outcome",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/38-bgtvt.pdf",
+          "title": "Government of Vietnam document portal (November 2024 folder): text of Circular 38/2024/TT-BGTVT on speed and safe distance, Articles 6 and 7 (limits for motorcycles and mopeds) and Article 12 (in force 1 January 2025, replacing Circular 31/2019)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nguoiquansat.vn/nguoi-di-xe-may-o-to-se-bi-phat-neu-khong-chap-hanh-quy-dinh-toc-do-khi-luu-thong-tren-duong-can-biet-de-thuc-hien-nghiem-chinh-271998.html",
+          "title": "Người Quan Sát (1 February 2026): explainer of the speed limits of Circular 38/2024/TT-BGTVT for motorcycles and mopeds, which still cites the replaced Decree 100/2019 for fines",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal: consolidated text 55/VBHN-VPQH of Law 36/2024/QH15 on road traffic order and safety, Article 12 on speed and Article 34 defining motorcycle and moped",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H04",
+      "subcluster": "ss-city",
+      "slug": "betonamu-baiku-supido-to-kega-who-jiko-kenkyu-to-sokudo-seigen",
+      "primary_query": "速度が上がるとバイクの重大事故のリスクはどれくらい高まりますか ベトナムの制限速度は",
+      "secondary_queries": [
+        "平均速度が1%上がると死亡事故のリスクは本当に4%上がるのか",
+        "バイクの運転者の速度とけがの重さに関する研究",
+        "ベトナムのバイクの市街地内と市街地外での制限速度",
+        "速度と事故のべき乗モデルは市街地の道路にも当てはまるか",
+        "ベトナムで125ccのスクーターは制限速度ではバイクか原付か"
+      ],
+      "entities": [
+        "世界保健機関",
+        "Elvik 2018 べき乗モデル",
+        "Cameron and Elvik 2010",
+        "PubMed",
+        "通達38/2024/TT-BGTVT",
+        "法律36/2024/QH15"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "ベトナムでバイクに乗る人は速く走るほど危険だと聞きますが、研究が速度にどれほどのリスクを結びつけているのか、有名な4%という数字が市街地の道路にも当てはまるのか、ベトナムの法律がスクーターにどんな制限速度を定めているのかを知りたがります。",
+      "content_angle": "PubMedの分析3件、バイクの研究2件、WHOのファクトシート、ベトナムの法令に基づきます。WHO（日付のないページ、2026年10月20日閲覧）：平均速度が1%上がるごとに死亡事故のリスクは4%、重大事故のリスクは3%上がります。Elvik他（Accid Anal Prev、2018年11月23日、最近の研究のメタ分析）：べき乗モデルと指数モデルのどちらもよく当てはまり、速度と安全の関係は個々の運転者でも交通の平均速度でも同じでした。Cameron and Elvik（2010年6月11日）：Nilssonの指数（死亡事故は4乗、重大事故は3乗、負傷事故全体は2乗）はスウェーデンの郊外での制限速度変更から得られたもので、地方道路や高速道路には合うものの、都市の幹線道路にはそのままは当てはまらないため、Writerは4%を市街地の道路への約束のように書いてはいけません。Wu他（Traffic Inj Prev、2018年2月23日、フランスのバイクの操縦不能事故の症例対照研究）：リスクは速度とともに上がり、速度の2乗を使ったモデルの方がよく当てはまり、カーブでは操縦不能のリスクが3倍になりました。Prajongkha and Kanitpong（2025年12月19日、タイの追突事故）：衝突前の速度が高いほど死亡の確率が上がりました。ベトナムの都市のスクーターを測った研究はありません。ベトナム：通達38/2024/TT-BGTVT（2025年1月1日施行、標識が別に示さない場合）は、バイク（xe mô tô）について市街地内で中央分離帯のある道路または一方通行の複数車線で60km/h、対面通行または1車線で50km/h、市街地外で70km/hと60km/h、原付（xe gắn máy、法律36/2024/QH15第34条で50cc以下または4kW以下）は40km/hと定め、110〜125ccのスクーターはバイクに当たります。法律第12条は天候などの条件に合った速度を求めます。2026年2月1日の記事は罰金をまだ置き換えられた政令100/2019で説明しているため、Writerは改正後の政令168/2024を使い、罰金額は書かず、既存の制限速度の記事に誘導します。",
+      "working_title": "バイクの速度とけが：WHOと事故研究が示すことと、ベトナムが定める制限速度",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries",
+          "title": "World Health Organization (undated fact sheet read 20 October 2026): road traffic injuries, with the statement that every 1% increase in mean speed brings a 4% increase in fatal crash risk and a 3% increase in serious crash risk",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30472529/",
+          "title": "PubMed (Accid Anal Prev, 23 November 2018; DOI 10.1016/j.aap.2018.11.014): Elvik et al., meta-analysis of recent studies of speed and road safety, Power Model and Exponential Model, same relationship for individual drivers and mean traffic speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20728642/",
+          "title": "PubMed (Accid Anal Prev, 11 June 2010; DOI 10.1016/j.aap.2010.05.012): Cameron and Elvik, test of Nilsson's Power Model by road type, satisfactory for rural highways and freeways but not directly for urban arterial roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29185788/",
+          "title": "PubMed (Traffic Inj Prev, 23 February 2018; DOI 10.1080/15389588.2017.1410145): Wu et al., French case-control study of motorcycle loss-of-control crashes, risk rising with speed and tripled in a curve",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41417257/",
+          "title": "PubMed (Traffic Inj Prev, 19 December 2025; DOI 10.1080/15389588.2025.2587848): Prajongkha and Kanitpong, Thai study of motorcycle rear-end collisions where pre-impact speed raised the probability of a fatal outcome",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2024/11/38-bgtvt.pdf",
+          "title": "Government of Vietnam document portal (November 2024 folder): text of Circular 38/2024/TT-BGTVT on speed and safe distance, Articles 6 and 7 (limits for motorcycles and mopeds) and Article 12 (in force 1 January 2025, replacing Circular 31/2019)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://nguoiquansat.vn/nguoi-di-xe-may-o-to-se-bi-phat-neu-khong-chap-hanh-quy-dinh-toc-do-khi-luu-thong-tren-duong-can-biet-de-thuc-hien-nghiem-chinh-271998.html",
+          "title": "Người Quan Sát (1 February 2026): explainer of the speed limits of Circular 38/2024/TT-BGTVT for motorcycles and mopeds, which still cites the replaced Decree 100/2019 for fines",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal: consolidated text 55/VBHN-VPQH of Law 36/2024/QH15 on road traffic order and safety, Article 12 on speed and Article 34 defining motorcycle and moped",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}
