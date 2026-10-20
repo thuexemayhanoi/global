@@ -132,6 +132,11 @@ export function validateTopicalMap({map,matrix,frozenUrls=[]}){
  for(const r of refs.values())if(!/^https:\/\/[^/]+/i.test(r.url||"")||!/^\d{4}-\d{2}-\d{2}$/.test(r.checked_on||"")||!r.title||unsafeText(r.title))
   fail("T8",r.key||"reference","Reference registry entry needs an https URL, title and checked_on date");
  const rows=matrix.rows,byId=new Map(rows.map(r=>[r.id,r]));
+ // A distinct_from reason explains the pair from both sides. Matrix rows precede every proposal in the comparison
+ // pool, so once a later candidate is promoted its row (which carries the reason) is judged against the earlier
+ // queued candidate it named, and that candidate has no reason of its own.
+ const explainedBy=new Set();
+ for(const r of rows)for(const d of r.distinct_from||[])if(String(d?.reason||"").length>=40)explainedBy.add(r.id+">"+d?.id);
  // Owner maps let a PROMOTED candidate coexist with the Matrix row it became.
  const urls=new Map([...frozenUrls.map(u=>[u,"FROZEN"]),...rows.map(r=>[r.url,r.id])]);
  const queries=new Map(rows.map(r=>[r.locale+"::"+normalize(r.primary_query),r.id]));
@@ -201,7 +206,7 @@ export function validateTopicalMap({map,matrix,frozenUrls=[]}){
    const distinct=new Map((p.distinct_from||[]).map(d=>[d?.id,d?.reason]));
    for(const [oid,score] of (pairsFor.get(i)||[])){
     if(oid===self)continue;
-    const justified=String(distinct.get(oid)||"").length>=40;
+    const justified=String(distinct.get(oid)||"").length>=40||explainedBy.has(oid+">"+id);
     if(justified)continue;
     if(score>=SIMILARITY_FAIL)fail("T4",id,"Cannibalization risk vs "+oid+" (overlap "+score.toFixed(2)+"); merge, re-scope or justify in distinct_from");
     else if(score>=SIMILARITY_WARN)warn("T4",id,"Review intent overlap vs "+oid+" (overlap "+score.toFixed(2)+")");
