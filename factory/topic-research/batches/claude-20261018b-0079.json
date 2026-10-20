@@ -1,0 +1,552 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H03",
+      "subcluster": "dc-insurance",
+      "slug": "bao-hiem-xe-may-tu-nguyen-vat-chat-tai-nan-ngoai-bat-buoc",
+      "primary_query": "bảo hiểm xe máy tự nguyện gồm những loại nào và khác gì bảo hiểm bắt buộc",
+      "secondary_queries": [
+        "bảo hiểm vật chất xe máy có bồi thường mất cắp không",
+        "bảo hiểm tai nạn người ngồi trên xe máy tự nguyện quyền lợi và loại trừ",
+        "bảo hiểm trách nhiệm dân sự tự nguyện xe máy phần vượt mức bắt buộc",
+        "Nghị định 67/2023/NĐ-CP bảo hiểm tự nguyện xe máy mở rộng điều kiện bảo hiểm",
+        "người nước ngoài có tham gia được bảo hiểm xe máy tự nguyện ở Việt Nam không"
+      ],
+      "entities": [
+        "Nghị định 67/2023/NĐ-CP",
+        "bảo hiểm tự nguyện xe máy",
+        "bảo hiểm vật chất xe máy",
+        "bảo hiểm tai nạn người ngồi trên xe",
+        "doanh nghiệp bảo hiểm"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Người sở hữu xe máy ở Việt Nam, kể cả người nước ngoài mua xe, biết bảo hiểm bắt buộc chỉ bồi thường cho người khác nên muốn biết có những loại bảo hiểm tự nguyện nào cho xe bị hư hỏng, mất cắp hoặc cho chính người ngồi trên xe, ai mua được và thường loại trừ gì.",
+      "content_angle": "Dựa vào Nghị định 67/2023/NĐ-CP (khoản 3 Điều 4 cho phép thỏa thuận mở rộng bảo hiểm, khoản 8 Điều 12 nhắc đến hợp đồng tự nguyện cho phần vượt mức bắt buộc, khoản 5 Điều 75 yêu cầu doanh nghiệp bảo hiểm giải thích rõ sự khác nhau giữa bảo hiểm bắt buộc và tự nguyện) cùng quy tắc bảo hiểm tự nguyện xe máy và trang sản phẩm do PVI và Bảo Minh công bố để phân biệt bảo hiểm vật chất, bảo hiểm tai nạn người ngồi trên xe và bảo hiểm trách nhiệm dân sự tự nguyện; các trang này nói đến chủ xe nên người viết phải kiểm tra người thuê hoặc khách có thể là bên mua bảo hiểm không, nêu các loại trừ như điều kiện về giấy phép lái xe và nồng độ cồn, không nêu phí hay hạn mức và lưu ý quy tắc mỗi công ty khác nhau.",
+      "working_title": "Bảo hiểm xe máy tự nguyện tại Việt Nam: bảo hiểm vật chất và tai nạn ngoài gói bắt buộc",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.msig.com.vn/sites/default/files/downloads/67_2023_ND-CP_ENG.pdf",
+          "title": "Government of Vietnam (6 September 2023): Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners, English translation (MSIG Vietnam copy), Articles 4, 7 and 12",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/Bao-hiem/Nghi-dinh-67-2023-ND-CP-bao-hiem-bat-buoc-trach-nhiem-dan-su-cua-chu-xe-co-gioi-578283.aspx",
+          "title": "Thu Vien Phap Luat: Vietnamese text of Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://online.pvi.com.vn/kien-thuc/cac-loai-bao-hiem-xe-may-tu-nguyen-va-bat-buoc",
+          "title": "PVI Insurance (online shop knowledge page, 22 May 2026): the three voluntary motorbike products compared with the compulsory policy",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://gw.pvi.digital/public/contract/loaitrubaohiemxemay.pdf",
+          "title": "PVI Insurance (rules issued 27 June 2025, Decision 501/QD-PVIBH): voluntary motorbike insurance rules with the exclusions for people on the motorbike",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.baominh.com.vn/bao-hiem-tai-nan-lai-phu-xe-va-nguoi-ngoi-tren-xe",
+          "title": "Bao Minh Insurance: product summary of voluntary accident cover for the driver and others carried on a motor vehicle, with exclusions",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H03",
+      "subcluster": "dc-insurance",
+      "slug": "voluntary-motorbike-insurance-vietnam-own-damage-accident",
+      "primary_query": "voluntary motorbike insurance in Vietnam own damage theft and personal accident cover",
+      "secondary_queries": [
+        "difference between compulsory and voluntary motorbike insurance in Vietnam",
+        "can I insure my motorbike against theft or damage in Vietnam",
+        "personal accident insurance for a motorbike rider in Vietnam what it covers",
+        "voluntary third-party cover above the compulsory limit for a motorbike in Vietnam",
+        "what does Vietnamese motorbike insurance exclude licence and alcohol"
+      ],
+      "entities": [
+        "Decree 67/2023/ND-CP",
+        "voluntary insurance rules",
+        "PVI Insurance",
+        "Bao Minh",
+        "personal accident insurance"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Expats and long-stay riders who own a bike in Vietnam know the compulsory policy only pays other people, and ask which voluntary policies exist for damage, theft or injuries to themselves, who can buy them and what they usually exclude.",
+      "content_angle": "Uses Decree 67/2023/ND-CP (Article 4(3) lets policyholder and insurer agree extra cover, Article 12(8) refers to voluntary policies above the compulsory limit, Article 75(5) obliges insurers to explain the difference between compulsory and voluntary insurance) together with the published voluntary motorbike rules and product pages of PVI and Bao Minh to separate own-damage, personal-accident and voluntary third-party top-up cover; the pages address vehicle owners, so the Writer must check whether a renter or visitor can be a policyholder, list typical exclusions such as licence and alcohol conditions, quote no premiums or limits, and say that insurers' rules differ.",
+      "working_title": "Voluntary Motorbike Insurance in Vietnam: Own-Damage and Accident Cover Beyond the Compulsory Policy",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.msig.com.vn/sites/default/files/downloads/67_2023_ND-CP_ENG.pdf",
+          "title": "Government of Vietnam (6 September 2023): Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners, English translation (MSIG Vietnam copy), Articles 4, 7 and 12",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/Bao-hiem/Nghi-dinh-67-2023-ND-CP-bao-hiem-bat-buoc-trach-nhiem-dan-su-cua-chu-xe-co-gioi-578283.aspx",
+          "title": "Thu Vien Phap Luat: Vietnamese text of Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://online.pvi.com.vn/kien-thuc/cac-loai-bao-hiem-xe-may-tu-nguyen-va-bat-buoc",
+          "title": "PVI Insurance (online shop knowledge page, 22 May 2026): the three voluntary motorbike products compared with the compulsory policy",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://gw.pvi.digital/public/contract/loaitrubaohiemxemay.pdf",
+          "title": "PVI Insurance (rules issued 27 June 2025, Decision 501/QD-PVIBH): voluntary motorbike insurance rules with the exclusions for people on the motorbike",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.baominh.com.vn/bao-hiem-tai-nan-lai-phu-xe-va-nguoi-ngoi-tren-xe",
+          "title": "Bao Minh Insurance: product summary of voluntary accident cover for the driver and others carried on a motor vehicle, with exclusions",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H03",
+      "subcluster": "dc-insurance",
+      "slug": "freiwillige-motorradversicherung-vietnam-eigenschaden-unfall",
+      "primary_query": "freiwillige Motorradversicherung Vietnam Eigenschaden Diebstahl und Unfallversicherung für Fahrer",
+      "secondary_queries": [
+        "Unterschied zwischen Pflichtversicherung und freiwilliger Versicherung für Motorräder in Vietnam",
+        "kann ich mein Motorrad in Vietnam gegen Diebstahl und Schäden versichern",
+        "Insassenunfallversicherung Motorrad Vietnam was ist abgedeckt",
+        "freiwillige Haftpflicht Zusatzdeckung über der Pflichtsumme Motorrad Vietnam",
+        "Ausschlüsse Motorradversicherung Vietnam Führerschein und Alkohol"
+      ],
+      "entities": [
+        "Dekret 67/2023/ND-CP",
+        "freiwillige Versicherung",
+        "PVI Insurance",
+        "Bao Minh",
+        "Insassenunfallversicherung"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Wer in Vietnam ein Motorrad besitzt, weiß, dass die Pflichtversicherung nur andere Personen entschädigt, und fragt, welche freiwilligen Policen es für Schäden, Diebstahl oder eigene Verletzungen gibt, wer sie abschließen kann und was sie üblicherweise ausschließen.",
+      "content_angle": "Stützt sich auf das Dekret 67/2023/ND-CP (Artikel 4 Absatz 3 erlaubt zusätzliche Vereinbarungen, Artikel 12 Absatz 8 verweist auf freiwillige Policen oberhalb der Pflichtgrenze, Artikel 75 Absatz 5 verpflichtet Versicherer, den Unterschied zwischen Pflicht- und freiwilliger Versicherung zu erklären) und auf die veröffentlichten Bedingungen und Produktseiten von PVI und Bao Minh, um Eigenschaden-, Unfall- und freiwillige Haftpflicht-Zusatzdeckung zu trennen; die Seiten richten sich an Fahrzeughalter, daher muss der Autor prüfen, ob Mieter oder Besucher Versicherungsnehmer sein können, übliche Ausschlüsse wie Führerschein- und Alkoholbedingungen nennen, keine Prämien oder Limits angeben und darauf hinweisen, dass die Bedingungen der Versicherer abweichen.",
+      "working_title": "Freiwillige Motorradversicherung in Vietnam: Eigenschaden- und Unfalldeckung zusätzlich zur Pflichtpolice",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.msig.com.vn/sites/default/files/downloads/67_2023_ND-CP_ENG.pdf",
+          "title": "Government of Vietnam (6 September 2023): Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners, English translation (MSIG Vietnam copy), Articles 4, 7 and 12",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/Bao-hiem/Nghi-dinh-67-2023-ND-CP-bao-hiem-bat-buoc-trach-nhiem-dan-su-cua-chu-xe-co-gioi-578283.aspx",
+          "title": "Thu Vien Phap Luat: Vietnamese text of Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://online.pvi.com.vn/kien-thuc/cac-loai-bao-hiem-xe-may-tu-nguyen-va-bat-buoc",
+          "title": "PVI Insurance (online shop knowledge page, 22 May 2026): the three voluntary motorbike products compared with the compulsory policy",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://gw.pvi.digital/public/contract/loaitrubaohiemxemay.pdf",
+          "title": "PVI Insurance (rules issued 27 June 2025, Decision 501/QD-PVIBH): voluntary motorbike insurance rules with the exclusions for people on the motorbike",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.baominh.com.vn/bao-hiem-tai-nan-lai-phu-xe-va-nguoi-ngoi-tren-xe",
+          "title": "Bao Minh Insurance: product summary of voluntary accident cover for the driver and others carried on a motor vehicle, with exclusions",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H03",
+      "subcluster": "dc-insurance",
+      "slug": "assurance-moto-facultative-vietnam-dommages-accident",
+      "primary_query": "assurance moto facultative au Vietnam dommages vol et accident corporel du conducteur",
+      "secondary_queries": [
+        "différence entre assurance obligatoire et assurance facultative pour une moto au Vietnam",
+        "peut-on assurer sa moto contre le vol et les dommages au Vietnam",
+        "assurance accident des occupants d'une moto au Vietnam ce qu'elle couvre",
+        "responsabilité civile facultative au-dessus du plafond obligatoire moto Vietnam",
+        "exclusions de l'assurance moto au Vietnam permis et alcool"
+      ],
+      "entities": [
+        "décret 67/2023/ND-CP",
+        "assurance facultative",
+        "PVI Insurance",
+        "Bao Minh",
+        "assurance accident des occupants"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Les propriétaires de moto au Vietnam savent que l'assurance obligatoire n'indemnise que les autres personnes et se demandent quelles assurances facultatives existent pour les dommages, le vol ou leurs propres blessures, qui peut les souscrire et ce qu'elles excluent d'ordinaire.",
+      "content_angle": "S'appuie sur le décret 67/2023/ND-CP (l'article 4, alinéa 3 permet des garanties convenues en plus, l'article 12, alinéa 8 vise les contrats facultatifs au-delà du plafond obligatoire, l'article 75, alinéa 5 oblige les assureurs à expliquer la différence entre assurance obligatoire et facultative) et sur les conditions et pages produits publiées par PVI et Bao Minh pour distinguer dommages au véhicule, accident corporel et complément facultatif de responsabilité civile ; ces pages s'adressent aux propriétaires, le rédacteur doit donc vérifier si un locataire ou un visiteur peut être souscripteur, citer les exclusions courantes comme les conditions de permis et d'alcool, ne donner ni primes ni plafonds et rappeler que les règles varient selon l'assureur.",
+      "working_title": "Assurance moto facultative au Vietnam : dommages et accident en plus de l'assurance obligatoire",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.msig.com.vn/sites/default/files/downloads/67_2023_ND-CP_ENG.pdf",
+          "title": "Government of Vietnam (6 September 2023): Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners, English translation (MSIG Vietnam copy), Articles 4, 7 and 12",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/Bao-hiem/Nghi-dinh-67-2023-ND-CP-bao-hiem-bat-buoc-trach-nhiem-dan-su-cua-chu-xe-co-gioi-578283.aspx",
+          "title": "Thu Vien Phap Luat: Vietnamese text of Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://online.pvi.com.vn/kien-thuc/cac-loai-bao-hiem-xe-may-tu-nguyen-va-bat-buoc",
+          "title": "PVI Insurance (online shop knowledge page, 22 May 2026): the three voluntary motorbike products compared with the compulsory policy",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://gw.pvi.digital/public/contract/loaitrubaohiemxemay.pdf",
+          "title": "PVI Insurance (rules issued 27 June 2025, Decision 501/QD-PVIBH): voluntary motorbike insurance rules with the exclusions for people on the motorbike",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.baominh.com.vn/bao-hiem-tai-nan-lai-phu-xe-va-nguoi-ngoi-tren-xe",
+          "title": "Bao Minh Insurance: product summary of voluntary accident cover for the driver and others carried on a motor vehicle, with exclusions",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H03",
+      "subcluster": "dc-insurance",
+      "slug": "seguro-voluntario-de-moto-vietnam-danos-propios-accidentes",
+      "primary_query": "seguro voluntario de moto en Vietnam daños propios robo y accidentes personales",
+      "secondary_queries": [
+        "diferencia entre seguro obligatorio y seguro voluntario de moto en Vietnam",
+        "se puede asegurar una moto contra robo y daños en Vietnam",
+        "seguro de accidentes para los ocupantes de una moto en Vietnam qué cubre",
+        "responsabilidad civil voluntaria por encima del límite obligatorio moto Vietnam",
+        "exclusiones del seguro de moto en Vietnam carné y alcohol"
+      ],
+      "entities": [
+        "decreto 67/2023/ND-CP",
+        "seguro voluntario",
+        "PVI Insurance",
+        "Bao Minh",
+        "seguro de accidentes de ocupantes"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quienes tienen una moto en Vietnam saben que el seguro obligatorio solo indemniza a otras personas y se preguntan qué seguros voluntarios existen para daños, robo o lesiones propias, quién puede contratarlos y qué suelen excluir.",
+      "content_angle": "Se apoya en el decreto 67/2023/ND-CP (el artículo 4, apartado 3 permite pactar garantías adicionales, el artículo 12, apartado 8 alude a pólizas voluntarias por encima del límite obligatorio y el artículo 75, apartado 5 obliga a las aseguradoras a explicar la diferencia entre seguro obligatorio y voluntario) y en las condiciones y páginas de producto publicadas por PVI y Bao Minh para separar daños propios, accidentes personales y ampliación voluntaria de responsabilidad civil; esas páginas se dirigen a propietarios, así que el redactor debe comprobar si un arrendatario o visitante puede ser tomador, citar exclusiones habituales como las condiciones de carné y alcohol, no dar primas ni límites y advertir de que las reglas varían según la aseguradora.",
+      "working_title": "Seguro voluntario de moto en Vietnam: daños propios y accidentes además del seguro obligatorio",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.msig.com.vn/sites/default/files/downloads/67_2023_ND-CP_ENG.pdf",
+          "title": "Government of Vietnam (6 September 2023): Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners, English translation (MSIG Vietnam copy), Articles 4, 7 and 12",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/Bao-hiem/Nghi-dinh-67-2023-ND-CP-bao-hiem-bat-buoc-trach-nhiem-dan-su-cua-chu-xe-co-gioi-578283.aspx",
+          "title": "Thu Vien Phap Luat: Vietnamese text of Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://online.pvi.com.vn/kien-thuc/cac-loai-bao-hiem-xe-may-tu-nguyen-va-bat-buoc",
+          "title": "PVI Insurance (online shop knowledge page, 22 May 2026): the three voluntary motorbike products compared with the compulsory policy",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://gw.pvi.digital/public/contract/loaitrubaohiemxemay.pdf",
+          "title": "PVI Insurance (rules issued 27 June 2025, Decision 501/QD-PVIBH): voluntary motorbike insurance rules with the exclusions for people on the motorbike",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.baominh.com.vn/bao-hiem-tai-nan-lai-phu-xe-va-nguoi-ngoi-tren-xe",
+          "title": "Bao Minh Insurance: product summary of voluntary accident cover for the driver and others carried on a motor vehicle, with exclusions",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H03",
+      "subcluster": "dc-insurance",
+      "slug": "vrijwillige-motorverzekering-vietnam-eigen-schade-ongevallen",
+      "primary_query": "vrijwillige motorverzekering Vietnam eigen schade diefstal en ongevallenverzekering bestuurder",
+      "secondary_queries": [
+        "verschil tussen verplichte en vrijwillige motorverzekering in Vietnam",
+        "kan ik mijn motor in Vietnam verzekeren tegen diefstal en schade",
+        "ongevallenverzekering voor inzittenden van een motor in Vietnam wat is gedekt",
+        "vrijwillige aansprakelijkheid boven de verplichte limiet motor Vietnam",
+        "uitsluitingen motorverzekering Vietnam rijbewijs en alcohol"
+      ],
+      "entities": [
+        "decreet 67/2023/ND-CP",
+        "vrijwillige verzekering",
+        "PVI Insurance",
+        "Bao Minh",
+        "ongevallenverzekering inzittenden"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Wie in Vietnam een motor bezit, weet dat de verplichte verzekering alleen anderen vergoedt, en vraagt welke vrijwillige polissen er zijn voor schade, diefstal of eigen letsel, wie ze kan afsluiten en wat ze gewoonlijk uitsluiten.",
+      "content_angle": "Steunt op decreet 67/2023/ND-CP (artikel 4 lid 3 laat extra afspraken toe, artikel 12 lid 8 verwijst naar vrijwillige polissen boven de verplichte limiet en artikel 75 lid 5 verplicht verzekeraars het verschil tussen verplichte en vrijwillige verzekering uit te leggen) en op de gepubliceerde voorwaarden en productpagina's van PVI en Bao Minh om eigen schade, ongevallendekking en vrijwillige aanvullende aansprakelijkheid te scheiden; de pagina's richten zich tot voertuigeigenaren, dus de schrijver moet nagaan of een huurder of bezoeker verzekeringnemer kan zijn, gebruikelijke uitsluitingen zoals rijbewijs- en alcoholvoorwaarden noemen, geen premies of limieten vermelden en zeggen dat de regels per verzekeraar verschillen.",
+      "working_title": "Vrijwillige motorverzekering in Vietnam: eigen schade en ongevallendekking naast de verplichte polis",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.msig.com.vn/sites/default/files/downloads/67_2023_ND-CP_ENG.pdf",
+          "title": "Government of Vietnam (6 September 2023): Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners, English translation (MSIG Vietnam copy), Articles 4, 7 and 12",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/Bao-hiem/Nghi-dinh-67-2023-ND-CP-bao-hiem-bat-buoc-trach-nhiem-dan-su-cua-chu-xe-co-gioi-578283.aspx",
+          "title": "Thu Vien Phap Luat: Vietnamese text of Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://online.pvi.com.vn/kien-thuc/cac-loai-bao-hiem-xe-may-tu-nguyen-va-bat-buoc",
+          "title": "PVI Insurance (online shop knowledge page, 22 May 2026): the three voluntary motorbike products compared with the compulsory policy",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://gw.pvi.digital/public/contract/loaitrubaohiemxemay.pdf",
+          "title": "PVI Insurance (rules issued 27 June 2025, Decision 501/QD-PVIBH): voluntary motorbike insurance rules with the exclusions for people on the motorbike",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.baominh.com.vn/bao-hiem-tai-nan-lai-phu-xe-va-nguoi-ngoi-tren-xe",
+          "title": "Bao Minh Insurance: product summary of voluntary accident cover for the driver and others carried on a motor vehicle, with exclusions",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H03",
+      "subcluster": "dc-insurance",
+      "slug": "yuenan-motuoche-ziyuan-baoxian-cheliang-sunshi-yiwai",
+      "primary_query": "越南摩托车自愿保险有哪些：车辆损失险和乘员意外险",
+      "secondary_queries": [
+        "越南摩托车强制保险和自愿保险有什么区别",
+        "越南摩托车被盗或损坏可以投保吗",
+        "越南摩托车乘员意外伤害保险保什么",
+        "越南摩托车第三者责任险超出强制限额的自愿加保",
+        "越南摩托车保险除外责任 驾照 酒精"
+      ],
+      "entities": [
+        "第67/2023/ND-CP号议定",
+        "自愿保险",
+        "PVI保险公司",
+        "Bao Minh保险公司",
+        "乘员意外险"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "在越南拥有摩托车的人知道强制保险只赔别人，想弄清有哪些自愿保险可以覆盖车辆损坏、被盗或自己的伤害，谁能购买，以及通常有哪些除外责任。",
+      "content_angle": "依据第67/2023/ND-CP号议定（第4条第3款允许另行约定扩大保障，第12条第8款提到超出强制限额部分的自愿保单，第75条第5款要求保险公司说明强制保险与自愿保险的区别），并结合PVI和Bao Minh公布的自愿保险条款与产品页面，区分车辆损失、乘员意外和自愿加保的第三者责任；这些页面面向车主，撰稿人须核实租车人或游客能否成为投保人，列出驾照和酒精等常见除外责任，不写保费或限额，并说明各保险公司规则不同。",
+      "working_title": "越南摩托车自愿保险：强制险之外的车辆损失险与意外险",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.msig.com.vn/sites/default/files/downloads/67_2023_ND-CP_ENG.pdf",
+          "title": "Government of Vietnam (6 September 2023): Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners, English translation (MSIG Vietnam copy), Articles 4, 7 and 12",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/Bao-hiem/Nghi-dinh-67-2023-ND-CP-bao-hiem-bat-buoc-trach-nhiem-dan-su-cua-chu-xe-co-gioi-578283.aspx",
+          "title": "Thu Vien Phap Luat: Vietnamese text of Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://online.pvi.com.vn/kien-thuc/cac-loai-bao-hiem-xe-may-tu-nguyen-va-bat-buoc",
+          "title": "PVI Insurance (online shop knowledge page, 22 May 2026): the three voluntary motorbike products compared with the compulsory policy",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://gw.pvi.digital/public/contract/loaitrubaohiemxemay.pdf",
+          "title": "PVI Insurance (rules issued 27 June 2025, Decision 501/QD-PVIBH): voluntary motorbike insurance rules with the exclusions for people on the motorbike",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.baominh.com.vn/bao-hiem-tai-nan-lai-phu-xe-va-nguoi-ngoi-tren-xe",
+          "title": "Bao Minh Insurance: product summary of voluntary accident cover for the driver and others carried on a motor vehicle, with exclusions",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H03",
+      "subcluster": "dc-insurance",
+      "slug": "seguro-facultativo-de-mota-vietname-danos-proprios-acidentes",
+      "primary_query": "seguro facultativo de mota no Vietname danos próprios roubo e acidentes pessoais",
+      "secondary_queries": [
+        "diferença entre seguro obrigatório e seguro facultativo de mota no Vietname",
+        "posso segurar a minha mota contra roubo e danos no Vietname",
+        "seguro de acidentes pessoais para ocupantes de uma mota no Vietname o que cobre",
+        "responsabilidade civil facultativa acima do limite obrigatório mota Vietname",
+        "exclusões do seguro de mota no Vietname carta e álcool"
+      ],
+      "entities": [
+        "decreto 67/2023/ND-CP",
+        "seguro facultativo",
+        "PVI Insurance",
+        "Bao Minh",
+        "seguro de acidentes pessoais"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quem tem uma mota no Vietname sabe que o seguro obrigatório só indemniza outras pessoas e pergunta que seguros facultativos existem para danos, roubo ou lesões próprias, quem os pode contratar e o que costumam excluir.",
+      "content_angle": "Apoia-se no decreto 67/2023/ND-CP (o artigo 4, n.º 3 permite acordar coberturas adicionais, o artigo 12, n.º 8 refere apólices facultativas acima do limite obrigatório e o artigo 75, n.º 5 obriga as seguradoras a explicar a diferença entre seguro obrigatório e facultativo) e nas condições e páginas de produto publicadas pela PVI e pela Bao Minh para separar danos próprios, acidentes pessoais e reforço facultativo de responsabilidade civil; essas páginas dirigem-se a proprietários, por isso o redator deve verificar se um arrendatário ou visitante pode ser tomador, citar exclusões habituais como as condições de carta e álcool, não indicar prémios nem limites e avisar que as regras variam consoante a seguradora.",
+      "working_title": "Seguro facultativo de mota no Vietname: danos próprios e acidentes além do seguro obrigatório",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.msig.com.vn/sites/default/files/downloads/67_2023_ND-CP_ENG.pdf",
+          "title": "Government of Vietnam (6 September 2023): Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners, English translation (MSIG Vietnam copy), Articles 4, 7 and 12",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/Bao-hiem/Nghi-dinh-67-2023-ND-CP-bao-hiem-bat-buoc-trach-nhiem-dan-su-cua-chu-xe-co-gioi-578283.aspx",
+          "title": "Thu Vien Phap Luat: Vietnamese text of Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://online.pvi.com.vn/kien-thuc/cac-loai-bao-hiem-xe-may-tu-nguyen-va-bat-buoc",
+          "title": "PVI Insurance (online shop knowledge page, 22 May 2026): the three voluntary motorbike products compared with the compulsory policy",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://gw.pvi.digital/public/contract/loaitrubaohiemxemay.pdf",
+          "title": "PVI Insurance (rules issued 27 June 2025, Decision 501/QD-PVIBH): voluntary motorbike insurance rules with the exclusions for people on the motorbike",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.baominh.com.vn/bao-hiem-tai-nan-lai-phu-xe-va-nguoi-ngoi-tren-xe",
+          "title": "Bao Minh Insurance: product summary of voluntary accident cover for the driver and others carried on a motor vehicle, with exclusions",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H03",
+      "subcluster": "dc-insurance",
+      "slug": "beteunam-obaibai-imui-boheom-jacha-sonhae-tapseungja-sanghae",
+      "primary_query": "베트남 오토바이 임의보험 자차 손해 도난 탑승자 상해 보험 종류",
+      "secondary_queries": [
+        "베트남 오토바이 의무보험과 임의보험 차이",
+        "베트남에서 오토바이 도난 파손 보험 가입 가능한가",
+        "베트남 오토바이 탑승자 상해보험 보상 범위",
+        "베트남 오토바이 의무보험 한도를 넘는 임의 배상책임보험",
+        "베트남 오토바이 보험 면책 사유 면허 음주"
+      ],
+      "entities": [
+        "시행령 67/2023/ND-CP",
+        "임의보험",
+        "PVI 보험",
+        "Bao Minh 보험",
+        "탑승자 상해보험"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "베트남에서 오토바이를 소유한 사람은 의무보험이 다른 사람만 보상한다는 것을 알고, 차량 손해나 도난, 본인 부상을 위한 임의보험에 어떤 것이 있는지, 누가 가입할 수 있는지, 보통 무엇을 제외하는지 알고 싶어 합니다.",
+      "content_angle": "시행령 67/2023/ND-CP(제4조 제3항은 추가 보상 약정을 허용하고, 제12조 제8항은 의무 한도를 넘는 임의보험 계약을 언급하며, 제75조 제5항은 보험사가 의무보험과 임의보험의 차이를 설명하도록 규정)와 PVI, Bao Minh이 공개한 임의보험 약관 및 상품 페이지를 바탕으로 차량 손해, 탑승자 상해, 임의 대인 배상 추가 보상을 구분하며, 이 페이지들은 차량 소유자를 대상으로 하므로 작성자는 렌터나 방문객이 계약자가 될 수 있는지 확인하고, 면허와 음주 조건 같은 일반적 면책 사유를 적고, 보험료나 한도는 적지 않으며 보험사마다 규정이 다르다고 밝혀야 합니다.",
+      "working_title": "베트남 오토바이 임의보험: 의무보험 밖의 차량 손해와 탑승자 상해 보상",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.msig.com.vn/sites/default/files/downloads/67_2023_ND-CP_ENG.pdf",
+          "title": "Government of Vietnam (6 September 2023): Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners, English translation (MSIG Vietnam copy), Articles 4, 7 and 12",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/Bao-hiem/Nghi-dinh-67-2023-ND-CP-bao-hiem-bat-buoc-trach-nhiem-dan-su-cua-chu-xe-co-gioi-578283.aspx",
+          "title": "Thu Vien Phap Luat: Vietnamese text of Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://online.pvi.com.vn/kien-thuc/cac-loai-bao-hiem-xe-may-tu-nguyen-va-bat-buoc",
+          "title": "PVI Insurance (online shop knowledge page, 22 May 2026): the three voluntary motorbike products compared with the compulsory policy",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://gw.pvi.digital/public/contract/loaitrubaohiemxemay.pdf",
+          "title": "PVI Insurance (rules issued 27 June 2025, Decision 501/QD-PVIBH): voluntary motorbike insurance rules with the exclusions for people on the motorbike",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.baominh.com.vn/bao-hiem-tai-nan-lai-phu-xe-va-nguoi-ngoi-tren-xe",
+          "title": "Bao Minh Insurance: product summary of voluntary accident cover for the driver and others carried on a motor vehicle, with exclusions",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H03",
+      "subcluster": "dc-insurance",
+      "slug": "betonamu-baiku-nini-hoken-sharyo-songai-tojosha-shogai",
+      "primary_query": "ベトナムのバイクの任意保険 車両損害 盗難 搭乗者傷害の種類",
+      "secondary_queries": [
+        "ベトナムのバイク 強制保険と任意保険の違い",
+        "ベトナムでバイクの盗難や破損に保険をかけられるか",
+        "ベトナムのバイク 搭乗者傷害保険の補償範囲",
+        "ベトナム バイク 強制保険の限度額を超える任意の賠償責任保険",
+        "ベトナムのバイク保険の免責 免許 飲酒"
+      ],
+      "entities": [
+        "政令67/2023/ND-CP",
+        "任意保険",
+        "PVI保険",
+        "Bao Minh保険",
+        "搭乗者傷害保険"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "ベトナムでバイクを所有する人は、強制保険が他人にしか支払われないことを知り、車両の損害や盗難、自分のけがに備える任意保険にどんな種類があるのか、誰が加入できるのか、通常何が免責になるのかを知りたがります。",
+      "content_angle": "政令67/2023/ND-CP（第4条第3項は追加補償の合意を認め、第12条第8項は強制の限度を超える任意契約に触れ、第75条第5項は保険会社に強制保険と任意保険の違いを説明させる）と、PVIおよびBao Minhが公開している任意保険の約款・商品ページをもとに、車両損害、搭乗者傷害、任意の対人賠償上乗せを区別し、これらのページは車両所有者向けなので、執筆者は借り手や旅行者が契約者になれるかを確認し、免許や飲酒条件などの一般的な免責を挙げ、保険料や限度額は書かず、保険会社ごとに規定が違うことを伝えます。",
+      "working_title": "ベトナムのバイクの任意保険：強制保険の外にある車両損害と搭乗者傷害の補償",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.msig.com.vn/sites/default/files/downloads/67_2023_ND-CP_ENG.pdf",
+          "title": "Government of Vietnam (6 September 2023): Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners, English translation (MSIG Vietnam copy), Articles 4, 7 and 12",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/Bao-hiem/Nghi-dinh-67-2023-ND-CP-bao-hiem-bat-buoc-trach-nhiem-dan-su-cua-chu-xe-co-gioi-578283.aspx",
+          "title": "Thu Vien Phap Luat: Vietnamese text of Decree 67/2023/ND-CP on compulsory civil liability insurance of motor vehicle owners",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://online.pvi.com.vn/kien-thuc/cac-loai-bao-hiem-xe-may-tu-nguyen-va-bat-buoc",
+          "title": "PVI Insurance (online shop knowledge page, 22 May 2026): the three voluntary motorbike products compared with the compulsory policy",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://gw.pvi.digital/public/contract/loaitrubaohiemxemay.pdf",
+          "title": "PVI Insurance (rules issued 27 June 2025, Decision 501/QD-PVIBH): voluntary motorbike insurance rules with the exclusions for people on the motorbike",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.baominh.com.vn/bao-hiem-tai-nan-lai-phu-xe-va-nguoi-ngoi-tren-xe",
+          "title": "Bao Minh Insurance: product summary of voluntary accident cover for the driver and others carried on a motor vehicle, with exclusions",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}

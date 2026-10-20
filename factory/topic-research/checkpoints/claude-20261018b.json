@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T04:55:28.936Z",
+  "updated_at": "2026-10-20T04:55:39.656Z",
   "base_main_sha": "343b27b62a058042c99fa454f719d8493263023b",
-  "last_commit_sha": "1ba2a361a9e4c98e0e134985b2ca588b6ec8e250",
+  "last_commit_sha": "4d2407131c8fd34ecc7bbd28b91c18d8d416cc52",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 780,
-    "qa_pass": 780,
+    "researched": 790,
+    "qa_pass": 790,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 770,
+    "pushed": 780,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 79,
-      "de": 79,
-      "fr": 79,
-      "es": 79,
-      "nl": 79,
-      "pt": 79,
-      "zh": 79,
-      "ko": 79,
-      "ja": 79,
-      "en": 69
+      "vi": 80,
+      "de": 80,
+      "fr": 80,
+      "es": 80,
+      "nl": 80,
+      "pt": 80,
+      "zh": 80,
+      "ko": 80,
+      "ja": 80,
+      "en": 70
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 130,
+      "traffic-law-safety": 140,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -46,9 +46,9 @@
     }
   },
   "last_batch": {
-    "seq": 78,
-    "file": "factory/topic-research/batches/claude-20261018b-0078.json",
-    "sha256": "ecd3020a3fc519136d4933dab9c453cdc9159679bb809ef6e6fcb7c431b15edf",
+    "seq": 79,
+    "file": "factory/topic-research/batches/claude-20261018b-0079.json",
+    "sha256": "b38c9a11198b382583e6c3e2e422d622cbd547dc7732a35750deeab0ad5ad2e6",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -8605,8 +8605,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0078.json",
       "sha256": "ecd3020a3fc519136d4933dab9c453cdc9159679bb809ef6e6fcb7c431b15edf",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "4d2407131c8fd34ecc7bbd28b91c18d8d416cc52",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -8710,11 +8710,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 79,
+      "file": "factory/topic-research/batches/claude-20261018b-0079.json",
+      "sha256": "b38c9a11198b382583e6c3e2e422d622cbd547dc7732a35750deeab0ad5ad2e6",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:bao-hiem-xe-may-tu-nguyen-vat-chat-tai-nan-ngoai-bat-buoc",
+          "locale": "vi",
+          "slug": "bao-hiem-xe-may-tu-nguyen-vat-chat-tai-nan-ngoai-bat-buoc",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-insurance",
+          "key": "vi::bao hiem xe may tu nguyen gom nhung loai nao va khac gi bao hiem bat buoc",
+          "ta_id": null
+        },
+        {
+          "ref": "en:voluntary-motorbike-insurance-vietnam-own-damage-accident",
+          "locale": "en",
+          "slug": "voluntary-motorbike-insurance-vietnam-own-damage-accident",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H03",
+          "subcluster": "dc-insurance",
+          "key": "en::voluntary motorbike insurance in vietnam own damage theft and personal accident cover",
+          "ta_id": null
+        },
+        {
+          "ref": "de:freiwillige-motorradversicherung-vietnam-eigenschaden-unfall",
+          "locale": "de",
+          "slug": "freiwillige-motorradversicherung-vietnam-eigenschaden-unfall",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H03",
+          "subcluster": "dc-insurance",
+          "key": "de::freiwillige motorradversicherung vietnam eigenschaden diebstahl und unfallversicherung fur fahrer",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:assurance-moto-facultative-vietnam-dommages-accident",
+          "locale": "fr",
+          "slug": "assurance-moto-facultative-vietnam-dommages-accident",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H03",
+          "subcluster": "dc-insurance",
+          "key": "fr::assurance moto facultative au vietnam dommages vol et accident corporel du conducteur",
+          "ta_id": null
+        },
+        {
+          "ref": "es:seguro-voluntario-de-moto-vietnam-danos-propios-accidentes",
+          "locale": "es",
+          "slug": "seguro-voluntario-de-moto-vietnam-danos-propios-accidentes",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H03",
+          "subcluster": "dc-insurance",
+          "key": "es::seguro voluntario de moto en vietnam danos propios robo y accidentes personales",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:vrijwillige-motorverzekering-vietnam-eigen-schade-ongevallen",
+          "locale": "nl",
+          "slug": "vrijwillige-motorverzekering-vietnam-eigen-schade-ongevallen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H03",
+          "subcluster": "dc-insurance",
+          "key": "nl::vrijwillige motorverzekering vietnam eigen schade diefstal en ongevallenverzekering bestuurder",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-motuoche-ziyuan-baoxian-cheliang-sunshi-yiwai",
+          "locale": "zh",
+          "slug": "yuenan-motuoche-ziyuan-baoxian-cheliang-sunshi-yiwai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H03",
+          "subcluster": "dc-insurance",
+          "key": "zh::越南摩托车自愿保险有哪些:车辆损失险和乘员意外险",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:seguro-facultativo-de-mota-vietname-danos-proprios-acidentes",
+          "locale": "pt",
+          "slug": "seguro-facultativo-de-mota-vietname-danos-proprios-acidentes",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H03",
+          "subcluster": "dc-insurance",
+          "key": "pt::seguro facultativo de mota no vietname danos proprios roubo e acidentes pessoais",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-obaibai-imui-boheom-jacha-sonhae-tapseungja-sanghae",
+          "locale": "ko",
+          "slug": "beteunam-obaibai-imui-boheom-jacha-sonhae-tapseungja-sanghae",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H03",
+          "subcluster": "dc-insurance",
+          "key": "ko::베트남 오토바이 임의보험 자차 손해 도난 탑승자 상해 보험 종류",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-nini-hoken-sharyo-songai-tojosha-shogai",
+          "locale": "ja",
+          "slug": "betonamu-baiku-nini-hoken-sharyo-songai-tojosha-shogai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H03",
+          "subcluster": "dc-insurance",
+          "key": "ja::ヘトナムのハイクの任意保険 車両損害 盗難 搭乗者傷害の種類",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 79,
-    "file": "factory/topic-research/batches/claude-20261018b-0079.json",
+    "seq": 80,
+    "file": "factory/topic-research/batches/claude-20261018b-0080.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -8727,13 +8838,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-19T00:39:43.767Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 55,
-      "topics": 10,
-      "sha256": "0bbef7ef3c1226bd03da53d40482b2f836797cad1086a4c245d119c0ecf9cb6e"
-    },
     {
       "at": "2026-10-19T00:41:45.320Z",
       "event": "CHECKPOINT_UPDATED"
@@ -8898,6 +9002,13 @@
       "seq": 78,
       "topics": 10,
       "sha256": "ecd3020a3fc519136d4933dab9c453cdc9159679bb809ef6e6fcb7c431b15edf"
+    },
+    {
+      "at": "2026-10-20T04:55:39.656Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 79,
+      "topics": 10,
+      "sha256": "b38c9a11198b382583e6c3e2e422d622cbd547dc7732a35750deeab0ad5ad2e6"
     }
   ]
 }
