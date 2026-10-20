@@ -10768,17 +10768,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-20T09:32:34.458Z"
+    },
+    {
+      "id": "ES-S24",
+      "locale": "es",
+      "url": "/es/guides/responsabilidad-danos-robo/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-20T09:33:06.911Z",
+      "source_sha256": "9bc7bdceca6940c5dcc669cddff0c118a54c9cdb948872d3a71252af2d973a67",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "FR-S25",
+      "locale": "fr",
+      "url": "/fr/guides/responsabilite-dommages-vol/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-20T09:33:06.911Z",
+      "source_sha256": "c323106719681466c4c59c37d20ccd83e3cadcdae9cb80b5a749daff0c72e8a1",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T06:37:20.587Z",
-      "ids": [
-        "JA-S67",
-        "KO-S66"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T06:38:44.692Z",
       "ids": [
@@ -12362,6 +12376,14 @@
         "EN-S25"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-20T09:33:06.911Z",
+      "ids": [
+        "ES-S24",
+        "FR-S25"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -12374,6 +12396,6 @@
     "live_seconds": 102
   },
   "queue": {
-    "APPROVED_BY_POLICY": 6
+    "APPROVED_BY_POLICY": 4
   }
 }
