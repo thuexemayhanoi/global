@@ -13,22 +13,24 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
 | Matrix rows (1081) | 893 | 19 | 4 | 165 |
-| Topical candidates (220) | 0 | 0 | 6 | 214 |
-| Silos (330) | 142 | 12 | 0 | 66 |
+| Topical candidates (560) | 0 | 0 | 10 | 550 |
+| Silos (330) | 142 | 12 | 0 | 176 |
 
-Knowledge graph: 42 entities, 2356 typed edges (hreflang_equivalent 190, about 710, contains 1246, has_silo 160, has_hub 40, has_pillar 10).
+Knowledge graph: 42 entities, 2696 typed edges (hreflang_equivalent 190, about 710, contains 1586, has_silo 160, has_hub 40, has_pillar 10).
 
 ## REVIEW — competing intents
 
-5 pair(s); showing up to 5.
+7 pair(s); showing up to 7.
 
 | A | B | Score | Basis |
 |---|---|---|---|
 | TA-KO-0100 | TA-KO-0101 | 0.6 | query |
 | ES-S05 | ES-S38 | 0.5 | query |
 | NL-S11 | NL-S68 | 0.5 | query |
+| TA-DE-0125 | TA-DE-0127 | 0.5 | query |
 | TA-JA-0100 | TA-JA-0101 | 0.5 | query |
 | TA-KO-0106 | TA-KO-0109 | 0.5 | query |
+| TA-VI-0130 | TA-VI-0131 | 0.5 | query |
 
 ## UPGRADE — live pages below targets
 
@@ -80,21 +82,21 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 | ss-city | riding | local | – | P40 I3 KEEP | P42 I2 KEEP | P42 I2 KEEP | P42 I2 KEEP | P33 I2 KEEP | P41 I2 UPGRADE | P41 I2 KEEP | P41 I2 KEEP | P40 I2 KEEP | P40 I2 KEEP |
 | rt-northern-loops (proposed Hub) | planning | local | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
 | rt-day-trips (proposed Hub) | planning | local | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
-| travel-neighborhoods (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
+| travel-neighborhoods (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
 | travel-seasons (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
-| travel-etiquette (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
+| travel-etiquette (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
 | mob-urban-transit (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
 | mob-intercity (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
 | mob-last-mile (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
-| dest-northern (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
-| dest-local (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
-| dest-landscapes (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
-| plan-itineraries (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
-| plan-budget (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
-| plan-logistics (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
-| electric-choice (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
-| electric-infrastructure (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
-| electric-sustainability (proposed Hub) | planning | informational | – | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP | ∅ GAP |
+| dest-northern (proposed Hub) | planning | informational | – | C3 CREATE | C3 CREATE | C3 CREATE | C3 CREATE | C3 CREATE | C3 CREATE | C3 CREATE | C3 CREATE | C3 CREATE | C3 CREATE |
+| dest-local (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
+| dest-landscapes (proposed Hub) | planning | informational | – | C3 CREATE | C3 CREATE | C3 CREATE | C3 CREATE | C3 CREATE | C3 CREATE | C3 CREATE | C3 CREATE | C3 CREATE | C3 CREATE |
+| plan-itineraries (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
+| plan-budget (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
+| plan-logistics (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
+| electric-choice (proposed Hub) | planning | informational | – | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE |
+| electric-infrastructure (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
+| electric-sustainability (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
 
 ## Search journey coverage
 
@@ -108,7 +110,7 @@ Published / planned (IDEA + drafts) / candidates per stage.
 | pickup | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
 | riding | 56 / 8 / 0 | 60 / 5 / 0 | 60 / 5 / 0 | 60 / 5 / 0 | 50 / 5 / 0 | 58 / 6 / 0 | 58 / 6 / 0 | 58 / 6 / 0 | 58 / 5 / 0 | 58 / 5 / 0 |
 | return | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 |
-| planning | 0 / 0 / 22 | 0 / 0 / 22 | 0 / 0 / 22 | 0 / 0 / 22 | 0 / 0 / 22 | 0 / 0 / 22 | 0 / 0 / 22 | 0 / 0 / 22 | 0 / 0 / 22 | 0 / 0 / 22 |
+| planning | 0 / 0 / 56 | 0 / 0 / 56 | 0 / 0 / 56 | 0 / 0 / 56 | 0 / 0 / 56 | 0 / 0 / 56 | 0 / 0 / 56 | 0 / 0 / 56 | 0 / 0 / 56 | 0 / 0 / 56 |
 
 Every locale checklist also covers the consideration → decision → pickup → riding → return steps in short sections; that is breadth, not depth (see UPGRADE). `return` (deposit refund, late return) has no dedicated page and is answered inside the deposit and extra-cost silos rather than a separate silo. Transactional booking intent is deliberately not targeted: /global is an independent guide (owner positioning decision).
 
@@ -116,16 +118,16 @@ Every locale checklist also covers the consideration → decision → pickup →
 
 | Locale | Rows | Published | Protected drafts | Planned | Candidates | Published depth OK |
 |---|---|---|---|---|---|---|
-| vi | 107 | 87 | 0 | 20 | 22 | 99% |
-| en | 111 | 96 | 0 | 15 | 22 | 98% |
-| de | 110 | 98 | 0 | 12 | 22 | 98% |
-| fr | 111 | 95 | 0 | 16 | 22 | 98% |
-| es | 99 | 85 | 0 | 14 | 22 | 95% |
-| nl | 108 | 90 | 0 | 18 | 22 | 96% |
-| zh | 108 | 90 | 0 | 18 | 22 | 98% |
-| pt | 108 | 90 | 0 | 18 | 22 | 98% |
-| ko | 107 | 90 | 0 | 17 | 22 | 98% |
-| ja | 107 | 90 | 0 | 17 | 22 | 98% |
+| vi | 107 | 87 | 0 | 20 | 56 | 99% |
+| en | 111 | 96 | 0 | 15 | 56 | 98% |
+| de | 110 | 98 | 0 | 12 | 56 | 98% |
+| fr | 111 | 95 | 0 | 16 | 56 | 98% |
+| es | 99 | 85 | 0 | 14 | 56 | 95% |
+| nl | 108 | 90 | 0 | 18 | 56 | 96% |
+| zh | 108 | 90 | 0 | 18 | 56 | 98% |
+| pt | 108 | 90 | 0 | 18 | 56 | 98% |
+| ko | 107 | 90 | 0 | 17 | 56 | 98% |
+| ja | 107 | 90 | 0 | 17 | 56 | 98% |
 
 Live Writer states (CLAIMED/SUBMITTED) change on every autopilot commit and are not part of this file: run `node scripts/seo/topical-authority.mjs status`.
 
