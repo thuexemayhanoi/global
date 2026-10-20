@@ -1,0 +1,535 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H04",
+      "subcluster": "ss-incidents",
+      "slug": "bhyt-tai-nan-xe-may-cap-cuu-benh-vien-khac-noi-dang-ky-giay-to-xuat-trinh",
+      "primary_query": "tai nạn xe máy cấp cứu ở bệnh viện khác nơi đăng ký thì bảo hiểm y tế có thanh toán không",
+      "secondary_queries": [
+        "thẻ BHYT đi cấp cứu giấy tờ xuất trình trước khi kết thúc đợt điều trị",
+        "Luật Bảo hiểm y tế sửa đổi cấp cứu tại bất kỳ cơ sở khám chữa bệnh nào",
+        "BHYT không thanh toán những trường hợp nào theo Điều 23",
+        "dùng VNeID mức 2 hoặc căn cước công dân thay thẻ BHYT giấy",
+        "cho người khác mượn thẻ BHYT bị khóa hoặc thu hồi",
+        "người nước ngoài bị tai nạn xe máy ở Việt Nam có được dùng BHYT không"
+      ],
+      "entities": [
+        "Luật Bảo hiểm y tế số 51/2024/QH15",
+        "Bảo hiểm xã hội Việt Nam",
+        "thẻ bảo hiểm y tế và VNeID",
+        "Nghị định 188/2025/NĐ-CP",
+        "Luật Khám bệnh, chữa bệnh số 15/2023/QH15",
+        "cấp cứu"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Người Việt có thẻ BHYT và người đón khách nước ngoài muốn biết thẻ giúp được gì khi tai nạn xe máy phải cấp cứu ở bệnh viện không phải nơi đăng ký, và cần xuất trình giấy tờ nào.",
+      "content_angle": "Bài cho người có thẻ BHYT và người đón khách nước ngoài. Cổng Bảo hiểm xã hội Việt Nam (18/07/2025, hướng dẫn Luật 51/2024/QH15 và Nghị định 188/2025/NĐ-CP): dùng CCCD hoặc VNeID mức 2 đã tích hợp BHYT, hoặc thẻ kèm giấy tờ tùy thân; khi cấp cứu thì xuất trình giấy tờ trước khi kết thúc đợt điều trị; thẻ cho người khác mượn có thể bị khóa hoặc thu hồi. Toàn văn Luật 51/2024/QH15 trên cổng Chính phủ (đăng 08/01/2025, hiệu lực 01/07/2025): khoản 5 mới của Điều 22 cho hưởng 100% mức hưởng ở khoản 1 khi cấp cứu tại bất kỳ cơ sở nào (không phải 100% hóa đơn) và Điều 28 về xuất trình giấy tờ; Luật 15/2023/QH15: Điều 7 khoản 2 cấm từ chối hay cố ý chậm cấp cứu (trừ Điều 40), Điều 61 khoản 7 nói ai chi trả chi phí cấp cứu ngoại viện. LuatVietnam (24/03/2025, nguồn thứ cấp) kể 12 trường hợp không được thanh toán, không có mục tai nạn giao thông. Người viết phải đọc Điều 12 và Điều 23 hiện hành, kiểm tra xem còn đòi giấy tờ công an hay xét lỗi không, chỉ viết điều nguồn nêu, không ghi số tiền.",
+      "working_title": "BHYT khi tai nạn xe máy: cấp cứu ở bệnh viện khác nơi đăng ký, giấy tờ xuất trình và việc mượn thẻ",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://baohiemxahoi.gov.vn/tintuc/Pages/linh-vuc-bao-hiem-y-te.aspx?ItemID=25147&CateID=0",
+          "title": "Vietnam Social Security portal (18 July 2025, Vietnamese): how to use a health insurance card from 1 July 2025 under Law 51/2024/QH15 and Decree 188/2025/ND-CP, documents in an emergency, locked cards",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-luat-sua-doi-bo-sung-mot-so-dieu-cua-luat-bao-hiem-y-te-11924122017211787.htm",
+          "title": "Government policy portal (published 8 January 2025, Vietnamese): full text of Law 51/2024/QH15 amending the Law on Health Insurance, Articles 22 and 28, effective 1 July 2025",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/bao-hiem/truong-hop-khong-duoc-bhyt-thanh-toan-chi-phi-kham-chua-benh-563-101434-article.html",
+          "title": "LuatVietnam (24 March 2025, Vietnamese, secondary source): cases where health insurance does not pay from 1 July 2025 and direct payment at facilities without a contract, except emergencies",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-luat-15-2023-qh15-kham-benh-chua-benh-119231127164453959.htm",
+          "title": "Government policy portal (page dated 27 November 2023, Vietnamese): full text of Law 15/2023/QH15 on Medical Examination and Treatment, ban on refusing emergency care in Article 7, emergency care and who pays for ambulance services in Article 61",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H04",
+      "subcluster": "ss-incidents",
+      "slug": "nhs-ghic-motorbike-accident-vietnam-uk-visitors-reciprocal-healthcare",
+      "primary_query": "does the UK NHS or a GHIC pay for treatment after a motorbike accident in Vietnam",
+      "secondary_queries": [
+        "is Vietnam on the UK reciprocal healthcare agreements list",
+        "can I use my GHIC in Vietnam",
+        "does the NHS pay for medical treatment abroad outside the EU",
+        "do I pay upfront for hospital treatment in Vietnam even if insured",
+        "does a GHIC pay for repatriation or an air ambulance from Vietnam"
+      ],
+      "entities": [
+        "Global Health Insurance Card (GHIC)",
+        "NHS Business Services Authority",
+        "UK reciprocal healthcare agreements",
+        "Department of Health and Social Care",
+        "Foreign, Commonwealth & Development Office (FCDO)"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "UK visitors who ride a scooter in Vietnam often assume the NHS or a GHIC will pay if they are hurt, so they want to know what the UK government says is and is not covered there.",
+      "content_angle": "Audience: UK visitors; NHS entitlement only. The DHSC page on reciprocal healthcare agreements with non-EU countries (published 1 July 2021, last updated 2 October 2026) says a country not listed has no agreement with the UK; Vietnam was not listed on 20 October 2026. It says to hold travel insurance covering healthcare costs and that the agreements do not cover repatriation. The NHS Business Services Authority page on where you can use your card (no date) lists where a GHIC or EHIC works, without Vietnam, and says the card is no substitute for travel insurance and never covers repatriation. FCDO: in hospital abroad (updated 7 June 2024: you will often have to pay upfront even if insured, keep receipts, the embassy cannot pay medical bills or arrange repatriation); foreign travel insurance (2 August 2024: mopeds not usually covered); Vietnam health (public update 21 September 2026: dial 115, tell your insurer quickly). The Writer re-reads the lists on the day and gives no costs.",
+      "working_title": "UK Visitors in Vietnam: Does the NHS or a GHIC Pay for a Motorbike Accident?",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.gov.uk/guidance/uk-reciprocal-healthcare-agreements-with-non-eu-countries",
+          "title": "Department of Health and Social Care on GOV.UK (published 1 July 2021, last updated 2 October 2026): UK reciprocal healthcare agreements with non-EU countries, a country not listed has no agreement",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nhsbsa.nhs.uk/get-healthcare-cover-travelling-abroad/where-you-can-use-your-card",
+          "title": "NHS Business Services Authority (no date shown): where you can use a UK GHIC or EHIC and why it is not a substitute for travel insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gov.uk/guidance/foreign-travel-insurance",
+          "title": "FCDO on GOV.UK (last updated 2 August 2024): foreign travel insurance, what a policy should cover, GHIC is not an alternative and mopeds are not usually covered",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gov.uk/guidance/in-hospital-abroad",
+          "title": "FCDO on GOV.UK (last updated 7 June 2024): if you are in hospital abroad, paying upfront, contacting your insurer and what the embassy cannot pay for",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gov.uk/foreign-travel-advice/vietnam/health",
+          "title": "FCDO on GOV.UK (public update 21 September 2026): Vietnam travel advice, health section, insurance for local treatment and evacuation, calling 115",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H04",
+      "subcluster": "ss-incidents",
+      "slug": "gesetzliche-krankenkasse-rollerunfall-vietnam-sgb-v-gkv-ausland",
+      "primary_query": "zahlt die gesetzliche Krankenkasse nach einem Rollerunfall in Vietnam die Behandlung",
+      "secondary_queries": [
+        "Sozialversicherungsabkommen Krankenversicherung Vietnam Deutschland",
+        "Behandlung außerhalb der EU sechs Wochen Ausnahme Krankenkasse § 18 SGB V",
+        "Anspruch ruht im Ausland § 16 SGB V Krankenversicherung",
+        "Auslandsreise-Krankenversicherung Rücktransport Krankenkasse zahlt nicht",
+        "Arztrechnung im Ausland selbst bezahlen Originalrechnung Diagnose aufbewahren"
+      ],
+      "entities": [
+        "gesetzliche Krankenversicherung (GKV)",
+        "Bundesministerium für Gesundheit",
+        "SGB V § 16 und § 18",
+        "GKV-Spitzenverband DVKA",
+        "Auswärtiges Amt",
+        "Auslandsreise-Krankenversicherung"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Gesetzlich Versicherte, die in Vietnam Roller fahren, wollen vor der Reise wissen, ob ihre Krankenkasse nach einem Unfall Behandlung oder Rücktransport bezahlt und was sie stattdessen brauchen.",
+      "content_angle": "Zielgruppe: gesetzlich Versicherte. Bundesgesundheitsministerium (Stand 3. September 2026): GKV-Leistungen werden grundsätzlich nur im Inland erbracht; Ausnahmen für EU, EWR, Schweiz, UK und Länder mit Sozialversicherungsabkommen (genannt: Tunesien, Türkei). Außerhalb der EU zahlt die Kasse höchstens sechs Wochen im Kalenderjahr, nur wenn man wegen Vorerkrankung oder Alter keine private Auslandskrankenversicherung bekommt, die Ablehnung vor der Reise nachweist und die Kasse vorher zusagt, nur bis zur Höhe der deutschen Kosten. Gesetze im Internet: § 16 Abs. 1 Nr. 1 SGB V (Anspruch ruht im Ausland), § 18 Abs. 3. DVKA-Urlauberseite: Merkblätter für andere Länder, Vietnam fehlt. Verbraucherzentrale (Stand 18. März 2026): Urlaub außerhalb der EU nicht gedeckt, Rücktransport nicht bezahlt, Arztrechnung zunächst selbst zahlen. Auswärtiges Amt: Kosten oft vor der Entlassung begleichen. Der Schreiber prüft Wortlaut und mögliches Abkommen mit Krankenversicherungsteil, keine Beträge.",
+      "working_title": "Zahlt die gesetzliche Krankenkasse nach einem Rollerunfall in Vietnam? Was BMG, SGB V und DVKA sagen",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.bundesgesundheitsministerium.de/krankenversicherung-im-ausland",
+          "title": "Bundesministerium für Gesundheit (Stand 3 September 2026): health insurance abroad, statutory benefits mostly only in Germany, six-week exception outside the EU with conditions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gesetze-im-internet.de/sgb_5/__16.html",
+          "title": "Gesetze im Internet (no date shown): section 16 SGB V, entitlement is suspended while the insured person is abroad",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.gesetze-im-internet.de/sgb_5/__18.html",
+          "title": "Gesetze im Internet (no date shown): section 18 SGB V, paragraph 3 on urgently needed treatment outside the EU and EEA",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.dvka.de/de/versicherte/touristen/",
+          "title": "GKV-Spitzenverband, DVKA (no date shown): holiday leaflets by country for statutory insured travellers, Vietnam is not among them",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.verbraucherzentrale.de/wissen/geld-versicherungen/weitere-versicherungen/auslandsreisen-welcher-versicherungsschutz-ist-notwendig-10713",
+          "title": "Verbraucherzentrale (Stand 18 March 2026): travelling abroad, which insurance is needed and what statutory health insurance does not pay",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.auswaertiges-amt.de/de/reiseundsicherheit/vietnamsicherheit-217274",
+          "title": "Auswärtiges Amt (no date shown): travel and safety advice for Vietnam, health care, paying treatment costs before discharge, road traffic",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H04",
+      "subcluster": "ss-incidents",
+      "slug": "assurance-maladie-accident-scooter-vietnam-soins-urgents-remboursement-s3125",
+      "primary_query": "l'assurance maladie rembourse-t-elle les soins après un accident de scooter au Vietnam",
+      "secondary_queries": [
+        "remboursement soins urgents et imprévus hors Europe CPAM au retour",
+        "formulaire S3125 demande de remboursement de soins à l'étranger",
+        "remboursement sur la base des tarifs français et non des dépenses réelles",
+        "la carte européenne d'assurance maladie est-elle valable au Vietnam",
+        "rapatriement sanitaire pris en charge par l'assurance maladie ou par l'assistance"
+      ],
+      "entities": [
+        "Assurance Maladie (ameli)",
+        "CPAM et médecin conseil",
+        "formulaire S3125",
+        "Cleiss",
+        "France Diplomatie",
+        "rapatriement sanitaire"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Des assurés français qui louent un scooter au Vietnam veulent savoir si leur caisse d'assurance maladie remboursera des soins urgents après un accident et quels justificatifs garder.",
+      "content_angle": "Public : assurés du régime français. Ameli (article du 30 avril 2026, « Vacances hors d'Europe ») : hors UE, EEE, Suisse et Royaume-Uni, seuls les soins urgents et imprévus peuvent éventuellement être remboursés par la CPAM au retour, après avance des frais ; garder prescriptions, factures acquittées et justificatifs ; demande par le compte ameli ou le formulaire S3125 ; le médecin conseil apprécie l'urgence ; remboursement sur la base des tarifs forfaitaires français, pas des dépenses réelles ; refus non contestable ; pas d'indemnités journalières hors Europe. La page de demande (métadonnées du 19 octobre 2026) décrit les canaux. Cleiss : aucune prise en charge sur place sauf accord, rapatriement sanitaire exclu ; sa liste d'accords n'a pas pu être lue, le rédacteur vérifie s'il existe un accord avec le Vietnam. France Diplomatie (Santé, 15 septembre 2026 ; prise en charge médicale, 30 mars 2026) : assistance ou assurance indispensable, l'ambassade ne paie pas. Aucun montant.",
+      "working_title": "Accident de scooter au Vietnam : que rembourse l'Assurance Maladie ? Soins urgents, formulaire S3125",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.ameli.fr/assure/droits-demarches/europe-international/protection-sociale-etranger/vacances-etranger",
+          "title": "Assurance Maladie, ameli.fr (article dated 30 April 2026): holidays abroad, care outside Europe, urgent and unforeseen care, reimbursement on French tariffs",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.ameli.fr/assure/adresses-et-contacts/vos-paiements-vos-remboursements/demander-un-remboursement-de-soins-effectues-l-etranger",
+          "title": "Assurance Maladie, ameli.fr (page metadata 19 October 2026): asking for reimbursement of care received abroad through the ameli account or by post",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.cleiss.fr/particuliers/partir/vacances/index.html",
+          "title": "Cleiss (no date shown): your health cover on holiday abroad, countries without an agreement, repatriation not covered by health insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.diplomatie.gouv.fr/fr/information-par-pays/vietnam/conseils-aux-voyageurs-sante",
+          "title": "France Diplomatie (updated 15 September 2026): Vietnam travel advice, health section, assistance contract and repatriation, the embassy does not pay",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.diplomatie.gouv.fr/fr/informations-pratiques/preparer-son-depart/la-prise-en-charge-medicale-et-les-assurances",
+          "title": "France Diplomatie (published 1 June 2021, updated 30 March 2026): medical cover and insurance when leaving France, assistance versus health insurance",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H04",
+      "subcluster": "ss-incidents",
+      "slug": "seguridad-social-tarjeta-sanitaria-europea-accidente-moto-vietnam",
+      "primary_query": "cubre la seguridad social española un accidente de moto en Vietnam",
+      "secondary_queries": [
+        "la tarjeta sanitaria europea es válida en Vietnam",
+        "convenio de seguridad social entre España y Vietnam sanidad",
+        "reembolso de gastos médicos en el extranjero Seguridad Social países",
+        "gastos de hospitalización en Vietnam a cargo del paciente evacuación en avión medicalizado",
+        "qué hacer si tengo un accidente de moto en Vietnam y no tengo seguro médico"
+      ],
+      "entities": [
+        "Tarjeta Sanitaria Europea (TSE)",
+        "Seguridad Social",
+        "Embajada de España en Hanói",
+        "Ministerio de Asuntos Exteriores, Unión Europea y Cooperación",
+        "evacuación en avión medicalizado"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Los viajeros españoles que alquilan una moto en Vietnam suelen dar por hecho que la sanidad pública o la tarjeta sanitaria cubrirá un accidente, y necesitan saber qué dice Exteriores.",
+      "content_angle": "Para lectores en España. La Embajada de España en Hanói, en Recomendaciones de viaje (vigentes a 20 de octubre de 2026; actualizadas el 9 de julio de 2025), recuerda que las prestaciones de la Seguridad Social no operan en el extranjero salvo en determinados países de la UE y del EEE mediante la Tarjeta Sanitaria Europea, que la TSE no es válida ni operativa en Vietnam y que los gastos de hospitalización o tratamiento corren a cargo del paciente, con un seguro que incluya la evacuación en avión medicalizado. Su página de Educación y Sanidad (metadatos del 11 de agosto de 2026) añade que no hay convenios de Seguridad Social entre España y Vietnam. La Revista de la Seguridad Social (2 de febrero de 2026) lista los países de la TSE y avisa de que no vale si se viaja para tratarse; el servicio de reembolso (metadatos del 16 de septiembre de 2026) solo cubre gastos pagados en la UE, el EEE, Suiza y el Reino Unido. El redactor comprueba fechas y textos y no inventa vías de reembolso.",
+      "working_title": "Accidente de moto en Vietnam: ¿cubre algo la Seguridad Social o la Tarjeta Sanitaria Europea?",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.exteriores.gob.es/Embajadas/hanoi/es/ViajarA/Paginas/Recomendaciones-de-viaje.aspx",
+          "title": "Embajada de España en Hanói (valid on 20 October 2026, last updated 9 July 2025): travel recommendations, medical insurance and the European Health Card in Vietnam",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.exteriores.gob.es/Embajadas/hanoi/es/ViajarA/Paginas/Educaci%C3%B3n-y-Sanidad.aspx",
+          "title": "Embajada de España en Hanói (page metadata 11 August 2026): education and health, no Social Security agreement between Spain and Vietnam",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://revista.seg-social.es/-/como-obtener-la-tarjeta-sanitaria-europea",
+          "title": "Revista Seguridad Social (2 February 2026): quick guide to the European Health Card, where it is valid and when it is not",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://prestaciones.seg-social.es/servicio/solicitar-reembolso-gastos-medico-extranjero.html",
+          "title": "Seguridad Social (page metadata 16 September 2026): service to claim back medical costs paid abroad, limited to EU, EEA, Switzerland and UK",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H04",
+      "subcluster": "ss-incidents",
+      "slug": "zorgverzekering-zvw-scooterongeluk-vietnam-vergoeding-buiten-europa",
+      "primary_query": "wat vergoedt mijn zorgverzekering bij een scooterongeluk in Vietnam",
+      "secondary_queries": [
+        "basisverzekering spoedeisende zorg buiten de EU vergoeding Vietnam",
+        "vergoeding nooit hoger dan het Nederlandse tarief buitenland",
+        "eigen risico en alarmcentrale zorgverzekeraar bij een ongeluk in het buitenland",
+        "repatriëring wordt niet vergoed door de basisverzekering",
+        "reisverzekering die ook ongevallen met voertuigen dekt Vietnam"
+      ],
+      "entities": [
+        "Zorgverzekeringswet (Zvw)",
+        "Zorginstituut Nederland",
+        "alarmcentrale van de zorgverzekeraar",
+        "Rijksoverheid",
+        "NederlandWereldwijd",
+        "repatriëring"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Nederlandse reizigers die in Vietnam een scooter huren willen weten wat hun basisverzekering vergoedt na een ongeluk en wat ze zelf of via een reisverzekering moeten regelen.",
+      "content_angle": "Voor Nederlandse lezers die in Vietnam met een scooter vallen. Zorginstituut Nederland (pagina uit november 2016, gewijzigd 19 juni 2026): de Zvw kent geen specifieke regels over zorg in het buitenland, alleen zorg die ook in Nederland verzekerd is wordt vergoed, de hoogte hangt van de polis af, eigen risico geldt ook, bij onverwachte zorg bel je de alarmcentrale van je verzekeraar en buiten de EU kan een deel onvergoed blijven. Rijksoverheid (gewijzigd 2 januari 2026): je blijft verzekerd voor spoedeisende zorg, krijgt hooguit wat de behandeling in Nederland kost, moet bij een privékliniek mogelijk bijbetalen en repatriëring vergoedt alleen een reis- of aanvullende verzekering. NederlandWereldwijd reisadvies Vietnam (laatst gewijzigd 9 september 2026): een reisverzekering voor ziekenhuisopname en repatriëring, die ook ongevallen met voertuigen dekt. De schrijver controleert de actuele tekst en noemt geen bedragen.",
+      "working_title": "Scooterongeluk in Vietnam: wat vergoedt de Nederlandse basisverzekering (Zvw) en wat niet?",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.zorginstituutnederland.nl/verzekerde-zorg/b/buitenland-en-zorg-zvw",
+          "title": "Zorginstituut Nederland (issued 17 November 2016, modified 19 June 2026): care abroad under the Zvw, what is reimbursed and the insurer's emergency centre",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/zorgverzekering/hoe-ben-ik-voor-zorg-verzekerd-als-ik-op-vakantie-ben-in-het-buitenland",
+          "title": "Rijksoverheid (issued 16 September 2013, modified 2 January 2026): how you are insured for care on holiday abroad, Dutch tariff limit, repatriation not covered by basic insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/reisadvies/vietnam",
+          "title": "Ministerie van Buitenlandse Zaken, NederlandWereldwijd (last changed 9 September 2026): Vietnam travel advice, travel insurance for hospital stays and vehicle accidents, limited health care",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H04",
+      "subcluster": "ss-incidents",
+      "slug": "yuenan-motuoche-shigu-guonei-yibao-jingwai-jiuyi-baoxiao",
+      "primary_query": "在越南骑摩托车受伤 国内医保能报销吗",
+      "secondary_queries": [
+        "境外就医 基本医疗保险基金不予支付",
+        "社会保险法第三十条 在境外就医",
+        "第三人负担的医疗费用 交通事故 医保不支付",
+        "医疗保障法 2027年1月1日施行 境外就医",
+        "中国驻越南使馆 就医费用 自行承担 领事保护与协助条例"
+      ],
+      "entities": [
+        "国家医疗保障局",
+        "社会保险法 第三十条",
+        "基本医疗保险基金",
+        "医疗保障法",
+        "领事保护与协助条例",
+        "中国驻越南使馆"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "计划在越南租骑摩托车的中国游客，想知道摔伤后国内基本医保能不能报销境外医疗费，以及法律条文和主管部门对此是怎么说的，好在出发前做好准备和选择保险。",
+      "content_angle": "写给计划在越南租骑摩托车的中国大陆游客。国家医保局网站所载《社会保险法》（2010年10月28日通过，2011年7月1日起施行；这是2010年文本，现行条文请核对）第三十条：在境外就医、应当由第三人负担的医疗费用，不纳入基本医疗保险基金支付范围；同一条另有规定，第三人不支付或无法确定时由基金先行支付并向第三人追偿，作者不得把这一款用于境外就医，因为境外就医已被单列为不支付项。国家医保局“哪些医疗费用能报销？”（2025年8月23日）同样列出这两项。《医疗保障法》2026年8月28日通过，2027年1月1日起实施，目前尚未生效，条文未重复境外就医一项，第二条规定未尽事项适用《社会保险法》。外交部《领事保护与协助条例》（2023年9月1日起施行）第二十六条：在领事保护与协助过程中得到第三方提供的医疗等服务，应当支付应由自身承担的费用。驻越南使馆2026年9月24日的提醒称，未取得越南驾驶证严禁租借、驾驶摩托车。作者须核对法律现行文本，不写任何金额，也不替使馆承诺任何帮助。",
+      "working_title": "在越南骑摩托车摔伤，国内医保能报销吗？社会保险法第三十条与国家医保局的说明",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.nhsa.gov.cn/art/2010/10/28/art_104_6420.html",
+          "title": "National Healthcare Security Administration site (law text, passed 28 October 2010, in force 1 July 2011): Social Insurance Law, Article 30 on costs the basic medical insurance fund does not pay, including treatment abroad",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nhsa.gov.cn/art/2025/8/23/art_14_17675.html",
+          "title": "National Healthcare Security Administration (23 August 2025): which medical costs can be reimbursed, items the fund does not pay including treatment abroad and costs owed by a third party",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=106747",
+          "title": "Global laws portal of MOFCOM, from the national laws database (no date shown): Medical Security Law passed 28 August 2026, in force 1 January 2027, not yet in force",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.mfa.gov.cn/web//wjb_673085/zfxxgk_674865/zcfg/xzfg/202307/t20230718_11114529.shtml",
+          "title": "Ministry of Foreign Affairs (18 July 2023): Regulations on Consular Protection and Assistance, in force 1 September 2023, Article 26 on paying for medical and other services received from third parties",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vn.china-embassy.gov.cn/lsyw/202609/t20260924_12030715.htm",
+          "title": "Chinese Embassy in Vietnam (24 September 2026): holiday safety reminder, motorbike accident risk and no riding without a Vietnamese licence",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H04",
+      "subcluster": "ss-incidents",
+      "slug": "sns-cesd-acidente-mota-vietname-cuidados-saude-estrangeiro",
+      "primary_query": "o SNS cobre o tratamento depois de um acidente de mota no Vietname",
+      "secondary_queries": [
+        "cartão europeu de seguro de doença é válido no Vietname",
+        "acordos bilaterais de saúde entre Portugal e outros países lista",
+        "assistência médica no estrangeiro SNS autorização antes da viagem",
+        "seguro de viagem com repatriamento médico para o Vietname",
+        "consulta do viajante antes de viajar para o Vietname"
+      ],
+      "entities": [
+        "Serviço Nacional de Saúde (SNS)",
+        "Cartão Europeu de Seguro de Doença (CESD)",
+        "SNS 24",
+        "Assistência Médica no Estrangeiro",
+        "Portal das Comunidades Portuguesas",
+        "Consulta do Viajante"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Os portugueses que alugam uma mota no Vietname querem saber se o SNS ou o cartão europeu paga o tratamento depois de um acidente e o que têm de contratar por conta própria.",
+      "content_angle": "Para leitores em Portugal. O SNS, em Cuidados de Saúde no Estrangeiro (listagem de 6 de fevereiro de 2026), recomenda um seguro de viagem completo, diz que o Cartão Europeu de Seguro de Doença (CESD) é para países da União Europeia, manda verificar os acordos com o país de destino e enumera os países com acordos bilaterais em vigor que protegem na doença (Andorra, Brasil, Cabo Verde, Quebec, Marrocos e Tunísia), sem o Vietname; esses acordos não preveem reembolso. Comissão Europeia (versão portuguesa, 6 de julho de 2022): o CESD não substitui o seguro de viagem, não cobre o setor privado nem o repatriamento e não vale se a viagem for para tratamento. O SNS 24 (3 de julho de 2026) descreve a Assistência Médica no Estrangeiro como cuidados programados, autorizados antes da viagem; o redator confirma que não serve para urgências em férias. O Portal das Comunidades (22 de setembro de 2026) pede seguro com repatriamento médico. O redator verifica a lista de acordos e não promete reembolso.",
+      "working_title": "Acidente de mota no Vietname: o SNS ou o Cartão Europeu de Seguro de Doença cobrem o tratamento?",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.sns.gov.pt/cuidados-de-saude-no-estrangeiro/",
+          "title": "Serviço Nacional de Saúde (listing date 6 February 2026): health care abroad, travel insurance, bilateral agreements and the European Health Insurance Card",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.sns24.gov.pt/pt/tema/prevencao-e-cuidados-de-saude/assistencia-medica-no-estrangeiro/",
+          "title": "SNS 24 (updated 3 July 2026): Assistência Médica no Estrangeiro, planned care abroad authorised before the trip",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://employment-social-affairs.ec.europa.eu/policies-and-activities/moving-working-europe/eu-social-security-coordination/european-health-insurance-card_pt",
+          "title": "European Commission, Portuguese version (6 July 2022): European Health Insurance Card, countries where it is valid, not an alternative to travel insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://portaldascomunidades.mne.gov.pt/pt/vai-viajar/conselhos-aos-viajantes/asia/vietname",
+          "title": "Portal das Comunidades Portuguesas (last updated 22 September 2026): travel advice for Vietnam, travel insurance with medical repatriation, road accidents and helmets",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H04",
+      "subcluster": "ss-incidents",
+      "slug": "beteunam-otobai-sago-gungmin-geongang-boheom-haeoe-chiryo-jeogyong",
+      "primary_query": "베트남 오토바이 사고 치료비 국민건강보험 적용되나요",
+      "secondary_queries": [
+        "국민건강보험법 제54조 국외 체류 보험급여 정지",
+        "해외에서 진료받은 비용 건강보험 환급 가능한지",
+        "외교부 영사조력 의료비 본인 부담 원칙",
+        "3개월 이상 해외 체류 건강보험 급여정지 신고",
+        "베트남 병원 응급실 비용 먼저 내야 하나"
+      ],
+      "entities": [
+        "국민건강보험공단",
+        "국민건강보험법 제54조",
+        "외교부 영사조력",
+        "영사조력법",
+        "법제처 생활법령정보"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "베트남에서 오토바이를 빌려 타다 사고가 나면 치료비를 국민건강보험으로 돌려받을 수 있는지 궁금해하는 한국 여행자가, 법령과 외교부 안내가 실제로 무엇을 말하는지 알고 싶어 합니다.",
+      "content_angle": "한국 독자를 위한 글입니다. 국가법령정보센터의 국민건강보험법 제54조(2026년 10월 8일 시행 본)는 국외에 체류하는 경우 그 기간에는 보험급여를 하지 아니한다고 정합니다. 법제처 생활법령정보(건강보험급여의 제한 및 지급정지)는 제53조(고의 또는 중대한 과실로 인한 범죄행위에 원인이 있거나 고의로 사고를 일으킨 경우의 급여 제한)와 제54조를 함께 설명하고, 해외유학자 항목(2026년 9월 15일 기준)은 3개월 이상 국외 체류 시 급여정지 신고를 안내합니다. 외교부 해외안전여행의 영사조력 안내는 현지 의료기관 정보 제공은 가능하지만 의료비 지불과 병원과의 의료비 교섭은 할 수 없다고 하고, 영사조력의 기본원칙으로 비용 자기부담(영사조력법 제19조 제1항)을 설명합니다. 필자는 국민건강보험공단의 공식 안내에서 해외 진료비를 돌려받을 수 있는 창구가 있는지 직접 확인해야 하고, 블로그나 상업 사이트의 주장은 근거로 쓰지 않으며, 금액은 쓰지 않습니다. 여행자보험 약관은 이 글의 범위가 아닙니다.",
+      "working_title": "베트남에서 오토바이 사고로 치료받으면 국민건강보험이 적용될까: 건강보험법 제54조와 외교부 안내",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1031508879",
+          "title": "National Law Information Center (version in force from 8 October 2026): National Health Insurance Act Article 54, no insurance benefits while staying abroad",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.easylaw.go.kr/CSP/CnpClsMainBtr.laf?popMenu=ov&csmSeq=1063&ccfNo=3&cciNo=6&cnpClsNo=1",
+          "title": "Ministry of Government Legislation, Easy Law (no date shown): limits and suspension of health insurance benefits, Articles 53 and 54",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=699&ccfNo=2&cciNo=6&cnpClsNo=1",
+          "title": "Ministry of Government Legislation, Easy Law (information as of 15 September 2026): suspension of benefits for people staying abroad three months or more",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://0404.go.kr/bbs/embsyNtc/1283808/detail?ntnCd=202",
+          "title": "Ministry of Foreign Affairs, Overseas Safety Travel (no date shown): what consular assistance can and cannot do, local medical information yes, paying medical bills no",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.0404.go.kr/bbs/contsPst/MST0000000000118/18/detail",
+          "title": "Ministry of Foreign Affairs, Overseas Safety Travel (no date shown): main concepts of consular assistance, Consular Assistance Act in force 16 January 2021, own-cost principle",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H04",
+      "subcluster": "ss-incidents",
+      "slug": "betonamu-baiku-jiko-kaigai-ryoyohi-kyokai-kenpo-kokuho-daisansha",
+      "primary_query": "ベトナム バイク事故 海外療養費 協会けんぽ 国民健康保険",
+      "secondary_queries": [
+        "海外療養費 申請 必要書類 診療内容明細書 領収明細書",
+        "海外療養費 第三者行為による傷病届 交通事故",
+        "海外療養費 支給額 日本国内の治療費を基準 差額",
+        "海外療養費 時効 2年 申請期限",
+        "ベトナム 医療事情 外務省 海外旅行保険 キャッシュレス"
+      ],
+      "entities": [
+        "海外療養費",
+        "全国健康保険協会（協会けんぽ）",
+        "国民健康保険",
+        "第三者行為による傷病届",
+        "外務省 海外安全ホームページ",
+        "世界の医療事情"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "ベトナムでレンタルバイクに乗って事故に遭った日本の旅行者が、加入している公的医療保険から治療費がどこまで戻るのか、申請の条件と書類、第三者行為の扱いを渡航前に知りたいと考えています。",
+      "content_angle": "協会けんぽや国民健康保険に入っている人向けの記事です。全国健康保険協会の「海外療養費」の案内は、海外旅行中などにやむを得ず現地で受けた診療について申請により一部が払い戻される制度で、日本国内で保険診療として認められる内容であり治療目的の渡航でないことが条件、支給額は日本国内で同じ傷病を治療した場合の費用を基準に計算し実際の支払額が低ければその額、診療内容明細書・領収明細書・領収書原本と日本語訳・渡航期間が分かる書類などが必要、ケガは負傷原因届、第三者による傷病は第三者行為による傷病届、審査には数か月かかり時効は2年、と説明しています。東京都北区（2025年9月24日更新）も同様で、実費と標準額の差が大きくなることがあり民間の海外旅行保険を勧めています。一方、小山市の国保ページは交通事故など第三者行為による傷病は支給されない場合があり、支給額が自己負担額の1割未満になることもあるとしており、案内が分かれるため、書き手は加入先の保険者に確認してください。外務省の海外安全ホームページ（2026年3月13日更新）は、ベトナムの医療水準と、高額になる入院や移送の費用に備える海外旅行保険を強く勧めています。金額は書かないでください。",
+      "working_title": "ベトナムでバイク事故に遭ったら海外療養費は使える？協会けんぽ・国保の仕組みと第三者行為の届出",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.kyoukaikenpo.or.jp/benefit/overseas_medical_expenses/index.html",
+          "title": "Japan Health Insurance Association, Kyokai Kenpo (no date shown): overseas medical expenses benefit, conditions, calculation basis, documents and two-year limit",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.city.kita.lg.jp/living/insurance-pension/1001703/1001744/1001757.html",
+          "title": "Kita City, Tokyo (updated 24 September 2025): overseas medical expenses under National Health Insurance, standard amount, third-party notice and two-year limit",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.city.oyama.tochigi.jp/kenkou-fukushi-kaigo/kokuho/page001096.html",
+          "title": "Oyama City, Tochigi (no date shown): overseas medical expenses under National Health Insurance, cases that may not be paid including traffic accidents caused by a third party",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.anzen.mofa.go.jp/info/pcsafetymeasure_015.html",
+          "title": "Ministry of Foreign Affairs of Japan, Overseas Safety Homepage (updated 13 March 2026): Vietnam basic safety data, medical facilities and strongly recommended travel insurance",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}
