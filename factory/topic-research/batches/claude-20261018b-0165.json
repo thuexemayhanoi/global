@@ -1,0 +1,602 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H04",
+      "subcluster": "ss-incidents",
+      "slug": "xe-may-mat-khoi-cho-do-bi-csgt-di-chuyen-tam-giu-o-bai-hay-bi-trom-viet-nam",
+      "primary_query": "xe máy đang đỗ biến mất có phải bị CSGT cẩu về bãi không hay bị mất trộm",
+      "secondary_queries": [
+        "CSGT có được cẩu xe máy đỗ sai quy định không",
+        "ai trả tiền khi CSGT di chuyển xe đỗ sai quy định",
+        "xe bị tạm giữ thì được đưa về bãi nào ở Hà Nội",
+        "thông báo của CSGT gửi cho chủ xe hay người thuê xe máy",
+        "khi nào nên trình báo mất xe thay vì tìm xe bị cẩu"
+      ],
+      "entities": [
+        "Luật Trật tự, an toàn giao thông đường bộ (Điều 69)",
+        "Nghị định 168/2024/NĐ-CP (Điều 48)",
+        "Thông tư 73/2024/TT-BCA (Điều 17)",
+        "Phòng Cảnh sát giao thông Công an Hà Nội",
+        "bãi tạm giữ phương tiện"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Du khách quay lại chỗ đỗ thấy xe máy không còn cần phân biệt xe bị CSGT di chuyển hoặc tạm giữ với xe bị trộm, biết ai nhận thông báo, ai trả chi phí và nên hỏi ở đâu trước khi trình báo mất cắp.",
+      "content_angle": "Dựa trên Điều 69 Luật Trật tự, an toàn giao thông đường bộ 2024 trong văn bản hợp nhất 55/VBHN-VPQH (CSGT được di chuyển phương tiện dừng, đỗ sai quy định gây cản trở khi người điều khiển hoặc chủ xe vắng mặt hoặc không chấp hành, được thuê tổ chức làm việc đó, người vi phạm trả chi phí và phải bảo đảm an toàn cho xe), Điều 48 khoản 4 Nghị định 168/2024/NĐ-CP và Điều 17 khoản 2 Thông tư 73/2024/TT-BCA trong văn bản hợp nhất 19/VBHN-BCA (xe bị tạm giữ được đưa về nơi tạm giữ, lập biên bản có người chứng kiến hoặc camera và gửi thông báo đến chủ phương tiện yêu cầu người vi phạm đến giải quyết) và Điều 125 Luật Xử lý vi phạm hành chính (biên bản, quyết định trong 24 giờ, thời hạn tạm giữ). Bối cảnh Hà Nội: Dân trí (19/10/2026) về xử lý khu phố cổ bằng biên bản tại chỗ và phạt nguội, Lao Động (14/1/2026) về các bãi tạm giữ. Chưa thấy nguồn chính thức của Hà Nội về cẩu xe hay khóa bánh, nên người viết không coi hai việc này là thường lệ và tách khỏi bài tạm giữ xe và bài trình báo mất cắp.",
+      "working_title": "Xe máy biến mất khỏi chỗ đỗ ở Việt Nam: bị CSGT di chuyển, tạm giữ ở bãi hay bị mất trộm?",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 55/VBHN-VPQH, March 2026): Law 36/2024/QH15 on Road Traffic Order and Safety, Article 69 on traffic police moving a vehicle stopped or parked in breach of the rules, hiring a firm to do it, who pays and keeping the vehicle safe",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles, taking a held vehicle to the holding place and who bears the moving and substitute-transport costs",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding a vehicle when the driver is absent, the record with a witness or camera and the notice sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on holding vehicles, the record, the holding decision within 24 hours, safekeeping and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/loat-tai-xe-dung-do-xe-sai-quy-dinh-tren-pho-co-ha-noi-bi-csgt-xu-phat-20261019130911989.htm",
+          "title": "Dân trí (19 October 2026): Hanoi Traffic Police Team No. 1 and Hoàn Kiếm ward police patrol the Old Quarter against wrongly stopped and parked vehicles, using on-the-spot records, camera-based fines and pledges from parking operators",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/hang-van-xe-vi-pham-bi-bo-quen-tai-bai-tam-giu-o-ha-noi-1640536.ldo",
+          "title": "Lao Động (14 January 2026): vehicles held for violations in Hanoi are taken to holding yards designated by the authorities, the yard on Lê Quang Đạo street and why many held motorbikes are left unclaimed",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H04",
+      "subcluster": "ss-incidents",
+      "slug": "motorbike-gone-from-where-parked-vietnam-moved-by-police-held-in-yard-or-stolen",
+      "primary_query": "my motorbike is gone from where I parked it in Hanoi was it towed by police or stolen",
+      "secondary_queries": [
+        "can Vietnamese traffic police tow a wrongly parked motorbike",
+        "who pays when police move an illegally parked motorbike in Vietnam",
+        "how do I find out if my motorbike was taken to a police holding yard in Hanoi",
+        "does the police notice go to the registered owner of a rental motorbike in Vietnam",
+        "when to report a missing motorbike as stolen instead of looking for a towed one in Vietnam"
+      ],
+      "entities": [
+        "Law on Road Traffic Order and Safety (Article 69)",
+        "Decree 168/2024/NĐ-CP (Article 48)",
+        "Circular 73/2024/TT-BCA (Article 17)",
+        "Hanoi Traffic Police Department",
+        "vehicle holding yard"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "A visitor who returns to an empty parking spot needs to tell a motorbike moved or held by the police from a stolen one, and to know who receives the notice, who pays and where to ask first, before filing a theft report.",
+      "content_angle": "Built on Article 69 of the 2024 Road Traffic Law in the consolidated text 55/VBHN-VPQH (traffic police may move a vehicle stopped or parked in breach of the rules that obstructs traffic when its driver or owner is absent or refuses, may hire a firm to do it, the driver or owner pays and the vehicle must be kept safe), on Article 48(4) of Decree 168/2024/NĐ-CP and Article 17(2) of Circular 73/2024/TT-BCA in consolidated text 19/VBHN-BCA (a held vehicle is taken to the holding place, the case is recorded with a witness or camera and a notice goes to the registered owner asking the violator to come in) and on Article 125 of the Law on Handling of Administrative Violations (record, decision within 24 hours, time limits). Hanoi context: Dân trí (19 October 2026) on Old Quarter enforcement by on-the-spot records and camera fines, and Lao Động (14 January 2026) on the holding yards. No official Hanoi source on towing or wheel clamps was found, so the Writer does not present either as routine and keeps clear of the impound and theft-report articles.",
+      "working_title": "Your Motorbike Is Gone From Where You Parked It in Vietnam: Moved by Police, Held in a Yard or Stolen?",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 55/VBHN-VPQH, March 2026): Law 36/2024/QH15 on Road Traffic Order and Safety, Article 69 on traffic police moving a vehicle stopped or parked in breach of the rules, hiring a firm to do it, who pays and keeping the vehicle safe",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles, taking a held vehicle to the holding place and who bears the moving and substitute-transport costs",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding a vehicle when the driver is absent, the record with a witness or camera and the notice sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on holding vehicles, the record, the holding decision within 24 hours, safekeeping and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/loat-tai-xe-dung-do-xe-sai-quy-dinh-tren-pho-co-ha-noi-bi-csgt-xu-phat-20261019130911989.htm",
+          "title": "Dân trí (19 October 2026): Hanoi Traffic Police Team No. 1 and Hoàn Kiếm ward police patrol the Old Quarter against wrongly stopped and parked vehicles, using on-the-spot records, camera-based fines and pledges from parking operators",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/hang-van-xe-vi-pham-bi-bo-quen-tai-bai-tam-giu-o-ha-noi-1640536.ldo",
+          "title": "Lao Động (14 January 2026): vehicles held for violations in Hanoi are taken to holding yards designated by the authorities, the yard on Lê Quang Đạo street and why many held motorbikes are left unclaimed",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H04",
+      "subcluster": "ss-incidents",
+      "slug": "motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen",
+      "primary_query": "mein Motorrad ist in Hanoi vom Parkplatz verschwunden wurde es von der Polizei abgeschleppt oder gestohlen",
+      "secondary_queries": [
+        "darf die Verkehrspolizei in Vietnam ein falsch geparktes Motorrad abschleppen",
+        "wer zahlt wenn die Polizei in Vietnam ein falsch geparktes Motorrad umsetzt",
+        "wie finde ich heraus ob mein Motorrad in einen Verwahrplatz der Polizei in Hanoi kam",
+        "geht die Mitteilung der Polizei in Vietnam an den Halter des Leihmotorrads",
+        "wann sollte ich ein vermisstes Motorrad in Vietnam als gestohlen melden"
+      ],
+      "entities": [
+        "Gesetz über Straßenverkehrsordnung und -sicherheit (Artikel 69)",
+        "Dekret 168/2024/NĐ-CP (Artikel 48)",
+        "Rundschreiben 73/2024/TT-BCA (Artikel 17)",
+        "Verkehrspolizei Hanoi",
+        "Verwahrplatz für Fahrzeuge"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Reisende, die zu einem leeren Parkplatz zurückkehren, müssen ein von der Polizei umgesetztes oder verwahrtes Motorrad von einem gestohlenen unterscheiden und wissen, wer die Mitteilung erhält, wer zahlt und wo sie zuerst nachfragen, bevor sie einen Diebstahl anzeigen.",
+      "content_angle": "Gestützt auf Artikel 69 des Straßenverkehrsgesetzes von 2024 in der konsolidierten Fassung 55/VBHN-VPQH (die Verkehrspolizei darf ein regelwidrig haltendes oder parkendes, den Verkehr behinderndes Fahrzeug umsetzen, wenn Fahrer oder Halter abwesend sind oder sich weigern, darf dafür eine Firma beauftragen, der Fahrer oder Halter zahlt und das Fahrzeug muss sicher bleiben), auf Artikel 48 Absatz 4 des Dekrets 168/2024/NĐ-CP und Artikel 17 Absatz 2 des Rundschreibens 73/2024/TT-BCA in der Fassung 19/VBHN-BCA (ein verwahrtes Fahrzeug kommt zum Verwahrort, der Fall wird mit Zeugen oder Kamera protokolliert und der Halter erhält eine Mitteilung, dass der Verursacher sich melden soll) sowie auf Artikel 125 des Gesetzes über die Ahndung von Verwaltungsverstößen (Protokoll, Beschluss binnen 24 Stunden, Fristen). Zum Kontext Hanoi: Dân trí (19. Oktober 2026) zur Kontrolle der Altstadt mit Protokollen vor Ort und Kamerabußen, Lao Động (14. Januar 2026) zu den Verwahrplätzen. Eine amtliche Hanoier Quelle zu Abschleppen oder Radkrallen wurde nicht gefunden; der Autor stellt beides daher nicht als Regelfall dar und grenzt vom Beitrag zur Beschlagnahme und zur Diebstahlanzeige ab.",
+      "working_title": "Motorrad vom Parkplatz verschwunden in Vietnam: von der Polizei umgesetzt, verwahrt oder gestohlen?",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 55/VBHN-VPQH, March 2026): Law 36/2024/QH15 on Road Traffic Order and Safety, Article 69 on traffic police moving a vehicle stopped or parked in breach of the rules, hiring a firm to do it, who pays and keeping the vehicle safe",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles, taking a held vehicle to the holding place and who bears the moving and substitute-transport costs",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding a vehicle when the driver is absent, the record with a witness or camera and the notice sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on holding vehicles, the record, the holding decision within 24 hours, safekeeping and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/loat-tai-xe-dung-do-xe-sai-quy-dinh-tren-pho-co-ha-noi-bi-csgt-xu-phat-20261019130911989.htm",
+          "title": "Dân trí (19 October 2026): Hanoi Traffic Police Team No. 1 and Hoàn Kiếm ward police patrol the Old Quarter against wrongly stopped and parked vehicles, using on-the-spot records, camera-based fines and pledges from parking operators",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/hang-van-xe-vi-pham-bi-bo-quen-tai-bai-tam-giu-o-ha-noi-1640536.ldo",
+          "title": "Lao Động (14 January 2026): vehicles held for violations in Hanoi are taken to holding yards designated by the authorities, the yard on Lê Quang Đạo street and why many held motorbikes are left unclaimed",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H04",
+      "subcluster": "ss-incidents",
+      "slug": "moto-disparue-emplacement-vietnam-deplacee-par-la-police-en-fourriere-ou-volee",
+      "primary_query": "ma moto a disparu de son emplacement à Hanoï a-t-elle été enlevée par la police ou volée",
+      "secondary_queries": [
+        "la police de la circulation vietnamienne peut-elle enlever une moto mal garée",
+        "qui paie quand la police déplace une moto garée illégalement au Vietnam",
+        "comment savoir si ma moto a été emmenée dans une fourrière de la police à Hanoï",
+        "l'avis de la police est-il envoyé au propriétaire d'une moto de location au Vietnam",
+        "quand déclarer une moto disparue comme volée plutôt que la chercher en fourrière au Vietnam"
+      ],
+      "entities": [
+        "loi sur l'ordre et la sécurité routiers (article 69)",
+        "décret 168/2024/NĐ-CP (article 48)",
+        "circulaire 73/2024/TT-BCA (article 17)",
+        "police de la circulation de Hanoï",
+        "fourrière de véhicules"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Un visiteur qui retrouve un emplacement vide doit distinguer une moto déplacée ou retenue par la police d'une moto volée, et savoir qui reçoit l'avis, qui paie et où demander en premier, avant de déposer plainte pour vol.",
+      "content_angle": "Fondé sur l'article 69 de la loi de 2024 sur l'ordre et la sécurité routiers, texte consolidé 55/VBHN-VPQH (la police de la circulation peut déplacer un véhicule arrêté ou stationné en infraction et gênant la circulation quand son conducteur ou propriétaire est absent ou refuse, peut recourir à une entreprise, le conducteur ou propriétaire paie et le véhicule doit rester en sécurité), sur l'article 48, alinéa 4, du décret 168/2024/NĐ-CP et l'article 17, alinéa 2, de la circulaire 73/2024/TT-BCA, texte consolidé 19/VBHN-BCA (un véhicule retenu est conduit au lieu de rétention, l'affaire est consignée avec un témoin ou une caméra et un avis est adressé au propriétaire pour que le contrevenant se présente) et sur l'article 125 de la loi sur le traitement des infractions administratives (procès-verbal, décision sous 24 heures, délais). Contexte hanoïen : Dân trí (19 octobre 2026) sur les contrôles de la vieille ville par procès-verbaux sur place et amendes par caméra, Lao Động (14 janvier 2026) sur les fourrières. Aucune source officielle de Hanoï sur l'enlèvement ou le sabot n'a été trouvée : le rédacteur ne les présente pas comme courants et se démarque des articles sur la mise en fourrière et la déclaration de vol.",
+      "working_title": "Moto disparue de son emplacement au Vietnam : déplacée par la police, en fourrière ou volée ?",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 55/VBHN-VPQH, March 2026): Law 36/2024/QH15 on Road Traffic Order and Safety, Article 69 on traffic police moving a vehicle stopped or parked in breach of the rules, hiring a firm to do it, who pays and keeping the vehicle safe",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles, taking a held vehicle to the holding place and who bears the moving and substitute-transport costs",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding a vehicle when the driver is absent, the record with a witness or camera and the notice sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on holding vehicles, the record, the holding decision within 24 hours, safekeeping and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/loat-tai-xe-dung-do-xe-sai-quy-dinh-tren-pho-co-ha-noi-bi-csgt-xu-phat-20261019130911989.htm",
+          "title": "Dân trí (19 October 2026): Hanoi Traffic Police Team No. 1 and Hoàn Kiếm ward police patrol the Old Quarter against wrongly stopped and parked vehicles, using on-the-spot records, camera-based fines and pledges from parking operators",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/hang-van-xe-vi-pham-bi-bo-quen-tai-bai-tam-giu-o-ha-noi-1640536.ldo",
+          "title": "Lao Động (14 January 2026): vehicles held for violations in Hanoi are taken to holding yards designated by the authorities, the yard on Lê Quang Đạo street and why many held motorbikes are left unclaimed",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H04",
+      "subcluster": "ss-incidents",
+      "slug": "moto-desaparecida-vietnam-movida-por-la-policia-retenida-o-robada",
+      "primary_query": "mi moto ha desaparecido del sitio donde la aparqué en Hanói ¿la retiró la policía o me la robaron?",
+      "secondary_queries": [
+        "puede la policía de tráfico de Vietnam retirar una moto mal aparcada",
+        "quién paga cuando la policía mueve una moto aparcada ilegalmente en Vietnam",
+        "cómo saber si mi moto fue llevada a un depósito de la policía en Hanói",
+        "el aviso de la policía llega al titular de una moto de alquiler en Vietnam",
+        "cuándo denunciar una moto desaparecida como robada en vez de buscarla en el depósito en Vietnam"
+      ],
+      "entities": [
+        "Ley de Orden y Seguridad del Tráfico por Carretera (artículo 69)",
+        "Decreto 168/2024/NĐ-CP (artículo 48)",
+        "Circular 73/2024/TT-BCA (artículo 17)",
+        "Policía de Tráfico de Hanói",
+        "depósito de vehículos"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Un visitante que vuelve a un sitio vacío necesita distinguir una moto movida o retenida por la policía de una robada, y saber quién recibe el aviso, quién paga y dónde preguntar primero antes de presentar una denuncia por robo.",
+      "content_angle": "Basado en el artículo 69 de la Ley de 2024 de Orden y Seguridad del Tráfico por Carretera, texto consolidado 55/VBHN-VPQH (la policía de tráfico puede mover un vehículo detenido o aparcado en infracción que obstruye la circulación cuando su conductor o titular está ausente o se niega, puede contratar a una empresa, el conductor o titular paga y el vehículo debe quedar seguro), en el artículo 48, apartado 4, del Decreto 168/2024/NĐ-CP y en el artículo 17, apartado 2, de la Circular 73/2024/TT-BCA, texto consolidado 19/VBHN-BCA (un vehículo retenido se lleva al lugar de retención, el caso se levanta con un testigo o una cámara y se envía un aviso al titular para que el infractor se presente) y en el artículo 125 de la Ley de Tratamiento de las Infracciones Administrativas (acta, decisión en 24 horas, plazos). Contexto de Hanói: Dân trí (19 de octubre de 2026) sobre el control del casco antiguo con actas in situ y multas por cámara, y Lao Động (14 de enero de 2026) sobre los depósitos. No se encontró ninguna fuente oficial de Hanói sobre grúa o cepo: el redactor no los presenta como habituales y se distingue de los artículos sobre el depósito del vehículo y la denuncia de robo.",
+      "working_title": "Tu moto ya no está donde la aparcaste en Vietnam: ¿movida por la policía, retenida o robada?",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 55/VBHN-VPQH, March 2026): Law 36/2024/QH15 on Road Traffic Order and Safety, Article 69 on traffic police moving a vehicle stopped or parked in breach of the rules, hiring a firm to do it, who pays and keeping the vehicle safe",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles, taking a held vehicle to the holding place and who bears the moving and substitute-transport costs",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding a vehicle when the driver is absent, the record with a witness or camera and the notice sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on holding vehicles, the record, the holding decision within 24 hours, safekeeping and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/loat-tai-xe-dung-do-xe-sai-quy-dinh-tren-pho-co-ha-noi-bi-csgt-xu-phat-20261019130911989.htm",
+          "title": "Dân trí (19 October 2026): Hanoi Traffic Police Team No. 1 and Hoàn Kiếm ward police patrol the Old Quarter against wrongly stopped and parked vehicles, using on-the-spot records, camera-based fines and pledges from parking operators",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/hang-van-xe-vi-pham-bi-bo-quen-tai-bai-tam-giu-o-ha-noi-1640536.ldo",
+          "title": "Lao Động (14 January 2026): vehicles held for violations in Hanoi are taken to holding yards designated by the authorities, the yard on Lê Quang Đạo street and why many held motorbikes are left unclaimed",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H04",
+      "subcluster": "ss-incidents",
+      "slug": "motor-weg-van-parkeerplek-vietnam-verplaatst-door-politie-in-depot-of-gestolen",
+      "primary_query": "mijn motor is in Hanoi weg van de plek waar ik hem parkeerde is hij weggesleept door de politie of gestolen",
+      "secondary_queries": [
+        "mag de Vietnamese verkeerspolitie een verkeerd geparkeerde motor wegslepen",
+        "wie betaalt als de politie in Vietnam een illegaal geparkeerde motor verplaatst",
+        "hoe weet ik of mijn motor naar een depot van de politie in Hanoi is gebracht",
+        "gaat de mededeling van de politie in Vietnam naar de eigenaar van een huurmotor",
+        "wanneer meld ik een vermiste motor in Vietnam als gestolen in plaats van te zoeken in het depot"
+      ],
+      "entities": [
+        "wet op de verkeersorde en verkeersveiligheid (artikel 69)",
+        "decreet 168/2024/NĐ-CP (artikel 48)",
+        "circulaire 73/2024/TT-BCA (artikel 17)",
+        "verkeerspolitie van Hanoi",
+        "depot voor voertuigen"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Een bezoeker die bij een lege parkeerplek terugkomt, moet een door de politie verplaatste of vastgehouden motor kunnen onderscheiden van een gestolen motor en weten wie de mededeling krijgt, wie betaalt en waar hij eerst moet vragen voor hij aangifte van diefstal doet.",
+      "content_angle": "Gebaseerd op artikel 69 van de wet van 2024 op de verkeersorde en verkeersveiligheid, geconsolideerde tekst 55/VBHN-VPQH (de verkeerspolitie mag een in strijd met de regels stilstaand of geparkeerd voertuig dat het verkeer hindert verplaatsen als bestuurder of eigenaar afwezig is of weigert, mag daarvoor een bedrijf inhuren, de bestuurder of eigenaar betaalt en het voertuig moet veilig blijven), op artikel 48 lid 4 van decreet 168/2024/NĐ-CP en artikel 17 lid 2 van circulaire 73/2024/TT-BCA, geconsolideerde tekst 19/VBHN-BCA (een vastgehouden voertuig gaat naar de bewaarplaats, de zaak wordt met een getuige of camera vastgelegd en de eigenaar krijgt een mededeling dat de overtreder zich moet melden) en op artikel 125 van de wet op de afhandeling van administratieve overtredingen (proces-verbaal, besluit binnen 24 uur, termijnen). Context Hanoi: Dân trí (19 oktober 2026) over de controle in de oude wijk met processen-verbaal ter plaatse en cameraboetes en Lao Động (14 januari 2026) over de depots. Er is geen officiële Hanoise bron over wegslepen of wielklem gevonden: de schrijver presenteert beide niet als gebruikelijk en houdt een grens met de artikelen over inbeslagname en aangifte van diefstal.",
+      "working_title": "Motor weg van de parkeerplek in Vietnam: verplaatst door de politie, in een depot of gestolen?",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 55/VBHN-VPQH, March 2026): Law 36/2024/QH15 on Road Traffic Order and Safety, Article 69 on traffic police moving a vehicle stopped or parked in breach of the rules, hiring a firm to do it, who pays and keeping the vehicle safe",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles, taking a held vehicle to the holding place and who bears the moving and substitute-transport costs",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding a vehicle when the driver is absent, the record with a witness or camera and the notice sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on holding vehicles, the record, the holding decision within 24 hours, safekeeping and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/loat-tai-xe-dung-do-xe-sai-quy-dinh-tren-pho-co-ha-noi-bi-csgt-xu-phat-20261019130911989.htm",
+          "title": "Dân trí (19 October 2026): Hanoi Traffic Police Team No. 1 and Hoàn Kiếm ward police patrol the Old Quarter against wrongly stopped and parked vehicles, using on-the-spot records, camera-based fines and pledges from parking operators",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/hang-van-xe-vi-pham-bi-bo-quen-tai-bai-tam-giu-o-ha-noi-1640536.ldo",
+          "title": "Lao Động (14 January 2026): vehicles held for violations in Hanoi are taken to holding yards designated by the authorities, the yard on Lê Quang Đạo street and why many held motorbikes are left unclaimed",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H04",
+      "subcluster": "ss-incidents",
+      "slug": "yuenan-motuoche-tingfangchu-bujian-jiaojing-nuozou-kouya-haishi-beitou",
+      "primary_query": "我的摩托车在河内停放的地方不见了，是被警察拖走了还是被偷了",
+      "secondary_queries": [
+        "越南交警可以拖走乱停的摩托车吗",
+        "越南警察挪走违规停放的摩托车费用由谁承担",
+        "怎么知道我的摩托车有没有被带到河内警方的扣押停车场",
+        "越南警察的通知会发给租来的摩托车的登记车主吗",
+        "什么时候该把不见的摩托车当作被盗报案而不是去找拖车场"
+      ],
+      "entities": [
+        "道路交通秩序与安全法第69条",
+        "第168/2024/NĐ-CP号议定第48条",
+        "第73/2024/TT-BCA号通知第17条",
+        "河内交警局",
+        "车辆扣押停车场"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "游客回到停车的地方发现摩托车不见了，需要分清是被警察挪走或扣押，还是被偷，并知道通知发给谁、费用谁出、先该向哪里询问，然后再决定是否报失窃案。",
+      "content_angle": "依据2024年《道路交通秩序与安全法》第69条的合并文本55/VBHN-VPQH（驾驶人或车主不在场或拒绝配合时，交警可以挪走违规停放并妨碍交通的车辆，可雇用企业来做，费用由驾驶人或车主承担，并须保证车辆安全）、第168/2024/NĐ-CP号议定第48条第4款和第73/2024/TT-BCA号通知第17条第2款的合并文本19/VBHN-BCA（被扣车辆送往扣押地点，在证人或摄像记录下立案，并向车辆所有人发出通知，要求违法者前来处理），以及《行政违法处理法》第125条（记录、24小时内作出决定、期限）。河内背景：Dân trí（2026年10月19日）关于老城区以现场记录和摄像罚款进行执法，Lao Động（2026年1月14日）关于扣押停车场。没有找到河内关于拖车或锁轮的官方来源，所以写作者不把这两者当作常规做法，并与车辆扣押和报失窃两篇文章区分。",
+      "working_title": "越南摩托车停放处不见了：被交警挪走、扣在停车场，还是被偷了？",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 55/VBHN-VPQH, March 2026): Law 36/2024/QH15 on Road Traffic Order and Safety, Article 69 on traffic police moving a vehicle stopped or parked in breach of the rules, hiring a firm to do it, who pays and keeping the vehicle safe",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles, taking a held vehicle to the holding place and who bears the moving and substitute-transport costs",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding a vehicle when the driver is absent, the record with a witness or camera and the notice sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on holding vehicles, the record, the holding decision within 24 hours, safekeeping and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/loat-tai-xe-dung-do-xe-sai-quy-dinh-tren-pho-co-ha-noi-bi-csgt-xu-phat-20261019130911989.htm",
+          "title": "Dân trí (19 October 2026): Hanoi Traffic Police Team No. 1 and Hoàn Kiếm ward police patrol the Old Quarter against wrongly stopped and parked vehicles, using on-the-spot records, camera-based fines and pledges from parking operators",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/hang-van-xe-vi-pham-bi-bo-quen-tai-bai-tam-giu-o-ha-noi-1640536.ldo",
+          "title": "Lao Động (14 January 2026): vehicles held for violations in Hanoi are taken to holding yards designated by the authorities, the yard on Lê Quang Đạo street and why many held motorbikes are left unclaimed",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H04",
+      "subcluster": "ss-incidents",
+      "slug": "mota-desapareceu-onde-estacionou-vietname-movida-pela-policia-retida-ou-roubada",
+      "primary_query": "a minha mota desapareceu do sítio onde a estacionei em Hanói foi rebocada pela polícia ou roubada",
+      "secondary_queries": [
+        "pode a polícia de trânsito do Vietname rebocar uma mota mal estacionada",
+        "quem paga quando a polícia move uma mota estacionada ilegalmente no Vietname",
+        "como saber se a minha mota foi levada para um parque da polícia em Hanói",
+        "o aviso da polícia chega ao titular de uma mota de aluguer no Vietname",
+        "quando denunciar uma mota desaparecida como roubada em vez de a procurar no parque do Vietname"
+      ],
+      "entities": [
+        "Lei da Ordem e Segurança Rodoviárias (artigo 69)",
+        "Decreto 168/2024/NĐ-CP (artigo 48)",
+        "Circular 73/2024/TT-BCA (artigo 17)",
+        "Polícia de Trânsito de Hanói",
+        "parque de veículos retidos"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Um visitante que volta a um lugar vazio precisa de distinguir uma mota movida ou retida pela polícia de uma mota roubada e de saber quem recebe o aviso, quem paga e onde perguntar primeiro antes de apresentar queixa de furto.",
+      "content_angle": "Baseado no artigo 69 da Lei de 2024 da Ordem e Segurança Rodoviárias, texto consolidado 55/VBHN-VPQH (a polícia de trânsito pode mover um veículo parado ou estacionado em infração que obstrui o trânsito quando o condutor ou titular está ausente ou recusa, pode contratar uma empresa, o condutor ou titular paga e o veículo deve ficar seguro), no artigo 48, n.º 4, do Decreto 168/2024/NĐ-CP e no artigo 17, n.º 2, da Circular 73/2024/TT-BCA, texto consolidado 19/VBHN-BCA (um veículo retido é levado para o local de retenção, o caso é registado com uma testemunha ou câmara e é enviado um aviso ao titular para o infrator se apresentar) e no artigo 125 da Lei do Tratamento das Infrações Administrativas (auto, decisão em 24 horas, prazos). Contexto de Hanói: Dân trí (19 de outubro de 2026) sobre a fiscalização do bairro antigo com autos no local e coimas por câmara e Lao Động (14 de janeiro de 2026) sobre os parques de retenção. Não se encontrou fonte oficial de Hanói sobre reboque ou bloqueio de rodas: o redator não os apresenta como habituais e distingue-se dos artigos sobre apreensão do veículo e queixa de furto.",
+      "working_title": "A mota desapareceu do sítio onde a estacionou no Vietname: movida pela polícia, retida ou roubada?",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 55/VBHN-VPQH, March 2026): Law 36/2024/QH15 on Road Traffic Order and Safety, Article 69 on traffic police moving a vehicle stopped or parked in breach of the rules, hiring a firm to do it, who pays and keeping the vehicle safe",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles, taking a held vehicle to the holding place and who bears the moving and substitute-transport costs",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding a vehicle when the driver is absent, the record with a witness or camera and the notice sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on holding vehicles, the record, the holding decision within 24 hours, safekeeping and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/loat-tai-xe-dung-do-xe-sai-quy-dinh-tren-pho-co-ha-noi-bi-csgt-xu-phat-20261019130911989.htm",
+          "title": "Dân trí (19 October 2026): Hanoi Traffic Police Team No. 1 and Hoàn Kiếm ward police patrol the Old Quarter against wrongly stopped and parked vehicles, using on-the-spot records, camera-based fines and pledges from parking operators",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/hang-van-xe-vi-pham-bi-bo-quen-tai-bai-tam-giu-o-ha-noi-1640536.ldo",
+          "title": "Lao Động (14 January 2026): vehicles held for violations in Hanoi are taken to holding yards designated by the authorities, the yard on Lê Quang Đạo street and why many held motorbikes are left unclaimed",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H04",
+      "subcluster": "ss-incidents",
+      "slug": "beteunam-juchahan-otobai-sarajyeosseul-ttae-gyeongchal-ideong-bogwanso-doinan",
+      "primary_query": "하노이에서 주차한 오토바이가 사라졌는데 경찰이 견인한 건지 도난인지 어떻게 알 수 있나요",
+      "secondary_queries": [
+        "베트남 교통경찰은 잘못 주차한 오토바이를 견인할 수 있나요",
+        "베트남에서 경찰이 불법 주차한 오토바이를 옮기면 비용은 누가 내나요",
+        "내 오토바이가 하노이 경찰 보관소로 옮겨졌는지 어떻게 확인하나요",
+        "베트남 경찰의 통지는 렌털 오토바이의 등록 소유자에게 가나요",
+        "사라진 오토바이를 보관소에서 찾지 않고 도난으로 신고해야 하는 때는 언제인가요"
+      ],
+      "entities": [
+        "도로교통질서안전법 제69조",
+        "정부령 168/2024/NĐ-CP 제48조",
+        "공안부 통달 73/2024/TT-BCA 제17조",
+        "하노이 교통경찰국",
+        "차량 보관소"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "주차했던 자리에 돌아와 빈 공간을 본 방문객은 경찰이 옮기거나 보관한 오토바이와 도난 오토바이를 구분하고, 통지를 누가 받고 비용은 누가 내며 도난 신고 전에 어디에 먼저 물어봐야 하는지 알아야 합니다.",
+      "content_angle": "정부 문서 포털의 통합본 55/VBHN-VPQH에 실린 2024년 도로교통질서안전법 제69조(운전자나 소유자가 없거나 따르지 않을 때 교통경찰은 규정을 어겨 정차 또는 주차해 통행을 방해하는 차량을 옮길 수 있고, 업체를 고용할 수 있으며, 비용은 운전자나 소유자가 내고 차량의 안전을 지켜야 함), 정부령 168/2024/NĐ-CP 제48조 4항과 통합본 19/VBHN-BCA의 통달 73/2024/TT-BCA 제17조 2항(보관 차량은 보관 장소로 옮겨지고, 증인이나 카메라로 사건을 기록하며 위반자가 오도록 요구하는 통지를 차량 소유자에게 보냄), 그리고 행정위반처리법 제125조(기록, 24시간 내 결정, 기한)에 근거합니다. 하노이 맥락으로는 구시가지 단속을 현장 기록과 카메라 과태료로 설명한 Dân trí(2026년 10월 19일)와 보관소를 다룬 Lao Động(2026년 1월 14일)이 있습니다. 하노이의 견인이나 바퀴 잠금에 관한 공식 자료는 찾지 못했으므로 작성자는 둘 다 일상적인 조치로 소개하지 않으며, 차량 압수와 도난 신고 글과 구분합니다.",
+      "working_title": "베트남에서 주차한 오토바이가 사라졌을 때: 경찰이 옮겼는지, 보관소에 있는지, 도난인지",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 55/VBHN-VPQH, March 2026): Law 36/2024/QH15 on Road Traffic Order and Safety, Article 69 on traffic police moving a vehicle stopped or parked in breach of the rules, hiring a firm to do it, who pays and keeping the vehicle safe",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles, taking a held vehicle to the holding place and who bears the moving and substitute-transport costs",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding a vehicle when the driver is absent, the record with a witness or camera and the notice sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on holding vehicles, the record, the holding decision within 24 hours, safekeeping and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/loat-tai-xe-dung-do-xe-sai-quy-dinh-tren-pho-co-ha-noi-bi-csgt-xu-phat-20261019130911989.htm",
+          "title": "Dân trí (19 October 2026): Hanoi Traffic Police Team No. 1 and Hoàn Kiếm ward police patrol the Old Quarter against wrongly stopped and parked vehicles, using on-the-spot records, camera-based fines and pledges from parking operators",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/hang-van-xe-vi-pham-bi-bo-quen-tai-bai-tam-giu-o-ha-noi-1640536.ldo",
+          "title": "Lao Động (14 January 2026): vehicles held for violations in Hanoi are taken to holding yards designated by the authorities, the yard on Lê Quang Đạo street and why many held motorbikes are left unclaimed",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H04",
+      "subcluster": "ss-incidents",
+      "slug": "betonamu-tometa-baiku-kieta-keisatsu-ido-hokan-basho-tonan",
+      "primary_query": "ハノイで停めたバイクがなくなっていたが警察に移動されたのか盗まれたのかどう確かめるか",
+      "secondary_queries": [
+        "ベトナムの交通警察は違法駐車のバイクをレッカー移動できるか",
+        "ベトナムで警察が違法駐車のバイクを移動した場合の費用は誰が払うか",
+        "自分のバイクがハノイの警察の保管場所に運ばれたかどう調べるか",
+        "ベトナムの警察の通知はレンタルバイクの登録所有者に送られるか",
+        "いなくなったバイクを保管場所で探さず盗難として届け出るのはいつか"
+      ],
+      "entities": [
+        "道路交通秩序安全法第69条",
+        "政令168/2024/NĐ-CP第48条",
+        "公安省通達73/2024/TT-BCA第17条",
+        "ハノイ交通警察局",
+        "車両の保管場所"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "停めた場所に戻って空きスペースを見た旅行者は、警察に移動または保管されたバイクと盗まれたバイクを見分け、通知を誰が受け取り、費用を誰が払い、盗難届の前にまずどこへ問い合わせるかを知る必要があります。",
+      "content_angle": "政府の文書ポータルにある統合文書55/VBHN-VPQHの2024年道路交通秩序安全法第69条（運転者や所有者が不在または従わない場合、交通警察は規則に反して停車または駐車し交通を妨げる車両を移動でき、業者に依頼でき、費用は運転者や所有者が負担し、車両の安全を保たねばならない）、政令168/2024/NĐ-CP第48条第4項と統合文書19/VBHN-BCAの公安省通達73/2024/TT-BCA第17条第2項（保管された車両は保管場所へ運ばれ、証人またはカメラで事案を記録し、違反者に出頭を求める通知を車両の所有者に送る）、および行政違反処理法第125条（調書、24時間以内の決定、期限）に基づきます。ハノイの状況は、旧市街の取り締まりを現場の調書とカメラによる罰金で伝えたDân trí（2026年10月19日）と、保管場所を扱ったLao Động（2026年1月14日）です。ハノイのレッカー移動や車輪ロックに関する公式の情報は見つからなかったため、執筆者はそのどちらも日常的な措置としては扱わず、車両の押収と盗難届の各記事とは区別します。",
+      "working_title": "ベトナムで停めたバイクが消えたとき：警察に移動された、保管場所にある、それとも盗難か",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 55/VBHN-VPQH, March 2026): Law 36/2024/QH15 on Road Traffic Order and Safety, Article 69 on traffic police moving a vehicle stopped or parked in breach of the rules, hiring a firm to do it, who pays and keeping the vehicle safe",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles, taking a held vehicle to the holding place and who bears the moving and substitute-transport costs",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding a vehicle when the driver is absent, the record with a witness or camera and the notice sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on holding vehicles, the record, the holding decision within 24 hours, safekeeping and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/loat-tai-xe-dung-do-xe-sai-quy-dinh-tren-pho-co-ha-noi-bi-csgt-xu-phat-20261019130911989.htm",
+          "title": "Dân trí (19 October 2026): Hanoi Traffic Police Team No. 1 and Hoàn Kiếm ward police patrol the Old Quarter against wrongly stopped and parked vehicles, using on-the-spot records, camera-based fines and pledges from parking operators",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/hang-van-xe-vi-pham-bi-bo-quen-tai-bai-tam-giu-o-ha-noi-1640536.ldo",
+          "title": "Lao Động (14 January 2026): vehicles held for violations in Hanoi are taken to holding yards designated by the authorities, the yard on Lê Quang Đạo street and why many held motorbikes are left unclaimed",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}

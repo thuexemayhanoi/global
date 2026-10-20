@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T20:49:04.954Z",
+  "updated_at": "2026-10-20T20:49:22.103Z",
   "base_main_sha": "5160debc109578bd2bfc6a9313e10412c24482a7",
-  "last_commit_sha": "c0997c31af6febff24c0de8509dca3e9a34b7210",
+  "last_commit_sha": "9085aa184feaa183a27363f0b8cef538cde722c5",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1640,
-    "qa_pass": 1640,
+    "researched": 1650,
+    "qa_pass": 1650,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1630,
+    "pushed": 1640,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 165,
-      "de": 165,
-      "fr": 165,
-      "es": 165,
-      "nl": 165,
-      "pt": 165,
-      "zh": 165,
-      "ko": 165,
-      "ja": 165,
-      "en": 155
+      "vi": 166,
+      "de": 166,
+      "fr": 166,
+      "es": 166,
+      "nl": 166,
+      "pt": 166,
+      "zh": 166,
+      "ko": 166,
+      "ja": 166,
+      "en": 156
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 680,
+      "traffic-law-safety": 690,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 164,
-    "file": "factory/topic-research/batches/claude-20261018b-0164.json",
-    "sha256": "247db68258576a67dff8b9b5a547854ca0cd6c54271627e11cba636dba1c4f0c",
+    "seq": 165,
+    "file": "factory/topic-research/batches/claude-20261018b-0165.json",
+    "sha256": "7cdf8795d3ef24910338a397eed39000d33282dc8d2a08601262b85116e5c843",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -18152,8 +18152,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0164.json",
       "sha256": "247db68258576a67dff8b9b5a547854ca0cd6c54271627e11cba636dba1c4f0c",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "9085aa184feaa183a27363f0b8cef538cde722c5",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -18257,11 +18257,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 165,
+      "file": "factory/topic-research/batches/claude-20261018b-0165.json",
+      "sha256": "7cdf8795d3ef24910338a397eed39000d33282dc8d2a08601262b85116e5c843",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:xe-may-mat-khoi-cho-do-bi-csgt-di-chuyen-tam-giu-o-bai-hay-bi-trom-viet-nam",
+          "locale": "vi",
+          "slug": "xe-may-mat-khoi-cho-do-bi-csgt-di-chuyen-tam-giu-o-bai-hay-bi-trom-viet-nam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::xe may dang do bien mat co phai bi csgt cau ve bai khong hay bi mat trom",
+          "ta_id": null
+        },
+        {
+          "ref": "en:motorbike-gone-from-where-parked-vietnam-moved-by-police-held-in-yard-or-stolen",
+          "locale": "en",
+          "slug": "motorbike-gone-from-where-parked-vietnam-moved-by-police-held-in-yard-or-stolen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::my motorbike is gone from where i parked it in hanoi was it towed by police or stolen",
+          "ta_id": null
+        },
+        {
+          "ref": "de:motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen",
+          "locale": "de",
+          "slug": "motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::mein motorrad ist in hanoi vom parkplatz verschwunden wurde es von der polizei abgeschleppt oder gestohlen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:moto-disparue-emplacement-vietnam-deplacee-par-la-police-en-fourriere-ou-volee",
+          "locale": "fr",
+          "slug": "moto-disparue-emplacement-vietnam-deplacee-par-la-police-en-fourriere-ou-volee",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::ma moto a disparu de son emplacement a hanoi a-t-elle ete enlevee par la police ou volee",
+          "ta_id": null
+        },
+        {
+          "ref": "es:moto-desaparecida-vietnam-movida-por-la-policia-retenida-o-robada",
+          "locale": "es",
+          "slug": "moto-desaparecida-vietnam-movida-por-la-policia-retenida-o-robada",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::mi moto ha desaparecido del sitio donde la aparque en hanoi ¿la retiro la policia o me la robaron?",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:motor-weg-van-parkeerplek-vietnam-verplaatst-door-politie-in-depot-of-gestolen",
+          "locale": "nl",
+          "slug": "motor-weg-van-parkeerplek-vietnam-verplaatst-door-politie-in-depot-of-gestolen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::mijn motor is in hanoi weg van de plek waar ik hem parkeerde is hij weggesleept door de politie of gestolen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-motuoche-tingfangchu-bujian-jiaojing-nuozou-kouya-haishi-beitou",
+          "locale": "zh",
+          "slug": "yuenan-motuoche-tingfangchu-bujian-jiaojing-nuozou-kouya-haishi-beitou",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::我的摩托车在河内停放的地方不见了,是被警察拖走了还是被偷了",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:mota-desapareceu-onde-estacionou-vietname-movida-pela-policia-retida-ou-roubada",
+          "locale": "pt",
+          "slug": "mota-desapareceu-onde-estacionou-vietname-movida-pela-policia-retida-ou-roubada",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::a minha mota desapareceu do sitio onde a estacionei em hanoi foi rebocada pela policia ou roubada",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-juchahan-otobai-sarajyeosseul-ttae-gyeongchal-ideong-bogwanso-doinan",
+          "locale": "ko",
+          "slug": "beteunam-juchahan-otobai-sarajyeosseul-ttae-gyeongchal-ideong-bogwanso-doinan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::하노이에서 주차한 오토바이가 사라졌는데 경찰이 견인한 건지 도난인지 어떻게 알 수 있나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-tometa-baiku-kieta-keisatsu-ido-hokan-basho-tonan",
+          "locale": "ja",
+          "slug": "betonamu-tometa-baiku-kieta-keisatsu-ido-hokan-basho-tonan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ハノイて停めたハイクかなくなっていたか警察に移動されたのか盗まれたのかとう確かめるか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 165,
-    "file": "factory/topic-research/batches/claude-20261018b-0165.json",
+    "seq": 166,
+    "file": "factory/topic-research/batches/claude-20261018b-0166.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -18274,13 +18385,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T19:44:14.428Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 140,
-      "topics": 10,
-      "sha256": "010d744c4c324868f0c4cbaed315c7d7f8582956e0544ee2428bc4baa7b5ab53"
-    },
     {
       "at": "2026-10-20T19:46:58.524Z",
       "event": "BATCH_COMMITTED",
@@ -18448,6 +18552,13 @@
       "seq": 164,
       "topics": 10,
       "sha256": "247db68258576a67dff8b9b5a547854ca0cd6c54271627e11cba636dba1c4f0c"
+    },
+    {
+      "at": "2026-10-20T20:49:22.103Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 165,
+      "topics": 10,
+      "sha256": "7cdf8795d3ef24910338a397eed39000d33282dc8d2a08601262b85116e5c843"
     }
   ]
 }
