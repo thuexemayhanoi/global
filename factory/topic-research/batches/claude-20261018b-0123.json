@@ -1,0 +1,452 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H03",
+      "subcluster": "dc-contract",
+      "slug": "kiem-tra-cua-hang-cho-thue-xe-may-co-dang-ky-kinh-doanh-khong",
+      "primary_query": "cách kiểm tra cửa hàng cho thuê xe máy có đăng ký kinh doanh hay không",
+      "secondary_queries": [
+        "tra cứu doanh nghiệp trên cổng thông tin quốc gia về đăng ký doanh nghiệp",
+        "tra cứu hộ kinh doanh theo mã số thuế hoặc tên",
+        "cho thuê xe máy không đăng ký kinh doanh có bị coi là vi phạm không",
+        "tra cứu mã số thuế người nộp thuế trên trang của Cục Thuế",
+        "làm sao biết một cửa hàng cho thuê xe máy ở Hà Nội có thật và đang hoạt động"
+      ],
+      "entities": [
+        "Cổng thông tin quốc gia về đăng ký doanh nghiệp",
+        "Nghị định 168/2025/NĐ-CP",
+        "hộ kinh doanh",
+        "mã số thuế",
+        "Cục Thuế"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Khách thuê xe máy tìm thấy cửa hàng trên bản đồ hay trang mạng xã hội và muốn có chứng cứ rằng đó là một đơn vị kinh doanh hợp pháp trước khi đưa bản sao hộ chiếu và tiền cọc, nhưng chưa biết Việt Nam công khai thông tin đăng ký doanh nghiệp và hộ kinh doanh qua các trang tra cứu chính thức, miễn phí.",
+      "content_angle": "Dựa trên Nghị định 168/2025/NĐ-CP (toàn văn trên cổng thông tin xây dựng chính sách của Chính phủ, có hiệu lực từ 1/7/2025; sau đó có thể đã được sửa đổi nên người viết phải đối chiếu văn bản hiện hành): Điều 74 cho phép xem công khai, miễn phí trên Cổng thông tin quốc gia về đăng ký doanh nghiệp tên, mã số, địa chỉ trụ sở chính, ngành nghề, người đại diện theo pháp luật và tình trạng pháp lý của doanh nghiệp; Điều 116 cho phép tra cứu hộ kinh doanh với tên, mã số hộ kinh doanh, địa chỉ, ngành nghề và họ tên chủ hộ; Điều 82 khoản 3 cho biết hộ làm dịch vụ có thu nhập thấp không bắt buộc đăng ký trừ ngành nghề có điều kiện, nên một cửa hàng nhỏ chưa đăng ký không đương nhiên bị coi là vi phạm và bài viết không được kết tội; mã số hộ kinh doanh chính là mã số thuế. Hướng dẫn những việc khách có thể làm: nhập tên hoặc mã số thuế (ghi trên hóa đơn, biển hiệu hoặc trang của cửa hàng) vào công cụ tìm kiếm của cổng, đọc tình trạng pháp lý (đang hoạt động, tạm ngừng, không hoạt động tại địa chỉ đã đăng ký), so địa chỉ và ngành nghề với lời cửa hàng nói, rồi dùng trang tra cứu người nộp thuế của Cục Thuế (mã số thuế, tên, địa chỉ hoặc số định danh người đại diện kèm mã xác nhận) làm bước kiểm tra thứ hai. Nói rõ việc tra cứu không chứng minh điều gì về bảo hiểm, quyền sở hữu xe, chất lượng hay sự trung thực; cửa hàng có thể kinh doanh dưới thương hiệu khác tên đăng ký; giao diện cổng thay đổi nên chỉ mô tả công cụ ở mức chung và ghi ngày từng trang. Gắn với quy trình thuê xe (hỏi tên đơn vị và mã số thuế trước khi trả tiền, giữ biên nhận) mà không khẳng định cửa hàng chưa đăng ký là trái luật hay cửa hàng đã đăng ký thì an toàn.",
+      "working_title": "Cửa hàng thuê xe máy có đăng ký kinh doanh không: cách tra cứu ở cổng đăng ký doanh nghiệp và Cục Thuế",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2025-nd-cp-ve-dang-ky-doanh-nghiep-119250702175708554.htm",
+          "title": "Government policy portal (26 August 2025): full text of Decree 168/2025/NĐ-CP on business registration, in force 1 July 2025, Art. 74 (public free lookup of enterprises: name, code, head-office address, business lines, legal representative, legal status), Art. 82(3) (low-income service households need not register unless the business line is conditional), Art. 116 (free lookup of household businesses: name, code, address, business lines, owner's name), Art. 124 (effect)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dangkykinhdoanh.gov.vn/vn/Pages/chitiettin.aspx?IDNews=3885&groupID=611&tieude=cong-cu-tim-kiem-thong-tin-tren-cong-thong-tin-dang-ky-doanh-nghiep-quoc-gia.aspx",
+          "title": "National Business Registration Portal help page (dated 16 October 2026): instant search by enterprise name, abbreviated name, foreign-language name, enterprise code, and advanced filters by type, legal representative, address, province and ward; results show legal status and head-office address",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://tracuunnt.gdt.gov.vn/",
+          "title": "General Department of Taxation, Ministry of Finance: taxpayer information lookup by tax code, taxpayer name, business address or the representative's identity number, with a verification code",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H03",
+      "subcluster": "dc-contract",
+      "slug": "check-motorbike-rental-shop-registered-business-vietnam-official-lookups",
+      "primary_query": "how to check if a motorbike rental shop in Vietnam is a registered business",
+      "secondary_queries": [
+        "how to look up a company on the Vietnam national business registration portal",
+        "can I search a household business in Vietnam by tax code or name",
+        "is a motorbike rental shop without a business registration illegal in Vietnam",
+        "how to check a Vietnamese tax code online",
+        "how to tell if a scooter rental company in Hanoi is real and still operating"
+      ],
+      "entities": [
+        "National Business Registration Portal",
+        "Decree 168/2025/NĐ-CP",
+        "household business",
+        "tax code",
+        "General Department of Taxation"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Visitors who find a rental shop on a map app or a social page want some proof that it exists as a legal business before they hand over a passport copy and a deposit, and they do not know that Vietnam publishes company and household-business registrations in official, free lookups.",
+      "content_angle": "Built on Decree 168/2025/NĐ-CP (full text on the government policy portal, in force 1 July 2025; it may have been amended since, so the Writer must check the current text): Art 74 makes an enterprise's name, code, head-office address, business lines, legal representative and legal status publicly and freely viewable on the National Business Registration Portal; Art 116 does the same for household businesses (name, household-business code, address, business lines, owner's name); Art 82(3) says low-income service households need not register unless the line of business is conditional, so a small shop without a registration is not automatically unlawful and the article must not accuse anyone; the household-business code is the tax code. Walk through what a visitor can do: type the name or tax code (printed on a receipt, a sign or the shop's page) into the portal's search tool, read the legal status (active, suspended, not operating at the registered address), compare the address and business lines with what the shop says, and use the General Department of Taxation's taxpayer lookup (tax code, name, address or the representative's identity number, with a verification code) as a second check. Say what a lookup does not prove: it shows nothing about insurance, who owns the bike, quality or honesty, a shop may trade under a brand that differs from its registered name, and portal screens change, so describe the tools in general terms and date every page. Tie it to the rental flow (ask for the business name and tax code before paying, keep a receipt) without claiming that an unregistered shop is illegal or that a registered one is safe.",
+      "working_title": "Is a Motorbike Rental Shop in Vietnam a Registered Business? How to Check the Official Company and Tax Lookups",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2025-nd-cp-ve-dang-ky-doanh-nghiep-119250702175708554.htm",
+          "title": "Government policy portal (26 August 2025): full text of Decree 168/2025/NĐ-CP on business registration, in force 1 July 2025, Art. 74 (public free lookup of enterprises: name, code, head-office address, business lines, legal representative, legal status), Art. 82(3) (low-income service households need not register unless the business line is conditional), Art. 116 (free lookup of household businesses: name, code, address, business lines, owner's name), Art. 124 (effect)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dangkykinhdoanh.gov.vn/vn/Pages/chitiettin.aspx?IDNews=3885&groupID=611&tieude=cong-cu-tim-kiem-thong-tin-tren-cong-thong-tin-dang-ky-doanh-nghiep-quoc-gia.aspx",
+          "title": "National Business Registration Portal help page (dated 16 October 2026): instant search by enterprise name, abbreviated name, foreign-language name, enterprise code, and advanced filters by type, legal representative, address, province and ward; results show legal status and head-office address",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://tracuunnt.gdt.gov.vn/",
+          "title": "General Department of Taxation, Ministry of Finance: taxpayer information lookup by tax code, taxpayer name, business address or the representative's identity number, with a verification code",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H03",
+      "subcluster": "dc-contract",
+      "slug": "rollerverleih-vietnam-eingetragenes-unternehmen-pruefen-offizielle-register",
+      "primary_query": "wie prüfe ich ob ein Rollerverleih in Vietnam ein eingetragenes Unternehmen ist",
+      "secondary_queries": [
+        "Unternehmen im nationalen Registerportal von Vietnam nachschlagen",
+        "Haushaltsbetrieb in Vietnam über Steuernummer oder Namen suchen",
+        "ist ein Rollerverleih in Vietnam ohne Gewerbeanmeldung illegal",
+        "vietnamesische Steuernummer online prüfen",
+        "woran erkenne ich ob ein Rollerverleih in Hanoi echt ist und noch arbeitet"
+      ],
+      "entities": [
+        "Nationales Portal für Unternehmensregistrierung",
+        "Regierungsdekret 168/2025/NĐ-CP",
+        "Haushaltsbetrieb (hộ kinh doanh)",
+        "Steuernummer",
+        "Generaldirektion Steuern Vietnam"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Reisende, die einen Rollerverleih über eine Karten-App oder eine Social-Media-Seite finden, wollen vor der Herausgabe einer Passkopie und einer Kaution wissen, ob es ein rechtmäßig eingetragener Betrieb ist, und kennen die kostenlosen amtlichen Abfragen für Unternehmen und Haushaltsbetriebe in Vietnam nicht.",
+      "content_angle": "Gestützt auf das Regierungsdekret 168/2025/NĐ-CP (Volltext auf dem Politikportal der Regierung, in Kraft seit dem 1. Juli 2025; inzwischen kann es geändert worden sein, daher die aktuelle Fassung prüfen): Art. 74 macht Name, Nummer, Sitzadresse, Geschäftsfelder, gesetzlichen Vertreter und Rechtsstatus eines Unternehmens im Nationalen Portal für Unternehmensregistrierung öffentlich und kostenlos einsehbar; Art. 116 gilt entsprechend für Haushaltsbetriebe (Name, Nummer, Adresse, Geschäftsfelder, Name des Inhabers); nach Art. 82 Abs. 3 müssen Haushalte mit geringem Einkommen im Dienstleistungsbereich sich nicht eintragen, außer bei genehmigungspflichtigen Geschäftsfeldern, ein kleiner Verleih ohne Eintragung ist also nicht automatisch rechtswidrig und der Text darf niemanden beschuldigen; die Nummer des Haushaltsbetriebs ist die Steuernummer. Erklären, was Reisende tun können: Namen oder Steuernummer (auf Quittung, Schild oder Seite des Verleihs) in die Suche des Portals eingeben, den Rechtsstatus lesen (aktiv, ausgesetzt, nicht mehr an der eingetragenen Adresse tätig), Adresse und Geschäftsfelder mit den Angaben des Verleihs vergleichen und die Steuerzahler-Abfrage der Generaldirektion Steuern (Steuernummer, Name, Adresse oder Ausweisnummer des Vertreters mit Prüfcode) als zweite Kontrolle nutzen. Klar sagen, was eine Abfrage nicht belegt: nichts über Versicherung, Eigentum am Roller, Qualität oder Ehrlichkeit, ein Verleih kann unter einer Marke auftreten, die vom eingetragenen Namen abweicht, und Portalmasken ändern sich, daher die Werkzeuge allgemein beschreiben und jede Seite datieren. An den Mietablauf anknüpfen (vor dem Bezahlen Firmennamen und Steuernummer erfragen, Quittung aufbewahren), ohne zu behaupten, ein nicht eingetragener Verleih sei illegal oder ein eingetragener sicher.",
+      "working_title": "Rollerverleih in Vietnam: eingetragenes Unternehmen? So prüfen Sie Unternehmensportal und Steuerabfrage",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2025-nd-cp-ve-dang-ky-doanh-nghiep-119250702175708554.htm",
+          "title": "Government policy portal (26 August 2025): full text of Decree 168/2025/NĐ-CP on business registration, in force 1 July 2025, Art. 74 (public free lookup of enterprises: name, code, head-office address, business lines, legal representative, legal status), Art. 82(3) (low-income service households need not register unless the business line is conditional), Art. 116 (free lookup of household businesses: name, code, address, business lines, owner's name), Art. 124 (effect)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dangkykinhdoanh.gov.vn/vn/Pages/chitiettin.aspx?IDNews=3885&groupID=611&tieude=cong-cu-tim-kiem-thong-tin-tren-cong-thong-tin-dang-ky-doanh-nghiep-quoc-gia.aspx",
+          "title": "National Business Registration Portal help page (dated 16 October 2026): instant search by enterprise name, abbreviated name, foreign-language name, enterprise code, and advanced filters by type, legal representative, address, province and ward; results show legal status and head-office address",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://tracuunnt.gdt.gov.vn/",
+          "title": "General Department of Taxation, Ministry of Finance: taxpayer information lookup by tax code, taxpayer name, business address or the representative's identity number, with a verification code",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H03",
+      "subcluster": "dc-contract",
+      "slug": "loueur-scooter-vietnam-entreprise-enregistree-verifier-registres-officiels",
+      "primary_query": "comment vérifier qu'un loueur de scooters au Vietnam est une entreprise enregistrée",
+      "secondary_queries": [
+        "chercher une entreprise sur le portail national d'enregistrement des entreprises du Vietnam",
+        "retrouver une entreprise familiale au Vietnam par son numéro fiscal ou son nom",
+        "un loueur de scooters sans enregistrement est-il illégal au Vietnam",
+        "vérifier un numéro fiscal vietnamien en ligne",
+        "comment savoir si un loueur de scooters à Hanoï existe vraiment et travaille encore"
+      ],
+      "entities": [
+        "portail national d'enregistrement des entreprises",
+        "décret 168/2025/NĐ-CP",
+        "entreprise familiale (hộ kinh doanh)",
+        "numéro fiscal",
+        "Direction générale des impôts du Vietnam"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Les voyageurs qui trouvent un loueur sur une application de cartes ou une page de réseau social veulent une preuve qu'il s'agit d'une activité légale avant de laisser une copie de passeport et une caution, et ignorent que le Vietnam publie gratuitement les enregistrements d'entreprises et d'entreprises familiales dans des recherches officielles.",
+      "content_angle": "Fondé sur le décret 168/2025/NĐ-CP (texte intégral sur le portail des politiques du gouvernement, en vigueur depuis le 1er juillet 2025 ; il a pu être modifié depuis, d'où la vérification du texte actuel) : l'art. 74 rend publics et gratuits sur le portail national d'enregistrement des entreprises le nom, le numéro, l'adresse du siège, les activités, le représentant légal et le statut juridique d'une entreprise ; l'art. 116 fait de même pour les entreprises familiales (nom, numéro, adresse, activités, nom du chef de ménage) ; l'art. 82, al. 3 dispense d'enregistrement les ménages à faible revenu qui rendent des services, sauf pour les activités soumises à conditions, de sorte qu'un petit loueur non enregistré n'est pas automatiquement hors la loi et que l'article ne doit accuser personne ; le numéro de l'entreprise familiale est le numéro fiscal. Expliquer ce que le voyageur peut faire : saisir le nom ou le numéro fiscal (sur un reçu, une enseigne ou la page du loueur) dans l'outil de recherche du portail, lire le statut juridique (actif, suspendu, n'exerçant plus à l'adresse enregistrée), comparer l'adresse et les activités avec ce que dit le loueur, puis utiliser la recherche de contribuable de la Direction générale des impôts (numéro fiscal, nom, adresse ou numéro d'identité du représentant, avec un code de vérification) comme second contrôle. Dire ce qu'une recherche ne prouve pas : rien sur l'assurance, la propriété du scooter, la qualité ou l'honnêteté, un loueur peut exercer sous une enseigne différente du nom enregistré, et les écrans du portail changent, d'où des descriptions générales et des pages datées. Relier au parcours de location (demander la raison sociale et le numéro fiscal avant de payer, garder le reçu) sans affirmer qu'un loueur non enregistré est illégal ni qu'un loueur enregistré est sûr.",
+      "working_title": "Loueur de scooters au Vietnam : entreprise enregistrée ? Vérifier le portail officiel et la recherche fiscale",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2025-nd-cp-ve-dang-ky-doanh-nghiep-119250702175708554.htm",
+          "title": "Government policy portal (26 August 2025): full text of Decree 168/2025/NĐ-CP on business registration, in force 1 July 2025, Art. 74 (public free lookup of enterprises: name, code, head-office address, business lines, legal representative, legal status), Art. 82(3) (low-income service households need not register unless the business line is conditional), Art. 116 (free lookup of household businesses: name, code, address, business lines, owner's name), Art. 124 (effect)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dangkykinhdoanh.gov.vn/vn/Pages/chitiettin.aspx?IDNews=3885&groupID=611&tieude=cong-cu-tim-kiem-thong-tin-tren-cong-thong-tin-dang-ky-doanh-nghiep-quoc-gia.aspx",
+          "title": "National Business Registration Portal help page (dated 16 October 2026): instant search by enterprise name, abbreviated name, foreign-language name, enterprise code, and advanced filters by type, legal representative, address, province and ward; results show legal status and head-office address",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://tracuunnt.gdt.gov.vn/",
+          "title": "General Department of Taxation, Ministry of Finance: taxpayer information lookup by tax code, taxpayer name, business address or the representative's identity number, with a verification code",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H03",
+      "subcluster": "dc-contract",
+      "slug": "alquiler-motos-vietnam-empresa-registrada-comprobar-registros-oficiales",
+      "primary_query": "cómo comprobar si una tienda de alquiler de motos en Vietnam es una empresa registrada",
+      "secondary_queries": [
+        "buscar una empresa en el portal nacional de registro de empresas de Vietnam",
+        "buscar un negocio familiar en Vietnam por código fiscal o nombre",
+        "es ilegal una tienda de alquiler de motos en Vietnam sin registro mercantil",
+        "comprobar un código fiscal vietnamita por internet",
+        "cómo saber si una empresa de alquiler de scooters en Hanói existe de verdad y sigue activa"
+      ],
+      "entities": [
+        "portal nacional de registro de empresas",
+        "decreto 168/2025/NĐ-CP",
+        "negocio familiar (hộ kinh doanh)",
+        "código fiscal",
+        "Dirección General de Impuestos de Vietnam"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Los viajeros que encuentran una tienda de alquiler en una aplicación de mapas o en una página de redes sociales quieren una prueba de que es un negocio legal antes de entregar una copia del pasaporte y una fianza, y no saben que Vietnam publica de forma gratuita los registros de empresas y de negocios familiares en consultas oficiales.",
+      "content_angle": "Basado en el decreto 168/2025/NĐ-CP (texto íntegro en el portal de políticas del Gobierno, en vigor desde el 1 de julio de 2025; puede haberse modificado después, así que hay que revisar el texto vigente): el art. 74 hace públicos y gratuitos en el portal nacional de registro de empresas el nombre, el código, la dirección de la sede, las actividades, el representante legal y la situación jurídica de una empresa; el art. 116 hace lo mismo con los negocios familiares (nombre, código, dirección, actividades, nombre del titular); el art. 82, apartado 3, exime de registrarse a los hogares de bajos ingresos que prestan servicios, salvo en actividades condicionadas, de modo que una tienda pequeña sin registro no es automáticamente ilegal y el artículo no debe acusar a nadie; el código del negocio familiar es el código fiscal. Explicar qué puede hacer el viajero: escribir el nombre o el código fiscal (en un recibo, un cartel o la página de la tienda) en la herramienta de búsqueda del portal, leer la situación jurídica (activa, suspendida, sin actividad en la dirección registrada), comparar la dirección y las actividades con lo que dice la tienda y usar la consulta de contribuyentes de la Dirección General de Impuestos (código fiscal, nombre, dirección o número de identidad del representante, con un código de verificación) como segunda comprobación. Decir lo que una consulta no demuestra: nada sobre el seguro, la propiedad de la moto, la calidad o la honradez, una tienda puede operar con una marca distinta del nombre registrado y las pantallas del portal cambian, por lo que se describen las herramientas en términos generales y se fecha cada página. Vincularlo con el proceso de alquiler (pedir el nombre de la empresa y el código fiscal antes de pagar, guardar el recibo) sin afirmar que una tienda sin registrar sea ilegal ni que una registrada sea segura.",
+      "working_title": "Alquiler de motos en Vietnam: ¿empresa registrada? Cómo comprobarlo en el portal oficial y la consulta fiscal",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2025-nd-cp-ve-dang-ky-doanh-nghiep-119250702175708554.htm",
+          "title": "Government policy portal (26 August 2025): full text of Decree 168/2025/NĐ-CP on business registration, in force 1 July 2025, Art. 74 (public free lookup of enterprises: name, code, head-office address, business lines, legal representative, legal status), Art. 82(3) (low-income service households need not register unless the business line is conditional), Art. 116 (free lookup of household businesses: name, code, address, business lines, owner's name), Art. 124 (effect)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dangkykinhdoanh.gov.vn/vn/Pages/chitiettin.aspx?IDNews=3885&groupID=611&tieude=cong-cu-tim-kiem-thong-tin-tren-cong-thong-tin-dang-ky-doanh-nghiep-quoc-gia.aspx",
+          "title": "National Business Registration Portal help page (dated 16 October 2026): instant search by enterprise name, abbreviated name, foreign-language name, enterprise code, and advanced filters by type, legal representative, address, province and ward; results show legal status and head-office address",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://tracuunnt.gdt.gov.vn/",
+          "title": "General Department of Taxation, Ministry of Finance: taxpayer information lookup by tax code, taxpayer name, business address or the representative's identity number, with a verification code",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H03",
+      "subcluster": "dc-contract",
+      "slug": "scooterverhuur-vietnam-geregistreerd-bedrijf-controleren-officiele-registers",
+      "primary_query": "hoe controleer ik of een scooterverhuurder in Vietnam een geregistreerd bedrijf is",
+      "secondary_queries": [
+        "een bedrijf opzoeken in het nationale portaal voor bedrijfsregistratie van Vietnam",
+        "een huishoudbedrijf in Vietnam zoeken met belastingnummer of naam",
+        "is een scooterverhuurder in Vietnam zonder bedrijfsregistratie illegaal",
+        "een Vietnamees belastingnummer online controleren",
+        "hoe weet ik of een scooterverhuurder in Hanoi echt bestaat en nog actief is"
+      ],
+      "entities": [
+        "nationaal portaal voor bedrijfsregistratie",
+        "decreet 168/2025/NĐ-CP",
+        "huishoudbedrijf (hộ kinh doanh)",
+        "belastingnummer",
+        "Algemene Belastingdienst van Vietnam"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Reizigers die een verhuurder vinden via een kaartenapp of een social-mediapagina willen bewijs dat het een legaal bedrijf is voordat ze een paspoortkopie en een borg afgeven, en weten niet dat Vietnam registraties van bedrijven en huishoudbedrijven in officiële, gratis opzoekingen publiceert.",
+      "content_angle": "Gebaseerd op decreet 168/2025/NĐ-CP (volledige tekst op het beleidsportaal van de regering, van kracht sinds 1 juli 2025; het kan sindsdien gewijzigd zijn, dus de geldende tekst controleren): art. 74 maakt naam, nummer, adres van de zetel, activiteiten, wettelijk vertegenwoordiger en juridische status van een onderneming openbaar en gratis inzichtelijk op het nationale portaal voor bedrijfsregistratie; art. 116 doet hetzelfde voor huishoudbedrijven (naam, nummer, adres, activiteiten, naam van de eigenaar); art. 82 lid 3 stelt huishoudens met een laag inkomen die diensten verlenen vrij van registratie, behalve bij vergunningsplichtige activiteiten, dus een kleine verhuurder zonder registratie is niet automatisch onwettig en de tekst mag niemand beschuldigen; het nummer van het huishoudbedrijf is het belastingnummer. Uitleggen wat een reiziger kan doen: de naam of het belastingnummer (op een bon, een bord of de pagina van de verhuurder) invoeren in de zoekfunctie van het portaal, de juridische status lezen (actief, opgeschort, niet meer actief op het geregistreerde adres), adres en activiteiten vergelijken met wat de verhuurder zegt en de belastingplichtigenzoekfunctie van de Algemene Belastingdienst (belastingnummer, naam, adres of identiteitsnummer van de vertegenwoordiger, met verificatiecode) als tweede controle gebruiken. Duidelijk zeggen wat een opzoeking niet bewijst: niets over verzekering, eigendom van de scooter, kwaliteit of eerlijkheid, een verhuurder kan onder een merk werken dat afwijkt van de geregistreerde naam en portaalschermen veranderen, dus de hulpmiddelen algemeen beschrijven en elke pagina dateren. Koppelen aan het huurproces (vóór betaling om de bedrijfsnaam en het belastingnummer vragen, de bon bewaren) zonder te beweren dat een niet-geregistreerde verhuurder illegaal is of een geregistreerde veilig.",
+      "working_title": "Scooterverhuur in Vietnam: geregistreerd bedrijf? Zo controleer je het officiële portaal en de belastingcheck",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2025-nd-cp-ve-dang-ky-doanh-nghiep-119250702175708554.htm",
+          "title": "Government policy portal (26 August 2025): full text of Decree 168/2025/NĐ-CP on business registration, in force 1 July 2025, Art. 74 (public free lookup of enterprises: name, code, head-office address, business lines, legal representative, legal status), Art. 82(3) (low-income service households need not register unless the business line is conditional), Art. 116 (free lookup of household businesses: name, code, address, business lines, owner's name), Art. 124 (effect)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dangkykinhdoanh.gov.vn/vn/Pages/chitiettin.aspx?IDNews=3885&groupID=611&tieude=cong-cu-tim-kiem-thong-tin-tren-cong-thong-tin-dang-ky-doanh-nghiep-quoc-gia.aspx",
+          "title": "National Business Registration Portal help page (dated 16 October 2026): instant search by enterprise name, abbreviated name, foreign-language name, enterprise code, and advanced filters by type, legal representative, address, province and ward; results show legal status and head-office address",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://tracuunnt.gdt.gov.vn/",
+          "title": "General Department of Taxation, Ministry of Finance: taxpayer information lookup by tax code, taxpayer name, business address or the representative's identity number, with a verification code",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H03",
+      "subcluster": "dc-contract",
+      "slug": "yuenan-zu-motuoche-dian-shi-fou-zhuce-qiye-guanfang-chaxun",
+      "primary_query": "怎么查越南租摩托车的店铺是不是正规注册的企业",
+      "secondary_queries": [
+        "越南国家企业登记门户网站怎么查公司",
+        "越南家庭商户(hộ kinh doanh)可以用税号或名字查吗",
+        "越南租摩托车的小店没有注册算违法吗",
+        "越南税号怎么在网上查询",
+        "怎么判断河内的租车店是真实存在而且还在营业"
+      ],
+      "entities": [
+        "国家企业登记信息门户",
+        "第168/2025/NĐ-CP号议定",
+        "家庭商户(hộ kinh doanh)",
+        "税号",
+        "越南税务总局"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "游客在地图应用或社交媒体上找到租车店，想在交出护照复印件和押金之前确认它是合法经营的主体，但不知道越南其实通过官方免费查询系统公开企业和家庭商户的登记信息。",
+      "content_angle": "依据第168/2025/NĐ-CP号议定（全文见政府政策门户网站，自2025年7月1日起施行；之后可能已被修订，撰写时必须核对现行文本）：第74条规定企业的名称、编码、总部地址、经营行业、法定代表人和法律状态在国家企业登记信息门户上公开免费可查；第116条对家庭商户作同样规定（名称、编码、地址、经营行业、户主姓名）；第82条第3款规定从事服务业的低收入家庭无需登记，有条件经营的行业除外，所以没有登记的小店不一定违法，文章不能给任何人定罪；家庭商户的编码就是税号。说明游客能做什么：把名称或税号（印在收据、招牌或店铺主页上）输入门户的搜索工具，读取法律状态（正常经营、暂停、已不在登记地址经营），把地址和经营行业与店家的说法对照，再用税务总局的纳税人查询（税号、名称、地址或代表人证件号码并输入验证码）做第二次核对。说明查询证明不了什么：看不出保险、车辆归属、服务质量或诚信，店铺可能使用与登记名称不同的品牌，门户界面也会变化，所以只做一般性描述并标明每个页面的日期。再与租车流程衔接（付款前问清单位名称和税号，保留收据），但不断言没注册的店就是违法，也不断言注册了的店就安全。",
+      "working_title": "越南租摩托车的店铺是不是注册企业：怎样在官方企业门户和税务查询里核对",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2025-nd-cp-ve-dang-ky-doanh-nghiep-119250702175708554.htm",
+          "title": "Government policy portal (26 August 2025): full text of Decree 168/2025/NĐ-CP on business registration, in force 1 July 2025, Art. 74 (public free lookup of enterprises: name, code, head-office address, business lines, legal representative, legal status), Art. 82(3) (low-income service households need not register unless the business line is conditional), Art. 116 (free lookup of household businesses: name, code, address, business lines, owner's name), Art. 124 (effect)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dangkykinhdoanh.gov.vn/vn/Pages/chitiettin.aspx?IDNews=3885&groupID=611&tieude=cong-cu-tim-kiem-thong-tin-tren-cong-thong-tin-dang-ky-doanh-nghiep-quoc-gia.aspx",
+          "title": "National Business Registration Portal help page (dated 16 October 2026): instant search by enterprise name, abbreviated name, foreign-language name, enterprise code, and advanced filters by type, legal representative, address, province and ward; results show legal status and head-office address",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://tracuunnt.gdt.gov.vn/",
+          "title": "General Department of Taxation, Ministry of Finance: taxpayer information lookup by tax code, taxpayer name, business address or the representative's identity number, with a verification code",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H03",
+      "subcluster": "dc-contract",
+      "slug": "aluguer-motas-vietname-empresa-registada-verificar-registos-oficiais",
+      "primary_query": "como verificar se uma loja de aluguer de motas no Vietname é uma empresa registada",
+      "secondary_queries": [
+        "procurar uma empresa no portal nacional de registo de empresas do Vietname",
+        "procurar um negócio familiar no Vietname pelo número fiscal ou pelo nome",
+        "é ilegal uma loja de aluguer de motas no Vietname sem registo comercial",
+        "verificar um número fiscal vietnamita na internet",
+        "como saber se uma empresa de aluguer de scooters em Hanói existe mesmo e continua a funcionar"
+      ],
+      "entities": [
+        "portal nacional de registo de empresas",
+        "decreto 168/2025/NĐ-CP",
+        "negócio familiar (hộ kinh doanh)",
+        "número fiscal",
+        "Direção-Geral dos Impostos do Vietname"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Os viajantes que encontram uma loja de aluguer numa aplicação de mapas ou numa página de rede social querem uma prova de que é um negócio legal antes de entregar uma cópia do passaporte e uma caução, e não sabem que o Vietname publica gratuitamente os registos de empresas e de negócios familiares em consultas oficiais.",
+      "content_angle": "Baseado no decreto 168/2025/NĐ-CP (texto integral no portal de políticas do Governo, em vigor desde 1 de julho de 2025; pode ter sido alterado depois, pelo que se deve confirmar o texto atual): o art. 74 torna públicos e gratuitos no portal nacional de registo de empresas o nome, o código, a morada da sede, as atividades, o representante legal e a situação jurídica de uma empresa; o art. 116 faz o mesmo para os negócios familiares (nome, código, morada, atividades, nome do titular); o art. 82, n.º 3, dispensa de registo os agregados de baixos rendimentos que prestam serviços, salvo em atividades condicionadas, pelo que uma loja pequena sem registo não é automaticamente ilegal e o artigo não deve acusar ninguém; o código do negócio familiar é o número fiscal. Explicar o que o viajante pode fazer: escrever o nome ou o número fiscal (num recibo, num letreiro ou na página da loja) na ferramenta de pesquisa do portal, ler a situação jurídica (ativa, suspensa, sem atividade na morada registada), comparar a morada e as atividades com o que a loja diz e usar a consulta de contribuintes da Direção-Geral dos Impostos (número fiscal, nome, morada ou número de identificação do representante, com um código de verificação) como segunda verificação. Dizer o que uma consulta não prova: nada sobre seguro, propriedade da mota, qualidade ou honestidade, uma loja pode trabalhar sob uma marca diferente do nome registado e os ecrãs do portal mudam, por isso as ferramentas são descritas em termos gerais e cada página é datada. Ligar ao processo de aluguer (pedir o nome da empresa e o número fiscal antes de pagar, guardar o recibo) sem afirmar que uma loja não registada é ilegal nem que uma registada é segura.",
+      "working_title": "Aluguer de motas no Vietname: é uma empresa registada? Como verificar o portal oficial e a consulta fiscal",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2025-nd-cp-ve-dang-ky-doanh-nghiep-119250702175708554.htm",
+          "title": "Government policy portal (26 August 2025): full text of Decree 168/2025/NĐ-CP on business registration, in force 1 July 2025, Art. 74 (public free lookup of enterprises: name, code, head-office address, business lines, legal representative, legal status), Art. 82(3) (low-income service households need not register unless the business line is conditional), Art. 116 (free lookup of household businesses: name, code, address, business lines, owner's name), Art. 124 (effect)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dangkykinhdoanh.gov.vn/vn/Pages/chitiettin.aspx?IDNews=3885&groupID=611&tieude=cong-cu-tim-kiem-thong-tin-tren-cong-thong-tin-dang-ky-doanh-nghiep-quoc-gia.aspx",
+          "title": "National Business Registration Portal help page (dated 16 October 2026): instant search by enterprise name, abbreviated name, foreign-language name, enterprise code, and advanced filters by type, legal representative, address, province and ward; results show legal status and head-office address",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://tracuunnt.gdt.gov.vn/",
+          "title": "General Department of Taxation, Ministry of Finance: taxpayer information lookup by tax code, taxpayer name, business address or the representative's identity number, with a verification code",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H03",
+      "subcluster": "dc-contract",
+      "slug": "beteunam-otobai-daeyeo-gage-sileop-deungrok-hwagin-gongsik-josoe",
+      "primary_query": "베트남 오토바이 대여점이 정식 등록된 사업체인지 확인하는 방법",
+      "secondary_queries": [
+        "베트남 국가 기업등록 포털에서 회사 조회하는 방법",
+        "베트남 가구 사업체(hộ kinh doanh)를 세금 번호나 이름으로 찾을 수 있나요",
+        "사업자 등록 없이 오토바이를 빌려주는 가게는 불법인가요",
+        "베트남 세금 번호를 온라인으로 확인하는 방법",
+        "하노이 오토바이 대여점이 실제로 있고 아직 영업 중인지 알아보는 방법"
+      ],
+      "entities": [
+        "국가 기업등록 정보 포털",
+        "정부령 168/2025/NĐ-CP",
+        "가구 사업체(hộ kinh doanh)",
+        "세금 번호",
+        "베트남 세무총국"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "지도 앱이나 SNS 페이지에서 대여점을 찾은 여행자는 여권 사본과 보증금을 내주기 전에 그곳이 합법적으로 운영되는 사업체인지 확인하고 싶어 하지만, 베트남이 기업과 가구 사업체의 등록 정보를 공식 무료 조회 서비스로 공개한다는 사실은 잘 모릅니다.",
+      "content_angle": "정부령 168/2025/NĐ-CP(정부 정책 포털에 전문 게시, 2025년 7월 1일 시행, 이후 개정되었을 수 있으므로 현행 문서를 확인해야 함)에 근거합니다. 제74조는 기업의 이름, 번호, 본사 주소, 사업 분야, 법정 대표자, 법적 상태를 국가 기업등록 포털에서 누구나 무료로 볼 수 있게 하고, 제116조는 가구 사업체(이름, 번호, 주소, 사업 분야, 가구주 이름)에도 같은 조회를 인정하며, 제82조 3항은 서비스업을 하는 저소득 가구는 조건부 업종이 아니면 등록하지 않아도 된다고 하므로 등록하지 않은 작은 가게가 곧바로 불법인 것은 아니고 글에서 누구도 단정적으로 비난하면 안 됩니다. 가구 사업체 번호가 곧 세금 번호입니다. 여행자가 할 수 있는 일을 단계별로 설명합니다. 영수증, 간판, 가게 페이지에 적힌 이름이나 세금 번호를 포털의 검색 도구에 입력하고, 법적 상태(영업 중, 일시 중지, 등록 주소에서 영업하지 않음)를 읽고, 주소와 사업 분야를 가게의 설명과 비교한 뒤, 세무총국의 납세자 조회(세금 번호, 이름, 주소 또는 대표자 신분증 번호와 확인 코드)를 두 번째 확인 수단으로 씁니다. 조회로 알 수 없는 것도 분명히 적습니다. 보험, 오토바이 소유권, 품질, 정직함은 알 수 없고, 가게가 등록 이름과 다른 브랜드로 영업할 수도 있으며, 포털 화면은 바뀌므로 도구를 일반적으로 설명하고 각 페이지의 날짜를 적어야 합니다. 대여 과정(결제 전에 사업체 이름과 세금 번호를 묻고 영수증을 보관)과 연결하되 미등록 가게가 불법이라거나 등록된 가게가 안전하다고 단정하지 않습니다.",
+      "working_title": "베트남 오토바이 대여점이 정식 등록된 사업체인지 확인하는 법: 공식 기업 포털과 세무 조회",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2025-nd-cp-ve-dang-ky-doanh-nghiep-119250702175708554.htm",
+          "title": "Government policy portal (26 August 2025): full text of Decree 168/2025/NĐ-CP on business registration, in force 1 July 2025, Art. 74 (public free lookup of enterprises: name, code, head-office address, business lines, legal representative, legal status), Art. 82(3) (low-income service households need not register unless the business line is conditional), Art. 116 (free lookup of household businesses: name, code, address, business lines, owner's name), Art. 124 (effect)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dangkykinhdoanh.gov.vn/vn/Pages/chitiettin.aspx?IDNews=3885&groupID=611&tieude=cong-cu-tim-kiem-thong-tin-tren-cong-thong-tin-dang-ky-doanh-nghiep-quoc-gia.aspx",
+          "title": "National Business Registration Portal help page (dated 16 October 2026): instant search by enterprise name, abbreviated name, foreign-language name, enterprise code, and advanced filters by type, legal representative, address, province and ward; results show legal status and head-office address",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://tracuunnt.gdt.gov.vn/",
+          "title": "General Department of Taxation, Ministry of Finance: taxpayer information lookup by tax code, taxpayer name, business address or the representative's identity number, with a verification code",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H03",
+      "subcluster": "dc-contract",
+      "slug": "betonamu-baiku-rental-ten-toroku-jigyosha-kakunin-kosiki-kensaku",
+      "primary_query": "ベトナムのバイクレンタル店が正式に登録された事業者か確認する方法",
+      "secondary_queries": [
+        "ベトナムの国家企業登記ポータルで会社を検索する方法",
+        "ベトナムの世帯事業者(hộ kinh doanh)を税番号や名前で検索できるか",
+        "事業登記なしでバイクを貸す店は違法か",
+        "ベトナムの税番号をオンラインで確認する方法",
+        "ハノイのバイクレンタル店が実在して今も営業しているかを知る方法"
+      ],
+      "entities": [
+        "国家企業登記ポータル",
+        "政令168/2025/NĐ-CP",
+        "世帯事業者(hộ kinh doanh)",
+        "税番号",
+        "ベトナム税務総局"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "地図アプリやSNSのページでレンタル店を見つけた旅行者は、パスポートのコピーやデポジットを渡す前に、そこが合法的な事業者かどうかの裏付けがほしいのに、ベトナムが企業と世帯事業者の登録情報を公的な無料検索で公開していることを知りません。",
+      "content_angle": "政令168/2025/NĐ-CP（政府の政策ポータルに全文、2025年7月1日施行、その後改正されている可能性があるため現行の文書を確認する）に基づきます。第74条は企業の名称、番号、本店住所、事業分野、法定代表者、法的状態を国家企業登記ポータルで誰でも無料で閲覧できるとし、第116条は世帯事業者（名称、番号、住所、事業分野、世帯主の氏名）にも同じ検索を認め、第82条3項はサービスを営む低所得世帯は許認可が必要な業種でない限り登録しなくてよいと定めているので、登録のない小さな店がただちに違法とは限らず、記事で誰かを断定的に非難してはいけません。世帯事業者の番号が税番号です。旅行者にできることを順に説明します。レシート、看板、店のページに書かれた名称や税番号をポータルの検索ツールに入力し、法的状態（営業中、一時停止、登録住所では営業していない）を読み、住所と事業分野を店の説明と照らし合わせ、さらに税務総局の納税者検索（税番号、名称、住所または代表者の身分証番号と確認コード）を二つ目の確認手段にします。検索で分からないことも明記します。保険、バイクの所有者、品質、誠実さは分からず、店が登録名と違うブランド名で営業していることもあり、ポータルの画面は変わるため、ツールは一般的に説明して各ページの日付を書く必要があります。貸出の流れ（支払い前に事業者名と税番号を尋ね、レシートを保管する）につなげつつ、未登録の店は違法だとも、登録済みの店は安全だとも断定しません。",
+      "working_title": "ベトナムのバイクレンタル店は登録された事業者か：公式の企業ポータルと税務検索での確認方法",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2025-nd-cp-ve-dang-ky-doanh-nghiep-119250702175708554.htm",
+          "title": "Government policy portal (26 August 2025): full text of Decree 168/2025/NĐ-CP on business registration, in force 1 July 2025, Art. 74 (public free lookup of enterprises: name, code, head-office address, business lines, legal representative, legal status), Art. 82(3) (low-income service households need not register unless the business line is conditional), Art. 116 (free lookup of household businesses: name, code, address, business lines, owner's name), Art. 124 (effect)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dangkykinhdoanh.gov.vn/vn/Pages/chitiettin.aspx?IDNews=3885&groupID=611&tieude=cong-cu-tim-kiem-thong-tin-tren-cong-thong-tin-dang-ky-doanh-nghiep-quoc-gia.aspx",
+          "title": "National Business Registration Portal help page (dated 16 October 2026): instant search by enterprise name, abbreviated name, foreign-language name, enterprise code, and advanced filters by type, legal representative, address, province and ward; results show legal status and head-office address",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://tracuunnt.gdt.gov.vn/",
+          "title": "General Department of Taxation, Ministry of Finance: taxpayer information lookup by tax code, taxpayer name, business address or the representative's identity number, with a verification code",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}
