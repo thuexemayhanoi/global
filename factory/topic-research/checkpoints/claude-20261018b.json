@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T09:47:44.401Z",
+  "updated_at": "2026-10-20T09:47:54.608Z",
   "base_main_sha": "d05b594abac3ed4ebe7c24a5b4fa47e73e8cccbf",
-  "last_commit_sha": "ea34fd00fa6481f2fedbbdef98897e756aea026f",
+  "last_commit_sha": "996455d1c4c9fa4db10e5c303d64db68949b348f",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1010,
-    "qa_pass": 1010,
+    "researched": 1020,
+    "qa_pass": 1020,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1000,
+    "pushed": 1010,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 102,
-      "de": 102,
-      "fr": 102,
-      "es": 102,
-      "nl": 102,
-      "pt": 102,
-      "zh": 102,
-      "ko": 102,
-      "ja": 102,
-      "en": 92
+      "vi": 103,
+      "de": 103,
+      "fr": 103,
+      "es": 103,
+      "nl": 103,
+      "pt": 103,
+      "zh": 103,
+      "ko": 103,
+      "ja": 103,
+      "en": 93
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 260,
+      "traffic-law-safety": 270,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 101,
-    "file": "factory/topic-research/batches/claude-20261018b-0101.json",
-    "sha256": "0e87084dc099ce18eb4b79e99e52ceebe87d25d4b33648e6a25a1aac299d04d6",
+    "seq": 102,
+    "file": "factory/topic-research/batches/claude-20261018b-0102.json",
+    "sha256": "f67f1bf58f1a5b68920356649f7955ac1e5d0594f01b05446857fa42a489811e",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -11159,8 +11159,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0101.json",
       "sha256": "0e87084dc099ce18eb4b79e99e52ceebe87d25d4b33648e6a25a1aac299d04d6",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "996455d1c4c9fa4db10e5c303d64db68949b348f",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -11264,11 +11264,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 102,
+      "file": "factory/topic-research/batches/claude-20261018b-0102.json",
+      "sha256": "f67f1bf58f1a5b68920356649f7955ac1e5d0594f01b05446857fa42a489811e",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:bao-hiem-du-lich-xe-may-dieu-khoan-loai-tru-bang-lai-nong-do-con",
+          "locale": "vi",
+          "slug": "bao-hiem-du-lich-xe-may-dieu-khoan-loai-tru-bang-lai-nong-do-con",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-insurance",
+          "key": "vi::bao hiem du lich co boi thuong khi di xe may khong co bang lai hoac co nong do con",
+          "ta_id": null
+        },
+        {
+          "ref": "en:australian-travel-insurance-riding-motorbike-vietnam-smartraveller",
+          "locale": "en",
+          "slug": "australian-travel-insurance-riding-motorbike-vietnam-smartraveller",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H03",
+          "subcluster": "dc-insurance",
+          "key": "en::australian travel insurance riding a motorbike in vietnam licence helmet alcohol",
+          "ta_id": null
+        },
+        {
+          "ref": "de:auslandskrankenversicherung-mietroller-vietnam-fuehrerschein-ausschluesse",
+          "locale": "de",
+          "slug": "auslandskrankenversicherung-mietroller-vietnam-fuehrerschein-ausschluesse",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H03",
+          "subcluster": "dc-insurance",
+          "key": "de::auslandskrankenversicherung mietroller vietnam unfall ohne fuhrerschein",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:assurance-voyage-scooter-vietnam-exclusions-permis-contrat",
+          "locale": "fr",
+          "slug": "assurance-voyage-scooter-vietnam-exclusions-permis-contrat",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H03",
+          "subcluster": "dc-insurance",
+          "key": "fr::assurance voyage accident de scooter vietnam exclusions permis contrat",
+          "ta_id": null
+        },
+        {
+          "ref": "es:seguro-de-viaje-moto-vietnam-clausulas-limitativas-permiso",
+          "locale": "es",
+          "slug": "seguro-de-viaje-moto-vietnam-clausulas-limitativas-permiso",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H03",
+          "subcluster": "dc-insurance",
+          "key": "es::seguro de viaje accidente de moto vietnam permiso internacional no valido",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:reisverzekering-gehuurde-scooter-vietnam-rijbewijs-dekking",
+          "locale": "nl",
+          "slug": "reisverzekering-gehuurde-scooter-vietnam-rijbewijs-dekking",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H03",
+          "subcluster": "dc-insurance",
+          "key": "nl::reisverzekering gehuurde scooter vietnam ongeluk motorrijbewijs",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-qi-motuoche-jingwai-lvyou-yiwaixian-zeren-mianchu",
+          "locale": "zh",
+          "slug": "yuenan-qi-motuoche-jingwai-lvyou-yiwaixian-zeren-mianchu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H03",
+          "subcluster": "dc-insurance",
+          "key": "zh::越南骑摩托车 境外旅游意外险 理赔 无驾驶证",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:seguro-de-viagem-mota-vietname-exclusoes-declaracao-do-risco",
+          "locale": "pt",
+          "slug": "seguro-de-viagem-mota-vietname-exclusoes-declaracao-do-risco",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H03",
+          "subcluster": "dc-insurance",
+          "key": "pt::seguro de viagem acidente de mota vietname exclusoes carta de conducao",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-sago-yeohaengja-boheom-yakgwan-alril-uimu",
+          "locale": "ko",
+          "slug": "beteunam-otobai-sago-yeohaengja-boheom-yakgwan-alril-uimu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H03",
+          "subcluster": "dc-insurance",
+          "key": "ko::베트남 오토바이 사고 여행자보험 약관 알릴 의무",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-rentarubaiku-kaigai-ryokou-hoken-menseki-musikaku-unten",
+          "locale": "ja",
+          "slug": "betonamu-rentarubaiku-kaigai-ryokou-hoken-menseki-musikaku-unten",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H03",
+          "subcluster": "dc-insurance",
+          "key": "ja::ヘトナム レンタルハイク 海外旅行保険 無免許運転 免責",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 102,
-    "file": "factory/topic-research/batches/claude-20261018b-0102.json",
+    "seq": 103,
+    "file": "factory/topic-research/batches/claude-20261018b-0103.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -11281,13 +11392,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:55:08.818Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 77,
-      "topics": 10,
-      "sha256": "5dcd71f9bb4c16810c2757ebd59fbc9b59a53520a160362251a7679b08f36b61"
-    },
     {
       "at": "2026-10-20T04:55:28.936Z",
       "event": "BATCH_COMMITTED",
@@ -11455,6 +11559,13 @@
       "seq": 101,
       "topics": 10,
       "sha256": "0e87084dc099ce18eb4b79e99e52ceebe87d25d4b33648e6a25a1aac299d04d6"
+    },
+    {
+      "at": "2026-10-20T09:47:54.608Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 102,
+      "topics": 10,
+      "sha256": "f67f1bf58f1a5b68920356649f7955ac1e5d0594f01b05446857fa42a489811e"
     }
   ]
 }
