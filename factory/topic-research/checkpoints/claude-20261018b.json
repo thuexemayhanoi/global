@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T04:55:39.656Z",
+  "updated_at": "2026-10-20T04:55:50.518Z",
   "base_main_sha": "343b27b62a058042c99fa454f719d8493263023b",
-  "last_commit_sha": "4d2407131c8fd34ecc7bbd28b91c18d8d416cc52",
+  "last_commit_sha": "84e00f809f9f46675943094baaeea5229dc92f8d",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 790,
-    "qa_pass": 790,
+    "researched": 800,
+    "qa_pass": 800,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 780,
+    "pushed": 790,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 80,
-      "de": 80,
-      "fr": 80,
-      "es": 80,
-      "nl": 80,
-      "pt": 80,
-      "zh": 80,
-      "ko": 80,
-      "ja": 80,
-      "en": 70
+      "vi": 81,
+      "de": 81,
+      "fr": 81,
+      "es": 81,
+      "nl": 81,
+      "pt": 81,
+      "zh": 81,
+      "ko": 81,
+      "ja": 81,
+      "en": 71
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 140,
+      "traffic-law-safety": 150,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -46,9 +46,9 @@
     }
   },
   "last_batch": {
-    "seq": 79,
-    "file": "factory/topic-research/batches/claude-20261018b-0079.json",
-    "sha256": "b38c9a11198b382583e6c3e2e422d622cbd547dc7732a35750deeab0ad5ad2e6",
+    "seq": 80,
+    "file": "factory/topic-research/batches/claude-20261018b-0080.json",
+    "sha256": "a3dcac36d9c19ce65a2520fb2d4440c3c92167ec8a24d506a33767192b2f9117",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -8716,8 +8716,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0079.json",
       "sha256": "b38c9a11198b382583e6c3e2e422d622cbd547dc7732a35750deeab0ad5ad2e6",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "84e00f809f9f46675943094baaeea5229dc92f8d",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -8821,11 +8821,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 80,
+      "file": "factory/topic-research/batches/claude-20261018b-0080.json",
+      "sha256": "a3dcac36d9c19ce65a2520fb2d4440c3c92167ec8a24d506a33767192b2f9117",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:dieu-khoan-khong-duoc-phep-hop-dong-thue-xe-may-khieu-nai",
+          "locale": "vi",
+          "slug": "dieu-khoan-khong-duoc-phep-hop-dong-thue-xe-may-khieu-nai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-contract",
+          "key": "vi::dieu khoan khong duoc phep trong hop dong thue xe may va khieu nai tiem cho thue o dau",
+          "ta_id": null
+        },
+        {
+          "ref": "en:unfair-terms-motorbike-rental-contract-vietnam-complaints",
+          "locale": "en",
+          "slug": "unfair-terms-motorbike-rental-contract-vietnam-complaints",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H03",
+          "subcluster": "dc-contract",
+          "key": "en::unfair terms in a motorbike rental contract in vietnam and where to complain",
+          "ta_id": null
+        },
+        {
+          "ref": "de:unzulaessige-klauseln-motorradmiete-vietnam-beschwerde",
+          "locale": "de",
+          "slug": "unzulaessige-klauseln-motorradmiete-vietnam-beschwerde",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H03",
+          "subcluster": "dc-contract",
+          "key": "de::unzulassige klauseln im motorrad mietvertrag in vietnam und wo man sich beschweren kann",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:clauses-interdites-contrat-location-moto-vietnam-reclamation",
+          "locale": "fr",
+          "slug": "clauses-interdites-contrat-location-moto-vietnam-reclamation",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H03",
+          "subcluster": "dc-contract",
+          "key": "fr::clauses interdites dans un contrat de location de moto au vietnam et ou se plaindre",
+          "ta_id": null
+        },
+        {
+          "ref": "es:clausulas-prohibidas-contrato-alquiler-moto-vietnam-reclamar",
+          "locale": "es",
+          "slug": "clausulas-prohibidas-contrato-alquiler-moto-vietnam-reclamar",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H03",
+          "subcluster": "dc-contract",
+          "key": "es::clausulas prohibidas en un contrato de alquiler de moto en vietnam y donde reclamar",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:onredelijke-bedingen-motorhuurcontract-vietnam-klacht",
+          "locale": "nl",
+          "slug": "onredelijke-bedingen-motorhuurcontract-vietnam-klacht",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H03",
+          "subcluster": "dc-contract",
+          "key": "nl::onredelijke bedingen in een huurcontract voor een motor in vietnam en waar klagen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-motuoche-zulin-hetong-bugong-tiaokuan-tousu",
+          "locale": "zh",
+          "slug": "yuenan-motuoche-zulin-hetong-bugong-tiaokuan-tousu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H03",
+          "subcluster": "dc-contract",
+          "key": "zh::越南摩托车租赁合同的不公平条款和向哪里投诉",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:clausulas-proibidas-contrato-aluguer-mota-vietname-reclamar",
+          "locale": "pt",
+          "slug": "clausulas-proibidas-contrato-aluguer-mota-vietname-reclamar",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H03",
+          "subcluster": "dc-contract",
+          "key": "pt::clausulas proibidas num contrato de aluguer de mota no vietname e onde reclamar",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-obaibai-daeyeo-gyeyak-bulgongjeong-johang-minwon",
+          "locale": "ko",
+          "slug": "beteunam-obaibai-daeyeo-gyeyak-bulgongjeong-johang-minwon",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H03",
+          "subcluster": "dc-contract",
+          "key": "ko::베트남 오토바이 렌털 계약의 불공정 약관과 어디에 신고하나",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-rental-keiyaku-futo-joko-kujo-saki",
+          "locale": "ja",
+          "slug": "betonamu-baiku-rental-keiyaku-futo-joko-kujo-saki",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H03",
+          "subcluster": "dc-contract",
+          "key": "ja::ヘトナムのハイクレンタル契約の不当な条項と苦情の申し立て先",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 80,
-    "file": "factory/topic-research/batches/claude-20261018b-0080.json",
+    "seq": 81,
+    "file": "factory/topic-research/batches/claude-20261018b-0081.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -8838,10 +8949,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-19T00:41:45.320Z",
-      "event": "CHECKPOINT_UPDATED"
-    },
     {
       "at": "2026-10-20T04:13:17.464Z",
       "event": "BATCH_COMMITTED",
@@ -9009,6 +9116,13 @@
       "seq": 79,
       "topics": 10,
       "sha256": "b38c9a11198b382583e6c3e2e422d622cbd547dc7732a35750deeab0ad5ad2e6"
+    },
+    {
+      "at": "2026-10-20T04:55:50.518Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 80,
+      "topics": 10,
+      "sha256": "a3dcac36d9c19ce65a2520fb2d4440c3c92167ec8a24d506a33767192b2f9117"
     }
   ]
 }
