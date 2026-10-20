@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T20:48:47.565Z",
+  "updated_at": "2026-10-20T20:49:04.954Z",
   "base_main_sha": "5160debc109578bd2bfc6a9313e10412c24482a7",
-  "last_commit_sha": "97619ac10429fe07999127e265ce01c416b22a75",
+  "last_commit_sha": "c0997c31af6febff24c0de8509dca3e9a34b7210",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1630,
-    "qa_pass": 1630,
+    "researched": 1640,
+    "qa_pass": 1640,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1620,
+    "pushed": 1630,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 164,
-      "de": 164,
-      "fr": 164,
-      "es": 164,
-      "nl": 164,
-      "pt": 164,
-      "zh": 164,
-      "ko": 164,
-      "ja": 164,
-      "en": 154
+      "vi": 165,
+      "de": 165,
+      "fr": 165,
+      "es": 165,
+      "nl": 165,
+      "pt": 165,
+      "zh": 165,
+      "ko": 165,
+      "ja": 165,
+      "en": 155
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 670,
+      "traffic-law-safety": 680,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 163,
-    "file": "factory/topic-research/batches/claude-20261018b-0163.json",
-    "sha256": "f4354e25f58f4abb523076013ee82f8681307bbde5dcec3b20ad7c671506a702",
+    "seq": 164,
+    "file": "factory/topic-research/batches/claude-20261018b-0164.json",
+    "sha256": "247db68258576a67dff8b9b5a547854ca0cd6c54271627e11cba636dba1c4f0c",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -18041,8 +18041,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0163.json",
       "sha256": "f4354e25f58f4abb523076013ee82f8681307bbde5dcec3b20ad7c671506a702",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "c0997c31af6febff24c0de8509dca3e9a34b7210",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -18146,11 +18146,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 164,
+      "file": "factory/topic-research/batches/claude-20261018b-0164.json",
+      "sha256": "247db68258576a67dff8b9b5a547854ca0cd6c54271627e11cba636dba1c4f0c",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:csgt-tam-giu-bang-lai-giay-to-bien-ban-thoi-han-hen-thoi-gian-giu-nhan-lai",
+          "locale": "vi",
+          "slug": "csgt-tam-giu-bang-lai-giay-to-bien-ban-thoi-han-hen-thoi-gian-giu-nhan-lai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::bi csgt giu bang lai xe thi co duoc chay tiep khong va lay lai bang nhu the nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:police-hold-driving-licence-papers-vietnam-record-appointment-time-limit-return",
+          "locale": "en",
+          "slug": "police-hold-driving-licence-papers-vietnam-record-appointment-time-limit-return",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::what happens when vietnamese police keep my driving licence and how do i get it back before i leave",
+          "ta_id": null
+        },
+        {
+          "ref": "de:polizei-behaelt-fuehrerschein-papiere-vietnam-protokoll-termin-fristen-rueckgabe",
+          "locale": "de",
+          "slug": "polizei-behaelt-fuehrerschein-papiere-vietnam-protokoll-termin-fristen-rueckgabe",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::was passiert wenn die polizei in vietnam meinen fuhrerschein einbehalt und wie bekomme ich ihn vor der abreise zuruck",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:police-garde-permis-papiers-vietnam-proces-verbal-rendez-vous-delais-restitution",
+          "locale": "fr",
+          "slug": "police-garde-permis-papiers-vietnam-proces-verbal-rendez-vous-delais-restitution",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::que se passe-t-il quand la police vietnamienne garde mon permis de conduire et comment le recuperer avant de partir",
+          "ta_id": null
+        },
+        {
+          "ref": "es:policia-retiene-carne-conducir-documentos-vietnam-acta-cita-plazos-recuperarlos",
+          "locale": "es",
+          "slug": "policia-retiene-carne-conducir-documentos-vietnam-acta-cita-plazos-recuperarlos",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::que pasa si la policia de vietnam me retiene el carne de conducir y como lo recupero antes de irme",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:politie-houdt-rijbewijs-papieren-vast-vietnam-proces-verbaal-afspraak-termijnen",
+          "locale": "nl",
+          "slug": "politie-houdt-rijbewijs-papieren-vast-vietnam-proces-verbaal-afspraak-termijnen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::wat gebeurt er als de vietnamese politie mijn rijbewijs inhoudt en hoe krijg ik het terug voor ik vertrek",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-jingcha-zankou-jiazhao-zhengjian-weizhang-jilu-yuedingriqi-qixian-quhui",
+          "locale": "zh",
+          "slug": "yuenan-jingcha-zankou-jiazhao-zhengjian-weizhang-jilu-yuedingriqi-qixian-quhui",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::在越南被警察扣下驾照怎么办,离开前怎样拿回来",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:policia-retem-carta-documentos-vietname-auto-data-marcada-prazos-recuperar",
+          "locale": "pt",
+          "slug": "policia-retem-carta-documentos-vietname-auto-data-marcada-prazos-recuperar",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::o que acontece quando a policia do vietname retem a minha carta de conducao e como a recupero antes de partir",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-gyeongchal-myeonheojeung-seoryu-bogwan-wiban-girok-gihan-dolryeobadgi",
+          "locale": "ko",
+          "slug": "beteunam-gyeongchal-myeonheojeung-seoryu-bogwan-wiban-girok-gihan-dolryeobadgi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::베트남에서 경찰이 운전면허증을 보관하면 어떻게 되고 출국 전에 어떻게 돌려받나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-keisatsu-menkyosho-shorui-azukari-ihan-kiroku-shuttokikan-henkan",
+          "locale": "ja",
+          "slug": "betonamu-keisatsu-menkyosho-shorui-azukari-ihan-kiroku-shuttokikan-henkan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ヘトナムて警察に運転免許証を預かられたらとうなるのか、出国前にとうやって返してもらうのか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 164,
-    "file": "factory/topic-research/batches/claude-20261018b-0164.json",
+    "seq": 165,
+    "file": "factory/topic-research/batches/claude-20261018b-0165.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -18163,13 +18274,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T19:38:32.527Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 139,
-      "topics": 10,
-      "sha256": "1000d265b542f31e785874b55a647a9d3b5786066b4a9c6058ddbff42f11f808"
-    },
     {
       "at": "2026-10-20T19:44:14.428Z",
       "event": "BATCH_COMMITTED",
@@ -18337,6 +18441,13 @@
       "seq": 163,
       "topics": 10,
       "sha256": "f4354e25f58f4abb523076013ee82f8681307bbde5dcec3b20ad7c671506a702"
+    },
+    {
+      "at": "2026-10-20T20:49:04.954Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 164,
+      "topics": 10,
+      "sha256": "247db68258576a67dff8b9b5a547854ca0cd6c54271627e11cba636dba1c4f0c"
     }
   ]
 }

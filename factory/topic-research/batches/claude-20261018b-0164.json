@@ -1,0 +1,602 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H04",
+      "subcluster": "ss-incidents",
+      "slug": "csgt-tam-giu-bang-lai-giay-to-bien-ban-thoi-han-hen-thoi-gian-giu-nhan-lai",
+      "primary_query": "bị CSGT giữ bằng lái xe thì có được chạy tiếp không và lấy lại bằng như thế nào",
+      "secondary_queries": [
+        "CSGT giữ bằng lái xe tối đa bao lâu thì phải trả",
+        "bị tạm giữ bằng lái có được tiếp tục lái xe không",
+        "thời hạn hẹn ghi trong biên bản vi phạm hành chính là gì",
+        "nộp phạt xong lấy lại bằng lái ở đâu và cần mang giấy tờ gì",
+        "người nước ngoài sắp về nước bị giữ bằng lái phải hỏi gì"
+      ],
+      "entities": [
+        "Luật Xử lý vi phạm hành chính (Điều 125)",
+        "Nghị định 168/2024/NĐ-CP (Điều 48)",
+        "biên bản vi phạm hành chính",
+        "Cảnh sát giao thông",
+        "Cổng Dịch vụ công Bộ Công an"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Du khách bị CSGT giữ bằng lái hoặc giấy tờ xe khi kiểm tra ven đường muốn biết có được chạy tiếp không, giấy nào thay cho bằng, được giữ tối đa bao lâu và lấy lại thế nào trước khi bay về nước.",
+      "content_angle": "Dựa trên Luật Xử lý vi phạm hành chính bản hợp nhất 171/2026/VBHN-LQ-VPQH ngày 30/9/2026, Điều 125 (chỉ tạm giữ khi thật cần thiết; biên bản ghi rõ giấy tờ bị giữ và người vi phạm nhận một bản; khi chỉ phạt tiền thì có thể giữ giấy phép lái xe, rồi giấy tờ xe, đến khi chấp hành xong quyết định; các trường hợp khác thời hạn 7 ngày làm việc, kéo dài được trong vụ việc phức tạp) và Điều 48 Nghị định 168/2024/NĐ-CP (quá thời hạn hẹn ghi trong biên bản mà vẫn lái xe thì bị phạt như không có giấy tờ). Kèm bài LuatVietnam tiếng Anh về người nước ngoài (14/10/2025), bài Thanh Niên về thời hạn hẹn và VNeID (21/3/2026), Thông tư 73/2024/TT-BCA (Điều 17: giao quyết định tạm giữ, tạm giữ giấy tờ trong tài khoản định danh trên môi trường điện tử) và một giải đáp của Bộ Công an (15/9/2026) về nhận lại bằng, có nộp phạt trực tuyến và trả giấy phép qua bưu chính. Người viết thêm danh sách câu hỏi cho khách sắp rời Việt Nam, không hứa trả giấy tờ ra nước ngoài, và tách khỏi bài tạm giữ xe, bài bị CSGT dừng xe và bài nộp phạt.",
+      "working_title": "CSGT tạm giữ bằng lái hoặc giấy tờ: biên bản, thời hạn hẹn, thời gian giữ tối đa và cách nhận lại",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on temporary holding of vehicles, licences and papers, the record, the holding decision, which papers may be held for a fine and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles and papers, the appointment date in the violation record and papers shown after a check",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.luatvietnam.vn/legal-news/how-are-foreigners-sanctioned-for-traffic-violations-in-vietnam-4729-104689-article.html",
+          "title": "LuatVietnam English (14 October 2025): how foreigners are sanctioned for traffic violations, the on-the-spot decision, papers taken when a fine is not paid at once and the vehicle-holding periods under Article 48",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanhnien.vn/chong-che-quen-mang-giay-to-xe-bi-csgt-xu-phat-the-nao-18526032013250943.htm",
+          "title": "Thanh Niên (21 March 2026): what happens when papers cannot be shown at a check, the appointment date on the violation record, showing papers or VNeID in time and Circular 73/2024/TT-BCA on electronic ID",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/b62cae32-8355-4c82-beab-100ca06e3263?page=/",
+          "title": "Ministry of Public Security online Q&A (15 September 2026): a licence held for a traffic fine, no petition needed, paying online on the Ministry's public service portal and the licence returned by post after payment",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding papers and vehicles, the order of papers held for a fine, the holding decision and holding papers held in the ID account electronically",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H04",
+      "subcluster": "ss-incidents",
+      "slug": "police-hold-driving-licence-papers-vietnam-record-appointment-time-limit-return",
+      "primary_query": "what happens when Vietnamese police keep my driving licence and how do I get it back before I leave",
+      "secondary_queries": [
+        "can I keep riding in Vietnam after police hold my driving licence",
+        "how long can Vietnamese traffic police keep a driving licence",
+        "what paper do I get when police take my licence in Vietnam",
+        "how to collect a held driving licence after paying a fine in Vietnam",
+        "what should a tourist ask the police when they keep a licence and the flight home is soon"
+      ],
+      "entities": [
+        "Law on Handling of Administrative Violations (Article 125)",
+        "Decree 168/2024/NĐ-CP (Article 48)",
+        "violation record",
+        "traffic police",
+        "Ministry of Public Security public service portal"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "A visitor whose licence or vehicle papers are taken at a roadside check wants to know whether they may keep riding, what document stands in for the licence, how long it can be held and how to get it back before a flight home.",
+      "content_angle": "Built on the consolidated Law on Handling of Administrative Violations (171/2026/VBHN-LQ-VPQH, 30 September 2026), Article 125 (holding only when necessary; the record lists what is held and the violator gets a copy; when only a fine applies the officer may hold the driving licence, then vehicle papers, until the decision is carried out; otherwise the limit is 7 working days, extendable in complex cases) and Article 48 of Decree 168/2024/NĐ-CP (driving on after the appointment date in the violation record counts as having no papers). Also LuatVietnam English on foreigners (14 October 2025), Thanh Niên on the appointment date and VNeID (21 March 2026), Circular 73/2024/TT-BCA (Article 17: delivery of the holding decision, electronic holding of papers kept in the ID account) and a Ministry of Public Security answer (15 September 2026) on collecting a held licence by online payment and post. The Writer adds questions for a visitor about to leave, does not promise return abroad, and keeps clear of the impound, stopped-by-police and fine-payment articles.",
+      "working_title": "Police Hold Your Licence or Papers in Vietnam: Record, Appointment Date, How Long and Getting Them Back",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on temporary holding of vehicles, licences and papers, the record, the holding decision, which papers may be held for a fine and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles and papers, the appointment date in the violation record and papers shown after a check",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.luatvietnam.vn/legal-news/how-are-foreigners-sanctioned-for-traffic-violations-in-vietnam-4729-104689-article.html",
+          "title": "LuatVietnam English (14 October 2025): how foreigners are sanctioned for traffic violations, the on-the-spot decision, papers taken when a fine is not paid at once and the vehicle-holding periods under Article 48",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanhnien.vn/chong-che-quen-mang-giay-to-xe-bi-csgt-xu-phat-the-nao-18526032013250943.htm",
+          "title": "Thanh Niên (21 March 2026): what happens when papers cannot be shown at a check, the appointment date on the violation record, showing papers or VNeID in time and Circular 73/2024/TT-BCA on electronic ID",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/b62cae32-8355-4c82-beab-100ca06e3263?page=/",
+          "title": "Ministry of Public Security online Q&A (15 September 2026): a licence held for a traffic fine, no petition needed, paying online on the Ministry's public service portal and the licence returned by post after payment",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding papers and vehicles, the order of papers held for a fine, the holding decision and holding papers held in the ID account electronically",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H04",
+      "subcluster": "ss-incidents",
+      "slug": "polizei-behaelt-fuehrerschein-papiere-vietnam-protokoll-termin-fristen-rueckgabe",
+      "primary_query": "was passiert wenn die Polizei in Vietnam meinen Führerschein einbehält und wie bekomme ich ihn vor der Abreise zurück",
+      "secondary_queries": [
+        "wie lange darf die Verkehrspolizei in Vietnam einen Führerschein einbehalten",
+        "darf ich in Vietnam weiterfahren wenn die Polizei meinen Führerschein einbehalten hat",
+        "welches Papier bekomme ich wenn die Polizei in Vietnam meinen Führerschein nimmt",
+        "einbehaltenen Führerschein nach Zahlung der Geldbuße in Vietnam abholen",
+        "was sollte ein Tourist fragen wenn der Führerschein einbehalten wird und der Rückflug bald ist"
+      ],
+      "entities": [
+        "Gesetz über die Ahndung von Verwaltungsverstößen (Artikel 125)",
+        "Dekret 168/2024/NĐ-CP (Artikel 48)",
+        "Verstoßprotokoll",
+        "Verkehrspolizei",
+        "Online-Portal des Ministeriums für öffentliche Sicherheit"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Reisende, denen bei einer Straßenkontrolle der Führerschein oder die Fahrzeugpapiere abgenommen werden, wollen wissen, ob sie weiterfahren dürfen, welches Dokument den Führerschein ersetzt, wie lange er einbehalten werden kann und wie sie ihn vor dem Rückflug zurückbekommen.",
+      "content_angle": "Gestützt auf die konsolidierte Fassung des Gesetzes über die Ahndung von Verwaltungsverstößen (171/2026/VBHN-LQ-VPQH vom 30. September 2026), Artikel 125 (Einbehalt nur wenn nötig; das Protokoll nennt das Einbehaltene und der Betroffene erhält eine Kopie; bei reiner Geldbuße darf zuerst der Führerschein, dann der Fahrzeugschein bis zum Vollzug der Entscheidung einbehalten werden; sonst gilt eine Frist von 7 Werktagen, in komplexen Fällen verlängerbar) und Artikel 48 des Dekrets 168/2024/NĐ-CP (wer nach dem im Protokoll genannten Termin weiterfährt, gilt als ohne Papiere). Dazu LuatVietnam English zu Ausländern (14. Oktober 2025), Thanh Niên zu Termin und VNeID (21. März 2026), das Rundschreiben 73/2024/TT-BCA (Artikel 17: Zustellung des Einbehaltsbeschlusses, elektronischer Einbehalt von Papieren im ID-Konto) und eine Antwort des Ministeriums für öffentliche Sicherheit (15. September 2026) zur Abholung eines Führerscheins mit Online-Zahlung und Rücksendung per Post. Der Autor ergänzt Fragen für Reisende kurz vor der Abreise, verspricht keine Rücksendung ins Ausland und grenzt vom Beitrag zur Beschlagnahme, zur Polizeikontrolle und zur Zahlung ab.",
+      "working_title": "Polizei behält Führerschein oder Papiere in Vietnam: Protokoll, Termin, Fristen und Rückgabe",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on temporary holding of vehicles, licences and papers, the record, the holding decision, which papers may be held for a fine and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles and papers, the appointment date in the violation record and papers shown after a check",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.luatvietnam.vn/legal-news/how-are-foreigners-sanctioned-for-traffic-violations-in-vietnam-4729-104689-article.html",
+          "title": "LuatVietnam English (14 October 2025): how foreigners are sanctioned for traffic violations, the on-the-spot decision, papers taken when a fine is not paid at once and the vehicle-holding periods under Article 48",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanhnien.vn/chong-che-quen-mang-giay-to-xe-bi-csgt-xu-phat-the-nao-18526032013250943.htm",
+          "title": "Thanh Niên (21 March 2026): what happens when papers cannot be shown at a check, the appointment date on the violation record, showing papers or VNeID in time and Circular 73/2024/TT-BCA on electronic ID",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/b62cae32-8355-4c82-beab-100ca06e3263?page=/",
+          "title": "Ministry of Public Security online Q&A (15 September 2026): a licence held for a traffic fine, no petition needed, paying online on the Ministry's public service portal and the licence returned by post after payment",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding papers and vehicles, the order of papers held for a fine, the holding decision and holding papers held in the ID account electronically",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H04",
+      "subcluster": "ss-incidents",
+      "slug": "police-garde-permis-papiers-vietnam-proces-verbal-rendez-vous-delais-restitution",
+      "primary_query": "que se passe-t-il quand la police vietnamienne garde mon permis de conduire et comment le récupérer avant de partir",
+      "secondary_queries": [
+        "combien de temps la police de la circulation vietnamienne peut-elle garder un permis de conduire",
+        "puis-je continuer à rouler au Vietnam quand la police a retenu mon permis",
+        "quel document reçoit-on quand la police retient le permis au Vietnam",
+        "récupérer un permis retenu après le paiement de l'amende au Vietnam",
+        "que doit demander un touriste quand la police garde son permis et que le vol retour approche"
+      ],
+      "entities": [
+        "loi sur le traitement des infractions administratives (article 125)",
+        "décret 168/2024/NĐ-CP (article 48)",
+        "procès-verbal d'infraction",
+        "police de la circulation",
+        "portail de services publics du ministère de la Sécurité publique"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Un visiteur à qui l'on retient le permis ou les papiers du véhicule lors d'un contrôle routier veut savoir s'il peut continuer à rouler, quel document remplace le permis, combien de temps il peut être gardé et comment le récupérer avant son vol de retour.",
+      "content_angle": "Fondé sur le texte consolidé de la loi sur le traitement des infractions administratives (171/2026/VBHN-LQ-VPQH du 30 septembre 2026), article 125 (rétention seulement si nécessaire ; le procès-verbal liste ce qui est retenu et l'intéressé en reçoit un exemplaire ; en cas d'amende seule, l'agent peut retenir le permis, puis les papiers du véhicule, jusqu'à l'exécution de la décision ; sinon le délai est de 7 jours ouvrables, prolongeable dans les affaires complexes) et sur l'article 48 du décret 168/2024/NĐ-CP (rouler encore après la date de convocation du procès-verbal vaut absence de papiers). S'y ajoutent LuatVietnam English sur les étrangers (14 octobre 2025), Thanh Niên sur la date de convocation et VNeID (21 mars 2026), la circulaire 73/2024/TT-BCA (article 17 : remise de la décision de rétention, rétention électronique des papiers du compte d'identité) et une réponse du ministère de la Sécurité publique (15 septembre 2026) sur la récupération d'un permis, avec paiement en ligne et renvoi par la poste. Le rédacteur ajoute des questions pour un visiteur sur le départ, ne promet pas de renvoi à l'étranger et se démarque des articles sur la mise en fourrière, le contrôle routier et le paiement des amendes.",
+      "working_title": "Permis ou papiers gardés par la police au Vietnam : procès-verbal, convocation, délais et restitution",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on temporary holding of vehicles, licences and papers, the record, the holding decision, which papers may be held for a fine and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles and papers, the appointment date in the violation record and papers shown after a check",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.luatvietnam.vn/legal-news/how-are-foreigners-sanctioned-for-traffic-violations-in-vietnam-4729-104689-article.html",
+          "title": "LuatVietnam English (14 October 2025): how foreigners are sanctioned for traffic violations, the on-the-spot decision, papers taken when a fine is not paid at once and the vehicle-holding periods under Article 48",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanhnien.vn/chong-che-quen-mang-giay-to-xe-bi-csgt-xu-phat-the-nao-18526032013250943.htm",
+          "title": "Thanh Niên (21 March 2026): what happens when papers cannot be shown at a check, the appointment date on the violation record, showing papers or VNeID in time and Circular 73/2024/TT-BCA on electronic ID",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/b62cae32-8355-4c82-beab-100ca06e3263?page=/",
+          "title": "Ministry of Public Security online Q&A (15 September 2026): a licence held for a traffic fine, no petition needed, paying online on the Ministry's public service portal and the licence returned by post after payment",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding papers and vehicles, the order of papers held for a fine, the holding decision and holding papers held in the ID account electronically",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H04",
+      "subcluster": "ss-incidents",
+      "slug": "policia-retiene-carne-conducir-documentos-vietnam-acta-cita-plazos-recuperarlos",
+      "primary_query": "qué pasa si la policía de Vietnam me retiene el carné de conducir y cómo lo recupero antes de irme",
+      "secondary_queries": [
+        "cuánto tiempo puede retener la policía de tráfico de Vietnam un carné de conducir",
+        "puedo seguir conduciendo en Vietnam si la policía me ha retenido el carné",
+        "qué documento me dan cuando la policía retiene el carné en Vietnam",
+        "cómo recoger un carné retenido después de pagar la multa en Vietnam",
+        "qué debe preguntar un turista cuando le retienen el carné y el vuelo de vuelta está cerca"
+      ],
+      "entities": [
+        "Ley de Tratamiento de las Infracciones Administrativas (artículo 125)",
+        "Decreto 168/2024/NĐ-CP (artículo 48)",
+        "acta de infracción",
+        "policía de tráfico",
+        "portal de servicios públicos del Ministerio de Seguridad Pública"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Un visitante al que se retiene el carné o los papeles del vehículo en un control de carretera quiere saber si puede seguir conduciendo, qué documento sustituye al carné, cuánto tiempo puede retenerse y cómo recuperarlo antes del vuelo de regreso.",
+      "content_angle": "Basado en el texto consolidado de la Ley de Tratamiento de las Infracciones Administrativas (171/2026/VBHN-LQ-VPQH, 30 de septiembre de 2026), artículo 125 (retención solo si es necesaria; el acta enumera lo retenido y el infractor recibe una copia; si solo hay multa, el agente puede retener el carné y luego los papeles del vehículo hasta que se cumpla la decisión; en otro caso el plazo es de 7 días hábiles, ampliable en casos complejos) y en el artículo 48 del Decreto 168/2024/NĐ-CP (seguir conduciendo pasada la fecha de citación del acta equivale a no llevar documentos). Se suman LuatVietnam English sobre extranjeros (14 de octubre de 2025), Thanh Niên sobre la fecha de citación y VNeID (21 de marzo de 2026), la Circular 73/2024/TT-BCA (artículo 17: entrega de la decisión de retención y retención electrónica de documentos de la cuenta de identidad) y una respuesta del Ministerio de Seguridad Pública (15 de septiembre de 2026) sobre cómo recoger un carné, con pago en línea y devolución por correo. El redactor añade preguntas para un visitante a punto de irse, no promete la devolución al extranjero y se distingue de los artículos sobre el depósito del vehículo, el control policial y el pago de multas.",
+      "working_title": "La policía retiene tu carné o documentos en Vietnam: acta, citación, plazos y cómo recuperarlos",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on temporary holding of vehicles, licences and papers, the record, the holding decision, which papers may be held for a fine and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles and papers, the appointment date in the violation record and papers shown after a check",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.luatvietnam.vn/legal-news/how-are-foreigners-sanctioned-for-traffic-violations-in-vietnam-4729-104689-article.html",
+          "title": "LuatVietnam English (14 October 2025): how foreigners are sanctioned for traffic violations, the on-the-spot decision, papers taken when a fine is not paid at once and the vehicle-holding periods under Article 48",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanhnien.vn/chong-che-quen-mang-giay-to-xe-bi-csgt-xu-phat-the-nao-18526032013250943.htm",
+          "title": "Thanh Niên (21 March 2026): what happens when papers cannot be shown at a check, the appointment date on the violation record, showing papers or VNeID in time and Circular 73/2024/TT-BCA on electronic ID",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/b62cae32-8355-4c82-beab-100ca06e3263?page=/",
+          "title": "Ministry of Public Security online Q&A (15 September 2026): a licence held for a traffic fine, no petition needed, paying online on the Ministry's public service portal and the licence returned by post after payment",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding papers and vehicles, the order of papers held for a fine, the holding decision and holding papers held in the ID account electronically",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H04",
+      "subcluster": "ss-incidents",
+      "slug": "politie-houdt-rijbewijs-papieren-vast-vietnam-proces-verbaal-afspraak-termijnen",
+      "primary_query": "wat gebeurt er als de Vietnamese politie mijn rijbewijs inhoudt en hoe krijg ik het terug voor ik vertrek",
+      "secondary_queries": [
+        "hoe lang mag de Vietnamese verkeerspolitie een rijbewijs inhouden",
+        "mag ik in Vietnam blijven rijden als de politie mijn rijbewijs heeft ingehouden",
+        "welk papier krijg ik als de politie in Vietnam mijn rijbewijs meeneemt",
+        "ingehouden rijbewijs ophalen na het betalen van de boete in Vietnam",
+        "wat moet een toerist vragen als het rijbewijs wordt ingehouden en de terugvlucht dichtbij is"
+      ],
+      "entities": [
+        "wet op de afhandeling van administratieve overtredingen (artikel 125)",
+        "decreet 168/2024/NĐ-CP (artikel 48)",
+        "proces-verbaal",
+        "verkeerspolitie",
+        "online dienstenportaal van het ministerie van Openbare Veiligheid"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Een bezoeker wiens rijbewijs of voertuigpapieren bij een wegcontrole worden ingehouden, wil weten of hij mag doorrijden, welk document het rijbewijs vervangt, hoe lang het kan worden vastgehouden en hoe hij het terugkrijgt voor de vlucht naar huis.",
+      "content_angle": "Gebaseerd op de geconsolideerde tekst van de wet op de afhandeling van administratieve overtredingen (171/2026/VBHN-LQ-VPQH, 30 september 2026), artikel 125 (inhouden alleen als het nodig is; het proces-verbaal vermeldt wat is ingehouden en de overtreder krijgt een exemplaar; bij alleen een boete mag de agent het rijbewijs en daarna de voertuigpapieren inhouden tot de beslissing is uitgevoerd; anders geldt een termijn van 7 werkdagen, in complexe zaken verlengbaar) en artikel 48 van decreet 168/2024/NĐ-CP (wie na de afspraakdatum in het proces-verbaal blijft rijden, geldt als zonder papieren). Daarbij LuatVietnam English over buitenlanders (14 oktober 2025), Thanh Niên over de afspraakdatum en VNeID (21 maart 2026), circulaire 73/2024/TT-BCA (artikel 17: overhandiging van het besluit tot inhouding, elektronische inhouding van papieren in het ID-account) en een antwoord van het ministerie van Openbare Veiligheid (15 september 2026) over het ophalen van een rijbewijs, met online betalen en terugsturen per post. De schrijver voegt vragen toe voor een bezoeker die bijna vertrekt, belooft geen terugzending naar het buitenland en houdt een grens met de artikelen over inbeslagname van het voertuig, de politiecontrole en het betalen van boetes.",
+      "working_title": "Politie houdt rijbewijs of papieren vast in Vietnam: proces-verbaal, afspraak, termijnen en terugkrijgen",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on temporary holding of vehicles, licences and papers, the record, the holding decision, which papers may be held for a fine and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles and papers, the appointment date in the violation record and papers shown after a check",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.luatvietnam.vn/legal-news/how-are-foreigners-sanctioned-for-traffic-violations-in-vietnam-4729-104689-article.html",
+          "title": "LuatVietnam English (14 October 2025): how foreigners are sanctioned for traffic violations, the on-the-spot decision, papers taken when a fine is not paid at once and the vehicle-holding periods under Article 48",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanhnien.vn/chong-che-quen-mang-giay-to-xe-bi-csgt-xu-phat-the-nao-18526032013250943.htm",
+          "title": "Thanh Niên (21 March 2026): what happens when papers cannot be shown at a check, the appointment date on the violation record, showing papers or VNeID in time and Circular 73/2024/TT-BCA on electronic ID",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/b62cae32-8355-4c82-beab-100ca06e3263?page=/",
+          "title": "Ministry of Public Security online Q&A (15 September 2026): a licence held for a traffic fine, no petition needed, paying online on the Ministry's public service portal and the licence returned by post after payment",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding papers and vehicles, the order of papers held for a fine, the holding decision and holding papers held in the ID account electronically",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H04",
+      "subcluster": "ss-incidents",
+      "slug": "yuenan-jingcha-zankou-jiazhao-zhengjian-weizhang-jilu-yuedingriqi-qixian-quhui",
+      "primary_query": "在越南被警察扣下驾照怎么办，离开前怎样拿回来",
+      "secondary_queries": [
+        "越南交警最长可以暂扣驾照多久",
+        "越南驾照被暂扣后还能继续骑车吗",
+        "越南警察暂扣驾照时会给什么凭证",
+        "在越南交完罚款后去哪里取回被暂扣的驾照",
+        "游客快要回国时驾照被越南警察暂扣应该问什么"
+      ],
+      "entities": [
+        "行政违法处理法第125条",
+        "第168/2024/NĐ-CP号议定第48条",
+        "违法记录",
+        "交通警察",
+        "越南公安部公共服务门户"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "游客在路边检查时被警察暂扣驾照或车辆证件，想知道还能不能继续骑车、什么文件可以代替驾照、最长会被扣多久，以及怎样在回国航班之前把证件取回来。",
+      "content_angle": "依据政府文件门户网站上的《行政违法处理法》合并文本171/2026/VBHN-LQ-VPQH（2026年9月30日）第125条（只有确有必要才可暂扣；记录要写明被扣物品，违法人持有一份；只处罚款时，执法人员可先暂扣驾照，再暂扣车辆证件，直到决定执行完毕；其他情形通常期限为7个工作日，复杂案件可延长）和第168/2024/NĐ-CP号议定第48条（超过违法记录上写明的约定日期仍继续驾驶，按无证处理）。另有LuatVietnam英文版关于外国人的文章（2025年10月14日）、Thanh Niên关于约定日期和VNeID的报道（2026年3月21日）、第73/2024/TT-BCA号通知（第17条：暂扣决定的送达和身份账户内证件的电子暂扣）和公安部2026年9月15日的一则答复，讲述取回被暂扣驾照，提到在线缴款和邮寄返还。写作者为即将离境的游客列出要问的问题，不承诺把证件寄到国外，并与暂扣车辆、被警察拦停和缴纳罚款几篇文章区分。",
+      "working_title": "越南警察暂扣驾照或证件：违法记录、约定日期、暂扣期限和取回方法",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on temporary holding of vehicles, licences and papers, the record, the holding decision, which papers may be held for a fine and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles and papers, the appointment date in the violation record and papers shown after a check",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.luatvietnam.vn/legal-news/how-are-foreigners-sanctioned-for-traffic-violations-in-vietnam-4729-104689-article.html",
+          "title": "LuatVietnam English (14 October 2025): how foreigners are sanctioned for traffic violations, the on-the-spot decision, papers taken when a fine is not paid at once and the vehicle-holding periods under Article 48",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanhnien.vn/chong-che-quen-mang-giay-to-xe-bi-csgt-xu-phat-the-nao-18526032013250943.htm",
+          "title": "Thanh Niên (21 March 2026): what happens when papers cannot be shown at a check, the appointment date on the violation record, showing papers or VNeID in time and Circular 73/2024/TT-BCA on electronic ID",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/b62cae32-8355-4c82-beab-100ca06e3263?page=/",
+          "title": "Ministry of Public Security online Q&A (15 September 2026): a licence held for a traffic fine, no petition needed, paying online on the Ministry's public service portal and the licence returned by post after payment",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding papers and vehicles, the order of papers held for a fine, the holding decision and holding papers held in the ID account electronically",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H04",
+      "subcluster": "ss-incidents",
+      "slug": "policia-retem-carta-documentos-vietname-auto-data-marcada-prazos-recuperar",
+      "primary_query": "o que acontece quando a polícia do Vietname retém a minha carta de condução e como a recupero antes de partir",
+      "secondary_queries": [
+        "quanto tempo pode a polícia de trânsito do Vietname reter uma carta de condução",
+        "posso continuar a conduzir no Vietname se a polícia reteve a minha carta",
+        "que documento recebo quando a polícia retém a carta no Vietname",
+        "como levantar uma carta retida depois de pagar a coima no Vietname",
+        "o que deve perguntar um turista quando lhe retêm a carta e o voo de regresso está próximo"
+      ],
+      "entities": [
+        "Lei do Tratamento das Infrações Administrativas (artigo 125)",
+        "Decreto 168/2024/NĐ-CP (artigo 48)",
+        "auto de infração",
+        "polícia de trânsito",
+        "portal de serviços públicos do Ministério da Segurança Pública"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Um visitante a quem retêm a carta ou os documentos do veículo numa fiscalização de estrada quer saber se pode continuar a conduzir, que documento substitui a carta, durante quanto tempo ela pode ser retida e como a recuperar antes do voo de regresso.",
+      "content_angle": "Baseado no texto consolidado da Lei do Tratamento das Infrações Administrativas (171/2026/VBHN-LQ-VPQH, 30 de setembro de 2026), artigo 125 (retenção só quando necessária; o auto enumera o que fica retido e o infrator recebe uma cópia; havendo só coima, o agente pode reter a carta e depois os documentos do veículo até a decisão ser cumprida; nos outros casos o prazo é de 7 dias úteis, prorrogável em casos complexos) e no artigo 48 do Decreto 168/2024/NĐ-CP (quem continua a conduzir depois da data marcada no auto é tratado como sem documentos). Somam-se a LuatVietnam English sobre estrangeiros (14 de outubro de 2025), o Thanh Niên sobre a data marcada e o VNeID (21 de março de 2026), a Circular 73/2024/TT-BCA (artigo 17: entrega da decisão de retenção e retenção eletrónica de documentos da conta de identidade) e uma resposta do Ministério da Segurança Pública (15 de setembro de 2026) sobre o levantamento de uma carta, com pagamento em linha e devolução pelo correio. O redator acrescenta perguntas para um visitante prestes a partir, não promete a devolução no estrangeiro e distingue-se dos artigos sobre apreensão do veículo, fiscalização policial e pagamento de coimas.",
+      "working_title": "A polícia retém a carta ou os documentos no Vietname: auto, data marcada, prazos e como os recuperar",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on temporary holding of vehicles, licences and papers, the record, the holding decision, which papers may be held for a fine and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles and papers, the appointment date in the violation record and papers shown after a check",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.luatvietnam.vn/legal-news/how-are-foreigners-sanctioned-for-traffic-violations-in-vietnam-4729-104689-article.html",
+          "title": "LuatVietnam English (14 October 2025): how foreigners are sanctioned for traffic violations, the on-the-spot decision, papers taken when a fine is not paid at once and the vehicle-holding periods under Article 48",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanhnien.vn/chong-che-quen-mang-giay-to-xe-bi-csgt-xu-phat-the-nao-18526032013250943.htm",
+          "title": "Thanh Niên (21 March 2026): what happens when papers cannot be shown at a check, the appointment date on the violation record, showing papers or VNeID in time and Circular 73/2024/TT-BCA on electronic ID",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/b62cae32-8355-4c82-beab-100ca06e3263?page=/",
+          "title": "Ministry of Public Security online Q&A (15 September 2026): a licence held for a traffic fine, no petition needed, paying online on the Ministry's public service portal and the licence returned by post after payment",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding papers and vehicles, the order of papers held for a fine, the holding decision and holding papers held in the ID account electronically",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H04",
+      "subcluster": "ss-incidents",
+      "slug": "beteunam-gyeongchal-myeonheojeung-seoryu-bogwan-wiban-girok-gihan-dolryeobadgi",
+      "primary_query": "베트남에서 경찰이 운전면허증을 보관하면 어떻게 되고 출국 전에 어떻게 돌려받나요",
+      "secondary_queries": [
+        "베트남 교통경찰은 운전면허증을 최대 얼마나 보관할 수 있나요",
+        "베트남에서 경찰이 면허증을 보관한 뒤에도 계속 운전해도 되나요",
+        "베트남 경찰이 면허증을 가져갈 때 어떤 서류를 받나요",
+        "베트남에서 과태료를 낸 뒤 보관된 면허증은 어디서 돌려받나요",
+        "출국이 임박한 관광객이 면허증을 보관당하면 무엇을 물어봐야 하나요"
+      ],
+      "entities": [
+        "행정위반처리법 제125조",
+        "정부령 168/2024/NĐ-CP 제48조",
+        "위반 기록",
+        "교통경찰",
+        "베트남 공안부 공공서비스 포털"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "도로 검문에서 경찰에게 운전면허증이나 차량 서류를 보관당한 방문객은 계속 운전해도 되는지, 면허증을 대신하는 서류는 무엇인지, 얼마나 오래 보관될 수 있는지, 귀국 항공편 전에 어떻게 돌려받는지 알고 싶어 합니다.",
+      "content_angle": "정부 문서 포털의 행정위반처리법 통합본 171/2026/VBHN-LQ-VPQH(2026년 9월 30일) 제125조(꼭 필요한 경우에만 보관하고, 기록에는 보관 물품을 적어 위반자에게 한 부를 주며, 벌금만 부과하는 경우 담당자는 운전면허증, 그다음 차량 서류를 결정이 이행될 때까지 보관할 수 있고, 그 밖의 경우 기한은 영업일 7일이며 복잡한 사건은 연장 가능)와 정부령 168/2024/NĐ-CP 제48조(위반 기록에 적힌 처리 기한이 지났는데도 계속 운전하면 서류 없음으로 처리)에 근거합니다. 외국인을 다룬 LuatVietnam 영문 기사(2025년 10월 14일), 처리 기한과 VNeID를 다룬 Thanh Niên 기사(2026년 3월 21일), 공안부 통달 73/2024/TT-BCA(제17조: 보관 결정서의 교부와 신분 계정 서류의 전자 보관), 면허증을 찾는 방법을 다룬 공안부의 2026년 9월 15일 답변(온라인 납부와 우편 반환 설명)이 더해집니다. 작성자는 곧 출국하는 방문객을 위한 질문 목록을 덧붙이고 해외 우편 반환은 약속하지 않으며, 차량 압수, 경찰 검문, 과태료 납부 글과 구분합니다.",
+      "working_title": "베트남에서 경찰이 면허증이나 서류를 보관할 때: 위반 기록, 처리 기한, 보관 기간과 돌려받는 방법",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on temporary holding of vehicles, licences and papers, the record, the holding decision, which papers may be held for a fine and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles and papers, the appointment date in the violation record and papers shown after a check",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.luatvietnam.vn/legal-news/how-are-foreigners-sanctioned-for-traffic-violations-in-vietnam-4729-104689-article.html",
+          "title": "LuatVietnam English (14 October 2025): how foreigners are sanctioned for traffic violations, the on-the-spot decision, papers taken when a fine is not paid at once and the vehicle-holding periods under Article 48",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanhnien.vn/chong-che-quen-mang-giay-to-xe-bi-csgt-xu-phat-the-nao-18526032013250943.htm",
+          "title": "Thanh Niên (21 March 2026): what happens when papers cannot be shown at a check, the appointment date on the violation record, showing papers or VNeID in time and Circular 73/2024/TT-BCA on electronic ID",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/b62cae32-8355-4c82-beab-100ca06e3263?page=/",
+          "title": "Ministry of Public Security online Q&A (15 September 2026): a licence held for a traffic fine, no petition needed, paying online on the Ministry's public service portal and the licence returned by post after payment",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding papers and vehicles, the order of papers held for a fine, the holding decision and holding papers held in the ID account electronically",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H04",
+      "subcluster": "ss-incidents",
+      "slug": "betonamu-keisatsu-menkyosho-shorui-azukari-ihan-kiroku-shuttokikan-henkan",
+      "primary_query": "ベトナムで警察に運転免許証を預かられたらどうなるのか、出国前にどうやって返してもらうのか",
+      "secondary_queries": [
+        "ベトナムの交通警察は運転免許証を最長でどのくらい預かれるのか",
+        "ベトナムで警察に免許証を預かられた後もバイクを運転してよいか",
+        "ベトナムで警察が免許証を預かるとき代わりに何の書類をもらえるか",
+        "ベトナムで罰金を払った後に預けた免許証はどこで返してもらえるか",
+        "出国が近い旅行者が免許証を預かられたら何を確認すべきか"
+      ],
+      "entities": [
+        "行政違反処理法第125条",
+        "政令168/2024/NĐ-CP第48条",
+        "違反調書",
+        "交通警察",
+        "公安省の公共サービスポータル"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "路上の検問で警察に運転免許証や車両書類を預かられた旅行者は、そのまま運転を続けてよいのか、免許証の代わりになる書類は何か、どのくらい預かられるのか、帰国便の前にどう返してもらうのかを知りたがります。",
+      "content_angle": "政府の文書ポータルにある行政違反処理法の統合文書171/2026/VBHN-LQ-VPQH（2026年9月30日）の第125条（本当に必要な場合に限って保管し、調書には保管物を明記して違反者に一部を渡し、罰金のみの場合は担当者が運転免許証、次に車両書類を決定の履行まで保管でき、それ以外の通常の期限は7営業日で複雑な事案は延長可能）と、政令168/2024/NĐ-CP第48条（違反調書に書かれた出頭期限を過ぎても運転を続ければ書類なしとして扱う）に基づきます。さらに、外国人を扱ったLuatVietnamの英語版記事（2025年10月14日）、出頭期限とVNeIDを扱ったThanh Niên紙の記事（2026年3月21日）、公安省通達73/2024/TT-BCA（第17条：保管決定の交付とID口座内の書類の電子的保管）、預かられた免許証の受け取りに関する公安省の2026年9月15日の回答（オンライン納付と郵送での返還を説明）があります。執筆者は出国間近の旅行者向けの質問リストを添え、海外への郵送返還は約束せず、車両の押収、警察の検問、罰金の納付の各記事とは区別します。",
+      "working_title": "ベトナムで警察に免許証や書類を預かられたとき：違反調書、出頭期限、保管期間と返還の受け方",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/10/171-vbhn-vpqh.signed.pdf",
+          "title": "Government of Vietnam document portal (consolidated text 171/2026/VBHN-LQ-VPQH of 30 September 2026): Law on Handling of Administrative Violations, Article 125 on temporary holding of vehicles, licences and papers, the record, the holding decision, which papers may be held for a fine and the time limits",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm",
+          "title": "Government e-newspaper chinhphu.vn (full text of Decree 168/2024/NĐ-CP, page of 3 April 2025): Article 48 on holding vehicles and papers, the appointment date in the violation record and papers shown after a check",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://english.luatvietnam.vn/legal-news/how-are-foreigners-sanctioned-for-traffic-violations-in-vietnam-4729-104689-article.html",
+          "title": "LuatVietnam English (14 October 2025): how foreigners are sanctioned for traffic violations, the on-the-spot decision, papers taken when a fine is not paid at once and the vehicle-holding periods under Article 48",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanhnien.vn/chong-che-quen-mang-giay-to-xe-bi-csgt-xu-phat-the-nao-18526032013250943.htm",
+          "title": "Thanh Niên (21 March 2026): what happens when papers cannot be shown at a check, the appointment date on the violation record, showing papers or VNeID in time and Circular 73/2024/TT-BCA on electronic ID",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/b62cae32-8355-4c82-beab-100ca06e3263?page=/",
+          "title": "Ministry of Public Security online Q&A (15 September 2026): a licence held for a traffic fine, no petition needed, paying online on the Ministry's public service portal and the licence returned by post after payment",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://luatvietnam.vn/giao-thong/van-ban-hop-nhat-19-vbhn-bca-405783-d5.html",
+          "title": "LuatVietnam (consolidated text 19/VBHN-BCA, signed 26 April 2025): Circular 73/2024/TT-BCA on traffic police patrol and handling, Article 17(2) on holding papers and vehicles, the order of papers held for a fine, the holding decision and holding papers held in the ID account electronically",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}
