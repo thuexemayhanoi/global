@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T09:36:09.527Z",
-  "base_main_sha": "6546b85c5b76c19e459da29a3d89e2987e5db683",
-  "last_commit_sha": "e79600ba17ef269aa4edc32380c3382b84739863",
+  "updated_at": "2026-10-20T09:36:19.790Z",
+  "base_main_sha": "fdab4caa9d203c3b8cd3eefbac6733bdf1bbb69d",
+  "last_commit_sha": "3da7888c05fd83a6fd408647ad663a68b1230bea",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 970,
-    "qa_pass": 970,
+    "researched": 980,
+    "qa_pass": 980,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 960,
+    "pushed": 970,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 98,
-      "de": 98,
-      "fr": 98,
-      "es": 98,
-      "nl": 98,
-      "pt": 98,
-      "zh": 98,
-      "ko": 98,
-      "ja": 98,
-      "en": 88
+      "vi": 99,
+      "de": 99,
+      "fr": 99,
+      "es": 99,
+      "nl": 99,
+      "pt": 99,
+      "zh": 99,
+      "ko": 99,
+      "ja": 99,
+      "en": 89
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 220,
+      "traffic-law-safety": 230,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 97,
-    "file": "factory/topic-research/batches/claude-20261018b-0097.json",
-    "sha256": "2104c711642e1ebca8723ffb74fd9c0686f46d40d0f4b82e4b50519c7b92cf32",
+    "seq": 98,
+    "file": "factory/topic-research/batches/claude-20261018b-0098.json",
+    "sha256": "71b0276dacf2e2a9a254577ca881245e5f90d1edd5724c8217edb167e89b2827",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -10715,8 +10715,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0097.json",
       "sha256": "2104c711642e1ebca8723ffb74fd9c0686f46d40d0f4b82e4b50519c7b92cf32",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "3da7888c05fd83a6fd408647ad663a68b1230bea",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -10820,11 +10820,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 98,
+      "file": "factory/topic-research/batches/claude-20261018b-0098.json",
+      "sha256": "71b0276dacf2e2a9a254577ca881245e5f90d1edd5724c8217edb167e89b2827",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:dong-set-loc-di-xe-may-ha-noi-canh-bao-tru-an",
+          "locale": "vi",
+          "slug": "dong-set-loc-di-xe-may-ha-noi-canh-bao-tru-an",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-weather",
+          "key": "vi::dang di xe may o ha noi gap dong set thi phai lam gi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:thunderstorm-lightning-motorbike-hanoi-warnings-shelter",
+          "locale": "en",
+          "slug": "thunderstorm-lightning-motorbike-hanoi-warnings-shelter",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-weather",
+          "key": "en::what to do on a motorbike when a thunderstorm or lightning warning is issued in hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "de:gewitter-blitz-motorroller-hanoi-warnungen-schutz",
+          "locale": "de",
+          "slug": "gewitter-blitz-motorroller-hanoi-warnungen-schutz",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-weather",
+          "key": "de::was tun auf dem motorroller bei gewitter und blitzwarnung in hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:orage-foudre-scooter-hanoi-alertes-abri",
+          "locale": "fr",
+          "slug": "orage-foudre-scooter-hanoi-alertes-abri",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-weather",
+          "key": "fr::que faire en scooter quand une alerte orage et foudre est emise a hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "es:tormenta-rayos-moto-hanoi-avisos-refugio",
+          "locale": "es",
+          "slug": "tormenta-rayos-moto-hanoi-avisos-refugio",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-weather",
+          "key": "es::que hacer en moto cuando hay un aviso de tormenta y rayos en hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:onweer-bliksem-scooter-hanoi-waarschuwingen-schuilen",
+          "locale": "nl",
+          "slug": "onweer-bliksem-scooter-hanoi-waarschuwingen-schuilen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-weather",
+          "key": "nl::wat te doen op de scooter bij een onweers- en bliksemwaarschuwing in hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:zai-henei-qi-motuo-leibao-shandian-yujing-bilei",
+          "locale": "zh",
+          "slug": "zai-henei-qi-motuo-leibao-shandian-yujing-bilei",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-weather",
+          "key": "zh::在河内骑摩托车遇到雷暴闪电预警该怎么办",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:trovoada-raios-scooter-hanoi-avisos-abrigo",
+          "locale": "pt",
+          "slug": "trovoada-raios-scooter-hanoi-avisos-abrigo",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-weather",
+          "key": "pt::o que fazer de scooter quando ha aviso de trovoada e raios em hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-orto-bai-noeu-beongae-gyeongbo-daepi",
+          "locale": "ko",
+          "slug": "hanoi-orto-bai-noeu-beongae-gyeongbo-daepi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-weather",
+          "key": "ko::하노이에서 오토바이를 타다 뇌우와 번개 경보가 나오면 어떻게 하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-baiku-raiu-rakurai-keiho-hinan",
+          "locale": "ja",
+          "slug": "hanoi-baiku-raiu-rakurai-keiho-hinan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-weather",
+          "key": "ja::ハノイてハイクに乗っていて雷雨や落雷の警報か出たらとうするか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 98,
-    "file": "factory/topic-research/batches/claude-20261018b-0098.json",
+    "seq": 99,
+    "file": "factory/topic-research/batches/claude-20261018b-0099.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -10837,13 +10948,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:51:20.194Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 73,
-      "topics": 10,
-      "sha256": "b0b83db0e7f4abe4de645468320e8e74174e01742d94bf50ce4369b3ec9ddb76"
-    },
     {
       "at": "2026-10-20T04:51:28.112Z",
       "event": "BATCH_COMMITTED",
@@ -11011,6 +11115,13 @@
       "seq": 97,
       "topics": 10,
       "sha256": "2104c711642e1ebca8723ffb74fd9c0686f46d40d0f4b82e4b50519c7b92cf32"
+    },
+    {
+      "at": "2026-10-20T09:36:19.790Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 98,
+      "topics": 10,
+      "sha256": "71b0276dacf2e2a9a254577ca881245e5f90d1edd5724c8217edb167e89b2827"
     }
   ]
 }
