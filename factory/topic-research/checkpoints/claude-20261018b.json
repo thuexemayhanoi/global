@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T20:21:29.225Z",
+  "updated_at": "2026-10-20T20:21:40.282Z",
   "base_main_sha": "cad6ee1b90b9fda55c6807411d1bb745dd86b6d6",
-  "last_commit_sha": "5f57d0c00bd244b062e29fed5278ea3dca8938ca",
+  "last_commit_sha": "79b818b6403d14b717ca509adc8c62ac72ba5a57",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1530,
-    "qa_pass": 1530,
+    "researched": 1540,
+    "qa_pass": 1540,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1520,
+    "pushed": 1530,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 154,
-      "de": 154,
-      "fr": 154,
-      "es": 154,
-      "nl": 154,
-      "pt": 154,
-      "zh": 154,
-      "ko": 154,
-      "ja": 154,
-      "en": 144
+      "vi": 155,
+      "de": 155,
+      "fr": 155,
+      "es": 155,
+      "nl": 155,
+      "pt": 155,
+      "zh": 155,
+      "ko": 155,
+      "ja": 155,
+      "en": 145
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 590,
+      "traffic-law-safety": 600,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 153,
-    "file": "factory/topic-research/batches/claude-20261018b-0153.json",
-    "sha256": "35c4b9d00e59e24cfdfe8164072920825dd8d74eeb65221677497c353fff34f5",
+    "seq": 154,
+    "file": "factory/topic-research/batches/claude-20261018b-0154.json",
+    "sha256": "403e549cfb6ebfcdbbb7ac8a8f04bfaa62f30f8ecbc35c2fa61b8b937baef371",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -16931,8 +16931,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0153.json",
       "sha256": "35c4b9d00e59e24cfdfe8164072920825dd8d74eeb65221677497c353fff34f5",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "79b818b6403d14b717ca509adc8c62ac72ba5a57",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -17036,11 +17036,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 154,
+      "file": "factory/topic-research/batches/claude-20261018b-0154.json",
+      "sha256": "403e549cfb6ebfcdbbb7ac8a8f04bfaa62f30f8ecbc35c2fa61b8b937baef371",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:so-y-te-ha-noi-cong-bo-co-so-kham-chua-benh-tra-cuu-khach-nuoc-ngoai-tai-nan",
+          "locale": "vi",
+          "slug": "so-y-te-ha-noi-cong-bo-co-so-kham-chua-benh-tra-cuu-khach-nuoc-ngoai-tai-nan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::benh vien nao o ha noi kham cho nguoi nuoc ngoai bi tai nan xe may so y te co danh sach khong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:fcdo-list-medical-facilities-vietnam-what-it-says-how-uk-visitors-use-it",
+          "locale": "en",
+          "slug": "fcdo-list-medical-facilities-vietnam-what-it-says-how-uk-visitors-use-it",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::fcdo list of doctors and medical facilities in vietnam for british nationals",
+          "ta_id": null
+        },
+        {
+          "ref": "de:aerztelisten-deutsche-botschaft-hanoi-generalkonsulat-ho-chi-minh-stadt-vietnam",
+          "locale": "de",
+          "slug": "aerztelisten-deutsche-botschaft-hanoi-generalkonsulat-ho-chi-minh-stadt-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::arzte und krankenhauser in hanoi liste der deutschen botschaft nach einem rollerunfall",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:liste-de-notoriete-ambassade-france-vietnam-hopitaux-cliniques-contacts-utiles",
+          "locale": "fr",
+          "slug": "liste-de-notoriete-ambassade-france-vietnam-hopitaux-cliniques-contacts-utiles",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::liste de notoriete de l'ambassade de france au vietnam hopitaux et cliniques apres un accident",
+          "ta_id": null
+        },
+        {
+          "ref": "es:hospitales-en-vietnam-lista-exteriores-embajada-hanoi-accidente-moto",
+          "locale": "es",
+          "slug": "hospitales-en-vietnam-lista-exteriores-embajada-hanoi-accidente-moto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::lista de hospitales en vietnam de la embajada de espana para espanoles",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:ziekenhuis-vietnam-scooterongeluk-nederlandwereldwijd-verzekeraar-ambassade",
+          "locale": "nl",
+          "slug": "ziekenhuis-vietnam-scooterongeluk-nederlandwereldwijd-verzekeraar-ambassade",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::ziekenhuis in vietnam na een scooterongeluk wat zegt buitenlandse zaken en doet de ambassade",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-chushi-zhuyuan-zhongguo-shilingguan-yiyuan-xinxi-lingshi-baohu-tiaoli",
+          "locale": "zh",
+          "slug": "yuenan-chushi-zhuyuan-zhongguo-shilingguan-yiyuan-xinxi-lingshi-baohu-tiaoli",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::在越南出事故住院 中国使领馆提供医院信息吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:hospital-vietname-acidente-mota-portal-das-comunidades-saude-seguro",
+          "locale": "pt",
+          "slug": "hospital-vietname-acidente-mota-portal-das-comunidades-saude-seguro",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::que hospital procurar no vietname depois de um acidente de mota segundo o portal das comunidades",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-daesagwan-byeongwon-mongnok-hangugeo-jinryo-hanoi-hochimin",
+          "locale": "ko",
+          "slug": "beteunam-daesagwan-byeongwon-mongnok-hangugeo-jinryo-hanoi-hochimin",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::베트남 한국 대사관 병원 목록 하노이 호치민 한국어 진료 가능 병원",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-byoin-ichiran-gaimusho-sekai-no-iryo-jijo-taishikan-iryo-kikan",
+          "locale": "ja",
+          "slug": "betonamu-byoin-ichiran-gaimusho-sekai-no-iryo-jijo-taishikan-iryo-kikan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ヘトナム 病院 一覧 外務省 世界の医療事情 日本語対応 ハノイ ホーチミン",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 154,
-    "file": "factory/topic-research/batches/claude-20261018b-0154.json",
+    "seq": 155,
+    "file": "factory/topic-research/batches/claude-20261018b-0155.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -17053,13 +17164,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T10:56:44.216Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 129,
-      "topics": 10,
-      "sha256": "9c8d4a0e3f61abd2da9d370bf6b07930ef75fadabb3abdd7e736d78491304113"
-    },
     {
       "at": "2026-10-20T10:56:58.692Z",
       "event": "BATCH_COMMITTED",
@@ -17227,6 +17331,13 @@
       "seq": 153,
       "topics": 10,
       "sha256": "35c4b9d00e59e24cfdfe8164072920825dd8d74eeb65221677497c353fff34f5"
+    },
+    {
+      "at": "2026-10-20T20:21:40.282Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 154,
+      "topics": 10,
+      "sha256": "403e549cfb6ebfcdbbb7ac8a8f04bfaa62f30f8ecbc35c2fa61b8b937baef371"
     }
   ]
 }
