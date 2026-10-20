@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T20:49:22.103Z",
+  "updated_at": "2026-10-20T20:49:40.827Z",
   "base_main_sha": "5160debc109578bd2bfc6a9313e10412c24482a7",
-  "last_commit_sha": "9085aa184feaa183a27363f0b8cef538cde722c5",
+  "last_commit_sha": "bb715cc333d5c6f2e54b2ded3eb6b01fd20f9eab",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1650,
-    "qa_pass": 1650,
+    "researched": 1660,
+    "qa_pass": 1660,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1640,
+    "pushed": 1650,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 166,
-      "de": 166,
-      "fr": 166,
-      "es": 166,
-      "nl": 166,
-      "pt": 166,
-      "zh": 166,
-      "ko": 166,
-      "ja": 166,
-      "en": 156
+      "vi": 167,
+      "de": 167,
+      "fr": 167,
+      "es": 167,
+      "nl": 167,
+      "pt": 167,
+      "zh": 167,
+      "ko": 167,
+      "ja": 167,
+      "en": 157
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 690,
+      "traffic-law-safety": 700,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 165,
-    "file": "factory/topic-research/batches/claude-20261018b-0165.json",
-    "sha256": "7cdf8795d3ef24910338a397eed39000d33282dc8d2a08601262b85116e5c843",
+    "seq": 166,
+    "file": "factory/topic-research/batches/claude-20261018b-0166.json",
+    "sha256": "5955330c05e5ad27c7c16b25a6a2cec6cf22ebddc2b0b97f69c8b52af3b3655e",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -18263,8 +18263,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0165.json",
       "sha256": "7cdf8795d3ef24910338a397eed39000d33282dc8d2a08601262b85116e5c843",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "bb715cc333d5c6f2e54b2ded3eb6b01fd20f9eab",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -18368,11 +18368,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 166,
+      "file": "factory/topic-research/batches/claude-20261018b-0166.json",
+      "sha256": "5955330c05e5ad27c7c16b25a6a2cec6cf22ebddc2b0b97f69c8b52af3b3655e",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:bang-lai-xe-dien-tu-1-7-2026-nguoi-nuoc-ngoai-sau-sat-hach-hoac-doi-bang-the-pet",
+          "locale": "vi",
+          "slug": "bang-lai-xe-dien-tu-1-7-2026-nguoi-nuoc-ngoai-sau-sat-hach-hoac-doi-bang-the-pet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-licence",
+          "key": "vi::nguoi nuoc ngoai thi hoac doi bang lai xe may sau 1/7/2026 se nhan bang dien tu hay the pet",
+          "ta_id": null
+        },
+        {
+          "ref": "en:electronic-driving-licence-vietnam-july-2026-after-test-or-exchange-pet-card",
+          "locale": "en",
+          "slug": "electronic-driving-licence-vietnam-july-2026-after-test-or-exchange-pet-card",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H03",
+          "subcluster": "dc-licence",
+          "key": "en::after the motorbike test or a licence exchange in vietnam do i get an electronic licence or a card",
+          "ta_id": null
+        },
+        {
+          "ref": "de:elektronischer-fuehrerschein-vietnam-juli-2026-nach-pruefung-umtausch-pet-karte",
+          "locale": "de",
+          "slug": "elektronischer-fuehrerschein-vietnam-juli-2026-nach-pruefung-umtausch-pet-karte",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H03",
+          "subcluster": "dc-licence",
+          "key": "de::bekomme ich in vietnam nach der motorradprufung oder dem fuhrerscheinumtausch einen elektronischen fuhrerschein oder eine karte",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:permis-electronique-vietnam-juillet-2026-apres-examen-ou-echange-carte-pet",
+          "locale": "fr",
+          "slug": "permis-electronique-vietnam-juillet-2026-apres-examen-ou-echange-carte-pet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H03",
+          "subcluster": "dc-licence",
+          "key": "fr::au vietnam, recoit-on un permis electronique ou une carte apres l'examen moto ou l'echange de permis",
+          "ta_id": null
+        },
+        {
+          "ref": "es:carne-conducir-electronico-vietnam-julio-2026-tras-examen-o-canje-tarjeta-pet",
+          "locale": "es",
+          "slug": "carne-conducir-electronico-vietnam-julio-2026-tras-examen-o-canje-tarjeta-pet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H03",
+          "subcluster": "dc-licence",
+          "key": "es::en vietnam, tras el examen de moto o el canje del carne, ¿se recibe un carne electronico o una tarjeta?",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:elektronisch-rijbewijs-vietnam-juli-2026-na-examen-of-omwisseling-pet-kaart",
+          "locale": "nl",
+          "slug": "elektronisch-rijbewijs-vietnam-juli-2026-na-examen-of-omwisseling-pet-kaart",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H03",
+          "subcluster": "dc-licence",
+          "key": "nl::krijg je in vietnam na het motorexamen of de omwisseling een elektronisch rijbewijs of een pasje",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-dianzi-jiazhao-2026-nian-7-yue-waiguoren-kaoshi-huozheng-hou-pet-ka",
+          "locale": "zh",
+          "slug": "yuenan-dianzi-jiazhao-2026-nian-7-yue-waiguoren-kaoshi-huozheng-hou-pet-ka",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H03",
+          "subcluster": "dc-licence",
+          "key": "zh::在越南考摩托车驾照或换领驾照后拿到的是电子驾照还是实体卡",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:carta-conducao-eletronica-vietname-julho-2026-apos-exame-ou-troca-cartao-pet",
+          "locale": "pt",
+          "slug": "carta-conducao-eletronica-vietname-julho-2026-apos-exame-ou-troca-cartao-pet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H03",
+          "subcluster": "dc-licence",
+          "key": "pt::no vietname, depois do exame de mota ou da troca da carta, recebe-se uma carta eletronica ou um cartao",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-jeonja-unjeon-myeonheojeung-2026-nyeon-7-wol-oegugin-sigeom-gyohwan-pet",
+          "locale": "ko",
+          "slug": "beteunam-jeonja-unjeon-myeonheojeung-2026-nyeon-7-wol-oegugin-sigeom-gyohwan-pet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H03",
+          "subcluster": "dc-licence",
+          "key": "ko::베트남에서 오토바이 시험이나 면허 교환 후에는 전자 면허증을 받나요 아니면 카드를 받나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-denshi-unten-menkyosho-2026-nen-7-gatsu-gaikokujin-shiken-kirikae-pet",
+          "locale": "ja",
+          "slug": "betonamu-denshi-unten-menkyosho-2026-nen-7-gatsu-gaikokujin-shiken-kirikae-pet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H03",
+          "subcluster": "dc-licence",
+          "key": "ja::ヘトナムてハイクの試験や免許の切り替えの後に受け取るのは電子免許証かカートか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 166,
-    "file": "factory/topic-research/batches/claude-20261018b-0166.json",
+    "seq": 167,
+    "file": "factory/topic-research/batches/claude-20261018b-0167.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -18385,13 +18496,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T19:46:58.524Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 141,
-      "topics": 10,
-      "sha256": "b259c4d0f10fd483e4add2f32b0dbe9ac29120da9ed7ba21cd271d681bbbf902"
-    },
     {
       "at": "2026-10-20T19:49:40.521Z",
       "event": "BATCH_COMMITTED",
@@ -18559,6 +18663,13 @@
       "seq": 165,
       "topics": 10,
       "sha256": "7cdf8795d3ef24910338a397eed39000d33282dc8d2a08601262b85116e5c843"
+    },
+    {
+      "at": "2026-10-20T20:49:40.827Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 166,
+      "topics": 10,
+      "sha256": "5955330c05e5ad27c7c16b25a6a2cec6cf22ebddc2b0b97f69c8b52af3b3655e"
     }
   ]
 }
