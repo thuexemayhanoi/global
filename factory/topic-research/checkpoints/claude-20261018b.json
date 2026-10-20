@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T21:30:50.402Z",
+  "updated_at": "2026-10-20T21:31:05.805Z",
   "base_main_sha": "c21cab37733fc2c6a41700500a8718edf9cd510f",
-  "last_commit_sha": "5d68bc2794f1901d0a422b07f3b49a22c1bdc07c",
+  "last_commit_sha": "a8853b02867a60203076b5446f05f4e5b168e5a5",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1810,
-    "qa_pass": 1810,
+    "researched": 1820,
+    "qa_pass": 1820,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1800,
+    "pushed": 1810,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 182,
-      "de": 182,
-      "fr": 182,
-      "es": 182,
-      "nl": 182,
-      "pt": 182,
-      "zh": 182,
-      "ko": 182,
-      "ja": 182,
-      "en": 172
+      "vi": 183,
+      "de": 183,
+      "fr": 183,
+      "es": 183,
+      "nl": 183,
+      "pt": 183,
+      "zh": 183,
+      "ko": 183,
+      "ja": 183,
+      "en": 173
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 791,
+      "traffic-law-safety": 801,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 181,
-    "file": "factory/topic-research/batches/claude-20261018b-0181.json",
-    "sha256": "d764a8566cfa283cc134de22507b84fcc838ee7bbb68c30c20e81ca7e28bb64b",
+    "seq": 182,
+    "file": "factory/topic-research/batches/claude-20261018b-0182.json",
+    "sha256": "02f483dbc688b934006735e04d77e63ba920e13ce259b85836c90c879cd708a5",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -20039,8 +20039,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0181.json",
       "sha256": "d764a8566cfa283cc134de22507b84fcc838ee7bbb68c30c20e81ca7e28bb64b",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "a8853b02867a60203076b5446f05f4e5b168e5a5",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -20144,11 +20144,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 182,
+      "file": "factory/topic-research/batches/claude-20261018b-0182.json",
+      "sha256": "02f483dbc688b934006735e04d77e63ba920e13ce259b85836c90c879cd708a5",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:met-moi-khi-di-xe-may-nghien-cuu-giac-ngu-duong-dai-va-quy-dinh-viet-nam",
+          "locale": "vi",
+          "slug": "met-moi-khi-di-xe-may-nghien-cuu-giac-ngu-duong-dai-va-quy-dinh-viet-nam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::met hoac thieu ngu co lam tang nguy co tai nan khi di xe may khong va di duong dai nen nghi bao lau mot lan",
+          "ta_id": null
+        },
+        {
+          "ref": "en:tiredness-on-a-motorbike-rider-studies-sleep-long-rides-and-vietnam-rule",
+          "locale": "en",
+          "slug": "tiredness-on-a-motorbike-rider-studies-sleep-long-rides-and-vietnam-rule",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::does being tired really raise the crash risk on a motorbike and how often should you stop on a long ride",
+          "ta_id": null
+        },
+        {
+          "ref": "de:muedigkeit-auf-dem-roller-studien-zu-schlaf-langen-fahrten-und-vietnam-regel",
+          "locale": "de",
+          "slug": "muedigkeit-auf-dem-roller-studien-zu-schlaf-langen-fahrten-und-vietnam-regel",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::erhoht mudigkeit das unfallrisiko auf dem motorrad wirklich und wie oft sollte man auf langer fahrt anhalten",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:fatigue-a-moto-etudes-sommeil-longs-trajets-cdc-nhtsa-et-regle-du-vietnam",
+          "locale": "fr",
+          "slug": "fatigue-a-moto-etudes-sommeil-longs-trajets-cdc-nhtsa-et-regle-du-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::la fatigue augmente-t-elle vraiment le risque d'accident a moto et tous les combien s'arreter sur un long trajet",
+          "ta_id": null
+        },
+        {
+          "ref": "es:cansancio-en-moto-estudios-sueno-viajes-largos-cdc-nhtsa-y-norma-de-vietnam",
+          "locale": "es",
+          "slug": "cansancio-en-moto-estudios-sueno-viajes-largos-cdc-nhtsa-y-norma-de-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::el cansancio aumenta de verdad el riesgo de accidente en moto y cada cuanto hay que parar en un viaje largo",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:vermoeidheid-op-de-scooter-studies-slaap-lange-ritten-en-vietnamese-regel",
+          "locale": "nl",
+          "slug": "vermoeidheid-op-de-scooter-studies-slaap-lange-ritten-en-vietnamese-regel",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::verhoogt vermoeidheid echt het ongevalsrisico op een scooter en hoe vaak moet je stoppen op een lange rit",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-qi-motuoche-pilao-shuimian-changtu-qixing-yanjiu-cdc-nhtsa-he-guiding",
+          "locale": "zh",
+          "slug": "yuenan-qi-motuoche-pilao-shuimian-changtu-qixing-yanjiu-cdc-nhtsa-he-guiding",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::疲劳会让骑摩托车的事故风险真的增加吗 长途骑行多久该停一次",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:cansaco-na-mota-estudos-sono-viagens-longas-cdc-nhtsa-e-regra-do-vietname",
+          "locale": "pt",
+          "slug": "cansaco-na-mota-estudos-sono-viagens-longas-cdc-nhtsa-e-regra-do-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::o cansaco aumenta mesmo o risco de acidente de mota e de quanto em quanto tempo se deve parar numa viagem longa",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-pilo-jeoljeum-sumyeon-janggeori-yeongu-cdc-nhtsa-beop",
+          "locale": "ko",
+          "slug": "beteunam-otobai-pilo-jeoljeum-sumyeon-janggeori-yeongu-cdc-nhtsa-beop",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::피로하면 오토바이 사고 위험이 정말 커지나요 장거리에서는 얼마나 자주 쉬어야 하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-hiro-suimin-chokyori-kenkyu-cdc-nhtsa-to-horitsu",
+          "locale": "ja",
+          "slug": "betonamu-baiku-hiro-suimin-chokyori-kenkyu-cdc-nhtsa-to-horitsu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::疲れているとハイクの事故リスクは本当に上かりますか 長距離てはとれくらいことに休むへきてすか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 182,
-    "file": "factory/topic-research/batches/claude-20261018b-0182.json",
+    "seq": 183,
+    "file": "factory/topic-research/batches/claude-20261018b-0183.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -20161,13 +20272,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:29:49.250Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 157,
-      "topics": 10,
-      "sha256": "270e2211df99773da9f5f4c941438ba7b1a372cf6acd959d900747b9ec93e81a"
-    },
     {
       "at": "2026-10-20T20:36:47.390Z",
       "event": "BATCH_COMMITTED",
@@ -20335,6 +20439,13 @@
       "seq": 181,
       "topics": 10,
       "sha256": "d764a8566cfa283cc134de22507b84fcc838ee7bbb68c30c20e81ca7e28bb64b"
+    },
+    {
+      "at": "2026-10-20T21:31:05.805Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 182,
+      "topics": 10,
+      "sha256": "02f483dbc688b934006735e04d77e63ba920e13ce259b85836c90c879cd708a5"
     }
   ]
 }
