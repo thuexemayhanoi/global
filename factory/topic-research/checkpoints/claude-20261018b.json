@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:15:42.185Z",
+  "updated_at": "2026-10-20T10:15:56.106Z",
   "base_main_sha": "d1a521e81cdad57a514df615979caa00b41cc3a5",
-  "last_commit_sha": "25b1e018263e6a23dec51b8409fd0f995df6ec8c",
+  "last_commit_sha": "66943ff1e0d63d297220460068e5982fa3f97c4a",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1090,
-    "qa_pass": 1090,
+    "researched": 1100,
+    "qa_pass": 1100,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1080,
+    "pushed": 1090,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 110,
-      "de": 110,
-      "fr": 110,
-      "es": 110,
-      "nl": 110,
-      "pt": 110,
-      "zh": 110,
-      "ko": 110,
-      "ja": 110,
-      "en": 100
+      "vi": 111,
+      "de": 111,
+      "fr": 111,
+      "es": 111,
+      "nl": 111,
+      "pt": 111,
+      "zh": 111,
+      "ko": 111,
+      "ja": 111,
+      "en": 101
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 110
+      "motorbike-rental": 120
     }
   },
   "last_batch": {
-    "seq": 109,
-    "file": "factory/topic-research/batches/claude-20261018b-0109.json",
-    "sha256": "6edda0fd6991641e160b461558f115f721226ca4ac49f7435ed70931ba2d7322",
+    "seq": 110,
+    "file": "factory/topic-research/batches/claude-20261018b-0110.json",
+    "sha256": "02a5682e52c4b0c4bc074ffe145419f1aee16180408eb01e60a2222a626b604e",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -12047,8 +12047,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0109.json",
       "sha256": "6edda0fd6991641e160b461558f115f721226ca4ac49f7435ed70931ba2d7322",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "66943ff1e0d63d297220460068e5982fa3f97c4a",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -12152,11 +12152,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 110,
+      "file": "factory/topic-research/batches/claude-20261018b-0110.json",
+      "sha256": "02a5682e52c4b0c4bc074ffe145419f1aee16180408eb01e60a2222a626b604e",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:suzuki-satria-raider-va-cac-xe-suzuki-khac-tai-viet-nam",
+          "locale": "vi",
+          "slug": "suzuki-satria-raider-va-cac-xe-suzuki-khac-tai-viet-nam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-models",
+          "key": "vi::suzuki raider satria khac nhau the nao va can bang lai hang nao o viet nam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:suzuki-satria-raider-and-other-suzuki-bikes-in-vietnam",
+          "locale": "en",
+          "slug": "suzuki-satria-raider-and-other-suzuki-bikes-in-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-models",
+          "key": "en::suzuki raider vs suzuki satria in vietnam differences and licence class",
+          "ta_id": null
+        },
+        {
+          "ref": "de:suzuki-satria-raider-und-andere-suzuki-in-vietnam",
+          "locale": "de",
+          "slug": "suzuki-satria-raider-und-andere-suzuki-in-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-models",
+          "key": "de::suzuki raider satria unterschiede und notige fuhrerscheinklasse in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:suzuki-satria-raider-et-autres-suzuki-au-vietnam",
+          "locale": "fr",
+          "slug": "suzuki-satria-raider-et-autres-suzuki-au-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-models",
+          "key": "fr::suzuki raider satria differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:suzuki-satria-raider-y-otras-suzuki-en-vietnam",
+          "locale": "es",
+          "slug": "suzuki-satria-raider-y-otras-suzuki-en-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-models",
+          "key": "es::suzuki raider satria diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:suzuki-satria-raider-en-andere-suzuki-in-vietnam",
+          "locale": "nl",
+          "slug": "suzuki-satria-raider-en-andere-suzuki-in-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-models",
+          "key": "nl::suzuki raider satria verschillen en welk rijbewijs je nodig hebt in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:suzuki-satria-raider-yuenan-xianxing-chexing-jiashi",
+          "locale": "zh",
+          "slug": "suzuki-satria-raider-yuenan-xianxing-chexing-jiashi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-models",
+          "key": "zh::铃木 raider satria 区别 越南 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:suzuki-satria-raider-e-outras-suzuki-no-vietname",
+          "locale": "pt",
+          "slug": "suzuki-satria-raider-e-outras-suzuki-no-vietname",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-models",
+          "key": "pt::suzuki raider satria diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:suzuki-satria-raider-vietnam-hyeonhaeng-modeol-myeonheo",
+          "locale": "ko",
+          "slug": "suzuki-satria-raider-vietnam-hyeonhaeng-modeol-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-models",
+          "key": "ko::스즈키 raider satria 차이와 베트남에서 필요한 면허 종류",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:suzuki-satria-raider-vietnam-genko-sharyo-menkyo",
+          "locale": "ja",
+          "slug": "suzuki-satria-raider-vietnam-genko-sharyo-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-models",
+          "key": "ja::ススキ raider satria の違いとヘトナムて必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 110,
-    "file": "factory/topic-research/batches/claude-20261018b-0110.json",
+    "seq": 111,
+    "file": "factory/topic-research/batches/claude-20261018b-0111.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -12169,13 +12280,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:57:11.129Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 85,
-      "topics": 10,
-      "sha256": "44e9b24d1fb478a3b52524ef4cb3f0b196afbc8ae9e73c8bc3fb327e4d735b50"
-    },
     {
       "at": "2026-10-20T05:04:05.026Z",
       "event": "BATCH_COMMITTED",
@@ -12343,6 +12447,13 @@
       "seq": 109,
       "topics": 10,
       "sha256": "6edda0fd6991641e160b461558f115f721226ca4ac49f7435ed70931ba2d7322"
+    },
+    {
+      "at": "2026-10-20T10:15:56.106Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 110,
+      "topics": 10,
+      "sha256": "02a5682e52c4b0c4bc074ffe145419f1aee16180408eb01e60a2222a626b604e"
     }
   ]
 }
