@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T09:47:21.751Z",
+  "updated_at": "2026-10-20T09:47:44.401Z",
   "base_main_sha": "d05b594abac3ed4ebe7c24a5b4fa47e73e8cccbf",
-  "last_commit_sha": "8af9e9b6f999d7e6754db9e54cfc5c42effbc4fb",
+  "last_commit_sha": "ea34fd00fa6481f2fedbbdef98897e756aea026f",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1000,
-    "qa_pass": 1000,
+    "researched": 1010,
+    "qa_pass": 1010,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 990,
+    "pushed": 1000,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 101,
-      "de": 101,
-      "fr": 101,
-      "es": 101,
-      "nl": 101,
-      "pt": 101,
-      "zh": 101,
-      "ko": 101,
-      "ja": 101,
-      "en": 91
+      "vi": 102,
+      "de": 102,
+      "fr": 102,
+      "es": 102,
+      "nl": 102,
+      "pt": 102,
+      "zh": 102,
+      "ko": 102,
+      "ja": 102,
+      "en": 92
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 250,
+      "traffic-law-safety": 260,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 100,
-    "file": "factory/topic-research/batches/claude-20261018b-0100.json",
-    "sha256": "8499f56e6f42ff0dc2417a3a142428a8754464f2855d4c97fc75815f15c99be2",
+    "seq": 101,
+    "file": "factory/topic-research/batches/claude-20261018b-0101.json",
+    "sha256": "0e87084dc099ce18eb4b79e99e52ceebe87d25d4b33648e6a25a1aac299d04d6",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -11048,8 +11048,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0100.json",
       "sha256": "8499f56e6f42ff0dc2417a3a142428a8754464f2855d4c97fc75815f15c99be2",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "ea34fd00fa6481f2fedbbdef98897e756aea026f",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -11153,11 +11153,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 101,
+      "file": "factory/topic-research/batches/claude-20261018b-0101.json",
+      "sha256": "0e87084dc099ce18eb4b79e99e52ceebe87d25d4b33648e6a25a1aac299d04d6",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:cong-an-khuyen-cao-nguoi-nuoc-ngoai-di-xe-may-o-viet-nam",
+          "locale": "vi",
+          "slug": "cong-an-khuyen-cao-nguoi-nuoc-ngoai-di-xe-may-o-viet-nam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::cong an khuyen cao nguoi nuoc ngoai di xe may o viet nam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:uk-australia-us-travel-advice-riding-motorbike-vietnam",
+          "locale": "en",
+          "slug": "uk-australia-us-travel-advice-riding-motorbike-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::uk australian and us government travel advice on riding a motorbike in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:auswaertiges-amt-vietnam-reisehinweise-roller-motorrad",
+          "locale": "de",
+          "slug": "auswaertiges-amt-vietnam-reisehinweise-roller-motorrad",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::auswartiges amt vietnam reisehinweise roller motorrad fuhrerschein",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:conseils-aux-voyageurs-vietnam-moto-scooter-permis-casque",
+          "locale": "fr",
+          "slug": "conseils-aux-voyageurs-vietnam-moto-scooter-permis-casque",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::conseils aux voyageurs vietnam moto scooter permis international casque",
+          "ta_id": null
+        },
+        {
+          "ref": "es:recomendaciones-viaje-exteriores-vietnam-moto-permiso",
+          "locale": "es",
+          "slug": "recomendaciones-viaje-exteriores-vietnam-moto-permiso",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::recomendaciones de viaje vietnam exteriores conducir moto permiso internacional",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:reisadvies-vietnam-scooter-motor-anwb-buitenlandse-zaken",
+          "locale": "nl",
+          "slug": "reisadvies-vietnam-scooter-motor-anwb-buitenlandse-zaken",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::reisadvies vietnam scooter motor rijden 50 cc rijbewijs anwb",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-motuoche-zhu-yuenan-shiguan-lingshi-tixing",
+          "locale": "zh",
+          "slug": "yuenan-motuoche-zhu-yuenan-shiguan-lingshi-tixing",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::越南租摩托车 中国驻越南使馆 提醒 驾驶证",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:conselhos-aos-viajantes-vietname-mota-capacete-carta",
+          "locale": "pt",
+          "slug": "conselhos-aos-viajantes-vietname-mota-capacete-carta",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::conselhos aos viajantes vietname andar de mota capacete licenca internacional",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-oegyobu-dorogyotonggongdan-annae",
+          "locale": "ko",
+          "slug": "beteunam-otobai-oegyobu-dorogyotonggongdan-annae",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::베트남 오토바이 운전 외교부 안전정보 국제운전면허증",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-rentaru-baiku-gaimusho-kaigai-anzen",
+          "locale": "ja",
+          "slug": "betonamu-rentaru-baiku-gaimusho-kaigai-anzen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ヘトナム レンタルハイク 外務省 海外安全情報 運転免許",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 101,
-    "file": "factory/topic-research/batches/claude-20261018b-0101.json",
+    "seq": 102,
+    "file": "factory/topic-research/batches/claude-20261018b-0102.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -11170,13 +11281,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:52:16.107Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 76,
-      "topics": 10,
-      "sha256": "20c22500caebcd0fa326a8d40b42239f96f44ea7134d1e0917189234e9546ecf"
-    },
     {
       "at": "2026-10-20T04:55:08.818Z",
       "event": "BATCH_COMMITTED",
@@ -11344,6 +11448,13 @@
       "seq": 100,
       "topics": 10,
       "sha256": "8499f56e6f42ff0dc2417a3a142428a8754464f2855d4c97fc75815f15c99be2"
+    },
+    {
+      "at": "2026-10-20T09:47:44.401Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 101,
+      "topics": 10,
+      "sha256": "0e87084dc099ce18eb4b79e99e52ceebe87d25d4b33648e6a25a1aac299d04d6"
     }
   ]
 }
