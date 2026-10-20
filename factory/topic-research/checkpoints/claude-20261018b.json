@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:09:41.108Z",
-  "base_main_sha": "35c3196f5c3a760adb2641c95d0feaaefe7c0687",
-  "last_commit_sha": "c42996e3b1034603d77ad084bd1eab766ced4782",
+  "updated_at": "2026-10-20T10:15:42.185Z",
+  "base_main_sha": "d1a521e81cdad57a514df615979caa00b41cc3a5",
+  "last_commit_sha": "25b1e018263e6a23dec51b8409fd0f995df6ec8c",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1080,
-    "qa_pass": 1080,
+    "researched": 1090,
+    "qa_pass": 1090,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1070,
+    "pushed": 1080,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 109,
-      "de": 109,
-      "fr": 109,
-      "es": 109,
-      "nl": 109,
-      "pt": 109,
-      "zh": 109,
-      "ko": 109,
-      "ja": 109,
-      "en": 99
+      "vi": 110,
+      "de": 110,
+      "fr": 110,
+      "es": 110,
+      "nl": 110,
+      "pt": 110,
+      "zh": 110,
+      "ko": 110,
+      "ja": 110,
+      "en": 100
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 100
+      "motorbike-rental": 110
     }
   },
   "last_batch": {
-    "seq": 108,
-    "file": "factory/topic-research/batches/claude-20261018b-0108.json",
-    "sha256": "766b1f9557a18f86cdd734aec4eb2eb31dd81bdd55d4fad1407ce8a2e8e005ba",
+    "seq": 109,
+    "file": "factory/topic-research/batches/claude-20261018b-0109.json",
+    "sha256": "6edda0fd6991641e160b461558f115f721226ca4ac49f7435ed70931ba2d7322",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -11936,8 +11936,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0108.json",
       "sha256": "766b1f9557a18f86cdd734aec4eb2eb31dd81bdd55d4fad1407ce8a2e8e005ba",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "25b1e018263e6a23dec51b8409fd0f995df6ec8c",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -12041,11 +12041,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 109,
+      "file": "factory/topic-research/batches/claude-20261018b-0109.json",
+      "sha256": "6edda0fd6991641e160b461558f115f721226ca4ac49f7435ed70931ba2d7322",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:honda-wave-rsx-blade-future-125-xe-so-khac-nhau",
+          "locale": "vi",
+          "slug": "honda-wave-rsx-blade-future-125-xe-so-khac-nhau",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-models",
+          "key": "vi::honda wave rsx blade future 125 khac nhau the nao va can bang lai hang nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:honda-wave-rsx-blade-future-125-semi-automatic-differences",
+          "locale": "en",
+          "slug": "honda-wave-rsx-blade-future-125-semi-automatic-differences",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-models",
+          "key": "en::honda wave rsx vs blade vs future 125 differences",
+          "ta_id": null
+        },
+        {
+          "ref": "de:honda-wave-rsx-blade-future-125-halbautomatik-unterschiede",
+          "locale": "de",
+          "slug": "honda-wave-rsx-blade-future-125-halbautomatik-unterschiede",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-models",
+          "key": "de::honda wave rsx blade future 125 unterschiede und notige fuhrerscheinklasse",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:honda-wave-rsx-blade-future-125-semi-automatiques-differences",
+          "locale": "fr",
+          "slug": "honda-wave-rsx-blade-future-125-semi-automatiques-differences",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-models",
+          "key": "fr::honda wave rsx blade future 125 differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:honda-wave-rsx-blade-future-125-semiautomaticas-diferencias",
+          "locale": "es",
+          "slug": "honda-wave-rsx-blade-future-125-semiautomaticas-diferencias",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-models",
+          "key": "es::honda wave rsx blade future 125 diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:honda-wave-rsx-blade-future-125-halfautomaten-verschillen",
+          "locale": "nl",
+          "slug": "honda-wave-rsx-blade-future-125-halfautomaten-verschillen",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-models",
+          "key": "nl::honda wave rsx blade future 125 verschillen en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:honda-wave-rsx-blade-future-125-banzidong-qubie",
+          "locale": "zh",
+          "slug": "honda-wave-rsx-blade-future-125-banzidong-qubie",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-models",
+          "key": "zh::本田 wave rsx blade future 125 区别 半自动摩托车 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:honda-wave-rsx-blade-future-125-semiautomaticas-diferencas",
+          "locale": "pt",
+          "slug": "honda-wave-rsx-blade-future-125-semiautomaticas-diferencas",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-models",
+          "key": "pt::honda wave rsx blade future 125 diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:honda-wave-rsx-blade-future-125-chai-myeonheo",
+          "locale": "ko",
+          "slug": "honda-wave-rsx-blade-future-125-chai-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-models",
+          "key": "ko::혼다 wave rsx blade future 125 차이와 필요한 면허 종류",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:honda-wave-rsx-blade-future-125-chigai-menkyo",
+          "locale": "ja",
+          "slug": "honda-wave-rsx-blade-future-125-chigai-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-models",
+          "key": "ja::ホンタ wave rsx blade future 125 の違いと必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 109,
-    "file": "factory/topic-research/batches/claude-20261018b-0109.json",
+    "seq": 110,
+    "file": "factory/topic-research/batches/claude-20261018b-0110.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -12058,13 +12169,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:56:57.246Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 84,
-      "topics": 10,
-      "sha256": "13105eb164e62b9c69eef8dcae4f0694df4d70aeadd434a4f86cb8516cb2be71"
-    },
     {
       "at": "2026-10-20T04:57:11.129Z",
       "event": "BATCH_COMMITTED",
@@ -12232,6 +12336,13 @@
       "seq": 108,
       "topics": 10,
       "sha256": "766b1f9557a18f86cdd734aec4eb2eb31dd81bdd55d4fad1407ce8a2e8e005ba"
+    },
+    {
+      "at": "2026-10-20T10:15:42.185Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 109,
+      "topics": 10,
+      "sha256": "6edda0fd6991641e160b461558f115f721226ca4ac49f7435ed70931ba2d7322"
     }
   ]
 }
