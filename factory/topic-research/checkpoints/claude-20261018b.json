@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T09:36:00.229Z",
+  "updated_at": "2026-10-20T09:36:09.527Z",
   "base_main_sha": "6546b85c5b76c19e459da29a3d89e2987e5db683",
-  "last_commit_sha": "12e7d0799b1a6d1ca7369eac142206fa0331d993",
+  "last_commit_sha": "e79600ba17ef269aa4edc32380c3382b84739863",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 960,
-    "qa_pass": 960,
+    "researched": 970,
+    "qa_pass": 970,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 950,
+    "pushed": 960,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 97,
-      "de": 97,
-      "fr": 97,
-      "es": 97,
-      "nl": 97,
-      "pt": 97,
-      "zh": 97,
-      "ko": 97,
-      "ja": 97,
-      "en": 87
+      "vi": 98,
+      "de": 98,
+      "fr": 98,
+      "es": 98,
+      "nl": 98,
+      "pt": 98,
+      "zh": 98,
+      "ko": 98,
+      "ja": 98,
+      "en": 88
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 210,
+      "traffic-law-safety": 220,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 96,
-    "file": "factory/topic-research/batches/claude-20261018b-0096.json",
-    "sha256": "d491ab0e287919cd22cb523c14cb676782616669645cfcd7f11fbbe63b318044",
+    "seq": 97,
+    "file": "factory/topic-research/batches/claude-20261018b-0097.json",
+    "sha256": "2104c711642e1ebca8723ffb74fd9c0686f46d40d0f4b82e4b50519c7b92cf32",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -10604,8 +10604,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0096.json",
       "sha256": "d491ab0e287919cd22cb523c14cb676782616669645cfcd7f11fbbe63b318044",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "e79600ba17ef269aa4edc32380c3382b84739863",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -10709,11 +10709,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 97,
+      "file": "factory/topic-research/batches/claude-20261018b-0097.json",
+      "sha256": "2104c711642e1ebca8723ffb74fd9c0686f46d40d0f4b82e4b50519c7b92cf32",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:quyen-nghia-vu-nguoi-thue-xe-may-bo-luat-dan-su",
+          "locale": "vi",
+          "slug": "quyen-nghia-vu-nguoi-thue-xe-may-bo-luat-dan-su",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-contract",
+          "key": "vi::nguoi thue xe may co quyen gi khi xe bi loi theo bo luat dan su",
+          "ta_id": null
+        },
+        {
+          "ref": "en:motorbike-renter-rights-duties-civil-code-defects-late-return",
+          "locale": "en",
+          "slug": "motorbike-renter-rights-duties-civil-code-defects-late-return",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H03",
+          "subcluster": "dc-contract",
+          "key": "en::renter's rights under the vietnamese civil code if a rental motorbike has a defect",
+          "ta_id": null
+        },
+        {
+          "ref": "de:rechte-pflichten-mieter-motorroller-vietnam-zivilgesetzbuch",
+          "locale": "de",
+          "slug": "rechte-pflichten-mieter-motorroller-vietnam-zivilgesetzbuch",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H03",
+          "subcluster": "dc-contract",
+          "key": "de::welche rechte hat der mieter eines motorrollers in vietnam bei einem mangel nach dem zivilgesetzbuch",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:droits-obligations-locataire-scooter-code-civil-vietnam",
+          "locale": "fr",
+          "slug": "droits-obligations-locataire-scooter-code-civil-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H03",
+          "subcluster": "dc-contract",
+          "key": "fr::quels sont les droits du locataire d'un scooter au vietnam en cas de defaut selon le code civil",
+          "ta_id": null
+        },
+        {
+          "ref": "es:derechos-obligaciones-inquilino-moto-codigo-civil-vietnam",
+          "locale": "es",
+          "slug": "derechos-obligaciones-inquilino-moto-codigo-civil-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H03",
+          "subcluster": "dc-contract",
+          "key": "es::que derechos tiene quien alquila una moto en vietnam si hay un defecto segun el codigo civil",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:rechten-plichten-huurder-scooter-burgerlijk-wetboek-vietnam",
+          "locale": "nl",
+          "slug": "rechten-plichten-huurder-scooter-burgerlijk-wetboek-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H03",
+          "subcluster": "dc-contract",
+          "key": "nl::welke rechten heeft de huurder van een scooter in vietnam bij een gebrek volgens het burgerlijk wetboek",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-minfadian-zuzhe-quanli-yiwu-zulin-motuoche",
+          "locale": "zh",
+          "slug": "yuenan-minfadian-zuzhe-quanli-yiwu-zulin-motuoche",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H03",
+          "subcluster": "dc-contract",
+          "key": "zh::越南民法典规定租摩托车的租客在车辆有缺陷时有哪些权利",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:direitos-deveres-locatario-scooter-codigo-civil-vietname",
+          "locale": "pt",
+          "slug": "direitos-deveres-locatario-scooter-codigo-civil-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H03",
+          "subcluster": "dc-contract",
+          "key": "pt::que direitos tem quem aluga uma scooter no vietname em caso de defeito segundo o codigo civil",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-minbeop-orto-bai-imchaein-gwolli-uimu-gyeolham",
+          "locale": "ko",
+          "slug": "beteunam-minbeop-orto-bai-imchaein-gwolli-uimu-gyeolham",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H03",
+          "subcluster": "dc-contract",
+          "key": "ko::베트남 민법에서 렌탈 오토바이에 결함이 있을 때 임차인의 권리는 무엇인가요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-minpo-baiku-karinushi-kenri-gimu-kekkan",
+          "locale": "ja",
+          "slug": "betonamu-minpo-baiku-karinushi-kenri-gimu-kekkan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H03",
+          "subcluster": "dc-contract",
+          "key": "ja::ヘトナム民法てレンタルハイクに欠陥かあった場合の借主の権利は",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 97,
-    "file": "factory/topic-research/batches/claude-20261018b-0097.json",
+    "seq": 98,
+    "file": "factory/topic-research/batches/claude-20261018b-0098.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -10726,13 +10837,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:49:52.773Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 72,
-      "topics": 10,
-      "sha256": "513d417c783f4c444f705befcb1293df086c2b6463f66c6f473cc14ee9ff3a42"
-    },
     {
       "at": "2026-10-20T04:51:20.194Z",
       "event": "BATCH_COMMITTED",
@@ -10900,6 +11004,13 @@
       "seq": 96,
       "topics": 10,
       "sha256": "d491ab0e287919cd22cb523c14cb676782616669645cfcd7f11fbbe63b318044"
+    },
+    {
+      "at": "2026-10-20T09:36:09.527Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 97,
+      "topics": 10,
+      "sha256": "2104c711642e1ebca8723ffb74fd9c0686f46d40d0f4b82e4b50519c7b92cf32"
     }
   ]
 }
