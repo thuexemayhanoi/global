@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T20:47:59.632Z",
+  "updated_at": "2026-10-20T20:48:31.812Z",
   "base_main_sha": "5160debc109578bd2bfc6a9313e10412c24482a7",
-  "last_commit_sha": "0c724c2c16c6e4059ce4d955284afaba3c589b7d",
+  "last_commit_sha": "6f1a3d49dd260c7055f29051c785ee5f64c74b53",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1610,
-    "qa_pass": 1610,
+    "researched": 1620,
+    "qa_pass": 1620,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1600,
+    "pushed": 1610,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 162,
-      "de": 162,
-      "fr": 162,
-      "es": 162,
-      "nl": 162,
-      "pt": 162,
-      "zh": 162,
-      "ko": 162,
-      "ja": 162,
-      "en": 152
+      "vi": 163,
+      "de": 163,
+      "fr": 163,
+      "es": 163,
+      "nl": 163,
+      "pt": 163,
+      "zh": 163,
+      "ko": 163,
+      "ja": 163,
+      "en": 153
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 650,
+      "traffic-law-safety": 660,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 161,
-    "file": "factory/topic-research/batches/claude-20261018b-0161.json",
-    "sha256": "52832cd03399fac92152d1c6ed33bbae737166935e0409d5f32fd76fa89290de",
+    "seq": 162,
+    "file": "factory/topic-research/batches/claude-20261018b-0162.json",
+    "sha256": "20920e128c080eaa72609e40bb86d2f0e4688adb9aed969b862f298562f7b121",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -17819,8 +17819,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0161.json",
       "sha256": "52832cd03399fac92152d1c6ed33bbae737166935e0409d5f32fd76fa89290de",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "6f1a3d49dd260c7055f29051c785ee5f64c74b53",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -17924,11 +17924,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 162,
+      "file": "factory/topic-research/batches/claude-20261018b-0162.json",
+      "sha256": "20920e128c080eaa72609e40bb86d2f0e4688adb9aed969b862f298562f7b121",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:hieu-lenh-csgt-den-tin-hieu-bien-bao-vach-ke-duong-mau-thuan-nghe-theo-cai-nao",
+          "locale": "vi",
+          "slug": "hieu-lenh-csgt-den-tin-hieu-bien-bao-vach-ke-duong-mau-thuan-nghe-theo-cai-nao",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::csgt ra hieu khac den tin hieu va bien bao thi phai nghe theo cai nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:police-signal-traffic-light-road-sign-marking-conflict-which-wins-vietnam",
+          "locale": "en",
+          "slug": "police-signal-traffic-light-road-sign-marking-conflict-which-wins-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::which wins in vietnam when a police officer, a traffic light and a road sign disagree",
+          "ta_id": null
+        },
+        {
+          "ref": "de:polizeizeichen-ampel-verkehrszeichen-markierung-widerspruch-vietnam-was-gilt",
+          "locale": "de",
+          "slug": "polizeizeichen-ampel-verkehrszeichen-markierung-widerspruch-vietnam-was-gilt",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::was gilt in vietnam wenn ein polizist, die ampel und ein verkehrszeichen sich widersprechen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:agent-feu-panneau-marquage-contradiction-vietnam-lequel-l-emporte",
+          "locale": "fr",
+          "slug": "agent-feu-panneau-marquage-contradiction-vietnam-lequel-l-emporte",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::que faut-il suivre au vietnam quand l'agent, le feu et le panneau se contredisent",
+          "ta_id": null
+        },
+        {
+          "ref": "es:agente-semaforo-senal-marca-vial-contradiccion-vietnam-cual-manda",
+          "locale": "es",
+          "slug": "agente-semaforo-senal-marca-vial-contradiccion-vietnam-cual-manda",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::que hay que obedecer en vietnam si el agente, el semaforo y la senal se contradicen",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:agent-verkeerslicht-bord-wegmarkering-tegenstrijdig-vietnam-wat-gaat-voor",
+          "locale": "nl",
+          "slug": "agent-verkeerslicht-bord-wegmarkering-tegenstrijdig-vietnam-wat-gaat-voor",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::wat geldt er in vietnam als de agent, het verkeerslicht en het verkeersbord elkaar tegenspreken",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-jiaojing-shoushi-xinhaodeng-biaozhi-biaoxian-maodun-yi-shei-weizhun",
+          "locale": "zh",
+          "slug": "yuenan-jiaojing-shoushi-xinhaodeng-biaozhi-biaoxian-maodun-yi-shei-weizhun",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南交警手势、红绿灯和交通标志互相矛盾时听谁的",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:agente-semaforo-sinal-marca-rodoviaria-conflito-vietname-o-que-prevalece",
+          "locale": "pt",
+          "slug": "agente-semaforo-sinal-marca-rodoviaria-conflito-vietname-o-que-prevalece",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::o que prevalece no vietname quando o agente, o semaforo e o sinal se contradizem",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-gyeongchal-susinho-sinhodeung-pyojipan-chungdol-useon-sunwi",
+          "locale": "ko",
+          "slug": "beteunam-gyeongchal-susinho-sinhodeung-pyojipan-chungdol-useon-sunwi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::베트남에서 교통경찰 수신호와 신호등과 표지판이 서로 다를 때 무엇을 따라야 하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-keisatsukan-aizu-shingoki-hyoshiki-hyoji-shori-kuichigai-yusen-junjo",
+          "locale": "ja",
+          "slug": "betonamu-keisatsukan-aizu-shingoki-hyoshiki-hyoji-shori-kuichigai-yusen-junjo",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナムて警察官の合図と信号機と標識か食い違ったらとれに従うのか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 162,
-    "file": "factory/topic-research/batches/claude-20261018b-0162.json",
+    "seq": 163,
+    "file": "factory/topic-research/batches/claude-20261018b-0163.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -17941,13 +18052,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T19:32:22.617Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 137,
-      "topics": 10,
-      "sha256": "8e676adba693c0cf05c0b8a5fa5b28e9743a26ce444dd77be789a5abb02dd734"
-    },
     {
       "at": "2026-10-20T19:34:54.706Z",
       "event": "BATCH_COMMITTED",
@@ -18115,6 +18219,13 @@
       "seq": 161,
       "topics": 10,
       "sha256": "52832cd03399fac92152d1c6ed33bbae737166935e0409d5f32fd76fa89290de"
+    },
+    {
+      "at": "2026-10-20T20:48:31.812Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 162,
+      "topics": 10,
+      "sha256": "20920e128c080eaa72609e40bb86d2f0e4688adb9aed969b862f298562f7b121"
     }
   ]
 }
