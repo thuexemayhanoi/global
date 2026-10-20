@@ -83,10 +83,10 @@ OpenRush ideas cho "thuê xe máy hà nội" trả về 40 trên 3.089.005 dòng
 | scooter rent hanoi / mopeds in hanoi | 10 | giao dịch |
 
 ### nl (NL)
-OpenRush ideas cho "scooter huren Hanoi" trả về 25 trên 114.427 dòng, không dòng nào liên quan Việt Nam (toàn bộ là bảo hiểm, lý thuyết và mua scooter trong nước). Không có số liệu nhu cầu bản ngữ; SERP trả về trang ngoại ngữ.
+OpenRush ideas cho "scooter huren Hanoi" trả về 25 trên 114.427 dòng, không dòng nào liên quan Việt Nam (toàn bộ là bảo hiểm, lý thuyết và mua scooter trong nước). Bổ sung bằng OpenSEO `research_keywords` (20:40 UTC, Hà Lan 2528, nl, seed "scooter rijden vietnam rijbewijs"): 76 từ khóa, seed không có khối lượng, không từ nào chứa Vietnam hay Hanoi; chỉ có truy vấn bằng lái scooter trong nước ("scooter rijbewijs halen" 1.300, "scooter rijbewijs leeftijd" 480, "motorscooter rijbewijs" 390, "welk rijbewijs voor scooter" 50). Không có số liệu nhu cầu bản ngữ cho chủ đề Việt Nam; SERP trả về trang ngoại ngữ. Giữ `NOT_VALIDATED`.
 
 ### zh
-Không có dữ liệu từ khóa (lỗi tham số rồi hết credit). SERP zh có AI Overview và không có trang bản ngữ chuyên về hướng dẫn trong top 10.
+OpenRush không có dữ liệu (lỗi tham số rồi hết credit). Bổ sung bằng OpenSEO `research_keywords` (20:40 UTC, Singapore 2702, zh-CN, seed thông tin "越南 摩托车 驾照"): 75 từ khóa trả về, không từ nào chứa 越南; chỉ có các truy vấn bằng lái quốc tế chung: "idp 驾照" 10, "iaa 国际 驾照" 10, "国际驾驶许可证" 10, "国际驾照美国" 10 (CPC 2,50 USD); phần còn lại là bằng lái Singapore, Malaysia, Đài Loan. Kết luận: chỉ mục zh tại Singapore không ghi nhận nhu cầu riêng về xe máy Việt Nam ở mức đo được; giữ `NOT_VALIDATED`. SERP zh có AI Overview và không có trang bản ngữ chuyên về hướng dẫn trong top 10.
 
 ### pt (PT)
 OpenRush ideas cho "alugar moto Hanói" trả về 15 trên 28.881 dòng, toàn bộ là thuê ô tô trong nước; chế độ suggestions trả về 0. Không có số liệu nhu cầu bản ngữ.
