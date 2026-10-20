@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T05:16:20.663Z",
+  "updated_at": "2026-10-20T05:16:39.100Z",
   "base_main_sha": "2e57d8907ace700d93a2d1582573966bc3d96426",
-  "last_commit_sha": "8b259f4a5f2c22cf13084847459dc064d573c7f2",
+  "last_commit_sha": "f567a2dda3659059c5900ea4d1d5ab48137056b9",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 870,
-    "qa_pass": 870,
+    "researched": 880,
+    "qa_pass": 880,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 860,
+    "pushed": 870,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 88,
-      "de": 88,
-      "fr": 88,
-      "es": 88,
-      "nl": 88,
-      "pt": 88,
-      "zh": 88,
-      "ko": 88,
-      "ja": 88,
-      "en": 78
+      "vi": 89,
+      "de": 89,
+      "fr": 89,
+      "es": 89,
+      "nl": 89,
+      "pt": 89,
+      "zh": 89,
+      "ko": 89,
+      "ja": 89,
+      "en": 79
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 10
+      "motorbike-rental": 20
     }
   },
   "last_batch": {
-    "seq": 87,
-    "file": "factory/topic-research/batches/claude-20261018b-0087.json",
-    "sha256": "ceb0a8b46ae3fa11a2f673524aa74f1c3be5c8654b2d678604833043d7f5260b",
+    "seq": 88,
+    "file": "factory/topic-research/batches/claude-20261018b-0088.json",
+    "sha256": "df8a7ee83ee6d0d4384895a8158a5e8b257d8b57e9e0774c8becca897851b13b",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -9605,8 +9605,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0087.json",
       "sha256": "ceb0a8b46ae3fa11a2f673524aa74f1c3be5c8654b2d678604833043d7f5260b",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "f567a2dda3659059c5900ea4d1d5ab48137056b9",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -9710,11 +9710,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 88,
+      "file": "factory/topic-research/batches/claude-20261018b-0088.json",
+      "sha256": "df8a7ee83ee6d0d4384895a8158a5e8b257d8b57e9e0774c8becca897851b13b",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:honda-sh-mode-sh125i-sh160i-sh350i-khac-nhau-the-nao",
+          "locale": "vi",
+          "slug": "honda-sh-mode-sh125i-sh160i-sh350i-khac-nhau-the-nao",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-models",
+          "key": "vi::honda sh mode sh160i sh350i khac nhau the nao va can bang lai hang nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:honda-sh-mode-sh125i-sh160i-sh350i-differences",
+          "locale": "en",
+          "slug": "honda-sh-mode-sh125i-sh160i-sh350i-differences",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-models",
+          "key": "en::honda sh mode vs sh160i vs sh350i what is the difference",
+          "ta_id": null
+        },
+        {
+          "ref": "de:honda-sh-mode-sh125i-sh160i-sh350i-unterschiede",
+          "locale": "de",
+          "slug": "honda-sh-mode-sh125i-sh160i-sh350i-unterschiede",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-models",
+          "key": "de::honda sh mode sh160i sh350i unterschiede und notige fuhrerscheinklasse",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:honda-sh-mode-sh125i-sh160i-sh350i-differences",
+          "locale": "fr",
+          "slug": "honda-sh-mode-sh125i-sh160i-sh350i-differences",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-models",
+          "key": "fr::honda sh mode sh160i sh350i differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:honda-sh-mode-sh125i-sh160i-sh350i-diferencias",
+          "locale": "es",
+          "slug": "honda-sh-mode-sh125i-sh160i-sh350i-diferencias",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-models",
+          "key": "es::honda sh mode sh160i sh350i diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:honda-sh-mode-sh125i-sh160i-sh350i-verschillen",
+          "locale": "nl",
+          "slug": "honda-sh-mode-sh125i-sh160i-sh350i-verschillen",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-models",
+          "key": "nl::honda sh mode sh160i sh350i verschillen en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:honda-sh-mode-sh160i-sh350i-qubie-jiashi-leibie",
+          "locale": "zh",
+          "slug": "honda-sh-mode-sh160i-sh350i-qubie-jiashi-leibie",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-models",
+          "key": "zh::本田 sh mode sh160i sh350i 有什么区别 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:honda-sh-mode-sh125i-sh160i-sh350i-diferencas",
+          "locale": "pt",
+          "slug": "honda-sh-mode-sh125i-sh160i-sh350i-diferencas",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-models",
+          "key": "pt::honda sh mode sh160i sh350i diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:honda-sh-mode-sh160i-sh350i-chai-myeonheo",
+          "locale": "ko",
+          "slug": "honda-sh-mode-sh160i-sh350i-chai-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-models",
+          "key": "ko::혼다 sh 모드 sh160i sh350i 차이와 필요한 면허 종류",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:honda-sh-mode-sh160i-sh350i-chigai-menkyo",
+          "locale": "ja",
+          "slug": "honda-sh-mode-sh160i-sh350i-chigai-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-models",
+          "key": "ja::ホンタ sh mode sh160i sh350i の違いと必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 88,
-    "file": "factory/topic-research/batches/claude-20261018b-0088.json",
+    "seq": 89,
+    "file": "factory/topic-research/batches/claude-20261018b-0089.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -9727,13 +9838,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:24:55.495Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 63,
-      "topics": 10,
-      "sha256": "831cddaaf76d196dc132c046dada3eb99bbd22079c2eb11cdfc4f0ac7223120e"
-    },
     {
       "at": "2026-10-20T04:27:19.602Z",
       "event": "BATCH_COMMITTED",
@@ -9901,6 +10005,13 @@
       "seq": 87,
       "topics": 10,
       "sha256": "ceb0a8b46ae3fa11a2f673524aa74f1c3be5c8654b2d678604833043d7f5260b"
+    },
+    {
+      "at": "2026-10-20T05:16:39.100Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 88,
+      "topics": 10,
+      "sha256": "df8a7ee83ee6d0d4384895a8158a5e8b257d8b57e9e0774c8becca897851b13b"
     }
   ]
 }
