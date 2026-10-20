@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T04:56:31.503Z",
+  "updated_at": "2026-10-20T04:56:44.103Z",
   "base_main_sha": "343b27b62a058042c99fa454f719d8493263023b",
-  "last_commit_sha": "129803169990cbc42e20a9a44c3b5da39984bc47",
+  "last_commit_sha": "c5a0b54576f59d3b4c3cb8b5a3f56c2b77e212f0",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 820,
-    "qa_pass": 820,
+    "researched": 830,
+    "qa_pass": 830,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 810,
+    "pushed": 820,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 83,
-      "de": 83,
-      "fr": 83,
-      "es": 83,
-      "nl": 83,
-      "pt": 83,
-      "zh": 83,
-      "ko": 83,
-      "ja": 83,
-      "en": 73
+      "vi": 84,
+      "de": 84,
+      "fr": 84,
+      "es": 84,
+      "nl": 84,
+      "pt": 84,
+      "zh": 84,
+      "ko": 84,
+      "ja": 84,
+      "en": 74
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 170,
+      "traffic-law-safety": 180,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -46,9 +46,9 @@
     }
   },
   "last_batch": {
-    "seq": 82,
-    "file": "factory/topic-research/batches/claude-20261018b-0082.json",
-    "sha256": "a5c8992b5458adda697de1537cdf43316f433708fd011877a2cbbd7d2d78543c",
+    "seq": 83,
+    "file": "factory/topic-research/batches/claude-20261018b-0083.json",
+    "sha256": "aff33a501dbdf488ac1793b021fb7886e3776f8aad03bac5d9cb51fbb815ce74",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -9049,8 +9049,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0082.json",
       "sha256": "a5c8992b5458adda697de1537cdf43316f433708fd011877a2cbbd7d2d78543c",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "c5a0b54576f59d3b4c3cb8b5a3f56c2b77e212f0",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -9154,11 +9154,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 83,
+      "file": "factory/topic-research/batches/claude-20261018b-0083.json",
+      "sha256": "aff33a501dbdf488ac1793b021fb7886e3776f8aad03bac5d9cb51fbb815ce74",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:trinh-bao-cong-an-mat-xe-may-tui-xach-ho-chieu-du-khach",
+          "locale": "vi",
+          "slug": "trinh-bao-cong-an-mat-xe-may-tui-xach-ho-chieu-du-khach",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::bi mat xe may hoac tui xach khi di du lich trinh bao cong an o dau can mang giay to gi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:report-stolen-motorbike-bag-passport-police-vietnam-visitor",
+          "locale": "en",
+          "slug": "report-stolen-motorbike-bag-passport-police-vietnam-visitor",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::how to report a stolen motorbike or bag to the police in vietnam as a tourist",
+          "ta_id": null
+        },
+        {
+          "ref": "de:diebstahl-verlust-polizei-melden-vietnam-motorrad-tasche-reisepass",
+          "locale": "de",
+          "slug": "diebstahl-verlust-polizei-melden-vietnam-motorrad-tasche-reisepass",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::diebstahl in vietnam melden gestohlenes motorrad oder tasche bei der polizei als tourist",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:signaler-vol-ou-perte-police-vietnam-moto-sac-passeport",
+          "locale": "fr",
+          "slug": "signaler-vol-ou-perte-police-vietnam-moto-sac-passeport",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::signaler un vol de moto ou de sac a la police au vietnam quand on est touriste",
+          "ta_id": null
+        },
+        {
+          "ref": "es:denunciar-robo-o-perdida-policia-vietnam-moto-bolso-pasaporte",
+          "locale": "es",
+          "slug": "denunciar-robo-o-perdida-policia-vietnam-moto-bolso-pasaporte",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::como denunciar el robo de una moto o un bolso a la policia en vietnam siendo turista",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:diefstal-of-verlies-melden-politie-vietnam-motor-tas-paspoort",
+          "locale": "nl",
+          "slug": "diefstal-of-verlies-melden-politie-vietnam-motor-tas-paspoort",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::gestolen motor of tas melden bij de politie in vietnam als toerist",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-motuoche-beibao-diushi-baoan-youke",
+          "locale": "zh",
+          "slug": "yuenan-motuoche-beibao-diushi-baoan-youke",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::越南摩托车或背包被偷 游客如何向警察报案",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:denunciar-roubo-ou-perda-policia-vietname-mota-mala-passaporte",
+          "locale": "pt",
+          "slug": "denunciar-roubo-ou-perda-policia-vietname-mota-mala-passaporte",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::como denunciar o roubo de uma mota ou mala a policia no vietname sendo turista",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-obaibai-gabang-yeogwon-dojin-bunsil-gyeongchal-singo",
+          "locale": "ko",
+          "slug": "beteunam-obaibai-gabang-yeogwon-dojin-bunsil-gyeongchal-singo",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::베트남 여행 중 오토바이나 가방 도난 경찰 신고 방법",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-kaban-pasupooto-nanbu-funshitsu-keisatsu-todoke",
+          "locale": "ja",
+          "slug": "betonamu-baiku-kaban-pasupooto-nanbu-funshitsu-keisatsu-todoke",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ヘトナム 旅行中 ハイクやハックの盗難 警察への届け出方法",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 83,
-    "file": "factory/topic-research/batches/claude-20261018b-0083.json",
+    "seq": 84,
+    "file": "factory/topic-research/batches/claude-20261018b-0084.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -9171,13 +9282,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:13:37.856Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 58,
-      "topics": 10,
-      "sha256": "f987423f1a9e0a07aa48b5b3fd5ff82bbd8e073d2b87857f16de51fbd168c92c"
-    },
     {
       "at": "2026-10-20T04:13:46.286Z",
       "event": "BATCH_COMMITTED",
@@ -9345,6 +9449,13 @@
       "seq": 82,
       "topics": 10,
       "sha256": "a5c8992b5458adda697de1537cdf43316f433708fd011877a2cbbd7d2d78543c"
+    },
+    {
+      "at": "2026-10-20T04:56:44.103Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 83,
+      "topics": 10,
+      "sha256": "aff33a501dbdf488ac1793b021fb7886e3776f8aad03bac5d9cb51fbb815ce74"
     }
   ]
 }

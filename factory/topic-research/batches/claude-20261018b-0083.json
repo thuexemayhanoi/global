@@ -1,0 +1,637 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H04",
+      "subcluster": "ss-incidents",
+      "slug": "trinh-bao-cong-an-mat-xe-may-tui-xach-ho-chieu-du-khach",
+      "primary_query": "bị mất xe máy hoặc túi xách khi đi du lịch trình báo công an ở đâu cần mang giấy tờ gì",
+      "secondary_queries": [
+        "mất hộ chiếu ở Việt Nam cần giấy xác nhận của công an để xin xuất cảnh",
+        "trình báo mất cắp ở công an phường nhận được giấy gì",
+        "Điều 146 Bộ luật Tố tụng hình sự biên bản tiếp nhận tố giác tin báo về tội phạm",
+        "xe máy thuê bị mất cắp có phải trình báo công an và báo cho chủ xe không",
+        "mất túi xách khi du lịch có cần giấy của công an để làm bảo hiểm du lịch"
+      ],
+      "entities": [
+        "Công an phường",
+        "biên bản tiếp nhận",
+        "Bộ luật Tố tụng hình sự 2015",
+        "đại sứ quán",
+        "Cục Quản lý xuất nhập cảnh"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Du khách bị mất xe máy thuê, túi xách hoặc hộ chiếu cần biết trình báo ở đâu, mang theo giấy tờ gì khi người tiếp nhận không nói tiếng Anh, nhận lại văn bản nào và những nơi khác như đại sứ quán, công ty bảo hiểm hay cửa hàng cho thuê xe sẽ đòi giấy đó.",
+      "content_angle": "Đi theo lộ trình mà các nguồn chính thống mô tả: hướng dẫn của Bộ Công an về nơi tiếp nhận tố giác, tin báo (Công an xã, phường và các cơ quan điều tra trực ban) cùng các cách trình báo, quy định tại Điều 146 Bộ luật Tố tụng hình sự về biên bản tiếp nhận, và các trang của Đại sứ quán Mỹ và Úc nói rằng cần biên bản của công an địa phương nơi xảy ra mất mát để cấp lại hộ chiếu, làm thủ tục xuất cảnh và để yêu cầu bảo hiểm. Smartraveller bổ sung điều công ty bảo hiểm mong đợi và việc đại sứ quán không thể giúp tìm lại tài sản. Người viết phải kiểm tra cơ cấu công an hiện hành sau khi bỏ Công an cấp huyện, xác định chính xác văn bản người trình báo được giữ, và không bịa ra mẫu đơn, lệ phí, thời hạn hay lời hứa tìm lại được đồ. Bài bổ sung cho hướng dẫn phòng chống mất xe máy, vốn chỉ có một danh sách ngắn 'nếu xe bị mất', bằng cách trình bày cả lộ trình trình báo. Sổ tay an toàn của Đại sứ quán Nhật Bản cho biết việc trình báo tội phạm phải qua bước thụ lý có thể mất từ khoảng một ngày đến một tháng và đôi khi không được tiếp nhận, đồng thời có thể xin văn bản chứng minh đã trình báo để làm hồ sơ bảo hiểm.",
+      "working_title": "Trình báo công an khi mất xe máy, túi xách hoặc hộ chiếu ở Việt Nam: đến đâu, mang gì và nhận lại giấy gì",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://bocongan.gov.vn/bai-viet/huong-dan-to-giac-bao-tin-ve-toi-pham-kien-nghi-khoi-to-d139-t35195",
+          "title": "Ministry of Public Security (27 February 2025): guidance on reporting a crime, which offices receive reports (commune and ward police, investigation offices on duty), ways to report and the reporter's rights",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.vn.emb-japan.go.jp/files/100954888.pdf",
+          "title": "Embassy of Japan in Vietnam (1 March 2026): safety guide for residents, how a crime report is accepted by the Vietnamese police, possible delays and asking for a document proving the report for insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/62523/thu-tuc-giai-quyet-to-giac-tin-bao-ve-toi-pham-kien-nghi-khoi-to",
+          "title": "Thu Vien Phap Luat: Article 146 of the Criminal Procedure Code 2015 (amended 2021) on receiving crime reports, the record of receipt and the duties of ward and commune police",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vn.usembassy.gov/replace-a-lost-or-stolen-passport",
+          "title": "US Embassy and Consulate in Vietnam: replacing a lost or stolen passport, the local police report, the immigration requirement and insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnam.embassy.gov.au/hnoi/Passports_and_Visas.html",
+          "title": "Australian Embassy in Vietnam: lost or stolen passports, a Vietnamese police report from the local police where the loss happened, and what the embassy cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.smartraveller.gov.au/while-overseas/personal-emergencies/lost-or-damaged-property",
+          "title": "Smartraveller (Australian Government): lost or damaged belongings overseas, reporting to local police, insurers and police reports, and what consular staff cannot do",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H04",
+      "subcluster": "ss-incidents",
+      "slug": "report-stolen-motorbike-bag-passport-police-vietnam-visitor",
+      "primary_query": "how to report a stolen motorbike or bag to the police in Vietnam as a tourist",
+      "secondary_queries": [
+        "police report for a stolen passport in Vietnam exit visa",
+        "where to file a police report in Hanoi after a theft",
+        "does the Vietnamese police give a copy of the report for insurance",
+        "lost bag in Vietnam report to the police or the embassy",
+        "rented motorbike stolen in Vietnam police report and the rental shop"
+      ],
+      "entities": [
+        "ward or commune police",
+        "record of receipt of a crime report",
+        "Criminal Procedure Code 2015",
+        "embassy or consulate",
+        "Immigration Department"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "A visitor whose rented scooter, bag or passport disappears needs to know where in Vietnam a theft or loss is reported, what to bring when the officers may not speak English, which paper to keep, and who else, such as the embassy, the insurer and the rental shop, will ask for it.",
+      "content_angle": "Follows the route the official sources describe: the Ministry of Public Security's guidance on who receives a crime report (commune and ward police and the investigation offices on duty) and how a report may be made, Article 146 of the Criminal Procedure Code on the record of receipt, and the US and Australian embassy pages saying a Vietnamese police report from the local police where the loss happened is needed for a replacement passport, the exit procedure and insurance. Smartraveller adds what insurers expect and what embassies cannot do, such as helping to find property. The Writer must check the current police structure after the district-level police were dissolved, exactly which document a reporter is entitled to keep, and must not invent forms, fees, time limits or promises of recovery. It complements the theft-prevention guide, which has only a short 'if the bike is stolen' list, by covering the whole reporting route. The Japanese embassy's safety guide adds that a crime report goes through a formal acceptance step that can take from about a day to a month and is sometimes not accepted, and that a document proving the report can be requested for an insurance claim.",
+      "working_title": "Reporting a Stolen Motorbike, Bag or Passport to the Police in Vietnam as a Visitor",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://bocongan.gov.vn/bai-viet/huong-dan-to-giac-bao-tin-ve-toi-pham-kien-nghi-khoi-to-d139-t35195",
+          "title": "Ministry of Public Security (27 February 2025): guidance on reporting a crime, which offices receive reports (commune and ward police, investigation offices on duty), ways to report and the reporter's rights",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.vn.emb-japan.go.jp/files/100954888.pdf",
+          "title": "Embassy of Japan in Vietnam (1 March 2026): safety guide for residents, how a crime report is accepted by the Vietnamese police, possible delays and asking for a document proving the report for insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/62523/thu-tuc-giai-quyet-to-giac-tin-bao-ve-toi-pham-kien-nghi-khoi-to",
+          "title": "Thu Vien Phap Luat: Article 146 of the Criminal Procedure Code 2015 (amended 2021) on receiving crime reports, the record of receipt and the duties of ward and commune police",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vn.usembassy.gov/replace-a-lost-or-stolen-passport",
+          "title": "US Embassy and Consulate in Vietnam: replacing a lost or stolen passport, the local police report, the immigration requirement and insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnam.embassy.gov.au/hnoi/Passports_and_Visas.html",
+          "title": "Australian Embassy in Vietnam: lost or stolen passports, a Vietnamese police report from the local police where the loss happened, and what the embassy cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.smartraveller.gov.au/while-overseas/personal-emergencies/lost-or-damaged-property",
+          "title": "Smartraveller (Australian Government): lost or damaged belongings overseas, reporting to local police, insurers and police reports, and what consular staff cannot do",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H04",
+      "subcluster": "ss-incidents",
+      "slug": "diebstahl-verlust-polizei-melden-vietnam-motorrad-tasche-reisepass",
+      "primary_query": "Diebstahl in Vietnam melden gestohlenes Motorrad oder Tasche bei der Polizei als Tourist",
+      "secondary_queries": [
+        "Polizeibericht gestohlener Reisepass Vietnam Ausreisevisum",
+        "wo Anzeige bei der Polizei in Hanoi nach einem Diebstahl erstatten",
+        "bekommt man in Vietnam eine Kopie der Anzeige für die Versicherung",
+        "Tasche verloren in Vietnam Polizei oder Botschaft informieren",
+        "gemietetes Motorrad gestohlen Vietnam Anzeige und Verleiher"
+      ],
+      "entities": [
+        "Gemeinde- und Bezirkspolizei",
+        "Aufnahmeprotokoll der Anzeige",
+        "Strafprozessordnung 2015",
+        "Botschaft",
+        "Einwanderungsbehörde"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Reisende, denen ein gemietetes Motorrad, eine Tasche oder der Reisepass abhandenkommt, müssen wissen, wo in Vietnam Diebstahl oder Verlust gemeldet wird, was sie mitbringen sollten, wenn die Beamten kein Englisch sprechen, welches Papier sie behalten und wer es noch verlangt, etwa Botschaft, Versicherung und Vermieter.",
+      "content_angle": "Folgt dem Weg, den die offiziellen Quellen beschreiben: die Hinweise des Ministeriums für öffentliche Sicherheit dazu, wer Strafanzeigen entgegennimmt (Gemeinde- und Bezirkspolizei sowie die Bereitschaftsstellen der Ermittlungsbehörden) und wie man sie erstattet, Artikel 146 der Strafprozessordnung zum Aufnahmeprotokoll und die Seiten der US-amerikanischen und der australischen Botschaft, wonach ein vietnamesischer Polizeibericht der Polizei am Ort des Verlusts für Ersatzpass, Ausreiseverfahren und Versicherung nötig ist. Smartraveller ergänzt, was Versicherer erwarten und was Botschaften nicht leisten können, etwa beim Wiederfinden von Eigentum helfen. Der Autor muss die heutige Polizeistruktur nach der Auflösung der Kreispolizei prüfen, genau klären, welches Dokument der Anzeigende behalten darf, und darf weder Formulare, Gebühren, Fristen noch Aussichten auf Wiederbeschaffung erfinden. Der Beitrag ergänzt den Ratgeber zur Diebstahlprävention, der nur eine kurze Liste für den Fall eines gestohlenen Motorrads enthält, um den ganzen Meldeweg. Die Seite der Deutschen Botschaft Hanoi zum Passverlust verlangt die Anzeige bei der nächstgelegenen Polizeistation und nennt das Protokoll für das neue Dokument und für die vietnamesischen Ausreisebehörden; der Autor muss ihren aktuellen Stand lesen. Der Sicherheitsratgeber der japanischen Botschaft ergänzt, dass eine Strafanzeige ein förmliches Annahmeverfahren durchläuft, das von etwa einem Tag bis zu rund einem Monat dauern kann und mitunter nicht angenommen wird, und dass für Versicherungsansprüche ein Nachweis der Anzeige verlangt werden kann.",
+      "working_title": "Diebstahl oder Verlust in Vietnam melden: Motorrad, Tasche oder Reisepass bei der Polizei anzeigen",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://bocongan.gov.vn/bai-viet/huong-dan-to-giac-bao-tin-ve-toi-pham-kien-nghi-khoi-to-d139-t35195",
+          "title": "Ministry of Public Security (27 February 2025): guidance on reporting a crime, which offices receive reports (commune and ward police, investigation offices on duty), ways to report and the reporter's rights",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.vn.emb-japan.go.jp/files/100954888.pdf",
+          "title": "Embassy of Japan in Vietnam (1 March 2026): safety guide for residents, how a crime report is accepted by the Vietnamese police, possible delays and asking for a document proving the report for insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/62523/thu-tuc-giai-quyet-to-giac-tin-bao-ve-toi-pham-kien-nghi-khoi-to",
+          "title": "Thu Vien Phap Luat: Article 146 of the Criminal Procedure Code 2015 (amended 2021) on receiving crime reports, the record of receipt and the duties of ward and commune police",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vn.usembassy.gov/replace-a-lost-or-stolen-passport",
+          "title": "US Embassy and Consulate in Vietnam: replacing a lost or stolen passport, the local police report, the immigration requirement and insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnam.embassy.gov.au/hnoi/Passports_and_Visas.html",
+          "title": "Australian Embassy in Vietnam: lost or stolen passports, a Vietnamese police report from the local police where the loss happened, and what the embassy cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.smartraveller.gov.au/while-overseas/personal-emergencies/lost-or-damaged-property",
+          "title": "Smartraveller (Australian Government): lost or damaged belongings overseas, reporting to local police, insurers and police reports, and what consular staff cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnam.diplo.de/vn-de/service/passverlust/1263700",
+          "title": "German Embassy Hanoi (Federal Foreign Office): what to do after a passport loss in Vietnam, the police report for the new document and for the Vietnamese exit authorities",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H04",
+      "subcluster": "ss-incidents",
+      "slug": "signaler-vol-ou-perte-police-vietnam-moto-sac-passeport",
+      "primary_query": "signaler un vol de moto ou de sac à la police au Vietnam quand on est touriste",
+      "secondary_queries": [
+        "rapport de police passeport volé Vietnam visa de sortie",
+        "où déposer plainte à Hanoï après un vol",
+        "la police vietnamienne remet-elle une copie du procès-verbal pour l'assurance",
+        "sac perdu au Vietnam prévenir la police ou l'ambassade",
+        "moto de location volée au Vietnam déclaration de police et loueur"
+      ],
+      "entities": [
+        "police de commune et de quartier",
+        "procès-verbal de réception",
+        "code de procédure pénale 2015",
+        "ambassade",
+        "service de l'immigration"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Le voyageur dont la moto de location, le sac ou le passeport disparaît veut savoir où déclarer le vol ou la perte au Vietnam, quoi apporter si les agents ne parlent pas anglais, quel document conserver et qui d'autre, ambassade, assureur ou loueur, le réclamera.",
+      "content_angle": "Suit le parcours décrit par les sources officielles : les indications du ministère de la Sécurité publique sur qui reçoit un signalement (police des communes et des quartiers, permanences des services d'enquête) et sur les façons de le faire, l'article 146 du code de procédure pénale sur le procès-verbal de réception, et les pages des ambassades des États-Unis et d'Australie selon lesquelles un rapport de police vietnamien établi par la police du lieu de la perte est nécessaire pour un passeport de remplacement, la procédure de sortie et l'assurance. Smartraveller précise ce qu'attendent les assureurs et ce que les ambassades ne peuvent pas faire, comme retrouver des biens. L'auteur doit vérifier l'organisation actuelle de la police après la suppression de la police de district, établir exactement quel document le déclarant peut conserver et ne rien inventer en formulaires, frais, délais ou promesses de récupération. Il complète le guide de prévention du vol, qui ne contient qu'une courte liste pour une moto volée, en couvrant tout le parcours de déclaration. La page de l'ambassade de France sur la perte ou le vol de documents commence par la déclaration au commissariat le plus proche et renvoie le visa de sortie aux seules autorités vietnamiennes ; l'auteur doit y lire comment elle distingue la déclaration de perte de la déclaration de vol. Le guide de sécurité de l'ambassade du Japon ajoute qu'un signalement pénal passe par une étape formelle d'acceptation, qui peut durer d'environ un jour à un mois et n'aboutit parfois pas, et qu'un document attestant le signalement peut être demandé pour une demande d'assurance.",
+      "working_title": "Signaler un vol ou une perte à la police au Vietnam : moto, sac ou passeport, où aller et que recevoir",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://bocongan.gov.vn/bai-viet/huong-dan-to-giac-bao-tin-ve-toi-pham-kien-nghi-khoi-to-d139-t35195",
+          "title": "Ministry of Public Security (27 February 2025): guidance on reporting a crime, which offices receive reports (commune and ward police, investigation offices on duty), ways to report and the reporter's rights",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.vn.emb-japan.go.jp/files/100954888.pdf",
+          "title": "Embassy of Japan in Vietnam (1 March 2026): safety guide for residents, how a crime report is accepted by the Vietnamese police, possible delays and asking for a document proving the report for insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/62523/thu-tuc-giai-quyet-to-giac-tin-bao-ve-toi-pham-kien-nghi-khoi-to",
+          "title": "Thu Vien Phap Luat: Article 146 of the Criminal Procedure Code 2015 (amended 2021) on receiving crime reports, the record of receipt and the duties of ward and commune police",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vn.usembassy.gov/replace-a-lost-or-stolen-passport",
+          "title": "US Embassy and Consulate in Vietnam: replacing a lost or stolen passport, the local police report, the immigration requirement and insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnam.embassy.gov.au/hnoi/Passports_and_Visas.html",
+          "title": "Australian Embassy in Vietnam: lost or stolen passports, a Vietnamese police report from the local police where the loss happened, and what the embassy cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.smartraveller.gov.au/while-overseas/personal-emergencies/lost-or-damaged-property",
+          "title": "Smartraveller (Australian Government): lost or damaged belongings overseas, reporting to local police, insurers and police reports, and what consular staff cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vn.diplomatie.gouv.fr/fr/urgence-difficulte/perte-ou-vol-de-documents",
+          "title": "French Embassy in Vietnam (France Diplomatie): loss or theft of documents, declaration at the nearest police station, laissez-passer and the exit visa handled by the Vietnamese authorities",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H04",
+      "subcluster": "ss-incidents",
+      "slug": "denunciar-robo-o-perdida-policia-vietnam-moto-bolso-pasaporte",
+      "primary_query": "cómo denunciar el robo de una moto o un bolso a la policía en Vietnam siendo turista",
+      "secondary_queries": [
+        "denuncia policial pasaporte robado Vietnam visado de salida",
+        "dónde poner una denuncia en Hanói tras un robo",
+        "la policía vietnamita da copia de la denuncia para el seguro",
+        "bolso perdido en Vietnam avisar a la policía o a la embajada",
+        "moto de alquiler robada en Vietnam denuncia y empresa de alquiler"
+      ],
+      "entities": [
+        "policía de comuna y de barrio",
+        "acta de recepción de la denuncia",
+        "Código de Procedimiento Penal 2015",
+        "embajada",
+        "Departamento de Inmigración"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "El viajero al que desaparece la moto de alquiler, el bolso o el pasaporte necesita saber dónde se denuncia un robo o una pérdida en Vietnam, qué llevar si los agentes no hablan inglés, qué documento conservar y quién más, como la embajada, el seguro o la empresa de alquiler, lo pedirá.",
+      "content_angle": "Sigue el recorrido que describen las fuentes oficiales: las indicaciones del Ministerio de Seguridad Pública sobre quién recibe una denuncia (policía de comunas y barrios y oficinas de investigación de guardia) y cómo se presenta, el artículo 146 del Código de Procedimiento Penal sobre el acta de recepción, y las páginas de las embajadas de Estados Unidos y Australia según las cuales hace falta un informe policial vietnamita de la policía del lugar de la pérdida para un pasaporte de reemplazo, el trámite de salida y el seguro. Smartraveller añade lo que esperan las aseguradoras y lo que las embajadas no pueden hacer, como ayudar a localizar objetos. El redactor debe comprobar la estructura policial actual tras la supresión de la policía de distrito, aclarar con exactitud qué documento puede quedarse quien denuncia y no inventar formularios, tasas, plazos ni promesas de recuperación. Complementa la guía de prevención de robos, que solo tiene una lista breve para cuando la moto es robada, al cubrir el recorrido completo de la denuncia. La página de la Embajada de España en Hanói sobre el salvoconducto recomienda siempre la denuncia ante la policía local y la exige para el visado de salida vietnamita; el redactor debe leer su estado actual. La guía de seguridad de la embajada de Japón añade que una denuncia penal pasa por un trámite formal de aceptación que puede durar de un día a un mes y a veces no se admite, y que puede pedirse un documento que acredite la denuncia para reclamar al seguro.",
+      "working_title": "Denunciar un robo o una pérdida a la policía en Vietnam: moto, bolso o pasaporte, y qué documento recibes",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://bocongan.gov.vn/bai-viet/huong-dan-to-giac-bao-tin-ve-toi-pham-kien-nghi-khoi-to-d139-t35195",
+          "title": "Ministry of Public Security (27 February 2025): guidance on reporting a crime, which offices receive reports (commune and ward police, investigation offices on duty), ways to report and the reporter's rights",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.vn.emb-japan.go.jp/files/100954888.pdf",
+          "title": "Embassy of Japan in Vietnam (1 March 2026): safety guide for residents, how a crime report is accepted by the Vietnamese police, possible delays and asking for a document proving the report for insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/62523/thu-tuc-giai-quyet-to-giac-tin-bao-ve-toi-pham-kien-nghi-khoi-to",
+          "title": "Thu Vien Phap Luat: Article 146 of the Criminal Procedure Code 2015 (amended 2021) on receiving crime reports, the record of receipt and the duties of ward and commune police",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vn.usembassy.gov/replace-a-lost-or-stolen-passport",
+          "title": "US Embassy and Consulate in Vietnam: replacing a lost or stolen passport, the local police report, the immigration requirement and insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnam.embassy.gov.au/hnoi/Passports_and_Visas.html",
+          "title": "Australian Embassy in Vietnam: lost or stolen passports, a Vietnamese police report from the local police where the loss happened, and what the embassy cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.smartraveller.gov.au/while-overseas/personal-emergencies/lost-or-damaged-property",
+          "title": "Smartraveller (Australian Government): lost or damaged belongings overseas, reporting to local police, insurers and police reports, and what consular staff cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.exteriores.gob.es/Embajadas/hanoi/es/ServiciosConsulares/Paginas/index.aspx?scca=Pasaportes+y+otros+documentos&scco=Vietnam&scd=151&scs=Salvoconducto",
+          "title": "Embassy of Spain in Hanoi: safe-conduct (salvoconducto) after losing a passport, the local police report and the Vietnamese exit visa",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H04",
+      "subcluster": "ss-incidents",
+      "slug": "diefstal-of-verlies-melden-politie-vietnam-motor-tas-paspoort",
+      "primary_query": "gestolen motor of tas melden bij de politie in Vietnam als toerist",
+      "secondary_queries": [
+        "politierapport gestolen paspoort Vietnam uitreisvisum",
+        "waar aangifte doen bij de politie in Hanoi na diefstal",
+        "krijg je in Vietnam een kopie van de aangifte voor de verzekering",
+        "tas verloren in Vietnam politie of ambassade inlichten",
+        "gehuurde motor gestolen Vietnam aangifte en de verhuurder"
+      ],
+      "entities": [
+        "gemeente- en wijkpolitie",
+        "proces-verbaal van ontvangst",
+        "Wetboek van Strafvordering 2015",
+        "ambassade",
+        "immigratiedienst"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Reizigers wier gehuurde motor, tas of paspoort verdwijnt, willen weten waar in Vietnam diefstal of verlies wordt gemeld, wat ze meenemen als de agenten geen Engels spreken, welk papier ze moeten bewaren en wie er nog om vraagt, zoals ambassade, verzekeraar en verhuurder.",
+      "content_angle": "Volgt de route die de officiële bronnen beschrijven: de aanwijzingen van het ministerie van Openbare Veiligheid over wie een aangifte in ontvangst neemt (gemeente- en wijkpolitie en de dienstdoende onderzoeksbureaus) en hoe je die doet, artikel 146 van het Wetboek van Strafvordering over het proces-verbaal van ontvangst, en de pagina's van de Amerikaanse en Australische ambassade waarin staat dat een Vietnamees politierapport van de politie op de plek van het verlies nodig is voor een vervangend paspoort, de uitreisprocedure en de verzekering. Smartraveller vult aan wat verzekeraars verwachten en wat ambassades niet kunnen doen, zoals helpen bij het terugvinden van spullen. De schrijver moet de huidige politiestructuur na de opheffing van de districtspolitie nagaan, precies uitzoeken welk document de aangever mag houden en geen formulieren, kosten, termijnen of beloftes van teruggave verzinnen. Het vult de gids over diefstalpreventie aan, die maar een korte lijst heeft voor als de motor is gestolen, met de hele route van de aangifte. De pagina's van Nederland Wereldwijd over een nooddocument in Vietnam en over een kwijtgeraakt of gestolen paspoort vragen aangifte bij de lokale politie en een verklaring van vermissing bij de ambassade; de schrijver moet de actuele versie lezen. De veiligheidsgids van de Japanse ambassade voegt toe dat een aangifte een formele aanvaardingsstap doorloopt die van ongeveer een dag tot een maand kan duren en soms niet wordt aanvaard, en dat voor een verzekeringsclaim om een document dat de aangifte bewijst kan worden gevraagd.",
+      "working_title": "Diefstal of verlies melden bij de politie in Vietnam: motor, tas of paspoort, waar naartoe en wat krijg je mee",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://bocongan.gov.vn/bai-viet/huong-dan-to-giac-bao-tin-ve-toi-pham-kien-nghi-khoi-to-d139-t35195",
+          "title": "Ministry of Public Security (27 February 2025): guidance on reporting a crime, which offices receive reports (commune and ward police, investigation offices on duty), ways to report and the reporter's rights",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.vn.emb-japan.go.jp/files/100954888.pdf",
+          "title": "Embassy of Japan in Vietnam (1 March 2026): safety guide for residents, how a crime report is accepted by the Vietnamese police, possible delays and asking for a document proving the report for insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/62523/thu-tuc-giai-quyet-to-giac-tin-bao-ve-toi-pham-kien-nghi-khoi-to",
+          "title": "Thu Vien Phap Luat: Article 146 of the Criminal Procedure Code 2015 (amended 2021) on receiving crime reports, the record of receipt and the duties of ward and commune police",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vn.usembassy.gov/replace-a-lost-or-stolen-passport",
+          "title": "US Embassy and Consulate in Vietnam: replacing a lost or stolen passport, the local police report, the immigration requirement and insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnam.embassy.gov.au/hnoi/Passports_and_Visas.html",
+          "title": "Australian Embassy in Vietnam: lost or stolen passports, a Vietnamese police report from the local police where the loss happened, and what the embassy cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.smartraveller.gov.au/while-overseas/personal-emergencies/lost-or-damaged-property",
+          "title": "Smartraveller (Australian Government): lost or damaged belongings overseas, reporting to local police, insurers and police reports, and what consular staff cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/nooddocument/vietnam",
+          "title": "Nederland Wereldwijd: applying for an emergency travel document in Vietnam, Hanoi embassy and Ho Chi Minh City consulate general",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.nederlandwereldwijd.nl/paspoort-id-kaart/kwijt-gestolen",
+          "title": "Nederland Wereldwijd: passport or ID card lost or stolen abroad, report to the local police and the declaration of loss at the embassy",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H04",
+      "subcluster": "ss-incidents",
+      "slug": "yuenan-motuoche-beibao-diushi-baoan-youke",
+      "primary_query": "越南摩托车或背包被偷 游客如何向警察报案",
+      "secondary_queries": [
+        "越南护照被偷 警察报案证明 出境签证",
+        "河内被偷后去哪里报案",
+        "越南警察会给报案回执吗 保险理赔要用",
+        "在越南丢了包 找警察还是找大使馆",
+        "越南租的摩托车被偷 报警和租车店"
+      ],
+      "entities": [
+        "坊和乡公安",
+        "报案接收记录",
+        "2015年刑事诉讼法典",
+        "大使馆",
+        "移民管理局"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "租来的摩托车、背包或护照在越南丢失或被盗的游客，需要知道去哪里报案，警察不会说英语时该带什么，哪份文件要留好，以及大使馆、保险公司和租车店还会向他们要什么。",
+      "content_angle": "沿着官方来源描述的路径展开：越南公安部关于谁接收报案（乡、坊公安和值班的侦查机关）以及如何报案的指引，刑事诉讼法典第146条关于接收记录的规定，以及美国和澳大利亚大使馆页面所述——补办护照、办理出境手续和保险理赔都需要丢失地点当地警方出具的越南语报案文件。Smartraveller补充保险公司的要求，以及大使馆不能做什么，例如帮忙找回物品。撰稿人必须核对取消县级公安之后现行的公安架构，弄清报案人究竟能拿到哪份文件，不得编造表格、费用、期限，也不得承诺能找回失物。本文补充防盗指南，该指南只有一份简短的“摩托车被盗怎么办”清单，而这里讲完整的报案流程。中国领事服务网的通用指引建议丢失护照后尽快向当地警方报案并索要报案证明，再向使馆申请补发或旅行证；驻越南使馆的须知讲的是使馆自己的办理流程，撰稿人必须另行核对越南当地对报案证明的要求。日本大使馆的安全手册还提到，刑事报案要经过正式立案受理环节，可能需要一天到一个月左右，有时甚至不被受理，而为了保险理赔可以要求出具证明已报案的文件。",
+      "working_title": "在越南被盗或丢失物品如何报警：摩托车、背包或护照，去哪里、带什么、能拿到什么文件",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://bocongan.gov.vn/bai-viet/huong-dan-to-giac-bao-tin-ve-toi-pham-kien-nghi-khoi-to-d139-t35195",
+          "title": "Ministry of Public Security (27 February 2025): guidance on reporting a crime, which offices receive reports (commune and ward police, investigation offices on duty), ways to report and the reporter's rights",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.vn.emb-japan.go.jp/files/100954888.pdf",
+          "title": "Embassy of Japan in Vietnam (1 March 2026): safety guide for residents, how a crime report is accepted by the Vietnamese police, possible delays and asking for a document proving the report for insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/62523/thu-tuc-giai-quyet-to-giac-tin-bao-ve-toi-pham-kien-nghi-khoi-to",
+          "title": "Thu Vien Phap Luat: Article 146 of the Criminal Procedure Code 2015 (amended 2021) on receiving crime reports, the record of receipt and the duties of ward and commune police",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vn.usembassy.gov/replace-a-lost-or-stolen-passport",
+          "title": "US Embassy and Consulate in Vietnam: replacing a lost or stolen passport, the local police report, the immigration requirement and insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnam.embassy.gov.au/hnoi/Passports_and_Visas.html",
+          "title": "Australian Embassy in Vietnam: lost or stolen passports, a Vietnamese police report from the local police where the loss happened, and what the embassy cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.smartraveller.gov.au/while-overseas/personal-emergencies/lost-or-damaged-property",
+          "title": "Smartraveller (Australian Government): lost or damaged belongings overseas, reporting to local police, insurers and police reports, and what consular staff cannot do",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H04",
+      "subcluster": "ss-incidents",
+      "slug": "denunciar-roubo-ou-perda-policia-vietname-mota-mala-passaporte",
+      "primary_query": "como denunciar o roubo de uma mota ou mala à polícia no Vietname sendo turista",
+      "secondary_queries": [
+        "relatório policial passaporte roubado Vietname visto de saída",
+        "onde apresentar queixa em Hanói depois de um roubo",
+        "a polícia vietnamita dá uma cópia da queixa para o seguro",
+        "mala perdida no Vietname avisar a polícia ou a embaixada",
+        "mota alugada roubada no Vietname queixa e a empresa de aluguer"
+      ],
+      "entities": [
+        "polícia de comuna e de bairro",
+        "auto de receção da denúncia",
+        "Código de Processo Penal 2015",
+        "embaixada",
+        "serviço de imigração"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "O viajante a quem desaparece a mota alugada, a mala ou o passaporte precisa de saber onde se apresenta queixa de um roubo ou de uma perda no Vietname, o que levar se os agentes não falarem inglês, que documento guardar e quem mais, como a embaixada, o seguro ou a empresa de aluguer, o vai pedir.",
+      "content_angle": "Segue o percurso que as fontes oficiais descrevem: as indicações do Ministério da Segurança Pública sobre quem recebe uma denúncia (polícia de comunas e bairros e gabinetes de investigação de serviço) e como se apresenta, o artigo 146 do Código de Processo Penal sobre o auto de receção, e as páginas das embaixadas dos Estados Unidos e da Austrália segundo as quais é preciso um relatório policial vietnamita da polícia do local da perda para um passaporte de substituição, o procedimento de saída e o seguro. A Smartraveller acrescenta o que as seguradoras esperam e o que as embaixadas não podem fazer, como ajudar a encontrar bens. O autor deve verificar a estrutura policial atual depois da extinção da polícia distrital, esclarecer com exatidão que documento o denunciante pode guardar e não inventar formulários, taxas, prazos nem promessas de recuperação. Complementa o guia de prevenção de roubos, que só tem uma lista curta para quando a mota é roubada, ao cobrir o percurso completo da queixa. A página do Portal das Comunidades Portuguesas sobre o Vietname indica que a embaixada em Hanói não tem secção consular e remete para uma embaixada ou consulado de um país da UE para o título de viagem provisório; o autor deve confirmar se continua atual. O guia de segurança da embaixada do Japão acrescenta que uma denúncia criminal passa por uma fase formal de aceitação que pode demorar de cerca de um dia a um mês e por vezes nem é aceite, e que se pode pedir um documento que comprove a denúncia para um pedido de seguro.",
+      "working_title": "Denunciar um roubo ou uma perda à polícia no Vietname: mota, mala ou passaporte, onde ir e o que recebe",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://bocongan.gov.vn/bai-viet/huong-dan-to-giac-bao-tin-ve-toi-pham-kien-nghi-khoi-to-d139-t35195",
+          "title": "Ministry of Public Security (27 February 2025): guidance on reporting a crime, which offices receive reports (commune and ward police, investigation offices on duty), ways to report and the reporter's rights",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.vn.emb-japan.go.jp/files/100954888.pdf",
+          "title": "Embassy of Japan in Vietnam (1 March 2026): safety guide for residents, how a crime report is accepted by the Vietnamese police, possible delays and asking for a document proving the report for insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/62523/thu-tuc-giai-quyet-to-giac-tin-bao-ve-toi-pham-kien-nghi-khoi-to",
+          "title": "Thu Vien Phap Luat: Article 146 of the Criminal Procedure Code 2015 (amended 2021) on receiving crime reports, the record of receipt and the duties of ward and commune police",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vn.usembassy.gov/replace-a-lost-or-stolen-passport",
+          "title": "US Embassy and Consulate in Vietnam: replacing a lost or stolen passport, the local police report, the immigration requirement and insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnam.embassy.gov.au/hnoi/Passports_and_Visas.html",
+          "title": "Australian Embassy in Vietnam: lost or stolen passports, a Vietnamese police report from the local police where the loss happened, and what the embassy cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.smartraveller.gov.au/while-overseas/personal-emergencies/lost-or-damaged-property",
+          "title": "Smartraveller (Australian Government): lost or damaged belongings overseas, reporting to local police, insurers and police reports, and what consular staff cannot do",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H04",
+      "subcluster": "ss-incidents",
+      "slug": "beteunam-obaibai-gabang-yeogwon-dojin-bunsil-gyeongchal-singo",
+      "primary_query": "베트남 여행 중 오토바이나 가방 도난 경찰 신고 방법",
+      "secondary_queries": [
+        "베트남 여권 도난 경찰 신고서 출국 비자",
+        "하노이에서 도난당한 뒤 어디에 신고하나",
+        "베트남 경찰이 보험 청구용 신고 사본을 주나",
+        "베트남에서 가방 분실 경찰에 알리나 대사관에 알리나",
+        "베트남 렌털 오토바이 도난 경찰 신고와 렌털 업체"
+      ],
+      "entities": [
+        "관할 지역 공안(Công an phường·xã)",
+        "신고 접수 기록",
+        "2015년 형사소송법",
+        "대사관",
+        "출입국 관리 당국"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "렌털한 오토바이, 가방 또는 여권을 잃어버리거나 도난당한 여행자는 베트남에서 어디에 신고해야 하는지, 경찰이 영어를 못할 때 무엇을 가져가야 하는지, 어떤 서류를 받아 두어야 하는지, 대사관·보험사·렌털 업체가 그 서류를 요구하는지 알고 싶어 합니다.",
+      "content_angle": "공식 출처가 설명하는 경로를 따라 정리합니다. 범죄 신고를 누가 접수하는지(관할 지역 공안(Công an phường·xã)과 당직 수사 기관)와 신고 방법에 대한 공안부 안내, 접수 기록에 관한 형사소송법 제146조, 그리고 여권 재발급, 출국 절차, 보험 청구에 분실 장소 관할 경찰의 베트남어 신고 서류가 필요하다고 밝힌 미국·호주 대사관 페이지를 다룹니다. Smartraveller는 보험사가 기대하는 것과 대사관이 해 줄 수 없는 일, 예를 들어 물건을 찾아 주는 일을 보완합니다. 작성자는 구 단위 공안이 해체된 뒤의 현행 공안 구조를 확인하고, 신고인이 실제로 받을 수 있는 서류가 무엇인지 정확히 밝히며, 양식·수수료·기한·되찾을 수 있다는 약속을 지어내서는 안 됩니다. 이 글은 오토바이 도난 시 짧은 목록만 있는 도난 예방 가이드를 보완해 신고 절차 전체를 다룹니다. 주베트남 한국대사관의 여권 분실 안내는 관할 공안에서 여권분실확인서를 받은 뒤 재발급과 출국허가를 받는 순서를 설명하므로 작성자는 최신 내용을 확인해야 합니다. 주베트남 일본대사관의 안전 가이드는 범죄 신고가 정식 접수 단계를 거치며 하루에서 한 달 정도 걸릴 수 있고 때로는 접수되지 않기도 하며, 보험 청구에 필요하면 신고를 증명하는 문서를 요청할 수 있다고 덧붙입니다.",
+      "working_title": "베트남에서 오토바이·가방·여권 도난이나 분실을 경찰에 신고하기: 어디로 가서 무엇을 가져가고 어떤 서류를 받나",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://bocongan.gov.vn/bai-viet/huong-dan-to-giac-bao-tin-ve-toi-pham-kien-nghi-khoi-to-d139-t35195",
+          "title": "Ministry of Public Security (27 February 2025): guidance on reporting a crime, which offices receive reports (commune and ward police, investigation offices on duty), ways to report and the reporter's rights",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.vn.emb-japan.go.jp/files/100954888.pdf",
+          "title": "Embassy of Japan in Vietnam (1 March 2026): safety guide for residents, how a crime report is accepted by the Vietnamese police, possible delays and asking for a document proving the report for insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/62523/thu-tuc-giai-quyet-to-giac-tin-bao-ve-toi-pham-kien-nghi-khoi-to",
+          "title": "Thu Vien Phap Luat: Article 146 of the Criminal Procedure Code 2015 (amended 2021) on receiving crime reports, the record of receipt and the duties of ward and commune police",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vn.usembassy.gov/replace-a-lost-or-stolen-passport",
+          "title": "US Embassy and Consulate in Vietnam: replacing a lost or stolen passport, the local police report, the immigration requirement and insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnam.embassy.gov.au/hnoi/Passports_and_Visas.html",
+          "title": "Australian Embassy in Vietnam: lost or stolen passports, a Vietnamese police report from the local police where the loss happened, and what the embassy cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.smartraveller.gov.au/while-overseas/personal-emergencies/lost-or-damaged-property",
+          "title": "Smartraveller (Australian Government): lost or damaged belongings overseas, reporting to local police, insurers and police reports, and what consular staff cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://overseas.mofa.go.kr/vn-ko/brd/m_2192/view.do?seq=1176999",
+          "title": "Korean Embassy in Vietnam (Ministry of Foreign Affairs): what to do after losing a passport, the police loss confirmation, reissue and the exit permit",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H04",
+      "subcluster": "ss-incidents",
+      "slug": "betonamu-baiku-kaban-pasupooto-nanbu-funshitsu-keisatsu-todoke",
+      "primary_query": "ベトナム 旅行中 バイクやバッグの盗難 警察への届け出方法",
+      "secondary_queries": [
+        "ベトナム パスポート盗難 警察の届出証明 出国ビザ",
+        "ハノイで盗難に遭ったらどこに届け出るか",
+        "ベトナムの警察は保険請求用の届出控えをくれるか",
+        "ベトナムでバッグを紛失 警察と大使館のどちらに連絡するか",
+        "レンタルバイクが盗まれた ベトナム 警察への届出とレンタル店"
+      ],
+      "entities": [
+        "坊・社の公安（Công an phường）",
+        "届出の受理記録",
+        "2015年刑事訴訟法",
+        "大使館",
+        "出入国管理当局"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "借りたバイクやバッグ、パスポートをベトナムで盗まれたり失くしたりした旅行者は、どこに届け出るのか、警察官が英語を話せないときに何を持って行くのか、どの書類を手元に残すのか、大使館・保険会社・レンタル店が何を求めるのかを知りたがっています。",
+      "content_angle": "公式の情報源が示す流れに沿って整理します。犯罪の届出を誰が受理するか（坊・社の公安と当番の捜査機関）と届出の方法についての公安省の案内、受理記録に関する刑事訴訟法第146条、そしてパスポートの再発行、出国手続き、保険請求には紛失・盗難の場所を管轄する警察のベトナム語の届出書類が必要だと述べる米国とオーストラリアの大使館のページを取り上げます。Smartravellerは保険会社が求めることと、大使館が物の捜索などをしてくれないことを補います。執筆者は郡レベルの公安が廃止された後の現行の警察の体制を確認し、届け出た人が実際に受け取れる書類が何かを正確に示し、書式・手数料・期限・取り戻せるという約束を作ってはいけません。この記事は、バイクが盗まれた場合の短いリストしかない盗難予防の案内を補い、届け出の流れ全体を扱います。在ベトナム日本国大使館の「パスポートをなくしてしまったら」は、最寄りの公安で紛失届受理証明書を取得し、大使館で申請し、出入国管理局で出国ビザを得る流れを示しているので、執筆者は最新の内容を確認してください。在ベトナム日本国大使館の安全の手引きは、犯罪被害の届出には受理の手続きがあり、受理まで1日から1か月程度かかるうえ受理されないこともあること、保険請求に必要なら届出を証明する文書の発行を求められることを付け加えています。",
+      "working_title": "ベトナムでバイク・バッグ・パスポートの盗難や紛失を警察に届ける：行き先、持ち物、発行される書類",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://bocongan.gov.vn/bai-viet/huong-dan-to-giac-bao-tin-ve-toi-pham-kien-nghi-khoi-to-d139-t35195",
+          "title": "Ministry of Public Security (27 February 2025): guidance on reporting a crime, which offices receive reports (commune and ward police, investigation offices on duty), ways to report and the reporter's rights",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.vn.emb-japan.go.jp/files/100954888.pdf",
+          "title": "Embassy of Japan in Vietnam (1 March 2026): safety guide for residents, how a crime report is accepted by the Vietnamese police, possible delays and asking for a document proving the report for insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/62523/thu-tuc-giai-quyet-to-giac-tin-bao-ve-toi-pham-kien-nghi-khoi-to",
+          "title": "Thu Vien Phap Luat: Article 146 of the Criminal Procedure Code 2015 (amended 2021) on receiving crime reports, the record of receipt and the duties of ward and commune police",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vn.usembassy.gov/replace-a-lost-or-stolen-passport",
+          "title": "US Embassy and Consulate in Vietnam: replacing a lost or stolen passport, the local police report, the immigration requirement and insurance",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnam.embassy.gov.au/hnoi/Passports_and_Visas.html",
+          "title": "Australian Embassy in Vietnam: lost or stolen passports, a Vietnamese police report from the local police where the loss happened, and what the embassy cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.smartraveller.gov.au/while-overseas/personal-emergencies/lost-or-damaged-property",
+          "title": "Smartraveller (Australian Government): lost or damaged belongings overseas, reporting to local police, insurers and police reports, and what consular staff cannot do",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.vn.emb-japan.go.jp/files/100689688.pdf",
+          "title": "Embassy of Japan in Vietnam: what to do after losing a passport, the police loss-report certificate, the embassy application and the exit visa",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}
