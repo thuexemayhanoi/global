@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T20:54:59.798Z",
+  "updated_at": "2026-10-20T20:55:14.002Z",
   "base_main_sha": "99caecdd0a61d3a2c9c0115f6875240eb5aba688",
-  "last_commit_sha": "aabb3f9c685cfa0cde658723ebbe17b9c833d7ec",
+  "last_commit_sha": "4a8b4fddaaac60db6adb69a263a95018f0103e91",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1690,
-    "qa_pass": 1690,
+    "researched": 1700,
+    "qa_pass": 1700,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1680,
+    "pushed": 1690,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 170,
-      "de": 170,
-      "fr": 170,
-      "es": 170,
-      "nl": 170,
-      "pt": 170,
-      "zh": 170,
-      "ko": 170,
-      "ja": 170,
-      "en": 160
+      "vi": 171,
+      "de": 171,
+      "fr": 171,
+      "es": 171,
+      "nl": 171,
+      "pt": 171,
+      "zh": 171,
+      "ko": 171,
+      "ja": 171,
+      "en": 161
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 330
+      "motorbike-rental": 340
     }
   },
   "last_batch": {
-    "seq": 169,
-    "file": "factory/topic-research/batches/claude-20261018b-0169.json",
-    "sha256": "a138873249d1c706e1f43645de54549511b1423582d139c3ced9a1e25b0361c0",
+    "seq": 170,
+    "file": "factory/topic-research/batches/claude-20261018b-0170.json",
+    "sha256": "3d603ded93097431cede5539d96437f94b55d9ff0f5cf279a6193d12c1c1e5b3",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -18707,8 +18707,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0169.json",
       "sha256": "a138873249d1c706e1f43645de54549511b1423582d139c3ced9a1e25b0361c0",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "4a8b4fddaaac60db6adb69a263a95018f0103e91",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -18812,11 +18812,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 170,
+      "file": "factory/topic-research/batches/claude-20261018b-0170.json",
+      "sha256": "3d603ded93097431cede5539d96437f94b55d9ff0f5cf279a6193d12c1c1e5b3",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-khac-nhau-bang-lai-hang-a",
+          "locale": "vi",
+          "slug": "bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-khac-nhau-bang-lai-hang-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "vi::bmw f 450 gs r 1300 gs r 1300 gs adventure khac nhau the nao va can bang lai hang nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-differences-licence-class",
+          "locale": "en",
+          "slug": "bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-differences-licence-class",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "en::bmw f 450 gs vs r 1300 gs vs r 1300 gs adventure differences",
+          "ta_id": null
+        },
+        {
+          "ref": "de:bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-unterschiede-klasse-a",
+          "locale": "de",
+          "slug": "bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-unterschiede-klasse-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "de::bmw f 450 gs r 1300 gs r 1300 gs adventure unterschiede und notige fuhrerscheinklasse",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-differences-permis-a",
+          "locale": "fr",
+          "slug": "bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-differences-permis-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "fr::bmw f 450 gs r 1300 gs r 1300 gs adventure differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-diferencias-carne-a",
+          "locale": "es",
+          "slug": "bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-diferencias-carne-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "es::bmw f 450 gs r 1300 gs r 1300 gs adventure diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-verschillen-rijbewijs-a",
+          "locale": "nl",
+          "slug": "bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-verschillen-rijbewijs-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "nl::bmw f 450 gs r 1300 gs r 1300 gs adventure verschillen en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-qubie-jiazhao-a-lei",
+          "locale": "zh",
+          "slug": "bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-qubie-jiazhao-a-lei",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "zh::宝马 f 450 gs r 1300 gs r 1300 gs adventure 区别 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-diferencas-carta-a",
+          "locale": "pt",
+          "slug": "bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-diferencas-carta-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "pt::bmw f 450 gs r 1300 gs r 1300 gs adventure diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-chai-myeonheo",
+          "locale": "ko",
+          "slug": "bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-chai-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ko::bmw f 450 gs r 1300 gs r 1300 gs adventure 차이와 필요한 면허",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-chigai-menkyo",
+          "locale": "ja",
+          "slug": "bmw-f-450-gs-r-1300-gs-r-1300-gs-adventure-chigai-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ja::bmw f 450 gs r 1300 gs r 1300 gs adventure の違いと必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 170,
-    "file": "factory/topic-research/batches/claude-20261018b-0170.json",
+    "seq": 171,
+    "file": "factory/topic-research/batches/claude-20261018b-0171.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -18829,13 +18940,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T19:58:59.195Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 145,
-      "topics": 10,
-      "sha256": "100f56835c6f946d2c21dc60121f7af0ec16ae71d283fb4c99227403499fdca3"
-    },
     {
       "at": "2026-10-20T20:03:12.274Z",
       "event": "BATCH_COMMITTED",
@@ -19003,6 +19107,13 @@
       "seq": 169,
       "topics": 10,
       "sha256": "a138873249d1c706e1f43645de54549511b1423582d139c3ced9a1e25b0361c0"
+    },
+    {
+      "at": "2026-10-20T20:55:14.002Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 170,
+      "topics": 10,
+      "sha256": "3d603ded93097431cede5539d96437f94b55d9ff0f5cf279a6193d12c1c1e5b3"
     }
   ]
 }
