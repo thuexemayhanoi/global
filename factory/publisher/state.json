@@ -10744,17 +10744,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-20T09:29:58.543Z"
+    },
+    {
+      "id": "DE-S24",
+      "locale": "de",
+      "url": "/de/guides/haftung-schaden-diebstahl/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-20T09:30:24.863Z",
+      "source_sha256": "3669bcfabf1d5c4c3f5c1f4b6349544bfae826a9d7a18da1c20a4830ea2748d3",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "EN-S25",
+      "locale": "en",
+      "url": "/en/guides/damage-and-theft-liability/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-20T09:30:24.863Z",
+      "source_sha256": "c13f219ad0b01bd5ad031e8d98ee96278588b1195328f1a382234ccb40552f8e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T06:31:53.631Z",
-      "ids": [
-        "FR-S82",
-        "NL-S66"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T06:33:33.735Z",
       "ids": [
@@ -12338,6 +12352,14 @@
         "ZH-S24"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-20T09:30:24.863Z",
+      "ids": [
+        "DE-S24",
+        "EN-S25"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -12350,6 +12372,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 8
+    "APPROVED_BY_POLICY": 6
   }
 }
