@@ -1,0 +1,652 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H04",
+      "subcluster": "ss-weather",
+      "slug": "xe-may-gap-suong-mu-tren-duong-deo-mien-bac",
+      "primary_query": "đi xe máy gặp sương mù dày trên đường đèo miền Bắc nên làm gì",
+      "secondary_queries": [
+        "sương mù quốc lộ 4D Sa Pa cảnh báo của cảnh sát giao thông",
+        "đường lên Tam Đảo sương mù đi xe máy cần lưu ý gì",
+        "sương mù thường xuất hiện lúc nào trên đường đèo phía Bắc",
+        "sương mù dày có nên dừng xe chờ không khi đi xe máy",
+        "bật đèn sương mù đèn chiếu gần và đi tốc độ bao nhiêu khi đi xe máy trong sương mù"
+      ],
+      "entities": [
+        "Sa Pa",
+        "quốc lộ 4D",
+        "Tam Đảo",
+        "quốc lộ 6",
+        "Trung tâm Dự báo khí tượng thủy văn quốc gia"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Người đi xe máy lên Sa Pa, Tam Đảo hay các đèo phía Bắc muốn biết sương mù dày trên đường đèo diễn ra thế nào, công an và cơ quan khí tượng khuyến cáo gì, và đến mức nào thì nên dừng lại chờ hoặc hoãn chuyến đi.",
+      "content_angle": "Kết hợp cảnh báo của Cảnh sát giao thông Lào Cai về quốc lộ 4D qua Sa Pa (tháng 12/2025 và tháng 2/2026, sương mù ghi nhận chủ yếu từ khoảng 13 giờ đến 9 giờ sáng hôm sau), khuyến cáo của Công an tỉnh Phú Thọ cho đường lên Tam Đảo (tạm dừng ở vị trí an toàn khi tầm nhìn dưới mức an toàn), lời khuyên của CSGT Hòa Bình cho các đèo quốc lộ 6 quanh Mai Châu (tháng 2/2025: bật đèn sương mù hoặc đèn chiếu gần, không bám đuôi xe phía trước), khuyến cáo của Cục Cảnh sát giao thông về đèn chiếu gần, đèn sương mù và tốc độ chậm, cùng lời giải thích của Trung tâm Dự báo khí tượng thủy văn quốc gia về nguyên nhân sương mù ở miền Bắc; nhiều khuyến cáo viết cho người lái ô tô nên người viết phải nói rõ điểm nào áp dụng cho xe máy, kiểm tra Hà Giang bằng nguồn địa phương trước khi nêu tên, và chỉ trích tốc độ, khoảng cách từ các khuyến cáo đã dẫn hoặc Thông tư 38/2024/TT-BGTVT.",
+      "working_title": "Sương mù trên đường đèo miền Bắc: lời khuyên của công an ở Sa Pa, Tam Đảo và khi nào nên chờ",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://congan.phutho.gov.vn/article/Khuyen-cao-ky-nang-xu-ly-tinh-huong-khi-luu-thong-26378-33",
+          "title": "Phu Tho provincial police portal (undated, written after the 29 March 2026 accident it cites): advice for the Tam Dao mountain road, including rain and fog, stopping at a safe place and geared bikes for motorbikes",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophapluat.vn/canh-bao-suong-mu-day-tam-nhin-han-che-tren-quoc-lo-4d-qua-sa-pa.html",
+          "title": "Bao Phap Luat Viet Nam (21 February 2026): Lao Cai traffic police warning on fog and limited visibility on National Highway 4D through Sa Pa, with the fog time window and advice",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/bai-viet/canh-sat-giao-thong-lao-cai-tuyen-truyen-an-toan-tren-tuyen-duong-mu-suong-sa-pa-1766843851",
+          "title": "Ministry of Public Security portal (27 December 2025): Lao Cai traffic police outreach on the foggy, slippery Sa Pa route (National Highway 4D)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/thoi-tiet-xau-suong-mu-day-dac-tai-xe-di-chuyen-nhu-the-nao-cho-an-toan-20260207084902179.htm",
+          "title": "Dan Tri (7 February 2026): national Traffic Police Department advice in fog: dipped lights, fog lights, low speed, safe distance, no overtaking on narrow roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baotintuc.vn/canh-bao-suong-mu-tiep-tuc-xuat-hien-trong-nhung-ngay-toi-post940330.html",
+          "title": "Bao Tin tuc, VNA (12 January 2026): a National Centre for Hydro-Meteorological Forecasting forecaster explains advection fog in northern Vietnam and its risk to road traffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/xa-hoi/suong-mu-day-tren-quoc-lo-6-tai-xe-chat-vat-vuot-deo-nguy-hiem-1465355.ldo",
+          "title": "Lao Dong (19 February 2025): dense fog on the National Highway 6 passes around Mai Chau and Pha Din, with traffic police advice on lights, distance and speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/EN/Giao-thong-Van-tai/Circular-38-2024-TT-BGTVT-speed-and-safety-distance-of-motor-vehicles/656203/tieng-anh.aspx",
+          "title": "Thu Vien Phap Luat (15 November 2024 circular): Circular 38/2024/TT-BGTVT on speed and safe distance, which requires a larger distance in rain, fog and winding mountain roads",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H04",
+      "subcluster": "ss-weather",
+      "slug": "fog-on-northern-vietnam-mountain-roads",
+      "primary_query": "what to do in thick fog on a mountain road in northern Vietnam on a motorbike",
+      "secondary_queries": [
+        "Sa Pa National Highway 4D fog warning police motorbike",
+        "Tam Dao road fog what to do on a scooter",
+        "when does fog form on mountain roads in northern Vietnam morning or evening",
+        "should I stop riding when fog is thick on a mountain pass in Vietnam",
+        "fog lights and speed in fog Vietnam motorbike"
+      ],
+      "entities": [
+        "Sa Pa",
+        "National Highway 4D",
+        "Tam Dao",
+        "National Highway 6",
+        "National Centre for Hydro-Meteorological Forecasting"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Riders heading to Sa Pa, Tam Dao or other northern passes ask how dense fog behaves on mountain roads, what the police and the weather service advise, and at which point the sensible choice is to stop, wait or postpone the ride.",
+      "content_angle": "Combines Lao Cai traffic police warnings for National Highway 4D through Sa Pa (December 2025 and February 2026, with fog recorded mainly from about 13:00 to 09:00 the next morning), Phu Tho provincial police advice for the Tam Dao road (stop at a safe place when visibility drops below a safe level), Hoa Binh traffic police advice for the National Highway 6 passes around Mai Chau (February 2025: fog lights or dipped beam, no tailgating), the national Traffic Police Department's advice on dipped lights, fog lights and low speed, and a National Centre for Hydro-Meteorological Forecasting explanation of why fog forms in the north; much of this advice is written for car drivers, so the Writer must say which points apply to motorbikes, check Ha Giang with local sources before naming it, and quote speeds and distances only from the cited advice or from Circular 38/2024/TT-BGTVT.",
+      "working_title": "Fog on Northern Vietnam's Mountain Roads: What Police in Sa Pa and Tam Dao Advise and When to Wait",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://congan.phutho.gov.vn/article/Khuyen-cao-ky-nang-xu-ly-tinh-huong-khi-luu-thong-26378-33",
+          "title": "Phu Tho provincial police portal (undated, written after the 29 March 2026 accident it cites): advice for the Tam Dao mountain road, including rain and fog, stopping at a safe place and geared bikes for motorbikes",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophapluat.vn/canh-bao-suong-mu-day-tam-nhin-han-che-tren-quoc-lo-4d-qua-sa-pa.html",
+          "title": "Bao Phap Luat Viet Nam (21 February 2026): Lao Cai traffic police warning on fog and limited visibility on National Highway 4D through Sa Pa, with the fog time window and advice",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/bai-viet/canh-sat-giao-thong-lao-cai-tuyen-truyen-an-toan-tren-tuyen-duong-mu-suong-sa-pa-1766843851",
+          "title": "Ministry of Public Security portal (27 December 2025): Lao Cai traffic police outreach on the foggy, slippery Sa Pa route (National Highway 4D)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/thoi-tiet-xau-suong-mu-day-dac-tai-xe-di-chuyen-nhu-the-nao-cho-an-toan-20260207084902179.htm",
+          "title": "Dan Tri (7 February 2026): national Traffic Police Department advice in fog: dipped lights, fog lights, low speed, safe distance, no overtaking on narrow roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baotintuc.vn/canh-bao-suong-mu-tiep-tuc-xuat-hien-trong-nhung-ngay-toi-post940330.html",
+          "title": "Bao Tin tuc, VNA (12 January 2026): a National Centre for Hydro-Meteorological Forecasting forecaster explains advection fog in northern Vietnam and its risk to road traffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/xa-hoi/suong-mu-day-tren-quoc-lo-6-tai-xe-chat-vat-vuot-deo-nguy-hiem-1465355.ldo",
+          "title": "Lao Dong (19 February 2025): dense fog on the National Highway 6 passes around Mai Chau and Pha Din, with traffic police advice on lights, distance and speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/EN/Giao-thong-Van-tai/Circular-38-2024-TT-BGTVT-speed-and-safety-distance-of-motor-vehicles/656203/tieng-anh.aspx",
+          "title": "Thu Vien Phap Luat (15 November 2024 circular): Circular 38/2024/TT-BGTVT on speed and safe distance, which requires a larger distance in rain, fog and winding mountain roads",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H04",
+      "subcluster": "ss-weather",
+      "slug": "nebel-auf-bergstrassen-in-nordvietnam",
+      "primary_query": "Nebel auf Bergstraßen in Nordvietnam mit dem Motorrad was tun",
+      "secondary_queries": [
+        "Sa Pa Nationalstraße 4D Nebel Warnung Polizei Motorrad",
+        "Tam Dao Bergstraße Nebel mit dem Roller fahren",
+        "wann bildet sich Nebel auf Bergpässen in Nordvietnam",
+        "bei dichtem Nebel anhalten oder weiterfahren Motorrad Vietnam",
+        "Nebelscheinwerfer und Geschwindigkeit bei Nebel Vietnam Motorrad"
+      ],
+      "entities": [
+        "Sa Pa",
+        "Nationalstraße 4D",
+        "Tam Dao",
+        "Nationalstraße 6",
+        "Nationales Zentrum für hydrometeorologische Vorhersage"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Wer mit dem Motorrad nach Sa Pa, Tam Dao oder über andere Pässe im Norden fährt, möchte wissen, wie dichter Nebel auf Bergstraßen auftritt, was Polizei und Wetterdienst raten und ab wann man besser anhält, wartet oder die Fahrt verschiebt.",
+      "content_angle": "Verbindet Warnungen der Verkehrspolizei von Lao Cai für die Nationalstraße 4D durch Sa Pa (Dezember 2025 und Februar 2026, Nebel überwiegend etwa von 13 Uhr bis 9 Uhr am nächsten Morgen), den Rat der Provinzpolizei von Phu Tho für die Straße nach Tam Dao (an sicherer Stelle anhalten, wenn die Sicht unter ein sicheres Maß fällt), den Rat der Verkehrspolizei von Hoa Binh für die Pässe der Nationalstraße 6 bei Mai Chau (Februar 2025: Nebelscheinwerfer oder Abblendlicht, nicht dicht auffahren), die Hinweise der nationalen Verkehrspolizeibehörde zu Abblendlicht, Nebelscheinwerfern und niedrigem Tempo und die Erklärung des Nationalen Zentrums für hydrometeorologische Vorhersage, warum im Norden Nebel entsteht; vieles richtet sich an Autofahrer, daher muss der Autor sagen, was für Motorräder gilt, Ha Giang vor einer Nennung mit lokalen Quellen prüfen und Geschwindigkeiten und Abstände nur aus den zitierten Hinweisen oder aus dem Rundschreiben 38/2024/TT-BGTVT zitieren.",
+      "working_title": "Nebel auf den Bergstraßen Nordvietnams: Was die Polizei bei Sa Pa und Tam Dao rät und wann man besser wartet",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://congan.phutho.gov.vn/article/Khuyen-cao-ky-nang-xu-ly-tinh-huong-khi-luu-thong-26378-33",
+          "title": "Phu Tho provincial police portal (undated, written after the 29 March 2026 accident it cites): advice for the Tam Dao mountain road, including rain and fog, stopping at a safe place and geared bikes for motorbikes",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophapluat.vn/canh-bao-suong-mu-day-tam-nhin-han-che-tren-quoc-lo-4d-qua-sa-pa.html",
+          "title": "Bao Phap Luat Viet Nam (21 February 2026): Lao Cai traffic police warning on fog and limited visibility on National Highway 4D through Sa Pa, with the fog time window and advice",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/bai-viet/canh-sat-giao-thong-lao-cai-tuyen-truyen-an-toan-tren-tuyen-duong-mu-suong-sa-pa-1766843851",
+          "title": "Ministry of Public Security portal (27 December 2025): Lao Cai traffic police outreach on the foggy, slippery Sa Pa route (National Highway 4D)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/thoi-tiet-xau-suong-mu-day-dac-tai-xe-di-chuyen-nhu-the-nao-cho-an-toan-20260207084902179.htm",
+          "title": "Dan Tri (7 February 2026): national Traffic Police Department advice in fog: dipped lights, fog lights, low speed, safe distance, no overtaking on narrow roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baotintuc.vn/canh-bao-suong-mu-tiep-tuc-xuat-hien-trong-nhung-ngay-toi-post940330.html",
+          "title": "Bao Tin tuc, VNA (12 January 2026): a National Centre for Hydro-Meteorological Forecasting forecaster explains advection fog in northern Vietnam and its risk to road traffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/xa-hoi/suong-mu-day-tren-quoc-lo-6-tai-xe-chat-vat-vuot-deo-nguy-hiem-1465355.ldo",
+          "title": "Lao Dong (19 February 2025): dense fog on the National Highway 6 passes around Mai Chau and Pha Din, with traffic police advice on lights, distance and speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/EN/Giao-thong-Van-tai/Circular-38-2024-TT-BGTVT-speed-and-safety-distance-of-motor-vehicles/656203/tieng-anh.aspx",
+          "title": "Thu Vien Phap Luat (15 November 2024 circular): Circular 38/2024/TT-BGTVT on speed and safe distance, which requires a larger distance in rain, fog and winding mountain roads",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H04",
+      "subcluster": "ss-weather",
+      "slug": "brouillard-sur-les-routes-de-montagne-du-nord-du-vietnam",
+      "primary_query": "brouillard épais sur une route de montagne dans le nord du Vietnam à moto que faire",
+      "secondary_queries": [
+        "route nationale 4D Sa Pa brouillard avertissement police moto",
+        "route de Tam Dao brouillard que faire en scooter",
+        "quand le brouillard se forme-t-il sur les routes de montagne du nord du Vietnam",
+        "faut-il s'arrêter quand le brouillard est épais sur un col au Vietnam",
+        "antibrouillards et vitesse dans le brouillard Vietnam moto"
+      ],
+      "entities": [
+        "Sa Pa",
+        "route nationale 4D",
+        "Tam Dao",
+        "route nationale 6",
+        "Centre national de prévision hydrométéorologique"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Les motards qui montent à Sa Pa, à Tam Dao ou sur d'autres cols du nord veulent savoir comment le brouillard épais se comporte sur les routes de montagne, ce que conseillent la police et le service météorologique et à quel moment il vaut mieux s'arrêter, attendre ou reporter la sortie.",
+      "content_angle": "Associe les avertissements de la police de la circulation de Lao Cai pour la route nationale 4D à Sa Pa (décembre 2025 et février 2026, brouillard surtout d'environ 13 h à 9 h le lendemain), les conseils de la police provinciale de Phu Tho pour la route de Tam Dao (s'arrêter en lieu sûr quand la visibilité passe sous un niveau sûr), ceux de la police de la circulation de Hoa Binh pour les cols de la route nationale 6 autour de Mai Chau (février 2025 : antibrouillards ou feux de croisement, ne pas coller le véhicule de devant), ceux du service national de la police de la circulation sur les feux de croisement, les antibrouillards et la vitesse réduite, et l'explication du Centre national de prévision hydrométéorologique sur la formation du brouillard dans le nord ; beaucoup de conseils visent les automobilistes, l'auteur doit donc préciser lesquels valent pour les motos, vérifier Ha Giang auprès de sources locales avant de le nommer et ne citer vitesses et distances que d'après les conseils cités ou la circulaire 38/2024/TT-BGTVT.",
+      "working_title": "Brouillard en montagne au nord du Vietnam : conseils de la police à Sa Pa et Tam Dao, et quand attendre",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://congan.phutho.gov.vn/article/Khuyen-cao-ky-nang-xu-ly-tinh-huong-khi-luu-thong-26378-33",
+          "title": "Phu Tho provincial police portal (undated, written after the 29 March 2026 accident it cites): advice for the Tam Dao mountain road, including rain and fog, stopping at a safe place and geared bikes for motorbikes",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophapluat.vn/canh-bao-suong-mu-day-tam-nhin-han-che-tren-quoc-lo-4d-qua-sa-pa.html",
+          "title": "Bao Phap Luat Viet Nam (21 February 2026): Lao Cai traffic police warning on fog and limited visibility on National Highway 4D through Sa Pa, with the fog time window and advice",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/bai-viet/canh-sat-giao-thong-lao-cai-tuyen-truyen-an-toan-tren-tuyen-duong-mu-suong-sa-pa-1766843851",
+          "title": "Ministry of Public Security portal (27 December 2025): Lao Cai traffic police outreach on the foggy, slippery Sa Pa route (National Highway 4D)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/thoi-tiet-xau-suong-mu-day-dac-tai-xe-di-chuyen-nhu-the-nao-cho-an-toan-20260207084902179.htm",
+          "title": "Dan Tri (7 February 2026): national Traffic Police Department advice in fog: dipped lights, fog lights, low speed, safe distance, no overtaking on narrow roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baotintuc.vn/canh-bao-suong-mu-tiep-tuc-xuat-hien-trong-nhung-ngay-toi-post940330.html",
+          "title": "Bao Tin tuc, VNA (12 January 2026): a National Centre for Hydro-Meteorological Forecasting forecaster explains advection fog in northern Vietnam and its risk to road traffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/xa-hoi/suong-mu-day-tren-quoc-lo-6-tai-xe-chat-vat-vuot-deo-nguy-hiem-1465355.ldo",
+          "title": "Lao Dong (19 February 2025): dense fog on the National Highway 6 passes around Mai Chau and Pha Din, with traffic police advice on lights, distance and speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/EN/Giao-thong-Van-tai/Circular-38-2024-TT-BGTVT-speed-and-safety-distance-of-motor-vehicles/656203/tieng-anh.aspx",
+          "title": "Thu Vien Phap Luat (15 November 2024 circular): Circular 38/2024/TT-BGTVT on speed and safe distance, which requires a larger distance in rain, fog and winding mountain roads",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H04",
+      "subcluster": "ss-weather",
+      "slug": "niebla-en-carreteras-de-montana-del-norte-de-vietnam",
+      "primary_query": "niebla espesa en una carretera de montaña del norte de Vietnam en moto qué hacer",
+      "secondary_queries": [
+        "carretera nacional 4D Sa Pa niebla aviso policía moto",
+        "carretera de Tam Dao niebla qué hacer en scooter",
+        "cuándo se forma la niebla en las carreteras de montaña del norte de Vietnam",
+        "conviene parar cuando la niebla es espesa en un puerto de montaña en Vietnam",
+        "luces antiniebla y velocidad con niebla Vietnam moto"
+      ],
+      "entities": [
+        "Sa Pa",
+        "carretera nacional 4D",
+        "Tam Dao",
+        "carretera nacional 6",
+        "Centro Nacional de Predicción Hidrometeorológica"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Los moteros que suben a Sa Pa, a Tam Dao o a otros puertos del norte quieren saber cómo se comporta la niebla espesa en las carreteras de montaña, qué aconsejan la policía y el servicio meteorológico y en qué momento conviene parar, esperar o aplazar la ruta.",
+      "content_angle": "Combina los avisos de la policía de tráfico de Lao Cai para la carretera nacional 4D en Sa Pa (diciembre de 2025 y febrero de 2026, con niebla registrada principalmente de las 13:00 a las 9:00 del día siguiente), el consejo de la policía provincial de Phu Tho para la carretera de Tam Dao (parar en un lugar seguro cuando la visibilidad baja de un nivel seguro), el de la policía de tráfico de Hoa Binh para los puertos de la carretera nacional 6 en torno a Mai Chau (febrero de 2025: luces antiniebla o de cruce, no pegarse al vehículo de delante), las indicaciones de la dirección nacional de policía de tráfico sobre luces de cruce, antinieblas y velocidad baja, y la explicación del Centro Nacional de Predicción Hidrometeorológica sobre por qué se forma niebla en el norte; muchos consejos se dirigen a conductores de coche, así que el redactor debe decir cuáles valen para motos, comprobar Ha Giang con fuentes locales antes de nombrarlo y citar velocidades y distancias solo de los consejos citados o de la circular 38/2024/TT-BGTVT.",
+      "working_title": "Niebla en la montaña del norte de Vietnam: qué aconseja la policía en Sa Pa y Tam Dao y cuándo esperar",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://congan.phutho.gov.vn/article/Khuyen-cao-ky-nang-xu-ly-tinh-huong-khi-luu-thong-26378-33",
+          "title": "Phu Tho provincial police portal (undated, written after the 29 March 2026 accident it cites): advice for the Tam Dao mountain road, including rain and fog, stopping at a safe place and geared bikes for motorbikes",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophapluat.vn/canh-bao-suong-mu-day-tam-nhin-han-che-tren-quoc-lo-4d-qua-sa-pa.html",
+          "title": "Bao Phap Luat Viet Nam (21 February 2026): Lao Cai traffic police warning on fog and limited visibility on National Highway 4D through Sa Pa, with the fog time window and advice",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/bai-viet/canh-sat-giao-thong-lao-cai-tuyen-truyen-an-toan-tren-tuyen-duong-mu-suong-sa-pa-1766843851",
+          "title": "Ministry of Public Security portal (27 December 2025): Lao Cai traffic police outreach on the foggy, slippery Sa Pa route (National Highway 4D)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/thoi-tiet-xau-suong-mu-day-dac-tai-xe-di-chuyen-nhu-the-nao-cho-an-toan-20260207084902179.htm",
+          "title": "Dan Tri (7 February 2026): national Traffic Police Department advice in fog: dipped lights, fog lights, low speed, safe distance, no overtaking on narrow roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baotintuc.vn/canh-bao-suong-mu-tiep-tuc-xuat-hien-trong-nhung-ngay-toi-post940330.html",
+          "title": "Bao Tin tuc, VNA (12 January 2026): a National Centre for Hydro-Meteorological Forecasting forecaster explains advection fog in northern Vietnam and its risk to road traffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/xa-hoi/suong-mu-day-tren-quoc-lo-6-tai-xe-chat-vat-vuot-deo-nguy-hiem-1465355.ldo",
+          "title": "Lao Dong (19 February 2025): dense fog on the National Highway 6 passes around Mai Chau and Pha Din, with traffic police advice on lights, distance and speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/EN/Giao-thong-Van-tai/Circular-38-2024-TT-BGTVT-speed-and-safety-distance-of-motor-vehicles/656203/tieng-anh.aspx",
+          "title": "Thu Vien Phap Luat (15 November 2024 circular): Circular 38/2024/TT-BGTVT on speed and safe distance, which requires a larger distance in rain, fog and winding mountain roads",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H04",
+      "subcluster": "ss-weather",
+      "slug": "mist-op-bergwegen-in-noord-vietnam",
+      "primary_query": "dichte mist op een bergweg in Noord-Vietnam met de motor wat doen",
+      "secondary_queries": [
+        "nationale weg 4D Sa Pa mist waarschuwing politie motor",
+        "weg naar Tam Dao mist wat te doen op een scooter",
+        "wanneer ontstaat mist op bergwegen in Noord-Vietnam",
+        "moet je stoppen bij dichte mist op een bergpas in Vietnam",
+        "mistlampen en snelheid bij mist Vietnam motor"
+      ],
+      "entities": [
+        "Sa Pa",
+        "nationale weg 4D",
+        "Tam Dao",
+        "nationale weg 6",
+        "Nationaal Centrum voor Hydrometeorologische Voorspellingen"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Wie met de motor naar Sa Pa, Tam Dao of andere passen in het noorden rijdt, wil weten hoe dichte mist zich op bergwegen gedraagt, wat politie en weerdienst adviseren en vanaf wanneer je beter stopt, wacht of de rit uitstelt.",
+      "content_angle": "Combineert waarschuwingen van de verkeerspolitie van Lao Cai voor nationale weg 4D door Sa Pa (december 2025 en februari 2026, met mist vooral van ongeveer 13:00 tot 9:00 de volgende ochtend), het advies van de provinciale politie van Phu Tho voor de weg naar Tam Dao (stoppen op een veilige plek als het zicht onder een veilig niveau zakt), dat van de verkeerspolitie van Hoa Binh voor de passen van nationale weg 6 rond Mai Chau (februari 2025: mistlampen of dimlicht, niet te dicht achter de voorligger rijden), de tips van de nationale verkeerspolitiedienst over dimlicht, mistlampen en lage snelheid en de uitleg van het Nationale Centrum voor Hydrometeorologische Voorspellingen over het ontstaan van mist in het noorden; veel advies is voor automobilisten geschreven, dus de schrijver moet zeggen wat voor motoren geldt, Ha Giang eerst met lokale bronnen controleren en snelheden en afstanden alleen uit de aangehaalde adviezen of uit circulaire 38/2024/TT-BGTVT citeren.",
+      "working_title": "Mist op bergwegen in Noord-Vietnam: wat de politie bij Sa Pa en Tam Dao adviseert en wanneer je wacht",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://congan.phutho.gov.vn/article/Khuyen-cao-ky-nang-xu-ly-tinh-huong-khi-luu-thong-26378-33",
+          "title": "Phu Tho provincial police portal (undated, written after the 29 March 2026 accident it cites): advice for the Tam Dao mountain road, including rain and fog, stopping at a safe place and geared bikes for motorbikes",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophapluat.vn/canh-bao-suong-mu-day-tam-nhin-han-che-tren-quoc-lo-4d-qua-sa-pa.html",
+          "title": "Bao Phap Luat Viet Nam (21 February 2026): Lao Cai traffic police warning on fog and limited visibility on National Highway 4D through Sa Pa, with the fog time window and advice",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/bai-viet/canh-sat-giao-thong-lao-cai-tuyen-truyen-an-toan-tren-tuyen-duong-mu-suong-sa-pa-1766843851",
+          "title": "Ministry of Public Security portal (27 December 2025): Lao Cai traffic police outreach on the foggy, slippery Sa Pa route (National Highway 4D)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/thoi-tiet-xau-suong-mu-day-dac-tai-xe-di-chuyen-nhu-the-nao-cho-an-toan-20260207084902179.htm",
+          "title": "Dan Tri (7 February 2026): national Traffic Police Department advice in fog: dipped lights, fog lights, low speed, safe distance, no overtaking on narrow roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baotintuc.vn/canh-bao-suong-mu-tiep-tuc-xuat-hien-trong-nhung-ngay-toi-post940330.html",
+          "title": "Bao Tin tuc, VNA (12 January 2026): a National Centre for Hydro-Meteorological Forecasting forecaster explains advection fog in northern Vietnam and its risk to road traffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/xa-hoi/suong-mu-day-tren-quoc-lo-6-tai-xe-chat-vat-vuot-deo-nguy-hiem-1465355.ldo",
+          "title": "Lao Dong (19 February 2025): dense fog on the National Highway 6 passes around Mai Chau and Pha Din, with traffic police advice on lights, distance and speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/EN/Giao-thong-Van-tai/Circular-38-2024-TT-BGTVT-speed-and-safety-distance-of-motor-vehicles/656203/tieng-anh.aspx",
+          "title": "Thu Vien Phap Luat (15 November 2024 circular): Circular 38/2024/TT-BGTVT on speed and safe distance, which requires a larger distance in rain, fog and winding mountain roads",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H04",
+      "subcluster": "ss-weather",
+      "slug": "yuenan-beibu-shanlu-dawu-qi-motuoche",
+      "primary_query": "在越南北部山路上遇到浓雾骑摩托车怎么办",
+      "secondary_queries": [
+        "沙巴 4D号国道 大雾 警告 摩托车",
+        "三岛山路 大雾 骑摩托车",
+        "越南北部山路什么时候起雾",
+        "浓雾能见度低要不要停下来等 越南",
+        "雾灯 近光灯 车速 越南 摩托车 大雾"
+      ],
+      "entities": [
+        "沙巴",
+        "4D号国道",
+        "三岛",
+        "6号国道",
+        "国家水文气象预报中心"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "骑摩托车去沙巴、三岛或越南北部其他山口的人想知道，山路上的浓雾通常是怎样出现的，警方和气象部门给出了什么建议，以及到了什么程度就该停下来等待或推迟行程。",
+      "content_angle": "综合老街省交警对经过沙巴的4D号国道的提醒（2025年12月和2026年2月，雾主要出现在前一天13点至次日9点左右）、富寿省公安对上三岛山路的建议（能见度低于安全水平时应在安全处暂停）、和平省交警对 Mai Chau 一带6号国道山口的建议（2025年2月：开雾灯或近光灯，不要紧跟前车）、国家交警局关于近光灯、雾灯和低速行驶的建议，以及国家水文气象预报中心对北部为何起雾的解释；其中许多建议是写给汽车驾驶员的，因此撰稿人要说明哪些适用于摩托车，在提到河江之前先用当地来源核实，并且只从所引建议或第38/2024/TT-BGTVT号通知中引用车速与车距。",
+      "working_title": "越南北部山路上的大雾：沙巴和三岛的警方建议，以及什么时候该等一等",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://congan.phutho.gov.vn/article/Khuyen-cao-ky-nang-xu-ly-tinh-huong-khi-luu-thong-26378-33",
+          "title": "Phu Tho provincial police portal (undated, written after the 29 March 2026 accident it cites): advice for the Tam Dao mountain road, including rain and fog, stopping at a safe place and geared bikes for motorbikes",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophapluat.vn/canh-bao-suong-mu-day-tam-nhin-han-che-tren-quoc-lo-4d-qua-sa-pa.html",
+          "title": "Bao Phap Luat Viet Nam (21 February 2026): Lao Cai traffic police warning on fog and limited visibility on National Highway 4D through Sa Pa, with the fog time window and advice",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/bai-viet/canh-sat-giao-thong-lao-cai-tuyen-truyen-an-toan-tren-tuyen-duong-mu-suong-sa-pa-1766843851",
+          "title": "Ministry of Public Security portal (27 December 2025): Lao Cai traffic police outreach on the foggy, slippery Sa Pa route (National Highway 4D)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/thoi-tiet-xau-suong-mu-day-dac-tai-xe-di-chuyen-nhu-the-nao-cho-an-toan-20260207084902179.htm",
+          "title": "Dan Tri (7 February 2026): national Traffic Police Department advice in fog: dipped lights, fog lights, low speed, safe distance, no overtaking on narrow roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baotintuc.vn/canh-bao-suong-mu-tiep-tuc-xuat-hien-trong-nhung-ngay-toi-post940330.html",
+          "title": "Bao Tin tuc, VNA (12 January 2026): a National Centre for Hydro-Meteorological Forecasting forecaster explains advection fog in northern Vietnam and its risk to road traffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/xa-hoi/suong-mu-day-tren-quoc-lo-6-tai-xe-chat-vat-vuot-deo-nguy-hiem-1465355.ldo",
+          "title": "Lao Dong (19 February 2025): dense fog on the National Highway 6 passes around Mai Chau and Pha Din, with traffic police advice on lights, distance and speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/EN/Giao-thong-Van-tai/Circular-38-2024-TT-BGTVT-speed-and-safety-distance-of-motor-vehicles/656203/tieng-anh.aspx",
+          "title": "Thu Vien Phap Luat (15 November 2024 circular): Circular 38/2024/TT-BGTVT on speed and safe distance, which requires a larger distance in rain, fog and winding mountain roads",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H04",
+      "subcluster": "ss-weather",
+      "slug": "nevoeiro-nas-estradas-de-montanha-do-norte-do-vietname",
+      "primary_query": "nevoeiro cerrado numa estrada de montanha no norte do Vietname de mota o que fazer",
+      "secondary_queries": [
+        "estrada nacional 4D Sa Pa nevoeiro aviso polícia mota",
+        "estrada de Tam Dao nevoeiro o que fazer de scooter",
+        "quando se forma nevoeiro nas estradas de montanha do norte do Vietname",
+        "convém parar com nevoeiro cerrado num passo de montanha no Vietname",
+        "faróis de nevoeiro e velocidade com nevoeiro Vietname mota"
+      ],
+      "entities": [
+        "Sa Pa",
+        "estrada nacional 4D",
+        "Tam Dao",
+        "estrada nacional 6",
+        "Centro Nacional de Previsão Hidrometeorológica"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Os motociclistas que sobem a Sa Pa, a Tam Dao ou a outros passos do norte querem saber como se comporta o nevoeiro cerrado nas estradas de montanha, o que aconselham a polícia e o serviço meteorológico e em que ponto convém parar, esperar ou adiar a viagem.",
+      "content_angle": "Combina os avisos da polícia de trânsito de Lao Cai para a estrada nacional 4D em Sa Pa (dezembro de 2025 e fevereiro de 2026, com nevoeiro sobretudo das 13:00 às 9:00 do dia seguinte), o conselho da polícia provincial de Phu Tho para a estrada de Tam Dao (parar num local seguro quando a visibilidade desce abaixo de um nível seguro), o da polícia de trânsito de Hoa Binh para os passos da estrada nacional 6 em redor de Mai Chau (fevereiro de 2025: faróis de nevoeiro ou médios, não colar ao veículo da frente), as indicações da direção nacional da polícia de trânsito sobre médios, faróis de nevoeiro e velocidade baixa e a explicação do Centro Nacional de Previsão Hidrometeorológica sobre a formação de nevoeiro no norte; muitos conselhos dirigem-se a condutores de automóveis, por isso o redator deve dizer quais valem para motas, verificar Ha Giang com fontes locais antes de o nomear e citar velocidades e distâncias apenas dos conselhos citados ou da circular 38/2024/TT-BGTVT.",
+      "working_title": "Nevoeiro na montanha do norte do Vietname: o que a polícia aconselha em Sa Pa e Tam Dao e quando esperar",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://congan.phutho.gov.vn/article/Khuyen-cao-ky-nang-xu-ly-tinh-huong-khi-luu-thong-26378-33",
+          "title": "Phu Tho provincial police portal (undated, written after the 29 March 2026 accident it cites): advice for the Tam Dao mountain road, including rain and fog, stopping at a safe place and geared bikes for motorbikes",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophapluat.vn/canh-bao-suong-mu-day-tam-nhin-han-che-tren-quoc-lo-4d-qua-sa-pa.html",
+          "title": "Bao Phap Luat Viet Nam (21 February 2026): Lao Cai traffic police warning on fog and limited visibility on National Highway 4D through Sa Pa, with the fog time window and advice",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/bai-viet/canh-sat-giao-thong-lao-cai-tuyen-truyen-an-toan-tren-tuyen-duong-mu-suong-sa-pa-1766843851",
+          "title": "Ministry of Public Security portal (27 December 2025): Lao Cai traffic police outreach on the foggy, slippery Sa Pa route (National Highway 4D)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/thoi-tiet-xau-suong-mu-day-dac-tai-xe-di-chuyen-nhu-the-nao-cho-an-toan-20260207084902179.htm",
+          "title": "Dan Tri (7 February 2026): national Traffic Police Department advice in fog: dipped lights, fog lights, low speed, safe distance, no overtaking on narrow roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baotintuc.vn/canh-bao-suong-mu-tiep-tuc-xuat-hien-trong-nhung-ngay-toi-post940330.html",
+          "title": "Bao Tin tuc, VNA (12 January 2026): a National Centre for Hydro-Meteorological Forecasting forecaster explains advection fog in northern Vietnam and its risk to road traffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/xa-hoi/suong-mu-day-tren-quoc-lo-6-tai-xe-chat-vat-vuot-deo-nguy-hiem-1465355.ldo",
+          "title": "Lao Dong (19 February 2025): dense fog on the National Highway 6 passes around Mai Chau and Pha Din, with traffic police advice on lights, distance and speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/EN/Giao-thong-Van-tai/Circular-38-2024-TT-BGTVT-speed-and-safety-distance-of-motor-vehicles/656203/tieng-anh.aspx",
+          "title": "Thu Vien Phap Luat (15 November 2024 circular): Circular 38/2024/TT-BGTVT on speed and safe distance, which requires a larger distance in rain, fog and winding mountain roads",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H04",
+      "subcluster": "ss-weather",
+      "slug": "beteunam-bukbu-sanak-dolo-angae-otobai",
+      "primary_query": "베트남 북부 산악 도로에서 짙은 안개 속 오토바이 운전 어떻게 해야 할까",
+      "secondary_queries": [
+        "사파 국도 4D 안개 경고 경찰 오토바이",
+        "땀다오 산길 안개 스쿠터 운전",
+        "베트남 북부 산악 도로에서 안개는 언제 끼는지",
+        "고갯길에서 안개가 짙을 때 멈춰야 하는지 베트남",
+        "안개등과 안개 속 주행 속도 베트남 오토바이"
+      ],
+      "entities": [
+        "사파",
+        "국도 4D",
+        "땀다오",
+        "국도 6호선",
+        "국가수문기상예보센터"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "사파, 땀다오 또는 북부의 다른 고갯길로 오토바이를 타고 가는 여행자는 산길에서 짙은 안개가 어떻게 나타나는지, 경찰과 기상 당국이 무엇을 권고하는지, 어느 시점에 멈추거나 기다리거나 일정을 미뤄야 하는지 알고 싶어 합니다.",
+      "content_angle": "라오까이성 교통경찰이 사파를 지나는 국도 4D에 내린 경고(2025년 12월과 2026년 2월, 안개는 주로 전날 13시경부터 다음 날 9시경까지 기록), 푸토성 경찰이 땀다오 도로에 내놓은 권고(시야가 안전 수준 아래로 떨어지면 안전한 곳에서 일시 정지), 호아빈 교통경찰이 마이쩌우 일대 국도 6호선 고개에 대해 한 조언(2025년 2월: 안개등 또는 하향등 사용, 앞차에 바짝 붙지 않기), 국가 교통경찰국의 하향등·안개등·저속 주행 권고, 국가수문기상예보센터가 설명한 북부 안개 발생 원인을 결합합니다. 권고 상당수가 자동차 운전자를 대상으로 쓰였으므로 작성자는 오토바이에 해당하는 항목을 구분하고, 하장은 현지 출처로 확인한 뒤에만 언급하며, 속도와 거리는 인용한 권고 또는 통첩 38/2024/TT-BGTVT에서만 인용해야 합니다.",
+      "working_title": "베트남 북부 산악 도로의 안개: 사파와 땀다오 경찰의 권고, 그리고 기다려야 할 때",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://congan.phutho.gov.vn/article/Khuyen-cao-ky-nang-xu-ly-tinh-huong-khi-luu-thong-26378-33",
+          "title": "Phu Tho provincial police portal (undated, written after the 29 March 2026 accident it cites): advice for the Tam Dao mountain road, including rain and fog, stopping at a safe place and geared bikes for motorbikes",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophapluat.vn/canh-bao-suong-mu-day-tam-nhin-han-che-tren-quoc-lo-4d-qua-sa-pa.html",
+          "title": "Bao Phap Luat Viet Nam (21 February 2026): Lao Cai traffic police warning on fog and limited visibility on National Highway 4D through Sa Pa, with the fog time window and advice",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/bai-viet/canh-sat-giao-thong-lao-cai-tuyen-truyen-an-toan-tren-tuyen-duong-mu-suong-sa-pa-1766843851",
+          "title": "Ministry of Public Security portal (27 December 2025): Lao Cai traffic police outreach on the foggy, slippery Sa Pa route (National Highway 4D)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/thoi-tiet-xau-suong-mu-day-dac-tai-xe-di-chuyen-nhu-the-nao-cho-an-toan-20260207084902179.htm",
+          "title": "Dan Tri (7 February 2026): national Traffic Police Department advice in fog: dipped lights, fog lights, low speed, safe distance, no overtaking on narrow roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baotintuc.vn/canh-bao-suong-mu-tiep-tuc-xuat-hien-trong-nhung-ngay-toi-post940330.html",
+          "title": "Bao Tin tuc, VNA (12 January 2026): a National Centre for Hydro-Meteorological Forecasting forecaster explains advection fog in northern Vietnam and its risk to road traffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/xa-hoi/suong-mu-day-tren-quoc-lo-6-tai-xe-chat-vat-vuot-deo-nguy-hiem-1465355.ldo",
+          "title": "Lao Dong (19 February 2025): dense fog on the National Highway 6 passes around Mai Chau and Pha Din, with traffic police advice on lights, distance and speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/EN/Giao-thong-Van-tai/Circular-38-2024-TT-BGTVT-speed-and-safety-distance-of-motor-vehicles/656203/tieng-anh.aspx",
+          "title": "Thu Vien Phap Luat (15 November 2024 circular): Circular 38/2024/TT-BGTVT on speed and safe distance, which requires a larger distance in rain, fog and winding mountain roads",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H04",
+      "subcluster": "ss-weather",
+      "slug": "betonamu-hokubu-yamamichi-kiri-baiku",
+      "primary_query": "ベトナム北部の山道で濃い霧の中バイクで走るときはどうする",
+      "secondary_queries": [
+        "サパ 国道4D 霧 警告 警察 バイク",
+        "タムダオ 山道 霧 スクーター",
+        "ベトナム北部の山道で霧が出やすい時間帯",
+        "峠で霧が濃いとき止まるべきか ベトナム",
+        "フォグランプ 霧の中の速度 ベトナム バイク"
+      ],
+      "entities": [
+        "サパ",
+        "国道4D",
+        "タムダオ",
+        "国道6号",
+        "国家水文気象予報センター"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "サパやタムダオ、北部のほかの峠へバイクで向かう旅行者は、山道で濃い霧がどのように現れるのか、警察や気象当局が何を勧めているのか、どの時点で止まる・待つ・延期するのがよいのかを知りたがります。",
+      "content_angle": "ラオカイ省交通警察が国道4D（サパ区間）に出した警告（2025年12月と2026年2月、霧は主に前日13時ごろから翌朝9時ごろまで記録）、フートー省警察がタムダオの道路に出した助言（視界が安全な水準を下回ったら安全な場所で停止）、ホアビン省交通警察がマイチャウ周辺の国道6号の峠について述べた助言（2025年2月：フォグランプかロービームを使い、前の車に近づきすぎない）、国家交通警察局のロービーム・フォグランプ・低速走行の助言、国家水文気象予報センターによる北部の霧の発生理由の説明を組み合わせます。助言の多くは自動車の運転者向けなので、執筆者はバイクに当てはまる点を区別し、ハザン省は現地の情報源で確認してから名前を出し、速度や車間距離は引用した助言か通達38/2024/TT-BGTVTからのみ引用してください。",
+      "working_title": "ベトナム北部の山道の霧：サパとタムダオの警察の助言と、待つべきとき",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://congan.phutho.gov.vn/article/Khuyen-cao-ky-nang-xu-ly-tinh-huong-khi-luu-thong-26378-33",
+          "title": "Phu Tho provincial police portal (undated, written after the 29 March 2026 accident it cites): advice for the Tam Dao mountain road, including rain and fog, stopping at a safe place and geared bikes for motorbikes",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baophapluat.vn/canh-bao-suong-mu-day-tam-nhin-han-che-tren-quoc-lo-4d-qua-sa-pa.html",
+          "title": "Bao Phap Luat Viet Nam (21 February 2026): Lao Cai traffic police warning on fog and limited visibility on National Highway 4D through Sa Pa, with the fog time window and advice",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/bai-viet/canh-sat-giao-thong-lao-cai-tuyen-truyen-an-toan-tren-tuyen-duong-mu-suong-sa-pa-1766843851",
+          "title": "Ministry of Public Security portal (27 December 2025): Lao Cai traffic police outreach on the foggy, slippery Sa Pa route (National Highway 4D)",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dantri.com.vn/thoi-su/thoi-tiet-xau-suong-mu-day-dac-tai-xe-di-chuyen-nhu-the-nao-cho-an-toan-20260207084902179.htm",
+          "title": "Dan Tri (7 February 2026): national Traffic Police Department advice in fog: dipped lights, fog lights, low speed, safe distance, no overtaking on narrow roads",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://baotintuc.vn/canh-bao-suong-mu-tiep-tuc-xuat-hien-trong-nhung-ngay-toi-post940330.html",
+          "title": "Bao Tin tuc, VNA (12 January 2026): a National Centre for Hydro-Meteorological Forecasting forecaster explains advection fog in northern Vietnam and its risk to road traffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/xa-hoi/suong-mu-day-tren-quoc-lo-6-tai-xe-chat-vat-vuot-deo-nguy-hiem-1465355.ldo",
+          "title": "Lao Dong (19 February 2025): dense fog on the National Highway 6 passes around Mai Chau and Pha Din, with traffic police advice on lights, distance and speed",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thuvienphapluat.vn/van-ban/EN/Giao-thong-Van-tai/Circular-38-2024-TT-BGTVT-speed-and-safety-distance-of-motor-vehicles/656203/tieng-anh.aspx",
+          "title": "Thu Vien Phap Luat (15 November 2024 circular): Circular 38/2024/TT-BGTVT on speed and safe distance, which requires a larger distance in rain, fog and winding mountain roads",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}

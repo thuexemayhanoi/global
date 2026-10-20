@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T04:51:28.112Z",
+  "updated_at": "2026-10-20T04:52:06.696Z",
   "base_main_sha": "343b27b62a058042c99fa454f719d8493263023b",
-  "last_commit_sha": "c6453d0935a357f5ae6cb113526fb9e4f5961024",
+  "last_commit_sha": "c06431be0179b4990a6673185439217629553ee1",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 740,
-    "qa_pass": 740,
+    "researched": 750,
+    "qa_pass": 750,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 730,
+    "pushed": 740,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 75,
-      "de": 75,
-      "fr": 75,
-      "es": 75,
-      "nl": 75,
-      "pt": 75,
-      "zh": 75,
-      "ko": 75,
-      "ja": 75,
-      "en": 65
+      "vi": 76,
+      "de": 76,
+      "fr": 76,
+      "es": 76,
+      "nl": 76,
+      "pt": 76,
+      "zh": 76,
+      "ko": 76,
+      "ja": 76,
+      "en": 66
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 90,
+      "traffic-law-safety": 100,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -46,9 +46,9 @@
     }
   },
   "last_batch": {
-    "seq": 74,
-    "file": "factory/topic-research/batches/claude-20261018b-0074.json",
-    "sha256": "e8b8dc6be8146af636b3dc614cadea57082d309e23cfb8634fa0de8096cb3365",
+    "seq": 75,
+    "file": "factory/topic-research/batches/claude-20261018b-0075.json",
+    "sha256": "3640cdf69c38f5ceea5f7f906f1c83b448b09441f872d41654705e2bc61319fa",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -8161,8 +8161,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0074.json",
       "sha256": "e8b8dc6be8146af636b3dc614cadea57082d309e23cfb8634fa0de8096cb3365",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "c06431be0179b4990a6673185439217629553ee1",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -8266,11 +8266,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 75,
+      "file": "factory/topic-research/batches/claude-20261018b-0075.json",
+      "sha256": "3640cdf69c38f5ceea5f7f906f1c83b448b09441f872d41654705e2bc61319fa",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:xe-may-gap-suong-mu-tren-duong-deo-mien-bac",
+          "locale": "vi",
+          "slug": "xe-may-gap-suong-mu-tren-duong-deo-mien-bac",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-weather",
+          "key": "vi::di xe may gap suong mu day tren duong deo mien bac nen lam gi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:fog-on-northern-vietnam-mountain-roads",
+          "locale": "en",
+          "slug": "fog-on-northern-vietnam-mountain-roads",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-weather",
+          "key": "en::what to do in thick fog on a mountain road in northern vietnam on a motorbike",
+          "ta_id": null
+        },
+        {
+          "ref": "de:nebel-auf-bergstrassen-in-nordvietnam",
+          "locale": "de",
+          "slug": "nebel-auf-bergstrassen-in-nordvietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-weather",
+          "key": "de::nebel auf bergstraßen in nordvietnam mit dem motorrad was tun",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:brouillard-sur-les-routes-de-montagne-du-nord-du-vietnam",
+          "locale": "fr",
+          "slug": "brouillard-sur-les-routes-de-montagne-du-nord-du-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-weather",
+          "key": "fr::brouillard epais sur une route de montagne dans le nord du vietnam a moto que faire",
+          "ta_id": null
+        },
+        {
+          "ref": "es:niebla-en-carreteras-de-montana-del-norte-de-vietnam",
+          "locale": "es",
+          "slug": "niebla-en-carreteras-de-montana-del-norte-de-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-weather",
+          "key": "es::niebla espesa en una carretera de montana del norte de vietnam en moto que hacer",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:mist-op-bergwegen-in-noord-vietnam",
+          "locale": "nl",
+          "slug": "mist-op-bergwegen-in-noord-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-weather",
+          "key": "nl::dichte mist op een bergweg in noord-vietnam met de motor wat doen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-beibu-shanlu-dawu-qi-motuoche",
+          "locale": "zh",
+          "slug": "yuenan-beibu-shanlu-dawu-qi-motuoche",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-weather",
+          "key": "zh::在越南北部山路上遇到浓雾骑摩托车怎么办",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:nevoeiro-nas-estradas-de-montanha-do-norte-do-vietname",
+          "locale": "pt",
+          "slug": "nevoeiro-nas-estradas-de-montanha-do-norte-do-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-weather",
+          "key": "pt::nevoeiro cerrado numa estrada de montanha no norte do vietname de mota o que fazer",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-bukbu-sanak-dolo-angae-otobai",
+          "locale": "ko",
+          "slug": "beteunam-bukbu-sanak-dolo-angae-otobai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-weather",
+          "key": "ko::베트남 북부 산악 도로에서 짙은 안개 속 오토바이 운전 어떻게 해야 할까",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-hokubu-yamamichi-kiri-baiku",
+          "locale": "ja",
+          "slug": "betonamu-hokubu-yamamichi-kiri-baiku",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-weather",
+          "key": "ja::ヘトナム北部の山道て濃い霧の中ハイクて走るときはとうする",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 75,
-    "file": "factory/topic-research/batches/claude-20261018b-0075.json",
+    "seq": 76,
+    "file": "factory/topic-research/batches/claude-20261018b-0076.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -8283,13 +8394,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-19T00:38:40.279Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 51,
-      "topics": 10,
-      "sha256": "f0fea6de97811286b609d3dbea7fe5459a993131c04f36d2feb15399e4259957"
-    },
     {
       "at": "2026-10-19T00:38:55.766Z",
       "event": "BATCH_COMMITTED",
@@ -8454,6 +8558,13 @@
       "seq": 74,
       "topics": 10,
       "sha256": "e8b8dc6be8146af636b3dc614cadea57082d309e23cfb8634fa0de8096cb3365"
+    },
+    {
+      "at": "2026-10-20T04:52:06.696Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 75,
+      "topics": 10,
+      "sha256": "3640cdf69c38f5ceea5f7f906f1c83b448b09441f872d41654705e2bc61319fa"
     }
   ]
 }
