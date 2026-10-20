@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:57:12.816Z",
+  "updated_at": "2026-10-20T10:57:29.438Z",
   "base_main_sha": "2b81c61739dbf22f12c3a10c150d1e448d4e68e5",
-  "last_commit_sha": "4775ca429acc844f66254d5c34b34cce4d78c6f3",
+  "last_commit_sha": "874fbfc84f1101c749f36ed3a737e14b70d3435c",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1310,
-    "qa_pass": 1310,
+    "researched": 1320,
+    "qa_pass": 1320,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1300,
+    "pushed": 1310,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 132,
-      "de": 132,
-      "fr": 132,
-      "es": 132,
-      "nl": 132,
-      "pt": 132,
-      "zh": 132,
-      "ko": 132,
-      "ja": 132,
-      "en": 122
+      "vi": 133,
+      "de": 133,
+      "fr": 133,
+      "es": 133,
+      "nl": 133,
+      "pt": 133,
+      "zh": 133,
+      "ko": 133,
+      "ja": 133,
+      "en": 123
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 430,
+      "traffic-law-safety": 440,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 131,
-    "file": "factory/topic-research/batches/claude-20261018b-0131.json",
-    "sha256": "1abcb53d20801417c98690f560cebc57086cb4a16c53dc03fc69b1e55826b937",
+    "seq": 132,
+    "file": "factory/topic-research/batches/claude-20261018b-0132.json",
+    "sha256": "f0f302fa7f767cd62fa757c172906084f3fba8c206fa346ab86fa0f4fc5358c6",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -14489,8 +14489,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0131.json",
       "sha256": "1abcb53d20801417c98690f560cebc57086cb4a16c53dc03fc69b1e55826b937",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "874fbfc84f1101c749f36ed3a737e14b70d3435c",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -14594,11 +14594,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 132,
+      "file": "factory/topic-research/batches/claude-20261018b-0132.json",
+      "sha256": "f0f302fa7f767cd62fa757c172906084f3fba8c206fa346ab86fa0f4fc5358c6",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:ha-giang-loop-easy-rider-yeu-cau-an-toan-thang-4-2026-tuyen-quang",
+          "locale": "vi",
+          "slug": "ha-giang-loop-easy-rider-yeu-cau-an-toan-thang-4-2026-tuyen-quang",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::easy rider ha giang co hop phap khong va quy dinh moi nam 2026 la gi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:ha-giang-loop-easy-rider-rules-april-2026-tuyen-quang",
+          "locale": "en",
+          "slug": "ha-giang-loop-easy-rider-rules-april-2026-tuyen-quang",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::ha giang loop easy rider rules 2026 what changed for tourists",
+          "ta_id": null
+        },
+        {
+          "ref": "de:ha-giang-loop-easy-rider-regeln-april-2026-tuyen-quang",
+          "locale": "de",
+          "slug": "ha-giang-loop-easy-rider-regeln-april-2026-tuyen-quang",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::ha giang loop easy rider regeln 2026 was hat sich fur touristen geandert",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:boucle-de-ha-giang-easy-rider-regles-avril-2026-tuyen-quang",
+          "locale": "fr",
+          "slug": "boucle-de-ha-giang-easy-rider-regles-avril-2026-tuyen-quang",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::boucle de ha giang easy rider regles 2026 ce qui change pour les touristes",
+          "ta_id": null
+        },
+        {
+          "ref": "es:ha-giang-loop-easy-rider-normas-abril-2026-tuyen-quang",
+          "locale": "es",
+          "slug": "ha-giang-loop-easy-rider-normas-abril-2026-tuyen-quang",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::ha giang loop easy rider normas 2026 que cambia para los turistas",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:ha-giang-loop-easy-rider-regels-april-2026-tuyen-quang",
+          "locale": "nl",
+          "slug": "ha-giang-loop-easy-rider-regels-april-2026-tuyen-quang",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::ha giang loop easy rider regels 2026 wat verandert er voor toeristen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hejiang-huanxian-easy-rider-2026nian-4yue-xinyaoqiu-xuanguang",
+          "locale": "zh",
+          "slug": "hejiang-huanxian-easy-rider-2026nian-4yue-xinyaoqiu-xuanguang",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::河江环线 easy rider 2026年新规 游客要注意什么",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:ha-giang-loop-easy-rider-regras-abril-2026-tuyen-quang",
+          "locale": "pt",
+          "slug": "ha-giang-loop-easy-rider-regras-abril-2026-tuyen-quang",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::ha giang loop easy rider regras 2026 o que muda para os turistas",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hajang-rup-ijirideo-2026-nyeon-4-wol-gyujeong-tuyeonkwang",
+          "locale": "ko",
+          "slug": "hajang-rup-ijirideo-2026-nyeon-4-wol-gyujeong-tuyeonkwang",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::하장 루프 이지라이더 2026년 새 규정 여행자가 알아야 할 점",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hazan-loop-easy-rider-2026nen-4gatsu-kisei-tuyen-quang",
+          "locale": "ja",
+          "slug": "hazan-loop-easy-rider-2026nen-4gatsu-kisei-tuyen-quang",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ハサン・ルーフ イーシーライター 2026年 新ルール 旅行者か知るへきこと",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 132,
-    "file": "factory/topic-research/batches/claude-20261018b-0132.json",
+    "seq": 133,
+    "file": "factory/topic-research/batches/claude-20261018b-0133.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -14611,13 +14722,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T10:07:34.810Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 107,
-      "topics": 10,
-      "sha256": "d4c70886485b1aabce2e46e6155b5deccb4b279429a6ff86a27a5b3dd8b0572a"
-    },
     {
       "at": "2026-10-20T10:09:41.108Z",
       "event": "BATCH_COMMITTED",
@@ -14785,6 +14889,13 @@
       "seq": 131,
       "topics": 10,
       "sha256": "1abcb53d20801417c98690f560cebc57086cb4a16c53dc03fc69b1e55826b937"
+    },
+    {
+      "at": "2026-10-20T10:57:29.438Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 132,
+      "topics": 10,
+      "sha256": "f0f302fa7f767cd62fa757c172906084f3fba8c206fa346ab86fa0f4fc5358c6"
     }
   ]
 }
