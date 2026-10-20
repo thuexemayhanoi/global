@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T05:16:39.100Z",
+  "updated_at": "2026-10-20T05:16:54.821Z",
   "base_main_sha": "2e57d8907ace700d93a2d1582573966bc3d96426",
-  "last_commit_sha": "f567a2dda3659059c5900ea4d1d5ab48137056b9",
+  "last_commit_sha": "c7a791354148d46b6d5ef56c9ac6632325c0122e",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 880,
-    "qa_pass": 880,
+    "researched": 890,
+    "qa_pass": 890,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 870,
+    "pushed": 880,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 89,
-      "de": 89,
-      "fr": 89,
-      "es": 89,
-      "nl": 89,
-      "pt": 89,
-      "zh": 89,
-      "ko": 89,
-      "ja": 89,
-      "en": 79
+      "vi": 90,
+      "de": 90,
+      "fr": 90,
+      "es": 90,
+      "nl": 90,
+      "pt": 90,
+      "zh": 90,
+      "ko": 90,
+      "ja": 90,
+      "en": 80
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 20
+      "motorbike-rental": 30
     }
   },
   "last_batch": {
-    "seq": 88,
-    "file": "factory/topic-research/batches/claude-20261018b-0088.json",
-    "sha256": "df8a7ee83ee6d0d4384895a8158a5e8b257d8b57e9e0774c8becca897851b13b",
+    "seq": 89,
+    "file": "factory/topic-research/batches/claude-20261018b-0089.json",
+    "sha256": "02da587d4083ab0be93dc07d077b14a1d3cc8538b03f037745229ef0a23e0532",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -9716,8 +9716,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0088.json",
       "sha256": "df8a7ee83ee6d0d4384895a8158a5e8b257d8b57e9e0774c8becca897851b13b",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "c7a791354148d46b6d5ef56c9ac6632325c0122e",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -9821,11 +9821,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 89,
+      "file": "factory/topic-research/batches/claude-20261018b-0089.json",
+      "sha256": "02da587d4083ab0be93dc07d077b14a1d3cc8538b03f037745229ef0a23e0532",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:vespa-primavera-sprint-gts-khac-xe-ga-honda-bang-lai",
+          "locale": "vi",
+          "slug": "vespa-primavera-sprint-gts-khac-xe-ga-honda-bang-lai",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-models",
+          "key": "vi::vespa khac xe ga honda the nao va can bang lai hang nao o viet nam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:vespa-vs-honda-scooter-primavera-sprint-gts-licence",
+          "locale": "en",
+          "slug": "vespa-vs-honda-scooter-primavera-sprint-gts-licence",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-models",
+          "key": "en::vespa vs honda scooter in vietnam differences and licence class",
+          "ta_id": null
+        },
+        {
+          "ref": "de:vespa-oder-honda-roller-primavera-sprint-gts-fuehrerschein",
+          "locale": "de",
+          "slug": "vespa-oder-honda-roller-primavera-sprint-gts-fuehrerschein",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-models",
+          "key": "de::vespa oder honda roller unterschiede und notige fuhrerscheinklasse in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:vespa-ou-scooter-honda-primavera-sprint-gts-permis",
+          "locale": "fr",
+          "slug": "vespa-ou-scooter-honda-primavera-sprint-gts-permis",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-models",
+          "key": "fr::vespa ou scooter honda differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:vespa-o-scooter-honda-primavera-sprint-gts-carne",
+          "locale": "es",
+          "slug": "vespa-o-scooter-honda-primavera-sprint-gts-carne",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-models",
+          "key": "es::vespa o scooter honda diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:vespa-of-honda-scooter-primavera-sprint-gts-rijbewijs",
+          "locale": "nl",
+          "slug": "vespa-of-honda-scooter-primavera-sprint-gts-rijbewijs",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-models",
+          "key": "nl::vespa of honda scooter verschillen en welk rijbewijs je nodig hebt in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:vespa-yu-honda-tabanche-qubie-primavera-sprint-gts",
+          "locale": "zh",
+          "slug": "vespa-yu-honda-tabanche-qubie-primavera-sprint-gts",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-models",
+          "key": "zh::vespa 和本田踏板车的区别以及在越南需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:vespa-ou-scooter-honda-primavera-sprint-gts-carta",
+          "locale": "pt",
+          "slug": "vespa-ou-scooter-honda-primavera-sprint-gts-carta",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-models",
+          "key": "pt::vespa ou scooter honda diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beseupa-peurimabera-seupeurinteu-gts-honda-seukuteo-myeonheo",
+          "locale": "ko",
+          "slug": "beseupa-peurimabera-seupeurinteu-gts-honda-seukuteo-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-models",
+          "key": "ko::베스파와 혼다 스쿠터의 차이와 베트남에서 필요한 면허",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:vespa-primavera-sprint-gts-honda-sukuta-menkyo",
+          "locale": "ja",
+          "slug": "vespa-primavera-sprint-gts-honda-sukuta-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-models",
+          "key": "ja::ヘスハとホンタのスクーターの違いとヘトナムて必要な免許",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 89,
-    "file": "factory/topic-research/batches/claude-20261018b-0089.json",
+    "seq": 90,
+    "file": "factory/topic-research/batches/claude-20261018b-0090.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -9838,13 +9949,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:27:19.602Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 64,
-      "topics": 10,
-      "sha256": "b208b8b3cbd479da27a1221e810704959c5b243116428d56e42a1955585a0523"
-    },
     {
       "at": "2026-10-20T04:30:46.799Z",
       "event": "BATCH_COMMITTED",
@@ -10012,6 +10116,13 @@
       "seq": 88,
       "topics": 10,
       "sha256": "df8a7ee83ee6d0d4384895a8158a5e8b257d8b57e9e0774c8becca897851b13b"
+    },
+    {
+      "at": "2026-10-20T05:16:54.821Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 89,
+      "topics": 10,
+      "sha256": "02da587d4083ab0be93dc07d077b14a1d3cc8538b03f037745229ef0a23e0532"
     }
   ]
 }
