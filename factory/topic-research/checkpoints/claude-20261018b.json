@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T04:13:17.464Z",
+  "updated_at": "2026-10-20T04:13:29.786Z",
   "base_main_sha": "dc7b8b5561cd3c609cd8b644cbee6c13bbbee548",
-  "last_commit_sha": "487da5caf1171041dfb992a88ff7679cf952e5e5",
+  "last_commit_sha": "2f01bc753bf1a37c6c0b812d7064b1bcefd804ad",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 560,
-    "qa_pass": 560,
+    "researched": 570,
+    "qa_pass": 570,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 550,
+    "pushed": 560,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 57,
-      "de": 57,
-      "fr": 57,
-      "es": 57,
-      "nl": 57,
-      "pt": 57,
-      "zh": 57,
-      "ko": 57,
-      "ja": 57,
-      "en": 47
+      "vi": 58,
+      "de": 58,
+      "fr": 58,
+      "es": 58,
+      "nl": 58,
+      "pt": 58,
+      "zh": 58,
+      "ko": 58,
+      "ja": 58,
+      "en": 48
     },
     "domains": {
       "transportation-mobility": 90,
-      "traffic-law-safety": 20,
+      "traffic-law-safety": 30,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
@@ -46,9 +46,9 @@
     }
   },
   "last_batch": {
-    "seq": 56,
-    "file": "factory/topic-research/batches/claude-20261018b-0056.json",
-    "sha256": "8adef5c55058e332b4e72e45f0c094fc69e0e901f47452de3aa00f027c666ebc",
+    "seq": 57,
+    "file": "factory/topic-research/batches/claude-20261018b-0057.json",
+    "sha256": "c5a5901b74a9f93a8a002cf2f886fcf0ceed922ef2f17cd111672357910b4072",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -6163,8 +6163,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0056.json",
       "sha256": "8adef5c55058e332b4e72e45f0c094fc69e0e901f47452de3aa00f027c666ebc",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "2f01bc753bf1a37c6c0b812d7064b1bcefd804ad",
       "researched_on": "2026-10-19",
       "topics": [
         {
@@ -6268,11 +6268,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 57,
+      "file": "factory/topic-research/batches/claude-20261018b-0057.json",
+      "sha256": "c5a5901b74a9f93a8a002cf2f886fcf0ceed922ef2f17cd111672357910b4072",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:di-xe-may-o-viet-nam-co-an-toan-khong-so-lieu",
+          "locale": "vi",
+          "slug": "di-xe-may-o-viet-nam-co-an-toan-khong-so-lieu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::di xe may o viet nam co an toan khong so lieu an toan giao thong chinh thuc",
+          "ta_id": null
+        },
+        {
+          "ref": "en:is-it-safe-to-ride-a-motorbike-in-vietnam",
+          "locale": "en",
+          "slug": "is-it-safe-to-ride-a-motorbike-in-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::is it safe to ride a motorbike in vietnam official road safety statistics",
+          "ta_id": null
+        },
+        {
+          "ref": "de:ist-motorradfahren-in-vietnam-sicher-statistik",
+          "locale": "de",
+          "slug": "ist-motorradfahren-in-vietnam-sicher-statistik",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::ist motorradfahren in vietnam sicher offizielle verkehrsstatistik",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:rouler-a-moto-au-vietnam-est-ce-sur-statistiques",
+          "locale": "fr",
+          "slug": "rouler-a-moto-au-vietnam-est-ce-sur-statistiques",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::est-il sur de rouler a moto au vietnam statistiques officielles de securite routiere",
+          "ta_id": null
+        },
+        {
+          "ref": "es:es-seguro-conducir-moto-en-vietnam-estadisticas",
+          "locale": "es",
+          "slug": "es-seguro-conducir-moto-en-vietnam-estadisticas",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::es seguro conducir una moto en vietnam estadisticas oficiales de seguridad vial",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:is-motorrijden-in-vietnam-veilig-statistieken",
+          "locale": "nl",
+          "slug": "is-motorrijden-in-vietnam-veilig-statistieken",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::is motorrijden in vietnam veilig officiele verkeersveiligheidscijfers",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:zai-yuenan-qi-motuoche-anquan-ma-guanfang-shuju",
+          "locale": "zh",
+          "slug": "zai-yuenan-qi-motuoche-anquan-ma-guanfang-shuju",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::在越南骑摩托车安全吗 官方道路安全统计",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:e-seguro-andar-de-mota-no-vietname-estatisticas",
+          "locale": "pt",
+          "slug": "e-seguro-andar-de-mota-no-vietname-estatisticas",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::e seguro andar de mota no vietname estatisticas oficiais de seguranca rodoviaria",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-obaibai-anjeon-gongsik-tonggye",
+          "locale": "ko",
+          "slug": "beteunam-obaibai-anjeon-gongsik-tonggye",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::베트남에서 오토바이를 타는 것은 안전한가 공식 도로 안전 통계",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-anzen-ka-kobetsu-tokei",
+          "locale": "ja",
+          "slug": "betonamu-baiku-anzen-ka-kobetsu-tokei",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナムてハイクに乗るのは安全か 公式の交通安全統計",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 57,
-    "file": "factory/topic-research/batches/claude-20261018b-0057.json",
+    "seq": 58,
+    "file": "factory/topic-research/batches/claude-20261018b-0058.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -6285,13 +6396,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-18T23:56:51.419Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 33,
-      "topics": 10,
-      "sha256": "03cca7267fc5cd6a0a6b09ddb64a8c5c40d7532acfe985d7839a59aef6feef43"
-    },
     {
       "at": "2026-10-18T23:57:01.018Z",
       "event": "BATCH_COMMITTED",
@@ -6456,6 +6560,13 @@
       "seq": 56,
       "topics": 10,
       "sha256": "8adef5c55058e332b4e72e45f0c094fc69e0e901f47452de3aa00f027c666ebc"
+    },
+    {
+      "at": "2026-10-20T04:13:29.786Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 57,
+      "topics": 10,
+      "sha256": "c5a5901b74a9f93a8a002cf2f886fcf0ceed922ef2f17cd111672357910b4072"
     }
   ]
 }
