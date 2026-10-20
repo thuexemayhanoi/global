@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T20:03:28.622Z",
+  "updated_at": "2026-10-20T20:03:45.968Z",
   "base_main_sha": "dd6c3a000160946793d2b715b9ce887267f5c3f4",
-  "last_commit_sha": "a0b655dc595b197938f74f3ede0492c5090731ba",
+  "last_commit_sha": "1f8ece6db2950819169483b9d1bc6232e84841a4",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1470,
-    "qa_pass": 1470,
+    "researched": 1480,
+    "qa_pass": 1480,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1460,
+    "pushed": 1470,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 148,
-      "de": 148,
-      "fr": 148,
-      "es": 148,
-      "nl": 148,
-      "pt": 148,
-      "zh": 148,
-      "ko": 148,
-      "ja": 148,
-      "en": 138
+      "vi": 149,
+      "de": 149,
+      "fr": 149,
+      "es": 149,
+      "nl": 149,
+      "pt": 149,
+      "zh": 149,
+      "ko": 149,
+      "ja": 149,
+      "en": 139
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 250
+      "motorbike-rental": 260
     }
   },
   "last_batch": {
-    "seq": 147,
-    "file": "factory/topic-research/batches/claude-20261018b-0147.json",
-    "sha256": "ee74c93b2d6583d4d65659a3ad5e2d69cf3b99130f8fe5b39855af829d3f5786",
+    "seq": 148,
+    "file": "factory/topic-research/batches/claude-20261018b-0148.json",
+    "sha256": "863c0f193e1bc47a3ac7809dfc33f5fd3a3c4cd4d6ede65171b713697fdd8d8f",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -16265,8 +16265,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0147.json",
       "sha256": "ee74c93b2d6583d4d65659a3ad5e2d69cf3b99130f8fe5b39855af829d3f5786",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "1f8ece6db2950819169483b9d1bc6232e84841a4",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -16370,11 +16370,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 148,
+      "file": "factory/topic-research/batches/claude-20261018b-0148.json",
+      "sha256": "863c0f193e1bc47a3ac7809dfc33f5fd3a3c4cd4d6ede65171b713697fdd8d8f",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:cfmoto-450mt-450sr-s-450cl-c-amt-khac-nhau-bang-lai-hang-a",
+          "locale": "vi",
+          "slug": "cfmoto-450mt-450sr-s-450cl-c-amt-khac-nhau-bang-lai-hang-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "vi::cfmoto 450mt 450sr s 450cl-c amt khac nhau the nao va can bang lai hang nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:cfmoto-450mt-450sr-s-450cl-c-amt-differences-licence-class",
+          "locale": "en",
+          "slug": "cfmoto-450mt-450sr-s-450cl-c-amt-differences-licence-class",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "en::cfmoto 450mt vs 450sr s vs 450cl-c amt differences vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:cfmoto-450mt-450sr-s-450cl-c-amt-unterschiede-klasse-a",
+          "locale": "de",
+          "slug": "cfmoto-450mt-450sr-s-450cl-c-amt-unterschiede-klasse-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "de::cfmoto 450mt 450sr s 450cl-c amt unterschiede und notige fuhrerscheinklasse",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:cfmoto-450mt-450sr-s-450cl-c-amt-differences-permis-a",
+          "locale": "fr",
+          "slug": "cfmoto-450mt-450sr-s-450cl-c-amt-differences-permis-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "fr::cfmoto 450mt 450sr s 450cl-c amt differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:cfmoto-450mt-450sr-s-450cl-c-amt-diferencias-carne-a",
+          "locale": "es",
+          "slug": "cfmoto-450mt-450sr-s-450cl-c-amt-diferencias-carne-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "es::cfmoto 450mt 450sr s 450cl-c amt diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:cfmoto-450mt-450sr-s-450cl-c-amt-verschillen-rijbewijs-a",
+          "locale": "nl",
+          "slug": "cfmoto-450mt-450sr-s-450cl-c-amt-verschillen-rijbewijs-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "nl::cfmoto 450mt 450sr s 450cl-c amt verschillen en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:cfmoto-450mt-450sr-s-450cl-c-amt-qubie-jiazhao-a-lei",
+          "locale": "zh",
+          "slug": "cfmoto-450mt-450sr-s-450cl-c-amt-qubie-jiazhao-a-lei",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "zh::春风 450mt 450sr s 450cl-c amt 区别 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:cfmoto-450mt-450sr-s-450cl-c-amt-diferencas-carta-a",
+          "locale": "pt",
+          "slug": "cfmoto-450mt-450sr-s-450cl-c-amt-diferencas-carta-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "pt::cfmoto 450mt 450sr s 450cl-c amt diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:cfmoto-450mt-450sr-s-450cl-c-amt-chai-myeonheo",
+          "locale": "ko",
+          "slug": "cfmoto-450mt-450sr-s-450cl-c-amt-chai-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ko::cfmoto 450mt 450sr s 450cl-c amt 차이와 필요한 면허",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:cfmoto-450mt-450sr-s-450cl-c-amt-chigai-menkyo",
+          "locale": "ja",
+          "slug": "cfmoto-450mt-450sr-s-450cl-c-amt-chigai-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ja::cfmoto 450mt 450sr s 450cl-c amt の違いと必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 148,
-    "file": "factory/topic-research/batches/claude-20261018b-0148.json",
+    "seq": 149,
+    "file": "factory/topic-research/batches/claude-20261018b-0149.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -16387,13 +16498,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T10:52:59.437Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 123,
-      "topics": 10,
-      "sha256": "6cb92d4370ceca547b09218e223cadf4988be61c899db1809277d1e3c0a62c21"
-    },
     {
       "at": "2026-10-20T10:54:53.669Z",
       "event": "BATCH_COMMITTED",
@@ -16561,6 +16665,13 @@
       "seq": 147,
       "topics": 10,
       "sha256": "ee74c93b2d6583d4d65659a3ad5e2d69cf3b99130f8fe5b39855af829d3f5786"
+    },
+    {
+      "at": "2026-10-20T20:03:45.968Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 148,
+      "topics": 10,
+      "sha256": "863c0f193e1bc47a3ac7809dfc33f5fd3a3c4cd4d6ede65171b713697fdd8d8f"
     }
   ]
 }
