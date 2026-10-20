@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:56:58.692Z",
+  "updated_at": "2026-10-20T10:57:12.816Z",
   "base_main_sha": "2b81c61739dbf22f12c3a10c150d1e448d4e68e5",
-  "last_commit_sha": "3f133f309ebb9eb2693615fabcc844ece94dfdfa",
+  "last_commit_sha": "4775ca429acc844f66254d5c34b34cce4d78c6f3",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1300,
-    "qa_pass": 1300,
+    "researched": 1310,
+    "qa_pass": 1310,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1290,
+    "pushed": 1300,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 131,
-      "de": 131,
-      "fr": 131,
-      "es": 131,
-      "nl": 131,
-      "pt": 131,
-      "zh": 131,
-      "ko": 131,
-      "ja": 131,
-      "en": 121
+      "vi": 132,
+      "de": 132,
+      "fr": 132,
+      "es": 132,
+      "nl": 132,
+      "pt": 132,
+      "zh": 132,
+      "ko": 132,
+      "ja": 132,
+      "en": 122
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 420,
+      "traffic-law-safety": 430,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 130,
-    "file": "factory/topic-research/batches/claude-20261018b-0130.json",
-    "sha256": "39cd0f8e9e21b485ade131f69f79360d1c65675cb2edb261d6c7d2e7840adc3f",
+    "seq": 131,
+    "file": "factory/topic-research/batches/claude-20261018b-0131.json",
+    "sha256": "1abcb53d20801417c98690f560cebc57086cb4a16c53dc03fc69b1e55826b937",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -14378,8 +14378,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0130.json",
       "sha256": "39cd0f8e9e21b485ade131f69f79360d1c65675cb2edb261d6c7d2e7840adc3f",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "4775ca429acc844f66254d5c34b34cce4d78c6f3",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -14483,11 +14483,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 131,
+      "file": "factory/topic-research/batches/claude-20261018b-0131.json",
+      "sha256": "1abcb53d20801417c98690f560cebc57086cb4a16c53dc03fc69b1e55826b937",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:xe-may-di-vao-lan-brt-ha-noi-quy-dinh-va-phuong-an-tam-thoi-lang-ha-giang-vo",
+          "locale": "vi",
+          "slug": "xe-may-di-vao-lan-brt-ha-noi-quy-dinh-va-phuong-an-tam-thoi-lang-ha-giang-vo",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::xe may co duoc di vao lan brt o ha noi khong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:hanoi-brt-lane-motorbikes-rule-and-temporary-opening-lang-ha",
+          "locale": "en",
+          "slug": "hanoi-brt-lane-motorbikes-rule-and-temporary-opening-lang-ha",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::can motorbikes ride in the brt lane in hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "de:hanoi-brt-spur-roller-regel-und-voruebergehende-oeffnung-lang-ha",
+          "locale": "de",
+          "slug": "hanoi-brt-spur-roller-regel-und-voruebergehende-oeffnung-lang-ha",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::darf man in hanoi mit dem motorroller auf der brt-spur fahren",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:hanoi-voie-brt-scooters-regle-et-ouverture-temporaire-lang-ha",
+          "locale": "fr",
+          "slug": "hanoi-voie-brt-scooters-regle-et-ouverture-temporaire-lang-ha",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::peut-on rouler en scooter sur la voie brt a hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "es:hanoi-carril-brt-motos-norma-y-apertura-temporal-lang-ha",
+          "locale": "es",
+          "slug": "hanoi-carril-brt-motos-norma-y-apertura-temporal-lang-ha",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::se puede circular en moto por el carril brt en hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:hanoi-brt-rijstrook-scooters-regel-en-tijdelijke-opening-lang-ha",
+          "locale": "nl",
+          "slug": "hanoi-brt-rijstrook-scooters-regel-en-tijdelijke-opening-lang-ha",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::mag je in hanoi met een scooter op de brt-rijstrook rijden",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-brt-zhuanyongdao-motuoche-guiding-yu-zanshi-kaifang-lang-ha",
+          "locale": "zh",
+          "slug": "hanoi-brt-zhuanyongdao-motuoche-guiding-yu-zanshi-kaifang-lang-ha",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::河内brt快速公交专用道摩托车可以骑吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:hanoi-faixa-brt-motas-regra-e-abertura-temporaria-lang-ha",
+          "locale": "pt",
+          "slug": "hanoi-faixa-brt-motas-regra-e-abertura-temporaria-lang-ha",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::pode-se circular de mota na faixa brt em hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-brt-jeonyong-charo-otobai-gyuchik-imsi-gaebang-lang-ha",
+          "locale": "ko",
+          "slug": "hanoi-brt-jeonyong-charo-otobai-gyuchik-imsi-gaebang-lang-ha",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::하노이 brt 전용차로에 오토바이가 들어가도 되나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-brt-senyo-lane-baiku-rule-to-ichiji-kaiho-lang-ha",
+          "locale": "ja",
+          "slug": "hanoi-brt-senyo-lane-baiku-rule-to-ichiji-kaiho-lang-ha",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ハノイのbrt専用レーンはハイクて走れますか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 131,
-    "file": "factory/topic-research/batches/claude-20261018b-0131.json",
+    "seq": 132,
+    "file": "factory/topic-research/batches/claude-20261018b-0132.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -14500,13 +14611,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T10:04:52.232Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 106,
-      "topics": 10,
-      "sha256": "f0e666342ed50b51e0860c10fb9bf1a6354ce09a39027a69f90f55163a321a2d"
-    },
     {
       "at": "2026-10-20T10:07:34.810Z",
       "event": "BATCH_COMMITTED",
@@ -14674,6 +14778,13 @@
       "seq": 130,
       "topics": 10,
       "sha256": "39cd0f8e9e21b485ade131f69f79360d1c65675cb2edb261d6c7d2e7840adc3f"
+    },
+    {
+      "at": "2026-10-20T10:57:12.816Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 131,
+      "topics": 10,
+      "sha256": "1abcb53d20801417c98690f560cebc57086cb4a16c53dc03fc69b1e55826b937"
     }
   ]
 }
