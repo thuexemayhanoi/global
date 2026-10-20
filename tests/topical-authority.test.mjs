@@ -66,7 +66,7 @@ test("cannibalization: exact or near-duplicate intents fail unless explicitly di
 test("a distinct_from reason covers the pair from both sides, also after the later candidate is promoted",()=>{
  const m=clone(),a=first(m,"de"),list=m.locales.de.proposals;
  const next=1+Math.max(...list.map(p=>Number(p.candidate_id.split("-")[2])));
- const b={...structuredClone(a),candidate_id:"TA-DE-"+String(next).padStart(4,"0"),slug:a.slug+"-pruefen",
+ const b={...structuredClone(a),candidate_id:"TA-DE-"+String(next).padStart(4,"0"),slug:a.slug.slice(0,60).replace(/-+$/,"")+"-pruefen",
   working_title:a.working_title.slice(0,100)+" prüfen",primary_query:a.primary_query+" prüfen",secondary_queries:a.secondary_queries.map(q=>q+" prüfen")};
  list.push(b);
  assert.ok(fails(m).some(i=>i.gate==="T4"&&i.id===b.candidate_id&&i.reason.includes(a.candidate_id)));
