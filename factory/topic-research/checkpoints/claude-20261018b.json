@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T21:30:22.450Z",
+  "updated_at": "2026-10-20T21:30:35.679Z",
   "base_main_sha": "c21cab37733fc2c6a41700500a8718edf9cd510f",
-  "last_commit_sha": "5f1a24035712a778583ad682f2e465ecb8c12611",
+  "last_commit_sha": "c9ff73a1be63e7dd38f8ed4690caa83df962abee",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1790,
-    "qa_pass": 1790,
+    "researched": 1800,
+    "qa_pass": 1800,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1780,
+    "pushed": 1790,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 180,
-      "de": 180,
-      "fr": 180,
-      "es": 180,
-      "nl": 180,
-      "pt": 180,
-      "zh": 180,
-      "ko": 180,
-      "ja": 180,
-      "en": 170
+      "vi": 181,
+      "de": 181,
+      "fr": 181,
+      "es": 181,
+      "nl": 181,
+      "pt": 181,
+      "zh": 181,
+      "ko": 181,
+      "ja": 181,
+      "en": 171
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 771,
+      "traffic-law-safety": 781,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 179,
-    "file": "factory/topic-research/batches/claude-20261018b-0179.json",
-    "sha256": "fc50b997063123e2abf1e944cf863618c6e7e6025c30f954d0a9a9fedc9947cf",
+    "seq": 180,
+    "file": "factory/topic-research/batches/claude-20261018b-0180.json",
+    "sha256": "f5b2d45232f59c8f723630d2e2a0fe3dba9d9b46feffb39aad627d7be7b00dc2",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -19817,8 +19817,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0179.json",
       "sha256": "fc50b997063123e2abf1e944cf863618c6e7e6025c30f954d0a9a9fedc9947cf",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "c9ff73a1be63e7dd38f8ed4690caa83df962abee",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -19922,11 +19922,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 180,
+      "file": "factory/topic-research/batches/claude-20261018b-0180.json",
+      "sha256": "f5b2d45232f59c8f723630d2e2a0fe3dba9d9b46feffb39aad627d7be7b00dc2",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:dung-dien-thoai-khi-di-xe-may-who-nghien-cuu-o-viet-nam-va-luat-36-2024",
+          "locale": "vi",
+          "slug": "dung-dien-thoai-khi-di-xe-may-who-nghien-cuu-o-viet-nam-va-luat-36-2024",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::dung dien thoai khi di xe may nguy hiem den muc nao va luat viet nam cam nhung gi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:phone-use-on-a-motorbike-who-vietnamese-rider-studies-and-law-36-2024-ban",
+          "locale": "en",
+          "slug": "phone-use-on-a-motorbike-who-vietnamese-rider-studies-and-law-36-2024-ban",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::is using a phone while riding a motorbike really dangerous and what does vietnamese law ban",
+          "ta_id": null
+        },
+        {
+          "ref": "de:handy-am-roller-who-studien-aus-vietnam-und-was-gesetz-36-2024-verbietet",
+          "locale": "de",
+          "slug": "handy-am-roller-who-studien-aus-vietnam-und-was-gesetz-36-2024-verbietet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::wie gefahrlich ist das handy beim rollerfahren wirklich und was verbietet das vietnamesische gesetz",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:telephone-a-moto-oms-etudes-de-motards-vietnam-et-ce-que-la-loi-interdit",
+          "locale": "fr",
+          "slug": "telephone-a-moto-oms-etudes-de-motards-vietnam-et-ce-que-la-loi-interdit",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::utiliser son telephone a moto ou en scooter est-il vraiment dangereux et que interdit la loi vietnamienne",
+          "ta_id": null
+        },
+        {
+          "ref": "es:movil-en-moto-oms-estudios-de-motoristas-en-vietnam-y-lo-que-prohibe-la-ley",
+          "locale": "es",
+          "slug": "movil-en-moto-oms-estudios-de-motoristas-en-vietnam-y-lo-que-prohibe-la-ley",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::usar el movil yendo en moto es de verdad peligroso y que prohibe la ley de vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:telefoon-op-de-scooter-who-studies-vietnamese-rijders-en-verbod-wet-36-2024",
+          "locale": "nl",
+          "slug": "telefoon-op-de-scooter-who-studies-vietnamese-rijders-en-verbod-wet-36-2024",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::is bellen of appen op een scooter echt gevaarlijk en wat verbiedt de vietnamese wet",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-qi-motuoche-yong-shouji-who-yuenan-qishou-yanjiu-he-fa-guiding",
+          "locale": "zh",
+          "slug": "yuenan-qi-motuoche-yong-shouji-who-yuenan-qishou-yanjiu-he-fa-guiding",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::骑摩托车时用手机真的很危险吗 越南法律禁止什么",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:telemovel-na-mota-oms-estudos-no-vietname-e-o-que-a-lei-36-2024-proibe",
+          "locale": "pt",
+          "slug": "telemovel-na-mota-oms-estudos-no-vietname-e-o-que-a-lei-36-2024-proibe",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::usar o telemovel a andar de mota e mesmo perigoso e o que proibe a lei do vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-hyudaejeonhwa-sayong-who-yeongu-wa-beomnyul-36-2024-geumji",
+          "locale": "ko",
+          "slug": "beteunam-otobai-hyudaejeonhwa-sayong-who-yeongu-wa-beomnyul-36-2024-geumji",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::오토바이를 타면서 휴대전화를 쓰면 정말 위험한가요 베트남 법은 무엇을 금지하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-keitai-shiyo-who-untensha-kenkyu-to-horitsu-36-2024-kinshi",
+          "locale": "ja",
+          "slug": "betonamu-baiku-keitai-shiyo-who-untensha-kenkyu-to-horitsu-36-2024-kinshi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ハイクに乗りなからスマホを使うのは本当に危険てすか ヘトナムの法律は何を禁していますか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 180,
-    "file": "factory/topic-research/batches/claude-20261018b-0180.json",
+    "seq": 181,
+    "file": "factory/topic-research/batches/claude-20261018b-0181.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -19939,13 +20050,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:25:09.231Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 155,
-      "topics": 10,
-      "sha256": "05d73c0dec180758e04fe2f9ac85ebbfd47afee251088b830e19ac841bb7e54f"
-    },
     {
       "at": "2026-10-20T20:27:49.995Z",
       "event": "BATCH_COMMITTED",
@@ -20113,6 +20217,13 @@
       "seq": 179,
       "topics": 10,
       "sha256": "fc50b997063123e2abf1e944cf863618c6e7e6025c30f954d0a9a9fedc9947cf"
+    },
+    {
+      "at": "2026-10-20T21:30:35.679Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 180,
+      "topics": 10,
+      "sha256": "f5b2d45232f59c8f723630d2e2a0fe3dba9d9b46feffb39aad627d7be7b00dc2"
     }
   ]
 }
