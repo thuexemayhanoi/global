@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:04:52.232Z",
+  "updated_at": "2026-10-20T10:07:34.810Z",
   "base_main_sha": "35c3196f5c3a760adb2641c95d0feaaefe7c0687",
-  "last_commit_sha": "e3db7278f4647e8e4ccbd2461e905b878c56c76b",
+  "last_commit_sha": "ec7b1a165f8953804ea6d51390f12feaccf8f607",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1060,
-    "qa_pass": 1060,
+    "researched": 1070,
+    "qa_pass": 1070,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1050,
+    "pushed": 1060,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 107,
-      "de": 107,
-      "fr": 107,
-      "es": 107,
-      "nl": 107,
-      "pt": 107,
-      "zh": 107,
-      "ko": 107,
-      "ja": 107,
-      "en": 97
+      "vi": 108,
+      "de": 108,
+      "fr": 108,
+      "es": 108,
+      "nl": 108,
+      "pt": 108,
+      "zh": 108,
+      "ko": 108,
+      "ja": 108,
+      "en": 98
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 300,
+      "traffic-law-safety": 310,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 106,
-    "file": "factory/topic-research/batches/claude-20261018b-0106.json",
-    "sha256": "f0e666342ed50b51e0860c10fb9bf1a6354ce09a39027a69f90f55163a321a2d",
+    "seq": 107,
+    "file": "factory/topic-research/batches/claude-20261018b-0107.json",
+    "sha256": "d4c70886485b1aabce2e46e6155b5deccb4b279429a6ff86a27a5b3dd8b0572a",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -11714,8 +11714,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0106.json",
       "sha256": "f0e666342ed50b51e0860c10fb9bf1a6354ce09a39027a69f90f55163a321a2d",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "ec7b1a165f8953804ea6d51390f12feaccf8f607",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -11819,11 +11819,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 107,
+      "file": "factory/topic-research/batches/claude-20261018b-0107.json",
+      "sha256": "d4c70886485b1aabce2e46e6155b5deccb4b279429a6ff86a27a5b3dd8b0572a",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:dua-xe-mo-to-nuoc-ngoai-vao-viet-nam-du-lich-nghi-dinh-151-2024",
+          "locale": "vi",
+          "slug": "dua-xe-mo-to-nuoc-ngoai-vao-viet-nam-du-lich-nghi-dinh-151-2024",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-papers",
+          "key": "vi::nguoi nuoc ngoai dua xe mo to vao viet nam du lich can dieu kien gi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:foreign-plated-motorbike-vietnam-own-motorcycle-rules",
+          "locale": "en",
+          "slug": "foreign-plated-motorbike-vietnam-own-motorcycle-rules",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H03",
+          "subcluster": "dc-papers",
+          "key": "en::can i bring my own motorcycle into vietnam as a tourist",
+          "ta_id": null
+        },
+        {
+          "ref": "de:eigenes-motorrad-nach-vietnam-mitbringen-dekret-151-2024",
+          "locale": "de",
+          "slug": "eigenes-motorrad-nach-vietnam-mitbringen-dekret-151-2024",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H03",
+          "subcluster": "dc-papers",
+          "key": "de::eigenes motorrad nach vietnam mitnehmen als tourist erlaubt",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:emmener-sa-moto-au-vietnam-decret-151-2024",
+          "locale": "fr",
+          "slug": "emmener-sa-moto-au-vietnam-decret-151-2024",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H03",
+          "subcluster": "dc-papers",
+          "key": "fr::peut-on emmener sa propre moto au vietnam en tant que touriste",
+          "ta_id": null
+        },
+        {
+          "ref": "es:llevar-moto-propia-a-vietnam-decreto-151-2024",
+          "locale": "es",
+          "slug": "llevar-moto-propia-a-vietnam-decreto-151-2024",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H03",
+          "subcluster": "dc-papers",
+          "key": "es::puedo llevar mi propia moto a vietnam como turista",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:eigen-motor-meenemen-naar-vietnam-decreet-151-2024",
+          "locale": "nl",
+          "slug": "eigen-motor-meenemen-naar-vietnam-decreet-151-2024",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H03",
+          "subcluster": "dc-papers",
+          "key": "nl::mag ik als toerist mijn eigen motor meenemen naar vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:zijia-motuoche-ruyue-nan-waiguo-chepai-yiding-151-2024",
+          "locale": "zh",
+          "slug": "zijia-motuoche-ruyue-nan-waiguo-chepai-yiding-151-2024",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H03",
+          "subcluster": "dc-papers",
+          "key": "zh::外国游客可以把自己的摩托车骑进越南吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:levar-mota-propria-para-o-vietname-decreto-151-2024",
+          "locale": "pt",
+          "slug": "levar-mota-propria-para-o-vietname-decreto-151-2024",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H03",
+          "subcluster": "dc-papers",
+          "key": "pt::posso levar a minha propria mota para o vietname como turista",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-jagi-otobai-banip-sihaengnyeong-151-2024",
+          "locale": "ko",
+          "slug": "beteunam-jagi-otobai-banip-sihaengnyeong-151-2024",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H03",
+          "subcluster": "dc-papers",
+          "key": "ko::외국 번호판 오토바이를 베트남에 가져가 탈 수 있나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:jibun-no-baiku-wo-betonamu-ni-mochikomu-seirei-151-2024",
+          "locale": "ja",
+          "slug": "jibun-no-baiku-wo-betonamu-ni-mochikomu-seirei-151-2024",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H03",
+          "subcluster": "dc-papers",
+          "key": "ja::自分のハイクをヘトナムに持ち込んて走れるのか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 107,
-    "file": "factory/topic-research/batches/claude-20261018b-0107.json",
+    "seq": 108,
+    "file": "factory/topic-research/batches/claude-20261018b-0108.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -11836,13 +11947,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:56:31.503Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 82,
-      "topics": 10,
-      "sha256": "a5c8992b5458adda697de1537cdf43316f433708fd011877a2cbbd7d2d78543c"
-    },
     {
       "at": "2026-10-20T04:56:44.103Z",
       "event": "BATCH_COMMITTED",
@@ -12010,6 +12114,13 @@
       "seq": 106,
       "topics": 10,
       "sha256": "f0e666342ed50b51e0860c10fb9bf1a6354ce09a39027a69f90f55163a321a2d"
+    },
+    {
+      "at": "2026-10-20T10:07:34.810Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 107,
+      "topics": 10,
+      "sha256": "d4c70886485b1aabce2e46e6155b5deccb4b279429a6ff86a27a5b3dd8b0572a"
     }
   ]
 }
