@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T04:13:29.786Z",
+  "updated_at": "2026-10-20T04:13:37.856Z",
   "base_main_sha": "dc7b8b5561cd3c609cd8b644cbee6c13bbbee548",
-  "last_commit_sha": "2f01bc753bf1a37c6c0b812d7064b1bcefd804ad",
+  "last_commit_sha": "8a1cdf0d42040efa96b824fb1b2a536ce0923554",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 570,
-    "qa_pass": 570,
+    "researched": 580,
+    "qa_pass": 580,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 560,
+    "pushed": 570,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 58,
-      "de": 58,
-      "fr": 58,
-      "es": 58,
-      "nl": 58,
-      "pt": 58,
-      "zh": 58,
-      "ko": 58,
-      "ja": 58,
-      "en": 48
+      "vi": 59,
+      "de": 59,
+      "fr": 59,
+      "es": 59,
+      "nl": 59,
+      "pt": 59,
+      "zh": 59,
+      "ko": 59,
+      "ja": 59,
+      "en": 49
     },
     "domains": {
       "transportation-mobility": 90,
-      "traffic-law-safety": 30,
+      "traffic-law-safety": 40,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 100,
       "destinations-experiences": 100,
@@ -46,9 +46,9 @@
     }
   },
   "last_batch": {
-    "seq": 57,
-    "file": "factory/topic-research/batches/claude-20261018b-0057.json",
-    "sha256": "c5a5901b74a9f93a8a002cf2f886fcf0ceed922ef2f17cd111672357910b4072",
+    "seq": 58,
+    "file": "factory/topic-research/batches/claude-20261018b-0058.json",
+    "sha256": "f987423f1a9e0a07aa48b5b3fd5ff82bbd8e073d2b87857f16de51fbd168c92c",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -6274,8 +6274,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0057.json",
       "sha256": "c5a5901b74a9f93a8a002cf2f886fcf0ceed922ef2f17cd111672357910b4072",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "8a1cdf0d42040efa96b824fb1b2a536ce0923554",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -6379,11 +6379,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 58,
+      "file": "factory/topic-research/batches/claude-20261018b-0058.json",
+      "sha256": "f987423f1a9e0a07aa48b5b3fd5ff82bbd8e073d2b87857f16de51fbd168c92c",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:tai-sao-viet-nam-nhieu-xe-may-co-bao-nhieu",
+          "locale": "vi",
+          "slug": "tai-sao-viet-nam-nhieu-xe-may-co-bao-nhieu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::tai sao viet nam co nhieu xe may nhu vay va co bao nhieu chiec",
+          "ta_id": null
+        },
+        {
+          "ref": "en:why-vietnam-runs-on-motorbikes",
+          "locale": "en",
+          "slug": "why-vietnam-runs-on-motorbikes",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::why are there so many motorbikes in vietnam and how many are there",
+          "ta_id": null
+        },
+        {
+          "ref": "de:warum-vietnam-so-viele-motorraeder-hat",
+          "locale": "de",
+          "slug": "warum-vietnam-so-viele-motorraeder-hat",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::warum gibt es so viele motorroller in vietnam und wie viele sind es",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:pourquoi-le-vietnam-roule-a-moto-combien",
+          "locale": "fr",
+          "slug": "pourquoi-le-vietnam-roule-a-moto-combien",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::pourquoi y a-t-il autant de motos au vietnam et combien sont-elles",
+          "ta_id": null
+        },
+        {
+          "ref": "es:por-que-vietnam-va-en-moto-cuantas-hay",
+          "locale": "es",
+          "slug": "por-que-vietnam-va-en-moto-cuantas-hay",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::por que hay tantas motos en vietnam y cuantas hay",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:waarom-vietnam-op-motoren-rijdt-hoeveel",
+          "locale": "nl",
+          "slug": "waarom-vietnam-op-motoren-rijdt-hoeveel",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::waarom zijn er zoveel motoren in vietnam en hoeveel zijn het er",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-weihe-motuoche-duo-you-duoshao",
+          "locale": "zh",
+          "slug": "yuenan-weihe-motuoche-duo-you-duoshao",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南为什么有这么多摩托车 一共有多少辆",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:porque-o-vietname-anda-de-mota-quantas",
+          "locale": "pt",
+          "slug": "porque-o-vietname-anda-de-mota-quantas",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::porque ha tantas motas no vietname e quantas sao",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-eun-wae-obaibai-gyotong-myeot-dae",
+          "locale": "ko",
+          "slug": "beteunam-eun-wae-obaibai-gyotong-myeot-dae",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::베트남에는 왜 오토바이가 이렇게 많은가 몇 대나 있나",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-ha-naze-baiku-shakai-nandai",
+          "locale": "ja",
+          "slug": "betonamu-ha-naze-baiku-shakai-nandai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナムにはなせハイクかこんなに多いのか 何台あるのか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 58,
-    "file": "factory/topic-research/batches/claude-20261018b-0058.json",
+    "seq": 59,
+    "file": "factory/topic-research/batches/claude-20261018b-0059.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -6396,13 +6507,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-18T23:57:01.018Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 34,
-      "topics": 10,
-      "sha256": "0ae3c4974b54deac55c36d78e2f6b662cb8a31a4ed97d12c010c5d5279ac41c4"
-    },
     {
       "at": "2026-10-18T23:57:10.972Z",
       "event": "BATCH_COMMITTED",
@@ -6567,6 +6671,13 @@
       "seq": 57,
       "topics": 10,
       "sha256": "c5a5901b74a9f93a8a002cf2f886fcf0ceed922ef2f17cd111672357910b4072"
+    },
+    {
+      "at": "2026-10-20T04:13:37.856Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 58,
+      "topics": 10,
+      "sha256": "f987423f1a9e0a07aa48b5b3fd5ff82bbd8e073d2b87857f16de51fbd168c92c"
     }
   ]
 }
