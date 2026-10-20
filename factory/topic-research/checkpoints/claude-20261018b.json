@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T20:36:47.390Z",
+  "updated_at": "2026-10-20T20:38:41.856Z",
   "base_main_sha": "6e5bfbc11a893b69b3955573f2fcba842a5c28dc",
-  "last_commit_sha": "5fef8ddd6b02d2a890834e04b931b8fc5becb224",
+  "last_commit_sha": "23ddae999d6b28d8bb8f8f0aa3a767d136f3025f",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1580,
-    "qa_pass": 1580,
+    "researched": 1590,
+    "qa_pass": 1590,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1570,
+    "pushed": 1580,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 159,
-      "de": 159,
-      "fr": 159,
-      "es": 159,
-      "nl": 159,
-      "pt": 159,
-      "zh": 159,
-      "ko": 159,
-      "ja": 159,
-      "en": 149
+      "vi": 160,
+      "de": 160,
+      "fr": 160,
+      "es": 160,
+      "nl": 160,
+      "pt": 160,
+      "zh": 160,
+      "ko": 160,
+      "ja": 160,
+      "en": 150
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 280
+      "motorbike-rental": 290
     }
   },
   "last_batch": {
-    "seq": 158,
-    "file": "factory/topic-research/batches/claude-20261018b-0158.json",
-    "sha256": "0b58b94e81ff635ce945d7cd11262df23463eaca3d40803176a5c1aca744a48b",
+    "seq": 159,
+    "file": "factory/topic-research/batches/claude-20261018b-0159.json",
+    "sha256": "3e0a7fc6d60eb8c1add62a07f65d740f5216c5aef2af4f16e60345cafc5310ce",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -17486,8 +17486,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0158.json",
       "sha256": "0b58b94e81ff635ce945d7cd11262df23463eaca3d40803176a5c1aca744a48b",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "23ddae999d6b28d8bb8f8f0aa3a767d136f3025f",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -17591,11 +17591,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 159,
+      "file": "factory/topic-research/batches/claude-20261018b-0159.json",
+      "sha256": "3e0a7fc6d60eb8c1add62a07f65d740f5216c5aef2af4f16e60345cafc5310ce",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:phanh-abs-xe-may-viet-nam-bang-chung-giam-tai-nan-va-du-thao-quy-chuan-2026",
+          "locale": "vi",
+          "slug": "phanh-abs-xe-may-viet-nam-bang-chung-giam-tai-nan-va-du-thao-quy-chuan-2026",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-power",
+          "key": "vi::phanh abs co bat buoc tren xe may o viet nam khong va co that su giam tai nan khong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:abs-brakes-rental-motorbike-vietnam-what-studies-show-and-2026-draft-rule",
+          "locale": "en",
+          "slug": "abs-brakes-rental-motorbike-vietnam-what-studies-show-and-2026-draft-rule",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-power",
+          "key": "en::is abs compulsory on motorbikes in vietnam and does abs really reduce crashes",
+          "ta_id": null
+        },
+        {
+          "ref": "de:abs-roller-motorrad-vietnam-was-studien-zeigen-und-der-entwurf-2026",
+          "locale": "de",
+          "slug": "abs-roller-motorrad-vietnam-was-studien-zeigen-und-der-entwurf-2026",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-power",
+          "key": "de::ist abs bei motorrollern in vietnam pflicht und verringert abs wirklich die unfalle",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:abs-moto-scooter-vietnam-ce-que-montrent-les-etudes-et-le-projet-de-regle-2026",
+          "locale": "fr",
+          "slug": "abs-moto-scooter-vietnam-ce-que-montrent-les-etudes-et-le-projet-de-regle-2026",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-power",
+          "key": "fr::l'abs est-il obligatoire sur les motos et scooters au vietnam et reduit-il vraiment les accidents",
+          "ta_id": null
+        },
+        {
+          "ref": "es:abs-moto-scooter-vietnam-que-muestran-los-estudios-y-el-proyecto-de-norma-2026",
+          "locale": "es",
+          "slug": "abs-moto-scooter-vietnam-que-muestran-los-estudios-y-el-proyecto-de-norma-2026",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-power",
+          "key": "es::es obligatorio el abs en las motos de vietnam y reduce de verdad los accidentes",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:abs-scooter-motor-vietnam-wat-studies-tonen-en-de-ontwerpregel-2026",
+          "locale": "nl",
+          "slug": "abs-scooter-motor-vietnam-wat-studies-tonen-en-de-ontwerpregel-2026",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-power",
+          "key": "nl::is abs verplicht op motoren en scooters in vietnam en vermindert abs echt het aantal ongevallen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-motuoche-abs-shache-yanjiu-jianshao-shigu-he-2026-nian-guifan-caoan",
+          "locale": "zh",
+          "slug": "yuenan-motuoche-abs-shache-yanjiu-jianshao-shigu-he-2026-nian-guifan-caoan",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-power",
+          "key": "zh::越南的摩托车必须装abs刹车吗 abs真的能减少事故吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:abs-mota-scooter-vietname-o-que-mostram-os-estudos-e-o-projeto-de-norma-2026",
+          "locale": "pt",
+          "slug": "abs-mota-scooter-vietname-o-que-mostram-os-estudos-e-o-projeto-de-norma-2026",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-power",
+          "key": "pt::o abs e obrigatorio nas motas do vietname e reduz mesmo os acidentes",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-abs-beureikeu-yeongu-sago-gamso-2026-gijun-choan",
+          "locale": "ko",
+          "slug": "beteunam-otobai-abs-beureikeu-yeongu-sago-gamso-2026-gijun-choan",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-power",
+          "key": "ko::베트남에서 오토바이에 abs 브레이크가 의무인가요 그리고 abs가 정말 사고를 줄이나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-abs-bureki-kenkyu-jiko-genshou-2026-kijun-soan",
+          "locale": "ja",
+          "slug": "betonamu-baiku-abs-bureki-kenkyu-jiko-genshou-2026-kijun-soan",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-power",
+          "key": "ja::ヘトナムのハイクにabsは義務てすか absは本当に事故を減らしますか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 159,
-    "file": "factory/topic-research/batches/claude-20261018b-0159.json",
+    "seq": 160,
+    "file": "factory/topic-research/batches/claude-20261018b-0160.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -17608,13 +17719,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T11:06:24.038Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 134,
-      "topics": 10,
-      "sha256": "d6464829af92cdccbf9597733a835089f809a7c8df8a48ca375ed7c8bea8f7f7"
-    },
     {
       "at": "2026-10-20T11:10:42.796Z",
       "event": "BATCH_COMMITTED",
@@ -17782,6 +17886,13 @@
       "seq": 158,
       "topics": 10,
       "sha256": "0b58b94e81ff635ce945d7cd11262df23463eaca3d40803176a5c1aca744a48b"
+    },
+    {
+      "at": "2026-10-20T20:38:41.856Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 159,
+      "topics": 10,
+      "sha256": "3e0a7fc6d60eb8c1add62a07f65d740f5216c5aef2af4f16e60345cafc5310ce"
     }
   ]
 }
