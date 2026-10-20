@@ -10696,17 +10696,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-19T09:58:39.911Z"
+    },
+    {
+      "id": "NL-S23",
+      "locale": "nl",
+      "url": "/nl/guides/tanken-ron92-ron95/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-20T09:26:37.258Z",
+      "source_sha256": "37531178243c2ba2363df848fe0a43fbc76c67784a99048fc481ea6709c7bafa",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "PT-S23",
+      "locale": "pt",
+      "url": "/pt/guides/abastecer-ron92-ron95/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-20T09:26:37.258Z",
+      "source_sha256": "182c6a4355b16ab83da1f71e6b8cad9e70b83dd0bcf0edb61be27224aeda2fb5",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T06:14:10.157Z",
-      "ids": [
-        "ZH-S67",
-        "ZH-S68"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T06:15:32.168Z",
       "ids": [
@@ -12290,6 +12304,14 @@
         "DE-S96"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-20T09:26:37.258Z",
+      "ids": [
+        "NL-S23",
+        "PT-S23"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -12301,5 +12323,7 @@
     "commit": "a5b5803f3cb08f8be6a48e47cdf1331eae8da6e2",
     "live_seconds": 101
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 10
+  }
 }
