@@ -1,0 +1,602 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H04",
+      "subcluster": "ss-city",
+      "slug": "kiem-tra-cam-duong-va-giao-thong-ha-noi-truoc-khi-di-xe-may-kenh-chinh-thuc",
+      "primary_query": "làm sao xem tình hình giao thông và đường cấm ở Hà Nội trước khi đi xe máy",
+      "secondary_queries": [
+        "bảng điện tử thông tin giao thông Hà Nội từ 15/7/2026 hiển thị gì",
+        "xem camera giao thông Hà Nội bằng ứng dụng iHanoi",
+        "Sở Xây dựng Hà Nội thông báo phân luồng giao thông ở đâu",
+        "kênh chính thức báo đường ngập và cấm đường ở Hà Nội",
+        "Hà Nội cấm đường khi có sự kiện lớn thông báo thế nào"
+      ],
+      "entities": [
+        "Sở Xây dựng Hà Nội",
+        "iHanoi",
+        "bảng thông tin điện tử VMS",
+        "Phòng Cảnh sát giao thông Hà Nội",
+        "VOV Giao thông"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Người thuê hoặc đi xe máy ở Hà Nội muốn biết trước đường nào đang bị cấm, phân luồng, ngập hay tắc để chọn lộ trình, và nên tin vào kênh chính thức nào thay vì tin đồn trên mạng.",
+      "content_angle": "Dựa trên bản tin của Thông tấn xã Việt Nam (14/7/2026) về 36 bảng điện tử hiển thị thông tin giao thông thời gian thực từ 15/7/2026 (ùn tắc, tai nạn, ngập, phân luồng, lộ trình thay thế) trong dự án giai đoạn 2 của trung tâm chỉ huy giao thông, bài hướng dẫn xem camera trong ứng dụng iHanoi (Dân sinh, 17/8/2024), thông báo phân luồng của Sở Xây dựng Hà Nội về thi công cầu Tứ Liên từ 21/10/2026 (cổng thông tin Chính phủ, 17/10/2026), bản tin Nhà chức trách thông báo của VOV Giao thông (16/8/2026), thông báo của Phòng Cảnh sát giao thông Hà Nội về cấm đường khi có sự kiện lớn (Znews, 1/6/2026) và bài của Lao Động (21/9/2026) về lệnh cấm xe qua điểm ngập sâu. Giải thích mỗi kênh cho biết gì, khác nhau giữa thông báo thi công và thông báo sự kiện, và người nước ngoài có dùng được iHanoi hay không (người viết phải kiểm tra yêu cầu đăng ký). Phân biệt với bài về vùng phát thải thấp và bài về cầu qua sông Hồng.",
+      "working_title": "Xem đường cấm và giao thông Hà Nội trước khi đi xe máy: bảng điện tử, camera iHanoi và thông báo chính thức",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnam.vnanet.vn/english/tin-van/hanoi-launches-real-time-traffic-information-system-with-36-electronic-message-boards-456752.html",
+          "title": "Vietnam News Agency (14 July 2026): from 15 July 2026 Hanoi shows real-time traffic information on 36 variable message signs at key routes and intersections (congestion, accidents, flooding, diversions, alternative routes) as part of phase 2 of the traffic command and information centre project with AI cameras",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dansinh.dantri.com.vn/dien-dan-dan-sinh/xem-nhanh-camera-giao-thong-o-ha-noi-qua-dien-thoai-sieu-de-dang-20240817234258454.htm",
+          "title": "Dân Sinh (Dân Trí supplement, 17 August 2024): how residents view live traffic cameras in the iHanoi citizen app (Giao thông menu, then Camera giao thông), the account registration step and the camera map",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanglong.baochinhphu.vn/ha-noi-phan-luong-giao-thong-phuc-vu-thi-cong-cau-tu-lien-tu-ngay-21-10-10326101717454018.htm",
+          "title": "Government news site (17 October 2026): example of a Hanoi Department of Construction notice, the traffic diversion for Tứ Liên bridge works from 21 October 2026 with one-way sections, banned vehicle types and the alternative routes advised for Noi Bai travellers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ban-tin-nha-chuc-trach-thong-bao-ngay-17-8-d54594.html",
+          "title": "VOV Giao Thong (16 August 2026): the daily bulletin of announcements by the authorities, including Hanoi traffic changes around the Tran Hung Dao bridge works until 30 December 2026 and other diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://znews.vn/ha-noi-tam-cam-nhieu-tuyen-duong-tu-ngay-3-den-56-post1654684.html",
+          "title": "Znews (1 June 2026): example of a Hanoi Traffic Police announcement of temporary bans and restrictions on listed streets at set hours during a national congress, showing how event closures are notified",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/nuoc-ngap-gan-1m-tren-dai-lo-thang-long-dan-mo-dich-vu-keo-xe-may-100000-dongluot-1770385.ldo",
+          "title": "Lao Dong (21 September 2026): Thang Long Boulevard flooded by 0.7 to 1 m, the Hanoi Department of Construction banning all vehicles from the flooded point, diversions by direction and warning signs",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H04",
+      "subcluster": "ss-city",
+      "slug": "check-hanoi-road-closures-and-live-traffic-before-riding-official-channels",
+      "primary_query": "how to check road closures and traffic in Hanoi before riding a motorbike",
+      "secondary_queries": [
+        "what do Hanoi's electronic traffic message boards show since July 2026",
+        "how to view Hanoi traffic cameras in the iHanoi app",
+        "where does the Hanoi Department of Construction announce traffic diversions",
+        "official sources for flooded and closed roads in Hanoi",
+        "how are road closures for big events announced in Hanoi"
+      ],
+      "entities": [
+        "Hanoi Department of Construction",
+        "iHanoi",
+        "variable message signs",
+        "Hanoi Traffic Police Division",
+        "VOV Giao Thong"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Renters and riders in Hanoi want to know in advance which roads are closed, diverted, flooded or jammed so they can choose a route, and which official channels to trust instead of rumours online.",
+      "content_angle": "Built on the Vietnam News Agency report (14 July 2026) on 36 variable message signs showing real-time traffic information from 15 July 2026 (congestion, accidents, flooding, diversions, alternative routes) under phase 2 of the traffic command centre project, the Dân Sinh guide to viewing cameras in the iHanoi app (17 August 2024), the Department of Construction diversion notice for the Tứ Liên bridge works from 21 October 2026 (Government news site, 17 October 2026), the VOV Giao Thong bulletin of authority announcements (16 August 2026), the Traffic Police Division announcement of event closures (Znews, 1 June 2026) and Lao Dong on the vehicle ban at a deep flood point (21 September 2026). Explain what each channel tells you, how works notices differ from event notices and whether a foreign visitor can use iHanoi (the Writer must check the registration requirement). Keep a boundary with the low-emission zone article and the Red River bridges article.",
+      "working_title": "Hanoi Road Closures and Live Traffic Before a Ride: Message Boards, iHanoi Cameras and Official Notices",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnam.vnanet.vn/english/tin-van/hanoi-launches-real-time-traffic-information-system-with-36-electronic-message-boards-456752.html",
+          "title": "Vietnam News Agency (14 July 2026): from 15 July 2026 Hanoi shows real-time traffic information on 36 variable message signs at key routes and intersections (congestion, accidents, flooding, diversions, alternative routes) as part of phase 2 of the traffic command and information centre project with AI cameras",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dansinh.dantri.com.vn/dien-dan-dan-sinh/xem-nhanh-camera-giao-thong-o-ha-noi-qua-dien-thoai-sieu-de-dang-20240817234258454.htm",
+          "title": "Dân Sinh (Dân Trí supplement, 17 August 2024): how residents view live traffic cameras in the iHanoi citizen app (Giao thông menu, then Camera giao thông), the account registration step and the camera map",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanglong.baochinhphu.vn/ha-noi-phan-luong-giao-thong-phuc-vu-thi-cong-cau-tu-lien-tu-ngay-21-10-10326101717454018.htm",
+          "title": "Government news site (17 October 2026): example of a Hanoi Department of Construction notice, the traffic diversion for Tứ Liên bridge works from 21 October 2026 with one-way sections, banned vehicle types and the alternative routes advised for Noi Bai travellers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ban-tin-nha-chuc-trach-thong-bao-ngay-17-8-d54594.html",
+          "title": "VOV Giao Thong (16 August 2026): the daily bulletin of announcements by the authorities, including Hanoi traffic changes around the Tran Hung Dao bridge works until 30 December 2026 and other diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://znews.vn/ha-noi-tam-cam-nhieu-tuyen-duong-tu-ngay-3-den-56-post1654684.html",
+          "title": "Znews (1 June 2026): example of a Hanoi Traffic Police announcement of temporary bans and restrictions on listed streets at set hours during a national congress, showing how event closures are notified",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/nuoc-ngap-gan-1m-tren-dai-lo-thang-long-dan-mo-dich-vu-keo-xe-may-100000-dongluot-1770385.ldo",
+          "title": "Lao Dong (21 September 2026): Thang Long Boulevard flooded by 0.7 to 1 m, the Hanoi Department of Construction banning all vehicles from the flooded point, diversions by direction and warning signs",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H04",
+      "subcluster": "ss-city",
+      "slug": "hanoi-sperrungen-und-live-verkehr-vor-der-fahrt-pruefen-offizielle-kanaele",
+      "primary_query": "wie prüft man vor einer Rollerfahrt in Hanoi Straßensperrungen und die aktuelle Verkehrslage",
+      "secondary_queries": [
+        "was zeigen die elektronischen Verkehrsanzeigen in Hanoi seit Juli 2026",
+        "Verkehrskameras in Hanoi in der iHanoi-App ansehen",
+        "wo veröffentlicht das Bauamt Hanoi Verkehrsumleitungen",
+        "offizielle Quellen für überflutete und gesperrte Straßen in Hanoi",
+        "wie werden Sperrungen für Großveranstaltungen in Hanoi bekannt gegeben"
+      ],
+      "entities": [
+        "Bauamt Hanoi",
+        "iHanoi",
+        "Wechselverkehrszeichen",
+        "Verkehrspolizei Hanoi",
+        "VOV Giao Thong"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Mieter und Rollerfahrer in Hanoi wollen vorab wissen, welche Straßen gesperrt, umgeleitet, überflutet oder verstopft sind, um eine Route zu wählen, und welchen offiziellen Kanälen sie statt Gerüchten im Netz trauen können.",
+      "content_angle": "Gestützt auf den Bericht der Vietnamesischen Nachrichtenagentur (14. Juli 2026) über 36 Wechselverkehrsanzeigen mit Echtzeit-Verkehrsinformationen ab 15. Juli 2026 (Stau, Unfälle, Überflutung, Umleitungen, Alternativrouten) in Phase 2 des Projekts des Verkehrsleitzentrums, die Anleitung von Dân Sinh zu den Kameras in der iHanoi-App (17. August 2024), die Umleitungsmitteilung des Bauamts Hanoi zu den Arbeiten an der Tứ-Liên-Brücke ab 21. Oktober 2026 (Regierungs-Nachrichtenseite, 17. Oktober 2026), den Bericht von VOV Giao Thong über Behördenmitteilungen (16. August 2026), die Mitteilung der Verkehrspolizei zu Veranstaltungssperrungen (Znews, 1. Juni 2026) und Lao Dong zum Fahrverbot an einer tief überfluteten Stelle (21. September 2026). Erklären, was jeder Kanal sagt, wie Baustellenmitteilungen und Veranstaltungsmitteilungen sich unterscheiden und ob ein ausländischer Besucher iHanoi nutzen kann (der Autor prüft die Anmeldeanforderung). Vom Beitrag zur Niedrigemissionszone und zu den Brücken über den Roten Fluss abgrenzen.",
+      "working_title": "Sperrungen und Live-Verkehr in Hanoi prüfen: Anzeigetafeln, iHanoi-Kameras und offizielle Meldungen",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnam.vnanet.vn/english/tin-van/hanoi-launches-real-time-traffic-information-system-with-36-electronic-message-boards-456752.html",
+          "title": "Vietnam News Agency (14 July 2026): from 15 July 2026 Hanoi shows real-time traffic information on 36 variable message signs at key routes and intersections (congestion, accidents, flooding, diversions, alternative routes) as part of phase 2 of the traffic command and information centre project with AI cameras",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dansinh.dantri.com.vn/dien-dan-dan-sinh/xem-nhanh-camera-giao-thong-o-ha-noi-qua-dien-thoai-sieu-de-dang-20240817234258454.htm",
+          "title": "Dân Sinh (Dân Trí supplement, 17 August 2024): how residents view live traffic cameras in the iHanoi citizen app (Giao thông menu, then Camera giao thông), the account registration step and the camera map",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanglong.baochinhphu.vn/ha-noi-phan-luong-giao-thong-phuc-vu-thi-cong-cau-tu-lien-tu-ngay-21-10-10326101717454018.htm",
+          "title": "Government news site (17 October 2026): example of a Hanoi Department of Construction notice, the traffic diversion for Tứ Liên bridge works from 21 October 2026 with one-way sections, banned vehicle types and the alternative routes advised for Noi Bai travellers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ban-tin-nha-chuc-trach-thong-bao-ngay-17-8-d54594.html",
+          "title": "VOV Giao Thong (16 August 2026): the daily bulletin of announcements by the authorities, including Hanoi traffic changes around the Tran Hung Dao bridge works until 30 December 2026 and other diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://znews.vn/ha-noi-tam-cam-nhieu-tuyen-duong-tu-ngay-3-den-56-post1654684.html",
+          "title": "Znews (1 June 2026): example of a Hanoi Traffic Police announcement of temporary bans and restrictions on listed streets at set hours during a national congress, showing how event closures are notified",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/nuoc-ngap-gan-1m-tren-dai-lo-thang-long-dan-mo-dich-vu-keo-xe-may-100000-dongluot-1770385.ldo",
+          "title": "Lao Dong (21 September 2026): Thang Long Boulevard flooded by 0.7 to 1 m, the Hanoi Department of Construction banning all vehicles from the flooded point, diversions by direction and warning signs",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H04",
+      "subcluster": "ss-city",
+      "slug": "verifier-routes-fermees-et-trafic-hanoi-avant-de-rouler-canaux-officiels",
+      "primary_query": "comment vérifier les routes fermées et le trafic à Hanoï avant de partir à moto",
+      "secondary_queries": [
+        "que montrent les panneaux électroniques d'information routière de Hanoï depuis juillet 2026",
+        "voir les caméras de circulation de Hanoï dans l'application iHanoi",
+        "où le département de la Construction de Hanoï annonce-t-il les déviations",
+        "sources officielles pour les routes inondées et fermées à Hanoï",
+        "comment les fermetures de routes pour de grands événements sont-elles annoncées à Hanoï"
+      ],
+      "entities": [
+        "département de la Construction de Hanoï",
+        "iHanoi",
+        "panneaux à messages variables",
+        "police de la circulation de Hanoï",
+        "VOV Giao Thong"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Les loueurs et motards de Hanoï veulent savoir à l'avance quelles routes sont fermées, déviées, inondées ou embouteillées pour choisir un itinéraire, et quels canaux officiels croire plutôt que les rumeurs en ligne.",
+      "content_angle": "Fondé sur le reportage de l'Agence vietnamienne d'information (14 juillet 2026) sur 36 panneaux à messages variables affichant l'information routière en temps réel depuis le 15 juillet 2026 (embouteillages, accidents, inondations, déviations, itinéraires alternatifs) dans la phase 2 du projet de centre de commandement de la circulation, le guide de Dân Sinh sur les caméras de l'application iHanoi (17 août 2024), l'avis de déviation du département de la Construction pour les travaux du pont Tứ Liên dès le 21 octobre 2026 (site d'information du gouvernement, 17 octobre 2026), le bulletin de VOV Giao Thong sur les annonces des autorités (16 août 2026), l'annonce de la police de la circulation sur les fermetures liées à un événement (Znews, 1er juin 2026) et Lao Dong sur l'interdiction de passer à un point fortement inondé (21 septembre 2026). Expliquer ce que dit chaque canal, la différence entre avis de travaux et avis d'événement et si un visiteur étranger peut utiliser iHanoi (le rédacteur vérifie la condition d'inscription). Se démarquer de l'article sur la zone à faibles émissions et de celui sur les ponts du fleuve Rouge.",
+      "working_title": "Vérifier les routes fermées et le trafic à Hanoï avant de rouler : panneaux, caméras iHanoi et avis officiels",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnam.vnanet.vn/english/tin-van/hanoi-launches-real-time-traffic-information-system-with-36-electronic-message-boards-456752.html",
+          "title": "Vietnam News Agency (14 July 2026): from 15 July 2026 Hanoi shows real-time traffic information on 36 variable message signs at key routes and intersections (congestion, accidents, flooding, diversions, alternative routes) as part of phase 2 of the traffic command and information centre project with AI cameras",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dansinh.dantri.com.vn/dien-dan-dan-sinh/xem-nhanh-camera-giao-thong-o-ha-noi-qua-dien-thoai-sieu-de-dang-20240817234258454.htm",
+          "title": "Dân Sinh (Dân Trí supplement, 17 August 2024): how residents view live traffic cameras in the iHanoi citizen app (Giao thông menu, then Camera giao thông), the account registration step and the camera map",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanglong.baochinhphu.vn/ha-noi-phan-luong-giao-thong-phuc-vu-thi-cong-cau-tu-lien-tu-ngay-21-10-10326101717454018.htm",
+          "title": "Government news site (17 October 2026): example of a Hanoi Department of Construction notice, the traffic diversion for Tứ Liên bridge works from 21 October 2026 with one-way sections, banned vehicle types and the alternative routes advised for Noi Bai travellers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ban-tin-nha-chuc-trach-thong-bao-ngay-17-8-d54594.html",
+          "title": "VOV Giao Thong (16 August 2026): the daily bulletin of announcements by the authorities, including Hanoi traffic changes around the Tran Hung Dao bridge works until 30 December 2026 and other diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://znews.vn/ha-noi-tam-cam-nhieu-tuyen-duong-tu-ngay-3-den-56-post1654684.html",
+          "title": "Znews (1 June 2026): example of a Hanoi Traffic Police announcement of temporary bans and restrictions on listed streets at set hours during a national congress, showing how event closures are notified",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/nuoc-ngap-gan-1m-tren-dai-lo-thang-long-dan-mo-dich-vu-keo-xe-may-100000-dongluot-1770385.ldo",
+          "title": "Lao Dong (21 September 2026): Thang Long Boulevard flooded by 0.7 to 1 m, the Hanoi Department of Construction banning all vehicles from the flooded point, diversions by direction and warning signs",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H04",
+      "subcluster": "ss-city",
+      "slug": "comprobar-cortes-de-calle-y-trafico-hanoi-antes-de-salir-canales-oficiales",
+      "primary_query": "cómo comprobar los cortes de calles y el tráfico en Hanói antes de salir en moto",
+      "secondary_queries": [
+        "qué muestran los paneles electrónicos de tráfico de Hanói desde julio de 2026",
+        "ver las cámaras de tráfico de Hanói en la aplicación iHanoi",
+        "dónde anuncia el Departamento de Construcción de Hanói los desvíos",
+        "fuentes oficiales de calles inundadas y cortadas en Hanói",
+        "cómo se anuncian los cortes de calles por grandes eventos en Hanói"
+      ],
+      "entities": [
+        "Departamento de Construcción de Hanói",
+        "iHanoi",
+        "paneles de mensaje variable",
+        "Policía de Tráfico de Hanói",
+        "VOV Giao Thong"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Los usuarios de motos de alquiler y los motoristas de Hanói quieren saber de antemano qué calles están cortadas, desviadas, inundadas o atascadas para elegir ruta, y en qué canales oficiales confiar en lugar de rumores en internet.",
+      "content_angle": "Basado en el reportaje de la Agencia Vietnamita de Noticias (14 de julio de 2026) sobre 36 paneles de mensaje variable con información de tráfico en tiempo real desde el 15 de julio de 2026 (atascos, accidentes, inundaciones, desvíos, rutas alternativas) en la fase 2 del proyecto del centro de mando de tráfico, la guía de Dân Sinh sobre las cámaras de la aplicación iHanoi (17 de agosto de 2024), el aviso de desvíos del Departamento de Construcción por las obras del puente Tứ Liên desde el 21 de octubre de 2026 (sitio de noticias del Gobierno, 17 de octubre de 2026), el boletín de VOV Giao Thong con anuncios de las autoridades (16 de agosto de 2026), el anuncio de la Policía de Tráfico sobre cortes por un evento (Znews, 1 de junio de 2026) y Lao Dong sobre la prohibición de pasar por un punto muy inundado (21 de septiembre de 2026). Explicar qué dice cada canal, la diferencia entre avisos de obras y de eventos y si un visitante extranjero puede usar iHanoi (el redactor comprueba el requisito de registro). Distinguirlo del artículo sobre la zona de bajas emisiones y del de los puentes del río Rojo.",
+      "working_title": "Cortes de calle y tráfico en directo en Hanói: paneles, cámaras iHanoi y avisos oficiales",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnam.vnanet.vn/english/tin-van/hanoi-launches-real-time-traffic-information-system-with-36-electronic-message-boards-456752.html",
+          "title": "Vietnam News Agency (14 July 2026): from 15 July 2026 Hanoi shows real-time traffic information on 36 variable message signs at key routes and intersections (congestion, accidents, flooding, diversions, alternative routes) as part of phase 2 of the traffic command and information centre project with AI cameras",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dansinh.dantri.com.vn/dien-dan-dan-sinh/xem-nhanh-camera-giao-thong-o-ha-noi-qua-dien-thoai-sieu-de-dang-20240817234258454.htm",
+          "title": "Dân Sinh (Dân Trí supplement, 17 August 2024): how residents view live traffic cameras in the iHanoi citizen app (Giao thông menu, then Camera giao thông), the account registration step and the camera map",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanglong.baochinhphu.vn/ha-noi-phan-luong-giao-thong-phuc-vu-thi-cong-cau-tu-lien-tu-ngay-21-10-10326101717454018.htm",
+          "title": "Government news site (17 October 2026): example of a Hanoi Department of Construction notice, the traffic diversion for Tứ Liên bridge works from 21 October 2026 with one-way sections, banned vehicle types and the alternative routes advised for Noi Bai travellers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ban-tin-nha-chuc-trach-thong-bao-ngay-17-8-d54594.html",
+          "title": "VOV Giao Thong (16 August 2026): the daily bulletin of announcements by the authorities, including Hanoi traffic changes around the Tran Hung Dao bridge works until 30 December 2026 and other diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://znews.vn/ha-noi-tam-cam-nhieu-tuyen-duong-tu-ngay-3-den-56-post1654684.html",
+          "title": "Znews (1 June 2026): example of a Hanoi Traffic Police announcement of temporary bans and restrictions on listed streets at set hours during a national congress, showing how event closures are notified",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/nuoc-ngap-gan-1m-tren-dai-lo-thang-long-dan-mo-dich-vu-keo-xe-may-100000-dongluot-1770385.ldo",
+          "title": "Lao Dong (21 September 2026): Thang Long Boulevard flooded by 0.7 to 1 m, the Hanoi Department of Construction banning all vehicles from the flooded point, diversions by direction and warning signs",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H04",
+      "subcluster": "ss-city",
+      "slug": "wegafsluitingen-en-live-verkeer-hanoi-controleren-officiele-kanalen",
+      "primary_query": "hoe controleer je voor een rit op een scooter in Hanoi wegafsluitingen en het verkeer",
+      "secondary_queries": [
+        "wat tonen de elektronische verkeersborden in Hanoi sinds juli 2026",
+        "verkeerscamera's van Hanoi bekijken in de iHanoi-app",
+        "waar maakt het bouwdepartement van Hanoi omleidingen bekend",
+        "officiële bronnen voor overstroomde en afgesloten wegen in Hanoi",
+        "hoe worden afsluitingen voor grote evenementen in Hanoi aangekondigd"
+      ],
+      "entities": [
+        "Bouwdepartement van Hanoi",
+        "iHanoi",
+        "dynamische informatieborden",
+        "verkeerspolitie van Hanoi",
+        "VOV Giao Thong"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Huurders en scooterrijders in Hanoi willen vooraf weten welke wegen zijn afgesloten, omgeleid, overstroomd of vol staan om een route te kiezen, en welke officiële kanalen ze kunnen vertrouwen in plaats van geruchten online.",
+      "content_angle": "Gebaseerd op het bericht van het Vietnamese persbureau (14 juli 2026) over 36 dynamische borden met realtime verkeersinformatie vanaf 15 juli 2026 (files, ongevallen, overstromingen, omleidingen, alternatieve routes) in fase 2 van het project van het verkeerscommandocentrum, de gids van Dân Sinh voor de camera's in de iHanoi-app (17 augustus 2024), de omleidingsmelding van het bouwdepartement voor de werkzaamheden aan de Tứ Liên-brug vanaf 21 oktober 2026 (nieuwssite van de regering, 17 oktober 2026), het bulletin van VOV Giao Thong met aankondigingen van de autoriteiten (16 augustus 2026), de aankondiging van de verkeerspolitie over afsluitingen bij een evenement (Znews, 1 juni 2026) en Lao Dong over het verbod om een diep overstroomd punt te passeren (21 september 2026). Leg uit wat elk kanaal meldt, het verschil tussen meldingen over werkzaamheden en over evenementen en of een buitenlandse bezoeker iHanoi kan gebruiken (de schrijver controleert de registratie-eis). Houd een grens met het artikel over de lage-emissiezone en dat over de bruggen over de Rode Rivier.",
+      "working_title": "Wegafsluitingen en live verkeer in Hanoi: borden, iHanoi-camera's en officiële meldingen",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnam.vnanet.vn/english/tin-van/hanoi-launches-real-time-traffic-information-system-with-36-electronic-message-boards-456752.html",
+          "title": "Vietnam News Agency (14 July 2026): from 15 July 2026 Hanoi shows real-time traffic information on 36 variable message signs at key routes and intersections (congestion, accidents, flooding, diversions, alternative routes) as part of phase 2 of the traffic command and information centre project with AI cameras",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dansinh.dantri.com.vn/dien-dan-dan-sinh/xem-nhanh-camera-giao-thong-o-ha-noi-qua-dien-thoai-sieu-de-dang-20240817234258454.htm",
+          "title": "Dân Sinh (Dân Trí supplement, 17 August 2024): how residents view live traffic cameras in the iHanoi citizen app (Giao thông menu, then Camera giao thông), the account registration step and the camera map",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanglong.baochinhphu.vn/ha-noi-phan-luong-giao-thong-phuc-vu-thi-cong-cau-tu-lien-tu-ngay-21-10-10326101717454018.htm",
+          "title": "Government news site (17 October 2026): example of a Hanoi Department of Construction notice, the traffic diversion for Tứ Liên bridge works from 21 October 2026 with one-way sections, banned vehicle types and the alternative routes advised for Noi Bai travellers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ban-tin-nha-chuc-trach-thong-bao-ngay-17-8-d54594.html",
+          "title": "VOV Giao Thong (16 August 2026): the daily bulletin of announcements by the authorities, including Hanoi traffic changes around the Tran Hung Dao bridge works until 30 December 2026 and other diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://znews.vn/ha-noi-tam-cam-nhieu-tuyen-duong-tu-ngay-3-den-56-post1654684.html",
+          "title": "Znews (1 June 2026): example of a Hanoi Traffic Police announcement of temporary bans and restrictions on listed streets at set hours during a national congress, showing how event closures are notified",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/nuoc-ngap-gan-1m-tren-dai-lo-thang-long-dan-mo-dich-vu-keo-xe-may-100000-dongluot-1770385.ldo",
+          "title": "Lao Dong (21 September 2026): Thang Long Boulevard flooded by 0.7 to 1 m, the Hanoi Department of Construction banning all vehicles from the flooded point, diversions by direction and warning signs",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H04",
+      "subcluster": "ss-city",
+      "slug": "hanoi-qianwang-qian-chakan-fengdao-yu-shishi-jiaotong-guanfang-qudao",
+      "primary_query": "在河内骑摩托车出发前怎样查看封路和实时路况",
+      "secondary_queries": [
+        "河内自2026年7月起的电子交通信息屏显示什么",
+        "在iHanoi应用里查看河内交通摄像头",
+        "河内市建设厅在哪里发布交通分流通知",
+        "河内积水和封路的官方信息来源",
+        "河内大型活动的封路是怎么通知的"
+      ],
+      "entities": [
+        "河内市建设厅",
+        "iHanoi",
+        "可变信息标志",
+        "河内交通警察处",
+        "VOV交通频道"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "在河内租车或骑车的人想提前知道哪些路被封、分流、积水或拥堵以便选择路线，也想知道应该相信哪些官方渠道而不是网上的传言，避免临时绕远路。",
+      "content_angle": "依据越南通讯社（2026年7月14日）关于自2026年7月15日起36块可变信息标志提供实时交通信息（拥堵、事故、积水、分流、替代路线）的报道（交通指挥中心项目第二期）、Dân Sinh关于iHanoi应用查看摄像头的指南（2024年8月17日）、河内市建设厅关于2026年10月21日起四联桥施工分流的通知（政府新闻网站，2026年10月17日）、VOV交通频道的当局通知简报（2026年8月16日）、交通警察处关于大型活动封路的通知（Znews，2026年6月1日）以及劳动报关于深水积水点禁止车辆通行的报道（2026年9月21日）。说明每个渠道提供什么、施工通知与活动通知有何不同，以及外国游客能否使用iHanoi（写作者须核实注册要求）。并与低排放区文章和红河桥梁文章区分。",
+      "working_title": "在河内骑车前查看封路和实时路况：电子信息屏、iHanoi摄像头与官方通知",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnam.vnanet.vn/english/tin-van/hanoi-launches-real-time-traffic-information-system-with-36-electronic-message-boards-456752.html",
+          "title": "Vietnam News Agency (14 July 2026): from 15 July 2026 Hanoi shows real-time traffic information on 36 variable message signs at key routes and intersections (congestion, accidents, flooding, diversions, alternative routes) as part of phase 2 of the traffic command and information centre project with AI cameras",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dansinh.dantri.com.vn/dien-dan-dan-sinh/xem-nhanh-camera-giao-thong-o-ha-noi-qua-dien-thoai-sieu-de-dang-20240817234258454.htm",
+          "title": "Dân Sinh (Dân Trí supplement, 17 August 2024): how residents view live traffic cameras in the iHanoi citizen app (Giao thông menu, then Camera giao thông), the account registration step and the camera map",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanglong.baochinhphu.vn/ha-noi-phan-luong-giao-thong-phuc-vu-thi-cong-cau-tu-lien-tu-ngay-21-10-10326101717454018.htm",
+          "title": "Government news site (17 October 2026): example of a Hanoi Department of Construction notice, the traffic diversion for Tứ Liên bridge works from 21 October 2026 with one-way sections, banned vehicle types and the alternative routes advised for Noi Bai travellers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ban-tin-nha-chuc-trach-thong-bao-ngay-17-8-d54594.html",
+          "title": "VOV Giao Thong (16 August 2026): the daily bulletin of announcements by the authorities, including Hanoi traffic changes around the Tran Hung Dao bridge works until 30 December 2026 and other diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://znews.vn/ha-noi-tam-cam-nhieu-tuyen-duong-tu-ngay-3-den-56-post1654684.html",
+          "title": "Znews (1 June 2026): example of a Hanoi Traffic Police announcement of temporary bans and restrictions on listed streets at set hours during a national congress, showing how event closures are notified",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/nuoc-ngap-gan-1m-tren-dai-lo-thang-long-dan-mo-dich-vu-keo-xe-may-100000-dongluot-1770385.ldo",
+          "title": "Lao Dong (21 September 2026): Thang Long Boulevard flooded by 0.7 to 1 m, the Hanoi Department of Construction banning all vehicles from the flooded point, diversions by direction and warning signs",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H04",
+      "subcluster": "ss-city",
+      "slug": "verificar-ruas-cortadas-e-transito-hanoi-antes-de-sair-canais-oficiais",
+      "primary_query": "como verificar as ruas cortadas e o trânsito em Hanói antes de sair de mota",
+      "secondary_queries": [
+        "o que mostram os painéis eletrónicos de trânsito de Hanói desde julho de 2026",
+        "ver as câmaras de trânsito de Hanói na aplicação iHanoi",
+        "onde anuncia o Departamento de Construção de Hanói os desvios",
+        "fontes oficiais de ruas inundadas e cortadas em Hanói",
+        "como são anunciados os cortes de ruas por grandes eventos em Hanói"
+      ],
+      "entities": [
+        "Departamento de Construção de Hanói",
+        "iHanoi",
+        "painéis de mensagem variável",
+        "Polícia de Trânsito de Hanói",
+        "VOV Giao Thong"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Os utilizadores de motas de aluguer e os motociclistas de Hanói querem saber de antemão que ruas estão cortadas, desviadas, inundadas ou congestionadas para escolher o percurso, e em que canais oficiais confiar em vez de rumores na internet.",
+      "content_angle": "Baseado na reportagem da Agência Vietnamita de Notícias (14 de julho de 2026) sobre 36 painéis de mensagem variável com informação de trânsito em tempo real desde 15 de julho de 2026 (congestionamentos, acidentes, inundações, desvios, percursos alternativos) na fase 2 do projeto do centro de comando de trânsito, no guia da Dân Sinh sobre as câmaras da aplicação iHanoi (17 de agosto de 2024), no aviso de desvios do Departamento de Construção para as obras da ponte Tứ Liên desde 21 de outubro de 2026 (sítio de notícias do Governo, 17 de outubro de 2026), no boletim da VOV Giao Thong com anúncios das autoridades (16 de agosto de 2026), no anúncio da Polícia de Trânsito sobre cortes por um evento (Znews, 1 de junho de 2026) e na Lao Dong sobre a proibição de passar num ponto muito inundado (21 de setembro de 2026). Explicar o que diz cada canal, a diferença entre avisos de obras e de eventos e se um visitante estrangeiro pode usar a iHanoi (o redator verifica o requisito de registo). Distinguir do artigo sobre a zona de baixas emissões e do das pontes do rio Vermelho.",
+      "working_title": "Ruas cortadas e trânsito em direto em Hanói: painéis, câmaras iHanoi e avisos oficiais",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnam.vnanet.vn/english/tin-van/hanoi-launches-real-time-traffic-information-system-with-36-electronic-message-boards-456752.html",
+          "title": "Vietnam News Agency (14 July 2026): from 15 July 2026 Hanoi shows real-time traffic information on 36 variable message signs at key routes and intersections (congestion, accidents, flooding, diversions, alternative routes) as part of phase 2 of the traffic command and information centre project with AI cameras",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dansinh.dantri.com.vn/dien-dan-dan-sinh/xem-nhanh-camera-giao-thong-o-ha-noi-qua-dien-thoai-sieu-de-dang-20240817234258454.htm",
+          "title": "Dân Sinh (Dân Trí supplement, 17 August 2024): how residents view live traffic cameras in the iHanoi citizen app (Giao thông menu, then Camera giao thông), the account registration step and the camera map",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanglong.baochinhphu.vn/ha-noi-phan-luong-giao-thong-phuc-vu-thi-cong-cau-tu-lien-tu-ngay-21-10-10326101717454018.htm",
+          "title": "Government news site (17 October 2026): example of a Hanoi Department of Construction notice, the traffic diversion for Tứ Liên bridge works from 21 October 2026 with one-way sections, banned vehicle types and the alternative routes advised for Noi Bai travellers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ban-tin-nha-chuc-trach-thong-bao-ngay-17-8-d54594.html",
+          "title": "VOV Giao Thong (16 August 2026): the daily bulletin of announcements by the authorities, including Hanoi traffic changes around the Tran Hung Dao bridge works until 30 December 2026 and other diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://znews.vn/ha-noi-tam-cam-nhieu-tuyen-duong-tu-ngay-3-den-56-post1654684.html",
+          "title": "Znews (1 June 2026): example of a Hanoi Traffic Police announcement of temporary bans and restrictions on listed streets at set hours during a national congress, showing how event closures are notified",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/nuoc-ngap-gan-1m-tren-dai-lo-thang-long-dan-mo-dich-vu-keo-xe-may-100000-dongluot-1770385.ldo",
+          "title": "Lao Dong (21 September 2026): Thang Long Boulevard flooded by 0.7 to 1 m, the Hanoi Department of Construction banning all vehicles from the flooded point, diversions by direction and warning signs",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H04",
+      "subcluster": "ss-city",
+      "slug": "hanoi-oto-bakkeul-ttae-doro-tongje-silsigan-gyotong-hwagin-gongsik-chaneol",
+      "primary_query": "하노이에서 오토바이를 타기 전에 도로 통제와 실시간 교통 상황은 어떻게 확인하나요",
+      "secondary_queries": [
+        "2026년 7월부터 하노이 전광판 교통정보에는 무엇이 표시되나요",
+        "iHanoi 앱으로 하노이 교통 카메라를 보는 방법",
+        "하노이 건설국은 교통 우회 안내를 어디에 공지하나요",
+        "하노이 침수·통제 도로를 알려 주는 공식 출처",
+        "하노이에서 대규모 행사 때 도로 통제는 어떻게 공지되나요"
+      ],
+      "entities": [
+        "하노이시 건설국",
+        "iHanoi",
+        "가변 정보 표지",
+        "하노이 교통경찰국",
+        "VOV Giao Thong"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "하노이에서 렌트하거나 오토바이를 타는 사람은 경로를 고르기 위해 어느 도로가 통제, 우회, 침수, 정체인지 미리 알고 싶어 하며, 인터넷 소문 대신 어떤 공식 채널을 믿어야 하는지 알고 싶어 합니다.",
+      "content_angle": "2026년 7월 15일부터 36개 가변 정보 표지가 실시간 교통정보(정체, 사고, 침수, 우회, 대체 경로)를 보여 준다는 베트남 통신사 보도(2026년 7월 14일, 교통 지휘센터 사업 2단계), iHanoi 앱 카메라 안내(Dân Sinh, 2024년 8월 17일), 2026년 10월 21일부터 뚜리엔교 공사에 따른 하노이 건설국 우회 공지(정부 뉴스 사이트, 2026년 10월 17일), 당국 공지를 전하는 VOV Giao Thong 방송 요약(2026년 8월 16일), 행사에 따른 통제를 알린 교통경찰국 공지(Znews, 2026년 6월 1일), 깊게 침수된 지점의 통행 금지를 다룬 Lao Dong 기사(2026년 9월 21일)에 근거합니다. 각 채널이 무엇을 알려 주는지, 공사 공지와 행사 공지의 차이, 외국인 방문객이 iHanoi를 쓸 수 있는지(작성자가 가입 요건 확인)를 설명합니다. 저배출구역 글과 홍강 교량 글과 구분합니다.",
+      "working_title": "하노이에서 오토바이 타기 전 도로 통제·실시간 교통 확인법: 전광판, iHanoi 카메라, 공식 공지",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnam.vnanet.vn/english/tin-van/hanoi-launches-real-time-traffic-information-system-with-36-electronic-message-boards-456752.html",
+          "title": "Vietnam News Agency (14 July 2026): from 15 July 2026 Hanoi shows real-time traffic information on 36 variable message signs at key routes and intersections (congestion, accidents, flooding, diversions, alternative routes) as part of phase 2 of the traffic command and information centre project with AI cameras",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dansinh.dantri.com.vn/dien-dan-dan-sinh/xem-nhanh-camera-giao-thong-o-ha-noi-qua-dien-thoai-sieu-de-dang-20240817234258454.htm",
+          "title": "Dân Sinh (Dân Trí supplement, 17 August 2024): how residents view live traffic cameras in the iHanoi citizen app (Giao thông menu, then Camera giao thông), the account registration step and the camera map",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanglong.baochinhphu.vn/ha-noi-phan-luong-giao-thong-phuc-vu-thi-cong-cau-tu-lien-tu-ngay-21-10-10326101717454018.htm",
+          "title": "Government news site (17 October 2026): example of a Hanoi Department of Construction notice, the traffic diversion for Tứ Liên bridge works from 21 October 2026 with one-way sections, banned vehicle types and the alternative routes advised for Noi Bai travellers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ban-tin-nha-chuc-trach-thong-bao-ngay-17-8-d54594.html",
+          "title": "VOV Giao Thong (16 August 2026): the daily bulletin of announcements by the authorities, including Hanoi traffic changes around the Tran Hung Dao bridge works until 30 December 2026 and other diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://znews.vn/ha-noi-tam-cam-nhieu-tuyen-duong-tu-ngay-3-den-56-post1654684.html",
+          "title": "Znews (1 June 2026): example of a Hanoi Traffic Police announcement of temporary bans and restrictions on listed streets at set hours during a national congress, showing how event closures are notified",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/nuoc-ngap-gan-1m-tren-dai-lo-thang-long-dan-mo-dich-vu-keo-xe-may-100000-dongluot-1770385.ldo",
+          "title": "Lao Dong (21 September 2026): Thang Long Boulevard flooded by 0.7 to 1 m, the Hanoi Department of Construction banning all vehicles from the flooded point, diversions by direction and warning signs",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H04",
+      "subcluster": "ss-city",
+      "slug": "hanoi-baiku-mae-ni-doro-kisei-to-riarutaimu-kotsu-kakunin-koshiki-channel",
+      "primary_query": "ハノイでバイクに乗る前に通行止めやリアルタイムの交通状況を確認するにはどうすればよいですか",
+      "secondary_queries": [
+        "2026年7月からのハノイの電光掲示板は何を表示するか",
+        "iHanoiアプリでハノイの交通カメラを見る方法",
+        "ハノイ市建設局は迂回の案内をどこで告知するか",
+        "ハノイの冠水や通行止めを知るための公式の情報源",
+        "ハノイで大規模イベント時の通行止めはどう告知されるか"
+      ],
+      "entities": [
+        "ハノイ市建設局",
+        "iHanoi",
+        "可変情報板",
+        "ハノイ交通警察課",
+        "VOV Giao Thong"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "ハノイでバイクを借りたり乗ったりする人は、経路を選ぶために、どの道が通行止め、迂回、冠水、渋滞なのかを事前に知りたく、ネット上のうわさではなくどの公式チャンネルを信頼すべきかを知りたがります。",
+      "content_angle": "2026年7月15日から36基の可変情報板がリアルタイムの交通情報（渋滞、事故、冠水、迂回、代替ルート）を表示するというベトナム通信社の報道（2026年7月14日、交通指揮センター事業の第2期）、iHanoiアプリでカメラを見る方法の案内（Dân Sinh、2024年8月17日）、2026年10月21日からのトゥーリエン橋工事に伴うハノイ市建設局の迂回告知（政府ニュースサイト、2026年10月17日）、当局の告知を伝えるVOV Giao Thongの番組要約（2026年8月16日）、イベントに伴う規制を知らせた交通警察課の告知（Znews、2026年6月1日）、深く冠水した地点の通行禁止を伝えたLao Dongの記事（2026年9月21日）に基づきます。各チャンネルが何を伝えるか、工事の告知とイベントの告知の違い、外国人旅行者がiHanoiを使えるか（執筆者が登録要件を確認）を説明します。低排出ゾーンの記事と紅河の橋の記事とは区別します。",
+      "working_title": "ハノイでバイクに乗る前の通行止めとリアルタイム交通の確認：電光掲示板、iHanoiカメラ、公式告知",
+      "word_target": 1300,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnam.vnanet.vn/english/tin-van/hanoi-launches-real-time-traffic-information-system-with-36-electronic-message-boards-456752.html",
+          "title": "Vietnam News Agency (14 July 2026): from 15 July 2026 Hanoi shows real-time traffic information on 36 variable message signs at key routes and intersections (congestion, accidents, flooding, diversions, alternative routes) as part of phase 2 of the traffic command and information centre project with AI cameras",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://dansinh.dantri.com.vn/dien-dan-dan-sinh/xem-nhanh-camera-giao-thong-o-ha-noi-qua-dien-thoai-sieu-de-dang-20240817234258454.htm",
+          "title": "Dân Sinh (Dân Trí supplement, 17 August 2024): how residents view live traffic cameras in the iHanoi citizen app (Giao thông menu, then Camera giao thông), the account registration step and the camera map",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://thanglong.baochinhphu.vn/ha-noi-phan-luong-giao-thong-phuc-vu-thi-cong-cau-tu-lien-tu-ngay-21-10-10326101717454018.htm",
+          "title": "Government news site (17 October 2026): example of a Hanoi Department of Construction notice, the traffic diversion for Tứ Liên bridge works from 21 October 2026 with one-way sections, banned vehicle types and the alternative routes advised for Noi Bai travellers",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vovgiaothong.vn/newsaudio/ban-tin-nha-chuc-trach-thong-bao-ngay-17-8-d54594.html",
+          "title": "VOV Giao Thong (16 August 2026): the daily bulletin of announcements by the authorities, including Hanoi traffic changes around the Tran Hung Dao bridge works until 30 December 2026 and other diversions",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://znews.vn/ha-noi-tam-cam-nhieu-tuyen-duong-tu-ngay-3-den-56-post1654684.html",
+          "title": "Znews (1 June 2026): example of a Hanoi Traffic Police announcement of temporary bans and restrictions on listed streets at set hours during a national congress, showing how event closures are notified",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://laodong.vn/ban-doc/nuoc-ngap-gan-1m-tren-dai-lo-thang-long-dan-mo-dich-vu-keo-xe-may-100000-dongluot-1770385.ldo",
+          "title": "Lao Dong (21 September 2026): Thang Long Boulevard flooded by 0.7 to 1 m, the Hanoi Department of Construction banning all vehicles from the flooded point, diversions by direction and warning signs",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}
