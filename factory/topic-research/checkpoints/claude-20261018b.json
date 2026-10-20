@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T09:17:55.277Z",
-  "base_main_sha": "4a7ac7cb0fad64182f5550e4ee871a90c67f5454",
-  "last_commit_sha": "0db7ca2ed348157fe3e42ee0949dc4f6862d1802",
+  "updated_at": "2026-10-20T09:27:08.474Z",
+  "base_main_sha": "52903def7f84a8aca00745959c46bf9721b0a5a6",
+  "last_commit_sha": "f7111aff10051b5ca847e345793b4366b9ce2417",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 910,
-    "qa_pass": 910,
+    "researched": 920,
+    "qa_pass": 920,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 900,
+    "pushed": 910,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 92,
-      "de": 92,
-      "fr": 92,
-      "es": 92,
-      "nl": 92,
-      "pt": 92,
-      "zh": 92,
-      "ko": 92,
-      "ja": 92,
-      "en": 82
+      "vi": 93,
+      "de": 93,
+      "fr": 93,
+      "es": 93,
+      "nl": 93,
+      "pt": 93,
+      "zh": 93,
+      "ko": 93,
+      "ja": 93,
+      "en": 83
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 40
+      "motorbike-rental": 50
     }
   },
   "last_batch": {
-    "seq": 91,
-    "file": "factory/topic-research/batches/claude-20261018b-0091.json",
-    "sha256": "39433ad8c80bbaabb8739989b1c60e677a7abe233280720b65c47cb53be1adbe",
+    "seq": 92,
+    "file": "factory/topic-research/batches/claude-20261018b-0092.json",
+    "sha256": "203c5fae08142492049751018aac700d1f518f4485ebe9f66869140fd2d13c11",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -10049,8 +10049,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0091.json",
       "sha256": "39433ad8c80bbaabb8739989b1c60e677a7abe233280720b65c47cb53be1adbe",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "f7111aff10051b5ca847e345793b4366b9ce2417",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -10061,7 +10061,7 @@
           "parent_id": "VI-H04",
           "subcluster": "ss-incidents",
           "key": "vi::xe tay ga de khong no phai kiem tra gi truoc khi goi tho",
-          "ta_id": null
+          "ta_id": "TA-VI-0185"
         },
         {
           "ref": "en:scooter-will-not-start-what-to-check",
@@ -10071,7 +10071,7 @@
           "parent_id": "EN-H04",
           "subcluster": "ss-incidents",
           "key": "en::scooter won't start what to check before calling for help",
-          "ta_id": null
+          "ta_id": "TA-EN-0189"
         },
         {
           "ref": "de:roller-springt-nicht-an-was-zuerst-pruefen",
@@ -10081,7 +10081,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-incidents",
           "key": "de::roller springt nicht an was zuerst prufen",
-          "ta_id": null
+          "ta_id": "TA-DE-0188"
         },
         {
           "ref": "fr:scooter-ne-demarre-pas-que-verifier-avant-d-appeler",
@@ -10091,7 +10091,7 @@
           "parent_id": "FR-H04",
           "subcluster": "ss-incidents",
           "key": "fr::scooter qui ne demarre pas que verifier avant d'appeler le loueur",
-          "ta_id": null
+          "ta_id": "TA-FR-0189"
         },
         {
           "ref": "es:moto-automatica-no-arranca-que-revisar-antes-de-llamar",
@@ -10101,7 +10101,7 @@
           "parent_id": "ES-H04",
           "subcluster": "ss-incidents",
           "key": "es::la moto automatica no arranca que revisar antes de llamar al taller",
-          "ta_id": null
+          "ta_id": "TA-ES-0177"
         },
         {
           "ref": "nl:scooter-start-niet-wat-controleren-voordat-je-belt",
@@ -10111,7 +10111,7 @@
           "parent_id": "NL-H04",
           "subcluster": "ss-incidents",
           "key": "nl::scooter start niet wat controleren voordat je belt",
-          "ta_id": null
+          "ta_id": "TA-NL-0186"
         },
         {
           "ref": "zh:tabanche-qidong-bu-liao-xian-jiancha-shenme",
@@ -10121,7 +10121,7 @@
           "parent_id": "ZH-H04",
           "subcluster": "ss-incidents",
           "key": "zh::踏板摩托车启动不了先检查什么",
-          "ta_id": null
+          "ta_id": "TA-ZH-0186"
         },
         {
           "ref": "pt:scooter-nao-arranca-o-que-verificar-antes-de-pedir-ajuda",
@@ -10131,7 +10131,7 @@
           "parent_id": "PT-H04",
           "subcluster": "ss-incidents",
           "key": "pt::scooter nao arranca o que verificar antes de pedir ajuda",
-          "ta_id": null
+          "ta_id": "TA-PT-0186"
         },
         {
           "ref": "ko:seukuteo-sidongi-an-geollil-ttae-meonjeo-hwaginhal-geot",
@@ -10141,7 +10141,7 @@
           "parent_id": "KO-H04",
           "subcluster": "ss-incidents",
           "key": "ko::스쿠터 시동이 안 걸릴 때 먼저 확인할 것",
-          "ta_id": null
+          "ta_id": "TA-KO-0185"
         },
         {
           "ref": "ja:sukuta-enjin-ga-kakaranai-saki-ni-kakunin-suru-koto",
@@ -10151,14 +10151,125 @@
           "parent_id": "JA-H04",
           "subcluster": "ss-incidents",
           "key": "ja::スクーター エンシンかかからない 先に確認すること",
+          "ta_id": "TA-JA-0185"
+        }
+      ]
+    },
+    {
+      "seq": 92,
+      "file": "factory/topic-research/batches/claude-20261018b-0092.json",
+      "sha256": "203c5fae08142492049751018aac700d1f518f4485ebe9f66869140fd2d13c11",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:xang-e10-xe-tay-ga-thue-tuong-thich",
+          "locale": "vi",
+          "slug": "xang-e10-xe-tay-ga-thue-tuong-thich",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H02",
+          "subcluster": "rc-extras",
+          "key": "vi::xang e10 co do duoc cho xe tay ga thue khong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:e10-petrol-vietnam-rental-scooter-compatibility",
+          "locale": "en",
+          "slug": "e10-petrol-vietnam-rental-scooter-compatibility",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H02",
+          "subcluster": "rc-extras",
+          "key": "en::can a rental scooter in vietnam use e10 petrol",
+          "ta_id": null
+        },
+        {
+          "ref": "de:e10-benzin-vietnam-mietroller-vertraeglichkeit",
+          "locale": "de",
+          "slug": "e10-benzin-vietnam-mietroller-vertraeglichkeit",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H02",
+          "subcluster": "rc-extras",
+          "key": "de::darf ein mietroller in vietnam e10 tanken",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:essence-e10-vietnam-scooter-location-compatibilite",
+          "locale": "fr",
+          "slug": "essence-e10-vietnam-scooter-location-compatibilite",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H02",
+          "subcluster": "rc-extras",
+          "key": "fr::un scooter de location peut-il rouler a l'essence e10 au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:gasolina-e10-vietnam-moto-alquiler-compatibilidad",
+          "locale": "es",
+          "slug": "gasolina-e10-vietnam-moto-alquiler-compatibilidad",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H02",
+          "subcluster": "rc-extras",
+          "key": "es::puede una moto de alquiler en vietnam usar gasolina e10",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:e10-benzine-vietnam-huurscooter-compatibiliteit",
+          "locale": "nl",
+          "slug": "e10-benzine-vietnam-huurscooter-compatibiliteit",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H02",
+          "subcluster": "rc-extras",
+          "key": "nl::kan een huurscooter in vietnam op e10-benzine rijden",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-e10-qiyou-zulin-tabanche-jianrong",
+          "locale": "zh",
+          "slug": "yuenan-e10-qiyou-zulin-tabanche-jianrong",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H02",
+          "subcluster": "rc-extras",
+          "key": "zh::越南租的踏板摩托车能加e10汽油吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:gasolina-e10-vietname-scooter-aluguer-compatibilidade",
+          "locale": "pt",
+          "slug": "gasolina-e10-vietname-scooter-aluguer-compatibilidade",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H02",
+          "subcluster": "rc-extras",
+          "key": "pt::uma scooter de aluguer no vietname pode usar gasolina e10",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-e10-hwibalyu-rental-seukuteo-hohwan",
+          "locale": "ko",
+          "slug": "beteunam-e10-hwibalyu-rental-seukuteo-hohwan",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H02",
+          "subcluster": "rc-extras",
+          "key": "ko::베트남 렌탈 스쿠터에 e10 휘발유를 넣어도 되나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-e10-gasorin-rental-sukuta-taio",
+          "locale": "ja",
+          "slug": "betonamu-e10-gasorin-rental-sukuta-taio",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H02",
+          "subcluster": "rc-extras",
+          "key": "ja::ヘトナムのレンタルスクーターにe10カソリンを入れてよいか",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 92,
-    "file": "factory/topic-research/batches/claude-20261018b-0092.json",
+    "seq": 93,
+    "file": "factory/topic-research/batches/claude-20261018b-0093.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -10171,13 +10282,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:34:53.009Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 67,
-      "topics": 10,
-      "sha256": "71a2c06af47310a4d44fd7a8e02370dbb46fcae20f08b1e40f66cee47941499a"
-    },
     {
       "at": "2026-10-20T04:36:43.646Z",
       "event": "BATCH_COMMITTED",
@@ -10345,6 +10449,13 @@
       "seq": 91,
       "topics": 10,
       "sha256": "39433ad8c80bbaabb8739989b1c60e677a7abe233280720b65c47cb53be1adbe"
+    },
+    {
+      "at": "2026-10-20T09:27:08.474Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 92,
+      "topics": 10,
+      "sha256": "203c5fae08142492049751018aac700d1f518f4485ebe9f66869140fd2d13c11"
     }
   ]
 }
