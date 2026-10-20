@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:56:44.216Z",
+  "updated_at": "2026-10-20T10:56:58.692Z",
   "base_main_sha": "2b81c61739dbf22f12c3a10c150d1e448d4e68e5",
-  "last_commit_sha": "de29281c5939689fb7406f133797f01cb2382211",
+  "last_commit_sha": "3f133f309ebb9eb2693615fabcc844ece94dfdfa",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1290,
-    "qa_pass": 1290,
+    "researched": 1300,
+    "qa_pass": 1300,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1280,
+    "pushed": 1290,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 130,
-      "de": 130,
-      "fr": 130,
-      "es": 130,
-      "nl": 130,
-      "pt": 130,
-      "zh": 130,
-      "ko": 130,
-      "ja": 130,
-      "en": 120
+      "vi": 131,
+      "de": 131,
+      "fr": 131,
+      "es": 131,
+      "nl": 131,
+      "pt": 131,
+      "zh": 131,
+      "ko": 131,
+      "ja": 131,
+      "en": 121
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 410,
+      "traffic-law-safety": 420,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 129,
-    "file": "factory/topic-research/batches/claude-20261018b-0129.json",
-    "sha256": "9c8d4a0e3f61abd2da9d370bf6b07930ef75fadabb3abdd7e736d78491304113",
+    "seq": 130,
+    "file": "factory/topic-research/batches/claude-20261018b-0130.json",
+    "sha256": "39cd0f8e9e21b485ade131f69f79360d1c65675cb2edb261d6c7d2e7840adc3f",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -14267,8 +14267,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0129.json",
       "sha256": "9c8d4a0e3f61abd2da9d370bf6b07930ef75fadabb3abdd7e736d78491304113",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "3f133f309ebb9eb2693615fabcc844ece94dfdfa",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -14372,11 +14372,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 130,
+      "file": "factory/topic-research/batches/claude-20261018b-0130.json",
+      "sha256": "39cd0f8e9e21b485ade131f69f79360d1c65675cb2edb261d6c7d2e7840adc3f",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:tra-cuu-phat-nguoi-bien-so-xe-may-vnetraffic-tin-nhan-gia-mao",
+          "locale": "vi",
+          "slug": "tra-cuu-phat-nguoi-bien-so-xe-may-vnetraffic-tin-nhan-gia-mao",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::cach tra cuu phat nguoi xe may theo bien so tren vnetraffic",
+          "ta_id": null
+        },
+        {
+          "ref": "en:check-motorbike-plate-camera-fines-vietnam-fake-fine-texts",
+          "locale": "en",
+          "slug": "check-motorbike-plate-camera-fines-vietnam-fake-fine-texts",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::how to check a motorbike licence plate for traffic camera fines in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:vietnam-kamera-bussgeld-kennzeichen-pruefen-vnetraffic",
+          "locale": "de",
+          "slug": "vietnam-kamera-bussgeld-kennzeichen-pruefen-vnetraffic",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::vietnam kamera-bußgeld per kennzeichen prufen und gefalschte bußgeld-sms erkennen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:amendes-camera-vietnam-verifier-plaque-vnetraffic-faux-messages",
+          "locale": "fr",
+          "slug": "amendes-camera-vietnam-verifier-plaque-vnetraffic-faux-messages",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::comment verifier les amendes par camera d'une plaque de moto au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:multas-por-camara-vietnam-comprobar-matricula-vnetraffic-mensajes-falsos",
+          "locale": "es",
+          "slug": "multas-por-camara-vietnam-comprobar-matricula-vnetraffic-mensajes-falsos",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::como comprobar si una matricula de moto tiene multas por camara en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:cameraboetes-vietnam-kenteken-controleren-vnetraffic-nepberichten",
+          "locale": "nl",
+          "slug": "cameraboetes-vietnam-kenteken-controleren-vnetraffic-nepberichten",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::hoe controleer ik een scooterkenteken op cameraboetes in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-motuoche-shexiangtou-fadan-chepai-chaxun-vnetraffic-jiaduanxin",
+          "locale": "zh",
+          "slug": "yuenan-motuoche-shexiangtou-fadan-chepai-chaxun-vnetraffic-jiaduanxin",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::越南摩托车摄像头违章罚单怎么按车牌查询",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:multas-por-camara-vietname-verificar-matricula-vnetraffic-mensagens-falsas",
+          "locale": "pt",
+          "slug": "multas-por-camara-vietname-verificar-matricula-vnetraffic-mensagens-falsas",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::como verificar multas por camara de uma matricula de mota no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-kamera-gwataeryo-beonhopan-jochoe-vnetraffic-gaja-munja",
+          "locale": "ko",
+          "slug": "beteunam-otobai-kamera-gwataeryo-beonhopan-jochoe-vnetraffic-gaja-munja",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::베트남 오토바이 번호판으로 단속 카메라 과태료 조회하는 방법",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-kamera-ihan-nanba-vnetraffic-nise-bakkin-message",
+          "locale": "ja",
+          "slug": "betonamu-kamera-ihan-nanba-vnetraffic-nise-bakkin-message",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ヘトナムてハイクのナンハーから監視カメラの違反通知を調へる方法",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 130,
-    "file": "factory/topic-research/batches/claude-20261018b-0130.json",
+    "seq": 131,
+    "file": "factory/topic-research/batches/claude-20261018b-0131.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -14389,13 +14500,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T10:04:30.129Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 105,
-      "topics": 10,
-      "sha256": "2f048ff0d4e3f04d4ba22359940bb93dba010aab77e1d8f34d8b09226b0525df"
-    },
     {
       "at": "2026-10-20T10:04:52.232Z",
       "event": "BATCH_COMMITTED",
@@ -14563,6 +14667,13 @@
       "seq": 129,
       "topics": 10,
       "sha256": "9c8d4a0e3f61abd2da9d370bf6b07930ef75fadabb3abdd7e736d78491304113"
+    },
+    {
+      "at": "2026-10-20T10:56:58.692Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 130,
+      "topics": 10,
+      "sha256": "39cd0f8e9e21b485ade131f69f79360d1c65675cb2edb261d6c7d2e7840adc3f"
     }
   ]
 }

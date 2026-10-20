@@ -1,0 +1,602 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H04",
+      "subcluster": "ss-incidents",
+      "slug": "tra-cuu-phat-nguoi-bien-so-xe-may-vnetraffic-tin-nhan-gia-mao",
+      "primary_query": "cách tra cứu phạt nguội xe máy theo biển số trên VNeTraffic",
+      "secondary_queries": [
+        "VNeTraffic tra cứu phạt nguội theo biển số xe máy",
+        "tin nhắn thông báo phạt nguội có phải lừa đảo không",
+        "thông báo vi phạm giao thông gửi qua VNeTraffic sau bao lâu",
+        "trang web Cục CSGT tra cứu phương tiện vi phạm",
+        "thuê xe máy bị phạt nguội ai nhận thông báo"
+      ],
+      "entities": [
+        "ứng dụng VNeTraffic",
+        "Cục Cảnh sát giao thông",
+        "tài khoản định danh điện tử VNeID mức 2",
+        "Nghị định 168/2024/NĐ-CP Điều 47",
+        "Cổng Dịch vụ công quốc gia"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Người thuê xe máy và chủ xe nghe tin xe bị camera ghi hình hoặc nhận tin nhắn đòi nộp phạt gấp muốn biết thông báo thật được gửi bằng cách nào, tra biển số ở đâu và làm sao nhận ra lừa đảo.",
+      "content_angle": "Dựa trên khuyến cáo của Cục CSGT hồi tháng 6/2026: vi phạm phát hiện qua hệ thống giám sát được thông báo bằng văn bản cho chủ phương tiện, trên trang thông tin của Cục và trong ứng dụng VNeTraffic (chủ xe đứng tên chính chủ đã xác thực VNeID mức 2 nhận thông báo trong ứng dụng khoảng 2 giờ sau khi vi phạm được ghi nhận), còn tin nhắn, cuộc gọi hay đường link đòi nộp phạt là lừa đảo; ứng dụng cũng có mục tra cứu phạt nguội theo biển số. Thêm khung pháp lý ở khoản 8 và khoản 11 Điều 47 Nghị định 168/2024/NĐ-CP (chủ xe phải phối hợp xác định người lái; vụ việc chưa giải quyết bị chặn đăng kiểm, đăng ký xe và cấp đổi giấy phép lái xe) cùng các trang giả mạo mà công an mô tả. Người viết phải kiểm chứng trước khi hứa với độc giả nước ngoài: tra biển số có cần đăng nhập VNeID không, thông báo đến cửa hàng cho thuê (chủ xe) hay người thuê, chủ xe là người nước ngoài có nhận được thông báo trong ứng dụng hay không khi Nghị định 320/2026/NĐ-CP (có hiệu lực từ 28/9/2026) cho phép người nước ngoài nhập cảnh hoặc cư trú hợp pháp được cấp tài khoản định danh điện tử, và không nêu mức phạt.",
+      "working_title": "Tra cứu phạt nguội xe máy bằng biển số trên VNeTraffic và cách nhận biết tin nhắn phạt nguội giả mạo",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnamnet.vn/cuc-csgt-huong-dan-xu-ly-khi-nhan-tin-nhan-bao-loi-phat-50-000-dong-2530502.html",
+          "title": "VietNamNet (29 June 2026): Traffic Police Department on fake fine messages, the VNeTraffic notice about two hours after a violation and the plate lookup",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://csgt.bocongan.gov.vn/index.php/tintuc/goc-canh-bao-chong-dao-lua-lam-gi-khi-nhan-tin-nhan-thong-bao-vi-pham-giao-thong",
+          "title": "Traffic Police Department, Ministry of Public Security (June 2026, page updated later): warning page on fake violation messages, the in-app notice for registered owners and the plate lookup in VNeTraffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hatinh.gov.vn/vi/bai-viet/canh-giac-voi-tin-nhan-bo-cong-an-yeu-cau-nop-phat-nguoi",
+          "title": "Ha Tinh provincial portal (20 August 2026): fake texts demanding payment of a camera fine and the official channels named by the Traffic Police Department",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4",
+          "title": "Ministry of Public Security portal (answer dated January 2025): Article 47(8) and (11) of Decree 168/2024 on notices of camera-detected violations sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.thegioididong.com/tin-tuc/cach-tra-cuu-vi-pham-giao-thong-tren-vnetraffic-1592685",
+          "title": "Thegioididong (20 February 2026): step-by-step guide to checking violations in VNeTraffic after a VNeID login, with the traffic police website as the plate-lookup alternative",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/nghi-dinh-so-320-2026-nd-cp-ve-dinh-danh-va-xac-thuc-dien-tu-119260815180442475.htm",
+          "title": "Government policy portal (15 August 2026): Decree 320/2026/ND-CP of 13 August 2026, Article 7 on electronic ID accounts for foreigners who enter or reside legally (in force from 28 September 2026)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H04",
+      "subcluster": "ss-incidents",
+      "slug": "check-motorbike-plate-camera-fines-vietnam-fake-fine-texts",
+      "primary_query": "how to check a motorbike licence plate for traffic camera fines in Vietnam",
+      "secondary_queries": [
+        "VNeTraffic check traffic violations by plate number",
+        "is a Vietnam traffic fine text message a scam",
+        "how do camera fines reach the owner of a rental motorbike in Vietnam",
+        "Vietnam traffic police website check violations by plate",
+        "fake national public service portal fine payment link Vietnam"
+      ],
+      "entities": [
+        "VNeTraffic app",
+        "Traffic Police Department (Cục CSGT)",
+        "VNeID level 2 account",
+        "Decree 168/2024/ND-CP Article 47",
+        "National Public Service Portal"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Riders and renters who hear that a scooter was caught on camera, or who receive a text demanding immediate payment of a fine, need to know how real notices arrive, where a plate can be checked and how to recognise a scam.",
+      "content_angle": "Built on the Traffic Police Department's June 2026 statements: camera-detected violations are notified in writing to the vehicle owner, on the department's website and in the VNeTraffic app (registered owners with a verified VNeID level 2 account get an in-app notice about two hours after the violation is recorded), while texts, calls and links demanding payment are scams; the app also has a plate lookup in its camera-fine section. Adds the legal frame in Article 47(8) and (11) of Decree 168/2024 (the owner must help identify the driver; unresolved cases hold up vehicle registration and licence procedures) and the fake pages the police describe. Before promising anything to foreign readers the Writer must verify whether the plate lookup needs a VNeID login, whether the notice goes to the rental shop as owner or to the renter, and whether foreign owners can receive in-app notices now that Decree 320/2026/ND-CP (in force from 28 September 2026) lets foreigners who enter or reside legally obtain an electronic ID account; no fine levels are to be quoted.",
+      "working_title": "Camera Fines in Vietnam: Checking a Plate on VNeTraffic and Spotting Fake Fine Messages",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnamnet.vn/cuc-csgt-huong-dan-xu-ly-khi-nhan-tin-nhan-bao-loi-phat-50-000-dong-2530502.html",
+          "title": "VietNamNet (29 June 2026): Traffic Police Department on fake fine messages, the VNeTraffic notice about two hours after a violation and the plate lookup",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://csgt.bocongan.gov.vn/index.php/tintuc/goc-canh-bao-chong-dao-lua-lam-gi-khi-nhan-tin-nhan-thong-bao-vi-pham-giao-thong",
+          "title": "Traffic Police Department, Ministry of Public Security (June 2026, page updated later): warning page on fake violation messages, the in-app notice for registered owners and the plate lookup in VNeTraffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hatinh.gov.vn/vi/bai-viet/canh-giac-voi-tin-nhan-bo-cong-an-yeu-cau-nop-phat-nguoi",
+          "title": "Ha Tinh provincial portal (20 August 2026): fake texts demanding payment of a camera fine and the official channels named by the Traffic Police Department",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4",
+          "title": "Ministry of Public Security portal (answer dated January 2025): Article 47(8) and (11) of Decree 168/2024 on notices of camera-detected violations sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.thegioididong.com/tin-tuc/cach-tra-cuu-vi-pham-giao-thong-tren-vnetraffic-1592685",
+          "title": "Thegioididong (20 February 2026): step-by-step guide to checking violations in VNeTraffic after a VNeID login, with the traffic police website as the plate-lookup alternative",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/nghi-dinh-so-320-2026-nd-cp-ve-dinh-danh-va-xac-thuc-dien-tu-119260815180442475.htm",
+          "title": "Government policy portal (15 August 2026): Decree 320/2026/ND-CP of 13 August 2026, Article 7 on electronic ID accounts for foreigners who enter or reside legally (in force from 28 September 2026)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H04",
+      "subcluster": "ss-incidents",
+      "slug": "vietnam-kamera-bussgeld-kennzeichen-pruefen-vnetraffic",
+      "primary_query": "Vietnam Kamera-Bußgeld per Kennzeichen prüfen und gefälschte Bußgeld-SMS erkennen",
+      "secondary_queries": [
+        "VNeTraffic Verstöße nach Kennzeichen abfragen",
+        "Bußgeld-SMS Vietnam Betrug oder echt",
+        "wie erreichen Kamera-Bußgelder den Halter eines Mietrollers in Vietnam",
+        "Website der Verkehrspolizei Vietnam Verstöße abfragen",
+        "gefälschte Zahlungsseite Nationales Portal für öffentliche Dienste Vietnam"
+      ],
+      "entities": [
+        "VNeTraffic-App",
+        "Verkehrspolizeiamt (Cục CSGT)",
+        "VNeID-Konto Stufe 2",
+        "Dekret 168/2024/ND-CP Art. 47",
+        "Nationales Portal für öffentliche Dienste"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Wer in Vietnam einen Roller fährt oder mietet und hört, das Fahrzeug sei von einer Kamera erfasst worden, oder eine SMS mit Zahlungsaufforderung erhält, will wissen, wie echte Mitteilungen ankommen, wo man ein Kennzeichen prüft und woran man Betrug erkennt.",
+      "content_angle": "Stützt sich auf die Aussagen des Verkehrspolizeiamts vom Juni 2026: Kameraverstöße werden dem Fahrzeughalter schriftlich, auf der Website des Amts und in der VNeTraffic-App mitgeteilt (auf sich zugelassene Halter mit bestätigtem VNeID-Konto Stufe 2 erhalten rund zwei Stunden nach der Erfassung eine Mitteilung in der App), während SMS, Anrufe und Links mit Zahlungsaufforderung Betrug sind; die App bietet außerdem eine Kennzeichenabfrage. Ergänzt um den Rechtsrahmen in Artikel 47 Absatz 8 und 11 des Dekrets 168/2024 (der Halter muss bei der Ermittlung des Fahrers mitwirken; offene Fälle blockieren Zulassungs- und Führerscheinverfahren) und die gefälschten Seiten, die die Polizei beschreibt. Bevor der Autor ausländischen Lesern etwas zusagt, muss er klären, ob die Kennzeichenabfrage ein VNeID-Login braucht, ob die Mitteilung den Verleih als Halter oder den Mieter erreicht und ob ausländische Halter Mitteilungen in der App erhalten können, seit das Dekret 320/2026/ND-CP (in Kraft ab 28. September 2026) legal eingereisten oder wohnhaften Ausländern ein elektronisches Identitätskonto ermöglicht; Bußgeldhöhen nennt er nicht.",
+      "working_title": "Kamera-Bußgelder in Vietnam: Kennzeichen in VNeTraffic prüfen und gefälschte Bußgeld-SMS erkennen",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnamnet.vn/cuc-csgt-huong-dan-xu-ly-khi-nhan-tin-nhan-bao-loi-phat-50-000-dong-2530502.html",
+          "title": "VietNamNet (29 June 2026): Traffic Police Department on fake fine messages, the VNeTraffic notice about two hours after a violation and the plate lookup",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://csgt.bocongan.gov.vn/index.php/tintuc/goc-canh-bao-chong-dao-lua-lam-gi-khi-nhan-tin-nhan-thong-bao-vi-pham-giao-thong",
+          "title": "Traffic Police Department, Ministry of Public Security (June 2026, page updated later): warning page on fake violation messages, the in-app notice for registered owners and the plate lookup in VNeTraffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hatinh.gov.vn/vi/bai-viet/canh-giac-voi-tin-nhan-bo-cong-an-yeu-cau-nop-phat-nguoi",
+          "title": "Ha Tinh provincial portal (20 August 2026): fake texts demanding payment of a camera fine and the official channels named by the Traffic Police Department",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4",
+          "title": "Ministry of Public Security portal (answer dated January 2025): Article 47(8) and (11) of Decree 168/2024 on notices of camera-detected violations sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.thegioididong.com/tin-tuc/cach-tra-cuu-vi-pham-giao-thong-tren-vnetraffic-1592685",
+          "title": "Thegioididong (20 February 2026): step-by-step guide to checking violations in VNeTraffic after a VNeID login, with the traffic police website as the plate-lookup alternative",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/nghi-dinh-so-320-2026-nd-cp-ve-dinh-danh-va-xac-thuc-dien-tu-119260815180442475.htm",
+          "title": "Government policy portal (15 August 2026): Decree 320/2026/ND-CP of 13 August 2026, Article 7 on electronic ID accounts for foreigners who enter or reside legally (in force from 28 September 2026)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H04",
+      "subcluster": "ss-incidents",
+      "slug": "amendes-camera-vietnam-verifier-plaque-vnetraffic-faux-messages",
+      "primary_query": "comment vérifier les amendes par caméra d'une plaque de moto au Vietnam",
+      "secondary_queries": [
+        "VNeTraffic consulter les infractions par numéro de plaque",
+        "SMS d'amende Vietnam arnaque ou vrai message",
+        "comment une amende par caméra parvient au propriétaire d'un scooter loué au Vietnam",
+        "site de la police de la route du Vietnam consulter les infractions",
+        "fausse page du portail national des services publics paiement d'amende Vietnam"
+      ],
+      "entities": [
+        "application VNeTraffic",
+        "Département de la police de la route (Cục CSGT)",
+        "compte VNeID niveau 2",
+        "décret 168/2024/ND-CP article 47",
+        "portail national des services publics"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Les conducteurs et loueurs qui apprennent qu'un scooter a été flashé, ou qui reçoivent un SMS exigeant le paiement immédiat d'une amende, veulent savoir comment arrivent les vrais avis, où vérifier une plaque et comment reconnaître une arnaque.",
+      "content_angle": "S'appuie sur les déclarations du Département de la police de la route de juin 2026 : les infractions relevées par caméra sont notifiées par écrit au propriétaire du véhicule, sur le site du département et dans l'application VNeTraffic (les titulaires de la carte grise dont le compte VNeID niveau 2 est vérifié reçoivent un avis dans l'application environ deux heures après l'enregistrement), alors que les SMS, appels et liens réclamant un paiement sont des arnaques ; l'application propose aussi une recherche par plaque. Ajoute le cadre juridique de l'article 47, alinéas 8 et 11, du décret 168/2024 (le propriétaire doit aider à identifier le conducteur ; les dossiers non réglés bloquent immatriculation et démarches de permis) et les fausses pages décrites par la police. Avant de promettre quoi que ce soit à des lecteurs étrangers, le rédacteur doit vérifier si la recherche par plaque exige une connexion VNeID, si l'avis va au loueur propriétaire ou au locataire, et si des propriétaires étrangers peuvent recevoir les avis dans l'application depuis que le décret 320/2026/ND-CP (en vigueur le 28 septembre 2026) permet aux étrangers entrés ou résidant légalement d'obtenir un compte d'identification électronique, sans citer de montants d'amende.",
+      "working_title": "Amendes par caméra au Vietnam : vérifier une plaque dans VNeTraffic et repérer les faux messages d'amende",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnamnet.vn/cuc-csgt-huong-dan-xu-ly-khi-nhan-tin-nhan-bao-loi-phat-50-000-dong-2530502.html",
+          "title": "VietNamNet (29 June 2026): Traffic Police Department on fake fine messages, the VNeTraffic notice about two hours after a violation and the plate lookup",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://csgt.bocongan.gov.vn/index.php/tintuc/goc-canh-bao-chong-dao-lua-lam-gi-khi-nhan-tin-nhan-thong-bao-vi-pham-giao-thong",
+          "title": "Traffic Police Department, Ministry of Public Security (June 2026, page updated later): warning page on fake violation messages, the in-app notice for registered owners and the plate lookup in VNeTraffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hatinh.gov.vn/vi/bai-viet/canh-giac-voi-tin-nhan-bo-cong-an-yeu-cau-nop-phat-nguoi",
+          "title": "Ha Tinh provincial portal (20 August 2026): fake texts demanding payment of a camera fine and the official channels named by the Traffic Police Department",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4",
+          "title": "Ministry of Public Security portal (answer dated January 2025): Article 47(8) and (11) of Decree 168/2024 on notices of camera-detected violations sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.thegioididong.com/tin-tuc/cach-tra-cuu-vi-pham-giao-thong-tren-vnetraffic-1592685",
+          "title": "Thegioididong (20 February 2026): step-by-step guide to checking violations in VNeTraffic after a VNeID login, with the traffic police website as the plate-lookup alternative",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/nghi-dinh-so-320-2026-nd-cp-ve-dinh-danh-va-xac-thuc-dien-tu-119260815180442475.htm",
+          "title": "Government policy portal (15 August 2026): Decree 320/2026/ND-CP of 13 August 2026, Article 7 on electronic ID accounts for foreigners who enter or reside legally (in force from 28 September 2026)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H04",
+      "subcluster": "ss-incidents",
+      "slug": "multas-por-camara-vietnam-comprobar-matricula-vnetraffic-mensajes-falsos",
+      "primary_query": "cómo comprobar si una matrícula de moto tiene multas por cámara en Vietnam",
+      "secondary_queries": [
+        "VNeTraffic consultar infracciones por número de matrícula",
+        "SMS de multa Vietnam estafa o mensaje real",
+        "cómo llega una multa por cámara al propietario de una moto alquilada en Vietnam",
+        "web de la policía de tráfico de Vietnam consultar infracciones",
+        "página falsa del portal nacional de servicios públicos pago de multa Vietnam"
+      ],
+      "entities": [
+        "aplicación VNeTraffic",
+        "Departamento de Policía de Tráfico (Cục CSGT)",
+        "cuenta VNeID de nivel 2",
+        "decreto 168/2024/ND-CP artículo 47",
+        "portal nacional de servicios públicos"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quienes conducen o alquilan una moto y se enteran de que una cámara la captó, o reciben un SMS que exige pagar una multa de inmediato, quieren saber cómo llegan los avisos reales, dónde se comprueba una matrícula y cómo reconocer una estafa.",
+      "content_angle": "Se apoya en las declaraciones del Departamento de Policía de Tráfico de junio de 2026: las infracciones detectadas por cámara se notifican por escrito al propietario del vehículo, en la web del departamento y en la aplicación VNeTraffic (los titulares registrados del vehículo con cuenta VNeID de nivel 2 verificada reciben un aviso en la app unas dos horas después del registro), mientras que los SMS, llamadas y enlaces que exigen un pago son estafas; la aplicación también ofrece consulta por matrícula. Añade el marco legal del artículo 47, apartados 8 y 11, del decreto 168/2024 (el propietario debe ayudar a identificar al conductor; los casos sin resolver bloquean trámites de registro y de carné) y las páginas falsas que describe la policía. Antes de prometer nada a lectores extranjeros, el redactor debe comprobar si la consulta por matrícula exige iniciar sesión con VNeID, si el aviso llega al negocio de alquiler como propietario o al arrendatario, y si los propietarios extranjeros pueden recibir avisos en la app ahora que el decreto 320/2026/ND-CP (en vigor desde el 28 de septiembre de 2026) permite a los extranjeros que entran o residen legalmente obtener una cuenta de identificación electrónica, sin citar cuantías de multas.",
+      "working_title": "Multas por cámara en Vietnam: comprobar una matrícula en VNeTraffic y detectar mensajes de multa falsos",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnamnet.vn/cuc-csgt-huong-dan-xu-ly-khi-nhan-tin-nhan-bao-loi-phat-50-000-dong-2530502.html",
+          "title": "VietNamNet (29 June 2026): Traffic Police Department on fake fine messages, the VNeTraffic notice about two hours after a violation and the plate lookup",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://csgt.bocongan.gov.vn/index.php/tintuc/goc-canh-bao-chong-dao-lua-lam-gi-khi-nhan-tin-nhan-thong-bao-vi-pham-giao-thong",
+          "title": "Traffic Police Department, Ministry of Public Security (June 2026, page updated later): warning page on fake violation messages, the in-app notice for registered owners and the plate lookup in VNeTraffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hatinh.gov.vn/vi/bai-viet/canh-giac-voi-tin-nhan-bo-cong-an-yeu-cau-nop-phat-nguoi",
+          "title": "Ha Tinh provincial portal (20 August 2026): fake texts demanding payment of a camera fine and the official channels named by the Traffic Police Department",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4",
+          "title": "Ministry of Public Security portal (answer dated January 2025): Article 47(8) and (11) of Decree 168/2024 on notices of camera-detected violations sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.thegioididong.com/tin-tuc/cach-tra-cuu-vi-pham-giao-thong-tren-vnetraffic-1592685",
+          "title": "Thegioididong (20 February 2026): step-by-step guide to checking violations in VNeTraffic after a VNeID login, with the traffic police website as the plate-lookup alternative",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/nghi-dinh-so-320-2026-nd-cp-ve-dinh-danh-va-xac-thuc-dien-tu-119260815180442475.htm",
+          "title": "Government policy portal (15 August 2026): Decree 320/2026/ND-CP of 13 August 2026, Article 7 on electronic ID accounts for foreigners who enter or reside legally (in force from 28 September 2026)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H04",
+      "subcluster": "ss-incidents",
+      "slug": "cameraboetes-vietnam-kenteken-controleren-vnetraffic-nepberichten",
+      "primary_query": "hoe controleer ik een scooterkenteken op cameraboetes in Vietnam",
+      "secondary_queries": [
+        "VNeTraffic overtredingen opzoeken met kenteken",
+        "sms over verkeersboete Vietnam oplichting of echt",
+        "hoe bereikt een cameraboete de eigenaar van een gehuurde scooter in Vietnam",
+        "website van de verkeerspolitie Vietnam overtredingen opzoeken",
+        "nepwebsite nationaal portaal voor openbare diensten boete betalen Vietnam"
+      ],
+      "entities": [
+        "VNeTraffic-app",
+        "Departement Verkeerspolitie (Cục CSGT)",
+        "VNeID-account niveau 2",
+        "decreet 168/2024/ND-CP artikel 47",
+        "nationaal portaal voor openbare diensten"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Wie in Vietnam een scooter rijdt of huurt en hoort dat er een camera flitste, of een sms krijgt die direct betaling van een boete eist, wil weten hoe echte berichten aankomen, waar je een kenteken controleert en hoe je oplichting herkent.",
+      "content_angle": "Gebaseerd op de verklaringen van het Departement Verkeerspolitie van juni 2026: overtredingen die door camera's zijn vastgelegd worden schriftelijk aan de voertuigeigenaar gemeld, op de website van het departement en in de VNeTraffic-app (op eigen naam geregistreerde eigenaren met een geverifieerd VNeID-account niveau 2 krijgen ongeveer twee uur na de registratie een melding in de app), terwijl sms'jes, telefoontjes en links die betaling eisen oplichting zijn; de app heeft ook een zoekfunctie op kenteken. Voegt daaraan het juridische kader in artikel 47, lid 8 en 11, van decreet 168/2024 toe (de eigenaar moet meewerken aan het vaststellen van de bestuurder; onopgeloste zaken blokkeren registratie en rijbewijsprocedures) en de nepwebsites die de politie beschrijft. Voordat de schrijver buitenlandse lezers iets belooft, moet hij nagaan of de kentekenzoekfunctie een VNeID-login vraagt, of de melding de verhuurder als eigenaar of de huurder bereikt en of buitenlandse eigenaren meldingen in de app kunnen krijgen nu decreet 320/2026/ND-CP (van kracht vanaf 28 september 2026) buitenlanders die legaal binnenkomen of verblijven een elektronisch identiteitsaccount laat krijgen; boetebedragen noemt hij niet.",
+      "working_title": "Cameraboetes in Vietnam: kenteken controleren in VNeTraffic en nepberichten over boetes herkennen",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnamnet.vn/cuc-csgt-huong-dan-xu-ly-khi-nhan-tin-nhan-bao-loi-phat-50-000-dong-2530502.html",
+          "title": "VietNamNet (29 June 2026): Traffic Police Department on fake fine messages, the VNeTraffic notice about two hours after a violation and the plate lookup",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://csgt.bocongan.gov.vn/index.php/tintuc/goc-canh-bao-chong-dao-lua-lam-gi-khi-nhan-tin-nhan-thong-bao-vi-pham-giao-thong",
+          "title": "Traffic Police Department, Ministry of Public Security (June 2026, page updated later): warning page on fake violation messages, the in-app notice for registered owners and the plate lookup in VNeTraffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hatinh.gov.vn/vi/bai-viet/canh-giac-voi-tin-nhan-bo-cong-an-yeu-cau-nop-phat-nguoi",
+          "title": "Ha Tinh provincial portal (20 August 2026): fake texts demanding payment of a camera fine and the official channels named by the Traffic Police Department",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4",
+          "title": "Ministry of Public Security portal (answer dated January 2025): Article 47(8) and (11) of Decree 168/2024 on notices of camera-detected violations sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.thegioididong.com/tin-tuc/cach-tra-cuu-vi-pham-giao-thong-tren-vnetraffic-1592685",
+          "title": "Thegioididong (20 February 2026): step-by-step guide to checking violations in VNeTraffic after a VNeID login, with the traffic police website as the plate-lookup alternative",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/nghi-dinh-so-320-2026-nd-cp-ve-dinh-danh-va-xac-thuc-dien-tu-119260815180442475.htm",
+          "title": "Government policy portal (15 August 2026): Decree 320/2026/ND-CP of 13 August 2026, Article 7 on electronic ID accounts for foreigners who enter or reside legally (in force from 28 September 2026)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H04",
+      "subcluster": "ss-incidents",
+      "slug": "yuenan-motuoche-shexiangtou-fadan-chepai-chaxun-vnetraffic-jiaduanxin",
+      "primary_query": "越南摩托车摄像头违章罚单怎么按车牌查询",
+      "secondary_queries": [
+        "VNeTraffic 按车牌查询违章记录",
+        "越南交通罚款短信是真是假 诈骗",
+        "越南租来的摩托车被摄像头拍到 通知会发给谁",
+        "越南交警局网站 查询车辆违章",
+        "冒充国家公共服务门户 罚款付款链接 越南"
+      ],
+      "entities": [
+        "VNeTraffic应用",
+        "越南交通警察局（Cục CSGT）",
+        "VNeID二级电子身份账户",
+        "第168/2024/ND-CP号议定第47条",
+        "国家公共服务门户"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "在越南骑行或租摩托车的人听说车被摄像头拍到，或收到要求立即缴纳罚款的短信时，想知道真实的通知怎样送达、在哪里可以按车牌核查，以及如何识别诈骗。",
+      "content_angle": "依据越南交通警察局2026年6月的表态：摄像头发现的违章会书面通知车主，并公布在该局网站和VNeTraffic应用中（车辆登记在本人名下且已验证VNeID二级账户的车主约在违章被记录两小时后收到应用内通知），而要求付款的短信、电话和链接都是诈骗；应用中还有按车牌查询的功能。再加上第168/2024/ND-CP号议定第47条第8款和第11款的法律框架（车主须配合查明驾驶人，未处理的案件会卡住车辆登记和驾驶证手续），以及警方描述的假冒页面。撰稿人在向外国读者作任何承诺之前，须核实按车牌查询是否需要登录VNeID、通知发给作为车主的租车店还是承租人，以及在第320/2026/ND-CP号议定（自2026年9月28日起生效）允许合法入境或居留的外国人获得电子身份账户之后，外国车主能否收到应用内通知，并且不写罚款金额。",
+      "working_title": "越南摄像头罚单：在VNeTraffic按车牌查询，并识别冒充警方的假罚款短信",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnamnet.vn/cuc-csgt-huong-dan-xu-ly-khi-nhan-tin-nhan-bao-loi-phat-50-000-dong-2530502.html",
+          "title": "VietNamNet (29 June 2026): Traffic Police Department on fake fine messages, the VNeTraffic notice about two hours after a violation and the plate lookup",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://csgt.bocongan.gov.vn/index.php/tintuc/goc-canh-bao-chong-dao-lua-lam-gi-khi-nhan-tin-nhan-thong-bao-vi-pham-giao-thong",
+          "title": "Traffic Police Department, Ministry of Public Security (June 2026, page updated later): warning page on fake violation messages, the in-app notice for registered owners and the plate lookup in VNeTraffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hatinh.gov.vn/vi/bai-viet/canh-giac-voi-tin-nhan-bo-cong-an-yeu-cau-nop-phat-nguoi",
+          "title": "Ha Tinh provincial portal (20 August 2026): fake texts demanding payment of a camera fine and the official channels named by the Traffic Police Department",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4",
+          "title": "Ministry of Public Security portal (answer dated January 2025): Article 47(8) and (11) of Decree 168/2024 on notices of camera-detected violations sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.thegioididong.com/tin-tuc/cach-tra-cuu-vi-pham-giao-thong-tren-vnetraffic-1592685",
+          "title": "Thegioididong (20 February 2026): step-by-step guide to checking violations in VNeTraffic after a VNeID login, with the traffic police website as the plate-lookup alternative",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/nghi-dinh-so-320-2026-nd-cp-ve-dinh-danh-va-xac-thuc-dien-tu-119260815180442475.htm",
+          "title": "Government policy portal (15 August 2026): Decree 320/2026/ND-CP of 13 August 2026, Article 7 on electronic ID accounts for foreigners who enter or reside legally (in force from 28 September 2026)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H04",
+      "subcluster": "ss-incidents",
+      "slug": "multas-por-camara-vietname-verificar-matricula-vnetraffic-mensagens-falsas",
+      "primary_query": "como verificar multas por câmara de uma matrícula de mota no Vietname",
+      "secondary_queries": [
+        "VNeTraffic consultar infrações por número de matrícula",
+        "SMS de multa Vietname burla ou mensagem verdadeira",
+        "como chega uma multa por câmara ao proprietário de uma mota alugada no Vietname",
+        "site da polícia de trânsito do Vietname consultar infrações",
+        "página falsa do portal nacional de serviços públicos pagamento de multa Vietname"
+      ],
+      "entities": [
+        "aplicação VNeTraffic",
+        "Departamento de Polícia de Trânsito (Cục CSGT)",
+        "conta VNeID de nível 2",
+        "decreto 168/2024/ND-CP artigo 47",
+        "portal nacional de serviços públicos"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quem conduz ou aluga uma mota e ouve dizer que foi apanhada por uma câmara, ou recebe um SMS a exigir o pagamento imediato de uma multa, quer saber como chegam os avisos verdadeiros, onde se verifica uma matrícula e como reconhecer uma burla.",
+      "content_angle": "Baseia-se nas declarações do Departamento de Polícia de Trânsito de junho de 2026: as infrações detetadas por câmara são notificadas por escrito ao proprietário do veículo, no sítio do departamento e na aplicação VNeTraffic (os titulares registados do veículo com conta VNeID de nível 2 verificada recebem um aviso na aplicação cerca de duas horas depois do registo), enquanto SMS, chamadas e ligações que exigem pagamento são burlas; a aplicação tem ainda uma consulta por matrícula. Acrescenta o quadro legal do artigo 47, n.os 8 e 11, do decreto 168/2024 (o proprietário deve ajudar a identificar o condutor; os casos por resolver bloqueiam o registo e os procedimentos da carta) e as páginas falsas descritas pela polícia. Antes de prometer o que quer que seja a leitores estrangeiros, o redator deve verificar se a consulta por matrícula exige início de sessão no VNeID, se o aviso chega à empresa de aluguer, como proprietária, ou ao locatário, e se os proprietários estrangeiros podem receber avisos na aplicação, agora que o decreto 320/2026/ND-CP (em vigor desde 28 de setembro de 2026) permite aos estrangeiros que entram ou residem legalmente obter uma conta de identificação eletrónica, sem citar valores de coimas.",
+      "working_title": "Multas por câmara no Vietname: verificar uma matrícula no VNeTraffic e reconhecer mensagens de multa falsas",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnamnet.vn/cuc-csgt-huong-dan-xu-ly-khi-nhan-tin-nhan-bao-loi-phat-50-000-dong-2530502.html",
+          "title": "VietNamNet (29 June 2026): Traffic Police Department on fake fine messages, the VNeTraffic notice about two hours after a violation and the plate lookup",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://csgt.bocongan.gov.vn/index.php/tintuc/goc-canh-bao-chong-dao-lua-lam-gi-khi-nhan-tin-nhan-thong-bao-vi-pham-giao-thong",
+          "title": "Traffic Police Department, Ministry of Public Security (June 2026, page updated later): warning page on fake violation messages, the in-app notice for registered owners and the plate lookup in VNeTraffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hatinh.gov.vn/vi/bai-viet/canh-giac-voi-tin-nhan-bo-cong-an-yeu-cau-nop-phat-nguoi",
+          "title": "Ha Tinh provincial portal (20 August 2026): fake texts demanding payment of a camera fine and the official channels named by the Traffic Police Department",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4",
+          "title": "Ministry of Public Security portal (answer dated January 2025): Article 47(8) and (11) of Decree 168/2024 on notices of camera-detected violations sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.thegioididong.com/tin-tuc/cach-tra-cuu-vi-pham-giao-thong-tren-vnetraffic-1592685",
+          "title": "Thegioididong (20 February 2026): step-by-step guide to checking violations in VNeTraffic after a VNeID login, with the traffic police website as the plate-lookup alternative",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/nghi-dinh-so-320-2026-nd-cp-ve-dinh-danh-va-xac-thuc-dien-tu-119260815180442475.htm",
+          "title": "Government policy portal (15 August 2026): Decree 320/2026/ND-CP of 13 August 2026, Article 7 on electronic ID accounts for foreigners who enter or reside legally (in force from 28 September 2026)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H04",
+      "subcluster": "ss-incidents",
+      "slug": "beteunam-otobai-kamera-gwataeryo-beonhopan-jochoe-vnetraffic-gaja-munja",
+      "primary_query": "베트남 오토바이 번호판으로 단속 카메라 과태료 조회하는 방법",
+      "secondary_queries": [
+        "VNeTraffic 번호판으로 위반 내역 조회",
+        "베트남 교통 벌금 문자 사기인지 진짜인지",
+        "베트남 렌터카 오토바이 카메라 단속 통지는 누구에게 가나",
+        "베트남 교통경찰국 웹사이트 위반 차량 조회",
+        "국가 공공서비스 포털 사칭 벌금 납부 링크 베트남"
+      ],
+      "entities": [
+        "VNeTraffic 앱",
+        "교통경찰국(Cục CSGT)",
+        "VNeID 2단계 계정",
+        "시행령 168/2024/ND-CP 제47조",
+        "국가 공공서비스 포털"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "베트남에서 오토바이를 타거나 빌리는 사람은 차량이 카메라에 찍혔다는 말을 듣거나 벌금을 즉시 내라는 문자를 받으면, 진짜 통지는 어떻게 오는지, 번호판은 어디서 조회하는지, 사기는 어떻게 알아보는지 알고 싶어 합니다.",
+      "content_angle": "2026년 6월 베트남 교통경찰국의 발표를 바탕으로 합니다. 카메라로 적발된 위반은 차량 소유자에게 서면으로, 교통경찰국 웹사이트와 VNeTraffic 앱에서 통지되며(차량이 본인 명의로 등록되어 있고 VNeID 2단계 계정을 인증한 소유자는 위반 기록 약 2시간 뒤 앱 알림을 받음), 납부를 요구하는 문자·전화·링크는 모두 사기입니다. 앱에는 번호판 조회 기능도 있습니다. 여기에 시행령 168/2024 제47조 제8항과 제11항의 법적 틀(소유자는 운전자 특정에 협조해야 하고, 미해결 사건은 차량 등록과 면허 절차를 막음)과 경찰이 설명한 가짜 페이지를 더합니다. 집필자는 외국인 독자에게 무언가를 약속하기 전에 번호판 조회에 VNeID 로그인이 필요한지, 통지가 소유자인 대여점에 가는지 임차인에게 가는지, 그리고 시행령 320/2026/ND-CP(2026년 9월 28일 시행)로 합법적으로 입국하거나 거주하는 외국인도 전자 신원 계정을 받을 수 있게 된 만큼 외국인 소유자가 앱 알림을 받을 수 있는지 확인해야 하며, 과태료 금액은 쓰지 않습니다.",
+      "working_title": "베트남 카메라 단속 과태료: VNeTraffic에서 번호판 조회하고 가짜 벌금 문자 구별하기",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnamnet.vn/cuc-csgt-huong-dan-xu-ly-khi-nhan-tin-nhan-bao-loi-phat-50-000-dong-2530502.html",
+          "title": "VietNamNet (29 June 2026): Traffic Police Department on fake fine messages, the VNeTraffic notice about two hours after a violation and the plate lookup",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://csgt.bocongan.gov.vn/index.php/tintuc/goc-canh-bao-chong-dao-lua-lam-gi-khi-nhan-tin-nhan-thong-bao-vi-pham-giao-thong",
+          "title": "Traffic Police Department, Ministry of Public Security (June 2026, page updated later): warning page on fake violation messages, the in-app notice for registered owners and the plate lookup in VNeTraffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hatinh.gov.vn/vi/bai-viet/canh-giac-voi-tin-nhan-bo-cong-an-yeu-cau-nop-phat-nguoi",
+          "title": "Ha Tinh provincial portal (20 August 2026): fake texts demanding payment of a camera fine and the official channels named by the Traffic Police Department",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4",
+          "title": "Ministry of Public Security portal (answer dated January 2025): Article 47(8) and (11) of Decree 168/2024 on notices of camera-detected violations sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.thegioididong.com/tin-tuc/cach-tra-cuu-vi-pham-giao-thong-tren-vnetraffic-1592685",
+          "title": "Thegioididong (20 February 2026): step-by-step guide to checking violations in VNeTraffic after a VNeID login, with the traffic police website as the plate-lookup alternative",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/nghi-dinh-so-320-2026-nd-cp-ve-dinh-danh-va-xac-thuc-dien-tu-119260815180442475.htm",
+          "title": "Government policy portal (15 August 2026): Decree 320/2026/ND-CP of 13 August 2026, Article 7 on electronic ID accounts for foreigners who enter or reside legally (in force from 28 September 2026)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H04",
+      "subcluster": "ss-incidents",
+      "slug": "betonamu-kamera-ihan-nanba-vnetraffic-nise-bakkin-message",
+      "primary_query": "ベトナムでバイクのナンバーから監視カメラの違反通知を調べる方法",
+      "secondary_queries": [
+        "VNeTraffic ナンバーで違反を検索",
+        "ベトナム 交通違反 罰金のSMSは詐欺か本物か",
+        "ベトナムでレンタルバイクがカメラに撮られたら通知は誰に届くか",
+        "ベトナム 交通警察局 ウェブサイト 違反車両の検索",
+        "国家公共サービスポータルを装った罰金支払いリンク ベトナム"
+      ],
+      "entities": [
+        "VNeTrafficアプリ",
+        "交通警察局（Cục CSGT）",
+        "VNeIDレベル2アカウント",
+        "政令168/2024/ND-CP 第47条",
+        "国家公共サービスポータル"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "ベトナムでバイクに乗る人や借りる人は、車両が監視カメラに撮られたと聞いたり、罰金をすぐ払うよう求めるSMSを受け取ったりしたとき、本物の通知がどう届くのか、ナンバーをどこで調べるのか、詐欺をどう見抜くのかを知りたがります。",
+      "content_angle": "2026年6月の交通警察局の発表に基づきます。カメラで検知された違反は、車両の所有者に書面で、また同局のウェブサイトとVNeTrafficアプリで通知され（車両が本人名義で登録され、VNeIDレベル2を認証した所有者には、違反の記録から約2時間後にアプリ内通知が届く）、支払いを求めるSMS・電話・リンクはすべて詐欺です。アプリにはナンバーでの検索機能もあります。これに政令168/2024第47条第8項・第11項の法的枠組み（所有者は運転者の特定に協力する義務があり、未解決の案件は車両登録や免許の手続きを止める）と、警察が説明する偽サイトを加えます。執筆者は、外国人読者に何かを約束する前に、ナンバー検索にVNeIDログインが必要か、通知が所有者であるレンタル店に届くのか借りた人に届くのか、そして政令320/2026/ND-CP（2026年9月28日施行）により合法的に入国または居住する外国人も電子身分アカウントを取得できるようになったため、外国人の所有者がアプリ通知を受け取れるのかを確認し、罰金額は書きません。",
+      "working_title": "ベトナムの監視カメラ違反：VNeTrafficでナンバーを調べ、偽の罰金メッセージを見分ける",
+      "word_target": 1500,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://vietnamnet.vn/cuc-csgt-huong-dan-xu-ly-khi-nhan-tin-nhan-bao-loi-phat-50-000-dong-2530502.html",
+          "title": "VietNamNet (29 June 2026): Traffic Police Department on fake fine messages, the VNeTraffic notice about two hours after a violation and the plate lookup",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://csgt.bocongan.gov.vn/index.php/tintuc/goc-canh-bao-chong-dao-lua-lam-gi-khi-nhan-tin-nhan-thong-bao-vi-pham-giao-thong",
+          "title": "Traffic Police Department, Ministry of Public Security (June 2026, page updated later): warning page on fake violation messages, the in-app notice for registered owners and the plate lookup in VNeTraffic",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://hatinh.gov.vn/vi/bai-viet/canh-giac-voi-tin-nhan-bo-cong-an-yeu-cau-nop-phat-nguoi",
+          "title": "Ha Tinh provincial portal (20 August 2026): fake texts demanding payment of a camera fine and the official channels named by the Traffic Police Department",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4",
+          "title": "Ministry of Public Security portal (answer dated January 2025): Article 47(8) and (11) of Decree 168/2024 on notices of camera-detected violations sent to the vehicle owner",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.thegioididong.com/tin-tuc/cach-tra-cuu-vi-pham-giao-thong-tren-vnetraffic-1592685",
+          "title": "Thegioididong (20 February 2026): step-by-step guide to checking violations in VNeTraffic after a VNeID login, with the traffic police website as the plate-lookup alternative",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://xaydungchinhsach.chinhphu.vn/nghi-dinh-so-320-2026-nd-cp-ve-dinh-danh-va-xac-thuc-dien-tu-119260815180442475.htm",
+          "title": "Government policy portal (15 August 2026): Decree 320/2026/ND-CP of 13 August 2026, Article 7 on electronic ID accounts for foreigners who enter or reside legally (in force from 28 September 2026)",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}
