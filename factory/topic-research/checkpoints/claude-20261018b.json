@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T21:30:09.467Z",
+  "updated_at": "2026-10-20T21:30:22.450Z",
   "base_main_sha": "c21cab37733fc2c6a41700500a8718edf9cd510f",
-  "last_commit_sha": "dfb3fc915e63fccf2c09dae40dd6a03b588e6057",
+  "last_commit_sha": "5f1a24035712a778583ad682f2e465ecb8c12611",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1780,
-    "qa_pass": 1780,
+    "researched": 1790,
+    "qa_pass": 1790,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1770,
+    "pushed": 1780,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 179,
-      "de": 179,
-      "fr": 179,
-      "es": 179,
-      "nl": 179,
-      "pt": 179,
-      "zh": 179,
-      "ko": 179,
-      "ja": 179,
-      "en": 169
+      "vi": 180,
+      "de": 180,
+      "fr": 180,
+      "es": 180,
+      "nl": 180,
+      "pt": 180,
+      "zh": 180,
+      "ko": 180,
+      "ja": 180,
+      "en": 170
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 761,
+      "traffic-law-safety": 771,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 178,
-    "file": "factory/topic-research/batches/claude-20261018b-0178.json",
-    "sha256": "2798a05209b423d389f648e27ddf13b5a2950c6225a4304ade751cea6e39bfe1",
+    "seq": 179,
+    "file": "factory/topic-research/batches/claude-20261018b-0179.json",
+    "sha256": "fc50b997063123e2abf1e944cf863618c6e7e6025c30f954d0a9a9fedc9947cf",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -19706,8 +19706,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0178.json",
       "sha256": "2798a05209b423d389f648e27ddf13b5a2950c6225a4304ade751cea6e39bfe1",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "5f1a24035712a778583ad682f2e465ecb8c12611",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -19811,11 +19811,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 179,
+      "file": "factory/topic-research/batches/claude-20261018b-0179.json",
+      "sha256": "fc50b997063123e2abf1e944cf863618c6e7e6025c30f954d0a9a9fedc9947cf",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:tieng-on-va-thinh-luc-khi-di-xe-may-duong-dai-nghien-cuu-tieng-gio-mu-bao-hiem",
+          "locale": "vi",
+          "slug": "tieng-on-va-thinh-luc-khi-di-xe-may-duong-dai-nghien-cuu-tieng-gio-mu-bao-hiem",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-gear",
+          "key": "vi::tieng gio khi di xe may nhieu ngay co lam hai thinh luc khong va co nen dung nut tai",
+          "ta_id": null
+        },
+        {
+          "ref": "en:noise-hearing-long-motorbike-ride-wind-noise-helmet-courier-studies",
+          "locale": "en",
+          "slug": "noise-hearing-long-motorbike-ride-wind-noise-helmet-courier-studies",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-gear",
+          "key": "en::can wind noise on a motorbike damage your hearing on a week-long ride and do earplugs help",
+          "ta_id": null
+        },
+        {
+          "ref": "de:laerm-und-gehoer-auf-langer-motorradfahrt-windgeraeusche-helm-und-kurierstudien",
+          "locale": "de",
+          "slug": "laerm-und-gehoer-auf-langer-motorradfahrt-windgeraeusche-helm-und-kurierstudien",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-gear",
+          "key": "de::konnen windgerausche auf dem roller das gehor bei einer woche fahrt schadigen und helfen ohrstopsel",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:bruit-et-audition-a-moto-bruit-du-vent-casque-et-coursiers-etudes",
+          "locale": "fr",
+          "slug": "bruit-et-audition-a-moto-bruit-du-vent-casque-et-coursiers-etudes",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-gear",
+          "key": "fr::le bruit du vent a moto peut-il abimer l'audition pendant une semaine de route et les bouchons d'oreilles aident-ils",
+          "ta_id": null
+        },
+        {
+          "ref": "es:ruido-y-audicion-en-moto-de-larga-distancia-ruido-del-viento-casco-y-mensajeros",
+          "locale": "es",
+          "slug": "ruido-y-audicion-en-moto-de-larga-distancia-ruido-del-viento-casco-y-mensajeros",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-gear",
+          "key": "es::puede el ruido del viento en moto danar el oido en una semana de ruta y ayudan los tapones",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:lawaai-en-gehoor-op-een-lange-motorrit-windgeluid-helm-en-koeriersstudies",
+          "locale": "nl",
+          "slug": "lawaai-en-gehoor-op-een-lange-motorrit-windgeluid-helm-en-koeriersstudies",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-gear",
+          "key": "nl::kan windgeluid op een scooter het gehoor beschadigen tijdens een week rijden en helpen oordoppen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-qi-motuoche-changtu-zaoyin-yu-tingli-fengsheng-toukui-kuaidiyuan-yanjiu",
+          "locale": "zh",
+          "slug": "yuenan-qi-motuoche-changtu-zaoyin-yu-tingli-fengsheng-toukui-kuaidiyuan-yanjiu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-gear",
+          "key": "zh::骑摩托车一个星期风噪会伤听力吗 戴耳塞有用吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:ruido-e-audicao-de-mota-em-viagem-longa-ruido-do-vento-capacete-e-estafetas",
+          "locale": "pt",
+          "slug": "ruido-e-audicao-de-mota-em-viagem-longa-ruido-do-vento-capacete-e-estafetas",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-gear",
+          "key": "pt::o ruido do vento numa mota pode prejudicar a audicao numa semana de viagem e os tampoes ajudam",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-janggeoriu-soeum-cheongnyeok-baram-soeum-heolmet-yeongu",
+          "locale": "ko",
+          "slug": "beteunam-otobai-janggeoriu-soeum-cheongnyeok-baram-soeum-heolmet-yeongu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-gear",
+          "key": "ko::오토바이로 일주일 동안 달리면 바람 소음이 청력에 해로운가요 귀마개가 도움이 되나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-choki-soon-to-choryoku-kazeoto-herumetto-haitatsuin-kenkyu",
+          "locale": "ja",
+          "slug": "betonamu-baiku-choki-soon-to-choryoku-kazeoto-herumetto-haitatsuin-kenkyu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-gear",
+          "key": "ja::ハイクて1週間走ると風切り音て聴力か傷みますか 耳栓は役に立ちますか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 179,
-    "file": "factory/topic-research/batches/claude-20261018b-0179.json",
+    "seq": 180,
+    "file": "factory/topic-research/batches/claude-20261018b-0180.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -19828,13 +19939,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:21:40.282Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 154,
-      "topics": 10,
-      "sha256": "403e549cfb6ebfcdbbb7ac8a8f04bfaa62f30f8ecbc35c2fa61b8b937baef371"
-    },
     {
       "at": "2026-10-20T20:25:09.231Z",
       "event": "BATCH_COMMITTED",
@@ -20002,6 +20106,13 @@
       "seq": 178,
       "topics": 10,
       "sha256": "2798a05209b423d389f648e27ddf13b5a2950c6225a4304ade751cea6e39bfe1"
+    },
+    {
+      "at": "2026-10-20T21:30:22.450Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 179,
+      "topics": 10,
+      "sha256": "fc50b997063123e2abf1e944cf863618c6e7e6025c30f954d0a9a9fedc9947cf"
     }
   ]
 }
