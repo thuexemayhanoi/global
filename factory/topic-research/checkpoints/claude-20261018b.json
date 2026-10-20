@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T20:38:41.856Z",
-  "base_main_sha": "6e5bfbc11a893b69b3955573f2fcba842a5c28dc",
-  "last_commit_sha": "23ddae999d6b28d8bb8f8f0aa3a767d136f3025f",
+  "updated_at": "2026-10-20T20:47:38.875Z",
+  "base_main_sha": "5160debc109578bd2bfc6a9313e10412c24482a7",
+  "last_commit_sha": "90712e439cc1de6576b0a750c1bfb625a6b83f13",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1590,
-    "qa_pass": 1590,
+    "researched": 1600,
+    "qa_pass": 1600,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1580,
+    "pushed": 1590,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 160,
-      "de": 160,
-      "fr": 160,
-      "es": 160,
-      "nl": 160,
-      "pt": 160,
-      "zh": 160,
-      "ko": 160,
-      "ja": 160,
-      "en": 150
+      "vi": 161,
+      "de": 161,
+      "fr": 161,
+      "es": 161,
+      "nl": 161,
+      "pt": 161,
+      "zh": 161,
+      "ko": 161,
+      "ja": 161,
+      "en": 151
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 640,
+      "traffic-law-safety": 650,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 159,
-    "file": "factory/topic-research/batches/claude-20261018b-0159.json",
-    "sha256": "3e0a7fc6d60eb8c1add62a07f65d740f5216c5aef2af4f16e60345cafc5310ce",
+    "seq": 160,
+    "file": "factory/topic-research/batches/claude-20261018b-0160.json",
+    "sha256": "83fa79bb63944b94d17781932906dc60589bc72f81c91a0b77238b0d095d676e",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -17597,8 +17597,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0159.json",
       "sha256": "3e0a7fc6d60eb8c1add62a07f65d740f5216c5aef2af4f16e60345cafc5310ce",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "90712e439cc1de6576b0a750c1bfb625a6b83f13",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -17702,11 +17702,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 160,
+      "file": "factory/topic-research/batches/claude-20261018b-0160.json",
+      "sha256": "83fa79bb63944b94d17781932906dc60589bc72f81c91a0b77238b0d095d676e",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:nga-xe-may-dap-dau-dau-hieu-chan-dong-nao-va-khi-nao-phai-thay-mu-bao-hiem",
+          "locale": "vi",
+          "slug": "nga-xe-may-dap-dau-dau-hieu-chan-dong-nao-va-khi-nao-phai-thay-mu-bao-hiem",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::nga xe may bi dap dau thi phai lam gi va co can thay mu bao hiem khac khong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:head-knock-after-scooter-fall-concussion-warning-signs-and-replacing-the-helmet",
+          "locale": "en",
+          "slug": "head-knock-after-scooter-fall-concussion-warning-signs-and-replacing-the-helmet",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::what to do after hitting your head in a scooter fall and should i replace my helmet",
+          "ta_id": null
+        },
+        {
+          "ref": "de:kopfstoss-nach-rollersturz-warnzeichen-gehirnerschuetterung-und-helm-ersetzen",
+          "locale": "de",
+          "slug": "kopfstoss-nach-rollersturz-warnzeichen-gehirnerschuetterung-und-helm-ersetzen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::was tun nach einem rollersturz mit kopfstoß und muss ich meinen helm ersetzen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:choc-a-la-tete-apres-chute-de-scooter-signes-de-commotion-et-remplacer-le-casque",
+          "locale": "fr",
+          "slug": "choc-a-la-tete-apres-chute-de-scooter-signes-de-commotion-et-remplacer-le-casque",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::que faire apres un choc a la tete lors d'une chute de scooter et faut-il remplacer son casque",
+          "ta_id": null
+        },
+        {
+          "ref": "es:golpe-en-la-cabeza-tras-caida-en-scooter-senales-de-conmocion-y-cambiar-el-casco",
+          "locale": "es",
+          "slug": "golpe-en-la-cabeza-tras-caida-en-scooter-senales-de-conmocion-y-cambiar-el-casco",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::que hacer tras golpearse la cabeza en una caida en scooter y hay que cambiar el casco",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:klap-op-het-hoofd-na-scootervaltpartij-hersenschuddingstekens-en-helm-vervangen",
+          "locale": "nl",
+          "slug": "klap-op-het-hoofd-na-scootervaltpartij-hersenschuddingstekens-en-helm-vervangen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::wat te doen na een val met de scooter waarbij je je hoofd stoot en moet ik mijn helm vervangen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-tidaiche-shuaidao-pengdao-tou-naozhendang-jingshi-xinhao-gengtuan-toukui",
+          "locale": "zh",
+          "slug": "yuenan-tidaiche-shuaidao-pengdao-tou-naozhendang-jingshi-xinhao-gengtuan-toukui",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::骑踏板车摔倒撞到头后该怎么办 头盔需要换吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:pancada-na-cabeca-apos-queda-de-scooter-sinais-de-concussao-e-trocar-capacete",
+          "locale": "pt",
+          "slug": "pancada-na-cabeca-apos-queda-de-scooter-sinais-de-concussao-e-trocar-capacete",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::o que fazer depois de bater com a cabeca numa queda de scooter e e preciso trocar o capacete",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-seukuteo-neomeojin-hu-meori-chungyeok-noejintang-sinho-heolmet-gyoche",
+          "locale": "ko",
+          "slug": "beteunam-seukuteo-neomeojin-hu-meori-chungyeok-noejintang-sinho-heolmet-gyoche",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::스쿠터에서 넘어져 머리를 부딪힌 뒤에는 어떻게 해야 하고 헬멧도 바꿔야 하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-sukuta-tentou-atama-uchi-noushintou-keikoku-herumetto-koukan",
+          "locale": "ja",
+          "slug": "betonamu-sukuta-tentou-atama-uchi-noushintou-keikoku-herumetto-koukan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::スクーターて転んて頭を打った後はとうすれはよいてすか ヘルメットは交換か必要てすか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 160,
-    "file": "factory/topic-research/batches/claude-20261018b-0160.json",
+    "seq": 161,
+    "file": "factory/topic-research/batches/claude-20261018b-0161.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -17719,13 +17830,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T11:10:42.796Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 135,
-      "topics": 10,
-      "sha256": "d9a255983a48efb39bbed2b569fb9fd77f5f32c8b4cd1988bc54fb206e03242a"
-    },
     {
       "at": "2026-10-20T19:27:12.965Z",
       "event": "BATCH_COMMITTED",
@@ -17893,6 +17997,13 @@
       "seq": 159,
       "topics": 10,
       "sha256": "3e0a7fc6d60eb8c1add62a07f65d740f5216c5aef2af4f16e60345cafc5310ce"
+    },
+    {
+      "at": "2026-10-20T20:47:38.875Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 160,
+      "topics": 10,
+      "sha256": "83fa79bb63944b94d17781932906dc60589bc72f81c91a0b77238b0d095d676e"
     }
   ]
 }
