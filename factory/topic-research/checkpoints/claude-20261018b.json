@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:22:33.591Z",
+  "updated_at": "2026-10-20T10:23:05.176Z",
   "base_main_sha": "a73f4bdcffb1044ba80edba608503dd259dba99d",
-  "last_commit_sha": "a742c64ff655dca9fff7f3f34fcfc7c862569a15",
+  "last_commit_sha": "215c3797de0e03720a7261f853fae9a42a6962bd",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1130,
-    "qa_pass": 1130,
+    "researched": 1140,
+    "qa_pass": 1140,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1120,
+    "pushed": 1130,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 114,
-      "de": 114,
-      "fr": 114,
-      "es": 114,
-      "nl": 114,
-      "pt": 114,
-      "zh": 114,
-      "ko": 114,
-      "ja": 114,
-      "en": 104
+      "vi": 115,
+      "de": 115,
+      "fr": 115,
+      "es": 115,
+      "nl": 115,
+      "pt": 115,
+      "zh": 115,
+      "ko": 115,
+      "ja": 115,
+      "en": 105
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 130
+      "motorbike-rental": 140
     }
   },
   "last_batch": {
-    "seq": 113,
-    "file": "factory/topic-research/batches/claude-20261018b-0113.json",
-    "sha256": "c9fb0dd07e3df861d1432ac2174ae161987f23d6b089741078a6d284769fd86d",
+    "seq": 114,
+    "file": "factory/topic-research/batches/claude-20261018b-0114.json",
+    "sha256": "8644882652e2a626c20a568e5200158c3030a6dff408a21a52a23cabd6ee6fad",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -12491,8 +12491,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0113.json",
       "sha256": "c9fb0dd07e3df861d1432ac2174ae161987f23d6b089741078a6d284769fd86d",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "215c3797de0e03720a7261f853fae9a42a6962bd",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -12596,11 +12596,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 114,
+      "file": "factory/topic-research/batches/claude-20261018b-0114.json",
+      "sha256": "8644882652e2a626c20a568e5200158c3030a6dff408a21a52a23cabd6ee6fad",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:honda-air-blade-vario-125-va-160-cach-phan-biet-bang-lai",
+          "locale": "vi",
+          "slug": "honda-air-blade-vario-125-va-160-cach-phan-biet-bang-lai",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-models",
+          "key": "vi::honda air blade 160 va 125 khac nhau the nao va can bang lai hang nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:honda-air-blade-vario-125-and-160-how-to-tell-apart",
+          "locale": "en",
+          "slug": "honda-air-blade-vario-125-and-160-how-to-tell-apart",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-models",
+          "key": "en::honda air blade 160 vs 125 difference and licence class",
+          "ta_id": null
+        },
+        {
+          "ref": "de:honda-air-blade-vario-125-und-160-unterscheiden-fuehrerschein",
+          "locale": "de",
+          "slug": "honda-air-blade-vario-125-und-160-unterscheiden-fuehrerschein",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-models",
+          "key": "de::honda air blade 160 oder 125 unterschied und notige fuhrerscheinklasse",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:honda-air-blade-vario-125-et-160-distinguer-permis",
+          "locale": "fr",
+          "slug": "honda-air-blade-vario-125-et-160-distinguer-permis",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-models",
+          "key": "fr::honda air blade 160 ou 125 difference et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:honda-air-blade-vario-125-y-160-como-distinguirlas-carne",
+          "locale": "es",
+          "slug": "honda-air-blade-vario-125-y-160-como-distinguirlas-carne",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-models",
+          "key": "es::honda air blade 160 o 125 diferencia y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:honda-air-blade-vario-125-en-160-herkennen-rijbewijs",
+          "locale": "nl",
+          "slug": "honda-air-blade-vario-125-en-160-herkennen-rijbewijs",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-models",
+          "key": "nl::honda air blade 160 of 125 verschil en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:honda-air-blade-vario-125-160-qufen-jiashi",
+          "locale": "zh",
+          "slug": "honda-air-blade-vario-125-160-qufen-jiashi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-models",
+          "key": "zh::本田 air blade 160 和 125 区别 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:honda-air-blade-vario-125-e-160-como-distinguir-carta",
+          "locale": "pt",
+          "slug": "honda-air-blade-vario-125-e-160-como-distinguir-carta",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-models",
+          "key": "pt::honda air blade 160 ou 125 diferenca e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:honda-air-blade-vario-125-160-gubyeol-myeonheo",
+          "locale": "ko",
+          "slug": "honda-air-blade-vario-125-160-gubyeol-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-models",
+          "key": "ko::혼다 air blade 160과 125 차이와 필요한 면허 종류",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:honda-air-blade-vario-125-160-mikiwake-menkyo",
+          "locale": "ja",
+          "slug": "honda-air-blade-vario-125-160-mikiwake-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-models",
+          "key": "ja::ホンタ air blade 160 と 125 の違いと必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 114,
-    "file": "factory/topic-research/batches/claude-20261018b-0114.json",
+    "seq": 115,
+    "file": "factory/topic-research/batches/claude-20261018b-0115.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -12613,13 +12724,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T05:16:54.821Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 89,
-      "topics": 10,
-      "sha256": "02da587d4083ab0be93dc07d077b14a1d3cc8538b03f037745229ef0a23e0532"
-    },
     {
       "at": "2026-10-20T05:17:11.770Z",
       "event": "BATCH_COMMITTED",
@@ -12787,6 +12891,13 @@
       "seq": 113,
       "topics": 10,
       "sha256": "c9fb0dd07e3df861d1432ac2174ae161987f23d6b089741078a6d284769fd86d"
+    },
+    {
+      "at": "2026-10-20T10:23:05.176Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 114,
+      "topics": 10,
+      "sha256": "8644882652e2a626c20a568e5200158c3030a6dff408a21a52a23cabd6ee6fad"
     }
   ]
 }
