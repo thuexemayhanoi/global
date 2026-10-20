@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T10:07:34.810Z",
+  "updated_at": "2026-10-20T10:09:41.108Z",
   "base_main_sha": "35c3196f5c3a760adb2641c95d0feaaefe7c0687",
-  "last_commit_sha": "ec7b1a165f8953804ea6d51390f12feaccf8f607",
+  "last_commit_sha": "c42996e3b1034603d77ad084bd1eab766ced4782",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1070,
-    "qa_pass": 1070,
+    "researched": 1080,
+    "qa_pass": 1080,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1060,
+    "pushed": 1070,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 108,
-      "de": 108,
-      "fr": 108,
-      "es": 108,
-      "nl": 108,
-      "pt": 108,
-      "zh": 108,
-      "ko": 108,
-      "ja": 108,
-      "en": 98
+      "vi": 109,
+      "de": 109,
+      "fr": 109,
+      "es": 109,
+      "nl": 109,
+      "pt": 109,
+      "zh": 109,
+      "ko": 109,
+      "ja": 109,
+      "en": 99
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 310,
+      "traffic-law-safety": 320,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 107,
-    "file": "factory/topic-research/batches/claude-20261018b-0107.json",
-    "sha256": "d4c70886485b1aabce2e46e6155b5deccb4b279429a6ff86a27a5b3dd8b0572a",
+    "seq": 108,
+    "file": "factory/topic-research/batches/claude-20261018b-0108.json",
+    "sha256": "766b1f9557a18f86cdd734aec4eb2eb31dd81bdd55d4fad1407ce8a2e8e005ba",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -11825,8 +11825,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0107.json",
       "sha256": "d4c70886485b1aabce2e46e6155b5deccb4b279429a6ff86a27a5b3dd8b0572a",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "c42996e3b1034603d77ad084bd1eab766ced4782",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -11930,11 +11930,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 108,
+      "file": "factory/topic-research/batches/claude-20261018b-0108.json",
+      "sha256": "766b1f9557a18f86cdd734aec4eb2eb31dd81bdd55d4fad1407ce8a2e8e005ba",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:google-maps-che-do-xe-may-viet-nam-tranh-duong-cao-toc",
+          "locale": "vi",
+          "slug": "google-maps-che-do-xe-may-viet-nam-tranh-duong-cao-toc",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::cach bat che do xe may tren google maps o viet nam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:google-maps-two-wheeler-mode-vietnam-motorbike-navigation",
+          "locale": "en",
+          "slug": "google-maps-two-wheeler-mode-vietnam-motorbike-navigation",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::how to use google maps two-wheeler mode on a motorbike in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:google-maps-zweiradmodus-vietnam-roller-navigation",
+          "locale": "de",
+          "slug": "google-maps-zweiradmodus-vietnam-roller-navigation",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::google maps zweiradmodus in vietnam fur roller nutzen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:google-maps-mode-deux-roues-vietnam-scooter",
+          "locale": "fr",
+          "slug": "google-maps-mode-deux-roues-vietnam-scooter",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::comment activer le mode deux-roues de google maps au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:google-maps-modo-moto-vietnam-navegar-scooter",
+          "locale": "es",
+          "slug": "google-maps-modo-moto-vietnam-navegar-scooter",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::como activar el modo moto de google maps en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:google-maps-tweewielermodus-vietnam-scooter-navigeren",
+          "locale": "nl",
+          "slug": "google-maps-tweewielermodus-vietnam-scooter-navigeren",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::hoe gebruik ik de tweewielermodus van google maps in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:gugeditu-liangluanche-moshi-yuenan-motuoche-daohang",
+          "locale": "zh",
+          "slug": "gugeditu-liangluanche-moshi-yuenan-motuoche-daohang",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南骑摩托车怎么开启谷歌地图两轮车模式",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:google-maps-modo-mota-vietname-navegar-scooter",
+          "locale": "pt",
+          "slug": "google-maps-modo-mota-vietname-navegar-scooter",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::como ativar o modo de duas rodas do google maps no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-gugeul-jido-iryunmodeu-otobai-gilchajgi",
+          "locale": "ko",
+          "slug": "beteunam-gugeul-jido-iryunmodeu-otobai-gilchajgi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::베트남에서 구글 지도 이륜차 모드로 오토바이 길찾기 하는 방법",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:guguru-mappu-nirinsha-modo-betonamu-baiku-nabi",
+          "locale": "ja",
+          "slug": "guguru-mappu-nirinsha-modo-betonamu-baiku-nabi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナムてクークルマッフの二輪モートを使ってハイクて走る方法",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 108,
-    "file": "factory/topic-research/batches/claude-20261018b-0108.json",
+    "seq": 109,
+    "file": "factory/topic-research/batches/claude-20261018b-0109.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -11947,13 +12058,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T04:56:44.103Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 83,
-      "topics": 10,
-      "sha256": "aff33a501dbdf488ac1793b021fb7886e3776f8aad03bac5d9cb51fbb815ce74"
-    },
     {
       "at": "2026-10-20T04:56:57.246Z",
       "event": "BATCH_COMMITTED",
@@ -12121,6 +12225,13 @@
       "seq": 107,
       "topics": 10,
       "sha256": "d4c70886485b1aabce2e46e6155b5deccb4b279429a6ff86a27a5b3dd8b0572a"
+    },
+    {
+      "at": "2026-10-20T10:09:41.108Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 108,
+      "topics": 10,
+      "sha256": "766b1f9557a18f86cdd734aec4eb2eb31dd81bdd55d4fad1407ce8a2e8e005ba"
     }
   ]
 }
