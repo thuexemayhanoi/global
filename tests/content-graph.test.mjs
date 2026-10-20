@@ -65,9 +65,10 @@ test("existing competing intents are explicitly REVIEW, and an injected duplicat
  for(const pair of graph.review_pairs){
   assert.ok(["HIGH","MEDIUM"].includes(pair.level),JSON.stringify(pair));
   for(const id of [pair.a,pair.b]){
-   const n=graph.nodes.find(x=>x.id===id);
-   assert.equal(n?.action,"REVIEW",id+" must remain visible for cannibalization review");
-   assert.match(n?.cannibalization_risk||"",/REVIEW/,id);
+   // A pair can join two Matrix rows or two research candidates (same-template route guides), and both stay visible as REVIEW.
+   const n=graph.nodes.find(x=>x.id===id),c=graph.candidates.find(x=>x.id===id);
+   assert.equal((n||c)?.action,"REVIEW",id+" must remain visible for cannibalization review");
+   if(n)assert.match(n.cannibalization_risk||"",/REVIEW/,id);
   }
  }
  const dir=copyRepo();
@@ -89,13 +90,15 @@ test("validate-plan blocks near-duplicate Matrix rows before any Writer claim",(
  try{
   const file=path.join(dir,"data/seo/master-matrix.json"),m=JSON.parse(fs.readFileSync(file,"utf8"));
   const src=m.rows.find(r=>r.id==="DE-S05");
-  m.rows.push({...src,id:"DE-S99",url:"/de/guides/dup-test/",primary_query:"Führerschein deutscher Motorrad Vietnam",working_title:"Duplicate intent rehearsal title"});
+  // Matrix IDs keep growing (DE-S99 is a real row today), so the rehearsal row takes the next free DE ID.
+  const dup="DE-S"+(1+Math.max(...m.rows.filter(r=>/^DE-S\d+$/.test(r.id)).map(r=>Number(r.id.slice(4)))));
+  m.rows.push({...src,id:dup,url:"/de/guides/dup-test/",primary_query:"Führerschein deutscher Motorrad Vietnam",working_title:"Duplicate intent rehearsal title"});
   fs.writeFileSync(file,JSON.stringify(m,null,2));
   const r=spawnSync(process.execPath,["scripts/seo/validate-plan.mjs"],{cwd:dir,encoding:"utf8"});
   assert.notEqual(r.status,0);
-  assert.match(r.stderr,/Cannibalization candidate DE-S05 vs DE-S99/);
+  assert.match(r.stderr,new RegExp("Cannibalization candidate DE-S05 vs "+dup));
   const ok=JSON.parse(JSON.stringify(m));
-  ok.rows.find(x=>x.id==="DE-S99").distinct_from=[{id:"DE-S05",reason:"Rehearsal: owner-reviewed distinct audience and intent for this test."}];
+  ok.rows.find(x=>x.id===dup).distinct_from=[{id:"DE-S05",reason:"Rehearsal: owner-reviewed distinct audience and intent for this test."}];
   fs.writeFileSync(file,JSON.stringify(ok,null,2));
   const r2=spawnSync(process.execPath,["scripts/seo/validate-plan.mjs"],{cwd:dir,encoding:"utf8"});
   assert.doesNotMatch(r2.stderr,/Cannibalization candidate/);
