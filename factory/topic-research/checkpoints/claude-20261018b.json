@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:48:55.726Z",
+  "updated_at": "2026-10-21T04:49:07.347Z",
   "base_main_sha": "c9ef11168bf22fb0da6e2fe3dcb5404a1b1c2b6c",
-  "last_commit_sha": "6893f5a08ceee08d4145efcea7d40c029e5d8d65",
+  "last_commit_sha": "f91fe1bb92eef1951e812a224880e04f51ae523e",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 2180,
-    "qa_pass": 2180,
+    "researched": 2190,
+    "qa_pass": 2190,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2170,
+    "pushed": 2180,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 219,
-      "de": 219,
-      "fr": 219,
-      "es": 219,
-      "nl": 219,
-      "pt": 219,
-      "zh": 219,
-      "ko": 219,
-      "ja": 219,
-      "en": 209
+      "vi": 220,
+      "de": 220,
+      "fr": 220,
+      "es": 220,
+      "nl": 220,
+      "pt": 220,
+      "zh": 220,
+      "ko": 220,
+      "ja": 220,
+      "en": 210
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 1011,
+      "traffic-law-safety": 1021,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 218,
-    "file": "factory/topic-research/batches/claude-20261018b-0218.json",
-    "sha256": "1bef9a7ba8216b447e3bcc75cf82cb3af80c66c7487afb8dd7de40302d5ab396",
+    "seq": 219,
+    "file": "factory/topic-research/batches/claude-20261018b-0219.json",
+    "sha256": "ae494f12ebcdaeb7ba671faa970b3b9de7cd56abbb351533c9138e92463719a6",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -24146,8 +24146,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0218.json",
       "sha256": "1bef9a7ba8216b447e3bcc75cf82cb3af80c66c7487afb8dd7de40302d5ab396",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "f91fe1bb92eef1951e812a224880e04f51ae523e",
       "researched_on": "2026-10-21",
       "topics": [
         {
@@ -24251,11 +24251,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 219,
+      "file": "factory/topic-research/batches/claude-20261018b-0219.json",
+      "sha256": "ae494f12ebcdaeb7ba671faa970b3b9de7cd56abbb351533c9138e92463719a6",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-21",
+      "topics": [
+        {
+          "ref": "vi:nguoi-di-xe-may-viet-nam-nhan-thuc-rui-ro-khao-sat-quan-sat-thoi-quen",
+          "locale": "vi",
+          "slug": "nguoi-di-xe-may-viet-nam-nhan-thuc-rui-ro-khao-sat-quan-sat-thoi-quen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::nguoi di xe may o viet nam co thay di xe nguy hiem khong va cac nghien cuu noi gi ve vuot den do va xi nhan",
+          "ta_id": null
+        },
+        {
+          "ref": "en:vietnamese-motorbike-riders-risk-perception-surveys-roadside-studies-habits",
+          "locale": "en",
+          "slug": "vietnamese-motorbike-riders-risk-perception-surveys-roadside-studies-habits",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::do vietnamese motorbike riders think riding is risky and what do studies say about red lights and turn signals",
+          "ta_id": null
+        },
+        {
+          "ref": "de:risikowahrnehmung-motorradfahrer-vietnam-umfragen-beobachtungen-gewohnheiten",
+          "locale": "de",
+          "slug": "risikowahrnehmung-motorradfahrer-vietnam-umfragen-beobachtungen-gewohnheiten",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::halten motorradfahrer in vietnam das fahren fur riskant und was sagen studien zu roten ampeln und blinkern",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:perception-du-risque-motards-vietnam-enquetes-observations-habitudes-regles",
+          "locale": "fr",
+          "slug": "perception-du-risque-motards-vietnam-enquetes-observations-habitudes-regles",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::les motards vietnamiens trouvent-ils que rouler est risque et que disent les etudes sur les feux rouges et les clignotants",
+          "ta_id": null
+        },
+        {
+          "ref": "es:percepcion-del-riesgo-motoristas-vietnam-encuestas-observacion-habitos-normas",
+          "locale": "es",
+          "slug": "percepcion-del-riesgo-motoristas-vietnam-encuestas-observacion-habitos-normas",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::los motoristas vietnamitas piensan que conducir es arriesgado y que dicen los estudios sobre los semaforos en rojo y los intermitentes",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:risicoperceptie-motorrijders-vietnam-enquetes-observatie-gewoonten-regels",
+          "locale": "nl",
+          "slug": "risicoperceptie-motorrijders-vietnam-enquetes-observatie-gewoonten-regels",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::vinden vietnamese motorrijders rijden riskant en wat zeggen onderzoeken over rode lichten en richtingaanwijzers",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-motuoche-shou-fengxian-ganzhi-diaocha-guancha-xiguan-guize",
+          "locale": "zh",
+          "slug": "yuenan-motuoche-shou-fengxian-ganzhi-diaocha-guancha-xiguan-guize",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::越南的摩托车手觉得骑车危险吗 研究怎么说闯红灯和不打转向灯",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:perceicao-do-risco-motociclistas-vietname-inqueritos-observacao-habitos-regras",
+          "locale": "pt",
+          "slug": "perceicao-do-risco-motociclistas-vietname-inqueritos-observacao-habitos-regras",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::os motociclistas vietnamitas acham que conduzir e arriscado e o que dizem os estudos sobre os semaforos vermelhos e os piscas",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-unjeonja-wiheom-injji-josa-gwanchal-seubgwan-gyuchik",
+          "locale": "ko",
+          "slug": "beteunam-otobai-unjeonja-wiheom-injji-josa-gwanchal-seubgwan-gyuchik",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::베트남 오토바이 운전자들은 운전이 위험하다고 생각하나요 신호 위반과 방향지시등에 대해 연구는 뭐라고 하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-unten-sha-risuku-ninshiki-chosa-kansatsu-shukan-ruru",
+          "locale": "ja",
+          "slug": "betonamu-baiku-unten-sha-risuku-ninshiki-chosa-kansatsu-shukan-ruru",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ヘトナムのハイクの運転者は運転を危険たと思っているのか 信号無視やウインカーについて研究は何と言っているか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 219,
-    "file": "factory/topic-research/batches/claude-20261018b-0219.json",
+    "seq": 220,
+    "file": "factory/topic-research/batches/claude-20261018b-0220.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -24268,13 +24379,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-21T03:57:41.788Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 194,
-      "topics": 10,
-      "sha256": "01115c5afb94407f1099bb243d405bba541e0b7c981bc829c6791e178da531fe"
-    },
     {
       "at": "2026-10-21T03:57:57.282Z",
       "event": "BATCH_COMMITTED",
@@ -24442,6 +24546,13 @@
       "seq": 218,
       "topics": 10,
       "sha256": "1bef9a7ba8216b447e3bcc75cf82cb3af80c66c7487afb8dd7de40302d5ab396"
+    },
+    {
+      "at": "2026-10-21T04:49:07.347Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 219,
+      "topics": 10,
+      "sha256": "ae494f12ebcdaeb7ba671faa970b3b9de7cd56abbb351533c9138e92463719a6"
     }
   ]
 }
