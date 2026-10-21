@@ -20,8 +20,9 @@ export function validateProposal(item,packet){
  for(const k of KEYS)if(!(k in item))errors.push("missing key "+k);
  if(!packet)errors.push("no published packet");
  else{
-  if(item.title!==packet.title)errors.push("current title drifted from packet");
-  if(item.meta_description!==packet.meta_description)errors.push("current description drifted from packet");
+  // A packet that already carries the proposed value is an applied proposal, not drift.
+  if(item.title!==packet.title&&packet.title!==item.proposed_title)errors.push("current title drifted from packet");
+  if(item.meta_description!==packet.meta_description&&packet.meta_description!==item.proposed_description)errors.push("current description drifted from packet");
  }
  const t=item.proposed_title,d=item.proposed_description;
  if(item.title_len>TITLE_MAX){
@@ -62,9 +63,10 @@ export function run(argv=process.argv.slice(2)){
    if(item.proposed_title)report.titles++;
    if(item.proposed_description)report.descriptions++;
    if(apply&&entry){
-    if(item.proposed_title)entry.packet.title=item.proposed_title;
-    if(item.proposed_description)entry.packet.meta_description=item.proposed_description;
-    fs.writeFileSync(entry.file,JSON.stringify(entry.packet,null,2)+"\n");
+    let changed=false;
+    if(item.proposed_title&&entry.packet.title!==item.proposed_title){entry.packet.title=item.proposed_title;changed=true;}
+    if(item.proposed_description&&entry.packet.meta_description!==item.proposed_description){entry.packet.meta_description=item.proposed_description;changed=true;}
+    if(changed)fs.writeFileSync(entry.file,JSON.stringify(entry.packet,null,2)+"\n");
    }
   }
  }
