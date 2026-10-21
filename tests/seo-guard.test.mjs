@@ -120,6 +120,9 @@ test("published content cannot silently shrink or lose a section",()=>{
  const c=codes(checkGuard(ctx));
  assert.ok(c.includes("HEADING_REMOVED"),c.join());
  const shrink=base();
+ // Compare loss with the current document, including reviewed additive upgrades.
+ // An older frozen minimum can be shorter than the text left by this mutation.
+ shrink.registry=buildRegistry({matrix,locales,files,previous:registry});
  shrink.files["ja/checklist/index.html"]=shrink.files["ja/checklist/index.html"].replace(/<p>[^<]{20,}<\/p>/g,"<p>短</p>");
  assert.ok(codes(checkGuard(shrink)).includes("CONTENT_LOSS"));
  const grow=base();
