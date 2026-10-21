@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T03:45:17.381Z",
+  "updated_at": "2026-10-21T03:45:31.195Z",
   "base_main_sha": "68e51c4329575725c39c26fcfdb9e0491d984fb6",
-  "last_commit_sha": "abe6542258fc0d2e8f3ae7929b6660ecd4bbe4c5",
+  "last_commit_sha": "11ea1f6649b093941b903a1bb0afc12302de918d",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1900,
-    "qa_pass": 1900,
+    "researched": 1910,
+    "qa_pass": 1910,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1890,
+    "pushed": 1900,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 191,
-      "de": 191,
-      "fr": 191,
-      "es": 191,
-      "nl": 191,
-      "pt": 191,
-      "zh": 191,
-      "ko": 191,
-      "ja": 191,
-      "en": 181
+      "vi": 192,
+      "de": 192,
+      "fr": 192,
+      "es": 192,
+      "nl": 192,
+      "pt": 192,
+      "zh": 192,
+      "ko": 192,
+      "ja": 192,
+      "en": 182
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 881,
+      "traffic-law-safety": 891,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 190,
-    "file": "factory/topic-research/batches/claude-20261018b-0190.json",
-    "sha256": "720251334ccf594432a983f38daf2cc9077e93a0e0dbb2035348ca5cca56e58c",
+    "seq": 191,
+    "file": "factory/topic-research/batches/claude-20261018b-0191.json",
+    "sha256": "3676e73fbd4b4dfd28a7e9368f6208c0361f73e3651e61e1bbf25f4836bb2707",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -21038,8 +21038,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0190.json",
       "sha256": "720251334ccf594432a983f38daf2cc9077e93a0e0dbb2035348ca5cca56e58c",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "11ea1f6649b093941b903a1bb0afc12302de918d",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -21143,11 +21143,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 191,
+      "file": "factory/topic-research/batches/claude-20261018b-0191.json",
+      "sha256": "3676e73fbd4b4dfd28a7e9368f6208c0361f73e3651e61e1bbf25f4836bb2707",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:canh-bao-thien-tai-tren-dien-thoai-viet-nam-sms-zalo-ung-dung-du-khach",
+          "locale": "vi",
+          "slug": "canh-bao-thien-tai-tren-dien-thoai-viet-nam-sms-zalo-ung-dung-du-khach",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-weather",
+          "key": "vi::o viet nam canh bao thien tai chinh thuc gui toi dien thoai bang cach nao va sim nuoc ngoai co nhan duoc khong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:disaster-alerts-on-your-phone-vietnam-sms-zalo-apps-visitors",
+          "locale": "en",
+          "slug": "disaster-alerts-on-your-phone-vietnam-sms-zalo-apps-visitors",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-weather",
+          "key": "en::how does vietnam send official disaster alerts to phones and will a foreign sim get them",
+          "ta_id": null
+        },
+        {
+          "ref": "de:katastrophenwarnungen-aufs-handy-vietnam-sms-zalo-apps-besucher",
+          "locale": "de",
+          "slug": "katastrophenwarnungen-aufs-handy-vietnam-sms-zalo-apps-besucher",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-weather",
+          "key": "de::wie verschickt vietnam amtliche katastrophenwarnungen aufs handy und bekommt eine auslandische sim-karte sie",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:alertes-de-catastrophe-telephone-vietnam-sms-zalo-applications-visiteur",
+          "locale": "fr",
+          "slug": "alertes-de-catastrophe-telephone-vietnam-sms-zalo-applications-visiteur",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-weather",
+          "key": "fr::comment le vietnam envoie-t-il les alertes officielles de catastrophe sur les telephones et une carte sim etrangere les recoit-elle",
+          "ta_id": null
+        },
+        {
+          "ref": "es:alertas-de-desastres-en-el-movil-vietnam-sms-zalo-aplicaciones-visitante",
+          "locale": "es",
+          "slug": "alertas-de-desastres-en-el-movil-vietnam-sms-zalo-aplicaciones-visitante",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-weather",
+          "key": "es::como envia vietnam las alertas oficiales de desastres a los telefonos y las recibe una tarjeta sim extranjera",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:rampwaarschuwingen-op-je-telefoon-vietnam-sms-zalo-apps-bezoeker",
+          "locale": "nl",
+          "slug": "rampwaarschuwingen-op-je-telefoon-vietnam-sms-zalo-apps-bezoeker",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-weather",
+          "key": "nl::hoe stuurt vietnam officiele rampwaarschuwingen naar telefoons en krijgt een buitenlandse simkaart ze",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-shouji-guanfang-zaihai-yujing-duanxin-zalo-yingyong-youke",
+          "locale": "zh",
+          "slug": "yuenan-shouji-guanfang-zaihai-yujing-duanxin-zalo-yingyong-youke",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-weather",
+          "key": "zh::越南怎样把官方灾害预警发到手机上,外国sim卡能收到吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:alertas-de-catastrofe-no-telemovel-vietname-sms-zalo-aplicacoes-visitante",
+          "locale": "pt",
+          "slug": "alertas-de-catastrofe-no-telemovel-vietname-sms-zalo-aplicacoes-visitante",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-weather",
+          "key": "pt::como e que o vietname envia os alertas oficiais de catastrofe para os telemoveis e um cartao sim estrangeiro recebe-os",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-hyudaepon-gongsik-jaenan-gyeongbo-munja-zalo-aep-bangmunja",
+          "locale": "ko",
+          "slug": "beteunam-hyudaepon-gongsik-jaenan-gyeongbo-munja-zalo-aep-bangmunja",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-weather",
+          "key": "ko::베트남은 공식 재난 경보를 휴대폰으로 어떻게 보내고 외국 유심도 받을 수 있나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-sumaho-koshiki-saigai-keiho-sms-zalo-apuri-ryokosha",
+          "locale": "ja",
+          "slug": "betonamu-sumaho-koshiki-saigai-keiho-sms-zalo-apuri-ryokosha",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-weather",
+          "key": "ja::ヘトナムは公式の災害警報をとのように携帯電話に送り、外国のsimても受け取れるのか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 191,
-    "file": "factory/topic-research/batches/claude-20261018b-0191.json",
+    "seq": 192,
+    "file": "factory/topic-research/batches/claude-20261018b-0192.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -21160,13 +21271,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:49:40.827Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 166,
-      "topics": 10,
-      "sha256": "5955330c05e5ad27c7c16b25a6a2cec6cf22ebddc2b0b97f69c8b52af3b3655e"
-    },
     {
       "at": "2026-10-20T20:54:33.825Z",
       "event": "BATCH_COMMITTED",
@@ -21334,6 +21438,13 @@
       "seq": 190,
       "topics": 10,
       "sha256": "720251334ccf594432a983f38daf2cc9077e93a0e0dbb2035348ca5cca56e58c"
+    },
+    {
+      "at": "2026-10-21T03:45:31.195Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 191,
+      "topics": 10,
+      "sha256": "3676e73fbd4b4dfd28a7e9368f6208c0361f73e3651e61e1bbf25f4836bb2707"
     }
   ]
 }
