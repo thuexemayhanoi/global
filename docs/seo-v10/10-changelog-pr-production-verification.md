@@ -9,7 +9,7 @@ Ngày: 2026-10-20. Nhánh: `seo/v10-global-engine-20261020` (từ `main` `fc4fbb
 | IMPLEMENTED | Hoàn tất | commit `318e865c` (mã, HTML tạo lại, đồ thị, test, báo cáo 01 đến 09 và 11) và các commit tiếp theo trong mục 2b |
 | TESTED | Hoàn tất | 291 test xanh tại local trên đầu nhánh cuối; CI `qa.yml` xanh trên `318e865c`, `7926200c`, `52a9aa21`, `c0286253`, `1ce61e0c`, `cb696fce`, `5162d721` và trên `main` sau merge (run 39541765259); hai lần đỏ trên `f62b0768` và `941a1f44` do test Topic Factory phía `main` (sửa ở #80, #81, đã gộp) |
 | DEPLOYED | Hoàn tất | GitHub Pages deploy `main` xong lúc 04:05:15 UTC 2026-10-21 (run 39541884028, head `f50bc63a` chứa `0a048ab4`) |
-| VERIFIED | Hoàn tất ở mức connector và workflow | `post-publish-qa.yml` PASS 941 URL; OpenSEO crawl 50 trang 200 OK; PageSpeed mobile LCP 2,5 s xuống 1,7 s (mục 6) |
+| VERIFIED | Hoàn tất ở mức connector và workflow | `post-publish-qa.yml` PASS 941 URL; HTML production đọc trực tiếp qua crawler connector khớp HTML đã commit (mục 6, hàng 8); PageSpeed mobile LCP 2,5 s xuống 1,7 s (mục 6); số liệu OpenSEO 50 trang là của phiên 1, phiên 2 không xác minh lại được (mục 6, hàng 9) |
 
 ## 2. Changelog mã nguồn (commit `318e865c`)
 
@@ -79,9 +79,12 @@ Mỗi bước ghi kết quả vào mục 6 của tài liệu này trong một co
 | 3 | OpenSEO site audit `acb45dea-03cb-4f53-be14-427e5c3631a5` (50 trang, không Lighthouse) | 04:09:38 đến 04:10:31 | 50/50 HTTP 200, indexable, trong sitemap; phản hồi 5 đến 43 ms; chỉ còn info title-too-long 43 và meta-description-too-long 47 (biên tập, PR đề xuất riêng); không lỗi liên kết, canonical, trùng lặp hay thin content |
 | 4 | Ubersuggest `pagespeed_audit` (`forceUpdate`, URL gốc) | 04:09 | Desktop: FCP 405 ms, LCP 431 ms (trước 608), SI 681 ms, TBT 0, CLS 0. Mobile: FCP 1,3 s, LCP 1,7 s (trước 2,5 s), SI 2,6 s (trước 4,5 s), TTI 1,7 s (trước 2,5 s), TBT 0, CLS 0. Cơ hội còn lại: Redirects 190 ms và 630 ms (lớp HTTPS/apex, ngoài repo) |
 | 5 | OpenRush `audit_site` | | BLOCKED: tài khoản hết credit (402) |
-| 6 | Tải trực tiếp HTML production từ sandbox | 04:12 | BLOCKED: proxy chặn (mã 000); bằng chứng về markup mới trên production là gián tiếp: `post-publish-qa` đọc HTML live và khớp fingerprint, PageSpeed giảm LCP đúng như kỳ vọng của hero đáp ứng, và `main` sau merge được `qa.yml` xác nhận byte-identical với HTML đã tạo |
+| 6 | Tải trực tiếp HTML production từ sandbox | 04:12 | BLOCKED lúc đó: proxy chặn (mã 000); đến 09:08 UTC đã xác minh trực tiếp qua crawler connector (hàng 8). Bằng chứng gián tiếp vẫn giữ nguyên: `post-publish-qa` đọc HTML live và khớp fingerprint, PageSpeed giảm LCP đúng như kỳ vọng của hero đáp ứng, và `main` sau merge được `qa.yml` xác nhận byte-identical với HTML đã tạo |
+| 7 | GitHub Pages deploy các commit `main` sau đó (phiên 2, 09:00 UTC) | 04:24 đến 04:58 | 5 lần deploy tiếp theo cho các commit Topic Factory `756c805b`, `0e451bb0`, `c9ef1116`, `232b500b`, `27a9e0fc` (run 2498 đến 2502) đều thành công; production tiếp tục được phục vụ từ `main` |
+| 8 | Tải HTML production qua crawler connector (TinyFish `fetch_content`, `ttl` 0, phiên 2) | 09:05 đến 09:08 | `/`: hero `srcset` 800w/1200w/1600w, `sizes`, `preload` với `imagesrcset`, `fetchpriority="high"`, alt mô tả; 4 ảnh thẻ `alt=""`; `og:image` 1600×900. `/en/topics/choosing-a-rental-bike/`, `/de/guides/yamaha-janus-grande-sirius-exciter-unterschiede/`, `/ja/guides/menkyo-kirikae/`: `og:site_name`, `og:image`, `twitter:card summary_large_image`, `<nav class="crumb">` byte-identical với HTML đã commit trên `main`. JSON-LD không đọc được qua connector (script bị lược bỏ), nên BreadcrumbList và Article vẫn là bằng chứng gián tiếp qua fingerprint `schema_types` của `post-publish-qa` |
+| 9 | Kiểm tra lại số liệu bước 2 đến 4 ở phiên 2 | 09:00 đến 09:10 | Bước 2: log job 119033299532 in đúng `passed: true`, `issues: []`, `checked: 941`. Bước 4: `pagespeed_audit` đọc lại bản cache (không `forceUpdate`) trả về đúng các số liệu đã ghi. Bước 3: KHÔNG xác minh lại được — tài khoản OpenSEO của phiên 2 chỉ thấy dự án `7636b3bd` với danh sách audit trống, audit `acb45dea` không tìm thấy; số liệu bước 3 giữ nguyên là báo cáo của phiên 1, chưa được phiên 2 kiểm chứng độc lập |
 
-Credit sau xác minh: OpenSEO còn 157 (`whoami` 04:14 UTC; 325 lúc bắt đầu phiên); Ubersuggest còn 1 báo cáo PageSpeed trong ngày.
+Credit sau xác minh: OpenSEO còn 157 (`whoami` 04:14 UTC; 325 lúc bắt đầu phiên); Ubersuggest còn 1 báo cáo PageSpeed trong ngày. Phiên 2 (09:00 UTC) không tiêu credit OpenSEO; dùng 1 trong 3 báo cáo Ubersuggest trong ngày để đọc lại bản cache.
 
 Không có số liệu thứ hạng, lập chỉ mục hay lưu lượng nào được đo hay suy luận.
 
