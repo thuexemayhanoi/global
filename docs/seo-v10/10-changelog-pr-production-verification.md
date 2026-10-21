@@ -1,15 +1,15 @@
 # 10 · Changelog, GitHub commit/PR và Production Verification
 
-Ngày: 2026-10-20. Nhánh: `seo/v10-global-engine-20261020` (từ `main` `fc4fbb6c`). Pull request: https://github.com/thuexemayhanoi/global/pull/79 (mở, chưa merge; chủ sở hữu merge theo đúng quy trình, phiên này không tự merge).
+Ngày: 2026-10-20. Nhánh: `seo/v10-global-engine-20261020` (từ `main` `fc4fbb6c`). Pull request: https://github.com/thuexemayhanoi/global/pull/79, đã merge (squash) vào `main` thành `0a048ab4` lúc 04:01 UTC 2026-10-21 sau khi CI xanh trên đầu nhánh `5162d721`, theo ủy quyền của chủ sở hữu ngày 2026-10-21 cho các thay đổi SEO an toàn (không trường đóng băng, không dữ liệu kinh doanh); nhánh `main` không có yêu cầu review bắt buộc nên không có bảo vệ nào bị bỏ qua.
 
 ## 1. Trạng thái tổng theo bốn mức
 
 | Mức | Trạng thái | Bằng chứng |
 |---|---|---|
 | IMPLEMENTED | Hoàn tất | commit `318e865c` (mã, HTML tạo lại, đồ thị, test, báo cáo 01 đến 09 và 11) và các commit tiếp theo trong mục 2b |
-| TESTED | Hoàn tất tại local | 279 test (278 pass, 1 bỏ qua có chủ ý), mọi guard xanh (xem 09); CI `qa.yml` xanh trên `318e865c`, `7926200c`, `52a9aa21`, `c0286253`; đang chạy trên đầu nhánh mới |
-| DEPLOYED | Chưa | GitHub Pages chỉ deploy từ `main`; cần merge PR #79 |
-| VERIFIED | Chưa | sau deploy: `post-publish-qa.yml` + crawler connector (mục 5) |
+| TESTED | Hoàn tất | 291 test xanh tại local trên đầu nhánh cuối; CI `qa.yml` xanh trên `318e865c`, `7926200c`, `52a9aa21`, `c0286253`, `1ce61e0c`, `cb696fce`, `5162d721` và trên `main` sau merge (run 39541765259); hai lần đỏ trên `f62b0768` và `941a1f44` do test Topic Factory phía `main` (sửa ở #80, #81, đã gộp) |
+| DEPLOYED | Hoàn tất | GitHub Pages deploy `main` xong lúc 04:05:15 UTC 2026-10-21 (run 39541884028, head `f50bc63a` chứa `0a048ab4`) |
+| VERIFIED | Hoàn tất ở mức connector và workflow | `post-publish-qa.yml` PASS 941 URL; OpenSEO crawl 50 trang 200 OK; PageSpeed mobile LCP 2,5 s xuống 1,7 s (mục 6) |
 
 ## 2. Changelog mã nguồn (commit `318e865c`)
 
@@ -70,9 +70,20 @@ PR xếp chồng chờ chủ sở hữu duyệt nội dung: https://github.com/t
 
 Mỗi bước ghi kết quả vào mục 6 của tài liệu này trong một commit sau, với ngày giờ và công cụ. Không ghi "đã xác minh" trước khi có kết quả thật.
 
-## 6. Kết quả xác minh production
+## 6. Kết quả xác minh production (2026-10-21, sau deploy 04:05 UTC)
 
-Chưa có (PR chưa merge).
+| Bước | Công cụ | Thời điểm (UTC) | Kết quả |
+|---|---|---|---|
+| 1 | GitHub Pages deploy `main` | 04:02:55 đến 04:05:15 | thành công (run 39541884028); lần deploy riêng cho `0a048ab4` bị hủy vì bị thay bởi deploy của commit Topic Factory `f50bc63a` ngay sau, commit này chứa toàn bộ PR #79 |
+| 2 | `post-publish-qa.yml` (workflow_dispatch trên `main`) | 04:10:15 đến 04:10:34 | `passed: true`, `issues: []`, `checked: 941` (926 URL PUBLISHED, sitemap, robots, 404, search); artifact `global-live-post-publish-qa` run 39542532902 |
+| 3 | OpenSEO site audit `acb45dea-03cb-4f53-be14-427e5c3631a5` (50 trang, không Lighthouse) | 04:09:38 đến 04:10:31 | 50/50 HTTP 200, indexable, trong sitemap; phản hồi 5 đến 43 ms; chỉ còn info title-too-long 43 và meta-description-too-long 47 (biên tập, PR đề xuất riêng); không lỗi liên kết, canonical, trùng lặp hay thin content |
+| 4 | Ubersuggest `pagespeed_audit` (`forceUpdate`, URL gốc) | 04:09 | Desktop: FCP 405 ms, LCP 431 ms (trước 608), SI 681 ms, TBT 0, CLS 0. Mobile: FCP 1,3 s, LCP 1,7 s (trước 2,5 s), SI 2,6 s (trước 4,5 s), TTI 1,7 s (trước 2,5 s), TBT 0, CLS 0. Cơ hội còn lại: Redirects 190 ms và 630 ms (lớp HTTPS/apex, ngoài repo) |
+| 5 | OpenRush `audit_site` | | BLOCKED: tài khoản hết credit (402) |
+| 6 | Tải trực tiếp HTML production từ sandbox | 04:12 | BLOCKED: proxy chặn (mã 000); bằng chứng về markup mới trên production là gián tiếp: `post-publish-qa` đọc HTML live và khớp fingerprint, PageSpeed giảm LCP đúng như kỳ vọng của hero đáp ứng, và `main` sau merge được `qa.yml` xác nhận byte-identical với HTML đã tạo |
+
+Credit sau xác minh: OpenSEO còn 157 (`whoami` 04:14 UTC; 325 lúc bắt đầu phiên); Ubersuggest còn 1 báo cáo PageSpeed trong ngày.
+
+Không có số liệu thứ hạng, lập chỉ mục hay lưu lượng nào được đo hay suy luận.
 
 ## 7. Worker song song đã dùng
 

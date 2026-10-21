@@ -56,4 +56,17 @@ Kỳ vọng: điện thoại tải 79 KB hoặc 139 KB thay vì 260 KB cho ảnh
 2. Sau khi merge, chạy lại `pagespeed_audit` (`forceUpdate`) cho trang gốc, một Hub và một bài Supporting để có số liệu cho mẫu bài, không chỉ trang gốc.
 3. Khi có property GSC hoặc CrUX cho tên miền, thay số liệu phòng thí nghiệm bằng số liệu trường trong tài liệu này.
 
-Trạng thái: thay đổi hiệu năng trong PR là IMPLEMENTED và TESTED; các thẻ meta và JSON-LD thêm vào chỉ tốn vài trăm byte mỗi trang. Số liệu CWV: TESTED bằng connector trước deploy; VERIFIED sau deploy cần đo lại.
+## 6. Đo lại sau deploy (Ubersuggest `pagespeed_audit`, `forceUpdate`, URL gốc, 04:09 UTC 2026-10-21)
+
+| Chỉ số | Mobile trước | Mobile sau | Desktop trước | Desktop sau |
+|---|---|---|---|---|
+| First Contentful Paint | 1,3 s | 1,3 s | 408 ms | 405 ms |
+| Largest Contentful Paint | 2,5 s | **1,7 s** | 608 ms | **431 ms** |
+| Speed Index | 4,5 s | **2,6 s** | 675 ms | 681 ms |
+| Time to Interactive | 2,5 s | 1,7 s | 608 ms | 431 ms |
+| Total Blocking Time | 0 ms | 0 ms | 6 ms | 0 ms |
+| Cumulative Layout Shift | 0 | 0 | 0 | 0 |
+
+Hai lần đo là số liệu phòng thí nghiệm của cùng một công cụ trước và sau khi `main` chứa hero đáp ứng được deploy (04:05 UTC); không phải số liệu trường và có dao động tự nhiên giữa các lần chạy. Cơ hội "Redirects" không đổi vì nằm ở lớp HTTPS/apex ngoài repo.
+
+Trạng thái: thay đổi hiệu năng là IMPLEMENTED, TESTED, DEPLOYED (PR #79 merge `0a048ab4`) và VERIFIED bằng lần đo phòng thí nghiệm ở trên; các thẻ meta và JSON-LD thêm vào chỉ tốn vài trăm byte mỗi trang.
