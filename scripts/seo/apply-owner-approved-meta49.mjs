@@ -79,8 +79,11 @@ for(const page of built.urls){
  if(!original)throw Error("New URL appeared: "+page.url);
  const approval=byUrl.get(page.url);
  if(!approval){
-  if(JSON.stringify(page)!==JSON.stringify(original))
-   throw Error("Unapproved frozen page changed: "+page.url);
+  if(JSON.stringify(page)!==JSON.stringify(original)){
+   const fpChanges=Object.keys(page.fingerprint).filter(k=>JSON.stringify(page.fingerprint[k])!==JSON.stringify(original.fingerprint[k]));
+   const cBefore=original.content,cAfter=page.content;
+   throw Error("Unapproved frozen page changed: "+page.url+" fingerprintKeys="+JSON.stringify(fpChanges)+" contentBefore="+JSON.stringify(cBefore)+" contentAfter="+JSON.stringify(cAfter));
+  }
   continue;
  }
  if(page.id!==original.id||page.locale!==original.locale||page.role!==original.role||
