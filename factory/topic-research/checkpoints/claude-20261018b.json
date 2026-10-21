@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:25:13.412Z",
+  "updated_at": "2026-10-21T04:25:24.446Z",
   "base_main_sha": "756c805b8872dc35bf3d63eb3ae67cfb501b6728",
-  "last_commit_sha": "d6d4303b07399bc8afc2a56299321912cf300d7e",
+  "last_commit_sha": "230a7d1277af919cf1dcd70dc53e5bdd165a6f0a",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 2080,
-    "qa_pass": 2080,
+    "researched": 2090,
+    "qa_pass": 2090,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2070,
+    "pushed": 2080,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 209,
-      "de": 209,
-      "fr": 209,
-      "es": 209,
-      "nl": 209,
-      "pt": 209,
-      "zh": 209,
-      "ko": 209,
-      "ja": 209,
-      "en": 199
+      "vi": 210,
+      "de": 210,
+      "fr": 210,
+      "es": 210,
+      "nl": 210,
+      "pt": 210,
+      "zh": 210,
+      "ko": 210,
+      "ja": 210,
+      "en": 200
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 961,
+      "traffic-law-safety": 971,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 208,
-    "file": "factory/topic-research/batches/claude-20261018b-0208.json",
-    "sha256": "4cfeb79d9210ee822bcb9a97ad067f8fc213985bc5e68eb1f3feb66e593f8303",
+    "seq": 209,
+    "file": "factory/topic-research/batches/claude-20261018b-0209.json",
+    "sha256": "207cfa3506554d83bcec0a7703f86387c7387ab1ceb4cc61fb306727e842c567",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -23036,8 +23036,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0208.json",
       "sha256": "4cfeb79d9210ee822bcb9a97ad067f8fc213985bc5e68eb1f3feb66e593f8303",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "230a7d1277af919cf1dcd70dc53e5bdd165a6f0a",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -23141,11 +23141,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 209,
+      "file": "factory/topic-research/batches/claude-20261018b-0209.json",
+      "sha256": "207cfa3506554d83bcec0a7703f86387c7387ab1ceb4cc61fb306727e842c567",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:nguoi-ngoi-sau-xe-may-nghien-cuu-mu-bao-hiem-va-chan-thuong-so-voi-nguoi-lai",
+          "locale": "vi",
+          "slug": "nguoi-ngoi-sau-xe-may-nghien-cuu-mu-bao-hiem-va-chan-thuong-so-voi-nguoi-lai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::nguoi ngoi sau xe may co doi mu bao hiem it hon nguoi lai khong va nghien cuu noi gi ve chan thuong khi tai nan",
+          "ta_id": null
+        },
+        {
+          "ref": "en:pillion-passengers-motorbike-studies-helmet-use-and-injuries-versus-rider",
+          "locale": "en",
+          "slug": "pillion-passengers-motorbike-studies-helmet-use-and-injuries-versus-rider",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::do pillion passengers on a motorbike wear helmets less than the rider and what do studies say about their injuries in a crash",
+          "ta_id": null
+        },
+        {
+          "ref": "de:mitfahrende-motorrad-studien-helmnutzung-und-verletzungen-gegenueber-dem-fahrer",
+          "locale": "de",
+          "slug": "mitfahrende-motorrad-studien-helmnutzung-und-verletzungen-gegenueber-dem-fahrer",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::tragen mitfahrende auf dem motorrad seltener einen helm als der fahrer und was sagen studien zu ihren verletzungen bei unfallen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:passager-arriere-moto-etudes-casque-et-blessures-par-rapport-au-conducteur",
+          "locale": "fr",
+          "slug": "passager-arriere-moto-etudes-casque-et-blessures-par-rapport-au-conducteur",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::le passager arriere d'une moto porte-t-il moins souvent un casque que le conducteur et que disent les etudes sur ses blessures en cas d'accident",
+          "ta_id": null
+        },
+        {
+          "ref": "es:acompanante-moto-estudios-uso-del-casco-y-lesiones-frente-al-conductor",
+          "locale": "es",
+          "slug": "acompanante-moto-estudios-uso-del-casco-y-lesiones-frente-al-conductor",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::el acompanante de una moto lleva el casco con menos frecuencia que el conductor y que dicen los estudios sobre sus lesiones en un accidente",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:duopassagier-scooter-onderzoek-helmgebruik-en-letsel-naast-de-bestuurder",
+          "locale": "nl",
+          "slug": "duopassagier-scooter-onderzoek-helmgebruik-en-letsel-naast-de-bestuurder",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::dragen duopassagiers op een motor of scooter minder vaak een helm dan de bestuurder en wat zegt onderzoek over hun letsel bij een ongeval",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:motuoche-houzuo-chengke-yanjiu-toukui-peidai-shoushang-yu-jiashiren-bijiao",
+          "locale": "zh",
+          "slug": "motuoche-houzuo-chengke-yanjiu-toukui-peidai-shoushang-yu-jiashiren-bijiao",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::摩托车后座乘客戴头盔的比例比驾驶人低吗 研究怎么说事故中他们的受伤情况",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:passageiro-garupa-mota-estudos-capacete-e-lesoes-face-ao-condutor",
+          "locale": "pt",
+          "slug": "passageiro-garupa-mota-estudos-capacete-e-lesoes-face-ao-condutor",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::o passageiro da garupa de uma mota usa capacete com menos frequencia do que o condutor e o que dizem os estudos sobre as suas lesoes num acidente",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:otobai-dwitjwaseok-dongseungja-heolmet-chakyong-bubsang-yeongu-unjeonja-bigyo",
+          "locale": "ko",
+          "slug": "otobai-dwitjwaseok-dongseungja-heolmet-chakyong-bubsang-yeongu-unjeonja-bigyo",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::오토바이 뒷좌석 동승자는 운전자보다 헬멧을 덜 쓰나요 사고에서 부상은 어떻다고 연구는 말하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:baiku-kobu-zaseki-dosoja-herumetto-chakuyo-kega-kenkyu-undensha-hikaku",
+          "locale": "ja",
+          "slug": "baiku-kobu-zaseki-dosoja-herumetto-chakuyo-kega-kenkyu-undensha-hikaku",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ハイクの後部座席の同乗者は運転者よりヘルメットをかふらないのてすか 事故てのけかについて研究は何と言っていますか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 209,
-    "file": "factory/topic-research/batches/claude-20261018b-0209.json",
+    "seq": 210,
+    "file": "factory/topic-research/batches/claude-20261018b-0210.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -23158,13 +23269,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T21:46:15.419Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 184,
-      "topics": 10,
-      "sha256": "5348312b2ad9dc28f57ddaa150f77b9b98d94b0248a512d6ca928ede2d740646"
-    },
     {
       "at": "2026-10-21T03:44:20.681Z",
       "event": "BATCH_COMMITTED",
@@ -23332,6 +23436,13 @@
       "seq": 208,
       "topics": 10,
       "sha256": "4cfeb79d9210ee822bcb9a97ad067f8fc213985bc5e68eb1f3feb66e593f8303"
+    },
+    {
+      "at": "2026-10-21T04:25:24.446Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 209,
+      "topics": 10,
+      "sha256": "207cfa3506554d83bcec0a7703f86387c7387ab1ceb4cc61fb306727e842c567"
     }
   ]
 }
