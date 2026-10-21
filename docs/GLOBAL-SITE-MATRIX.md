@@ -12,9 +12,9 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
-| Matrix rows (1958) | 908 | 10 | 36 | 1004 |
+| Matrix rows (1958) | 909 | 9 | 36 | 1004 |
 | Topical candidates (1373) | 0 | 0 | 37 | 1336 |
-| Silos (330) | 138 | 16 | 0 | 176 |
+| Silos (330) | 139 | 15 | 0 | 176 |
 
 Knowledge graph: 42 entities, 4386 typed edges (hreflang_equivalent 190, about 710, contains 3276, has_silo 160, has_hub 40, has_pillar 10).
 
@@ -70,16 +70,15 @@ Knowledge graph: 42 entities, 4386 typed edges (hreflang_equivalent 190, about 7
 
 | ID | URL | Words | H2 | FAQ | Inbound pages | Reasons |
 |---|---|---|---|---|---|---|
-| VI-CHECKLIST | /vi/checklist/ | 428 | 5 | 1 | 96 | Main content 428 words < 800 target for SUPPORT |
-| EN-CHECKLIST | /en/checklist/ | 286 | 5 | 1 | 105 | Main content 286 words < 800 target for SUPPORT |
-| DE-CHECKLIST | /de/checklist/ | 257 | 5 | 1 | 107 | Main content 257 words < 800 target for SUPPORT |
-| FR-CHECKLIST | /fr/checklist/ | 286 | 5 | 1 | 104 | Main content 286 words < 800 target for SUPPORT |
-| ES-CHECKLIST | /es/checklist/ | 273 | 5 | 1 | 94 | Main content 273 words < 800 target for SUPPORT |
-| NL-CHECKLIST | /nl/checklist/ | 244 | 5 | 1 | 99 | Main content 244 words < 800 target for SUPPORT |
-| ZH-CHECKLIST | /zh/checklist/ | 285 | 5 | 1 | 99 | Main content 285 words < 800 target for SUPPORT |
-| PT-CHECKLIST | /pt/checklist/ | 252 | 5 | 1 | 99 | Main content 252 words < 800 target for SUPPORT |
-| KO-CHECKLIST | /ko/checklist/ | 198 | 5 | 1 | 99 | Main content 198 words < 800 target for SUPPORT |
-| JA-CHECKLIST | /ja/checklist/ | 280 | 5 | 1 | 99 | Main content 280 words < 800 target for SUPPORT |
+| EN-CHECKLIST | /en/checklist/ | 647 | 9 | 1 | 105 | Main content 647 words < 800 target for SUPPORT |
+| DE-CHECKLIST | /de/checklist/ | 554 | 9 | 1 | 107 | Main content 554 words < 800 target for SUPPORT |
+| FR-CHECKLIST | /fr/checklist/ | 665 | 9 | 1 | 104 | Main content 665 words < 800 target for SUPPORT |
+| ES-CHECKLIST | /es/checklist/ | 633 | 9 | 1 | 94 | Main content 633 words < 800 target for SUPPORT |
+| NL-CHECKLIST | /nl/checklist/ | 569 | 9 | 1 | 99 | Main content 569 words < 800 target for SUPPORT |
+| ZH-CHECKLIST | /zh/checklist/ | 663 | 9 | 1 | 99 | Main content 663 words < 800 target for SUPPORT |
+| PT-CHECKLIST | /pt/checklist/ | 613 | 9 | 1 | 99 | Main content 613 words < 800 target for SUPPORT |
+| KO-CHECKLIST | /ko/checklist/ | 465 | 9 | 1 | 99 | Main content 465 words < 800 target for SUPPORT |
+| JA-CHECKLIST | /ja/checklist/ | 749 | 9 | 1 | 99 | Main content 749 words < 800 target for SUPPORT |
 
 Targets: Pillar ≥ 600 words, ≥ 3 FAQ; Supporting ≥ 800 words, ≥ 4 H2 (new drafts already need ≥ 1,000 words).
 
@@ -100,7 +99,7 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 | dc-contract | decision | informational | – | P3 I7 C1 KEEP | P4 I6 C1 KEEP | P4 I6 C1 KEEP | P4 I6 C1 KEEP | P3 I6 C1 KEEP | P3 I7 C1 KEEP | P3 I7 C1 KEEP | P3 I7 C1 KEEP | P4 I6 C1 KEEP | P4 I6 C1 KEEP |
 | dc-insurance | decision | informational | – | P1 I4 KEEP | P2 I4 UPGRADE | P2 I4 KEEP | P2 I4 KEEP | P2 I4 KEEP | P2 I4 KEEP | P1 I4 KEEP | P2 I4 KEEP | P2 I4 KEEP | P2 I4 UPGRADE |
 | dc-papers | riding | informational | – | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP |
-| ss-pickup (reserved: CHECKLIST) | pickup | informational | – | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE |
+| ss-pickup (reserved: CHECKLIST) | pickup | informational | – | P1 KEEP | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE |
 | ss-weather | riding | local | – | P4 I7 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP |
 | ss-incidents | riding | informational | – | P8 I13 C15 KEEP | P8 I15 C12 KEEP | P8 I21 C6 KEEP | P8 I15 C12 KEEP | P7 I15 C12 KEEP | P8 I13 C14 KEEP | P8 I13 C14 KEEP | P8 I13 C14 KEEP | P8 I15 C12 KEEP | P8 I15 C12 KEEP |
 | ss-gear | riding | informational | – | P1 I4 C7 KEEP | P2 I5 C5 KEEP | P2 I7 C3 KEEP | P2 I3 C7 KEEP | P2 I5 C5 KEEP | P1 I4 C7 KEEP | P1 I4 C7 KEEP | P1 I4 C7 KEEP | P2 I3 C7 KEEP | P2 I3 C7 KEEP |
@@ -143,7 +142,7 @@ Every locale checklist also covers the consideration → decision → pickup →
 
 | Locale | Rows | Published | Protected drafts | Planned | Candidates | Published depth OK |
 |---|---|---|---|---|---|---|
-| vi | 189 | 88 | 0 | 101 | 143 | 98% |
+| vi | 189 | 88 | 0 | 101 | 143 | 99% |
 | en | 199 | 97 | 0 | 102 | 137 | 97% |
 | de | 219 | 99 | 0 | 120 | 116 | 99% |
 | fr | 197 | 96 | 0 | 101 | 139 | 99% |
