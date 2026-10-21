@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:28:26.622Z",
+  "updated_at": "2026-10-21T04:30:00.326Z",
   "base_main_sha": "0e451bb09b5f531d1353b639755388f43583e9a4",
-  "last_commit_sha": "c60f2102e487047e48e702dae6bbd4adc08f5cc4",
+  "last_commit_sha": "75ae519e38e9c1a7c4f3b4d92ef7026a891e9f22",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 2100,
-    "qa_pass": 2100,
+    "researched": 2110,
+    "qa_pass": 2110,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2090,
+    "pushed": 2100,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 211,
-      "de": 211,
-      "fr": 211,
-      "es": 211,
-      "nl": 211,
-      "pt": 211,
-      "zh": 211,
-      "ko": 211,
-      "ja": 211,
-      "en": 201
+      "vi": 212,
+      "de": 212,
+      "fr": 212,
+      "es": 212,
+      "nl": 212,
+      "pt": 212,
+      "zh": 212,
+      "ko": 212,
+      "ja": 212,
+      "en": 202
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 459
+      "motorbike-rental": 469
     }
   },
   "last_batch": {
-    "seq": 210,
-    "file": "factory/topic-research/batches/claude-20261018b-0210.json",
-    "sha256": "3837b535f96b7b1eaf892e2f3f74e09a9864c98bd2e396171f94bd136d75d5b3",
+    "seq": 211,
+    "file": "factory/topic-research/batches/claude-20261018b-0211.json",
+    "sha256": "be77c32a51e864bda17a8aa265a8b239778e1abf72dc662d5e55e8886a140860",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -23258,8 +23258,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0210.json",
       "sha256": "3837b535f96b7b1eaf892e2f3f74e09a9864c98bd2e396171f94bd136d75d5b3",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "75ae519e38e9c1a7c4f3b4d92ef7026a891e9f22",
       "researched_on": "2026-10-21",
       "topics": [
         {
@@ -23363,11 +23363,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 211,
+      "file": "factory/topic-research/batches/claude-20261018b-0211.json",
+      "sha256": "be77c32a51e864bda17a8aa265a8b239778e1abf72dc662d5e55e8886a140860",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-21",
+      "topics": [
+        {
+          "ref": "vi:triumph-street-triple-765-r-rs-speed-triple-1200-rs-khac-nhau-bang-lai-hang-a",
+          "locale": "vi",
+          "slug": "triumph-street-triple-765-r-rs-speed-triple-1200-rs-khac-nhau-bang-lai-hang-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-power",
+          "key": "vi::triumph street triple 765 r 765 rs speed triple 1200 rs khac nhau the nao va can bang lai hang nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:triumph-street-triple-765-r-rs-speed-triple-1200-rs-differences-licence-class",
+          "locale": "en",
+          "slug": "triumph-street-triple-765-r-rs-speed-triple-1200-rs-differences-licence-class",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-power",
+          "key": "en::triumph street triple 765 r vs 765 rs vs speed triple 1200 rs differences",
+          "ta_id": null
+        },
+        {
+          "ref": "de:triumph-street-triple-765-r-rs-speed-triple-1200-rs-unterschiede-klasse-a",
+          "locale": "de",
+          "slug": "triumph-street-triple-765-r-rs-speed-triple-1200-rs-unterschiede-klasse-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-power",
+          "key": "de::triumph street triple 765 r 765 rs speed triple 1200 rs unterschiede und notige fuhrerscheinklasse",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:triumph-street-triple-765-r-rs-speed-triple-1200-rs-differences-permis-a",
+          "locale": "fr",
+          "slug": "triumph-street-triple-765-r-rs-speed-triple-1200-rs-differences-permis-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-power",
+          "key": "fr::triumph street triple 765 r 765 rs speed triple 1200 rs differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:triumph-street-triple-765-r-rs-speed-triple-1200-rs-diferencias-carne-a",
+          "locale": "es",
+          "slug": "triumph-street-triple-765-r-rs-speed-triple-1200-rs-diferencias-carne-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-power",
+          "key": "es::triumph street triple 765 r 765 rs speed triple 1200 rs diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:triumph-street-triple-765-r-rs-speed-triple-1200-rs-verschillen-rijbewijs-a",
+          "locale": "nl",
+          "slug": "triumph-street-triple-765-r-rs-speed-triple-1200-rs-verschillen-rijbewijs-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-power",
+          "key": "nl::triumph street triple 765 r 765 rs speed triple 1200 rs verschillen en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:triumph-street-triple-765-r-rs-speed-triple-1200-rs-qubie-jiazhao-a-lei",
+          "locale": "zh",
+          "slug": "triumph-street-triple-765-r-rs-speed-triple-1200-rs-qubie-jiazhao-a-lei",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-power",
+          "key": "zh::凯旋 street triple 765 r 765 rs speed triple 1200 rs 区别 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:triumph-street-triple-765-r-rs-speed-triple-1200-rs-diferencas-carta-a",
+          "locale": "pt",
+          "slug": "triumph-street-triple-765-r-rs-speed-triple-1200-rs-diferencas-carta-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-power",
+          "key": "pt::triumph street triple 765 r 765 rs speed triple 1200 rs diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:triumph-street-triple-765-r-rs-speed-triple-1200-rs-chai-myeonheo",
+          "locale": "ko",
+          "slug": "triumph-street-triple-765-r-rs-speed-triple-1200-rs-chai-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-power",
+          "key": "ko::트라이엄프 street triple 765 r 765 rs speed triple 1200 rs 차이와 필요한 면허",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:triumph-street-triple-765-r-rs-speed-triple-1200-rs-chigai-menkyo",
+          "locale": "ja",
+          "slug": "triumph-street-triple-765-r-rs-speed-triple-1200-rs-chigai-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-power",
+          "key": "ja::トライアンフ street triple 765 r 765 rs speed triple 1200 rs の違いと必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 211,
-    "file": "factory/topic-research/batches/claude-20261018b-0211.json",
+    "seq": 212,
+    "file": "factory/topic-research/batches/claude-20261018b-0212.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -23380,13 +23491,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-21T03:44:31.380Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 186,
-      "topics": 10,
-      "sha256": "813d338665ebb23f8b7c5bf4baee5466b140e078213fdbb5928fbecbc280b2b6"
-    },
     {
       "at": "2026-10-21T03:44:41.695Z",
       "event": "BATCH_COMMITTED",
@@ -23554,6 +23658,13 @@
       "seq": 210,
       "topics": 10,
       "sha256": "3837b535f96b7b1eaf892e2f3f74e09a9864c98bd2e396171f94bd136d75d5b3"
+    },
+    {
+      "at": "2026-10-21T04:30:00.326Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 211,
+      "topics": 10,
+      "sha256": "be77c32a51e864bda17a8aa265a8b239778e1abf72dc662d5e55e8886a140860"
     }
   ]
 }
