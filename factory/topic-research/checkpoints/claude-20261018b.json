@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:49:07.347Z",
+  "updated_at": "2026-10-21T04:49:19.744Z",
   "base_main_sha": "c9ef11168bf22fb0da6e2fe3dcb5404a1b1c2b6c",
-  "last_commit_sha": "f91fe1bb92eef1951e812a224880e04f51ae523e",
+  "last_commit_sha": "c5defa22748379bd5b73796ada85389577a9f075",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 2190,
-    "qa_pass": 2190,
+    "researched": 2200,
+    "qa_pass": 2200,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2180,
+    "pushed": 2190,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 220,
-      "de": 220,
-      "fr": 220,
-      "es": 220,
-      "nl": 220,
-      "pt": 220,
-      "zh": 220,
-      "ko": 220,
-      "ja": 220,
-      "en": 210
+      "vi": 221,
+      "de": 221,
+      "fr": 221,
+      "es": 221,
+      "nl": 221,
+      "pt": 221,
+      "zh": 221,
+      "ko": 221,
+      "ja": 221,
+      "en": 211
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 1021,
+      "traffic-law-safety": 1031,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 219,
-    "file": "factory/topic-research/batches/claude-20261018b-0219.json",
-    "sha256": "ae494f12ebcdaeb7ba671faa970b3b9de7cd56abbb351533c9138e92463719a6",
+    "seq": 220,
+    "file": "factory/topic-research/batches/claude-20261018b-0220.json",
+    "sha256": "6307e5c9e087ac9323cf310b5d176eb6aebc6368a30bef39f41cfabe07556f89",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -24257,8 +24257,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0219.json",
       "sha256": "ae494f12ebcdaeb7ba671faa970b3b9de7cd56abbb351533c9138e92463719a6",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "c5defa22748379bd5b73796ada85389577a9f075",
       "researched_on": "2026-10-21",
       "topics": [
         {
@@ -24362,11 +24362,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 220,
+      "file": "factory/topic-research/batches/claude-20261018b-0220.json",
+      "sha256": "6307e5c9e087ac9323cf310b5d176eb6aebc6368a30bef39f41cfabe07556f89",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-21",
+      "topics": [
+        {
+          "ref": "vi:dau-lung-co-co-tay-khi-di-xe-may-lau-nghien-cuu-tu-the-gio-chay-rung-xoc",
+          "locale": "vi",
+          "slug": "dau-lung-co-co-tay-khi-di-xe-may-lau-nghien-cuu-tu-the-gio-chay-rung-xoc",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-gear",
+          "key": "vi::vi sao di xe may lau bi dau lung co va co tay va cac nghien cuu ve nguoi lai xe noi gi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:back-neck-wrist-strain-long-motorbike-rides-rider-studies-posture-vibration",
+          "locale": "en",
+          "slug": "back-neck-wrist-strain-long-motorbike-rides-rider-studies-posture-vibration",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-gear",
+          "key": "en::why does my back neck and wrist hurt after a long motorbike ride and what do studies on riders say",
+          "ta_id": null
+        },
+        {
+          "ref": "de:ruecken-nacken-handgelenk-motorrad-studien-haltung-fahrzeit-vibration",
+          "locale": "de",
+          "slug": "ruecken-nacken-handgelenk-motorrad-studien-haltung-fahrzeit-vibration",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-gear",
+          "key": "de::warum tun nach einer langen motorradfahrt rucken nacken und handgelenke weh und was sagen studien zu fahrern",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:dos-nuque-poignets-moto-etudes-posture-duree-vibrations",
+          "locale": "fr",
+          "slug": "dos-nuque-poignets-moto-etudes-posture-duree-vibrations",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-gear",
+          "key": "fr::pourquoi le dos la nuque et les poignets font-ils mal apres un long trajet a moto et que disent les etudes sur les conducteurs",
+          "ta_id": null
+        },
+        {
+          "ref": "es:espalda-cuello-munecas-moto-estudios-postura-horas-vibraciones",
+          "locale": "es",
+          "slug": "espalda-cuello-munecas-moto-estudios-postura-horas-vibraciones",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-gear",
+          "key": "es::por que duelen la espalda el cuello y las munecas tras un viaje largo en moto y que dicen los estudios sobre los conductores",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:rug-nek-pols-motor-onderzoek-houding-uren-trillingen",
+          "locale": "nl",
+          "slug": "rug-nek-pols-motor-onderzoek-houding-uren-trillingen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-gear",
+          "key": "nl::waarom doen rug nek en polsen pijn na een lange motorrit en wat zeggen studies over rijders",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:qi-motuoche-bei-jing-shouwan-laosun-yanjiu-zitai-shichang-zhendong",
+          "locale": "zh",
+          "slug": "qi-motuoche-bei-jing-shouwan-laosun-yanjiu-zitai-shichang-zhendong",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-gear",
+          "key": "zh::长途骑摩托车后为什么背部颈部和手腕会痛 针对骑手的研究怎么说",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:costas-pescoco-pulsos-mota-estudos-postura-horas-vibracao",
+          "locale": "pt",
+          "slug": "costas-pescoco-pulsos-mota-estudos-postura-horas-vibracao",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-gear",
+          "key": "pt::porque e que doem as costas o pescoco e os pulsos depois de uma viagem longa de mota e o que dizem os estudos sobre os condutores",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:otobai-heori-mok-sonmok-budam-yeongu-jase-sigan-jindong",
+          "locale": "ko",
+          "slug": "otobai-heori-mok-sonmok-budam-yeongu-jase-sigan-jindong",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-gear",
+          "key": "ko::오토바이를 오래 타면 왜 허리와 목과 손목이 아픈가요 운전자 연구는 뭐라고 하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:baiku-koshi-kubi-tekubi-futan-kenkyu-shisei-jikan-shindo",
+          "locale": "ja",
+          "slug": "baiku-koshi-kubi-tekubi-futan-kenkyu-shisei-jikan-shindo",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-gear",
+          "key": "ja::ハイクて長く走ると腰や首や手首か痛くなるのはなせか 運転者の研究は何と言っているか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 220,
-    "file": "factory/topic-research/batches/claude-20261018b-0220.json",
+    "seq": 221,
+    "file": "factory/topic-research/batches/claude-20261018b-0221.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -24379,13 +24490,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-21T03:57:57.282Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 195,
-      "topics": 10,
-      "sha256": "19975db63ef062f62a336d5cc0efa06f321f9aec2e8c82755d1aaff865553b1d"
-    },
     {
       "at": "2026-10-21T03:58:13.059Z",
       "event": "BATCH_COMMITTED",
@@ -24553,6 +24657,13 @@
       "seq": 219,
       "topics": 10,
       "sha256": "ae494f12ebcdaeb7ba671faa970b3b9de7cd56abbb351533c9138e92463719a6"
+    },
+    {
+      "at": "2026-10-21T04:49:19.744Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 220,
+      "topics": 10,
+      "sha256": "6307e5c9e087ac9323cf310b5d176eb6aebc6368a30bef39f41cfabe07556f89"
     }
   ]
 }
