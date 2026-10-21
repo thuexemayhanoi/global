@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T03:44:41.695Z",
+  "updated_at": "2026-10-21T03:44:52.976Z",
   "base_main_sha": "68e51c4329575725c39c26fcfdb9e0491d984fb6",
-  "last_commit_sha": "0312339c6b4d8b756a8fbd521a15c0d9c5515623",
+  "last_commit_sha": "dd11595cba75e007db7e1cc2fb07c45b4523f346",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1870,
-    "qa_pass": 1870,
+    "researched": 1880,
+    "qa_pass": 1880,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1860,
+    "pushed": 1870,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 188,
-      "de": 188,
-      "fr": 188,
-      "es": 188,
-      "nl": 188,
-      "pt": 188,
-      "zh": 188,
-      "ko": 188,
-      "ja": 188,
-      "en": 178
+      "vi": 189,
+      "de": 189,
+      "fr": 189,
+      "es": 189,
+      "nl": 189,
+      "pt": 189,
+      "zh": 189,
+      "ko": 189,
+      "ja": 189,
+      "en": 179
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 851,
+      "traffic-law-safety": 861,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 187,
-    "file": "factory/topic-research/batches/claude-20261018b-0187.json",
-    "sha256": "8a157e0142f15176ddaaeacef502c7d18e0ae00096b288a2517aa40f03cd0bc4",
+    "seq": 188,
+    "file": "factory/topic-research/batches/claude-20261018b-0188.json",
+    "sha256": "6521bb4135ef6c792fc08092636c173dedef8d01149b2c29893349677fcfc94c",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -20705,8 +20705,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0187.json",
       "sha256": "8a157e0142f15176ddaaeacef502c7d18e0ae00096b288a2517aa40f03cd0bc4",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "dd11595cba75e007db7e1cc2fb07c45b4523f346",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -20810,11 +20810,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 188,
+      "file": "factory/topic-research/batches/claude-20261018b-0188.json",
+      "sha256": "6521bb4135ef6c792fc08092636c173dedef8d01149b2c29893349677fcfc94c",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:canh-bao-nang-nong-viet-nam-cap-do-rui-ro-thien-tai-nguoi-di-xe-may",
+          "locale": "vi",
+          "slug": "canh-bao-nang-nong-viet-nam-cap-do-rui-ro-thien-tai-nguoi-di-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-weather",
+          "key": "vi::cap do rui ro thien tai do nang nong nghia la gi va xem canh bao nang nong chinh thuc o dau",
+          "ta_id": null
+        },
+        {
+          "ref": "en:vietnam-heat-warnings-risk-levels-weather-service-rider",
+          "locale": "en",
+          "slug": "vietnam-heat-warnings-risk-levels-weather-service-rider",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-weather",
+          "key": "en::what do heat wave warning levels mean in vietnam and who announces them",
+          "ta_id": null
+        },
+        {
+          "ref": "de:hitzewarnungen-vietnam-risikostufen-amtliche-meldungen-rollerfahrer",
+          "locale": "de",
+          "slug": "hitzewarnungen-vietnam-risikostufen-amtliche-meldungen-rollerfahrer",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-weather",
+          "key": "de::was bedeuten die hitzewarnungen und risikostufen in vietnam und wo finde ich sie",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:alertes-canicule-vietnam-niveaux-de-risque-bulletins-officiels-motard",
+          "locale": "fr",
+          "slug": "alertes-canicule-vietnam-niveaux-de-risque-bulletins-officiels-motard",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-weather",
+          "key": "fr::que signifient les alertes canicule et leurs niveaux de risque au vietnam et ou les consulter",
+          "ta_id": null
+        },
+        {
+          "ref": "es:avisos-de-calor-vietnam-niveles-de-riesgo-boletines-oficiales-moto",
+          "locale": "es",
+          "slug": "avisos-de-calor-vietnam-niveles-de-riesgo-boletines-oficiales-moto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-weather",
+          "key": "es::que significan los avisos de calor y sus niveles de riesgo en vietnam y donde consultarlos",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:hittewaarschuwingen-vietnam-risiconiveaus-officiele-berichten-scooter",
+          "locale": "nl",
+          "slug": "hittewaarschuwingen-vietnam-risiconiveaus-officiele-berichten-scooter",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-weather",
+          "key": "nl::wat betekenen hittewaarschuwingen en risiconiveaus in vietnam en waar vind ik ze",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-gaowen-yujing-fengxian-dengji-guanfang-tongbao-qi-motuoche",
+          "locale": "zh",
+          "slug": "yuenan-gaowen-yujing-fengxian-dengji-guanfang-tongbao-qi-motuoche",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-weather",
+          "key": "zh::越南高温预警的风险等级是什么意思,官方预警在哪里看",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:avisos-de-calor-vietname-niveis-de-risco-boletins-oficiais-mota",
+          "locale": "pt",
+          "slug": "avisos-de-calor-vietname-niveis-de-risco-boletins-oficiais-mota",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-weather",
+          "key": "pt::o que significam os avisos de calor e os niveis de risco no vietname e onde os consultar",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-pokyeom-gyeongbo-wiheom-deunggeub-gongsik-tongbo-otobai",
+          "locale": "ko",
+          "slug": "beteunam-pokyeom-gyeongbo-wiheom-deunggeub-gongsik-tongbo-otobai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-weather",
+          "key": "ko::베트남 폭염 경보의 위험 등급은 무슨 뜻이고 공식 경보는 어디서 보나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-moshokeiho-risuku-reberu-koshiki-joho-baiku",
+          "locale": "ja",
+          "slug": "betonamu-moshokeiho-risuku-reberu-koshiki-joho-baiku",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-weather",
+          "key": "ja::ヘトナムの猛暑警報のリスクレヘルは何を意味し、公式の警報はとこて見られるか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 188,
-    "file": "factory/topic-research/batches/claude-20261018b-0188.json",
+    "seq": 189,
+    "file": "factory/topic-research/batches/claude-20261018b-0189.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -20827,13 +20938,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:48:47.565Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 163,
-      "topics": 10,
-      "sha256": "f4354e25f58f4abb523076013ee82f8681307bbde5dcec3b20ad7c671506a702"
-    },
     {
       "at": "2026-10-20T20:49:04.954Z",
       "event": "BATCH_COMMITTED",
@@ -21001,6 +21105,13 @@
       "seq": 187,
       "topics": 10,
       "sha256": "8a157e0142f15176ddaaeacef502c7d18e0ae00096b288a2517aa40f03cd0bc4"
+    },
+    {
+      "at": "2026-10-21T03:44:52.976Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 188,
+      "topics": 10,
+      "sha256": "6521bb4135ef6c792fc08092636c173dedef8d01149b2c29893349677fcfc94c"
     }
   ]
 }
