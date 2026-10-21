@@ -40,11 +40,20 @@ Ngày: 2026-10-20. Không có dữ liệu trường (CrUX, GA4, RUM). Chỉ có 
 | Trình đơn ngôn ngữ | liên kết HTML thật | hoạt động không cần JS |
 | Bố cục | container tối đa, bảng cuộn ngang | cần kiểm tra thực tế trên thiết bị khi có RUM |
 
-## 4. Khuyến nghị (chưa thực hiện, ngoài phạm vi PR này)
+## 4. Đã thực hiện trong PR #79 (worker PERF, nhánh `seo/v10-perf` đã gộp)
 
-1. Phục vụ hero ở hai kích thước bằng `srcset` (ví dụ 960 và 1600) hoặc nén lại mục tiêu dưới 120 KB cho 1600×900; thêm `<link rel="preload" as="image">` cho hero trên trang gốc và Pillar. Đây là đòn bẩy trực tiếp cho LCP mobile. Cần kiểm tra chất lượng ảnh bằng mắt trước khi thay tệp.
-2. Giữ `ultra.css` cuối cùng trong thứ tự tải hoặc tách phần chỉ dùng cho trang gốc; đo lại Speed Index mobile sau thay đổi.
-3. Sau khi merge, chạy lại `pagespeed_audit` cho một Hub và một bài Supporting (còn 2 báo cáo trong ngày) để có số liệu cho mẫu bài, không chỉ trang gốc.
-4. Khi có property GSC hoặc CrUX cho tên miền, thay số liệu phòng thí nghiệm bằng số liệu trường trong tài liệu này.
+| Thay đổi | Chi tiết | Trạng thái |
+|---|---|---|
+| Hero đáp ứng theo kích thước màn hình | `hero-hanoi-800.webp` 78.702 byte (800×450) và `hero-hanoi-1200.webp` 139.424 byte (1200×675) tạo từ bản gốc 1600×900 (259.960 byte, giữ nguyên làm ảnh xem trước mạng xã hội) bằng ImageMagick; `<img srcset sizes>` trên hero với `sizes="(max-width: 767px) calc(100vw - 36px), (max-width: 880px) 520px, 470px"` suy ra từ `assets/ultra.css` và `assets/styles.css` | IMPLEMENTED, TESTED |
+| Preload hero | `<link rel="preload" as="image" imagesrcset imagesizes fetchpriority="high">` chỉ trên trang gốc `/` (trang duy nhất hiển thị ảnh hero), đặt trước stylesheet đầu tiên | IMPLEMENTED, TESTED |
+| Test hồi quy | `tests/hero-perf.test.mjs` (4 test): kích thước thật của ba tệp WebP đọc từ header khớp bộ mô tả `srcset`, `sizes` khớp CSS thật, trang gốc có đúng một preload, không trang nào khác hiển thị hero hay preload | TESTED |
 
-Trạng thái: không có thay đổi mã về hiệu năng trong PR này (các thay đổi SEO không thêm tài nguyên tải thêm: chỉ thêm thẻ meta và vài trăm byte JSON-LD mỗi trang). Số liệu: TESTED bằng connector trước deploy; VERIFIED sau deploy cần chạy lại.
+Kỳ vọng: điện thoại tải 79 KB hoặc 139 KB thay vì 260 KB cho ảnh LCP; con số LCP thực tế chỉ được ghi sau khi deploy và đo lại (mục 5).
+
+## 5. Khuyến nghị còn lại (chưa thực hiện)
+
+1. Giữ `ultra.css` cuối cùng trong thứ tự tải hoặc tách phần chỉ dùng cho trang gốc; đo lại Speed Index mobile sau thay đổi.
+2. Sau khi merge, chạy lại `pagespeed_audit` (`forceUpdate`) cho trang gốc, một Hub và một bài Supporting để có số liệu cho mẫu bài, không chỉ trang gốc.
+3. Khi có property GSC hoặc CrUX cho tên miền, thay số liệu phòng thí nghiệm bằng số liệu trường trong tài liệu này.
+
+Trạng thái: thay đổi hiệu năng trong PR là IMPLEMENTED và TESTED; các thẻ meta và JSON-LD thêm vào chỉ tốn vài trăm byte mỗi trang. Số liệu CWV: TESTED bằng connector trước deploy; VERIFIED sau deploy cần đo lại.

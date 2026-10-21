@@ -8,7 +8,7 @@ Ngày: 2026-10-20. Nhánh: `seo/v10-global-engine-20261020` trên nền `main` `
 |---|---|---|---|
 | `node scripts/build.mjs` | Generated 954 static files | Generated 954 static files | |
 | `node scripts/build.mjs --check` | Verified 954 | Verified 954 | byte-identical với HTML đã commit |
-| `node --test tests/*.test.mjs` | 264 pass, 0 fail | **273 pass, 0 fail** | thêm 9 test trong `tests/seo-v10.test.mjs` |
+| `node --test tests/*.test.mjs` | 264 pass, 0 fail | **279 test: 278 pass, 0 fail, 1 bỏ qua có chủ ý** | thêm `tests/seo-v10.test.mjs` (9), `tests/hero-perf.test.mjs` (4), `tests/meta-proposals.test.mjs` (2, một test bỏ qua khi chưa có tệp đề xuất) |
 | `node scripts/seo/validate-plan.mjs` | SEO MATRIX VALID | SEO MATRIX VALID | 1.781 dòng, 926 published, 855 planned |
 | `node scripts/seo/seo-guard.mjs` | PASS, fail 0, warn 69 | PASS, fail 0, warn 159 | warn chỉ là ANCHOR_DIVERSITY (xem 06); 926 URL đóng băng không đổi fingerprint |
 | `node scripts/seo/fact-guard.mjs` | PASS, fail 0, warn 709 | PASS, fail 0, warn 709 | không thay đổi; không có NAP, giá hay schema kinh doanh mới |
@@ -27,17 +27,26 @@ Ngày: 2026-10-20. Nhánh: `seo/v10-global-engine-20261020` trên nền `main` `
 | Vá `articles.mjs` bằng script khớp nhầm vị trí và làm hỏng tệp (SyntaxError) | neo chuỗi trùng với hàm `checkArticle` | `git checkout` tệp, vá lại neo vào `export function renderArticle(` có kiểm tra |
 | Audit nội bộ báo nhầm NOT_FROZEN 926 ở vòng đầu | đọc sai khóa của `url-freeze.json` | sửa audit; số liệu trong các tài liệu này là số sau khi sửa |
 | ANCHOR_DIVERSITY tăng 69 → 159 | mỗi bài nhận 6 liên kết anh em với anchor là tiêu đề | chấp nhận, ghi nhận trong 06; không chặn |
+| Codex review trên PR #79: cửa sổ xoay vòng bỏ rơi bài cùng silo ở cuối silo (ví dụ DE-S96 có 4 bài cùng silo nhưng không trỏ tới bài nào) | thuật toán vòng đầu chỉ xoay theo thứ tự silo | `siblingPlan` theo Hub: cùng silo trước, tỏa đều, cân bằng; đo lại 861 bài: tới 4 đến 7 liên kết, 706 bài đúng 6 (commit `f62b0768`) |
+| Codex review: alt ảnh thẻ chủ đề lặp đúng tiêu đề bên cạnh | bản đầu đặt alt bằng tiêu đề thẻ | ảnh trang trí trở lại `alt=""`, chỉ hero có alt mô tả; test cập nhật (commit `f62b0768`) |
+| Worker song song bị dừng vì hạn mức phiên (HTTP 429) lúc 20:33 UTC | 7 worker đề xuất tiêu đề và worker QA chưa kịp ghi kết quả | PERF đã commit xong trước đó và được gộp; các worker còn lại được chạy lại sau khi hạn mức mở (mục 5) |
 
-## 3. Test mới (`tests/seo-v10.test.mjs`, 9 test)
+## 3. Test mới
+
+`tests/hero-perf.test.mjs` (4 test, worker PERF): kích thước thật của ba tệp WebP hero khớp `srcset`, `sizes` khớp CSS, trang gốc có đúng một preload trước stylesheet, không trang nào khác hiển thị hero hay preload.
+
+`tests/meta-proposals.test.mjs` (2 test): bộ kiểm tra của `scripts/seo/apply-meta-proposals.mjs` (giới hạn 60 ký tự tiêu đề, 120 đến 155 ký tự mô tả, không bịa số, đề xuất null khi trường đã trong giới hạn) và kiểm tra mọi tệp đề xuất khi có.
+
+`tests/seo-v10.test.mjs` (9 test)
 
 1. Hub: breadcrumb Global › Ngôn ngữ › Hub, 3 mục, không lặp URL, có `<nav class="crumb">` bắt đầu bằng Global.
 2. Supporting: breadcrumb 3 mục duy nhất, kết thúc tại chính trang.
 3. Mọi Hub và Supporting có `og:site_name`, `og:image`, `twitter:card`, Article có `publisher`, `isPartOf`, `datePublished` đúng bằng `publication.approved_at` (hoặc không có ngày khi không có bản ghi).
-4. Liên kết anh em: mỗi bài nhận ít nhất min(6, n−1) liên kết, khối có đúng min(6, n−1) liên kết, không tự trỏ, không lặp.
-5. `topicLinks` đơn vị: 8 bài, 2 silo, thứ tự chính xác, 6 liên kết tới mỗi bài.
+4. Liên kết anh em: khối có đúng min(6, n−1) liên kết, không tự trỏ, không lặp, bài cùng silo luôn đứng trước, mỗi bài nhận ít nhất min(6, số bài cùng silo) liên kết tới; in phân bố thực tế vào nhật ký.
+5. `topicLinks` đơn vị: 8 bài, 2 silo, thứ tự chính xác, tổng 48 liên kết, tối thiểu 5 liên kết tới mỗi bài.
 6. `renderArticle` đơn vị: đường dẫn cho Hub và bài de, ngày, logo, `og:image:width`.
 7. Thanh liên quan: bắt đầu tại trang chủ ngôn ngữ, tối đa 5, không lặp, không tự trỏ.
-8. Alt ảnh: gốc và 10 trang chủ ngôn ngữ, mọi ảnh có alt từ 3 ký tự, alt ảnh chủ đề vi bằng tiêu đề thẻ bản địa.
+8. Alt ảnh: gốc và 10 trang chủ ngôn ngữ, hero có alt mô tả từ 20 ký tự, mọi ảnh trang trí có `alt=""` và đứng cạnh tiêu đề `<h3>` của nó.
 9. `sitemapFilePattern`: nhận `sitemap-vi-10.xml`, `sitemap-de-123.xml`; từ chối `sitemap-xx.xml`, `-1`, `-01`, `.gz`.
 
 ## 4. Những gì QA không chứng minh
