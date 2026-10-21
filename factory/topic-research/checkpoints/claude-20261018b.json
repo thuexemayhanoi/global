@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:30:35.517Z",
+  "updated_at": "2026-10-21T04:30:48.723Z",
   "base_main_sha": "0e451bb09b5f531d1353b639755388f43583e9a4",
-  "last_commit_sha": "ecb263221e8781f060d8ee46515096e6d4ac1fee",
+  "last_commit_sha": "7b4a981fe9050a53390a2522656048b72dd6a70e",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 2140,
-    "qa_pass": 2140,
+    "researched": 2150,
+    "qa_pass": 2150,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2130,
+    "pushed": 2140,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 215,
-      "de": 215,
-      "fr": 215,
-      "es": 215,
-      "nl": 215,
-      "pt": 215,
-      "zh": 215,
-      "ko": 215,
-      "ja": 215,
-      "en": 205
+      "vi": 216,
+      "de": 216,
+      "fr": 216,
+      "es": 216,
+      "nl": 216,
+      "pt": 216,
+      "zh": 216,
+      "ko": 216,
+      "ja": 216,
+      "en": 206
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 499
+      "motorbike-rental": 509
     }
   },
   "last_batch": {
-    "seq": 214,
-    "file": "factory/topic-research/batches/claude-20261018b-0214.json",
-    "sha256": "946a56768b6d082c15f1d1646dcee6fd8c2da014a8371d6b00d6922f7c406633",
+    "seq": 215,
+    "file": "factory/topic-research/batches/claude-20261018b-0215.json",
+    "sha256": "d03f02dc7b4b042b2d8adcf5466b7896116ded3fca0b388b34a17f7ff0cf4ef0",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -23702,8 +23702,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0214.json",
       "sha256": "946a56768b6d082c15f1d1646dcee6fd8c2da014a8371d6b00d6922f7c406633",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "7b4a981fe9050a53390a2522656048b72dd6a70e",
       "researched_on": "2026-10-21",
       "topics": [
         {
@@ -23807,11 +23807,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 215,
+      "file": "factory/topic-research/batches/claude-20261018b-0215.json",
+      "sha256": "d03f02dc7b4b042b2d8adcf5466b7896116ded3fca0b388b34a17f7ff0cf4ef0",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-21",
+      "topics": [
+        {
+          "ref": "vi:bmw-s-1000-r-s-1000-rr-m-1000-r-khac-nhau-bang-lai-hang-a",
+          "locale": "vi",
+          "slug": "bmw-s-1000-r-s-1000-rr-m-1000-r-khac-nhau-bang-lai-hang-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-power",
+          "key": "vi::bmw s 1000 r s 1000 rr m 1000 r khac nhau the nao va can bang lai hang nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:bmw-s-1000-r-s-1000-rr-m-1000-r-differences-licence-class-a",
+          "locale": "en",
+          "slug": "bmw-s-1000-r-s-1000-rr-m-1000-r-differences-licence-class-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-power",
+          "key": "en::bmw s 1000 r vs s 1000 rr vs m 1000 r differences",
+          "ta_id": null
+        },
+        {
+          "ref": "de:bmw-s-1000-r-s-1000-rr-m-1000-r-unterschiede-klasse-a",
+          "locale": "de",
+          "slug": "bmw-s-1000-r-s-1000-rr-m-1000-r-unterschiede-klasse-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-power",
+          "key": "de::bmw s 1000 r s 1000 rr m 1000 r unterschiede und notige fuhrerscheinklasse",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:bmw-s-1000-r-s-1000-rr-m-1000-r-differences-permis-a",
+          "locale": "fr",
+          "slug": "bmw-s-1000-r-s-1000-rr-m-1000-r-differences-permis-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-power",
+          "key": "fr::bmw s 1000 r s 1000 rr m 1000 r differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:bmw-s-1000-r-s-1000-rr-m-1000-r-diferencias-carne-a",
+          "locale": "es",
+          "slug": "bmw-s-1000-r-s-1000-rr-m-1000-r-diferencias-carne-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-power",
+          "key": "es::bmw s 1000 r s 1000 rr m 1000 r diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:bmw-s-1000-r-s-1000-rr-m-1000-r-verschillen-rijbewijs-a",
+          "locale": "nl",
+          "slug": "bmw-s-1000-r-s-1000-rr-m-1000-r-verschillen-rijbewijs-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-power",
+          "key": "nl::bmw s 1000 r s 1000 rr m 1000 r verschillen en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:bmw-s-1000-r-s-1000-rr-m-1000-r-qubie-jiazhao-a-lei",
+          "locale": "zh",
+          "slug": "bmw-s-1000-r-s-1000-rr-m-1000-r-qubie-jiazhao-a-lei",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-power",
+          "key": "zh::宝马 s 1000 r s 1000 rr m 1000 r 区别 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:bmw-s-1000-r-s-1000-rr-m-1000-r-diferencas-carta-a",
+          "locale": "pt",
+          "slug": "bmw-s-1000-r-s-1000-rr-m-1000-r-diferencas-carta-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-power",
+          "key": "pt::bmw s 1000 r s 1000 rr m 1000 r diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:bmw-s-1000-r-s-1000-rr-m-1000-r-chai-myeonheo",
+          "locale": "ko",
+          "slug": "bmw-s-1000-r-s-1000-rr-m-1000-r-chai-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-power",
+          "key": "ko::bmw s 1000 r s 1000 rr m 1000 r 차이와 필요한 면허",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:bmw-s-1000-r-s-1000-rr-m-1000-r-chigai-menkyo",
+          "locale": "ja",
+          "slug": "bmw-s-1000-r-s-1000-rr-m-1000-r-chigai-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-power",
+          "key": "ja::bmw s 1000 r s 1000 rr m 1000 r の違いと必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 215,
-    "file": "factory/topic-research/batches/claude-20261018b-0215.json",
+    "seq": 216,
+    "file": "factory/topic-research/batches/claude-20261018b-0216.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -23824,13 +23935,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-21T03:45:17.381Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 190,
-      "topics": 10,
-      "sha256": "720251334ccf594432a983f38daf2cc9077e93a0e0dbb2035348ca5cca56e58c"
-    },
     {
       "at": "2026-10-21T03:45:31.195Z",
       "event": "BATCH_COMMITTED",
@@ -23998,6 +24102,13 @@
       "seq": 214,
       "topics": 10,
       "sha256": "946a56768b6d082c15f1d1646dcee6fd8c2da014a8371d6b00d6922f7c406633"
+    },
+    {
+      "at": "2026-10-21T04:30:48.723Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 215,
+      "topics": 10,
+      "sha256": "d03f02dc7b4b042b2d8adcf5466b7896116ded3fca0b388b34a17f7ff0cf4ef0"
     }
   ]
 }
