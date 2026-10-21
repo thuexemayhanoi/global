@@ -6,8 +6,8 @@ Ngày: 2026-10-20. Nhánh: `seo/v10-global-engine-20261020` (từ `main` `fc4fbb
 
 | Mức | Trạng thái | Bằng chứng |
 |---|---|---|
-| IMPLEMENTED | Hoàn tất | commit `318e865c` (mã, HTML tạo lại, đồ thị, test, báo cáo 01 đến 09 và 11) |
-| TESTED | Hoàn tất tại local | 273/273 test, mọi guard xanh (xem 09); CI `qa.yml` chạy trên PR #79 |
+| IMPLEMENTED | Hoàn tất | commit `318e865c` (mã, HTML tạo lại, đồ thị, test, báo cáo 01 đến 09 và 11) và các commit tiếp theo trong mục 2b |
+| TESTED | Hoàn tất tại local | 279 test (278 pass, 1 bỏ qua có chủ ý), mọi guard xanh (xem 09); CI `qa.yml` xanh trên `318e865c`, `7926200c`, `52a9aa21`, `c0286253`; đang chạy trên đầu nhánh mới |
 | DEPLOYED | Chưa | GitHub Pages chỉ deploy từ `main`; cần merge PR #79 |
 | VERIFIED | Chưa | sau deploy: `post-publish-qa.yml` + crawler connector (mục 5) |
 
@@ -26,6 +26,21 @@ Ngày: 2026-10-20. Nhánh: `seo/v10-global-engine-20261020` (từ `main` `fc4fbb
 | `docs/seo-v10/*` | 10 báo cáo và 1 phụ lục | tài liệu |
 
 Không đổi: `CNAME`, `robots.txt`, `sitemap*.xml`, `data/seo/url-freeze.json`, `data/seo/master-matrix.json`, `content/`, `factory/`, `scripts/navigation.mjs`, `assets/`, menu, footer, theme.
+
+## 2b. Các commit tiếp theo trên PR #79
+
+| Commit | Nội dung | Ai làm |
+|---|---|---|
+| `7926200c` | báo cáo 10, `qa.yml` chạy `tests/seo-v10.test.mjs` | điều phối |
+| `52a9aa21` | gộp `main` (10 commit Topic Factory), tạo lại content graph (1.919 dòng, 993 IDEA) | điều phối |
+| `c0286253` | `scripts/seo/apply-meta-proposals.mjs` + `tests/meta-proposals.test.mjs`; báo cáo 03 bổ sung nghiên cứu zh và nl | điều phối |
+| `f62b0768` | sửa theo review Codex: `siblingPlan` cùng silo trước và cân bằng; ảnh trang trí trở lại `alt=""`; test và báo cáo 01, 02, 06, 07 | điều phối |
+| `24cacc49` qua `e07d5c64` | hero đáp ứng `srcset`/`sizes`, hai tệp WebP 800w và 1200w, preload trên trang gốc, `tests/hero-perf.test.mjs` | worker PERF (nhánh `seo/v10-perf`) |
+| `941a1f44` | trang gốc tạo lại với hero mới; báo cáo 08 và 09 | điều phối |
+| `f2ae3c7e` qua `46d84418` | `tests/seo-site-qa.test.mjs`: 12 test QA toàn site cho 10 ngôn ngữ (lang, canonical, H1, tiêu đề và mô tả duy nhất, liên kết nội bộ, noindex, JSON-LD, hreflang, sitemap, ảnh) chạy dưới 1 giây; đưa vào `qa.yml` | worker QA (nhánh `seo/v10-qa`) |
+| `cb696fce` | `qa.yml` chạy thêm `tests/hero-perf.test.mjs` và `tests/meta-proposals.test.mjs` | điều phối |
+
+PR xếp chồng chờ chủ sở hữu duyệt nội dung: https://github.com/thuexemayhanoi/global/pull/82 (nhánh `seo/v10-pillar-sections`, commit `fe626f50`): một mục "cách dùng cẩm nang" bản ngữ trên 10 trang chủ ngôn ngữ, 9 Pillar chuyển UPGRADE thành KEEP trong content graph. Chỉ merge sau PR #79 và sau khi đọc lại từng ngôn ngữ.
 
 ## 3. Điều kiện an toàn đã kiểm
 
@@ -59,7 +74,20 @@ Mỗi bước ghi kết quả vào mục 6 của tài liệu này trong một co
 
 Chưa có (PR chưa merge).
 
-## 7. Việc còn lại và chủ sở hữu quyết định
+## 7. Worker song song đã dùng
+
+| Worker | Phạm vi | Kết quả | Trạng thái |
+|---|---|---|---|
+| Điều phối (phiên này) | audit, sửa generator, gộp nhánh, QA, PR, trả lời review | PR #79, PR #82, 11 báo cáo | hoạt động |
+| PERF (subagent, worktree riêng, nhánh `seo/v10-perf`) | hero đáp ứng, preload, test | gộp vào PR #79 | hoàn tất |
+| QA (subagent, worktree riêng, nhánh `seo/v10-qa`) | bộ test QA toàn site 10 ngôn ngữ | gộp vào PR #79 | hoàn tất |
+| PILLAR A (vi, en, de, fr, es) và PILLAR B (nl, zh, pt, ko, ja) | đề xuất mục mới cho trang chủ ngôn ngữ | PR #82 | hoàn tất, chờ duyệt nội dung |
+| META vi, en, de, fr, es, nl, pt | đề xuất rút gọn tiêu đề và mô tả (JSON, kiểm tra bằng `apply-meta-proposals.mjs`) | bị dừng lúc 20:33 UTC vì hạn mức phiên (HTTP 429), chạy lại từ 03:45 UTC 2026-10-21 | đang chạy, xem mục 8 khi có kết quả |
+| W1, W2, W3 (Writer) | không dùng cho SEO: cả ba đang giữ 10 claim bài viết mỗi slot, theo quy tắc không chiếm Writer đang có claim | không tham gia | không dùng |
+
+Khả năng song song thật: subagent trong cùng container (mỗi worker một worktree git hoặc một tệp đầu ra riêng, điều phối gộp tuần tự các thay đổi generator). Không có phiên AI độc lập nào khác đang chạy trên máy này (`ListAgents` trống); không giả định thêm.
+
+## 8. Việc còn lại và chủ sở hữu quyết định
 
 - Biên tập 321 tiêu đề trên 70 ký tự và 622 mô tả trên 165 ký tự (trường đóng băng, cần PR riêng với `seo-guard --write`); danh sách trong 11.
 - `distinct_from` cho 4 IDEA trùng ý định với trang live (04) trước khi Writer nhận.
