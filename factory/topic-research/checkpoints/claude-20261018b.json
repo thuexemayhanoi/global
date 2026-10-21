@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:53:28.874Z",
+  "updated_at": "2026-10-21T04:53:40.176Z",
   "base_main_sha": "232b500b15e8f67536a1b8d29a7f9137e4ba0781",
-  "last_commit_sha": "83d5ad7215574b4f067973b7d66b63106dabe878",
+  "last_commit_sha": "955df5e2444e2c77e8471b3661a08c8345097c5f",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 2230,
-    "qa_pass": 2230,
+    "researched": 2240,
+    "qa_pass": 2240,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2220,
+    "pushed": 2230,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 224,
-      "de": 224,
-      "fr": 224,
-      "es": 224,
-      "nl": 224,
-      "pt": 224,
-      "zh": 224,
-      "ko": 224,
-      "ja": 224,
-      "en": 214
+      "vi": 225,
+      "de": 225,
+      "fr": 225,
+      "es": 225,
+      "nl": 225,
+      "pt": 225,
+      "zh": 225,
+      "ko": 225,
+      "ja": 225,
+      "en": 215
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 539
+      "motorbike-rental": 549
     }
   },
   "last_batch": {
-    "seq": 223,
-    "file": "factory/topic-research/batches/claude-20261018b-0223.json",
-    "sha256": "4dca588831a640b90cf7284265a69c6ccda58f65bef8ff038a6eb1272993e4bd",
+    "seq": 224,
+    "file": "factory/topic-research/batches/claude-20261018b-0224.json",
+    "sha256": "47646cf2b068e91931c72e7ce2f4d4e0b44d695fcf7d0407498faded33f5f9e0",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -24701,8 +24701,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0223.json",
       "sha256": "4dca588831a640b90cf7284265a69c6ccda58f65bef8ff038a6eb1272993e4bd",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "955df5e2444e2c77e8471b3661a08c8345097c5f",
       "researched_on": "2026-10-21",
       "topics": [
         {
@@ -24806,11 +24806,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 224,
+      "file": "factory/topic-research/batches/claude-20261018b-0224.json",
+      "sha256": "47646cf2b068e91931c72e7ce2f4d4e0b44d695fcf7d0407498faded33f5f9e0",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-21",
+      "topics": [
+        {
+          "ref": "vi:kawasaki-ninja-h2-ninja-h2r-z-h2-se-khac-nhau-hang-a",
+          "locale": "vi",
+          "slug": "kawasaki-ninja-h2-ninja-h2r-z-h2-se-khac-nhau-hang-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-power",
+          "key": "vi::kawasaki ninja h2 ninja h2r z h2 se khac nhau the nao va can bang lai hang nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:kawasaki-ninja-h2-ninja-h2r-z-h2-se-differences-licence-class-a",
+          "locale": "en",
+          "slug": "kawasaki-ninja-h2-ninja-h2r-z-h2-se-differences-licence-class-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-power",
+          "key": "en::kawasaki ninja h2 vs ninja h2r vs z h2 se differences",
+          "ta_id": null
+        },
+        {
+          "ref": "de:kawasaki-ninja-h2-ninja-h2r-z-h2-se-unterschiede-klasse-a",
+          "locale": "de",
+          "slug": "kawasaki-ninja-h2-ninja-h2r-z-h2-se-unterschiede-klasse-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-power",
+          "key": "de::kawasaki ninja h2 ninja h2r z h2 se unterschiede und notige fuhrerscheinklasse",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:kawasaki-ninja-h2-ninja-h2r-z-h2-se-differences-permis-a",
+          "locale": "fr",
+          "slug": "kawasaki-ninja-h2-ninja-h2r-z-h2-se-differences-permis-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-power",
+          "key": "fr::kawasaki ninja h2 ninja h2r z h2 se differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:kawasaki-ninja-h2-ninja-h2r-z-h2-se-diferencias-carne-a",
+          "locale": "es",
+          "slug": "kawasaki-ninja-h2-ninja-h2r-z-h2-se-diferencias-carne-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-power",
+          "key": "es::kawasaki ninja h2 ninja h2r z h2 se diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:kawasaki-ninja-h2-ninja-h2r-z-h2-se-verschillen-rijbewijs-a",
+          "locale": "nl",
+          "slug": "kawasaki-ninja-h2-ninja-h2r-z-h2-se-verschillen-rijbewijs-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-power",
+          "key": "nl::kawasaki ninja h2 ninja h2r z h2 se verschillen en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:kawasaki-ninja-h2-ninja-h2r-z-h2-se-qubie-jiazhao-a-lei",
+          "locale": "zh",
+          "slug": "kawasaki-ninja-h2-ninja-h2r-z-h2-se-qubie-jiazhao-a-lei",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-power",
+          "key": "zh::川崎 ninja h2 ninja h2r z h2 se 区别 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:kawasaki-ninja-h2-ninja-h2r-z-h2-se-diferencas-carta-a",
+          "locale": "pt",
+          "slug": "kawasaki-ninja-h2-ninja-h2r-z-h2-se-diferencas-carta-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-power",
+          "key": "pt::kawasaki ninja h2 ninja h2r z h2 se diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:kawasaki-ninja-h2-ninja-h2r-z-h2-se-chai-myeonheo",
+          "locale": "ko",
+          "slug": "kawasaki-ninja-h2-ninja-h2r-z-h2-se-chai-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-power",
+          "key": "ko::kawasaki ninja h2 ninja h2r z h2 se 차이와 필요한 면허",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:kawasaki-ninja-h2-ninja-h2r-z-h2-se-chigai-menkyo",
+          "locale": "ja",
+          "slug": "kawasaki-ninja-h2-ninja-h2r-z-h2-se-chigai-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-power",
+          "key": "ja::kawasaki ninja h2 ninja h2r z h2 se の違いと必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 224,
-    "file": "factory/topic-research/batches/claude-20261018b-0224.json",
+    "seq": 225,
+    "file": "factory/topic-research/batches/claude-20261018b-0225.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -24823,13 +24934,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-21T03:59:17.517Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 199,
-      "topics": 10,
-      "sha256": "38e985fcee9b2399237bf33504f68285334ca61672ea2cc3f29191bb7b6370e3"
-    },
     {
       "at": "2026-10-21T04:00:26.585Z",
       "event": "BATCH_COMMITTED",
@@ -24997,6 +25101,13 @@
       "seq": 223,
       "topics": 10,
       "sha256": "4dca588831a640b90cf7284265a69c6ccda58f65bef8ff038a6eb1272993e4bd"
+    },
+    {
+      "at": "2026-10-21T04:53:40.176Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 224,
+      "topics": 10,
+      "sha256": "47646cf2b068e91931c72e7ce2f4d4e0b44d695fcf7d0407498faded33f5f9e0"
     }
   ]
 }
