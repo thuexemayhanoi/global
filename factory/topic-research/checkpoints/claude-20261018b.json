@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T03:58:31.068Z",
+  "updated_at": "2026-10-21T03:58:48.410Z",
   "base_main_sha": "635f5ad89248472b389714176314d0b240abdb8b",
-  "last_commit_sha": "c22ea487f7fd111de603b12cbbd6f3eb2639a1f1",
+  "last_commit_sha": "40feb378fe8a6bb21ae6e17bdb0062c0995afbe6",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1970,
-    "qa_pass": 1970,
+    "researched": 1980,
+    "qa_pass": 1980,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1960,
+    "pushed": 1970,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 198,
-      "de": 198,
-      "fr": 198,
-      "es": 198,
-      "nl": 198,
-      "pt": 198,
-      "zh": 198,
-      "ko": 198,
-      "ja": 198,
-      "en": 188
+      "vi": 199,
+      "de": 199,
+      "fr": 199,
+      "es": 199,
+      "nl": 199,
+      "pt": 199,
+      "zh": 199,
+      "ko": 199,
+      "ja": 199,
+      "en": 189
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 911,
+      "traffic-law-safety": 921,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 197,
-    "file": "factory/topic-research/batches/claude-20261018b-0197.json",
-    "sha256": "5730edf6db487b917b3ba32a497025b08c5063956883a98572a70469f203c8ea",
+    "seq": 198,
+    "file": "factory/topic-research/batches/claude-20261018b-0198.json",
+    "sha256": "3788c865f24bea93add4ce6e97130d3f98ae883c4596f5adfb5e2eb1a8763b1c",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -21815,8 +21815,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0197.json",
       "sha256": "5730edf6db487b917b3ba32a497025b08c5063956883a98572a70469f203c8ea",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "40feb378fe8a6bb21ae6e17bdb0062c0995afbe6",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -21920,11 +21920,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 198,
+      "file": "factory/topic-research/batches/claude-20261018b-0198.json",
+      "sha256": "3788c865f24bea93add4ce6e97130d3f98ae883c4596f5adfb5e2eb1a8763b1c",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:thao-mu-bao-hiem-nguoi-di-xe-may-sau-tai-nan-cot-song-co-nghien-cuu-so-cuu",
+          "locale": "vi",
+          "slug": "thao-mu-bao-hiem-nguoi-di-xe-may-sau-tai-nan-cot-song-co-nghien-cuu-so-cuu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::co nen thao mu bao hiem cho nguoi di xe may bi tai nan khong va nghien cuu noi gi ve cu dong cot song co",
+          "ta_id": null
+        },
+        {
+          "ref": "en:remove-motorcyclist-helmet-after-crash-cervical-spine-studies-first-aid-guidance",
+          "locale": "en",
+          "slug": "remove-motorcyclist-helmet-after-crash-cervical-spine-studies-first-aid-guidance",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::should you take a motorcyclist's helmet off after a crash and what do studies say about neck movement",
+          "ta_id": null
+        },
+        {
+          "ref": "de:motorradhelm-abnehmen-nach-unfall-halswirbelsaeule-studien-erste-hilfe",
+          "locale": "de",
+          "slug": "motorradhelm-abnehmen-nach-unfall-halswirbelsaeule-studien-erste-hilfe",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::soll man nach einem unfall den helm eines motorrad- oder rollerfahrers abnehmen und was sagen studien zur halswirbelsaule",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:retirer-casque-motard-apres-accident-rachis-cervical-etudes-secourisme",
+          "locale": "fr",
+          "slug": "retirer-casque-motard-apres-accident-rachis-cervical-etudes-secourisme",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::faut-il retirer le casque d'un motard ou d'un conducteur de scooter apres un accident et que disent les etudes sur le rachis cervical",
+          "ta_id": null
+        },
+        {
+          "ref": "es:quitar-casco-motorista-accidente-columna-cervical-estudios-primeros-auxilios",
+          "locale": "es",
+          "slug": "quitar-casco-motorista-accidente-columna-cervical-estudios-primeros-auxilios",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::se debe quitar el casco a un motorista accidentado y que dicen los estudios sobre el movimiento del cuello",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:helm-afdoen-motorrijder-na-ongeval-nekwervels-onderzoek-en-eerstehulpbronnen",
+          "locale": "nl",
+          "slug": "helm-afdoen-motorrijder-na-ongeval-nekwervels-onderzoek-en-eerstehulpbronnen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::moet je na een ongeval de helm van een motor- of scooterrijder afdoen en wat zegt onderzoek over nekbewegingen",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:motuoche-qishou-shigu-hou-zhai-toukui-jingzhui-yanjiu-he-jijiu-zhinan",
+          "locale": "zh",
+          "slug": "motuoche-qishou-shigu-hou-zhai-toukui-jingzhui-yanjiu-he-jijiu-zhinan",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::摩托车手事故后要不要摘头盔 研究怎么说颈椎活动",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:tirar-capacete-motociclista-apos-acidente-coluna-cervical-estudos-socorros",
+          "locale": "pt",
+          "slug": "tirar-capacete-motociclista-apos-acidente-coluna-cervical-estudos-socorros",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::deve-se tirar o capacete a um motociclista depois de um acidente e o que dizem os estudos sobre o movimento do pescoco",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:otobai-sago-hu-heolmet-beotgigi-gyeongchu-yeongu-wa-eungeup-cheochi-jichim",
+          "locale": "ko",
+          "slug": "otobai-sago-hu-heolmet-beotgigi-gyeongchu-yeongu-wa-eungeup-cheochi-jichim",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::오토바이 사고 후 운전자의 헬멧을 벗겨야 하나요 연구는 목뼈 움직임에 대해 뭐라고 하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:baiku-jiko-go-herumetto-hazusu-keitsui-kenkyu-to-oukyu-teate-shishin",
+          "locale": "ja",
+          "slug": "baiku-jiko-go-herumetto-hazusu-keitsui-kenkyu-to-oukyu-teate-shishin",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::事故後にハイクの運転者のヘルメットは外すへきてすか 研究は頸椎の動きについて何と言っていますか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 198,
-    "file": "factory/topic-research/batches/claude-20261018b-0198.json",
+    "seq": 199,
+    "file": "factory/topic-research/batches/claude-20261018b-0199.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -21937,13 +22048,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T21:12:31.970Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 173,
-      "topics": 10,
-      "sha256": "5b5a7013ea254ee9ccd73c5e692b3e8b92a1ca042d5b9b189dea19b1ecf8c185"
-    },
     {
       "at": "2026-10-20T21:15:11.028Z",
       "event": "BATCH_COMMITTED",
@@ -22111,6 +22215,13 @@
       "seq": 197,
       "topics": 10,
       "sha256": "5730edf6db487b917b3ba32a497025b08c5063956883a98572a70469f203c8ea"
+    },
+    {
+      "at": "2026-10-21T03:58:48.410Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 198,
+      "topics": 10,
+      "sha256": "3788c865f24bea93add4ce6e97130d3f98ae883c4596f5adfb5e2eb1a8763b1c"
     }
   ]
 }
