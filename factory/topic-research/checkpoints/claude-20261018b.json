@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T03:57:25.660Z",
+  "updated_at": "2026-10-21T03:57:41.788Z",
   "base_main_sha": "635f5ad89248472b389714176314d0b240abdb8b",
-  "last_commit_sha": "a1eab0381113425493c99c472c2d4eb433eb07eb",
+  "last_commit_sha": "963a62d2e90643463eef6c1530475320a2dbeb0b",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1930,
-    "qa_pass": 1930,
+    "researched": 1940,
+    "qa_pass": 1940,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1920,
+    "pushed": 1930,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 194,
-      "de": 194,
-      "fr": 194,
-      "es": 194,
-      "nl": 194,
-      "pt": 194,
-      "zh": 194,
-      "ko": 194,
-      "ja": 194,
-      "en": 184
+      "vi": 195,
+      "de": 195,
+      "fr": 195,
+      "es": 195,
+      "nl": 195,
+      "pt": 195,
+      "zh": 195,
+      "ko": 195,
+      "ja": 195,
+      "en": 185
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 369
+      "motorbike-rental": 379
     }
   },
   "last_batch": {
-    "seq": 193,
-    "file": "factory/topic-research/batches/claude-20261018b-0193.json",
-    "sha256": "4863c1918ff102191e220c4d5af7401072c4f1f250c4c8aff0c1b1cb673af58b",
+    "seq": 194,
+    "file": "factory/topic-research/batches/claude-20261018b-0194.json",
+    "sha256": "01115c5afb94407f1099bb243d405bba541e0b7c981bc829c6791e178da531fe",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -21371,8 +21371,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0193.json",
       "sha256": "4863c1918ff102191e220c4d5af7401072c4f1f250c4c8aff0c1b1cb673af58b",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "963a62d2e90643463eef6c1530475320a2dbeb0b",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -21476,11 +21476,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 194,
+      "file": "factory/topic-research/batches/claude-20261018b-0194.json",
+      "sha256": "01115c5afb94407f1099bb243d405bba541e0b7c981bc829c6791e178da531fe",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-khac-nhau-hang-a",
+          "locale": "vi",
+          "slug": "honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-khac-nhau-hang-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-models",
+          "key": "vi::honda cb1000 hornet rebel 1100 gold wing fireblade sp khac nhau the nao va can bang lai hang nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-differences-class-a",
+          "locale": "en",
+          "slug": "honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-differences-class-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-models",
+          "key": "en::honda cb1000 hornet vs rebel 1100 vs gold wing vs fireblade sp differences",
+          "ta_id": null
+        },
+        {
+          "ref": "de:honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-unterschiede-klasse-a",
+          "locale": "de",
+          "slug": "honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-unterschiede-klasse-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-models",
+          "key": "de::honda cb1000 hornet rebel 1100 gold wing fireblade sp unterschiede und notige fuhrerscheinklasse",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-differences-permis-a",
+          "locale": "fr",
+          "slug": "honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-differences-permis-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-models",
+          "key": "fr::honda cb1000 hornet rebel 1100 gold wing fireblade sp differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-diferencias-carne-a",
+          "locale": "es",
+          "slug": "honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-diferencias-carne-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-models",
+          "key": "es::honda cb1000 hornet rebel 1100 gold wing fireblade sp diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-verschillen-rijbewijs-a",
+          "locale": "nl",
+          "slug": "honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-verschillen-rijbewijs-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-models",
+          "key": "nl::honda cb1000 hornet rebel 1100 gold wing fireblade sp verschillen en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-qubie-jiazhao-a-lei",
+          "locale": "zh",
+          "slug": "honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-qubie-jiazhao-a-lei",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-models",
+          "key": "zh::本田 cb1000 hornet rebel 1100 gold wing fireblade sp 区别 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-diferencas-carta-a",
+          "locale": "pt",
+          "slug": "honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-diferencas-carta-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-models",
+          "key": "pt::honda cb1000 hornet rebel 1100 gold wing fireblade sp diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-chai-myeonheo",
+          "locale": "ko",
+          "slug": "honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-chai-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-models",
+          "key": "ko::혼다 cb1000 hornet rebel 1100 gold wing fireblade sp 차이와 필요한 면허",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-chigai-menkyo",
+          "locale": "ja",
+          "slug": "honda-cb1000-hornet-rebel-1100-gold-wing-fireblade-sp-chigai-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-models",
+          "key": "ja::ホンタ cb1000 hornet rebel 1100 gold wing fireblade sp の違いと必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 194,
-    "file": "factory/topic-research/batches/claude-20261018b-0194.json",
+    "seq": 195,
+    "file": "factory/topic-research/batches/claude-20261018b-0195.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -21493,13 +21604,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:54:59.798Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 169,
-      "topics": 10,
-      "sha256": "a138873249d1c706e1f43645de54549511b1423582d139c3ced9a1e25b0361c0"
-    },
     {
       "at": "2026-10-20T20:55:14.002Z",
       "event": "BATCH_COMMITTED",
@@ -21667,6 +21771,13 @@
       "seq": 193,
       "topics": 10,
       "sha256": "4863c1918ff102191e220c4d5af7401072c4f1f250c4c8aff0c1b1cb673af58b"
+    },
+    {
+      "at": "2026-10-21T03:57:41.788Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 194,
+      "topics": 10,
+      "sha256": "01115c5afb94407f1099bb243d405bba541e0b7c981bc829c6791e178da531fe"
     }
   ]
 }
