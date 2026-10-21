@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T03:57:57.282Z",
+  "updated_at": "2026-10-21T03:58:13.059Z",
   "base_main_sha": "635f5ad89248472b389714176314d0b240abdb8b",
-  "last_commit_sha": "3432b0c878057a4d2d1f9f7a5b12ce088ed7f4f7",
+  "last_commit_sha": "e7f4b3526fcd0957a9bb363a36c9028f776b6377",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1950,
-    "qa_pass": 1950,
+    "researched": 1960,
+    "qa_pass": 1960,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1940,
+    "pushed": 1950,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 196,
-      "de": 196,
-      "fr": 196,
-      "es": 196,
-      "nl": 196,
-      "pt": 196,
-      "zh": 196,
-      "ko": 196,
-      "ja": 196,
-      "en": 186
+      "vi": 197,
+      "de": 197,
+      "fr": 197,
+      "es": 197,
+      "nl": 197,
+      "pt": 197,
+      "zh": 197,
+      "ko": 197,
+      "ja": 197,
+      "en": 187
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 389
+      "motorbike-rental": 399
     }
   },
   "last_batch": {
-    "seq": 195,
-    "file": "factory/topic-research/batches/claude-20261018b-0195.json",
-    "sha256": "19975db63ef062f62a336d5cc0efa06f321f9aec2e8c82755d1aaff865553b1d",
+    "seq": 196,
+    "file": "factory/topic-research/batches/claude-20261018b-0196.json",
+    "sha256": "2920ab1614e811567036a387ace6bc15bf8beea06490e50293a78fcfc72a78f7",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -21593,8 +21593,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0195.json",
       "sha256": "19975db63ef062f62a336d5cc0efa06f321f9aec2e8c82755d1aaff865553b1d",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "e7f4b3526fcd0957a9bb363a36c9028f776b6377",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -21698,11 +21698,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 196,
+      "file": "factory/topic-research/batches/claude-20261018b-0196.json",
+      "sha256": "2920ab1614e811567036a387ace6bc15bf8beea06490e50293a78fcfc72a78f7",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:bmw-r-12-ninet-r-12-s-r-12-gs-khac-nhau-bang-lai-hang-a",
+          "locale": "vi",
+          "slug": "bmw-r-12-ninet-r-12-s-r-12-gs-khac-nhau-bang-lai-hang-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-models",
+          "key": "vi::bmw r 12 ninet r 12 s r 12 g/s khac nhau the nao va can bang lai hang nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:bmw-r-12-ninet-r-12-s-r-12-gs-differences-licence-class",
+          "locale": "en",
+          "slug": "bmw-r-12-ninet-r-12-s-r-12-gs-differences-licence-class",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-models",
+          "key": "en::bmw r 12 ninet vs r 12 s vs r 12 g/s differences",
+          "ta_id": null
+        },
+        {
+          "ref": "de:bmw-r-12-ninet-r-12-s-r-12-gs-unterschiede-klasse-a",
+          "locale": "de",
+          "slug": "bmw-r-12-ninet-r-12-s-r-12-gs-unterschiede-klasse-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-models",
+          "key": "de::bmw r 12 ninet r 12 s r 12 g/s unterschiede und notige fuhrerscheinklasse",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:bmw-r-12-ninet-r-12-s-r-12-gs-differences-permis-a",
+          "locale": "fr",
+          "slug": "bmw-r-12-ninet-r-12-s-r-12-gs-differences-permis-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-models",
+          "key": "fr::bmw r 12 ninet r 12 s r 12 g/s differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:bmw-r-12-ninet-r-12-s-r-12-gs-diferencias-carne-a",
+          "locale": "es",
+          "slug": "bmw-r-12-ninet-r-12-s-r-12-gs-diferencias-carne-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-models",
+          "key": "es::bmw r 12 ninet r 12 s r 12 g/s diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:bmw-r-12-ninet-r-12-s-r-12-gs-verschillen-rijbewijs-a",
+          "locale": "nl",
+          "slug": "bmw-r-12-ninet-r-12-s-r-12-gs-verschillen-rijbewijs-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-models",
+          "key": "nl::bmw r 12 ninet r 12 s r 12 g/s verschillen en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:bmw-r-12-ninet-r-12-s-r-12-gs-qubie-jiazhao-a-lei",
+          "locale": "zh",
+          "slug": "bmw-r-12-ninet-r-12-s-r-12-gs-qubie-jiazhao-a-lei",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-models",
+          "key": "zh::宝马 r 12 ninet r 12 s r 12 g/s 区别 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:bmw-r-12-ninet-r-12-s-r-12-gs-diferencas-carta-a",
+          "locale": "pt",
+          "slug": "bmw-r-12-ninet-r-12-s-r-12-gs-diferencas-carta-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-models",
+          "key": "pt::bmw r 12 ninet r 12 s r 12 g/s diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:bmw-r-12-ninet-r-12-s-r-12-gs-chai-myeonheo",
+          "locale": "ko",
+          "slug": "bmw-r-12-ninet-r-12-s-r-12-gs-chai-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-models",
+          "key": "ko::bmw r 12 ninet r 12 s r 12 g/s 차이와 필요한 면허",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:bmw-r-12-ninet-r-12-s-r-12-gs-chigai-menkyo",
+          "locale": "ja",
+          "slug": "bmw-r-12-ninet-r-12-s-r-12-gs-chigai-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-models",
+          "key": "ja::bmw r 12 ninet r 12 s r 12 g/s の違いと必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 196,
-    "file": "factory/topic-research/batches/claude-20261018b-0196.json",
+    "seq": 197,
+    "file": "factory/topic-research/batches/claude-20261018b-0197.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -21715,13 +21826,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:55:27.991Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 171,
-      "topics": 10,
-      "sha256": "b1f0691aa93480f0c84a66a9e227df447eaa4976254d81ac017ded1fb5dd5aba"
-    },
     {
       "at": "2026-10-20T21:09:48.942Z",
       "event": "BATCH_COMMITTED",
@@ -21889,6 +21993,13 @@
       "seq": 195,
       "topics": 10,
       "sha256": "19975db63ef062f62a336d5cc0efa06f321f9aec2e8c82755d1aaff865553b1d"
+    },
+    {
+      "at": "2026-10-21T03:58:13.059Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 196,
+      "topics": 10,
+      "sha256": "2920ab1614e811567036a387ace6bc15bf8beea06490e50293a78fcfc72a78f7"
     }
   ]
 }
