@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:21:19.758Z",
+  "updated_at": "2026-10-21T04:21:30.777Z",
   "base_main_sha": "f50bc63a6355beb1acc516325da94ace2096ae63",
-  "last_commit_sha": "1147c71d2e0925f313e019979d5b78c2715dd960",
+  "last_commit_sha": "9a8cb1d3b4fafd8d000fcfff09731b905dd1d87c",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 2020,
-    "qa_pass": 2020,
+    "researched": 2030,
+    "qa_pass": 2030,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2010,
+    "pushed": 2020,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 203,
-      "de": 203,
-      "fr": 203,
-      "es": 203,
-      "nl": 203,
-      "pt": 203,
-      "zh": 203,
-      "ko": 203,
-      "ja": 203,
-      "en": 193
+      "vi": 204,
+      "de": 204,
+      "fr": 204,
+      "es": 204,
+      "nl": 204,
+      "pt": 204,
+      "zh": 204,
+      "ko": 204,
+      "ja": 204,
+      "en": 194
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 429
+      "motorbike-rental": 439
     }
   },
   "last_batch": {
-    "seq": 202,
-    "file": "factory/topic-research/batches/claude-20261018b-0202.json",
-    "sha256": "35f2f0fc402928677cd3e20a389f1aa6eb5455a440c844a5422e65c1fbf67855",
+    "seq": 203,
+    "file": "factory/topic-research/batches/claude-20261018b-0203.json",
+    "sha256": "d1c37c636c896960ccd0db08c88e495531ffb24a72f30cc224261e73c00c51f3",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -22370,8 +22370,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0202.json",
       "sha256": "35f2f0fc402928677cd3e20a389f1aa6eb5455a440c844a5422e65c1fbf67855",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "9a8cb1d3b4fafd8d000fcfff09731b905dd1d87c",
       "researched_on": "2026-10-21",
       "topics": [
         {
@@ -22475,11 +22475,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 203,
+      "file": "factory/topic-research/batches/claude-20261018b-0203.json",
+      "sha256": "d1c37c636c896960ccd0db08c88e495531ffb24a72f30cc224261e73c00c51f3",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-21",
+      "topics": [
+        {
+          "ref": "vi:lich-bao-duong-xe-tay-ga-honda-yamaha-moc-km-va-thang",
+          "locale": "vi",
+          "slug": "lich-bao-duong-xe-tay-ga-honda-yamaha-moc-km-va-thang",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "vi::bao lau bao duong xe tay ga mot lan lich bao duong dinh ky honda yamaha theo km hay theo thang",
+          "ta_id": null
+        },
+        {
+          "ref": "en:scooter-service-intervals-what-honda-and-yamaha-vietnam-print",
+          "locale": "en",
+          "slug": "scooter-service-intervals-what-honda-and-yamaha-vietnam-print",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "en::scooter service intervals in vietnam how often to service a honda or yamaha scooter",
+          "ta_id": null
+        },
+        {
+          "ref": "de:roller-wartungsintervalle-honda-und-yamaha-vietnam",
+          "locale": "de",
+          "slug": "roller-wartungsintervalle-honda-und-yamaha-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "de::wie oft roller warten wartungsintervalle honda und yamaha in vietnam kilometer oder monate",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:intervalles-d-entretien-scooter-honda-yamaha-vietnam",
+          "locale": "fr",
+          "slug": "intervalles-d-entretien-scooter-honda-yamaha-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "fr::a quelle frequence reviser un scooter intervalles d'entretien honda et yamaha au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:intervalos-de-mantenimiento-scooter-honda-yamaha-vietnam",
+          "locale": "es",
+          "slug": "intervalos-de-mantenimiento-scooter-honda-yamaha-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "es::cada cuanto hacer el mantenimiento de una scooter intervalos honda y yamaha en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:onderhoudsintervallen-scooter-honda-en-yamaha-vietnam",
+          "locale": "nl",
+          "slug": "onderhoudsintervallen-scooter-honda-en-yamaha-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "nl::hoe vaak onderhoud scooter onderhoudsintervallen honda en yamaha in vietnam kilometers of maanden",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:tabanche-baoyang-zhouqi-honda-yamaha-yuenan-gongli-yu-yuefen",
+          "locale": "zh",
+          "slug": "tabanche-baoyang-zhouqi-honda-yamaha-yuenan-gongli-yu-yuefen",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "zh::踏板车多久保养一次 本田雅马哈越南保养周期按公里还是按月",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:intervalos-de-manutencao-scooter-honda-yamaha-vietname",
+          "locale": "pt",
+          "slug": "intervalos-de-manutencao-scooter-honda-yamaha-vietname",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "pt::de quanto em quanto tempo rever uma scooter intervalos de manutencao honda e yamaha no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:seukuteo-jeonggi-jeomgeom-jugi-honda-yamaha-beteunam-juhaenggeori",
+          "locale": "ko",
+          "slug": "seukuteo-jeonggi-jeomgeom-jugi-honda-yamaha-beteunam-juhaenggeori",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ko::스쿠터 정기 점검 주기 혼다 야마하 베트남 주행거리 기준 몇 개월마다",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:sukuta-teiki-seibi-kankaku-honda-yamaha-betonamu-kiro-to-tsuki",
+          "locale": "ja",
+          "slug": "sukuta-teiki-seibi-kankaku-honda-yamaha-betonamu-kiro-to-tsuki",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ja::スクーター 定期メンテナンス 間隔 ホンタ ヤマハ ヘトナム 走行距離と月数の目安",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 203,
-    "file": "factory/topic-research/batches/claude-20261018b-0203.json",
+    "seq": 204,
+    "file": "factory/topic-research/batches/claude-20261018b-0204.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -22492,13 +22603,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T21:30:09.467Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 178,
-      "topics": 10,
-      "sha256": "2798a05209b423d389f648e27ddf13b5a2950c6225a4304ade751cea6e39bfe1"
-    },
     {
       "at": "2026-10-20T21:30:22.450Z",
       "event": "BATCH_COMMITTED",
@@ -22666,6 +22770,13 @@
       "seq": 202,
       "topics": 10,
       "sha256": "35f2f0fc402928677cd3e20a389f1aa6eb5455a440c844a5422e65c1fbf67855"
+    },
+    {
+      "at": "2026-10-21T04:21:30.777Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 203,
+      "topics": 10,
+      "sha256": "d1c37c636c896960ccd0db08c88e495531ffb24a72f30cc224261e73c00c51f3"
     }
   ]
 }
