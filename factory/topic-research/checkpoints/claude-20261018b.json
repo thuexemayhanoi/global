@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T03:45:31.195Z",
+  "updated_at": "2026-10-21T03:48:07.523Z",
   "base_main_sha": "68e51c4329575725c39c26fcfdb9e0491d984fb6",
-  "last_commit_sha": "11ea1f6649b093941b903a1bb0afc12302de918d",
+  "last_commit_sha": "8b795c57683ab2f3e854ece0589d71303c650118",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1910,
-    "qa_pass": 1910,
+    "researched": 1920,
+    "qa_pass": 1920,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1900,
+    "pushed": 1910,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 192,
-      "de": 192,
-      "fr": 192,
-      "es": 192,
-      "nl": 192,
-      "pt": 192,
-      "zh": 192,
-      "ko": 192,
-      "ja": 192,
-      "en": 182
+      "vi": 193,
+      "de": 193,
+      "fr": 193,
+      "es": 193,
+      "nl": 193,
+      "pt": 193,
+      "zh": 193,
+      "ko": 193,
+      "ja": 193,
+      "en": 183
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 891,
+      "traffic-law-safety": 901,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 191,
-    "file": "factory/topic-research/batches/claude-20261018b-0191.json",
-    "sha256": "3676e73fbd4b4dfd28a7e9368f6208c0361f73e3651e61e1bbf25f4836bb2707",
+    "seq": 192,
+    "file": "factory/topic-research/batches/claude-20261018b-0192.json",
+    "sha256": "e9023cb7e7f14662b2c3c5e1ab806bcf6303eb7264bfe166e6657e57c1d7da18",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -21149,8 +21149,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0191.json",
       "sha256": "3676e73fbd4b4dfd28a7e9368f6208c0361f73e3651e61e1bbf25f4836bb2707",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "8b795c57683ab2f3e854ece0589d71303c650118",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -21254,11 +21254,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 192,
+      "file": "factory/topic-research/batches/claude-20261018b-0192.json",
+      "sha256": "e9023cb7e7f14662b2c3c5e1ab806bcf6303eb7264bfe166e6657e57c1d7da18",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:doc-du-bao-thoi-tiet-viet-nam-truoc-chuyen-di-xe-may-canh-bao-mua-gio-tam-nhin",
+          "locale": "vi",
+          "slug": "doc-du-bao-thoi-tiet-viet-nam-truoc-chuyen-di-xe-may-canh-bao-mua-gio-tam-nhin",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-weather",
+          "key": "vi::doc du bao thoi tiet va canh bao cua viet nam the nao truoc khi di xe may ca ngay",
+          "ta_id": null
+        },
+        {
+          "ref": "en:reading-vietnam-weather-forecast-before-day-ride-forecast-warning-english",
+          "locale": "en",
+          "slug": "reading-vietnam-weather-forecast-before-day-ride-forecast-warning-english",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-weather",
+          "key": "en::how to read the vietnamese weather forecast and warnings before a day ride on a motorbike",
+          "ta_id": null
+        },
+        {
+          "ref": "de:wetterbericht-vietnam-vor-tagesfahrt-lesen-vorhersage-warnung-regen-wind",
+          "locale": "de",
+          "slug": "wetterbericht-vietnam-vor-tagesfahrt-lesen-vorhersage-warnung-regen-wind",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-weather",
+          "key": "de::wie lese ich den vietnamesischen wetterbericht und die warnungen vor einer tagesfahrt mit dem roller",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:lire-meteo-vietnam-avant-journee-a-moto-prevision-alerte-pluie-vent",
+          "locale": "fr",
+          "slug": "lire-meteo-vietnam-avant-journee-a-moto-prevision-alerte-pluie-vent",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-weather",
+          "key": "fr::comment lire les previsions et les alertes meteo vietnamiennes avant une journee en scooter",
+          "ta_id": null
+        },
+        {
+          "ref": "es:leer-el-tiempo-en-vietnam-antes-de-un-dia-en-moto-prevision-aviso-lluvia-viento",
+          "locale": "es",
+          "slug": "leer-el-tiempo-en-vietnam-antes-de-un-dia-en-moto-prevision-aviso-lluvia-viento",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-weather",
+          "key": "es::como leer las previsiones y los avisos meteorologicos de vietnam antes de un dia en moto",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:vietnamees-weerbericht-lezen-voor-dagtocht-voorspelling-waarschuwing-regen-wind",
+          "locale": "nl",
+          "slug": "vietnamees-weerbericht-lezen-voor-dagtocht-voorspelling-waarschuwing-regen-wind",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-weather",
+          "key": "nl::hoe lees ik de vietnamese weersvoorspelling en waarschuwingen voor een dag op de scooter",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:chuxing-qian-kan-yuenan-tianqi-yubao-yu-yujing-qufen-yu-feng-nengjiandu",
+          "locale": "zh",
+          "slug": "chuxing-qian-kan-yuenan-tianqi-yubao-yu-yujing-qufen-yu-feng-nengjiandu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-weather",
+          "key": "zh::骑摩托车出行前怎么看越南的天气预报和预警",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:ler-a-previsao-do-tempo-do-vietname-antes-de-um-dia-de-mota-aviso-chuva-vento",
+          "locale": "pt",
+          "slug": "ler-a-previsao-do-tempo-do-vietname-antes-de-um-dia-de-mota-aviso-chuva-vento",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-weather",
+          "key": "pt::como ler as previsoes e os avisos meteorologicos do vietname antes de um dia de mota",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-ilgi-yebo-dangil-otobai-jeon-yebo-gyeongbo-bi-baram-sijeong",
+          "locale": "ko",
+          "slug": "beteunam-ilgi-yebo-dangil-otobai-jeon-yebo-gyeongbo-bi-baram-sijeong",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-weather",
+          "key": "ko::오토바이로 하루 달리기 전에 베트남 일기예보와 경보를 어떻게 읽나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-tenki-yoho-higaeri-baiku-mae-yoho-keiho-ame-kaze-shitei",
+          "locale": "ja",
+          "slug": "betonamu-tenki-yoho-higaeri-baiku-mae-yoho-keiho-ame-kaze-shitei",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-weather",
+          "key": "ja::ハイクて一日走る前にヘトナムの天気予報と警報をとう読むのか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 192,
-    "file": "factory/topic-research/batches/claude-20261018b-0192.json",
+    "seq": 193,
+    "file": "factory/topic-research/batches/claude-20261018b-0193.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -21271,13 +21382,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:54:33.825Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 167,
-      "topics": 10,
-      "sha256": "524be87e0d44111d97cba8dff2b6f61a044f7cca8b23bc3da281cb04b6e0b29d"
-    },
     {
       "at": "2026-10-20T20:54:45.976Z",
       "event": "BATCH_COMMITTED",
@@ -21445,6 +21549,13 @@
       "seq": 191,
       "topics": 10,
       "sha256": "3676e73fbd4b4dfd28a7e9368f6208c0361f73e3651e61e1bbf25f4836bb2707"
+    },
+    {
+      "at": "2026-10-21T03:48:07.523Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 192,
+      "topics": 10,
+      "sha256": "e9023cb7e7f14662b2c3c5e1ab806bcf6303eb7264bfe166e6657e57c1d7da18"
     }
   ]
 }
