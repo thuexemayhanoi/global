@@ -19,9 +19,24 @@ const publishedUrl=(row,files)=>row&&row.status==="PUBLISHED"&&Object.prototype.
 const classes=(code)=>micro[code]||micro.en;
 
 const globalPhotoAssets=[{"path":"/topic-choose-bike.webp","title":"Choose your vehicle","desc":"Find a vehicle that fits your experience, route and needs."},{"path":"/topic-prices-deposits.webp","title":"Prices & deposits","desc":"Compare the full rental terms, not just the daily rate."},{"path":"/topic-documents.webp","title":"Documents & contracts","desc":"Know which questions to ask before signing."},{"path":"/topic-safety.webp","title":"Safety & pickup checks","desc":"Check the condition of the bike before riding."}];
+// The hero is content and gets alt text describing the artwork (Hanoi-inspired illustration, not a photo of a shop).
+// Gallery and topic-card images stay decorative (alt=""): the heading right next to each one already names the topic,
+// so repeating it would only make screen readers announce the same words twice.
+const HERO_ALT="Illustration of a scooter rider on a lakeside street in Hanoi at sunset";
+// Responsive hero: the LCP candidate of the root page (the only page that renders this photo; locale homes
+// use the CSS artwork). The 1600×900 original stays the social preview image; the 800w and 1200w files are
+// ImageMagick resizes of it, so phones no longer download the full-size file.
+export const HERO_SRC="/hero-hanoi.webp";
+export const HERO_SRCSET="/hero-hanoi-800.webp 800w, /hero-hanoi-1200.webp 1200w, /hero-hanoi.webp 1600w";
+// Rendered width of .ultra-hero-photo per assets/ultra.css: up to 767px the hero grid is one column and the
+// figure spans the .container (100vw - 36px); 768–880px it is still one column but capped at 520px; from 881px
+// it sits in the second grid column (minmax(270px,.8fr) of a ≤1150px container), which never exceeds 470px.
+export const HERO_SIZES="(max-width: 767px) calc(100vw - 36px), (max-width: 880px) 520px, 470px";
+export function heroPreloadLink(){
+ return '<link rel="preload" as="image" href="'+HERO_SRC+'" imagesrcset="'+HERO_SRCSET+'" imagesizes="'+HERO_SIZES+'" fetchpriority="high">';
+}
 function globalHeroPhoto(){
- // Illustration is decorative; adjacent heading carries the actual meaning.
- return '<figure class="ultra-hero-photo"><img src="/hero-hanoi.webp" width="1600" height="900" alt="" fetchpriority="high" loading="eager" decoding="async"><figcaption><span>✳</span> HANOI-INSPIRED • TWO-WHEEL TRAVEL</figcaption></figure>';
+ return '<figure class="ultra-hero-photo"><img src="'+HERO_SRC+'" srcset="'+HERO_SRCSET+'" sizes="'+HERO_SIZES+'" width="1600" height="900" alt="'+clean(HERO_ALT)+'" fetchpriority="high" loading="eager" decoding="async"><figcaption><span>✳</span> HANOI-INSPIRED • TWO-WHEEL TRAVEL</figcaption></figure>';
 }
 function injectGatewayGallery(html){
  if(html.includes('class="ultra-gateway-gallery"'))return html;

@@ -14,6 +14,8 @@ export const SITEMAP_LIMIT=40000;
 export const SITEMAP_MAX_BYTES=40*1024*1024;
 // One child-name grammar for every reader: sitemap-main.xml, sitemap-<ll>.xml, sitemap-<ll>-<n>.xml (n ≥ 2).
 export const SITEMAP_CHILD=/^sitemap-(main|[a-z]{2})(?:-(?:[2-9]|[1-9][0-9]+))?\.xml$/;
+// The same grammar restricted to the configured locales: the set of root files the build owns and may delete when stale.
+export const sitemapFilePattern=codes=>new RegExp("^sitemap-(?:main|"+codes.map(c=>c.replace(/[^a-z]/g,"")).join("|")+")(?:-(?:[2-9]|[1-9][0-9]+))?\\.xml$");
 const NS="http://www.sitemaps.org/schemas/sitemap/0.9";
 const XML_HEAD='<?xml version="1.0" encoding="UTF-8"?>\n';
 const escapeXML=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");

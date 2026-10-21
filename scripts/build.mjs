@@ -2,9 +2,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { enhanceNavigation } from "./navigation.mjs";
 import { applyPremium, createSearchPage } from "./premium.mjs";
-import { applyUltra } from "./ultra.mjs";
-import { generateApprovedArticles } from "./articles.mjs";
-import { generateSitemaps } from "./sitemaps.mjs";
+import { applyUltra, heroPreloadLink } from "./ultra.mjs";
+import { generateApprovedArticles, SOCIAL_IMAGE } from "./articles.mjs";
+import { generateSitemaps, sitemapFilePattern } from "./sitemaps.mjs";
 const root=process.cwd();
 const data=JSON.parse(fs.readFileSync(path.join(root,"content/locales.json"),"utf8"));
 const siteOutput=function siteOutput(locales,siteInfo){
@@ -26,8 +26,9 @@ ${path==="/"?'<meta name="google-site-verification" content="HwLeUnxn5y1nBbGQD-5
 <meta property="og:type" content="${page==="guide"?"article":"website"}">
 <meta property="og:site_name" content="Vietnam Two-Wheel Guide">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${site}${path}">
-<meta name="twitter:card" content="summary">
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta property="og:image" content="${site}${SOCIAL_IMAGE.path}"><meta property="og:image:width" content="${SOCIAL_IMAGE.width}"><meta property="og:image:height" content="${SOCIAL_IMAGE.height}">
+<meta name="twitter:card" content="summary_large_image">
+${page==="root"?heroPreloadLink()+"\n":""}<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="stylesheet" href="/assets/styles.css">
 ${jsonLd(structured)}
 </head><body><a class="skip" href="#main">Skip to content</a>`;
@@ -42,7 +43,7 @@ ${jsonLd(structured)}
     return head(l.htmlLang,l.title,l.description,path,"locale",schema)+nav(l,"locale")+`<main id="main"><section class="hero"><div class="container hero-inner"><p class="eyebrow">${esc(l.eyebrow)}</p><h1>${esc(l.h1)}</h1><p class="lead">${esc(l.intro)}</p><div class="actions"><a class="btn" href="${href(l,true)}">${esc(l.navRead)} →</a><a class="btn secondary" href="#topics">${esc(l.navTopics)} ↓</a></div></div></section><div class="container">${crumb(l,false)}</div><section class="section" id="topics"><div class="container"><p class="overline">${esc(l.navTopics)}</p><h2>${esc(l.navTopics)}</h2><div class="topic-grid">${l.topics.map((t,i)=>`<article class="topic"><span class="number">${String(i+1).padStart(2,"0")}</span><h3>${esc(t[0])}</h3><p>${esc(t[1])}</p></article>`).join("")}</div></div></section><aside class="info-band"><div class="container info-band-in"><div><h2>${esc(l.guideTitle)}</h2><p>${esc(l.guideDescription)}</p></div><a href="${href(l,true)}" class="btn">${esc(l.navRead)} →</a></div></aside><section class="section"><div class="container"><p class="overline">FAQ</p><h2>FAQ</h2><div class="faq">${l.faq.map(([q,a])=>`<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("")}</div></div></section></main>`+footer(l);
   }
   function guide(l){
-    const path=href(l,true);const schema={"@context":"https://schema.org","@graph":[{"@type":"Article","headline":l.guideTitle,"description":l.guideDescription,"inLanguage":l.htmlLang,"mainEntityOfPage":site+path,"author":{"@type":"Organization","name":"Vietnam Two-Wheel Guide"},"about":HANOI},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Global","item":site+"/"},{"@type":"ListItem","position":2,"name":l.name,"item":site+href(l,false)},{"@type":"ListItem","position":3,"name":l.navGuide,"item":site+path}]}]};
+    const path=href(l,true);const schema={"@context":"https://schema.org","@graph":[{"@type":"Article","headline":l.guideTitle,"description":l.guideDescription,"inLanguage":l.htmlLang,"mainEntityOfPage":site+path,"isPartOf":{"@type":"WebSite","name":"Vietnam Two-Wheel Guide","url":site+"/"},"author":{"@type":"Organization","name":"Vietnam Two-Wheel Guide","url":site+"/about/"},"publisher":{"@type":"Organization","name":"Vietnam Two-Wheel Guide","url":site+"/about/","logo":{"@type":"ImageObject","url":site+"/assets/favicon.svg"}},"about":HANOI},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Global","item":site+"/"},{"@type":"ListItem","position":2,"name":l.name,"item":site+href(l,false)},{"@type":"ListItem","position":3,"name":l.navGuide,"item":site+path}]}]};
     return head(l.htmlLang,l.guideTitle,l.guideDescription,path,"guide",schema)+nav(l,"guide")+`<main id="main"><div class="container">${crumb(l,true)}<article class="article"><p class="pill">${esc(l.navGuide)}</p><h1>${esc(l.guideTitle)}</h1><p class="article-lead">${esc(l.guideIntro)}</p>${l.guideSections.map((s,i)=>`<section><p class="overline">0${i+1}</p><h2>${esc(s[0])}</h2><p>${esc(s[1])}</p></section>`).join("")}<p class="quiet">${esc(l.navNote)}</p><a class="btn" href="${href(l,false)}">← ${esc(l.navBack)}</a></article></div></main>`+footer(l);
   }
   for(const l of locales){OUT[`${l.code}/index.html`]=home(l);OUT[`${l.code}/checklist/index.html`]=guide(l)}
@@ -79,7 +80,8 @@ const check=process.argv.includes("--check");
 let errors=0;
 // Reject/remove stale generated shards after a batch shrinks or URLs move;
 // never delete content outside the explicitly owned sitemap namespace.
-const ownedSitemap=/^sitemap-(?:main|vi|en|de|fr|es|nl|zh|pt|ko|ja)(?:-[2-9][0-9]*)?\.xml$/;
+// One grammar for shard names (scripts/sitemaps.mjs), so a tenth shard "-10" is owned too.
+const ownedSitemap=sitemapFilePattern(data.map(l=>l.code));
 for(const name of fs.readdirSync(root)){
  if(ownedSitemap.test(name)&&!Object.hasOwn(files,name)){
   if(check){console.error("STALE-SITEMAP",name);errors++;}
