@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:21:42.159Z",
+  "updated_at": "2026-10-21T04:21:54.024Z",
   "base_main_sha": "f50bc63a6355beb1acc516325da94ace2096ae63",
-  "last_commit_sha": "5cc3f7e76a893d21ff42a16f329ea543770dd8a0",
+  "last_commit_sha": "06a9ebe42ef052f337b5031910f85673c5640450",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 2040,
-    "qa_pass": 2040,
+    "researched": 2050,
+    "qa_pass": 2050,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2030,
+    "pushed": 2040,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 205,
-      "de": 205,
-      "fr": 205,
-      "es": 205,
-      "nl": 205,
-      "pt": 205,
-      "zh": 205,
-      "ko": 205,
-      "ja": 205,
-      "en": 195
+      "vi": 206,
+      "de": 206,
+      "fr": 206,
+      "es": 206,
+      "nl": 206,
+      "pt": 206,
+      "zh": 206,
+      "ko": 206,
+      "ja": 206,
+      "en": 196
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 449
+      "motorbike-rental": 459
     }
   },
   "last_batch": {
-    "seq": 204,
-    "file": "factory/topic-research/batches/claude-20261018b-0204.json",
-    "sha256": "d6c276b95756f3c89ba52c1c9f43948f4baf75d78ce17ad1cda1ba9faf789bd5",
+    "seq": 205,
+    "file": "factory/topic-research/batches/claude-20261018b-0205.json",
+    "sha256": "9bb0dc0774c7c543ca79d89368cf5d7c208dcb1dcb89a1fc21724c440513d19f",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -22592,8 +22592,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0204.json",
       "sha256": "d6c276b95756f3c89ba52c1c9f43948f4baf75d78ce17ad1cda1ba9faf789bd5",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "06a9ebe42ef052f337b5031910f85673c5640450",
       "researched_on": "2026-10-21",
       "topics": [
         {
@@ -22697,11 +22697,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 205,
+      "file": "factory/topic-research/batches/claude-20261018b-0205.json",
+      "sha256": "9bb0dc0774c7c543ca79d89368cf5d7c208dcb1dcb89a1fc21724c440513d19f",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-21",
+      "topics": [
+        {
+          "ref": "vi:sac-dien-thoai-tren-xe-ga-cong-usb-moc-mu-bao-hiem-hoc-do",
+          "locale": "vi",
+          "slug": "sac-dien-thoai-tren-xe-ga-cong-usb-moc-mu-bao-hiem-hoc-do",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "vi::xe ga honda co sac dien thoai duoc khong cong usb moc mu bao hiem va hoc do phia truoc chiu tai bao nhieu",
+          "ta_id": null
+        },
+        {
+          "ref": "en:charging-a-phone-on-a-scooter-usb-socket-helmet-hook-and-pocket",
+          "locale": "en",
+          "slug": "charging-a-phone-on-a-scooter-usb-socket-helmet-hook-and-pocket",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "en::can you charge a phone on a honda scooter usb socket helmet hook and front pocket weight limit",
+          "ta_id": null
+        },
+        {
+          "ref": "de:handy-laden-am-roller-usb-buchse-helmhaken-staufach",
+          "locale": "de",
+          "slug": "handy-laden-am-roller-usb-buchse-helmhaken-staufach",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "de::handy am honda roller laden usb buchse helmhaken und vorderes staufach gewichtsgrenze",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:recharger-son-telephone-sur-un-scooter-prise-usb-crochet-casque",
+          "locale": "fr",
+          "slug": "recharger-son-telephone-sur-un-scooter-prise-usb-crochet-casque",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "fr::recharger un telephone sur un scooter honda prise usb crochet casque et vide-poches limite de poids",
+          "ta_id": null
+        },
+        {
+          "ref": "es:cargar-el-movil-en-una-scooter-puerto-usb-gancho-casco-guantera",
+          "locale": "es",
+          "slug": "cargar-el-movil-en-una-scooter-puerto-usb-gancho-casco-guantera",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "es::cargar el movil en una scooter honda puerto usb gancho del casco y guantera limite de peso",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:telefoon-opladen-op-een-scooter-usb-helmhaak-voorvak",
+          "locale": "nl",
+          "slug": "telefoon-opladen-op-een-scooter-usb-helmhaak-voorvak",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "nl::telefoon opladen op een honda scooter usb aansluiting helmhaak en voorvak maximaal gewicht",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:tabanche-gei-shouji-chongdian-usb-jiekou-guapankou-qianzhi-chuwuge",
+          "locale": "zh",
+          "slug": "tabanche-gei-shouji-chongdian-usb-jiekou-guapankou-qianzhi-chuwuge",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "zh::本田踏板车能不能给手机充电 usb接口 挂盔钩 前储物格承重",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:carregar-o-telemovel-na-scooter-entrada-usb-gancho-do-capacete",
+          "locale": "pt",
+          "slug": "carregar-o-telemovel-na-scooter-entrada-usb-gancho-do-capacete",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "pt::carregar o telemovel numa scooter honda entrada usb gancho do capacete e compartimento frontal peso maximo",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:seukuteo-hyudaepon-chungjeon-usb-danja-helmet-geori-ap-sunabham",
+          "locale": "ko",
+          "slug": "seukuteo-hyudaepon-chungjeon-usb-danja-helmet-geori-ap-sunabham",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ko::혼다 스쿠터 휴대폰 충전 usb 단자 헬멧 걸이 앞 수납함 무게 제한",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:sukuta-sumaho-juden-usb-soketto-herumetto-horudaa-furonto-poketto",
+          "locale": "ja",
+          "slug": "sukuta-sumaho-juden-usb-soketto-herumetto-horudaa-furonto-poketto",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ja::ホンタ スクーター スマホ 充電 usbソケット ヘルメットホルター フロントホケット 重量制限",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 205,
-    "file": "factory/topic-research/batches/claude-20261018b-0205.json",
+    "seq": 206,
+    "file": "factory/topic-research/batches/claude-20261018b-0206.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -22714,13 +22825,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T21:30:35.679Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 180,
-      "topics": 10,
-      "sha256": "f5b2d45232f59c8f723630d2e2a0fe3dba9d9b46feffb39aad627d7be7b00dc2"
-    },
     {
       "at": "2026-10-20T21:30:50.402Z",
       "event": "BATCH_COMMITTED",
@@ -22888,6 +22992,13 @@
       "seq": 204,
       "topics": 10,
       "sha256": "d6c276b95756f3c89ba52c1c9f43948f4baf75d78ce17ad1cda1ba9faf789bd5"
+    },
+    {
+      "at": "2026-10-21T04:21:54.024Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 205,
+      "topics": 10,
+      "sha256": "9bb0dc0774c7c543ca79d89368cf5d7c208dcb1dcb89a1fc21724c440513d19f"
     }
   ]
 }
