@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:48:34.687Z",
+  "updated_at": "2026-10-21T04:48:44.680Z",
   "base_main_sha": "c9ef11168bf22fb0da6e2fe3dcb5404a1b1c2b6c",
-  "last_commit_sha": "2d3fed2a7887b57299fef7d79d43ae0802a189c8",
+  "last_commit_sha": "17aa5ff57eb3f53bbeed99259e9a216002e4f980",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 2160,
-    "qa_pass": 2160,
+    "researched": 2170,
+    "qa_pass": 2170,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2150,
+    "pushed": 2160,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 217,
-      "de": 217,
-      "fr": 217,
-      "es": 217,
-      "nl": 217,
-      "pt": 217,
-      "zh": 217,
-      "ko": 217,
-      "ja": 217,
-      "en": 207
+      "vi": 218,
+      "de": 218,
+      "fr": 218,
+      "es": 218,
+      "nl": 218,
+      "pt": 218,
+      "zh": 218,
+      "ko": 218,
+      "ja": 218,
+      "en": 208
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 991,
+      "traffic-law-safety": 1001,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 216,
-    "file": "factory/topic-research/batches/claude-20261018b-0216.json",
-    "sha256": "3162866cd04fe922cfd99213d43d1128eb8307485fbf9fa9d81d7f2b76654560",
+    "seq": 217,
+    "file": "factory/topic-research/batches/claude-20261018b-0217.json",
+    "sha256": "a253e63e71363819b92eba9aa011c847f8e6f2fec6c71238bc897732f37f36ff",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -23924,8 +23924,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0216.json",
       "sha256": "3162866cd04fe922cfd99213d43d1128eb8307485fbf9fa9d81d7f2b76654560",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "17aa5ff57eb3f53bbeed99259e9a216002e4f980",
       "researched_on": "2026-10-21",
       "topics": [
         {
@@ -24029,11 +24029,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 217,
+      "file": "factory/topic-research/batches/claude-20261018b-0217.json",
+      "sha256": "a253e63e71363819b92eba9aa011c847f8e6f2fec6c71238bc897732f37f36ff",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-21",
+      "topics": [
+        {
+          "ref": "vi:o-nhiem-giao-thong-khi-di-xe-may-nghien-cuu-phoi-nhiem-ca-nhan-aqi",
+          "locale": "vi",
+          "slug": "o-nhiem-giao-thong-khi-di-xe-may-nghien-cuu-phoi-nhiem-ca-nhan-aqi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-weather",
+          "key": "vi::nguoi di xe may hit phai bao nhieu khi thai giao thong o ha noi va tp ho chi minh so voi chi so aqi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:traffic-pollution-on-a-motorbike-personal-exposure-studies-vietnam-asia-aqi",
+          "locale": "en",
+          "slug": "traffic-pollution-on-a-motorbike-personal-exposure-studies-vietnam-asia-aqi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-weather",
+          "key": "en::how much traffic pollution do motorbike riders breathe in hanoi and ho chi minh city compared with the aqi",
+          "ta_id": null
+        },
+        {
+          "ref": "de:luftverschmutzung-auf-dem-roller-persoenliche-expositionsstudien-vietnam-aqi",
+          "locale": "de",
+          "slug": "luftverschmutzung-auf-dem-roller-persoenliche-expositionsstudien-vietnam-aqi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-weather",
+          "key": "de::wie viel verkehrsabgase atmen motorradfahrer in hanoi und ho-chi-minh-stadt ein und wie passt das zum aqi",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:pollution-a-moto-etudes-exposition-personnelle-vietnam-asie-indice-aqi",
+          "locale": "fr",
+          "slug": "pollution-a-moto-etudes-exposition-personnelle-vietnam-asie-indice-aqi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-weather",
+          "key": "fr::quelle quantite de pollution routiere respirent les motards a hanoi et a ho chi minh-ville par rapport a l'indice aqi",
+          "ta_id": null
+        },
+        {
+          "ref": "es:contaminacion-en-moto-estudios-exposicion-personal-vietnam-asia-indice-aqi",
+          "locale": "es",
+          "slug": "contaminacion-en-moto-estudios-exposicion-personal-vietnam-asia-indice-aqi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-weather",
+          "key": "es::cuanta contaminacion del trafico respiran los motoristas en hanoi y ciudad ho chi minh frente al indice aqi",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:luchtvervuiling-op-de-motor-onderzoek-persoonlijke-blootstelling-vietnam-aqi",
+          "locale": "nl",
+          "slug": "luchtvervuiling-op-de-motor-onderzoek-persoonlijke-blootstelling-vietnam-aqi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-weather",
+          "key": "nl::hoeveel verkeersvervuiling ademen motorrijders in hanoi en ho chi minhstad in vergeleken met de aqi",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:qi-motuoche-jiaotong-wuran-gerenbaolu-yanjiu-yuenan-yazhou-aqi",
+          "locale": "zh",
+          "slug": "qi-motuoche-jiaotong-wuran-gerenbaolu-yanjiu-yuenan-yazhou-aqi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-weather",
+          "key": "zh::在河内和胡志明市骑摩托车吸入多少交通污染 和aqi相比怎么样",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:poluicao-na-mota-estudos-exposicao-pessoal-vietname-asia-indice-aqi",
+          "locale": "pt",
+          "slug": "poluicao-na-mota-estudos-exposicao-pessoal-vietname-asia-indice-aqi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-weather",
+          "key": "pt::quanta poluicao do transito respiram os motociclistas em hanoi e na cidade de ho chi minh em comparacao com o indice aqi",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:otobai-gyotong-osyeom-gaein-nochul-yeongu-beteunam-asia-aqi",
+          "locale": "ko",
+          "slug": "otobai-gyotong-osyeom-gaein-nochul-yeongu-beteunam-asia-aqi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-weather",
+          "key": "ko::하노이와 호찌민시에서 오토바이 운전자는 교통 오염을 얼마나 들이마시고 aqi와 비교하면 어떤가요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:baiku-kotsu-osen-kojin-bakuro-kenkyu-betonamu-asia-aqi",
+          "locale": "ja",
+          "slug": "baiku-kotsu-osen-kojin-bakuro-kenkyu-betonamu-asia-aqi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-weather",
+          "key": "ja::ハノイやホーチミン市てハイクの運転者はとれくらい交通由来の汚染を吸い込むのか aqiと比へるととうか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 217,
-    "file": "factory/topic-research/batches/claude-20261018b-0217.json",
+    "seq": 218,
+    "file": "factory/topic-research/batches/claude-20261018b-0218.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -24046,13 +24157,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-21T03:48:07.523Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 192,
-      "topics": 10,
-      "sha256": "e9023cb7e7f14662b2c3c5e1ab806bcf6303eb7264bfe166e6657e57c1d7da18"
-    },
     {
       "at": "2026-10-21T03:57:25.660Z",
       "event": "BATCH_COMMITTED",
@@ -24220,6 +24324,13 @@
       "seq": 216,
       "topics": 10,
       "sha256": "3162866cd04fe922cfd99213d43d1128eb8307485fbf9fa9d81d7f2b76654560"
+    },
+    {
+      "at": "2026-10-21T04:48:44.680Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 217,
+      "topics": 10,
+      "sha256": "a253e63e71363819b92eba9aa011c847f8e6f2fec6c71238bc897732f37f36ff"
     }
   ]
 }
