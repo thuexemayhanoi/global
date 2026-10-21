@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:21:30.777Z",
+  "updated_at": "2026-10-21T04:21:42.159Z",
   "base_main_sha": "f50bc63a6355beb1acc516325da94ace2096ae63",
-  "last_commit_sha": "9a8cb1d3b4fafd8d000fcfff09731b905dd1d87c",
+  "last_commit_sha": "5cc3f7e76a893d21ff42a16f329ea543770dd8a0",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 2030,
-    "qa_pass": 2030,
+    "researched": 2040,
+    "qa_pass": 2040,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2020,
+    "pushed": 2030,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 204,
-      "de": 204,
-      "fr": 204,
-      "es": 204,
-      "nl": 204,
-      "pt": 204,
-      "zh": 204,
-      "ko": 204,
-      "ja": 204,
-      "en": 194
+      "vi": 205,
+      "de": 205,
+      "fr": 205,
+      "es": 205,
+      "nl": 205,
+      "pt": 205,
+      "zh": 205,
+      "ko": 205,
+      "ja": 205,
+      "en": 195
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 439
+      "motorbike-rental": 449
     }
   },
   "last_batch": {
-    "seq": 203,
-    "file": "factory/topic-research/batches/claude-20261018b-0203.json",
-    "sha256": "d1c37c636c896960ccd0db08c88e495531ffb24a72f30cc224261e73c00c51f3",
+    "seq": 204,
+    "file": "factory/topic-research/batches/claude-20261018b-0204.json",
+    "sha256": "d6c276b95756f3c89ba52c1c9f43948f4baf75d78ce17ad1cda1ba9faf789bd5",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -22481,8 +22481,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0203.json",
       "sha256": "d1c37c636c896960ccd0db08c88e495531ffb24a72f30cc224261e73c00c51f3",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "5cc3f7e76a893d21ff42a16f329ea543770dd8a0",
       "researched_on": "2026-10-21",
       "topics": [
         {
@@ -22586,11 +22586,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 204,
+      "file": "factory/topic-research/batches/claude-20261018b-0204.json",
+      "sha256": "d6c276b95756f3c89ba52c1c9f43948f4baf75d78ce17ad1cda1ba9faf789bd5",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-21",
+      "topics": [
+        {
+          "ref": "vi:kiem-tra-phanh-xe-tay-ga-hanh-trinh-tu-do-ma-phanh-dau-phanh",
+          "locale": "vi",
+          "slug": "kiem-tra-phanh-xe-tay-ga-hanh-trinh-tu-do-ma-phanh-dau-phanh",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "vi::cach kiem tra phanh xe tay ga hanh trinh tu do tay phanh ma phanh mon va muc dau phanh",
+          "ta_id": null
+        },
+        {
+          "ref": "en:scooter-brake-checks-lever-free-play-pad-wear-and-fluid-level",
+          "locale": "en",
+          "slug": "scooter-brake-checks-lever-free-play-pad-wear-and-fluid-level",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "en::how to check scooter brakes brake lever free play brake pad wear and brake fluid level honda",
+          "ta_id": null
+        },
+        {
+          "ref": "de:rollerbremsen-pruefen-leerweg-belagverschleiss-bremsfluessigkeit",
+          "locale": "de",
+          "slug": "rollerbremsen-pruefen-leerweg-belagverschleiss-bremsfluessigkeit",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "de::roller bremsen prufen leerweg bremshebel bremsbelage verschleiß und bremsflussigkeit stand",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:controler-les-freins-d-un-scooter-garde-du-levier-usure-liquide",
+          "locale": "fr",
+          "slug": "controler-les-freins-d-un-scooter-garde-du-levier-usure-liquide",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "fr::comment controler les freins d'un scooter garde du levier usure des plaquettes et niveau de liquide de frein",
+          "ta_id": null
+        },
+        {
+          "ref": "es:revisar-los-frenos-de-una-scooter-holgura-pastillas-liquido",
+          "locale": "es",
+          "slug": "revisar-los-frenos-de-una-scooter-holgura-pastillas-liquido",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "es::como revisar los frenos de una scooter holgura de la maneta desgaste de las pastillas y nivel del liquido de frenos",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:scooterremmen-controleren-speling-hendel-slijtage-remvloeistof",
+          "locale": "nl",
+          "slug": "scooterremmen-controleren-speling-hendel-slijtage-remvloeistof",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "nl::scooter remmen controleren speling remhendel slijtage remblokken en remvloeistof niveau",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:tabanche-shache-jiancha-ziyou-xingcheng-shachepian-mosun-shacheyou",
+          "locale": "zh",
+          "slug": "tabanche-shache-jiancha-ziyou-xingcheng-shachepian-mosun-shacheyou",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "zh::踏板车刹车怎么检查 刹车把手自由行程 刹车片磨损 刹车油液位",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:verificar-os-travoes-da-scooter-folga-pastilhas-liquido",
+          "locale": "pt",
+          "slug": "verificar-os-travoes-da-scooter-folga-pastilhas-liquido",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "pt::como verificar os travoes da scooter folga da manete desgaste das pastilhas e nivel do liquido dos travoes",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:seukuteo-beureikeu-jeomgeom-reobeo-yugyeok-paedeu-mamo-beureikeuaek",
+          "locale": "ko",
+          "slug": "seukuteo-beureikeu-jeomgeom-reobeo-yugyeok-paedeu-mamo-beureikeuaek",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ko::스쿠터 브레이크 점검 방법 레버 유격 브레이크 패드 마모 브레이크액 양",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:sukuta-bureki-kakunin-reba-no-asobi-paddo-mamou-bureki-eki",
+          "locale": "ja",
+          "slug": "sukuta-bureki-kakunin-reba-no-asobi-paddo-mamou-bureki-eki",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ja::スクーター フレーキ 確認方法 レハーの遊ひ フレーキハットの摩耗 フレーキ液の量",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 204,
-    "file": "factory/topic-research/batches/claude-20261018b-0204.json",
+    "seq": 205,
+    "file": "factory/topic-research/batches/claude-20261018b-0205.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -22603,13 +22714,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T21:30:22.450Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 179,
-      "topics": 10,
-      "sha256": "fc50b997063123e2abf1e944cf863618c6e7e6025c30f954d0a9a9fedc9947cf"
-    },
     {
       "at": "2026-10-20T21:30:35.679Z",
       "event": "BATCH_COMMITTED",
@@ -22777,6 +22881,13 @@
       "seq": 203,
       "topics": 10,
       "sha256": "d1c37c636c896960ccd0db08c88e495531ffb24a72f30cc224261e73c00c51f3"
+    },
+    {
+      "at": "2026-10-21T04:21:42.159Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 204,
+      "topics": 10,
+      "sha256": "d6c276b95756f3c89ba52c1c9f43948f4baf75d78ce17ad1cda1ba9faf789bd5"
     }
   ]
 }
