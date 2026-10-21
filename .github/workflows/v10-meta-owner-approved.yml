@@ -1,9 +1,8 @@
 name: Owner-approved SEO V10 metadata application (49 only)
 on:
-  push:
-    branches:
-      - seo/v10-approved-meta49-20261021
-  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
 permissions:
   contents: write
 concurrency:
@@ -11,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   apply:
-    if: github.repository == 'thuexemayhanoi/global' && github.ref == 'refs/heads/seo/v10-approved-meta49-20261021'
+    if: github.repository == 'thuexemayhanoi/global' && github.event.pull_request.head.repo.full_name == 'thuexemayhanoi/global' && github.event.pull_request.head.ref == 'seo/v10-approved-meta49-20261021'
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
@@ -19,6 +18,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 1
       - uses: actions/setup-node@v4
         with:
