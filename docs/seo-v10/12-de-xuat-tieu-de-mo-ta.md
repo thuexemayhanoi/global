@@ -36,3 +36,16 @@ Tệp đề xuất: `docs/seo-v10/proposals/meta-<locale>.json`, mỗi mục có
 - Tiêu đề ngắn hơn hiển thị trọn trên SERP nhưng cũng bớt từ khóa phụ; đây là đánh đổi có chủ ý, chưa có dữ liệu CTR để đo (không có GSC).
 - Một số worker đã ghi chú các mục nên liếc qua: en (EN-S10, S22, S30, S59, S63 đổi vài từ), es (ES-S12 thì hiện tại, ES-S17 tiêu đề dựng lại từ H1, ES-S57 số ít), fr (vài tiêu đề đúng 60 và mô tả 153 đến 154), vi (số khẩn cấp 113, 114, 115 chỉ giữ khi là chủ đề trang).
 - Sau khi merge: Pages deploy, chạy `post-publish-qa.yml` và `live-markup-qa.yml` để xác nhận production khớp fingerprint mới.
+
+## 5. Review Codex trên PR #86 và nhánh song song PR #88 (2026-10-21)
+
+Codex (bot review của repo) chấm ba điểm P2 trên đầu nhánh `d1c309b7`, cả ba đều đúng và đã sửa trong tệp đề xuất rồi áp dụng lại (packet, HTML, `url-freeze.json` tạo lại):
+
+| ID | Vấn đề | Sửa |
+|---|---|---|
+| EN-S39 | tiêu đề rút gọn "What the Law Allows" bỏ mất ý cấm, dễ hiểu là được dùng điện thoại khi lái | "Using a Phone While Riding in Vietnam: Bans and Exceptions" (58 ký tự) |
+| DE-S40 | mô tả bỏ "ohne Kreisverkehrszeichen" nên "rechts vor links" thành quy tắc chung | mô tả giữ cả hai điều kiện có biển và không có biển vòng xuyến (155 ký tự) |
+| PT-S39 | cùng lỗi: bỏ "sinalizadas" ở quy tắc ưu tiên bên trái trong vòng xuyến | mô tả giữ "rotundas sinalizadas" (155 ký tự) |
+| PT-S63 | "búfalos e vacas de moto" đọc như trâu bò đi xe máy | "Animais na estrada no Vietname: como passar búfalos e vacas" (59 ký tự) |
+
+Cùng lúc, PR #88 (phiên khác, đã gộp vào `main` lúc 09:52 UTC) đưa lên 49 đề xuất cho S01 đến S07 của bảy ngôn ngữ trong đúng bảy tệp `meta-<locale>.json`, kèm `scripts/seo/meta-review-status.mjs`, test và `proposals/README.md`. Khi gộp `main` vào nhánh này, bảy tệp giữ bản 632 mục (đã chứa 49 ID đó với câu chữ khác; bản của PR #88 còn đọc được ở commit `52bd927e` để so sánh). `meta-review-status.mjs` được sửa nhỏ để nhận ra đề xuất đã áp dụng (packet đã mang đúng tiêu đề hoặc mô tả đề xuất) thay vì báo lỗi lệch độ dài; README ghi trạng thái này. Chủ sở hữu có thể chọn câu chữ của PR #88 cho bất kỳ ID nào trong 49 ID bằng cách sửa tệp đề xuất rồi chạy lại các bước ở mục 3.
