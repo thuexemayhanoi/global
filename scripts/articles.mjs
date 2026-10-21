@@ -257,7 +257,7 @@ export function topicLinks(row,matrix,topical,code,ix=rowsIndex(matrix)){
  }
  return "";
 }
-export function renderArticle(packet,locale,row,matrix,topical=null,ix=rowsIndex(matrix)){
+export function renderArticle(packet,locale,row,matrix,topical=null,ix=rowsIndex(matrix),displayLead=packet.meta_description){
  const htmlLang=locale.htmlLang||locale.code,url=SITE+row.url;
  const parent=ix.byId.get(row.parent_id);
  const home="/"+locale.code+"/";
@@ -277,12 +277,16 @@ export function renderArticle(packet,locale,row,matrix,topical=null,ix=rowsIndex
  const json=JSON.stringify(data).replace(/</g,"\\u003c");
  const social='<meta property="og:site_name" content="'+esc(BRAND)+'"><meta property="og:image" content="'+SITE+SOCIAL_IMAGE.path+'"><meta property="og:image:width" content="'+SOCIAL_IMAGE.width+'"><meta property="og:image:height" content="'+SOCIAL_IMAGE.height+'">\n<meta name="twitter:card" content="summary_large_image">';
  const crumbNav=trail.map(c=>'<a href="'+esc(c.url)+'">'+esc(c.name)+'</a>').join(' <span aria-hidden="true">›</span> ');
- return '<!doctype html>\n<html lang="'+esc(htmlLang)+'"><head>\n<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<title>'+esc(packet.title)+'</title>\n<meta name="description" content="'+esc(packet.meta_description)+'">\n<link rel="canonical" href="'+esc(url)+'">\n<meta property="og:type" content="article"><meta property="og:title" content="'+esc(packet.title)+'"><meta property="og:description" content="'+esc(packet.meta_description)+'"><meta property="og:url" content="'+esc(url)+'">\n'+social+'\n<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">\n<script type="application/ld+json">'+json+'</script>\n</head><body><a class="skip" href="#main">Skip to content</a><main id="main"><div class="container"><nav class="crumb" aria-label="Breadcrumb">'+crumbNav+'</nav><article class="article"><h1>'+esc(packet.h1)+'</h1><p class="article-lead">'+esc(packet.meta_description)+'</p>'+cover+'<div class="article-copy">'+renderMarkdown(packet.body_markdown)+'</div>'+topicLinks(row,matrix,topical,locale.code,ix)+'<section class="article-references"><h2>'+esc((ARTICLE_LABELS[locale.code]||ARTICLE_LABELS.en)[2])+'</h2><ol>'+sources+'</ol></section>'+(packet.publication?'<p class="article-provenance">'+esc(AI_DISCLOSURE[locale.code]||AI_DISCLOSURE.en)+'</p>':'')+'<p><a href="'+esc(parentURL)+'">← '+esc(parentLabel)+'</a></p></article></div></main></body></html>\n';
+ return '<!doctype html>\n<html lang="'+esc(htmlLang)+'"><head>\n<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<title>'+esc(packet.title)+'</title>\n<meta name="description" content="'+esc(packet.meta_description)+'">\n<link rel="canonical" href="'+esc(url)+'">\n<meta property="og:type" content="article"><meta property="og:title" content="'+esc(packet.title)+'"><meta property="og:description" content="'+esc(packet.meta_description)+'"><meta property="og:url" content="'+esc(url)+'">\n'+social+'\n<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">\n<script type="application/ld+json">'+json+'</script>\n</head><body><a class="skip" href="#main">Skip to content</a><main id="main"><div class="container"><nav class="crumb" aria-label="Breadcrumb">'+crumbNav+'</nav><article class="article"><h1>'+esc(packet.h1)+'</h1><p class="article-lead">'+esc(displayLead)+'</p>'+cover+'<div class="article-copy">'+renderMarkdown(packet.body_markdown)+'</div>'+topicLinks(row,matrix,topical,locale.code,ix)+'<section class="article-references"><h2>'+esc((ARTICLE_LABELS[locale.code]||ARTICLE_LABELS.en)[2])+'</h2><ol>'+sources+'</ol></section>'+(packet.publication?'<p class="article-provenance">'+esc(AI_DISCLOSURE[locale.code]||AI_DISCLOSURE.en)+'</p>':'')+'<p><a href="'+esc(parentURL)+'">← '+esc(parentLabel)+'</a></p></article></div></main></body></html>\n';
 }
 export function generateApprovedArticles(root,matrix,locales){
  const dir=path.join(root,"content/articles");
  const pages={};
  if(!fs.existsSync(dir))return pages;
+ // Keep the published lead independent of later metadata-only editorial changes.
+ const leadFile=path.join(root,"content/article-leads.json");
+ const leads=fs.existsSync(leadFile)?JSON.parse(fs.readFileSync(leadFile,"utf8")).leads:{};
+ if(!leads||typeof leads!=="object"||Array.isArray(leads))throw Error("Invalid published article leads");
  const topical=loadTopicalMap(root),ix=rowsIndex(matrix);
  for(const file of fs.readdirSync(dir).sort()){
   if(!file.endsWith(".json"))continue;
@@ -295,7 +299,8 @@ export function generateApprovedArticles(root,matrix,locales){
   if(!qa.passed)throw Error("Stored article QA failed "+file+": "+qa.errors.join("; "));
   const generated=htmlPagePath(row.url);
   if(pages[generated])throw Error("Article URL collision "+generated);
-  pages[generated]=renderArticle(packet,locale,row,matrix,topical,ix);
+  if(Object.hasOwn(leads,packet.matrix_id)&&(typeof leads[packet.matrix_id]!=="string"||!leads[packet.matrix_id].trim()))throw Error("Invalid published lead: "+packet.matrix_id);
+  pages[generated]=renderArticle(packet,locale,row,matrix,topical,ix,leads[packet.matrix_id]??packet.meta_description);
  }
  return pages;
 }
