@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:21:09.723Z",
+  "updated_at": "2026-10-21T04:21:19.758Z",
   "base_main_sha": "f50bc63a6355beb1acc516325da94ace2096ae63",
-  "last_commit_sha": "26f202aed90bae847920fdad4ce459eae2f4b838",
+  "last_commit_sha": "1147c71d2e0925f313e019979d5b78c2715dd960",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 2010,
-    "qa_pass": 2010,
+    "researched": 2020,
+    "qa_pass": 2020,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2000,
+    "pushed": 2010,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 202,
-      "de": 202,
-      "fr": 202,
-      "es": 202,
-      "nl": 202,
-      "pt": 202,
-      "zh": 202,
-      "ko": 202,
-      "ja": 202,
-      "en": 192
+      "vi": 203,
+      "de": 203,
+      "fr": 203,
+      "es": 203,
+      "nl": 203,
+      "pt": 203,
+      "zh": 203,
+      "ko": 203,
+      "ja": 203,
+      "en": 193
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 419
+      "motorbike-rental": 429
     }
   },
   "last_batch": {
-    "seq": 201,
-    "file": "factory/topic-research/batches/claude-20261018b-0201.json",
-    "sha256": "5b9626c87822593b00e539046009a0b3b9b3d442e198cd382e80a0f50feb8b3e",
+    "seq": 202,
+    "file": "factory/topic-research/batches/claude-20261018b-0202.json",
+    "sha256": "35f2f0fc402928677cd3e20a389f1aa6eb5455a440c844a5422e65c1fbf67855",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -22259,8 +22259,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0201.json",
       "sha256": "5b9626c87822593b00e539046009a0b3b9b3d442e198cd382e80a0f50feb8b3e",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "1147c71d2e0925f313e019979d5b78c2715dd960",
       "researched_on": "2026-10-21",
       "topics": [
         {
@@ -22364,11 +22364,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 202,
+      "file": "factory/topic-research/batches/claude-20261018b-0202.json",
+      "sha256": "35f2f0fc402928677cd3e20a389f1aa6eb5455a440c844a5422e65c1fbf67855",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-21",
+      "topics": [
+        {
+          "ref": "vi:dong-ho-xang-va-nap-binh-xang-xe-ga-honda-vach-e-nhap-nhay",
+          "locale": "vi",
+          "slug": "dong-ho-xang-va-nap-binh-xang-xe-ga-honda-vach-e-nhap-nhay",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "vi::dong ho xang xe ga honda nhap nhay vach e con bao nhieu xang va mo nap binh xang o dau",
+          "ta_id": null
+        },
+        {
+          "ref": "en:scooter-fuel-gauge-and-fuel-cap-what-the-low-fuel-bar-means",
+          "locale": "en",
+          "slug": "scooter-fuel-gauge-and-fuel-cap-what-the-low-fuel-bar-means",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "en::scooter fuel gauge flashing low fuel warning and how to open the fuel tank on a honda",
+          "ta_id": null
+        },
+        {
+          "ref": "de:tankanzeige-und-tankdeckel-am-honda-roller-reservebalken",
+          "locale": "de",
+          "slug": "tankanzeige-und-tankdeckel-am-honda-roller-reservebalken",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "de::honda roller tankanzeige blinkt reserve und wie offnet man den tankdeckel",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:jauge-d-essence-et-bouchon-de-reservoir-scooter-honda",
+          "locale": "fr",
+          "slug": "jauge-d-essence-et-bouchon-de-reservoir-scooter-honda",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "fr::scooter honda jauge d'essence qui clignote reserve et comment ouvrir le bouchon du reservoir",
+          "ta_id": null
+        },
+        {
+          "ref": "es:indicador-de-combustible-y-tapon-del-deposito-scooter-honda",
+          "locale": "es",
+          "slug": "indicador-de-combustible-y-tapon-del-deposito-scooter-honda",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "es::scooter honda indicador de combustible parpadea reserva y como abrir el tapon del deposito",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:brandstofmeter-en-tankdop-honda-scooter-laatste-streepje",
+          "locale": "nl",
+          "slug": "brandstofmeter-en-tankdop-honda-scooter-laatste-streepje",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "nl::honda scooter brandstofmeter knippert reserve en hoe open je de tankdop",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:honda-tabanche-youliangbiao-he-youxianggai-zuihou-yige-shanshuo",
+          "locale": "zh",
+          "slug": "honda-tabanche-youliangbiao-he-youxianggai-zuihou-yige-shanshuo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "zh::本田踏板车油量表闪烁 还剩多少油 油箱盖在哪里怎么打开",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:indicador-de-combustivel-e-tampa-do-deposito-scooter-honda",
+          "locale": "pt",
+          "slug": "indicador-de-combustivel-e-tampa-do-deposito-scooter-honda",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "pt::scooter honda indicador de combustivel a piscar reserva e como abrir a tampa do deposito",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:honda-seukuteo-yeonryo-geijiwa-jujuseong-majimak-nunkkeum-kkambak",
+          "locale": "ko",
+          "slug": "honda-seukuteo-yeonryo-geijiwa-jujuseong-majimak-nunkkeum-kkambak",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ko::혼다 스쿠터 연료 게이지 깜박임 남은 연료와 주유구 여는 법",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:sukuta-nenryo-kei-to-kyuyuguchi-saigo-no-memori-tenmetsu",
+          "locale": "ja",
+          "slug": "sukuta-nenryo-kei-to-kyuyuguchi-saigo-no-memori-tenmetsu",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ja::ホンタ スクーター 燃料計 点滅 残りの量 給油口の開け方",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 202,
-    "file": "factory/topic-research/batches/claude-20261018b-0202.json",
+    "seq": 203,
+    "file": "factory/topic-research/batches/claude-20261018b-0203.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -22381,13 +22492,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T21:22:13.527Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 177,
-      "topics": 10,
-      "sha256": "52827cd1b59d81f1a075e2ee7bf964122c9587f17b46a610036d09e80e9e15d6"
-    },
     {
       "at": "2026-10-20T21:30:09.467Z",
       "event": "BATCH_COMMITTED",
@@ -22555,6 +22659,13 @@
       "seq": 201,
       "topics": 10,
       "sha256": "5b9626c87822593b00e539046009a0b3b9b3d442e198cd382e80a0f50feb8b3e"
+    },
+    {
+      "at": "2026-10-21T04:21:19.758Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 202,
+      "topics": 10,
+      "sha256": "35f2f0fc402928677cd3e20a389f1aa6eb5455a440c844a5422e65c1fbf67855"
     }
   ]
 }
