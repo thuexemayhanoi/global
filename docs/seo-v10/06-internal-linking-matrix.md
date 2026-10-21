@@ -10,7 +10,7 @@ Ngày: 2026-10-20. Nguồn: `scripts/articles.mjs` (`topicLinks`), `scripts/prem
 | Breadcrumb | đầu bài | Hub: Ngôn ngữ › Ngôn ngữ (lặp); bài: Ngôn ngữ › Hub | Hub: Global › Ngôn ngữ › Hub; bài: Ngôn ngữ › Hub › bài | sửa trong `renderArticle` |
 | Liên kết trong nội dung | thân bài | theo Writer | không đổi | |
 | "Guides in this topic" trên Hub | cuối Hub | mọi bài con đã xuất bản, nhóm theo silo | không đổi | là lớp chống mồ côi ở quy mô lớn |
-| "Bài cùng chủ đề" trên bài Supporting | cuối bài | 6 bài: cùng silo trước, rồi theo ưu tiên; mọi bài trong Hub trỏ về cùng 6 dòng đầu | cửa sổ xoay vòng 6 bài: danh sách bài của Hub sắp theo silo rồi ưu tiên, mỗi bài trỏ tới 6 bài tiếp theo trong vòng | mỗi bài nhận đúng min(6, n−1) liên kết anh em |
+| "Bài cùng chủ đề" trên bài Supporting | cuối bài | 6 bài: cùng silo trước, rồi theo ưu tiên; mọi bài trong Hub trỏ về cùng 6 dòng đầu | kế hoạch theo Hub (`siblingPlan`): bài cùng silo trước (cửa sổ xoay vòng trong silo), các chỗ còn lại lấy từ silo khác với điểm bắt đầu lệch theo thứ tự của bài trong silo, rồi một vòng cân bằng chuyển liên kết dư sang bài còn thiếu; liên kết cùng silo không bao giờ bị chuyển | đo trên 861 bài: ít nhất 4, trung vị 6 (706 bài đúng 6), nhiều nhất 7; mọi bài luôn trỏ tới min(6, số bài cùng silo) bài cùng silo |
 | Thanh bài liên quan (premium) | đầu bài, tối đa 5 | lấy 5 dòng đầu trong pool ngôn ngữ thỏa điều kiện | Pillar đứng đầu, rồi cửa sổ xoay vòng 4 bài cùng cha hoặc bài con | phân bổ đều quanh vòng |
 | Liên kết về cha | cuối bài | 1 | không đổi | |
 
@@ -57,8 +57,8 @@ Vì sao WARN tăng: mỗi bài giờ nhận 6 liên kết anh em thay vì tập 
 ## 5. Test bảo vệ
 
 `tests/seo-v10.test.mjs`:
-- mỗi bài hướng dẫn nhận ít nhất min(6, n−1) liên kết anh em, khối anh em có đúng min(6, n−1) liên kết, không tự trỏ, không lặp;
-- `topicLinks` trên 8 bài giả lập (2 silo) cho thứ tự chính xác và đúng 6 liên kết tới mỗi bài;
+- khối anh em có đúng min(6, n−1) liên kết, không tự trỏ, không lặp, luôn gồm min(6, số bài cùng silo) bài cùng silo trước; mỗi bài nhận ít nhất min(6, số bài cùng silo) liên kết tới và test in phân bố thực tế (ít nhất, trung vị, nhiều nhất) vào nhật ký CI;
+- `topicLinks` trên 8 bài giả lập (2 silo) cho thứ tự chính xác, tổng 48 liên kết và tối thiểu 5 liên kết tới mỗi bài;
 - thanh bài liên quan bắt đầu bằng trang chủ ngôn ngữ, tối đa 5, không lặp, không tự trỏ.
 
 Trạng thái: IMPLEMENTED, TESTED. `content-graph.json` và `docs/GLOBAL-SITE-MATRIX.md` được tạo lại (`--write`) và `--check` xanh.

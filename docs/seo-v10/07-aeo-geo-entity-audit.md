@@ -40,7 +40,7 @@ Ngày tháng: 901 packet có `publication.approved_at` nên Article nhận đún
 | Trang không có liên kết nguồn ngoài | 25: gốc, 10 Pillar, 10 checklist, 4 tiện ích | trang khung, không phải bài có khẳng định |
 | FAQ hiển thị | 10 Pillar (phần FAQ bằng `<details>`) | không có FAQPage schema, xem bên dưới |
 | Ảnh xem trước mạng xã hội | `og:image` 1600×900, `twitter:card summary_large_image` | 927 trang, trừ `/search/` |
-| Alt ảnh | mô tả thật cho hero và ảnh chủ đề (theo ngôn ngữ) | 11 ảnh |
+| Alt ảnh | hero trang gốc có alt mô tả tác phẩm; 44 ảnh thẻ chủ đề và thư viện giữ `alt=""` vì là ảnh trang trí đứng cạnh tiêu đề | 45 ảnh trên 11 trang |
 
 ## 4. Quyết định có chủ ý
 

@@ -15,14 +15,15 @@ Ngày: 2026-10-20. Phạm vi: 928 tệp HTML (926 URL PUBLISHED, `/search/`, `40
 | P0 | CNAME, robots.txt, shard sitemap thiếu | 0 | 0 | không cần | OK |
 | P1 | BreadcrumbList lặp URL trên Hub | 40 | 0 | `scripts/articles.mjs`: Hub có cha là Pillar dùng đường dẫn Global › Ngôn ngữ › Hub; bài Supporting giữ Ngôn ngữ › Hub › Bài | IMPLEMENTED, TESTED |
 | P2 | Article thiếu `datePublished` / `dateModified` | 911 | 10 | lấy đúng `publication.approved_at` của packet; không có bản ghi thì không bịa ngày (10 checklist cũ) | IMPLEMENTED, TESTED |
-| P2 | Dưới 3 liên kết nội dung trỏ tới | 179 | 0 | cửa sổ liên kết xoay vòng trong `topicLinks` và thanh bài liên quan (xem 06) | IMPLEMENTED, TESTED |
+| P2 | Dưới 3 liên kết nội dung trỏ tới | 179 | 0 | kế hoạch liên kết anh em theo Hub trong `topicLinks` (cùng silo trước, tỏa đều sang silo khác, cân bằng tới tối thiểu min(6, n−1)) và thanh bài liên quan xoay vòng (xem 06) | IMPLEMENTED, TESTED |
 | P2 | Tiêu đề trên 70 ký tự | 321 | 321 | biên tập, trường đóng băng trong `url-freeze.json` | BLOCKED (cần PR biên tập kèm `seo-guard --write`) |
 | P2 | Mô tả trên 165 ký tự | 622 | 622 | biên tập, trường đóng băng | BLOCKED (như trên) |
 | P3 | Article thiếu `publisher`, `isPartOf`, logo | 911 | 0 | Organization "Vietnam Two-Wheel Guide" với `url` `/about/` và logo `/assets/favicon.svg`, `isPartOf` WebSite | IMPLEMENTED, TESTED |
 | P3 | Thiếu `og:image` | 927 | 1 | ảnh xã hội toàn site `/hero-hanoi.webp` 1600×900 trong `head()` của build và trong `renderArticle` | IMPLEMENTED, TESTED |
 | P3 | Thiếu `twitter:card` | 902 | 1 | `summary_large_image` trên mọi trang có ảnh | IMPLEMENTED, TESTED |
 | P3 | Thiếu `og:site_name` trên bài | 902 | 1 | thêm vào `renderArticle` | IMPLEMENTED, TESTED |
-| P3 | Alt ảnh rỗng (hero, 4 ảnh chủ đề, thư viện gốc) | 11 | 0 | `scripts/ultra.mjs`: alt mô tả cho hero, alt theo tiêu đề thẻ chủ đề đã bản địa hóa | IMPLEMENTED, TESTED |
+| P3 | Ảnh hero trang gốc không có alt dù là nội dung | 1 | 0 | `scripts/ultra.mjs`: alt mô tả tác phẩm minh họa cho hero | IMPLEMENTED, TESTED |
+| P3 | Ảnh thẻ chủ đề (40) và thư viện gốc (4) có `alt=""` | 44 ảnh trên 11 trang | 44 ảnh, giữ nguyên | giữ `alt=""` có chủ ý: ảnh trang trí đứng ngay cạnh tiêu đề cùng nghĩa; lặp tiêu đề vào alt chỉ khiến trình đọc màn hình đọc hai lần (nhận xét Codex trên PR #79 đã được tiếp nhận; bản đầu của PR từng đặt alt bằng tiêu đề thẻ) | OK, có test bảo vệ |
 | P3 | Open Graph không đầy đủ | 1 | 1 | `/search/` là trang noindex, bỏ qua có chủ ý | OK |
 | P3 | Checklist không có `x-default` | 10 | 10 | theo thiết kế: cụm hreflang chỉ gồm trang tương đương; bản đồ hreflang là trường đóng băng | OK (xem 05) |
 | P3 | Tiêu đề 61 đến 70 ký tự | 227 | 227 | biên tập | BLOCKED (biên tập) |
@@ -30,7 +31,7 @@ Ngày: 2026-10-20. Phạm vi: 928 tệp HTML (926 URL PUBLISHED, `/search/`, `40
 | P3 | Mô tả dưới 70 ký tự (zh, ja, ko mỗi locale 2) | 6 | 6 | như trên | Không hành động |
 | Hạ tầng | Regex sitemap thuộc sở hữu của build không nhận shard `-10` trở lên | tiềm ẩn | sửa | `sitemapFilePattern` dùng chung ngữ pháp với `SITEMAP_CHILD`; build chỉ xóa shard cũ đúng tên | IMPLEMENTED, TESTED |
 
-Tổng lỗi có thể sửa ở generator: 3.701 lượt trên 928 trang trước, còn 13 lượt sau (10 checklist không có ngày vì không có bản ghi xuất bản, 3 thẻ xã hội trên `/search/` noindex).
+Tổng lỗi có thể sửa ở generator: 3.701 lượt trên 928 trang trước, còn 23 lượt sau, tất cả có chủ ý (10 checklist không có ngày vì không có bản ghi xuất bản, 3 thẻ xã hội trên `/search/` noindex, 10 trang chủ ngôn ngữ có ảnh trang trí `alt=""` cạnh tiêu đề).
 
 ## 2. Theo ngôn ngữ: quét, phát hiện, đã sửa, còn lại
 

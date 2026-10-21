@@ -6,6 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {renderArticle,topicLinks,SOCIAL_IMAGE} from "../scripts/articles.mjs";
 import {sitemapFilePattern,SITEMAP_CHILD} from "../scripts/sitemaps.mjs";
+import {loadTopicalMap} from "../scripts/seo/topical-authority-core.mjs";
 
 const root=process.cwd();
 const SITE="https://global.rentbikehanoi.com";
@@ -59,10 +60,13 @@ test("every Hub and Supporting page carries site name, social image, card type a
  }
 });
 
-test("sibling links spread across each Hub: every published guide receives at least min(6, n-1) inbound sibling links",()=>{
+test("sibling links keep the silo first and still spread across each Hub",()=>{
+ const topical=loadTopicalMap(root);
+ const silo=r=>topical.locales?.[r.locale]?.existing?.[r.id]||r.subcluster||"";
  const guides=published.filter(r=>r.role==="SUPPORT"&&r.url.includes("/guides/"));
- const byParent=new Map();
+ const byParent=new Map(),byUrl=new Map(guides.map(g=>[g.url,g]));
  for(const g of guides){if(!byParent.has(g.parent_id))byParent.set(g.parent_id,[]);byParent.get(g.parent_id).push(g);}
+ const mates=g=>byParent.get(g.parent_id).filter(r=>r.id!==g.id&&silo(r)===silo(g)).length;
  const inbound=new Map(guides.map(g=>[g.url,0]));
  for(const g of guides){
   const html=read(g.url);
@@ -75,11 +79,16 @@ test("sibling links spread across each Hub: every published guide receives at le
   assert.equal(new Set(hrefs).size,hrefs.length,g.id+" repeats a sibling");
   assert.ok(!hrefs.includes(g.url),g.id+" links itself");
   for(const h of hrefs){assert.ok(inbound.has(h),g.id+" links a non-guide "+h);inbound.set(h,inbound.get(h)+1);}
+  const sameSilo=hrefs.filter(h=>silo(byUrl.get(h))===silo(g)).length;
+  assert.equal(sameSilo,Math.min(6,mates(g)),g.id+" must link its silo-mates before other silos");
  }
+ const counts=[];
  for(const g of guides){
-  const n=byParent.get(g.parent_id).length;
-  assert.ok(inbound.get(g.url)>=Math.min(6,n-1),g.id+" has only "+inbound.get(g.url)+" inbound sibling links");
+  const got=inbound.get(g.url);counts.push(got);
+  assert.ok(got>=Math.min(6,mates(g)),g.id+" has only "+got+" inbound sibling links for "+mates(g)+" silo-mates");
  }
+ counts.sort((a,b)=>a-b);
+ console.log("sibling inbound: guides="+counts.length+" min="+counts[0]+" median="+counts[Math.floor(counts.length/2)]+" max="+counts[counts.length-1]);
 });
 
 test("topicLinks keeps the same-silo-first order for a guide and walks a cyclic window",()=>{
@@ -89,10 +98,11 @@ test("topicLinks keeps the same-silo-first order for a guide and walks a cyclic 
  const m={rows};
  const links=id=>[...topicLinks(rows.find(r=>r.id===id),m,topical,"en").matchAll(/href="([^"]+)"/g)].map(x=>x[1]);
  assert.deepEqual(links("EN-S01"),["/en/guides/en-s02/","/en/guides/en-s03/","/en/guides/en-s04/","/en/guides/en-s05/","/en/guides/en-s06/","/en/guides/en-s07/"],"same silo first, then the next silo in order");
- assert.deepEqual(links("EN-S08"),["/en/guides/en-s01/","/en/guides/en-s02/","/en/guides/en-s03/","/en/guides/en-s04/","/en/guides/en-s05/","/en/guides/en-s06/"],"the window wraps around the Hub");
+ assert.deepEqual(links("EN-S08"),["/en/guides/en-s04/","/en/guides/en-s05/","/en/guides/en-s06/","/en/guides/en-s07/","/en/guides/en-s03/","/en/guides/en-s01/"],"the last guide of a silo still links every silo-mate, then wraps into the other silo at its own offset");
  const inbound={};
  for(const r of rows.slice(2))for(const h of links(r.id))inbound[h]=(inbound[h]||0)+1;
- for(const r of rows.slice(2))assert.equal(inbound[r.url],6,r.id);
+ assert.equal(Object.values(inbound).reduce((a,b)=>a+b,0),48,"six links per guide");
+ for(const r of rows.slice(2)){const mates=(topical.locales.en.existing[r.id]==="a"?3:5)-1;assert.ok(inbound[r.url]>=Math.min(6,mates)&&inbound[r.url]>=5,r.id+" "+inbound[r.url]);}
 });
 
 test("renderArticle builds a three-level trail for Hubs and guides without repeating URLs",()=>{
@@ -130,17 +140,23 @@ test("the related rail starts at the locale home, never repeats or self-links, a
  }
 });
 
-test("root and locale home illustrations carry descriptive alt text, localized on locale homes",()=>{
+test("the hero describes its artwork; gallery and topic-card images stay decorative next to their headings",()=>{
  const pages=["/",...locales.map(l=>"/"+l.code+"/")];
  for(const p of pages){
   const html=p==="/"?fs.readFileSync(path.join(root,"index.html"),"utf8"):read(p);
-  const imgs=html.match(/<img [^>]*>/g)||[];
+  const imgs=[...html.matchAll(/<img [^>]*>/g)];
   assert.ok(imgs.length>=4,p);
-  for(const img of imgs){const alt=img.match(/\salt="([^"]*)"/);assert.ok(alt&&alt[1].trim().length>=3,p+" "+img.slice(0,80));}
+  for(const m of imgs){
+   const img=m[0],alt=img.match(/\salt="([^"]*)"/);
+   assert.ok(alt,p+" every image declares alt: "+img.slice(0,80));
+   if(img.includes('src="/hero-hanoi'))assert.ok(alt[1].length>=20,p+" hero alt must describe the artwork");
+   else{
+    assert.equal(alt[1],"",p+" decorative illustration must not repeat its heading: "+img.slice(0,80));
+    assert.ok(/<h3>/.test(html.slice(m.index,m.index+img.length+400)),p+" a decorative image must sit next to the heading that names it");
+   }
+  }
  }
- const vi=read("/vi/");
- const l=locales.find(x=>x.code==="vi");
- for(const [title] of l.topics)assert.ok(vi.includes('alt="'+title.replace(/&/g,"&amp;")+'"'),"vi topic image alt uses the localized heading: "+title);
+ assert.ok(fs.readFileSync(path.join(root,"index.html"),"utf8").includes('src="/hero-hanoi.webp"'),"root renders the hero");
 });
 
 test("the build owns every shard name the sitemap grammar can produce for its locales, and nothing else",()=>{

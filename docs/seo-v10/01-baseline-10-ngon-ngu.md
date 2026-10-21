@@ -57,7 +57,7 @@ Audit V10 (`audit-v10`) đọc từng HTML: head, canonical, robots, hreflang, H
 | P3 | NO_OG_IMAGE | 927 | Không trang nào có `og:image` |
 | P3 | NO_TWITTER_CARD | 902 | Bài viết không có thẻ Twitter |
 | P3 | OG_NO_SITE_NAME | 902 | Bài viết không có `og:site_name` |
-| P3 | IMG_EMPTY_ALT | 11 | Ảnh hero và ảnh chủ đề có `alt=""` |
+| P3 | IMG_EMPTY_ALT | 11 | Ảnh hero của trang gốc là nội dung nhưng có `alt=""`; 40 ảnh thẻ chủ đề trên 10 trang chủ ngôn ngữ và 4 ảnh thư viện trang gốc là ảnh trang trí đứng ngay cạnh tiêu đề (audit đếm theo trang) |
 | P3 | OG_INCOMPLETE | 1 | `/search/` (noindex) |
 | P3 | HREFLANG_NO_XDEFAULT | 10 | 10 trang checklist, theo thiết kế (xem 05) |
 | P3 | TITLE_61_70 | 227 | Biên tập |

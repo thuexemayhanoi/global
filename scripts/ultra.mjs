@@ -19,24 +19,25 @@ const publishedUrl=(row,files)=>row&&row.status==="PUBLISHED"&&Object.prototype.
 const classes=(code)=>micro[code]||micro.en;
 
 const globalPhotoAssets=[{"path":"/topic-choose-bike.webp","title":"Choose your vehicle","desc":"Find a vehicle that fits your experience, route and needs."},{"path":"/topic-prices-deposits.webp","title":"Prices & deposits","desc":"Compare the full rental terms, not just the daily rate."},{"path":"/topic-documents.webp","title":"Documents & contracts","desc":"Know which questions to ask before signing."},{"path":"/topic-safety.webp","title":"Safety & pickup checks","desc":"Check the condition of the bike before riding."}];
-// Alt text describes what each illustration shows (Hanoi-inspired artwork, not photographs of a real shop);
-// the topic cards reuse the card's own localized heading so every locale gets alt text in its language.
+// The hero is content and gets alt text describing the artwork (Hanoi-inspired illustration, not a photo of a shop).
+// Gallery and topic-card images stay decorative (alt=""): the heading right next to each one already names the topic,
+// so repeating it would only make screen readers announce the same words twice.
 const HERO_ALT="Illustration of a scooter rider on a lakeside street in Hanoi at sunset";
 function globalHeroPhoto(){
  return '<figure class="ultra-hero-photo"><img src="/hero-hanoi.webp" width="1600" height="900" alt="'+clean(HERO_ALT)+'" fetchpriority="high" loading="eager" decoding="async"><figcaption><span>✳</span> HANOI-INSPIRED • TWO-WHEEL TRAVEL</figcaption></figure>';
 }
 function injectGatewayGallery(html){
  if(html.includes('class="ultra-gateway-gallery"'))return html;
- const gallery='<section class="ultra-gateway-gallery" aria-labelledby="ultra-gallery-heading"><div class="container"><div class="ultra-gallery-heading"><div><p class="ultra-gallery-overline">TRAVEL EDITORIAL</p><h2 id="ultra-gallery-heading">Discover our four guide topics</h2></div><p>Choose a language above to explore guidance on each topic.</p></div><div class="ultra-gallery-grid">'+globalPhotoAssets.map((item,i)=>'<article class="ultra-gallery-card"><div class="ultra-gallery-image"><img src="'+clean(item.path)+'" width="960" height="720" loading="lazy" decoding="async" alt="'+clean(item.title)+'"></div><div class="ultra-gallery-content"><span class="ultra-gallery-count">0'+(i+1)+'</span><h3>'+clean(item.title)+'</h3><p>'+clean(item.desc)+'</p></div></article>').join("")+'</div></div></section>';
+ const gallery='<section class="ultra-gateway-gallery" aria-labelledby="ultra-gallery-heading"><div class="container"><div class="ultra-gallery-heading"><div><p class="ultra-gallery-overline">TRAVEL EDITORIAL</p><h2 id="ultra-gallery-heading">Discover our four guide topics</h2></div><p>Choose a language above to explore guidance on each topic.</p></div><div class="ultra-gallery-grid">'+globalPhotoAssets.map((item,i)=>'<article class="ultra-gallery-card"><div class="ultra-gallery-image"><img src="'+clean(item.path)+'" width="960" height="720" loading="lazy" decoding="async" alt=""></div><div class="ultra-gallery-content"><span class="ultra-gallery-count">0'+(i+1)+'</span><h3>'+clean(item.title)+'</h3><p>'+clean(item.desc)+'</p></div></article>').join("")+'</div></div></section>';
  return html.replace('</main>',gallery+'</main>');
 }
 function addTopicPhotos(html){
  if(html.includes('class="ultra-topic-image"'))return html;
  let idx=0;
- html=html.replace(/(<article class="topic ultra-topic-card" id="ultra-topic-\d+">)(<span class="number">\d+<\/span><h3>)([^<]*)(<\/h3>)/g,(whole,head,number,title,close)=>{
+ html=html.replace(/(<article class="topic ultra-topic-card" id="ultra-topic-\d+">)/g,head=>{
   const a=globalPhotoAssets[idx++];
   if(!a)throw Error("No image assigned to topic card "+idx);
-  return head+'<div class="ultra-topic-image"><img src="'+clean(a.path)+'" width="960" height="720" loading="lazy" decoding="async" alt="'+title+'"></div>'+number+title+close;
+  return head+'<div class="ultra-topic-image"><img src="'+clean(a.path)+'" width="960" height="720" loading="lazy" decoding="async" alt=""></div>';
  });
  if(idx!==4)throw Error("Expected 4 images for all four topic cards, got "+idx);
  return html;

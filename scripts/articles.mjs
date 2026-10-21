@@ -193,6 +193,41 @@ const ARTICLE_LABELS={
  ko:["이 주제의 가이드","같은 주제의 다른 가이드","참고 자료","기타 가이드"],
  ja:["このテーマのガイド","同じテーマの関連ガイド","参考資料","その他のガイド"]
 };
+// One sibling plan per Hub and locale, memoised per build index. Every guide links its silo-mates first (a cyclic
+// window inside the silo, so a silo with more than seven guides still spreads), fills the rest of its six slots from
+// the other silos starting k entries further for the i-th guide of its silo (a silo fans out instead of pointing at
+// the same first rows), and a balancing pass then moves surplus other-silo links to guides still under
+// min(6, n-1) inbound links. Mate links are never moved, so the silo-first order survives the balancing.
+const SIBLING_PLANS=new WeakMap();
+function siblingPlan(cycle,siloOf,ix,key){
+ let plans=SIBLING_PLANS.get(ix);
+ if(!plans){plans=new Map();SIBLING_PLANS.set(ix,plans);}
+ if(plans.has(key))return plans.get(key);
+ const n=cycle.length,target=Math.min(6,n-1),links=new Map(),inbound=new Map(cycle.map(r=>[r.id,0]));
+ cycle.forEach((row,at)=>{
+  const own=siloOf(row),ring=cycle.slice(at+1).concat(cycle.slice(0,at));
+  const mates=ring.filter(r=>siloOf(r)===own),others=ring.filter(r=>siloOf(r)!==own);
+  const take=Math.min(6,mates.length),k=6-take,i=cycle.slice(0,at).filter(r=>siloOf(r)===own).length;
+  const start=others.length?(i*k)%others.length:0;
+  const list=mates.slice(0,take).concat(others.slice(start).concat(others.slice(0,start)).slice(0,k));
+  links.set(row.id,list);for(const r of list)inbound.set(r.id,inbound.get(r.id)+1);
+ });
+ const by=sign=>(a,b)=>sign*(inbound.get(a.id)-inbound.get(b.id))||a.id.localeCompare(b.id);
+ for(let guard=0;guard<6*n;guard++){
+  const short=cycle.filter(r=>inbound.get(r.id)<target).sort(by(1))[0];
+  if(!short)break;
+  let moved=false;
+  for(const t of cycle.filter(r=>inbound.get(r.id)>target).sort(by(-1))){
+   const g=cycle.find(g=>g.id!==short.id&&siloOf(g)!==siloOf(t)&&links.get(g.id).some(r=>r.id===t.id)&&!links.get(g.id).some(r=>r.id===short.id));
+   if(!g)continue;
+   const list=links.get(g.id);list[list.findIndex(r=>r.id===t.id)]=short;
+   inbound.set(t.id,inbound.get(t.id)-1);inbound.set(short.id,inbound.get(short.id)+1);moved=true;break;
+  }
+  if(!moved)break;
+ }
+ plans.set(key,links);
+ return links;
+}
 /**
  * Hub → every PUBLISHED child grouped by silo (no orphan Supporting pages);
  * Supporting → up to six PUBLISHED siblings, same silo first. PUBLISHED only.
@@ -215,13 +250,9 @@ export function topicLinks(row,matrix,topical,code,ix=rowsIndex(matrix)){
  }
  if(row.role==="SUPPORT"){
   const own=siloOf(row);
-  // Cyclic window over the Hub's published guides ordered silo-major (silo, then priority): each guide links the
-  // six that follow it, so every guide receives six inbound sibling links and most of them stay in its own silo,
-  // instead of the whole Hub pointing at its first six rows.
   const cycle=(ix.pubSupport.get(row.parent_id)||[]).filter(r=>r.locale===code).sort((a,b)=>siloOf(a).localeCompare(siloOf(b))||order(a,b));
-  const at=cycle.findIndex(r=>r.id===row.id);
-  const ring=(at<0?cycle:cycle.slice(at+1).concat(cycle.slice(0,at))).filter(r=>r.id!==row.id);
-  const sib=(at<0?[...ring.filter(r=>siloOf(r)===own),...ring.filter(r=>siloOf(r)!==own)]:ring).slice(0,6);
+  // A row that is not (yet) a PUBLISHED guide of this Hub (draft previews) gets the plain silo-first list instead of a plan slot.
+  const sib=siblingPlan(cycle,siloOf,ix,row.parent_id+"|"+code).get(row.id)||[...cycle.filter(r=>siloOf(r)===own),...cycle.filter(r=>siloOf(r)!==own)].filter(r=>r.id!==row.id).slice(0,6);
   return sib.length?'<section class="topic-guides topic-guides--siblings"><h2>'+esc(L[1])+'</h2><ul>'+sib.map(item).join("")+'</ul></section>':"";
  }
  return "";
