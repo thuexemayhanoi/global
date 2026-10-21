@@ -2,16 +2,16 @@
 
 Repository: `thuexemayhanoi/global` · production `https://global.rentbikehanoi.com`.
 
-This folder contains **editorial proposals only**. No published article packet, SEO freeze record, generated HTML, Google Search Console data, or live business information is modified by this work.
+This folder contains the **metadata editorial review workflow and its evidence**. The first owner-approved 49-item batch was applied in [PR #90](https://github.com/thuexemayhanoi/global/pull/90), with the corresponding published article packets, generated HTML, derived graph/search index and the reviewed URL-freeze fingerprints updated together. This does not introduce Google Search Console or live business data.
 
-## First reviewed-source batch
+## First batch — approved and applied in PR #90
 
-- `meta-vi.json`, `meta-en.json`, `meta-de.json`, `meta-fr.json`, `meta-es.json`, `meta-nl.json`, `meta-pt.json`: 7 records each, **49 articles**.
+- `applied-20261021-49/meta-vi.json`, `meta-en.json`, `meta-de.json`, `meta-fr.json`, `meta-es.json`, `meta-nl.json`, `meta-pt.json`: 7 archived approved records per locale, **49 articles**.
 - Proposed titles: only where existing title length exceeds the current *repository's editorial review threshold* of 60 characters; otherwise `null`.
 - Proposed descriptions: 49 individually worded, page-specific summaries, each 120–155 characters to satisfy the existing proposal validator.
 - Every proposal includes the exact published packet's ID, URL, current title and description, before/after character counts and an owner-review note.
-- No URLs, H1s, canonicals, hreflang, structured data, publisher queue or NAP change.
-- All proposal text should be reviewed by a fluent editor in the relevant language before approval. A test passing is not proof of language quality.
+- The application changes exactly **30 SEO titles + 49 meta descriptions** on 49 existing URLs, with generated HTML/search index/graph and a checked re-freeze. No URLs, H1s, canonicals, hreflang, schema types, publisher queue or NAP change.
+- Owner approved publishing this specified 49-item batch on 21 October 2026. Further batches still require separate approvals. Automated QA is not proof of all native-language editorial nuance.
 
 ## Why not automatically rewrite all 321 / 622?
 
@@ -28,7 +28,7 @@ node scripts/seo/apply-meta-proposals.mjs     # dry run only
 node --test tests/meta-proposals.test.mjs tests/meta-review-status.test.mjs
 ```
 
-`meta-review-status` reports the full published-packet backlog, validated staged proposals and outstanding flags per locale; it exits non-zero on stale or malformed proposals. It **never applies** changes.
+`meta-review-status` reports published-packet backlog, any active proposals and outstanding flags per locale; it exits non-zero on stale or malformed active proposals. The applied 49-item batch was moved into `applied-20261021-49/`, so it is not re-applied. This status script **never applies** changes.
 
 ## Owner-approved application (separate, deliberate PR)
 
