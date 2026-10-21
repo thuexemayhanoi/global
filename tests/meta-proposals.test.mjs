@@ -34,6 +34,8 @@ test("validateProposal enforces the limits and the null rule",()=>{
  assert.ok(validateProposal({...ok,proposed_description:"C".repeat(DESC_MAX+1)},packet).some(e=>/outside/.test(e)));
  assert.ok(validateProposal({...ok,proposed_title:"Title with 2026 invented"},packet).some(e=>/number 2026/.test(e)));
  assert.deepEqual(validateProposal({...ok,proposed_title:"Title with 2025 from the body"},packet),[]);
+ assert.deepEqual(validateProposal(ok,{...packet,title:ok.proposed_title,meta_description:ok.proposed_description}),[],"an applied proposal is not drift");
+ assert.ok(validateProposal(ok,{...packet,title:"Something else"}).some(e=>/drifted/.test(e)));
  const short={...base,title:"Fine",title_len:4,proposed_title:"Other",proposed_title_len:5};
  assert.ok(validateProposal(short,{...packet,title:"Fine"}).some(e=>/must have null/.test(e)));
 });
