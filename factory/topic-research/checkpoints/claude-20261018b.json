@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T03:44:52.976Z",
+  "updated_at": "2026-10-21T03:45:05.043Z",
   "base_main_sha": "68e51c4329575725c39c26fcfdb9e0491d984fb6",
-  "last_commit_sha": "dd11595cba75e007db7e1cc2fb07c45b4523f346",
+  "last_commit_sha": "055e10cc647ecdc17ae785a7a49285d9dc0df69d",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1880,
-    "qa_pass": 1880,
+    "researched": 1890,
+    "qa_pass": 1890,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1870,
+    "pushed": 1880,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 189,
-      "de": 189,
-      "fr": 189,
-      "es": 189,
-      "nl": 189,
-      "pt": 189,
-      "zh": 189,
-      "ko": 189,
-      "ja": 189,
-      "en": 179
+      "vi": 190,
+      "de": 190,
+      "fr": 190,
+      "es": 190,
+      "nl": 190,
+      "pt": 190,
+      "zh": 190,
+      "ko": 190,
+      "ja": 190,
+      "en": 180
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 861,
+      "traffic-law-safety": 871,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 188,
-    "file": "factory/topic-research/batches/claude-20261018b-0188.json",
-    "sha256": "6521bb4135ef6c792fc08092636c173dedef8d01149b2c29893349677fcfc94c",
+    "seq": 189,
+    "file": "factory/topic-research/batches/claude-20261018b-0189.json",
+    "sha256": "b71d3dcf333b76daebacdcd976f73af220b4d3d78558b9f7126daf7cfa8b650e",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -20816,8 +20816,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0188.json",
       "sha256": "6521bb4135ef6c792fc08092636c173dedef8d01149b2c29893349677fcfc94c",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "055e10cc647ecdc17ae785a7a49285d9dc0df69d",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -20921,11 +20921,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 189,
+      "file": "factory/topic-research/batches/claude-20261018b-0189.json",
+      "sha256": "b71d3dcf333b76daebacdcd976f73af220b4d3d78558b9f7126daf7cfa8b650e",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:ret-hai-bang-gia-suong-muoi-vung-nui-phia-bac-canh-bao-duong-deo-xe-may",
+          "locale": "vi",
+          "slug": "ret-hai-bang-gia-suong-muoi-vung-nui-phia-bac-canh-bao-duong-deo-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-weather",
+          "key": "vi::ret hai, bang gia va suong muoi o vung nui phia bac duoc canh bao the nao va di xe may duong deo co an toan khong",
+          "ta_id": null
+        },
+        {
+          "ref": "en:cold-spells-frost-ice-northern-vietnam-mountain-roads-warnings-motorbike",
+          "locale": "en",
+          "slug": "cold-spells-frost-ice-northern-vietnam-mountain-roads-warnings-motorbike",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-weather",
+          "key": "en::what do cold and frost warnings mean in northern vietnam and is it safe to ride the mountain roads",
+          "ta_id": null
+        },
+        {
+          "ref": "de:kaelte-frost-eis-bergstrassen-nordvietnam-warnstufen-rollerfahrer",
+          "locale": "de",
+          "slug": "kaelte-frost-eis-bergstrassen-nordvietnam-warnstufen-rollerfahrer",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-weather",
+          "key": "de::was bedeuten kalte- und frostwarnungen in nordvietnam und kann man bei eis die bergstraßen mit dem roller fahren",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:froid-gel-verglas-routes-de-montagne-nord-vietnam-niveaux-alerte-motard",
+          "locale": "fr",
+          "slug": "froid-gel-verglas-routes-de-montagne-nord-vietnam-niveaux-alerte-motard",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-weather",
+          "key": "fr::que signifient les alertes froid et gel dans le nord du vietnam et peut-on rouler sur les routes de montagne quand il y a du verglas",
+          "ta_id": null
+        },
+        {
+          "ref": "es:frio-heladas-hielo-carreteras-de-montana-norte-de-vietnam-niveles-de-aviso-moto",
+          "locale": "es",
+          "slug": "frio-heladas-hielo-carreteras-de-montana-norte-de-vietnam-niveles-de-aviso-moto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-weather",
+          "key": "es::que significan los avisos de frio y heladas en el norte de vietnam y se puede circular en moto por carreteras de montana con hielo",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:kou-vorst-ijs-bergwegen-noord-vietnam-waarschuwingsniveaus-scooter",
+          "locale": "nl",
+          "slug": "kou-vorst-ijs-bergwegen-noord-vietnam-waarschuwingsniveaus-scooter",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-weather",
+          "key": "nl::wat betekenen kou- en vorstwaarschuwingen in noord-vietnam en kun je met ijs over de bergwegen rijden",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-beibu-shanqu-hanchao-shuangdong-bingjia-yujing-dengji-shandao-motuoche",
+          "locale": "zh",
+          "slug": "yuenan-beibu-shanqu-hanchao-shuangdong-bingjia-yujing-dengji-shandao-motuoche",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-weather",
+          "key": "zh::越南北部山区的严寒、霜冻和结冰预警是什么意思,结冰时骑摩托车走山路安全吗",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:frio-geada-gelo-estradas-de-montanha-norte-do-vietname-niveis-de-aviso-mota",
+          "locale": "pt",
+          "slug": "frio-geada-gelo-estradas-de-montanha-norte-do-vietname-niveis-de-aviso-mota",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-weather",
+          "key": "pt::o que significam os avisos de frio e geada no norte do vietname e pode-se andar de mota nas estradas de montanha com gelo",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-bukbu-sangan-hanpa-seoli-eoreum-doro-gyeongbo-deunggeub-otobai",
+          "locale": "ko",
+          "slug": "beteunam-bukbu-sangan-hanpa-seoli-eoreum-doro-gyeongbo-deunggeub-otobai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-weather",
+          "key": "ko::베트남 북부 산악 지역의 한파, 서리, 결빙 경보는 무슨 뜻이고 얼음이 얼면 오토바이로 산길을 가도 되나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-hokubu-sangaku-kanpa-shimo-toketsu-keiho-reberu-baiku",
+          "locale": "ja",
+          "slug": "betonamu-hokubu-sangaku-kanpa-shimo-toketsu-keiho-reberu-baiku",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-weather",
+          "key": "ja::ヘトナム北部の山岳地帯の寒波・霜・凍結の警報は何を意味し、凍結しているときにハイクて山道を走ってよいか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 189,
-    "file": "factory/topic-research/batches/claude-20261018b-0189.json",
+    "seq": 190,
+    "file": "factory/topic-research/batches/claude-20261018b-0190.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -20938,13 +21049,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:49:04.954Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 164,
-      "topics": 10,
-      "sha256": "247db68258576a67dff8b9b5a547854ca0cd6c54271627e11cba636dba1c4f0c"
-    },
     {
       "at": "2026-10-20T20:49:22.103Z",
       "event": "BATCH_COMMITTED",
@@ -21112,6 +21216,13 @@
       "seq": 188,
       "topics": 10,
       "sha256": "6521bb4135ef6c792fc08092636c173dedef8d01149b2c29893349677fcfc94c"
+    },
+    {
+      "at": "2026-10-21T03:45:05.043Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 189,
+      "topics": 10,
+      "sha256": "b71d3dcf333b76daebacdcd976f73af220b4d3d78558b9f7126daf7cfa8b650e"
     }
   ]
 }
