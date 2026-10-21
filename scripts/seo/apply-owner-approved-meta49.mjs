@@ -123,7 +123,7 @@ run("node",["scripts/seo/seo-guard.mjs","--write"]);
 if(JSON.stringify(fsRead(REGISTRY))!==JSON.stringify(built))
  throw Error("Re-frozen registry differs from independently checked registry");
 // Fail if the builder touches an unrelated or protected file. This also checks untracked files.
-const changed=execFileSync("git",["status","--porcelain","-uall"],{encoding:"utf8"}).trim().split("\n").filter(Boolean).map(x=>x.slice(3).split(" -> ").at(-1));
+const changed=execFileSync("git",["status","--porcelain","-uall"],{encoding:"utf8"}).trimEnd().split("\n").filter(Boolean).map(x=>x.slice(3).split(" -> ").at(-1));
 const allowed=p=>
   /^content\/articles\/(VI|EN|DE|FR|ES|NL|PT)-S0[1-7]\.json$/.test(p)||
   /^(vi|en|de|fr|es|nl|pt)\/guides\/[a-z0-9-]+\/index\.html$/.test(p)||
