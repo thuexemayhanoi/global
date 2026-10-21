@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:25:03.219Z",
+  "updated_at": "2026-10-21T04:25:13.412Z",
   "base_main_sha": "756c805b8872dc35bf3d63eb3ae67cfb501b6728",
-  "last_commit_sha": "da331ed60a8c8f2767596bc8054d554fb11b54db",
+  "last_commit_sha": "d6d4303b07399bc8afc2a56299321912cf300d7e",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 2070,
-    "qa_pass": 2070,
+    "researched": 2080,
+    "qa_pass": 2080,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2060,
+    "pushed": 2070,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 208,
-      "de": 208,
-      "fr": 208,
-      "es": 208,
-      "nl": 208,
-      "pt": 208,
-      "zh": 208,
-      "ko": 208,
-      "ja": 208,
-      "en": 198
+      "vi": 209,
+      "de": 209,
+      "fr": 209,
+      "es": 209,
+      "nl": 209,
+      "pt": 209,
+      "zh": 209,
+      "ko": 209,
+      "ja": 209,
+      "en": 199
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 951,
+      "traffic-law-safety": 961,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 207,
-    "file": "factory/topic-research/batches/claude-20261018b-0207.json",
-    "sha256": "91c2bc08b2cd0c36ee23b623f089077ffdaeee24acba025f390282515bc988f0",
+    "seq": 208,
+    "file": "factory/topic-research/batches/claude-20261018b-0208.json",
+    "sha256": "4cfeb79d9210ee822bcb9a97ad067f8fc213985bc5e68eb1f3feb66e593f8303",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -22925,8 +22925,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0207.json",
       "sha256": "91c2bc08b2cd0c36ee23b623f089077ffdaeee24acba025f390282515bc988f0",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "d6d4303b07399bc8afc2a56299321912cf300d7e",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -23030,11 +23030,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 208,
+      "file": "factory/topic-research/batches/claude-20261018b-0208.json",
+      "sha256": "4cfeb79d9210ee822bcb9a97ad067f8fc213985bc5e68eb1f3feb66e593f8303",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:mat-duong-xau-va-tai-nan-xe-may-nghien-cuu-do-duoc-gi-ve-o-ga-soi-dau-nhot",
+          "locale": "vi",
+          "slug": "mat-duong-xau-va-tai-nan-xe-may-nghien-cuu-do-duoc-gi-ve-o-ga-soi-dau-nhot",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::o ga, soi da va dau nhot tren duong co that su gay tai nan xe may khong va nghien cuu da do duoc gi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:road-surface-hazards-motorbike-crashes-gravel-oil-potholes-what-studies-measured",
+          "locale": "en",
+          "slug": "road-surface-hazards-motorbike-crashes-gravel-oil-potholes-what-studies-measured",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::do potholes, gravel and oil on the road really cause motorcycle crashes and what do studies measure",
+          "ta_id": null
+        },
+        {
+          "ref": "de:schlagloecher-split-oel-fahrbahngefahren-motorradunfaelle-was-studien-messen",
+          "locale": "de",
+          "slug": "schlagloecher-split-oel-fahrbahngefahren-motorradunfaelle-was-studien-messen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::verursachen schlaglocher, split und ol auf der straße wirklich motorrad- und rollerunfalle und was haben studien gemessen",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:nids-de-poule-gravillons-huile-defauts-de-chaussee-accidents-de-moto-etudes",
+          "locale": "fr",
+          "slug": "nids-de-poule-gravillons-huile-defauts-de-chaussee-accidents-de-moto-etudes",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::les nids-de-poule, les gravillons et l'huile sur la route causent-ils vraiment des accidents de moto et qu'ont mesure les etudes",
+          "ta_id": null
+        },
+        {
+          "ref": "es:baches-grava-suelta-aceite-defectos-de-la-calzada-accidentes-de-moto-estudios",
+          "locale": "es",
+          "slug": "baches-grava-suelta-aceite-defectos-de-la-calzada-accidentes-de-moto-estudios",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::los baches, la grava suelta y el aceite en la calzada causan realmente accidentes de moto y que midieron los estudios",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:kuilen-grind-olie-wegdekgevaren-motor-scooter-ongevallen-wat-onderzoek-mat",
+          "locale": "nl",
+          "slug": "kuilen-grind-olie-wegdekgevaren-motor-scooter-ongevallen-wat-onderzoek-mat",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::veroorzaken kuilen in de weg, grind en olie echt ongevallen met motoren en scooters en wat mat onderzoek",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:luomian-keng-dong-suishi-youwu-yu-motuoche-shigu-yanjiu-celiang-le-shenme",
+          "locale": "zh",
+          "slug": "luomian-keng-dong-suishi-youwu-yu-motuoche-shigu-yanjiu-celiang-le-shenme",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::路上的坑洼 碎石和油污真的会造成摩托车事故吗 研究测量了什么",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:buracos-gravilha-oleo-defeitos-do-piso-acidentes-de-mota-o-que-medem-os-estudos",
+          "locale": "pt",
+          "slug": "buracos-gravilha-oleo-defeitos-do-piso-acidentes-de-mota-o-que-medem-os-estudos",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::os buracos, a gravilha solta e o oleo na estrada causam mesmo acidentes de mota e o que mediram os estudos",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:poteuhol-jagal-gireum-otobai-sago-yeongu-ga-cheukjeonghan-geot",
+          "locale": "ko",
+          "slug": "poteuhol-jagal-gireum-otobai-sago-yeongu-ga-cheukjeonghan-geot",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::도로의 포트홀과 자갈, 기름이 정말 오토바이 사고를 일으키나요 연구는 무엇을 측정했나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:romen-pothole-jari-abura-to-baiku-jiko-kenkyu-ga-sokuteishita-koto",
+          "locale": "ja",
+          "slug": "romen-pothole-jari-abura-to-baiku-jiko-kenkyu-ga-sokuteishita-koto",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::路面の穴ほこや砂利、油は本当にハイク事故の原因になるのてすか 研究は何を測定しましたか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 208,
-    "file": "factory/topic-research/batches/claude-20261018b-0208.json",
+    "seq": 209,
+    "file": "factory/topic-research/batches/claude-20261018b-0209.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -23047,13 +23158,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T21:33:00.402Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 183,
-      "topics": 10,
-      "sha256": "df3a710d11958c5742a698efe992452f275ce4773b0651c17e5a2b8459bb350b"
-    },
     {
       "at": "2026-10-20T21:46:15.419Z",
       "event": "BATCH_COMMITTED",
@@ -23221,6 +23325,13 @@
       "seq": 207,
       "topics": 10,
       "sha256": "91c2bc08b2cd0c36ee23b623f089077ffdaeee24acba025f390282515bc988f0"
+    },
+    {
+      "at": "2026-10-21T04:25:13.412Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 208,
+      "topics": 10,
+      "sha256": "4cfeb79d9210ee822bcb9a97ad067f8fc213985bc5e68eb1f3feb66e593f8303"
     }
   ]
 }
