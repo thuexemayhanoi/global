@@ -1,0 +1,712 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "TOPIC_RESEARCH_BATCH",
+  "agent": {
+    "name": "claude",
+    "session": "research-claude-20261018b"
+  },
+  "researched_on": "2026-10-20",
+  "candidates": [
+    {
+      "locale": "vi",
+      "parent_id": "VI-H04",
+      "subcluster": "ss-weather",
+      "slug": "chi-so-uv-chong-nang-khi-di-xe-may-viet-nam-thang-uv-nguon-du-bao-loi-khuyen",
+      "primary_query": "chỉ số UV bao nhiêu thì cần chống nắng khi đi xe máy ở Việt Nam và xem chỉ số UV chính thức ở đâu",
+      "secondary_queries": [
+        "thang chỉ số UV thấp trung bình cao rất cao cực cao nghĩa là gì",
+        "xem dự báo chỉ số UV Hà Nội ở nguồn chính thức nào",
+        "đi xe máy có cần kem chống nắng, kính râm và áo dài tay không",
+        "vì sao chỉ số UV ở Việt Nam vẫn cao khi trời nhiều mây",
+        "WHO khuyến cáo chống nắng khi chỉ số UV từ 3 trở lên"
+      ],
+      "entities": [
+        "Chỉ số UV toàn cầu của WHO",
+        "Trung tâm Dự báo khí tượng thủy văn quốc gia",
+        "ứng dụng SunSmart Global UV (WHO)",
+        "tia UVA và UVB",
+        "Bệnh viện Bạch Mai",
+        "thang chỉ số UV của EPA Mỹ"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Người đi xe máy ở Hà Nội và miền Bắc phơi nắng nhiều giờ, thấy chỉ số UV rất cao trong dự báo và tin tức, nên muốn biết thang chỉ số nghĩa là gì, số liệu chính thức lấy từ đâu và cách che chắn da, mắt nào thực sự hợp lý khi ngồi trên xe.",
+      "content_angle": "Giải thích chỉ số UV do WHO xây dựng cùng UNEP, WMO và ICNIRP (năm nhóm mức phơi nhiễm từ thấp đến cực cao kèm màu quy ước: thông cáo của WHO ngày 22/7/2002) và lời khuyên trong tờ thông tin của WHO là dùng biện pháp chống nắng khi chỉ số đạt 3 trở lên: hạn chế ra nắng giữa trưa, tìm bóng râm, mặc quần áo che chắn, đội mũ rộng vành, đeo kính râm ôm sát chắn 99–100% UV-A và UV-B, còn kem chống nắng chỉ dùng cho vùng da quần áo không che được; UV tăng theo độ cao mặt trời, vĩ độ thấp, độ cao địa hình và phản xạ, vẫn có thể cao khi có mây, và người làm việc ngoài trời có nguy cơ ung thư da cao hơn. Cho xem các ngưỡng số theo cách US EPA in ra, khác nhau giữa các trang: năm nhóm (0–2, 3–5, 6–7, 8–10, từ 11) ở trang lưu trữ năm 2017 nhưng ba nhóm (1–2, 3–7, từ 8) ở trang cập nhật ngày 15/6/2026; người viết phải nêu chỗ khác nhau và trích đúng thang mà dự báo của Việt Nam dùng, vì dự báo ngày 11/8/2026 do Việt Nam Mới đăng gọi chỉ số 12 và 13 là ‘rất cao’ trong khi thang năm nhóm của WHO và EPA gọi từ 11 trở lên là ‘cực cao’. Nơi Việt Nam đưa số liệu UV: bài đó ghi Trung tâm Dự báo khí tượng thủy văn quốc gia là nguồn của chỉ số UV theo phường, xã cho Hà Nội (12), TP Hồ Chí Minh (10) và Đà Nẵng (13), nhưng VnExpress ngày 26/5/2026 lại dẫn AccuWeather và Weather Online cho các mức cực đại trong tuần, còn menu của trang Trung tâm không có trang UV (hai thẻ ảnh mang nhãn UV lại mở trang ra-đa), nên người viết phải tìm bản tin gốc và nói rõ nếu không tìm thấy. Về sức khỏe: lời khuyên của Khoa Da liễu và Bỏng, Bệnh viện Bạch Mai ngày 5/8/2025 (kem chống nắng phổ rộng thoa lại sau mỗi 2–3 giờ, UVA xuyên qua kính, UV xuyên qua mây, tránh giờ trưa, áo dài tay, mũ, kính chống UV) và ứng dụng SunSmart Global UV miễn phí của WHO cho du khách. Chưa tìm thấy nghiên cứu riêng về người đi xe máy, nên không được bịa ra; chỉ nhắc kính mũ bảo hiểm, găng tay hay che cổ khi nguồn nói vậy.",
+      "working_title": "Chỉ số UV và chống nắng khi đi xe máy ở Việt Nam: cách đọc thang UV, nguồn dự báo và lời khuyên chính thức",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/ultraviolet-radiation",
+          "title": "WHO fact sheet Ultraviolet radiation (undated page, listed 21 June 2022): what raises UV levels (sun height, latitude, altitude, reflection, thin cloud), outdoor workers' skin-cancer risk, protective measures (shade, clothing, broad-brimmed hat, wraparound sunglasses with 99 to 100 per cent UV-A and UV-B protection, sunscreen for uncovered skin) and sun protection when the UV Index reaches 3 or above",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news/item/22-07-2002-helping-people-reduce-their-risks-of-skin-cancer-and-cataract",
+          "title": "WHO news release (22 July 2002): the Global Solar UV Index developed by WHO with UNEP, WMO and ICNIRP, grouped into the exposure categories low, moderate, high, very high and extreme with colour codes and simple icons",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/teams/environment-climate-change-and-health/radiation-and-health/non-ionizing/optical-radiation",
+          "title": "WHO Optical radiation page (undated): the free SunSmart Global UV App for mobile devices, which shows the level of solar UV at a specific location and time slots for sun protection",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.epa.gov/sunsafety/uv-index-scale-0",
+          "title": "US EPA UV Index Scale (updated 15 June 2026): three bands (1-2 low, 3-7 moderate to high, 8 and above very high to extreme), a statement that the scale follows WHO international guidelines, protection advice and the shadow rule",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://19january2017snapshot.epa.gov/sunsafety/uv-index-scale-1_.html",
+          "title": "US EPA UV Index Scale (archived snapshot of 19 January 2017): five bands (0-2 low, 3-5 moderate, 6-7 high, 8-10 very high, 11 and above extreme) with protection messages for each, including shade near midday, sunglasses, sunscreen and reflective surfaces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://bachmai.gov.vn/bai-viet/canh-bao-nguy-co-benh-da-va-bong-da-do-thoi-tiet-nang-nong?id=5135db46-d0ae-4aa6-90db-a22fa77d20e0",
+          "title": "Bach Mai Hospital (5 August 2025): dermatology department warning on sunburn during northern heat with the UV index described as very high (9-10 and above), UVA through glass, UV through cloud, broad-spectrum sunscreen reapplied every 2 to 3 hours, avoiding the middle of the day, long sleeves, wide-brimmed hat and UV sunglasses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/tia-cuc-tim-ca-nuoc-o-muc-rat-nguy-hai-5078264.html",
+          "title": "VnExpress (26 May 2026): UV index of 10 to 13 reported in several provinces during a heat wave, maxima for Hanoi and Ho Chi Minh City attributed to AccuWeather and Weather Online, the forecasting centre's warning for older people, children and outdoor workers, and doctors' advice on sunscreen, clothing, hat, glasses, mask and gloves",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnammoi.vn/du-bao-thoi-tiet-ngay-mai-128-ha-noi-nong-gay-gat-38-do-da-nang-uv-cham-muc-13-tp-hcm-co-noi-35-do-2026810165137551.htm",
+          "title": "Viet Nam Moi (11 August 2026, a site that republishes agency reports and credits the national forecasting centre): daily city forecast with a UV index line per ward and commune, Hanoi 12, Ho Chi Minh City 10 and Da Nang 13, described as very high risk",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "parent_id": "EN-H04",
+      "subcluster": "ss-weather",
+      "slug": "uv-index-sun-protection-motorbike-vietnam-scale-forecasts-official-advice",
+      "primary_query": "what does the UV index mean on a motorbike in Vietnam and when do I need sun protection",
+      "secondary_queries": [
+        "UV index scale low moderate high very high extreme what to do",
+        "where to find the UV index forecast for Hanoi from an official source",
+        "do I need sunscreen, sunglasses and long sleeves on a motorbike in Vietnam",
+        "why is the UV index so high in Vietnam even when it is cloudy",
+        "WHO advice sun protection when the UV index is 3 or above"
+      ],
+      "entities": [
+        "WHO Global Solar UV Index",
+        "National Center for Hydro-Meteorological Forecasting",
+        "SunSmart Global UV app (WHO)",
+        "UV-A and UV-B",
+        "Bach Mai Hospital",
+        "US EPA UV Index scale"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Riders in Hanoi and northern Vietnam spend hours in strong sun and see very high UV figures in forecasts and news, so they want to know what the scale means, where official figures come from and what skin and eye protection makes sense on a bike.",
+      "content_angle": "Explains the UV Index as built by WHO with UNEP, WMO and ICNIRP (five exposure categories from low to extreme with colour codes: WHO news release of 22 July 2002) and the WHO fact sheet advice to use sun protection when the index reaches 3 or above: limit midday sun, seek shade, wear protective clothing and a broad-brimmed hat, wear wraparound sunglasses that give 99 to 100 per cent UV-A and UV-B protection, and use sunscreen only for skin that clothes cannot cover; UV rises with sun height, lower latitude, altitude and reflection, can stay high under cloud, and outdoor workers face a higher skin-cancer risk. Show the numeric bands as the US EPA prints them, which differ by page: five bands (0 to 2, 3 to 5, 6 to 7, 8 to 10, 11 and above) in its 2017 archived page but three (1 to 2, 3 to 7, 8 and above) on the page updated 15 June 2026; the Writer must show the difference and quote the scale a Vietnamese forecast uses, because the 11 August 2026 forecast reported by Viet Nam Moi calls index 12 and 13 ‘very high’ while the WHO and EPA five-band scale calls 11 and above ‘extreme’. Where Vietnam gives UV figures: that report credits the national forecasting centre with a UV index per ward and commune for Hanoi (12), Ho Chi Minh City (10) and Da Nang (13), but VnExpress of 26 May 2026 attributes the week's maxima to AccuWeather and Weather Online, and the centre's site menu lists no UV page (two image tabs labelled UV open radar pages), so the Writer must look for the primary bulletin and say plainly if it cannot be found. Health side: Bach Mai Hospital's dermatology advice of 5 August 2025 (broad-spectrum sunscreen reapplied every 2 to 3 hours, UVA through glass, UV through cloud, avoid the middle of the day, long sleeves, hat, UV sunglasses) and WHO's free SunSmart Global UV app for a visitor. No rider-specific study was found, so do not invent one and mention helmet visors, gloves or neck cover only as a source says.",
+      "working_title": "UV Index and Sun Protection on a Motorbike in Vietnam: Reading the Scale, the Forecasts and Official Advice",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/ultraviolet-radiation",
+          "title": "WHO fact sheet Ultraviolet radiation (undated page, listed 21 June 2022): what raises UV levels (sun height, latitude, altitude, reflection, thin cloud), outdoor workers' skin-cancer risk, protective measures (shade, clothing, broad-brimmed hat, wraparound sunglasses with 99 to 100 per cent UV-A and UV-B protection, sunscreen for uncovered skin) and sun protection when the UV Index reaches 3 or above",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news/item/22-07-2002-helping-people-reduce-their-risks-of-skin-cancer-and-cataract",
+          "title": "WHO news release (22 July 2002): the Global Solar UV Index developed by WHO with UNEP, WMO and ICNIRP, grouped into the exposure categories low, moderate, high, very high and extreme with colour codes and simple icons",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/teams/environment-climate-change-and-health/radiation-and-health/non-ionizing/optical-radiation",
+          "title": "WHO Optical radiation page (undated): the free SunSmart Global UV App for mobile devices, which shows the level of solar UV at a specific location and time slots for sun protection",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.epa.gov/sunsafety/uv-index-scale-0",
+          "title": "US EPA UV Index Scale (updated 15 June 2026): three bands (1-2 low, 3-7 moderate to high, 8 and above very high to extreme), a statement that the scale follows WHO international guidelines, protection advice and the shadow rule",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://19january2017snapshot.epa.gov/sunsafety/uv-index-scale-1_.html",
+          "title": "US EPA UV Index Scale (archived snapshot of 19 January 2017): five bands (0-2 low, 3-5 moderate, 6-7 high, 8-10 very high, 11 and above extreme) with protection messages for each, including shade near midday, sunglasses, sunscreen and reflective surfaces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://bachmai.gov.vn/bai-viet/canh-bao-nguy-co-benh-da-va-bong-da-do-thoi-tiet-nang-nong?id=5135db46-d0ae-4aa6-90db-a22fa77d20e0",
+          "title": "Bach Mai Hospital (5 August 2025): dermatology department warning on sunburn during northern heat with the UV index described as very high (9-10 and above), UVA through glass, UV through cloud, broad-spectrum sunscreen reapplied every 2 to 3 hours, avoiding the middle of the day, long sleeves, wide-brimmed hat and UV sunglasses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/tia-cuc-tim-ca-nuoc-o-muc-rat-nguy-hai-5078264.html",
+          "title": "VnExpress (26 May 2026): UV index of 10 to 13 reported in several provinces during a heat wave, maxima for Hanoi and Ho Chi Minh City attributed to AccuWeather and Weather Online, the forecasting centre's warning for older people, children and outdoor workers, and doctors' advice on sunscreen, clothing, hat, glasses, mask and gloves",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnammoi.vn/du-bao-thoi-tiet-ngay-mai-128-ha-noi-nong-gay-gat-38-do-da-nang-uv-cham-muc-13-tp-hcm-co-noi-35-do-2026810165137551.htm",
+          "title": "Viet Nam Moi (11 August 2026, a site that republishes agency reports and credits the national forecasting centre): daily city forecast with a UV index line per ward and commune, Hanoi 12, Ho Chi Minh City 10 and Da Nang 13, described as very high risk",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "de",
+      "parent_id": "DE-H04",
+      "subcluster": "ss-weather",
+      "slug": "uv-index-sonnenschutz-roller-vietnam-skala-vorhersagen-amtliche-hinweise",
+      "primary_query": "was bedeutet der UV-Index auf dem Roller in Vietnam und ab wann brauche ich Sonnenschutz",
+      "secondary_queries": [
+        "UV-Index Skala niedrig mäßig hoch sehr hoch extrem was tun",
+        "wo finde ich den UV-Index für Hanoi aus einer amtlichen Quelle",
+        "schützen Helm und lange Ärmel auf dem Roller in Vietnam vor UV-Strahlung",
+        "warum ist der UV-Index in Vietnam auch bei Wolken so hoch",
+        "WHO Sonnenschutz ab UV-Index 3"
+      ],
+      "entities": [
+        "Globaler UV-Index der WHO",
+        "Nationales Zentrum für hydrometeorologische Vorhersage",
+        "SunSmart-Global-UV-App (WHO)",
+        "UV-A und UV-B",
+        "Bach-Mai-Krankenhaus",
+        "UV-Index-Skala der US-Umweltbehörde EPA"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Rollerfahrer in Hanoi und Nordvietnam sind stundenlang starker Sonne ausgesetzt und sehen in Vorhersagen und Nachrichten sehr hohe UV-Werte; sie wollen wissen, was die Skala bedeutet, woher amtliche Werte stammen und welcher Haut- und Augenschutz auf dem Roller sinnvoll ist.",
+      "content_angle": "Erklärt den UV-Index, wie ihn die WHO mit UNEP, WMO und ICNIRP entwickelt hat (fünf Expositionskategorien von niedrig bis extrem mit Farbcodes: WHO-Mitteilung vom 22. Juli 2002), und den Rat des WHO-Faktenblatts, Sonnenschutz ab einem Index von 3 zu verwenden: die Mittagssonne meiden, Schatten suchen, schützende Kleidung und einen breitkrempigen Hut tragen, eine Wraparound-Sonnenbrille mit 99 bis 100 Prozent UV-A- und UV-B-Schutz nutzen und Sonnencreme nur für Haut, die Kleidung nicht bedeckt; UV steigt mit Sonnenstand, geringerer Breite, Höhe und Reflexion, kann unter Wolken hoch bleiben, und Menschen, die im Freien arbeiten, haben ein höheres Hautkrebsrisiko. Die Zahlenbereiche so zeigen, wie die US-Umweltbehörde EPA sie druckt, und sie unterscheiden sich je nach Seite: fünf Bereiche (0 bis 2, 3 bis 5, 6 bis 7, 8 bis 10, ab 11) auf der archivierten Seite von 2017, aber drei (1 bis 2, 3 bis 7, ab 8) auf der am 15. Juni 2026 aktualisierten Seite; der Autor muss den Unterschied zeigen und die Skala zitieren, die eine vietnamesische Vorhersage verwendet, denn die von Viet Nam Moi gemeldete Vorhersage vom 11. August 2026 nennt die Indexwerte 12 und 13 ‚sehr hoch‘, während die Fünf-Stufen-Skala von WHO und EPA ab 11 ‚extrem‘ sagt. Wo Vietnam UV-Werte nennt: Diese Meldung führt das nationale Vorhersagezentrum als Quelle eines UV-Index je Stadtbezirk und Gemeinde für Hanoi (12), Ho-Chi-Minh-Stadt (10) und Da Nang (13) an, doch VnExpress vom 26. Mai 2026 schreibt die Wochenmaxima AccuWeather und Weather Online zu, und das Menü der Seite des Zentrums enthält keine UV-Seite (zwei Bildregister mit der Beschriftung UV öffnen Radarseiten), also muss der Autor die Originalmeldung suchen und offen sagen, wenn er sie nicht findet. Gesundheitsseite: der Rat der Abteilung für Dermatologie und Verbrennungen des Bach-Mai-Krankenhauses vom 5. August 2025 (Breitband-Sonnencreme alle 2 bis 3 Stunden erneuern, UVA durch Glas, UV durch Wolken, Mittagszeit meiden, lange Ärmel, Hut, UV-Sonnenbrille) und die kostenlose SunSmart-Global-UV-App der WHO für Besucher. Eine Studie speziell zu Rollerfahrern wurde nicht gefunden, also keine erfinden und Helmvisier, Handschuhe oder Nackenschutz nur nennen, wenn eine Quelle es sagt.",
+      "working_title": "UV-Index und Sonnenschutz auf dem Roller in Vietnam: Skala, Vorhersagen und amtliche Hinweise",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/ultraviolet-radiation",
+          "title": "WHO fact sheet Ultraviolet radiation (undated page, listed 21 June 2022): what raises UV levels (sun height, latitude, altitude, reflection, thin cloud), outdoor workers' skin-cancer risk, protective measures (shade, clothing, broad-brimmed hat, wraparound sunglasses with 99 to 100 per cent UV-A and UV-B protection, sunscreen for uncovered skin) and sun protection when the UV Index reaches 3 or above",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news/item/22-07-2002-helping-people-reduce-their-risks-of-skin-cancer-and-cataract",
+          "title": "WHO news release (22 July 2002): the Global Solar UV Index developed by WHO with UNEP, WMO and ICNIRP, grouped into the exposure categories low, moderate, high, very high and extreme with colour codes and simple icons",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/teams/environment-climate-change-and-health/radiation-and-health/non-ionizing/optical-radiation",
+          "title": "WHO Optical radiation page (undated): the free SunSmart Global UV App for mobile devices, which shows the level of solar UV at a specific location and time slots for sun protection",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.epa.gov/sunsafety/uv-index-scale-0",
+          "title": "US EPA UV Index Scale (updated 15 June 2026): three bands (1-2 low, 3-7 moderate to high, 8 and above very high to extreme), a statement that the scale follows WHO international guidelines, protection advice and the shadow rule",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://19january2017snapshot.epa.gov/sunsafety/uv-index-scale-1_.html",
+          "title": "US EPA UV Index Scale (archived snapshot of 19 January 2017): five bands (0-2 low, 3-5 moderate, 6-7 high, 8-10 very high, 11 and above extreme) with protection messages for each, including shade near midday, sunglasses, sunscreen and reflective surfaces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://bachmai.gov.vn/bai-viet/canh-bao-nguy-co-benh-da-va-bong-da-do-thoi-tiet-nang-nong?id=5135db46-d0ae-4aa6-90db-a22fa77d20e0",
+          "title": "Bach Mai Hospital (5 August 2025): dermatology department warning on sunburn during northern heat with the UV index described as very high (9-10 and above), UVA through glass, UV through cloud, broad-spectrum sunscreen reapplied every 2 to 3 hours, avoiding the middle of the day, long sleeves, wide-brimmed hat and UV sunglasses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/tia-cuc-tim-ca-nuoc-o-muc-rat-nguy-hai-5078264.html",
+          "title": "VnExpress (26 May 2026): UV index of 10 to 13 reported in several provinces during a heat wave, maxima for Hanoi and Ho Chi Minh City attributed to AccuWeather and Weather Online, the forecasting centre's warning for older people, children and outdoor workers, and doctors' advice on sunscreen, clothing, hat, glasses, mask and gloves",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnammoi.vn/du-bao-thoi-tiet-ngay-mai-128-ha-noi-nong-gay-gat-38-do-da-nang-uv-cham-muc-13-tp-hcm-co-noi-35-do-2026810165137551.htm",
+          "title": "Viet Nam Moi (11 August 2026, a site that republishes agency reports and credits the national forecasting centre): daily city forecast with a UV index line per ward and commune, Hanoi 12, Ho Chi Minh City 10 and Da Nang 13, described as very high risk",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "fr",
+      "parent_id": "FR-H04",
+      "subcluster": "ss-weather",
+      "slug": "indice-uv-protection-solaire-scooter-vietnam-echelle-previsions-conseils",
+      "primary_query": "que signifie l'indice UV à scooter au Vietnam et à partir de quand faut-il se protéger du soleil",
+      "secondary_queries": [
+        "échelle de l'indice UV faible modéré élevé très élevé extrême que faire",
+        "où trouver l'indice UV de Hanoï dans une source officielle",
+        "faut-il de la crème solaire, des lunettes et des manches longues à scooter",
+        "pourquoi l'indice UV reste élevé au Vietnam même par temps nuageux",
+        "conseil de l'OMS protection solaire à partir de l'indice UV 3"
+      ],
+      "entities": [
+        "indice UV mondial de l'OMS",
+        "Centre national de prévision hydrométéorologique",
+        "application SunSmart Global UV (OMS)",
+        "UV-A et UV-B",
+        "hôpital Bach Mai",
+        "échelle de l'indice UV de l'EPA américaine"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Les motards de Hanoï et du nord du Vietnam passent des heures en plein soleil et voient des valeurs d'indice UV très élevées dans les prévisions et les actualités ; ils veulent savoir ce que l'échelle signifie, d'où viennent les chiffres officiels et quelle protection de la peau et des yeux a du sens à scooter.",
+      "content_angle": "Explique l'indice UV tel que l'OMS l'a conçu avec le PNUE, l'OMM et l'ICNIRP (cinq catégories d'exposition de faible à extrême avec des codes de couleur : communiqué de l'OMS du 22 juillet 2002) et le conseil de la fiche de l'OMS d'utiliser une protection solaire dès que l'indice atteint 3 : limiter le soleil de midi, chercher l'ombre, porter des vêtements couvrants et un chapeau à larges bords, mettre des lunettes de soleil enveloppantes qui protègent à 99 à 100 % contre les UV-A et UV-B et n'utiliser la crème solaire que sur la peau que les vêtements ne couvrent pas ; les UV augmentent avec la hauteur du soleil, une latitude plus basse, l'altitude et la réflexion, peuvent rester élevés sous les nuages, et les travailleurs en extérieur courent un risque plus élevé de cancer de la peau. Montrer les seuils chiffrés tels que l'EPA américaine les imprime, qui varient selon la page : cinq tranches (0 à 2, 3 à 5, 6 à 7, 8 à 10, 11 et plus) sur sa page archivée de 2017 mais trois (1 à 2, 3 à 7, 8 et plus) sur la page mise à jour le 15 juin 2026 ; le rédacteur doit montrer l'écart et citer l'échelle qu'utilise une prévision vietnamienne, car la prévision du 11 août 2026 relayée par Viet Nam Moi qualifie les indices 12 et 13 de « très élevés » alors que l'échelle à cinq niveaux de l'OMS et de l'EPA appelle « extrême » tout indice de 11 et plus. Où le Vietnam donne des chiffres UV : ce reportage attribue au centre national de prévision un indice UV par quartier et commune pour Hanoï (12), Hô Chi Minh-Ville (10) et Đà Nẵng (13), mais VnExpress du 26 mai 2026 attribue les maxima de la semaine à AccuWeather et Weather Online, et le menu du site du centre ne comporte aucune page UV (deux onglets d'images intitulés UV ouvrent des pages de radar) ; le rédacteur doit donc chercher le bulletin d'origine et dire franchement s'il ne le trouve pas. Côté santé : le conseil du service de dermatologie et brûlures de l'hôpital Bach Mai du 5 août 2025 (crème solaire à large spectre renouvelée toutes les 2 à 3 heures, UVA à travers le verre, UV à travers les nuages, éviter le milieu de la journée, manches longues, chapeau, lunettes anti-UV) et l'application gratuite SunSmart Global UV de l'OMS pour un visiteur. Aucune étude propre aux motards n'a été trouvée : n'en inventer aucune et ne mentionner visière de casque, gants ou protection du cou que si une source le dit.",
+      "working_title": "Indice UV et protection solaire à scooter au Vietnam : l'échelle, les prévisions et les conseils officiels",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/ultraviolet-radiation",
+          "title": "WHO fact sheet Ultraviolet radiation (undated page, listed 21 June 2022): what raises UV levels (sun height, latitude, altitude, reflection, thin cloud), outdoor workers' skin-cancer risk, protective measures (shade, clothing, broad-brimmed hat, wraparound sunglasses with 99 to 100 per cent UV-A and UV-B protection, sunscreen for uncovered skin) and sun protection when the UV Index reaches 3 or above",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news/item/22-07-2002-helping-people-reduce-their-risks-of-skin-cancer-and-cataract",
+          "title": "WHO news release (22 July 2002): the Global Solar UV Index developed by WHO with UNEP, WMO and ICNIRP, grouped into the exposure categories low, moderate, high, very high and extreme with colour codes and simple icons",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/teams/environment-climate-change-and-health/radiation-and-health/non-ionizing/optical-radiation",
+          "title": "WHO Optical radiation page (undated): the free SunSmart Global UV App for mobile devices, which shows the level of solar UV at a specific location and time slots for sun protection",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.epa.gov/sunsafety/uv-index-scale-0",
+          "title": "US EPA UV Index Scale (updated 15 June 2026): three bands (1-2 low, 3-7 moderate to high, 8 and above very high to extreme), a statement that the scale follows WHO international guidelines, protection advice and the shadow rule",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://19january2017snapshot.epa.gov/sunsafety/uv-index-scale-1_.html",
+          "title": "US EPA UV Index Scale (archived snapshot of 19 January 2017): five bands (0-2 low, 3-5 moderate, 6-7 high, 8-10 very high, 11 and above extreme) with protection messages for each, including shade near midday, sunglasses, sunscreen and reflective surfaces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://bachmai.gov.vn/bai-viet/canh-bao-nguy-co-benh-da-va-bong-da-do-thoi-tiet-nang-nong?id=5135db46-d0ae-4aa6-90db-a22fa77d20e0",
+          "title": "Bach Mai Hospital (5 August 2025): dermatology department warning on sunburn during northern heat with the UV index described as very high (9-10 and above), UVA through glass, UV through cloud, broad-spectrum sunscreen reapplied every 2 to 3 hours, avoiding the middle of the day, long sleeves, wide-brimmed hat and UV sunglasses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/tia-cuc-tim-ca-nuoc-o-muc-rat-nguy-hai-5078264.html",
+          "title": "VnExpress (26 May 2026): UV index of 10 to 13 reported in several provinces during a heat wave, maxima for Hanoi and Ho Chi Minh City attributed to AccuWeather and Weather Online, the forecasting centre's warning for older people, children and outdoor workers, and doctors' advice on sunscreen, clothing, hat, glasses, mask and gloves",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnammoi.vn/du-bao-thoi-tiet-ngay-mai-128-ha-noi-nong-gay-gat-38-do-da-nang-uv-cham-muc-13-tp-hcm-co-noi-35-do-2026810165137551.htm",
+          "title": "Viet Nam Moi (11 August 2026, a site that republishes agency reports and credits the national forecasting centre): daily city forecast with a UV index line per ward and commune, Hanoi 12, Ho Chi Minh City 10 and Da Nang 13, described as very high risk",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "parent_id": "ES-H04",
+      "subcluster": "ss-weather",
+      "slug": "indice-uv-proteccion-solar-moto-vietnam-escala-previsiones-consejos-oficiales",
+      "primary_query": "qué significa el índice UV en moto en Vietnam y a partir de cuándo hay que protegerse del sol",
+      "secondary_queries": [
+        "escala del índice UV bajo moderado alto muy alto extremo qué hacer",
+        "dónde encontrar el índice UV de Hanói en una fuente oficial",
+        "hacen falta crema solar, gafas y mangas largas yendo en moto",
+        "por qué el índice UV es alto en Vietnam incluso con nubes",
+        "consejo de la OMS protección solar desde el índice UV 3"
+      ],
+      "entities": [
+        "Índice UV solar mundial de la OMS",
+        "Centro Nacional de Previsión Hidrometeorológica",
+        "aplicación SunSmart Global UV (OMS)",
+        "UV-A y UV-B",
+        "Hospital Bach Mai",
+        "escala del índice UV de la EPA de EE. UU."
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quienes van en moto por Hanói y el norte de Vietnam pasan horas bajo un sol fuerte y ven valores de índice UV muy altos en las previsiones y las noticias; quieren saber qué significa la escala, de dónde salen las cifras oficiales y qué protección de piel y ojos tiene sentido en la moto.",
+      "content_angle": "Explica el índice UV tal como lo creó la OMS con el PNUMA, la OMM y la ICNIRP (cinco categorías de exposición de baja a extrema con códigos de color: comunicado de la OMS del 22 de julio de 2002) y el consejo de la ficha de la OMS de usar protección solar cuando el índice llega a 3: limitar el sol del mediodía, buscar la sombra, llevar ropa que cubra y un sombrero de ala ancha, usar gafas de sol envolventes que den una protección del 99 al 100 % contra UV-A y UV-B y aplicar crema solar solo en la piel que la ropa no cubre; los UV aumentan con la altura del sol, una latitud menor, la altitud y la reflexión, pueden seguir altos bajo las nubes, y quienes trabajan al aire libre tienen más riesgo de cáncer de piel. Mostrar los tramos numéricos tal como los imprime la EPA de EE. UU., que varían según la página: cinco tramos (0 a 2, 3 a 5, 6 a 7, 8 a 10, 11 o más) en su página archivada de 2017 pero tres (1 a 2, 3 a 7, 8 o más) en la página actualizada el 15 de junio de 2026; el redactor debe mostrar la diferencia y citar la escala que usa una previsión vietnamita, porque la previsión del 11 de agosto de 2026 difundida por Viet Nam Moi llama «muy alto» a los índices 12 y 13, mientras que la escala de cinco niveles de la OMS y la EPA llama «extremo» a 11 o más. Dónde da Vietnam cifras de UV: ese reportaje atribuye al centro nacional de previsión un índice UV por barrio y comuna para Hanói (12), Ciudad Ho Chi Minh (10) y Da Nang (13), pero VnExpress del 26 de mayo de 2026 atribuye los máximos de la semana a AccuWeather y Weather Online, y el menú del sitio del centro no incluye ninguna página de UV (dos pestañas de imágenes rotuladas UV abren páginas de radar), así que el redactor debe buscar el boletín original y decir con franqueza si no lo encuentra. Lado sanitario: el consejo del servicio de dermatología y quemaduras del hospital Bach Mai del 5 de agosto de 2025 (protector solar de amplio espectro cada 2 a 3 horas, UVA a través del cristal, UV a través de las nubes, evitar el mediodía, mangas largas, sombrero, gafas con filtro UV) y la aplicación gratuita SunSmart Global UV de la OMS para un visitante. No se encontró ningún estudio específico sobre motoristas: no inventar ninguno y mencionar visera del casco, guantes o protección del cuello solo si una fuente lo dice.",
+      "working_title": "Índice UV y protección solar en moto en Vietnam: la escala, las previsiones y los consejos oficiales",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/ultraviolet-radiation",
+          "title": "WHO fact sheet Ultraviolet radiation (undated page, listed 21 June 2022): what raises UV levels (sun height, latitude, altitude, reflection, thin cloud), outdoor workers' skin-cancer risk, protective measures (shade, clothing, broad-brimmed hat, wraparound sunglasses with 99 to 100 per cent UV-A and UV-B protection, sunscreen for uncovered skin) and sun protection when the UV Index reaches 3 or above",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news/item/22-07-2002-helping-people-reduce-their-risks-of-skin-cancer-and-cataract",
+          "title": "WHO news release (22 July 2002): the Global Solar UV Index developed by WHO with UNEP, WMO and ICNIRP, grouped into the exposure categories low, moderate, high, very high and extreme with colour codes and simple icons",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/teams/environment-climate-change-and-health/radiation-and-health/non-ionizing/optical-radiation",
+          "title": "WHO Optical radiation page (undated): the free SunSmart Global UV App for mobile devices, which shows the level of solar UV at a specific location and time slots for sun protection",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.epa.gov/sunsafety/uv-index-scale-0",
+          "title": "US EPA UV Index Scale (updated 15 June 2026): three bands (1-2 low, 3-7 moderate to high, 8 and above very high to extreme), a statement that the scale follows WHO international guidelines, protection advice and the shadow rule",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://19january2017snapshot.epa.gov/sunsafety/uv-index-scale-1_.html",
+          "title": "US EPA UV Index Scale (archived snapshot of 19 January 2017): five bands (0-2 low, 3-5 moderate, 6-7 high, 8-10 very high, 11 and above extreme) with protection messages for each, including shade near midday, sunglasses, sunscreen and reflective surfaces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://bachmai.gov.vn/bai-viet/canh-bao-nguy-co-benh-da-va-bong-da-do-thoi-tiet-nang-nong?id=5135db46-d0ae-4aa6-90db-a22fa77d20e0",
+          "title": "Bach Mai Hospital (5 August 2025): dermatology department warning on sunburn during northern heat with the UV index described as very high (9-10 and above), UVA through glass, UV through cloud, broad-spectrum sunscreen reapplied every 2 to 3 hours, avoiding the middle of the day, long sleeves, wide-brimmed hat and UV sunglasses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/tia-cuc-tim-ca-nuoc-o-muc-rat-nguy-hai-5078264.html",
+          "title": "VnExpress (26 May 2026): UV index of 10 to 13 reported in several provinces during a heat wave, maxima for Hanoi and Ho Chi Minh City attributed to AccuWeather and Weather Online, the forecasting centre's warning for older people, children and outdoor workers, and doctors' advice on sunscreen, clothing, hat, glasses, mask and gloves",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnammoi.vn/du-bao-thoi-tiet-ngay-mai-128-ha-noi-nong-gay-gat-38-do-da-nang-uv-cham-muc-13-tp-hcm-co-noi-35-do-2026810165137551.htm",
+          "title": "Viet Nam Moi (11 August 2026, a site that republishes agency reports and credits the national forecasting centre): daily city forecast with a UV index line per ward and commune, Hanoi 12, Ho Chi Minh City 10 and Da Nang 13, described as very high risk",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "nl",
+      "parent_id": "NL-H04",
+      "subcluster": "ss-weather",
+      "slug": "uv-index-zonbescherming-scooter-vietnam-schaal-voorspellingen-officiele-adviezen",
+      "primary_query": "wat betekent de uv-index op de scooter in Vietnam en vanaf wanneer heb ik zonbescherming nodig",
+      "secondary_queries": [
+        "uv-index schaal laag matig hoog zeer hoog extreem wat te doen",
+        "waar vind ik de uv-index voor Hanoi bij een officiële bron",
+        "zijn zonnebrandcrème, een zonnebril en lange mouwen nodig op de scooter",
+        "waarom is de uv-index in Vietnam ook bij bewolking hoog",
+        "WHO advies zonbescherming vanaf uv-index 3"
+      ],
+      "entities": [
+        "Wereldwijde uv-index van de WHO",
+        "Nationaal Centrum voor Hydro-Meteorologische Voorspellingen",
+        "SunSmart Global UV-app (WHO)",
+        "UV-A en UV-B",
+        "Bach Mai-ziekenhuis",
+        "uv-indexschaal van de Amerikaanse EPA"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Scooterrijders in Hanoi en Noord-Vietnam zitten uren in felle zon en zien zeer hoge uv-waarden in voorspellingen en nieuws; ze willen weten wat de schaal betekent, waar officiële cijfers vandaan komen en welke huid- en oogbescherming op een scooter zinvol is.",
+      "content_angle": "Legt de uv-index uit zoals de WHO hem met UNEP, WMO en ICNIRP heeft opgezet (vijf blootstellingscategorieën van laag tot extreem met kleurcodes: persbericht van de WHO van 22 juli 2002) en het advies uit het WHO-factsheet om zonbescherming te gebruiken vanaf een index van 3: de middagzon beperken, schaduw zoeken, beschermende kleding en een hoed met brede rand dragen, een omsluitende zonnebril met 99 tot 100 procent bescherming tegen UV-A en UV-B gebruiken en zonnebrandcrème alleen op huid die kleding niet bedekt; uv neemt toe met de zonnehoogte, een lagere breedtegraad, hoogte en weerkaatsing, kan hoog blijven onder wolken, en mensen die buiten werken hebben een hoger risico op huidkanker. Toon de cijfergrenzen zoals de Amerikaanse EPA ze afdrukt, wat per pagina verschilt: vijf banden (0 tot 2, 3 tot 5, 6 tot 7, 8 tot 10, 11 en hoger) op de gearchiveerde pagina van 2017 maar drie (1 tot 2, 3 tot 7, 8 en hoger) op de pagina die op 15 juni 2026 is bijgewerkt; de schrijver moet het verschil laten zien en de schaal citeren die een Vietnamese voorspelling gebruikt, want de voorspelling van 11 augustus 2026 die Viet Nam Moi meldt noemt index 12 en 13 ‘zeer hoog’, terwijl de vijfstappenschaal van WHO en EPA 11 en hoger ‘extreem’ noemt. Waar Vietnam uv-cijfers geeft: dat bericht noemt het nationale voorspellingscentrum als bron van een uv-index per wijk en gemeente voor Hanoi (12), Ho Chi Minhstad (10) en Da Nang (13), maar VnExpress van 26 mei 2026 schrijft de weekmaxima toe aan AccuWeather en Weather Online, en het menu van de site van het centrum heeft geen uv-pagina (twee beeldtabs met het label UV openen radarpagina's), dus de schrijver moet het oorspronkelijke bericht zoeken en eerlijk zeggen als hij het niet vindt. Gezondheidskant: het advies van de afdeling dermatologie en brandwonden van het Bach Mai-ziekenhuis van 5 augustus 2025 (breedspectrum-zonnebrandcrème om de 2 tot 3 uur opnieuw aanbrengen, UVA door glas, uv door wolken, het midden van de dag vermijden, lange mouwen, hoed, zonnebril met uv-filter) en de gratis SunSmart Global UV-app van de WHO voor een bezoeker. Er is geen onderzoek specifiek over scooterrijders gevonden: verzin er geen en noem helmvizier, handschoenen of nekbescherming alleen als een bron dat zegt.",
+      "working_title": "UV-index en zonbescherming op de scooter in Vietnam: de schaal, de voorspellingen en officiële adviezen",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/ultraviolet-radiation",
+          "title": "WHO fact sheet Ultraviolet radiation (undated page, listed 21 June 2022): what raises UV levels (sun height, latitude, altitude, reflection, thin cloud), outdoor workers' skin-cancer risk, protective measures (shade, clothing, broad-brimmed hat, wraparound sunglasses with 99 to 100 per cent UV-A and UV-B protection, sunscreen for uncovered skin) and sun protection when the UV Index reaches 3 or above",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news/item/22-07-2002-helping-people-reduce-their-risks-of-skin-cancer-and-cataract",
+          "title": "WHO news release (22 July 2002): the Global Solar UV Index developed by WHO with UNEP, WMO and ICNIRP, grouped into the exposure categories low, moderate, high, very high and extreme with colour codes and simple icons",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/teams/environment-climate-change-and-health/radiation-and-health/non-ionizing/optical-radiation",
+          "title": "WHO Optical radiation page (undated): the free SunSmart Global UV App for mobile devices, which shows the level of solar UV at a specific location and time slots for sun protection",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.epa.gov/sunsafety/uv-index-scale-0",
+          "title": "US EPA UV Index Scale (updated 15 June 2026): three bands (1-2 low, 3-7 moderate to high, 8 and above very high to extreme), a statement that the scale follows WHO international guidelines, protection advice and the shadow rule",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://19january2017snapshot.epa.gov/sunsafety/uv-index-scale-1_.html",
+          "title": "US EPA UV Index Scale (archived snapshot of 19 January 2017): five bands (0-2 low, 3-5 moderate, 6-7 high, 8-10 very high, 11 and above extreme) with protection messages for each, including shade near midday, sunglasses, sunscreen and reflective surfaces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://bachmai.gov.vn/bai-viet/canh-bao-nguy-co-benh-da-va-bong-da-do-thoi-tiet-nang-nong?id=5135db46-d0ae-4aa6-90db-a22fa77d20e0",
+          "title": "Bach Mai Hospital (5 August 2025): dermatology department warning on sunburn during northern heat with the UV index described as very high (9-10 and above), UVA through glass, UV through cloud, broad-spectrum sunscreen reapplied every 2 to 3 hours, avoiding the middle of the day, long sleeves, wide-brimmed hat and UV sunglasses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/tia-cuc-tim-ca-nuoc-o-muc-rat-nguy-hai-5078264.html",
+          "title": "VnExpress (26 May 2026): UV index of 10 to 13 reported in several provinces during a heat wave, maxima for Hanoi and Ho Chi Minh City attributed to AccuWeather and Weather Online, the forecasting centre's warning for older people, children and outdoor workers, and doctors' advice on sunscreen, clothing, hat, glasses, mask and gloves",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnammoi.vn/du-bao-thoi-tiet-ngay-mai-128-ha-noi-nong-gay-gat-38-do-da-nang-uv-cham-muc-13-tp-hcm-co-noi-35-do-2026810165137551.htm",
+          "title": "Viet Nam Moi (11 August 2026, a site that republishes agency reports and credits the national forecasting centre): daily city forecast with a UV index line per ward and commune, Hanoi 12, Ho Chi Minh City 10 and Da Nang 13, described as very high risk",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "zh",
+      "parent_id": "ZH-H04",
+      "subcluster": "ss-weather",
+      "slug": "yuenan-qi-motuoche-ziwaixian-zhishu-fangshai-dengji-yubao-laiyuan-jianyi",
+      "primary_query": "在越南骑摩托车时紫外线指数是什么意思，指数到多少需要防晒",
+      "secondary_queries": [
+        "紫外线指数等级 低 中等 高 很高 极高 怎么应对",
+        "河内的紫外线指数在哪里查官方来源",
+        "骑摩托车需要防晒霜、墨镜和长袖吗",
+        "为什么越南多云时紫外线指数也很高",
+        "世卫组织 紫外线指数3以上需要防晒"
+      ],
+      "entities": [
+        "世卫组织全球太阳紫外线指数",
+        "越南国家水文气象预报中心",
+        "SunSmart Global UV应用（世卫组织）",
+        "UVA与UVB",
+        "白梅医院",
+        "美国环保署紫外线指数等级"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "在河内和越南北部骑摩托车的人要在烈日下待上好几个小时，在预报和新闻里看到很高的紫外线指数，想知道这个等级是什么意思、官方数据从哪里来，以及骑车时怎样保护皮肤和眼睛才合理。",
+      "content_angle": "解释世卫组织与联合国环境规划署、世界气象组织和国际非电离辐射防护委员会共同制定的紫外线指数（从低到极高共五个暴露类别并配有颜色：世卫组织2002年7月22日新闻稿），以及世卫组织说明中的建议：指数达到3以上就要采取防晒措施，包括避开正午阳光、找阴凉处、穿能遮盖的衣服、戴宽檐帽、戴对UV-A和UV-B有99%至100%防护的包裹式太阳镜，防晒霜只用于衣服遮不到的皮肤；紫外线随太阳高度、较低纬度、海拔和反射增强，有云时仍可能很强，在户外工作的人患皮肤癌的风险更高。按美国环保署的印法展示数值区间，各页面并不一致：2017年存档页是五个区间（0至2、3至5、6至7、8至10、11以上），而2026年6月15日更新的页面是三个区间（1至2、3至7、8以上）；撰稿人须指出这一差异，并引用越南预报所用的等级，因为越南新报报道的2026年8月11日预报把指数12和13称为“很高”，而世卫组织和美国环保署的五级标准把11以上称为“极高”。越南在哪里提供紫外线数据：该报道称国家水文气象预报中心是河内（12）、胡志明市（10）和岘港（13）按坊和乡列出的紫外线指数的来源，但VnExpress 2026年5月26日把当周最高值归于AccuWeather和Weather Online，而中心网站的菜单里没有紫外线页面（两个标着UV的图像标签打开的是雷达页面），因此撰稿人必须查找原始通报，找不到就如实说明。健康方面：白梅医院皮肤科与烧伤科2025年8月5日的建议（广谱防晒霜每2至3小时补涂、UVA可穿透玻璃、紫外线可穿透云层、避开中午时段、长袖、帽子、防紫外线太阳镜），以及世卫组织供游客使用的免费SunSmart Global UV应用。没有找到专门针对摩托车骑行者的研究，因此不要编造，只有来源提到时才写头盔面罩、手套或护颈。",
+      "working_title": "越南骑摩托车的紫外线指数与防晒：怎么看指数等级、预报来源和官方建议",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/ultraviolet-radiation",
+          "title": "WHO fact sheet Ultraviolet radiation (undated page, listed 21 June 2022): what raises UV levels (sun height, latitude, altitude, reflection, thin cloud), outdoor workers' skin-cancer risk, protective measures (shade, clothing, broad-brimmed hat, wraparound sunglasses with 99 to 100 per cent UV-A and UV-B protection, sunscreen for uncovered skin) and sun protection when the UV Index reaches 3 or above",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news/item/22-07-2002-helping-people-reduce-their-risks-of-skin-cancer-and-cataract",
+          "title": "WHO news release (22 July 2002): the Global Solar UV Index developed by WHO with UNEP, WMO and ICNIRP, grouped into the exposure categories low, moderate, high, very high and extreme with colour codes and simple icons",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/teams/environment-climate-change-and-health/radiation-and-health/non-ionizing/optical-radiation",
+          "title": "WHO Optical radiation page (undated): the free SunSmart Global UV App for mobile devices, which shows the level of solar UV at a specific location and time slots for sun protection",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.epa.gov/sunsafety/uv-index-scale-0",
+          "title": "US EPA UV Index Scale (updated 15 June 2026): three bands (1-2 low, 3-7 moderate to high, 8 and above very high to extreme), a statement that the scale follows WHO international guidelines, protection advice and the shadow rule",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://19january2017snapshot.epa.gov/sunsafety/uv-index-scale-1_.html",
+          "title": "US EPA UV Index Scale (archived snapshot of 19 January 2017): five bands (0-2 low, 3-5 moderate, 6-7 high, 8-10 very high, 11 and above extreme) with protection messages for each, including shade near midday, sunglasses, sunscreen and reflective surfaces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://bachmai.gov.vn/bai-viet/canh-bao-nguy-co-benh-da-va-bong-da-do-thoi-tiet-nang-nong?id=5135db46-d0ae-4aa6-90db-a22fa77d20e0",
+          "title": "Bach Mai Hospital (5 August 2025): dermatology department warning on sunburn during northern heat with the UV index described as very high (9-10 and above), UVA through glass, UV through cloud, broad-spectrum sunscreen reapplied every 2 to 3 hours, avoiding the middle of the day, long sleeves, wide-brimmed hat and UV sunglasses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/tia-cuc-tim-ca-nuoc-o-muc-rat-nguy-hai-5078264.html",
+          "title": "VnExpress (26 May 2026): UV index of 10 to 13 reported in several provinces during a heat wave, maxima for Hanoi and Ho Chi Minh City attributed to AccuWeather and Weather Online, the forecasting centre's warning for older people, children and outdoor workers, and doctors' advice on sunscreen, clothing, hat, glasses, mask and gloves",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnammoi.vn/du-bao-thoi-tiet-ngay-mai-128-ha-noi-nong-gay-gat-38-do-da-nang-uv-cham-muc-13-tp-hcm-co-noi-35-do-2026810165137551.htm",
+          "title": "Viet Nam Moi (11 August 2026, a site that republishes agency reports and credits the national forecasting centre): daily city forecast with a UV index line per ward and commune, Hanoi 12, Ho Chi Minh City 10 and Da Nang 13, described as very high risk",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "pt",
+      "parent_id": "PT-H04",
+      "subcluster": "ss-weather",
+      "slug": "indice-uv-protecao-solar-mota-vietname-escala-previsoes-conselhos-oficiais",
+      "primary_query": "o que significa o índice UV de mota no Vietname e a partir de quando é preciso proteção solar",
+      "secondary_queries": [
+        "escala do índice UV baixo moderado alto muito alto extremo o que fazer",
+        "onde encontrar o índice UV de Hanói numa fonte oficial",
+        "é preciso protetor solar, óculos e mangas compridas andando de mota",
+        "porque é que o índice UV é alto no Vietname mesmo com nuvens",
+        "conselho da OMS proteção solar a partir do índice UV 3"
+      ],
+      "entities": [
+        "Índice UV solar mundial da OMS",
+        "Centro Nacional de Previsão Hidrometeorológica",
+        "aplicação SunSmart Global UV (OMS)",
+        "UV-A e UV-B",
+        "Hospital Bach Mai",
+        "escala do índice UV da EPA dos EUA"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "Quem anda de mota em Hanói e no norte do Vietname passa horas sob sol forte e vê valores de índice UV muito altos nas previsões e nas notícias; quer saber o que significa a escala, de onde vêm os números oficiais e que proteção da pele e dos olhos faz sentido na mota.",
+      "content_angle": "Explica o índice UV tal como a OMS o criou com o PNUA, a OMM e a ICNIRP (cinco categorias de exposição de baixa a extrema com códigos de cor: comunicado da OMS de 22 de julho de 2002) e o conselho da ficha da OMS de usar proteção solar quando o índice chega a 3: limitar o sol do meio-dia, procurar sombra, vestir roupa que cubra e um chapéu de abas largas, usar óculos de sol envolventes com proteção de 99 a 100 % contra UV-A e UV-B e aplicar protetor solar apenas na pele que a roupa não cobre; os UV aumentam com a altura do sol, uma latitude menor, a altitude e a reflexão, podem continuar altos sob as nuvens, e quem trabalha ao ar livre tem maior risco de cancro da pele. Mostrar os intervalos numéricos como a EPA dos EUA os imprime, que variam conforme a página: cinco intervalos (0 a 2, 3 a 5, 6 a 7, 8 a 10, 11 ou mais) na página arquivada de 2017 mas três (1 a 2, 3 a 7, 8 ou mais) na página atualizada a 15 de junho de 2026; o redator deve mostrar a diferença e citar a escala que uma previsão vietnamita usa, porque a previsão de 11 de agosto de 2026 divulgada pelo Viet Nam Moi chama «muito alto» aos índices 12 e 13, enquanto a escala de cinco níveis da OMS e da EPA chama «extremo» a 11 ou mais. Onde o Vietname dá valores de UV: essa reportagem atribui ao centro nacional de previsão um índice UV por bairro e comuna para Hanói (12), Cidade de Ho Chi Minh (10) e Da Nang (13), mas o VnExpress de 26 de maio de 2026 atribui os máximos da semana ao AccuWeather e ao Weather Online, e o menu do sítio do centro não inclui nenhuma página de UV (dois separadores de imagens rotulados UV abrem páginas de radar), pelo que o redator deve procurar o boletim original e dizer com franqueza se não o encontrar. Lado da saúde: o conselho do serviço de dermatologia e queimaduras do hospital Bach Mai de 5 de agosto de 2025 (protetor solar de largo espetro reaplicado de 2 a 3 horas, UVA através do vidro, UV através das nuvens, evitar o meio do dia, mangas compridas, chapéu, óculos com filtro UV) e a aplicação gratuita SunSmart Global UV da OMS para um visitante. Não foi encontrado nenhum estudo específico sobre motociclistas: não inventar nenhum e mencionar viseira do capacete, luvas ou proteção do pescoço apenas se uma fonte o disser.",
+      "working_title": "Índice UV e proteção solar de mota no Vietname: a escala, as previsões e os conselhos oficiais",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/ultraviolet-radiation",
+          "title": "WHO fact sheet Ultraviolet radiation (undated page, listed 21 June 2022): what raises UV levels (sun height, latitude, altitude, reflection, thin cloud), outdoor workers' skin-cancer risk, protective measures (shade, clothing, broad-brimmed hat, wraparound sunglasses with 99 to 100 per cent UV-A and UV-B protection, sunscreen for uncovered skin) and sun protection when the UV Index reaches 3 or above",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news/item/22-07-2002-helping-people-reduce-their-risks-of-skin-cancer-and-cataract",
+          "title": "WHO news release (22 July 2002): the Global Solar UV Index developed by WHO with UNEP, WMO and ICNIRP, grouped into the exposure categories low, moderate, high, very high and extreme with colour codes and simple icons",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/teams/environment-climate-change-and-health/radiation-and-health/non-ionizing/optical-radiation",
+          "title": "WHO Optical radiation page (undated): the free SunSmart Global UV App for mobile devices, which shows the level of solar UV at a specific location and time slots for sun protection",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.epa.gov/sunsafety/uv-index-scale-0",
+          "title": "US EPA UV Index Scale (updated 15 June 2026): three bands (1-2 low, 3-7 moderate to high, 8 and above very high to extreme), a statement that the scale follows WHO international guidelines, protection advice and the shadow rule",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://19january2017snapshot.epa.gov/sunsafety/uv-index-scale-1_.html",
+          "title": "US EPA UV Index Scale (archived snapshot of 19 January 2017): five bands (0-2 low, 3-5 moderate, 6-7 high, 8-10 very high, 11 and above extreme) with protection messages for each, including shade near midday, sunglasses, sunscreen and reflective surfaces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://bachmai.gov.vn/bai-viet/canh-bao-nguy-co-benh-da-va-bong-da-do-thoi-tiet-nang-nong?id=5135db46-d0ae-4aa6-90db-a22fa77d20e0",
+          "title": "Bach Mai Hospital (5 August 2025): dermatology department warning on sunburn during northern heat with the UV index described as very high (9-10 and above), UVA through glass, UV through cloud, broad-spectrum sunscreen reapplied every 2 to 3 hours, avoiding the middle of the day, long sleeves, wide-brimmed hat and UV sunglasses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/tia-cuc-tim-ca-nuoc-o-muc-rat-nguy-hai-5078264.html",
+          "title": "VnExpress (26 May 2026): UV index of 10 to 13 reported in several provinces during a heat wave, maxima for Hanoi and Ho Chi Minh City attributed to AccuWeather and Weather Online, the forecasting centre's warning for older people, children and outdoor workers, and doctors' advice on sunscreen, clothing, hat, glasses, mask and gloves",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnammoi.vn/du-bao-thoi-tiet-ngay-mai-128-ha-noi-nong-gay-gat-38-do-da-nang-uv-cham-muc-13-tp-hcm-co-noi-35-do-2026810165137551.htm",
+          "title": "Viet Nam Moi (11 August 2026, a site that republishes agency reports and credits the national forecasting centre): daily city forecast with a UV index line per ward and commune, Hanoi 12, Ho Chi Minh City 10 and Da Nang 13, described as very high risk",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ko",
+      "parent_id": "KO-H04",
+      "subcluster": "ss-weather",
+      "slug": "beteunam-otobai-jaoesen-jisu-haetbit-chadan-dangye-yebo-chulcheo-gongsik-gwongo",
+      "primary_query": "베트남에서 오토바이를 탈 때 자외선 지수는 무슨 뜻이고 몇부터 햇빛 차단이 필요한가요",
+      "secondary_queries": [
+        "자외선 지수 단계 낮음 보통 높음 매우 높음 위험 대처",
+        "하노이 자외선 지수를 공식 출처에서 어디서 보나요",
+        "오토바이를 탈 때 선크림과 선글라스, 긴팔이 필요한가요",
+        "베트남은 구름이 낀 날에도 자외선 지수가 높은 이유",
+        "WHO 자외선 지수 3 이상 햇빛 차단 권고"
+      ],
+      "entities": [
+        "WHO 세계 자외선 지수",
+        "국가수문기상예보센터",
+        "SunSmart Global UV 앱(WHO)",
+        "UV-A와 UV-B",
+        "박마이 병원",
+        "미국 환경보호청 자외선 지수 등급"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "하노이와 베트남 북부에서 오토바이를 타는 사람은 몇 시간씩 강한 햇빛을 받으며 예보와 뉴스에서 매우 높은 자외선 지수를 보게 되므로, 지수가 무엇을 뜻하는지, 공식 수치가 어디서 나오는지, 오토바이 위에서 어떤 피부·눈 보호가 합리적인지 알고 싶어 합니다.",
+      "content_angle": "WHO가 UNEP, WMO, ICNIRP와 함께 만든 자외선 지수(낮음에서 극심까지 다섯 가지 노출 범주와 색 구분: WHO 2002년 7월 22일자 보도자료)와, 지수가 3 이상이면 햇빛 차단 조치를 쓰라는 WHO 팩트시트의 권고를 설명합니다. 정오의 햇빛을 피하고, 그늘을 찾고, 몸을 가리는 옷과 챙이 넓은 모자를 쓰고, UV-A와 UV-B를 99~100% 막는 랩어라운드형 선글라스를 쓰며, 자외선 차단제는 옷으로 가려지지 않는 피부에만 바르라는 내용입니다. 자외선은 태양 고도, 낮은 위도, 고도, 반사에 따라 강해지고 구름이 있어도 높을 수 있으며, 야외에서 일하는 사람은 피부암 위험이 더 높습니다. 숫자 구간은 미국 환경보호청이 인쇄한 대로 보여 주되 페이지마다 다릅니다. 2017년 보관 페이지는 다섯 구간(0~2, 3~5, 6~7, 8~10, 11 이상)이지만 2026년 6월 15일에 갱신된 페이지는 세 구간(1~2, 3~7, 8 이상)입니다. 작성자는 이 차이를 보여 주고 베트남 예보가 쓰는 등급을 인용해야 하는데, 베트남 모이가 전한 2026년 8월 11일 예보는 지수 12와 13을 ‘매우 높음’이라 부르는 반면 WHO와 EPA의 5단계 척도는 11 이상을 ‘극심’이라 부르기 때문입니다. 베트남이 자외선 수치를 어디서 내는지도 다룹니다. 그 보도는 국가수문기상예보센터를 하노이(12), 호찌민시(10), 다낭(13)의 동·사 단위 자외선 지수의 출처로 적지만, VnExpress 2026년 5월 26일자는 그 주의 최고치를 AccuWeather와 Weather Online의 것으로 돌렸고, 센터 사이트 메뉴에는 자외선 페이지가 없으며(UV라는 이름이 붙은 이미지 탭 두 개는 레이더 페이지를 엽니다), 그래서 작성자는 원 통보를 찾아야 하고 찾지 못하면 솔직히 밝혀야 합니다. 건강 측면에서는 박마이 병원 피부·화상과의 2025년 8월 5일자 조언(광범위 자외선 차단제를 2~3시간마다 덧바르기, UVA는 유리를 통과, 자외선은 구름을 통과, 한낮 피하기, 긴팔, 모자, 자외선 차단 선글라스)과 방문자를 위한 WHO의 무료 SunSmart Global UV 앱을 다룹니다. 오토바이 운전자만을 대상으로 한 연구는 찾지 못했으므로 지어내지 말고, 헬멧 바이저, 장갑, 목 가리개는 출처가 말할 때만 언급하십시오.",
+      "working_title": "베트남에서 오토바이를 탈 때의 자외선 지수와 햇빛 차단: 지수 읽는 법, 예보 출처, 공식 권고",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/ultraviolet-radiation",
+          "title": "WHO fact sheet Ultraviolet radiation (undated page, listed 21 June 2022): what raises UV levels (sun height, latitude, altitude, reflection, thin cloud), outdoor workers' skin-cancer risk, protective measures (shade, clothing, broad-brimmed hat, wraparound sunglasses with 99 to 100 per cent UV-A and UV-B protection, sunscreen for uncovered skin) and sun protection when the UV Index reaches 3 or above",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news/item/22-07-2002-helping-people-reduce-their-risks-of-skin-cancer-and-cataract",
+          "title": "WHO news release (22 July 2002): the Global Solar UV Index developed by WHO with UNEP, WMO and ICNIRP, grouped into the exposure categories low, moderate, high, very high and extreme with colour codes and simple icons",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/teams/environment-climate-change-and-health/radiation-and-health/non-ionizing/optical-radiation",
+          "title": "WHO Optical radiation page (undated): the free SunSmart Global UV App for mobile devices, which shows the level of solar UV at a specific location and time slots for sun protection",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.epa.gov/sunsafety/uv-index-scale-0",
+          "title": "US EPA UV Index Scale (updated 15 June 2026): three bands (1-2 low, 3-7 moderate to high, 8 and above very high to extreme), a statement that the scale follows WHO international guidelines, protection advice and the shadow rule",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://19january2017snapshot.epa.gov/sunsafety/uv-index-scale-1_.html",
+          "title": "US EPA UV Index Scale (archived snapshot of 19 January 2017): five bands (0-2 low, 3-5 moderate, 6-7 high, 8-10 very high, 11 and above extreme) with protection messages for each, including shade near midday, sunglasses, sunscreen and reflective surfaces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://bachmai.gov.vn/bai-viet/canh-bao-nguy-co-benh-da-va-bong-da-do-thoi-tiet-nang-nong?id=5135db46-d0ae-4aa6-90db-a22fa77d20e0",
+          "title": "Bach Mai Hospital (5 August 2025): dermatology department warning on sunburn during northern heat with the UV index described as very high (9-10 and above), UVA through glass, UV through cloud, broad-spectrum sunscreen reapplied every 2 to 3 hours, avoiding the middle of the day, long sleeves, wide-brimmed hat and UV sunglasses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/tia-cuc-tim-ca-nuoc-o-muc-rat-nguy-hai-5078264.html",
+          "title": "VnExpress (26 May 2026): UV index of 10 to 13 reported in several provinces during a heat wave, maxima for Hanoi and Ho Chi Minh City attributed to AccuWeather and Weather Online, the forecasting centre's warning for older people, children and outdoor workers, and doctors' advice on sunscreen, clothing, hat, glasses, mask and gloves",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnammoi.vn/du-bao-thoi-tiet-ngay-mai-128-ha-noi-nong-gay-gat-38-do-da-nang-uv-cham-muc-13-tp-hcm-co-noi-35-do-2026810165137551.htm",
+          "title": "Viet Nam Moi (11 August 2026, a site that republishes agency reports and credits the national forecasting centre): daily city forecast with a UV index line per ward and commune, Hanoi 12, Ho Chi Minh City 10 and Da Nang 13, described as very high risk",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    },
+    {
+      "locale": "ja",
+      "parent_id": "JA-H04",
+      "subcluster": "ss-weather",
+      "slug": "betonamu-baiku-uv-indekkusu-hiyakedome-yoho-detokoro-koshiki-jogen",
+      "primary_query": "ベトナムでバイクに乗るときUVインデックスは何を意味し、いくつから日焼け対策が必要か",
+      "secondary_queries": [
+        "UVインデックスの段階 低い 中程度 強い 非常に強い 極端に強い 対策",
+        "ハノイのUVインデックスを公式の情報源で確認する方法",
+        "バイクに乗るとき日焼け止めやサングラス、長袖は必要か",
+        "ベトナムは曇りでもUVインデックスが高いのはなぜか",
+        "WHOが勧めるUVインデックス3以上の日焼け対策"
+      ],
+      "entities": [
+        "WHOの世界UVインデックス",
+        "国家水文気象予報センター",
+        "SunSmart Global UVアプリ（WHO）",
+        "UV-AとUV-B",
+        "バックマイ病院",
+        "米国環境保護庁のUVインデックス区分"
+      ],
+      "search_intent": "informational",
+      "intent_rationale": "ハノイやベトナム北部でバイクに乗る人は何時間も強い日差しを浴び、予報やニュースで非常に高いUVインデックスを目にするため、指数が何を意味するのか、公式の数値がどこから来るのか、バイクの上でどんな皮膚と目の保護が理にかなっているのかを知りたがります。",
+      "content_angle": "WHOがUNEP、WMO、ICNIRPと作ったUVインデックス（低いから極端に強いまでの5つの曝露区分と色分け：WHOの2002年7月22日付発表）と、指数が3以上になったら日焼け対策を取るというWHOファクトシートの助言を説明します。正午の日差しを避け、日陰を探し、体を覆う服と広いつばの帽子を身につけ、UV-AとUV-Bを99〜100%防ぐラップアラウンド型のサングラスを使い、日焼け止めは服で覆えない皮膚にだけ使うという内容です。紫外線は太陽の高さ、低い緯度、標高、反射で強まり、雲があっても高いままのことがあり、屋外で働く人は皮膚がんのリスクが高くなります。数値の区分は米国環境保護庁が掲載しているとおりに示しますが、ページによって異なります。2017年の保存ページは5区分（0〜2、3〜5、6〜7、8〜10、11以上）ですが、2026年6月15日に更新されたページは3区分（1〜2、3〜7、8以上）です。執筆者はこの違いを示し、ベトナムの予報が使う区分を引用する必要があります。ベトナム・モイが伝えた2026年8月11日の予報は指数12と13を「非常に高い」と呼ぶ一方、WHOとEPAの5段階では11以上を「極端に強い」と呼ぶからです。ベトナムがUVの数値をどこで出しているかも扱います。その報道は国家水文気象予報センターをハノイ（12）、ホーチミン市（10）、ダナン（13）の区・社ごとのUVインデックスの出どころとしていますが、VnExpressの2026年5月26日付は週の最大値をAccuWeatherとWeather Onlineのものとし、センターのサイトのメニューにはUVのページがなく（UVと書かれた2つの画像タブはレーダーのページを開く）、執筆者は元の情報を探し、見つからなければ率直にそう書く必要があります。健康面では、バックマイ病院皮膚科・熱傷科の2025年8月5日付の助言（広域スペクトルの日焼け止めを2〜3時間ごとに塗り直す、UVAはガラスを通る、紫外線は雲を通る、日中の時間帯を避ける、長袖、帽子、UVカットのサングラス）と、旅行者向けのWHOの無料のSunSmart Global UVアプリを扱います。バイクに乗る人だけを対象にした研究は見つからなかったので作り話をせず、ヘルメットのバイザー、手袋、首の保護は資料が述べているときだけ触れてください。",
+      "working_title": "ベトナムでバイクに乗るときのUVインデックスと日焼け対策：指数の読み方、予報の出どころ、公式の助言",
+      "word_target": 1400,
+      "keyword_evidence": "NOT_VALIDATED",
+      "references": [
+        {
+          "url": "https://www.who.int/news-room/fact-sheets/detail/ultraviolet-radiation",
+          "title": "WHO fact sheet Ultraviolet radiation (undated page, listed 21 June 2022): what raises UV levels (sun height, latitude, altitude, reflection, thin cloud), outdoor workers' skin-cancer risk, protective measures (shade, clothing, broad-brimmed hat, wraparound sunglasses with 99 to 100 per cent UV-A and UV-B protection, sunscreen for uncovered skin) and sun protection when the UV Index reaches 3 or above",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/news/item/22-07-2002-helping-people-reduce-their-risks-of-skin-cancer-and-cataract",
+          "title": "WHO news release (22 July 2002): the Global Solar UV Index developed by WHO with UNEP, WMO and ICNIRP, grouped into the exposure categories low, moderate, high, very high and extreme with colour codes and simple icons",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.who.int/teams/environment-climate-change-and-health/radiation-and-health/non-ionizing/optical-radiation",
+          "title": "WHO Optical radiation page (undated): the free SunSmart Global UV App for mobile devices, which shows the level of solar UV at a specific location and time slots for sun protection",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://www.epa.gov/sunsafety/uv-index-scale-0",
+          "title": "US EPA UV Index Scale (updated 15 June 2026): three bands (1-2 low, 3-7 moderate to high, 8 and above very high to extreme), a statement that the scale follows WHO international guidelines, protection advice and the shadow rule",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://19january2017snapshot.epa.gov/sunsafety/uv-index-scale-1_.html",
+          "title": "US EPA UV Index Scale (archived snapshot of 19 January 2017): five bands (0-2 low, 3-5 moderate, 6-7 high, 8-10 very high, 11 and above extreme) with protection messages for each, including shade near midday, sunglasses, sunscreen and reflective surfaces",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://bachmai.gov.vn/bai-viet/canh-bao-nguy-co-benh-da-va-bong-da-do-thoi-tiet-nang-nong?id=5135db46-d0ae-4aa6-90db-a22fa77d20e0",
+          "title": "Bach Mai Hospital (5 August 2025): dermatology department warning on sunburn during northern heat with the UV index described as very high (9-10 and above), UVA through glass, UV through cloud, broad-spectrum sunscreen reapplied every 2 to 3 hours, avoiding the middle of the day, long sleeves, wide-brimmed hat and UV sunglasses",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vnexpress.net/tia-cuc-tim-ca-nuoc-o-muc-rat-nguy-hai-5078264.html",
+          "title": "VnExpress (26 May 2026): UV index of 10 to 13 reported in several provinces during a heat wave, maxima for Hanoi and Ho Chi Minh City attributed to AccuWeather and Weather Online, the forecasting centre's warning for older people, children and outdoor workers, and doctors' advice on sunscreen, clothing, hat, glasses, mask and gloves",
+          "checked_on": "2026-10-20"
+        },
+        {
+          "url": "https://vietnammoi.vn/du-bao-thoi-tiet-ngay-mai-128-ha-noi-nong-gay-gat-38-do-da-nang-uv-cham-muc-13-tp-hcm-co-noi-35-do-2026810165137551.htm",
+          "title": "Viet Nam Moi (11 August 2026, a site that republishes agency reports and credits the national forecasting centre): daily city forecast with a UV index line per ward and commune, Hanoi 12, Ho Chi Minh City 10 and Da Nang 13, described as very high risk",
+          "checked_on": "2026-10-20"
+        }
+      ]
+    }
+  ]
+}

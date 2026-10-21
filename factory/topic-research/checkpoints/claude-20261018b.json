@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T03:45:05.043Z",
+  "updated_at": "2026-10-21T03:45:17.381Z",
   "base_main_sha": "68e51c4329575725c39c26fcfdb9e0491d984fb6",
-  "last_commit_sha": "055e10cc647ecdc17ae785a7a49285d9dc0df69d",
+  "last_commit_sha": "abe6542258fc0d2e8f3ae7929b6660ecd4bbe4c5",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1890,
-    "qa_pass": 1890,
+    "researched": 1900,
+    "qa_pass": 1900,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1880,
+    "pushed": 1890,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 190,
-      "de": 190,
-      "fr": 190,
-      "es": 190,
-      "nl": 190,
-      "pt": 190,
-      "zh": 190,
-      "ko": 190,
-      "ja": 190,
-      "en": 180
+      "vi": 191,
+      "de": 191,
+      "fr": 191,
+      "es": 191,
+      "nl": 191,
+      "pt": 191,
+      "zh": 191,
+      "ko": 191,
+      "ja": 191,
+      "en": 181
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 871,
+      "traffic-law-safety": 881,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 189,
-    "file": "factory/topic-research/batches/claude-20261018b-0189.json",
-    "sha256": "b71d3dcf333b76daebacdcd976f73af220b4d3d78558b9f7126daf7cfa8b650e",
+    "seq": 190,
+    "file": "factory/topic-research/batches/claude-20261018b-0190.json",
+    "sha256": "720251334ccf594432a983f38daf2cc9077e93a0e0dbb2035348ca5cca56e58c",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -20927,8 +20927,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0189.json",
       "sha256": "b71d3dcf333b76daebacdcd976f73af220b4d3d78558b9f7126daf7cfa8b650e",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "abe6542258fc0d2e8f3ae7929b6660ecd4bbe4c5",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -21032,11 +21032,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 190,
+      "file": "factory/topic-research/batches/claude-20261018b-0190.json",
+      "sha256": "720251334ccf594432a983f38daf2cc9077e93a0e0dbb2035348ca5cca56e58c",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:chi-so-uv-chong-nang-khi-di-xe-may-viet-nam-thang-uv-nguon-du-bao-loi-khuyen",
+          "locale": "vi",
+          "slug": "chi-so-uv-chong-nang-khi-di-xe-may-viet-nam-thang-uv-nguon-du-bao-loi-khuyen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-weather",
+          "key": "vi::chi so uv bao nhieu thi can chong nang khi di xe may o viet nam va xem chi so uv chinh thuc o dau",
+          "ta_id": null
+        },
+        {
+          "ref": "en:uv-index-sun-protection-motorbike-vietnam-scale-forecasts-official-advice",
+          "locale": "en",
+          "slug": "uv-index-sun-protection-motorbike-vietnam-scale-forecasts-official-advice",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-weather",
+          "key": "en::what does the uv index mean on a motorbike in vietnam and when do i need sun protection",
+          "ta_id": null
+        },
+        {
+          "ref": "de:uv-index-sonnenschutz-roller-vietnam-skala-vorhersagen-amtliche-hinweise",
+          "locale": "de",
+          "slug": "uv-index-sonnenschutz-roller-vietnam-skala-vorhersagen-amtliche-hinweise",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-weather",
+          "key": "de::was bedeutet der uv-index auf dem roller in vietnam und ab wann brauche ich sonnenschutz",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:indice-uv-protection-solaire-scooter-vietnam-echelle-previsions-conseils",
+          "locale": "fr",
+          "slug": "indice-uv-protection-solaire-scooter-vietnam-echelle-previsions-conseils",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-weather",
+          "key": "fr::que signifie l'indice uv a scooter au vietnam et a partir de quand faut-il se proteger du soleil",
+          "ta_id": null
+        },
+        {
+          "ref": "es:indice-uv-proteccion-solar-moto-vietnam-escala-previsiones-consejos-oficiales",
+          "locale": "es",
+          "slug": "indice-uv-proteccion-solar-moto-vietnam-escala-previsiones-consejos-oficiales",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-weather",
+          "key": "es::que significa el indice uv en moto en vietnam y a partir de cuando hay que protegerse del sol",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:uv-index-zonbescherming-scooter-vietnam-schaal-voorspellingen-officiele-adviezen",
+          "locale": "nl",
+          "slug": "uv-index-zonbescherming-scooter-vietnam-schaal-voorspellingen-officiele-adviezen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-weather",
+          "key": "nl::wat betekent de uv-index op de scooter in vietnam en vanaf wanneer heb ik zonbescherming nodig",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-qi-motuoche-ziwaixian-zhishu-fangshai-dengji-yubao-laiyuan-jianyi",
+          "locale": "zh",
+          "slug": "yuenan-qi-motuoche-ziwaixian-zhishu-fangshai-dengji-yubao-laiyuan-jianyi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-weather",
+          "key": "zh::在越南骑摩托车时紫外线指数是什么意思,指数到多少需要防晒",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:indice-uv-protecao-solar-mota-vietname-escala-previsoes-conselhos-oficiais",
+          "locale": "pt",
+          "slug": "indice-uv-protecao-solar-mota-vietname-escala-previsoes-conselhos-oficiais",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-weather",
+          "key": "pt::o que significa o indice uv de mota no vietname e a partir de quando e preciso protecao solar",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-jaoesen-jisu-haetbit-chadan-dangye-yebo-chulcheo-gongsik-gwongo",
+          "locale": "ko",
+          "slug": "beteunam-otobai-jaoesen-jisu-haetbit-chadan-dangye-yebo-chulcheo-gongsik-gwongo",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-weather",
+          "key": "ko::베트남에서 오토바이를 탈 때 자외선 지수는 무슨 뜻이고 몇부터 햇빛 차단이 필요한가요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-uv-indekkusu-hiyakedome-yoho-detokoro-koshiki-jogen",
+          "locale": "ja",
+          "slug": "betonamu-baiku-uv-indekkusu-hiyakedome-yoho-detokoro-koshiki-jogen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-weather",
+          "key": "ja::ヘトナムてハイクに乗るときuvインテックスは何を意味し、いくつから日焼け対策か必要か",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 190,
-    "file": "factory/topic-research/batches/claude-20261018b-0190.json",
+    "seq": 191,
+    "file": "factory/topic-research/batches/claude-20261018b-0191.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -21049,13 +21160,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:49:22.103Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 165,
-      "topics": 10,
-      "sha256": "7cdf8795d3ef24910338a397eed39000d33282dc8d2a08601262b85116e5c843"
-    },
     {
       "at": "2026-10-20T20:49:40.827Z",
       "event": "BATCH_COMMITTED",
@@ -21223,6 +21327,13 @@
       "seq": 189,
       "topics": 10,
       "sha256": "b71d3dcf333b76daebacdcd976f73af220b4d3d78558b9f7126daf7cfa8b650e"
+    },
+    {
+      "at": "2026-10-21T03:45:17.381Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 190,
+      "topics": 10,
+      "sha256": "720251334ccf594432a983f38daf2cc9077e93a0e0dbb2035348ca5cca56e58c"
     }
   ]
 }
