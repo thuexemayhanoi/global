@@ -7,9 +7,9 @@ Ngày: 2026-10-20. Nhánh: `seo/v10-global-engine-20261020` (từ `main` `fc4fbb
 | Mức | Trạng thái | Bằng chứng |
 |---|---|---|
 | IMPLEMENTED | Hoàn tất | commit `318e865c` (mã, HTML tạo lại, đồ thị, test, báo cáo 01 đến 09 và 11) và các commit tiếp theo trong mục 2b |
-| TESTED | Hoàn tất | 291 test xanh tại local trên đầu nhánh cuối; CI `qa.yml` xanh trên `318e865c`, `7926200c`, `52a9aa21`, `c0286253`, `1ce61e0c`, `cb696fce`, `5162d721` và trên `main` sau merge (run 39541765259); hai lần đỏ trên `f62b0768` và `941a1f44` do test Topic Factory phía `main` (sửa ở #80, #81, đã gộp) |
+| TESTED | Hoàn tất | 291 test xanh tại local trên đầu nhánh cuối của PR #79; 295 test xanh (0 fail) trên `d1c309b7`, đầu nhánh của PR #86, và CI `qa.yml` xanh trên đó (run 39579189886); CI `qa.yml` xanh trên `main` `74be8b4d` sau PR #82 (run 39578433470); CI `qa.yml` xanh trên `318e865c`, `7926200c`, `52a9aa21`, `c0286253`, `1ce61e0c`, `cb696fce`, `5162d721` và trên `main` sau merge (run 39541765259); hai lần đỏ trên `f62b0768` và `941a1f44` do test Topic Factory phía `main` (sửa ở #80, #81, đã gộp) |
 | DEPLOYED | Hoàn tất | GitHub Pages deploy `main` xong lúc 04:05:15 UTC 2026-10-21 (run 39541884028, head `f50bc63a` chứa `0a048ab4`) |
-| VERIFIED | Hoàn tất | `live-markup-qa.yml` (PR #84, merge `ea8f9f6f`) so sánh byte 928/928 route của production với HTML đã commit: trùng khớp hoàn toàn lúc 09:18 UTC 2026-10-21 (mục 6, hàng 10); cộng `post-publish-qa.yml` PASS 941, HTML mẫu qua crawler connector (hàng 8) và PageSpeed mobile LCP 2,5 s xuống 1,7 s |
+| VERIFIED | Hoàn tất | `live-markup-qa.yml` (PR #84, merge `ea8f9f6f`) so sánh byte 928/928 route của production với HTML đã commit: trùng khớp hoàn toàn lúc 09:18 UTC 2026-10-21 (mục 6, hàng 10) và lặp lại 928/928 lúc 09:39 UTC sau khi PR #82 lên `main` (hàng 11); cộng `post-publish-qa.yml` PASS 941, HTML mẫu qua crawler connector (hàng 8) và PageSpeed mobile LCP 2,5 s xuống 1,7 s |
 
 ## 2. Changelog mã nguồn (commit `318e865c`)
 
@@ -84,6 +84,7 @@ Mỗi bước ghi kết quả vào mục 6 của tài liệu này trong một co
 | 8 | Tải HTML production qua crawler connector (TinyFish `fetch_content`, `ttl` 0, phiên 2) | 09:05 đến 09:08 | `/`: hero `srcset` 800w/1200w/1600w, `sizes`, `preload` với `imagesrcset`, `fetchpriority="high"`, alt mô tả; 4 ảnh thẻ `alt=""`; `og:image` 1600×900. `/en/topics/choosing-a-rental-bike/`, `/de/guides/yamaha-janus-grande-sirius-exciter-unterschiede/`, `/ja/guides/menkyo-kirikae/`: `og:site_name`, `og:image`, `twitter:card summary_large_image`, `<nav class="crumb">` byte-identical với HTML đã commit trên `main`. JSON-LD không đọc được qua connector (script bị lược bỏ), nên BreadcrumbList và Article vẫn là bằng chứng gián tiếp qua fingerprint `schema_types` của `post-publish-qa` |
 | 9 | Kiểm tra lại số liệu bước 2 đến 4 ở phiên 2 | 09:00 đến 09:10 | Bước 2: log job 119033299532 in đúng `passed: true`, `issues: []`, `checked: 941`. Bước 4: `pagespeed_audit` đọc lại bản cache (không `forceUpdate`) trả về đúng các số liệu đã ghi. Bước 3: KHÔNG xác minh lại được — tài khoản OpenSEO của phiên 2 chỉ thấy dự án `7636b3bd` với danh sách audit trống, audit `acb45dea` không tìm thấy; số liệu bước 3 giữ nguyên là báo cáo của phiên 1, chưa được phiên 2 kiểm chứng độc lập |
 | 10 | `live-markup-qa.yml` trên `main` `ea8f9f6f` (workflow_dispatch, limit 0; run 39575897733, job 119141218066) | 09:18:26 đến 09:18:39 | `passed: true`, `checked: 928`, `identical: 928`, `mismatched: []`: trang gốc, 925 URL PUBLISHED còn lại, `/search/` và `/404.html` trên production trùng từng byte với HTML đã commit, nên mọi trường mới (Article `publisher`, `isPartOf`, ngày, breadcrumb 3 cấp, `og:image`, `twitter:card`, hero `srcset` và preload, liên kết anh em) được chứng minh trực tiếp trên toàn bộ site; artifact `global-live-markup-qa` |
+| 11 | GitHub Pages deploy `main` `74be8b4d` (PR #82, mục mới trên 10 trang chủ ngôn ngữ) rồi `live-markup-qa.yml` lần 2 (workflow_dispatch, limit 0; run 39578578316, job 119150210394) | deploy 09:37:44 đến 09:38:41; QA 09:39:03 đến 09:39:19 | `passed: true`, `checked: 928`, `identical: 928`, `mismatched: []`: 10 trang chủ ngôn ngữ với các mục mới cùng 918 route còn lại trên production trùng từng byte với HTML đã commit trên `main` `74be8b4d`; artifact 12335466791 |
 
 Credit sau xác minh: OpenSEO còn 157 (`whoami` 04:14 UTC; 325 lúc bắt đầu phiên); Ubersuggest còn 1 báo cáo PageSpeed trong ngày. Phiên 2 (09:00 UTC) không tiêu credit OpenSEO; dùng 1 trong 3 báo cáo Ubersuggest trong ngày để đọc lại bản cache.
 
@@ -93,19 +94,20 @@ Không có số liệu thứ hạng, lập chỉ mục hay lưu lượng nào đ
 
 | Worker | Phạm vi | Kết quả | Trạng thái |
 |---|---|---|---|
-| Điều phối (phiên này) | audit, sửa generator, gộp nhánh, QA, PR, trả lời review | PR #79, PR #82, 11 báo cáo | hoạt động |
+| Điều phối (phiên này) | audit, sửa generator, gộp nhánh, QA, PR, trả lời review, xác minh production | PR #79, #82, #84, #85 (đã gộp), PR #86 (chờ duyệt), 12 báo cáo | hoàn tất phần khả thi |
+| Phiên Claude thứ hai (độc lập, cùng tài khoản, `session_014WsQ6AmZowaBRiy9K8waSX`) | sửa hai test Topic Factory phụ thuộc mức READY thật trên `main` (PR #80, #81, làm CI của PR #79 đỏ rồi xanh lại), xác minh production qua crawler connector và ghi báo cáo 08 và 10 (PR #83), gộp `main` vào các nhánh SEO | PR #80, #81, #83 đã gộp; mục 6 hàng 7 đến 9 | hoàn tất |
 | PERF (subagent, worktree riêng, nhánh `seo/v10-perf`) | hero đáp ứng, preload, test | gộp vào PR #79 | hoàn tất |
 | QA (subagent, worktree riêng, nhánh `seo/v10-qa`) | bộ test QA toàn site 10 ngôn ngữ | gộp vào PR #79 | hoàn tất |
-| PILLAR A (vi, en, de, fr, es) và PILLAR B (nl, zh, pt, ko, ja) | đề xuất mục mới cho trang chủ ngôn ngữ | PR #82 | hoàn tất, chờ duyệt nội dung |
-| META vi, en, de, fr, es, nl, pt | đề xuất rút gọn tiêu đề và mô tả (JSON, kiểm tra bằng `apply-meta-proposals.mjs`) | bị dừng lúc 20:33 UTC vì hạn mức phiên (HTTP 429), chạy lại từ 03:45 UTC 2026-10-21 | đang chạy, xem mục 8 khi có kết quả |
+| PILLAR A (vi, en, de, fr, es) và PILLAR B (nl, zh, pt, ko, ja) | đề xuất mục mới cho trang chủ ngôn ngữ | PR #82, gộp vào `main` lúc 09:37 UTC 2026-10-21 (`74be8b4d`), xác minh production ở mục 6 hàng 11 | hoàn tất |
+| META vi, en, de, fr, es, nl, pt | đề xuất rút gọn tiêu đề và mô tả (JSON, kiểm tra bằng `apply-meta-proposals.mjs`) | 632 trang, 546 tiêu đề mới, 622 mô tả mới trong `docs/seo-v10/proposals/meta-<locale>.json` (báo cáo 12); đã áp dụng, tạo lại HTML, đóng băng lại và QA trên nhánh `seo/v10-meta-proposals` → PR #86. Hai lần bị dừng vì hạn mức phiên (HTTP 429, 20:33 UTC 2026-10-20 và 08:40 UTC 2026-10-21), chạy tiếp sau mỗi lần | hoàn tất, PR #86 chờ chủ sở hữu duyệt vì đổi trường đóng băng |
 | W1, W2, W3 (Writer) | không dùng cho SEO: cả ba đang giữ 10 claim bài viết mỗi slot, theo quy tắc không chiếm Writer đang có claim | không tham gia | không dùng |
 
 Khả năng song song thật: subagent trong cùng container (mỗi worker một worktree git hoặc một tệp đầu ra riêng, điều phối gộp tuần tự các thay đổi generator). Không có phiên AI độc lập nào khác đang chạy trên máy này (`ListAgents` trống); không giả định thêm.
 
 ## 8. Việc còn lại và chủ sở hữu quyết định
 
-- Biên tập 321 tiêu đề trên 70 ký tự và 622 mô tả trên 165 ký tự (trường đóng băng, cần PR riêng với `seo-guard --write`); danh sách trong 11.
+- Duyệt PR #86: 546 tiêu đề và 622 mô tả rút gọn trên 632 trang vi, en, de, fr, es, nl, pt (zh, ja, ko không cần; báo cáo 12). Merge là bước duyệt; có thể sửa chữ trong `docs/seo-v10/proposals/meta-<locale>.json` trước khi merge rồi chạy lại các bước ở báo cáo 12 mục 3. Sau merge: Pages deploy, `post-publish-qa.yml` và `live-markup-qa.yml`.
 - `distinct_from` cho 4 IDEA trùng ý định với trang live (04) trước khi Writer nhận.
-- Hình hero nhẹ hơn hoặc `srcset` để cải thiện LCP mobile (08).
+- Hero đáp ứng đã xong và đo lại (08 mục 4 và 6). Còn lại ở 08 mục 5: đo PageSpeed cho một Hub và một Supporting, cân nhắc thứ tự tải `ultra.css`.
 - Thêm property Google Search Console cho `global.rentbikehanoi.com` để các báo cáo sau có số liệu trường; cho tới lúc đó, không có số liệu thứ hạng hay lưu lượng nào được ghi.
 - BLOCKED trong phiên: Firecrawl (402), OpenRush sau lần gọi zh (402), Ubersuggest site audit (trả phí), tải trực tiếp production từ sandbox (proxy chặn), điểm Lighthouse của OpenSEO (chỉ xem trong giao diện).

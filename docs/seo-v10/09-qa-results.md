@@ -56,3 +56,13 @@ Ngày: 2026-10-20. Nhánh: `seo/v10-global-engine-20261020` trên nền `main` `
 - Không kiểm tra nội dung đúng sai về mặt biên tập; đó là việc của G1 đến G5, G7 và fact-guard trên từng bài.
 
 Nhật ký đầy đủ của vòng cuối (có thể tạo lại bằng cách chạy các lệnh trên): kết quả tóm tắt ở bảng 1; nhật ký thô nằm ngoài repo.
+
+## 5. Cập nhật 2026-10-21 (sau khi gộp PR #79, #82, #84, #85; PR #86 mở chờ duyệt)
+
+| Lệnh | `main` `74be8b4d` | Nhánh PR #86 `d1c309b7` | Ghi chú |
+|---|---|---|---|
+| `node --test tests/*.test.mjs` | 295 test: 294 pass, 0 fail, 1 bỏ qua | 295 test: 295 pass, 0 fail, 0 bỏ qua | thêm `tests/seo-site-qa.test.mjs` (12, worker QA) và `tests/live-markup-qa.test.mjs` (4, PR #84); test bỏ qua trên `main` là kiểm tra tệp đề xuất, tệp này chỉ có trên nhánh PR #86 |
+| `node scripts/build.mjs --check`, `seo-guard`, `fact-guard`, `content-graph --check`, `nav-qa`, `validate-plan`, `audit-static --fail-p0`, `apply-meta-proposals.mjs` (dry-run) | không áp dụng cho tệp đề xuất; các lệnh còn lại chạy trong `qa.yml` | xanh tại local trên `d1c309b7`; dry-run 7 tệp, 632 mục, 546 tiêu đề, 622 mô tả, `errors: []` | PR #86 đóng băng lại 632 URL với tiêu đề và mô tả mới, mọi URL khác giữ nguyên fingerprint |
+
+- `qa.yml` chạy thêm `tests/live-markup-qa.test.mjs` từ PR tài liệu này; trước đó tệp test này chỉ chạy khi gọi `node --test tests/*.test.mjs` tại local.
+- Điểm "không chứng minh production đã đổi" ở mục 4 đã được giải quyết: `post-publish-qa.yml` PASS 941 route và `live-markup-qa.yml` 928/928 route trùng từng byte, hai lần (báo cáo 10 mục 6, hàng 2, 10 và 11).
