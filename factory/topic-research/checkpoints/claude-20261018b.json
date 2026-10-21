@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T03:58:13.059Z",
+  "updated_at": "2026-10-21T03:58:31.068Z",
   "base_main_sha": "635f5ad89248472b389714176314d0b240abdb8b",
-  "last_commit_sha": "e7f4b3526fcd0957a9bb363a36c9028f776b6377",
+  "last_commit_sha": "c22ea487f7fd111de603b12cbbd6f3eb2639a1f1",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1960,
-    "qa_pass": 1960,
+    "researched": 1970,
+    "qa_pass": 1970,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1950,
+    "pushed": 1960,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 197,
-      "de": 197,
-      "fr": 197,
-      "es": 197,
-      "nl": 197,
-      "pt": 197,
-      "zh": 197,
-      "ko": 197,
-      "ja": 197,
-      "en": 187
+      "vi": 198,
+      "de": 198,
+      "fr": 198,
+      "es": 198,
+      "nl": 198,
+      "pt": 198,
+      "zh": 198,
+      "ko": 198,
+      "ja": 198,
+      "en": 188
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 901,
+      "traffic-law-safety": 911,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 196,
-    "file": "factory/topic-research/batches/claude-20261018b-0196.json",
-    "sha256": "2920ab1614e811567036a387ace6bc15bf8beea06490e50293a78fcfc72a78f7",
+    "seq": 197,
+    "file": "factory/topic-research/batches/claude-20261018b-0197.json",
+    "sha256": "5730edf6db487b917b3ba32a497025b08c5063956883a98572a70469f203c8ea",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -21704,8 +21704,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0196.json",
       "sha256": "2920ab1614e811567036a387ace6bc15bf8beea06490e50293a78fcfc72a78f7",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "c22ea487f7fd111de603b12cbbd6f3eb2639a1f1",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -21809,11 +21809,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 197,
+      "file": "factory/topic-research/batches/claude-20261018b-0197.json",
+      "sha256": "5730edf6db487b917b3ba32a497025b08c5063956883a98572a70469f203c8ea",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:mua-duong-uot-xe-may-nghien-cuu-tai-nan-canh-sat-giao-thong-khuyen-cao",
+          "locale": "vi",
+          "slug": "mua-duong-uot-xe-may-nghien-cuu-tai-nan-canh-sat-giao-thong-khuyen-cao",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-weather",
+          "key": "vi::troi mua co lam tai nan xe may de xay ra hon khong va cac nghien cuu cung canh sat giao thong noi gi ve di xe may tren duong uot",
+          "ta_id": null
+        },
+        {
+          "ref": "en:rain-wet-roads-motorbike-crash-studies-vietnam-traffic-police-advice",
+          "locale": "en",
+          "slug": "rain-wet-roads-motorbike-crash-studies-vietnam-traffic-police-advice",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-weather",
+          "key": "en::does rain make motorbike crashes more likely and what do studies and vietnamese traffic police say about riding on wet roads",
+          "ta_id": null
+        },
+        {
+          "ref": "de:regen-nasse-strassen-roller-unfallstudien-vietnam-verkehrspolizei-rat",
+          "locale": "de",
+          "slug": "regen-nasse-strassen-roller-unfallstudien-vietnam-verkehrspolizei-rat",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-weather",
+          "key": "de::macht regen rollerunfalle wahrscheinlicher und was sagen studien und vietnams verkehrspolizei zum fahren auf nasser straße",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:pluie-route-mouillee-scooter-etudes-accidents-police-vietnam-conseils",
+          "locale": "fr",
+          "slug": "pluie-route-mouillee-scooter-etudes-accidents-police-vietnam-conseils",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-weather",
+          "key": "fr::la pluie rend-elle les accidents de scooter plus probables et que disent les etudes et la police de la route vietnamienne sur la conduite sur route mouillee",
+          "ta_id": null
+        },
+        {
+          "ref": "es:lluvia-calzada-mojada-moto-estudios-choques-policia-trafico-vietnam",
+          "locale": "es",
+          "slug": "lluvia-calzada-mojada-moto-estudios-choques-policia-trafico-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-weather",
+          "key": "es::la lluvia hace mas probables los accidentes de moto y que dicen los estudios y la policia de trafico de vietnam sobre circular con la calzada mojada",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:regen-nat-wegdek-scooter-ongevallenstudies-vietnam-verkeerspolitie-advies",
+          "locale": "nl",
+          "slug": "regen-nat-wegdek-scooter-ongevallenstudies-vietnam-verkeerspolitie-advies",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-weather",
+          "key": "nl::maakt regen scooterongevallen waarschijnlijker en wat zeggen onderzoek en de vietnamese verkeerspolitie over rijden op nat wegdek",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:motuoche-yu-yu-shihua-lumian-shigu-yanjiu-yuenan-jiaojing-jianyi",
+          "locale": "zh",
+          "slug": "motuoche-yu-yu-shihua-lumian-shigu-yanjiu-yuenan-jiaojing-jianyi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-weather",
+          "key": "zh::下雨会让摩托车事故更容易发生吗,研究和越南交警对湿路骑行怎么说",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:chuva-piso-molhado-mota-estudos-acidentes-policia-transito-vietname",
+          "locale": "pt",
+          "slug": "chuva-piso-molhado-mota-estudos-acidentes-policia-transito-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-weather",
+          "key": "pt::a chuva torna os acidentes de mota mais provaveis e o que dizem os estudos e a policia de transito do vietname sobre andar com o piso molhado",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:otobai-bi-jeojeun-doro-sago-yeongu-beteunam-gyotong-gyeongchal-gwongo",
+          "locale": "ko",
+          "slug": "otobai-bi-jeojeun-doro-sago-yeongu-beteunam-gyotong-gyeongchal-gwongo",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-weather",
+          "key": "ko::비가 오면 오토바이 사고가 더 잘 일어나나요 연구와 베트남 교통경찰은 젖은 도로 주행에 대해 뭐라고 하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:baiku-ame-nureta-romen-jiko-kenkyu-betonamu-kotsu-keisatsu-jogen",
+          "locale": "ja",
+          "slug": "baiku-ame-nureta-romen-jiko-kenkyu-betonamu-kotsu-keisatsu-jogen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-weather",
+          "key": "ja::雨の日はハイク事故か起きやすくなりますか 研究とヘトナム交通警察は濡れた路面の走行について何と言っていますか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 197,
-    "file": "factory/topic-research/batches/claude-20261018b-0197.json",
+    "seq": 198,
+    "file": "factory/topic-research/batches/claude-20261018b-0198.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -21826,13 +21937,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T21:09:48.942Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 172,
-      "topics": 10,
-      "sha256": "575cff105fed397a5714302f02d86d48921c3e32935c0399fbd7c9d9a14ff188"
-    },
     {
       "at": "2026-10-20T21:12:31.970Z",
       "event": "BATCH_COMMITTED",
@@ -22000,6 +22104,13 @@
       "seq": 196,
       "topics": 10,
       "sha256": "2920ab1614e811567036a387ace6bc15bf8beea06490e50293a78fcfc72a78f7"
+    },
+    {
+      "at": "2026-10-21T03:58:31.068Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 197,
+      "topics": 10,
+      "sha256": "5730edf6db487b917b3ba32a497025b08c5063956883a98572a70469f203c8ea"
     }
   ]
 }
