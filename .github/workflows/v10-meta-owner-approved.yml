@@ -1,0 +1,48 @@
+name: Owner-approved SEO V10 metadata application (49 only)
+on:
+  push:
+    branches:
+      - seo/v10-approved-meta49-20261021
+    paths:
+      - .github/workflows/v10-meta-owner-approved.yml
+permissions:
+  contents: write
+concurrency:
+  group: meta-v10-approved49-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  apply:
+    if: github.repository == 'thuexemayhanoi/global' && github.ref == 'refs/heads/seo/v10-approved-meta49-20261021'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout exact approved feature branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Confirm scoped owner-approval batch and baseline
+        shell: bash
+        run: |
+          test "$(git branch --show-current)" = "seo/v10-approved-meta49-20261021"
+          test "$(find docs/seo-v10/proposals -maxdepth 1 -name 'meta-*.json' | wc -l)" -eq 7
+          node scripts/seo/apply-meta-proposals.mjs
+          node scripts/seo/meta-review-status.mjs
+      - name: Apply EXACT 49 proposals, regenerate deterministic files and freeze after strict QA
+        run: node scripts/seo/apply-owner-approved-meta49.mjs
+      - name: Commit only checked changes and push feature branch without force
+        shell: bash
+        run: |
+          git status --short
+          git add -A
+          git diff --cached --check
+          test -n "$(git diff --cached --name-only)"
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m "seo(global): apply owner-approved 49 title/meta changes with scoped freeze QA"
+          git push origin HEAD:refs/heads/seo/v10-approved-meta49-20261021
+      - name: Report approved deployment PR next step
+        run: |
+          echo "49 approved metadata changes pushed to the feature branch."
+          echo "Open a reviewed pull request; never force-push or change production directly."
