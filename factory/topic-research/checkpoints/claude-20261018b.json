@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-20T21:46:15.419Z",
+  "updated_at": "2026-10-21T03:44:20.681Z",
   "base_main_sha": "68e51c4329575725c39c26fcfdb9e0491d984fb6",
-  "last_commit_sha": "6fb24700ddbe3cb7c372c5dba11f16f14694d535",
+  "last_commit_sha": "714744595ebfcfd5521a79c3c75ac23ceac869ca",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1840,
-    "qa_pass": 1840,
+    "researched": 1850,
+    "qa_pass": 1850,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1830,
+    "pushed": 1840,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 185,
-      "de": 185,
-      "fr": 185,
-      "es": 185,
-      "nl": 185,
-      "pt": 185,
-      "zh": 185,
-      "ko": 185,
-      "ja": 185,
-      "en": 175
+      "vi": 186,
+      "de": 186,
+      "fr": 186,
+      "es": 186,
+      "nl": 186,
+      "pt": 186,
+      "zh": 186,
+      "ko": 186,
+      "ja": 186,
+      "en": 176
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 821,
+      "traffic-law-safety": 831,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 184,
-    "file": "factory/topic-research/batches/claude-20261018b-0184.json",
-    "sha256": "5348312b2ad9dc28f57ddaa150f77b9b98d94b0248a512d6ca928ede2d740646",
+    "seq": 185,
+    "file": "factory/topic-research/batches/claude-20261018b-0185.json",
+    "sha256": "4c9777d6183f304e1bc6560b3798e655493d70d1f5e871d6476aed8b96dd4a73",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -20372,8 +20372,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0184.json",
       "sha256": "5348312b2ad9dc28f57ddaa150f77b9b98d94b0248a512d6ca928ede2d740646",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "714744595ebfcfd5521a79c3c75ac23ceac869ca",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -20477,11 +20477,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 185,
+      "file": "factory/topic-research/batches/claude-20261018b-0185.json",
+      "sha256": "4c9777d6183f304e1bc6560b3798e655493d70d1f5e871d6476aed8b96dd4a73",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:tre-em-di-xe-may-viet-nam-nghien-cuu-mu-bao-hiem-chan-thuong-who-unicef",
+          "locale": "vi",
+          "slug": "tre-em-di-xe-may-viet-nam-nghien-cuu-mu-bao-hiem-chan-thuong-who-unicef",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::cac nghien cuu noi gi ve viec doi mu bao hiem va chan thuong cua tre em ngoi sau xe may o viet nam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:children-motorbike-passengers-vietnam-helmet-use-injury-studies-who-unicef",
+          "locale": "en",
+          "slug": "children-motorbike-passengers-vietnam-helmet-use-injury-studies-who-unicef",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::what do studies say about helmet use and injuries for children riding as passengers on motorbikes in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:kinder-motorroller-vietnam-studien-helmnutzung-verletzungen-who-unicef",
+          "locale": "de",
+          "slug": "kinder-motorroller-vietnam-studien-helmnutzung-verletzungen-who-unicef",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::was sagen studien zur helmnutzung und zu verletzungen von kindern als sozius auf motorrollern in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:enfants-scooter-vietnam-etudes-port-du-casque-blessures-oms-unicef",
+          "locale": "fr",
+          "slug": "enfants-scooter-vietnam-etudes-port-du-casque-blessures-oms-unicef",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::que disent les etudes sur le port du casque et les blessures des enfants passagers de deux-roues au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:ninos-moto-vietnam-estudios-uso-casco-lesiones-oms-unicef",
+          "locale": "es",
+          "slug": "ninos-moto-vietnam-estudios-uso-casco-lesiones-oms-unicef",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::que dicen los estudios sobre el uso del casco y las lesiones de los ninos que van de pasajeros en moto en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:kinderen-scooter-vietnam-onderzoek-helmgebruik-letsel-who-unicef",
+          "locale": "nl",
+          "slug": "kinderen-scooter-vietnam-onderzoek-helmgebruik-letsel-who-unicef",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::wat zegt onderzoek over helmgebruik en letsel bij kinderen die als passagier op een scooter in vietnam meerijden",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-motuoche-ertong-toukui-peidai-shangqing-yanjiu-who-unicef",
+          "locale": "zh",
+          "slug": "yuenan-motuoche-ertong-toukui-peidai-shangqing-yanjiu-who-unicef",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::越南摩托车后座儿童戴头盔情况和受伤风险,研究怎么说",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:criancas-mota-vietname-estudos-uso-capacete-lesoes-oms-unicef",
+          "locale": "pt",
+          "slug": "criancas-mota-vietname-estudos-uso-capacete-lesoes-oms-unicef",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::o que dizem os estudos sobre o uso do capacete e as lesoes das criancas passageiras de mota no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-eorini-helmet-chakyong-busang-yeongu-who-unicef",
+          "locale": "ko",
+          "slug": "beteunam-otobai-eorini-helmet-chakyong-busang-yeongu-who-unicef",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::베트남에서 오토바이 뒷자리에 타는 어린이의 헬멧 착용과 부상에 대해 연구는 뭐라고 하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-kodomo-herumetto-chakuyo-kega-kenkyu-who-unicef",
+          "locale": "ja",
+          "slug": "betonamu-baiku-kodomo-herumetto-chakuyo-kega-kenkyu-who-unicef",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ヘトナムてハイクの後ろに乗る子とものヘルメット着用とけかについて研究は何と言っていますか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 185,
-    "file": "factory/topic-research/batches/claude-20261018b-0185.json",
+    "seq": 186,
+    "file": "factory/topic-research/batches/claude-20261018b-0186.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -20494,13 +20605,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:47:38.875Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 160,
-      "topics": 10,
-      "sha256": "83fa79bb63944b94d17781932906dc60589bc72f81c91a0b77238b0d095d676e"
-    },
     {
       "at": "2026-10-20T20:47:59.632Z",
       "event": "BATCH_COMMITTED",
@@ -20668,6 +20772,13 @@
       "seq": 184,
       "topics": 10,
       "sha256": "5348312b2ad9dc28f57ddaa150f77b9b98d94b0248a512d6ca928ede2d740646"
+    },
+    {
+      "at": "2026-10-21T03:44:20.681Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 185,
+      "topics": 10,
+      "sha256": "4c9777d6183f304e1bc6560b3798e655493d70d1f5e871d6476aed8b96dd4a73"
     }
   ]
 }
