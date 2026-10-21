@@ -20,6 +20,14 @@ const REGISTRY="data/seo/url-freeze.json";
 const prefix="docs/seo-v10/proposals";
 const fsRead=p=>JSON.parse(fs.readFileSync(path.join(ROOT,p),"utf8"));
 const old=fsRead(REGISTRY);
+// The frozen content snapshots predate merged Pillar/checklist additions (#82/#89).
+// Compare against the CURRENT, deterministic committed HTML, not outdated old
+// word-count/H2 snapshots. The existing seo-guard below still protects the
+// original freeze from content loss and changed SEO fingerprint.
+const currentMatrix=fsRead("data/seo/master-matrix.json");
+const currentLocales=fsRead("content/locales.json");
+const currentBaseline=buildRegistry({matrix:currentMatrix,locales:currentLocales,files:collectHtml(),previous:old});
+const baselineUrl=new Map(currentBaseline.urls.map(x=>[x.url,x]));
 const originalPackets=loadPackets();
 const expected=[];
 for(const locale of REQUIRED){
@@ -52,6 +60,9 @@ const run=(cmd,args)=>{
  execFileSync(cmd,args,{cwd:ROOT,stdio:"inherit",env:{...process.env,CI:"true"}});
 };
 // Preflight finished. Apply the exact reviewed packet text.
+run("node",["scripts/build.mjs","--check"]);
+run("node",["scripts/seo/seo-guard.mjs"]);
+run("node",["scripts/seo/content-graph.mjs","--check"]);
 run("node",["scripts/seo/apply-meta-proposals.mjs","--apply"]);
 for(const p of expected){
  const after=fsRead("content/articles/"+p.id+".json");
@@ -75,7 +86,7 @@ const locales=fsRead("content/locales.json");
 const built=buildRegistry({matrix,locales,files:collectHtml(),previous:old});
 if(built.urls.length!==old.urls.length)throw Error("Published frozen URL count changed");
 for(const page of built.urls){
- const original=previousUrl.get(page.url);
+ const original=baselineUrl.get(page.url);
  if(!original)throw Error("New URL appeared: "+page.url);
  const approval=byUrl.get(page.url);
  if(!approval){
