@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { enhanceNavigation } from "./navigation.mjs";
 import { applyPremium, createSearchPage } from "./premium.mjs";
-import { applyUltra } from "./ultra.mjs";
+import { applyUltra, heroPreloadLink } from "./ultra.mjs";
 import { generateApprovedArticles, SOCIAL_IMAGE } from "./articles.mjs";
 import { generateSitemaps, sitemapFilePattern } from "./sitemaps.mjs";
 const root=process.cwd();
@@ -28,7 +28,7 @@ ${path==="/"?'<meta name="google-site-verification" content="HwLeUnxn5y1nBbGQD-5
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${site}${path}">
 <meta property="og:image" content="${site}${SOCIAL_IMAGE.path}"><meta property="og:image:width" content="${SOCIAL_IMAGE.width}"><meta property="og:image:height" content="${SOCIAL_IMAGE.height}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+${page==="root"?heroPreloadLink()+"\n":""}<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="stylesheet" href="/assets/styles.css">
 ${jsonLd(structured)}
 </head><body><a class="skip" href="#main">Skip to content</a>`;
