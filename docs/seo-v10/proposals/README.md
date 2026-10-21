@@ -13,6 +13,17 @@ This folder contains the **metadata editorial review workflow and its evidence**
 - The application changes exactly **30 SEO titles + 49 meta descriptions** on 49 existing URLs, with generated HTML/search index/graph and a checked re-freeze. No URLs, H1s, canonicals, hreflang, schema types, publisher queue or NAP change.
 - Owner approved publishing this specified 49-item batch on 21 October 2026. Further batches still require separate approvals. Automated QA is not proof of all native-language editorial nuance.
 
+
+## Second owner-approved batch — S08–S10, seven locales
+
+- PR [#91](https://github.com/thuexemayhanoi/global/pull/91) continues the owner's approval, using the existing Claude proposal review PR #86 as *candidate text*, not merging the mass-edit branch.
+- 21 existing article IDs: S08, S09 and S10 for each `vi`, `en`, `de`, `fr`, `es`, `nl`, `pt`.
+- **21 title rewrites and 21 meta description rewrites**. Candidate titles and descriptions were compared to the exact original packets, locale, URL, length constraints and numeric assertions; the generation run refuses unrelated URL changes.
+- Applied records are archived in `applied-20261021-next21/`. No fresh `meta-<locale>.json` files should remain in the active proposal folder.
+- The one-off write-capable CI job/script was removed from the PR before final static QA and merge.
+- All 10 locale sections remain in the progress inventory; `zh`, `ko`, `ja` still require linguistic/visual review, not synthetic text padding.
+- Do not count a PR merge as successful production deployment: check GitHub Pages and Live QA separately.
+
 ## Why not automatically rewrite all 321 / 622?
 
 The historical appendix `docs/seo-v10/11-phu-luc-url-can-xu-ly.md` lists **321 titles longer than 70 characters** and **622 descriptions longer than 165**. The current proposal application tool uses a different title threshold (60 characters), which also covers titles in the 61–70 group. These are **review flags, not confirmed SEO defects**. Google does not impose fixed 60-character title or 155-character snippet limits; title links and snippets can vary by query and device.
