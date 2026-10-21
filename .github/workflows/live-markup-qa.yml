@@ -1,0 +1,29 @@
+name: Live Markup QA (manual, read-only)
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Number of routes to compare, 0 compares every PUBLISHED URL plus /search/ and /404.html"
+        required: false
+        default: "0"
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Compare deployed HTML byte for byte with the committed build
+        run: node scripts/seo/live-markup-qa.mjs --confirm-live --limit=${{ inputs.limit }}
+      - name: Store evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: global-live-markup-qa
+          path: reports/live-markup-qa.json
+          if-no-files-found: ignore
+          retention-days: 14
