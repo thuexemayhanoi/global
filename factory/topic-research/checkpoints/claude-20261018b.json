@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T03:44:20.681Z",
+  "updated_at": "2026-10-21T03:44:31.380Z",
   "base_main_sha": "68e51c4329575725c39c26fcfdb9e0491d984fb6",
-  "last_commit_sha": "714744595ebfcfd5521a79c3c75ac23ceac869ca",
+  "last_commit_sha": "f7d7362e8b3c2b65efdc1e15c89bb3ffc57167b2",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1850,
-    "qa_pass": 1850,
+    "researched": 1860,
+    "qa_pass": 1860,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1840,
+    "pushed": 1850,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 186,
-      "de": 186,
-      "fr": 186,
-      "es": 186,
-      "nl": 186,
-      "pt": 186,
-      "zh": 186,
-      "ko": 186,
-      "ja": 186,
-      "en": 176
+      "vi": 187,
+      "de": 187,
+      "fr": 187,
+      "es": 187,
+      "nl": 187,
+      "pt": 187,
+      "zh": 187,
+      "ko": 187,
+      "ja": 187,
+      "en": 177
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 831,
+      "traffic-law-safety": 841,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 185,
-    "file": "factory/topic-research/batches/claude-20261018b-0185.json",
-    "sha256": "4c9777d6183f304e1bc6560b3798e655493d70d1f5e871d6476aed8b96dd4a73",
+    "seq": 186,
+    "file": "factory/topic-research/batches/claude-20261018b-0186.json",
+    "sha256": "813d338665ebb23f8b7c5bf4baee5466b140e078213fdbb5928fbecbc280b2b6",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -20483,8 +20483,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0185.json",
       "sha256": "4c9777d6183f304e1bc6560b3798e655493d70d1f5e871d6476aed8b96dd4a73",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "f7d7362e8b3c2b65efdc1e15c89bb3ffc57167b2",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -20588,11 +20588,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 186,
+      "file": "factory/topic-research/batches/claude-20261018b-0186.json",
+      "sha256": "813d338665ebb23f8b7c5bf4baee5466b140e078213fdbb5928fbecbc280b2b6",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:du-khach-nuoc-ngoai-chan-thuong-xe-may-viet-nam-dong-nam-a-nghien-cuu-cdc",
+          "locale": "vi",
+          "slug": "du-khach-nuoc-ngoai-chan-thuong-xe-may-viet-nam-dong-nam-a-nghien-cuu-cdc",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::cac nghien cuu va co quan y te ghi nhan gi ve chan thuong cua khach du lich va nguoi nuoc ngoai di xe may o viet nam va dong nam a",
+          "ta_id": null
+        },
+        {
+          "ref": "en:visitors-motorbike-injuries-vietnam-southeast-asia-studies-cdc-yellow-book",
+          "locale": "en",
+          "slug": "visitors-motorbike-injuries-vietnam-southeast-asia-studies-cdc-yellow-book",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::what do studies and health agencies report about injuries to tourists and foreign visitors on motorbikes in vietnam and southeast asia",
+          "ta_id": null
+        },
+        {
+          "ref": "de:touristen-roller-verletzungen-vietnam-suedostasien-studien-cdc-yellow-book",
+          "locale": "de",
+          "slug": "touristen-roller-verletzungen-vietnam-suedostasien-studien-cdc-yellow-book",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::was berichten studien und gesundheitsbehorden uber verletzungen von touristen und auslandischen besuchern auf motorrollern in vietnam und sudostasien",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:visiteurs-blesses-scooter-vietnam-asie-du-sud-est-etudes-cdc-yellow-book",
+          "locale": "fr",
+          "slug": "visiteurs-blesses-scooter-vietnam-asie-du-sud-est-etudes-cdc-yellow-book",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::que rapportent les etudes et les agences de sante sur les blessures des touristes et visiteurs etrangers a moto ou scooter au vietnam et en asie du sud-est",
+          "ta_id": null
+        },
+        {
+          "ref": "es:visitantes-lesionados-moto-vietnam-sudeste-asiatico-estudios-cdc-yellow-book",
+          "locale": "es",
+          "slug": "visitantes-lesionados-moto-vietnam-sudeste-asiatico-estudios-cdc-yellow-book",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::que informan los estudios y las agencias de salud sobre las lesiones de turistas y visitantes extranjeros en moto en vietnam y el sudeste asiatico",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:bezoekers-scooter-letsel-vietnam-zuidoost-azie-onderzoek-cdc-yellow-book",
+          "locale": "nl",
+          "slug": "bezoekers-scooter-letsel-vietnam-zuidoost-azie-onderzoek-cdc-yellow-book",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::wat melden onderzoek en gezondheidsinstanties over letsel bij toeristen en buitenlandse bezoekers op scooters in vietnam en zuidoost-azie",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-dongnanya-youke-motuoche-shoushang-yanjiu-cdc-yellow-book",
+          "locale": "zh",
+          "slug": "yuenan-dongnanya-youke-motuoche-shoushang-yanjiu-cdc-yellow-book",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::关于游客和外国人在越南及东南亚骑摩托车受伤的情况,研究和卫生机构有哪些报告",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:visitantes-feridos-mota-vietname-sudeste-asiatico-estudos-cdc-yellow-book",
+          "locale": "pt",
+          "slug": "visitantes-feridos-mota-vietname-sudeste-asiatico-estudos-cdc-yellow-book",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::o que referem os estudos e as agencias de saude sobre as lesoes de turistas e visitantes estrangeiros de mota no vietname e no sudeste asiatico",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-dongnama-otobai-banmungaek-busang-yeongu-cdc-yellow-book",
+          "locale": "ko",
+          "slug": "beteunam-dongnama-otobai-banmungaek-busang-yeongu-cdc-yellow-book",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::베트남과 동남아시아에서 오토바이를 타는 관광객과 외국인 방문객의 부상에 대해 연구와 보건기관은 무엇을 보고하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-tonan-ajia-ryokosha-baiku-kega-kenkyu-cdc-yellow-book",
+          "locale": "ja",
+          "slug": "betonamu-tonan-ajia-ryokosha-baiku-kega-kenkyu-cdc-yellow-book",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ヘトナムや東南アシアてハイクに乗る旅行者や外国人のけかについて研究や保健機関は何を報告していますか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 186,
-    "file": "factory/topic-research/batches/claude-20261018b-0186.json",
+    "seq": 187,
+    "file": "factory/topic-research/batches/claude-20261018b-0187.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -20605,13 +20716,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:47:59.632Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 161,
-      "topics": 10,
-      "sha256": "52832cd03399fac92152d1c6ed33bbae737166935e0409d5f32fd76fa89290de"
-    },
     {
       "at": "2026-10-20T20:48:31.812Z",
       "event": "BATCH_COMMITTED",
@@ -20779,6 +20883,13 @@
       "seq": 185,
       "topics": 10,
       "sha256": "4c9777d6183f304e1bc6560b3798e655493d70d1f5e871d6476aed8b96dd4a73"
+    },
+    {
+      "at": "2026-10-21T03:44:31.380Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 186,
+      "topics": 10,
+      "sha256": "813d338665ebb23f8b7c5bf4baee5466b140e078213fdbb5928fbecbc280b2b6"
     }
   ]
 }
