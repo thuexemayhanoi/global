@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:24:53.162Z",
+  "updated_at": "2026-10-21T04:25:03.219Z",
   "base_main_sha": "756c805b8872dc35bf3d63eb3ae67cfb501b6728",
-  "last_commit_sha": "b297d5e5aa6d87320041861492b8900e3a193a39",
+  "last_commit_sha": "da331ed60a8c8f2767596bc8054d554fb11b54db",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 2060,
-    "qa_pass": 2060,
+    "researched": 2070,
+    "qa_pass": 2070,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2050,
+    "pushed": 2060,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 207,
-      "de": 207,
-      "fr": 207,
-      "es": 207,
-      "nl": 207,
-      "pt": 207,
-      "zh": 207,
-      "ko": 207,
-      "ja": 207,
-      "en": 197
+      "vi": 208,
+      "de": 208,
+      "fr": 208,
+      "es": 208,
+      "nl": 208,
+      "pt": 208,
+      "zh": 208,
+      "ko": 208,
+      "ja": 208,
+      "en": 198
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 941,
+      "traffic-law-safety": 951,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 206,
-    "file": "factory/topic-research/batches/claude-20261018b-0206.json",
-    "sha256": "40a8b6f531a38c2802cfcbf63ec0dcb14530b0621e2bfcefc45280d09da316bf",
+    "seq": 207,
+    "file": "factory/topic-research/batches/claude-20261018b-0207.json",
+    "sha256": "91c2bc08b2cd0c36ee23b623f089077ffdaeee24acba025f390282515bc988f0",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -22814,8 +22814,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0206.json",
       "sha256": "40a8b6f531a38c2802cfcbf63ec0dcb14530b0621e2bfcefc45280d09da316bf",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "da331ed60a8c8f2767596bc8054d554fb11b54db",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -22919,11 +22919,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 207,
+      "file": "factory/topic-research/batches/claude-20261018b-0207.json",
+      "sha256": "91c2bc08b2cd0c36ee23b623f089077ffdaeee24acba025f390282515bc988f0",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:kinh-nghiem-lai-xe-may-va-nguy-co-tai-nan-nghien-cuu-nhung-thang-dau",
+          "locale": "vi",
+          "slug": "kinh-nghiem-lai-xe-may-va-nguy-co-tai-nan-nghien-cuu-nhung-thang-dau",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-incidents",
+          "key": "vi::nguoi moi di xe may co de gap tai nan hon khong va nguy co giam nhanh the nao theo kinh nghiem lai",
+          "ta_id": null
+        },
+        {
+          "ref": "en:riding-experience-motorbike-crash-risk-novice-studies-first-months-years",
+          "locale": "en",
+          "slug": "riding-experience-motorbike-crash-risk-novice-studies-first-months-years",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-incidents",
+          "key": "en::how much more likely is a beginner to crash a motorbike and how quickly does the risk fall with experience",
+          "ta_id": null
+        },
+        {
+          "ref": "de:fahrerfahrung-roller-motorrad-unfallrisiko-studien-erste-monate-jahre",
+          "locale": "de",
+          "slug": "fahrerfahrung-roller-motorrad-unfallrisiko-studien-erste-monate-jahre",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-incidents",
+          "key": "de::wie viel hoher ist das unfallrisiko fur anfanger auf dem roller und wie schnell sinkt es mit der erfahrung",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:experience-de-conduite-moto-risque-d-accident-etudes-premiers-mois-annees",
+          "locale": "fr",
+          "slug": "experience-de-conduite-moto-risque-d-accident-etudes-premiers-mois-annees",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-incidents",
+          "key": "fr::un debutant en scooter ou en moto risque-t-il plus l'accident et a quelle vitesse le risque baisse-t-il avec l'experience",
+          "ta_id": null
+        },
+        {
+          "ref": "es:experiencia-conduccion-moto-riesgo-accidente-estudios-primeros-meses-anos",
+          "locale": "es",
+          "slug": "experiencia-conduccion-moto-riesgo-accidente-estudios-primeros-meses-anos",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-incidents",
+          "key": "es::un principiante en moto o scooter tiene mas riesgo de accidente y con que rapidez baja el riesgo con la experiencia",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:rijervaring-scooter-motor-ongevalsrisico-onderzoek-eerste-maanden-jaren",
+          "locale": "nl",
+          "slug": "rijervaring-scooter-motor-ongevalsrisico-onderzoek-eerste-maanden-jaren",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-incidents",
+          "key": "nl::hoeveel groter is het ongevalsrisico voor beginnende scooter- of motorrijders en hoe snel daalt het met ervaring",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:motuoche-jiashi-jingyan-yu-shigu-fengxian-yanjiu-touji-ge-yue-he-jinian",
+          "locale": "zh",
+          "slug": "motuoche-jiashi-jingyan-yu-shigu-fengxian-yanjiu-touji-ge-yue-he-jinian",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-incidents",
+          "key": "zh::新手骑摩托车更容易出事故吗 风险随经验下降得有多快",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:experiencia-conducao-mota-risco-acidente-estudos-primeiros-meses-anos",
+          "locale": "pt",
+          "slug": "experiencia-conducao-mota-risco-acidente-estudos-primeiros-meses-anos",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-incidents",
+          "key": "pt::um principiante de mota ou scooter tem mais risco de acidente e com que rapidez o risco desce com a experiencia",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:otobai-unjeon-gyeongheom-sago-wiheom-yeongu-cheot-myeot-dal-gwa-myeot-nyeon",
+          "locale": "ko",
+          "slug": "otobai-unjeon-gyeongheom-sago-wiheom-yeongu-cheot-myeot-dal-gwa-myeot-nyeon",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-incidents",
+          "key": "ko::오토바이 초보 운전자는 사고 위험이 얼마나 높고 경험이 쌓이면 얼마나 빨리 줄어드나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:baiku-unten-keiken-to-jiko-risuku-kenkyu-saisho-no-kagetsu-to-sunen",
+          "locale": "ja",
+          "slug": "baiku-unten-keiken-to-jiko-risuku-kenkyu-saisho-no-kagetsu-to-sunen",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-incidents",
+          "key": "ja::ハイクの初心者は事故のリスクかとれくらい高く 経験を積むととれくらい早く下かりますか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 207,
-    "file": "factory/topic-research/batches/claude-20261018b-0207.json",
+    "seq": 208,
+    "file": "factory/topic-research/batches/claude-20261018b-0208.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -22936,13 +23047,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T21:31:05.805Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 182,
-      "topics": 10,
-      "sha256": "02f483dbc688b934006735e04d77e63ba920e13ce259b85836c90c879cd708a5"
-    },
     {
       "at": "2026-10-20T21:33:00.402Z",
       "event": "BATCH_COMMITTED",
@@ -23110,6 +23214,13 @@
       "seq": 206,
       "topics": 10,
       "sha256": "40a8b6f531a38c2802cfcbf63ec0dcb14530b0621e2bfcefc45280d09da316bf"
+    },
+    {
+      "at": "2026-10-21T04:25:03.219Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 207,
+      "topics": 10,
+      "sha256": "91c2bc08b2cd0c36ee23b623f089077ffdaeee24acba025f390282515bc988f0"
     }
   ]
 }
