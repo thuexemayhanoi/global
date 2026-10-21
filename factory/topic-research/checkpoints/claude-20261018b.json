@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:48:44.680Z",
+  "updated_at": "2026-10-21T04:48:55.726Z",
   "base_main_sha": "c9ef11168bf22fb0da6e2fe3dcb5404a1b1c2b6c",
-  "last_commit_sha": "17aa5ff57eb3f53bbeed99259e9a216002e4f980",
+  "last_commit_sha": "6893f5a08ceee08d4145efcea7d40c029e5d8d65",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 2170,
-    "qa_pass": 2170,
+    "researched": 2180,
+    "qa_pass": 2180,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2160,
+    "pushed": 2170,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 218,
-      "de": 218,
-      "fr": 218,
-      "es": 218,
-      "nl": 218,
-      "pt": 218,
-      "zh": 218,
-      "ko": 218,
-      "ja": 218,
-      "en": 208
+      "vi": 219,
+      "de": 219,
+      "fr": 219,
+      "es": 219,
+      "nl": 219,
+      "pt": 219,
+      "zh": 219,
+      "ko": 219,
+      "ja": 219,
+      "en": 209
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 1001,
+      "traffic-law-safety": 1011,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 217,
-    "file": "factory/topic-research/batches/claude-20261018b-0217.json",
-    "sha256": "a253e63e71363819b92eba9aa011c847f8e6f2fec6c71238bc897732f37f36ff",
+    "seq": 218,
+    "file": "factory/topic-research/batches/claude-20261018b-0218.json",
+    "sha256": "1bef9a7ba8216b447e3bcc75cf82cb3af80c66c7487afb8dd7de40302d5ab396",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -24035,8 +24035,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0217.json",
       "sha256": "a253e63e71363819b92eba9aa011c847f8e6f2fec6c71238bc897732f37f36ff",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "6893f5a08ceee08d4145efcea7d40c029e5d8d65",
       "researched_on": "2026-10-21",
       "topics": [
         {
@@ -24140,11 +24140,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 218,
+      "file": "factory/topic-research/batches/claude-20261018b-0218.json",
+      "sha256": "1bef9a7ba8216b447e3bcc75cf82cb3af80c66c7487afb8dd7de40302d5ab396",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-21",
+      "topics": [
+        {
+          "ref": "vi:nang-nong-mat-nuoc-khi-di-xe-may-nghien-cuu-nguoi-lai-lao-dong-ngoai-troi",
+          "locale": "vi",
+          "slug": "nang-nong-mat-nuoc-khi-di-xe-may-nghien-cuu-nguoi-lai-lao-dong-ngoai-troi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-weather",
+          "key": "vi::co the nguoi di xe may chiu gi khi troi nong nhiet doi va uong nuoc co giup khong cac nghien cuu o viet nam noi gi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:heat-dehydration-motorbike-riders-outdoor-workers-studies-ministry-of-health-who",
+          "locale": "en",
+          "slug": "heat-dehydration-motorbike-riders-outdoor-workers-studies-ministry-of-health-who",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-weather",
+          "key": "en::what happens to a motorbike rider's body in tropical heat and does drinking water help studies in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "de:hitze-fluessigkeitsverlust-motorrad-studien-fahrer-arbeiter-im-freien-who",
+          "locale": "de",
+          "slug": "hitze-fluessigkeitsverlust-motorrad-studien-fahrer-arbeiter-im-freien-who",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-weather",
+          "key": "de::was passiert mit dem korper eines motorradfahrers bei tropischer hitze und hilft trinken studien aus vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:chaleur-deshydratation-moto-etudes-motards-travailleurs-exterieur-oms",
+          "locale": "fr",
+          "slug": "chaleur-deshydratation-moto-etudes-motards-travailleurs-exterieur-oms",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-weather",
+          "key": "fr::que subit le corps d'un motard par forte chaleur tropicale et boire de l'eau aide-t-il que disent les etudes au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:calor-deshidratacion-moto-estudios-motoristas-trabajadores-aire-libre-oms",
+          "locale": "es",
+          "slug": "calor-deshidratacion-moto-estudios-motoristas-trabajadores-aire-libre-oms",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-weather",
+          "key": "es::que le pasa al cuerpo de un motorista con calor tropical y ayuda beber agua que dicen los estudios en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:hitte-uitdroging-motor-onderzoek-motorrijders-buitenwerkers-who-ministerie",
+          "locale": "nl",
+          "slug": "hitte-uitdroging-motor-onderzoek-motorrijders-buitenwerkers-who-ministerie",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-weather",
+          "key": "nl::wat gebeurt er met het lichaam van een motorrijder bij tropische hitte en helpt water drinken onderzoek in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:qi-motuoche-gaowen-tuoshui-qishou-huwai-gongzuozhe-yanjiu-shiwei",
+          "locale": "zh",
+          "slug": "qi-motuoche-gaowen-tuoshui-qishou-huwai-gongzuozhe-yanjiu-shiwei",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-weather",
+          "key": "zh::热带高温下骑摩托车的人身体会怎样 喝水有用吗 越南的研究怎么说",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:calor-desidratacao-mota-estudos-motociclistas-trabalhadores-ao-ar-livre-oms",
+          "locale": "pt",
+          "slug": "calor-desidratacao-mota-estudos-motociclistas-trabalhadores-ao-ar-livre-oms",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-weather",
+          "key": "pt::o que acontece ao corpo de um motociclista com calor tropical e beber agua ajuda o que dizem os estudos no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:otobai-deowi-talsu-yeongu-undeungja-yaoe-nodongja-who-bogeonbu",
+          "locale": "ko",
+          "slug": "otobai-deowi-talsu-yeongu-undeungja-yaoe-nodongja-who-bogeonbu",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-weather",
+          "key": "ko::열대의 더위에서 오토바이 운전자의 몸은 어떻게 되고 물을 마시면 도움이 되나요 베트남 연구는 뭐라고 하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:baiku-atsusa-dassui-kenkyu-unten-sha-okugai-rodosha-who-hokensho",
+          "locale": "ja",
+          "slug": "baiku-atsusa-dassui-kenkyu-unten-sha-okugai-rodosha-who-hokensho",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-weather",
+          "key": "ja::熱帯の暑さの中てハイクの運転者の体はとうなるのか 水を飲むと役に立つのか ヘトナムの研究は何と言っているか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 218,
-    "file": "factory/topic-research/batches/claude-20261018b-0218.json",
+    "seq": 219,
+    "file": "factory/topic-research/batches/claude-20261018b-0219.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -24157,13 +24268,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-21T03:57:25.660Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 193,
-      "topics": 10,
-      "sha256": "4863c1918ff102191e220c4d5af7401072c4f1f250c4c8aff0c1b1cb673af58b"
-    },
     {
       "at": "2026-10-21T03:57:41.788Z",
       "event": "BATCH_COMMITTED",
@@ -24331,6 +24435,13 @@
       "seq": 217,
       "topics": 10,
       "sha256": "a253e63e71363819b92eba9aa011c847f8e6f2fec6c71238bc897732f37f36ff"
+    },
+    {
+      "at": "2026-10-21T04:48:55.726Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 218,
+      "topics": 10,
+      "sha256": "1bef9a7ba8216b447e3bcc75cf82cb3af80c66c7487afb8dd7de40302d5ab396"
     }
   ]
 }
