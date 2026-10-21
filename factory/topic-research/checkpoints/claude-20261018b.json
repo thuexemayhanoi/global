@@ -7,9 +7,9 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:53:40.176Z",
+  "updated_at": "2026-10-21T04:54:12.437Z",
   "base_main_sha": "232b500b15e8f67536a1b8d29a7f9137e4ba0781",
-  "last_commit_sha": "955df5e2444e2c77e8471b3661a08c8345097c5f",
+  "last_commit_sha": "723dbdd110bde0b0424e6b12b639f40edd90a5b2",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
@@ -19,8 +19,8 @@
     "qa_pass": 2240,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2230,
-    "pending_push": 10
+    "pushed": 2240,
+    "pending_push": 0
   },
   "coverage": {
     "locales": {
@@ -24812,8 +24812,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0224.json",
       "sha256": "47646cf2b068e91931c72e7ce2f4d4e0b44d695fcf7d0407498faded33f5f9e0",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "723dbdd110bde0b0424e6b12b639f40edd90a5b2",
       "researched_on": "2026-10-21",
       "topics": [
         {
@@ -24931,16 +24931,15 @@
       "kind": "NOTE",
       "message": "session end",
       "at": "2026-10-19T00:41:45.320Z"
+    },
+    {
+      "id": "note-255e9aa1",
+      "kind": "NOTE",
+      "message": "session end 2026-10-21 after batch 0224",
+      "at": "2026-10-21T04:54:12.437Z"
     }
   ],
   "history": [
-    {
-      "at": "2026-10-21T04:00:26.585Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 200,
-      "topics": 10,
-      "sha256": "152eb99f47e4cdb68c8b52c3cd07f27ce882057ecaff3e79d650b554967ba07a"
-    },
     {
       "at": "2026-10-21T04:21:09.723Z",
       "event": "BATCH_COMMITTED",
@@ -25108,6 +25107,10 @@
       "seq": 224,
       "topics": 10,
       "sha256": "47646cf2b068e91931c72e7ce2f4d4e0b44d695fcf7d0407498faded33f5f9e0"
+    },
+    {
+      "at": "2026-10-21T04:54:12.437Z",
+      "event": "CHECKPOINT_UPDATED"
     }
   ]
 }
