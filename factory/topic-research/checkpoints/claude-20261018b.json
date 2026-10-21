@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T03:44:31.380Z",
+  "updated_at": "2026-10-21T03:44:41.695Z",
   "base_main_sha": "68e51c4329575725c39c26fcfdb9e0491d984fb6",
-  "last_commit_sha": "f7d7362e8b3c2b65efdc1e15c89bb3ffc57167b2",
+  "last_commit_sha": "0312339c6b4d8b756a8fbd521a15c0d9c5515623",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1860,
-    "qa_pass": 1860,
+    "researched": 1870,
+    "qa_pass": 1870,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1850,
+    "pushed": 1860,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 187,
-      "de": 187,
-      "fr": 187,
-      "es": 187,
-      "nl": 187,
-      "pt": 187,
-      "zh": 187,
-      "ko": 187,
-      "ja": 187,
-      "en": 177
+      "vi": 188,
+      "de": 188,
+      "fr": 188,
+      "es": 188,
+      "nl": 188,
+      "pt": 188,
+      "zh": 188,
+      "ko": 188,
+      "ja": 188,
+      "en": 178
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 841,
+      "traffic-law-safety": 851,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 186,
-    "file": "factory/topic-research/batches/claude-20261018b-0186.json",
-    "sha256": "813d338665ebb23f8b7c5bf4baee5466b140e078213fdbb5928fbecbc280b2b6",
+    "seq": 187,
+    "file": "factory/topic-research/batches/claude-20261018b-0187.json",
+    "sha256": "8a157e0142f15176ddaaeacef502c7d18e0ae00096b288a2517aa40f03cd0bc4",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -20594,8 +20594,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0186.json",
       "sha256": "813d338665ebb23f8b7c5bf4baee5466b140e078213fdbb5928fbecbc280b2b6",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "0312339c6b4d8b756a8fbd521a15c0d9c5515623",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -20699,11 +20699,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 187,
+      "file": "factory/topic-research/batches/claude-20261018b-0187.json",
+      "sha256": "8a157e0142f15176ddaaeacef502c7d18e0ae00096b288a2517aa40f03cd0bc4",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:tai-nan-xe-may-viet-nam-xay-ra-khi-nao-o-dau-nhu-the-nao-nghien-cuu-cong-an",
+          "locale": "vi",
+          "slug": "tai-nan-xe-may-viet-nam-xay-ra-khi-nao-o-dau-nhu-the-nao-nghien-cuu-cong-an",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::tai nan xe may o viet nam thuong xay ra khi nao, o dau va cac nghien cuu noi gi ve dieu kien va yeu to nguy co",
+          "ta_id": null
+        },
+        {
+          "ref": "en:when-where-how-motorbike-crashes-happen-vietnam-hospital-police-studies",
+          "locale": "en",
+          "slug": "when-where-how-motorbike-crashes-happen-vietnam-hospital-police-studies",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::when and where do motorbike crashes happen in vietnam and what do studies say about the conditions and risk factors",
+          "ta_id": null
+        },
+        {
+          "ref": "de:wann-wo-wie-rollerunfaelle-vietnam-passieren-krankenhaus-polizei-studien",
+          "locale": "de",
+          "slug": "wann-wo-wie-rollerunfaelle-vietnam-passieren-krankenhaus-polizei-studien",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::wann und wo passieren rollerunfalle in vietnam und was sagen studien zu den umstanden und risikofaktoren",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:quand-ou-comment-accidents-scooter-vietnam-etudes-hopital-police",
+          "locale": "fr",
+          "slug": "quand-ou-comment-accidents-scooter-vietnam-etudes-hopital-police",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::quand et ou surviennent les accidents de scooter au vietnam et que disent les etudes sur les conditions et les facteurs de risque",
+          "ta_id": null
+        },
+        {
+          "ref": "es:cuando-donde-como-accidentes-moto-vietnam-estudios-hospital-policia",
+          "locale": "es",
+          "slug": "cuando-donde-como-accidentes-moto-vietnam-estudios-hospital-policia",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::cuando y donde ocurren los accidentes de moto en vietnam y que dicen los estudios sobre las condiciones y los factores de riesgo",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:wanneer-waar-hoe-scooterongevallen-vietnam-ziekenhuis-politie-onderzoek",
+          "locale": "nl",
+          "slug": "wanneer-waar-hoe-scooterongevallen-vietnam-ziekenhuis-politie-onderzoek",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::wanneer en waar gebeuren scooterongevallen in vietnam en wat zegt onderzoek over de omstandigheden en risicofactoren",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:yuenan-motuoche-shigu-hushi-hedi-ruhe-fasheng-yanjiu-jingfang-shuju",
+          "locale": "zh",
+          "slug": "yuenan-motuoche-shigu-hushi-hedi-ruhe-fasheng-yanjiu-jingfang-shuju",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::越南摩托车事故通常在什么时候、什么地方发生,研究如何说明这些条件和风险因素",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:quando-onde-como-acidentes-mota-vietname-estudos-hospital-policia",
+          "locale": "pt",
+          "slug": "quando-onde-como-acidentes-mota-vietname-estudos-hospital-policia",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::quando e onde acontecem os acidentes de mota no vietname e o que dizem os estudos sobre as condicoes e os fatores de risco",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:beteunam-otobai-sago-eonje-eodiseo-eotteoke-yeongu-gyeongchal-jaryo",
+          "locale": "ko",
+          "slug": "beteunam-otobai-sago-eonje-eodiseo-eotteoke-yeongu-gyeongchal-jaryo",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::베트남에서 오토바이 사고는 언제 어디서 주로 일어나고 연구는 그 조건과 위험 요인에 대해 무엇을 말하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:betonamu-baiku-jiko-itsu-doko-dono-yoni-kenkyu-keisatsu-deta",
+          "locale": "ja",
+          "slug": "betonamu-baiku-jiko-itsu-doko-dono-yoni-kenkyu-keisatsu-deta",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ヘトナムのハイク事故はいつとこて起きやすく、研究はその状況やリスク要因について何と言っていますか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 187,
-    "file": "factory/topic-research/batches/claude-20261018b-0187.json",
+    "seq": 188,
+    "file": "factory/topic-research/batches/claude-20261018b-0188.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -20716,13 +20827,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T20:48:31.812Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 162,
-      "topics": 10,
-      "sha256": "20920e128c080eaa72609e40bb86d2f0e4688adb9aed969b862f298562f7b121"
-    },
     {
       "at": "2026-10-20T20:48:47.565Z",
       "event": "BATCH_COMMITTED",
@@ -20890,6 +20994,13 @@
       "seq": 186,
       "topics": 10,
       "sha256": "813d338665ebb23f8b7c5bf4baee5466b140e078213fdbb5928fbecbc280b2b6"
+    },
+    {
+      "at": "2026-10-21T03:44:41.695Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 187,
+      "topics": 10,
+      "sha256": "8a157e0142f15176ddaaeacef502c7d18e0ae00096b288a2517aa40f03cd0bc4"
     }
   ]
 }
