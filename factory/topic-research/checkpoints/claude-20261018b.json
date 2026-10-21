@@ -7,37 +7,37 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T03:58:48.410Z",
+  "updated_at": "2026-10-21T03:59:17.517Z",
   "base_main_sha": "635f5ad89248472b389714176314d0b240abdb8b",
-  "last_commit_sha": "40feb378fe8a6bb21ae6e17bdb0062c0995afbe6",
+  "last_commit_sha": "f8075623ea8189a8a0252f411dfdfc3770f116c9",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 1980,
-    "qa_pass": 1980,
+    "researched": 1990,
+    "qa_pass": 1990,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 1970,
+    "pushed": 1980,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 199,
-      "de": 199,
-      "fr": 199,
-      "es": 199,
-      "nl": 199,
-      "pt": 199,
-      "zh": 199,
-      "ko": 199,
-      "ja": 199,
-      "en": 189
+      "vi": 200,
+      "de": 200,
+      "fr": 200,
+      "es": 200,
+      "nl": 200,
+      "pt": 200,
+      "zh": 200,
+      "ko": 200,
+      "ja": 200,
+      "en": 190
     },
     "domains": {
       "transportation-mobility": 100,
-      "traffic-law-safety": 921,
+      "traffic-law-safety": 931,
       "road-trips-routes": 70,
       "hanoi-vietnam-travel": 110,
       "destinations-experiences": 160,
@@ -47,9 +47,9 @@
     }
   },
   "last_batch": {
-    "seq": 198,
-    "file": "factory/topic-research/batches/claude-20261018b-0198.json",
-    "sha256": "3788c865f24bea93add4ce6e97130d3f98ae883c4596f5adfb5e2eb1a8763b1c",
+    "seq": 199,
+    "file": "factory/topic-research/batches/claude-20261018b-0199.json",
+    "sha256": "38e985fcee9b2399237bf33504f68285334ca61672ea2cc3f29191bb7b6370e3",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -21926,8 +21926,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0198.json",
       "sha256": "3788c865f24bea93add4ce6e97130d3f98ae883c4596f5adfb5e2eb1a8763b1c",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "f8075623ea8189a8a0252f411dfdfc3770f116c9",
       "researched_on": "2026-10-20",
       "topics": [
         {
@@ -22031,11 +22031,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 199,
+      "file": "factory/topic-research/batches/claude-20261018b-0199.json",
+      "sha256": "38e985fcee9b2399237bf33504f68285334ca61672ea2cc3f29191bb7b6370e3",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-20",
+      "topics": [
+        {
+          "ref": "vi:xe-om-cong-nghe-ha-noi-hanh-khach-nghien-cuu-tai-xe-mu-bao-hiem-hang-xe",
+          "locale": "vi",
+          "slug": "xe-om-cong-nghe-ha-noi-hanh-khach-nghien-cuu-tai-xe-mu-bao-hiem-hang-xe",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H04",
+          "subcluster": "ss-city",
+          "key": "vi::di xe om hoac xe om cong nghe o ha noi co an toan khong va cac nghien cuu, quy dinh doi mu bao hiem va cac hang xe noi gi voi hanh khach",
+          "ta_id": null
+        },
+        {
+          "ref": "en:motorbike-taxi-app-ride-passengers-hanoi-rider-studies-helmet-law-operators",
+          "locale": "en",
+          "slug": "motorbike-taxi-app-ride-passengers-hanoi-rider-studies-helmet-law-operators",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H04",
+          "subcluster": "ss-city",
+          "key": "en::is it safe to take a motorbike taxi or app-based motorbike ride in hanoi and what do rider studies, the helmet law and operators say for passengers",
+          "ta_id": null
+        },
+        {
+          "ref": "de:motorradtaxi-app-fahrt-hanoi-mitfahrer-studien-helmpflicht-anbieter",
+          "locale": "de",
+          "slug": "motorradtaxi-app-fahrt-hanoi-mitfahrer-studien-helmpflicht-anbieter",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "DE-H04",
+          "subcluster": "ss-city",
+          "key": "de::ist ein motorradtaxi oder eine app-fahrt auf dem roller in hanoi sicher und was sagen studien, helmpflicht und anbieter fur mitfahrer",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:moto-taxi-vtc-hanoi-passagers-etudes-conducteurs-casque-operateurs",
+          "locale": "fr",
+          "slug": "moto-taxi-vtc-hanoi-passagers-etudes-conducteurs-casque-operateurs",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "FR-H04",
+          "subcluster": "ss-city",
+          "key": "fr::est-il sur de prendre un moto-taxi ou une course par appli a hanoi et que disent les etudes, la loi sur le casque et les operateurs aux passagers",
+          "ta_id": null
+        },
+        {
+          "ref": "es:mototaxi-app-hanoi-pasajeros-estudios-conductores-casco-operadores",
+          "locale": "es",
+          "slug": "mototaxi-app-hanoi-pasajeros-estudios-conductores-casco-operadores",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ES-H04",
+          "subcluster": "ss-city",
+          "key": "es::es seguro tomar un mototaxi o un viaje en moto por app en hanoi y que dicen los estudios, la norma del casco y las plataformas a los pasajeros",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:motortaxi-app-rit-hanoi-passagiers-onderzoek-chauffeurs-helm-aanbieders",
+          "locale": "nl",
+          "slug": "motortaxi-app-rit-hanoi-passagiers-onderzoek-chauffeurs-helm-aanbieders",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H04",
+          "subcluster": "ss-city",
+          "key": "nl::is een motortaxi of motorrit per app in hanoi veilig en wat zeggen onderzoek, de helmplicht en aanbieders tegen passagiers",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:hanoi-motuoche-chuzuche-wangyue-chengke-siji-yanjiu-toukui-falv-pingtai",
+          "locale": "zh",
+          "slug": "hanoi-motuoche-chuzuche-wangyue-chengke-siji-yanjiu-toukui-falv-pingtai",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "ZH-H04",
+          "subcluster": "ss-city",
+          "key": "zh::在河内乘坐摩托车出租或网约摩托车安全吗,司机研究、头盔法规和平台对乘客怎么说",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:mototaxi-app-hanoi-passageiros-estudos-condutores-capacete-operadoras",
+          "locale": "pt",
+          "slug": "mototaxi-app-hanoi-passageiros-estudos-condutores-capacete-operadoras",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H04",
+          "subcluster": "ss-city",
+          "key": "pt::e seguro apanhar um mototaxi ou uma viagem de mota por app em hanoi e o que dizem os estudos, a lei do capacete e as operadoras aos passageiros",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-otobai-taeksi-aep-seungaek-unjeonja-yeongu-helmet-unyeongsa",
+          "locale": "ko",
+          "slug": "hanoi-otobai-taeksi-aep-seungaek-unjeonja-yeongu-helmet-unyeongsa",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H04",
+          "subcluster": "ss-city",
+          "key": "ko::하노이에서 오토바이 택시나 앱으로 부르는 오토바이를 타는 것은 안전한가요, 연구와 헬멧 규정과 운영사는 승객에게 무엇이라고 하나요",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-baiku-takushi-apuri-joukyaku-untensha-kenkyu-herumetto-jigyosha",
+          "locale": "ja",
+          "slug": "hanoi-baiku-takushi-apuri-joukyaku-untensha-kenkyu-herumetto-jigyosha",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H04",
+          "subcluster": "ss-city",
+          "key": "ja::ハノイてハイクタクシーやアフリ配車のハイクに乗るのは安全か、研究やヘルメット規定や運営会社は乗客に何と言っているか",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 199,
-    "file": "factory/topic-research/batches/claude-20261018b-0199.json",
+    "seq": 200,
+    "file": "factory/topic-research/batches/claude-20261018b-0200.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -22048,13 +22159,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-20T21:15:11.028Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 174,
-      "topics": 10,
-      "sha256": "4cd9ad0b13424ff3e277ea9c1ecc95f4151674bc7d914746d89931ca5f28ff84"
-    },
     {
       "at": "2026-10-20T21:15:32.193Z",
       "event": "BATCH_COMMITTED",
@@ -22222,6 +22326,13 @@
       "seq": 198,
       "topics": 10,
       "sha256": "3788c865f24bea93add4ce6e97130d3f98ae883c4596f5adfb5e2eb1a8763b1c"
+    },
+    {
+      "at": "2026-10-21T03:59:17.517Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 199,
+      "topics": 10,
+      "sha256": "38e985fcee9b2399237bf33504f68285334ca61672ea2cc3f29191bb7b6370e3"
     }
   ]
 }
