@@ -3,8 +3,7 @@ on:
   push:
     branches:
       - seo/v10-approved-meta49-20261021
-    paths:
-      - .github/workflows/v10-meta-owner-approved.yml
+  workflow_dispatch:
 permissions:
   contents: write
 concurrency:
