@@ -7,33 +7,33 @@
   "branch": "research/claude-20261018b",
   "batch_session": "research-claude-20261018b",
   "created_at": "2026-10-18T14:12:47.475Z",
-  "updated_at": "2026-10-21T04:53:08.191Z",
+  "updated_at": "2026-10-21T04:53:17.706Z",
   "base_main_sha": "232b500b15e8f67536a1b8d29a7f9137e4ba0781",
-  "last_commit_sha": "b41bd9e75eb51f7e5d714e2d48510137a96b8cb1",
+  "last_commit_sha": "b3c31fd8bf0d05f2c9d79e0208e6963e6fbcfc6d",
   "contract": {
     "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 2210,
-    "qa_pass": 2210,
+    "researched": 2220,
+    "qa_pass": 2220,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 2200,
+    "pushed": 2210,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "vi": 222,
-      "de": 222,
-      "fr": 222,
-      "es": 222,
-      "nl": 222,
-      "pt": 222,
-      "zh": 222,
-      "ko": 222,
-      "ja": 222,
-      "en": 212
+      "vi": 223,
+      "de": 223,
+      "fr": 223,
+      "es": 223,
+      "nl": 223,
+      "pt": 223,
+      "zh": 223,
+      "ko": 223,
+      "ja": 223,
+      "en": 213
     },
     "domains": {
       "transportation-mobility": 100,
@@ -43,13 +43,13 @@
       "destinations-experiences": 160,
       "travel-planning": 120,
       "electric-mobility": 100,
-      "motorbike-rental": 519
+      "motorbike-rental": 529
     }
   },
   "last_batch": {
-    "seq": 221,
-    "file": "factory/topic-research/batches/claude-20261018b-0221.json",
-    "sha256": "3e5b7ca9631d415970325df04d7d870fbf6f6398d4316c0184f5045f7354f029",
+    "seq": 222,
+    "file": "factory/topic-research/batches/claude-20261018b-0222.json",
+    "sha256": "f7f2b6a9bc53ed7f1d2a1d825a0461fc4f80e4b30c46ab901108573b0ed4acdd",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -24479,8 +24479,8 @@
       "file": "factory/topic-research/batches/claude-20261018b-0221.json",
       "sha256": "3e5b7ca9631d415970325df04d7d870fbf6f6398d4316c0184f5045f7354f029",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "b3c31fd8bf0d05f2c9d79e0208e6963e6fbcfc6d",
       "researched_on": "2026-10-21",
       "topics": [
         {
@@ -24584,11 +24584,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 222,
+      "file": "factory/topic-research/batches/claude-20261018b-0222.json",
+      "sha256": "f7f2b6a9bc53ed7f1d2a1d825a0461fc4f80e4b30c46ab901108573b0ed4acdd",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-21",
+      "topics": [
+        {
+          "ref": "vi:bmw-f-900-r-r-1250-rt-c-400-gt-khac-nhau-bang-lai-hang-a",
+          "locale": "vi",
+          "slug": "bmw-f-900-r-r-1250-rt-c-400-gt-khac-nhau-bang-lai-hang-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "vi::bmw f 900 r r 1250 rt c 400 gt khac nhau the nao va can bang lai hang nao",
+          "ta_id": null
+        },
+        {
+          "ref": "en:bmw-f-900-r-r-1250-rt-c-400-gt-differences-licence-class-a",
+          "locale": "en",
+          "slug": "bmw-f-900-r-r-1250-rt-c-400-gt-differences-licence-class-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "en::bmw f 900 r vs r 1250 rt vs c 400 gt differences",
+          "ta_id": null
+        },
+        {
+          "ref": "de:bmw-f-900-r-r-1250-rt-c-400-gt-unterschiede-klasse-a",
+          "locale": "de",
+          "slug": "bmw-f-900-r-r-1250-rt-c-400-gt-unterschiede-klasse-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "DE-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "de::bmw f 900 r r 1250 rt c 400 gt unterschiede und notige fuhrerscheinklasse",
+          "ta_id": null
+        },
+        {
+          "ref": "fr:bmw-f-900-r-r-1250-rt-c-400-gt-differences-permis-a",
+          "locale": "fr",
+          "slug": "bmw-f-900-r-r-1250-rt-c-400-gt-differences-permis-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "FR-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "fr::bmw f 900 r r 1250 rt c 400 gt differences et permis necessaire au vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "es:bmw-f-900-r-r-1250-rt-c-400-gt-diferencias-carne-a",
+          "locale": "es",
+          "slug": "bmw-f-900-r-r-1250-rt-c-400-gt-diferencias-carne-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ES-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "es::bmw f 900 r r 1250 rt c 400 gt diferencias y carne necesario en vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:bmw-f-900-r-r-1250-rt-c-400-gt-verschillen-rijbewijs-a",
+          "locale": "nl",
+          "slug": "bmw-f-900-r-r-1250-rt-c-400-gt-verschillen-rijbewijs-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "nl::bmw f 900 r r 1250 rt c 400 gt verschillen en welk rijbewijs je nodig hebt",
+          "ta_id": null
+        },
+        {
+          "ref": "zh:bmw-f-900-r-r-1250-rt-c-400-gt-qubie-jiazhao-a-lei",
+          "locale": "zh",
+          "slug": "bmw-f-900-r-r-1250-rt-c-400-gt-qubie-jiazhao-a-lei",
+          "domain_id": "motorbike-rental",
+          "parent_id": "ZH-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "zh::宝马 f 900 r r 1250 rt c 400 gt 区别 需要什么驾照",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:bmw-f-900-r-r-1250-rt-c-400-gt-diferencas-carta-a",
+          "locale": "pt",
+          "slug": "bmw-f-900-r-r-1250-rt-c-400-gt-diferencas-carta-a",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "pt::bmw f 900 r r 1250 rt c 400 gt diferencas e carta necessaria no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:bmw-f-900-r-r-1250-rt-c-400-gt-chai-myeonheo",
+          "locale": "ko",
+          "slug": "bmw-f-900-r-r-1250-rt-c-400-gt-chai-myeonheo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ko::bmw f 900 r r 1250 rt c 400 gt 차이와 필요한 면허",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:bmw-f-900-r-r-1250-rt-c-400-gt-chigai-menkyo",
+          "locale": "ja",
+          "slug": "bmw-f-900-r-r-1250-rt-c-400-gt-chigai-menkyo",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ja::bmw f 900 r r 1250 rt c 400 gt の違いと必要な免許区分",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 222,
-    "file": "factory/topic-research/batches/claude-20261018b-0222.json",
+    "seq": 223,
+    "file": "factory/topic-research/batches/claude-20261018b-0223.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -24601,13 +24712,6 @@
     }
   ],
   "history": [
-    {
-      "at": "2026-10-21T03:58:31.068Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 197,
-      "topics": 10,
-      "sha256": "5730edf6db487b917b3ba32a497025b08c5063956883a98572a70469f203c8ea"
-    },
     {
       "at": "2026-10-21T03:58:48.410Z",
       "event": "BATCH_COMMITTED",
@@ -24775,6 +24879,13 @@
       "seq": 221,
       "topics": 10,
       "sha256": "3e5b7ca9631d415970325df04d7d870fbf6f6398d4316c0184f5045f7354f029"
+    },
+    {
+      "at": "2026-10-21T04:53:17.706Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 222,
+      "topics": 10,
+      "sha256": "f7f2b6a9bc53ed7f1d2a1d825a0461fc4f80e4b30c46ab901108573b0ed4acdd"
     }
   ]
 }
