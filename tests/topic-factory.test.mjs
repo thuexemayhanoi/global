@@ -133,7 +133,10 @@ test("refill selects at most 50 gate-clean PROPOSED candidates round-robin by lo
 });
 
 test("standing manifest names the policy, keeps the exact statement and is accepted by the existing promotion planner",()=>{
- const ids=selectRefill({...stockCtx,validation:stockValidation,limit:3}).selected;
+ // Live READY levels decide which locales need a refill today (all HEALTHY means nothing is selected), so put every
+ // locale in need: this test is about the manifest and the planner, not about today's stock levels.
+ const needy={...policy,refill:{...policy.refill,ready_threshold:1e6,ready_target:1e6+1}};
+ const ids=selectRefill({...stockCtx,policy:needy,validation:stockValidation,limit:3}).selected;
  assert.ok(ids.length>0,"the stocked fixture always offers gate-clean candidates");
  const m=standingManifest(ids,{policyPath:policy.standing_policy,date:"2026-10-15"});
  assert.equal(m.approval_mode,"STANDING_POLICY");
