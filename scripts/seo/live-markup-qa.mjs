@@ -25,17 +25,23 @@ export function routesToCheck(matrix,limit=0){
 }
 /**
  * `cacheBust` (e.g. "?qa=<timestamp>") makes the CDN serve the deployed origin copy; GitHub Pages ignores the query.
- * Every route is fetched at most three times; a route that never answers is reported, never skipped.
+ * Every route is fetched at most three times: a network error or a 5xx answer (GitHub Pages returns a transient 503 while a
+ * deployment propagates) is retried with a short delay; a route that never answers or keeps failing is reported, never skipped.
  */
 export async function compareLiveMarkup(fetcher,routes,{origin=ORIGIN,root=ROOT,cacheBust="",concurrency=6}={}){
  const results=[];
  const getText=async url=>{
   let last;
   for(let i=0;i<3;i++){
-   try{const r=await fetcher(url,{signal:AbortSignal.timeout(20000)});return{status:r.status,text:await r.text()};}
-   catch(e){last=e;if(i<2)await new Promise(res=>setTimeout(res,1100*(i+1)));}
+   try{
+    const r=await fetcher(url,{signal:AbortSignal.timeout(20000)}),out={status:r.status,text:await r.text()};
+    if(r.status<500||i===2)return out;
+    last=out;
+   }catch(e){last=e;if(i===2)throw e;}
+   await new Promise(res=>setTimeout(res,1100*(i+1)));
   }
-  throw last;
+  if(last instanceof Error)throw last;
+  return last;
  };
  let next=0;
  const worker=async()=>{
