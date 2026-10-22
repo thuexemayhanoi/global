@@ -54,3 +54,21 @@ test("a route that cannot be fetched or returns the wrong status is reported, ne
  const broken=await compareLiveMarkup(async()=>{throw new Error("ECONNRESET");},["/"],{origin,root});
  assert.equal(broken.mismatched[0].error,"ECONNRESET");
 });
+
+test("a transient 5xx answer is retried and a persistent one is reported with its status",async()=>{
+ const routes=routesToCheck(matrix,2);
+ const calls=new Map();
+ const flaky=serve((r,t)=>t);
+ const fetcher=async(url,opts)=>{
+  const n=(calls.get(url)||0)+1;calls.set(url,n);
+  if(n===1)return{status:503,text:async()=>""};
+  return flaky(url,opts);
+ };
+ const report=await compareLiveMarkup(fetcher,routes,{origin,root,cacheBust:"?qa=1"});
+ assert.equal(report.passed,true,"one 503 followed by 200 is identical");
+ assert.ok([...calls.values()].every(n=>n===2));
+ const down=await compareLiveMarkup(async()=>({status:503,text:async()=>""}),routes,{origin,root,cacheBust:"?qa=1"});
+ assert.equal(down.passed,false);
+ assert.equal(down.mismatched.length,routes.length);
+ assert.ok(down.mismatched.every(m=>m.http_status===503));
+});
