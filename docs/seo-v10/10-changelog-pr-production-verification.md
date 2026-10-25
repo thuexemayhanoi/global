@@ -99,14 +99,14 @@ Không có số liệu thứ hạng, lập chỉ mục hay lưu lượng nào đ
 | PERF (subagent, worktree riêng, nhánh `seo/v10-perf`) | hero đáp ứng, preload, test | gộp vào PR #79 | hoàn tất |
 | QA (subagent, worktree riêng, nhánh `seo/v10-qa`) | bộ test QA toàn site 10 ngôn ngữ | gộp vào PR #79 | hoàn tất |
 | PILLAR A (vi, en, de, fr, es) và PILLAR B (nl, zh, pt, ko, ja) | đề xuất mục mới cho trang chủ ngôn ngữ | PR #82, gộp vào `main` lúc 09:37 UTC 2026-10-21 (`74be8b4d`), xác minh production ở mục 6 hàng 11 | hoàn tất |
-| META vi, en, de, fr, es, nl, pt | đề xuất rút gọn tiêu đề và mô tả (JSON, kiểm tra bằng `apply-meta-proposals.mjs`) | 632 trang, 546 tiêu đề mới, 622 mô tả mới trong `docs/seo-v10/proposals/meta-<locale>.json` (báo cáo 12); đã áp dụng, tạo lại HTML, đóng băng lại và QA trên nhánh `seo/v10-meta-proposals` → PR #86. Hai lần bị dừng vì hạn mức phiên (HTTP 429, 20:33 UTC 2026-10-20 và 08:40 UTC 2026-10-21), chạy tiếp sau mỗi lần | hoàn tất, PR #86 chờ chủ sở hữu duyệt vì đổi trường đóng băng |
+| META vi, en, de, fr, es, nl, pt | đề xuất rút gọn tiêu đề và mô tả (JSON, kiểm tra bằng `apply-meta-proposals.mjs`) | 632 trang, 546 tiêu đề mới, 622 mô tả mới trong `docs/seo-v10/proposals/meta-<locale>.json` (báo cáo 12); đã áp dụng, tạo lại HTML, đóng băng lại và QA trên nhánh `seo/v10-meta-proposals` → PR #86. Hai lần bị dừng vì hạn mức phiên (HTTP 429, 20:33 UTC 2026-10-20 và 08:40 UTC 2026-10-21), chạy tiếp sau mỗi lần | hoàn tất; cập nhật 2026-10-25: PR #86 đã đóng, không merge (SUPERSEDED bởi #90/#91 và V11 #92–#103) |
 | W1, W2, W3 (Writer) | không dùng cho SEO: cả ba đang giữ 10 claim bài viết mỗi slot, theo quy tắc không chiếm Writer đang có claim | không tham gia | không dùng |
 
 Khả năng song song thật: subagent trong cùng container (mỗi worker một worktree git hoặc một tệp đầu ra riêng, điều phối gộp tuần tự các thay đổi generator). Không có phiên AI độc lập nào khác đang chạy trên máy này (`ListAgents` trống); không giả định thêm.
 
 ## 8. Việc còn lại và chủ sở hữu quyết định
 
-- Duyệt PR #86: 546 tiêu đề và 622 mô tả rút gọn trên 632 trang vi, en, de, fr, es, nl, pt (zh, ja, ko không cần; báo cáo 12). Merge là bước duyệt; có thể sửa chữ trong `docs/seo-v10/proposals/meta-<locale>.json` trước khi merge rồi chạy lại các bước ở báo cáo 12 mục 3. Sau merge: Pages deploy, `post-publish-qa.yml` và `live-markup-qa.yml`.
+- (Cập nhật 2026-10-25: mục này đã xong theo cách khác. PR #86 đóng, không merge; #90/#91 và V11 #92–#103 thay thế; Live Markup QA trên commit V11 cuối `e120936` đạt, run 40206787983.) Duyệt PR #86: 546 tiêu đề và 622 mô tả rút gọn trên 632 trang vi, en, de, fr, es, nl, pt (zh, ja, ko không cần; báo cáo 12). Merge là bước duyệt; có thể sửa chữ trong `docs/seo-v10/proposals/meta-<locale>.json` trước khi merge rồi chạy lại các bước ở báo cáo 12 mục 3. Sau merge: Pages deploy, `post-publish-qa.yml` và `live-markup-qa.yml`.
 - `distinct_from` cho 4 IDEA trùng ý định với trang live (04) trước khi Writer nhận.
 - Hero đáp ứng đã xong và đo lại (08 mục 4 và 6). Còn lại ở 08 mục 5: đo PageSpeed cho một Hub và một Supporting, cân nhắc thứ tự tải `ultra.css`.
 - Thêm property Google Search Console cho `global.rentbikehanoi.com` để các báo cáo sau có số liệu trường; cho tới lúc đó, không có số liệu thứ hạng hay lưu lượng nào được ghi.
