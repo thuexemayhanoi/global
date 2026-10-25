@@ -10876,17 +10876,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-25T19:09:24.833Z"
+    },
+    {
+      "id": "DE-S102",
+      "locale": "de",
+      "url": "/de/guides/fuehrerschein-und-fahrzeugpapiere-per-vneid-vorzeigen/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-25T19:11:26.879Z",
+      "source_sha256": "8c0689f039e325ca11f948bb9700dc51b96837969bd9d65efd8e87ee606c52f2",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S103",
+      "locale": "de",
+      "url": "/de/guides/roller-durch-ueberflutete-strassen-hanoi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-25T19:11:26.879Z",
+      "source_sha256": "03b040491bfbfe0f6d9166829c1b89f2a9294de97996b8d1311559f9f6c7221c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T06:58:18.926Z",
-      "ids": [
-        "KO-S71",
-        "KO-S72"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T06:59:40.891Z",
       "ids": [
@@ -12464,6 +12478,14 @@
         "DE-S101"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-25T19:11:26.879Z",
+      "ids": [
+        "DE-S102",
+        "DE-S103"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -12475,6 +12497,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 1
+    "APPROVED_BY_POLICY": 3
   }
 }
