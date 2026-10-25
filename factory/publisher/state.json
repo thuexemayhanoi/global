@@ -11044,17 +11044,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-25T19:27:42.536Z"
+    },
+    {
+      "id": "DE-S122",
+      "locale": "de",
+      "url": "/de/guides/ausreisesperre-nach-unfall-in-vietnam-reisehinweise-und-gesetz/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-25T23:40:39.188Z",
+      "source_sha256": "1a88b675e1f107d2ceb84d97c3ad0b749e9a6ff67438625928f2d99dcfaf7b1f",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S127",
+      "locale": "de",
+      "url": "/de/guides/roller-springt-nicht-an-was-zuerst-pruefen/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-25T23:40:39.188Z",
+      "source_sha256": "ce31301752b3af427c3f4293fb57a8723e1634c62966c51cf5aa11d5900eecc8",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T07:50:48.650Z",
-      "ids": [
-        "JA-S68",
-        "JA-S69"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T07:52:32.355Z",
       "ids": [
@@ -12632,6 +12646,14 @@
         "DE-S121"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-25T23:40:39.188Z",
+      "ids": [
+        "DE-S122",
+        "DE-S127"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -12643,5 +12665,7 @@
     "commit": "fce943384f9aec24514dcda32393e47a8b5a186a",
     "live_seconds": 62
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 2
+  }
 }
