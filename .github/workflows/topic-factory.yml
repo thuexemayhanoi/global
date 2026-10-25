@@ -17,6 +17,8 @@ permissions:
 concurrency:
   group: global-topic-factory
   cancel-in-progress: false
+  # Queue every pending run (FIFO) instead of letting a newer pending run cancel an older one.
+  queue: max
 jobs:
   factory:
     # Research branches are trusted only after their own green push QA; code always comes from main.
