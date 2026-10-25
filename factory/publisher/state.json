@@ -11068,17 +11068,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-25T23:42:10.910Z"
+    },
+    {
+      "id": "DE-S111",
+      "locale": "de",
+      "url": "/de/guides/mit-dem-motorrad-um-den-hoan-kiem-see-am-wochenende/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-25T23:46:00.700Z",
+      "source_sha256": "5e2afc05bcdd617165d7453eb6f1ece200a921f908aa2578a6492c4dc5c912ca",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S128",
+      "locale": "de",
+      "url": "/de/guides/e10-benzin-vietnam-mietroller-vertraeglichkeit/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-25T23:46:00.700Z",
+      "source_sha256": "e16ec102a9d0df18bfa89eafc820b3f51372b0d544c038ac9b587a549a9f351e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T07:52:54.419Z",
-      "ids": [
-        "JA-S70",
-        "JA-S71"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T07:54:31.975Z",
       "ids": [
@@ -12656,6 +12670,14 @@
         "DE-S127"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-25T23:46:00.700Z",
+      "ids": [
+        "DE-S111",
+        "DE-S128"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -12667,5 +12689,7 @@
     "commit": "5e132ffd1ea741685a5d7febda4ee95e92981821",
     "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 2
+  }
 }
