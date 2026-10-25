@@ -10852,17 +10852,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-25T16:04:46.271Z"
+    },
+    {
+      "id": "DE-S100",
+      "locale": "de",
+      "url": "/de/guides/roten-fluss-hanoi-mit-dem-roller-ueberqueren/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-25T19:06:07.196Z",
+      "source_sha256": "6ebbd384d210afdfd3ac011d34efb8a0de16531570622408adc38b5422dba1e2",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T06:53:31.801Z",
-      "ids": [
-        "PT-S66",
-        "PT-S67"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T06:54:53.267Z",
       "ids": [
@@ -12444,6 +12447,13 @@
         "VI-S90"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-25T19:06:07.196Z",
+      "ids": [
+        "DE-S100"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -12454,5 +12464,7 @@
     "commit": "a7cddc16d60a287e0a6056ec443c7b6820484d3d",
     "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
