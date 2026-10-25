@@ -6,7 +6,7 @@ Date: 2026-10-21. Base: `b64c76c2dd56e2cb2e8a307df0fb0afca58fb3d9`.
 
 The existing ten rental checklists had five short preparation sections. Each now has four additional native-language sections: automatic/50cc vehicle checks, monthly term and maintenance questions, an itemised quote comparison, and an exact Old Quarter pickup agreement. These are questions to establish with a provider, not statements of local availability, legal exemptions or current rental prices. Planning sections follow the existing booking section; signing, handover, riding and return sections remain intact.
 
-Only `content/locales.json` changes site copy. The builder regenerates ten checklist HTML files; the derived content graph and readable site matrix are refreshed. No new URL, article, keyword ownership, claim, sitemap, menu, metadata, canonical, hreflang, schema, business reference or freeze-registry change is included. PR #86's metadata proposals remain separate.
+Only `content/locales.json` changes site copy. The builder regenerates ten checklist HTML files; the derived content graph and readable site matrix are refreshed. No new URL, article, keyword ownership, claim, sitemap, menu, metadata, canonical, hreflang, schema, business reference or freeze-registry change is included. PR #86's metadata proposals remain separate. (PR #86 was closed as superseded on 2026-10-25: #90/#91 and V11 #92–#103 replaced it.)
 
 ## Mapping and remaining research
 
