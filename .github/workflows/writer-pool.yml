@@ -61,6 +61,8 @@ permissions:
 concurrency:
   group: global-dynamic-writer-pool
   cancel-in-progress: false
+  # Queue every pending run (FIFO) instead of letting a newer pending run cancel an older one.
+  queue: max
 jobs:
   claim:
     runs-on: ubuntu-latest
