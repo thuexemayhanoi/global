@@ -100,18 +100,23 @@ test("one Writer can draft every remaining Matrix idea (104 at baseline) using t
  assert.equal(done.filter(id=>matrix.rows.find(r=>r.id===id).role==="SUPPORT").length,SUPPORT_DRAFTABLE);
  assert.equal(JSON.stringify(matrix),matrixBefore); // the Turbo loop never publishes or edits the Matrix
 });
-test("three Writers each claim up to ten unique article IDs, W1 continues without W2/W3",()=>{
+test("three Writers share scarce READY ideas without duplicate claims; a refill cannot invent IDs",()=>{
  let ledger=empty,seen=new Set();
+ let w1Initial=0;
  for(const w of ["W1","W2","W3"]){
+  const remaining=Math.max(0,DRAFTABLE-seen.size);
+  const expected=Math.min(MAX_BATCH,remaining);
   const a=autoAdvance(matrix,ledger,registry,req(w),{...opts,nonce:w});
-  assert.equal(a.claimed.length,10);
+  assert.equal(a.claimed.length,expected,"only genuine unclaimed Matrix IDEA rows may be allocated");
+  if(w==="W1")w1Initial=expected;
   for(const id of a.claimed){assert.ok(!seen.has(id));seen.add(id);}
   ledger=a.ledger;
  }
- assert.equal(seen.size,30);
+ assert.equal(seen.size,Math.min(3*MAX_BATCH,DRAFTABLE));
+ const remaining=Math.max(0,DRAFTABLE-seen.size);
  const a=autoAdvance(matrix,ledger,registry,req("W1"),{...opts,verifiedDraftIds:new Set(open(ledger,"W1").map(c=>c.id))});
- assert.equal(a.submitted.length,10);
- assert.equal(open(a.ledger,"W1").length,10);
+ assert.equal(a.submitted.length,w1Initial);
+ assert.equal(open(a.ledger,"W1").length,Math.min(MAX_BATCH,remaining));
  assert.ok(open(a.ledger,"W1").every(c=>!seen.has(c.id)));
 });
 test("source SHA+content hash are recorded on submitted drafts and cannot be malformed",()=>{
@@ -141,4 +146,15 @@ test("Supporting drafts can pass prepublication parent test; publisher still ref
   sources:[],serp_intent_checked:false,facts_reviewed_by_human:false};
  assert.ok(checkArticle(packet,matrix,locales).errors.some(x=>x.includes("Parent Hub/Pillar must be published")));
  assert.ok(!checkArticle(packet,matrix,locales,{allowUnpublishedParentForDraft:true}).errors.some(x=>x.includes("Parent Hub/Pillar must be published")));
+});
+
+test("serialized coordinators queue pending runs instead of cancelling them",()=>{
+ // A run skipped by its job condition (e.g. PR-event Writer QA) still joins a
+ // workflow-level concurrency group. Without queue: max the newest pending run
+ // cancels the older one, so a green Writer push could lose its Autopilot run
+ // (2026-10-25) or a research push its Topic Factory ingest.
+ for(const f of [".github/workflows/writer-pool-auto.yml",".github/workflows/writer-pool.yml",".github/workflows/topic-factory.yml"]){
+  const y=fs.readFileSync(f,"utf8");
+  assert.match(y,/^concurrency:\n  group: [\w-]+\n  cancel-in-progress: false\n(?:  #[^\n]*\n)*  queue: max$/m,f+" must queue pending runs");
+ }
 });

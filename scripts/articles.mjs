@@ -4,6 +4,9 @@ import {scanPacket,scanText} from "./seo/fact-guard-core.mjs";
 import {loadTopicalMap} from "./seo/topical-authority-core.mjs";
 
 const SITE="https://global.rentbikehanoi.com";
+export const BRAND="Vietnam Two-Wheel Guide";
+// Site-wide social preview image (the root hero illustration); article packets carry no cover images yet.
+export const SOCIAL_IMAGE={path:"/hero-hanoi.webp",width:1600,height:900};
 const esc=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const localeCodes=new Set(["vi","en","de","fr","es","nl","zh","pt","ko","ja"]);
 const topicStatus=new Set(["IDEA","RESEARCHED","DRAFT","QA_APPROVED","PUBLISHED"]);
@@ -190,6 +193,41 @@ const ARTICLE_LABELS={
  ko:["이 주제의 가이드","같은 주제의 다른 가이드","참고 자료","기타 가이드"],
  ja:["このテーマのガイド","同じテーマの関連ガイド","参考資料","その他のガイド"]
 };
+// One sibling plan per Hub and locale, memoised per build index. Every guide links its silo-mates first (a cyclic
+// window inside the silo, so a silo with more than seven guides still spreads), fills the rest of its six slots from
+// the other silos starting k entries further for the i-th guide of its silo (a silo fans out instead of pointing at
+// the same first rows), and a balancing pass then moves surplus other-silo links to guides still under
+// min(6, n-1) inbound links. Mate links are never moved, so the silo-first order survives the balancing.
+const SIBLING_PLANS=new WeakMap();
+function siblingPlan(cycle,siloOf,ix,key){
+ let plans=SIBLING_PLANS.get(ix);
+ if(!plans){plans=new Map();SIBLING_PLANS.set(ix,plans);}
+ if(plans.has(key))return plans.get(key);
+ const n=cycle.length,target=Math.min(6,n-1),links=new Map(),inbound=new Map(cycle.map(r=>[r.id,0]));
+ cycle.forEach((row,at)=>{
+  const own=siloOf(row),ring=cycle.slice(at+1).concat(cycle.slice(0,at));
+  const mates=ring.filter(r=>siloOf(r)===own),others=ring.filter(r=>siloOf(r)!==own);
+  const take=Math.min(6,mates.length),k=6-take,i=cycle.slice(0,at).filter(r=>siloOf(r)===own).length;
+  const start=others.length?(i*k)%others.length:0;
+  const list=mates.slice(0,take).concat(others.slice(start).concat(others.slice(0,start)).slice(0,k));
+  links.set(row.id,list);for(const r of list)inbound.set(r.id,inbound.get(r.id)+1);
+ });
+ const by=sign=>(a,b)=>sign*(inbound.get(a.id)-inbound.get(b.id))||a.id.localeCompare(b.id);
+ for(let guard=0;guard<6*n;guard++){
+  const short=cycle.filter(r=>inbound.get(r.id)<target).sort(by(1))[0];
+  if(!short)break;
+  let moved=false;
+  for(const t of cycle.filter(r=>inbound.get(r.id)>target).sort(by(-1))){
+   const g=cycle.find(g=>g.id!==short.id&&siloOf(g)!==siloOf(t)&&links.get(g.id).some(r=>r.id===t.id)&&!links.get(g.id).some(r=>r.id===short.id));
+   if(!g)continue;
+   const list=links.get(g.id);list[list.findIndex(r=>r.id===t.id)]=short;
+   inbound.set(t.id,inbound.get(t.id)-1);inbound.set(short.id,inbound.get(short.id)+1);moved=true;break;
+  }
+  if(!moved)break;
+ }
+ plans.set(key,links);
+ return links;
+}
 /**
  * Hub → every PUBLISHED child grouped by silo (no orphan Supporting pages);
  * Supporting → up to six PUBLISHED siblings, same silo first. PUBLISHED only.
@@ -212,26 +250,43 @@ export function topicLinks(row,matrix,topical,code,ix=rowsIndex(matrix)){
  }
  if(row.role==="SUPPORT"){
   const own=siloOf(row);
-  const sib=under(row.parent_id).sort((a,b)=>(siloOf(a)===own?0:1)-(siloOf(b)===own?0:1)||order(a,b)).slice(0,6);
+  const cycle=(ix.pubSupport.get(row.parent_id)||[]).filter(r=>r.locale===code).sort((a,b)=>siloOf(a).localeCompare(siloOf(b))||order(a,b));
+  // A row that is not (yet) a PUBLISHED guide of this Hub (draft previews) gets the plain silo-first list instead of a plan slot.
+  const sib=siblingPlan(cycle,siloOf,ix,row.parent_id+"|"+code).get(row.id)||[...cycle.filter(r=>siloOf(r)===own),...cycle.filter(r=>siloOf(r)!==own)].filter(r=>r.id!==row.id).slice(0,6);
   return sib.length?'<section class="topic-guides topic-guides--siblings"><h2>'+esc(L[1])+'</h2><ul>'+sib.map(item).join("")+'</ul></section>':"";
  }
  return "";
 }
-export function renderArticle(packet,locale,row,matrix,topical=null,ix=rowsIndex(matrix)){
+export function renderArticle(packet,locale,row,matrix,topical=null,ix=rowsIndex(matrix),displayLead=packet.meta_description){
  const htmlLang=locale.htmlLang||locale.code,url=SITE+row.url;
  const parent=ix.byId.get(row.parent_id);
- const parentURL=parent?.status==="PUBLISHED"?parent.url:"/"+locale.code+"/";
+ const home="/"+locale.code+"/";
+ const parentURL=parent?.status==="PUBLISHED"?parent.url:home;
  const parentLabel=parent?.status==="PUBLISHED"?parent.working_title:locale.name;
- const data={"@context":"https://schema.org","@graph":[{"@type":"Article","headline":packet.title,"description":packet.meta_description,"inLanguage":htmlLang,"mainEntityOfPage":url,"author":{"@type":"Organization","name":"Vietnam Two-Wheel Guide"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":locale.name,"item":SITE+"/"+locale.code+"/"},{"@type":"ListItem","position":2,"name":parentLabel,"item":SITE+parentURL},{"@type":"ListItem","position":3,"name":packet.title,"item":url}]}]};
+ // A Hub's parent is the locale Pillar itself, so its trail is Global › Language › Hub; a guide's is Language › Hub › Guide.
+ // Either way no URL appears twice in the BreadcrumbList.
+ const trail=parentURL===home?[{name:"Global",url:"/"},{name:locale.name,url:home}]:[{name:locale.name,url:home},{name:parentLabel,url:parentURL}];
+ const crumbs=trail.map((c,i)=>({"@type":"ListItem","position":i+1,"name":c.name,"item":SITE+c.url})).concat([{"@type":"ListItem","position":trail.length+1,"name":packet.title,"item":url}]);
+ const org={"@type":"Organization","name":BRAND,"url":SITE+"/about/"};
+ const article={"@type":"Article","headline":packet.title,"description":packet.meta_description,"inLanguage":htmlLang,"mainEntityOfPage":url,"isPartOf":{"@type":"WebSite","name":BRAND,"url":SITE+"/"},"author":org,"publisher":{...org,"logo":{"@type":"ImageObject","url":SITE+"/assets/favicon.svg"}}};
+ // The publication record's approval timestamp is the only dated event the repository holds for a page; no edit history is invented.
+ if(packet.publication?.approved_at){article.datePublished=packet.publication.approved_at;article.dateModified=packet.publication.approved_at;}
+ const data={"@context":"https://schema.org","@graph":[article,{"@type":"BreadcrumbList","itemListElement":crumbs}]};
  const sources=packet.sources.map(s=>'<li><a href="'+esc(s.url)+'" rel="noopener noreferrer">'+esc(s.title)+'</a></li>').join("");
  const cover=packet.cover_image?'<figure><img src="'+esc(packet.cover_image)+'" alt="'+esc(packet.cover_alt)+'" loading="lazy" decoding="async"><figcaption>'+esc(packet.image_credit)+'</figcaption></figure>':"";
  const json=JSON.stringify(data).replace(/</g,"\\u003c");
- return '<!doctype html>\n<html lang="'+esc(htmlLang)+'"><head>\n<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<title>'+esc(packet.title)+'</title>\n<meta name="description" content="'+esc(packet.meta_description)+'">\n<link rel="canonical" href="'+esc(url)+'">\n<meta property="og:type" content="article"><meta property="og:title" content="'+esc(packet.title)+'"><meta property="og:description" content="'+esc(packet.meta_description)+'"><meta property="og:url" content="'+esc(url)+'">\n<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">\n<script type="application/ld+json">'+json+'</script>\n</head><body><a class="skip" href="#main">Skip to content</a><main id="main"><div class="container"><nav class="crumb" aria-label="Breadcrumb"><a href="/'+esc(locale.code)+'/">'+esc(locale.name)+'</a> <span aria-hidden="true">›</span> <a href="'+esc(parentURL)+'">'+esc(parentLabel)+'</a></nav><article class="article"><h1>'+esc(packet.h1)+'</h1><p class="article-lead">'+esc(packet.meta_description)+'</p>'+cover+'<div class="article-copy">'+renderMarkdown(packet.body_markdown)+'</div>'+topicLinks(row,matrix,topical,locale.code,ix)+'<section class="article-references"><h2>'+esc((ARTICLE_LABELS[locale.code]||ARTICLE_LABELS.en)[2])+'</h2><ol>'+sources+'</ol></section>'+(packet.publication?'<p class="article-provenance">'+esc(AI_DISCLOSURE[locale.code]||AI_DISCLOSURE.en)+'</p>':'')+'<p><a href="'+esc(parentURL)+'">← '+esc(parentLabel)+'</a></p></article></div></main></body></html>\n';
+ const social='<meta property="og:site_name" content="'+esc(BRAND)+'"><meta property="og:image" content="'+SITE+SOCIAL_IMAGE.path+'"><meta property="og:image:width" content="'+SOCIAL_IMAGE.width+'"><meta property="og:image:height" content="'+SOCIAL_IMAGE.height+'">\n<meta name="twitter:card" content="summary_large_image">';
+ const crumbNav=trail.map(c=>'<a href="'+esc(c.url)+'">'+esc(c.name)+'</a>').join(' <span aria-hidden="true">›</span> ');
+ return '<!doctype html>\n<html lang="'+esc(htmlLang)+'"><head>\n<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<title>'+esc(packet.title)+'</title>\n<meta name="description" content="'+esc(packet.meta_description)+'">\n<link rel="canonical" href="'+esc(url)+'">\n<meta property="og:type" content="article"><meta property="og:title" content="'+esc(packet.title)+'"><meta property="og:description" content="'+esc(packet.meta_description)+'"><meta property="og:url" content="'+esc(url)+'">\n'+social+'\n<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">\n<script type="application/ld+json">'+json+'</script>\n</head><body><a class="skip" href="#main">Skip to content</a><main id="main"><div class="container"><nav class="crumb" aria-label="Breadcrumb">'+crumbNav+'</nav><article class="article"><h1>'+esc(packet.h1)+'</h1><p class="article-lead">'+esc(displayLead)+'</p>'+cover+'<div class="article-copy">'+renderMarkdown(packet.body_markdown)+'</div>'+topicLinks(row,matrix,topical,locale.code,ix)+'<section class="article-references"><h2>'+esc((ARTICLE_LABELS[locale.code]||ARTICLE_LABELS.en)[2])+'</h2><ol>'+sources+'</ol></section>'+(packet.publication?'<p class="article-provenance">'+esc(AI_DISCLOSURE[locale.code]||AI_DISCLOSURE.en)+'</p>':'')+'<p><a href="'+esc(parentURL)+'">← '+esc(parentLabel)+'</a></p></article></div></main></body></html>\n';
 }
 export function generateApprovedArticles(root,matrix,locales){
  const dir=path.join(root,"content/articles");
  const pages={};
  if(!fs.existsSync(dir))return pages;
+ // Keep the published lead independent of later metadata-only editorial changes.
+ const leadFile=path.join(root,"content/article-leads.json");
+ const leads=fs.existsSync(leadFile)?JSON.parse(fs.readFileSync(leadFile,"utf8")).leads:{};
+ if(!leads||typeof leads!=="object"||Array.isArray(leads))throw Error("Invalid published article leads");
  const topical=loadTopicalMap(root),ix=rowsIndex(matrix);
  for(const file of fs.readdirSync(dir).sort()){
   if(!file.endsWith(".json"))continue;
@@ -244,7 +299,8 @@ export function generateApprovedArticles(root,matrix,locales){
   if(!qa.passed)throw Error("Stored article QA failed "+file+": "+qa.errors.join("; "));
   const generated=htmlPagePath(row.url);
   if(pages[generated])throw Error("Article URL collision "+generated);
-  pages[generated]=renderArticle(packet,locale,row,matrix,topical,ix);
+  if(Object.hasOwn(leads,packet.matrix_id)&&(typeof leads[packet.matrix_id]!=="string"||!leads[packet.matrix_id].trim()))throw Error("Invalid published lead: "+packet.matrix_id);
+  pages[generated]=renderArticle(packet,locale,row,matrix,topical,ix,leads[packet.matrix_id]??packet.meta_description);
  }
  return pages;
 }

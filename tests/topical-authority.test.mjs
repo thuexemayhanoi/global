@@ -63,6 +63,26 @@ test("cannibalization: exact or near-duplicate intents fail unless explicitly di
  assert.ok(!fails(n).some(i=>i.gate==="T4"&&/DE-S04/.test(i.reason)));
 });
 
+test("a distinct_from reason covers the pair from both sides, also after the later candidate is promoted",()=>{
+ const m=clone(),a=first(m,"de"),list=m.locales.de.proposals;
+ const next=1+Math.max(...list.map(p=>Number(p.candidate_id.split("-")[2])));
+ const b={...structuredClone(a),candidate_id:"TA-DE-"+String(next).padStart(4,"0"),slug:a.slug.slice(0,60).replace(/-+$/,"")+"-pruefen",
+  working_title:a.working_title.slice(0,100)+" prüfen",primary_query:a.primary_query+" prüfen",secondary_queries:a.secondary_queries.map(q=>q+" prüfen")};
+ list.push(b);
+ assert.ok(fails(m).some(i=>i.gate==="T4"&&i.id===b.candidate_id&&i.reason.includes(a.candidate_id)));
+ b.distinct_from=[{id:a.candidate_id,reason:"Test-only justification long enough to pass the forty char rule."}];
+ assert.deepEqual(fails(m),[]);
+ // Promotion puts b's Matrix row ahead of every queued proposal in the comparison pool, so the pair is
+ // now judged from a's side; the reason b carried (copied onto its row) must still explain it.
+ const plan=planPromotion({map:m,matrix,board,manifest:{...MANIFEST,candidate_ids:[b.candidate_id]},validation:validateTopicalMap({map:m,matrix,frozenUrls:frozen})});
+ for(const {candidate_id,matrix_id} of plan.promoted){const p=allProposals(m).find(x=>x.candidate_id===candidate_id);p.status="PROMOTED";p.matrix_id=matrix_id;}
+ assert.deepEqual(fails(m,plan.matrix),[]);
+ // A reason shorter than 40 characters explains nothing, on either side.
+ const row=plan.matrix.rows.find(r=>r.id===plan.promoted[0].matrix_id);
+ row.distinct_from=[{id:a.candidate_id,reason:"too short"}];
+ assert.ok(fails(m,plan.matrix).some(i=>i.gate==="T4"&&i.id===a.candidate_id&&i.reason.includes(row.id)));
+});
+
 test("reserved live intents, money amounts, unsupported claims and wrong scripts are refused",()=>{
  const m=clone();
  first(m,"en").working_title="Hanoi pickup checklist for rental scooters explained";

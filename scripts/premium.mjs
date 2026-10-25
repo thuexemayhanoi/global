@@ -89,10 +89,15 @@ function enhanceArticle(html,route,idx){
   return '<h2 id="'+id+'">'+label+'</h2>';
  });
  const pRow=idx.byUrl.get("/"+route.replace(/index\.html$/,""));
- const related=[];
- for(const r of idx.pool.get(code)||[]){
+ // Pillar first, then a cyclic window of same-parent rows and children starting after this page,
+ // so the rail does not send every guide of a Hub to the same first four rows.
+ const pool=idx.pool.get(code)||[];
+ const pos=pool.findIndex(r=>r.url===pRow?.url);
+ const ring=pos<0?pool:pool.slice(pos+1).concat(pool.slice(0,pos));
+ const related=pool.filter(r=>r.role==="PILLAR"&&r.url!==pRow?.url).slice(0,1);
+ for(const r of ring){
   if(related.length===5)break;
-  if(r.url!==pRow?.url&&(r.parent_id===pRow?.parent_id||r.parent_id===pRow?.id||r.role==="PILLAR"))related.push(r);
+  if(r.role!=="PILLAR"&&r.url!==pRow?.url&&(r.parent_id===pRow?.parent_id||r.parent_id===pRow?.id))related.push(r);
  }
  const menu=headings.length>=2?'<nav class="premium-toc" aria-label="'+safe(tr[2])+'"><strong>'+safe(tr[2])+'</strong><ol>'+headings.map(h=>'<li><a href="#'+h.id+'">'+safe(h.title)+'</a></li>').join("")+'</ol></nav>':"";
  const relatedNav=related.length?'<nav class="premium-related" aria-label="'+safe(tr[3])+'"><strong>'+safe(tr[3])+'</strong>'+related.map(r=>'<a href="'+safe(r.url)+'">'+safe(r.working_title)+'</a>').join("")+'</nav>':"";
