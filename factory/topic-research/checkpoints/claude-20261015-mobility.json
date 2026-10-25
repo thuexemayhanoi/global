@@ -7,11 +7,11 @@
   "branch": "research/claude-20261015-mobility",
   "batch_session": "research-claude-20261015-mobility",
   "created_at": "2026-10-15T09:33:24.963Z",
-  "updated_at": "2026-10-15T22:41:57.598Z",
-  "base_main_sha": "40fc4651faad7c323c50bf2d9d419bd6679a93d5",
-  "last_commit_sha": "cbcdf46090aadf20cd68e5b05c3df9a51bf86373",
+  "updated_at": "2026-10-25T18:29:43.308Z",
+  "base_main_sha": "aed5e085a4cbb46f970b28c36be021417ca9dd8a",
+  "last_commit_sha": "267a99a46e3111e17d2e1d8a63d899fa672cbb81",
   "contract": {
-    "agents_md_sha256": "f2f151be14ebf85c72be7f03703e0861f5d9d8a2cdacc3f764497bef2730c725",
+    "agents_md_sha256": "7771220b00e65fd3e9899d8cc6113d05b89a5fab6ba8cba62a4ca842a608ac5e",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
@@ -19,8 +19,8 @@
     "qa_pass": 320,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 310,
-    "pending_push": 10
+    "pushed": 320,
+    "pending_push": 0
   },
   "coverage": {
     "locales": {
@@ -3495,8 +3495,8 @@
       "file": "factory/topic-research/batches/claude-20261015-mobility-0032.json",
       "sha256": "fb8d734bf6442225ee35179f3b277e27c21ca1896bee473255d0e3c91bbaf74e",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "267a99a46e3111e17d2e1d8a63d899fa672cbb81",
       "researched_on": "2026-10-15",
       "topics": [
         {
@@ -3620,16 +3620,15 @@
       "kind": "NOTE",
       "message": "re-trigger Topic Research QA and ingest of batch 0013 after merging main (branch Matrix was stale)",
       "at": "2026-10-15T18:04:41.285Z"
+    },
+    {
+      "id": "note-78670688",
+      "kind": "NOTE",
+      "message": "2026-10-25 resumed by Claude session_01YEa9dbs7LABfShoxTCDGTZ: re-trigger ingest of batch 0032 (Factory run 38818904946 aborted on the T4 promotion check that PR #77 fixed); session end",
+      "at": "2026-10-25T18:29:43.308Z"
     }
   ],
   "history": [
-    {
-      "at": "2026-10-15T17:46:21.161Z",
-      "event": "BATCH_COMMITTED",
-      "seq": 9,
-      "topics": 10,
-      "sha256": "1aa055f8a2aa0b3246487fd5ccea5712760a9ac66f9ee654f4e9edaf8157bb0b"
-    },
     {
       "at": "2026-10-15T17:47:22.329Z",
       "event": "BATCH_COMMITTED",
@@ -3794,6 +3793,10 @@
       "seq": 32,
       "topics": 10,
       "sha256": "fb8d734bf6442225ee35179f3b277e27c21ca1896bee473255d0e3c91bbaf74e"
+    },
+    {
+      "at": "2026-10-25T18:29:43.308Z",
+      "event": "CHECKPOINT_UPDATED"
     }
   ]
 }
