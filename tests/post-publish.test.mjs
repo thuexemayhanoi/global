@@ -29,3 +29,16 @@ test("whole live QA passes against the reviewed build and catches repo↔product
  assert.ok(drift.issues.some(i=>/fingerprint drift \/fr\/: title/.test(i)));
  assert.ok(drift.issues.some(i=>/NAP_DISPLAY_NOT_APPROVED \/de\//.test(i)));
 });
+
+test("a transient 5xx answer is retried; a persistent one is still reported",async()=>{
+ const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8")),locales=JSON.parse(fs.readFileSync("content/locales.json","utf8"));
+ const registry=JSON.parse(fs.readFileSync("data/seo/url-freeze.json","utf8"));
+ const target=matrix.rows.find(r=>r.status==="PUBLISHED"&&r.role==="SUPPORT").url;
+ const flaky=(failures)=>{const seen=new Map();const base=localFetcher();return async(url,opts)=>{const route=new URL(url).pathname;
+  if(route===target){const n=(seen.get(route)||0)+1;seen.set(route,n);if(n<=failures)return {status:503,text:async()=>"Service Unavailable"};}
+  return base(url,opts);};};
+ const once=await inspectProduction(flaky(1),"https://global.rentbikehanoi.com",matrix,locales,registry);
+ assert.deepEqual(once.issues,[]);
+ const always=await inspectProduction(flaky(3),"https://global.rentbikehanoi.com",matrix,locales,registry);
+ assert.ok(always.issues.includes("Unexpected HTTP status 503 "+target));
+});
