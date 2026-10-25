@@ -1,5 +1,7 @@
 # Hub proposal: Transportation & Urban Mobility (EN first)
 
+> **Superseded on 2026-10-25 by [`docs/HUB-ARCHITECTURE-DECISION-20261025.md`](HUB-ARCHITECTURE-DECISION-20261025.md).** The evidence there covers all 10 locales (11 `transport-mobility` candidates per locale on main `5e5594aad076`, not 10 EN-only) and all six research-open domains, and lists the owner decisions. Two points below are out of date: an EN-only Hub (option A) fails validator gates T2/T9 for the other nine locales, and domain status in `policy.json` is global, not per locale. The rest of this file is kept unchanged as history. Still not approved.
+
 Status: **PROPOSAL FOR OWNER REVIEW, not approved.** This document changes no Matrix row, URL, sitemap, navigation, hreflang or generated HTML. It records the evidence and the decisions needed before the `transport-mobility` Hub from `data/seo/topical-authority/architecture.json` can become a live Topic Pillar. Dated 2026-10-15.
 
 ## Why this proposal exists
