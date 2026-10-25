@@ -15,7 +15,7 @@ Architecture reference: thuexemayhanoi/blog. Borrow mechanisms, NEVER merge repo
 
 ## Continuous Writer execution
 
-For existing W1 use branch writer/w1-vibe-20261014, session w1-vibe-20261014 and open PR #17. Fetch and MERGE main, never reset/force push. Read AGENTS.md and this guide.
+For existing W1 use branch writer/w1-vibe-20261014, session w1-vibe-20261014 and open PR #17. (Historical: that session ended and was handed over on 2026-10-25; check `node scripts/writer-pool.mjs slots` for the current holder.) Fetch and MERGE main, never reset/force push. Read AGENTS.md and this guide.
 
 One-time activation only if missing:
 node scripts/writer-request.mjs start --writer W1 --session w1-vibe-20261014 --branch writer/w1-vibe-20261014
