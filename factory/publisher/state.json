@@ -10816,17 +10816,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-20T09:36:18.653Z"
+    },
+    {
+      "id": "VI-S88",
+      "locale": "vi",
+      "url": "/vi/guides/chieu-cao-yen-xe-ga-nguoi-thap-ha-noi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-25T16:00:54.087Z",
+      "source_sha256": "32d22db392ba1e6bf0df31e7bc1dcf49e3efa53f670b7c53b713a5dfe0e0a2da",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "VI-S89",
+      "locale": "vi",
+      "url": "/vi/guides/cop-xe-tay-ga-de-mu-bao-hiem-ao-mua/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-25T16:00:54.087Z",
+      "source_sha256": "758a3c3b39a2525492e35336a4ac6ff14d01111f6a43669992a08ab90fcb7587",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T06:46:22.611Z",
-      "ids": [
-        "ZH-S71",
-        "ZH-S72"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T06:47:38.908Z",
       "ids": [
@@ -12410,6 +12424,14 @@
         "KO-S24"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-25T16:00:54.087Z",
+      "ids": [
+        "VI-S88",
+        "VI-S89"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -12421,5 +12443,7 @@
     "commit": "6546b85c5b76c19e459da29a3d89e2987e5db683",
     "live_seconds": 42
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 3
+  }
 }

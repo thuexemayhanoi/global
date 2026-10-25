@@ -12,9 +12,9 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
-| Matrix rows (1958) | 909 | 9 | 36 | 1004 |
+| Matrix rows (1958) | 911 | 9 | 36 | 1002 |
 | Topical candidates (1373) | 0 | 0 | 37 | 1336 |
-| Silos (330) | 139 | 15 | 0 | 176 |
+| Silos (330) | 140 | 15 | 0 | 175 |
 
 Knowledge graph: 42 entities, 4386 typed edges (hreflang_equivalent 190, about 710, contains 3276, has_silo 160, has_hub 40, has_pillar 10).
 
@@ -91,7 +91,7 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 | vc-transmission | consideration | informational | – | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I2 C1 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP |
 | vc-power | consideration | informational | – | P4 I4 C8 KEEP | P4 I4 C9 KEEP | P4 I7 C6 KEEP | P4 I4 C9 KEEP | P4 I4 C9 KEEP | P4 I4 C9 KEEP | P4 I4 C9 KEEP | P4 I4 C9 KEEP | P4 I4 C9 KEEP | P4 I4 C9 KEEP |
 | vc-models | consideration | commercial | – | P2 I18 C10 KEEP | P3 I19 C9 KEEP | P5 I19 C6 KEEP | P2 I19 C9 KEEP | P3 I18 C9 KEEP | P2 I19 C9 KEEP | P2 I19 C9 KEEP | P2 I19 C9 KEEP | P2 I19 C9 KEEP | P2 I19 C9 KEEP |
-| vc-trip-fit | consideration | informational | – | I9 C7 CREATE | P2 I7 C7 KEEP | P2 I8 C6 KEEP | P1 I8 C7 KEEP | P2 I7 C7 KEEP | I9 C7 CREATE | I9 C7 CREATE | I9 C7 CREATE | I9 C7 CREATE | I9 C7 CREATE |
+| vc-trip-fit | consideration | informational | – | P2 I7 C7 KEEP | P2 I7 C7 KEEP | P2 I8 C6 KEEP | P1 I8 C7 KEEP | P2 I7 C7 KEEP | I9 C7 CREATE | I9 C7 CREATE | I9 C7 CREATE | I9 C7 CREATE | I9 C7 CREATE |
 | rc-period | consideration | commercial | Pillar FAQ ×10 | P2 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P1 I1 KEEP | P1 I1 KEEP |
 | rc-deposit | decision | commercial | Pillar FAQ ×10 | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP |
 | rc-extras | decision | commercial | – | P2 I3 KEEP | P2 I3 KEEP | P2 I3 KEEP | P2 I3 KEEP | P2 I3 KEEP | P2 I3 KEEP | P2 I3 KEEP | P2 I3 KEEP | P2 I3 KEEP | P2 I3 KEEP |
@@ -129,7 +129,7 @@ Published / planned (IDEA + drafts) / candidates per stage.
 | Stage | vi | en | de | fr | es | nl | zh | pt | ko | ja |
 |---|---|---|---|---|---|---|---|---|---|---|
 | awareness | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
-| consideration | 12 / 32 / 27 | 14 / 32 / 27 | 16 / 37 / 19 | 12 / 33 / 27 | 14 / 31 / 27 | 12 / 33 / 27 | 12 / 33 / 27 | 12 / 33 / 27 | 11 / 34 / 27 | 11 / 34 / 27 |
+| consideration | 14 / 30 / 27 | 14 / 32 / 27 | 16 / 37 / 19 | 12 / 33 / 27 | 14 / 31 / 27 | 12 / 33 / 27 | 12 / 33 / 27 | 12 / 33 / 27 | 11 / 34 / 27 | 11 / 34 / 27 |
 | decision | 14 / 19 / 4 | 17 / 18 / 4 | 17 / 20 / 2 | 18 / 18 / 4 | 16 / 18 / 4 | 15 / 19 / 4 | 15 / 19 / 4 | 15 / 19 / 4 | 16 / 18 / 4 | 16 / 18 / 4 |
 | pickup | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
 | riding | 56 / 50 / 43 | 60 / 52 / 37 | 60 / 63 / 26 | 60 / 50 / 39 | 50 / 52 / 37 | 58 / 49 / 41 | 58 / 49 / 41 | 58 / 49 / 41 | 58 / 50 / 39 | 58 / 50 / 39 |
@@ -142,7 +142,7 @@ Every locale checklist also covers the consideration → decision → pickup →
 
 | Locale | Rows | Published | Protected drafts | Planned | Candidates | Published depth OK |
 |---|---|---|---|---|---|---|
-| vi | 189 | 88 | 0 | 101 | 143 | 99% |
+| vi | 189 | 90 | 0 | 99 | 143 | 99% |
 | en | 199 | 97 | 0 | 102 | 137 | 97% |
 | de | 219 | 99 | 0 | 120 | 116 | 99% |
 | fr | 197 | 96 | 0 | 101 | 139 | 99% |
