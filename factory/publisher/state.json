@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 463,
+  "clean_runs": 465,
   "published": [
     {
       "id": "NL-H01",
@@ -10816,41 +10816,45 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-20T09:36:18.653Z"
+    },
+    {
+      "id": "VI-S88",
+      "locale": "vi",
+      "url": "/vi/guides/chieu-cao-yen-xe-ga-nguoi-thap-ha-noi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-25T16:00:54.087Z",
+      "source_sha256": "32d22db392ba1e6bf0df31e7bc1dcf49e3efa53f670b7c53b713a5dfe0e0a2da",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-25T16:03:04.886Z"
+    },
+    {
+      "id": "VI-S89",
+      "locale": "vi",
+      "url": "/vi/guides/cop-xe-tay-ga-de-mu-bao-hiem-ao-mua/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-25T16:00:54.087Z",
+      "source_sha256": "758a3c3b39a2525492e35336a4ac6ff14d01111f6a43669992a08ab90fcb7587",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-25T16:03:04.886Z"
+    },
+    {
+      "id": "VI-S90",
+      "locale": "vi",
+      "url": "/vi/guides/idling-stop-xe-ga-dung-den-do-ha-noi/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-25T16:03:26.106Z",
+      "source_sha256": "2295fd3890b2b7a476eca5fca2ab1de4ce13bc74630c6639393c7d5201a28216",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-25T16:04:46.271Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T06:46:22.611Z",
-      "ids": [
-        "ZH-S71",
-        "ZH-S72"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T06:47:38.908Z",
-      "ids": [
-        "ZH-S71",
-        "ZH-S72"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T06:48:48.277Z",
-      "ids": [
-        "KO-S67",
-        "KO-S68"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T06:50:09.315Z",
-      "ids": [
-        "KO-S67",
-        "KO-S68"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T06:53:31.801Z",
       "ids": [
@@ -12410,16 +12414,45 @@
         "KO-S24"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-25T16:00:54.087Z",
+      "ids": [
+        "VI-S88",
+        "VI-S89"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-25T16:03:04.886Z",
+      "ids": [
+        "VI-S88",
+        "VI-S89"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-25T16:03:26.106Z",
+      "ids": [
+        "VI-S90"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-25T16:04:46.271Z",
+      "ids": [
+        "VI-S90"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-20T09:36:18.653Z",
+    "at": "2026-10-25T16:04:46.271Z",
     "ids": [
-      "JA-S24",
-      "KO-S24"
+      "VI-S90"
     ],
-    "commit": "6546b85c5b76c19e459da29a3d89e2987e5db683",
-    "live_seconds": 42
+    "commit": "a7cddc16d60a287e0a6056ec443c7b6820484d3d",
+    "live_seconds": 61
   },
   "queue": {}
 }
