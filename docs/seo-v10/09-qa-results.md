@@ -57,7 +57,7 @@ Ngày: 2026-10-20. Nhánh: `seo/v10-global-engine-20261020` trên nền `main` `
 
 Nhật ký đầy đủ của vòng cuối (có thể tạo lại bằng cách chạy các lệnh trên): kết quả tóm tắt ở bảng 1; nhật ký thô nằm ngoài repo.
 
-## 5. Cập nhật 2026-10-21 (sau khi gộp PR #79, #82, #84, #85; PR #86 mở chờ duyệt)
+## 5. Cập nhật 2026-10-21 (sau khi gộp PR #79, #82, #84, #85; PR #86 mở chờ duyệt — PR #86 đóng ngày 2026-10-25, SUPERSEDED bởi V11)
 
 | Lệnh | `main` `74be8b4d` | Nhánh PR #86 `d1c309b7` | Ghi chú |
 |---|---|---|---|
