@@ -147,3 +147,14 @@ test("Supporting drafts can pass prepublication parent test; publisher still ref
  assert.ok(checkArticle(packet,matrix,locales).errors.some(x=>x.includes("Parent Hub/Pillar must be published")));
  assert.ok(!checkArticle(packet,matrix,locales,{allowUnpublishedParentForDraft:true}).errors.some(x=>x.includes("Parent Hub/Pillar must be published")));
 });
+
+test("serialized coordinators queue pending runs instead of cancelling them",()=>{
+ // A run skipped by its job condition (e.g. PR-event Writer QA) still joins a
+ // workflow-level concurrency group. Without queue: max the newest pending run
+ // cancels the older one, so a green Writer push could lose its Autopilot run
+ // (2026-10-25) or a research push its Topic Factory ingest.
+ for(const f of [".github/workflows/writer-pool-auto.yml",".github/workflows/writer-pool.yml",".github/workflows/topic-factory.yml"]){
+  const y=fs.readFileSync(f,"utf8");
+  assert.match(y,/^concurrency:\n  group: [\w-]+\n  cancel-in-progress: false\n(?:  #[^\n]*\n)*  queue: max$/m,f+" must queue pending runs");
+ }
+});
