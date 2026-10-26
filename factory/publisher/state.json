@@ -12004,17 +12004,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-26T17:42:06.327Z"
+    },
+    {
+      "id": "DE-S215",
+      "locale": "de",
+      "url": "/de/guides/laerm-und-gehoer-auf-langer-motorradfahrt-windgeraeusche-helm-und-kurierstudien/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T17:43:45.821Z",
+      "source_sha256": "0c91de37b985ee1c6ac2607f761e49809b65356772ac10608bdf0178c44861bc",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T16:14:41.622Z",
-      "ids": [
-        "VI-S83",
-        "VI-S84"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T16:16:07.824Z",
       "ids": [
@@ -13556,6 +13559,13 @@
         "DE-S193"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-26T17:43:45.821Z",
+      "ids": [
+        "DE-S215"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -13567,5 +13577,7 @@
     "commit": "bfba994e901d35b0202c8bc2d259d1ea56d7d110",
     "live_seconds": 141
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
