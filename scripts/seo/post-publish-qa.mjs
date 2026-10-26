@@ -30,12 +30,17 @@ export async function inspectProduction(fetcher=fetch,origin="https://global.ren
  const frozen=new Map((registry?.urls||[]).map(u=>[u.url,u]));
  const issues=[],evidence=[];
  const getURL=async (url,headers={})=>{
+  // At most three attempts: a network error or a 5xx answer (GitHub Pages returns a transient
+  // 503 while a deployment propagates) is retried after a short delay; the last answer is
+  // reported as is, so a route that keeps failing is never skipped.
   let lastError;
   for(let i=0;i<3;i++){
    try{
     const response=await fetcher(url,{headers,signal:AbortSignal.timeout(20000)});
-    return{response,status:response.status,text:await response.text()};
-   }catch(e){lastError=e;if(i<2)await new Promise(resolve=>setTimeout(resolve,1100*(i+1)));}
+    const out={response,status:response.status,text:await response.text()};
+    if(out.status<500||i===2)return out;
+   }catch(e){lastError=e;if(i===2)throw e;}
+   await new Promise(resolve=>setTimeout(resolve,1100*(i+1)));
   }
   throw lastError;
  };
