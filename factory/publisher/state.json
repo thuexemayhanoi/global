@@ -11260,17 +11260,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-26T00:12:28.288Z"
+    },
+    {
+      "id": "DE-S131",
+      "locale": "de",
+      "url": "/de/guides/honda-wave-alpha-starten-choke-kickstarter-benzinhahn/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T00:14:51.181Z",
+      "source_sha256": "68966c1b3cc4b2e5392ef557774386a93155fe9ad29db24626114fa14aabdd97",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S155",
+      "locale": "de",
+      "url": "/de/guides/rollerfahren-erster-tag-nach-langstreckenflug-hanoi-jetlag-muedigkeit/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T00:14:51.181Z",
+      "source_sha256": "fe05367bb0283c8577d9453b6849c58a502bf06a6c742d9c561dcb2bbacf2b1d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T08:40:38.301Z",
-      "ids": [
-        "VI-S74",
-        "VI-S75"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T08:42:20.158Z",
       "ids": [
@@ -12836,6 +12850,14 @@
         "DE-S134"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-26T00:14:51.181Z",
+      "ids": [
+        "DE-S131",
+        "DE-S155"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -12847,5 +12869,7 @@
     "commit": "cf276c0b45c621187d2bb520044fcea70aaff07c",
     "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 2
+  }
 }
