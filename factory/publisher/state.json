@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 504,
+  "clean_runs": 506,
   "published": [
     {
       "id": "NL-H01",
@@ -11606,7 +11606,8 @@
       "at": "2026-10-26T08:04:10.093Z",
       "source_sha256": "68a9f8ad075c0e7190ee826ef26f2001c3bc3741a20afde590163b478d2aded2",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-26T08:05:37.081Z"
     },
     {
       "id": "DE-S145",
@@ -11617,34 +11618,35 @@
       "at": "2026-10-26T08:04:10.093Z",
       "source_sha256": "36610a4ec22faed920cc8b7608b0ddceef4c51c172385bb306d8b2fc20c810ad",
       "review_sha256": null,
-      "live_qa": "PENDING"
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-26T08:05:37.081Z"
+    },
+    {
+      "id": "DE-S163",
+      "locale": "de",
+      "url": "/de/guides/yamaha-wr155r-suzuki-v-strom-250sx-honda-nx500-sitzhoehe-fuehrerschein/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T08:14:53.120Z",
+      "source_sha256": "8d13509f62a8ea5d74a58319727180478827e96de56aa1d5f97012cadbdb5ee9",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-26T08:16:42.915Z"
+    },
+    {
+      "id": "DE-S165",
+      "locale": "de",
+      "url": "/de/guides/strassengesetz-pflichten-rollerverleih-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T08:14:53.120Z",
+      "source_sha256": "4852475de491faa45a65b06a3d4c52f11b02bfd8870ff5c0cc6ca2b2d6173115",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-26T08:16:42.915Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T10:06:50.931Z",
-      "ids": [
-        "PT-S82",
-        "VI-S81"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T10:19:44.859Z",
-      "ids": [
-        "DE-S85",
-        "EN-S86"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T10:21:12.993Z",
-      "ids": [
-        "DE-S85",
-        "EN-S86"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T10:22:23.064Z",
       "ids": [
@@ -13178,18 +13180,42 @@
         "DE-S145"
       ],
       "result": "STAGED"
+    },
+    {
+      "at": "2026-10-26T08:05:37.081Z",
+      "ids": [
+        "DE-S143",
+        "DE-S145"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-26T08:14:53.120Z",
+      "ids": [
+        "DE-S163",
+        "DE-S165"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-26T08:16:42.915Z",
+      "ids": [
+        "DE-S163",
+        "DE-S165"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-26T08:03:42.057Z",
+    "at": "2026-10-26T08:16:42.915Z",
     "ids": [
-      "DE-S139",
-      "DE-S142"
+      "DE-S163",
+      "DE-S165"
     ],
-    "commit": "ec89794a5143899357f766a3f9a76a05e502ecce",
-    "live_seconds": 62
+    "commit": "e961e088a6760a2c57a285711b4a5849b72d00e0",
+    "live_seconds": 82
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 3
   }
 }
