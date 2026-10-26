@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 484,
+  "clean_runs": 486,
   "published": [
     {
       "id": "NL-H01",
@@ -11212,41 +11212,57 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-26T00:08:26.529Z"
+    },
+    {
+      "id": "DE-S146",
+      "locale": "de",
+      "url": "/de/guides/suzuki-satria-raider-und-andere-suzuki-in-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T00:08:55.390Z",
+      "source_sha256": "cb11443b29be57a4e541123555e309197d8b424ba0afbc066dd18cda625e262e",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-26T00:10:26.577Z"
+    },
+    {
+      "id": "DE-S147",
+      "locale": "de",
+      "url": "/de/guides/honda-super-cub-c125-ct125-yamaha-pg-1-cub-halbautomaten/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T00:08:55.390Z",
+      "source_sha256": "da0d19f6866d03bb7ed589f1a194e2c4991cf34b23e84fb02514c0103342db57",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-26T00:10:26.577Z"
+    },
+    {
+      "id": "DE-S114",
+      "locale": "de",
+      "url": "/de/guides/ha-giang-loop-grenzgebiet-genehmigung-auslaender-regeln/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T00:10:57.444Z",
+      "source_sha256": "6bcf80a98d5513494efe6410693d02bb08d367bdd676da9a149282063043f60b",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-26T00:12:28.288Z"
+    },
+    {
+      "id": "DE-S134",
+      "locale": "de",
+      "url": "/de/guides/gewitter-blitz-motorroller-hanoi-warnungen-schutz/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T00:10:57.444Z",
+      "source_sha256": "74a181990d858d402987964eec59f71e6f188fca56865e7b77a28e6f8a90d747",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-26T00:12:28.288Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T08:35:08.135Z",
-      "ids": [
-        "VI-S70",
-        "VI-S71"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T08:36:24.971Z",
-      "ids": [
-        "VI-S70",
-        "VI-S71"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T08:38:01.085Z",
-      "ids": [
-        "VI-S72",
-        "VI-S73"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T08:39:23.207Z",
-      "ids": [
-        "VI-S72",
-        "VI-S73"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T08:40:38.301Z",
       "ids": [
@@ -12788,18 +12804,48 @@
         "DE-S133"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-26T00:08:55.390Z",
+      "ids": [
+        "DE-S146",
+        "DE-S147"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-26T00:10:26.577Z",
+      "ids": [
+        "DE-S146",
+        "DE-S147"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-26T00:10:57.444Z",
+      "ids": [
+        "DE-S114",
+        "DE-S134"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-26T00:12:28.288Z",
+      "ids": [
+        "DE-S114",
+        "DE-S134"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-26T00:08:26.529Z",
+    "at": "2026-10-26T00:12:28.288Z",
     "ids": [
-      "DE-S125",
-      "DE-S133"
+      "DE-S114",
+      "DE-S134"
     ],
-    "commit": "7ffe9bfbb7925da65fa1e6f1dd7feec52992355c",
-    "live_seconds": 62
+    "commit": "cf276c0b45c621187d2bb520044fcea70aaff07c",
+    "live_seconds": 61
   },
-  "queue": {
-    "APPROVED_BY_POLICY": 4
-  }
+  "queue": {}
 }
