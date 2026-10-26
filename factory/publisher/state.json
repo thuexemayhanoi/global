@@ -11848,17 +11848,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-26T08:41:39.490Z"
+    },
+    {
+      "id": "DE-S172",
+      "locale": "de",
+      "url": "/de/guides/yamaha-mt-15-yzf-r15m-xs155r-unterschiede-fuehrerscheinklasse/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T17:16:03.561Z",
+      "source_sha256": "17aa0cd2b2927a8343ace368cc3fd0375e62a13f9000e7c099be20247559564c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T15:42:32.367Z",
-      "ids": [
-        "ES-S76",
-        "ES-S77"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T15:43:57.404Z",
       "ids": [
@@ -13406,6 +13409,13 @@
         "DE-S197"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-26T17:16:03.561Z",
+      "ids": [
+        "DE-S172"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -13417,5 +13427,7 @@
     "commit": "3434d77ea4755e501db2235416f64366bcad5103",
     "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
