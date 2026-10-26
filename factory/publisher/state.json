@@ -11524,17 +11524,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-26T00:46:52.415Z"
+    },
+    {
+      "id": "DE-S173",
+      "locale": "de",
+      "url": "/de/guides/vneid-fuer-auslaendische-besucher-ab-28-september-2026-wer-ein-konto-bekommt/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T07:49:38.384Z",
+      "source_sha256": "e351cda1bbb3269445da6b615f221d108af2e6523cbda21acf851e5cc220553e",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T09:49:46.896Z",
-      "ids": [
-        "VI-S79",
-        "VI-S80"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T09:51:08.271Z",
       "ids": [
@@ -13088,6 +13091,13 @@
         "DE-S162"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-26T07:49:38.384Z",
+      "ids": [
+        "DE-S173"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -13099,5 +13109,7 @@
     "commit": "19a993e5dcf577377e514670f14cc52d121b1ed0",
     "live_seconds": 62
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
