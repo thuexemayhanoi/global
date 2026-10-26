@@ -11284,17 +11284,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-26T00:16:03.390Z"
+    },
+    {
+      "id": "DE-S126",
+      "locale": "de",
+      "url": "/de/guides/honda-winner-yamaha-exciter-155-sportbike-mit-kupplung-einsteiger/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T00:17:49.651Z",
+      "source_sha256": "e1b4f914933a7753e29cd795965a745092bd419b38569a0facb3827bf6f477a3",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S149",
+      "locale": "de",
+      "url": "/de/guides/feinstaubmaske-rollerfahren-hanoi-gesundheitsministerium-niosh/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T00:17:49.651Z",
+      "source_sha256": "4ea7e3c14abe4eddb0c78f680999de7ff6d9818dca9053de276784c3ca7da033",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T08:45:52.156Z",
-      "ids": [
-        "VI-S76",
-        "ZH-S77"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T08:46:56.161Z",
       "ids": [
@@ -12860,6 +12874,14 @@
         "DE-S155"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-26T00:17:49.651Z",
+      "ids": [
+        "DE-S126",
+        "DE-S149"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -12871,5 +12893,7 @@
     "commit": "5ee128006f8ceebfb7e30a7016a027299b2188a0",
     "live_seconds": 42
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 3
+  }
 }
