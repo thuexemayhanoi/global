@@ -11728,17 +11728,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-26T08:28:35.124Z"
+    },
+    {
+      "id": "DE-S169",
+      "locale": "de",
+      "url": "/de/guides/hanoi-motorrad-parken-bargeldlos-bezahlen-plan-198-entwurf/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T08:30:01.022Z",
+      "source_sha256": "8d0680e393636334d57269c843ae8d5e144cf35f37279e1d3575c9a819d0feef",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S175",
+      "locale": "de",
+      "url": "/de/guides/hanoi-staugebuehr-fuer-roller-im-zentrum-was-beschluss-71-2026-beschlossen-hat/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T08:30:01.022Z",
+      "source_sha256": "8e6984c848257546e110f9064065e37fd8c49eab04fb95a7fadf1f8beb589fb7",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T10:48:30.080Z",
-      "ids": [
-        "JA-S82",
-        "KO-S82"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T10:49:54.129Z",
       "ids": [
@@ -13286,6 +13300,14 @@
         "DE-S171"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-26T08:30:01.022Z",
+      "ids": [
+        "DE-S169",
+        "DE-S175"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -13297,6 +13319,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 1
+    "APPROVED_BY_POLICY": 4
   }
 }
