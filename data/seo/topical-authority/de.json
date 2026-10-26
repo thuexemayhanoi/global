@@ -16326,6 +16326,613 @@
         "source": "factory/topic-research/batches/claude-20261026de4-0001.json@1e2b4574856a"
       },
       "matrix_id": "DE-S280"
+    },
+    {
+      "candidate_id": "TA-DE-0342",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-extras",
+      "slug": "benzinpreis-vietnam-donnerstag-hoechstpreis-region-2-erklaert",
+      "primary_query": "wie wird der Benzinpreis in Vietnam festgelegt und warum ändert er sich donnerstags",
+      "secondary_queries": [
+        "Benzinpreis Vietnam aktuell wo offiziell nachsehen",
+        "warum ist Benzin in den Bergen Vietnams teurer als in Hanoi",
+        "was bedeuten Region 1 und Region 2 an vietnamesischen Tankstellen",
+        "ab wann gilt ein neuer Benzinpreis in Vietnam am Donnerstag"
+      ],
+      "working_title": "Benzinpreis in Vietnam: Wer ihn festlegt, warum er donnerstags wechselt und was Region 2 bedeutet",
+      "search_intent": "informational",
+      "word_target": 1300,
+      "priority": 50,
+      "intent_rationale": "Reisende, die mit dem Mietroller länger unterwegs sind oder eine Tour in den Norden planen, sehen wechselnde Literpreise und Unterschiede zwischen Stadt und Bergregion und wollen verstehen, wer den Preis festlegt, wann er sich ändert und wo der amtliche Stand nachzulesen ist, um Tankkosten realistisch einzuplanen.",
+      "content_angle": "Erklärt die Preismechanik statt Preise: Laut Dekret 80/2023/NĐ-CP (Änderung der Dekrete 95/2021 und 83/2014) wird der Kraftstoffpreis jeden Donnerstag gesteuert. Das Industrie- und Handelsministerium veröffentlicht dann je Sorte einen Höchstpreis ('không cao hơn') samt Entnahme aus dem Preisstabilisierungsfonds; Erhöhungen gelten nicht vor, Senkungen nicht nach 15 Uhr (MOIT-Mitteilung vom 8. Oktober 2026). Nach Dekret 95/2021, Artikel 1 Absatz 27, dürfen Großhändler in Gebieten fern von Häfen und Depots (Region 2) höchstens 2 Prozent über dem Steuerungspreis verkaufen (Thư viện pháp luật, April 2026). Seit 1. Juni 2026 wird unverbleites Benzin als E10 verkauft, E5 RON 92 bleibt bis Ende 2030. Der Autor darf keine Literpreise nennen, keine Provinz ohne Quelle Region 2 zuordnen, muss prüfen, ob ein neues Mineralöldekret Dekret 80/2023 ersetzt hat, und Sortenwahl sowie E10-Verträglichkeit nur verlinken.",
+      "entities": [
+        "Dekret 80/2023/NĐ-CP",
+        "Dekret 95/2021/NĐ-CP",
+        "Industrie- und Handelsministerium",
+        "Preisstabilisierungsfonds",
+        "Region 2 (vùng 2)",
+        "E5 RON 92",
+        "E10 RON 95-III"
+      ],
+      "references": [
+        "rx-6d87ebe01a0a",
+        "rx-4fb7e4f6e09d",
+        "rx-9db2c8cadd94",
+        "rx-1a574ab24cac"
+      ],
+      "distinct_from": [
+        {
+          "id": "DE-S17",
+          "reason": "Nebenkosten-Ratgeber nennt nur einen datierten Beispielpreis und die Tankregel des Vermieters, nicht die Donnerstagssteuerung, Höchstpreise und Region-2-Aufschläge"
+        },
+        {
+          "id": "DE-S23",
+          "reason": "Behandelt die Wahl zwischen RON 92 und RON 95 und den Ablauf an der Zapfsäule, nicht wie und wann der Staat den Literpreis festlegt"
+        },
+        {
+          "id": "DE-S128",
+          "reason": "Fragt, ob ein Mietroller E10 verträgt; dieser Artikel erklärt die staatliche Preisbildung für alle Sorten und regionale Unterschiede"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261026de2",
+        "researched_on": "2026-10-26",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261026de2-0001.json@6ee916a11127"
+      },
+      "matrix_id": "DE-S281"
+    },
+    {
+      "candidate_id": "TA-DE-0343",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-extras",
+      "slug": "roller-auf-bewachtem-parkplatz-gestohlen-wer-haftet-vietnam",
+      "primary_query": "Roller auf bewachtem Parkplatz in Vietnam gestohlen oder beschädigt wer haftet",
+      "secondary_queries": [
+        "haftet der Parkwächter in Vietnam für einen gestohlenen Roller",
+        "ist der Parkschein in Vietnam ein Vertrag",
+        "Schild Parken auf eigene Gefahr vor Café in Vietnam was gilt",
+        "Roller ohne Parkschein abgestellt und weg Vietnam Schadensersatz"
+      ],
+      "working_title": "Roller vom bewachten Parkplatz verschwunden oder beschädigt: Wann der Parkbetreiber in Vietnam haftet",
+      "search_intent": "informational",
+      "word_target": 1300,
+      "priority": 50,
+      "intent_rationale": "Wer seinen Mietroller vor einem Café, Supermarkt oder Wohnhaus bei einem Parkwächter abgibt und ihn danach beschädigt oder gar nicht mehr vorfindet, steht zwischen Vermieter und Parkbetreiber und will wissen, ob der Betreiber haftet, welche Rolle der Parkschein spielt und was ein Schild 'auf eigene Gefahr' bedeutet.",
+      "content_angle": "Stützt sich auf die Artikel 554 bis 557 des Zivilgesetzbuchs 91/2015/QH13 zum Verwahrungsvertrag: Der Verwahrer muss die Sache wie vereinbart aufbewahren, im übernommenen Zustand zurückgeben und bei Verlust oder Beschädigung Schadensersatz leisten, außer bei höherer Gewalt (Artikel 556 Absatz 2, Artikel 557). Die Zeitschrift der Anwaltskammer LSVN (April 2023) erklärt, dass ein solcher Vertrag nach Artikel 119 auch mündlich oder durch Verhalten entsteht, wenn es einen Parkschein oder einen Wächter gibt; ohne beides haftet das Geschäft in der Regel nicht. PLO (Januar 2023) und LuatVietnam beschreiben den Parkschein als Beweis des Vertrags. Der Autor darf keine Entschädigungshöhe versprechen, muss offenlassen, wie sich Ansprüche zwischen Mieter, Vermieter und Parkbetreiber verteilen, und auf den Mietvertrag verweisen; Parkregeln, Parkpreise, Diebstahlschutz und den Fall des abgeschleppten Rollers nur verlinken.",
+      "entities": [
+        "Zivilgesetzbuch 91/2015/QH13",
+        "Verwahrungsvertrag (hợp đồng gửi giữ tài sản)",
+        "Artikel 554",
+        "Artikel 556",
+        "Artikel 557",
+        "Parkschein (vé gửi xe)",
+        "höhere Gewalt"
+      ],
+      "references": [
+        "rx-222d06154059",
+        "rx-11b3ebbca513",
+        "rx-6a4382fec448",
+        "rx-d18bfbd0c416"
+      ],
+      "distinct_from": [
+        {
+          "id": "DE-S35",
+          "reason": "Erklärt, wie bewachtes Parken, Schilder und Parkpreise in Hanoi funktionieren, nicht die zivilrechtliche Haftung des Parkbetreibers bei Verlust oder Schaden"
+        },
+        {
+          "id": "DE-S34",
+          "reason": "Gibt Tipps zur Diebstahlvorbeugung und zum Vorgehen nach einem Diebstahl, aber nicht, wann ein Verwahrungsvertrag den Wächter schadensersatzpflichtig macht"
+        },
+        {
+          "id": "DE-S201",
+          "reason": "Klärt, ob die Polizei ein verschwundenes Motorrad umgesetzt hat oder es gestohlen wurde, nicht die Ansprüche gegen einen bezahlten Parkbetreiber"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261026de2",
+        "researched_on": "2026-10-26",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261026de2-0001.json@6ee916a11127"
+      },
+      "matrix_id": "DE-S282"
+    },
+    {
+      "candidate_id": "TA-DE-0344",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-extras",
+      "slug": "reparaturkosten-mietroller-pruefen-originalteile-honda-yamaha-vietnam",
+      "primary_query": "Reparaturkosten nach einem Schaden am Mietroller in Vietnam mit Originalteilpreisen prüfen",
+      "secondary_queries": [
+        "Honda Vietnam Ersatzteilpreise offiziell nachsehen",
+        "Originalteil von Honda in Vietnam am Etikett erkennen",
+        "Vermieter verlangt zu viel für Reparatur am Roller Vietnam",
+        "Honda HEAD Werkstatt Vietnam Rechnung für Reparatur"
+      ],
+      "working_title": "Reparaturrechnung für den Mietroller prüfen: Originalteile, Herstellerlisten und Abnutzung in Vietnam",
+      "search_intent": "informational",
+      "word_target": 1300,
+      "priority": 50,
+      "intent_rationale": "Nach einem Sturz oder einem Kratzer legt der Vermieter oft eine Reparatursumme fest oder zieht sie von der Kaution ab; Mieter wollen wissen, wie sie die Positionen nachvollziehen, wo es offizielle Ersatzteilpreise gibt, woran sie Originalteile erkennen und was das Gesetz zu natürlicher Abnutzung sagt.",
+      "content_angle": "Zeigt, wie man eine Schadensrechnung selbst plausibel macht, ohne Beträge zu nennen: Honda Việt Nam veröffentlicht auf honda.com.vn eine Liste gängiger Ersatzteile (etwa Luftfilter, Zündkerze, Bremsbeläge, Reifen, Batterie) mit Preisen ohne Mehrwertsteuer und erklärt auf einer eigenen Seite, dass Originalteile über autorisierte Händler (HEAD) vertrieben werden und am Etikett mit eingeprägtem Honda-Logo zu erkennen sind; Yamaha Motor Việt Nam führt einen eigenen Ersatzteilbereich. Nach Artikel 482 des Zivilgesetzbuchs (Fragen und Antworten des Rechtsportals der Provinz Tuyên Quang) gibt der Mieter den Roller im erhaltenen Zustand abzüglich natürlicher Abnutzung zurück; nur eine darüber hinausgehende Wertminderung begründet Schadensersatz. Der Autor soll eine nach Teilen und Arbeitslohn aufgeschlüsselte schriftliche Rechnung, Fotos und den Abgleich mit Herstellerlisten empfehlen, darf aber keine Preise zitieren (Listen ohne Arbeitslohn, Stand wechselt), nicht behaupten, Vermieter müssten Originalteile verwenden oder bei HEAD reparieren, und Haftungsklauseln nur verlinken.",
+      "entities": [
+        "Honda Việt Nam",
+        "HEAD (Honda-Vertragshändler)",
+        "Yamaha Motor Việt Nam",
+        "Originalersatzteile",
+        "Mehrwertsteuer",
+        "Zivilgesetzbuch Artikel 482"
+      ],
+      "references": [
+        "rx-18f803063d73",
+        "rx-e115ebd9a1f2",
+        "rx-6c12e5ec9d10",
+        "rx-3b39a62671ad"
+      ],
+      "distinct_from": [
+        {
+          "id": "DE-S24",
+          "reason": "Behandelt Haftungsklauseln für Schaden und Diebstahl im Mietvertrag, nicht wie man eine konkrete Reparaturrechnung mit Herstellerangaben nachprüft"
+        },
+        {
+          "id": "DE-S17",
+          "reason": "Gibt einen Überblick über alle Nebenkosten einschließlich Schäden, ohne Ersatzteillisten der Hersteller oder Kennzeichen von Originalteilen zu erklären"
+        },
+        {
+          "id": "DE-S133",
+          "reason": "Erklärt Mieterrechte bei einem Mangel des Rollers, nicht die Prüfung einer Rechnung für einen vom Mieter verursachten Schaden"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261026de2",
+        "researched_on": "2026-10-26",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261026de2-0001.json@6ee916a11127"
+      },
+      "matrix_id": "DE-S283"
+    },
+    {
+      "candidate_id": "TA-DE-0345",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-deposit",
+      "slug": "personalausweis-als-pfand-beim-rollerverleih-vietnam",
+      "primary_query": "darf ich meinen Personalausweis beim Rollerverleih in Vietnam als Pfand abgeben",
+      "secondary_queries": [
+        "Personalausweis hinterlegen im Ausland erlaubt",
+        "Vermieter will Personalausweis statt Reisepass behalten Vietnam",
+        "Personalausweis in Vietnam verloren was tun",
+        "Sicherheit beim Roller mieten ohne Ausweisdokument abzugeben"
+      ],
+      "working_title": "Personalausweis als Pfand beim Rollerverleih in Vietnam: Was das deutsche Ausweisrecht dazu sagt",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Deutsche Reisende wollen ihren Reisepass nicht beim Verleih lassen und überlegen, stattdessen den Personalausweis als Sicherheit zu geben, weil er für die Einreise nach Vietnam ohnehin nicht zählt; sie fragen, ob das erlaubt und vernünftig ist und was bei einem Verlust passiert.",
+      "content_angle": "Verbindet deutsches Ausweisrecht mit der Lage in Vietnam: § 1 Absatz 1 PAuswG (gesetze-im-internet.de) bestimmt, dass vom Inhaber nicht verlangt werden darf, den Personalausweis zu hinterlegen oder den Gewahrsam aufzugeben. Das Personalausweisportal des Bundes (Januar 2025) erklärt, der Ausweis gehöre der Bundesrepublik, rät von jeder Hinterlegung als Pfand ab, nennt Geldbeträge, Wertgegenstände oder Kreditkartendaten als Alternativen und empfiehlt, eine Hinterlegungsregel in Geschäftsbedingungen nicht zu akzeptieren. Das Auswärtige Amt führt in den Vietnam-Reisehinweisen (Stand 26. Oktober 2026) den Personalausweis nicht als Einreisedokument, und seine Seite zu Pässen und Ausweisen beschreibt die Hilfe der Auslandsvertretungen bei Verlust. Der Autor muss offenlassen, ob das deutsche Verbot einen vietnamesischen Vermieter bindet, darf nicht behaupten, Verleiher akzeptierten Personalausweise, und soll die Reisepassfrage und Ausweiskopien nur verlinken.",
+      "entities": [
+        "Personalausweisgesetz (PAuswG)",
+        "§ 1 Absatz 1 PAuswG",
+        "Bundesministerium des Innern",
+        "Personalausweisportal",
+        "Auswärtiges Amt",
+        "Reisepass"
+      ],
+      "references": [
+        "rx-7287c1590fa2",
+        "rx-137ee44b35ca",
+        "rx-201e12c12d4d",
+        "rx-12666663abfc"
+      ],
+      "distinct_from": [
+        {
+          "id": "DE-S16",
+          "reason": "Behandelt den Reisepass als Kaution und vietnamesische Regeln dazu, nicht den deutschen Personalausweis und das Hinterlegungsverbot im Personalausweisgesetz"
+        },
+        {
+          "id": "DE-S04",
+          "reason": "Erklärt, wie man die Rückzahlung einer Kaution prüft, nicht ob ein deutsches Ausweisdokument überhaupt als Pfand dienen darf"
+        },
+        {
+          "id": "DE-S118",
+          "reason": "Geht um Kopien von Pass und Führerschein und das vietnamesische Datenschutzrecht, nicht um das Abgeben des Originalausweises als Sicherheit"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261026de2",
+        "researched_on": "2026-10-26",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261026de2-0001.json@6ee916a11127"
+      },
+      "matrix_id": "DE-S284"
+    },
+    {
+      "candidate_id": "TA-DE-0346",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H02",
+      "cluster": "rental-costs",
+      "subcluster": "rc-deposit",
+      "slug": "kaution-per-kreditkarte-nicht-zurueck-chargeback-rollerverleih-vietnam",
+      "primary_query": "Kaution für den Mietroller in Vietnam per Kreditkarte bezahlt und nicht zurückbekommen",
+      "secondary_queries": [
+        "Chargeback Kreditkarte Kaution Vermieter im Ausland",
+        "Kreditkartenzahlung aus Vietnam zurückbuchen lassen Frist",
+        "Kaution als Reservierung auf der Kreditkarte nicht freigegeben",
+        "welche Belege braucht die Bank für ein Chargeback"
+      ],
+      "working_title": "Kaution per Kreditkarte nicht zurück: Wie ein Chargeback nach der Rollermiete in Vietnam funktioniert",
+      "search_intent": "informational",
+      "word_target": 1300,
+      "priority": 50,
+      "intent_rationale": "Wer die Kaution für einen Roller mit Karte bezahlt oder blocken lässt und sie nach der Abreise nicht zurückerhält, ist meist schon wieder zu Hause und will wissen, ob die eigene Bank die Zahlung zurückholen kann, welche Fristen gelten und welche Nachweise nötig sind.",
+      "content_angle": "Erklärt das Chargeback-Verfahren nach den Ratgebern des Europäischen Verbraucherzentrums Deutschland (Februar 2026) und des ADAC (August 2026): Es beruht auf den Regeln der Kartenorganisationen, nicht auf einem Gesetz; zuerst schriftlich beim Anbieter mit kurzer Frist reklamieren, dann bei der kartenausgebenden Bank das Reklamationsformular anfordern; meist bis zu 120 Tage ab Abbuchung, der ADAC nennt für einzelne Gründe bei Mastercard 90 Tage; Belege wie Zahlungsbeleg, Schriftverkehr und Fotos; Debitkarten nur teilweise, etwa bei vorübergehenden Reservierungen. Der NDR (November 2025) berichtet nach Angaben des EVZ, dass Banken Anträge oft pauschal ablehnen. Der Autor soll den Fall der einbehaltenen Kaution als ausgebliebene Erstattung einordnen, aber keinen Erfolg versprechen, keine Frist als feststehend darstellen, Barkaution und Überweisung als nicht über Chargeback rückholbar kennzeichnen und vietnamesische Rechtswege nur auf die Kautionsratgeber verlinken.",
+      "entities": [
+        "Chargeback",
+        "Visa",
+        "Mastercard",
+        "Europäisches Verbraucherzentrum Deutschland",
+        "kartenausgebende Bank",
+        "Debitkarte"
+      ],
+      "references": [
+        "rx-c3773007691e",
+        "rx-85277078ae49",
+        "rx-a55900fa3e88"
+      ],
+      "distinct_from": [
+        {
+          "id": "DE-S04",
+          "reason": "Prüft die Kautionsrückzahlung bei der Rückgabe vor Ort; dieser Artikel erklärt die Rückbuchung über die eigene Bank, wenn der Vermieter nicht zahlt"
+        },
+        {
+          "id": "DE-S152",
+          "reason": "Geht um das Bezahlen von Miete und Kaution in US-Dollar nach vietnamesischem Devisenrecht, nicht um das Chargeback-Verfahren der Kartenorganisationen"
+        },
+        {
+          "id": "DE-S132",
+          "reason": "Erklärt, wie das vietnamesische Zivilgesetzbuch die Kaution einordnet, nicht wie ein deutscher Karteninhaber eine Zahlung zurückholt"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261026de2",
+        "researched_on": "2026-10-26",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261026de2-0001.json@6ee916a11127"
+      },
+      "matrix_id": "DE-S285"
+    },
+    {
+      "candidate_id": "TA-DE-0347",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-contract",
+      "slug": "vertragsstrafe-im-rollermietvertrag-vietnam-gibt-es-eine-obergrenze",
+      "primary_query": "gibt es in Vietnam eine Obergrenze für Vertragsstrafen im Mietvertrag für einen Roller",
+      "secondary_queries": [
+        "Vertragsstrafe 8 Prozent Handelsgesetz Vietnam",
+        "darf ein Vermieter in Vietnam eine hohe Strafe für verspätete Rückgabe verlangen",
+        "was bedeutet phạt vi phạm im vietnamesischen Mietvertrag",
+        "Vertragsstrafe und Schadensersatz gleichzeitig Vietnam Zivilgesetzbuch"
+      ],
+      "working_title": "Vertragsstrafe im Rollermietvertrag in Vietnam: Gibt es eine gesetzliche Obergrenze?",
+      "search_intent": "informational",
+      "word_target": 1300,
+      "priority": 50,
+      "intent_rationale": "Vietnamesische Mietverträge für Roller enthalten oft Strafklauseln für Verspätung, Schäden oder Regelverstöße, und Mieter wollen vor der Unterschrift oder im Streit wissen, ob eine solche Vertragsstrafe in beliebiger Höhe gilt oder ob das Gesetz ihr eine Grenze setzt.",
+      "content_angle": "Stellt zwei Regelwerke nebeneinander: Nach Artikel 418 des Zivilgesetzbuchs gibt es eine Vertragsstrafe nur, wenn sie vereinbart ist; die Höhe bestimmen die Parteien, sofern kein anderes Gesetz etwas anderes sagt, und Strafe und Schadensersatz können kombiniert werden (Erläuterung des Rechtsportals pbgdpl.gov.vn). Artikel 301 des Handelsgesetzes 36/2005/QH11 begrenzt Strafen in Handelsverträgen auf 8 Prozent des verletzten Teils der Verpflichtung; nach Artikel 1 Absatz 3 kann eine Partei ohne Gewinnabsicht im Geschäft mit einem Händler die Anwendung des Handelsgesetzes wählen. Ein Beitrag auf lapphap.vn beschreibt dieses Wahlrecht, während Thư viện pháp luật Verträge für den privaten Verbrauch dem Zivilgesetzbuch zuordnet. Der Autor muss diese Unsicherheit offen darstellen, darf nicht behaupten, eine höhere Strafe sei automatisch unwirksam, keine Strafbeträge nennen und auf die Ratgeber zu unzulässigen Klauseln, zur Kaution und zur verspäteten Rückgabe verlinken.",
+      "entities": [
+        "Zivilgesetzbuch 91/2015/QH13",
+        "Artikel 418",
+        "Handelsgesetz 36/2005/QH11",
+        "Artikel 301",
+        "Artikel 1 Absatz 3 Handelsgesetz",
+        "phạt vi phạm"
+      ],
+      "references": [
+        "rx-2846f104d873",
+        "rx-12796a970585",
+        "rx-296951b2ebc1",
+        "rx-0a9b4df828fa"
+      ],
+      "distinct_from": [
+        {
+          "id": "DE-S117",
+          "reason": "Listet nach dem Verbraucherschutzgesetz verbotene Klauseln und Beschwerdewege, ohne die Höhe einer vereinbarten Vertragsstrafe und eine mögliche Obergrenze zu behandeln"
+        },
+        {
+          "id": "DE-S133",
+          "reason": "Erklärt Mieterrechte und Folgen verspäteter Rückgabe und erwähnt Vertragsstrafen nur als vereinbarungsabhängig, ohne Zivil- und Handelsrecht zu vergleichen"
+        },
+        {
+          "id": "DE-S132",
+          "reason": "Behandelt die Kaution im Zivilgesetzbuch und Beschluss 03/2026, nicht die gesetzliche Grenze einer vereinbarten Strafzahlung"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261026de2",
+        "researched_on": "2026-10-26",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261026de2-0001.json@6ee916a11127"
+      },
+      "matrix_id": "DE-S286"
+    },
+    {
+      "candidate_id": "TA-DE-0348",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-insurance",
+      "slug": "privathaftpflicht-benzinklausel-unfall-mit-mietroller-vietnam",
+      "primary_query": "zahlt meine Privathaftpflicht wenn ich in Vietnam mit dem Mietroller jemanden verletze",
+      "secondary_queries": [
+        "Benzinklausel Privathaftpflicht Roller im Ausland",
+        "private Haftpflicht Motorroller Urlaub Unfall",
+        "was bedeutet die kleine Benzinklausel",
+        "welche Versicherung zahlt Schäden an Dritten mit dem Mietroller im Ausland"
+      ],
+      "working_title": "Privathaftpflicht und Mietroller in Vietnam: Was die Benzinklausel ausschließt",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Viele Deutsche gehen davon aus, dass ihre private Haftpflichtversicherung weltweit jeden Schaden an Dritten deckt, und fragen vor oder nach der Rollerfahrt in Vietnam, ob sie auch Personen- und Sachschäden aus einem Unfall mit dem Mietroller übernimmt.",
+      "content_angle": "Erklärt die Benzinklausel: Nach dem verbreiteten Musterwortlaut, den Verivox zitiert, ist die gesetzliche Haftpflicht des Eigentümers, Besitzers, Halters oder Führers eines Kraftfahrzeugs wegen Schäden durch dessen Gebrauch nicht versichert; der ADAC (Seite zur Kfz-Haftpflicht, Oktober 2026) beschreibt, dass solche Fälle in die Kfz-Haftpflicht gehören. Der Bundesgerichtshof (IV ZR 120/05, 13. Dezember 2006) legt den Ausschluss so aus, dass sich eine Gefahr verwirklicht haben muss, die gerade dem Fahrzeuggebrauch eigen ist. Für Vietnam heißt das: Schäden an Dritten aus dem Fahren laufen über die vietnamesische Pflichtversicherung des Rollers bis zu ihren Höchstbeträgen, nicht über die deutsche Privathaftpflicht. Der Autor muss sagen, dass Tarife abweichen können und die eigenen Bedingungen entscheiden, darf keine Deckung versprechen oder ausschließen, die nicht im Bedingungswerk steht, keine Beträge nennen und für Pflichtversicherung, Haftung nach Zivilgesetzbuch und Zusatzpolicen auf die eigenen Ratgeber verweisen.",
+      "entities": [
+        "Privathaftpflichtversicherung",
+        "Benzinklausel",
+        "Bundesgerichtshof IV ZR 120/05",
+        "Kfz-Haftpflichtversicherung",
+        "Pflicht-Haftpflichtversicherung Vietnam",
+        "ADAC"
+      ],
+      "references": [
+        "rx-78917b7f99c8",
+        "rx-297690a3b5be",
+        "rx-0d69748e8c89"
+      ],
+      "distinct_from": [
+        {
+          "id": "DE-S30",
+          "reason": "Erklärt die vietnamesische Pflicht-Haftpflicht für den Roller, nicht warum die deutsche Privathaftpflicht wegen der Benzinklausel nicht einspringt"
+        },
+        {
+          "id": "DE-S136",
+          "reason": "Klärt, wer nach vietnamesischem Zivilrecht für einen Unfall mit dem Mietmotorrad haftet, nicht welche deutsche Versicherung den Schaden übernimmt"
+        },
+        {
+          "id": "DE-S10",
+          "reason": "Behandelt Reise- und Auslandskrankenversicherung nach einem Rollerunfall, die Privathaftpflicht erscheint dort nur als offene Frage"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261026de2",
+        "researched_on": "2026-10-26",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261026de2-0001.json@6ee916a11127"
+      },
+      "matrix_id": "DE-S287"
+    },
+    {
+      "candidate_id": "TA-DE-0349",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-insurance",
+      "slug": "mallorca-police-traveller-police-mietroller-vietnam",
+      "primary_query": "gilt die Mallorca-Police auch für einen Mietroller in Vietnam",
+      "secondary_queries": [
+        "Traveller-Police Motorrad Asien",
+        "Mallorca-Police außerhalb von Europa",
+        "Haftpflicht Deckungssumme für Mietroller im Ausland erhöhen",
+        "Mallorca-Police ohne eigenes Auto über die Privathaftpflicht"
+      ],
+      "working_title": "Mallorca-Police und Traveller-Police: Gelten sie für einen Mietroller in Vietnam?",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Deutsche kennen die Mallorca-Police aus der eigenen Autoversicherung und fragen sich, ob sie auch die Haftpflicht für einen in Vietnam gemieteten Roller aufstockt, weil die dortige Pflichtversicherung nach ihrem Eindruck niedrigere Höchstbeträge hat als in Deutschland.",
+      "content_angle": "Grenzt die beiden Zusatzschutze ab: Der ADAC-Ratgeber zum Mieten eines Autos beschreibt die Mallorca-Police als Zusatzdeckung für ganz Europa einschließlich Kanaren und Madeira und die Traveller-Police als weltweit gültig, meist mit einer Deckung von 500.000 Euro für Sach- und Personenschäden; manche Kreditkarten bieten Vergleichbares. Finanztip (Februar 2026) erklärt, dass die Mallorca-Klausel offiziell Versicherung für den Gebrauch fremder, versicherungspflichtiger Fahrzeuge heißt, Motorräder oder Roller mit größerem Motor erfassen kann, nur Schäden Dritter und nicht das Mietfahrzeug deckt und ohne eigenes Auto oft über die Privathaftpflicht abschließbar ist; die HUK nennt für ihre Police das europäische Ausland. Der Autor muss betonen, dass Vietnam außerhalb typischer Mallorca-Geltungsbereiche liegt, dass Zweiräder je nach Bedingungswerk ausgeschlossen sein können und man den Versicherer vor der Reise schriftlich fragen sollte; keine Tarifempfehlung und keine Zusage, dass eine Traveller-Police Roller in Vietnam deckt.",
+      "entities": [
+        "Mallorca-Police",
+        "Traveller-Police",
+        "Versicherung für den Gebrauch fremder Fahrzeuge",
+        "Kfz-Haftpflichtversicherung",
+        "Deckungssumme",
+        "Geltungsbereich"
+      ],
+      "references": [
+        "rx-0d5463c6397d",
+        "rx-e727cc3ad66c",
+        "rx-ad0beb80b8e6"
+      ],
+      "distinct_from": [
+        {
+          "id": "DE-S30",
+          "reason": "Beschreibt Umfang und Grenzen der vietnamesischen Pflichtversicherung, nicht ob eine deutsche Zusatzpolice für Mietfahrzeuge die Deckung aufstockt"
+        },
+        {
+          "id": "DE-S116",
+          "reason": "Behandelt freiwillige vietnamesische Motorradversicherungen für Eigenschaden und Fahrer, nicht deutsche Mallorca- oder Traveller-Policen"
+        },
+        {
+          "id": "DE-S138",
+          "reason": "Geht um Ausschlüsse der Auslandskrankenversicherung beim Rollerfahren, nicht um Haftpflichtdeckung gegenüber Dritten"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261026de2",
+        "researched_on": "2026-10-26",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261026de2-0001.json@6ee916a11127"
+      },
+      "matrix_id": "DE-S288"
+    },
+    {
+      "candidate_id": "TA-DE-0350",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-insurance",
+      "slug": "private-unfallversicherung-rollerunfall-vietnam-invaliditaet-ausschluesse",
+      "primary_query": "zahlt die private Unfallversicherung nach einem Rollerunfall in Vietnam",
+      "secondary_queries": [
+        "Unfallversicherung weltweit gültig Motorradunfall im Urlaub",
+        "Unfallversicherung Alkohol Roller Ausschluss Bewusstseinsstörung",
+        "Invalidität 15 Monate Frist Unfallversicherung Ausland",
+        "Bergungskosten Rücktransport Unfallversicherung Asien"
+      ],
+      "working_title": "Private Unfallversicherung nach einem Rollerunfall in Vietnam: Wann sie zahlt und wann nicht",
+      "search_intent": "informational",
+      "word_target": 1300,
+      "priority": 50,
+      "intent_rationale": "Wer in Vietnam Roller fährt und in Deutschland eine private Unfallversicherung hat, will wissen, ob sie im Ausland und auf dem Zweirad gilt, was sie überhaupt zahlt, welche Ausschlüsse beim Rollerfahren eine Rolle spielen und welche Fristen nach einem Unfall laufen.",
+      "content_angle": "Arbeitet mit den GDV-Musterbedingungen AUB 2020 (Stand Juni 2025): Schutz weltweit und rund um die Uhr (Ziffer 1.2); Invaliditätsleistung nur bei dauerhafter Beeinträchtigung, die binnen 15 Monaten eingetreten, ärztlich festgestellt und geltend gemacht ist (2.1.1); ausgeschlossen sind Unfälle durch Bewusstseinsstörungen, ausdrücklich auch durch Alkohol, mit dem Beispiel einer Fahrt unter Alkoholeinfluss (5.1.1), sowie Rennen mit Motorfahrzeugen (5.1.5); nach dem Unfall unverzüglich einen Arzt hinzuziehen und den Versicherer unterrichten (7.1); Such- und Bergungskosten nur, wenn vereinbart (2.8). Die BaFin erklärt, dass die Krankenversicherung die Heilbehandlung trägt und die Unfallversicherung bei dauerhaften Beeinträchtigungen einspringt; die Verbraucherzentrale Niedersachsen (April 2025) nennt sie eine reine Absicherung unfallbedingter Invalidität. Der Autor muss klarstellen, dass Musterbedingungen unverbindlich sind und Tarife abweichen, keine Leistungshöhen nennen, Behandlungskosten auf die Auslandskrankenversicherung verweisen und vietnamesische Alkoholregeln nur verlinken.",
+      "entities": [
+        "private Unfallversicherung",
+        "AUB 2020 (GDV-Musterbedingungen)",
+        "Invaliditätsleistung",
+        "Bewusstseinsstörung",
+        "Bergungskosten",
+        "BaFin"
+      ],
+      "references": [
+        "rx-4b46d65fac45",
+        "rx-6f92687cae7b",
+        "rx-2452858c92ab"
+      ],
+      "distinct_from": [
+        {
+          "id": "DE-S138",
+          "reason": "Prüft Ausschlüsse der Auslandskrankenversicherung für Behandlungskosten, nicht Invaliditätsleistungen und Ausschlüsse einer privaten Unfallversicherung"
+        },
+        {
+          "id": "DE-S10",
+          "reason": "Fragt, ob die Reiseversicherung nach einem Rollerunfall zahlt, und behandelt die private Unfallversicherung mit ihren Fristen nicht"
+        },
+        {
+          "id": "DE-S116",
+          "reason": "Beschreibt freiwillige vietnamesische Motorrad- und Fahrerunfallversicherungen, nicht eine in Deutschland abgeschlossene private Unfallversicherung"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261026de2",
+        "researched_on": "2026-10-26",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261026de2-0001.json@6ee916a11127"
+      },
+      "matrix_id": "DE-S289"
+    },
+    {
+      "candidate_id": "TA-DE-0351",
+      "locale": "de",
+      "role": "SUPPORT",
+      "parent_id": "DE-H03",
+      "cluster": "documents-contracts",
+      "subcluster": "dc-insurance",
+      "slug": "tasche-vom-roller-gestohlen-vietnam-reisegepaeck-hausratversicherung",
+      "primary_query": "Tasche vom Roller gestohlen in Vietnam zahlt die Reisegepäck- oder Hausratversicherung",
+      "secondary_queries": [
+        "Reisegepäckversicherung Diebstahl aus abgestelltem Fahrzeug Bedingungen",
+        "Hausratversicherung Außenversicherung Raub im Urlaub",
+        "Handtaschenraub vom Motorrad im Ausland Versicherung",
+        "Polizeibestätigung über Diebstahl in Vietnam für die Versicherung"
+      ],
+      "working_title": "Tasche vom Roller gestohlen in Vietnam: Was Reisegepäck- und Hausratversicherung zahlen",
+      "search_intent": "informational",
+      "word_target": 1200,
+      "priority": 50,
+      "intent_rationale": "Taschenraub vom fahrenden Roller und Diebstahl aus dem Staufach sind typische Schadensfälle für Rollerfahrer in vietnamesischen Städten; Betroffene wollen wissen, welche ihrer deutschen Versicherungen dafür aufkommt und welche Bedingungen und Nachweise dabei entscheiden.",
+      "content_angle": "Vergleicht zwei Policen anhand der Quellen: Die GDV-Musterbedingungen VB-Reisegepäck 2008/2025 decken mitgeführtes Gepäck bei Diebstahl, Raub und räuberischer Erpressung (Ziffer 2.1.1), bei Diebstahl aus einem abgestellten Kraftfahrzeug oder daran angebrachten Behältnissen aber nur, wenn diese verschlossen sind und der Schaden zwischen 6 und 22 Uhr eintritt (3.4); strafbare Handlungen sind unverzüglich der Polizei mit einer Liste anzuzeigen und bestätigen zu lassen (5.1). Die Verbraucherzentralen (April 2025) erklären, dass die Außenversicherung der Hausratversicherung weltweit meist bis zu drei Monate gilt und Raub erfasst, Diebstahl auf der Straße aber nicht; Finanztip (April 2026) bestätigt, dass einfacher Diebstahl nicht versichert ist. Der Autor muss sagen, dass Tarife abweichen und nicht belegt ist, ob ein Rollerstaufach als verschlossenes Behältnis gilt, darf keine Erstattungsbeträge nennen und soll die Anzeige bei der vietnamesischen Polizei sowie Diebstahlschutz nur verlinken.",
+      "entities": [
+        "Reisegepäckversicherung",
+        "VB-Reisegepäck 2008/2025 (GDV)",
+        "Hausratversicherung",
+        "Außenversicherung",
+        "Raub",
+        "einfacher Diebstahl"
+      ],
+      "references": [
+        "rx-b9a40169a4c0",
+        "rx-de962c277492",
+        "rx-1fbcca1e171b"
+      ],
+      "distinct_from": [
+        {
+          "id": "DE-S120",
+          "reason": "Erklärt, wie man einen Diebstahl bei der vietnamesischen Polizei meldet, nicht welche deutsche Versicherung den Verlust ersetzt und unter welchen Bedingungen"
+        },
+        {
+          "id": "DE-S34",
+          "reason": "Gibt Tipps gegen Rollerdiebstahl und Taschenraub vom Motorrad, behandelt aber keine Versicherungsbedingungen für gestohlenes Gepäck"
+        },
+        {
+          "id": "DE-S10",
+          "reason": "Behandelt Reise- und Krankenversicherung nach einem Rollerunfall, nicht Gepäck- und Hausratschutz bei Diebstahl oder Raub"
+        }
+      ],
+      "status": "PROMOTED",
+      "serp_evidence": "NOT_VALIDATED",
+      "source_verification": "NOT_STARTED",
+      "research": {
+        "agent": "claude",
+        "session": "research-claude-20261026de2",
+        "researched_on": "2026-10-26",
+        "keyword_evidence": "NOT_VALIDATED",
+        "source": "factory/topic-research/batches/claude-20261026de2-0001.json@6ee916a11127"
+      },
+      "matrix_id": "DE-S290"
     }
   ]
 }
