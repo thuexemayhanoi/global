@@ -11620,17 +11620,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-26T08:05:37.081Z"
+    },
+    {
+      "id": "DE-S163",
+      "locale": "de",
+      "url": "/de/guides/yamaha-wr155r-suzuki-v-strom-250sx-honda-nx500-sitzhoehe-fuehrerschein/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T08:14:53.120Z",
+      "source_sha256": "8d13509f62a8ea5d74a58319727180478827e96de56aa1d5f97012cadbdb5ee9",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S165",
+      "locale": "de",
+      "url": "/de/guides/strassengesetz-pflichten-rollerverleih-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T08:14:53.120Z",
+      "source_sha256": "4852475de491faa45a65b06a3d4c52f11b02bfd8870ff5c0cc6ca2b2d6173115",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T10:19:44.859Z",
-      "ids": [
-        "DE-S85",
-        "EN-S86"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T10:21:12.993Z",
       "ids": [
@@ -13180,6 +13194,14 @@
         "DE-S145"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-26T08:14:53.120Z",
+      "ids": [
+        "DE-S163",
+        "DE-S165"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -13191,5 +13213,7 @@
     "commit": "00ee6edd5d0d4b62006944cf97601304d739e544",
     "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 3
+  }
 }
