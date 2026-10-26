@@ -11716,17 +11716,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-26T08:23:36.638Z"
+    },
+    {
+      "id": "DE-S171",
+      "locale": "de",
+      "url": "/de/guides/reservebenzin-und-benzin-aus-flaschen-am-strassenrand-vietnam-roller/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-26T08:27:04.691Z",
+      "source_sha256": "899e2bfdd10f81ab64d3322129e1ed2bbf7bd80daea1e42671f5cd1af57f59a7",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T10:42:48.824Z",
-      "ids": [
-        "PT-S83",
-        "VI-S82"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T10:44:32.151Z",
       "ids": [
@@ -13276,6 +13279,13 @@
         "DE-S187"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-26T08:27:04.691Z",
+      "ids": [
+        "DE-S171"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -13287,5 +13297,7 @@
     "commit": "f4c3d4eee3cc5f0961b49c51be2b1377d6fcb764",
     "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
