@@ -12,15 +12,15 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
-| Matrix rows (2070) | 1021 | 9 | 38 | 1002 |
+| Matrix rows (2080) | 1021 | 9 | 40 | 1010 |
 | Topical candidates (1311) | 0 | 0 | 35 | 1276 |
 | Silos (330) | 139 | 16 | 0 | 175 |
 
-Knowledge graph: 42 entities, 4436 typed edges (hreflang_equivalent 190, about 710, contains 3326, has_silo 160, has_hub 40, has_pillar 10).
+Knowledge graph: 42 entities, 4446 typed edges (hreflang_equivalent 190, about 710, contains 3336, has_silo 160, has_hub 40, has_pillar 10).
 
 ## REVIEW — competing intents
 
-41 pair(s); showing up to 41.
+42 pair(s); showing up to 42.
 
 | A | B | Score | Basis |
 |---|---|---|---|
@@ -41,6 +41,7 @@ Knowledge graph: 42 entities, 4436 typed edges (hreflang_equivalent 190, about 7
 | NL-S183 | TA-NL-0307 | 0.53 | query |
 | DE-S125 | DE-S203 | 0.5 | query |
 | DE-S232 | DE-S257 | 0.5 | query |
+| DE-S305 | DE-S309 | 0.5 | query |
 | EN-S32 | EN-S110 | 0.5 | query |
 | ES-S05 | ES-S38 | 0.5 | query |
 | ES-S114 | TA-ES-0253 | 0.5 | query |
@@ -88,16 +89,16 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 
 | Silo | Journey | Intent | Live FAQ | vi | en | de | fr | es | nl | zh | pt | ko | ja |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| vc-transmission | consideration | informational | – | P4 I2 C1 KEEP | P4 I1 C2 KEEP | P5 I3 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP |
+| vc-transmission | consideration | informational | – | P4 I2 C1 KEEP | P4 I1 C2 KEEP | P5 I5 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP | P4 I1 C2 KEEP |
 | vc-power | consideration | informational | – | P4 I6 C6 KEEP | P4 I4 C9 KEEP | P10 I10 KEEP | P4 I4 C9 KEEP | P4 I4 C9 KEEP | P4 I4 C9 KEEP | P4 I4 C9 KEEP | P4 I4 C9 KEEP | P4 I4 C9 KEEP | P4 I4 C9 KEEP |
 | vc-models | consideration | commercial | – | P3 I21 C6 KEEP | P3 I19 C9 KEEP | P22 I12 UPGRADE | P2 I19 C9 KEEP | P3 I18 C9 KEEP | P2 I19 C9 KEEP | P2 I19 C9 KEEP | P2 I19 C9 KEEP | P2 I19 C9 KEEP | P2 I19 C9 KEEP |
-| vc-trip-fit | consideration | informational | – | P2 I8 C6 KEEP | P2 I7 C7 KEEP | P6 I12 KEEP | P1 I8 C7 KEEP | P2 I7 C7 KEEP | I9 C7 CREATE | I9 C7 CREATE | I9 C7 CREATE | I9 C7 CREATE | I9 C7 CREATE |
+| vc-trip-fit | consideration | informational | – | P2 I8 C6 KEEP | P2 I7 C7 KEEP | P6 I16 KEEP | P1 I8 C7 KEEP | P2 I7 C7 KEEP | I9 C7 CREATE | I9 C7 CREATE | I9 C7 CREATE | I9 C7 CREATE | I9 C7 CREATE |
 | rc-period | consideration | commercial | Pillar FAQ ×10 | P2 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P1 I1 KEEP | P2 KEEP | P2 KEEP | P2 KEEP | P1 I1 KEEP | P1 I1 KEEP |
 | rc-deposit | decision | commercial | Pillar FAQ ×10 | P2 I2 KEEP | P2 I2 KEEP | P4 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP | P2 I2 KEEP |
 | rc-extras | decision | commercial | – | P2 I3 KEEP | P2 I3 KEEP | P5 I3 KEEP | P2 I3 KEEP | P2 I3 KEEP | P2 I3 KEEP | P2 I3 KEEP | P2 I3 KEEP | P2 I3 KEEP | P2 I3 KEEP |
 | dc-licence | decision | informational | Pillar FAQ ×10 | P6 I5 C1 UPGRADE | P7 I3 C3 UPGRADE | P11 I9 KEEP | P8 I3 C3 KEEP | P7 I3 C3 UPGRADE | P6 I3 C3 KEEP | P7 I3 C3 KEEP | P6 I3 C3 KEEP | P6 I3 C3 KEEP | P6 I3 C3 KEEP |
 | dc-contract | decision | informational | – | P3 I7 C1 KEEP | P4 I6 C1 KEEP | P10 I2 KEEP | P4 I6 C1 KEEP | P3 I6 C2 KEEP | P3 I7 C1 KEEP | P3 I7 C1 KEEP | P3 I7 C1 KEEP | P4 I6 C1 KEEP | P4 I6 C1 KEEP |
-| dc-insurance | decision | informational | – | P1 I4 KEEP | P2 I4 UPGRADE | P6 I4 KEEP | P2 I4 KEEP | P2 I4 KEEP | P2 I4 KEEP | P1 I4 KEEP | P2 I4 KEEP | P2 I4 KEEP | P2 I4 UPGRADE |
+| dc-insurance | decision | informational | – | P1 I4 KEEP | P2 I4 UPGRADE | P6 I8 KEEP | P2 I4 KEEP | P2 I4 KEEP | P2 I4 KEEP | P1 I4 KEEP | P2 I4 KEEP | P2 I4 KEEP | P2 I4 UPGRADE |
 | dc-papers | riding | informational | – | P3 I7 KEEP | P3 I7 KEEP | P10 I3 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP |
 | ss-pickup (reserved: CHECKLIST) | pickup | informational | – | P1 KEEP | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE |
 | ss-weather | riding | local | – | P4 I7 C8 KEEP | P5 I6 C8 KEEP | P12 I9 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP |
@@ -129,8 +130,8 @@ Published / planned (IDEA + drafts) / candidates per stage.
 | Stage | vi | en | de | fr | es | nl | zh | pt | ko | ja |
 |---|---|---|---|---|---|---|---|---|---|---|
 | awareness | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
-| consideration | 15 / 37 / 19 | 14 / 32 / 27 | 44 / 38 / 0 | 12 / 33 / 27 | 14 / 31 / 27 | 12 / 33 / 27 | 12 / 33 / 27 | 12 / 33 / 27 | 11 / 34 / 27 | 11 / 34 / 27 |
-| decision | 14 / 21 / 2 | 17 / 18 / 4 | 36 / 20 / 0 | 18 / 18 / 4 | 16 / 18 / 5 | 15 / 19 / 4 | 15 / 19 / 4 | 15 / 19 / 4 | 16 / 18 / 4 | 16 / 18 / 4 |
+| consideration | 15 / 37 / 19 | 14 / 32 / 27 | 44 / 44 / 0 | 12 / 33 / 27 | 14 / 31 / 27 | 12 / 33 / 27 | 12 / 33 / 27 | 12 / 33 / 27 | 11 / 34 / 27 | 11 / 34 / 27 |
+| decision | 14 / 21 / 2 | 17 / 18 / 4 | 36 / 24 / 0 | 18 / 18 / 4 | 16 / 18 / 5 | 15 / 19 / 4 | 15 / 19 / 4 | 15 / 19 / 4 | 16 / 18 / 4 | 16 / 18 / 4 |
 | pickup | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
 | riding | 56 / 65 / 28 | 60 / 52 / 37 | 124 / 38 / 0 | 60 / 50 / 39 | 50 / 52 / 46 | 58 / 49 / 41 | 58 / 49 / 41 | 58 / 49 / 41 | 58 / 50 / 39 | 58 / 50 / 39 |
 | return | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 |
@@ -144,7 +145,7 @@ Every locale checklist also covers the consideration → decision → pickup →
 |---|---|---|---|---|---|---|
 | vi | 214 | 91 | 0 | 123 | 118 | 99% |
 | en | 199 | 97 | 0 | 102 | 137 | 97% |
-| de | 306 | 210 | 0 | 96 | 69 | 99% |
+| de | 316 | 210 | 0 | 106 | 69 | 99% |
 | fr | 197 | 96 | 0 | 101 | 139 | 99% |
 | es | 187 | 86 | 0 | 101 | 147 | 97% |
 | nl | 192 | 91 | 0 | 101 | 141 | 97% |
