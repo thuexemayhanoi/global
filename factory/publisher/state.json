@@ -12460,16 +12460,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-27T12:50:08.711Z"
+    },
+    {
+      "id": "DE-S233",
+      "locale": "de",
+      "url": "/de/guides/regen-nasse-strassen-roller-unfallstudien-vietnam-verkehrspolizei-rat/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T12:52:36.856Z",
+      "source_sha256": "d4e30db8ee3c8ed34978ff1d70d3112292b2ee73d6b2bee22221ae5344ba145c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S239",
+      "locale": "de",
+      "url": "/de/guides/roller-wartungsintervalle-honda-und-yamaha-vietnam/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T12:52:36.856Z",
+      "source_sha256": "31a1a79660e210352b71e8f1d97338c3f53f03a3b4f1dba6fcf5af4bd323c78d",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-17T07:37:20.124Z",
-      "ids": [
-        "EN-S24"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-17T07:38:25.536Z",
       "ids": [
@@ -13992,6 +14007,14 @@
         "DE-S251"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-27T12:52:36.856Z",
+      "ids": [
+        "DE-S233",
+        "DE-S239"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -14002,5 +14025,7 @@
     "commit": "4c6c62d3d932f4de82bfb81e685b98eda01acae2",
     "live_seconds": 102
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 2
+  }
 }
