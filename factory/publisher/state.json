@@ -12484,17 +12484,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-27T12:54:13.949Z"
+    },
+    {
+      "id": "DE-S231",
+      "locale": "de",
+      "url": "/de/guides/kawasaki-z900-z900rs-z1100-zx-6r-zx-10r-unterschiede-klasse-a/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T12:55:19.586Z",
+      "source_sha256": "c4b0cdf56226029eec5889232d1c1c1f0e5a95bd4975706368d16e2109590c92",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S232",
+      "locale": "de",
+      "url": "/de/guides/bmw-r-12-ninet-r-12-s-r-12-gs-unterschiede-klasse-a/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T12:55:19.586Z",
+      "source_sha256": "ffcdae4bb7087acd2137216891ac925e069c035f9c53861ab48db715bc23d99c",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-17T07:57:05.199Z",
-      "ids": [
-        "NL-S22",
-        "PT-S22"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-17T07:58:34.595Z",
       "ids": [
@@ -14018,6 +14032,14 @@
         "DE-S239"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-27T12:55:19.586Z",
+      "ids": [
+        "DE-S231",
+        "DE-S232"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -14030,6 +14052,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 2
+    "APPROVED_BY_POLICY": 3
   }
 }
