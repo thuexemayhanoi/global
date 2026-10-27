@@ -100,3 +100,19 @@ test("404 source is noindex and unknown route is delegated to GitHub Pages",()=>
  const h=read("404.html");assert.ok(h.includes('name="robots" content="noindex,follow"'));
  assert.ok(!h.includes('rel="canonical"'));
 });
+
+test("later Hubs join a More topics group only once PUBLISHED; an IDEA Hub renders nothing",async()=>{
+ const {enhanceNavigation,LEGACY_HUB_CLUSTERS}=await import("../scripts/navigation.mjs");
+ const ideaHubs=matrix.rows.filter(r=>r.role==="HUB"&&!LEGACY_HUB_CLUSTERS.includes(r.cluster));
+ assert.equal(ideaHubs.length,60);
+ const page='<html><body><a class="skip" href="#main">Skip</a><header class="header"></header><main id="main"></main><footer class="footer"></footer></body></html>';
+ const files={"en/index.html":page};
+ const nav=enhanceNavigation({...files},langs,matrix)["en/index.html"];
+ for(const h of ideaHubs.filter(h=>h.locale==="en"&&h.status!=="PUBLISHED")){assert.ok(!nav.includes(h.url),h.id);assert.ok(!nav.includes(h.working_title),h.id);}
+ assert.ok(!nav.includes("nav2-more"));
+ const m=structuredClone(matrix),h=m.rows.find(r=>r.id==="EN-H06");h.status="PUBLISHED";
+ const out=enhanceNavigation({...files,[h.url.slice(1)+"index.html"]:page},langs,m)["en/index.html"];
+ assert.equal((out.match(new RegExp('href="'+h.url+'"','g'))||[]).length,2,"header and footer link the published Hub");
+ assert.ok(out.includes('class="nav2-topic nav2-more"')&&out.includes("More topics"));
+ assert.equal((out.match(/class="nav2-topic"/g)||[]).length,4,"the four original Hub groups stay as they are");
+});

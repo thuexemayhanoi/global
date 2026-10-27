@@ -1,7 +1,7 @@
 {
   "version": 1,
   "locale": "zh",
-  "updated_on": "2026-10-14",
+  "updated_on": "2026-10-27",
   "market_notes": "Simplified-Chinese readers include mainland tourists, business travellers and long-stay workers. A recurring, high-stakes question is whether a Chinese licence can be used at all, alongside 押护照 deposits, insurance and how to deal with 交警. Queries are written without spaces, so overlap scoring uses character bigrams; slugs use pinyin.",
   "stop_tokens": [
     "河内",
@@ -47,7 +47,22 @@
     "ss-gear": "头盔与护具",
     "ss-city": "在河内骑行",
     "rt-northern-loops": "北部环线",
-    "rt-day-trips": "河内出发一日游"
+    "rt-day-trips": "河内出发一日游",
+    "mob-urban-transit": "市内公交与地铁",
+    "mob-intercity": "火车与长途客车",
+    "mob-last-mile": "机场与最后一公里接驳",
+    "travel-neighborhoods": "街区",
+    "travel-seasons": "季节与节庆",
+    "travel-etiquette": "礼仪与习俗",
+    "dest-northern": "越南北部景点",
+    "dest-local": "河内市内与周边",
+    "dest-landscapes": "自然风光与国家公园",
+    "plan-itineraries": "行程安排",
+    "plan-budget": "预算与支付",
+    "plan-logistics": "签证、证件与出行准备",
+    "electric-choice": "选择电动车",
+    "electric-infrastructure": "充电与换电",
+    "electric-sustainability": "排放与可持续"
   },
   "existing": {
     "ZH-CHECKLIST": "ss-pickup",
@@ -557,7 +572,7 @@
       "candidate_id": "TA-ZH-0019",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hejiang-huanxian",
@@ -575,7 +590,7 @@
         "zh-embassy-reminder-beijing-fao",
         "who-road-traffic-injuries"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED"
     },
@@ -583,7 +598,7 @@
       "candidate_id": "TA-ZH-0020",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "ningping-yiriyou",
@@ -601,7 +616,7 @@
         "zh-embassy-reminder-beijing-fao",
         "vi-nchmf-home"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED"
     },
@@ -4342,7 +4357,7 @@
       "candidate_id": "TA-ZH-0095",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "hanoi-ditie-2a-xian-jiling-hedong-zhandian-piaowu",
@@ -4355,7 +4370,7 @@
       "working_title": "河内地铁2A线（吉灵—河东）：站点、票种与游客乘坐指南",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "住在栋多、巴亭或河东一带的游客，以及想体验越南首条地铁线路的人，会查询这条线路经过哪些车站、车票怎么购买，以及它是否方便用来游览河内西部的景点。",
       "content_angle": "逐站介绍，面向不会越南语的旅客：哪些车站靠近景点、各类车票有何区别、什么时候坐地铁比打车更省事，并提醒到运营方网站核对现行票价。",
       "entities": [
@@ -4370,7 +4385,7 @@
         "rx-37e73e6382d0",
         "rx-79845491e4cc"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4385,7 +4400,7 @@
       "candidate_id": "TA-ZH-0096",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "hanoi-ditie-3-hao-xian-gaojia-duan-nhon-cau-giay",
@@ -4414,7 +4429,7 @@
         "rx-53927038735c",
         "rx-37e73e6382d0"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4429,7 +4444,7 @@
       "candidate_id": "TA-ZH-0097",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "hanoi-gongjiao-zenme-zuo-xianlu-zhifu-yingyong",
@@ -4455,7 +4470,7 @@
         "rx-eee6771cad88",
         "rx-b65e9e8771d0"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4470,7 +4485,7 @@
       "candidate_id": "TA-ZH-0098",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "hanoi-vinbus-diandong-gongjiao-xianlu",
@@ -4497,7 +4512,7 @@
         "rx-1493305fbcc0",
         "rx-013b4f53a1de"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4512,7 +4527,7 @@
       "candidate_id": "TA-ZH-0099",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-last-mile",
       "slug": "neipai-jichang-zuo-gongjiao-dao-hanoi-laocheng",
@@ -4525,7 +4540,7 @@
       "working_title": "从内排机场坐公交到河内老城区：快线与市区线路对比",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "刚落地、想不打车就前往老城区的旅客，会比较哪路公交从哪个航站楼出发、需要多长时间、怎么付款，以及在市中心的哪些地方停靠。",
       "content_angle": "按航站楼、行驶时间、行李空间和深夜是否有车，对比快线巴士与较慢的市区线路，并说明落地前如何核对现行时刻表。",
       "entities": [
@@ -4539,7 +4554,7 @@
         "rx-0151482b1c10",
         "rx-edbc19874e23"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4554,7 +4569,7 @@
       "candidate_id": "TA-ZH-0100",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "hanoi-changtu-qichezhan-nage-zhan-qu-nali",
@@ -4567,7 +4582,7 @@
       "working_title": "河内长途汽车站：各站开往哪些地区，含新启用的 Yen So 车站",
       "search_intent": "informational",
       "word_target": 1400,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "预订长途大巴或卧铺巴士的人需要知道自己的线路从河内的哪个汽车站出发、怎样从市中心前往该站，以及应该为这段路预留多少时间。",
       "content_angle": "按目的地区域绘制车站对照图，附上乘市区公交或出租车前往各站的方式，并建议向客运公司再确认出发站，因为长途线路正在 Giap Bat、Nuoc Ngam 与2026年10月启用的 Yen So 之间重新分配。",
       "entities": [
@@ -4581,7 +4596,7 @@
         "rx-42e17aa5f861",
         "rx-a114dbadaa86"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4596,7 +4611,7 @@
       "candidate_id": "TA-ZH-0101",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "hanoi-dao-shaba-zuo-huoche-yexing-laojie",
@@ -4624,7 +4639,7 @@
         "rx-f9d9d33cd37d",
         "rx-265e7b919b17"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4639,7 +4654,7 @@
       "candidate_id": "TA-ZH-0102",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "hanoi-dao-ningping-zuo-huoche-shijian-chezhan",
@@ -4673,7 +4688,7 @@
           "reason": "TA-ZH-0020 讲的是自己骑摩托车去宁平的一日游；本文讲的是坐火车的行程、时刻、到达车站以及到三谷的接驳。"
         }
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4688,7 +4703,7 @@
       "candidate_id": "TA-ZH-0103",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "hanoi-dao-xialong-zuo-daba-banche-xiaoba",
@@ -4715,7 +4730,7 @@
         "rx-4ac2e853efff",
         "rx-59bc3d0859c0"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4730,7 +4745,7 @@
       "candidate_id": "TA-ZH-0104",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-last-mile",
       "slug": "hanoi-dache-ruanjian-grab-xanh-sm-be-duibi",
@@ -4757,7 +4772,7 @@
         "rx-399044399e9b",
         "rx-652827dbd946"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4860,7 +4875,7 @@
       "candidate_id": "TA-ZH-0107",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "hanoi-qi-motuoche-dao-bawei-guojia-gongyuan",
@@ -4873,7 +4888,7 @@
       "working_title": "从河内骑摩托车到巴维国家公园：路线、山路和出发前要核对的事项",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "打算从河内市中心出发一日往返的骑行者，会查询去巴维要多久、哪些道路适合摩托车、山路难不难走，以及出发前应该向国家公园核实哪些信息。",
       "content_angle": "按行程顺序展开：先弄清升龙大道沿线哪些道路允许摩托车通行，再讲上山路段、雾天以及公园公布的开放时间，内容只依据公园官方网站和已核对过的旅游指南。",
       "entities": [
@@ -4887,7 +4902,7 @@
         "rx-c563d95e9b7c",
         "rx-a71738d99a5b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4902,7 +4917,7 @@
       "candidate_id": "TA-ZH-0108",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "hanoi-qi-motuoche-dao-xiangsi",
@@ -4915,7 +4930,7 @@
       "working_title": "从河内骑摩托车到香寺：去往 Ben Duc 码头的路、节庆期人流与乘船游览",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "考虑一日游去香寺的骑行者，想知道香寺距河内市中心有多远、道路和节庆期的人流会怎样影响摩托车行程，以及 Ben Duc 码头的乘船环节在一天中怎么安排。",
       "content_angle": "把一天的安排围绕摩托车路段和前往码头的接驳来展开，并说明庙会从正月初六持续到三月，河内市已把香山景区认定为市级旅游目的地，内容只依据已核对的资料。",
       "entities": [
@@ -4930,7 +4945,7 @@
         "rx-66202fa60e82",
         "rx-1aaa7d343a21"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4945,7 +4960,7 @@
       "candidate_id": "TA-ZH-0109",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-qi-motuoche-dao-gaoping-banyue-pubu",
@@ -4958,7 +4973,7 @@
       "working_title": "从河内骑摩托车到高平和板约瀑布：穿越地质公园的路线选择",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "不满足于河江环线、骑行经验丰富的车友，会查询高平距河内多远、有哪些路线可以到达板约瀑布，以及骑行穿越地质公园实际需要几天。",
       "content_angle": "先依据联合国教科文组织页面和近期报道对该地区的确认来规划路线，再列出骑行前需要向省级旅游部门核实的事项，包括路况、天气以及边境地区的任何要求。",
       "entities": [
@@ -4972,7 +4987,7 @@
         "rx-2ef6cacf2bde",
         "rx-6b22d1b4c416"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4987,7 +5002,7 @@
       "candidate_id": "TA-ZH-0110",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "hanoi-qi-motuoche-dao-sandao",
@@ -5015,7 +5030,7 @@
         "rx-abf5155e3f87",
         "rx-493f238b25be"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5030,7 +5045,7 @@
       "candidate_id": "TA-ZH-0111",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-qi-motuoche-dao-mai-chau-pu-luong",
@@ -5058,7 +5073,7 @@
         "rx-040fa2df6cd1",
         "rx-043d9353d8e1"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5073,7 +5088,7 @@
       "candidate_id": "TA-ZH-0112",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-qi-motuoche-dao-shaba-bu-zou-gaosu",
@@ -5101,7 +5116,7 @@
         "rx-5b71b4389f63",
         "rx-8e4da123146f"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5116,7 +5131,7 @@
       "candidate_id": "TA-ZH-0113",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-meiyue-tianqi",
@@ -5130,7 +5145,7 @@
       "working_title": "河内每月天气：气温、降雨、湿度与四季的真实体感",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "计划河内行程的游客需要知道每个月究竟多热、多冷、多潮湿，才能选好出行日期、决定带什么衣物，并避开最闷热或雨水最多的几周。",
       "content_angle": "根据气象站公布的气候平均值和国家旅游门户网站整理逐月表格，再用街头的真实体感（湿冷、毛毛雨、闷热潮湿）来描述每个季节，而不只是罗列数字。",
       "entities": [
@@ -5145,7 +5160,7 @@
         "rx-c983f144155b",
         "rx-df7e82ac43ec"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5160,7 +5175,7 @@
       "candidate_id": "TA-ZH-0114",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-dongtian-chuan-shenme",
@@ -5188,7 +5203,7 @@
         "rx-90643ef6a563",
         "rx-c983f144155b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5203,7 +5218,7 @@
       "candidate_id": "TA-ZH-0115",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-chunjie-qijian-yingye",
@@ -5231,7 +5246,7 @@
         "rx-23003ff3f63e",
         "rx-366c76f559e9"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5246,7 +5261,7 @@
       "candidate_id": "TA-ZH-0116",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-zhongqiujie-hang-ma-jie",
@@ -5275,7 +5290,7 @@
         "rx-a6232add5549",
         "rx-133ea5395fa7"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5290,7 +5305,7 @@
       "candidate_id": "TA-ZH-0117",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "hoan-kiem-hu-zhoumo-buxingjie",
@@ -5304,7 +5319,7 @@
       "working_title": "还剑湖周末步行街：开放时段、街道范围、夜市与避开人流的方法",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "游客和当地居民想知道还剑湖周边的步行街在哪些日子和时段开放、包含哪些街道、车辆如何受限，以及什么时候去才能避开拥挤的人群，好合理安排周末夜晚的行程。",
       "content_angle": "依据国家旅游主管部门的开通公告、VnExpress国际版的介绍以及节假日延长开放的报道，给出周末时段、涉及的主要街道，以及节假日期间如何调整时间安排。",
       "entities": [
@@ -5318,7 +5333,7 @@
         "rx-19686b4670bf",
         "rx-13ea3c501248"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5333,7 +5348,7 @@
       "candidate_id": "TA-ZH-0118",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "hanoi-gu-jiequ-sanshiliu-hang-jie",
@@ -5361,7 +5376,7 @@
         "rx-31183e76ccc4",
         "rx-73eb245dc1ee"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5376,7 +5391,7 @@
       "candidate_id": "TA-ZH-0119",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "hanoi-faguo-qu-yu-da-juyuan",
@@ -5404,7 +5419,7 @@
         "rx-33748c5ef9af",
         "rx-4b6d6dc13a5a"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5419,7 +5434,7 @@
       "candidate_id": "TA-ZH-0120",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "hanoi-xihu-huanhu-youwan",
@@ -5448,7 +5463,7 @@
         "rx-50be328dc3a4",
         "rx-778e5e379646"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5463,7 +5478,7 @@
       "candidate_id": "TA-ZH-0121",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-etiquette",
       "slug": "yuenan-simiao-baota-liyi",
@@ -5477,7 +5492,7 @@
       "working_title": "越南寺庙与佛塔参拜礼仪：着装、鞋帽、上香与拍照",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "游客第一次去越南的寺庙和佛塔，想知道该穿什么、要不要脱鞋或摘帽、能不能拍照，以及怎样上香才不会失礼或惹得当地人不快，免得在门口被拒绝。",
       "content_angle": "汇总国家旅游门户网站、越南新闻社英文版和青年报英文版关于文物古迹着装规定的报道，强调这些是文化规范，各处遗址可能另有自己的规定。",
       "entities": [
@@ -5491,7 +5506,7 @@
         "rx-18f5d6cae38d",
         "rx-223501057c96"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5506,7 +5521,7 @@
       "candidate_id": "TA-ZH-0122",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-etiquette",
       "slug": "canguan-humingling-kaifang-shijian",
@@ -5534,7 +5549,7 @@
         "rx-6b98b6b016ab",
         "rx-3fa8f96a0d89"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5549,7 +5564,7 @@
       "candidate_id": "TA-ZH-0123",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "hanoi-shenglong-huangcheng-youlan",
@@ -5563,7 +5578,7 @@
       "working_title": "河内升龙皇城：世界遗产的看点与参观方法",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "游客想弄清升龙皇城是什么、为什么被联合国教科文组织列入名录、里面有什么可看，以及怎样参观才能看懂层层叠压的遗迹，好在河内市中心安排半天行程。",
       "content_angle": "依据教科文组织的名录页面、列入决定、最新的保护状况决定以及升龙—河内遗产保护中心的网站，解释三项突出价值，并建议从中轴线走到考古区的参观路线。",
       "entities": [
@@ -5578,7 +5593,7 @@
         "rx-f1643b686c2d",
         "rx-f6d88cc8b36d"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5593,7 +5608,7 @@
       "candidate_id": "TA-ZH-0124",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "hanoi-wenmiao-guozijian-canguan",
@@ -5621,7 +5636,7 @@
         "rx-d91729f629f9",
         "rx-3b9872e4cdde"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5636,7 +5651,7 @@
       "candidate_id": "TA-ZH-0125",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "hanoi-shuishang-muouxi-shenglong-juyuan",
@@ -5664,7 +5679,7 @@
         "rx-2bf751d5709c",
         "rx-c6b05119b49a"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5679,7 +5694,7 @@
       "candidate_id": "TA-ZH-0126",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "bat-trang-taoci-cun-cong-hanoi-canguan",
@@ -5708,7 +5723,7 @@
         "rx-db62b62b7d30",
         "rx-22883c020584"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5723,7 +5738,7 @@
       "candidate_id": "TA-ZH-0127",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "tanglin-gucun-cong-hanoi-canguan",
@@ -5737,7 +5752,7 @@
       "working_title": "从河内参观唐林古村：红土石老房、村门与前往方式",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "游客想知道唐林古村离河内市中心有多远、怎样前往、有哪些红土石老房子、村门和亭可看，以及为什么它被称为第一个获得认定的古村，好决定值不值得专门花半天时间。",
       "content_angle": "对照越通社的报道、国家旅游主管部门的页面、旅游信息门户和国家航空公司的指南来描述古村，并指出各来源在认定年份、与河内的距离和老房子数量上的出入。",
       "entities": [
@@ -5752,7 +5767,7 @@
         "rx-1440baa5d062",
         "rx-3841f86b4ebf"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5767,7 +5782,7 @@
       "candidate_id": "TA-ZH-0128",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "changan-mingsheng-qun-unesco-canguan",
@@ -5795,7 +5810,7 @@
         "rx-909ea8c7e1ed",
         "rx-54cc8570f43b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5810,7 +5825,7 @@
       "candidate_id": "TA-ZH-0129",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "xialong-wan-yu-lanxia-wan-qubie",
@@ -5838,7 +5853,7 @@
         "rx-baeae45e1eef",
         "rx-54cc8570f43b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5853,7 +5868,7 @@
       "candidate_id": "TA-ZH-0130",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "mu-cang-chai-titian-sijijing",
@@ -5867,7 +5882,7 @@
       "working_title": "木江柴梯田的四季：灌水季、金色收获季与出行时间安排",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "游客想知道木江柴梯田什么时候景色最美、灌水季和金黄的收获季有什么不同、离河内有多远，以及2025年行政区合并之后它属于哪个省，好据此安排行程时间。",
       "content_angle": "依据国家旅游主管部门关于收获季的文章、灌水季页面和地区景点介绍，描述两个主要季节，并指出较早的资料写作安沛省，而2025年的报道写作老街省。",
       "entities": [
@@ -5881,7 +5896,7 @@
         "rx-bac0c4e0e3dc",
         "rx-356f10899310"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5896,7 +5911,7 @@
       "candidate_id": "TA-ZH-0131",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "juefang-guojia-gongyuan-cong-hanoi-canguan",
@@ -5924,7 +5939,7 @@
         "rx-bcdd62123acb",
         "rx-3907d4edb953"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5939,7 +5954,7 @@
       "candidate_id": "TA-ZH-0132",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "babe-guojia-gongyuan-yu-hu-canguan",
@@ -5968,7 +5983,7 @@
         "rx-cfddf53c052c",
         "rx-3907d4edb953"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5983,7 +5998,7 @@
       "candidate_id": "TA-ZH-0133",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "yuenan-dianzi-qianzheng-guanfang-shenqing",
@@ -5997,7 +6012,7 @@
       "working_title": "越南电子签证官方网站申请：条件、有效期、申请步骤与如何避开山寨网站",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "外国游客想知道怎样在官方网站申请越南电子签证、最长可以有效多久、照片和护照要怎样准备，以及怎样避开冒充官方、额外收费的山寨网站，好少走弯路并避免被多收钱。",
       "content_angle": "依据移民局的官方电子签证门户及其常见问题页面和越通社关于向所有国籍发放电子签证的报道，说明申请步骤、办理条件、有效期以及对非官方网站的警告，并提醒撰稿人引用门户当前的收费表。",
       "entities": [
@@ -6011,7 +6026,7 @@
         "rx-d3dea154ff82",
         "rx-41b31c3dadab"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6026,7 +6041,7 @@
       "candidate_id": "TA-ZH-0134",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "yuenan-mianqian-45-tian-shei-keyi",
@@ -6055,7 +6070,7 @@
         "rx-6849ddb3ff35",
         "rx-344396e164f6"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6070,7 +6085,7 @@
       "candidate_id": "TA-ZH-0135",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "yuenan-2027-fadingjiari-lvyou-anpai",
@@ -6098,7 +6113,7 @@
         "rx-366c76f559e9",
         "rx-23003ff3f63e"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6113,7 +6128,7 @@
       "candidate_id": "TA-ZH-0136",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "yuenan-lvxing-jiankang-zhunbei-yimiao",
@@ -6140,7 +6155,7 @@
         "rx-23b03926e595",
         "rx-09f4a676c2f2"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6155,7 +6170,7 @@
       "candidate_id": "TA-ZH-0137",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-budget",
       "slug": "yuenan-lvyou-zhifu-xianjin-yinhangka-erweima",
@@ -6169,7 +6184,7 @@
       "working_title": "在越南旅行怎么付款：现金、银行卡与跨境二维码对游客的实际用法",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "游客想知道在越南该用现金、银行卡还是二维码付款，自己国家的电子钱包能不能用，哪些国家已经建立支付互通，以及出发前该带些什么，才不至于临时手忙脚乱。",
       "content_angle": "依据越通社、国家旅游主管部门和越南国家支付公司（NAPAS）发布的消息，说明跨境二维码支付对特定国家游客意味着什么，指出哪些互通已经上线、哪些仍在计划中，并要求没有带日期的来源时不要刊登汇率或手续费。",
       "entities": [
@@ -6184,7 +6199,7 @@
         "rx-02137dcf0335",
         "rx-0a351df91c92"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6199,7 +6214,7 @@
       "candidate_id": "TA-ZH-0138",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-itineraries",
       "slug": "hanoi-sanri-xingcheng-shouci-fangwen",
@@ -6213,7 +6228,7 @@
       "working_title": "河内三日行程（首次到访）：遗产景点、胡志明陵、水上木偶戏与步行街的排序",
       "search_intent": "informational",
       "word_target": 1700,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "第一次来河内、只有三天时间的游客想要一份可行的安排：升龙皇城、文庙、胡志明陵、水上木偶戏和周末步行街各自安排在哪一天最合适，才能避开闭馆日并少走回头路，不把时间浪费在奔波上。",
       "content_angle": "依据各景点自己发布的参观信息拼出三天行程，并按开放日排序（陵墓周一和周五不开放，步行街只在周末晚上开放），同时提醒读者出发前再核对每个官方页面。",
       "entities": [
@@ -6229,7 +6244,7 @@
         "rx-c6b05119b49a",
         "rx-d43f0d9678fe"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6244,7 +6259,7 @@
       "candidate_id": "TA-ZH-0139",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-itineraries",
       "slug": "yuenan-beibu-yizhou-huoche-changtu-bashi",
@@ -6274,7 +6289,7 @@
         "rx-f9d9d33cd37d",
         "rx-a114dbadaa86"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6289,7 +6304,7 @@
       "candidate_id": "TA-ZH-0140",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-budget",
       "slug": "hanoi-lvxing-yusuan-guanfang-jiage-yemian",
@@ -6318,7 +6333,7 @@
         "rx-b65e9e8771d0",
         "rx-c6b05119b49a"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6333,7 +6348,7 @@
       "candidate_id": "TA-ZH-0141",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-infrastructure",
       "slug": "yuenan-dianji-motuoche-huandian-yunzuo",
@@ -6347,7 +6362,7 @@
       "working_title": "越南电动摩托车换电：VinFast、Selex、本田的系统与仍在计划中的部分",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "骑手和游客想弄清换电到底是怎么回事、VinFast、Selex 和本田的系统能不能互通、换电站在哪里，以及它和在家充电有什么区别，好判断租用或购买电动车时该不该看重换电网络。",
       "content_angle": "区分单一品牌系统（VinFast 与 V-Green）、Selex 与越南石油公司共建的开放网络，以及河内与 LG 新能源和本田的试点项目，把企业公布的站点数量当作带日期的说法，并要求没有带日期的来源时不要引用费用。",
       "entities": [
@@ -6362,7 +6377,7 @@
         "rx-5c7974a9f44d",
         "rx-e8e4487c621e"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6377,7 +6392,7 @@
       "candidate_id": "TA-ZH-0142",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-infrastructure",
       "slug": "hanoi-gongyu-dianji-motuoche-chongdian-guiding",
@@ -6405,7 +6420,7 @@
         "rx-0cd5cee118aa",
         "rx-12c3e1915685"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6420,7 +6435,7 @@
       "candidate_id": "TA-ZH-0143",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "vinfast-dianji-motuoche-chanpinxian-jieshao",
@@ -6434,7 +6449,7 @@
       "working_title": "VinFast 电动摩托车产品线详解：免驾照车型、换电车型与厂商公布的续航",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "买车和租车的人想知道 VinFast 的电动摩托车之间有什么区别：哪些车型不需要驾照就能骑、哪些使用可更换电池，以及厂商规格表上的续航和速度数字可信到什么程度，好决定该选哪一款或该向租车店问什么。",
       "content_angle": "利用 VinFast 面向投资者的发布和提交给美国证券交易委员会的文件，说明车型名称、限速版本和电池类型，把续航和速度标注为厂商公布的数据，并提醒撰稿人在给骑行者建议之前核对具体版本和现行驾照规定。",
       "entities": [
@@ -6448,7 +6463,7 @@
         "rx-a9d2a7add069",
         "rx-e8efb9ce9831"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6463,7 +6478,7 @@
       "candidate_id": "TA-ZH-0144",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "yuenan-dianji-motuoche-xuyao-jiazhao-ma",
@@ -6493,7 +6508,7 @@
         "rx-5f592756bb8a",
         "rx-2df797b594c9"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "WITHDRAWN",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6502,13 +6517,15 @@
         "researched_on": "2026-10-19",
         "keyword_evidence": "NOT_VALIDATED",
         "source": "factory/topic-research/batches/claude-20261018b-0049.json@487da5caf117"
-      }
+      },
+      "withdrawn_on": "2026-10-27",
+      "withdrawn_reason": "Withdrawn on activation of the electric-mobility Hub: licence rules for electric two-wheelers are already answered by the published 50 cc versus electric guide of this locale under vehicle-choice and by the documents-contracts licence guides; a second page would cannibalise that intent."
     },
     {
       "candidate_id": "TA-ZH-0145",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "yuenan-diandong-motuoche-dianchi-dianji-biaozhun-2026-10",
@@ -6538,7 +6555,7 @@
         "rx-40ba54311186",
         "rx-8d8fdbe753e1"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "WITHDRAWN",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6547,13 +6564,15 @@
         "researched_on": "2026-10-19",
         "keyword_evidence": "NOT_VALIDATED",
         "source": "factory/topic-research/batches/claude-20261018b-0050.json@487da5caf117"
-      }
+      },
+      "withdrawn_on": "2026-10-27",
+      "withdrawn_reason": "Withdrawn on activation of the electric-mobility Hub: the October 2026 battery and motor standards (QCVN) topic already belongs to vehicle-choice / vc-power in this locale (Matrix row or PROPOSED candidate); keeping both would publish two pages for one intent."
     },
     {
       "candidate_id": "TA-ZH-0146",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "diandong-motuoche-yu-ranyou-motuoche-zongchengben-yuenan",
@@ -6582,7 +6601,7 @@
         "rx-bf0f05ae16c8",
         "rx-9142070789dc"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6597,7 +6616,7 @@
       "candidate_id": "TA-ZH-0147",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "honda-dianji-motuoche-yuenan-icon-e-cuv-e-uc3",
@@ -6628,7 +6647,7 @@
         "rx-265051f6af71",
         "rx-50426d9095d5"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6643,7 +6662,7 @@
       "candidate_id": "TA-ZH-0148",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-sustainability",
       "slug": "hanoi-motuoche-paifang-jiance-2027-nian-7-yue",
@@ -6658,7 +6677,7 @@
       "working_title": "河内摩托车排放检测将于2027年7月1日起实施：哪些车适用、适用哪一级标准",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "在河内使用燃油摩托车的车主和长期居住者看到消息说强制排放检测将在2027年开始，想知道哪些人适用、自己的车必须达到哪一级排放标准，以及电动摩托车是否受影响。",
       "content_angle": "依据总理第13/2026/QD-TTg号决定及 VietnamPlus、VietNamNet 和《劳动报》的报道，说明各城市的起始日期、2028年1月起的二级要求以及按生产年份确定的等级，指出早先的草案日期和宽限期不同、只能引用最终决定，并交代检测与电动两轮车的关系。",
       "entities": [
@@ -6673,7 +6692,7 @@
         "rx-6a97616b32bc",
         "rx-e8c2375d44e5"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6688,7 +6707,7 @@
       "candidate_id": "TA-ZH-0149",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "yuenan-diandong-motuoche-pinpai-dat-bike-yadea-pega-selex",
@@ -6719,7 +6738,7 @@
         "rx-c75985af1ba0",
         "rx-0f63b275f367"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6734,7 +6753,7 @@
       "candidate_id": "TA-ZH-0150",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-sustainability",
       "slug": "yuenan-diandong-motuoche-dianchi-huishou-guiding",
@@ -6763,7 +6782,7 @@
         "rx-6c3e131cf300",
         "rx-9d5dbf8f609f"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6778,7 +6797,7 @@
       "candidate_id": "TA-ZH-0151",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-qi-motuoche-qu-moc-chau-guodao-6",
@@ -6808,7 +6827,7 @@
         "rx-d24d33f5d35d",
         "rx-218bb6bbce99"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7048,7 +7067,7 @@
       "candidate_id": "TA-ZH-0157",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "tongwen-kasite-gaoyuan-unesco-shijie-dizhi-gongyuan",
@@ -7079,7 +7098,7 @@
         "rx-7b2893458360",
         "rx-2590334325a4"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7094,7 +7113,7 @@
       "candidate_id": "TA-ZH-0158",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "yuenan-lvyou-sim-ka-esim-huzhao-dengji-renlian-yanzheng",
@@ -7125,7 +7144,7 @@
         "rx-a6b720c0a952",
         "rx-de0a0a67ac37"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7140,7 +7159,7 @@
       "candidate_id": "TA-ZH-0159",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "anzi-yongyan-kunshan-jiepo-unesco-shijie-yichan",
@@ -7171,7 +7190,7 @@
         "rx-f6b845a8aa73",
         "rx-b721093394ca"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7186,7 +7205,7 @@
       "candidate_id": "TA-ZH-0160",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "qinghua-huchao-chengbao-shijie-yichan-cong-hanei-canguan",
@@ -7219,7 +7238,7 @@
         "rx-9ddd09465b44",
         "rx-fa78b317638e"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7234,7 +7253,7 @@
       "candidate_id": "TA-ZH-0161",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "hanei-gululuo-cheng-luoxuanxing-chengqiang-canguan",
@@ -7266,7 +7285,7 @@
         "rx-655da81bbe3f",
         "rx-588679b98ee6"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7281,7 +7300,7 @@
       "candidate_id": "TA-ZH-0162",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "yuenan-haiguan-lvke-xingli-mianshui-xiane-shenbao",
@@ -7311,7 +7330,7 @@
         "rx-7ae35a69af75",
         "rx-379d8c319c8c"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7326,7 +7345,7 @@
       "candidate_id": "TA-ZH-0163",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanei-hehua-ji-xihu-baiyelian-guangan-lianhua-cha",
@@ -7357,7 +7376,7 @@
         "rx-61702c3ce63b",
         "rx-e85d6b270dba"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7372,7 +7391,7 @@
       "candidate_id": "TA-ZH-0164",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "yuenan-huoche-guiding-chepiao-zhengjian-ertong-xingli",
@@ -7402,7 +7421,7 @@
         "rx-06c22ca4d2e8",
         "rx-11c89b75771c"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7417,7 +7436,7 @@
       "candidate_id": "TA-ZH-0165",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "phong-nha-ke-bang-hin-nam-no-kuajing-yichan-dongxue",
@@ -7447,7 +7466,7 @@
         "rx-34593a857753",
         "rx-f335c7b604b4"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7462,7 +7481,7 @@
       "candidate_id": "TA-ZH-0166",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "yuenan-yuqi-juliu-yidingshu-282-2025-zhusu-dengji",
@@ -7492,7 +7511,7 @@
         "rx-5b06d71829ba",
         "rx-3ccbfae4adec"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7507,7 +7526,7 @@
       "candidate_id": "TA-ZH-0167",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "liangshan-unesco-shijie-dizhi-gongyuan-dongxue-huashi-miao",
@@ -7538,7 +7557,7 @@
         "rx-b91db2baf8df",
         "rx-3c7c82e9f1bb"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -8184,7 +8203,7 @@
       "candidate_id": "TA-ZH-0181",
       "locale": "zh",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "ZH-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "yuenan-wenhua-ri-11yue24ri-jiaqi-2026",
@@ -8216,7 +8235,7 @@
         "rx-f8367fd76141",
         "rx-429311dc4062"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {

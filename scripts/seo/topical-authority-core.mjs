@@ -19,7 +19,8 @@ import fs from "node:fs";
 import path from "node:path";
 
 export const TA_DIR="data/seo/topical-authority";
-export const PROPOSAL_STATES=new Set(["PROPOSED","ARCHITECTURE_BLOCKED","PROMOTED"]);
+// WITHDRAWN keeps researched data that duplicates an existing intent (with a reason) out of promotion and overlap checks.
+export const PROPOSAL_STATES=new Set(["PROPOSED","ARCHITECTURE_BLOCKED","PROMOTED","WITHDRAWN"]);
 export const INTENTS=new Set(["informational","commercial_investigation","navigational","transactional"]);
 export const SIMILARITY_FAIL=0.66;
 export const SIMILARITY_WARN=0.5;
@@ -160,13 +161,14 @@ export function validateTopicalMap({map,matrix,frozenUrls=[]}){
   const seen=[];
   // Each proposal is compared with the locale's Matrix rows and earlier proposals (≥ warn threshold).
   const props=Array.isArray(L.proposals)?L.proposals:[];
-  const pool=[...localRows.map(r=>({id:r.id,q:r.primary_query})),...props.map(p=>({id:p?.candidate_id,q:p?.primary_query}))];
+  const live=props.filter(p=>p?.status!=="WITHDRAWN");
+  const pool=[...localRows.map(r=>({id:r.id,q:r.primary_query})),...live.map(p=>({id:p?.candidate_id,q:p?.primary_query}))];
   const pairsFor=new Map();
   for(const [x,y,score] of similarPairs(pool.map(o=>tokens(o.q,code,stop)),SIMILARITY_WARN)){
    if(y<localRows.length)continue;
    const pi=y-localRows.length;
-   if(!pairsFor.has(pi))pairsFor.set(pi,[]);
-   pairsFor.get(pi).push([pool[x].id,score]);
+   if(!pairsFor.has(live[pi]))pairsFor.set(live[pi],[]);
+   pairsFor.get(live[pi]).push([pool[x].id,score]);
   }
   for(const [i,p] of (L.proposals||[]).entries()){
    const id=p?.candidate_id||code+"-row-"+i;
@@ -189,6 +191,7 @@ export function validateTopicalMap({map,matrix,frozenUrls=[]}){
     else if(parent.cluster!==p.cluster||c.hub!==p.cluster)fail("T2",id,"cluster/sub-cluster must match parent Hub "+parent.cluster);
     if(c.cluster.reserved_by)fail("T5",id,"Sub-cluster "+p.subcluster+" is reserved by the live "+c.cluster.reserved_by+" page");
     if(p.status==="ARCHITECTURE_BLOCKED")fail("T9",id,"ARCHITECTURE_BLOCKED is only for proposed Hubs");
+    if(p.status==="WITHDRAWN"&&(String(p.withdrawn_reason||"").trim().length<40||!/^\d{4}-\d{2}-\d{2}$/.test(p.withdrawn_on||"")))fail("T9",id,"WITHDRAWN needs withdrawn_on (YYYY-MM-DD) and a withdrawn_reason of ≥40 chars");
    }
    // T3
    const url=p.slug?proposalURL(p):null;
@@ -198,13 +201,13 @@ export function validateTopicalMap({map,matrix,frozenUrls=[]}){
    // T4
    if(unsafeText(p.primary_query)||normalize(p.primary_query).length<(CJK_BIGRAM.has(code)||code==="ko"?6:12))fail("T4",id,"primary_query missing, unsafe or too short");
    if(!INTENTS.has(p.search_intent))fail("T4",id,"Invalid search_intent");
-   const qk=code+"::"+normalize(p.primary_query);
-   if(clash(queries,qk))fail("T4",id,"Exact query collision with "+queries.get(qk));
-   queries.set(qk,id);
+   const qk=code+"::"+normalize(p.primary_query),withdrawn=p.status==="WITHDRAWN";
+   if(!withdrawn&&clash(queries,qk))fail("T4",id,"Exact query collision with "+queries.get(qk));
+   if(!withdrawn)queries.set(qk,id);
    if(!Array.isArray(p.secondary_queries)||p.secondary_queries.length<2||p.secondary_queries.length>6||p.secondary_queries.some(unsafeText))
     fail("T4",id,"Provide 2–6 native secondary query variants");
    const distinct=new Map((p.distinct_from||[]).map(d=>[d?.id,d?.reason]));
-   for(const [oid,score] of (pairsFor.get(i)||[])){
+   for(const [oid,score] of (pairsFor.get(p)||[])){
     if(oid===self)continue;
     const justified=String(distinct.get(oid)||"").length>=40||explainedBy.has(oid+">"+id);
     if(justified)continue;
@@ -220,8 +223,8 @@ export function validateTopicalMap({map,matrix,frozenUrls=[]}){
    const minTitle=CJK_BIGRAM.has(code)||code==="ko"?8:20;
    if(unsafeText(p.working_title)||[...p.working_title].length<minTitle||[...p.working_title].length>110)fail("T6",id,"working_title must be "+minTitle+"–110 chars and safe");
    const tk=code+"::"+normalize(p.working_title);
-   if(clash(titles,tk))fail("T6",id,"Title duplicates "+titles.get(tk));
-   titles.set(tk,id);
+   if(!withdrawn&&clash(titles,tk))fail("T6",id,"Title duplicates "+titles.get(tk));
+   if(!withdrawn)titles.set(tk,id);
    if(!Number.isInteger(p.word_target)||p.word_target<1000||p.word_target>5000)fail("T6",id,"word_target must be 1000..5000");
    // T7
    const claimText=[p.primary_query,p.working_title,...(p.secondary_queries||[])].join(" ");
@@ -255,6 +258,7 @@ export function validateTopicalMap({map,matrix,frozenUrls=[]}){
   counts:{locales:Object.keys(map.locales).length,proposals:proposals.length,
    proposed:proposals.filter(p=>p.status==="PROPOSED").length,
    architecture_blocked:proposals.filter(p=>p.status==="ARCHITECTURE_BLOCKED").length,
+   withdrawn:proposals.filter(p=>p.status==="WITHDRAWN").length,
    promoted:proposals.filter(p=>p.status==="PROMOTED").length,references:refs.size},
   auto_materialize:false,auto_publish:false};
 }
@@ -278,7 +282,7 @@ export function coverage({map,matrix,claims={claims:[]},protectedData={protected
    if(cid&&loc.clusters[cid])loc.clusters[cid][s]++;
   }
   for(const p of L.proposals||[]){
-   if(p.status==="PROMOTED")continue; // counted through its Matrix row
+   if(p.status==="PROMOTED"||p.status==="WITHDRAWN")continue; // counted through its Matrix row / never planned
    const s=p.status==="ARCHITECTURE_BLOCKED"?"ARCHITECTURE_BLOCKED":"PROPOSED";
    loc.totals[s]++;out.totals[s]++;
    if(loc.clusters[p.subcluster])loc.clusters[p.subcluster][s]++;

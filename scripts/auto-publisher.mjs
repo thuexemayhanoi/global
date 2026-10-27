@@ -19,7 +19,7 @@ import {createHash} from "node:crypto";
 import {execFileSync,spawnSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
 import {articlePath,STANDING_POLICY_PATH} from "./articles.mjs";
-import {eligibility,validateReview,shingles,publicationRecord,REVIEW_FILE,drainDecision,publishGate,selectForPublication,recordLiveQA,applyControl} from "./auto-publisher-core.mjs";
+import {eligibility,validateReview,shingles,publicationRecord,REVIEW_FILE,drainDecision,publishGate,selectForPublication,recordLiveQA,applyControl,requireHubSupport} from "./auto-publisher-core.mjs";
 import {readLocalSitemapInventory,SITEMAP_ORIGIN} from "./sitemaps.mjs";
 import {runLiveQA} from "./publisher-live-qa.mjs";
 import {legacyPilotOriginal,normalizeLegacyPilot} from "./legacy-pilot-core.mjs";
@@ -102,7 +102,7 @@ function evaluate(c){
   r.priority=d.row?.priority??99;
   results.push({...r,_packet:d.packet,_claim:d.claim});
  }
- return results;
+ return requireHubSupport(results,c.matrix,c.policy?.refill?.hub_min_supporting);
 }
 const summary=rs=>{const by={};for(const r of rs)by[r.decision]=(by[r.decision]||0)+1;return by;};
 const strip=r=>{const {_packet,_claim,...rest}=r;return rest;};

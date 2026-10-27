@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import {loadTopicalMap,validateTopicalMap,coverage,linkPlan,planPromotion,similarity,tokens,allProposals,proposalURL,similarPairs} from "../scripts/seo/topical-authority-core.mjs";
-import {menuChildren} from "../scripts/navigation.mjs";
+import {menuChildren,LEGACY_HUB_CLUSTERS} from "../scripts/navigation.mjs";
 import {readLocalSitemapInventory} from "../scripts/sitemaps.mjs";
 import {rewindPromotions} from "./support/promotion-fixture.mjs";
 const read=p=>JSON.parse(fs.readFileSync(p,"utf8"));
@@ -101,13 +101,17 @@ test("reserved live intents, money amounts, unsupported claims and wrong scripts
 test("hierarchy, governance and research gates fail closed",()=>{
  const m=clone(),p=first(m,"nl");
  p.parent_id="DE-H01";
- const q=m.locales.ko.proposals.find(x=>x.status==="ARCHITECTURE_BLOCKED");q.status="PROPOSED";
+ // No Hub is proposed any more (all six activated 2026-10-27): a live-Hub topic may not be ARCHITECTURE_BLOCKED,
+ // and a WITHDRAWN topic needs its dated reason.
+ const q=first(m,"ko");q.status="ARCHITECTURE_BLOCKED";
+ const w=m.locales.ja.proposals.find(x=>x.status==="PROPOSED");w.status="WITHDRAWN";
  const r=first(m,"es");r.publish=true;
  const s=first(m,"pt");s.references=["pt-portal-comunidades"];
  const t=m.locales.en.proposals[1],copied=m.locales.de.proposals[1];t.primary_query=copied.primary_query;t.working_title=copied.working_title;
  const issues=fails(m),has=(g,id)=>issues.some(i=>i.gate===g&&i.id===id);
  assert.ok(has("T2",p.candidate_id));
- assert.ok(has("T2",q.candidate_id));
+ assert.ok(has("T9",q.candidate_id));
+ assert.ok(has("T9",w.candidate_id));
  assert.ok(has("T9",r.candidate_id));
  assert.ok(has("T8",s.candidate_id));
  assert.ok(has("T10",t.candidate_id)||has("T10",copied.candidate_id)); // flagged on whichever locale is checked second
@@ -117,7 +121,7 @@ test("coverage separates live, pipeline and capacity states without double count
  const cov=coverage({map,matrix,claims:read("factory/external-writers/claims.json"),protectedData:read("factory/external-writers/protected-drafts.json")});
  const pipeline=["PUBLISHED","REVIEW","SUBMITTED","WRITING","PLANNED","BLOCKED"].reduce((a,k)=>a+cov.totals[k],0);
  assert.equal(pipeline,matrix.rows.filter(r=>["PILLAR","HUB","SUPPORT"].includes(r.role)).length);
- assert.equal(cov.totals.PROPOSED+cov.totals.ARCHITECTURE_BLOCKED,allProposals(map).filter(p=>p.status!=="PROMOTED").length);
+ assert.equal(cov.totals.PROPOSED+cov.totals.ARCHITECTURE_BLOCKED,allProposals(map).filter(p=>p.status!=="PROMOTED"&&p.status!=="WITHDRAWN").length);
  for(const code of matrix.locales)assert.deepEqual(cov.locales[code].gaps,[],code);
 });
 
@@ -142,8 +146,8 @@ test("promotion needs the exact owner manifest and only adds balanced IDEA rows"
  assert.ok(Math.max(...counts)-Math.min(...counts)<=1);
  assert.throws(()=>planPromotion({map,matrix,board,manifest:{...MANIFEST,statement:"yes"},validation}),/exact approval sentence/);
  assert.throws(()=>planPromotion({map,matrix,board,manifest:{...MANIFEST,approved_by:""},validation}),/approved_by/);
- const blocked=allProposals(map).find(p=>p.status==="ARCHITECTURE_BLOCKED").candidate_id;
- assert.throws(()=>planPromotion({map,matrix,board,manifest:{...MANIFEST,candidate_ids:[blocked]},validation}),/ARCHITECTURE_BLOCKED/);
+ const withdrawn=allProposals(map).find(p=>p.status==="WITHDRAWN").candidate_id;
+ assert.throws(()=>planPromotion({map,matrix,board,manifest:{...MANIFEST,candidate_ids:[withdrawn]},validation}),/WITHDRAWN/);
  assert.throws(()=>planPromotion({map,matrix,board,manifest:MANIFEST,validation:{passed:false}}),/failing gates/);
  // After promotion the candidate validates as PROMOTED against its own new row.
  const promoted=clone();
@@ -152,7 +156,8 @@ test("promotion needs the exact owner manifest and only adds balanced IDEA rows"
 });
 
 test("menus keep exactly two featured Supporting labels per Hub, PUBLISHED first",()=>{
- for(const hub of matrix.rows.filter(r=>r.role==="HUB"))assert.equal(menuChildren(matrix,hub.id).length,2,hub.id);
+ // The four original Hubs own the fixed menu groups; later Hubs join "More topics" once PUBLISHED.
+ for(const hub of matrix.rows.filter(r=>r.role==="HUB"&&LEGACY_HUB_CLUSTERS.includes(r.cluster)))assert.equal(menuChildren(matrix,hub.id).length,2,hub.id);
  const grown=structuredClone(matrix);
  // EN-H01's real children get published over time; keep them IDEA here so the newcomer's PUBLISHED status is what ranks it.
  for(const r of grown.rows)if(r.parent_id==="EN-H01")r.status="IDEA";

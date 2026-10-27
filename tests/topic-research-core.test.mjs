@@ -300,9 +300,9 @@ test("the checkpoint records everything the owner asked for and validates",()=>{
  assert.deepEqual(cp.contract,CONTRACT);
  assert.equal(cp.coverage.locales.en,10);
  assert.ok(cp.updated_at&&cp.created_at);
- // Research-only domains carry no parent and stay architecture-blocked topics.
+ // Since the six-Hub activation (2026-10-27) former research-only domains are parented by their Hub.
  const travel=summaries([enTopic(16)])[0];
- assert.equal(travel.parent_id,null);assert.equal(travel.domain_id,"hanoi-vietnam-travel");
+ assert.equal(travel.parent_id,"EN-H09");
  assert.ok(JSON.stringify(cp).length<20_000,"small enough to commit with every batch");
 });
 

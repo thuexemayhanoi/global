@@ -19,7 +19,7 @@ export function repairTicket(item,claim,{maxAttempts=MAX_REPAIR_ATTEMPTS}={}){
  let state="WAIT";if(permanent.length)state="BLOCKED";
  else if(fixable.length&&attempts>=maxAttempts)state="ESCALATED_MAX_ATTEMPTS";
  else if(fixable.length)state="REPAIR";
- else if(failed.includes("G2_PARENT_PUBLISHED"))state="WAIT_PARENT";
+ else if(failed.includes("G2_PARENT_PUBLISHED")||failed.includes("G2_HUB_SUPPORT_READY"))state="WAIT_PARENT";
  else if(failed.includes("G7_STAGE_CAP"))state="WAIT_STAGE";
  const next_revision=attempts+2;
  const prefix="factory/external-writers/inbox/"+claim.writer+"/revisions/";

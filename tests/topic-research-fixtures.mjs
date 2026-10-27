@@ -122,7 +122,10 @@ const place=(locale,[where,sub])=>{
  if(where==="EN-H02-costs")return {parent_id:hub(locale,"rental-costs"),subcluster:sub};
  if(where==="EN-H03-documents")return {parent_id:hub(locale,"documents-contracts"),subcluster:sub};
  if(where==="EN-H04-safety")return {parent_id:hub(locale,"safety-support"),subcluster:sub};
- return {parent_id:null,domain_id:where,subcluster:sub};
+ // Since the six-Hub activation (2026-10-27) every domain has a live-architecture Hub (XX-H05..H10).
+ const HUB_OF={"hanoi-vietnam-travel":"travel-guides","road-trips-routes":"routes-trips","transportation-mobility":"transport-mobility",
+  "destinations-experiences":"destinations-experiences","travel-planning":"travel-planning","electric-mobility":"electric-mobility"};
+ return {parent_id:hub(locale,HUB_OF[where]),subcluster:sub};
 };
 /** The n-th English test topic (0-based, 0..23). */
 export const enTopic=(n,over={})=>{

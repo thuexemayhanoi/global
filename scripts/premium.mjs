@@ -119,7 +119,9 @@ export function applyPremium(files,matrix,locales){
   const localeHome=p.match(/^([a-z]{2})\/index\.html$/);
   if(localeHome){
    const code=localeHome[1],tr=langUI[code]||langUI.en,copy=readingLabels[code]||readingLabels.en;
-   const cards=matrix.rows.filter(r=>r.locale===code&&r.status==="PUBLISHED"&&(r.role==="HUB"||r.role==="SUPPORT")&&files[r.url.slice(1)+"index.html"]).slice(0,8);
+   const pub=matrix.rows.filter(r=>r.locale===code&&r.status==="PUBLISHED"&&(r.role==="HUB"||r.role==="SUPPORT")&&files[r.url.slice(1)+"index.html"]);
+   // Every published Hub stays linked from its Pillar (seo-guard parent→child rule), also beyond the first eight cards.
+   const first=pub.slice(0,8),cards=[...first,...pub.filter(r=>r.role==="HUB"&&!first.includes(r))];
    if(cards.length){
     const region='<section class="premium-featured" aria-label="'+safe(tr[1])+'"><div class="container"><h2>'+safe(tr[1])+'</h2><div class="premium-featured-grid">'+cards.map(r=>'<a class="premium-featured-card" href="'+safe(r.url)+'"><strong>'+safe(r.working_title)+'</strong><span>'+safe(r.role==="HUB"?copy[0]:copy[1])+'</span><em>'+safe(copy[2])+'</em></a>').join("")+'</div></div></section>';
     h=h.replace('</main>',region+'</main>');

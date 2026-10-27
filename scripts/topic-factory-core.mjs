@@ -185,12 +185,20 @@ export function selectRefill({matrix,map,ledger,registry,policy,validation,limit
    if(why.length)rejected.push({candidate_id:id,locale:code,reasons:why});
    else ok.push(prepared({...p,id},code,stop));
   }
-  const need=Math.min(s.refill_need,s.remaining);
-  queues[code]=ok.map(o=>o.id).slice(0,need);
-  locales[code]={ready:s.ready,need,eligible:ok.length,refill:s.refill,research_gap:Math.max(0,need-ok.length)};
+  // Thin Hubs first: a Hub with fewer than refill.hub_min_supporting Supporting rows gets its first
+  // gate-clean topics even when READY is healthy, so no new Hub stays an empty category
+  // (owner authorization 2026-10-27, approvals/hub-architecture-20261027.json).
+  const minS=policy.refill.hub_min_supporting||0,parentOf=new Map((L?.proposals||[]).map(p=>[p.candidate_id,p.parent_id])),boot=[];
+  if(minS>0)for(const hub of rows.filter(r=>r.role==="HUB"&&r.status!=="BLOCKED").sort((a,b)=>a.priority-b.priority||a.id.localeCompare(b.id))){
+   const have=rows.filter(r=>r.role==="SUPPORT"&&r.parent_id===hub.id&&r.status!=="BLOCKED").length;
+   boot.push(...ok.filter(o=>parentOf.get(o.id)===hub.id).slice(0,Math.max(0,minS-have)).map(o=>o.id));
+  }
+  const need=Math.min(s.refill_need,s.remaining),bootstrap=boot.slice(0,s.remaining);
+  queues[code]=[...bootstrap,...ok.map(o=>o.id).filter(id=>!bootstrap.includes(id)).slice(0,Math.max(0,need-bootstrap.length))];
+  locales[code]={ready:s.ready,need,bootstrap:bootstrap.length,eligible:ok.length,refill:s.refill,research_gap:Math.max(0,need-ok.length)};
  }
  const cap=Math.min(limit??policy.refill.max_promotions_per_run,policy.refill.max_promotions_per_run,50),selected=[];
- const order=[...policy.targets.locales].sort((a,b)=>locales[b].need-locales[a].need||a.localeCompare(b));
+ const order=[...policy.targets.locales].sort((a,b)=>locales[b].need+locales[b].bootstrap-locales[a].need-locales[a].bootstrap||a.localeCompare(b));
  for(let round=0;selected.length<cap;round++){
   let took=false;
   for(const code of order){

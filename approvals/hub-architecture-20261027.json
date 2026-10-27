@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "HUB_ARCHITECTURE_DECISION",
+  "decided_on": "2026-10-27",
+  "decided_by": "Repository and website owner (tu.nguyen@rentbikehanoi.com), instruction given in a Claude Code session",
+  "evidence": "Owner message \"CLAUDE MASTER TASK — GLOBAL 100% COMPLETION & FULL MULTILINGUAL SEO AUDIT\", section A3, in session https://claude.ai/code/session_01YEa9dbs7LABfShoxTCDGTZ (2026-10-27).",
+  "recorded_by": "Claude Code (AI). This file records the owner's words verbatim; it is not a personal promotion manifest and approves no publication by itself.",
+  "verbatim": [
+    "A3. Hoàn thành kiến trúc Hub",
+    "Xử lý PR #72 và toàn bộ sáu nhóm nội dung nghiên cứu đang bị khóa: 1. Hanoi & Vietnam Travel Guides. 2. Vietnam Road Trips & Travel Routes. 3. Transportation & Urban Mobility. 4. Destinations & Local Experiences. 5. Travel Planning, Budget & Itineraries. 6. Electric Motorbikes & Sustainable Mobility.",
+    "Tôi ủy quyền triển khai mở rộng kiến trúc Hub cho cả 10 ngôn ngữ, với điều kiện mỗi Hub đáp ứng đầy đủ tiêu chí nội dung, kiểm tra nguồn, kiến trúc và SEO.",
+    "Không tạo danh mục rỗng hoặc thin content. Không làm mất bốn Hub đang hoạt động của mỗi ngôn ngữ.",
+    "Nếu thiếu dữ liệu, bổ sung nghiên cứu và bài hỗ trợ trước khi xuất bản Hub.",
+    "Được phép tạo nhánh, commit, push, mở PR và merge khi đủ điều kiện bảo vệ.",
+    "Không force-push, không bypass branch protection hoặc các kiểm tra bắt buộc."
+  ],
+  "scope": {
+    "hubs": ["routes-trips", "transport-mobility", "destinations-experiences", "travel-planning", "travel-guides", "electric-mobility"],
+    "matrix_hub_ids": "XX-H05 routes-trips, XX-H06 transport-mobility, XX-H07 destinations-experiences, XX-H08 travel-planning, XX-H09 travel-guides, XX-H10 electric-mobility, for XX in VI EN DE FR ES NL ZH PT KO JA",
+    "domains_activated": ["road-trips-routes", "transportation-mobility", "destinations-experiences", "travel-planning", "hanoi-vietnam-travel", "electric-mobility"],
+    "locales": ["vi", "en", "de", "fr", "es", "nl", "zh", "pt", "ko", "ja"]
+  },
+  "conditions_as_implemented": {
+    "no_empty_category": "Hub rows enter the Matrix as unpublished IDEA rows and appear nowhere on the site. The Auto Publisher holds a Hub (WAIT_PARENT, gate G2_HUB_SUPPORT_READY) until it has at least refill.hub_min_supporting (3) published or ready Supporting guides.",
+    "supporting_first": "The Topic Factory tops up every Hub below 3 Supporting rows from gate-clean PROPOSED research (standing policy promotion, max 50 per run); the first 3 topics per Hub and locale carry priority 40 so Writers claim them right after the Hub.",
+    "four_live_hubs_kept": "H01-H04 keep their URLs, labels, menu groups and homepage cards; later Hubs join a separate More topics group only once PUBLISHED.",
+    "content_source_seo_gates": "Every Hub and Supporting draft passes the unchanged Writer QA and Auto Publisher gates G1-G5 and G7 plus Live QA. routes-trips is SAFETY, travel-planning and electric-mobility are LEGAL (official dated source required).",
+    "duplicates": "21 researched topics that repeat an intent already owned by a live Hub are WITHDRAWN with a dated reason instead of being promoted or deleted."
+  },
+  "not_covered": [
+    "Deleting, renaming or redirecting any live URL",
+    "NAP, prices, business schema or any business fact",
+    "Overwriting published, frozen or protected content",
+    "hreflang between the new Hub pages (they are distinct native articles, consistent with the live Hubs)",
+    "Any publication outside the Auto Publisher gates"
+  ]
+}

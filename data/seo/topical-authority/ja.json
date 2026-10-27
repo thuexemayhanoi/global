@@ -1,7 +1,7 @@
 {
   "version": 1,
   "locale": "ja",
-  "updated_on": "2026-10-14",
+  "updated_on": "2026-10-27",
   "market_notes": "Japanese readers include tourists and many 駐在員 and 留学生. Japan's MOFA and embassy state that a Japanese-issued international permit is not valid in Vietnam, so licence conversion (切り替え) and insurance (海外旅行保険, クレジットカード付帯保険) are distinct, high-stakes intents. Queries are space-separated noun chains; overlap scoring uses character bigrams.",
   "stop_tokens": [
     "ハノイ",
@@ -45,7 +45,22 @@
     "ss-gear": "ヘルメットと装備",
     "ss-city": "ハノイ市内の走行",
     "rt-northern-loops": "北部ループ",
-    "rt-day-trips": "ハノイ発日帰り"
+    "rt-day-trips": "ハノイ発日帰り",
+    "mob-urban-transit": "市内バスとメトロ",
+    "mob-intercity": "鉄道と長距離バス",
+    "mob-last-mile": "空港と最後の移動",
+    "travel-neighborhoods": "エリア",
+    "travel-seasons": "季節と祭り",
+    "travel-etiquette": "マナーと習慣",
+    "dest-northern": "ベトナム北部の見どころ",
+    "dest-local": "ハノイ市内と近郊",
+    "dest-landscapes": "景観と国立公園",
+    "plan-itineraries": "モデルコース",
+    "plan-budget": "予算と支払い",
+    "plan-logistics": "ビザ・書類・準備",
+    "electric-choice": "電動バイクの選び方",
+    "electric-infrastructure": "充電とバッテリー交換",
+    "electric-sustainability": "排出ガスと持続可能性"
   },
   "existing": {
     "JA-CHECKLIST": "ss-pickup",
@@ -533,7 +548,7 @@
       "candidate_id": "TA-JA-0018",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hazan-loop",
@@ -551,7 +566,7 @@
         "ja-mofa-anzen",
         "who-road-traffic-injuries"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED"
     },
@@ -559,7 +574,7 @@
       "candidate_id": "TA-JA-0019",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "ninh-binh-higaeri",
@@ -577,7 +592,7 @@
         "ja-mofa-anzen",
         "vi-nchmf-home"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED"
     },
@@ -4312,7 +4327,7 @@
       "candidate_id": "TA-JA-0094",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "hanoi-metro-2a-gosen-eki-chiketto-noribakata",
@@ -4325,7 +4340,7 @@
       "working_title": "ハノイ・メトロ2A号線（カットリン〜ハドン）：駅、チケットの種類と旅行者向け乗り方",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "ドンダ地区やハドン周辺に泊まる旅行者や、ベトナム初の都市鉄道に乗ってみたい人は、この路線がどの駅を通るのか、切符をどう買うのか、ハノイ西部の観光に使えるのかを調べます。",
       "content_angle": "ベトナム語が読めない旅行者向けに駅ごとに案内します。どの駅が観光地に近いか、チケットの種類はどう違うか、どんな時にタクシーより電車が便利かを説明し、最新の運賃は運営会社のサイトで確認するよう促します。",
       "entities": [
@@ -4340,7 +4355,7 @@
         "rx-37e73e6382d0",
         "rx-79845491e4cc"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4355,7 +4370,7 @@
       "candidate_id": "TA-JA-0095",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "hanoi-metro-3-gosen-kokaku-kukan-nhon-cau-giay",
@@ -4384,7 +4399,7 @@
         "rx-53927038735c",
         "rx-37e73e6382d0"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4399,7 +4414,7 @@
       "candidate_id": "TA-JA-0096",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "hanoi-rosen-basu-noribakata-shiharai-apuri",
@@ -4425,7 +4440,7 @@
         "rx-eee6771cad88",
         "rx-b65e9e8771d0"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4440,7 +4455,7 @@
       "candidate_id": "TA-JA-0097",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "hanoi-binbasu-denki-basu-rosen",
@@ -4467,7 +4482,7 @@
         "rx-1493305fbcc0",
         "rx-013b4f53a1de"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4482,7 +4497,7 @@
       "candidate_id": "TA-JA-0098",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-last-mile",
       "slug": "noibai-kuko-kyutaun-basu-de-iku",
@@ -4495,7 +4510,7 @@
       "working_title": "ノイバイ空港からハノイ旧市街へバスで：急行バスと市内路線の比較",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "到着したばかりでタクシーを使わずに旧市街へ行きたい旅行者は、どのターミナルからどのバスが出るのか、所要時間はどのくらいか、支払い方法、市中心部のどこに止まるのかを比べます。",
       "content_angle": "ターミナル、所要時間、荷物スペース、夜遅い時間の運行の有無で急行バスとより遅い市内路線を比較し、着陸前に現在の時刻表を確認する方法を説明します。",
       "entities": [
@@ -4509,7 +4524,7 @@
         "rx-0151482b1c10",
         "rx-edbc19874e23"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4524,7 +4539,7 @@
       "candidate_id": "TA-JA-0099",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "hanoi-chokyori-basu-taminaru-dokoyuki",
@@ -4537,7 +4552,7 @@
       "working_title": "ハノイの長距離バスターミナル：どのターミナルがどの地域行きか、新設のYen Soも解説",
       "search_intent": "informational",
       "word_target": 1400,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "都市間バスや寝台バスを予約する人は、ハノイの複数あるターミナルのうち自分の路線がどこから出るのか、中心部からどう行くのか、移動にどれだけ時間を見込むべきかを知る必要があります。",
       "content_angle": "行き先の地域ごとにターミナルを整理し、市内バスやタクシーでの行き方を示し、都市間路線がGiap Bat、Nuoc Ngam、2026年10月に稼働したYen Soの間で再配分されつつあるため、出発場所を運行会社に確認する習慣も紹介します。",
       "entities": [
@@ -4551,7 +4566,7 @@
         "rx-42e17aa5f861",
         "rx-a114dbadaa86"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4566,7 +4581,7 @@
       "candidate_id": "TA-JA-0100",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "hanoi-kara-sapa-densha-yako-ressha-laocai",
@@ -4594,7 +4609,7 @@
         "rx-f9d9d33cd37d",
         "rx-265e7b919b17"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4609,7 +4624,7 @@
       "candidate_id": "TA-JA-0101",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "hanoi-kara-ninbin-densha-shoyo-jikan-eki",
@@ -4643,7 +4658,7 @@
           "reason": "TA-JA-0019は自分でバイクを運転するニンビン日帰り旅を扱い、この記事は電車での行き方、時刻、到着駅、タムコックへの乗り継ぎを扱います。"
         }
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4658,7 +4673,7 @@
       "candidate_id": "TA-JA-0102",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "hanoi-kara-harong-basu-rosen-rimujin-ban",
@@ -4685,7 +4700,7 @@
         "rx-4ac2e853efff",
         "rx-59bc3d0859c0"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4700,7 +4715,7 @@
       "candidate_id": "TA-JA-0103",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-last-mile",
       "slug": "hanoi-haisha-apuri-grab-xanh-sm-be-hikaku",
@@ -4727,7 +4742,7 @@
         "rx-399044399e9b",
         "rx-652827dbd946"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4830,7 +4845,7 @@
       "candidate_id": "TA-JA-0106",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "hanoi-kara-bavi-kokuritsu-koen-baiku",
@@ -4843,7 +4858,7 @@
       "working_title": "ハノイからバヴィ国立公園へバイクで：ルート、山道と出発前に確認すること",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "ハノイ中心部から日帰りで出かけたいライダーは、バヴィまでどのくらいかかるのか、どの道がバイクに向いているのか、山道はどれほど大変か、出発前に国立公園へ何を確認すべきかを調べます。",
       "content_angle": "旅の順に沿って、タンロン大通り沿いのどの道をバイクが通れるのかを見極めるところから、登り坂、霧、公園が告知する開園時間まで、公園の公式サイトと確認済みの旅行ガイドだけを根拠に説明します。",
       "entities": [
@@ -4857,7 +4872,7 @@
         "rx-c563d95e9b7c",
         "rx-a71738d99a5b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4872,7 +4887,7 @@
       "candidate_id": "TA-JA-0107",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "hanoi-kara-kouji-baiku-de-iku",
@@ -4885,7 +4900,7 @@
       "working_title": "ハノイから香寺へバイクで：ベンドゥック船着場までの道、祭りの混雑と舟下り",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "香寺への日帰りを考えているライダーは、ハノイ中心部からの距離、道路や祭りの時期の混雑がバイクの移動にどう影響するか、ベンドゥックの舟下りが一日のどこに入るのかを知りたがります。",
       "content_angle": "一日の計画をバイクの区間と船着場への移動を軸に組み立て、祭りが旧暦1月6日から3月まで続くことと、ハノイ市がフォンソンの遺跡群を市レベルの観光地に認定していることを、確認済みの資料だけで説明します。",
       "entities": [
@@ -4900,7 +4915,7 @@
         "rx-66202fa60e82",
         "rx-1aaa7d343a21"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4915,7 +4930,7 @@
       "candidate_id": "TA-JA-0108",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-kara-kaoban-banzokku-taki-baiku",
@@ -4928,7 +4943,7 @@
       "working_title": "ハノイからカオバンとバンゾック滝へバイクで：ジオパークを抜けるルートの選択肢",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "ハザンループの先を見据える経験豊富なライダーは、カオバンがハノイからどれほど遠いのか、どんなルートでバンゾック滝に行けるのか、ジオパークを走るのに現実には何日必要かを調べます。",
       "content_angle": "ユネスコのページと最近の報道が地域について確認している内容を土台にルートを組み、道路状況や天候から国境地域の要件まで、走る前に省の観光当局へ確認すべき点を整理します。",
       "entities": [
@@ -4942,7 +4957,7 @@
         "rx-2ef6cacf2bde",
         "rx-6b22d1b4c416"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4957,7 +4972,7 @@
       "candidate_id": "TA-JA-0109",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "hanoi-kara-tamudao-baiku-de-iku",
@@ -4985,7 +5000,7 @@
         "rx-abf5155e3f87",
         "rx-493f238b25be"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5000,7 +5015,7 @@
       "candidate_id": "TA-JA-0110",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-kara-maichau-puruon-baiku-de-iku",
@@ -5028,7 +5043,7 @@
         "rx-040fa2df6cd1",
         "rx-043d9353d8e1"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5043,7 +5058,7 @@
       "candidate_id": "TA-JA-0111",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-kara-sapa-baiku-kosokudoro-nashi",
@@ -5071,7 +5086,7 @@
         "rx-5b71b4389f63",
         "rx-8e4da123146f"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5086,7 +5101,7 @@
       "candidate_id": "TA-JA-0112",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-no-tsukibetsu-tenki",
@@ -5100,7 +5115,7 @@
       "working_title": "ハノイの月別の天気：気温・降水量・湿度と季節ごとの体感",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "ハノイ旅行を計画する人は、毎月実際にどれくらい暑く、寒く、湿っぽいのかを知って、旅行日程を決め、持ち物を考え、蒸し暑い週や雨の多い週を避けたいと考えます。",
       "content_angle": "観測所が公表した月別の平均気候データと国の観光ポータルの情報から月別の表を作り、数字を並べるだけでなく、街で感じる体感（じめじめした寒さ、小雨、暑さと湿気）で各季節を説明します。",
       "entities": [
@@ -5115,7 +5130,7 @@
         "rx-c983f144155b",
         "rx-df7e82ac43ec"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5130,7 +5145,7 @@
       "candidate_id": "TA-JA-0113",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-no-fuyu-no-fukusou",
@@ -5158,7 +5173,7 @@
         "rx-90643ef6a563",
         "rx-c983f144155b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5173,7 +5188,7 @@
       "candidate_id": "TA-JA-0114",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-no-tet-eigyo-jokyo",
@@ -5201,7 +5216,7 @@
         "rx-23003ff3f63e",
         "rx-366c76f559e9"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5216,7 +5231,7 @@
       "candidate_id": "TA-JA-0115",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-chushusetsu-hang-ma-dori",
@@ -5245,7 +5260,7 @@
         "rx-a6232add5549",
         "rx-133ea5395fa7"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5260,7 +5275,7 @@
       "candidate_id": "TA-JA-0116",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "hoankiem-ko-shumatsu-hokosha-tengoku",
@@ -5274,7 +5289,7 @@
       "working_title": "ホアンキエム湖の週末の歩行者天国：実施時間、対象の通り、ナイトマーケットと混雑を避ける方法",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "旅行者や住民は、ホアンキエム湖周辺の歩行者天国がどの曜日の何時に行われるのか、どの通りが対象か、車両がどう制限されるのか、混雑を避けるにはいつ行けばよいのかを知りたいと考えます。",
       "content_angle": "国の観光当局の開始告知、VnExpress国際版の案内、祝日の延長運営に関する報道をもとに、週末の実施時間帯と主な対象通り、祝日前後のスケジュール調整をまとめます。",
       "entities": [
@@ -5288,7 +5303,7 @@
         "rx-19686b4670bf",
         "rx-13ea3c501248"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5297,13 +5312,19 @@
         "researched_on": "2026-10-18",
         "keyword_evidence": "NOT_VALIDATED",
         "source": "factory/topic-research/batches/claude-20261018b-0022.json@487da5caf117"
-      }
+      },
+      "distinct_from": [
+        {
+          "id": "JA-S108",
+          "reason": "JA-S108は週末の通行止め時間にバイクでホアンキエム湖へ行く方法と駐車場所を扱い、本ガイドは徒歩で訪れる人向けに歩行者天国の時間帯、楽しみ方、ルールを説明します。"
+        }
+      ]
     },
     {
       "candidate_id": "TA-JA-0117",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "hanoi-kyushigai-36-dori-hang-no-namae",
@@ -5331,7 +5352,7 @@
         "rx-31183e76ccc4",
         "rx-73eb245dc1ee"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5346,7 +5367,7 @@
       "candidate_id": "TA-JA-0118",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "hanoi-furansu-chiku-to-opera-hausu",
@@ -5374,7 +5395,7 @@
         "rx-33748c5ef9af",
         "rx-4b6d6dc13a5a"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5389,7 +5410,7 @@
       "candidate_id": "TA-JA-0119",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "hanoi-seiko-shuhen-no-sugoshikata",
@@ -5418,7 +5439,7 @@
         "rx-50be328dc3a4",
         "rx-778e5e379646"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5433,7 +5454,7 @@
       "candidate_id": "TA-JA-0120",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-etiquette",
       "slug": "betonamu-jiin-to-pagoda-no-reigi",
@@ -5447,7 +5468,7 @@
       "working_title": "ベトナムの寺院とパゴダのマナー：服装、履物、線香、写真撮影",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "旅行者は、ベトナムの寺院やパゴダで何を着ればよいのか、靴や帽子を脱ぐ必要があるのか、失礼にならない線香のあげ方や写真の撮り方は何かを知りたいと考えます。",
       "content_angle": "国の観光ポータル、ベトナム・ニュース、トゥオイチェー・ニュースの文化遺産での服装規定に関する報道を合わせて、これらは文化的な規範であり施設ごとに独自の決まりがある場合があることを強調します。",
       "entities": [
@@ -5461,7 +5482,7 @@
         "rx-18f5d6cae38d",
         "rx-223501057c96"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5476,7 +5497,7 @@
       "candidate_id": "TA-JA-0121",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-etiquette",
       "slug": "hochimin-byo-kengaku-kaikan-jikan",
@@ -5504,7 +5525,7 @@
         "rx-6b98b6b016ab",
         "rx-3fa8f96a0d89"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5519,7 +5540,7 @@
       "candidate_id": "TA-JA-0122",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "hanoi-tanron-koujo-kengaku",
@@ -5533,7 +5554,7 @@
       "working_title": "ハノイのタンロン皇城：世界遺産の見どころと見学のしかた",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "旅行者は、タンロン皇城とは何か、なぜユネスコが登録したのか、中で何が見られるのか、重なり合う遺跡の層を理解するにはどう見学すればよいのかを知りたいと考えます。",
       "content_angle": "ユネスコの登録ページと登録決議、最新の保全状況決議、タンロン・ハノイ遺産保存センターのサイトをもとに、三つの顕著な価値を説明し、中心軸から考古学エリアへ進む見学ルートを提案します。",
       "entities": [
@@ -5548,7 +5569,7 @@
         "rx-f1643b686c2d",
         "rx-f6d88cc8b36d"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5563,7 +5584,7 @@
       "candidate_id": "TA-JA-0123",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "hanoi-bunbyo-kokushikan-kengaku",
@@ -5591,7 +5612,7 @@
         "rx-d91729f629f9",
         "rx-3b9872e4cdde"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5606,7 +5627,7 @@
       "candidate_id": "TA-JA-0124",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "hanoi-suijo-ningyogeki-tanron-gekijo",
@@ -5634,7 +5655,7 @@
         "rx-2bf751d5709c",
         "rx-c6b05119b49a"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5649,7 +5670,7 @@
       "candidate_id": "TA-JA-0125",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "hanoi-kara-batchan-togei-mura-kengaku",
@@ -5678,7 +5699,7 @@
         "rx-db62b62b7d30",
         "rx-22883c020584"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5693,7 +5714,7 @@
       "candidate_id": "TA-JA-0126",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "hanoi-kara-duonram-kosonn-kengaku",
@@ -5707,7 +5728,7 @@
       "working_title": "ハノイからドゥオンラム古村へ：ラテライトの古民家、村の門と行き方",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "旅行者は、ドゥオンラムがハノイ中心部からどれくらい離れているのか、どう行くのか、ラテライトの古民家や村の門、集会所などの見どころは何か、なぜ最初に認定された古村と呼ばれるのかを知りたいと考えます。",
       "content_angle": "ベトナム通信社の報道、国の観光当局のページ、観光情報ポータル、国営航空会社のガイドを突き合わせて古村を説明し、認定年、ハノイまでの距離、古民家の数で出典ごとに違いがある点を指摘します。",
       "entities": [
@@ -5722,7 +5743,7 @@
         "rx-1440baa5d062",
         "rx-3841f86b4ebf"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5737,7 +5758,7 @@
       "candidate_id": "TA-JA-0127",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "chan-an-keikan-fukugotai-yunesuko-kengaku",
@@ -5765,7 +5786,7 @@
         "rx-909ea8c7e1ed",
         "rx-54cc8570f43b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5780,7 +5801,7 @@
       "candidate_id": "TA-JA-0128",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "harong-wan-to-ranha-wan-no-chigai",
@@ -5808,7 +5829,7 @@
         "rx-baeae45e1eef",
         "rx-54cc8570f43b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5823,7 +5844,7 @@
       "candidate_id": "TA-JA-0129",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "mukanchai-tanada-kisetsu-betsu",
@@ -5837,7 +5858,7 @@
       "working_title": "ムカンチャイの棚田の季節：水張りの時期、黄金色の収穫期と旅の計画時期",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "旅行者は、ムカンチャイの棚田がいつ最も美しいのか、水張りの時期と黄金色の収穫期がどう違うのか、ハノイからどれくらい離れているのか、2025年の統合後にどの省に属するのかを知りたいと考えます。",
       "content_angle": "国の観光当局の収穫期の記事、水張りの時期のページ、地域の見どころを紹介した記事をもとに二つの主要な季節を説明し、古い資料はイェンバイ省、2025年の報道はラオカイ省としている点を指摘します。",
       "entities": [
@@ -5851,7 +5872,7 @@
         "rx-bac0c4e0e3dc",
         "rx-356f10899310"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5866,7 +5887,7 @@
       "candidate_id": "TA-JA-0130",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "hanoi-kara-kukkuhon-kokuritsu-koen",
@@ -5894,7 +5915,7 @@
         "rx-bcdd62123acb",
         "rx-3907d4edb953"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5909,7 +5930,7 @@
       "candidate_id": "TA-JA-0131",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "babe-kokuritsu-koen-to-ko-hoomon",
@@ -5938,7 +5959,7 @@
         "rx-cfddf53c052c",
         "rx-3907d4edb953"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5953,7 +5974,7 @@
       "candidate_id": "TA-JA-0132",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "betonamu-denshi-biza-koshiki-saito-moshikomi",
@@ -5967,7 +5988,7 @@
       "working_title": "ベトナムの電子ビザを公式サイトで申請：資格、有効期間、手順と偽サイトの避け方",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "外国人旅行者は、公式サイトで電子ビザをどう申請するのか、最長でどれくらい有効なのか、写真とパスポートをどう準備するのか、追加料金を取る紛らわしいサイトをどう避けるのかを知りたいと考えます。",
       "content_angle": "出入国管理局の公式電子ビザポータルとそのよくある質問ページ、すべての国籍に電子ビザを発給するというベトナム通信社の報道をもとに、申請手順と資格、有効期間、非公式サイトへの警告を説明し、ポータルの最新の手数料表を引用するよう案内します。",
       "entities": [
@@ -5981,7 +6002,7 @@
         "rx-d3dea154ff82",
         "rx-41b31c3dadab"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5996,7 +6017,7 @@
       "candidate_id": "TA-JA-0133",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "betonamu-biza-menjo-45nichi-taishosha",
@@ -6025,7 +6046,7 @@
         "rx-6849ddb3ff35",
         "rx-344396e164f6"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6040,7 +6061,7 @@
       "candidate_id": "TA-JA-0134",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "betonamu-2027nen-kyujitsu-ryoko-keikaku",
@@ -6068,7 +6089,7 @@
         "rx-366c76f559e9",
         "rx-23003ff3f63e"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6083,7 +6104,7 @@
       "candidate_id": "TA-JA-0135",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "betonamu-ryoko-mae-kenko-junbi-wakuchin",
@@ -6110,7 +6131,7 @@
         "rx-23b03926e595",
         "rx-09f4a676c2f2"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6125,7 +6146,7 @@
       "candidate_id": "TA-JA-0136",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-budget",
       "slug": "betonamu-ryoko-shiharai-genkin-kado-qr",
@@ -6139,7 +6160,7 @@
       "working_title": "ベトナム旅行の支払い方法：現金、カードと越境QRコードの使い方",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "旅行者は、ベトナムでは現金、カード、QRのどれで支払うべきか、自分の国の電子ウォレットが使えるのか、どの国がすでに決済連携を持っているのか、何を持っていけば困らないのかを知りたいと考えます。",
       "content_angle": "ベトナム通信社、国の観光当局、NAPASの発表をもとに、越境QR決済が特定の国の旅行者にとって何を意味するかを説明し、すでに稼働している連携と計画段階の連携を区別し、日付付きの出典なしに為替レートや手数料を載せないよう求めます。",
       "entities": [
@@ -6154,7 +6175,7 @@
         "rx-02137dcf0335",
         "rx-0a351df91c92"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6169,7 +6190,7 @@
       "candidate_id": "TA-JA-0137",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-itineraries",
       "slug": "hanoi-3nichikan-hatsu-hoomon-nittei",
@@ -6183,7 +6204,7 @@
       "working_title": "ハノイ初訪問の3日間：遺産の名所、ホーチミン廟、水上人形劇と歩行者天国の順番",
       "search_intent": "informational",
       "word_target": 1700,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "初めてハノイを訪れ三日間ある旅行者は、皇城、文廟、ホーチミン廟、水上人形劇、歩行者天国をどの日に入れれば休館日を避けて無駄な行き来を減らせるのか、現実的な計画を求めています。",
       "content_angle": "それぞれが自前の見学情報を公開している名所をもとに三日間の日程を組み、営業曜日に合わせて順番を決め（廟は月曜と金曜が休館、歩行者天国は週末の夜）、出発前に各公式ページを再確認するよう案内します。",
       "entities": [
@@ -6199,7 +6220,7 @@
         "rx-c6b05119b49a",
         "rx-d43f0d9678fe"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6214,7 +6235,7 @@
       "candidate_id": "TA-JA-0138",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-itineraries",
       "slug": "kita-betonamu-isshukan-ressha-basu",
@@ -6244,7 +6265,7 @@
         "rx-f9d9d33cd37d",
         "rx-a114dbadaa86"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6259,7 +6280,7 @@
       "candidate_id": "TA-JA-0139",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-budget",
       "slug": "hanoi-ryoko-yosan-koshiki-kakaku-peji",
@@ -6288,7 +6309,7 @@
         "rx-b65e9e8771d0",
         "rx-c6b05119b49a"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6303,7 +6324,7 @@
       "candidate_id": "TA-JA-0140",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-infrastructure",
       "slug": "betonamu-denki-sukuta-batteri-kokan",
@@ -6317,7 +6338,7 @@
       "working_title": "ベトナムの電動スクーターのバッテリー交換：ビンファスト、セレックス、ホンダの仕組みと計画段階の部分",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "ライダーや旅行者は、バッテリー交換とは実際に何なのか、ビンファスト、セレックス、ホンダの仕組みが互換なのか、ステーションはどこにあるのか、自宅での充電とどう違うのかを知りたいと考えます。",
       "content_angle": "一つのブランド専用の仕組み（ビンファストとVグリーン）、セレックスがペトロリメックスと築くオープンな網、ハノイとLGエナジーソリューション・ホンダの試験事業を区別し、企業が公表するステーション数は日付付きの主張として扱い、日付付きの出典なしに料金を載せません。",
       "entities": [
@@ -6332,7 +6353,7 @@
         "rx-5c7974a9f44d",
         "rx-e8e4487c621e"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6347,7 +6368,7 @@
       "candidate_id": "TA-JA-0141",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-infrastructure",
       "slug": "hanoi-apato-denki-baiku-juden-ruru",
@@ -6375,7 +6396,7 @@
         "rx-0cd5cee118aa",
         "rx-12c3e1915685"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6390,7 +6411,7 @@
       "candidate_id": "TA-JA-0142",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "binfasuto-denki-sukuta-rainappu",
@@ -6404,7 +6425,7 @@
       "working_title": "ビンファストの電動スクーター：免許不要のモデル、バッテリー交換式モデルとメーカー公表値",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "購入者やレンタル利用者は、ビンファストの電動スクーターがどう違うのか、どのモデルが免許なしで走れるのか、どのモデルが交換式バッテリーを使うのか、メーカー仕様の航続距離と速度をどこまで信頼してよいのかを知りたいと考えます。",
       "content_angle": "ビンファストの投資家向け発表と米証券取引委員会への提出書類をもとにモデル名、速度制限版、バッテリーの種類を整理し、航続距離と速度はメーカーが示した数値として表示し、ライダーに助言する前に正確な仕様と現行の免許規定を確認するよう案内します。",
       "entities": [
@@ -6418,7 +6439,7 @@
         "rx-a9d2a7add069",
         "rx-e8efb9ce9831"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6433,7 +6454,7 @@
       "candidate_id": "TA-JA-0143",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "betonamu-denki-baiku-menkyo-hitsuyo",
@@ -6463,7 +6484,7 @@
         "rx-5f592756bb8a",
         "rx-2df797b594c9"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "WITHDRAWN",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6472,13 +6493,15 @@
         "researched_on": "2026-10-19",
         "keyword_evidence": "NOT_VALIDATED",
         "source": "factory/topic-research/batches/claude-20261018b-0049.json@487da5caf117"
-      }
+      },
+      "withdrawn_on": "2026-10-27",
+      "withdrawn_reason": "Withdrawn on activation of the electric-mobility Hub: licence rules for electric two-wheelers are already answered by the published 50 cc versus electric guide of this locale under vehicle-choice and by the documents-contracts licence guides; a second page would cannibalise that intent."
     },
     {
       "candidate_id": "TA-JA-0144",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "betonamu-denki-baiku-batteri-moota-kijun-2026-10",
@@ -6508,7 +6531,7 @@
         "rx-40ba54311186",
         "rx-8d8fdbe753e1"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "WITHDRAWN",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6517,13 +6540,15 @@
         "researched_on": "2026-10-19",
         "keyword_evidence": "NOT_VALIDATED",
         "source": "factory/topic-research/batches/claude-20261018b-0050.json@487da5caf117"
-      }
+      },
+      "withdrawn_on": "2026-10-27",
+      "withdrawn_reason": "Withdrawn on activation of the electric-mobility Hub: the October 2026 battery and motor standards (QCVN) topic already belongs to vehicle-choice / vc-power in this locale (Matrix row or PROPOSED candidate); keeping both would publish two pages for one intent."
     },
     {
       "candidate_id": "TA-JA-0145",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "denki-sukuta-to-gasorin-baiku-sohoyuhiyo-betonamu",
@@ -6552,7 +6577,7 @@
         "rx-bf0f05ae16c8",
         "rx-9142070789dc"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6567,7 +6592,7 @@
       "candidate_id": "TA-JA-0146",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "honda-denki-sukuta-betonamu-icon-e-cuv-e-uc3",
@@ -6598,7 +6623,7 @@
         "rx-265051f6af71",
         "rx-50426d9095d5"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6613,7 +6638,7 @@
       "candidate_id": "TA-JA-0147",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-sustainability",
       "slug": "hanoi-baiku-haishutsugasu-kensa-2027-nen-7-gatsu",
@@ -6628,7 +6653,7 @@
       "working_title": "ハノイのバイク排ガス検査は2027年7月1日から：対象となる人と適用されるレベル",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "ハノイでガソリンバイクに乗る所有者や長期滞在者は、義務的な排ガス検査が2027年に始まると知り、誰が対象なのか、自分のバイクがどのレベルの基準を満たす必要があるのか、電動バイクも影響を受けるのかを知りたいと考えます。",
       "content_angle": "首相決定13/2026/QD-TTgをVietnamPlus、VietNamNet、ラオドン紙の報道に沿ってたどり、都市別の開始日、2028年1月からのレベル2要件と製造年別のレベルを説明し、先行する草案は日付や猶予期間が異なったため最終決定のみを引用すべきだと明記し、検査と電動二輪車の関係にも触れます。",
       "entities": [
@@ -6643,7 +6668,7 @@
         "rx-6a97616b32bc",
         "rx-e8c2375d44e5"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6658,7 +6683,7 @@
       "candidate_id": "TA-JA-0148",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "betonamu-denki-baiku-burando-dat-bike-yadea-pega-selex",
@@ -6689,7 +6714,7 @@
         "rx-c75985af1ba0",
         "rx-0f63b275f367"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6704,7 +6729,7 @@
       "candidate_id": "TA-JA-0149",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-sustainability",
       "slug": "betonamu-denki-baiku-batteri-risaikuru-kisoku",
@@ -6733,7 +6758,7 @@
         "rx-6c3e131cf300",
         "rx-9d5dbf8f609f"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6748,7 +6773,7 @@
       "candidate_id": "TA-JA-0150",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-moc-chau-baiku-kokudo-6",
@@ -6778,7 +6803,7 @@
         "rx-d24d33f5d35d",
         "rx-218bb6bbce99"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7018,7 +7043,7 @@
       "candidate_id": "TA-JA-0156",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "dongvan-karst-kogen-unesco-sekai-geopark",
@@ -7049,7 +7074,7 @@
         "rx-7b2893458360",
         "rx-2590334325a4"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7064,7 +7089,7 @@
       "candidate_id": "TA-JA-0157",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "betonamu-sim-esim-ryokosha-pasupoto-kao-ninsho",
@@ -7095,7 +7120,7 @@
         "rx-a6b720c0a952",
         "rx-de0a0a67ac37"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7110,7 +7135,7 @@
       "candidate_id": "TA-JA-0158",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "yentsu-vinh-nghiem-con-son-kiep-bac-yunesuko-sekai-isan",
@@ -7141,7 +7166,7 @@
         "rx-f6b845a8aa73",
         "rx-b721093394ca"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7156,7 +7181,7 @@
       "candidate_id": "TA-JA-0159",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "tainhoa-ho-cho-josai-sekai-isan-hanoi-kara",
@@ -7189,7 +7214,7 @@
         "rx-9ddd09465b44",
         "rx-fa78b317638e"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7204,7 +7229,7 @@
       "candidate_id": "TA-JA-0160",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "hanoi-koroa-josai-uzumaki-jobeki-homon",
@@ -7236,7 +7261,7 @@
         "rx-655da81bbe3f",
         "rx-588679b98ee6"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7251,7 +7276,7 @@
       "candidate_id": "TA-JA-0161",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "betonamu-zeikan-ryokosha-tenimotsu-menzei-seirei-an",
@@ -7281,7 +7306,7 @@
         "rx-7ae35a69af75",
         "rx-379d8c319c8c"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7296,7 +7321,7 @@
       "candidate_id": "TA-JA-0162",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-hasu-no-kisetsu-seiko-hyakuyoren-kuanan-hasucha",
@@ -7327,7 +7352,7 @@
         "rx-61702c3ce63b",
         "rx-e85d6b270dba"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7342,7 +7367,7 @@
       "candidate_id": "TA-JA-0163",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "betonamu-ressha-ruru-joshaken-honnin-kakunin-kodomo-nimotsu",
@@ -7372,7 +7397,7 @@
         "rx-06c22ca4d2e8",
         "rx-11c89b75771c"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7387,7 +7412,7 @@
       "candidate_id": "TA-JA-0164",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "fonnya-kebang-hin-namno-kokkyo-yunesuko-sekai-isan",
@@ -7417,7 +7442,7 @@
         "rx-34593a857753",
         "rx-f335c7b604b4"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7432,7 +7457,7 @@
       "candidate_id": "TA-JA-0165",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "betonamu-taizai-kigen-chouka-seirei-282-2025",
@@ -7462,7 +7487,7 @@
         "rx-5b06d71829ba",
         "rx-3ccbfae4adec"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7477,7 +7502,7 @@
       "candidate_id": "TA-JA-0166",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "ranson-yunesuko-sekai-jiopaku-dokutsu-kaseki-byo",
@@ -7508,7 +7533,7 @@
         "rx-b91db2baf8df",
         "rx-3c7c82e9f1bb"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -8155,7 +8180,7 @@
       "candidate_id": "TA-JA-0180",
       "locale": "ja",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "JA-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "betonamu-bunka-no-hi-11gatsu-24nichi-kyujitsu-2026",
@@ -8187,7 +8212,7 @@
         "rx-f8367fd76141",
         "rx-429311dc4062"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {

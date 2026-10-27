@@ -12,11 +12,11 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
-| Matrix rows (2130) | 1054 | 9 | 42 | 1025 |
-| Topical candidates (1311) | 0 | 0 | 35 | 1276 |
+| Matrix rows (2190) | 1054 | 9 | 42 | 1085 |
+| Topical candidates (1290) | 0 | 0 | 35 | 1255 |
 | Silos (330) | 138 | 17 | 0 | 175 |
 
-Knowledge graph: 42 entities, 4496 typed edges (hreflang_equivalent 190, about 710, contains 3386, has_silo 160, has_hub 40, has_pillar 10).
+Knowledge graph: 42 entities, 4705 typed edges (hreflang_equivalent 190, about 710, contains 3365, has_silo 330, has_hub 100, has_pillar 10).
 
 ## REVIEW — competing intents
 
@@ -106,23 +106,23 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 | ss-incidents | riding | informational | – | P8 I20 C8 KEEP | P8 I15 C12 KEEP | P33 I18 KEEP | P8 I15 C12 KEEP | P7 I15 C13 KEEP | P8 I13 C14 KEEP | P8 I13 C14 KEEP | P8 I13 C14 KEEP | P8 I15 C12 KEEP | P8 I15 C12 KEEP |
 | ss-gear | riding | informational | – | P1 I8 C3 KEEP | P2 I5 C5 KEEP | P11 I5 KEEP | P2 I3 C7 KEEP | P2 I5 C5 KEEP | P1 I4 C7 KEEP | P1 I4 C7 KEEP | P1 I4 C7 KEEP | P2 I3 C7 KEEP | P2 I3 C7 KEEP |
 | ss-city | riding | local | – | P40 I23 C9 KEEP | P42 I19 C12 KEEP | P70 I13 UPGRADE | P42 I19 C12 KEEP | P33 I19 C20 KEEP | P41 I19 C12 UPGRADE | P41 I19 C12 KEEP | P41 I19 C12 KEEP | P40 I19 C12 KEEP | P40 I19 C12 KEEP |
-| rt-northern-loops (proposed Hub) | planning | local | – | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE |
-| rt-day-trips (proposed Hub) | planning | local | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
-| travel-neighborhoods (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
-| travel-seasons (proposed Hub) | planning | informational | – | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE |
-| travel-etiquette (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
-| mob-urban-transit (proposed Hub) | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
-| mob-intercity (proposed Hub) | planning | informational | – | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE |
-| mob-last-mile (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
-| dest-northern (proposed Hub) | planning | informational | – | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE |
-| dest-local (proposed Hub) | planning | informational | – | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE |
-| dest-landscapes (proposed Hub) | planning | informational | – | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE |
-| plan-itineraries (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
-| plan-budget (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
-| plan-logistics (proposed Hub) | planning | informational | – | C8 CREATE | C8 CREATE | C8 CREATE | C8 CREATE | C8 CREATE | C8 CREATE | C8 CREATE | C8 CREATE | C8 CREATE | C8 CREATE |
-| electric-choice (proposed Hub) | planning | informational | – | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE |
-| electric-infrastructure (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
-| electric-sustainability (proposed Hub) | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
+| rt-northern-loops | planning | local | – | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE |
+| rt-day-trips | planning | local | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
+| mob-urban-transit | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
+| mob-intercity | planning | informational | – | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE |
+| mob-last-mile | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
+| dest-northern | planning | informational | – | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE |
+| dest-local | planning | informational | – | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE |
+| dest-landscapes | planning | informational | – | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE | C6 CREATE |
+| plan-itineraries | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
+| plan-budget | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
+| plan-logistics | planning | informational | – | C8 CREATE | C8 CREATE | C8 CREATE | C8 CREATE | C8 CREATE | C8 CREATE | C8 CREATE | C8 CREATE | C8 CREATE | C8 CREATE |
+| travel-neighborhoods | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
+| travel-seasons | planning | informational | – | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE |
+| travel-etiquette | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
+| electric-choice | planning | informational | – | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE | C4 CREATE |
+| electric-infrastructure | planning | informational | – | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
+| electric-sustainability | planning | informational | – | C2 CREATE | C2 CREATE | C1 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE | C2 CREATE |
 
 ## Search journey coverage
 
@@ -136,7 +136,7 @@ Published / planned (IDEA + drafts) / candidates per stage.
 | pickup | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
 | riding | 56 / 65 / 28 | 60 / 52 / 37 | 141 / 50 / 0 | 60 / 50 / 39 | 50 / 52 / 46 | 58 / 49 / 41 | 58 / 49 / 41 | 58 / 49 / 41 | 58 / 50 / 39 | 58 / 50 / 39 |
 | return | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 |
-| planning | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 |
+| planning | 0 / 0 / 67 | 0 / 0 / 67 | 0 / 0 / 66 | 0 / 0 / 67 | 0 / 0 / 67 | 0 / 0 / 67 | 0 / 0 / 67 | 0 / 0 / 67 | 0 / 0 / 67 | 0 / 0 / 67 |
 
 Every locale checklist also covers the consideration → decision → pickup → riding → return steps in short sections; that is breadth, not depth (see UPGRADE). `return` (deposit refund, late return) has no dedicated page and is answered inside the deposit and extra-cost silos rather than a separate silo. Transactional booking intent is deliberately not targeted: /global is an independent guide (owner positioning decision).
 
@@ -144,16 +144,16 @@ Every locale checklist also covers the consideration → decision → pickup →
 
 | Locale | Rows | Published | Protected drafts | Planned | Candidates | Published depth OK |
 |---|---|---|---|---|---|---|
-| vi | 214 | 91 | 0 | 123 | 118 | 99% |
-| en | 199 | 97 | 0 | 102 | 137 | 97% |
-| de | 366 | 245 | 0 | 121 | 69 | 98% |
-| fr | 197 | 96 | 0 | 101 | 139 | 99% |
-| es | 187 | 86 | 0 | 101 | 147 | 97% |
-| nl | 192 | 91 | 0 | 101 | 141 | 97% |
-| zh | 192 | 91 | 0 | 101 | 141 | 99% |
-| pt | 192 | 91 | 0 | 101 | 141 | 99% |
-| ko | 193 | 91 | 0 | 102 | 139 | 99% |
-| ja | 193 | 91 | 0 | 102 | 139 | 98% |
+| vi | 220 | 91 | 0 | 129 | 116 | 99% |
+| en | 205 | 97 | 0 | 108 | 135 | 97% |
+| de | 372 | 245 | 0 | 127 | 66 | 98% |
+| fr | 203 | 96 | 0 | 107 | 137 | 99% |
+| es | 193 | 86 | 0 | 107 | 145 | 97% |
+| nl | 198 | 91 | 0 | 107 | 139 | 97% |
+| zh | 198 | 91 | 0 | 107 | 139 | 99% |
+| pt | 198 | 91 | 0 | 107 | 139 | 99% |
+| ko | 199 | 91 | 0 | 108 | 137 | 99% |
+| ja | 199 | 91 | 0 | 108 | 137 | 98% |
 
 Live Writer states (CLAIMED/SUBMITTED) change on every autopilot commit and are not part of this file: run `node scripts/seo/topical-authority.mjs status`.
 

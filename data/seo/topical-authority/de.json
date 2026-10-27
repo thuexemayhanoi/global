@@ -1,7 +1,7 @@
 {
   "version": 1,
   "locale": "de",
-  "updated_on": "2026-10-14",
+  "updated_on": "2026-10-27",
   "market_notes": "German-speaking travellers plan thoroughly and search for legality before booking: whether their Internationaler Führerschein covers motorbikes, whether Auslandskranken- and Haftpflichtversicherung pay after a Rollerunfall, and what a Kaution involves. 'Roller' dominates everyday vocabulary; 'Motorrad' appears in licence and touring queries.",
   "stop_tokens": [
     "motorrad",
@@ -73,7 +73,22 @@
     "ss-gear": "Helm und Ausrüstung",
     "ss-city": "Fahren in Hanoi",
     "rt-northern-loops": "Rundtouren im Norden",
-    "rt-day-trips": "Tagesausflüge ab Hanoi"
+    "rt-day-trips": "Tagesausflüge ab Hanoi",
+    "mob-urban-transit": "Bus und Metro in der Stadt",
+    "mob-intercity": "Bahn und Fernbusse",
+    "mob-last-mile": "Flughafen und letzte Meile",
+    "travel-neighborhoods": "Stadtviertel",
+    "travel-seasons": "Reisezeit und Feste",
+    "travel-etiquette": "Umgangsformen",
+    "dest-northern": "Ziele in Nordvietnam",
+    "dest-local": "In und um Hanoi",
+    "dest-landscapes": "Landschaften und Nationalparks",
+    "plan-itineraries": "Reiserouten",
+    "plan-budget": "Budget und Bezahlen",
+    "plan-logistics": "Visum, Dokumente und Praktisches",
+    "electric-choice": "Elektroroller wählen",
+    "electric-infrastructure": "Laden und Akkutausch",
+    "electric-sustainability": "Emissionen und Nachhaltigkeit"
   },
   "existing": {
     "DE-CHECKLIST": "ss-pickup",
@@ -555,7 +570,7 @@
       "candidate_id": "TA-DE-0018",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "ha-giang-loop-ab-hanoi",
@@ -573,7 +588,7 @@
         "de-auswaertiges-amt",
         "who-road-traffic-injuries"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED"
     },
@@ -581,7 +596,7 @@
       "candidate_id": "TA-DE-0019",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "tagesausflug-ninh-binh",
@@ -599,7 +614,7 @@
         "de-auswaertiges-amt",
         "vi-nchmf-home"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED"
     },
@@ -4376,7 +4391,7 @@
       "candidate_id": "TA-DE-0097",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "hanoi-metro-linie-2a-cat-linh-ha-dong-stationen-tickets",
@@ -4389,7 +4404,7 @@
       "working_title": "Hanoi Metro Linie 2A (Cat Linh–Ha Dong): Stationen, Tickets und Tipps für Besucher",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Besucher, die in Dong Da oder Ha Dong wohnen oder Vietnams erste Metrolinie ausprobieren möchten, suchen nach den Haltestellen, dem Ticketkauf und danach, ob die Linie für Ausflüge im Westen Hanois taugt.",
       "content_angle": "Station für Station erklärt für Reisende ohne Vietnamesischkenntnisse: welche Halte in der Nähe von Sehenswürdigkeiten liegen, wie sich die Tickettypen unterscheiden und wann die Bahn schneller ist als ein Taxi, mit dem Hinweis, die aktuellen Tarife beim Betreiber zu prüfen.",
       "entities": [
@@ -4404,7 +4419,7 @@
         "rx-37e73e6382d0",
         "rx-79845491e4cc"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4419,7 +4434,7 @@
       "candidate_id": "TA-DE-0098",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "hanoi-metro-linie-3-nhon-cau-giay-hochbahnabschnitt",
@@ -4448,7 +4463,7 @@
         "rx-53927038735c",
         "rx-37e73e6382d0"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4463,7 +4478,7 @@
       "candidate_id": "TA-DE-0099",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "mit-dem-bus-in-hanoi-fahren-linien-bezahlung-apps",
@@ -4489,7 +4504,7 @@
         "rx-eee6771cad88",
         "rx-b65e9e8771d0"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4504,7 +4519,7 @@
       "candidate_id": "TA-DE-0100",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "elektrobusse-vinbus-hanoi-linien-und-anbindung",
@@ -4531,7 +4546,7 @@
         "rx-1493305fbcc0",
         "rx-013b4f53a1de"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4546,7 +4561,7 @@
       "candidate_id": "TA-DE-0101",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-last-mile",
       "slug": "flughafen-noi-bai-in-die-altstadt-von-hanoi-mit-dem-bus",
@@ -4559,7 +4574,7 @@
       "working_title": "Vom Flughafen Noi Bai in die Altstadt von Hanoi mit dem Bus: Expressbus und Stadtlinien im Vergleich",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Gerade gelandete Reisende, die ohne Taxi in die Altstadt wollen, vergleichen, welcher Bus von welchem Terminal fährt, wie lange er braucht, wie man zahlt und wo er im Zentrum hält.",
       "content_angle": "Vergleicht den Expressbus mit den langsameren Stadtlinien nach Terminal, Fahrzeit, Gepäckplatz und Verfügbarkeit am späten Abend und erklärt, wie man den aktuellen Fahrplan vor der Landung prüft.",
       "entities": [
@@ -4573,7 +4588,7 @@
         "rx-0151482b1c10",
         "rx-edbc19874e23"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4588,7 +4603,7 @@
       "candidate_id": "TA-DE-0102",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "fernbusbahnhoefe-in-hanoi-welcher-bahnhof-wohin",
@@ -4601,7 +4616,7 @@
       "working_title": "Fernbusbahnhöfe in Hanoi: Welcher Bahnhof bedient welche Region, auch der neue Bahnhof Yen So",
       "search_intent": "informational",
       "word_target": 1400,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Wer einen Fernbus oder Schlafbus bucht, muss wissen, von welchem der Busbahnhöfe Hanois die Linie abfährt, wie man vom Zentrum dorthin kommt und wie viel Zeit man für den Weg einplanen sollte.",
       "content_angle": "Eine Karte der Busbahnhöfe nach Zielregion mit Anfahrt per Stadtbus oder Taxi und der Gewohnheit, den Abfahrtsort beim Anbieter zu bestätigen, da Fernlinien derzeit zwischen Giap Bat, Nuoc Ngam und dem seit Oktober 2026 betriebenen Bahnhof Yen So neu verteilt werden.",
       "entities": [
@@ -4615,7 +4630,7 @@
         "rx-42e17aa5f861",
         "rx-a114dbadaa86"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4630,7 +4645,7 @@
       "candidate_id": "TA-DE-0103",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "mit-dem-zug-von-hanoi-nach-sapa-nachtzug-lao-cai",
@@ -4658,7 +4673,7 @@
         "rx-f9d9d33cd37d",
         "rx-265e7b919b17"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4673,7 +4688,7 @@
       "candidate_id": "TA-DE-0104",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "mit-dem-zug-von-hanoi-nach-ninh-binh-fahrzeit-bahnhof",
@@ -4701,7 +4716,7 @@
         "rx-64c0ff97d360",
         "rx-265e7b919b17"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4710,13 +4725,19 @@
         "researched_on": "2026-10-18",
         "keyword_evidence": "NOT_VALIDATED",
         "source": "factory/topic-research/batches/claude-20261018b-0002.json@d078eaad73c3"
-      }
+      },
+      "distinct_from": [
+        {
+          "id": "TA-DE-0019",
+          "reason": "TA-DE-0019 beschreibt den Tagesausflug mit dem Roller von Hanoi nach Ninh Binh (Route, Dauer, Sicherheit); dieser Beitrag behandelt nur die Bahnfahrt: Abfahrtsbahnhof, Fahrplan, Tickets und das Weiterkommen ab dem Bahnhof Ninh Binh."
+        }
+      ]
     },
     {
       "candidate_id": "TA-DE-0105",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "mit-dem-bus-von-hanoi-nach-ha-long-linienbus-limousine",
@@ -4743,7 +4764,7 @@
         "rx-4ac2e853efff",
         "rx-59bc3d0859c0"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4758,7 +4779,7 @@
       "candidate_id": "TA-DE-0106",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-last-mile",
       "slug": "fahrdienst-apps-in-hanoi-grab-xanh-sm-be-vergleich",
@@ -4785,7 +4806,7 @@
         "rx-399044399e9b",
         "rx-652827dbd946"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4888,7 +4909,7 @@
       "candidate_id": "TA-DE-0109",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "hanoi-zum-ba-vi-nationalpark-mit-dem-roller",
@@ -4901,7 +4922,7 @@
       "working_title": "Von Hanoi zum Ba-Vi-Nationalpark mit dem Roller: Route, Bergstraße und was vor der Fahrt zu prüfen ist",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Fahrer, die einen Tagesausflug aus dem Zentrum von Hanoi planen, wollen wissen, wie lange die Fahrt nach Ba Vi dauert, welche Straßen für einen Roller geeignet sind, wie schwierig die Bergstraße ist und was sie vorab beim Nationalpark klären sollten.",
       "content_angle": "Folgt der Fahrt der Reihe nach, von der Klärung, welche Straßen entlang des Thang Long Boulevard für Roller offen sind, bis zu Anstieg, Nebel und den vom Park bekanntgegebenen Öffnungszeiten, gestützt nur auf die offizielle Seite des Parks und geprüfte Reiseführer.",
       "entities": [
@@ -4915,7 +4936,7 @@
         "rx-c563d95e9b7c",
         "rx-a71738d99a5b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4930,7 +4951,7 @@
       "candidate_id": "TA-DE-0110",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "hanoi-zur-parfuempagode-mit-dem-roller",
@@ -4943,7 +4964,7 @@
       "working_title": "Von Hanoi zur Parfümpagode mit dem Roller: Anfahrt nach Ben Duc, Festzeit-Andrang und die Bootsfahrt",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Fahrer, die einen Tagesausflug zur Parfümpagode erwägen, wollen wissen, wie weit es vom Zentrum Hanois ist, wie Straße und Festzeit-Andrang eine Rollerfahrt beeinflussen und wo die Bootsfahrt bei Ben Duc im Tagesablauf liegt.",
       "content_angle": "Plant den Tag um die Rollerstrecke und den Weg zur Anlegestelle, mit dem Hinweis, dass das Fest vom sechsten Tag des ersten bis in den dritten Mondmonat läuft und Hanoi den Komplex von Huong Son als touristisches Ziel auf Stadtebene anerkennt, nur gestützt auf geprüfte Quellen.",
       "entities": [
@@ -4958,7 +4979,7 @@
         "rx-66202fa60e82",
         "rx-1aaa7d343a21"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4973,7 +4994,7 @@
       "candidate_id": "TA-DE-0111",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-cao-bang-ban-gioc-wasserfall-motorrad",
@@ -4986,7 +5007,7 @@
       "working_title": "Von Hanoi nach Cao Bang und zum Ban-Gioc-Wasserfall mit dem Motorrad: Routenoptionen durch den Geopark",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Erfahrene Fahrer, die über den Ha-Giang-Loop hinausblicken, fragen, wie weit Cao Bang von Hanoi entfernt ist, welche Routen zum Ban-Gioc-Wasserfall führen und wie viele Tage eine Fahrt durch den Geopark realistisch braucht.",
       "content_angle": "Legt die Route anhand dessen an, was die Geopark-Seite der UNESCO und aktuelle Berichte über das Gebiet bestätigen, und listet dann auf, was vor der Fahrt bei der Tourismusbehörde der Provinz zu klären ist, von Straßenzustand und Wetter bis zu Vorgaben im Grenzgebiet.",
       "entities": [
@@ -5000,7 +5021,7 @@
         "rx-2ef6cacf2bde",
         "rx-6b22d1b4c416"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5015,7 +5036,7 @@
       "candidate_id": "TA-DE-0112",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "hanoi-nach-tam-dao-mit-dem-roller",
@@ -5043,7 +5064,7 @@
         "rx-abf5155e3f87",
         "rx-493f238b25be"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5058,7 +5079,7 @@
       "candidate_id": "TA-DE-0113",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-nach-mai-chau-und-pu-luong-mit-dem-roller",
@@ -5086,7 +5107,7 @@
         "rx-040fa2df6cd1",
         "rx-043d9353d8e1"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5101,7 +5122,7 @@
       "candidate_id": "TA-DE-0114",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-nach-sa-pa-roller-ohne-autobahn",
@@ -5129,7 +5150,7 @@
         "rx-5b71b4389f63",
         "rx-8e4da123146f"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5144,7 +5165,7 @@
       "candidate_id": "TA-DE-0115",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-wetter-nach-monaten",
@@ -5158,7 +5179,7 @@
       "working_title": "Wetter in Hanoi nach Monaten: Temperatur, Regen, Luftfeuchtigkeit und wie sich jede Jahreszeit anfühlt",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Reisende, die eine Hanoi-Reise planen, müssen wissen, wie heiß, kalt und nass jeder Monat tatsächlich ist, um Reisedaten zu wählen, das Gepäck zu planen und die schwülsten oder regnerischsten Wochen zu meiden.",
       "content_angle": "Erstellt eine Monatstabelle aus veröffentlichten Klimamittelwerten einer Wetterstation und dem nationalen Tourismusportal und erklärt jede Jahreszeit danach, wie sie sich auf der Straße anfühlt (feuchte Kälte, Nieselregen, Hitze und Schwüle), statt nur Zahlen aufzulisten.",
       "entities": [
@@ -5173,7 +5194,7 @@
         "rx-c983f144155b",
         "rx-df7e82ac43ec"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5188,7 +5209,7 @@
       "candidate_id": "TA-DE-0116",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-im-winter-was-anziehen",
@@ -5216,7 +5237,7 @@
         "rx-90643ef6a563",
         "rx-c983f144155b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5231,7 +5252,7 @@
       "candidate_id": "TA-DE-0117",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-waehrend-tet-was-hat-offen",
@@ -5259,7 +5280,7 @@
         "rx-23003ff3f63e",
         "rx-366c76f559e9"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5274,7 +5295,7 @@
       "candidate_id": "TA-DE-0118",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "mittherbstfest-in-hanoi-hang-ma",
@@ -5303,7 +5324,7 @@
         "rx-a6232add5549",
         "rx-133ea5395fa7"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5318,7 +5339,7 @@
       "candidate_id": "TA-DE-0119",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "hoan-kiem-see-wochenende-fussgaengerzone",
@@ -5332,7 +5353,7 @@
       "working_title": "Fußgängerzone am Hoan-Kiem-See am Wochenende: Zeiten, Straßen, Nachtmarkt und Tipps gegen das Gedränge",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Besucher und Einheimische wollen wissen, an welchen Tagen und zu welchen Zeiten die Fußgängerzone rund um den Hoan-Kiem-See in Betrieb ist, welche Straßen sie umfasst, wie der Verkehr eingeschränkt wird und wann man hingeht, um dem Gedränge zu entgehen.",
       "content_angle": "Stützt sich auf die Eröffnungsmitteilung der nationalen Tourismusbehörde, den Leitfaden von VnExpress und Berichte über Verlängerungen an Feiertagen, um das Wochenendzeitfenster, die wichtigsten Straßen und die Anpassung des Zeitplans rund um Feiertage darzustellen.",
       "entities": [
@@ -5346,7 +5367,7 @@
         "rx-19686b4670bf",
         "rx-13ea3c501248"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5361,7 +5382,7 @@
       "candidate_id": "TA-DE-0120",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "hanoi-altstadt-36-strassen-hang-namen",
@@ -5389,7 +5410,7 @@
         "rx-31183e76ccc4",
         "rx-73eb245dc1ee"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5404,7 +5425,7 @@
       "candidate_id": "TA-DE-0121",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "hanoi-franzoesisches-viertel-opernhaus",
@@ -5432,7 +5453,7 @@
         "rx-33748c5ef9af",
         "rx-4b6d6dc13a5a"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5447,7 +5468,7 @@
       "candidate_id": "TA-DE-0122",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "westsee-hanoi-tay-ho-rund-um-den-see",
@@ -5476,7 +5497,7 @@
         "rx-50be328dc3a4",
         "rx-778e5e379646"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5491,7 +5512,7 @@
       "candidate_id": "TA-DE-0123",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-etiquette",
       "slug": "tempel-und-pagoden-etikette-in-vietnam",
@@ -5505,7 +5526,7 @@
       "working_title": "Tempel- und Pagoden-Etikette in Vietnam: Kleidung, Schuhe, Räucherstäbchen und Fotografieren",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Besucher wollen wissen, was sie in vietnamesischen Tempeln und Pagoden anziehen sollen, ob Schuhe oder Hüte abgenommen werden und wie man Räucherstäbchen anzündet und fotografiert, ohne anzuecken.",
       "content_angle": "Fasst Hinweise des nationalen Tourismusportals, von Viet Nam News und den Bericht von Tuoi Tre über Kleiderregeln an Kulturerbestätten zusammen und betont, dass es um kulturelle Normen geht und einzelne Stätten eigene Regeln festlegen können.",
       "entities": [
@@ -5519,7 +5540,7 @@
         "rx-18f5d6cae38d",
         "rx-223501057c96"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5534,7 +5555,7 @@
       "candidate_id": "TA-DE-0124",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-etiquette",
       "slug": "ho-chi-minh-mausoleum-besuch-zeiten-schliessung",
@@ -5562,7 +5583,7 @@
         "rx-6b98b6b016ab",
         "rx-3fa8f96a0d89"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5577,7 +5598,7 @@
       "candidate_id": "TA-DE-0125",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "kaiserliche-zitadelle-thang-long-hanoi",
@@ -5591,7 +5612,7 @@
       "working_title": "Kaiserliche Zitadelle von Thang Long in Hanoi: das UNESCO-Welterbe, was man sieht und wie man es besucht",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Besucher wollen wissen, was die Kaiserliche Zitadelle von Thang Long ist, warum die UNESCO sie aufgenommen hat, was es drinnen zu sehen gibt und wie man sie besucht, damit sich die übereinanderliegenden Schichten erschließen.",
       "content_angle": "Stützt sich auf die UNESCO-Listenseite, den Aufnahmebeschluss, den aktuellen Erhaltungsbeschluss und die Seite des Thang-Long-Hanoi-Zentrums für Denkmalpflege, um die drei herausragenden Werte zu erklären und einen Weg von der Zentralachse zum archäologischen Bereich vorzuschlagen.",
       "entities": [
@@ -5606,7 +5627,7 @@
         "rx-f1643b686c2d",
         "rx-f6d88cc8b36d"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5621,7 +5642,7 @@
       "candidate_id": "TA-DE-0126",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "literaturtempel-hanoi-besuch",
@@ -5649,7 +5670,7 @@
         "rx-d91729f629f9",
         "rx-3b9872e4cdde"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5664,7 +5685,7 @@
       "candidate_id": "TA-DE-0127",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "wasserpuppentheater-hanoi-thang-long",
@@ -5692,7 +5713,7 @@
         "rx-2bf751d5709c",
         "rx-c6b05119b49a"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5707,7 +5728,7 @@
       "candidate_id": "TA-DE-0128",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "keramikdorf-bat-trang-besuch-ab-hanoi",
@@ -5736,7 +5757,7 @@
         "rx-db62b62b7d30",
         "rx-22883c020584"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5751,7 +5772,7 @@
       "candidate_id": "TA-DE-0129",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "altes-dorf-duong-lam-besuch-ab-hanoi",
@@ -5765,7 +5786,7 @@
       "working_title": "Altes Dorf Duong Lam ab Hanoi besuchen: Laterithäuser, Dorftor und die Anreise",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Besucher wollen wissen, wie weit Duong Lam vom Zentrum Hanois entfernt ist, wie man hinkommt, was es zu sehen gibt, etwa Laterithäuser, das Dorftor und Gemeinschaftshäuser, und warum es als erstes anerkanntes altes Dorf gilt.",
       "content_angle": "Gleicht den VNA-Bericht, die Seite der nationalen Tourismusbehörde, das Tourismusinformationsportal und den Reiseführer der nationalen Fluggesellschaft ab, um das Dorf zu beschreiben und zu zeigen, wo die Quellen beim Anerkennungsjahr, der Entfernung nach Hanoi und der Zahl alter Häuser voneinander abweichen.",
       "entities": [
@@ -5780,7 +5801,7 @@
         "rx-1440baa5d062",
         "rx-3841f86b4ebf"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5795,7 +5816,7 @@
       "candidate_id": "TA-DE-0130",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "trang-an-landschaftskomplex-unesco-besuch",
@@ -5823,7 +5844,7 @@
         "rx-909ea8c7e1ed",
         "rx-54cc8570f43b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5838,7 +5859,7 @@
       "candidate_id": "TA-DE-0131",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "halong-bucht-und-lan-ha-bucht-unterschiede",
@@ -5866,7 +5887,7 @@
         "rx-baeae45e1eef",
         "rx-54cc8570f43b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5881,7 +5902,7 @@
       "candidate_id": "TA-DE-0132",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "mu-cang-chai-reisterrassen-nach-jahreszeit",
@@ -5895,7 +5916,7 @@
       "working_title": "Reisterrassen von Mu Cang Chai nach Jahreszeit: Wasserstauzeit, goldene Ernte und wann man die Reise plant",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Besucher wollen wissen, wann die Reisterrassen von Mu Cang Chai am eindrucksvollsten aussehen, wie sich die Wasserstauzeit von der goldenen Ernte unterscheidet, wie weit es von Hanoi ist und zu welcher Provinz der Ort nach den Zusammenlegungen von 2025 gehört.",
       "content_angle": "Stützt sich auf den Erntezeit-Artikel der nationalen Tourismusbehörde, deren Seite zur Wasserstauzeit und deren Beitrag zu den Sehenswürdigkeiten der Region, um die beiden Hauptjahreszeiten zu beschreiben, und weist darauf hin, dass ältere Quellen Yen Bai nennen, Berichte von 2025 dagegen Lao Cai.",
       "entities": [
@@ -5909,7 +5930,7 @@
         "rx-bac0c4e0e3dc",
         "rx-356f10899310"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5924,7 +5945,7 @@
       "candidate_id": "TA-DE-0133",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "cuc-phuong-nationalpark-besuch-ab-hanoi",
@@ -5952,7 +5973,7 @@
         "rx-bcdd62123acb",
         "rx-3907d4edb953"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5967,7 +5988,7 @@
       "candidate_id": "TA-DE-0134",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "ba-be-nationalpark-und-see-besuch",
@@ -5996,7 +6017,7 @@
         "rx-cfddf53c052c",
         "rx-3907d4edb953"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6011,7 +6032,7 @@
       "candidate_id": "TA-DE-0135",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "vietnam-e-visa-offizielles-portal-beantragen",
@@ -6025,7 +6046,7 @@
       "working_title": "Vietnam E-Visum auf dem offiziellen Portal: Voraussetzungen, Gültigkeit, Schritte und Schutz vor Fake-Seiten",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Ausländische Besucher wollen wissen, wie man das E-Visum auf der offiziellen Seite beantragt, wie lange es höchstens gelten kann, wie man Foto und Reisepass vorbereitet und wie man täuschend ähnliche Seiten vermeidet, die Zusatzgebühren verlangen.",
       "content_angle": "Stützt sich auf das offizielle E-Visum-Portal der Einwanderungsbehörde, dessen FAQ-Seite und den VNA-Bericht über E-Visa für alle Nationalitäten, um Antragsschritte, Voraussetzungen, Gültigkeit und die Warnung vor inoffiziellen Seiten zu erklären, und verlangt, die aktuelle Gebührentabelle des Portals zu zitieren.",
       "entities": [
@@ -6039,7 +6060,7 @@
         "rx-d3dea154ff82",
         "rx-41b31c3dadab"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6054,7 +6075,7 @@
       "candidate_id": "TA-DE-0136",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "vietnam-visumfreie-einreise-45-tage-wer",
@@ -6083,7 +6104,7 @@
         "rx-6849ddb3ff35",
         "rx-344396e164f6"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6098,7 +6119,7 @@
       "candidate_id": "TA-DE-0137",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "feiertage-vietnam-2027-reiseplanung",
@@ -6126,7 +6147,7 @@
         "rx-366c76f559e9",
         "rx-23003ff3f63e"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6141,7 +6162,7 @@
       "candidate_id": "TA-DE-0138",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "gesundheitsvorsorge-vietnam-reise-impfungen",
@@ -6168,7 +6189,7 @@
         "rx-23b03926e595",
         "rx-09f4a676c2f2"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6183,7 +6204,7 @@
       "candidate_id": "TA-DE-0139",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-budget",
       "slug": "bezahlen-in-vietnam-bargeld-karte-qr-code",
@@ -6197,7 +6218,7 @@
       "working_title": "Bezahlen in Vietnam als Tourist: Bargeld, Karten und grenzüberschreitende QR-Codes im Überblick",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Besucher wollen wissen, ob sie in Vietnam bar, mit Karte oder per QR-Code zahlen, ob ihre heimische E-Wallet funktioniert, welche Länder schon Zahlungsverbindungen haben und was sie dabeihaben sollten, um nicht in Verlegenheit zu geraten.",
       "content_angle": "Stützt sich auf Meldungen der VNA, der nationalen Tourismusbehörde und von NAPAS, um zu erklären, was grenzüberschreitende QR-Zahlung für Besucher aus bestimmten Ländern bedeutet, nennt bestehende und nur geplante Verbindungen und verlangt, keine Wechselkurse oder Gebühren ohne datierte Quelle zu veröffentlichen.",
       "entities": [
@@ -6212,7 +6233,7 @@
         "rx-02137dcf0335",
         "rx-0a351df91c92"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6227,7 +6248,7 @@
       "candidate_id": "TA-DE-0140",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-itineraries",
       "slug": "drei-tage-in-hanoi-erster-besuch-reiseplan",
@@ -6241,7 +6262,7 @@
       "working_title": "Drei Tage in Hanoi beim ersten Besuch: Welterbe, Mausoleum, Wasserpuppentheater und Fußgängerzone ordnen",
       "search_intent": "informational",
       "word_target": 1700,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Erstbesucher mit drei Tagen in Hanoi wollen einen machbaren Plan: an welchem Tag passen Zitadelle, Literaturtempel, Mausoleum, Wasserpuppentheater und Fußgängerzone, damit sie keine Schließtage erwischen und nicht ständig zurücklaufen.",
       "content_angle": "Baut einen Dreitagesplan aus Stätten auf, die eigene Besucherinformationen veröffentlichen, geordnet nach Öffnungstagen (das Mausoleum ist montags und freitags geschlossen, die Fußgängerzone läuft an Wochenendabenden), und verlangt, jede offizielle Seite vor der Reise erneut zu prüfen.",
       "entities": [
@@ -6257,7 +6278,7 @@
         "rx-c6b05119b49a",
         "rx-d43f0d9678fe"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6272,7 +6293,7 @@
       "candidate_id": "TA-DE-0141",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-itineraries",
       "slug": "eine-woche-nordvietnam-mit-zug-und-bus",
@@ -6302,7 +6323,7 @@
         "rx-f9d9d33cd37d",
         "rx-a114dbadaa86"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6317,7 +6338,7 @@
       "candidate_id": "TA-DE-0142",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-budget",
       "slug": "hanoi-reisebudget-offizielle-preisseiten",
@@ -6346,7 +6367,7 @@
         "rx-b65e9e8771d0",
         "rx-c6b05119b49a"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6361,7 +6382,7 @@
       "candidate_id": "TA-DE-0143",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-infrastructure",
       "slug": "batteriewechsel-elektroroller-vietnam-erklaert",
@@ -6375,7 +6396,7 @@
       "working_title": "Batteriewechsel bei Elektrorollern in Vietnam: VinFast, Selex, Honda und was noch Plan ist",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Fahrer und Besucher wollen verstehen, was Batteriewechsel eigentlich ist, ob die Systeme von VinFast, Selex und Honda zusammenarbeiten, wo die Stationen stehen und worin er sich vom Laden zu Hause unterscheidet.",
       "content_angle": "Trennt markenbezogene Systeme (VinFast mit V-Green), das offene Netz, das Selex mit Petrolimex aufbaut, und das Hanoier Pilotprojekt mit LG Energy Solution und Honda, gibt Stationszahlen der Unternehmen als datierte Angaben wieder und nennt keine Gebühren ohne datierte Quelle.",
       "entities": [
@@ -6390,7 +6411,7 @@
         "rx-5c7974a9f44d",
         "rx-e8e4487c621e"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6405,7 +6426,7 @@
       "candidate_id": "TA-DE-0144",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-infrastructure",
       "slug": "elektroroller-laden-hanoi-wohnhaus-oeffentliche-stationen",
@@ -6433,7 +6454,7 @@
         "rx-0cd5cee118aa",
         "rx-12c3e1915685"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6448,7 +6469,7 @@
       "candidate_id": "TA-DE-0145",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "vinfast-elektroroller-modelle-erklaert",
@@ -6462,7 +6483,7 @@
       "working_title": "VinFast Elektroroller erklärt: Modelle ohne Führerscheinpflicht, Wechselbatterie-Modelle und Herstellerangaben",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Käufer und Mieter wollen wissen, wie sich die Elektroroller von VinFast unterscheiden: welche Modelle ohne Führerschein fahren, welche Wechselbatterien nutzen und wie weit man den Reichweiten- und Geschwindigkeitsangaben der Hersteller trauen kann.",
       "content_angle": "Nutzt die Investorenmitteilungen und die SEC-Meldung von VinFast für Modellnamen, geschwindigkeitsbegrenzte Varianten und Batterietypen, kennzeichnet Reichweite und Geschwindigkeit als Herstellerangaben und verlangt, vor Empfehlungen die genaue Variante und die aktuellen Führerscheinregeln zu prüfen.",
       "entities": [
@@ -6476,7 +6497,7 @@
         "rx-a9d2a7add069",
         "rx-e8efb9ce9831"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6491,7 +6512,7 @@
       "candidate_id": "TA-DE-0146",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "brauchen-elektromotorraeder-in-vietnam-einen-fuehrerschein",
@@ -6521,7 +6542,7 @@
         "rx-5f592756bb8a",
         "rx-2df797b594c9"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "WITHDRAWN",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6530,13 +6551,15 @@
         "researched_on": "2026-10-19",
         "keyword_evidence": "NOT_VALIDATED",
         "source": "factory/topic-research/batches/claude-20261018b-0049.json@487da5caf117"
-      }
+      },
+      "withdrawn_on": "2026-10-27",
+      "withdrawn_reason": "Withdrawn on activation of the electric-mobility Hub: licence rules for electric two-wheelers are already answered by the published 50 cc versus electric guide of this locale under vehicle-choice and by the documents-contracts licence guides; a second page would cannibalise that intent."
     },
     {
       "candidate_id": "TA-DE-0147",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "elektromotorrad-batterie-motor-normen-oktober-2026",
@@ -6566,7 +6589,7 @@
         "rx-40ba54311186",
         "rx-8d8fdbe753e1"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "WITHDRAWN",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6575,13 +6598,15 @@
         "researched_on": "2026-10-19",
         "keyword_evidence": "NOT_VALIDATED",
         "source": "factory/topic-research/batches/claude-20261018b-0050.json@487da5caf117"
-      }
+      },
+      "withdrawn_on": "2026-10-27",
+      "withdrawn_reason": "Withdrawn on activation of the electric-mobility Hub: the October 2026 battery and motor standards (QCVN) topic already belongs to vehicle-choice / vc-power in this locale (Matrix row or PROPOSED candidate); keeping both would publish two pages for one intent."
     },
     {
       "candidate_id": "TA-DE-0148",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "elektroroller-oder-benziner-gesamtkosten-vietnam",
@@ -6610,7 +6635,7 @@
         "rx-bf0f05ae16c8",
         "rx-9142070789dc"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6625,7 +6650,7 @@
       "candidate_id": "TA-DE-0149",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "honda-elektroroller-vietnam-icon-e-cuv-e-uc3",
@@ -6656,7 +6681,7 @@
         "rx-265051f6af71",
         "rx-50426d9095d5"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6671,7 +6696,7 @@
       "candidate_id": "TA-DE-0150",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-sustainability",
       "slug": "abgasuntersuchung-motorraeder-hanoi-juli-2027",
@@ -6701,7 +6726,7 @@
         "rx-6a97616b32bc",
         "rx-e8c2375d44e5"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "WITHDRAWN",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6710,13 +6735,16 @@
         "researched_on": "2026-10-19",
         "keyword_evidence": "NOT_VALIDATED",
         "source": "factory/topic-research/batches/claude-20261018b-0053.json@487da5caf117"
-      }
+      },
+      "withdrawn_on": "2026-10-27",
+      "withdrawn_reason": "Withdrawn on activation of the electric-mobility Hub: the July 2027 motorbike emissions-testing intent is already the German Matrix row DE-S299 (/de/guides/abgaspruefung-motorrad-vietnam-ab-juli-2027-hanoi-mietroller/) researched on 2026-10-26.",
+      "duplicate_of": "DE-S299"
     },
     {
       "candidate_id": "TA-DE-0151",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "elektromotorrad-marken-vietnam-dat-bike-yadea-pega-selex",
@@ -6747,7 +6775,7 @@
         "rx-c75985af1ba0",
         "rx-0f63b275f367"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6762,7 +6790,7 @@
       "candidate_id": "TA-DE-0152",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-sustainability",
       "slug": "elektroroller-batterien-recycling-regeln-vietnam",
@@ -6777,7 +6805,7 @@
       "working_title": "Was mit Elektroroller-Batterien in Vietnam passiert: Recyclingregeln und die vorgeschlagene Quote für 2029",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "Fahrer und Mieter, die immer mehr Elektroroller auf Hanois Straßen sehen, fragen, was am Ende der Lebensdauer mit den Lithium-Batterien passiert, und Meldungen über eine vorgeschlagene verbindliche Recyclingquote machen unklar, was schon Gesetz und was noch Entwurf ist.",
       "content_angle": "Trennt, was gilt (der Rahmen der Herstellerverantwortung und eine aktuelle Recyclingquote von null für Lithium-Batterien von Fahrzeugen), von dem, was nur vorgeschlagen ist (die Quote im Dekretentwurf und das geänderte Umweltgesetz, das der Nationalversammlung vorgelegt werden soll), zitiert den VIR-Bericht bei Vietstock und das Ministerium, nennt Einwände der Branche zu Recyclingkapazitäten und verlangt, den Stand der Gesetzgebung vor der Veröffentlichung neu zu prüfen.",
       "entities": [
@@ -6791,7 +6819,7 @@
         "rx-6c3e131cf300",
         "rx-9d5dbf8f609f"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6806,7 +6834,7 @@
       "candidate_id": "TA-DE-0153",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-nach-moc-chau-mit-dem-motorrad",
@@ -6836,7 +6864,7 @@
         "rx-d24d33f5d35d",
         "rx-218bb6bbce99"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7076,7 +7104,7 @@
       "candidate_id": "TA-DE-0159",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "dong-van-karstplateau-unesco-geopark-ueberblick",
@@ -7107,7 +7135,7 @@
         "rx-7b2893458360",
         "rx-2590334325a4"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7122,7 +7150,7 @@
       "candidate_id": "TA-DE-0160",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "sim-esim-vietnam-touristen-reisepass-gesichtspruefung",
@@ -7153,7 +7181,7 @@
         "rx-a6b720c0a952",
         "rx-de0a0a67ac37"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7168,7 +7196,7 @@
       "candidate_id": "TA-DE-0161",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "yen-tu-vinh-nghiem-con-son-kiep-bac-unesco-welterbe",
@@ -7199,7 +7227,7 @@
         "rx-f6b845a8aa73",
         "rx-b721093394ca"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7214,7 +7242,7 @@
       "candidate_id": "TA-DE-0162",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "zitadelle-der-ho-dynastie-thanh-hoa-unesco-ab-hanoi",
@@ -7247,7 +7275,7 @@
         "rx-9ddd09465b44",
         "rx-fa78b317638e"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7262,7 +7290,7 @@
       "candidate_id": "TA-DE-0163",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "co-loa-zitadelle-hanoi-spiralwaelle-besuch",
@@ -7294,7 +7322,7 @@
         "rx-655da81bbe3f",
         "rx-588679b98ee6"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7309,7 +7337,7 @@
       "candidate_id": "TA-DE-0164",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "zoll-vietnam-reisende-freimengen-gepaeck-dekretentwurf",
@@ -7339,7 +7367,7 @@
         "rx-7ae35a69af75",
         "rx-379d8c319c8c"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7354,7 +7382,7 @@
       "candidate_id": "TA-DE-0165",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "lotussaison-hanoi-westsee-bach-diep-quang-an-lotustee",
@@ -7385,7 +7413,7 @@
         "rx-61702c3ce63b",
         "rx-e85d6b270dba"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7400,7 +7428,7 @@
       "candidate_id": "TA-DE-0166",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "zugfahren-in-vietnam-regeln-fahrkarten-ausweis-kinder-gepaeck",
@@ -7430,7 +7458,7 @@
         "rx-06c22ca4d2e8",
         "rx-11c89b75771c"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7445,7 +7473,7 @@
       "candidate_id": "TA-DE-0167",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "phong-nha-ke-bang-hin-nam-no-unesco-welterbe-grenzueberschreitend",
@@ -7475,7 +7503,7 @@
         "rx-34593a857753",
         "rx-f335c7b604b4"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7490,7 +7518,7 @@
       "candidate_id": "TA-DE-0168",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "aufenthalt-in-vietnam-ueberzogen-dekret-282-2025-meldepflicht",
@@ -7520,7 +7548,7 @@
         "rx-5b06d71829ba",
         "rx-3ccbfae4adec"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7535,7 +7563,7 @@
       "candidate_id": "TA-DE-0169",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "lang-son-unesco-global-geopark-hoehlen-fossilien-tempel",
@@ -7566,7 +7594,7 @@
         "rx-b91db2baf8df",
         "rx-3c7c82e9f1bb"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -8219,7 +8247,7 @@
       "candidate_id": "TA-DE-0183",
       "locale": "de",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "DE-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "vietnamesischer-kulturtag-24-november-feiertag-2026",
@@ -8251,7 +8279,7 @@
         "rx-f8367fd76141",
         "rx-429311dc4062"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
