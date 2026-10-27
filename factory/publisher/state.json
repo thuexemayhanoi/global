@@ -12364,17 +12364,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-27T12:31:02.586Z"
+    },
+    {
+      "id": "DE-S224",
+      "locale": "de",
+      "url": "/de/guides/hitzewarnungen-vietnam-risikostufen-amtliche-meldungen-rollerfahrer/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T12:36:43.411Z",
+      "source_sha256": "db2f530670b7b1c3394fd2cb199f12715588918c5eb242ff74807bf26e2c5c41",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T20:41:52.415Z",
-      "ids": [
-        "KO-S74",
-        "VI-S67"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T20:43:12.733Z",
       "ids": [
@@ -13896,6 +13899,13 @@
         "DE-S206"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-27T12:36:43.411Z",
+      "ids": [
+        "DE-S224"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -13906,5 +13916,7 @@
     "commit": "b380aa97008467eed564ff07687669c23bf4c7d6",
     "live_seconds": 62
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
