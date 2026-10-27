@@ -12292,17 +12292,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-27T12:19:02.493Z"
+    },
+    {
+      "id": "DE-S211",
+      "locale": "de",
+      "url": "/de/guides/elefand-krisenvorsorgeliste-vietnam-reise-was-der-eintrag-leistet/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T12:20:25.507Z",
+      "source_sha256": "64ed55846398d5133b9a1c19db7909d81638a77ccbceaaab2c003bac1c34b664",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T17:04:13.695Z",
-      "ids": [
-        "VI-S87",
-        "ZH-S88"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T17:05:35.629Z",
       "ids": [
@@ -13828,6 +13831,13 @@
         "DE-S237"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-27T12:20:25.507Z",
+      "ids": [
+        "DE-S211"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -13838,5 +13848,7 @@
     "commit": "6edae8176f01764624a49c04e5ad31989b067874",
     "live_seconds": 82
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
