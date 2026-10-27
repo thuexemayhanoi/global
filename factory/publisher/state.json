@@ -12304,17 +12304,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-27T12:21:52.636Z"
+    },
+    {
+      "id": "DE-S210",
+      "locale": "de",
+      "url": "/de/guides/kennzeichen-motorrad-verdecken-verbiegen-veraendern-vietnam-dekret-238-2026/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T12:23:47.235Z",
+      "source_sha256": "62891113a0771567fa3fd8e1cae149279576a206fa8a9c762ef9b6f37e485054",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S212",
+      "locale": "de",
+      "url": "/de/guides/tollwut-hundebiss-vietnam-wundversorgung-behandlung-vor-ort-rki-aa/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T12:23:47.235Z",
+      "source_sha256": "2a4fb3dce99a966bfe794dc49c129cc402fce404a184a418428910b2d8f81bb6",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T20:10:03.708Z",
-      "ids": [
-        "DE-S19",
-        "EN-S20"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T20:11:30.997Z",
       "ids": [
@@ -13838,6 +13852,14 @@
         "DE-S211"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-27T12:23:47.235Z",
+      "ids": [
+        "DE-S210",
+        "DE-S212"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -13849,6 +13871,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 1
+    "APPROVED_BY_POLICY": 3
   }
 }
