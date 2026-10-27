@@ -67,7 +67,9 @@ jobs:
             node scripts/topic-factory.mjs status >> "$GITHUB_STEP_SUMMARY"
           }
           allowed='^(data/seo/|factory/external-writers/assignments\.json$|approvals/auto/|docs/(GLOBAL-SITE-MATRIX|CONTENT-FACTORY-DASHBOARD)\.md$)'
-          for attempt in 1 2 3; do
+          # Writer Autopilot and Auto Publisher commit to main in bursts while one factory
+          # recompute takes about a minute, so three back-to-back attempts kept losing the race.
+          for attempt in 1 2 3 4 5 6; do
             step
             changed=$(git status --porcelain | awk '{print $2}')
             if [ -z "$changed" ]; then echo "No factory change."; exit 0; fi
@@ -83,5 +85,7 @@ jobs:
             fi
             echo "CONCURRENT_MAIN_UPDATE attempt=$attempt: recompute from latest main"
             git reset --hard origin/main
+            # Jittered pause so the next recompute starts after the current burst settles.
+            sleep $((10 + RANDOM % 30))
           done
           echo "FACTORY_SAFE_STOP: retry budget exhausted; nothing was force-pushed"; exit 1
