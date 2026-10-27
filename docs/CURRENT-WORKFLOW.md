@@ -177,7 +177,7 @@ Other actions: `action=pause` (reason), `action=scan` (read-only eligibility), `
 | Publisher `PAUSED` | Live QA FAIL/INCONCLUSIVE, a failed gate, or an operator pause | § 8 |
 | Pause reason `Pre-commit gate failed … fact-guard … UNSOURCED_AMOUNT <page>` | a staged page failed the site fact guard; nothing was published | the draft behind `<page>` needs a repair (since 2026-10-15 G1 also checks source titles, so this becomes a repair ticket instead of a pause); then the operator resumes (§ 8) |
 | `LIVE_QA_RECOVERY` | an earlier publication has no recorded live result | nothing; the run re-checks it before staging anything new |
-| `CONCURRENT_MAIN_UPDATE` | another workflow pushed to `main` | automatic recompute (three attempts; the Topic Factory six, with a jittered pause), never a force-push |
+| `CONCURRENT_MAIN_UPDATE` | another workflow pushed to `main` | automatic recompute (three attempts; the Topic Factory ten, each started once `main` has been still for 45 s), never a force-push |
 | Topic Factory `FACTORY_SAFE_STOP: retry budget exhausted` | `main` kept moving during every recompute; nothing was ingested or pushed | re-run that Topic Factory run (or `workflow_dispatch`); the research batch stays on its branch |
 
 ## 10. Commands
