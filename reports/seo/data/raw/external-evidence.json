@@ -1,0 +1,16 @@
+{
+ "collected_at": "2026-10-27T23:55Z",
+ "note": "Evidence gathered through connected third-party tools. The audit container itself cannot reach global.rentbikehanoi.com (egress policy 403), so live HTTP was verified by the repository's own read-only GitHub Actions QA and by external crawlers.",
+ "github_actions": [
+  {"workflow": "live-markup-qa.yml", "run_id": 40604722403, "url": "https://github.com/thuexemayhanoi/global/actions/runs/40604722403", "head_sha": "5adb7cd25bd94f00edf31d8d8b8717a7ec729568", "conclusion": "success", "scope": "all 1,079 PUBLISHED URLs + /search/ + /404.html; pass requires HTTP 200 and byte-identical HTML vs the committed build", "completed_at": "2026-10-27T23:49:43Z"},
+  {"workflow": "post-publish-qa.yml", "run_id": 40604724823, "url": "https://github.com/thuexemayhanoi/global/actions/runs/40604724823", "head_sha": "5adb7cd25bd94f00edf31d8d8b8717a7ec729568", "conclusion": "success", "scope": "HTTP status/lang/canonical of every PUBLISHED URL, sitemap index + shards vs Matrix, robots.txt, unknown route = 404, /search/ noindex, SEO fingerprints vs url-freeze, NAP/business-schema guard", "completed_at": "2026-10-27T23:51:22Z"}
+ ],
+ "openseo_site_audit": {"audit_id": "70e1f868-7461-4052-aae0-eeec9b619b97", "url": "https://app.openseo.so/p/f8184d9f-1606-4ba6-8c20-eef7cf01d032/audit?auditId=70e1f868-7461-4052-aae0-eeec9b619b97", "completed_at": "2026-10-27T23:52:28Z", "pages_crawled": 50, "plan_page_cap": 50, "status_200": 50, "indexable": 50, "in_sitemap": 50, "response_time_ms_range": [11, 143], "issues": [{"type": "title-too-long", "severity": "info", "url": "/", "length": 65}, {"type": "title-too-long", "severity": "info", "url": "/vi/guides/chieu-cao-yen-xe-ga-nguoi-thap-ha-noi/", "length": 62}], "lighthouse": "8 of 8 Lighthouse runs FAILED in the tool; no CWV from this source"},
+ "pagespeed_ubersuggest": {"target": "global.rentbikehanoi.com (homepage, lab data, Lighthouse via Ubersuggest)", "DESKTOP": {"FCP": "449 ms", "LCP": "529 ms", "CLS": "0", "TBT": "30 ms", "SpeedIndex": "737 ms", "TTI": "529 ms", "opportunity": "Redirects, est. 190 ms"}, "MOBILE": {"FCP": "1.3 s", "LCP": "1.7 s", "CLS": "0", "TBT": "14 ms", "SpeedIndex": "4.3 s", "TTI": "1.7 s", "opportunity": "Redirects, est. 630 ms"}, "field_data_crux": "NOT_AVAILABLE", "INP": "NOT_MEASURED (lab tools cannot measure INP)"},
+ "ubersuggest_domain_overview": {"domain": "global.rentbikehanoi.com", "organic_keywords": 0, "est_organic_traffic": 0, "domain_authority": 2, "backlinks": 37, "referring_domains": 32, "follow": 35, "nofollow": 2, "months_reported": "2025-10..2026-09", "caveat": "Third-party index estimate; not Google data"},
+ "search_console": {"status": "NOT_CONNECTED", "evidence": "OpenSEO project f8184d9f… list_search_console_sites returned 0 Google accounts"},
+ "ga4": {"status": "NOT_CONNECTED"},
+ "firecrawl": {"status": "NOT_AVAILABLE", "reason": "connected account out of credits"},
+ "openrush": {"status": "NOT_AVAILABLE", "reason": "402 insufficient credits"},
+ "redirect_and_header_probes": {"status": "NOT_CHECKED", "reason": "no tool with remaining capacity could fetch http://, www. or non-slash variants with headers from this environment"}
+}
