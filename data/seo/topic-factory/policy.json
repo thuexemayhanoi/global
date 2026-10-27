@@ -42,7 +42,8 @@
     "batch_min": 25,
     "batch_max": 50,
     "max_promotions_per_run": 50,
-    "research_needed_when_proposed_below": 25
+    "research_needed_when_proposed_below": 25,
+    "hub_min_supporting": 3
   },
   "duplicates": {
     "intent_overlap_fail": 0.66,
@@ -59,7 +60,8 @@
       "clusters": [
         "travel-guides"
       ],
-      "status": "RESEARCH_OPEN"
+      "status": "ACTIVE",
+      "activated_on": "2026-10-27"
     },
     {
       "id": "motorbike-rental",
@@ -76,7 +78,8 @@
       "clusters": [
         "routes-trips"
       ],
-      "status": "RESEARCH_OPEN"
+      "status": "ACTIVE",
+      "activated_on": "2026-10-27"
     },
     {
       "id": "transportation-mobility",
@@ -84,7 +87,8 @@
       "clusters": [
         "transport-mobility"
       ],
-      "status": "RESEARCH_OPEN"
+      "status": "ACTIVE",
+      "activated_on": "2026-10-27"
     },
     {
       "id": "traffic-law-safety",
@@ -101,7 +105,8 @@
       "clusters": [
         "destinations-experiences"
       ],
-      "status": "RESEARCH_OPEN"
+      "status": "ACTIVE",
+      "activated_on": "2026-10-27"
     },
     {
       "id": "travel-planning",
@@ -109,7 +114,8 @@
       "clusters": [
         "travel-planning"
       ],
-      "status": "RESEARCH_OPEN"
+      "status": "ACTIVE",
+      "activated_on": "2026-10-27"
     },
     {
       "id": "electric-mobility",
@@ -117,7 +123,8 @@
       "clusters": [
         "electric-mobility"
       ],
-      "status": "RESEARCH_OPEN"
+      "status": "ACTIVE",
+      "activated_on": "2026-10-27"
     }
   ],
   "architecture_rule": "All 8 domains are open for research. A RESEARCH_OPEN domain with no existing Hub accepts candidates using parent_id:null, domain_id and its proposed-Hub subcluster as ARCHITECTURE_BLOCKED in the topical map. Such candidates are not Matrix IDEA, Writer claims or publishable URLs. To create a Hub: reviewed architecture PR plus at least 8 distinct validated Supporting candidates, and existing Matrix/SEO/URL safeguards.",
@@ -127,7 +134,12 @@
       "safety-support": "SAFETY",
       "rental-costs": "PRICE",
       "vehicle-choice": "STANDARD",
-      "routes-trips": "STANDARD"
+      "routes-trips": "SAFETY",
+      "travel-planning": "LEGAL",
+      "electric-mobility": "LEGAL",
+      "transport-mobility": "STANDARD",
+      "destinations-experiences": "STANDARD",
+      "travel-guides": "STANDARD"
     },
     "default": "STANDARD"
   },

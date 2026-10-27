@@ -161,7 +161,7 @@ export function buildGraph(root=ROOT){
  for(const node of nodes)if(node.qa_status==="MISSING_PUBLISHED_HTML")errors.push("Missing published HTML "+node.id);
  const candidates=[];
  for(const [code,L] of Object.entries(map.locales))for(const p of L.proposals||[]){
-  if(p.status==="PROMOTED")continue;
+  if(p.status==="PROMOTED"||p.status==="WITHDRAWN")continue;
   const c=clusters.get(p.subcluster),blocked=p.status==="ARCHITECTURE_BLOCKED";
   candidates.push({id:p.candidate_id,locale:code,level:"SUPPORT",silo:p.subcluster,hub:c?.hub||null,parent_id:p.parent_id,proposed_url:proposalURL(p),
    primary_query_hypothesis:p.primary_query,working_title:p.working_title,intent:p.search_intent,journey_stage:c?.journey_stage||null,intent_class:c?.intent_class||null,

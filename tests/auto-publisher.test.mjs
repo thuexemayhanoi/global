@@ -196,3 +196,27 @@ test("legacy reviewer records remain verifiable but cannot block automated QA",a
  assert.ok(REVIEW_FILE.test("NL-H01.4846d24d0cb9.json"));
  assert.ok(!REVIEW_FILE.test("NL-H01.json"));
 });
+
+test("a new Hub waits for its first Supporting guides; it publishes once three are ready (no empty category)",async()=>{
+ const {requireHubSupport}=await import("../scripts/auto-publisher-core.mjs");
+ const {repairTicket}=await import("../scripts/repair-queue-core.mjs");
+ const m=structuredClone(matrix),h=m.rows.find(r=>r.id==="EN-H05");
+ assert.equal(h.status,"IDEA");
+ const kids=[1,2,3].map(n=>({id:"EN-S90"+n,locale:"en",role:"SUPPORT",parent_id:"EN-H05",status:"IDEA",url:"/en/guides/kid-"+n+"/",cluster:h.cluster}));
+ m.rows.push(...kids);
+ const approved=()=>({id:"EN-H05",decision:"APPROVED_BY_POLICY",failed:[],gates:[]});
+ const waiting=id=>({id,decision:"WAIT_PARENT",failed:["G2_PARENT_PUBLISHED"],gates:[]});
+ const two=requireHubSupport([approved(),waiting("EN-S901"),waiting("EN-S902")],m,3);
+ assert.equal(two[0].decision,"WAIT_PARENT");
+ assert.ok(two[0].failed.includes("G2_HUB_SUPPORT_READY"));
+ const claim={id:"EN-H05",status:"SUBMITTED",source_sha256:H,writer:"W1",session:"s",branch:"b",revisions:[]};
+ assert.equal(repairTicket({...two[0],source_sha256:H,writer:"W1",session:"s",branch:"b"},claim).state,"WAIT_PARENT","a hierarchy wait, never a repair");
+ const three=requireHubSupport([approved(),...kids.map(k=>waiting(k.id))],m,3);
+ assert.equal(three[0].decision,"APPROVED_BY_POLICY");
+ // A Supporting draft that fails its own gates does not count as ready.
+ assert.equal(requireHubSupport([approved(),waiting("EN-S901"),waiting("EN-S902"),{id:"EN-S903",decision:"REJECTED",failed:["G1_DEPTH"],gates:[]}],m,3)[0].decision,"WAIT_PARENT");
+ // Already published children count, and the four live Hubs never wait.
+ for(const k of kids)k.status="PUBLISHED";
+ assert.equal(requireHubSupport([approved()],m,3)[0].decision,"APPROVED_BY_POLICY");
+ assert.equal(policy.refill.hub_min_supporting,3);
+});

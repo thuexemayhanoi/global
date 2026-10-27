@@ -21,6 +21,21 @@ const enHub=matrix.rows.find(r=>r.locale==="en"&&r.role==="HUB"&&r.cluster==="ve
 // promotion of each locale, so they never depend on how much research is waiting today.
 const stock=rewindPromotions({map,matrix,ledger});
 const stockCtx={...ctx,map:stock.map,matrix:stock.matrix,ledger:stock.ledger};
+// Since the six-Hub activation (2026-10-27) all eight domains are ACTIVE. The research-only path for a
+// future domain is still exercised by turning one domain back into a pending, research-open proposal.
+function withPendingDomain(domainId){
+ const pol=structuredClone(policy),m=structuredClone(map),mx=structuredClone(matrix);
+ const d=pol.domains.find(x=>x.id===domainId),hubId=d.clusters[0];
+ d.status="RESEARCH_OPEN";
+ const h=m.architecture.hubs.find(x=>x.id===hubId);
+ m.architecture.hubs=m.architecture.hubs.filter(x=>x!==h);
+ m.architecture.proposed_hubs=[...(m.architecture.proposed_hubs||[]),{...h,status:"ARCHITECTURE_REVIEW"}];
+ const hubRows=new Set(mx.rows.filter(r=>r.role==="HUB"&&r.cluster===hubId).map(r=>r.id));
+ mx.rows=mx.rows.filter(r=>!hubRows.has(r.id)&&!hubRows.has(r.parent_id));
+ for(const L of Object.values(m.locales))for(const p of L.proposals)if(p.cluster===hubId&&p.status!=="PROMOTED"){p.status="ARCHITECTURE_BLOCKED";p.parent_id=null;delete p.withdrawn_on;delete p.withdrawn_reason;delete p.duplicate_of;}
+ for(const L of Object.values(m.locales))L.proposals=L.proposals.filter(p=>!(p.cluster===hubId&&p.status==="PROMOTED"));
+ return {policy:pol,map:m,matrix:mx};
+}
 const stockValidation=validateTopicalMap({map:stock.map,matrix:stock.matrix,frozenUrls:frozen});
 
 test("policy encodes the owner scope: 10 locales x 1000, 8 domains, refill 100 -> 250, standing policy authorizes promotion only",()=>{
@@ -67,16 +82,16 @@ test("domain research dashboard separates staged candidates from Matrix and repo
   assert.equal(x.matrix_total,Object.values(x.by_locale).reduce((n,c)=>n+c.matrix,0));
   assert.ok(x.architecture_blocked_total<=x.research_total);
  }
- const opened=d.filter(x=>x.status==="RESEARCH_OPEN");
- assert.equal(opened.length,6);
+ assert.equal(d.filter(x=>x.status==="ACTIVE").length,8,"all eight domains have a Hub since 2026-10-27");
  // Real research may already be staged for this domain, so the injected candidate is asserted as a delta.
- const before=d.find(x=>x.id==="hanoi-vietnam-travel");
- const demo=structuredClone(map);
+ const sim=withPendingDomain("hanoi-vietnam-travel");
+ const before=domainResearchCoverage({matrix:sim.matrix,map:sim.map,policy:sim.policy}).find(x=>x.id==="hanoi-vietnam-travel");
+ const demo=sim.map;
  const enHub=demo.architecture.proposed_hubs.find(x=>x.id==="travel-guides");
  const existing=demo.locales.en.proposals[0];
  demo.locales.en.proposals.push({...existing,candidate_id:"TA-EN-9898",parent_id:null,
   cluster:enHub.id,subcluster:enHub.clusters[0].id,status:"ARCHITECTURE_BLOCKED"});
- const next=domainResearchCoverage({matrix,map:demo,policy});
+ const next=domainResearchCoverage({matrix:sim.matrix,map:demo,policy:sim.policy});
  const travel=next.find(x=>x.id==="hanoi-vietnam-travel");
  assert.equal(travel.by_locale.en.architecture_blocked,before.by_locale.en.architecture_blocked+1);
  assert.equal(travel.by_locale.en.research,before.by_locale.en.research+1);
@@ -116,8 +131,9 @@ test("refill selects at most 50 gate-clean PROPOSED candidates round-robin by lo
  // with duplicates or transactional queries just to make counts equal.
  const all=Object.values(sel.locales),maximum=Math.max(...all.map(l=>l.selected));
  for(const [code,l] of Object.entries(sel.locales)){
-  assert.ok(l.selected<=Math.min(l.need,l.eligible),code+" selection cap");
-  if(l.selected<maximum-1)assert.equal(l.selected,Math.min(l.need,l.eligible),
+  // Hubs below refill.hub_min_supporting are topped up first, even when READY is healthy.
+  assert.ok(l.selected<=Math.min(l.need+l.bootstrap,l.eligible),code+" selection cap");
+  if(l.selected<maximum-1)assert.equal(l.selected,Math.min(l.need+l.bootstrap,l.eligible),
    code+" has fewer selections only because its valid candidate supply/need ran out");
  }
  // A copy of an existing Matrix query and a transactional twin are rejected, not promoted.
@@ -170,12 +186,15 @@ test("research intake rejects invented metrics, missing evidence, new domains wi
  assert.ok(validateResearchBatch(batch([good],{purpose:"OTHER"}),{matrix,map,policy}).issues.some(i=>i.gate==="R1"));
 });
 
-test("six research-open domains accept research-only batches but never enter Writer Matrix before reviewed Hubs",()=>{
- const pending=policy.domains.filter(d=>d.status==="RESEARCH_OPEN");
- assert.equal(pending.length,6);
- assert.equal(map.architecture.proposed_hubs.length,6);
- assert.equal(policy.domains.filter(d=>d.status==="ACTIVE").length,2);
- for(const d of pending){
+test("a research-open domain accepts research-only batches but never enters the Writer Matrix before a reviewed Hub",()=>{
+ // 2026-10-27: the six former research-open domains are ACTIVE with Hubs XX-H05..H10 in every locale.
+ assert.equal(policy.domains.filter(d=>d.status==="RESEARCH_OPEN").length,0);
+ assert.equal(policy.domains.filter(d=>d.status==="ACTIVE").length,8);
+ assert.equal((map.architecture.proposed_hubs||[]).length,0);
+ for(const code of matrix.locales)assert.equal(matrix.rows.filter(r=>r.locale===code&&r.role==="HUB").length,10,code);
+ for(const id of ["hanoi-vietnam-travel","road-trips-routes","transportation-mobility","destinations-experiences","travel-planning","electric-mobility"]){
+  const {policy,map,matrix}=withPendingDomain(id);
+  const d=policy.domains.find(x=>x.id===id),ctx={matrix,map,ledger,registry,policy};
   const h=map.architecture.proposed_hubs.find(x=>x.id===d.clusters[0]);
   assert.ok(h&&h.clusters.length>=2,d.id);
   const c={...good,domain_id:d.id,parent_id:null,subcluster:h.clusters[0].id,
@@ -308,4 +327,24 @@ test("scale: 10 locales x 1000 synthetic candidates are deduplicated and selecte
  assert.equal(n,10000);
  assert.equal(sel.selected.length,50);
  assert.ok(ms<60000,"selection over 10k candidates took "+ms+"ms");
+});
+
+test("thin Hubs are topped up first: at most refill.hub_min_supporting topics per Hub, even when READY is healthy",()=>{
+ assert.equal(policy.refill.hub_min_supporting,3);
+ const sel=selectRefill({...ctx,validation});
+ const props=new Map(Object.values(map.locales).flatMap(l=>l.proposals).map(p=>[p.candidate_id,p]));
+ const perHub={};
+ for(const id of sel.selected){const p=props.get(id);perHub[p.parent_id]=(perHub[p.parent_id]||0)+1;assert.equal(p.status,"PROPOSED");}
+ for(const [hubId,n] of Object.entries(perHub)){
+  const have=matrix.rows.filter(r=>r.role==="SUPPORT"&&r.parent_id===hubId&&r.status!=="BLOCKED").length;
+  if(have<3)assert.ok(n<=3-have,hubId+" topped up beyond the minimum");
+ }
+ for(const code of policy.targets.locales){
+  const l=sel.locales[code];
+  assert.ok(l.selected<=Math.min(l.need+l.bootstrap,l.eligible),code);
+  if(l.need===0)assert.ok(sel.selected.filter(id=>id.startsWith("TA-"+code.toUpperCase()+"-")).every(id=>matrix.rows.find(r=>r.id===props.get(id).parent_id)?.role==="HUB"),code);
+ }
+ // WITHDRAWN research is never selected.
+ for(const id of sel.selected)assert.notEqual(props.get(id).status,"WITHDRAWN");
+ assert.ok(sel.selected.length<=50);
 });

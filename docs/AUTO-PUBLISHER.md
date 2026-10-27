@@ -30,7 +30,7 @@ Writers never wait for publication; the publisher picks drafts up as soon as the
 | Gate | Checks | On failure |
 |---|---|---|
 | G1 draft QA | strict fact guard (no unsourced amounts, NAP) on title, description, H1, body and source titles (the page's reference list), structure, sources, links, ≥900 words | REJECTED → repair ticket |
-| G2 Matrix | IDEA row, new URL, not protected/held, PUBLISHED parent, immutable ledger evidence | BLOCKED / WAIT_PARENT |
+| G2 Matrix | IDEA row, new URL, not protected/held, PUBLISHED parent, immutable ledger evidence; a Hub needs ≥3 published or ready Supporting guides (`G2_HUB_SUPPORT_READY`, `refill.hub_min_supporting`) | BLOCKED / WAIT_PARENT |
 | G3 sensitivity | LEGAL / SAFETY / PRICE topics and money amounts (human review); a hard legal claim (law/article reference, penalty, licence-class threshold) without an official or statute-text citation in the same paragraph (repairable) | REVIEW_REQUIRED |
 | G4 editorial | native language, duplicated paragraphs, lexical variety, keyword stuffing, ≥4 H2, contextual internal link | REJECTED → repair ticket |
 | G5 content duplicates | L6 other drafts, L7 published articles (shingle Jaccard ≥0.45 fail, ≥0.30 warn) | REJECTED → repair ticket |

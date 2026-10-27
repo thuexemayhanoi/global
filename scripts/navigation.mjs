@@ -3,6 +3,10 @@
 // Hub gains more Supporting rows (topical-map promotion), PUBLISHED rows win,
 // then lowest priority; the rest are reached from the Hub page itself.
 export const MENU_CHILDREN_PER_HUB=2;
+// The four original Hubs own the fixed menu groups and labels. Hubs added later
+// (owner authorization 2026-10-27) join a "More topics" group once PUBLISHED.
+export const LEGACY_HUB_CLUSTERS=["vehicle-choice","rental-costs","documents-contracts","safety-support"];
+const MORE_TOPICS={vi:"Chủ đề khác",en:"More topics",de:"Weitere Themen",fr:"Autres rubriques",es:"Más temas",nl:"Meer onderwerpen",zh:"更多主题",pt:"Mais temas",ko:"더 많은 주제",ja:"その他のテーマ"};
 export function menuChildren(matrix,hubId){
   return matrix.rows.filter(r=>r.parent_id===hubId&&r.role==="SUPPORT"&&r.status!=="BLOCKED")
     .sort((a,b)=>(a.status==="PUBLISHED"?0:1)-(b.status==="PUBLISHED"?0:1)||a.priority-b.priority||a.id.localeCompare(b.id))
@@ -24,7 +28,9 @@ export function enhanceNavigation(files, locales, matrix) {
   const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
   const localeByCode=Object.fromEntries(locales.map(l=>[l.code,l]));
   const published=new Set(matrix.rows.filter(r=>r.status==="PUBLISHED").map(r=>r.url));
-  const hubs=code=>matrix.rows.filter(r=>r.locale===code&&r.role==="HUB").sort((a,b)=>a.priority-b.priority);
+  const hubs=code=>matrix.rows.filter(r=>r.locale===code&&r.role==="HUB"&&LEGACY_HUB_CLUSTERS.includes(r.cluster)).sort((a,b)=>a.priority-b.priority);
+  // IDEA Hubs never appear here: an unpublished category gets neither a link nor a label.
+  const extraHubs=code=>matrix.rows.filter(r=>r.locale===code&&r.role==="HUB"&&!LEGACY_HUB_CLUSTERS.includes(r.cluster)&&available(r)).sort((a,b)=>a.priority-b.priority);
   const children=id=>menuChildren(matrix,id);
   const available=row=>Boolean(row&&published.has(row.url)&&Object.prototype.hasOwnProperty.call(files,row.url==="/"? "index.html":row.url.slice(1)+"index.html"));
   function childItem(row,code) {
@@ -36,17 +42,27 @@ export function enhanceNavigation(files, locales, matrix) {
     const link=available(hub)?hub.url:'/'+l.code+'/#topics';
     return '<details class="nav2-topic" data-topic="'+esc(hub.id)+'"><summary>'+label+' <span aria-hidden="true">⌄</span></summary><div class="nav2-panel"><strong>'+label+'</strong><a class="nav2-parent-link" href="'+esc(link)+'">'+esc(translations[l.code][8])+' →</a>'+children(hub.id).map(r=>childItem(r,l.code)).join('')+'</div></details>';
   }
+  function moreTopicsMenu(l){
+    const extra=extraHubs(l.code);
+    if(!extra.length)return '';
+    const label=esc(MORE_TOPICS[l.code]||MORE_TOPICS.en);
+    return '<details class="nav2-topic nav2-more" data-topic="more"><summary>'+label+' <span aria-hidden="true">⌄</span></summary><div class="nav2-panel"><strong>'+label+'</strong>'+extra.map(r=>'<a class="nav2-child" href="'+esc(r.url)+'">'+esc(r.working_title)+'</a>').join('')+'</div></details>';
+  }
   function languages(l,isChecklist){
     return '<details class="lang nav2-lang"><summary aria-label="'+esc(translations[l.code][9])+'">🌐 '+esc(l.flag)+' '+esc(l.name)+' ⌄</summary><div class="lang-options">'+locales.map(to=>'<a href="/'+esc(to.code)+'/'+(isChecklist?'checklist/':'')+'" lang="'+esc(to.htmlLang)+'"'+(to.code===l.code?' aria-current="page"':'')+'>'+esc(to.flag)+' '+esc(to.name)+'</a>').join('')+'</div></details>';
   }
   function navHead(l,isChecklist) {
     const tr=translations[l.code], groups=hubs(l.code);
     if(groups.length!==4||groups.some(g=>children(g.id).length!==2))throw Error('Expected 4 hubs with 8 children for '+l.code);
-    return '<header class="header nav2-head" data-nav-version="2"><div class="container nav2-head-inner"><a class="brand nav2-brand" href="/"><span class="mark" aria-hidden="true">✳</span>VIETNAM<span class="brand-light">/</span>WHEELS</a><details class="nav2-drawer" open><summary class="nav2-menu-button">☰ '+esc(tr[6])+'</summary><nav class="nav2-main" aria-label="'+esc(tr[6])+'"><a class="nav2-direct" href="/'+l.code+'/">'+esc(tr[0])+'</a>'+groups.map((g,i)=>topicMenu(l,g,i)).join('')+'<a class="nav2-direct" href="/'+l.code+'/checklist/">'+esc(tr[5])+'</a></nav></details>'+languages(l,isChecklist)+'</div></header>';
+    return '<header class="header nav2-head" data-nav-version="2"><div class="container nav2-head-inner"><a class="brand nav2-brand" href="/"><span class="mark" aria-hidden="true">✳</span>VIETNAM<span class="brand-light">/</span>WHEELS</a><details class="nav2-drawer" open><summary class="nav2-menu-button">☰ '+esc(tr[6])+'</summary><nav class="nav2-main" aria-label="'+esc(tr[6])+'"><a class="nav2-direct" href="/'+l.code+'/">'+esc(tr[0])+'</a>'+groups.map((g,i)=>topicMenu(l,g,i)).join('')+moreTopicsMenu(l)+'<a class="nav2-direct" href="/'+l.code+'/checklist/">'+esc(tr[5])+'</a></nav></details>'+languages(l,isChecklist)+'</div></header>';
+  }
+  function moreTopicsFooter(l){
+    const extra=extraHubs(l.code);
+    return extra.length?'<section class="nav2-foot-more"><h3>'+esc(MORE_TOPICS[l.code]||MORE_TOPICS.en)+'</h3>'+extra.map(r=>'<a class="nav2-child" href="'+esc(r.url)+'">'+esc(r.working_title)+'</a>').join('')+'</section>':'';
   }
   function footer(l){
     const tr=translations[l.code],groups=hubs(l.code);
-    return '<footer class="footer nav2-footer" data-footer-version="2"><div class="container nav2-foot-wrap"><div class="nav2-footer-main"><div class="nav2-foot-brand"><a href="/" class="nav2-foot-logo">VIETNAM / WHEELS</a><p>'+esc(l.navNote)+'</p><a href="/'+l.code+'/">'+esc(tr[0])+'</a><a href="/'+l.code+'/checklist/">'+esc(tr[5])+'</a></div><nav class="nav2-foot-groups" aria-label="'+esc(tr[6])+'">'+groups.map((hub,i)=>'<section><h3>'+esc(tr[i+1])+'</h3>'+children(hub.id).map(r=>childItem(r,l.code)).join('')+'</section>').join('')+'</nav></div><div class="nav2-foot-bottom"><div class="nav2-foot-languages">'+locales.map(to=>'<a lang="'+esc(to.htmlLang)+'" href="/'+esc(to.code)+'/"'+(to.code===l.code?' aria-current="page"':'')+'>'+esc(to.flag)+' '+esc(to.code.toUpperCase())+'</a>').join('')+'</div><div class="nav2-legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></div></div></footer>';
+    return '<footer class="footer nav2-footer" data-footer-version="2"><div class="container nav2-foot-wrap"><div class="nav2-footer-main"><div class="nav2-foot-brand"><a href="/" class="nav2-foot-logo">VIETNAM / WHEELS</a><p>'+esc(l.navNote)+'</p><a href="/'+l.code+'/">'+esc(tr[0])+'</a><a href="/'+l.code+'/checklist/">'+esc(tr[5])+'</a></div><nav class="nav2-foot-groups" aria-label="'+esc(tr[6])+'">'+groups.map((hub,i)=>'<section><h3>'+esc(tr[i+1])+'</h3>'+children(hub.id).map(r=>childItem(r,l.code)).join('')+'</section>').join('')+moreTopicsFooter(l)+'</nav></div><div class="nav2-foot-bottom"><div class="nav2-foot-languages">'+locales.map(to=>'<a lang="'+esc(to.htmlLang)+'" href="/'+esc(to.code)+'/"'+(to.code===l.code?' aria-current="page"':'')+'>'+esc(to.flag)+' '+esc(to.code.toUpperCase())+'</a>').join('')+'</div><div class="nav2-legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></div></div></footer>';
   }
   // Header and footer depend on the locale (and checklist switcher), never on the page:
   // render each once instead of re-scanning the Matrix for every page (O(pages × rows)).

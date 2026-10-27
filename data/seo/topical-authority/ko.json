@@ -1,7 +1,7 @@
 {
   "version": 1,
   "locale": "ko",
-  "updated_on": "2026-10-14",
+  "updated_on": "2026-10-27",
   "market_notes": "Korean readers are short-stay tourists plus a large resident community (주재원, 유학생) in Hanoi. Searches focus on whether a 국제운전면허증 is accepted, 여행자보험 payouts after an 오토바이 사고, and practical 렌트 terms such as 여권 맡기기. 렌트/대여/렌탈 are used interchangeably.",
   "stop_tokens": [
     "하노이",
@@ -57,7 +57,22 @@
     "ss-gear": "헬멧과 보호장비",
     "ss-city": "하노이 시내 주행",
     "rt-northern-loops": "북부 루프",
-    "rt-day-trips": "하노이 근교 당일 여행"
+    "rt-day-trips": "하노이 근교 당일 여행",
+    "mob-urban-transit": "시내버스와 지하철",
+    "mob-intercity": "기차와 장거리 버스",
+    "mob-last-mile": "공항과 마지막 구간 이동",
+    "travel-neighborhoods": "동네",
+    "travel-seasons": "계절과 축제",
+    "travel-etiquette": "예절과 관습",
+    "dest-northern": "베트남 북부 명소",
+    "dest-local": "하노이 시내와 근교",
+    "dest-landscapes": "자연 경관과 국립공원",
+    "plan-itineraries": "여행 일정",
+    "plan-budget": "예산과 결제",
+    "plan-logistics": "비자·서류·준비",
+    "electric-choice": "전기 오토바이 고르기",
+    "electric-infrastructure": "충전과 배터리 교환",
+    "electric-sustainability": "배출가스와 지속가능성"
   },
   "existing": {
     "KO-CHECKLIST": "ss-pickup",
@@ -539,7 +554,7 @@
       "candidate_id": "TA-KO-0018",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hajang-rupeu",
@@ -557,7 +572,7 @@
         "ko-0404-vietnam",
         "who-road-traffic-injuries"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED"
     },
@@ -565,7 +580,7 @@
       "candidate_id": "TA-KO-0019",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "ninbin-dangil",
@@ -583,7 +598,7 @@
         "ko-0404-vietnam",
         "vi-nchmf-home"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED"
     },
@@ -4315,7 +4330,7 @@
       "candidate_id": "TA-KO-0094",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "hanoi-jihacheol-2a-hoseon-yeok-tiket-iyongbeop",
@@ -4328,7 +4343,7 @@
       "working_title": "하노이 지하철 2A호선(깟린–하동): 역, 티켓 종류와 여행자를 위한 이용법",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "동다나 하동 지역에 묵거나 베트남 최초의 지하철 노선을 타 보고 싶은 여행자는 이 노선이 어떤 역을 지나는지, 표는 어떻게 사는지, 하노이 서쪽 관광에 쓸 만한지 찾아봅니다.",
       "content_angle": "베트남어를 읽지 못하는 여행자를 위해 역별로 안내합니다. 어느 역이 볼거리와 가까운지, 표 종류가 어떻게 다른지, 언제 택시보다 지하철이 편한지 설명하고 최신 요금은 운영사 사이트에서 확인하도록 안내합니다.",
       "entities": [
@@ -4343,7 +4358,7 @@
         "rx-37e73e6382d0",
         "rx-79845491e4cc"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4358,7 +4373,7 @@
       "candidate_id": "TA-KO-0095",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "hanoi-jihacheol-3-hoseon-gogagugan-nhon-cau-giay",
@@ -4387,7 +4402,7 @@
         "rx-53927038735c",
         "rx-37e73e6382d0"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4402,7 +4417,7 @@
       "candidate_id": "TA-KO-0096",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "hanoi-sinaebeoseu-taneun-beop-noseon-gyeolje",
@@ -4428,7 +4443,7 @@
         "rx-eee6771cad88",
         "rx-b65e9e8771d0"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4443,7 +4458,7 @@
       "candidate_id": "TA-KO-0097",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-urban-transit",
       "slug": "hanoi-binbeoseu-jeongibeoseu-noseon",
@@ -4470,7 +4485,7 @@
         "rx-1493305fbcc0",
         "rx-013b4f53a1de"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4485,7 +4500,7 @@
       "candidate_id": "TA-KO-0098",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-last-mile",
       "slug": "noibai-gonghang-hanoi-gusigaji-beoseu",
@@ -4498,7 +4513,7 @@
       "working_title": "노이바이 공항에서 하노이 구시가지까지 버스로: 급행과 시내 노선 비교",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "막 도착해 택시 없이 구시가지로 가려는 여행자는 어느 터미널에서 어떤 버스가 출발하는지, 시간은 얼마나 걸리는지, 결제는 어떻게 하는지, 도심 어디에 서는지 비교해 봅니다.",
       "content_angle": "터미널, 소요 시간, 짐 공간, 늦은 밤 운행 여부를 기준으로 급행버스와 더 느린 시내 노선을 비교하고, 착륙 전에 현재 시간표를 확인하는 방법을 설명합니다.",
       "entities": [
@@ -4512,7 +4527,7 @@
         "rx-0151482b1c10",
         "rx-edbc19874e23"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4527,7 +4542,7 @@
       "candidate_id": "TA-KO-0099",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "hanoi-jangeori-beoseuteominal-eoneu-teominal",
@@ -4540,7 +4555,7 @@
       "working_title": "하노이 장거리 버스터미널: 어느 터미널이 어느 지역으로 가는지, 새로 문 연 Yen So 포함",
       "search_intent": "informational",
       "word_target": 1400,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "시외버스나 슬리핑버스를 예약하는 사람은 하노이의 여러 터미널 중 자신의 노선이 어디서 출발하는지, 도심에서 어떻게 가는지, 이동 시간을 얼마나 잡아야 하는지 알아야 합니다.",
       "content_angle": "행선지 지역별 터미널 지도와 시내버스·택시로 가는 방법을 싣고, 시외 노선이 Giap Bat, Nuoc Ngam과 2026년 10월에 가동된 Yen So 사이에서 재배치되고 있으므로 출발 터미널을 운수 회사에 확인하는 습관을 안내합니다.",
       "entities": [
@@ -4554,7 +4569,7 @@
         "rx-42e17aa5f861",
         "rx-a114dbadaa86"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4569,7 +4584,7 @@
       "candidate_id": "TA-KO-0100",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "hanoi-sapa-gicha-taneun-beop-yahaengyeolcha",
@@ -4597,7 +4612,7 @@
         "rx-f9d9d33cd37d",
         "rx-265e7b919b17"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4612,7 +4627,7 @@
       "candidate_id": "TA-KO-0101",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "hanoi-ninbin-gicha-taneun-beop-sososhigan",
@@ -4646,7 +4661,7 @@
           "reason": "TA-KO-0019는 직접 오토바이를 몰고 가는 닌빈 당일 여행을 다루고, 이 글은 기차 여정과 시간표, 도착역, 땀꼭까지의 연결을 다룹니다."
         }
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4661,7 +4676,7 @@
       "candidate_id": "TA-KO-0102",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "hanoi-halong-beoseu-taneun-beop-limujin-baen",
@@ -4688,7 +4703,7 @@
         "rx-4ac2e853efff",
         "rx-59bc3d0859c0"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4703,7 +4718,7 @@
       "candidate_id": "TA-KO-0103",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-last-mile",
       "slug": "hanoi-taeksi-aep-grab-xanh-sm-be-bigyo",
@@ -4730,7 +4745,7 @@
         "rx-399044399e9b",
         "rx-652827dbd946"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4833,7 +4848,7 @@
       "candidate_id": "TA-KO-0106",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "hanoi-babi-gungnipgongwon-otobai-gagi",
@@ -4846,7 +4861,7 @@
       "working_title": "하노이에서 바비 국립공원까지 오토바이로: 경로, 산길과 출발 전에 확인할 것",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "하노이 도심에서 하루 일정으로 다녀오려는 라이더는 바비까지 얼마나 걸리는지, 어떤 길이 오토바이에 맞는지, 산길이 얼마나 어려운지, 출발 전에 국립공원에 무엇을 확인해야 하는지 알아봅니다.",
       "content_angle": "여정 순서대로 따라갑니다. Thang Long 대로 주변에서 오토바이가 다닐 수 있는 길을 가리는 일부터 오르막, 안개, 공원이 공지한 운영 시간까지, 공원 공식 사이트와 확인한 여행 안내만을 근거로 합니다.",
       "entities": [
@@ -4860,7 +4875,7 @@
         "rx-c563d95e9b7c",
         "rx-a71738d99a5b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4875,7 +4890,7 @@
       "candidate_id": "TA-KO-0107",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "hanoi-hyangsawon-otobai-gagi",
@@ -4888,7 +4903,7 @@
       "working_title": "하노이에서 향사원까지 오토바이로: 벤둑 선착장 가는 길, 축제철 혼잡과 뱃길",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "향사원 당일 일정을 고민하는 라이더는 하노이 도심에서 얼마나 먼지, 도로와 축제철 혼잡이 오토바이 이동에 어떤 영향을 주는지, 벤둑의 뱃길이 하루 일정 어디에 들어가는지 알고 싶어 합니다.",
       "content_angle": "하루 일정을 오토바이 구간과 선착장까지의 이동을 중심으로 짜고, 축제가 음력 1월 6일부터 3월까지 이어지며 하노이시가 흐엉선 유적군을 시 단위 관광지로 인정했다는 점을 확인된 자료만으로 설명합니다.",
       "entities": [
@@ -4903,7 +4918,7 @@
         "rx-66202fa60e82",
         "rx-1aaa7d343a21"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4918,7 +4933,7 @@
       "candidate_id": "TA-KO-0108",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-kaobang-banjok-pokpo-otobai",
@@ -4931,7 +4946,7 @@
       "working_title": "하노이에서 까오방과 반족 폭포까지 오토바이로: 지질공원을 지나는 경로 선택지",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "하장 루프 너머를 보는 숙련 라이더는 까오방이 하노이에서 얼마나 먼지, 어떤 경로로 반족 폭포에 갈 수 있는지, 지질공원을 달리는 데 현실적으로 며칠이 필요한지 알아봅니다.",
       "content_angle": "유네스코 페이지와 최근 보도가 이 지역에 대해 확인해 주는 내용을 바탕으로 경로를 짠 뒤, 도로 상태와 날씨부터 국경 지역의 요건까지 출발 전에 성(省) 관광 당국에 확인할 사항을 정리합니다.",
       "entities": [
@@ -4945,7 +4960,7 @@
         "rx-2ef6cacf2bde",
         "rx-6b22d1b4c416"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -4960,7 +4975,7 @@
       "candidate_id": "TA-KO-0109",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-day-trips",
       "slug": "hanoi-ttamdao-otobai-gagi",
@@ -4988,7 +5003,7 @@
         "rx-abf5155e3f87",
         "rx-493f238b25be"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5003,7 +5018,7 @@
       "candidate_id": "TA-KO-0110",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-maijjeou-pureong-otobai-gagi",
@@ -5031,7 +5046,7 @@
         "rx-040fa2df6cd1",
         "rx-043d9353d8e1"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5046,7 +5061,7 @@
       "candidate_id": "TA-KO-0111",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-sapa-otobai-gosokdoro-eopsi",
@@ -5074,7 +5089,7 @@
         "rx-5b71b4389f63",
         "rx-8e4da123146f"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5089,7 +5104,7 @@
       "candidate_id": "TA-KO-0112",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-wolbyeol-nalssi",
@@ -5103,7 +5118,7 @@
       "working_title": "하노이 월별 날씨: 기온, 강수량, 습도와 계절별 체감",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "하노이 여행을 계획하는 사람은 매달 실제로 얼마나 덥고 춥고 습한지 알아야 여행 날짜를 고르고 짐을 꾸리며 가장 후텁지근하거나 비가 많은 주를 피할 수 있습니다.",
       "content_angle": "기상 관측소가 공개한 월별 평균 기후 자료와 국가 관광 포털 정보로 월별 표를 만들고, 숫자 나열에 그치지 않고 거리에서 느끼는 체감(눅눅한 추위, 보슬비, 무더위와 습기)으로 계절을 설명합니다.",
       "entities": [
@@ -5118,7 +5133,7 @@
         "rx-c983f144155b",
         "rx-df7e82ac43ec"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5133,7 +5148,7 @@
       "candidate_id": "TA-KO-0113",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-gyeoul-otcharim",
@@ -5161,7 +5176,7 @@
         "rx-90643ef6a563",
         "rx-c983f144155b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5170,13 +5185,19 @@
         "researched_on": "2026-10-18",
         "keyword_evidence": "NOT_VALIDATED",
         "source": "factory/topic-research/batches/claude-20261018b-0019.json@c3acf391066d"
-      }
+      },
+      "distinct_from": [
+        {
+          "id": "KO-S32",
+          "reason": "KO-S32는 하노이 겨울철 오토바이 운전(운전자 장비, 시야, 차가운 노면)을 다루고, 이 글은 운전하지 않는 여행자가 도시를 걸어 다닐 때 입을 옷을 고르는 방법을 설명합니다."
+        }
+      ]
     },
     {
       "candidate_id": "TA-KO-0114",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-tet-yeonhyu-yeongeop",
@@ -5204,7 +5225,7 @@
         "rx-23003ff3f63e",
         "rx-366c76f559e9"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5219,7 +5240,7 @@
       "candidate_id": "TA-KO-0115",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-jungchuseol-hang-ma-geori",
@@ -5248,7 +5269,7 @@
         "rx-a6232add5549",
         "rx-133ea5395fa7"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5263,7 +5284,7 @@
       "candidate_id": "TA-KO-0116",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "hoankiem-hosu-jumal-bohaengja-geori",
@@ -5277,7 +5298,7 @@
       "working_title": "호안끼엠 호수 주말 보행자 거리: 운영 시간, 거리 범위, 야시장과 붐비는 시간 피하는 법",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "방문객과 주민은 호안끼엠 호수 주변 보행자 거리가 어느 요일 몇 시에 운영되는지, 어떤 거리가 포함되는지, 차량이 어떻게 제한되는지, 붐비지 않으려면 언제 가야 하는지 알고 싶어 합니다.",
       "content_angle": "국가 관광 당국의 개통 공지, VnExpress 인터내셔널의 안내, 공휴일 연장 운영 보도를 바탕으로 주말 운영 시간대와 주요 거리, 공휴일 전후 일정 조정을 정리합니다.",
       "entities": [
@@ -5291,7 +5312,7 @@
         "rx-19686b4670bf",
         "rx-13ea3c501248"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5300,13 +5321,19 @@
         "researched_on": "2026-10-18",
         "keyword_evidence": "NOT_VALIDATED",
         "source": "factory/topic-research/batches/claude-20261018b-0022.json@487da5caf117"
-      }
+      },
+      "distinct_from": [
+        {
+          "id": "KO-S108",
+          "reason": "KO-S108은 주말 통제 시간에 오토바이로 호안끼엠 호수에 가는 방법과 주차를 다루고, 이 글은 걸어서 방문하는 사람을 위해 보행자 거리의 운영 시간, 즐길 거리, 규칙을 설명합니다."
+        }
+      ]
     },
     {
       "candidate_id": "TA-KO-0117",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "hanoi-gusigaji-36-geori-hang-ireum",
@@ -5334,7 +5361,7 @@
         "rx-31183e76ccc4",
         "rx-73eb245dc1ee"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5349,7 +5376,7 @@
       "candidate_id": "TA-KO-0118",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "hanoi-peurangseu-jigu-opera-hauseu",
@@ -5377,7 +5404,7 @@
         "rx-33748c5ef9af",
         "rx-4b6d6dc13a5a"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5392,7 +5419,7 @@
       "candidate_id": "TA-KO-0119",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-neighborhoods",
       "slug": "hanoi-seoho-hosu-juwi-dullobogi",
@@ -5421,7 +5448,7 @@
         "rx-50be328dc3a4",
         "rx-778e5e379646"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5436,7 +5463,7 @@
       "candidate_id": "TA-KO-0120",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-etiquette",
       "slug": "beteunam-sawon-sachal-yejeol",
@@ -5450,7 +5477,7 @@
       "working_title": "베트남 사원·사찰 예절: 옷차림, 신발, 향 피우기와 사진 촬영",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "여행자는 베트남의 사원과 사찰에 갈 때 무엇을 입어야 하는지, 신발이나 모자를 벗어야 하는지, 실례하지 않고 향을 피우고 사진을 찍는 방법이 무엇인지 알고 싶어 합니다.",
       "content_angle": "국가 관광 포털과 베트남 뉴스, 뚜오이째 뉴스가 다룬 유적지 복장 규정 보도를 종합하고, 이것이 문화적 규범이며 장소마다 자체 규정이 있을 수 있다는 점을 강조합니다.",
       "entities": [
@@ -5464,7 +5491,7 @@
         "rx-18f5d6cae38d",
         "rx-223501057c96"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5479,7 +5506,7 @@
       "candidate_id": "TA-KO-0121",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-etiquette",
       "slug": "hochimin-myo-bangmun-unyeong-sigan",
@@ -5507,7 +5534,7 @@
         "rx-6b98b6b016ab",
         "rx-3fa8f96a0d89"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5522,7 +5549,7 @@
       "candidate_id": "TA-KO-0122",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "tanglong-hwangseong-hanoi-yunesko",
@@ -5536,7 +5563,7 @@
       "working_title": "하노이 탕롱 황성: 유네스코 세계유산의 볼거리와 둘러보는 방법",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "방문객은 탕롱 황성이 무엇인지, 유네스코가 왜 등재했는지, 안에서 무엇을 볼 수 있는지, 겹겹이 쌓인 유적의 층을 이해하려면 어떻게 둘러보아야 하는지 알고 싶어 합니다.",
       "content_angle": "유네스코 등재 페이지와 등재 결정, 최신 보존 상태 결정, 탕롱-하노이 유산 보존센터 사이트를 바탕으로 세 가지 탁월한 가치를 설명하고 중앙 축에서 고고학 구역으로 이어지는 관람 동선을 제안합니다.",
       "entities": [
@@ -5551,7 +5578,7 @@
         "rx-f1643b686c2d",
         "rx-f6d88cc8b36d"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5566,7 +5593,7 @@
       "candidate_id": "TA-KO-0123",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "hanoi-munmyo-gukjagam-bangmun",
@@ -5594,7 +5621,7 @@
         "rx-d91729f629f9",
         "rx-3b9872e4cdde"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5609,7 +5636,7 @@
       "candidate_id": "TA-KO-0124",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "hanoi-susang-inhyeonggeuk-tanglong",
@@ -5637,7 +5664,7 @@
         "rx-2bf751d5709c",
         "rx-c6b05119b49a"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5652,7 +5679,7 @@
       "candidate_id": "TA-KO-0125",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "bat-trang-dojagi-maeul-hanoi-bangmun",
@@ -5681,7 +5708,7 @@
         "rx-db62b62b7d30",
         "rx-22883c020584"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5696,7 +5723,7 @@
       "candidate_id": "TA-KO-0126",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "deuongram-gochon-hanoi-bangmun",
@@ -5710,7 +5737,7 @@
       "working_title": "하노이에서 드엉람 고대 마을 가기: 라테라이트 고택, 마을 문과 가는 방법",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "방문객은 드엉람이 하노이 중심에서 얼마나 떨어져 있는지, 어떻게 가는지, 라테라이트 가옥과 마을 문, 공동 가옥 같은 볼거리가 무엇인지, 왜 최초로 인정받은 고대 마을이라 불리는지 알고 싶어 합니다.",
       "content_angle": "베트남통신사 보도와 국가 관광 당국 페이지, 관광 정보 포털, 국영 항공사 가이드를 대조해 마을을 설명하고, 인정 연도와 하노이까지 거리, 고가 수에서 출처마다 차이가 있음을 짚습니다.",
       "entities": [
@@ -5725,7 +5752,7 @@
         "rx-1440baa5d062",
         "rx-3841f86b4ebf"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5740,7 +5767,7 @@
       "candidate_id": "TA-KO-0127",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "jjangan-gyeonggwan-danji-yunesko-bangmun",
@@ -5768,7 +5795,7 @@
         "rx-909ea8c7e1ed",
         "rx-54cc8570f43b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5783,7 +5810,7 @@
       "candidate_id": "TA-KO-0128",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "halong-bei-wa-lanha-bei-chai",
@@ -5811,7 +5838,7 @@
         "rx-baeae45e1eef",
         "rx-54cc8570f43b"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5826,7 +5853,7 @@
       "candidate_id": "TA-KO-0129",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "mukkangchai-gyedanshik-non-gyejeol",
@@ -5840,7 +5867,7 @@
       "working_title": "무깡짜이 계단식 논의 계절: 물 대는 시기, 황금빛 수확기와 여행 계획 시점",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "방문객은 무깡짜이 계단식 논이 언제 가장 아름다운지, 물을 대는 시기와 황금빛 수확기가 어떻게 다른지, 하노이에서 얼마나 떨어져 있는지, 2025년 통합 이후 어느 성에 속하는지 알고 싶어 합니다.",
       "content_angle": "국가 관광 당국의 수확기 기사와 물 대는 시기 페이지, 지역 명소 소개 글을 바탕으로 두 주요 계절을 설명하고, 오래된 자료는 옌바이로, 2025년 보도는 라오까이로 적고 있음을 밝힙니다.",
       "entities": [
@@ -5854,7 +5881,7 @@
         "rx-bac0c4e0e3dc",
         "rx-356f10899310"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5869,7 +5896,7 @@
       "candidate_id": "TA-KO-0130",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "kukpeong-gungnip-gongwon-hanoi-bangmun",
@@ -5897,7 +5924,7 @@
         "rx-bcdd62123acb",
         "rx-3907d4edb953"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5912,7 +5939,7 @@
       "candidate_id": "TA-KO-0131",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "babe-gungnip-gongwon-hosu-bangmun",
@@ -5941,7 +5968,7 @@
         "rx-cfddf53c052c",
         "rx-3907d4edb953"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5956,7 +5983,7 @@
       "candidate_id": "TA-KO-0132",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "beteunam-jeonja-bija-gongsik-saiteu-sincheong",
@@ -5970,7 +5997,7 @@
       "working_title": "베트남 전자비자 공식 사이트 신청: 자격, 유효기간, 신청 단계와 가짜 사이트 피하기",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "외국인 방문객은 공식 사이트에서 전자비자를 어떻게 신청하는지, 최대 얼마 동안 유효한지, 사진과 여권을 어떻게 준비하는지, 추가 요금을 받는 비슷한 사이트를 어떻게 피하는지 알고 싶어 합니다.",
       "content_angle": "출입국관리국의 공식 전자비자 포털과 자주 묻는 질문 페이지, 모든 국적에 전자비자를 발급한다는 베트남통신사 보도를 바탕으로 신청 절차와 자격, 유효기간, 비공식 사이트에 대한 경고를 설명하고 포털의 현재 수수료표를 인용하도록 안내합니다.",
       "entities": [
@@ -5984,7 +6011,7 @@
         "rx-d3dea154ff82",
         "rx-41b31c3dadab"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -5999,7 +6026,7 @@
       "candidate_id": "TA-KO-0133",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "beteunam-bija-myeonje-45il-eoneu-nara",
@@ -6028,7 +6055,7 @@
         "rx-6849ddb3ff35",
         "rx-344396e164f6"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6043,7 +6070,7 @@
       "candidate_id": "TA-KO-0134",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "beteunam-2027-gonghyuil-yeohaeng-gyehoek",
@@ -6071,7 +6098,7 @@
         "rx-366c76f559e9",
         "rx-23003ff3f63e"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6086,7 +6113,7 @@
       "candidate_id": "TA-KO-0135",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "beteunam-yeohaeng-geongang-junbi-baeksin",
@@ -6113,7 +6140,7 @@
         "rx-23b03926e595",
         "rx-09f4a676c2f2"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6128,7 +6155,7 @@
       "candidate_id": "TA-KO-0136",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-budget",
       "slug": "beteunam-yeohaeng-gyeolje-hyeongeum-kadeu-qr",
@@ -6142,7 +6169,7 @@
       "working_title": "베트남 여행 결제: 현금, 카드와 국경 간 QR 코드가 방문객에게 작동하는 방식",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "방문객은 베트남에서 현금, 카드, QR 중 무엇으로 결제해야 하는지, 자기 나라의 전자지갑이 쓰이는지, 어떤 나라가 이미 결제 연동을 갖췄는지, 무엇을 챙겨야 곤란을 피하는지 알고 싶어 합니다.",
       "content_angle": "베트남통신사와 국가 관광 당국, NAPAS 발표를 바탕으로 국경 간 QR 결제가 특정 국가 방문객에게 어떤 의미인지 설명하고 이미 운영 중인 연동과 계획 단계의 연동을 구분하며, 날짜가 적힌 출처 없이는 환율이나 수수료를 싣지 말도록 요구합니다.",
       "entities": [
@@ -6157,7 +6184,7 @@
         "rx-02137dcf0335",
         "rx-0a351df91c92"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6172,7 +6199,7 @@
       "candidate_id": "TA-KO-0137",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-itineraries",
       "slug": "hanoi-3il-ilyeong-cheot-bangmun",
@@ -6186,7 +6213,7 @@
       "working_title": "하노이 첫 방문 3일 일정: 유산 명소, 호찌민 묘, 수상 인형극과 보행자 거리 순서 잡기",
       "search_intent": "informational",
       "word_target": 1700,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "하노이를 처음 찾는 사람이 사흘을 쓴다면 황성, 문묘, 호찌민 묘, 수상 인형극, 보행자 거리를 어느 날에 넣어야 휴관일을 피하고 오가는 길을 줄일 수 있는지 현실적인 계획을 원합니다.",
       "content_angle": "자체 방문 정보를 공개하는 명소를 바탕으로 사흘 일정을 짜고 운영 요일에 맞춰 순서를 정하며(묘는 월요일과 금요일 휴관, 보행자 거리는 주말 저녁 운영), 출발 전 각 공식 페이지를 다시 확인하도록 안내합니다.",
       "entities": [
@@ -6202,7 +6229,7 @@
         "rx-c6b05119b49a",
         "rx-d43f0d9678fe"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6217,7 +6244,7 @@
       "candidate_id": "TA-KO-0138",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-itineraries",
       "slug": "beteunam-bukbu-ilju-gicha-beoseu",
@@ -6247,7 +6274,7 @@
         "rx-f9d9d33cd37d",
         "rx-a114dbadaa86"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6262,7 +6289,7 @@
       "candidate_id": "TA-KO-0139",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-budget",
       "slug": "hanoi-yeohaeng-yesan-gongsik-gagyeok-peiji",
@@ -6291,7 +6318,7 @@
         "rx-b65e9e8771d0",
         "rx-c6b05119b49a"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6306,7 +6333,7 @@
       "candidate_id": "TA-KO-0140",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-infrastructure",
       "slug": "beteunam-jeongi-seukuteo-baeteori-gyohwan",
@@ -6320,7 +6347,7 @@
       "working_title": "베트남 전기 스쿠터 배터리 교환: 빈패스트, 셀렉스, 혼다의 시스템과 아직 계획인 부분",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "운전자와 방문객은 배터리 교환이 실제로 무엇인지, 빈패스트와 셀렉스, 혼다의 시스템이 서로 호환되는지, 교환소가 어디에 있는지, 집에서 충전하는 것과 어떻게 다른지 알고 싶어 합니다.",
       "content_angle": "한 브랜드 전용 시스템(빈패스트와 V-Green), 셀렉스가 페트롤리멕스와 구축하는 개방형 망, 하노이와 LG에너지솔루션·혼다의 시범 사업을 구분하고 기업이 밝힌 교환소 수는 날짜가 있는 주장으로 다루며 날짜가 적힌 출처 없이는 요금을 싣지 않습니다.",
       "entities": [
@@ -6335,7 +6362,7 @@
         "rx-5c7974a9f44d",
         "rx-e8e4487c621e"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6350,7 +6377,7 @@
       "candidate_id": "TA-KO-0141",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-infrastructure",
       "slug": "hanoi-apateu-jeongi-obaibai-chungjeon-gyujeong",
@@ -6378,7 +6405,7 @@
         "rx-0cd5cee118aa",
         "rx-12c3e1915685"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6393,7 +6420,7 @@
       "candidate_id": "TA-KO-0142",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "binpaseuteu-jeongi-seukuteo-laineop",
@@ -6407,7 +6434,7 @@
       "working_title": "빈패스트 전기 스쿠터 라인업: 면허가 필요 없는 모델, 배터리 교환 모델과 제조사 발표 수치",
       "search_intent": "informational",
       "word_target": 1600,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "구매자와 대여자는 빈패스트 전기 스쿠터가 서로 어떻게 다른지, 어떤 모델이 면허 없이 달릴 수 있는지, 어떤 모델이 교환식 배터리를 쓰는지, 제조사 사양의 주행거리와 속도를 얼마나 믿어야 하는지 알고 싶어 합니다.",
       "content_angle": "빈패스트의 투자자 대상 발표와 미국 증권거래위원회 제출 문서를 바탕으로 모델 이름과 속도 제한 변형, 배터리 유형을 정리하고 주행거리와 속도를 제조사가 밝힌 수치로 표시하며, 라이더에게 조언하기 전에 정확한 변형과 현행 면허 규정을 확인하도록 안내합니다.",
       "entities": [
@@ -6421,7 +6448,7 @@
         "rx-a9d2a7add069",
         "rx-e8efb9ce9831"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6436,7 +6463,7 @@
       "candidate_id": "TA-KO-0143",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "beteunam-jeongi-obaibai-myeonheo-pilyo",
@@ -6466,7 +6493,7 @@
         "rx-5f592756bb8a",
         "rx-2df797b594c9"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "WITHDRAWN",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6475,13 +6502,15 @@
         "researched_on": "2026-10-19",
         "keyword_evidence": "NOT_VALIDATED",
         "source": "factory/topic-research/batches/claude-20261018b-0049.json@487da5caf117"
-      }
+      },
+      "withdrawn_on": "2026-10-27",
+      "withdrawn_reason": "Withdrawn on activation of the electric-mobility Hub: licence rules for electric two-wheelers are already answered by the published 50 cc versus electric guide of this locale under vehicle-choice and by the documents-contracts licence guides; a second page would cannibalise that intent."
     },
     {
       "candidate_id": "TA-KO-0144",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "beteunam-jeongi-obaibai-baeteori-moteo-gijun-2026-10",
@@ -6511,7 +6540,7 @@
         "rx-40ba54311186",
         "rx-8d8fdbe753e1"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "WITHDRAWN",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6520,13 +6549,15 @@
         "researched_on": "2026-10-19",
         "keyword_evidence": "NOT_VALIDATED",
         "source": "factory/topic-research/batches/claude-20261018b-0050.json@487da5caf117"
-      }
+      },
+      "withdrawn_on": "2026-10-27",
+      "withdrawn_reason": "Withdrawn on activation of the electric-mobility Hub: the October 2026 battery and motor standards (QCVN) topic already belongs to vehicle-choice / vc-power in this locale (Matrix row or PROPOSED candidate); keeping both would publish two pages for one intent."
     },
     {
       "candidate_id": "TA-KO-0145",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "jeongi-seukuteo-hwiballyu-obaibai-chongsoyubiyong-beteunam",
@@ -6555,7 +6586,7 @@
         "rx-bf0f05ae16c8",
         "rx-9142070789dc"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6570,7 +6601,7 @@
       "candidate_id": "TA-KO-0146",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "honda-jeongi-obaibai-beteunam-icon-e-cuv-e-uc3",
@@ -6601,7 +6632,7 @@
         "rx-265051f6af71",
         "rx-50426d9095d5"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6616,7 +6647,7 @@
       "candidate_id": "TA-KO-0147",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-sustainability",
       "slug": "hanoi-obaibai-baegigas-geomsa-2027-nyeon-7-wol",
@@ -6631,7 +6662,7 @@
       "working_title": "하노이 오토바이 배출가스 검사 2027년 7월 1일 시작: 적용 대상과 적용 단계",
       "search_intent": "informational",
       "word_target": 1500,
-      "priority": 50,
+      "priority": 40,
       "intent_rationale": "하노이에서 휘발유 오토바이를 타는 소유자와 장기 체류자는 의무 배출가스 검사가 2027년에 시작된다는 소식을 보고 누가 대상인지, 자기 오토바이가 어느 단계의 기준을 충족해야 하는지, 전기 오토바이도 영향을 받는지 알고 싶어 합니다.",
       "content_angle": "총리 결정 13/2026/QD-TTg를 VietnamPlus, VietNamNet, 라오동 보도에 따라 따라가며 도시별 시작일, 2028년 1월부터의 2단계 요건과 제조 연도별 단계를 설명하고, 앞선 초안은 날짜와 유예 기간이 달랐으므로 최종 결정만 인용해야 한다고 밝히며 검사와 전기 이륜차의 관계도 짚습니다.",
       "entities": [
@@ -6646,7 +6677,7 @@
         "rx-6a97616b32bc",
         "rx-e8c2375d44e5"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6661,7 +6692,7 @@
       "candidate_id": "TA-KO-0148",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-choice",
       "slug": "beteunam-jeongi-obaibai-beurendeu-dat-bike-yadea-pega-selex",
@@ -6692,7 +6723,7 @@
         "rx-c75985af1ba0",
         "rx-0f63b275f367"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6707,7 +6738,7 @@
       "candidate_id": "TA-KO-0149",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H10",
       "cluster": "electric-mobility",
       "subcluster": "electric-sustainability",
       "slug": "beteunam-jeongi-obaibai-baeteori-jaehwaryong-gyujeong",
@@ -6736,7 +6767,7 @@
         "rx-6c3e131cf300",
         "rx-9d5dbf8f609f"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -6751,7 +6782,7 @@
       "candidate_id": "TA-KO-0150",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H05",
       "cluster": "routes-trips",
       "subcluster": "rt-northern-loops",
       "slug": "hanoi-moc-chau-obaibai-6beon-gukdo",
@@ -6781,7 +6812,7 @@
         "rx-d24d33f5d35d",
         "rx-218bb6bbce99"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7021,7 +7052,7 @@
       "candidate_id": "TA-KO-0156",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "dongban-karst-goweon-yunesko-segye-jijil-gongwon",
@@ -7052,7 +7083,7 @@
         "rx-7b2893458360",
         "rx-2590334325a4"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7067,7 +7098,7 @@
       "candidate_id": "TA-KO-0157",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "beteunam-yusim-esim-yeogwon-deungnok-eolgul-injeung",
@@ -7098,7 +7129,7 @@
         "rx-a6b720c0a952",
         "rx-de0a0a67ac37"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7113,7 +7144,7 @@
       "candidate_id": "TA-KO-0158",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "yentu-vinhnghiem-conson-kiepbac-yunesko-segye-yusan",
@@ -7144,7 +7175,7 @@
         "rx-f6b845a8aa73",
         "rx-b721093394ca"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7159,7 +7190,7 @@
       "candidate_id": "TA-KO-0159",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-northern",
       "slug": "tanhoa-ho-wangjo-seongchae-yunesko-hanoe-eseo",
@@ -7192,7 +7223,7 @@
         "rx-9ddd09465b44",
         "rx-fa78b317638e"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7207,7 +7238,7 @@
       "candidate_id": "TA-KO-0160",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-local",
       "slug": "hanoi-kkoroa-seongchae-naseonhyeong-seongbyeok",
@@ -7239,7 +7270,7 @@
         "rx-655da81bbe3f",
         "rx-588679b98ee6"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7254,7 +7285,7 @@
       "candidate_id": "TA-KO-0161",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "beteunam-segwan-yeohaengja-sumulpum-myeonse-hando-sihaengnyeong-chokan",
@@ -7284,7 +7315,7 @@
         "rx-7ae35a69af75",
         "rx-379d8c319c8c"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7299,7 +7330,7 @@
       "candidate_id": "TA-KO-0162",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H09",
       "cluster": "travel-guides",
       "subcluster": "travel-seasons",
       "slug": "hanoi-yeonkkot-siljeun-seoho-bakjieb-kkwangan-yeonkkotcha",
@@ -7330,7 +7361,7 @@
         "rx-61702c3ce63b",
         "rx-e85d6b270dba"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7345,7 +7376,7 @@
       "candidate_id": "TA-KO-0163",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H06",
       "cluster": "transport-mobility",
       "subcluster": "mob-intercity",
       "slug": "beteunam-gicha-gyujeong-seungchagwon-sinbun-eorini-sumulpum",
@@ -7375,7 +7406,7 @@
         "rx-06c22ca4d2e8",
         "rx-11c89b75771c"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7390,7 +7421,7 @@
       "candidate_id": "TA-KO-0164",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "pongnya-kkebang-hinnamno-gukgyeong-yunesko-segye-yusan",
@@ -7420,7 +7451,7 @@
         "rx-34593a857753",
         "rx-f335c7b604b4"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7435,7 +7466,7 @@
       "candidate_id": "TA-KO-0165",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "beteunam-chejae-gigan-chogwa-sihaengnyeong-282-2025",
@@ -7465,7 +7496,7 @@
         "rx-5b06d71829ba",
         "rx-3ccbfae4adec"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -7480,7 +7511,7 @@
       "candidate_id": "TA-KO-0166",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H07",
       "cluster": "destinations-experiences",
       "subcluster": "dest-landscapes",
       "slug": "langseon-yunesko-segye-jijil-gongwon-donggul-hwaseok-sawon",
@@ -7511,7 +7542,7 @@
         "rx-b91db2baf8df",
         "rx-3c7c82e9f1bb"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {
@@ -8158,7 +8189,7 @@
       "candidate_id": "TA-KO-0180",
       "locale": "ko",
       "role": "SUPPORT",
-      "parent_id": null,
+      "parent_id": "KO-H08",
       "cluster": "travel-planning",
       "subcluster": "plan-logistics",
       "slug": "beteunam-munhwa-ui-nal-11wol-24il-gonghyuil-2026",
@@ -8190,7 +8221,7 @@
         "rx-f8367fd76141",
         "rx-429311dc4062"
       ],
-      "status": "ARCHITECTURE_BLOCKED",
+      "status": "PROPOSED",
       "serp_evidence": "NOT_VALIDATED",
       "source_verification": "NOT_STARTED",
       "research": {

@@ -216,6 +216,27 @@ export function eligibility(ctx){
  else if(failed.includes("G7_STAGE_CAP"))decision="WAIT_STAGE";
  return {id:packet.matrix_id,locale:packet.locale,role:row?.role,decision,failed,gates,classification:cls,editorial:ed,duplicates:dups,words:qa.words};
 }
+/**
+ * No empty category goes live: a Hub with fewer than `min` PUBLISHED Supporting guides waits
+ * (WAIT_PARENT, a hierarchy wait, not a text problem) until enough of its Supporting drafts are
+ * ready, i.e. pass every gate except the parent. Runs after all drafts were evaluated so it can see
+ * the children's decisions; the four original Hubs are long past the threshold.
+ */
+export function requireHubSupport(results,matrix,min=0){
+ if(!(min>0))return results;
+ const byId=new Map(matrix.rows.map(r=>[r.id,r])),published={},ready={};
+ for(const r of matrix.rows)if(r.role==="SUPPORT"&&r.status==="PUBLISHED")published[r.parent_id]=(published[r.parent_id]||0)+1;
+ for(const r of results){const p=byId.get(r.id)?.parent_id;if(r.decision==="WAIT_PARENT"&&byId.get(r.id)?.role==="SUPPORT")ready[p]=(ready[p]||0)+1;}
+ for(const r of results){
+  if(r.decision!=="APPROVED_BY_POLICY"||byId.get(r.id)?.role!=="HUB")continue;
+  const have=(published[r.id]||0)+(ready[r.id]||0);
+  if(have>=min)continue;
+  r.decision="WAIT_PARENT";
+  r.failed=[...(r.failed||[]),"G2_HUB_SUPPORT_READY"];
+  r.gates=[...(r.gates||[]),{gate:"G2_HUB_SUPPORT_READY",passed:false,detail:(published[r.id]||0)+" published + "+(ready[r.id]||0)+" ready Supporting guide(s); a new Hub publishes with at least "+min}];
+ }
+ return results;
+}
 /** Publication record stored with the article JSON (honest: not human-reviewed). */
 export function publicationRecord({claim,reviewSha,policyPath=STANDING_POLICY_PATH,now,stage}){
  return {mode:"STANDING_POLICY",policy:policyPath,stage,source_commit:claim.source_commit,source_sha256:claim.source_sha256,
