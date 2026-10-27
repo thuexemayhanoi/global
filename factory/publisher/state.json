@@ -12124,17 +12124,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-26T18:09:40.717Z"
+    },
+    {
+      "id": "DE-S202",
+      "locale": "de",
+      "url": "/de/guides/elektronischer-fuehrerschein-vietnam-juli-2026-nach-pruefung-umtausch-pet-karte/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T08:54:21.675Z",
+      "source_sha256": "5bc1fcf00825e769212d57394006003a3f65cac223dafa8d748f258f634678d2",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T16:30:34.002Z",
-      "ids": [
-        "VI-S20",
-        "ZH-S21"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T16:32:17.901Z",
       "ids": [
@@ -13672,6 +13675,13 @@
         "DE-S223"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-27T08:54:21.675Z",
+      "ids": [
+        "DE-S202"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -13682,5 +13692,7 @@
     "commit": "80c14c62dffebbda374c3ab32c5d423c4d414271",
     "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
