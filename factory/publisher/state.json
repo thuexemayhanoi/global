@@ -12148,17 +12148,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-27T08:57:53.359Z"
+    },
+    {
+      "id": "DE-S205",
+      "locale": "de",
+      "url": "/de/guides/yamaha-mt-09-xsr900-tracer-9-gt-yzf-r9-unterschiede-klasse-a/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T08:59:03.374Z",
+      "source_sha256": "816466e8d737f0eed91aef54679bc636eaf90be4b5318a5f58be0821578c8a37",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T16:38:12.419Z",
-      "ids": [
-        "VI-S86",
-        "ZH-S87"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-16T16:39:59.399Z",
       "ids": [
@@ -13692,6 +13695,13 @@
         "DE-S203"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-27T08:59:03.374Z",
+      "ids": [
+        "DE-S205"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -13702,5 +13712,7 @@
     "commit": "cdc7a2fac0c0fca9bb582463fadd94baed945e12",
     "live_seconds": 62
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
