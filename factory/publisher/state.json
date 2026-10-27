@@ -12592,17 +12592,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-27T18:15:47.678Z"
+    },
+    {
+      "id": "DE-S248",
+      "locale": "de",
+      "url": "/de/guides/triumph-speed-twin-bonneville-scrambler-900-vs-1200-unterschiede-klasse-a/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T18:17:18.443Z",
+      "source_sha256": "f22e5b76ee5c9f6b8226b3c534384ed89a14900f95f27426c96d45b9a703cd20",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-19T09:45:40.795Z",
-      "ids": [
-        "ES-S82",
-        "FR-S92"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-19T09:47:27.446Z",
       "ids": [
@@ -14118,6 +14121,13 @@
         "DE-S255"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-27T18:17:18.443Z",
+      "ids": [
+        "DE-S248"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -14128,5 +14138,7 @@
     "commit": "ab92157dc34e324a388883e2f48976dab7424242",
     "live_seconds": 62
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
