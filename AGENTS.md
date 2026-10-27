@@ -179,6 +179,7 @@ Older text below or in older docs that conflicts with this contract is LEGACY:
 
 - Root `/` carries the 10-locale hreflang cluster with `x-default` to itself; Pillars carry WebPage + BreadcrumbList (Global › Language) with `about` Hanoi (Wikidata Q1858); checklists carry a 3-level BreadcrumbList. Never add business (LocalBusiness/AutoRental/NAP) schema while `publication.business_schema_approved` is false.
 - After any deployment you may run the manual `post-publish-qa.yml` workflow: it fetches every PUBLISHED URL live (cache-busted) and fails on status/lang/canonical issues, sitemap mismatch, any SEO fingerprint drift from `data/seo/url-freeze.json`, or live NAP/business-schema violations. The Auto Publisher runs its own live QA on every publication.
+- `node scripts/seo/language-audit.mjs` (CI, `--fail`) checks every page's `<html lang>` against `content/locales.json`, the body language (deterministic script/function-word counts, source lists excluded), hreflang codes, JSON-LD `inLanguage`, `og:locale` and language-switcher `lang` attributes. Baseline and decisions (`zh-CN`, no `og:locale`, hreflang only on true translations): `docs/MULTILINGUAL-SEO-AUDIT-20261027.md`.
 - `docs/GAP-MATRIX.md` is the DONE/PARTIAL/OWNER/BLOCKED status of the master work; update it with evidence, never optimistic claims.
 
 ## Global Content Factory 10K (owner standing policy 2026-10-15)
