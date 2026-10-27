@@ -12556,17 +12556,31 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-27T18:10:18.470Z"
+    },
+    {
+      "id": "DE-S234",
+      "locale": "de",
+      "url": "/de/guides/motorradhelm-abnehmen-nach-unfall-halswirbelsaeule-studien-erste-hilfe/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T18:11:10.329Z",
+      "source_sha256": "0b12398d5a9fa6c95335dc48ed720e46696b9595a93a84b8b006368dff8bbdf0",
+      "review_sha256": null,
+      "live_qa": "PENDING"
+    },
+    {
+      "id": "DE-S254",
+      "locale": "de",
+      "url": "/de/guides/hitze-fluessigkeitsverlust-motorrad-studien-fahrer-arbeiter-im-freien-who/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T18:11:10.329Z",
+      "source_sha256": "d34321cbac8ae93ea1f423a81eefcdeec58e6e699086aa99122ef4d5b11bc50f",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-19T09:41:48.582Z",
-      "ids": [
-        "DE-S93",
-        "EN-S94"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-19T09:43:36.531Z",
       "ids": [
@@ -14084,6 +14098,14 @@
         "DE-S240"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-27T18:11:10.329Z",
+      "ids": [
+        "DE-S234",
+        "DE-S254"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -14095,6 +14117,6 @@
     "live_seconds": 61
   },
   "queue": {
-    "APPROVED_BY_POLICY": 1
+    "APPROVED_BY_POLICY": 2
   }
 }
