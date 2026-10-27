@@ -3,7 +3,7 @@
   "stage": "CONTINUOUS",
   "paused": false,
   "pause_reason": null,
-  "clean_runs": 537,
+  "clean_runs": 540,
   "published": [
     {
       "id": "NL-H01",
@@ -12268,57 +12268,45 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-27T09:16:39.830Z"
+    },
+    {
+      "id": "DE-S236",
+      "locale": "de",
+      "url": "/de/guides/triumph-trident-660-daytona-660-tiger-sport-660-unterschiede-klasse-a/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T12:13:59.462Z",
+      "source_sha256": "092e050a74b41058af941646f4feba6a7de21c5cc7619581f786fa1217447c41",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-27T12:16:50.369Z"
+    },
+    {
+      "id": "DE-S237",
+      "locale": "de",
+      "url": "/de/guides/honda-roller-idling-stop-motor-geht-an-der-ampel-aus/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T12:17:17.562Z",
+      "source_sha256": "56e7e998a6e589880a397b6aa0b63a13fd54aef71e1c2c87cc14569ff349ac53",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-27T12:19:02.493Z"
+    },
+    {
+      "id": "DE-S211",
+      "locale": "de",
+      "url": "/de/guides/elefand-krisenvorsorgeliste-vietnam-reise-was-der-eintrag-leistet/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T12:20:25.507Z",
+      "source_sha256": "64ed55846398d5133b9a1c19db7909d81638a77ccbceaaab2c003bac1c34b664",
+      "review_sha256": null,
+      "live_qa": "PASS",
+      "live_qa_at": "2026-10-27T12:21:52.636Z"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-16T16:56:24.862Z",
-      "ids": [
-        "JA-S87",
-        "KO-S87"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T16:57:54.766Z",
-      "ids": [
-        "JA-S87",
-        "KO-S87"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T16:58:47.801Z",
-      "ids": [
-        "NL-S88",
-        "PT-S88"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T17:00:11.064Z",
-      "ids": [
-        "NL-S88",
-        "PT-S88"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
-    {
-      "at": "2026-10-16T17:04:13.695Z",
-      "ids": [
-        "VI-S87",
-        "ZH-S88"
-      ],
-      "result": "STAGED"
-    },
-    {
-      "at": "2026-10-16T17:05:35.629Z",
-      "ids": [
-        "VI-S87",
-        "ZH-S88"
-      ],
-      "result": "LIVE_QA_PASS"
-    },
     {
       "at": "2026-10-16T20:10:03.708Z",
       "ids": [
@@ -13808,15 +13796,59 @@
         "DE-S227"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-27T12:13:59.462Z",
+      "ids": [
+        "DE-S236"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-27T12:16:50.369Z",
+      "ids": [
+        "DE-S236"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-27T12:17:17.562Z",
+      "ids": [
+        "DE-S237"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-27T12:19:02.493Z",
+      "ids": [
+        "DE-S237"
+      ],
+      "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-27T12:20:25.507Z",
+      "ids": [
+        "DE-S211"
+      ],
+      "result": "STAGED"
+    },
+    {
+      "at": "2026-10-27T12:21:52.636Z",
+      "ids": [
+        "DE-S211"
+      ],
+      "result": "LIVE_QA_PASS"
     }
   ],
   "last_successful_deployment": {
-    "at": "2026-10-27T09:16:39.830Z",
+    "at": "2026-10-27T12:21:52.636Z",
     "ids": [
-      "DE-S227"
+      "DE-S211"
     ],
-    "commit": "ea69e99bc7f317488fd2a281f3062dc551a8062e",
-    "live_seconds": 101
+    "commit": "cbf83b1cc71dba5ae1649bfa4a9b62c146e2b6fa",
+    "live_seconds": 61
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
