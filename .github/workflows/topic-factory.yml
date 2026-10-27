@@ -29,7 +29,7 @@ jobs:
        github.event.workflow_run.head_repository.full_name == github.repository &&
        startsWith(github.event.workflow_run.head_branch, 'research/'))
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -67,9 +67,20 @@ jobs:
             node scripts/topic-factory.mjs status >> "$GITHUB_STEP_SUMMARY"
           }
           allowed='^(data/seo/|factory/external-writers/assignments\.json$|approvals/auto/|docs/(GLOBAL-SITE-MATRIX|CONTENT-FACTORY-DASHBOARD)\.md$)'
-          # Writer Autopilot and Auto Publisher commit to main in bursts while one factory
-          # recompute takes about a minute, so three back-to-back attempts kept losing the race.
-          for attempt in 1 2 3 4 5 6; do
+          # Writer Autopilot and Auto Publisher commit to main in bursts (about 1.5 commits a
+          # minute while the publisher drains a backlog, 2026-10-27) and one factory recompute
+          # takes about a minute, so immediate retries kept losing the race. Start each attempt
+          # only once main has been still for 45 s (bounded wait), then compare-and-swap.
+          wait_for_quiet_main() {
+            for _ in $(seq 1 12); do
+              git fetch -q --no-tags origin main
+              [ $(( $(date +%s) - $(git log -1 --format=%ct origin/main) )) -ge 45 ] && return 0
+              sleep 15
+            done
+          }
+          for attempt in 1 2 3 4 5 6 7 8 9 10; do
+            wait_for_quiet_main
+            git reset -q --hard origin/main
             step
             changed=$(git status --porcelain | awk '{print $2}')
             if [ -z "$changed" ]; then echo "No factory change."; exit 0; fi

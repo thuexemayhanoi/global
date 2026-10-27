@@ -159,6 +159,15 @@ test("the topic factory outlasts bursts of main commits without ever force-pushi
  assert.match(loop[2],/git reset --hard origin\/main\n\s*(?:#[^\n]*\n\s*)*sleep \$\(\(\d+ \+ RANDOM % \d+\)\)/,"jittered pause after a lost race");
  assert.match(loop[2],/git rev-parse origin\/main\)" = "\$\(git rev-parse HEAD\^\)" \] && git push origin HEAD:main/,"push only onto the exact main it was computed from");
  assert.doesNotMatch(y,/push[^\n]*(--force|-f\b)/,"never force-push");
+ // A burst of Autopilot/Publisher commits still beat six jittered attempts
+ // (research/claude-20261027de9, 2026-10-27): every attempt first waits,
+ // bounded, for main to be still and recomputes from that exact main.
+ assert.match(loop[2],/^\s*wait_for_quiet_main\n\s*git reset -q --hard origin\/main\n\s*step\n/,"wait for a quiet main, then recompute from it");
+ const wait=y.match(/wait_for_quiet_main\(\) \{\n([\s\S]*?)\n          \}/);
+ assert.ok(wait,"quiet-main helper present");
+ assert.match(wait[1],/for _ in \$\(seq 1 \d+\)/,"the wait is bounded");
+ assert.match(wait[1],/git log -1 --format=%ct origin\/main/,"measures the age of the newest main commit");
+ assert.ok(Number(y.match(/timeout-minutes: (\d+)/)[1])>=40,"enough job time for the bounded waits");
 });
 test("serialized coordinators queue pending runs instead of cancelling them",()=>{
  // A run skipped by its job condition (e.g. PR-event Writer QA) still joins a
