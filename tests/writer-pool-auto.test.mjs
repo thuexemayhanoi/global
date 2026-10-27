@@ -148,6 +148,18 @@ test("Supporting drafts can pass prepublication parent test; publisher still ref
  assert.ok(!checkArticle(packet,matrix,locales,{allowUnpublishedParentForDraft:true}).errors.some(x=>x.includes("Parent Hub/Pillar must be published")));
 });
 
+test("the topic factory outlasts bursts of main commits without ever force-pushing",()=>{
+ // Research intake for research/claude-20261026de1 and de5 stopped at
+ // FACTORY_SAFE_STOP after three immediate retries while the Writer Autopilot
+ // and the Auto Publisher kept moving main (2026-10-26/27).
+ const y=fs.readFileSync(".github/workflows/topic-factory.yml","utf8");
+ const loop=y.match(/for attempt in ([\d ]+); do\n([\s\S]*?)\n          done/);
+ assert.ok(loop,"CAS loop present");
+ assert.ok(loop[1].trim().split(/\s+/).length>=5,"at least five compare-and-swap attempts");
+ assert.match(loop[2],/git reset --hard origin\/main\n\s*(?:#[^\n]*\n\s*)*sleep \$\(\(\d+ \+ RANDOM % \d+\)\)/,"jittered pause after a lost race");
+ assert.match(loop[2],/git rev-parse origin\/main\)" = "\$\(git rev-parse HEAD\^\)" \] && git push origin HEAD:main/,"push only onto the exact main it was computed from");
+ assert.doesNotMatch(y,/push[^\n]*(--force|-f\b)/,"never force-push");
+});
 test("serialized coordinators queue pending runs instead of cancelling them",()=>{
  // A run skipped by its job condition (e.g. PR-event Writer QA) still joins a
  // workflow-level concurrency group. Without queue: max the newest pending run
