@@ -12520,16 +12520,20 @@
       "review_sha256": null,
       "live_qa": "PASS",
       "live_qa_at": "2026-10-27T12:59:20.471Z"
+    },
+    {
+      "id": "DE-S256",
+      "locale": "de",
+      "url": "/de/guides/ruecken-nacken-handgelenk-motorrad-studien-haltung-fahrzeit-vibration/",
+      "role": "SUPPORT",
+      "stage": "CONTINUOUS",
+      "at": "2026-10-27T17:56:45.537Z",
+      "source_sha256": "5f5104c18bbd4c4a6c653b3a77622f53b514569628f4e638cad90fde03f73efc",
+      "review_sha256": null,
+      "live_qa": "PENDING"
     }
   ],
   "runs": [
-    {
-      "at": "2026-10-17T08:00:45.117Z",
-      "ids": [
-        "ES-S23"
-      ],
-      "result": "STAGED"
-    },
     {
       "at": "2026-10-17T08:01:51.404Z",
       "ids": [
@@ -14052,6 +14056,13 @@
         "DE-S238"
       ],
       "result": "LIVE_QA_PASS"
+    },
+    {
+      "at": "2026-10-27T17:56:45.537Z",
+      "ids": [
+        "DE-S256"
+      ],
+      "result": "STAGED"
     }
   ],
   "last_successful_deployment": {
@@ -14062,5 +14073,7 @@
     "commit": "735405a74e91cbfdc85a1b2f1b7389f408e599f8",
     "live_seconds": 81
   },
-  "queue": {}
+  "queue": {
+    "APPROVED_BY_POLICY": 1
+  }
 }
