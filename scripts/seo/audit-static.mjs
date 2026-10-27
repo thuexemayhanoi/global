@@ -57,7 +57,8 @@ for(const row of published){
   if(/^(?:mailto:|tel:|https?:|javascript:|data:|#)/i.test(href))continue;
   const target=normalizedHref(href,row.url);
   if(target===null)continue;
-  if(target.startsWith("/assets/")){if(!fs.existsSync(path.join(root,target.slice(1))))issue("P1","MISSING_ASSET",row.url,"Referenced asset not found: "+target,"Restore the asset");continue;}
+  // Static files (also root-level ones such as the preloaded /hero-hanoi.webp) are assets, not pages.
+  if(target.startsWith("/assets/")||/\.(?:webp|avif|png|jpe?g|gif|svg|ico|css|js|json|xml|txt|pdf|woff2?)$/i.test(target)){if(!fs.existsSync(path.join(root,target.slice(1))))issue("P1","MISSING_ASSET",row.url,"Referenced asset not found: "+target,"Restore the asset");continue;}
   if(!publishedURLs.has(target)&&target!=="/"&&!(target==="/search/"&&fs.existsSync(path.join(root,"search/index.html"))&&fs.readFileSync(path.join(root,"search/index.html"),"utf8").includes('name="robots" content="noindex,follow"'))){issue("P1","BROKEN_INTERNAL_LINK",row.url,"Internal link points outside published inventory: "+target,"Remove/repair this link before publishing");}
  }
 }
