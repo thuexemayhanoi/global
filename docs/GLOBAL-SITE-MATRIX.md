@@ -12,7 +12,7 @@ Actions: **KEEP** (meets targets) · **UPGRADE** (published but below depth/link
 
 | Set | KEEP | UPGRADE | REVIEW | CREATE |
 |---|---|---|---|---|
-| Matrix rows (2130) | 1052 | 9 | 42 | 1027 |
+| Matrix rows (2130) | 1053 | 9 | 42 | 1026 |
 | Topical candidates (1311) | 0 | 0 | 35 | 1276 |
 | Silos (330) | 138 | 17 | 0 | 175 |
 
@@ -73,7 +73,7 @@ Knowledge graph: 42 entities, 4496 typed edges (hreflang_equivalent 190, about 7
 | ID | URL | Words | H2 | FAQ | Inbound pages | Reasons |
 |---|---|---|---|---|---|---|
 | EN-CHECKLIST | /en/checklist/ | 647 | 9 | 1 | 105 | Main content 647 words < 800 target for SUPPORT |
-| DE-CHECKLIST | /de/checklist/ | 554 | 9 | 1 | 251 | Main content 554 words < 800 target for SUPPORT |
+| DE-CHECKLIST | /de/checklist/ | 554 | 9 | 1 | 252 | Main content 554 words < 800 target for SUPPORT |
 | FR-CHECKLIST | /fr/checklist/ | 665 | 9 | 1 | 104 | Main content 665 words < 800 target for SUPPORT |
 | ES-CHECKLIST | /es/checklist/ | 633 | 9 | 1 | 94 | Main content 633 words < 800 target for SUPPORT |
 | NL-CHECKLIST | /nl/checklist/ | 569 | 9 | 1 | 99 | Main content 569 words < 800 target for SUPPORT |
@@ -103,7 +103,7 @@ Cell: P published · D protected draft · I planned IDEA · C topical candidates
 | dc-papers | riding | informational | – | P3 I7 KEEP | P3 I7 KEEP | P10 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP | P3 I7 KEEP |
 | ss-pickup (reserved: CHECKLIST) | pickup | informational | – | P1 KEEP | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE | P1 UPGRADE |
 | ss-weather | riding | local | – | P4 I7 C8 KEEP | P5 I6 C8 KEEP | P17 I7 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP | P5 I6 C8 KEEP |
-| ss-incidents | riding | informational | – | P8 I20 C8 KEEP | P8 I15 C12 KEEP | P32 I19 KEEP | P8 I15 C12 KEEP | P7 I15 C13 KEEP | P8 I13 C14 KEEP | P8 I13 C14 KEEP | P8 I13 C14 KEEP | P8 I15 C12 KEEP | P8 I15 C12 KEEP |
+| ss-incidents | riding | informational | – | P8 I20 C8 KEEP | P8 I15 C12 KEEP | P33 I18 KEEP | P8 I15 C12 KEEP | P7 I15 C13 KEEP | P8 I13 C14 KEEP | P8 I13 C14 KEEP | P8 I13 C14 KEEP | P8 I15 C12 KEEP | P8 I15 C12 KEEP |
 | ss-gear | riding | informational | – | P1 I8 C3 KEEP | P2 I5 C5 KEEP | P11 I5 KEEP | P2 I3 C7 KEEP | P2 I5 C5 KEEP | P1 I4 C7 KEEP | P1 I4 C7 KEEP | P1 I4 C7 KEEP | P2 I3 C7 KEEP | P2 I3 C7 KEEP |
 | ss-city | riding | local | – | P40 I23 C9 KEEP | P42 I19 C12 KEEP | P70 I13 UPGRADE | P42 I19 C12 KEEP | P33 I19 C20 KEEP | P41 I19 C12 UPGRADE | P41 I19 C12 KEEP | P41 I19 C12 KEEP | P40 I19 C12 KEEP | P40 I19 C12 KEEP |
 | rt-northern-loops (proposed Hub) | planning | local | – | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE | C5 CREATE |
@@ -134,7 +134,7 @@ Published / planned (IDEA + drafts) / candidates per stage.
 | consideration | 15 / 37 / 19 | 14 / 32 / 27 | 59 / 39 / 0 | 12 / 33 / 27 | 14 / 31 / 27 | 12 / 33 / 27 | 12 / 33 / 27 | 12 / 33 / 27 | 11 / 34 / 27 | 11 / 34 / 27 |
 | decision | 14 / 21 / 2 | 17 / 18 / 4 | 38 / 33 / 0 | 18 / 18 / 4 | 16 / 18 / 5 | 15 / 19 / 4 | 15 / 19 / 4 | 15 / 19 / 4 | 16 / 18 / 4 | 16 / 18 / 4 |
 | pickup | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 | 1 / 0 / 0 |
-| riding | 56 / 65 / 28 | 60 / 52 / 37 | 140 / 51 / 0 | 60 / 50 / 39 | 50 / 52 / 46 | 58 / 49 / 41 | 58 / 49 / 41 | 58 / 49 / 41 | 58 / 50 / 39 | 58 / 50 / 39 |
+| riding | 56 / 65 / 28 | 60 / 52 / 37 | 141 / 50 / 0 | 60 / 50 / 39 | 50 / 52 / 46 | 58 / 49 / 41 | 58 / 49 / 41 | 58 / 49 / 41 | 58 / 50 / 39 | 58 / 50 / 39 |
 | return | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 | 0 / 0 / 0 |
 | planning | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 | 0 / 0 / 69 |
 
@@ -146,7 +146,7 @@ Every locale checklist also covers the consideration → decision → pickup →
 |---|---|---|---|---|---|---|
 | vi | 214 | 91 | 0 | 123 | 118 | 99% |
 | en | 199 | 97 | 0 | 102 | 137 | 97% |
-| de | 366 | 243 | 0 | 123 | 69 | 98% |
+| de | 366 | 244 | 0 | 122 | 69 | 98% |
 | fr | 197 | 96 | 0 | 101 | 139 | 99% |
 | es | 187 | 86 | 0 | 101 | 147 | 97% |
 | nl | 192 | 91 | 0 | 101 | 141 | 97% |
