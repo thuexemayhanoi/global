@@ -134,7 +134,9 @@ test("host probes report advisories and never throw",async()=>{
 
 test("A–Z reviewed metadata rows are applied, within width limits, frozen and keep the visible lead",()=>{
  const width=s=>[...s].reduce((n,c)=>n+(/[ᄀ-ᅟ⺀-꓏가-힣豈-﫿︰-﹏＀-｠￠-￦]/u.test(c)?2:1),0);
- const reviews=JSON.parse(read("docs/seo-audit/execution/metadata-reviews.json"));
+ const dir="docs/seo-audit/execution/",sets=fs.readdirSync(path.join(root,dir)).filter(f=>/^metadata-reviews(-[a-z0-9-]+)?\.json$/.test(f));
+ const reviews=sets.flatMap(f=>JSON.parse(read(dir+f)));
+ assert.equal(new Set(reviews.map(r=>r.id)).size,reviews.length,"a URL belongs to one A–Z review round");
  const freeze=new Map(JSON.parse(read("data/seo/url-freeze.json")).urls.map(u=>[u.url,u.fingerprint]));
  const leads=JSON.parse(read("content/article-leads.json")).leads;
  assert.ok(reviews.length>=100);
@@ -168,4 +170,22 @@ test("source re-check finds the priced paragraphs and classifies each against th
  const down=await recheck([packet],async()=>{throw Object.assign(Error("fetch failed"),{cause:{code:"ECONNRESET"}});});
  assert.equal(down.results[0].paragraphs[0].outcome,"UNREACHABLE");
  assert.ok(read(".github/workflows/source-recheck.yml").includes("contents: read"),"read-only workflow");
+});
+
+test("PT pages keep one Portuguese variant: European Portuguese body, variant-neutral Pillar wording (S-PT-VARIANT)",()=>{
+ const files=[];
+ const walk=d=>{for(const e of fs.readdirSync(path.join(root,d),{withFileTypes:true}))e.isDirectory()?walk(d+"/"+e.name):e.name.endsWith(".html")&&files.push(d+"/"+e.name);};
+ walk("pt");
+ assert.ok(files.length>=90);
+ for(const f of files)assert.ok(!/\baluguel\b/i.test(read(f)),f+" uses the pt-BR noun 'aluguel' next to pt-PT body text");
+ assert.match(read("pt/index.html"),/<title>Alugar moto em Hanói: guia e checklist<\/title>/);
+ assert.ok(read("pt/guides/dia-semana-mes/index.html").includes(">Guia para alugar moto em Hanói</a>"),"rail anchor to the Pillar");
+});
+
+test("selective re-freeze is idempotent for an already applied reviewed change",()=>{
+ const html='<html lang="pt"><head><title>B</title></head><body><h1>H</h1></body></html>';
+ const reg={urls:[{url:"/pt/x/",fingerprint:{title:"B"}}]};
+ const once=selectiveRefreeze(reg,{"pt/x/index.html":html},{changes:[{url:"/pt/x/",field:"title",before:"A",after:"B"}]});
+ assert.ok(!once.errors.some(e=>/title/.test(e)),"already applied title change is not an error");
+ assert.ok(!once.changed.some(c=>c.field==="title"),"and is not counted as a new change");
 });

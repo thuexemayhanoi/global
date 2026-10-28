@@ -5,9 +5,11 @@
  * explicit review basis) and `applyBatch` proves that each rebuilt page differs only by the approved metadata echoes,
  * preserves the visible lead, re-freezes only the changed title/description fields and rolls back on any failure.
  * Unlike V11 it does not require a review row for every packet: only the reviewed rows are planned.
- *   node scripts/seo/metadata-az.mjs check
- *   node scripts/seo/metadata-az.mjs plan --write
- *   node scripts/seo/metadata-az.mjs apply --batch=N
+ *   node scripts/seo/metadata-az.mjs check [--set=NAME]
+ *   node scripts/seo/metadata-az.mjs plan --write [--set=NAME]
+ *   node scripts/seo/metadata-az.mjs apply --batch=N [--set=NAME]
+ * A named set keeps a later review round in its own files (metadata-reviews-NAME.json, metadata-plan-NAME.json,
+ * batches-NAME/), so an applied plan is never replaced and each round keeps its receipts.
  * The helper does not generate prose, publish, commit, push or merge.
  */
 import fs from "node:fs";
@@ -19,7 +21,12 @@ import {validateReviews,applyBatch,LOCALES} from "./metadata-v11.mjs";
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
 const DIR="docs/seo-audit/execution";
-const REVIEWS=DIR+"/metadata-reviews.json",PLAN=DIR+"/metadata-plan.json",RECEIPTS=DIR+"/batches";
+/** Review, plan and receipt paths of one review round; the unnamed set is the first A–Z round. */
+export function setPaths(name=""){
+ if(name&&!/^[a-z0-9-]{1,24}$/.test(name))throw Error("set name must be 1-24 lowercase letters, digits or hyphens");
+ const suffix=name?"-"+name:"";
+ return {reviews:DIR+"/metadata-reviews"+suffix+".json",plan:DIR+"/metadata-plan"+suffix+".json",receipts:DIR+"/batches"+suffix};
+}
 export const SCOPE="AZ_REVIEWED_METADATA_ONLY";
 const sha=s=>crypto.createHash("sha256").update(s).digest("hex");
 const stableBody=p=>{const {title,meta_description,...rest}=p;return JSON.stringify(rest);};
@@ -44,7 +51,7 @@ export function createAzPlan(packets,reviews,{size=50,baseCommit=""}={}){
  return {version:1,scope:SCOPE,base_commit:baseCommit,batch_size:size,reviewed:records.length,optimized:pending.length,batches,records};
 }
 function main(argv){
- const command=argv[0]||"check";
+ const command=argv[0]||"check",{reviews:REVIEWS,plan:PLAN,receipts:RECEIPTS}=setPaths(argv.find(a=>a.startsWith("--set="))?.slice(6)||"");
  if(command==="apply"){
   const n=Number(argv.find(a=>a.startsWith("--batch="))?.slice(8));
   if(!Number.isInteger(n)||n<1)throw Error("apply needs --batch=N");
