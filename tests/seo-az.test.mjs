@@ -300,3 +300,18 @@ test("the site-wide menu names each published Hub by its Matrix title, never a g
   }
  }
 });
+
+test("every Hub answers three or more visible FAQ questions, mirrored by FAQPage, with no number the body does not state (batch S)",()=>{
+ const hubs=published.filter(r=>r.role==="HUB");
+ assert.equal(hubs.length,40);
+ for(const hub of hubs){
+  const p=packets.find(x=>x.matrix_id===hub.id),faq=faqEntries(p.body_markdown,hub.locale);
+  assert.ok(faq.length>=3,hub.id+" visible FAQ");
+  const html=page(hub.url),node=graph(html).find(n=>n["@type"]==="FAQPage");
+  assert.equal(node?.mainEntity.length,faq.length,hub.id+" FAQPage mirrors the visible FAQ");
+  const heading="## "+FAQ_HEADINGS[hub.locale],start=p.body_markdown.indexOf(heading),after=p.body_markdown.indexOf("\n## ",start+heading.length);
+  const rest=p.body_markdown.slice(0,start)+(after<0?"":p.body_markdown.slice(after));
+  const stated=new Set(rest.match(/\d+/g)||[]);
+  for(const [q,a] of faq)for(const n of (q+" "+a).match(/\d+/g)||[])assert.ok(stated.has(n),hub.id+" FAQ number "+n+" is stated elsewhere in the body");
+ }
+});

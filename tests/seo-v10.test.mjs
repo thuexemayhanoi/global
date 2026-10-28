@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import {renderArticle,topicLinks,SOCIAL_IMAGE,socialImageFor} from "../scripts/articles.mjs";
-import {sitemapFilePattern,SITEMAP_CHILD} from "../scripts/sitemaps.mjs";
+import {sitemapFilePattern,SITEMAP_CHILD,reviewedPageDates} from "../scripts/sitemaps.mjs";
 import {loadTopicalMap} from "../scripts/seo/topical-authority-core.mjs";
 
 const root=process.cwd();
@@ -57,7 +57,9 @@ test("every Hub and Supporting page carries site name, social image, card type a
    const packet=JSON.parse(fs.readFileSync(packetPath,"utf8"));
    if(packet.publication?.approved_at){
     assert.equal(article.datePublished,packet.publication.approved_at,r.id+" datePublished must be the recorded approval time");
-    assert.equal(article.dateModified,packet.publication.approved_at,r.id);
+    // A reviewed body change after publication (data/seo/page-updates.json) is the only other allowed dateModified.
+    const update=reviewedPageDates(root).get(r.url)?.modified;
+    assert.equal(article.dateModified,update&&update>packet.publication.approved_at.slice(0,10)?update:packet.publication.approved_at,r.id);
    }else assert.equal(article.datePublished,undefined,r.id+" must not invent a date");
   }
  }

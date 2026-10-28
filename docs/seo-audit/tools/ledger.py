@@ -24,6 +24,16 @@ LOCALES = ["vi", "en", "de", "fr", "es", "nl", "zh", "pt", "ko", "ja"]
 FINAL = ["FIXED_VERIFIED", "FIXED_PENDING_LIVE", "VALIDATED_NO_FIX", "DUPLICATE", "EXTERNAL_DEPENDENCY", "BLOCKED"]
 
 
+def owner_backlog():
+    """(item, effect) rows of the bare OWNER_ACTIONS_LAST table in docs/seo-audit/OWNER-ACTIONS.md."""
+    out = []
+    for line in open(os.path.join(ROOT, "docs", "seo-audit", "OWNER-ACTIONS.md"), encoding="utf-8"):
+        m = re.match(r"^\|\s*\d+\s*\|(.+?)\|(.+?)\|\s*$", line)
+        if m:
+            out.append((m.group(1).strip(), m.group(2).strip()))
+    return out
+
+
 def rows(path):
     with open(path, encoding="utf-8-sig") as fh:
         return list(csv.DictReader(fh))
@@ -240,9 +250,6 @@ for b in batches.values():
     dep = f"[{b['deploy_run']}]({GH}/actions/runs/{b['deploy_run']})" if b.get("deploy_run") else "pending"
     pr = f"[#{b['pr']}]({GH}/pull/{b['pr']})" if b.get("pr") else "—"
     L.append(f"| {b['id']} | {b['title']} | {pr} | {b.get('merge_commit', '')[:7] or 'pending'} | {dep} | {qa} |")
-L.append("\n## OWNER_ACTION_REQUIRED\n")
-for i, (a, r) in enumerate(owner_actions.items(), 1):
-    L.append(f"{i}. {a} _(rules: {', '.join(sorted(r))})_")
 L.append("\n## Verification limits\n")
 for line in [
     "The audit container cannot reach global.rentbikehanoi.com (egress 403); production is verified by the repository's read-only GitHub Actions (live-markup-qa: every PUBLISHED URL byte-identical to the build; post-publish-qa: status, canonical, sitemap, fingerprints, NAP guard, host probes).",
@@ -252,5 +259,11 @@ for line in [
     "Authority/backlink figures are a third-party index estimate (Ubersuggest), not Google data; visibility changes need weeks after indexing.",
 ]:
     L.append(f"- {line}")
+# Owner directive 2026-10-28 (SEO-only): items that need an outside account or the owner go LAST, as a bare backlog.
+L.append("\n## OWNER_ACTIONS_LAST\n")
+L.append("Source: [OWNER-ACTIONS.md](OWNER-ACTIONS.md). These never block SEO work on published pages; none is marked done until it is.\n")
+for i, (item, effect) in enumerate(owner_backlog(), 1):
+    L.append(f"{i}. {item} — {effect}")
+L.append("\nLedger rules that wait on these items: " + "; ".join(f"{a} ({', '.join(sorted(r))})" for a, r in owner_actions.items()))
 open(os.path.join(ROOT, "docs", "seo-audit", "EXECUTION-LEDGER.md"), "w", encoding="utf-8").write("\n".join(L) + "\n")
 print(json.dumps({k: summary[k] for k in ("baseline_findings", "reaudit_findings", "new_in_reaudit", "outcomes", "tasks", "status")}, indent=1))
