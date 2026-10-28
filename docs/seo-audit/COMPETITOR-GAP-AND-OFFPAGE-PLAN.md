@@ -53,9 +53,9 @@ Mọi con số dưới đây đều do công cụ trả về. Không có số n�
 | G1 | Từ khóa chính chưa nằm trong H1 và mô tả của một số Pillar | — | Batch G (PR #127): H1 de, fr, es, pt, ja mở đầu bằng từ khóa chính; mô tả vi, de, fr, es, pt, ja chứa từ khóa | ĐÃ SỬA, chờ live QA |
 | G2 | "Kinh nghiệm, thủ tục, giá" (vi), "guide complet" (fr), "price & tips" (en) | Pillar 10 ngôn ngữ đều có 11 mục hướng dẫn, 4 chủ đề, FAQ, Hub giá/đặt cọc, giấy tờ, an toàn, chọn xe | Giữ nguyên. Không thêm giá hay mức cọc khi chưa có nguồn có ngày (fact-guard) | ĐÃ ĐỦ, không cần sửa |
 | G3 | Danh sách "N địa chỉ uy tín", so sánh đơn vị cho thuê (vi, pt, ko) | Tiêu chí đánh giá và so sánh báo giá ("So sánh báo giá trên cùng một danh sách") | Không lập danh sách cửa hàng: cần dữ liệu doanh nghiệp đã xác minh và có ngày; không bịa tên, giá, đánh giá | CHẶN THEO CHÍNH SÁCH (cần dữ liệu thật) |
-| G4 | So sánh ứng dụng thuê xe (ja) | Chưa có chủ đề | Đề xuất nghiên cứu Topic Factory: "thuê xe qua ứng dụng hay tại cửa hàng", 10 ngôn ngữ, nguồn thật, qua nhánh `research/*` | CHỜ WRITER / NGHIÊN CỨU |
-| G5 | Tự thuê xe hay đi tour có hướng dẫn hoặc easy rider (de) | Chỉ có DE-S168 (Ha Giang easy rider) | Đề xuất nghiên cứu Topic Factory cho 10 ngôn ngữ | CHỜ WRITER / NGHIÊN CỨU |
-| G6 | Ha Giang trong SERP fr, ko, pt | DE-S114, DE-S168 | Miền `routes-trips` đang ARCHITECTURE_BLOCKED: cần PR kiến trúc Hub với ≥8 Supporting đã xác minh | CHỜ PR KIẾN TRÚC |
+| G4 | So sánh ứng dụng/nền tảng thuê xe (ja) | DE: DE-S365 (đặt qua nền tảng hay thuê trực tiếp), DE-S376 (giao xe tại sân bay qua app) | Đã nghiên cứu và đưa vào Matrix cho DE (batch J). Các ngôn ngữ khác: nghiên cứu khi READY < 100 | DE ĐÃ VÀO MATRIX (IDEA), CHỜ WRITER |
+| G5 | Tự thuê xe hay đi tour có hướng dẫn hoặc easy rider (de) | DE-S168; mới: DE-S364 (Easy Rider hay tự lái), DE-S368 (chọn xe thuê cho Ha Giang Loop) | Đã nghiên cứu và đưa vào Matrix cho DE (batch J). Các ngôn ngữ khác: nghiên cứu khi READY < 100 | DE ĐÃ VÀO MATRIX (IDEA), CHỜ WRITER |
+| G6 | Ha Giang trong SERP fr, ko, pt | DE-S114, DE-S168; 90 ứng viên `routes-trips` (9 mỗi ngôn ngữ) | Đã đủ điều kiện ≥8 ứng viên ở 10 ngôn ngữ; cần chủ sở hữu duyệt Hub thứ 5: [`HUB-ARCHITECTURE-PROPOSAL-20261028.md`](HUB-ARCHITECTURE-PROPOSAL-20261028.md) | CHỜ CHỦ SỞ HỮU |
 | G7 | Câu hỏi về bằng lái (ja #1) | JA-H03, JA-S05, JA-S09, JA-S29 | Pillar đã liên kết Hub giấy tờ; theo dõi thứ hạng sau khi có GSC | ĐÃ CÓ NỘI DUNG |
 
 ## 4. Kế hoạch off-page hợp lệ (không mua link, không PBN, không backlink giả)
@@ -111,4 +111,4 @@ Mọi con số dưới đây đều do công cụ trả về. Không có số n�
 1. Kết nối Search Console và gửi sitemap. Mọi KPI thứ hạng phụ thuộc bước này.
 2. Duyệt credit cho rank tracking, AI visibility và đo volume còn thiếu (es, pt, zh và dạng chính xác của ko/ja).
 3. Chỉ định người thực hiện outreach bằng tài khoản thật. Agent không đăng bài lên diễn đàn hay gửi email thay chủ sở hữu.
-4. Mở phiên Writer cho các đề xuất nghiên cứu G4/G5, và PR kiến trúc Hub cho miền `routes-trips` (G6).
+4. Duyệt kiến trúc Hub mới: khuyến nghị phương án A, `routes-trips` ([đề xuất](HUB-ARCHITECTURE-PROPOSAL-20261028.md)). Giữ phiên Writer W1–W3 hoạt động để viết DE-S361…S380 và các chủ đề READY khác.
