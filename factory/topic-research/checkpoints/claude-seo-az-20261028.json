@@ -7,19 +7,19 @@
   "branch": "research/claude-seo-az-20261028",
   "batch_session": "research-claude-seo-az-20261028",
   "created_at": "2026-10-28T12:29:58.688Z",
-  "updated_at": "2026-10-28T12:47:55.978Z",
+  "updated_at": "2026-10-28T12:49:02.413Z",
   "base_main_sha": "ec9f61030a934a2c83a8c8e5153f36a5b3d688fd",
-  "last_commit_sha": "5894c04bd4a1a28f009572a8ab4220bb0a881b2e",
+  "last_commit_sha": "9d25a7b68391e1b1f90cdcb91373e5656fb6a28c",
   "contract": {
     "agents_md_sha256": "754a12f9f56248ff18882c8cee12fbd7e5fb16e07ad66d8bb078deefa0ebb321",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 60,
-    "qa_pass": 60,
+    "researched": 70,
+    "qa_pass": 70,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 50,
+    "pushed": 60,
     "pending_push": 10
   },
   "coverage": {
@@ -28,17 +28,18 @@
       "vi": 10,
       "en": 10,
       "fr": 10,
-      "es": 10
+      "es": 10,
+      "nl": 10
     },
     "domains": {
-      "motorbike-rental": 44,
-      "traffic-law-safety": 16
+      "motorbike-rental": 52,
+      "traffic-law-safety": 18
     }
   },
   "last_batch": {
-    "seq": 6,
-    "file": "factory/topic-research/batches/claude-seo-az-20261028-0006.json",
-    "sha256": "9a8d31722cce024fe52a106b77027e2de17b582f8ba85f1a6d73fb7c5552f371",
+    "seq": 7,
+    "file": "factory/topic-research/batches/claude-seo-az-20261028-0007.json",
+    "sha256": "379a14a6ab1dc05011f6d419eb723da8d87353f017f019205e4e1cad7b7429e0",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -603,8 +604,8 @@
       "file": "factory/topic-research/batches/claude-seo-az-20261028-0006.json",
       "sha256": "9a8d31722cce024fe52a106b77027e2de17b582f8ba85f1a6d73fb7c5552f371",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "9d25a7b68391e1b1f90cdcb91373e5656fb6a28c",
       "researched_on": "2026-10-28",
       "topics": [
         {
@@ -708,11 +709,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 7,
+      "file": "factory/topic-research/batches/claude-seo-az-20261028-0007.json",
+      "sha256": "379a14a6ab1dc05011f6d419eb723da8d87353f017f019205e4e1cad7b7429e0",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-28",
+      "topics": [
+        {
+          "ref": "nl:motor-huren-hanoi-inleveren-ho-chi-minhstad",
+          "locale": "nl",
+          "slug": "motor-huren-hanoi-inleveren-ho-chi-minhstad",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H02",
+          "subcluster": "rc-extras",
+          "key": "nl::motor huren in hanoi en inleveren in ho chi minhstad",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:scooter-huren-hanoi-bezorgd-bij-je-hotel",
+          "locale": "nl",
+          "slug": "scooter-huren-hanoi-bezorgd-bij-je-hotel",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H02",
+          "subcluster": "rc-extras",
+          "key": "nl::scooter huren in hanoi bezorgd bij je hotel",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:motor-huren-of-kopen-voor-reis-door-vietnam",
+          "locale": "nl",
+          "slug": "motor-huren-of-kopen-voor-reis-door-vietnam",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H02",
+          "subcluster": "rc-period",
+          "key": "nl::motor huren of kopen voor een reis door vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:easy-rider-of-zelf-rijden-vanuit-hanoi",
+          "locale": "nl",
+          "slug": "easy-rider-of-zelf-rijden-vanuit-hanoi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "nl::motorreis vanuit hanoi met een easy rider of zelf rijden",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:motor-hanoi-boeken-via-platform-of-direct-bij-verhuurder",
+          "locale": "nl",
+          "slug": "motor-hanoi-boeken-via-platform-of-direct-bij-verhuurder",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H03",
+          "subcluster": "dc-contract",
+          "key": "nl::motor in hanoi boeken via een platform of direct bij de verhuurder",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:wat-zit-er-bij-motorhuur-hanoi-inbegrepen",
+          "locale": "nl",
+          "slug": "wat-zit-er-bij-motorhuur-hanoi-inbegrepen",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H02",
+          "subcluster": "rc-extras",
+          "key": "nl::wat zit er bij de prijs van motorhuur in hanoi inbegrepen",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:onderhoud-olie-verversen-maandhuur-scooter-hanoi",
+          "locale": "nl",
+          "slug": "onderhoud-olie-verversen-maandhuur-scooter-hanoi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H02",
+          "subcluster": "rc-period",
+          "key": "nl::wie betaalt olie verversen en onderhoud bij maandhuur van een scooter in hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:huurscooter-te-laat-inleveren-hanoi",
+          "locale": "nl",
+          "slug": "huurscooter-te-laat-inleveren-hanoi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H02",
+          "subcluster": "rc-extras",
+          "key": "nl::huurscooter te laat inleveren in hanoi wat kost een extra dag",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:verhuurder-claimt-schade-bij-inleveren-vietnam",
+          "locale": "nl",
+          "slug": "verhuurder-claimt-schade-bij-inleveren-vietnam",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "NL-H03",
+          "subcluster": "dc-contract",
+          "key": "nl::verhuurder claimt schade bij het inleveren van de scooter in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "nl:proefrit-voor-motorhuur-hanoi",
+          "locale": "nl",
+          "slug": "proefrit-voor-motorhuur-hanoi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "NL-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "nl::proefrit voor je een motor huurt in hanoi waar let je op",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 7,
-    "file": "factory/topic-research/batches/claude-seo-az-20261028-0007.json",
+    "seq": 8,
+    "file": "factory/topic-research/batches/claude-seo-az-20261028-0008.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -759,6 +871,13 @@
       "seq": 6,
       "topics": 10,
       "sha256": "9a8d31722cce024fe52a106b77027e2de17b582f8ba85f1a6d73fb7c5552f371"
+    },
+    {
+      "at": "2026-10-28T12:49:02.413Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 7,
+      "topics": 10,
+      "sha256": "379a14a6ab1dc05011f6d419eb723da8d87353f017f019205e4e1cad7b7429e0"
     }
   ]
 }
