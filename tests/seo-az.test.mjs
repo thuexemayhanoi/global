@@ -392,3 +392,23 @@ test("each locale checklist shows a visible FAQ mirrored by FAQPage, built only 
   }
  }
 });
+
+test("the SEO A–Z Matrix on GitHub covers every published URL once, uses only the agreed statuses and names a resumable checkpoint (M0)",()=>{
+ const csvRows=f=>{const [head,...lines]=read("docs/seo-matrix/"+f).trim().split("\n");const cols=head.split(",");return {cols,count:lines.length,ids:lines.map(l=>l.split(",")[0])};};
+ const board=JSON.parse(read("docs/seo-matrix/TASKS.json")),cp=JSON.parse(read("docs/seo-matrix/CHECKPOINT.json"));
+ const allowed=new Set(["TODO","IN_PROGRESS","FIXED","MERGED","DEPLOYED","LIVE_VERIFIED","BLOCKED"]);
+ for(const t of board.tasks){
+  assert.ok(allowed.has(t.status),t.id+" status");
+  assert.ok(t.next_action,t.id+" next_action");
+  if(t.status==="LIVE_VERIFIED")assert.ok(t.pr&&t.commit&&t.deploy_run&&t.live_qa.length,t.id+" live verification needs PR, merge commit, deploy and live-QA runs");
+ }
+ const master=csvRows("MASTER-SEO-MATRIX.csv"),pub=published.map(r=>r.id).sort();
+ assert.deepEqual([...master.ids].sort(),pub,"one Matrix row per published URL");
+ for(const c of ["url","locale","primary_query","search_intent","title","description","h1","content_units","featured_image","og_image","tech_issues","img_status","meta_status","content_status","tech_status","status","branch","commit","pr","actions","qa_evidence","next_action"])assert.ok(master.cols.includes(c),"MASTER column "+c);
+ assert.ok(csvRows("IMAGE-SEO-MATRIX.csv").cols.includes("size_check")&&csvRows("CONTENT-SEO-MATRIX.csv").cols.includes("content_check"));
+ assert.ok(cp.current_task&&board.tasks.some(t=>t.id===cp.current_task.id),"checkpoint names a board task");
+ // Every Hub/Supporting URL belongs to exactly one image batch of at most 100 URLs.
+ const img=board.tasks.filter(t=>/^IMG-\d\d$/.test(t.id)&&t.id!=="IMG-00"),seen=new Map();
+ for(const t of img){assert.ok(t.scope.length<=100,t.id+" ≤100 images");for(const id of t.scope){assert.ok(!seen.has(id),id+" in one batch only");seen.set(id,t.id);}}
+ assert.deepEqual([...seen.keys()].sort(),published.filter(r=>r.role==="HUB"||r.role==="SUPPORT").map(r=>r.id).sort());
+});

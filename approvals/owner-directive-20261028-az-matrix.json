@@ -1,0 +1,80 @@
+{
+ "version": 1,
+ "directive_id": "owner-directive-20261028-az-matrix",
+ "date": "2026-10-28",
+ "scope": "thuexemayhanoi/global — existing published URLs in vi, en, de, fr, es, nl, zh, pt, ko, ja",
+ "priority": "Extends owner-directive-20261028-seo-only (no new articles, Hubs or URLs; PR #118 stays unmerged; Auto Publisher stays paused).",
+ "mode": "AUTONOMOUS_SEO_AZ_MATRIX",
+ "owner_intent": "Run SEO A–Z autonomously on existing URLs with the Matrix on GitHub as the single source of state, so work resumes from GitHub after any session ends.",
+ "order": [
+  "Finish open work",
+  "Push Matrix",
+  "Image SEO (batches of at most 100 images)",
+  "Title and meta description",
+  "Content upgrade",
+  "Technical SEO",
+  "QA → merge → deploy → live verification → Matrix sync after every batch"
+ ],
+ "matrix": {
+  "location": "docs/seo-matrix/",
+  "generator": "docs/seo-audit/tools/az_matrix.py",
+  "task_board": "docs/seo-matrix/TASKS.json",
+  "checkpoint": "docs/seo-matrix/CHECKPOINT.json",
+  "sheets": [
+   "IMAGE SEO MATRIX",
+   "CONTENT SEO MATRIX",
+   "SEO TASK BOARD"
+  ],
+  "per_url_fields": [
+   "URL",
+   "language",
+   "keyword",
+   "search intent",
+   "featured and content images, alt, bytes, format",
+   "SEO title",
+   "meta description",
+   "H1–H3",
+   "word count, content quality, internal links",
+   "technical issues",
+   "priority",
+   "status",
+   "branch, commit SHA, PR, GitHub Actions, QA evidence",
+   "next_action"
+  ],
+  "statuses": [
+   "TODO",
+   "IN_PROGRESS",
+   "FIXED",
+   "MERGED",
+   "DEPLOYED",
+   "LIVE_VERIFIED",
+   "BLOCKED"
+  ]
+ },
+ "image_standard": {
+  "bytes": "100–300 KB per image; under 100 KB accepted when sharp (never padded); over 300 KB re-encoded unless a technical reason is recorded in the Matrix",
+  "format": "WebP/AVIF preferred",
+  "other": [
+   "localized alt",
+   "SEO filename",
+   "width/height, srcset, loading",
+   "LCP and CLS safe",
+   "image sitemap only if needed",
+   "do not delete or replace good images just for uniform size"
+  ]
+ },
+ "meta_standard": {
+  "title": "60–70 characters when natural and within display width; zh/ko/ja by display width; never change a good title only to reach a length",
+  "description": "about 140–160 characters when suitable; zh/ko/ja by display width"
+ },
+ "content_standard": "Review pages under 1,000 words and expand to about 1,600–5,000 words where the topic and reliable information support it; no word target for contact, privacy, terms or pages that need no length.",
+ "resume": "On 'tiếp tục': read the Matrix and checkpoint on GitHub, check branch/PR/CI/deploy, finish the IN_PROGRESS task or next_action, then take the highest-priority TODO; push the Matrix and a new checkpoint before stopping; never restart or redo DONE work.",
+ "forbidden": [
+  "fabricated SEO metrics, images presented as real photos, sources or verification results",
+  "marking work done before live verification",
+  "bypassing QA, branch protection, URL freeze or business-data protection",
+  "asking the owner for routine decisions"
+ ],
+ "owner_actions_last": "Search Console, GA4, unverified business data and outside permissions go to OWNER_ACTIONS_LAST and never block the work.",
+ "reporting": "Final summary only after all self-executable work is done; progress and checkpoints are pushed to GitHub during the work."
+}

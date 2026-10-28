@@ -1,0 +1,101 @@
+{
+ "generated": "2026-10-28",
+ "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
+ "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
+ "current_task": {
+  "id": "M0",
+  "phase": "MATRIX",
+  "title": "Matrix brain: Master, Image and Content SEO Matrix, task board and checkpoint on GitHub",
+  "status": "FIXED",
+  "branch": "seo/az-m0-matrix",
+  "commit": null,
+  "pr": null,
+  "deploy_run": null,
+  "live_qa": [],
+  "next_action": "Merge after CI, then record merge commit, deploy run and live-QA runs (next PR)"
+ },
+ "next_todo": [
+  {
+   "id": "TECH-01",
+   "title": "Allow large image previews (robots max-image-preview:large) on indexable pages",
+   "next_action": "Ship with IMG-01 so Discover/Images may show the new 1200 px covers"
+  },
+  {
+   "id": "IMG-00",
+   "title": "Localized descriptive alt for the four topic illustrations on the 10 locale Pillars and the root language page (44 images, currently alt=\"\")",
+   "next_action": "Ship with IMG-01"
+  },
+  {
+   "id": "IMG-01",
+   "title": "Cover image batch 1: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
+   "next_action": "Render covers for the 100 URLs, QA (size 100–300 KB target, dims, alt), PR, merge, deploy, live QA"
+  },
+  {
+   "id": "IMG-02",
+   "title": "Cover image batch 2: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
+   "next_action": "Render covers for the 100 URLs, QA (size 100–300 KB target, dims, alt), PR, merge, deploy, live QA"
+  },
+  {
+   "id": "IMG-03",
+   "title": "Cover image batch 3: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
+   "next_action": "Render covers for the 100 URLs, QA (size 100–300 KB target, dims, alt), PR, merge, deploy, live QA"
+  }
+ ],
+ "blocked": [],
+ "owner_actions": "docs/seo-audit/OWNER-ACTIONS.md (OWNER_ACTIONS_LAST)",
+ "task_counts": {
+  "HISTORY": {
+   "DEPLOYED": 2,
+   "LIVE_VERIFIED": 25,
+   "MERGED": 2
+  },
+  "MATRIX": {
+   "FIXED": 1
+  },
+  "TECH": {
+   "TODO": 2
+  },
+  "IMG": {
+   "TODO": 12
+  },
+  "META": {
+   "TODO": 2
+  },
+  "CONTENT": {
+   "TODO": 1
+  }
+ },
+ "url_counts": {
+  "img_status": {
+   "TODO": 1075,
+   "NOT_NEEDED": 4
+  },
+  "meta_status": {
+   "OK": 919,
+   "TODO": 155,
+   "NOT_FORCED": 5
+  },
+  "content_status": {
+   "OK": 1056,
+   "NOT_FORCED": 15,
+   "TODO": 8
+  },
+  "tech_status": {
+   "TODO": 1079
+  },
+  "status": {
+   "TODO": 1079
+  }
+ },
+ "standards": {
+  "image_bytes": "100–300 KB per main image (smaller accepted when sharp; responsive variants are smaller by design; over 300 KB must be re-encoded or justified)",
+  "image_format": "WebP (AVIF optional)",
+  "title": "fits ~600 px (≈50–65 Latin characters, ≈30 CJK characters); short titles reviewed, never padded",
+  "description": "140–160 characters (Latin); 60–120 characters (zh/ja/ko)",
+  "content_floor": {
+   "words": 1000,
+   "ko_words": 750,
+   "cjk_chars": 1500
+  }
+ }
+}

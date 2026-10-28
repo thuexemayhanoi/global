@@ -58,10 +58,13 @@ with zipfile.ZipFile(workbook) as z:
     sheetroot = ET.fromstring(z.read("xl/workbook.xml"))
     ns = {"x": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
     sheets = sheetroot.findall(".//x:sheet", ns)
-    check(len(sheets) == 16, f"Expected original 16 sheets, found {len(sheets)}")
+    names = [sh.get("name") for sh in sheets]
+    az_sheets = ["IMAGE SEO MATRIX", "CONTENT SEO MATRIX", "SEO TASK BOARD"]
+    check(len([n for n in names if n not in az_sheets]) == 16, f"Expected the original 16 sheets, found {names}")
+    check(all(n in names for n in az_sheets), "SEO A–Z matrix sheets missing (docs/seo-matrix, az_matrix.py)")
     for name in z.namelist():
         if name == "xl/sharedStrings.xml" or name.startswith("xl/worksheets/sheet") and name.endswith(".xml"):
             raw = z.read(name).decode("utf-8")
             scan(raw, name)
             check("S-PILLAR-TRANSACTIONAL" not in raw, f"Old cross-domain task in {name}")
-print(f"PASS: owner-independent strategy, {len(pillars)} Pillars, {len(analysis['findings'])} findings, {len(analysis['tasks'])} active tasks, {len(sheets)} Excel sheets")
+print(f"PASS: owner-independent strategy, {len(pillars)} Pillars, {len(analysis['findings'])} findings, {len(analysis['tasks'])} active tasks, {len(sheets)} Excel sheets (16 + {len(az_sheets)} A–Z matrix sheets)")
