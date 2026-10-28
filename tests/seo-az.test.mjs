@@ -334,3 +334,8 @@ test("every price/deposit and documents/contract Supporting page answers visible
   if(added.has(row.id))for(const [q,a] of faq)for(const n of (q+" "+a).match(/\d+/g)||[])assert.ok(stated.has(n),row.id+" FAQ number "+n+" is stated elsewhere in the body");
  }
 });
+
+test("no page presents the replaced licence Circular 12/2025/TT-BCA without its successor 108/2026/TT-BCA (batch V)",()=>{
+ const stale=packets.filter(p=>p.body_markdown.includes("12/2025/TT-BCA")&&!p.body_markdown.includes("108/2026/TT-BCA")).map(p=>p.matrix_id);
+ assert.deepEqual(stale,[],"pages still citing only Circular 12/2025/TT-BCA");
+});
