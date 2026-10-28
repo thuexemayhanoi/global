@@ -92,4 +92,4 @@ Audit with evidence: `docs/WORKFLOW-AUDIT-20261015.md`. Contract: `AGENTS.md` §
 4. Resolve business conflicts C1–C3, and decide whether /global may display NAP/prices or business schema (`publication.*_approved`).
 5. Editorial UPGRADE of 20 live pages (depth + citations).
 6. Rebase and publish PR #6.
-7. Whether /global hands commercial intent to thuexemaynguyentu.com (positioning).
+7. ~~Whether /global hands commercial intent to thuexemaynguyentu.com (positioning).~~ Decided 2026-10-28 by the owner: /global competes independently for commercial and informational keywords (`approvals/owner-directive-20261028-independent-seo.json`).

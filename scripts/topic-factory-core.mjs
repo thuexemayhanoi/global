@@ -177,7 +177,7 @@ export function selectRefill({matrix,map,ledger,registry,policy,validation,limit
    const parent=matrix.rows.find(r=>r.id===p.parent_id);
    if(!parent||parent.role!=="HUB"||parent.locale!==code||parent.status==="BLOCKED")why.push({gate:"F2_PARENT",detail:"Needs an existing same-locale HUB parent"});
    if(!domainOf(policy,p.cluster))why.push({gate:"F3_SCOPE",detail:"Cluster "+p.cluster+" is outside the 8 approved domains"});
-   if((policy.forbidden_intents||[]).includes(p.search_intent))why.push({gate:"F4_COMMERCIAL_INTENT",detail:"Transactional rental intent belongs to the commercial sites"});
+   if((policy.forbidden_intents||[]).includes(p.search_intent))why.push({gate:"F4_COMMERCIAL_INTENT",detail:"Purely transactional intent cannot be fulfilled: /global has no booking, NAP or own prices (business-reference flags false)"});
    const dups=duplicateLayers({...p,id},[...corpus,...ok],{stop,thresholds:thr,distinctMin:thr.distinct_reason_min});
    if(dups.length)why.push({gate:"F5_DUPLICATE",detail:dups.map(d=>d.layer+"~"+d.with+"("+d.score+")").join(", ")});
    if(!Array.isArray(p.references)||p.references.length<2||String(p.intent_rationale||"").length<60)why.push({gate:"F7_RESEARCH",detail:"Needs ≥2 references and a researched intent rationale"});
