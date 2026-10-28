@@ -7,19 +7,19 @@
   "branch": "research/claude-seo-az-20261028",
   "batch_session": "research-claude-seo-az-20261028",
   "created_at": "2026-10-28T12:29:58.688Z",
-  "updated_at": "2026-10-28T12:51:40.578Z",
+  "updated_at": "2026-10-28T12:52:55.168Z",
   "base_main_sha": "c1b8099f702fc540c77d4293780cc0099ab82564",
-  "last_commit_sha": "92c7a5a8c09cdb2886c3c610bf4c420e37c37c37",
+  "last_commit_sha": "a0323dea2661c409cecb6d39ed7510cbd50b65d7",
   "contract": {
     "agents_md_sha256": "754a12f9f56248ff18882c8cee12fbd7e5fb16e07ad66d8bb078deefa0ebb321",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 90,
-    "qa_pass": 90,
+    "researched": 100,
+    "qa_pass": 100,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 80,
+    "pushed": 90,
     "pending_push": 10
   },
   "coverage": {
@@ -31,17 +31,18 @@
       "es": 10,
       "nl": 10,
       "zh": 10,
-      "pt": 10
+      "pt": 10,
+      "ko": 10
     },
     "domains": {
-      "motorbike-rental": 68,
-      "traffic-law-safety": 22
+      "motorbike-rental": 76,
+      "traffic-law-safety": 24
     }
   },
   "last_batch": {
-    "seq": 9,
-    "file": "factory/topic-research/batches/claude-seo-az-20261028-0009.json",
-    "sha256": "8b3765fb5986a884b77ca8e05c6b229e1e625119abfdf4d1b2306f34e6485240",
+    "seq": 10,
+    "file": "factory/topic-research/batches/claude-seo-az-20261028-0010.json",
+    "sha256": "29271ab9eca30ed63bc7b8d93d64e2d0243229520f495453c97ddf657c61e01f",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -939,8 +940,8 @@
       "file": "factory/topic-research/batches/claude-seo-az-20261028-0009.json",
       "sha256": "8b3765fb5986a884b77ca8e05c6b229e1e625119abfdf4d1b2306f34e6485240",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "a0323dea2661c409cecb6d39ed7510cbd50b65d7",
       "researched_on": "2026-10-28",
       "topics": [
         {
@@ -1044,11 +1045,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 10,
+      "file": "factory/topic-research/batches/claude-seo-az-20261028-0010.json",
+      "sha256": "29271ab9eca30ed63bc7b8d93d64e2d0243229520f495453c97ddf657c61e01f",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-28",
+      "topics": [
+        {
+          "ref": "ko:hanoi-bike-rent-hochiminh-return",
+          "locale": "ko",
+          "slug": "hanoi-bike-rent-hochiminh-return",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H02",
+          "subcluster": "rc-extras",
+          "key": "ko::하노이에서 오토바이 렌트하고 호치민에서 반납하기",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-bike-rent-hotel-delivery",
+          "locale": "ko",
+          "slug": "hanoi-bike-rent-hotel-delivery",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H02",
+          "subcluster": "rc-extras",
+          "key": "ko::하노이 오토바이 렌트 호텔까지 배달",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:vietnam-trip-rent-or-buy-motorbike",
+          "locale": "ko",
+          "slug": "vietnam-trip-rent-or-buy-motorbike",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H02",
+          "subcluster": "rc-period",
+          "key": "ko::베트남 여행 오토바이 렌트할까 구매할까",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-easy-rider-or-self-ride",
+          "locale": "ko",
+          "slug": "hanoi-easy-rider-or-self-ride",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ko::하노이 출발 오토바이 여행 이지라이더와 직접 운전 비교",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-bike-rent-platform-or-shop",
+          "locale": "ko",
+          "slug": "hanoi-bike-rent-platform-or-shop",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H03",
+          "subcluster": "dc-contract",
+          "key": "ko::하노이 오토바이 렌트 플랫폼 예약과 매장 직접 예약 차이",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-bike-rent-whats-included",
+          "locale": "ko",
+          "slug": "hanoi-bike-rent-whats-included",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H02",
+          "subcluster": "rc-extras",
+          "key": "ko::하노이 오토바이 렌트 가격에 포함되는 것",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-monthly-rent-maintenance-who-pays",
+          "locale": "ko",
+          "slug": "hanoi-monthly-rent-maintenance-who-pays",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H02",
+          "subcluster": "rc-period",
+          "key": "ko::하노이 오토바이 월 렌트 엔진오일 교체와 정비 비용은 누가 내나",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-bike-rent-late-return-fee",
+          "locale": "ko",
+          "slug": "hanoi-bike-rent-late-return-fee",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H02",
+          "subcluster": "rc-extras",
+          "key": "ko::하노이 렌트 오토바이 늦게 반납하면 추가 요금은 어떻게 계산하나",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:vietnam-bike-rent-damage-claim-on-return",
+          "locale": "ko",
+          "slug": "vietnam-bike-rent-damage-claim-on-return",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "KO-H03",
+          "subcluster": "dc-contract",
+          "key": "ko::베트남에서 오토바이 반납할 때 업체가 파손을 주장하면 어떻게 하나",
+          "ta_id": null
+        },
+        {
+          "ref": "ko:hanoi-test-ride-before-renting",
+          "locale": "ko",
+          "slug": "hanoi-test-ride-before-renting",
+          "domain_id": "motorbike-rental",
+          "parent_id": "KO-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ko::하노이에서 오토바이 렌트 전에 시승할 때 확인할 것",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 10,
-    "file": "factory/topic-research/batches/claude-seo-az-20261028-0010.json",
+    "seq": 11,
+    "file": "factory/topic-research/batches/claude-seo-az-20261028-0011.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -1116,6 +1228,13 @@
       "seq": 9,
       "topics": 10,
       "sha256": "8b3765fb5986a884b77ca8e05c6b229e1e625119abfdf4d1b2306f34e6485240"
+    },
+    {
+      "at": "2026-10-28T12:52:55.168Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 10,
+      "topics": 10,
+      "sha256": "29271ab9eca30ed63bc7b8d93d64e2d0243229520f495453c97ddf657c61e01f"
     }
   ]
 }
