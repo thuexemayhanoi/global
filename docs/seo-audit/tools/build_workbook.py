@@ -542,8 +542,8 @@ for name, label in (("build.txt", "build.mjs --check"), ("seo-guard.txt", "seo-g
 for b in BATCHES:
     if b["id"] == "AUDIT":
         continue
-    ch.append({"date": b.get("date"), "type": "FIX_BATCH", "item": f"Batch {b['id']}: {b['title']}", "commit_or_run": (f"PR #{b['pr']} · " if b.get("pr") else "") + (b.get("merge_commit") or "pending")[:7],
-               "result": ("deployed (Pages run " + str(b["deploy_run"]) + ")" if b.get("deploy_run") else "deploy pending") + (" · live QA " + " / ".join(str(x) for x in b["live_qa"]) + " success" if b.get("live_qa") else " · live QA pending"),
+    ch.append({"date": b.get("date"), "type": b.get("type", "FIX_BATCH"), "item": f"Batch {b['id']}: {b['title']}", "commit_or_run": (f"PR #{b['pr']} · " if b.get("pr") else "") + (b.get("merge_commit") or "pending")[:7],
+               "result": b.get("result") or (("deployed (Pages run " + str(b["deploy_run"]) + ")" if b.get("deploy_run") else "deploy pending") + (" · live QA " + " / ".join(str(x) for x in b["live_qa"]) + " success" if b.get("live_qa") else " · live QA pending")),
                "evidence_url": f"{GH}/pull/{b['pr']}" if b.get("pr") else None, "notes": b.get("pagespeed") or b.get("live_qa_note") or ""})
 if LSUM:
     o = LSUM["outcomes"]

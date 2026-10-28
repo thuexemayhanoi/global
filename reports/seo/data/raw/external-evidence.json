@@ -4,6 +4,22 @@
  "github_actions": [
   {
    "workflow": "live-markup-qa.yml",
+   "run_id": 40688268258,
+   "url": "https://github.com/thuexemayhanoi/global/actions/runs/40688268258",
+   "head_sha": "6b9630a6eca883b4d15e78ce3190d213c760571e",
+   "conclusion": "success",
+   "scope": "after batch I (PR #130): every PUBLISHED URL + /search/ + /404.html HTTP 200 and byte-identical to the committed build; mismatched: []"
+  },
+  {
+   "workflow": "post-publish-qa.yml",
+   "run_id": 40688272992,
+   "url": "https://github.com/thuexemayhanoi/global/actions/runs/40688272992",
+   "head_sha": "6b9630a6eca883b4d15e78ce3190d213c760571e",
+   "conclusion": "success",
+   "scope": "after batch I (PR #130): status, lang, canonical, sitemap, robots, 404, frozen SEO fingerprints, NAP/business-schema guard, host probes; passed"
+  },
+  {
+   "workflow": "live-markup-qa.yml",
    "run_id": 40685529787,
    "url": "https://github.com/thuexemayhanoi/global/actions/runs/40685529787",
    "head_sha": "752edfcc76a02a170f0c34dcf238893f37bb857e",
@@ -243,5 +259,23 @@
   "collected": "2026-10-28",
   "markets": 9,
   "global_in_results": false
+ },
+ "topic_research": {
+  "branch": "research/claude-seo-az-20261028",
+  "batches": [
+   "factory/topic-research/batches/claude-seo-az-20261028-0001.json",
+   "factory/topic-research/batches/claude-seo-az-20261028-0002.json"
+  ],
+  "qa_runs": [
+   40688315195,
+   40689002391
+  ],
+  "ingest_commits": [
+   "620b71129",
+   "e363a8aed"
+  ],
+  "promoted": "DE-S361..DE-S380",
+  "de_ready": "87 -> 107",
+  "checked": "2026-10-28"
  }
 }
