@@ -8,19 +8,19 @@ Outcome per finding is computed by `docs/seo-audit/tools/ledger.py` from the bas
 
 | Outcome | Findings |
 |---|---:|
-| FIXED_VERIFIED | 235 |
-| FIXED_PENDING_LIVE | 2 |
-| VALIDATED_NO_FIX | 684 |
+| FIXED_VERIFIED | 237 |
+| FIXED_PENDING_LIVE | 3 |
+| VALIDATED_NO_FIX | 681 |
 | DUPLICATE | 0 |
 | EXTERNAL_DEPENDENCY | 11 |
 | BLOCKED | 1 |
 | **Total** | **933** |
 
-Tasks: 95 — BLOCKED 1, DONE 49, IN_PROGRESS 2, NOT_APPLICABLE 36, OWNER_DECISION 7.
+Tasks: 95 — BLOCKED 1, DONE 48, IN_PROGRESS 3, NOT_APPLICABLE 36, OWNER_DECISION 7.
 
 ## Before / after (same analyzer, measured rules)
 
-Findings: **933 → 731** reported by the re-audit; 0 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
+Findings: **933 → 729** reported by the re-audit; 0 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
 
 | Rule | Baseline | Re-audit | Outcomes |
 |---|---:|---:|---|
@@ -52,7 +52,7 @@ Findings: **933 → 731** reported by the re-audit; 0 new. A finding that is sti
 | U-GRAPH-REVIEW | 13 | 0 | FIXED_VERIFIED 13 |
 | U-GRAPH-UPGRADE | 9 | 1 | FIXED_VERIFIED 8, VALIDATED_NO_FIX 1 |
 | U-NO-OFFICIAL-SOURCE | 66 | 63 | VALIDATED_NO_FIX 66 |
-| U-PQ-WEAK | 123 | 101 | VALIDATED_NO_FIX 98, FIXED_VERIFIED 23, FIXED_PENDING_LIVE 2 |
+| U-PQ-WEAK | 123 | 99 | VALIDATED_NO_FIX 95, FIXED_VERIFIED 25, FIXED_PENDING_LIVE 3 |
 | U-PRICE-REVIEW | 95 | 95 | VALIDATED_NO_FIX 86, FIXED_VERIFIED 9 |
 | U-TITLE-LONG | 55 | 0 | FIXED_VERIFIED 55 |
 | U-TITLE-SIMILAR | 33 | 33 | VALIDATED_NO_FIX 33 |
@@ -62,15 +62,15 @@ Findings: **933 → 731** reported by the re-audit; 0 new. A finding that is sti
 | Locale | Baseline findings | Fixed (verified) | Fixed (pending live) | Validated | External | Blocked | Re-audit remaining |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | vi | 45 | 7 | 0 | 37 | 1 | 0 | 40 |
-| en | 77 | 14 | 0 | 62 | 1 | 0 | 64 |
-| de | 194 | 24 | 1 | 167 | 2 | 0 | 171 |
+| en | 77 | 14 | 1 | 61 | 1 | 0 | 63 |
+| de | 194 | 25 | 1 | 166 | 2 | 0 | 170 |
 | fr | 44 | 8 | 0 | 35 | 1 | 0 | 36 |
 | es | 48 | 10 | 0 | 38 | 0 | 0 | 36 |
-| nl | 53 | 9 | 1 | 43 | 0 | 0 | 45 |
+| nl | 53 | 10 | 0 | 43 | 0 | 0 | 45 |
 | zh | 114 | 17 | 0 | 97 | 0 | 0 | 101 |
 | pt | 42 | 8 | 0 | 34 | 0 | 0 | 34 |
 | ko | 152 | 70 | 0 | 81 | 1 | 0 | 91 |
-| ja | 151 | 62 | 0 | 88 | 1 | 0 | 105 |
+| ja | 151 | 62 | 1 | 87 | 1 | 0 | 105 |
 
 Site-wide findings (locale ALL/global) are counted in the totals above, not per language.
 
@@ -96,7 +96,8 @@ Site-wide findings (locale ALL/global) are counted in the totals above, not per 
 | L | Commercial-investigation research in vi, en, fr, es, nl, zh, pt, ko, ja: 90 topics (batches 0003-0011; one-way, hotel/airport delivery, rent vs buy, Easy Rider vs self-ride, platform vs shop, what the price includes, monthly maintenance, late return, damage disputes, test ride) — research data only; under the owner's SEO-only directive (2026-10-28) it is not promoted for publication | — | d8d1262 | pending | pending |
 | N | Real dates for locale Pillars and checklists: sitemap <lastmod> and JSON-LD datePublished/dateModified from data/seo/page-updates.json (launch commit ece23a28, PRs #82/#123/#127/#130) | [#133](https://github.com/thuexemayhanoi/global/pull/133) | 5312eaa | [40707292176](https://github.com/thuexemayhanoi/global/actions/runs/40707292176) | [40707742441](https://github.com/thuexemayhanoi/global/actions/runs/40707742441) [40707747550](https://github.com/thuexemayhanoi/global/actions/runs/40707747550) |
 | O | Accessibility: language-menu accessible name starts with the visible language name (WCAG 2.5.3 Label in Name) on all pages; owner backlog rewritten as OWNER_ACTIONS_LAST (SEO-only directive) | [#135](https://github.com/thuexemayhanoi/global/pull/135) | 13d77ce | [40708511676](https://github.com/thuexemayhanoi/global/actions/runs/40708511676) | [40709295964](https://github.com/thuexemayhanoi/global/actions/runs/40709295964) [40709301983](https://github.com/thuexemayhanoi/global/actions/runs/40709301983) |
-| P | Price Hubs (rental-costs) in vi, de, nl, fr, es: titles lead with the commercial head term + price modifier from the Matrix primary query and dated autocomplete evidence; H1 and descriptions unchanged; separates VI-H02 from VI-S17 and ES-H02 from ES-S03 (reviewed set metadata-reviews-p.json) | — | pending | pending | pending |
+| P | Price Hubs (rental-costs) in vi, de, nl, fr, es: titles lead with the commercial head term + price modifier from the Matrix primary query and dated autocomplete evidence; H1 and descriptions unchanged; separates VI-H02 from VI-S17 and ES-H02 from ES-S03 (reviewed set metadata-reviews-p.json) | [#136](https://github.com/thuexemayhanoi/global/pull/136) | 4e32f01 | [40711358484](https://github.com/thuexemayhanoi/global/actions/runs/40711358484) | [40711950559](https://github.com/thuexemayhanoi/global/actions/runs/40711950559) [40711957461](https://github.com/thuexemayhanoi/global/actions/runs/40711957461) |
+| Q | Hubs with a genuinely weak primary-query match (U-PQ-WEAK): EN-H01 'Types of Motorbikes to Rent in Hanoi: How to Choose', DE-H04 'Roller fahren in Hanoi: Sicherheit, Regeln, Panne und Unfall', JA-H04 'ハノイのレンタルバイク安全ガイド：故障・盗難・事故への対応'; dated autocomplete evidence; H1 and descriptions unchanged (reviewed set metadata-reviews-q.json) | — | pending | pending | pending |
 
 ## OWNER_ACTION_REQUIRED
 

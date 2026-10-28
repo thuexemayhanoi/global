@@ -57,8 +57,12 @@ round_d2 = reviewed("metadata-reviews-d2.json")
 desc_changed_c = {i for i, r in round_c.items() if r["before_description"] != r["after_description"]}
 title_changed_c = {i for i, r in round_c.items() if r["before_title"] != r["after_title"]}
 title_changed_d2 = set(round_d2)
-round_p = reviewed("metadata-reviews-p.json")
-title_changed_p = {i for i, r in round_p.items() if r["before_title"] != r["after_title"]}
+# Later SEO-only Hub rounds: matrix_id -> batch letter (P, Q, ...) for reviewed title changes.
+hub_rounds = {}
+for letter in ("P", "Q"):
+    for i, r in reviewed(f"metadata-reviews-{letter.lower()}.json").items():
+        if r["before_title"] != r["after_title"]:
+            hub_rounds[i] = letter
 price_fixed = set(cfg["overrides"]["U-PRICE-REVIEW"]["fixed_ids"])
 
 remaining = collections.Counter(key(f) for f in after)
@@ -74,8 +78,8 @@ def batch_for(f, rule):
     if rule == "S-ARTICLE-NO-IMAGE":
         return ["B", "E1"]
     if rule == "U-PQ-WEAK":
-        if mid in title_changed_p:
-            return ["P"]
+        if mid in hub_rounds:
+            return [hub_rounds[mid]]
         return ["D2"] if mid in title_changed_d2 else (["C"] if mid in title_changed_c else [])
     if rule in ("U-DESC-LONG", "U-TITLE-LONG", "U-DESC-SHORT", "U-TITLE-SIMILAR"):
         return ["C"] if (mid in round_c) else (["D2"] if mid in round_d2 else [cfg["rules"][rule]["batch"]])
@@ -99,8 +103,8 @@ for f in base:
     owner = rc.get("owner_action", "")
     if not present:
         outcome, reason = rc["resolved_outcome"], rc["why_resolved"]
-        if rule == "U-PQ-WEAK" and bs == ["P"]:
-            reason = "Title now leads with the primary-query / commercial head-term wording in reviewed Hub round P (metadata-reviews-p.json)."
+        if rule == "U-PQ-WEAK" and mid in hub_rounds:
+            reason = f"Title now carries the primary-query / commercial head-term wording in reviewed Hub round {hub_rounds[mid]} (metadata-reviews-{hub_rounds[mid].lower()}.json)."
         if outcome == "FIXED_VERIFIED" and not verified(bs):
             outcome = "FIXED_PENDING_LIVE"
         if rule == "U-PQ-WEAK" and not bs:
@@ -109,6 +113,9 @@ for f in base:
         outcome, reason = rc["remaining_outcome"], rc["why_remaining"]
         if rule == "U-DESC-LONG" and mid in desc_changed_c:
             outcome, reason, bs = "FIXED_VERIFIED", "Description shortened from over 200 to the accepted 166–200 half-width band in reviewed round C (PR #122); the >165 heuristic still counts it.", ["C"]
+        elif rule == "U-PQ-WEAK" and mid in hub_rounds:
+            outcome, bs = "FIXED_VERIFIED", [hub_rounds[mid]]
+            reason = f"Title aligned in reviewed Hub round {hub_rounds[mid]} using the market term shown by dated autocomplete; the plain token heuristic still scores the Matrix synonym below 0.5."
         elif rule == "U-PQ-WEAK" and mid in title_changed_d2:
             outcome, reason, bs = "FIXED_VERIFIED", "Title aligned with the primary query in round D2 (PR #124); the plain token heuristic still scores the synonym/variant below 0.5.", ["D2"]
         elif rule == "U-PRICE-REVIEW":
