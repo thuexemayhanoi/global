@@ -148,7 +148,8 @@ export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublis
 // text (links reduced to their anchor text) and is emitted only for at least two complete pairs.
 export const FAQ_HEADINGS={vi:"Câu hỏi thường gặp",en:"Frequently asked questions",de:"Häufige Fragen",fr:"Questions fréquentes",es:"Preguntas frecuentes",nl:"Veelgestelde vragen",zh:"常见问题",pt:"Perguntas frequentes",ko:"자주 묻는 질문",ja:"よくある質問"};
 const plainText=s=>String(s).replace(/\[([^\]]+)\]\([^)]+\)/g,"$1").replace(/\*\*([^*]+)\*\*/g,"$1").replace(/^[-*]\s+/gm,"").replace(/\s+/gu," ").trim();
-const isQuestion=s=>/[?？]$/u.test(String(s).trim());
+// Japanese questions often end with the particle か and a full stop (…ますか。) instead of a question mark.
+const isQuestion=s=>/(?:[?？]|か。)$/u.test(String(s).trim());
 export function faqEntries(markdown,code){
  const heading=FAQ_HEADINGS[code];
  const lines=String(markdown??"").replace(/\r\n/g,"\n").split("\n");

@@ -205,3 +205,14 @@ test("topic photos ship 480w and 720w variants with srcset/sizes on the root gal
   for(const code of ["vi","en","de","fr","es","nl","zh","pt","ko","ja"])assert.ok(read(code+"/index.html").includes(srcset+' sizes="'+TOPIC_SIZES.card+'"'),n+" "+code+" topic card");
  }
 });
+
+test("Japanese FAQ questions ending in か。 are recognised; checklist Article graphs carry an image",async()=>{
+ const md="## よくある質問\n\n**ヘルメットは必要ですか。** はい、必要です。\n\n**子どもも乗れますか。** 条件があります。\n";
+ assert.equal(faqEntries(md,"ja").length,2);
+ assert.equal(faqEntries("## よくある質問\n\n**これは説明です。** 本文。\n\n**もう一つの文。** 本文。\n","ja").length,0,"a plain sentence is not a question");
+ for(const code of ["vi","en","de","fr","es","nl","zh","pt","ko","ja"]){
+  const graph=JSON.parse(page("/"+code+"/checklist/").match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])["@graph"];
+  const article=graph.find(n=>n["@type"]==="Article");
+  assert.equal(article.image["@type"],"ImageObject",code);
+ }
+});
