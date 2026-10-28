@@ -207,6 +207,7 @@ def parse_page(path, loc):
                 ctx_targets.add(p)
                 ctx_anchor.setdefault(p, a.get_text(" ", strip=True))
     d["contextual_internal_targets"] = sorted(ctx_targets)
+    d["main_internal_targets"] = sorted({urlparse(a["href"]).path or "/" for a in (main.find_all("a", href=True) if main else []) if is_internal(a["href"]) and not a["href"].startswith("#")})
     d["contextual_anchors"] = ctx_anchor
     d["external_links"] = sum(ext_hosts.values())
     d["external_hosts"] = dict(ext_hosts)
@@ -400,6 +401,10 @@ def main():
             rec["canonical_self"] = p["canonical"] == ORIGIN + u
             rec["indexable"] = "noindex" not in (p["robots"] or "") and rec["canonical_self"]
             rec["contextual_outlinks"] = len(p["contextual_internal_targets"])
+            pu = parent.get("url")
+            rec["links_to_parent"] = (pu in p["internal_targets"]) if pu else None
+            rec["parent_links_here"] = (u in pages[pu]["main_internal_targets"]) if pu and pu in pages else None
+            rec["linked_from_pillar"] = any(u in pages[x]["internal_targets"] for x in (f"/{r['locale']}/",) if x in pages)
             rec["inbound_internal_all"] = inbound_all.get(u, 0)
             rec["inbound_contextual"] = inbound_ctx.get(u, 0)
             rec["inbound_anchor_variants"] = len(set(a.lower() for a in anchors_in.get(u, []) if a))
@@ -458,7 +463,7 @@ def main():
 
     data = {
         "audit_date": AUDIT_DATE,
-        "head_commit": os.popen(f"git -C {ROOT} rev-parse HEAD").read().strip(),
+        "head_commit": os.popen(f"git -C {ROOT} merge-base HEAD origin/main").read().strip() or os.popen(f"git -C {ROOT} rev-parse HEAD").read().strip(),
         "inventory": inventory,
         "non_matrix_pages": extra,
         "broken_internal_links": broken,
