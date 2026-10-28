@@ -7,19 +7,19 @@
   "branch": "research/claude-seo-az-20261028",
   "batch_session": "research-claude-seo-az-20261028",
   "created_at": "2026-10-28T12:29:58.688Z",
-  "updated_at": "2026-10-28T12:52:55.168Z",
+  "updated_at": "2026-10-28T12:54:05.535Z",
   "base_main_sha": "c1b8099f702fc540c77d4293780cc0099ab82564",
-  "last_commit_sha": "a0323dea2661c409cecb6d39ed7510cbd50b65d7",
+  "last_commit_sha": "1a20387083b413ba6dd91898e75081e931486e79",
   "contract": {
     "agents_md_sha256": "754a12f9f56248ff18882c8cee12fbd7e5fb16e07ad66d8bb078deefa0ebb321",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 100,
-    "qa_pass": 100,
+    "researched": 110,
+    "qa_pass": 110,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 90,
+    "pushed": 100,
     "pending_push": 10
   },
   "coverage": {
@@ -32,17 +32,18 @@
       "nl": 10,
       "zh": 10,
       "pt": 10,
-      "ko": 10
+      "ko": 10,
+      "ja": 10
     },
     "domains": {
-      "motorbike-rental": 76,
-      "traffic-law-safety": 24
+      "motorbike-rental": 84,
+      "traffic-law-safety": 26
     }
   },
   "last_batch": {
-    "seq": 10,
-    "file": "factory/topic-research/batches/claude-seo-az-20261028-0010.json",
-    "sha256": "29271ab9eca30ed63bc7b8d93d64e2d0243229520f495453c97ddf657c61e01f",
+    "seq": 11,
+    "file": "factory/topic-research/batches/claude-seo-az-20261028-0011.json",
+    "sha256": "cd3c9634a261124cded6d65c12b00c66c8b9825bee6c5104455bee7d91dd4ffd",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -1051,8 +1052,8 @@
       "file": "factory/topic-research/batches/claude-seo-az-20261028-0010.json",
       "sha256": "29271ab9eca30ed63bc7b8d93d64e2d0243229520f495453c97ddf657c61e01f",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "1a20387083b413ba6dd91898e75081e931486e79",
       "researched_on": "2026-10-28",
       "topics": [
         {
@@ -1156,11 +1157,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 11,
+      "file": "factory/topic-research/batches/claude-seo-az-20261028-0011.json",
+      "sha256": "cd3c9634a261124cded6d65c12b00c66c8b9825bee6c5104455bee7d91dd4ffd",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-28",
+      "topics": [
+        {
+          "ref": "ja:hanoi-rental-bike-return-in-hochiminh",
+          "locale": "ja",
+          "slug": "hanoi-rental-bike-return-in-hochiminh",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H02",
+          "subcluster": "rc-extras",
+          "key": "ja::ハノイてハイクを借りてホーチミンて返却する方法",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-rental-bike-hotel-delivery",
+          "locale": "ja",
+          "slug": "hanoi-rental-bike-hotel-delivery",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H02",
+          "subcluster": "rc-extras",
+          "key": "ja::ハノイのレンタルハイク ホテルへの配達",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:vietnam-trip-rent-or-buy-motorbike",
+          "locale": "ja",
+          "slug": "vietnam-trip-rent-or-buy-motorbike",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H02",
+          "subcluster": "rc-period",
+          "key": "ja::ヘトナム旅行てハイクを借りるか買うか",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-easy-rider-or-ride-yourself",
+          "locale": "ja",
+          "slug": "hanoi-easy-rider-or-ride-yourself",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ja::ハノイ発のハイク旅行 イーシーライターと自分て運転の比較",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-bike-rental-platform-or-shop",
+          "locale": "ja",
+          "slug": "hanoi-bike-rental-platform-or-shop",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H03",
+          "subcluster": "dc-contract",
+          "key": "ja::ハノイのハイクレンタル 予約サイトと店舗に直接頼む違い",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-bike-rental-whats-included",
+          "locale": "ja",
+          "slug": "hanoi-bike-rental-whats-included",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H02",
+          "subcluster": "rc-extras",
+          "key": "ja::ハノイのハイクレンタル料金に含まれるもの",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-monthly-rental-maintenance-who-pays",
+          "locale": "ja",
+          "slug": "hanoi-monthly-rental-maintenance-who-pays",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H02",
+          "subcluster": "rc-period",
+          "key": "ja::ハノイのハイク月額レンタル オイル交換と整備費は誰か払うか",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-rental-bike-late-return-fee",
+          "locale": "ja",
+          "slug": "hanoi-rental-bike-late-return-fee",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H02",
+          "subcluster": "rc-extras",
+          "key": "ja::ハノイてレンタルハイクの返却か遅れたら追加料金はとう計算されるか",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:vietnam-rental-bike-damage-claim-on-return",
+          "locale": "ja",
+          "slug": "vietnam-rental-bike-damage-claim-on-return",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "JA-H03",
+          "subcluster": "dc-contract",
+          "key": "ja::ヘトナムてハイク返却時に店から損傷を主張されたらとうするか",
+          "ta_id": null
+        },
+        {
+          "ref": "ja:hanoi-test-ride-before-renting",
+          "locale": "ja",
+          "slug": "hanoi-test-ride-before-renting",
+          "domain_id": "motorbike-rental",
+          "parent_id": "JA-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "ja::ハノイてハイクを借りる前の試乗て確かめること",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 11,
-    "file": "factory/topic-research/batches/claude-seo-az-20261028-0011.json",
+    "seq": 12,
+    "file": "factory/topic-research/batches/claude-seo-az-20261028-0012.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -1235,6 +1347,13 @@
       "seq": 10,
       "topics": 10,
       "sha256": "29271ab9eca30ed63bc7b8d93d64e2d0243229520f495453c97ddf657c61e01f"
+    },
+    {
+      "at": "2026-10-28T12:54:05.535Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 11,
+      "topics": 10,
+      "sha256": "cd3c9634a261124cded6d65c12b00c66c8b9825bee6c5104455bee7d91dd4ffd"
     }
   ]
 }
