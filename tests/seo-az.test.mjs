@@ -135,8 +135,10 @@ test("host probes report advisories and never throw",async()=>{
 test("A–Z reviewed metadata rows are applied, within width limits, frozen and keep the visible lead",()=>{
  const width=s=>[...s].reduce((n,c)=>n+(/[ᄀ-ᅟ⺀-꓏가-힣豈-﫿︰-﹏＀-｠￠-￦]/u.test(c)?2:1),0);
  const dir="docs/seo-audit/execution/",sets=fs.readdirSync(path.join(root,dir)).filter(f=>/^metadata-reviews(-[a-z0-9-]+)?\.json$/.test(f));
- const reviews=sets.flatMap(f=>JSON.parse(read(dir+f)));
- assert.equal(new Set(reviews.map(r=>r.id)).size,reviews.length,"a URL belongs to one A–Z review round");
+ // A later round (metadata-reviews-<name>.json, applied after the unnamed first round) supersedes an earlier row for the same URL.
+ const latest=new Map();
+ for(const f of sets.sort((a,b)=>(a==="metadata-reviews.json"?-1:b==="metadata-reviews.json"?1:a.localeCompare(b))))for(const r of JSON.parse(read(dir+f)))latest.set(r.id,r);
+ const reviews=[...latest.values()];
  const freeze=new Map(JSON.parse(read("data/seo/url-freeze.json")).urls.map(u=>[u.url,u.fingerprint]));
  const leads=JSON.parse(read("content/article-leads.json")).leads;
  assert.ok(reviews.length>=100);
@@ -203,5 +205,49 @@ test("topic photos ship 480w and 720w variants with srcset/sizes on the root gal
   const srcset='srcset="/'+n+'-480.webp 480w, /'+n+'-720.webp 720w, /'+n+'.webp 960w"';
   assert.ok(read("index.html").includes(srcset+' sizes="'+TOPIC_SIZES.gallery+'"'),n+" root gallery");
   for(const code of ["vi","en","de","fr","es","nl","zh","pt","ko","ja"])assert.ok(read(code+"/index.html").includes(srcset+' sizes="'+TOPIC_SIZES.card+'"'),n+" "+code+" topic card");
+ }
+});
+
+test("Japanese FAQ questions ending in か。 are recognised; checklist Article graphs carry an image",async()=>{
+ const md="## よくある質問\n\n**ヘルメットは必要ですか。** はい、必要です。\n\n**子どもも乗れますか。** 条件があります。\n";
+ assert.equal(faqEntries(md,"ja").length,2);
+ assert.equal(faqEntries("## よくある質問\n\n**これは説明です。** 本文。\n\n**もう一つの文。** 本文。\n","ja").length,0,"a plain sentence is not a question");
+ for(const code of ["vi","en","de","fr","es","nl","zh","pt","ko","ja"]){
+  const graph=JSON.parse(page("/"+code+"/checklist/").match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])["@graph"];
+  const article=graph.find(n=>n["@type"]==="Article");
+  assert.equal(article.image["@type"],"ImageObject",code);
+ }
+});
+
+test("execution ledger gives every baseline finding exactly one final outcome",()=>{
+ const csv=f=>{const [h,...rows]=read(f).replace(/^﻿/,"").trim().split(/\r?\n/);return {h:h.split(","),n:rows.length};};
+ const base=read("reports/seo/data/baseline-20261027/findings.csv").replace(/^﻿/,"").trim().split(/\r?\n/).slice(1).map(l=>l.split(",")[0]);
+ const summary=JSON.parse(read("docs/seo-audit/execution/ledger-summary.json"));
+ assert.equal(summary.baseline_findings,base.length);
+ const total=Object.values(summary.outcomes).reduce((a,b)=>a+b,0);
+ assert.equal(total,base.length,"every baseline finding has an outcome");
+ assert.equal(csv("docs/seo-audit/execution/execution-ledger.csv").n>=base.length,true);
+ const allowed=new Set(["FIXED_VERIFIED","FIXED_PENDING_LIVE","VALIDATED_NO_FIX","DUPLICATE","EXTERNAL_DEPENDENCY","BLOCKED"]);
+ for(const k of Object.keys(summary.outcomes))assert.ok(allowed.has(k),k);
+ assert.equal(summary.complete,summary.outcomes.FIXED_PENDING_LIVE===0,"complete only when nothing waits for production");
+});
+
+test("each locale Pillar targets its researched commercial head term in title and H1 (S-PILLAR-HEAD-TERM, owner directive 2026-10-28)",()=>{
+ const terms=JSON.parse(fs.readFileSync(path.join(root,"data/seo/commercial-head-terms.json"),"utf8")).locales;
+ const locales=JSON.parse(fs.readFileSync(path.join(root,"content/locales.json"),"utf8"));
+ const matrix=JSON.parse(fs.readFileSync(path.join(root,"data/seo/master-matrix.json"),"utf8")).rows;
+ const fold=(s,loc)=>{const t=String(s||"").toLowerCase().replace(/đ/g,"d").replace(/\s+/g," ").trim();return loc==="zh"||loc==="ja"?t.replace(/ /g,""):t;};
+ assert.equal(locales.length,10);
+ for(const l of locales){
+  const ht=terms[l.code];
+  assert.ok(ht?.head_term,"head term for "+l.code);
+  assert.ok(ht.evidence.length&&ht.evidence.every(e=>e.keyword&&e.source),"evidence with a source for "+l.code);
+  const variants=[ht.head_term,...ht.title_variants].map(v=>fold(v,l.code));
+  const pillar=matrix.find(r=>r.role==="PILLAR"&&r.locale===l.code);
+  assert.match(pillar.search_intent,/^commercial/);
+  for(const [field,value] of [["primary_query",pillar.primary_query],["title",l.title],["h1",l.h1]])
+   assert.ok(variants.some(v=>fold(value,l.code).includes(v)),`${l.code} ${field} "${value}" lacks the head term`);
+  const html=fs.readFileSync(path.join(root,l.code,"index.html"),"utf8");
+  assert.ok(html.includes(">"+l.h1.replace(/&/g,"&amp;").replace(/'/g,"&#39;")+"<")||html.includes(l.h1),l.code+" H1 rendered");
  }
 });

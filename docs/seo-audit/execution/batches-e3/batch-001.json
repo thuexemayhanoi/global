@@ -1,0 +1,162 @@
+{
+  "batch": 1,
+  "status": "LOCAL_GATES_PASSED_AWAITING_CI_DEPLOY",
+  "branch": "seo/az-exec-e-ledger",
+  "ids": [
+    "KO-S16",
+    "JA-S16",
+    "JA-S23"
+  ],
+  "titles_changed": 3,
+  "descriptions_changed": 0,
+  "changed_files": [
+    "assets/search-index/ja-0000.json",
+    "assets/search-index/ko-0000.json",
+    "content/articles/JA-S16.json",
+    "content/articles/JA-S23.json",
+    "content/articles/KO-S16.json",
+    "data/seo/url-freeze.json",
+    "ja/guides/kyuyu/index.html",
+    "ja/guides/passport-azuke/index.html",
+    "ko/guides/yeogwon-bojeunggeum/index.html"
+  ],
+  "checks": [
+    {
+      "script": "scripts/build.mjs",
+      "args": [
+        "--check"
+      ],
+      "output_sha256": "45d5fddb881adc4bae5235f00734caec80d6dc7c6653b2d5c29c4a9d462ce374",
+      "last_line": "Verified 1108 static files"
+    },
+    {
+      "script": "scripts/seo/seo-guard.mjs",
+      "args": [
+        "--strict"
+      ],
+      "output_sha256": "74883343295bbe5fdbabcf064f651e669dc4bc8408a15ce466acca980d8d7fa7",
+      "last_line": "SEO_GUARD_PASS ✓ {\"mode\":\"SEO_PROTECTION_GUARD_READ_ONLY\",\"frozen_urls\":1079,\"published_urls\":1079,\"planned_urls_guarded\":3296,\"html_scanned\":1081,\"fail\":0,\"warn\":197}"
+    },
+    {
+      "script": "scripts/build.mjs",
+      "args": [],
+      "output_sha256": "e00426f9f4bebdb5c820181337b89b130687e31a381994ca0947bb6f53160285",
+      "last_line": "Generated 1108 static files"
+    },
+    {
+      "script": "scripts/seo/content-graph.mjs",
+      "args": [
+        "--write"
+      ],
+      "output_sha256": "c4df67fcb4160fc6cc5e5b51fcb91aa6fb3cd1c53b1a3aad8c796e76cf44f1e3",
+      "last_line": "CONTENT_GRAPH_WRITTEN {\"rows\":2130,\"published\":1079,\"idea\":1051,\"locales\":10,\"candidates\":1311,\"silos\":330,\"edges\":4496,\"actions\":{\"KEEP\":1078,\"UPGRADE\":1,\"CREATE\":2303,\"REVIEW\":59},\"review_pairs\":34}"
+    },
+    {
+      "script": "scripts/build.mjs",
+      "args": [
+        "--check"
+      ],
+      "output_sha256": "45d5fddb881adc4bae5235f00734caec80d6dc7c6653b2d5c29c4a9d462ce374",
+      "last_line": "Verified 1108 static files"
+    },
+    {
+      "script": "scripts/seo/seo-guard.mjs",
+      "args": [
+        "--strict"
+      ],
+      "output_sha256": "74883343295bbe5fdbabcf064f651e669dc4bc8408a15ce466acca980d8d7fa7",
+      "last_line": "SEO_GUARD_PASS ✓ {\"mode\":\"SEO_PROTECTION_GUARD_READ_ONLY\",\"frozen_urls\":1079,\"published_urls\":1079,\"planned_urls_guarded\":3296,\"html_scanned\":1081,\"fail\":0,\"warn\":197}"
+    },
+    {
+      "script": "scripts/seo/fact-guard.mjs",
+      "args": [],
+      "output_sha256": "1daff996d8a2e450f25e1a88b0e23e34a9aef43d0c38acf3fd9fc90f59df7a3b",
+      "last_line": "FACT_GUARD_PASS ✓ {\"fail\":0,\"warn\":743,\"mode\":\"READ_ONLY_ANTI_FABRICATION\"}"
+    },
+    {
+      "script": "scripts/seo/content-graph.mjs",
+      "args": [
+        "--check"
+      ],
+      "output_sha256": "5ec4d802bcab8bd80daef69e41c3442db13b5d7471b6d36ce37ac5af57e5c24a",
+      "last_line": "CONTENT_GRAPH_VALID {\"rows\":2130,\"published\":1079,\"idea\":1051,\"locales\":10,\"candidates\":1311,\"silos\":330,\"edges\":4496,\"actions\":{\"KEEP\":1078,\"UPGRADE\":1,\"CREATE\":2303,\"REVIEW\":59},\"review_pairs\":34}"
+    },
+    {
+      "script": "scripts/seo/validate-plan.mjs",
+      "args": [],
+      "output_sha256": "0fbf03744a581fb5ede8745bcdedb2e6e060df91782277329ba9247d785d06ac",
+      "last_line": "}"
+    },
+    {
+      "script": "scripts/nav-qa.mjs",
+      "args": [],
+      "output_sha256": "31b43377e96d6ca258edbe23caaa9d48f62e0bb7c1d38ec41d72ab217b64d35d",
+      "last_line": "Shared navigation QA PASS — 10 locales, 4 hubs and 8 child labels each, zero IDEA hyperlinks"
+    },
+    {
+      "script": "scripts/seo/audit-static.mjs",
+      "args": [
+        "--fail-p0"
+      ],
+      "output_sha256": "c1d4f65ace68e1c37c5c801ce008dc44bc3277b27dacc9c9a62c8585cf78f6f6",
+      "last_line": "}"
+    }
+  ],
+  "records": [
+    {
+      "id": "KO-S16",
+      "url": "/ko/guides/yeogwon-bojeunggeum/",
+      "locale": "ko",
+      "before_title": "여권을 오토바이 렌트 보증금으로 맡길 때의 위험과 대안",
+      "before_description": "베트남 정령 282/2025가 여권 담보를 어떻게 다루는지, 외교부와 각국 정부의 당부, 렌트 업체에 여권 대신 제안할 대안, 이미 맡긴 경우의 대처법을 정리했습니다.",
+      "after_title": "베트남 오토바이 렌트 시 여권을 맡기는 위험과 대안",
+      "after_description": "베트남 정령 282/2025가 여권 담보를 어떻게 다루는지, 외교부와 각국 정부의 당부, 렌트 업체에 여권 대신 제안할 대안, 이미 맡긴 경우의 대처법을 정리했습니다.",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z re-audit regression fix (U-PQ-WEAK): Round C shortened the title (67→53) and dropped 베트남 from the primary query '베트남 오토바이 렌트 여권 맡기기'; this restores it within 60 units.",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added; description and H1 unchanged.",
+      "width_review": "Unicode East-Asian-width: title 53→49; description unchanged. No browser/SERP pixel measurement.",
+      "primary_query": "베트남 오토바이 렌트 여권 맡기기",
+      "search_intent": "commercial_investigation",
+      "protected_packet_sha256": "274c22c8e8159827b75c257146595eac1576c9a219a5fddf329f62fd49c3423b"
+    },
+    {
+      "id": "JA-S16",
+      "url": "/ja/guides/passport-azuke/",
+      "locale": "ja",
+      "before_title": "パスポートをバイクの保証金に預けるリスクと代替案",
+      "before_description": "ベトナムの政令282/2025が旅券の質入れをどう扱うか、日本政府と各国政府の注意喚起、店に旅券を渡さずに済む代替案、すでに預けてしまった場合の対処をまとめました。",
+      "after_title": "ベトナムのレンタルバイクでパスポートを預けるリスクと代替案",
+      "after_description": "ベトナムの政令282/2025が旅券の質入れをどう扱うか、日本政府と各国政府の注意喚起、店に旅券を渡さずに済む代替案、すでに預けてしまった場合の対処をまとめました。",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z re-audit regression fix (U-PQ-WEAK): Round C shortened the title (72→48) and dropped ベトナム and レンタル from the primary query 'ベトナム バイク レンタル パスポート 預ける'; this restores them within 60 units.",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added; description and H1 unchanged.",
+      "width_review": "Unicode East-Asian-width: title 48→58; description unchanged. No browser/SERP pixel measurement.",
+      "primary_query": "ベトナム バイク レンタル パスポート 預ける",
+      "search_intent": "commercial_investigation",
+      "protected_packet_sha256": "9d24a614f19f9bd272454517045b66e84b94cf72b2e8f9738c517b45080047e9"
+    },
+    {
+      "id": "JA-S23",
+      "url": "/ja/guides/kyuyu/",
+      "locale": "ja",
+      "before_title": "ベトナムの給油：E5 RON92とRON95（E10）の違い",
+      "before_description": "ベトナムの給油を解説します。E5 RON92と2026年6月からE10に切り替わったRON95の違い、レンタルスクーターに合う方、スタンドでの手順と注意点までをまとめました。ハノイでの給油もこれで安心です。",
+      "after_title": "ベトナムのバイク給油：ガソリンE5 RON92とRON95の違い",
+      "after_description": "ベトナムの給油を解説します。E5 RON92と2026年6月からE10に切り替わったRON95の違い、レンタルスクーターに合う方、スタンドでの手順と注意点までをまとめました。ハノイでの給油もこれで安心です。",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z re-audit regression fix (U-PQ-WEAK): Round C shortened the title (72→44) and dropped バイク from the primary query 'ベトナム バイク ガソリン 92 95'; this restores バイク and ガソリン within 60 units (E10 dropped, no new number).",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added; description and H1 unchanged.",
+      "width_review": "Unicode East-Asian-width: title 44→51; description unchanged. No browser/SERP pixel measurement.",
+      "primary_query": "ベトナム バイク ガソリン 92 95",
+      "search_intent": "informational",
+      "protected_packet_sha256": "0129f55282b20ddae993bfe80214547fc62a5e1a950cb08ea646ffd580fce692"
+    }
+  ],
+  "production_verified": false
+}

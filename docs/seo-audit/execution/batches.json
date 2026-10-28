@@ -1,0 +1,124 @@
+{
+ "note": "Execution batches of the A–Z Matrix (owner directive 2026-10-28). Deploy = GitHub Pages pages-build-deployment run; live QA = live-markup-qa.yml (byte-identical HTML on every PUBLISHED URL) and post-publish-qa.yml (status, lang, canonical, sitemap, fingerprints, NAP). A later live QA run covers every earlier batch because each run checks the whole site at the current main commit.",
+ "batches": [
+  {
+   "id": "AUDIT",
+   "title": "Global SEO A–Z audit, Master Matrix and workbook (read-only)",
+   "pr": 119,
+   "merge_commit": "d369bf2a586014f1027a7a8dd55c94155decf04e",
+   "deploy_run": 40610424609,
+   "date": "2026-10-28"
+  },
+  {
+   "id": "A",
+   "title": "Owner directive, independent SEO positioning, Pillar intent labels",
+   "pr": 120,
+   "merge_commit": "268b334d71d0e507c5a691b363bac186d1012aed",
+   "deploy_run": 40611155294,
+   "date": "2026-10-28",
+   "live_qa": [
+    40635345660,
+    40635348101
+   ],
+   "live_qa_note": "Matrix-only change; covered by the first whole-site live QA after it (runs at d9e1d36, which contains 268b334)."
+  },
+  {
+   "id": "B",
+   "title": "Technical SEO: CLS fix, FAQPage, sitemap lastmod, topic images, checklist sources, host probes",
+   "pr": 121,
+   "merge_commit": "d9e1d36af7eb3f2afd03f0aab394ad06ee9358ac",
+   "deploy_run": 40634810514,
+   "live_qa": [
+    40635345660,
+    40635348101
+   ],
+   "date": "2026-10-28"
+  },
+  {
+   "id": "C",
+   "title": "Reviewed metadata: 55 titles, 78 descriptions",
+   "pr": 122,
+   "merge_commit": "84e44e600a7b3f17f9c41619b9192a49652d289e",
+   "deploy_run": 40635997465,
+   "live_qa": [
+    40636257766,
+    40636260494
+   ],
+   "date": "2026-10-28"
+  },
+  {
+   "id": "D1",
+   "title": "Checklist depth, overlap reasons, editorial transparency, source re-check tool",
+   "pr": 123,
+   "merge_commit": "e971ad24933a73da493d050d0fadaea8db5b4ab0",
+   "deploy_run": 40637416062,
+   "live_qa": [
+    40638975548,
+    40638978172
+   ],
+   "date": "2026-10-28"
+  },
+  {
+   "id": "D2",
+   "title": "21 query-aligned titles, one Portuguese variant on PT pages",
+   "pr": 124,
+   "merge_commit": "c43d6618b36fbe04e53c6a8320f3a38bb7aaee8f",
+   "deploy_run": 40638328327,
+   "live_qa": [
+    40638975548,
+    40638978172
+   ],
+   "date": "2026-10-28"
+  },
+  {
+   "id": "D3",
+   "title": "Sourced-price re-check: 9 articles corrected, 86 verified",
+   "pr": 125,
+   "merge_commit": "a34800ad820d092dfdb625934aad13e719fafb41",
+   "source_recheck_run": 40637453532,
+   "date": "2026-10-28",
+   "deploy_run": 40639567249,
+   "live_qa": [
+    40640026971,
+    40640030263
+   ]
+  },
+  {
+   "id": "D4",
+   "title": "Responsive topic photos (480w/720w srcset)",
+   "pr": 126,
+   "merge_commit": "eac8fe216af20e78d73c4b31f10d0f3a4ca391a7",
+   "date": "2026-10-28",
+   "deploy_run": 40639921194,
+   "live_qa": [
+    40640026971,
+    40640030263
+   ],
+   "pagespeed": "Ubersuggest PSI forced 2026-10-28 after deploy: mobile SI 2.4 s (was 4.0 s), LCP 1.7 s, CLS 0"
+  },
+  {
+   "id": "E1",
+   "title": "Re-audit gaps: checklist Article image, Japanese FAQ questions",
+   "pr": null,
+   "date": "2026-10-28"
+  },
+  {
+   "id": "E2",
+   "title": "Privacy and terms meta descriptions",
+   "pr": null,
+   "date": "2026-10-28"
+  },
+  {
+   "id": "E3",
+   "title": "Re-audit regression fixes: 3 query-aligned titles, KO Pillar description",
+   "pr": null,
+   "date": "2026-10-28"
+  },
+  {
+   "id": "G",
+   "title": "Commercial head terms per locale; Pillar H1/description alignment (owner directive 2026-10-28)",
+   "pr": null,
+   "date": "2026-10-28"
+  }
+ ]
+}
