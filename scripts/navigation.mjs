@@ -38,7 +38,8 @@ export function enhanceNavigation(files, locales, matrix) {
     return '<details class="nav2-topic" data-topic="'+esc(hub.id)+'"><summary>'+label+' <span aria-hidden="true">⌄</span></summary><div class="nav2-panel"><strong>'+label+'</strong><a class="nav2-parent-link" href="'+esc(link)+'">'+esc(translations[l.code][8])+' →</a>'+children(hub.id).map(r=>childItem(r,l.code)).join('')+'</div></details>';
   }
   function languages(l,isChecklist){
-    return '<details class="lang nav2-lang"><summary aria-label="'+esc(translations[l.code][9])+'">🌐 '+esc(l.flag)+' '+esc(l.name)+' ⌄</summary><div class="lang-options">'+locales.map(to=>'<a href="/'+esc(to.code)+'/'+(isChecklist?'checklist/':'')+'" lang="'+esc(to.htmlLang)+'"'+(to.code===l.code?' aria-current="page"':'')+'>'+esc(to.flag)+' '+esc(to.name)+'</a>').join('')+'</div></details>';
+    // The accessible name starts with the visible language name (WCAG 2.5.3 Label in Name); icons are hidden from AT.
+    return '<details class="lang nav2-lang"><summary aria-label="'+esc(l.name+' · '+translations[l.code][9])+'"><span aria-hidden="true">🌐 '+esc(l.flag)+'</span> '+esc(l.name)+' <span aria-hidden="true">⌄</span></summary><div class="lang-options">'+locales.map(to=>'<a href="/'+esc(to.code)+'/'+(isChecklist?'checklist/':'')+'" lang="'+esc(to.htmlLang)+'"'+(to.code===l.code?' aria-current="page"':'')+'>'+esc(to.flag)+' '+esc(to.name)+'</a>').join('')+'</div></details>';
   }
   function navHead(l,isChecklist) {
     const tr=translations[l.code], groups=hubs(l.code);

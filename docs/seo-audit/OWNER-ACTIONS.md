@@ -1,14 +1,13 @@
-# Việc chờ chủ sở hữu (ghi để xử lý sau)
+# OWNER_ACTIONS_LAST
 
-Cập nhật 28/10/2026. Agent không tự làm được các việc dưới đây, vì cần tài khoản, quyền hoặc quyết định của chủ sở hữu. Các việc SEO khác vẫn đang tiếp tục. Không việc nào trong danh sách này được đánh dấu DONE cho tới khi chủ sở hữu làm xong.
+Backlog of items that need an outside account, measurement or the owner's identity. Under the owner directive of 2026-10-28 (`approvals/owner-directive-20261028-seo-only.json`) these items never interrupt SEO work: they are listed here, and SEO on published pages continues. No item is marked DONE until it is actually done.
 
-| # | Việc | Vì sao cần | Cách làm ngắn gọn |
-|---|---|---|---|
-| 1 | **Kết nối Google Search Console** | Chưa có số liệu thứ hạng, lượt hiển thị, trang được index | Thêm property `global.rentbikehanoi.com` (thẻ xác minh đã có trên trang chủ), gửi `https://global.rentbikehanoi.com/sitemap.xml`, cấp quyền xem cho OpenSEO |
-| 2 | **Người viết bài đang dừng** | Có 1.041 chủ đề sẵn sàng viết nhưng không có bài mới. Ba "chỗ viết" W1, W2, W3 vẫn bị ba phiên AI cũ giữ (không hoạt động từ 25/10), kèm 30 chủ đề tiếng Đức | Chọn một: mở lại các phiên đó, **hoặc** báo ba chỗ đó là OFFLINE để hệ thống trả lại chủ đề. Sau đó một phiên mới mới được nhận chỗ và viết. Agent không được tự chiếm chỗ của phiên khác |
-| 3 | **Duyệt kiến trúc Hub mới** | 690 chủ đề đã nghiên cứu (hành trình từ Hà Nội, xe điện, du lịch…) đang bị khóa vì site hiện chỉ có 4 Hub | Đọc [`HUB-ARCHITECTURE-PROPOSAL-20261028.md`](HUB-ARCHITECTURE-PROPOSAL-20261028.md); khuyến nghị phương án A (`routes-trips`) |
-| 4 | **Off-page** | DA 2, 32 tên miền trỏ về; cần liên kết thật | Làm theo [`COMPETITOR-GAP-AND-OFFPAGE-PLAN.md`](COMPETITOR-GAP-AND-OFFPAGE-PLAN.md) bằng tài khoản thật; không mua link |
-| 5 | **Credit công cụ** | Hết quota đo lượng tìm kiếm (es, zh, pt) và chưa theo dõi thứ hạng | Duyệt credit OpenSEO/Ubersuggest cho theo dõi 10 từ khóa chính |
-| 6 | **GA4** | Chưa có số liệu truy cập | Quyết định có dùng hay không; nếu có thì cung cấp Measurement ID |
-| 7 | **Dữ liệu doanh nghiệp C1–C3** | Mâu thuẫn giờ mở cửa, ngưỡng giao xe, tên trên Google Business Profile | Xác nhận số đúng kèm bằng chứng có ngày, rồi sửa qua PR có review |
-| 8 | *(Tùy chọn)* Người biên tập | Hiển thị tên tác giả thật | Chỉ khi có người thật đọc duyệt bài |
+| # | Item | Effect while missing |
+|---|---|---|
+| 1 | Google Search Console data for global.rentbikehanoi.com | Rankings, impressions, indexing and field Core Web Vitals are unmeasured; Top 1–3 stays a target, not a verified result |
+| 2 | Analytics (GA4 or none) | No traffic or conversion data |
+| 3 | Off-page links from real accounts (plan: `COMPETITOR-GAP-AND-OFFPAGE-PLAN.md`) | Authority stays at DA 2 / 32 referring domains (Ubersuggest, 2026-10-28) |
+| 4 | Keyword volumes for es, zh, pt and exact ko/ja variants; rank tracking | Head terms for those markets rest on autocomplete and SERP evidence, not volumes |
+| 5 | Business data conflicts C1–C3 (hours, delivery threshold, GBP name) in `data/business/reference.json` | Business schema and NAP stay unpublished (protected) |
+| 6 | Named human editor (optional) | Bylines stay organisational |
+| 7 | New-Hub architecture (`HUB-ARCHITECTURE-PROPOSAL-20261028.md`) and PR #118 | Deferred: SEO-only mode creates no new Hubs or URLs |
