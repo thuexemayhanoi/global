@@ -26,6 +26,8 @@ d = json.load(open(os.path.join(DATA, "audit-data.json"), encoding="utf-8"))
 ext = json.load(open(os.path.join(DATA, "raw", "external-evidence.json"), encoding="utf-8"))
 kw = json.load(open(os.path.join(DATA, "raw", "keyword-metrics.json"), encoding="utf-8"))
 SHA = d["head_commit"]
+LIVE_SHA = ext["github_actions"][0].get("head_sha")
+LIVE_VERIFIED_FOR_SNAPSHOT = bool(SHA == LIVE_SHA and ext["github_actions"][0].get("conclusion") == "success")
 inv = d["inventory"]
 pub = [r for r in inv if r["matrix_status"] == "PUBLISHED"]
 articles = [r for r in pub if r["role"] in ("HUB", "SUPPORT") and not r["matrix_id"].endswith("CHECKLIST")]
@@ -353,8 +355,8 @@ for r in inv + [{"matrix_id": None, "url": x["url"], "locale": "global", "role":
     published = r["matrix_status"] == "PUBLISHED"
     master.append({**{k2: v for k2, v in r.items() if k2 not in ("h2_outline", "hreflang", "review_pairs", "seo_guard_warns", "sha256")},
                    "audit_id": f"A-{r.get('matrix_id') or r['url'].strip('/').replace('/', '-').upper() or 'ROOT'}",
-                   "http_status_live": 200 if published or r["matrix_status"] == "NOT_IN_MATRIX" else None,
-                   "live_evidence": "VERIFIED (live markup QA run 40604722403)" if published or r["matrix_status"] == "NOT_IN_MATRIX" else "N/A (not a URL yet)",
+                   "http_status_live": 200 if LIVE_VERIFIED_FOR_SNAPSHOT and (published or r["matrix_status"] == "NOT_IN_MATRIX") else None,
+                   "live_evidence": (f"VERIFIED (live markup QA run {ext['github_actions'][0]['run_id']})" if LIVE_VERIFIED_FOR_SNAPSHOT else "NOT_REVERIFIED (latest live run covers a different commit)") if published or r["matrix_status"] == "NOT_IN_MATRIX" else "N/A (not a URL yet)",
                    "pq_volume": k.get("search_volume") if k else None, "pq_intent_market": k.get("main_intent") if k else None,
                    "pq_kd": k.get("keyword_difficulty") if k else None,
                    "keyword_evidence": ("VERIFIED" if k else ("VERIFIED_NO_VOLUME" if kwm.get(r["locale"], {}).get("queried", 0) >= 50 and published else "NOT_CHECKED")),
