@@ -251,3 +251,16 @@ test("each locale Pillar targets its researched commercial head term in title an
   assert.ok(html.includes(">"+l.h1.replace(/&/g,"&amp;").replace(/'/g,"&#39;")+"<")||html.includes(l.h1),l.code+" H1 rendered");
  }
 });
+
+test("each locale Pillar answers the commercial-investigation questions: ordered rental steps, provider criteria and FAQPage = visible FAQ (batch I)",()=>{
+ const locales=JSON.parse(fs.readFileSync(path.join(root,"content/locales.json"),"utf8"));
+ for(const l of locales){
+  const html=fs.readFileSync(path.join(root,l.code,"index.html"),"utf8");
+  const steps=html.match(/<ol class="section-list section-steps">([\s\S]*?)<\/ol>/);
+  assert.ok(steps,l.code+" ordered steps rendered");
+  assert.ok((steps[1].match(/<li>/g)||[]).length>=5,l.code+" at least five steps");
+  assert.ok(l.extraSections.length>=3&&l.extraSections.some(s=>(s.bullets||[]).length>=5),l.code+" provider criteria section");
+  assert.ok(l.faq.length>=5,l.code+" five FAQ entries");
+  assert.equal((html.match(/"@type":"Question"/g)||[]).length,l.faq.length,l.code+" FAQPage mirrors the visible FAQ");
+ }
+});
