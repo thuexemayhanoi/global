@@ -1,0 +1,976 @@
+{
+ "batch": "T",
+ "date": "2026-10-28",
+ "rule": "Each price/deposit (rental-costs) Supporting page without an FAQ gets 3 visible FAQ pairs built only from facts and source links already in its own body: every number appears in the body, every URL is copied from the body, no currency amount, no rental-business name, questions distinct from the page's H2s, the Pillar FAQ, the price Hub FAQ and sibling FAQs. Checked by tests/seo-az.test.mjs (batch T).",
+ "pages": {
+  "VI-S03": {
+   "insert_before": "## Ba câu hỏi nên hỏi tiệm trước khi chọn mốc thời gian",
+   "faq": [
+    {
+     "q": "Thuê xe theo tuần nhưng trả sớm thì có được hoàn tiền những ngày chưa dùng không?",
+     "a": "Thường là không tự động: khi bạn rút ngắn chuyến đi, phần còn lại của gói tuần không được hoàn lại theo từng ngày. Có tiệm chấp nhận chuyển phần dư sang gói khác hoặc cộng dồn, nhưng đó là thỏa thuận riêng chứ không phải quy tắc mặc định. Hãy hỏi trước cách xử lý khi trả sớm và giữ câu trả lời bằng văn bản hoặc tin nhắn."
+    },
+    {
+     "q": "Thuê xe theo ngày mà muốn đổi xe giữa chuyến thì có mất thêm tiền không?",
+     "a": "Có thể có, vì khi thuê theo ngày, mỗi lần đổi xe giữa chuyến có thể bị tính như một hợp đồng mới. Nếu bạn định đổi loại xe theo cung đường, chẳng hạn xe số trong phố rồi xe địa hình cho ngoại thành, hãy hỏi tiệm khoản chênh lệch ngay từ đầu. Đừng để đến lúc giao xe mới để tiệm tự quyết định giúp bạn."
+    },
+    {
+     "q": "Chuyến đi khoảng một tuần thì nên thuê xe theo ngày hay theo tuần?",
+     "a": "Với chuyến khoảng năm đến mười ngày, mốc tuần thường là lựa chọn cân bằng, vì thuê tuần giúp giảm giá nếu bạn đã chắc lịch trình. Ngược lại, cứ thuê lẻ từng ngày cho chuyến dài hơn khoảng một tuần là cách tốn kém nhất. Thuê ngày chỉ hợp lý khi lịch trình chưa chắc, chuyến đi chỉ hai, ba ngày hoặc bạn muốn thử xe trước khi cam kết lâu hơn."
+    }
+   ]
+  },
+  "VI-S04": {
+   "insert_before": "## Kết luận ngắn",
+   "faq": [
+    {
+     "q": "Cửa hàng giữ lại tiền cọc thêm vài ngày để chờ phạt nguội có được không?",
+     "a": "Việc này tùy vào điều khoản hai bên đã thỏa thuận, vì số tiền bạn nhận lại do các điều khoản khấu trừ trong hợp đồng quyết định. Trước khi ký, hãy hỏi cửa hàng có giữ thêm cọc để chờ thông báo phạt nguội không, giữ trong bao lâu và giữ bao nhiêu. Nếu có, yêu cầu ghi rõ ngày hoàn cọc và số tài khoản nhận tiền."
+    },
+    {
+     "q": "Tự sửa xe thuê bị hỏng dọc đường có bị trừ tiền cọc không?",
+     "a": "Có thể, vì sửa chữa tự ý thường bị coi là lý do để trừ cọc. Khi xe gặp sự cố, hãy báo ngay cho cửa hàng bằng tin nhắn để không bị quy là che giấu, hỏi ý kiến họ trước khi sửa và giữ lại hóa đơn. Lỗi có sẵn như đèn, phanh hay khóa không hoạt động nên được ghi vào biên bản ngay lúc nhận xe."
+    },
+    {
+     "q": "Khi trả xe, cửa hàng muốn trừ cọc vì vết xước thì nên làm gì?",
+     "a": "Đề nghị nhân viên kiểm tra xe ngay trước mặt bạn và đối chiếu với ảnh chụp lúc nhận. Nếu cửa hàng vẫn muốn trừ tiền, yêu cầu báo giá bằng văn bản, hỏi rõ thay phụ tùng nào và xin giữ phụ tùng cũ nếu bạn phải trả tiền thay mới. Ảnh có mốc thời gian, biên bản giao xe có chữ ký và tin nhắn trao đổi là bằng chứng mạnh nhất của bạn."
+    }
+   ]
+  },
+  "VI-S16": {
+   "insert_before": "## Tóm lại",
+   "faq": [
+    {
+     "q": "Để lại căn cước làm cọc thì người thuê có bị phạt không, hay chỉ cửa hàng bị phạt?",
+     "a": "Cả hai phía đều nằm trong phạm vi bị cấm: [khoản 7 Điều 7 Luật Căn cước](https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Luat-Can-cuoc-26-2023-QH15-552422.aspx) cấm cả cầm cố lẫn nhận cầm cố thẻ căn cước. [Nghị định 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) đặt mức phạt tiền cho cả hai hành vi này tại điểm b khoản 4 Điều 11. Nếu bên nhận giữ thẻ là một tổ chức, chẳng hạn công ty cho thuê xe, mức phạt gấp đôi theo khoản 2 Điều 5 của [nghị định](https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/11/282-cp.signed.pdf)."
+    },
+    {
+     "q": "Cửa hàng nhất quyết đòi giữ thẻ căn cước gốc thì nên làm gì?",
+     "a": "Hãy hỏi rõ cửa hàng đang lo loại thiệt hại nào và khoản cọc bao nhiêu thì họ thấy đủ, rồi đề nghị cọc tiền mặt hoặc chuyển khoản có biên nhận, hợp đồng thuê bằng văn bản và cho xem căn cước điện tử để đối chiếu. Khoản cọc có số tiền cụ thể giúp cả hai bên minh bạch hơn, còn việc cầm cố thẻ căn cước đã bị [Luật Căn cước](https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Luat-Can-cuoc-26-2023-QH15-552422.aspx) cấm. Nếu nơi đó chỉ chấp nhận thẻ gốc, hãy chọn cửa hàng khác."
+    },
+    {
+     "q": "Thẻ căn cước đang nằm ở cửa hàng mà bị kiểm tra giấy tờ thì sao?",
+     "a": "Bạn có thể bị xử lý nếu không có căn cước điện tử để xuất trình thay. Theo [điểm a khoản 1 Điều 11 Nghị định 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx), không xuất trình thẻ căn cước hoặc căn cước điện tử khi cơ quan, người có thẩm quyền yêu cầu kiểm tra bị cảnh cáo hoặc phạt tiền. Vì vậy hãy giữ thẻ gốc bên mình, hoặc ít nhất có sẵn căn cước điện tử trên ứng dụng định danh quốc gia."
+    }
+   ]
+  },
+  "VI-S17": {
+   "insert_before": "## Câu hỏi nên hỏi trước khi trả tiền",
+   "faq": [
+    {
+     "q": "Cửa hàng có được thu khoản phí chưa thỏa thuận trước khi thuê xe không?",
+     "a": "Luật không cho phép ép bạn trả tiền cho dịch vụ đã cung cấp mà không có thỏa thuận trước, theo Điều 10 Luật Bảo vệ quyền lợi người tiêu dùng số 19/2023/QH15 ([toàn văn Luật](https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.aspx)). Điều 21 của Luật còn buộc bên kinh doanh cung cấp thông tin chính xác, đầy đủ về giá, phí và chi phí. Du khách thuê xe để tự đi lại phù hợp với định nghĩa người tiêu dùng, còn việc áp dụng trong từng tranh chấp do cơ quan có thẩm quyền quyết định."
+    },
+    {
+     "q": "Giá gửi xe mới của Hà Nội có áp dụng ở bãi xe khách sạn hay bãi tư nhân không?",
+     "a": "Không hẳn: Quyết định số 5794/QĐ-UBND chỉ áp dụng cho các điểm trông giữ xe tạm thời trên lòng đường, hè phố được đầu tư bằng ngân sách nhà nước, theo [bài của báo Dân trí](https://dantri.com.vn/thoi-su/ha-noi-tang-gap-doi-gia-trong-xe-o-long-duong-via-he-20261015191232581.htm) và [văn bản quyết định đính kèm](https://dcdn.dantri.com.vn/2026/10/15/qd-ubnd-tp-so-5794-ngay-151026-1792076607473.pdf). Khách sạn, trung tâm thương mại hay bãi tư nhân có thể áp giá riêng, vì vậy nên hỏi giá trước khi gửi và cất giữ vé xe."
+    },
+    {
+     "q": "Điều khoản trong hợp đồng thuê xe mơ hồ thì được hiểu theo hướng nào?",
+     "a": "Theo hướng có lợi cho người tiêu dùng, vì Điều 24 Luật Bảo vệ quyền lợi người tiêu dùng yêu cầu giải thích như vậy với điều khoản được hiểu khác nhau ([toàn văn Luật](https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.aspx)). Điều 26 buộc bên kinh doanh dành thời gian hợp lý để bạn nghiên cứu hợp đồng theo mẫu trước khi giao kết và cung cấp bản sao trong 07 ngày làm việc nếu bản của bạn bị mất. Hãy đọc kỹ trước khi trả tiền và chụp lại bản đã ký."
+    }
+   ]
+  },
+  "VI-S22": {
+   "insert_before": "## Checklist tuần đầu tiên",
+   "faq": [
+    {
+     "q": "Chậm trả tiền thuê xe tháng thì bên cho thuê có được chấm dứt hợp đồng không?",
+     "a": "Có thể, nếu bạn trả tiền thuê theo kỳ hạn mà không trả trong ba kỳ liên tiếp. Theo Điều 479 Bộ luật Dân sự 2015, khi đó bên cho thuê có quyền đơn phương chấm dứt thực hiện hợp đồng, trừ trường hợp có thỏa thuận khác ([trang chính thức về hợp đồng thuê tài sản theo Bộ luật Dân sự 2015](https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/53460/nhung-dieu-can-biet-ve-hop-dong-thue-tai-san-theo-bo-luat-dan-su-2015)). Vì vậy hãy ghi rõ thời điểm thanh toán vào hợp đồng và trả đúng hạn."
+    },
+    {
+     "q": "Sinh viên thuê xe theo tháng có trả xe sớm khi hết học kỳ được không?",
+     "a": "Việc này tùy vào thỏa thuận với bên cho thuê, nên hãy trao đổi ngay từ đầu. Thời gian ở Hà Nội của sinh viên thường tính theo học kỳ, vì vậy nên hỏi trước về việc trả xe sớm khi kết thúc học kỳ hoặc chuyển chỗ thực tập, và về khả năng gia hạn từng tháng thay vì cam kết nguyên một năm. Điều kiện trả xe sớm cần được ghi vào hợp đồng."
+    },
+    {
+     "q": "Thuê xe máy dài hạn thì ai trả tiền thay dầu, lốp và má phanh?",
+     "a": "Điều này do hai bên thỏa thuận, nên hãy chốt bằng văn bản trước khi nhận xe. Xe dùng hằng ngày trong vài tháng sẽ cần thay dầu, lốp, má phanh và sửa chữa nhỏ nhiều lần; hãy hỏi ai chịu chi phí hao mòn này và bạn có được chọn xưởng sửa không. Một gói tháng rẻ hơn nhưng bắt bạn tự chịu toàn bộ hao mòn và sửa chữa có thể tốn kém hơn gói đắt hơn chút ít mà đã bao trọn các khoản đó."
+    }
+   ]
+  },
+  "VI-S23": {
+   "insert_before": null,
+   "faq": [
+    {
+     "q": "Xăng E10 có làm hỏng động cơ xe máy thuê không?",
+     "a": "Không, với các xe số và xe tay ga phổ thông cho thuê ở Việt Nam. Ở mức ethanol tối đa 10% theo tiêu chuẩn và trong phạm vi nhà sản xuất đã thiết kế, xăng E10 không gây hại cho động cơ; rủi ro cho ống cao su và hệ thống cung cấp nhiên liệu chỉ xuất hiện khi vượt ngưỡng đó. E10 chứa ít năng lượng hơn trên mỗi lít, nhưng mức hao xăng tăng thêm gần như không nhận ra khi chạy trong phố."
+    },
+    {
+     "q": "Đổ RON95 thay cho RON92 có giúp xe thuê chạy khỏe hơn không?",
+     "a": "Không. Chỉ số octan đo khả năng chống tự bốc cháy khi hỗn hợp nhiên liệu bị nén chứ không đo chất lượng xăng, và chỉ động cơ tỷ số nén cao như các dòng xe thể thao mới cần octan cao. Với xe thuê phổ thông, RON95 không thêm công suất, không giúp xe chạy sạch hơn và không kéo dài tuổi thọ động cơ; khác biệt chủ yếu nằm ở giá bán cao hơn."
+    },
+    {
+     "q": "Xăng E5 RON92 còn được bán đến khi nào?",
+     "a": "Theo quy định hiện hành, xăng E5 RON92 vẫn được bán đến hết ngày 31/12/2030, còn RON95 trên toàn quốc đã chuyển sang E10 từ ngày 01/06/2026 ([thông tin điều tiết xăng RON95/RON92, thuvienphapluat.vn](https://thuvienphapluat.vn/phap-luat/ho-tro-phap-luat/thong-tin-bo-xang-ron95-92-tu-3042026-chi-su-dung-xang-sinh-hoc-e10-theo-de-xuat-moi-duoc-hieu-nhu--263715.html)). Vì vậy dù chọn cây xăng nào, bạn cũng đang đổ hỗn hợp có ethanol, do xăng khoáng thuần đã không còn có mặt ở các trạm thông thường. Nếu trạm không còn RON92, E10 RON95 là phương án thay thế an toàn."
+    }
+   ]
+  },
+  "EN-S03": {
+   "insert_before": "## Five questions before paying for a week or a month",
+   "faq": [
+    {
+     "q": "Does a motorbike rental day in Hanoi end at midnight or 24 hours after pickup?",
+     "a": "Usually 24 hours after pickup: Hanoi shops almost always count a rental day as a 24-hour period from the handover, not as a calendar day. Collect a bike at 3 pm on Monday for three days and it is due back at 3 pm on Thursday. Lateness thresholds differ between shops, so ask from what time your day runs and agree any extension by message before the deadline."
+    },
+    {
+     "q": "Can I get money back if I return a monthly rental motorbike early?",
+     "a": "Rarely. If you pay a 30-day monthly rate and leave after 18 days, shops seldom refund the difference, and when they do, the days you used are recalculated at the higher daily rate of that tier. Ask how an early return is handled before you pay, and have the rule written into the contract."
+    },
+    {
+     "q": "Is extending a Hanoi motorbike rental day by day more expensive than booking the full period?",
+     "a": "It often is. Book five days and then extend one day at a time, and you can stay in the most expensive tier instead of sliding into the next one. Weekly and monthly rentals in Hanoi are usually tiers of a scale based on the number of rental days, so ask for the daily price at your exact number of days and get the extension rule in writing."
+    }
+   ]
+  },
+  "EN-S04": {
+   "insert_before": "## Questions to ask before handing anything over",
+   "faq": [
+    {
+     "q": "Is it normal for a rental shop to refund a deposit later by bank transfer?",
+     "a": "Not for a cash deposit. Deposits in Hanoi are mostly cash, so expect the money back as soon as the bike passes inspection at return; a shop proposing to repay a cash deposit later or by transfer is a warning sign. If you agreed to a card hold instead, its release depends on your bank and can take days, so ask when it is released and whether that happens at the shop or at your bank."
+    },
+    {
+     "q": "Can a rental shop hold back my deposit over traffic camera fines?",
+     "a": "It may: a shop can expect you to settle fines the bike picked up during your rental before it releases the deposit. For camera fines, the registered owner must identify the rider under Article 47 of [Decree 168/2024/NĐ-CP](https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm), as the Ministry of Public Security explains in its [guidance on self-drive rentals](https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4). Agree in writing whether the deposit covers damage only or also fuel, lateness and traffic tickets."
+    },
+    {
+     "q": "How do I avoid paying for scratches that were already on the rental bike?",
+     "a": "Document the bike's condition before you ride away. Photograph every panel, wheel, mirror and lever at pickup, ask the shop to do it with you, and keep the timestamped photos on your own phone. A shared set of photos or a signed condition note gives both sides the same damage baseline; without one, the record of the bike's condition is whatever the deposit holder remembers."
+    }
+   ]
+  },
+  "EN-S17": {
+   "insert_before": "## In short",
+   "faq": [
+    {
+     "q": "Can a rental shop be fined for holding my passport as a deposit?",
+     "a": "Potentially, and so can you: Article 21(3)(b) of [Decree 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) lists both pledging a passport and accepting one in pledge among fined acts. Under Article 5(2), an organisation committing the same act pays double the amount set for an individual ([signed text on the Government portal](https://datafiles.chinhphu.vn/cpp/files/vbpq/2025/11/282-cp.signed.pdf)). The decree does not say outright whether a passport left as rental security counts as a pledge, but it makes no exception for rentals either."
+    },
+    {
+     "q": "Is a photocopy of my passport enough to carry while riding in Vietnam?",
+     "a": "Not under the letter of Vietnamese law. [Article 44 of the Law on Entry, Exit, Transit and Residence of Foreigners](https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Van-ban-hop-nhat-62-VBHN-VPQH-2026-Luat-Nhap-canh-xuat-canh-cua-nguoi-nuoc-ngoai-tai-Viet-Nam-698690.aspx) requires foreigners to carry their passport or international travel document, with their residence papers, when travelling around Vietnam. The UK government says the authorities will accept a printed copy of the passport photo page and visa ([FCDO safety and security advice](https://www.gov.uk/foreign-travel-advice/vietnam/safety-and-security)), but that describes how checks work in practice and does not change what Vietnamese law requires."
+    },
+    {
+     "q": "Why is leaving my passport riskier than paying a cash deposit?",
+     "a": "A cash deposit is meant to cover damage you actually caused, while a held passport lets the shop press you over any amount it claims. Without it you cannot complete the residence declaration at your next hotel or leave the country, and the UK government reports that foreign nationals involved in traffic accidents have been stopped from leaving Vietnam until the police finished their investigations ([FCDO](https://www.gov.uk/foreign-travel-advice/vietnam/safety-and-security)). Offer cash against a written receipt instead."
+    }
+   ]
+  },
+  "EN-S18": {
+   "insert_before": "## Questions to ask before you pay",
+   "faq": [
+    {
+     "q": "Can a rental shop make me pay a fee we never agreed on?",
+     "a": "Not for a service you never agreed to: Article 10 of the Law on Protection of Consumers' Rights (19/2023/QH15) bans forcing a consumer to pay for a service already provided without prior agreement, and Article 21 requires traders to give accurate and complete information on price, fees and costs ([full text](https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.aspx)). A visitor renting a bike for their own travel fits the law's definition of a consumer, though how it applies in a particular dispute is for the competent authorities to decide."
+    },
+    {
+     "q": "Do Hanoi's new parking prices apply in hotel or private car parks?",
+     "a": "Not necessarily. Decision 5794/QĐ-UBND covers state-funded parking points that temporarily use the roadway or pavement, according to the [Dân trí report](https://dantri.com.vn/thoi-su/ha-noi-tang-gap-doi-gia-trong-xe-o-long-duong-via-he-20261015191232581.htm) and the [decision text attached to it](https://dcdn.dantri.com.vn/2026/10/15/qd-ubnd-tp-so-5794-ngay-151026-1792076607473.pdf). Hotel, shopping-centre and private car parks can set their own prices, so ask before you leave the bike and keep the ticket."
+    },
+    {
+     "q": "Can I ask for my motorbike rental contract in English?",
+     "a": "You can agree to add it: under Article 23 of the consumer protection law, a consumer contract is in Vietnamese and the parties may add another language; if the two versions differ, the one more favourable to the consumer prevails ([full text](https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.aspx)). Article 24 says terms open to different readings are interpreted in the consumer's favour, and Article 26 gives you reasonable time to study a standard-form contract. Ask for a version you understand and photograph the signed copy."
+    }
+   ]
+  },
+  "EN-S24": {
+   "insert_before": null,
+   "faq": [
+    {
+     "q": "Is E10 petrol safe for a rental scooter in Vietnam?",
+     "a": "Yes, for the ordinary scooters and manual bikes rented in Vietnam. Within the ten percent ethanol the national standard allows and manufacturers design for, the blend does not ruin the engine; real risks for rubber hoses and the fuel system only appear above that threshold. Ethanol does hold slightly less energy per litre, but in everyday city riding the extra consumption is too small to notice."
+    },
+    {
+     "q": "Does RON 95 give a rental scooter more power than RON 92?",
+     "a": "No. The octane number measures resistance to self-ignition under pressure, not fuel quality, and only high-compression engines, usually sportier models, need the higher rating. On an ordinary rental scooter, RON 95 brings no extra power, no cleaner combustion and no longer engine life; the main difference is that it costs more at the pump."
+    },
+    {
+     "q": "Is E5 RON 92 petrol still sold in Vietnam?",
+     "a": "Yes. Under the official fuel regulation, E5 RON 92 remains available until 31 December 2030, while the RON 95 grade has been E10 across the country since 1 June 2026 ([explanation of the RON95/RON92 switchover, thuvienphapluat.vn](https://thuvienphapluat.vn/phap-luat/ho-tro-phap-luat/thong-tin-bo-xang-ron95-92-tu-3042026-chi-su-dung-xang-sinh-hoc-e10-theo-de-xuat-moi-duoc-hieu-nhu--263715.html)). Whichever pump you choose, you are filling an ethanol blend, because pure fossil petrol has disappeared from the regular station network. Where RON 92 is unavailable, E10 RON 95 is a safe alternative."
+    }
+   ]
+  },
+  "DE-S03": {
+   "insert_before": "## Fünf Fragen vor der Zahlung einer Woche oder eines Monats",
+   "faq": [
+    {
+     "q": "Gilt ein Miettag beim Rollerverleih in Hanoi als Kalendertag oder als 24 Stunden?",
+     "a": "In Hanoi ist ein Miettag fast immer ein Zeitraum von 24 Stunden ab Mietbeginn, kein Kalendertag. Wer den Roller am Montag um 15 Uhr für drei Tage übernimmt, bringt ihn am Donnerstag um 15 Uhr zurück. Ab wie vielen Minuten Verspätung eine Stunde oder ein ganzer Tag berechnet wird, legt jeder Vermieter selbst fest; vereinbaren Sie jede Verlängerung deshalb vor Ablauf per Nachricht."
+    },
+    {
+     "q": "Gibt es in Hanoi einen festen Wochenpreis für einen Mietroller?",
+     "a": "Meist nicht: Wochen- und Monatsmiete sind in Hanoi in der Regel Stufen einer Staffel, die sich nach der Zahl der Miettage richtet. Fragen Sie deshalb nach dem Tagespreis für Ihre genaue Anzahl an Tagen und vergleichen Sie zwei Anbieter schriftlich. Vorsicht beim schrittweisen Verlängern: Wer kurz bucht und dann täglich nachlegt, bleibt oft in der teuersten Stufe hängen."
+    },
+    {
+     "q": "Wer zahlt bei einer Monatsmiete in Hanoi Ölwechsel, Reifen und Werkstatt?",
+     "a": "Das hängt vom Vertrag ab und sollte vor der Zahlung schriftlich feststehen. Klären Sie, wer Ölwechsel, Bremsbeläge und abgefahrene Reifen trägt, ob es einen Ersatzroller gibt, wenn das Fahrzeug in die Werkstatt muss, und ob ein Zwischencheck mit Fotos vereinbart wird. Achten Sie außerdem darauf, dass die Pflichtversicherung den ganzen Mietzeitraum abdeckt, denn sie gehört zum Fahrzeug, nicht zum Fahrer."
+    }
+   ]
+  },
+  "DE-S04": {
+   "insert_before": "## Fragen, die vor jeder Hinterlegung geklärt sein sollten",
+   "faq": [
+    {
+     "q": "Wie schütze ich meine Rollerkaution vor Abzügen für alte Kratzer?",
+     "a": "Mit lückenlosen Fotos bei Mietbeginn: Fotografieren Sie jede Verkleidung, jedes Rad, jeden Spiegel und Hebel und bitten Sie die Vermietung, den Rundgang gemeinsam mit Ihnen zu machen. Speichern Sie die Bilder mit Zeitstempel auf Ihrem eigenen Telefon. Strittig ist meist nicht der Schaden selbst, sondern ob er bereits vor Mietbeginn vorhanden war, und ohne Belege zählt dann die Erinnerung der Seite, die das Geld verwahrt."
+    },
+    {
+     "q": "Bekomme ich eine Barkaution in Hanoi sofort zurück?",
+     "a": "Darauf sollten Sie bestehen: Wer bar hinterlegt, sollte das Geld bar zurückerhalten, sobald der Roller die Rückgabeprüfung bestanden hat. Schlägt die Vermietung vor, die Kaution später oder per Überweisung zu erstatten, ist das ein Warnsignal. Bei einer Kartenhinterlegung oder Vorautorisierung hängt die Freigabe dagegen vom eigenen Kreditinstitut ab und kann einige Tage dauern; klären Sie vorab, wann sie erfolgt und wer sie veranlasst."
+    },
+    {
+     "q": "Werden Verkehrsbußgelder aus der Mietzeit von der Kaution abgezogen?",
+     "a": "Das kommt vor: Manche Vermietungen erwarten, dass Sie Bußgelder aus Ihrer Mietzeit begleichen, bevor die Kaution freigegeben wird. Hintergrund ist, dass der Halter bei Verstößen, etwa per Kamera erfasst, nach Artikel 47 des [Dekrets 168/2024/NĐ-CP](https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm) den Fahrer benennen muss, wie das Ministerium für öffentliche Sicherheit in seiner [Auskunft zu Mietfahrzeugen](https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4) erläutert. Lassen Sie vorab schriftlich festhalten, ob die Kaution nur für Schäden oder auch für Verkehrsverstöße steht."
+    }
+   ]
+  },
+  "DE-S16": {
+   "insert_before": "## Kurz gesagt",
+   "faq": [
+    {
+     "q": "Ist es in Vietnam erlaubt, den Reisepass beim Rollerverleih als Pfand zu lassen?",
+     "a": "Rechtlich ist das zumindest heikel: Die [Verordnung 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) stuft in Artikel 21 Absatz 3 Buchstabe b das Verpfänden eines Passes und seine Annahme als Pfand als bußgeldbewehrte Ordnungswidrigkeit ein. Ob ein beim Verleih hinterlegter Pass darunter fällt, sagt sie nicht ausdrücklich, eine Ausnahme für Fahrzeugvermietungen enthält sie aber auch nicht. Auch das [Auswärtige Amt](https://www.auswaertiges-amt.de/de/service/laender/vietnam-node/vietnamsicherheit-217274) rät davon ab."
+    },
+    {
+     "q": "Was tun, wenn der Rollerverleih meinen Pass nicht zurückgibt?",
+     "a": "Verhandeln Sie nicht allein: Rufen Sie die Polizei unter [113](https://thuvienphapluat.vn/hoi-dap-phap-luat/111-113-114-115-la-so-dien-thoai-gi-138013545.html) an oder gehen Sie zur örtlichen Polizeistation, und verständigen Sie die deutsche Botschaft. Nach Artikel 21 Absatz 2 Buchstabe g der [Verordnung 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) ist auch das unrechtmäßige Zurückhalten fremder Pässe bußgeldbewehrt. Hilfreich sind ein Foto der Datenseite und eine unterschriebene Notiz des Verleihs mit Name, Passnummer und Rückgabedatum."
+    },
+    {
+     "q": "Muss ich als Tourist in Vietnam meinen Reisepass immer dabeihaben?",
+     "a": "Ja: Nach [Artikel 44 des Gesetzes über Einreise, Ausreise, Transit und Aufenthalt von Ausländern](https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Van-ban-hop-nhat-62-VBHN-VPQH-2026-Luat-Nhap-canh-xuat-canh-cua-nguoi-nuoc-ngoai-tai-Viet-Nam-698690.aspx) müssen Ausländer unterwegs ihren Pass oder ein gleichwertiges Reisedokument samt Aufenthaltspapieren mitführen und auf Verlangen vorzeigen. Wer ohne diese Dokumente unterwegs ist, riskiert nach Artikel 21 Absatz 1 der [Verordnung 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) eine Verwarnung oder ein Bußgeld. Schon deshalb gehört der Pass nicht in die Schublade eines Verleihs."
+    }
+   ]
+  },
+  "DE-S17": {
+   "insert_before": "## Fragen, die Sie vor der Zahlung stellen sollten",
+   "faq": [
+    {
+     "q": "Zahlt die Pflichtversicherung, wenn ich den Mietroller beschädige?",
+     "a": "Nein: Laut Artikel 7 des Dekrets 67/2023/NĐ-CP deckt der Versicherer Schäden Dritter an Gesundheit, Leben und Eigentum sowie Schäden der Mitfahrer an Gesundheit und Leben ab; der gemietete Roller selbst gehört nicht dazu ([Volltext](https://thuvienphapluat.vn/van-ban/Bao-hiem/Nghi-dinh-67-2023-ND-CP-bao-hiem-bat-buoc-trach-nhiem-dan-su-cua-chu-xe-co-gioi-578283.aspx)). Wer für Kratzer, einen abgebrochenen Spiegel oder einen verlorenen Schlüssel aufkommt, regelt der Mietvertrag. Erlaubt er es, können solche Beträge von der Kaution abgezogen werden."
+    },
+    {
+     "q": "Darf ein Vermieter in Vietnam Zusatzkosten erst bei der Rückgabe festlegen?",
+     "a": "Das Verbraucherschutzgesetz Nr. 19/2023/QH15 spricht dagegen: Artikel 10 untersagt, Verbraucher ohne vorherige Absprache zur Bezahlung einer schon erbrachten Leistung zu zwingen, und Artikel 25 lässt keine Klauseln zu, mit denen der Unternehmer den Preis erst zum Zeitpunkt der Leistung festsetzt, soweit das Gesetz nichts anderes bestimmt ([Volltext](https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.aspx)). Wie das im Streitfall angewandt wird, entscheiden die zuständigen Stellen. Lassen Sie Lieferung und Verlängerung deshalb vorab schriftlich bestätigen."
+    },
+    {
+     "q": "Gelten Hanois neue Parkpreise auch auf Hotelparkplätzen?",
+     "a": "Nicht automatisch: Der Beschluss 5794/QĐ-UBND betrifft staatlich finanzierte Stellplätze, die Fahrbahn oder Gehweg zeitweise nutzen, so die [Meldung von Dân trí](https://dantri.com.vn/thoi-su/ha-noi-tang-gap-doi-gia-trong-xe-o-long-duong-via-he-20261015191232581.htm). Parkplätze von Hotels, Einkaufszentren oder privaten Betreibern können abweichend abrechnen. Erkundigen Sie sich deshalb vor dem Parken nach dem Tarif und bewahren Sie den Parkschein auf."
+    }
+   ]
+  },
+  "DE-S23": {
+   "insert_before": null,
+   "faq": [
+    {
+     "q": "Schadet RON 95 einem Mietroller, der für RON 92 ausgelegt ist?",
+     "a": "Nein, das ist harmlos: Eine höhere Oktanzahl ist kein schlechterer, sondern nur ein teurerer Kraftstoff. Ein gewöhnlicher Mietroller hat keine hohe Verdichtung, deshalb bringt ihm RON 95 weder mehr Leistung noch eine sauberere Verbrennung oder ein längeres Motorleben. Gibt es an der Tankstelle kein RON 92, kannst du E10 RON 95 als unbedenkliche Ausweichmöglichkeit nehmen."
+    },
+    {
+     "q": "Wo sehe ich, welche Oktanzahl mein Mietroller braucht?",
+     "a": "Auf praktisch jedem Roller klebt am oder neben dem Tankdeckel ein Aufkleber mit der empfohlenen Oktanzahl, und im Handbuch steht derselbe Wert. Bei den in Hanoi verbreiteten Honda- und Yamaha-Rollern mit 110 bis 160 Kubikzentimetern liegt die Vorgabe um 92. Bist du unsicher, frag gleich bei Mietbeginn, welche Sorte der Vermieter selbst tankt."
+    },
+    {
+     "q": "Muss ich den Mietroller mit vollem Tank zurückgeben?",
+     "a": "Das hängt vom Vertrag ab, aber viele Vermieter erwarten bei der Rückgabe denselben Tankstand wie zu Beginn. Halte den Füllstand deshalb bei Mietbeginn mit einem Foto fest und lies nach, was der Vertrag zum Kraftstoff sagt. Manche Vermieter berechnen einen Zuschlag, wenn der Roller mit leuchtender Reservelampe zurückkommt."
+    }
+   ]
+  },
+  "DE-S128": {
+   "insert_before": "## Was dieser Ratgeber bewusst nicht verspricht",
+   "faq": [
+    {
+     "q": "Verträgt jeder Honda-Mietroller in Vietnam E10?",
+     "a": "Grundsätzlich ja, aber unter Bedingungen. Laut der [Erklärung von Honda Vietnam](https://www.honda.com.vn/tin-tuc/ve-honda/kha-nang-tuong-thich-cua-cac-mau-xe-honda-voi-xang-sinh-hoc-e10) sind alle seit 1997 im Land produzierten, importierten und offiziell vertriebenen Honda-Motorräder für E10 geeignet; Honda empfiehlt dazu ein Kraftstoffsystem im Originalzustand und regelmäßige Wartung, umgebaute Fahrzeuge sollen in einer autorisierten Werkstatt geprüft werden. Ob ein älterer Mietroller verändert wurde oder offiziell ins Land kam, sehen Sie ihm nicht an, deshalb sollten Sie beim Vermieter nachfragen."
+    },
+    {
+     "q": "Darf ein älterer Yamaha-Roller mit Vergaser E10 tanken?",
+     "a": "Das hängt vom Baujahr ab: Für Vergasermodelle vor 2017 empfiehlt Yamaha E5, Vergasermodelle ab 2017 gelten laut Hersteller als E10-verträglich ([Mitteilung von Yamaha Motor Vietnam](https://yamaha-motor.com.vn/tin-tuc/thong-bao-ve-tinh-tuong-thich-cua-cac-kieu-loai-xe-do-yamaha-san-xuat-va-kinh-doanh-voi-xang-e5-va-e10)). Das Baujahr steht auf dem Etikett am Fahrzeug, Einspritzer erkennen Sie am „FI“-Zeichen auf dem Aufkleber oder im Cockpit. Modelle mit Einspritzung führt Yamahas Liste für E5 und E10."
+    },
+    {
+     "q": "Was tanke ich, wenn niemand die E10-Eignung meines Mietrollers bestätigen kann?",
+     "a": "Dann greifen Sie zu E5 RON 92: Für sehr alte Fahrzeuge, deren Eignung niemand bestätigt, rät das Ministerium für Industrie und Handel zu E5 ([Fragen und Antworten des Ministeriums](https://moit.gov.vn/tin-tuc/phat-trien-nang-luong/85-cau-hoi-giai-dap-thac-mac-cua-nguoi-tieu-dung-ve-xang-e10.html)), und diese Sorte darf noch bis Ende 2030 gemischt werden. Da E5 nicht an jeder Station erhältlich sein muss, erkundigen Sie sich beim Vermieter nach seiner eigenen Tankstelle und tanken Sie vor längeren Fahrten rechtzeitig nach."
+    }
+   ]
+  },
+  "DE-S132": {
+   "insert_before": "## Was Sie vor der Übergabe klären sollten",
+   "faq": [
+    {
+     "q": "Ist die Kaution für einen Mietroller in Vietnam rechtlich eine Anzahlung (đặt cọc)?",
+     "a": "Nach dem Wortlaut des Zivilgesetzbuchs eher nicht: Geld, das Sie für die Mietdauer hinterlegen, damit der Roller zurückkommt, entspricht nach der Lesart dieses Ratgebers der ký cược aus [Artikel 329](https://congan.gialai.gov.vn/vi/news/cac-dao-luat-quan-trong/bo-luat-dan-su-2015-773.html). Eine đặt cọc nach [Artikel 328](https://congan.gialai.gov.vn/vi/news/cac-dao-luat-quan-trong/bo-luat-dan-su-2015-773.html) liegt eher vor, wenn Sie vorab zahlen, um einen Roller zu reservieren. Verbindlich entscheidet im Einzelfall ein Gericht, deshalb sollte der Zweck des Geldes auf der Quittung stehen."
+    },
+    {
+     "q": "Gibt es in Vietnam eine gesetzliche Frist für die Rückzahlung der Rollerkaution?",
+     "a": "Eine Frist in Tagen nennt das Gesetz nicht: Nach [Artikel 329](https://congan.gialai.gov.vn/vi/news/cac-dao-luat-quan-trong/bo-luat-dan-su-2015-773.html) Absatz 2 erhält der Mieter die Kaution zurück, wenn der Roller zurückgegeben und die Miete bezahlt ist. Wann die Miete fällig ist, richtet sich vorrangig nach der Vereinbarung, sonst nach [Artikel 481 Absatz 1](https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Bo-luat-dan-su-2015-296215.aspx) nach dem Brauch am Zahlungsort und, wenn auch der nichts ergibt, nach der Rückgabe des Rollers. Halten Sie den Rückzahlungstermin deshalb schriftlich fest."
+    },
+    {
+     "q": "Kann der Verleiher mehr als die Kaution verlangen, wenn der Roller nicht zurückkommt?",
+     "a": "Möglicherweise ja. [Artikel 329](https://congan.gialai.gov.vn/vi/news/cac-dao-luat-quan-trong/bo-luat-dan-su-2015-773.html) regelt nur, dass die Kaution dem Vermieter gehört, wenn der Roller nicht mehr vorhanden ist, und schweigt zum Wertunterschied. Der Autor eines Fachaufsatzes in der [Zeitschrift des Volksgerichts](https://tapchitoaan.vn/bien-phap-bao-dam-ky-cuoc-theo-bo-luat-dan-su9022.html) hält es für überzeugender, die Differenz in beide Richtungen auszugleichen, sodass der Vermieter den Rest fordern kann. Verstehen Sie die Kaution daher nicht automatisch als Obergrenze Ihrer Haftung."
+    }
+   ]
+  },
+  "DE-S139": {
+   "insert_before": "## Kurz gesagt",
+   "faq": [
+    {
+     "q": "Gilt die Mautbefreiung in Vietnam auch für größere Motorräder?",
+     "a": "Ja, an Stationen zentral verwalteter Projekte: Nummer 12 in [Artikel 3 des Rundschreibens 32/2024/TT-BGTVT](https://congbao.chinhphu.vn/van-ban/thong-tu-so-32-2024-tt-bgtvt-43223.htm) nimmt Motorräder, Mopeds und nicht motorisierte Fahrzeuge ohne Einschränkung nach Hubraum oder Bauart von der Zahlung aus. Ob Automatikroller, Halbautomatik oder Schaltmotorrad, spielt keine Rolle, und einen Nachweis verlangt die Vorschrift nicht. Für Straßenprojekte unter Provinzverwaltung gelten allerdings eigene Regeln."
+    },
+    {
+     "q": "Was tun, wenn an einer Mautstation Geld für den Roller verlangt wird?",
+     "a": "Fragen Sie freundlich nach dem Aushang mit den befreiten Fahrzeuggruppen. Das [Rundschreiben verpflichtet die Betreiber](https://luatvietnam.vn/thue/thong-tu-32-2024-tt-bgtvt-cua-bo-giao-thong-van-tai-quy-dinh-ve-quan-ly-gia-dich-vu-su-dung-duong-bo-cua-cac-du-an-dau-tu-xay-dung-duong-bo-de-kinh-doanh-do-trung-uong-quan-ly-373335-d1.html), Preise und befreite Gruppen an der Station öffentlich auszuhängen; achten Sie dort auf „miễn thu“ und in der Liste auf „xe mô tô, xe gắn máy“. Bedenken Sie, dass Projekte unter Provinzverwaltung eigene Regeln haben können, die dieser Ratgeber nicht für jede Provinz einzeln geprüft hat."
+    },
+    {
+     "q": "Darf ich mit dem Mietroller auf eine Schnellstraße (cao tốc) fahren?",
+     "a": "Nein: Nach [Artikel 25 Absatz 3 des Gesetzes 36/2024/QH15](https://xaydungchinhsach.chinhphu.vn/toan-van-luat-trat-tu-an-toan-giao-thong-duong-bo-119240909105718285.htm) dürfen Motorräder, Mopeds und ähnliche Fahrzeuge keine Schnellstraße benutzen; ausgenommen ist nur, wer dort Wartungs- oder Verwaltungsaufgaben übernimmt. Führt eine Mautanlage auf eine „cao tốc“, müssen Sie mit dem Roller eine andere Strecke wählen. Wie Sie solche Auffahrten erkennen, erklärt der Ratgeber [Mit dem Roller auf die Autobahn?](/de/guides/roller-autobahn-vietnam-verboten/)."
+    }
+   ]
+  },
+  "DE-S152": {
+   "insert_before": "## Stand der Quellen",
+   "faq": [
+    {
+     "q": "Darf ein Rollervermieter in Vietnam Preise nur in Dollar angeben?",
+     "a": "Nach dem Wortlaut grundsätzlich nicht: [Artikel 22](https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=55835) der Devisenverordnung schließt Geschäfte, Zahlungen, Preisauszeichnung und Werbung in Devisen auf vietnamesischem Staatsgebiet aus, abgesehen von bestimmten Ausnahmen. Unter den 17 Nummern in [Artikel 4](https://luatvietnam.vn/tai-chinh/van-ban-hop-nhat-28-vbhn-nhnn-2026-huong-dan-han-che-su-dung-ngoai-hoi-tai-viet-nam-431734-d5.html) des Rundschreibens ließ sich keine finden, die die Vermietung von Fahrzeugen an Reisende ausdrücklich nennt. Ob ein konkreter Fall rechtswidrig ist, beurteilen die zuständigen Stellen; zum 1. Dezember 2026 wandert der Grundsatz ins Staatsbankgesetz ([Gesetz 23/2026/QH16](https://thuvienphapluat.vn/van-ban/tien-te-ngan-hang/Luat-sua-doi-Ngan-hang-Nha-nuoc-Viet-Nam-Luat-Phong-chong-rua-tien-2026-so-23-2026-QH16-709712.aspx))."
+    },
+    {
+     "q": "Gilt die Beschränkung von Devisenzahlungen auch für Touristen in Vietnam?",
+     "a": "Ja, nach dem Wortlaut schon: [Artikel 22](https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=55835) richtet sich an Gebietsansässige und Gebietsfremde. Touristen gelten nach [Artikel 4 Absätze 2 und 3](https://cdn.thuvienphapluat.vn/uploads/tintuc/2026/09/26/2026_527-VBHN_140_2026_VBHN-PL-VPQH.pdf) unabhängig von der Aufenthaltsdauer als gebietsfremd, und ihre Staatsangehörigkeit ändert daran nichts. Den Besitz von Dollarnoten beschränkt die Regel dagegen nicht: [Artikel 24 Absatz 1](https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=55835) erlaubt Privatpersonen, Fremdwährung aufzubewahren, mitzuführen und an zugelassene Kreditinstitute zu verkaufen."
+    },
+    {
+     "q": "In welcher Währung sollte ich mir Miete und Kaution in Vietnam quittieren lassen?",
+     "a": "Lassen Sie sich die Beträge zusätzlich in der Landeswährung nennen, schriftlich im Chat, im Vertrag oder auf der Quittung; nach [Artikel 3 der Devisenverordnung](https://cdn.thuvienphapluat.vn/uploads/tintuc/2026/09/26/2026_527-VBHN_140_2026_VBHN-PL-VPQH.pdf) ist das Ziel, dass auf vietnamesischem Staatsgebiet nur die Landeswährung verwendet wird. Die Quittung sollte Betrag, Währung, Datum und Zweck nennen. Vereinbaren Sie vorab, in welcher Währung Sie die Kaution zurückerhalten, und notieren Sie den Umrechnungsweg schriftlich."
+    }
+   ]
+  },
+  "DE-S153": {
+   "insert_before": "## Kurz geprüft vor der Buchung",
+   "faq": [
+    {
+     "q": "Gilt das Verbot, über dem Aushang zu kassieren, auch für Lieferung oder Schäden?",
+     "a": "Nicht unmittelbar: [Artikel 29 Absatz 3](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/25-vbhn-vpqh.pdf) untersagt, über dem ausgehängten Preis zu verkaufen, gilt aber nur für die ausgehängte Leistung selbst. Zusatzposten ohne Aushang, etwa Lieferung zum Hotel, zusätzliche Stunden, Schäden oder Abzüge von der Kaution, richten sich nach der Vereinbarung sowie nach Zivil- und Verbraucherrecht. Fragen Sie deshalb jeden Zusatzposten vorab ab und lassen Sie die Antwort schriftlich bestätigen."
+    },
+    {
+     "q": "Welche Sprache schreibt das Preisgesetz für die Preistafel eines Rollerverleihs vor?",
+     "a": "Artikel 29 des Preisgesetzes legt keine fest. [Artikel 29 Absatz 2](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/25-vbhn-vpqh.pdf) verlangt eine klare Auszeichnung ohne Verwechslungsgefahr, schreibt aber weder Vietnamesisch noch Englisch vor, und auch zu Schriftgröße oder Standort der Tafel enthält der Artikel keine Vorgaben. Verstehen Sie eine Tafel nicht, lassen Sie sich die Preise erklären und fotografieren Sie den Aushang mit Datum."
+    },
+    {
+     "q": "Zählt ein Preis auf der Website des Vermieters als Preisaushang?",
+     "a": "Ja: [Artikel 29 Absatz 2](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/25-vbhn-vpqh.pdf) nennt neben Tafel, Papier und Verpackung ausdrücklich auch die Angabe auf Websites als zulässige Form. Entscheidend ist, dass Kunden und Behörden den Preis leicht wahrnehmen können. Speichern Sie vor der Buchung einen Screenshot mit Datum, damit Sie bei einer höheren Rechnung zeigen können, was angegeben war."
+    }
+   ]
+  },
+  "FR-S03": {
+   "insert_before": "## Cinq questions avant de payer une semaine ou un mois",
+   "faq": [
+    {
+     "q": "Une journée de location à Hanoï dure-t-elle 24 heures ou un jour calendaire ?",
+     "a": "À Hanoï, une journée de location correspond presque toujours à 24 heures comptées depuis la remise du véhicule, pas à un jour calendaire. Si vous prenez le scooter le lundi à 15 h pour trois jours, vous le rendez le jeudi à la même heure. Les seuils de retard varient selon les loueurs, mais l'heure de remise fait foi : négociez toute prolongation par message avant l'échéance."
+    },
+    {
+     "q": "Faut-il demander un tarif hebdomadaire ou un tarif journalier ?",
+     "a": "Demandez plutôt le prix journalier qui correspond à votre nombre exact de jours. À Hanoï, la semaine et le mois ne sont en général que des paliers d'une grille calculée sur le nombre de jours loués, et non des formules à part. Attention aussi aux prolongations au jour le jour : après une réservation de cinq jours, elles vous maintiennent souvent dans le palier le plus cher au lieu de vous faire passer au suivant."
+    },
+    {
+     "q": "Que se passe-t-il si je rends le scooter avant la fin du mois payé ?",
+     "a": "Le plus souvent, la différence n'est pas remboursée. Qui règle 30 jours au tarif mensuel et rend le scooter au bout de 18 jours la récupère rarement, et quand c'est le cas, la location est recalculée au tarif journalier plus élevé du palier réellement utilisé. Faites-vous expliquer cette règle de restitution anticipée avant de payer, et exigez qu'elle figure au contrat."
+    }
+   ]
+  },
+  "FR-S04": {
+   "insert_before": "## En bref",
+   "faq": [
+    {
+     "q": "Sous quel délai récupère-t-on la caution d'une moto louée à Hanoï ?",
+     "a": "Cela dépend de ce que fixe le contrat : faites préciser ce délai avant de signer. Le remboursement peut intervenir dès la restitution et le contrôle du véhicule, ou après quelques jours de rétention destinés à couvrir d'éventuelles [amendes par caméra](https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4). Dans ce cas, faites inscrire la durée, le montant conservé, la date de restitution et le compte destinataire, et précisez si l'argent revient en espèces ou par virement."
+    },
+    {
+     "q": "Comment éviter une retenue pour des rayures déjà présentes ?",
+     "a": "En faisant un état des lieux précis dès la remise. Prenez photos et vidéo horodatées de tout le véhicule, notamment carénage, flancs, rétroviseurs, feux et pneus, relevez kilométrage, carburant et accessoires, et faites signer l'employé sur les dommages existants. Envoyez aussitôt ces images au loueur par message pour garder une preuve datée, puis exigez à la restitution un contrôle en votre présence, à comparer avec ces photos."
+    },
+    {
+     "q": "Que faire si le loueur refuse de rendre la caution ?",
+     "a": "Négociez sur la base de l'[article 328 du Code civil vietnamien de 2015](https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Bo-luat-dan-su-2015-296215.aspx) et des clauses signées : si le contrat est exécuté, la caution est restituée ou imputée sur les sommes dues. Pour toute retenue, exigez un devis écrit et le détail des pièces remplacées ; vos meilleures preuves sont les photos horodatées, l'état des lieux signé et les messages. Si une pièce d'identité est retenue pour imposer un paiement étranger au contrat, sollicitez la police du quartier."
+    }
+   ]
+  },
+  "FR-S17": {
+   "insert_before": "## En résumé",
+   "faq": [
+    {
+     "q": "Est-il illégal de laisser son passeport en caution au Vietnam ?",
+     "a": "Le [décret 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) punit d’une amende le fait de mettre en gage ou d’accepter en gage un passeport (article 21, paragraphe 3, point b), et il vise les deux parties. Le texte ne précise pas si un passeport laissé chez un loueur en garantie constitue un gage, mais il ne prévoit aucune exception pour la location. Refuser poliment reste donc la réponse la plus raisonnable."
+    },
+    {
+     "q": "Un hôtel au Vietnam peut-il garder mon passeport ?",
+     "a": "La loi parle de présenter le passeport : une fois vos informations relevées, il est raisonnable de demander à le récupérer. L’[article 33](https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Van-ban-hop-nhat-62-VBHN-VPQH-2026-Luat-Nhap-canh-xuat-canh-cua-nguoi-nuoc-ngoai-tai-Viet-Nam-698690.aspx) de la loi sur l’entrée, la sortie, le transit et le séjour des étrangers exige des hébergements qu’ils fassent présenter ce document pour déclarer votre résidence temporaire à la police sous 12 heures, ou sous 24 heures en zone reculée."
+    },
+    {
+     "q": "Comment récupérer un passeport retenu par un loueur de scooter ?",
+     "a": "Ne négociez pas seul : l’article 21, paragraphe 2, point g, du [décret 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) punit aussi d’une amende l’appropriation ou la rétention illégale du passeport d’autrui. Contactez la police au [113](https://thuvienphapluat.vn/hoi-dap-phap-luat/111-113-114-115-la-so-dien-thoai-gi-138013545.html) ou au poste du quartier, puis informez l’ambassade de France à Hanoï. Une note signée indiquant votre nom, votre numéro de passeport et la date de restitution, obtenue lors de la remise, limite les risques."
+    }
+   ]
+  },
+  "FR-S18": {
+   "insert_before": "## Questions à poser avant de payer",
+   "faq": [
+    {
+     "q": "Un loueur de scooter peut-il facturer des frais qui n'étaient pas annoncés ?",
+     "a": "Pas pour un service déjà fourni sans votre accord préalable : l'article 10 de la loi vietnamienne sur la protection des droits des consommateurs (19/2023/QH15) interdit de vous contraindre à le payer. L'article 21 impose une information exacte et complète sur le prix, les frais et les coûts, et l'article 25 écarte les clauses permettant de fixer ou de modifier le prix au moment de la prestation ([texte intégral](https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.aspx)). Faites donc écrire chaque frais au contrat ou dans un message de confirmation."
+    },
+    {
+     "q": "Le tarif officiel de stationnement vaut-il aussi pour les parkings d'hôtel ?",
+     "a": "Pas forcément. La décision 5794/QĐ-UBND, prise le 15 octobre 2026 par le Comité populaire de Hanoï, fixe le tarif de gardiennage des points financés par l'État installés temporairement sur la chaussée ou le trottoir ([texte de la décision joint](https://dcdn.dantri.com.vn/2026/10/15/qd-ubnd-tp-so-5794-ngay-151026-1792076607473.pdf)). Un parking d'hôtel, un centre commercial ou un emplacement privé peut facturer autrement : demandez le prix avant de laisser le scooter et gardez le ticket."
+    },
+    {
+     "q": "Quelle version du contrat l'emporte si la traduction diffère du vietnamien ?",
+     "a": "Celle qui est la plus favorable au consommateur. Selon l'article 23 de la loi 19/2023/QH15, la langue du contrat conclu avec un consommateur est le vietnamien, une autre langue pouvant être ajoutée, et l'article 24 fait interpréter en faveur du consommateur les clauses comprises de façon différente ([texte intégral](https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.aspx)). L'article 26 vous laisse aussi un temps raisonnable pour étudier un contrat type et prévoit une copie sous 07 jours ouvrables si la vôtre est perdue."
+    }
+   ]
+  },
+  "FR-S24": {
+   "insert_before": "## Avant de repartir : le réflexe check-list",
+   "faq": [
+    {
+     "q": "Peut-on mettre du RON95 dans un scooter prévu pour du RON92 ?",
+     "a": "Oui, cela ne l'abîme pas, mais vous n'y gagnez ni puissance ni économie perceptible : vous payez un indice d'octane que le moteur n'exploite pas. La plupart des scooters de 110 à 150 cm³ vendus au Vietnam sont réglés pour du RON92, alors que le RON95 est réclamé par certaines motos sportives ou gros scooters à compression élevée. En cas de doute, suivez le manuel du modèle ou la consigne du loueur."
+    },
+    {
+     "q": "Trouve-t-on encore de l'essence sans éthanol au Vietnam ?",
+     "a": "Non, le choix ne se fait plus entre essence minérale et biocarburant. Depuis le 1er juin 2026, l'essence sans plomb doit être mélangée à 10 % d'éthanol (E10) sur tout le territoire et le RON95 purement minéral a quitté le marché, selon [l'explication publiée par Thư viện pháp luật](https://thuvienphapluat.vn/phap-luat/ho-tro-phap-luat/thong-tin-bo-xang-ron95-92-tu-3042026-chi-su-dung-xang-sinh-hoc-e10-theo-de-xuat-moi-duoc-hieu-nhu--263715.html) sur la circulaire 50/2025/TT-BCT. L'E5 RON92, qui contient 5 % d'éthanol, est maintenu jusqu'à la fin de l'année 2030."
+    },
+    {
+     "q": "Quelles précautions prendre avec l'E10 sur un scooter de location ?",
+     "a": "Sur un scooter récent, l'E10 est simplement le carburant courant du pays, mais trois précautions gardent du sens. Avec un modèle très ancien à carburateur et durites d'origine, consultez le loueur avant de ne rouler qu'au E10. Comme l'éthanol absorbe l'humidité, évitez de laisser le scooter garé des semaines avec le réservoir plein, et faites le plein dans des stations à gros débit, où le carburant tourne vite."
+    }
+   ]
+  },
+  "ES-S03": {
+   "insert_before": "## Cinco preguntas antes de pagar una semana o un mes",
+   "faq": [
+    {
+     "q": "¿Un día de alquiler en Hanói son 24 horas o un día natural?",
+     "a": "Casi siempre son 24 horas contadas desde la entrega de la moto, no un día natural. Si la recoges el lunes a las 15:00 para tres días, tendrás que devolverla el jueves a esa misma hora. Los umbrales para cobrar un retraso cambian de una tienda a otra, pero manda la hora de entrega: si necesitas más tiempo, acuerda la prórroga por mensaje antes de que venza el plazo."
+    },
+    {
+     "q": "¿Es mejor pedir un precio semanal o un precio por día?",
+     "a": "Pide el precio diario para tu número exacto de días. En Hanói, los alquileres semanales y mensuales no suelen ser productos aparte, sino tramos de una escala basada en los días alquilados. Ojo también con las prórrogas: quien reserva cinco días y luego alarga día a día suele quedarse en el tramo más caro en lugar de pasar al siguiente, así que pide que esa regla quede por escrito."
+    },
+    {
+     "q": "¿Qué pasa si devuelvo la moto antes de terminar el mes pagado?",
+     "a": "Lo más probable es que no recuperes la diferencia. Quien paga 30 días a tarifa mensual y devuelve la moto a los 18 rara vez recibe algo, y cuando hay reembolso, se recalcula al precio diario más alto del tramo realmente usado. Antes de pagar, pide que te expliquen la regla de devolución anticipada y que quede recogida en el contrato."
+    }
+   ]
+  },
+  "ES-S04": {
+   "insert_before": "## Conclusión breve",
+   "faq": [
+    {
+     "q": "¿Cuánto tarda la tienda en devolver el depósito?",
+     "a": "Depende de lo que fije el contrato, así que conviene aclararlo antes de firmar. La devolución puede hacerse nada más revisar la moto o tras unos días de retención para esperar posibles [multas por cámara](https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4). Si retienen una parte, que consten los días, la cantidad, la fecha de devolución y la cuenta de destino, y pregunta si te pagarán en efectivo o por transferencia."
+    },
+    {
+     "q": "¿Cómo evitar que te descuenten arañazos que la moto ya tenía?",
+     "a": "Con un acta de entrega bien hecha. Antes de salir, saca fotos y vídeo con fecha y hora de la moto entera, en especial carenado, tapas laterales, espejos, luces y neumáticos; anota kilómetros, gasolina y accesorios, y pide al empleado que firme los daños existentes. Envía las fotos a la tienda por mensaje en ese momento y, al devolverla, exige que la revisen delante de ti comparándola con esas imágenes."
+    },
+    {
+     "q": "¿Qué hacer si la tienda no quiere devolver el depósito?",
+     "a": "Negocia con el [artículo 328 del Código Civil vietnamita de 2015](https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Bo-luat-dan-su-2015-296215.aspx) y las cláusulas firmadas: si el contrato se cumple, el depósito se te devuelve o se resta de lo que debas pagar. Ante cualquier descuento, exige un presupuesto por escrito y el detalle de las piezas cambiadas; tus mejores pruebas son las fotos con hora, el acta firmada y los mensajes. Si retienen un documento de identidad para forzar un pago ajeno al contrato, pide ayuda a la policía del barrio."
+    }
+   ]
+  },
+  "ES-S16": {
+   "insert_before": "## En resumen",
+   "faq": [
+    {
+     "q": "¿Es ilegal dejar el pasaporte como garantía en Vietnam?",
+     "a": "El [Decreto 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) castiga con multa empeñar o aceptar en prenda un pasaporte (artículo 21.3.b), y alcanza a las dos partes del trato. El texto no precisa si dejar el pasaporte en una tienda como garantía equivale a una prenda, pero no contempla ninguna excepción para los alquileres. Ante una tienda que exija quedarse con su pasaporte, lo sensato es negarse."
+    },
+    {
+     "q": "¿Puede el hotel quedarse con mi pasaporte?",
+     "a": "En principio, solo debe enseñarlo: el [artículo 33](https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Van-ban-hop-nhat-62-VBHN-VPQH-2026-Luat-Nhap-canh-xuat-canh-cua-nguoi-nuoc-ngoai-tai-Viet-Nam-698690.aspx) de la Ley de entrada, salida, tránsito y residencia de extranjeros exige al alojamiento que se lo solicite para remitir su declaración de residencia temporal a la policía en 12 horas, o en 24 en zonas remotas. Las [recomendaciones de viaje de Exteriores](https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Detalle-recomendaciones-de-viaje.aspx?trc=vietnam) aconsejan reclamarlo de inmediato en cuanto el personal haya tomado los datos o lo haya fotocopiado."
+    },
+    {
+     "q": "¿Cómo recuperar un pasaporte retenido por una tienda de alquiler?",
+     "a": "No negocie solo: el artículo 21.2.g del [Decreto 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) también sanciona la apropiación o retención ilegal de un pasaporte ajeno. Pida ayuda a la policía en el [113](https://thuvienphapluat.vn/hoi-dap-phap-luat/111-113-114-115-la-so-dien-thoai-gi-138013545.html) o en la comisaría del barrio, e informe a la Embajada de España en Hanói. Si ya lo entregó, una nota firmada con su nombre, el número de pasaporte y la fecha de devolución limita el riesgo."
+    }
+   ]
+  },
+  "ES-S17": {
+   "insert_before": "## Preguntas que conviene hacer antes de pagar",
+   "faq": [
+    {
+     "q": "¿Puede la tienda cobrarme gastos que no me anunció?",
+     "a": "No por un servicio ya prestado sin tu acuerdo previo: el artículo 10 de la Ley de Protección de los Derechos de los Consumidores (19/2023/QH15) prohíbe obligarte a pagarlo. El artículo 21 exige información exacta y completa sobre precio, tasas y costes, y el artículo 25 no admite cláusulas que permitan fijar o cambiar el precio al prestar el servicio ([texto íntegro](https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.aspx)). Pide que cada gasto conste en el contrato o en un mensaje de confirmación antes de la recogida."
+    },
+    {
+     "q": "¿Se puede pagar el alquiler de la moto con tarjeta en Vietnam?",
+     "a": "Solo en algunos establecimientos, y a menudo con recargo. Según las [recomendaciones de viaje de Exteriores](https://www.exteriores.gob.es/es/ServiciosAlCiudadano/Paginas/Detalle-recomendaciones-de-viaje.aspx?trc=vietnam), la tarjeta de crédito no se acepta en muchos sitios y a menudo implica un recargo del 2 al 10 %, así que se recomienda llevar efectivo suficiente. Antes de pagar con tarjeta, pregunta a la tienda si aplica recargo, en qué moneda cobra y qué tipo de cambio usa."
+    },
+    {
+     "q": "¿Qué versión del contrato vale si la traducción no coincide con el vietnamita?",
+     "a": "Prevalece la más favorable al consumidor. Según el artículo 23 de la Ley 19/2023/QH15, el idioma del contrato con un consumidor es el vietnamita y las partes pueden añadir otro; según el artículo 24, una cláusula que admite lecturas distintas se interpreta a favor del consumidor ([texto íntegro](https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.aspx)). El artículo 26 te da además un tiempo razonable para estudiar un contrato de adhesión y una copia en 07 días hábiles si pierdes la tuya."
+    }
+   ]
+  },
+  "ES-S23": {
+   "insert_before": null,
+   "faq": [
+    {
+     "q": "¿Pasa algo si echo RON 95 a una moto pensada para RON 92?",
+     "a": "No, es inofensivo: un índice de octano superior no supone equivocarse de combustible, solo pagar más. En un scooter de alquiler corriente, sin compresión alta, la RON 95 no le da más potencia, ni quema más limpio, ni alarga la vida del motor. Para saber qué pide tu moto, mira la pegatina junto al tapón del depósito o el manual, o pregunta al propietario qué combustible utiliza."
+    },
+    {
+     "q": "¿Se sigue vendiendo gasolina sin etanol en Vietnam?",
+     "a": "No en la red normal: elijas la bomba que elijas, repostas una mezcla con etanol. Desde el 1 de junio de 2026, el Thông tư 50/2025/TT-BCT convierte la RON 95 en E10 en el país entero, es decir, con un diez por ciento de bioetanol ([información sobre la regulación de RON95/RON92, thuvienphapluat.vn](https://thuvienphapluat.vn/phap-luat/ho-tro-phap-luat/thong-tin-bo-xang-ron95-92-tu-3042026-chi-su-dung-xang-sinh-hoc-e10-theo-de-xuat-moi-duoc-hieu-nhu--263715.html)). La E5 RON 92, con un cinco por ciento de bioetanol, sigue disponible hasta el 31 de diciembre de 2030."
+    },
+    {
+     "q": "¿Es seguro comprar gasolina en botellas al borde de la carretera?",
+     "a": "No, conviene evitarlo. A veces, en carreteras rurales, hay vendedores informales que ofrecen gasolina en botellas de plástico: no hay forma de verificar su calidad ni su origen, y la proporción de la mezcla rara vez es correcta. Reposta siempre en una estación oficial de una marca conocida, aunque tengas prisa; en la propia Hanói hay estaciones oficiales a pocos kilómetros."
+    }
+   ]
+  },
+  "NL-S03": {
+   "insert_before": "## Vijf vragen vóór je een week of maand betaalt",
+   "faq": [
+    {
+     "q": "Is een huurdag bij scooterverhuur in Hanoi een kalenderdag of 24 uur?",
+     "a": "Bijna altijd 24 uur, gerekend vanaf het moment dat je de scooter meekrijgt, en dus geen kalenderdag. Haal je hem maandag om 15.00 uur op voor drie dagen, dan lever je hem donderdag om 15.00 uur in. Na hoeveel minuten vertraging een verhuurder een uur of een hele dag rekent, verschilt per bedrijf; spreek een verlenging daarom altijd vóór de deadline per bericht af."
+    },
+    {
+     "q": "Bestaat er in Hanoi een vaste weekprijs voor een huurscooter?",
+     "a": "Meestal niet: week- en maandhuur zijn in Hanoi doorgaans treden van een staffel die afhangt van het aantal huurdagen. Vraag daarom naar de dagprijs voor jouw precieze aantal dagen en vergelijk twee aanbieders op papier. Pas op met verlengen per dag: wie kort boekt en daarna steeds een dag bijtekent, blijft vaak in de duurste trede zitten."
+    },
+    {
+     "q": "Moet de verplichte verzekering je hele maandhuur dekken?",
+     "a": "Ja, de verplichte verzekering hoort bij het voertuig en niet bij de bestuurder, en ze moet de volledige huurperiode dekken. Kijk daarom naar de einddatum op het certificaat: verloopt het tijdens je huur, dan rijd je vanaf die dag onverzekerd. Rijden zonder kentekenbewijs of verzekeringsbewijs bij je is bovendien beboetbaar volgens [decreet 168/2024/NĐ-CP](https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-168-2024-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-trat-tu-atgt-duong-bo-119241231164556785.htm)."
+    }
+   ]
+  },
+  "NL-S04": {
+   "insert_before": "## Kort samengevat",
+   "faq": [
+    {
+     "q": "Mag een verhuurder een deel van de borg inhouden voor camera-boetes?",
+     "a": "Dat hangt af van wat je vooraf afspreekt. Leg vóór het tekenen vast of de borg direct na inleveren en controle terugkomt, of dat een deel enkele dagen achterblijft om [camera-boetes](https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4) af te wachten, en zo ja voor hoeveel dagen en om welk bedrag het gaat. Houdt de verhuurder bij het inleveren iets in, laat dan de teruggavedatum en je rekeningnummer op papier zetten."
+    },
+    {
+     "q": "Hoe bewijs je dat krassen al op de huurscooter zaten?",
+     "a": "Door de staat van de scooter bij het ophalen vast te leggen in foto's en video met tijdstempel, met extra aandacht voor kuip, spiegels, verlichting en banden. Schrijf ook kilometerstand, brandstofniveau en meegeleverde accessoires op en vraag de medewerker om bestaande schade af te tekenen. Stuur de beelden meteen per bericht naar de verhuurder, dan heb je bewijs met datum en tijd."
+    },
+    {
+     "q": "Wat doe je als de verhuurder bij het inleveren schade wil aftrekken?",
+     "a": "Laat de scooter in jouw bijzijn controleren en leg de bevindingen naast je foto's van het ophalen. Vraag om een schriftelijke offerte en welke onderdelen worden vervangen, en zeg dat je de oude onderdelen wilt meenemen als jij de nieuwe betaalt. Het deel dat niet wordt afgetrokken, hoort direct of binnen de afgesproken termijn tegen bewijs bij je terug te komen."
+    }
+   ]
+  },
+  "NL-S16": {
+   "insert_before": "## Samengevat",
+   "faq": [
+    {
+     "q": "Mag je in Vietnam je paspoort als borg achterlaten bij een scooterverhuurder?",
+     "a": "Juridisch is dat op zijn minst riskant: artikel 21, lid 3, onder b, van [decreet 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) beboet zowel het in pand geven als het in pand nemen van een paspoort. Of een paspoort dat bij een verhuurder ligt als pand telt, zegt het decreet niet letterlijk, maar een uitzondering voor verhuur bevat het evenmin. Vriendelijk weigeren en een contante borg tegen een schriftelijk bewijs aanbieden is de verstandige route."
+    },
+    {
+     "q": "Bij wie kun je terecht als een scooterverhuurder je paspoort blijft vasthouden?",
+     "a": "Bij de politie en je ambassade, want onderhandelen in je eentje is geen goed idee: bel [113](https://thuvienphapluat.vn/hoi-dap-phap-luat/111-113-114-115-la-so-dien-thoai-gi-138013545.html) of meld je bij het politiebureau in de wijk, en schakel de Nederlandse ambassade in. Volgens artikel 21, lid 2, onder g, van [decreet 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) is ook het onrechtmatig vasthouden van andermans paspoort beboetbaar. Een foto van je gegevenspagina en een getekend briefje met naam, paspoortnummer en teruggavedatum helpen daarbij."
+    },
+    {
+     "q": "Moet je als toerist in Vietnam altijd je paspoort bij je hebben?",
+     "a": "Ja: volgens [artikel 44 van de wet op in- en uitreis, doorreis en verblijf van buitenlanders](https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Van-ban-hop-nhat-62-VBHN-VPQH-2026-Luat-Nhap-canh-xuat-canh-cua-nguoi-nuoc-ngoai-tai-Viet-Nam-698690.aspx) moeten buitenlanders onderweg hun paspoort of internationaal reisdocument en hun verblijfspapieren bij zich dragen en op verzoek laten zien. Zonder die documenten riskeer je volgens artikel 21, lid 1, van [decreet 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) een waarschuwing of een boete. Ook daarom hoort je paspoort niet in de la van een verhuurder."
+    }
+   ]
+  },
+  "NL-S17": {
+   "insert_before": "## Vragen om vóór het betalen te stellen",
+   "faq": [
+    {
+     "q": "Betaalt de verplichte aansprakelijkheidsverzekering als je de huurscooter zelf beschadigt?",
+     "a": "Nee: de verzekeraar betaalt volgens artikel 7 van decreet 67/2023/NĐ-CP voor schade aan gezondheid, leven en eigendommen van derden en aan gezondheid en leven van passagiers, maar de gehuurde scooter zelf hoort daar niet bij ([volledige tekst](https://thuvienphapluat.vn/van-ban/Bao-hiem/Nghi-dinh-67-2023-ND-CP-bao-hiem-bat-buoc-trach-nhiem-dan-su-cua-chu-xe-co-gioi-578283.aspx)). Wie opdraait voor een kras, een afgebroken spiegel of een verloren sleutel, bepaalt het huurcontract. Staat het contract het toe, dan kunnen zulke bedragen op de borg worden ingehouden."
+    },
+    {
+     "q": "Mag een verhuurder pas achteraf een prijs rekenen voor bezorgen of verlengen?",
+     "a": "De Vietnamese consumentenwet 19/2023/QH15 biedt je daartegen houvast: artikel 10 verbiedt een consument zonder voorafgaande afspraak te laten betalen voor een al geleverde dienst, en artikel 25 sluit bedingen uit waarmee de ondernemer de prijs pas bij de levering vaststelt, tenzij de wet anders bepaalt ([volledige tekst](https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.aspx)). Hoe dat in een concreet geschil uitpakt, beslissen de bevoegde instanties. Laat elk tarief daarom vooraf schriftelijk bevestigen."
+    },
+    {
+     "q": "Gelden de nieuwe parkeertarieven van Hanoi ook bij hotels en winkelcentra?",
+     "a": "Niet automatisch: besluit 5794/QĐ-UBND geldt voor parkeerplekken op rijbaan en stoep die door de staat worden gefinancierd, volgens het [bericht van Dân trí](https://dantri.com.vn/thoi-su/ha-noi-tang-gap-doi-gia-trong-xe-o-long-duong-via-he-20261015191232581.htm). Parkeerplaatsen van hotels, winkelcentra of particulieren kunnen afwijkende tarieven rekenen. Informeer daarom naar de prijs voordat je parkeert en bewaar je parkeerkaartje."
+    }
+   ]
+  },
+  "NL-S22": {
+   "insert_before": "## Checklist voor de eerste week",
+   "faq": [
+    {
+     "q": "Heb je in Vietnam een rijbewijs nodig voor een scooter van 50 cc?",
+     "a": "Nee, voor scooters tot 50 cc is geen rijbewijs nodig, maar de bestuurder moet wel minstens zestien jaar zijn, zo blijkt uit de [officiële uitleg over scooters tot 50 cc](https://thuvienphapluat.vn/hoi-dap-phap-luat/nam-2025-xe-50cc-co-can-bang-lai-xe-khong-138043227.html). Boven 50 cc geldt wel een rijbewijsplicht, en de meeste huurscooters in Hanoi zitten tussen 110 en 125 cc. Voor korte ritten in je eigen wijk kan een model tot 50 cc daarom een eenvoudiger optie zijn."
+    },
+    {
+     "q": "Kan een verhuurder je maandcontract beëindigen als je de huur niet betaalt?",
+     "a": "Ja, in de meeste gevallen wel als je drie opeenvolgende termijnen laat liggen. Volgens artikel 479 van het Vietnamese burgerlijk wetboek van 2015 betaalt de huurder op de afgesproken momenten, en wie per periode betaalt en drie termijnen op rij overslaat, loopt het risico dat de verhuurder de overeenkomst eenzijdig opzegt ([officiële uitleg over huurcontracten volgens het Burgerlijk Wetboek 2015](https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/53460/nhung-dieu-can-biet-ve-hop-dong-thue-tai-san-theo-bo-luat-dan-su-2015)). Leg de betaalmomenten daarom duidelijk in het contract vast."
+    },
+    {
+     "q": "Wie betaalt olie, banden en remblokken bij een scooter die je maanden huurt?",
+     "a": "Dat hangt af van je afspraak met de verhuurder, dus regel het vooraf in het contract. Vraag of slijtagedelen in het maandtarief zitten of voor jouw rekening komen, en of je vrij een werkplaats kiest of verplicht naar een adres gaat dat de verhuurder aanwijst. Reken het goed door: een lager maandbedrag zonder onderhoud kan op termijn meer kosten dan een hoger bedrag waarin slijtage al zit."
+    }
+   ]
+  },
+  "NL-S23": {
+   "insert_before": null,
+   "faq": [
+    {
+     "q": "Is RON 95 schadelijk voor een huurscooter die voor RON 92 is gebouwd?",
+     "a": "Nee, dat is onschuldig: een hoger octaangetal is geen slechtere brandstof, alleen een duurdere. Een gewone huurscooter heeft geen hoge compressie, dus RON 95 levert geen extra vermogen, schonere verbranding of langer motorleven op. Is er geen RON 92 te krijgen, dan kun je E10 RON 95 gebruiken als veilig alternatief voor de motor."
+    },
+    {
+     "q": "Waar zie je welk octaangetal je huurscooter nodig heeft?",
+     "a": "Op vrijwel elke motor zit in of bij de tankdop een sticker met het aanbevolen octaangetal, en het instructieboekje vermeldt hetzelfde. Voor de gangbare huurmodellen van Honda en Yamaha met 110 tot 160 cc schrijft de fabrikant een octaangetal rond 92 voor. Twijfel je, vraag dan bij het ophalen welke brandstof de verhuurder zelf tankt."
+    },
+    {
+     "q": "Met hoeveel benzine lever je een huurscooter in Vietnam in?",
+     "a": "Dat hangt af van het contract, maar veel verhuurders verwachten bij het inleveren dezelfde tankstand als bij het ophalen. Maak daarom bij vertrek een foto van het brandstofpeil en lees na wat het contract over brandstof zegt. Sommige verhuurders rekenen een toeslag als je de scooter terugbrengt terwijl het reservelampje brandt."
+    }
+   ]
+  },
+  "ZH-S03": {
+   "insert_before": "## 选定时间档之前该问车行的三个问题",
+   "faq": [
+    {
+     "q": "在河内玩一周左右，摩托车按天租还是按周租？",
+     "a": "行程确定的话，按周租通常更合适：围绕河内五到十天的典型行程最常落在周租档，折算下来的日均价格明显低于逐日零租，又不必签整月合同。如果行程还不确定、总共只停留两三天，或者想先试一辆车再决定，按天租更灵活。"
+    },
+    {
+     "q": "按周租摩托车提前还车，没用完的天数能退钱吗？",
+     "a": "不一定。周租合同通常要求按时还车，行程缩短时，多出的包周天数不会自动按日退款。有些车行同意把剩余天数折抵其他套餐或顺延，但那是个案协商，不是默认规则。出发前就用文字或消息问清：提前还车怎么处理，延长几天时按日价计还是转成月价。"
+    },
+    {
+     "q": "签月租之前，为什么验车和押金比日租更要紧？",
+     "a": "因为月租会把你整段时间锁在同一辆车上，选车和验车都比日租重要得多，[检查清单](/zh/checklist/)要逐项认真过一遍，而不是扫一眼。押金方面，月租合同通常要求更高的押金和证件门槛，即使最终退还，这笔钱在租期内也被占用，要提前备好并计入成本。"
+    }
+   ]
+  },
+  "ZH-S04": {
+   "insert_before": "## 简短结论",
+   "faq": [
+    {
+     "q": "车行说要等交通罚单，押金可以晚几天再退吗？",
+     "a": "有可能，所以要在签字前说好：有的车行还车检查完毕就立即退，有的会为了等待事后罚单再扣留几天。事先问清扣留多久、扣多少，并写进合同；如果真的被扣留，要求写明退还日期和收款账户，并取得收据。"
+    },
+    {
+     "q": "还车时车行说有划痕要扣押金，该怎么应对？",
+     "a": "先请店员当面验车，并与取车时带时间戳的照片和视频对比。如果店家坚持扣钱，要求提供书面报价，问清更换哪些配件，并要求保留换下的旧件。协商不成时，以[第328条](https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Bo-luat-dan-su-2015-296215.aspx)和双方签字的合同条款为依据，用交接记录和消息往来作证据。"
+    },
+    {
+     "q": "租车途中自己找店修车，会影响退押金吗？",
+     "a": "可能会：擅自修理常被店家当作扣押金的理由。路上需要维修时，先用消息征得店家同意，并保留维修收据。出现任何问题也要立即用文字消息通知店家，以免被认定为隐瞒。"
+    }
+   ]
+  },
+  "ZH-S17": {
+   "insert_before": "## 小结",
+   "faq": [
+    {
+     "q": "在越南把护照押给车行，游客自己也会被罚吗？",
+     "a": "有可能，因为条文同时涵盖双方：[第282/2025/NĐ-CP号议定](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx)第21条第3款b项对抵押护照和接受抵押护照的行为都规定了罚款。议定没有明确说明押在车行作担保是否算“抵押”，但也没有为租车设任何例外，所以礼貌拒绝才是稳妥的做法。"
+    },
+    {
+     "q": "车行拒绝归还护照，应该向谁求助？",
+     "a": "不要独自交涉，应当报警或到所在坊的公安机关求助，并联系中国驻越南使领馆，领事保护与协助电话以[使领馆公布的信息](https://www.mfa.gov.cn/wjbzwfwpt/kzx/tzgg/202304/t20230421_11063258.html)为准。依照[第282/2025/NĐ-CP号议定](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx)第21条第2款g项，侵占或者非法扣留他人护照的，会被处以罚款。"
+    },
+    {
+     "q": "护照在车行丢失后，要多久才能离开越南？",
+     "a": "至少要等5个工作日：据[法国外交部](https://www.diplomatie.gouv.fr/files/files/pdf/cav/Vietnam%20-%20Minist%C3%A8re%20de%20l%27Europe%20et%20des%20Affaires%20%C3%A9trang%C3%A8res.pdf)提醒，仅向越南当局申请出境签证就需要这么久；如果已超过准许的停留期限，可能要几周。发现丢失后应尽快报警并联系使领馆，因为依照[第282/2025/NĐ-CP号议定](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx)第21条第2款a项，有效护照丢失未按规定报告的也会被罚款。"
+    }
+   ]
+  },
+  "ZH-S18": {
+   "insert_before": "## 付款前该问的几件事",
+   "faq": [
+    {
+     "q": "车行事先没说价格，事后能收送车费或续租费吗？",
+     "a": "不应该。第 19/2023/QH15 号《消费者权益保护法》第 10 条禁止在没有事先约定时强迫消费者为已提供的服务付款，第 21 条要求经营者准确、完整地告知价格和费用，第 25 条也不允许让经营者在提供服务时自行定价的条款（[法律全文](https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.aspx)）。取车前请逐项问清并写进合同或确认消息；具体争议如何适用，由主管机关判断。"
+    },
+    {
+     "q": "在越南租摩托车，还车时一定要加满油吗？",
+     "a": "不一定，要看车行的油量规则：有的要求满箱取、满箱还，有的要求取车时多少、还车时就还多少，也有的按油表格数收费。取车前问清楚，取车和还车时都给油表拍照，并问明还车时油不够每升怎么收。"
+    },
+    {
+     "q": "在河内酒店或商场停摩托车，也按新的路边看车价收费吗？",
+     "a": "不一定。河内市人民委员会2026年10月15日发布的第 5794/QĐ-UBND 号决定，只适用于由国家预算投资、占用车行道或人行道的看车点，见《民智报》的[报道](https://dantri.com.vn/thoi-su/ha-noi-tang-gap-doi-gia-trong-xe-o-long-duong-via-he-20261015191232581.htm)。酒店、商场停车场或私人看车点可能另有收费，停车前先问价并保存停车票；旧文章里的数字也可能偏低。"
+    }
+   ]
+  },
+  "ZH-S23": {
+   "insert_before": "## 第一个月的适应清单",
+   "faq": [
+    {
+     "q": "长租摩托车连续几期没交租金会怎样？",
+     "a": "出租方一般有权单方解除合同：越南《民法典》2015年第479条规定，按期支付租金时，承租人连续三期未付，出租方原则上可以解约，另有约定的除外。条文与解读见[官方转载的《民法典》财产租赁合同说明](https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/53460/nhung-dieu-can-biet-ve-hop-dong-thue-tai-san-theo-bo-luat-dan-su-2015)。所以签约时一定要把租期和付款时间写进合同。"
+    },
+    {
+     "q": "长租期间机油、轮胎和刹车片由谁出钱？",
+     "a": "取决于合同怎么写，所以要用书面方式约定这些易损件由谁承担，以及能否自选修理店。每天骑行的车在长租期内不可避免需要多次保养。看似便宜的月租金，如果易损件全部由承租人负担，长期算下来未必划算。"
+    },
+    {
+     "q": "留学生只在河内待一个学期，长租合同要注意什么？",
+     "a": "关键是别一次锁定一整年：提前谈好提前还车怎么处理，以及能否按月续租。合同里同时写明租期、付款时间、押金数额与退还条件，以及提前退租的条件。提前解约的处理方式可参考[合同与取消指南](/zh/guides/hetong-quxiao/)。"
+    }
+   ]
+  },
+  "ZH-S24": {
+   "insert_before": null,
+   "faq": [
+    {
+     "q": "标着92号的租车加了95号汽油，会伤发动机吗？",
+     "a": "不会。更高的辛烷值不是更差的油，只是更贵的油；对普通租用踏板车来说，RON95也不会带来更大的功率或更长的发动机寿命。E10里的乙醇在10%以内，这是越南标准允许、厂商也据此设计发动机的范围，不会因此毁掉发动机。"
+    },
+    {
+     "q": "越南的E5 RON92汽油会卖到什么时候？",
+     "a": "按现行规定，E5 RON92将继续供应到2030年12月31日。依据工贸部的议定 50/2025/TT-BCT，从2026年6月1日起，全国的RON95统一转为掺入10%生物乙醇的E10（[RON95/RON92调整信息, thuvienphapluat.vn](https://thuvienphapluat.vn/phap-luat/ho-tro-phap-luat/thong-tin-bo-xang-ron95-92-tu-3042026-chi-su-dung-xang-sinh-hoc-e10-theo-de-xuat-moi-duoc-hieu-nhu--263715.html)）。也就是说，常规加油站里已经买不到不含乙醇的汽油。"
+    },
+    {
+     "q": "在越南路边买塑料瓶装的汽油安全吗？",
+     "a": "不建议。乡间路边摊用塑料瓶卖的汽油，品质和来源都无法核实，调配比例也很少准确，再赶时间也最好别在那里加。请选择正规品牌的加油站；在河内市区，几公里之内总能找到一家。"
+    }
+   ]
+  },
+  "PT-S03": {
+   "insert_before": "## Cinco perguntas antes de pagar uma semana ou um mês",
+   "faq": [
+    {
+     "q": "Se levantar a moto à tarde, a que horas tenho de a devolver no último dia?",
+     "a": "À mesma hora a que a levantou: em Hanói, um dia de aluguer é quase sempre um período de 24 horas a contar da entrega, e não um dia de calendário. Por exemplo, uma moto levantada às 15h00 de segunda-feira para três dias volta à loja às 15h00 de quinta-feira. Os limites para cobrar atrasos variam de loja para loja, por isso combine qualquer prolongamento por mensagem antes do prazo."
+    },
+    {
+     "q": "Se pagar um mês de aluguer e devolver a moto mais cedo, recupero a diferença?",
+     "a": "Raramente: quem paga 30 dias à tarifa mensal e parte ao fim de 18 dificilmente recupera a diferença. Quando há reembolso, o aluguer é recalculado à tarifa diária mais alta do escalão realmente usado. Peça que lhe expliquem a regra de devolução antecipada antes de pagar e exija que fique escrita no contrato."
+    },
+    {
+     "q": "Compensa alugar a moto por poucos dias e ir prolongando dia a dia?",
+     "a": "Normalmente não: quem reserva cinco dias e depois prolonga dia a dia fica muitas vezes no escalão mais caro, em vez de passar ao seguinte. Em Hanói, os alugueres semanais e mensais costumam ser escalões de uma tabela contada em dias, e não produtos à parte. Peça o preço diário para o número exato de dias que pretende e deixe a regra de prolongamento escrita no contrato."
+    }
+   ]
+  },
+  "PT-S04": {
+   "insert_before": "## Conclusão breve",
+   "faq": [
+    {
+     "q": "A loja pode ficar com parte da caução à espera de multas de trânsito?",
+     "a": "Pode, se isso ficar combinado: em vez de devolver o valor logo após a verificação da moto, algumas lojas retêm uma parte durante alguns dias à espera de [multas de câmara](https://mps.gov.vn/hoi-dap/chi-tiet-cau-hoi/7511a592-d684-4380-978a-26ebfc4adff4). Antes de assinar, pergunte quantos dias dura essa retenção e que valor fica retido. Na devolução, faça registar a data em que recebe o resto e a conta de destino, contra recibo."
+    },
+    {
+     "q": "O que fazer se, na devolução, a loja quiser descontar um risco da caução?",
+     "a": "Peça que verifiquem a moto à sua frente e compare o risco com as fotografias e o vídeo feitos na entrega. Se a loja insistir, exija orçamento por escrito, pergunte que peças serão substituídas e proponha ficar com as antigas se pagar peças novas. Se não chegarem a acordo, negocie com base no [artigo 328](https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Bo-luat-dan-su-2015-296215.aspx) e nas cláusulas que assinou, apoiado nas fotografias com hora, no auto de entrega assinado e nas mensagens trocadas."
+    },
+    {
+     "q": "Reparar a moto por conta própria durante a viagem pode custar parte da caução?",
+     "a": "Pode: uma reparação feita sem acordo da loja serve muitas vezes de motivo para descontar a caução. Combine qualquer reparação com a loja antes de a fazer e guarde a fatura. Se acontecer um incidente, avise a loja por mensagem de imediato, para não ser acusado de o ocultar."
+    }
+   ]
+  },
+  "PT-S16": {
+   "insert_before": "## Em resumo",
+   "faq": [
+    {
+     "q": "Quem entrega o passaporte como garantia também comete uma infração no Vietname?",
+     "a": "Pode cometer, porque a redação abrange as duas partes: o artigo 21.º, n.º 3, alínea b), do [Decreto 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) pune com multa quem empenha um passaporte e quem o aceita em penhor. O decreto não esclarece se deixá-lo numa loja de aluguer conta como penhor, mas também não prevê exceção para alugueres. Recusar com cortesia é a resposta sensata."
+    },
+    {
+     "q": "A loja recusa-se a devolver o passaporte: a quem devo pedir ajuda?",
+     "a": "À polícia e à sua embaixada, sem tentar negociar sozinho: contacte a polícia ou dirija-se à esquadra do bairro e avise a Embaixada de Portugal. Reter ilegalmente o passaporte de outra pessoa, por exemplo para forçar o pagamento de um dano contestado, é punido com multa pelo artigo 21.º, n.º 2, alínea g), do [Decreto 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx)."
+    },
+    {
+     "q": "Se o passaporte se perder na loja de aluguer, quanto tempo demora a poder sair do Vietname?",
+     "a": "Pelo menos cinco dias úteis só para obter o visto de saída, segundo o [Ministério dos Negócios Estrangeiros francês](https://www.diplomatie.gouv.fr/files/files/pdf/cav/Vietnam%20-%20Minist%C3%A8re%20de%20l%27Europe%20et%20des%20Affaires%20%C3%A9trang%C3%A8res.pdf), e possivelmente várias semanas se tiver ultrapassado o período de permanência. Avise a polícia e a embaixada assim que notar a perda, porque não informar as autoridades da perda de um passaporte válido é punido com multa pelo artigo 21.º, n.º 2, alínea a), do [Decreto 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx)."
+    }
+   ]
+  },
+  "PT-S17": {
+   "insert_before": "## Perguntas a fazer antes de pagar",
+   "faq": [
+    {
+     "q": "O locador pode cobrar a entrega ou o prolongamento sem ter indicado o preço antes?",
+     "a": "Não deveria: a lei vietnamita de proteção dos consumidores, 19/2023/QH15, proíbe no artigo 10.º obrigar o consumidor a pagar um serviço já prestado sem acordo prévio. O artigo 21.º exige informação exata sobre preço, taxas e custos, e o artigo 25.º recusa, salvo disposição legal em contrário, cláusulas que deixem o comerciante fixar o preço no momento do serviço ([texto integral](https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.aspx)). Peça cada valor por escrito antes do levantamento; num litígio concreto, decidem as autoridades competentes."
+    },
+    {
+     "q": "Tenho de devolver a moto alugada com o depósito cheio?",
+     "a": "Depende da regra de abastecimento do locador, que pesa mais na conta do que o preço do litro. Há quem exija depósito cheio no levantamento e na devolução, quem peça o mesmo nível com que a moto saiu e quem faça pagar o combustível segundo o ponteiro. Pergunte antes de partir, fotografe o indicador nos dois momentos e informe-se de quanto cobram por litro se a devolver quase vazia."
+    },
+    {
+     "q": "O estacionamento em hotéis e centros comerciais de Hanói segue os novos preços da rua?",
+     "a": "Não necessariamente: a decisão 5794/QĐ-UBND, de 15 de outubro de 2026, fixa preços só para os pontos financiados pelo Estado que ocupam a faixa de rodagem ou o passeio, segundo a [reportagem do Dân trí](https://dantri.com.vn/thoi-su/ha-noi-tang-gap-doi-gia-trong-xe-o-long-duong-via-he-20261015191232581.htm). Parques de hotéis, centros comerciais ou espaços privados podem cobrar de outra forma. Pergunte o preço antes de deixar a moto, guarde o talão e lembre-se de que artigos mais antigos podem citar valores mais baixos."
+    }
+   ]
+  },
+  "PT-S22": {
+   "insert_before": "## Lista de verificação para a primeira semana",
+   "faq": [
+    {
+     "q": "O que acontece se falhar pagamentos num aluguer mensal de mota no Vietname?",
+     "a": "Se o aluguer for pago por períodos e falhar três pagamentos seguidos, o locador pode, em regra, terminar o contrato por iniciativa própria. É o que prevê o artigo 479 do Código Civil do Vietname, que também obriga o locatário a pagar nos prazos combinados; veja a [página oficial sobre contratos de arrendamento segundo o Código Civil de 2015](https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/53460/nhung-dieu-can-biet-ve-hop-dong-thue-tai-san-theo-bo-luat-dan-su-2015). Por isso, fixe no contrato a duração e os momentos de pagamento."
+    },
+    {
+     "q": "Num aluguer de vários meses, quem paga o óleo, os pneus e as pastilhas de travão?",
+     "a": "Quem o contrato indicar, por isso combine-o por escrito antes de assinar, incluindo se pode escolher a oficina. Uma mota usada diariamente precisa de manutenção várias vezes durante um contrato longo. Um valor mensal baixo com desgaste e reparações por sua conta pode sair mais caro do que um valor um pouco mais alto com assistência incluída."
+    },
+    {
+     "q": "Vou estudar um semestre em Hanói: como evito ficar preso a um contrato de um ano?",
+     "a": "Combine antes de assinar o que acontece se regressar mais cedo do que o planeado e se pode prolongar o contrato mês a mês, em vez de se obrigar a um ano inteiro. Deixe isso escrito junto da duração, dos momentos de pagamento e das condições de devolução da caução. As consequências de terminar o contrato antes do prazo estão no guia sobre [cancelar a reserva](/pt/guides/cancelar-reserva/)."
+    }
+   ]
+  },
+  "PT-S23": {
+   "insert_before": null,
+   "faq": [
+    {
+     "q": "Posso pôr RON 95 numa scooter alugada feita para RON 92?",
+     "a": "Podes: é inofensivo, porque um índice de octano mais alto não é combustível errado, apenas mais caro. O etanol da E10 também não estraga o motor, já que fica dentro do limite de dez por cento previsto na norma vietnamita, para o qual os fabricantes desenham os motores. Numa scooter de aluguer comum, a RON 95 não dá mais potência nem prolonga a vida do motor."
+    },
+    {
+     "q": "Até quando se vai vender gasolina E5 RON 92 no Vietname?",
+     "a": "Até 31 de dezembro de 2030: o artigo 4.º do Thông tư 50/2025/TT-BCT permite que a E5 RON 92 continue a ser produzida e usada até essa data ([texto oficial do Thông tư 50/2025/TT-BCT, vanban.chinhphu.vn](https://vanban.chinhphu.vn/?docid=215952&pageid=27160)). O mesmo artigo determina que, desde 1 de junho de 2026, a gasolina sem chumbo passe a E10. Na prática, qualquer gasolina que comprares numa bomba normal leva etanol."
+    },
+    {
+     "q": "É seguro comprar gasolina em garrafas à beira da estrada no Vietname?",
+     "a": "Não é aconselhável: a qualidade e a origem da gasolina vendida em garrafas de plástico nas estradas rurais não se podem verificar, e a proporção da mistura raramente bate certo. Mesmo com pressa, procura uma bomba oficial de marca conhecida. Em Hanói, as bombas oficiais ficam sempre a poucos quilómetros."
+    }
+   ]
+  },
+  "KO-S03": {
+   "insert_before": "## 주·월 단위 요금을 내기 전 다섯 가지 질문",
+   "faq": [
+    {
+     "q": "하노이 오토바이 렌트의 하루는 다음 날 같은 시각까지인가요?",
+     "a": "네, 보통 그렇습니다. 하노이의 렌트 하루는 달력상의 날짜가 아니라 인수 시점부터 24시간으로 세기 때문입니다. 지연을 몇 분부터 따지는지는 업체마다 다르니 시작 시각과 지연 기준을 확인하고, 연장이 필요하면 기한 전에 메시지로 합의해 두세요."
+    },
+    {
+     "q": "렌트를 하루씩 연장하면 요금 구간도 바뀌나요?",
+     "a": "저절로 바뀌지 않는 경우가 흔합니다. 짧게 예약한 뒤 하루씩 늘리면 다음 구간으로 넘어가지 못하고 가장 비싼 구간에 머물 수 있습니다. 반대로 월 요금을 내고 일찍 반납해도 차액을 돌려받는 일은 드무니, 연장과 조기 반납 규칙을 결제 전에 계약서에 적어 두세요."
+    },
+    {
+     "q": "한 달 렌트 도중 의무보험이 만료되면 어떻게 되나요?",
+     "a": "만료된 날부터는 무보험으로 달리는 셈이 됩니다. 의무 책임보험은 운전자가 아니라 차량에 붙고 렌트 기간 전체를 보장해야 하므로, 월 단위로 빌릴 때는 인수하면서 증서의 만료일부터 확인하세요. 보험이 전체 기간을 덮는지도 결제 전에 서면으로 받아 두면 좋습니다."
+    }
+   ]
+  },
+  "KO-S04": {
+   "insert_before": "## 짧은 결론",
+   "faq": [
+    {
+     "q": "보증금 환불액은 베트남 법으로 정해져 있나요?",
+     "a": "아니요, 법 조문만으로 정해지지는 않습니다. [베트남 민법(2015년) 제328조](https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Bo-luat-dan-su-2015-296215.aspx)의 계약금 규정에는 '별도의 합의가 있는 경우는 예외'라는 단서가 있어, 실제로 돌려받는 금액은 양쪽이 서명한 공제 조항에 달려 있습니다. 공제 항목과 계산 방법을 서명 전에 계약서에 적어 두세요."
+    },
+    {
+     "q": "업체가 흠집을 이유로 보증금을 깎겠다고 하면 무엇을 요구해야 하나요?",
+     "a": "먼저 서면 견적을 요구하고 어떤 부품을 교체하는지 확인하세요. 새 부품 비용을 낸다면 교체한 헌 부품을 가져가겠다고 말할 수 있습니다. 인수 때 찍은 시간 기록 사진과 비교해 이미 있던 흠집인지 따지고, 공제되지 않은 금액은 영수증과 함께 돌려받으세요."
+    },
+    {
+     "q": "보증금을 계좌이체나 카드로 낼 때 무엇을 확인해야 하나요?",
+     "a": "이체라면 메모란에 차량 번호와 '보증금'을 남겨 두면 환불을 요구할 때 증거가 됩니다. 카드 가승인 방식이면 승인 취소까지 며칠 걸리는지와 환율 차이를 누가 부담하는지 물어보세요. 출국 직전에 반납한다면 한국 계좌로 환불받을 수 있는지, 수수료는 누가 내는지도 확인해 두세요."
+    }
+   ]
+  },
+  "KO-S16": {
+   "insert_before": "## 정리",
+   "faq": [
+    {
+     "q": "렌트 업체에 여권을 담보로 맡기면 벌금을 받을 수 있나요?",
+     "a": "그럴 위험이 있습니다. [정령 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) 제21조 제3항 b호는 여권 등 출입국 서류를 담보로 맡기는 쪽과 받는 쪽 모두에 벌금을 정하고 있습니다. 렌트 보증이 이에 해당하는지는 명시되지 않았지만 렌트를 예외로 두는 규정도 없으므로, 정중히 거절하는 편이 현명합니다."
+    },
+    {
+     "q": "업체가 수리비를 이유로 여권을 돌려주지 않으면 어떻게 하나요?",
+     "a": "혼자 협상하지 말고 경찰에 신고하거나 관할 공안 사무소를 찾아가세요. [정령 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) 제21조 제2항 g호는 다른 사람의 여권을 불법으로 붙잡아 두는 행위에도 벌금을 정하고 있습니다. 주베트남 대한민국 대사관에도 함께 연락하세요."
+    },
+    {
+     "q": "베트남에서는 여권을 항상 지니고 다녀야 하나요?",
+     "a": "네, 다닐 때는 지녀야 합니다. [외국인 출입국·경유·거주법 제44조](https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Van-ban-hop-nhat-62-VBHN-VPQH-2026-Luat-Nhap-canh-xuat-canh-cua-nguoi-nuoc-ngoai-tai-Viet-Nam-698690.aspx)는 외국인이 여권 등 국제 여행 서류와 거주 관련 서류를 휴대하고 당국이 요구하면 제시하도록 정합니다. 이런 서류 없이 다니면 [정령 282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx) 제21조 제1항에 따라 경고나 벌금을 받을 수 있습니다."
+    }
+   ]
+  },
+  "KO-S17": {
+   "insert_before": "## 결제 전에 물어볼 질문",
+   "faq": [
+    {
+     "q": "렌트 오토바이의 연료를 덜 채워 반납하면 추가 요금이 붙나요?",
+     "a": "업체의 주유 규칙에 따라 청구될 수 있습니다. 가득 채워 돌려주는지, 받은 수준으로 돌려주는지, 게이지 눈금으로 정산하는지 출발 전에 묻고, 모자랄 때 리터당 얼마를 받는지도 확인하세요. 인수와 반납 때 연료 게이지도 사진으로 남겨 두세요."
+    },
+    {
+     "q": "반납할 때 미리 합의하지 않은 요금을 청구받으면 어떻게 되나요?",
+     "a": "베트남 소비자권리보호법 제10조는 사전 합의 없이 이미 제공한 서비스의 대금을 소비자에게 강요하는 것을 금지합니다([법률 전문](https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.aspx)). 다만 구체적인 분쟁에서의 적용은 담당 기관이 판단하므로, 배달·연장·늦은 반납 같은 항목의 요금을 인수일 전에 계약서나 확인 메시지로 받아 두세요."
+    },
+    {
+     "q": "의무보험이 빌린 오토바이의 파손도 보상하나요?",
+     "a": "아니요, 빌린 오토바이 자체의 손해는 보상 목록에 없습니다. 시행령 67/2023/NĐ-CP 제7조에 따르면 보험사가 보상하는 것은 제3자의 손해와 차량에 탄 승객의 건강·생명 손해입니다([시행령 전문](https://thuvienphapluat.vn/van-ban/Bao-hiem/Nghi-dinh-67-2023-ND-CP-bao-hiem-bat-buoc-trach-nhiem-dan-su-cua-chu-xe-co-gioi-578283.aspx)). 긁힘이나 부러진 미러 비용은 렌트 계약이 정하고, 계약이 허용하면 보증금에서 공제될 수 있습니다."
+    }
+   ]
+  },
+  "JA-S03": {
+   "insert_before": "## 1週間・1か月分を支払う前の五つの質問",
+   "faq": [
+    {
+     "q": "レンタルバイクの1日は、翌日の同じ時刻までですか？",
+     "a": "ハノイでは基本的にそうです。レンタル1日は暦の日付ではなく、引き渡しからの24時間で数えるためです。遅延の閾値は店ごとに違うので、開始時刻と遅延の扱いを確認し、延長が必要なら期限前にメッセージで合意しておきましょう。"
+    },
+    {
+     "q": "1日ずつ延長すると、料金の段階は変わりますか？",
+     "a": "自動的には変わらないことがよくあります。短く予約して1日ずつ延長すると、次の段階に移らず最も高い段階にとどまる場合があります。逆に月額で払って早く帰っても差額が戻ることはまれなので、延長と早期返却のルールは支払い前に契約書に書いてもらいましょう。"
+    },
+    {
+     "q": "1か月レンタルの途中で強制保険が切れたらどうなりますか？",
+     "a": "切れた日から無保険で走ることになります。強制保険は運転者ではなく車両に付帯し、レンタル期間全体をカバーしている必要があるため、1か月借りるときは受け取り時に証明書の有効期限を確かめましょう。全期間をカバーしているかどうかも、支払い前に書面で確認しておくと安心です。"
+    }
+   ]
+  },
+  "JA-S04": {
+   "insert_before": "## 短いまとめ",
+   "faq": [
+    {
+     "q": "保証金の返金額は、ベトナムの法律で決まっているのですか？",
+     "a": "いいえ、法律の条文だけでは決まりません。[ベトナム民法（2015年）第328条](https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Bo-luat-dan-su-2015-296215.aspx)の手付金の定めには「別段の合意がある場合を除く」という但し書きがあり、実際に返ってくる金額は双方が署名した差引条項に左右されます。差し引く項目と計算方法は、署名前に契約書へ書いてもらいましょう。"
+    },
+    {
+     "q": "傷を理由に保証金を差し引くと言われたら、何を求めればいいですか？",
+     "a": "まず書面の見積りを求め、どの部品を交換するのか確認しましょう。新品に交換する費用を払うなら、古い部品を引き取ると申し出ることができます。受け取り時の日時入りの写真と見比べて既存の傷かどうかを確かめ、差し引かれなかった分は預り証付きで返してもらいます。"
+    },
+    {
+     "q": "レンタル中に路上で修理すると、保証金に影響しますか？",
+     "a": "店の了解なしに修理すると、保証金を差し引く口実にされがちです。路上で修理が必要になったら事前に店の了解を得て、領収書を保管してください。何か起きたらすぐメッセージで店に知らせ、隠したと見なされないようにしましょう。"
+    }
+   ]
+  },
+  "JA-S16": {
+   "insert_before": "## まとめ",
+   "faq": [
+    {
+     "q": "レンタル店にパスポートを預けると、罰金の対象になりますか？",
+     "a": "対象になるおそれがあります。[政令282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx)第21条第3項b号は、旅券などの出入国書類を質に入れる側と質に取る側の双方に罰金を定めています。レンタルの担保がこれに当たるかは明記されていませんが、レンタルを例外とする規定もないため、丁寧に断るのが賢明です。"
+    },
+    {
+     "q": "修理代を理由に店がパスポートを返してくれないときは、どうすればいいですか？",
+     "a": "一人で交渉せず、警察に通報するか地区の警察署に行きましょう。[政令282/2025/NĐ-CP](https://thuvienphapluat.vn/van-ban/Vi-pham-hanh-chinh/Nghi-dinh-282-2025-ND-CP-xu-phat-vi-pham-hanh-chinh-linh-vuc-an-ninh-trat-tu-an-toan-xa-hoi-679658.aspx)第21条第2項g号は、他人の旅券を不法に留め置く行為にも罰金を定めています。あわせて日本国大使館にも連絡してください。"
+    },
+    {
+     "q": "預けたパスポートを店でなくされたら、出国までどれくらいかかりますか？",
+     "a": "最低でも5営業日はかかると考えておきましょう。[フランス外務省](https://www.diplomatie.gouv.fr/files/files/pdf/cav/Vietnam%20-%20Minist%C3%A8re%20de%20l%27Europe%20et%20des%20Affaires%20%C3%A9trang%C3%A8res.pdf)によると、旅券をなくした場合、ベトナム当局の出国ビザが出るまで最低5営業日、許可された滞在期間を過ぎていれば数週間かかることもあります。預ける前に、この日数も旅程に入れて判断してください。"
+    }
+   ]
+  },
+  "JA-S17": {
+   "insert_before": "## 支払う前に確認したい質問",
+   "faq": [
+    {
+     "q": "レンタルバイクの燃料を少なめで返すと、追加料金はかかりますか？",
+     "a": "店の給油ルールによっては請求されることがあります。満タンで返すのか、受け取ったときの量に戻すのか、燃料計の目盛りで精算するのかを受け取る前に確認し、不足時に1リットルいくら請求されるかも聞いておきましょう。受け取りと返却のときには燃料計も撮影しておきます。"
+    },
+    {
+     "q": "返却時に、事前に聞いていない料金を求められたらどうなりますか？",
+     "a": "ベトナムの消費者権利保護法第10条は、事前の合意なく、すでに提供したサービスの代金を消費者に強いて払わせることを禁じています（[法律の全文](https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.aspx)）。ただし個別の紛争での適用は所管当局が判断するため、配達や延長などの料金は受け取り日の前に契約書か確認メッセージに書いてもらいましょう。"
+    },
+    {
+     "q": "レンタルの契約書がベトナム語で読めないときは、どうすればいいですか？",
+     "a": "理解できる言語の版を求めましょう。消費者権利保護法第23条は、契約の言語はベトナム語で、当事者は別の言語を追加でき、2つの版が食い違えば消費者に有利な版が優先されると定めています（[法律の全文](https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.aspx)）。第26条は、契約を結ぶ前に検討できる合理的な時間を与えることも事業者に求めています。"
+    }
+   ]
+  }
+ }
+}
