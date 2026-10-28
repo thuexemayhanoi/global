@@ -153,3 +153,19 @@ test("A–Z reviewed metadata rows are applied, within width limits, frozen and 
   assert.equal(freeze.get(r.url).description,r.after_description,r.id+" frozen description");
  }
 });
+
+test("source re-check finds the priced paragraphs and classifies each against the live source (offline mock)",async()=>{
+ const {pricedParagraphs,recheck}=await import("../scripts/seo/source-recheck.mjs");
+ const packet={matrix_id:"EN-X",locale:"en",body_markdown:"## Costs\n\nRental from 150,000 VND per day at [Shop](https://shop.example.vn/p) and a deposit of 2,000,000 VND.\n\n## Other\n\nNo price here."};
+ const paras=pricedParagraphs(packet);
+ assert.equal(paras.length,1);
+ assert.deepEqual(paras[0].urls,["https://shop.example.vn/p"]);
+ const html=body=>({status:200,headers:{get:()=>"text/html; charset=utf-8"},text:async()=>body});
+ const partial=await recheck([packet],async()=>html("<p>Giá thuê từ 150.000 đồng/ngày</p>"));
+ assert.equal(partial.results[0].paragraphs[0].outcome,"PARTIAL");
+ const all=await recheck([packet],async()=>html("<p>150.000đ/ngày, đặt cọc 2.000.000đ</p>"));
+ assert.equal(all.results[0].paragraphs[0].outcome,"VERIFIED");
+ const down=await recheck([packet],async()=>{throw Object.assign(Error("fetch failed"),{cause:{code:"ECONNRESET"}});});
+ assert.equal(down.results[0].paragraphs[0].outcome,"UNREACHABLE");
+ assert.ok(read(".github/workflows/source-recheck.yml").includes("contents: read"),"read-only workflow");
+});

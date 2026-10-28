@@ -1,0 +1,29 @@
+name: Source Price Re-check (manual, read-only)
+on:
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: "Comma-separated article IDs; empty re-checks every article with a sourced third-party price"
+        required: false
+        default: ""
+permissions:
+  contents: read
+jobs:
+  recheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Fetch cited sources and look for each cited amount
+        run: node scripts/seo/source-recheck.mjs --confirm-live --ids="${{ inputs.ids }}"
+      - name: Store evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: global-source-recheck
+          path: reports/source-recheck.json
+          if-no-files-found: ignore
+          retention-days: 30
