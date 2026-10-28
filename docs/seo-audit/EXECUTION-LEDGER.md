@@ -1,6 +1,6 @@
 # Global SEO A–Z — execution ledger and dashboard
 
-Status: **IN_PROGRESS (fixes awaiting production verification)** · generated 2026-10-28 · baseline audit 2026-10-27 (PR #119) · re-audit 2026-10-28 at the merged state of every batch below.
+Status: **SEO_AZ_MATRIX_COMPLETE** · generated 2026-10-28 · baseline audit 2026-10-27 (PR #119) · re-audit 2026-10-28 at the merged state of every batch below.
 
 Outcome per finding is computed by `docs/seo-audit/tools/ledger.py` from the baseline findings, the re-audit, `execution/batches.json` and `execution/outcomes.json`. Full rows: [`execution/execution-ledger.csv`](execution/execution-ledger.csv) (933 findings) and [`execution/task-ledger.csv`](execution/task-ledger.csv) (95 tasks). Workbook: [`reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx`](../../reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx) (sheets EXECUTION LEDGER, OWNER ACTIONS, BEFORE vs AFTER).
 
@@ -8,15 +8,15 @@ Outcome per finding is computed by `docs/seo-audit/tools/ledger.py` from the bas
 
 | Outcome | Findings |
 |---|---:|
-| FIXED_VERIFIED | 240 |
-| FIXED_PENDING_LIVE | 1 |
+| FIXED_VERIFIED | 241 |
+| FIXED_PENDING_LIVE | 0 |
 | VALIDATED_NO_FIX | 680 |
 | DUPLICATE | 0 |
 | EXTERNAL_DEPENDENCY | 11 |
 | BLOCKED | 1 |
 | **Total** | **933** |
 
-Tasks: 95 — BLOCKED 1, DONE 51, IN_PROGRESS 1, NOT_APPLICABLE 35, OWNER_DECISION 7.
+Tasks: 95 — BLOCKED 1, DONE 52, NOT_APPLICABLE 35, OWNER_DECISION 7.
 
 ## Before / after (same analyzer, measured rules)
 
@@ -50,7 +50,7 @@ Findings: **933 → 727** reported by the re-audit; 0 new. A finding that is sti
 | U-DESC-LONG | 241 | 194 | VALIDATED_NO_FIX 169, FIXED_VERIFIED 72 |
 | U-DESC-SHORT | 8 | 0 | FIXED_VERIFIED 8 |
 | U-GRAPH-REVIEW | 13 | 0 | FIXED_VERIFIED 13 |
-| U-GRAPH-UPGRADE | 9 | 0 | FIXED_VERIFIED 8, FIXED_PENDING_LIVE 1 |
+| U-GRAPH-UPGRADE | 9 | 0 | FIXED_VERIFIED 9 |
 | U-NO-OFFICIAL-SOURCE | 66 | 63 | VALIDATED_NO_FIX 66 |
 | U-PQ-WEAK | 123 | 99 | VALIDATED_NO_FIX 95, FIXED_VERIFIED 28 |
 | U-PRICE-REVIEW | 95 | 95 | VALIDATED_NO_FIX 86, FIXED_VERIFIED 9 |
@@ -69,7 +69,7 @@ Findings: **933 → 727** reported by the re-audit; 0 new. A finding that is sti
 | nl | 53 | 10 | 0 | 43 | 0 | 0 | 45 |
 | zh | 114 | 17 | 0 | 97 | 0 | 0 | 101 |
 | pt | 42 | 8 | 0 | 34 | 0 | 0 | 34 |
-| ko | 152 | 70 | 1 | 80 | 1 | 0 | 90 |
+| ko | 152 | 71 | 0 | 80 | 1 | 0 | 90 |
 | ja | 151 | 63 | 0 | 87 | 1 | 0 | 105 |
 
 Site-wide findings (locale ALL/global) are counted in the totals above, not per language.
@@ -106,7 +106,7 @@ Site-wide findings (locale ALL/global) are counted in the totals above, not per 
 | W | AEO on commercial Supporting pages: visible FAQ (3 Q&A) on the 114 vehicle-choice articles without a usable FAQ, in 10 languages, from facts and source links already in each body; one-question sections keep their frozen heading and gain the pairs (faqEntries now reads the singular heading); FAQPage mirrors it; dateModified and <lastmod> from page-updates | [#143](https://github.com/thuexemayhanoi/global/pull/143) | 65b3451 | [40759650652](https://github.com/thuexemayhanoi/global/actions/runs/40759650652) | [40759827565](https://github.com/thuexemayhanoi/global/actions/runs/40759827565) [40759832625](https://github.com/thuexemayhanoi/global/actions/runs/40759832625) |
 | X1 | AEO on safety-and-support Supporting pages, wave 1: visible FAQ (3 Q&A) on the 227 articles in vi, en, fr, es, nl, zh, pt, ko, ja without a usable FAQ, from facts and source links already in each body; one-question sections (incl. 'A common question', 'Een veelgestelde vraag', 'Uma pergunta frequente') keep their frozen heading and gain the pairs; KO-S66's three plain-paragraph questions marked up as Q&A; FAQPage mirrors it; dateModified and <lastmod> from page-updates | [#144](https://github.com/thuexemayhanoi/global/pull/144) | 6689561 | [40764929424](https://github.com/thuexemayhanoi/global/actions/runs/40764929424) | [40765101023](https://github.com/thuexemayhanoi/global/actions/runs/40765101023) [40765105354](https://github.com/thuexemayhanoi/global/actions/runs/40765105354) |
 | X2 | AEO on safety-and-support Supporting pages, wave 2: visible FAQ (3 Q&A) on the 101 German articles without a usable FAQ, from facts and source links already in each body; one-question 'Häufige Frage' sections keep their frozen heading and gain the pairs; questions de-duplicated across neighbouring German articles (DE-S40/S199, DE-S37/S216); DE-S07 drafting leftovers and typos removed; FAQPage mirrors it; dateModified and <lastmod> from page-updates | [#145](https://github.com/thuexemayhanoi/global/pull/145) | c3245c5 | [40768840043](https://github.com/thuexemayhanoi/global/actions/runs/40768840043) | [40769008474](https://github.com/thuexemayhanoi/global/actions/runs/40769008474) [40769013581](https://github.com/thuexemayhanoi/global/actions/runs/40769013581) |
-| Y | AEO on the commercial rental-checklist page in 10 languages: visible FAQ (3 Q&A on pickup inspection, deposit records and breakdown/accident steps) built only from each checklist's own sections, rendered as H2 + H3 questions before the references, mirrored by FAQPage; dateModified and <lastmod> from page-updates | — | pending | pending | pending |
+| Y | AEO on the commercial rental-checklist page in 10 languages: visible FAQ (3 Q&A on pickup inspection, deposit records and breakdown/accident steps) built only from each checklist's own sections, rendered as H2 + H3 questions before the references, mirrored by FAQPage; dateModified and <lastmod> from page-updates | [#146](https://github.com/thuexemayhanoi/global/pull/146) | 3004dc6 | [40771129713](https://github.com/thuexemayhanoi/global/actions/runs/40771129713) | [40771299118](https://github.com/thuexemayhanoi/global/actions/runs/40771299118) [40771302816](https://github.com/thuexemayhanoi/global/actions/runs/40771302816) |
 
 ## Verification limits
 
