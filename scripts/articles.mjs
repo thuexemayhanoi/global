@@ -148,13 +148,15 @@ export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublis
 // block is one pair; continuation paragraphs belong to the open answer. FAQPage markup repeats exactly that visible
 // text (links reduced to their anchor text) and is emitted only for at least two complete pairs.
 export const FAQ_HEADINGS={vi:"Câu hỏi thường gặp",en:"Frequently asked questions",de:"Häufige Fragen",fr:"Questions fréquentes",es:"Preguntas frecuentes",nl:"Veelgestelde vragen",zh:"常见问题",pt:"Perguntas frequentes",ko:"자주 묻는 질문",ja:"よくある質問"};
+// Older pages opened a one-question section with the singular heading; questions later added under it are the same FAQ.
+const FAQ_SINGULAR={en:"Frequently asked question",de:"Häufige Frage",fr:"Question fréquente",es:"Pregunta frecuente",nl:"Veelgestelde vraag",pt:"Pergunta frequente"};
 const plainText=s=>String(s).replace(/\[([^\]]+)\]\([^)]+\)/g,"$1").replace(/\*\*([^*]+)\*\*/g,"$1").replace(/^[-*]\s+/gm,"").replace(/\s+/gu," ").trim();
 // Japanese questions often end with the particle か and a full stop (…ますか。) instead of a question mark.
 const isQuestion=s=>/(?:[?？]|か。)$/u.test(String(s).trim());
 export function faqEntries(markdown,code){
  const heading=FAQ_HEADINGS[code];
  const lines=String(markdown??"").replace(/\r\n/g,"\n").split("\n");
- const start=heading?lines.findIndex(l=>l.trim()==="## "+heading):-1;
+ const start=heading?lines.findIndex(l=>l.trim()==="## "+heading||(FAQ_SINGULAR[code]&&l.trim()==="## "+FAQ_SINGULAR[code])):-1;
  if(start<0)return [];
  const section=[];
  for(let i=start+1;i<lines.length&&!/^##\s/.test(lines[i].trim());i++)section.push(lines[i]);
