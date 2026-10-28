@@ -35,12 +35,18 @@ export const HERO_SIZES="(max-width: 767px) calc(100vw - 36px), (max-width: 880p
 export function heroPreloadLink(){
  return '<link rel="preload" as="image" href="'+HERO_SRC+'" imagesrcset="'+HERO_SRCSET+'" imagesizes="'+HERO_SIZES+'" fetchpriority="high">';
 }
+// Topic photos: 960×720 originals stay the social/Article images; the 480w and 720w files are resizes for smaller slots.
+// Gallery cards (root page) are a quarter of the ≤1150px container from 1024px, half the viewport below it;
+// topic cards (locale homes) are one column up to 760px and half the container above it (assets/styles.css).
+export const TOPIC_SIZES={gallery:"(max-width: 1023px) calc(50vw - 24px), 280px",card:"(max-width: 760px) calc(100vw - 36px), (max-width: 1186px) calc(50vw - 28px), 565px"};
+const topicSrcset=path=>[480,720].map(w=>path.replace(/\.webp$/,"-"+w+".webp")+" "+w+"w").concat(path+" 960w").join(", ");
+const topicImg=(path,sizes)=>'<img src="'+clean(path)+'" srcset="'+clean(topicSrcset(path))+'" sizes="'+sizes+'" width="960" height="720" loading="lazy" decoding="async" alt="">';
 function globalHeroPhoto(){
  return '<figure class="ultra-hero-photo"><img src="'+HERO_SRC+'" srcset="'+HERO_SRCSET+'" sizes="'+HERO_SIZES+'" width="1600" height="900" alt="'+clean(HERO_ALT)+'" fetchpriority="high" loading="eager" decoding="async"><figcaption><span>✳</span> HANOI-INSPIRED • TWO-WHEEL TRAVEL</figcaption></figure>';
 }
 function injectGatewayGallery(html){
  if(html.includes('class="ultra-gateway-gallery"'))return html;
- const gallery='<section class="ultra-gateway-gallery" aria-labelledby="ultra-gallery-heading"><div class="container"><div class="ultra-gallery-heading"><div><p class="ultra-gallery-overline">TRAVEL EDITORIAL</p><h2 id="ultra-gallery-heading">Discover our four guide topics</h2></div><p>Choose a language above to explore guidance on each topic.</p></div><div class="ultra-gallery-grid">'+globalPhotoAssets.map((item,i)=>'<article class="ultra-gallery-card"><div class="ultra-gallery-image"><img src="'+clean(item.path)+'" width="960" height="720" loading="lazy" decoding="async" alt=""></div><div class="ultra-gallery-content"><span class="ultra-gallery-count">0'+(i+1)+'</span><h3>'+clean(item.title)+'</h3><p>'+clean(item.desc)+'</p></div></article>').join("")+'</div></div></section>';
+ const gallery='<section class="ultra-gateway-gallery" aria-labelledby="ultra-gallery-heading"><div class="container"><div class="ultra-gallery-heading"><div><p class="ultra-gallery-overline">TRAVEL EDITORIAL</p><h2 id="ultra-gallery-heading">Discover our four guide topics</h2></div><p>Choose a language above to explore guidance on each topic.</p></div><div class="ultra-gallery-grid">'+globalPhotoAssets.map((item,i)=>'<article class="ultra-gallery-card"><div class="ultra-gallery-image">'+topicImg(item.path,TOPIC_SIZES.gallery)+'</div><div class="ultra-gallery-content"><span class="ultra-gallery-count">0'+(i+1)+'</span><h3>'+clean(item.title)+'</h3><p>'+clean(item.desc)+'</p></div></article>').join("")+'</div></div></section>';
  return html.replace('</main>',gallery+'</main>');
 }
 function addTopicPhotos(html){
@@ -49,7 +55,7 @@ function addTopicPhotos(html){
  html=html.replace(/(<article class="topic ultra-topic-card" id="ultra-topic-\d+">)/g,head=>{
   const a=globalPhotoAssets[idx++];
   if(!a)throw Error("No image assigned to topic card "+idx);
-  return head+'<div class="ultra-topic-image"><img src="'+clean(a.path)+'" width="960" height="720" loading="lazy" decoding="async" alt=""></div>';
+  return head+'<div class="ultra-topic-image">'+topicImg(a.path,TOPIC_SIZES.card)+'</div>';
  });
  if(idx!==4)throw Error("Expected 4 images for all four topic cards, got "+idx);
  return html;

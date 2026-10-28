@@ -192,3 +192,16 @@ test("selective re-freeze is idempotent for an already applied reviewed change",
  assert.ok(!once.errors.some(e=>/title/.test(e)),"already applied title change is not an error");
  assert.ok(!once.changed.some(c=>c.field==="title"),"and is not counted as a new change");
 });
+
+test("topic photos ship 480w and 720w variants with srcset/sizes on the root gallery and the locale topic cards (S-PSI-MOBILE)",async()=>{
+ const {TOPIC_SIZES}=await import("../scripts/ultra.mjs");
+ for(const n of ["topic-choose-bike","topic-prices-deposits","topic-documents","topic-safety"]){
+  const small=fs.readFileSync(path.join(root,n+"-480.webp")),big=fs.readFileSync(path.join(root,n+".webp"));
+  assert.equal(small.toString("ascii",8,12),"WEBP",n);
+  assert.ok(small.length<big.length/2,n+" variant is at least half the size");
+  assert.equal(fs.readFileSync(path.join(root,n+"-720.webp")).toString("ascii",8,12),"WEBP",n+" 720w");
+  const srcset='srcset="/'+n+'-480.webp 480w, /'+n+'-720.webp 720w, /'+n+'.webp 960w"';
+  assert.ok(read("index.html").includes(srcset+' sizes="'+TOPIC_SIZES.gallery+'"'),n+" root gallery");
+  for(const code of ["vi","en","de","fr","es","nl","zh","pt","ko","ja"])assert.ok(read(code+"/index.html").includes(srcset+' sizes="'+TOPIC_SIZES.card+'"'),n+" "+code+" topic card");
+ }
+});
