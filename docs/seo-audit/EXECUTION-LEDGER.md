@@ -101,16 +101,6 @@ Site-wide findings (locale ALL/global) are counted in the totals above, not per 
 | R | Site-wide menu: each published Hub is linked by its Matrix title instead of the generic 'current guide' text that all four Hub links shared on every page (10 locales, header of every page); arrow hidden from assistive technology | [#138](https://github.com/thuexemayhanoi/global/pull/138) | 0e8a10f | [40743344189](https://github.com/thuexemayhanoi/global/actions/runs/40743344189) | [40743991798](https://github.com/thuexemayhanoi/global/actions/runs/40743991798) [40743997226](https://github.com/thuexemayhanoi/global/actions/runs/40743997226) |
 | S | AEO: visible FAQ (3 Q&A) on all 40 Hubs in 10 languages, built only from facts and source links already in each Hub body; FAQPage mirrors it (selective re-freeze --schema-add=FAQPage); Hub dateModified and sitemap <lastmod> from reviewed page-updates entries | — | pending | pending | pending |
 
-## OWNER_ACTION_REQUIRED
-
-1. Search Console data for global.rentbikehanoi.com (backlog item 1, OWNER-ACTIONS.md). _(rules: S-CWV-FIELD, S-GSC-NOT-CONNECTED)_
-2. Analytics decision (backlog item 2, OWNER-ACTIONS.md). _(rules: S-GA4-NOT-CONNECTED)_
-3. Off-page links from real accounts per COMPETITOR-GAP-AND-OFFPAGE-PLAN.md; rank tracking (backlog items 3-4, OWNER-ACTIONS.md). _(rules: S-LOW-VISIBILITY)_
-4. Keyword volumes for es, zh, pt, nl and exact ko/ja variants (backlog item 4, OWNER-ACTIONS.md). _(rules: S-KW-NO-DEMAND, S-PQ-SENTENCE)_
-5. Optional named human editor (backlog item 6, OWNER-ACTIONS.md). _(rules: S-AUTHOR-ORG-ONLY)_
-6. Deferred by the owner's SEO-only directive of 2026-10-28: no new articles, so the locale imbalance stays until article production resumes. _(rules: S-LOCALE-IMBALANCE)_
-7. Business data conflicts C1-C3 in data/business/reference.json (backlog item 5, OWNER-ACTIONS.md). _(rules: S-BUSINESS-CONFLICTS)_
-
 ## Verification limits
 
 - The audit container cannot reach global.rentbikehanoi.com (egress 403); production is verified by the repository's read-only GitHub Actions (live-markup-qa: every PUBLISHED URL byte-identical to the build; post-publish-qa: status, canonical, sitemap, fingerprints, NAP guard, host probes).
@@ -118,3 +108,17 @@ Site-wide findings (locale ALL/global) are counted in the totals above, not per 
 - Keyword volumes exist only for the markets the tools returned (vi, en, fr, ko, ja full; de, es head terms); nl, pt and zh demand is NOT_CHECKED.
 - Third-party prices were verified on 2026-10-28; shops change them. source-recheck.yml re-runs the check; fact-guard keeps a standing WARN.
 - Authority/backlink figures are a third-party index estimate (Ubersuggest), not Google data; visibility changes need weeks after indexing.
+
+## OWNER_ACTIONS_LAST
+
+Source: [OWNER-ACTIONS.md](OWNER-ACTIONS.md). These never block SEO work on published pages; none is marked done until it is.
+
+1. Google Search Console data for global.rentbikehanoi.com — Rankings, impressions, indexing and field Core Web Vitals are unmeasured; Top 1–3 stays a target, not a verified result
+2. Analytics (GA4 or none) — No traffic or conversion data
+3. Off-page links from real accounts (plan: `COMPETITOR-GAP-AND-OFFPAGE-PLAN.md`) — Authority stays at DA 2 / 32 referring domains (Ubersuggest, 2026-10-28)
+4. Keyword volumes for es, zh, pt and exact ko/ja variants; rank tracking — Head terms for those markets rest on autocomplete and SERP evidence, not volumes
+5. Business data conflicts C1–C3 (hours, delivery threshold, GBP name) in `data/business/reference.json` — Business schema and NAP stay unpublished (protected)
+6. Named human editor (optional) — Bylines stay organisational
+7. New-Hub architecture (`HUB-ARCHITECTURE-PROPOSAL-20261028.md`) and PR #118 — Deferred: SEO-only mode creates no new Hubs or URLs
+
+Ledger rules that wait on these items: Search Console data for global.rentbikehanoi.com (backlog item 1, OWNER-ACTIONS.md). (S-CWV-FIELD, S-GSC-NOT-CONNECTED); Analytics decision (backlog item 2, OWNER-ACTIONS.md). (S-GA4-NOT-CONNECTED); Off-page links from real accounts per COMPETITOR-GAP-AND-OFFPAGE-PLAN.md; rank tracking (backlog items 3-4, OWNER-ACTIONS.md). (S-LOW-VISIBILITY); Keyword volumes for es, zh, pt, nl and exact ko/ja variants (backlog item 4, OWNER-ACTIONS.md). (S-KW-NO-DEMAND, S-PQ-SENTENCE); Optional named human editor (backlog item 6, OWNER-ACTIONS.md). (S-AUTHOR-ORG-ONLY); Deferred by the owner's SEO-only directive of 2026-10-28: no new articles, so the locale imbalance stays until article production resumes. (S-LOCALE-IMBALANCE); Business data conflicts C1-C3 in data/business/reference.json (backlog item 5, OWNER-ACTIONS.md). (S-BUSINESS-CONFLICTS)

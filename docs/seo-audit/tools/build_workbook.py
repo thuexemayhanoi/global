@@ -261,6 +261,15 @@ for rr in range(first, last + 1):
                                          f"-COUNTIFS({colref('ERRORS & BLOCKERS', 'task_id')},{col['task_id']}{rr},{colref('ERRORS & BLOCKERS', 'work_status')},\"WONT_FIX\")"
                                          f"-COUNTIFS({colref('ERRORS & BLOCKERS', 'task_id')},{col['task_id']}{rr},{colref('ERRORS & BLOCKERS', 'work_status')},\"NOT_APPLICABLE\")")
     ws[f"{col['open_findings']}{rr}"].font = F_BASE
+# OWNER_ACTIONS_LAST (owner directive 2026-10-28): outside-account items at the very end of the plan, as a bare backlog.
+r = last + 3
+ws.cell(row=r, column=1, value="OWNER_ACTIONS_LAST — needs an outside account or the owner; never blocks SEO work on published pages (source: docs/seo-audit/OWNER-ACTIONS.md)").font = F_SUB
+for line in open(os.path.join(ROOT, "docs", "seo-audit", "OWNER-ACTIONS.md"), encoding="utf-8"):
+    m = __import__("re").match(r"^\|\s*(\d+)\s*\|(.+?)\|(.+?)\|\s*$", line)
+    if m:
+        r += 1
+        for c, v in enumerate((int(m.group(1)), m.group(2).strip(), m.group(3).strip()), 1):
+            ws.cell(row=r, column=c, value=v).font = F_BASE
 
 # ---------------- 10 LANGUAGE MATRIX ----------------
 L_HEAD = ["locale", "published_urls_live", "published_urls", "pillar", "hubs", "supporting", "idea_rows", "ready", "claimed", "submitted_open",
