@@ -1,5 +1,15 @@
 # Repository contract · thuexemayhanoi/global
 
+## 2026-10-28 OWNER DIRECTIVE — SEO ONLY, NO NEW ARTICLES (HIGHEST OPERATIONAL PRIORITY)
+
+**Effective immediately.** Read `approvals/owner-directive-20261028-seo-only.json` and root `CLAUDE.md`. This instruction **supersedes the older "CURRENT PRODUCTION WORKFLOW" article factory obligation below**, without removing its audit history or weakening safety/QA constraints. The owner has stopped writing and publishing NEW articles on this `/global` repository; W1/W2/W3, topic refill and the Auto Publisher must not be used to increase content counts. Do not merge new-Hub expansion PR #118 or publish additional URLs under SEO-only mode. Do not delete existing content, queues, claims, branches, PRs, or audit evidence.
+
+Continue independent SEO for existing published 10-language pages: verify and improve search intent / commercial terms, title/meta/H1, Pillar/Hub/Silo, structured data, internal links, existing images/alt/OG, hreflang for real equivalents, canonical/sitemap/indexability, accessibility and performance. Use the A–Z Matrix, existing ledgers and ranking evidence when available; correct code/content and update matrix only for verified work. Execute commits/PRs, full build/SEO/fact tests and live QA. Keep business facts protected; no invented metrics or top-1 ranking claims.
+
+**Do not interrupt work with questions**, including GA4/GSC/analytics connection and other admin details. Put unverified business facts, missing credentials/accounts and external owner actions only in a final `OWNER_ACTIONS_LAST` report once executable tasks finish. Do not give setup instructions or upsell paid APIs. On "tiếp tục", resume SEO tasks from current main and execution ledger, **not** the writer queue.
+
+---
+
 ## CURRENT PRODUCTION WORKFLOW — AUTHORITATIVE CONTRACT
 
 Effective 2026-10-15 (owner standing policy `approvals/standing-policy-20261015.json` and the owner's instructions of 2026-10-15). This section is the single source of truth for how content is written, checked and published on /global. If anything later in this file, in an older runbook or in a Writer prompt conflicts with it, **this section wins**; the later sections stay binding for the protections they describe. Operational runbook for every AI Writer: `docs/CURRENT-WORKFLOW.md`.
