@@ -45,7 +45,7 @@ Every open SUBMITTED draft is in exactly one state. AWAITING QA = the publisher 
 
 ## Auto Publisher
 
-- Stage: **CONTINUOUS** — running
+- Stage: **CONTINUOUS** — **PAUSED**: Owner directive 2026-10-28 SEO_ONLY_NO_NEW_ARTICLES: stop writing/publishing new posts and new URLs; continue SEO on already published pages. See approvals/owner-directive-20261028-seo-only.json.
 
 | PUBLISH_STAGED (committed, live QA pending) | LIVE_QA_PASS | LIVE_QA_FAIL | LIVE_QA_INCONCLUSIVE |
 |---:|---:|---:|---:|
