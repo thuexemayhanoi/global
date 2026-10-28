@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "repo": "thuexemayhanoi/global",
+  "purpose": "OWNER_STRATEGY_DIRECTIVE",
+  "id": "owner-directive-20261028-independent-seo",
+  "granted_by": "Repository owner (sky.nguyen@rentbikehanoi.com), in the Claude Code session chat",
+  "granted_on": "2026-10-28",
+  "session": "https://claude.ai/code/session_011a4ufsZwpV4WEycaoTCBZ5",
+  "supersedes": [
+    "AGENTS.md (Global Content Factory 10K): 'Transactional rental keywords belong to thuexemaynguyentu.com (vi) and rentbikehanoi.com (en); do not clone them here.'",
+    "data/seo/topic-factory/policy.json positioning.rule: 'Transactional rental keywords belong to the commercial sites'",
+    "factory/topic-research/README.md: 'commercial rental keywords belong to thuexemaynguyentu.com and rentbikehanoi.com'"
+  ],
+  "owner_statements": [
+    "Tôi xác nhận global.rentbikehanoi.com là một dự án SEO độc lập hoàn toàn.",
+    "Tất cả các website và tên miền trong ngành thuê xe máy, bao gồm cả những tên miền khác do chính tôi sở hữu, đều được xem là đối thủ cạnh tranh SEO độc lập.",
+    "Không tránh từ khóa chỉ vì website khác của tôi đang sử dụng.",
+    "Không tự giảm ưu tiên từ khóa thương mại như “thuê xe máy Hà Nội”, “motorbike rental Hanoi”, “Hanoi scooter rental” hoặc những từ khóa liên quan chỉ vì trùng với tên miền khác.",
+    "Global được phép xây dựng chiến lược SEO thương mại, thông tin, du lịch và giao thông riêng cho cả 10 ngôn ngữ.",
+    "Không chuyển traffic hoặc ưu tiên xếp hạng cho website khác chỉ vì chúng cùng chủ sở hữu.",
+    "Được phép tối ưu Pillar, Hub, Supporting Content và internal links để Global cạnh tranh thứ hạng độc lập.",
+    "Không sao chép nội dung website khác; cạnh tranh bằng nội dung gốc, chất lượng và đáp ứng search intent tốt hơn.",
+    "Không chỉnh sửa các tên miền khác; chỉ tối ưu Global.",
+    "Quyết định này thay thế mọi quy tắc cũ yêu cầu Global phải nhường từ khóa thương mại cho các website cùng hệ thống. Cập nhật tài liệu chiến lược trong repository cho thống nhất, nhưng giữ nguyên các quy tắc bảo vệ dữ liệu doanh nghiệp và chất lượng nội dung.",
+    "Sử dụng PR và cơ chế merge tự động hợp lệ nếu cấu hình cho phép. Không tự bỏ qua branch protection, QA gates, Live QA, hoặc force-push vào main.",
+    "Không đánh dấu FIXED khi chưa thực sự sửa và test.",
+    "Không tự đoán mật khẩu, số liệu hoặc thay đổi dữ liệu doanh nghiệp được bảo vệ."
+  ],
+  "seo_execution": {
+    "authorized": true,
+    "what": "Execute the Global SEO A–Z Master Matrix (PR #119): fix technical SEO, optimize metadata, headings, structure, internal links, schema and the content of PUBLISHED Pillar/Hub/Supporting pages, including commercial keywords, through branches and PRs that pass every build, SEO, fact and language gate, followed by live QA.",
+    "frozen_fingerprints": "A deliberate change of a frozen title, description, H1 or JSON-LD type is applied with a selective re-freeze of exactly the changed fields in the same PR; content additions keep every frozen H2 and at least 90% of main text.",
+    "not_authorized": [
+      "Deleting, renaming or redirecting any URL",
+      "Changing NAP, opening hours, business prices, business-reference flags or adding business (LocalBusiness/AutoRental) schema",
+      "Inventing search volume, rankings, prices, legal facts, sources or human review",
+      "Copying content from any other website, or editing any other domain",
+      "Bypassing branch protection, QA gates or live QA, or force-pushing main"
+    ]
+  },
+  "intent_note": "Commercial and commercial-investigation keywords, including head terms such as 'thuê xe máy Hà Nội' and 'motorbike rental Hanoi', are normal Global targets. The Topic Factory gate F4 still refuses purely transactional topics (book/order/pay now) because /global offers no booking, address, phone or own prices while the business-reference publication flags are false; that is an intent-fulfilment and business-data rule, not deference to another domain."
+}
