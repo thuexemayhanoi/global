@@ -1,0 +1,163 @@
+{
+  "batch": 1,
+  "status": "LOCAL_GATES_PASSED_AWAITING_CI_DEPLOY",
+  "branch": "seo/az-q-hub-pq",
+  "ids": [
+    "EN-H01",
+    "DE-H04",
+    "JA-H04"
+  ],
+  "titles_changed": 3,
+  "descriptions_changed": 0,
+  "changed_files": [
+    "assets/search-index/de-0001.json",
+    "assets/search-index/en-0000.json",
+    "assets/search-index/ja-0000.json",
+    "content/articles/DE-H04.json",
+    "content/articles/EN-H01.json",
+    "content/articles/JA-H04.json",
+    "data/seo/url-freeze.json",
+    "de/topics/sicher-unterwegs/index.html",
+    "en/topics/choosing-a-rental-bike/index.html",
+    "ja/topics/anzen-trouble/index.html"
+  ],
+  "checks": [
+    {
+      "script": "scripts/build.mjs",
+      "args": [
+        "--check"
+      ],
+      "output_sha256": "45d5fddb881adc4bae5235f00734caec80d6dc7c6653b2d5c29c4a9d462ce374",
+      "last_line": "Verified 1108 static files"
+    },
+    {
+      "script": "scripts/seo/seo-guard.mjs",
+      "args": [
+        "--strict"
+      ],
+      "output_sha256": "2daee8025a4cfdbe0d06d847692901d81f4765f60a83e1f0dd4bde79cf6188bb",
+      "last_line": "SEO_GUARD_PASS ✓ {\"mode\":\"SEO_PROTECTION_GUARD_READ_ONLY\",\"frozen_urls\":1079,\"published_urls\":1079,\"planned_urls_guarded\":3406,\"html_scanned\":1081,\"fail\":0,\"warn\":197}"
+    },
+    {
+      "script": "scripts/build.mjs",
+      "args": [],
+      "output_sha256": "e00426f9f4bebdb5c820181337b89b130687e31a381994ca0947bb6f53160285",
+      "last_line": "Generated 1108 static files"
+    },
+    {
+      "script": "scripts/seo/content-graph.mjs",
+      "args": [
+        "--write"
+      ],
+      "output_sha256": "b6bf01b468f7a014fb0942e2164d10595392e421d5cbd1504784a4fbf9c5d8ae",
+      "last_line": "CONTENT_GRAPH_WRITTEN {\"rows\":2150,\"published\":1079,\"idea\":1071,\"locales\":10,\"candidates\":1401,\"silos\":330,\"edges\":4606,\"actions\":{\"KEEP\":1078,\"UPGRADE\":1,\"CREATE\":2413,\"REVIEW\":59},\"review_pairs\":34}"
+    },
+    {
+      "script": "scripts/build.mjs",
+      "args": [
+        "--check"
+      ],
+      "output_sha256": "45d5fddb881adc4bae5235f00734caec80d6dc7c6653b2d5c29c4a9d462ce374",
+      "last_line": "Verified 1108 static files"
+    },
+    {
+      "script": "scripts/seo/seo-guard.mjs",
+      "args": [
+        "--strict"
+      ],
+      "output_sha256": "2daee8025a4cfdbe0d06d847692901d81f4765f60a83e1f0dd4bde79cf6188bb",
+      "last_line": "SEO_GUARD_PASS ✓ {\"mode\":\"SEO_PROTECTION_GUARD_READ_ONLY\",\"frozen_urls\":1079,\"published_urls\":1079,\"planned_urls_guarded\":3406,\"html_scanned\":1081,\"fail\":0,\"warn\":197}"
+    },
+    {
+      "script": "scripts/seo/fact-guard.mjs",
+      "args": [],
+      "output_sha256": "1daff996d8a2e450f25e1a88b0e23e34a9aef43d0c38acf3fd9fc90f59df7a3b",
+      "last_line": "FACT_GUARD_PASS ✓ {\"fail\":0,\"warn\":743,\"mode\":\"READ_ONLY_ANTI_FABRICATION\"}"
+    },
+    {
+      "script": "scripts/seo/content-graph.mjs",
+      "args": [
+        "--check"
+      ],
+      "output_sha256": "cec6ccfc50f0f56c9bf73bd188047bb0a3953c0baf241e3f5abfdc30e6955107",
+      "last_line": "CONTENT_GRAPH_VALID {\"rows\":2150,\"published\":1079,\"idea\":1071,\"locales\":10,\"candidates\":1401,\"silos\":330,\"edges\":4606,\"actions\":{\"KEEP\":1078,\"UPGRADE\":1,\"CREATE\":2413,\"REVIEW\":59},\"review_pairs\":34}"
+    },
+    {
+      "script": "scripts/seo/validate-plan.mjs",
+      "args": [],
+      "output_sha256": "bfb4825a21dfdab06b7dc36a6c3c6f4e9f732d0f029d6e736156fde0050a8bc6",
+      "last_line": "}"
+    },
+    {
+      "script": "scripts/nav-qa.mjs",
+      "args": [],
+      "output_sha256": "31b43377e96d6ca258edbe23caaa9d48f62e0bb7c1d38ec41d72ab217b64d35d",
+      "last_line": "Shared navigation QA PASS — 10 locales, 4 hubs and 8 child labels each, zero IDEA hyperlinks"
+    },
+    {
+      "script": "scripts/seo/audit-static.mjs",
+      "args": [
+        "--fail-p0"
+      ],
+      "output_sha256": "94fffff7103948a6c7b5158ad76d9843084332bf2a47e72b8893a4f7f3c6e0ef",
+      "last_line": "}"
+    }
+  ],
+  "records": [
+    {
+      "id": "EN-H01",
+      "url": "/en/topics/choosing-a-rental-bike/",
+      "locale": "en",
+      "before_title": "Choosing a Rental Motorbike in Hanoi: Practical Guide",
+      "before_description": "Compare automatic, semi-automatic and manual rental motorbikes in Hanoi by route, driving eligibility, comfort, safety checks and full rental terms.",
+      "after_title": "Types of Motorbikes to Rent in Hanoi: How to Choose",
+      "after_description": "Compare automatic, semi-automatic and manual rental motorbikes in Hanoi by route, driving eligibility, comfort, safety checks and full rental terms.",
+      "decision": "OPTIMIZE",
+      "reason": "SEO-only Hub round Q: U-PQ-WEAK (title 0.29): the title did not name 'types' from the Matrix primary query 'types of motorbikes to rent in Hanoi'. Google autocomplete (en-US, 2026-10-28) returns 'types of motorcycles in vietnam', 'are motorbikes in vietnam automatic' and 'best motorbike rental in hanoi'. The body compares automatic scooters, semi-automatic underbones and manual motorcycles (H2 'Automatic scooter, semi-automatic underbone or manual motorcycle?'), so the title states the page's real scope; the generic suffix 'Practical Guide' is dropped. H1 and description unchanged.",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, full H2 outline and lead, Matrix primary_query, commercial head term and sibling titles in the same locale reviewed; no fact, number or claim added; description and H1 unchanged.",
+      "width_review": "Characters: title 53→51; description unchanged. No browser/SERP pixel measurement.",
+      "primary_query": "types of motorbikes to rent in Hanoi",
+      "search_intent": "commercial_investigation",
+      "protected_packet_sha256": "0dbe2a88a90f6c588405b8d94a8f42e30e6c353e861bedac05c395e7c0c12119"
+    },
+    {
+      "id": "DE-H04",
+      "url": "/de/topics/sicher-unterwegs/",
+      "locale": "de",
+      "before_title": "Mietroller in Hanoi: Verkehrsregeln, Panne und Unfall",
+      "before_description": "Rollerfahren in Hanoi: Helmpflicht, 0-Promille-Grenze, Tempolimits und Bußgelder, wie der Verkehr funktioniert und was bei Panne oder Unfall zu tun ist.",
+      "after_title": "Roller fahren in Hanoi: Sicherheit, Regeln, Panne und Unfall",
+      "after_description": "Rollerfahren in Hanoi: Helmpflicht, 0-Promille-Grenze, Tempolimits und Bußgelder, wie der Verkehr funktioniert und was bei Panne oder Unfall zu tun ist.",
+      "decision": "OPTIMIZE",
+      "reason": "SEO-only Hub round Q: U-PQ-WEAK (title 0.25): the title lacked 'Roller fahren' and 'Sicherheit' from the Matrix primary query 'Roller fahren Hanoi Sicherheit'. Google autocomplete (de, 2026-10-28) returns 'hanoi roller fahren', 'hanoi roller verkehr' and 'roller fahren vietnam'. The description already opens with 'Rollerfahren in Hanoi' and the H2 outline covers rules, traffic, breakdowns and accidents, so every title term is backed by a section. As the Hub, it takes the broad 'Roller fahren in Hanoi' term while its Supporting pages keep their narrower modifiers (Regenzeit, Tet, Winter, Verkehrsfluss). H1 keeps 'Mietroller'.",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, full H2 outline and lead, Matrix primary_query, commercial head term and sibling titles in the same locale reviewed; no fact, number or claim added; description and H1 unchanged.",
+      "width_review": "Characters: title 53→60; description unchanged. No browser/SERP pixel measurement.",
+      "primary_query": "Roller fahren Hanoi Sicherheit",
+      "search_intent": "informational",
+      "protected_packet_sha256": "d7e236900bcbd2971c23b8f9a3105158b3d30a40fd3d9bfc2a6f86f38f21d05e"
+    },
+    {
+      "id": "JA-H04",
+      "url": "/ja/topics/anzen-trouble/",
+      "locale": "ja",
+      "before_title": "ハノイのバイク安全ガイド：故障・盗難・事故への対応",
+      "before_description": "ハノイのレンタルバイク安全ガイド:ヘルメット義務と議定168/2024の罰金、ハノイの車流に入るコツ、雨と夜の走行技術、パンク・盗難・交通事故の標準対応手順、115と113の緊急電話の使い方までを解説します。",
+      "after_title": "ハノイのレンタルバイク安全ガイド：故障・盗難・事故への対応",
+      "after_description": "ハノイのレンタルバイク安全ガイド:ヘルメット義務と議定168/2024の罰金、ハノイの車流に入るコツ、雨と夜の走行技術、パンク・盗難・交通事故の標準対応手順、115と113の緊急電話の使い方までを解説します。",
+      "decision": "OPTIMIZE",
+      "reason": "SEO-only Hub round Q: U-PQ-WEAK (title 0.23): the title lacked 'レンタル' from the Matrix primary query 'ハノイ レンタルスクーター 安全'. Google autocomplete (ja, 2026-10-28) for 'ハノイ レンタルスクーター' returns only 'ハノイ レンタルバイク' variants, so the title uses the market term 'レンタルバイク' (JA commercial head-term variant 'ハノイのレンタルバイク'). It now matches the existing description ('ハノイのレンタルバイク安全ガイド') and lead; 'バイク 事故' (autocomplete 'ハノイ バイク 事故') is kept. H1 and description unchanged.",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, full H2 outline and lead, Matrix primary_query, commercial head term and sibling titles in the same locale reviewed; no fact, number or claim added; description and H1 unchanged.",
+      "width_review": "Unicode East-Asian-width: title 50→58; description unchanged. No browser/SERP pixel measurement.",
+      "primary_query": "ハノイ レンタルスクーター 安全",
+      "search_intent": "informational",
+      "protected_packet_sha256": "a129d98da3966d5ec1cb358e241899e983344076aa536577e0c7496d34c730dd"
+    }
+  ],
+  "production_verified": false
+}
