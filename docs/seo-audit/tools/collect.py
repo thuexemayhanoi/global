@@ -132,6 +132,7 @@ def parse_page(path, loc):
     d["h2_outline"] = [t for l, t in hs if l == 2][:30]
     # schema
     types, ok, inlang, dates, faq, crumbs, author_types = [], True, set(), {}, False, 0, set()
+    article_with_image = False
     for s in soup.select('script[type="application/ld+json"]'):
         try:
             data = json.loads(s.string or "")
@@ -152,6 +153,8 @@ def parse_page(path, loc):
                 for k in ("datePublished", "dateModified"):
                     if n.get(k):
                         dates[k] = n[k]
+                if (t == "Article" or isinstance(t, list) and "Article" in t) and n.get("image"):
+                    article_with_image = True
                 if t == "FAQPage":
                     faq = True
                 if t == "BreadcrumbList":
@@ -160,6 +163,7 @@ def parse_page(path, loc):
                     author_types.add(n["author"].get("@type"))
                 stack.extend(v for v in n.values() if isinstance(v, (dict, list)))
     d["schema_types"] = sorted(set(types))
+    d["article_image_in_schema"] = article_with_image
     d["schema_valid_json"] = ok
     d["schema_blocks"] = len(soup.select('script[type="application/ld+json"]'))
     d["schema_inlanguage"] = sorted(inlang)
