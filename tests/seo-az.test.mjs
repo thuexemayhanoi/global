@@ -355,3 +355,19 @@ test("every vehicle-choice page that batch W extended shows at least three FAQ p
   }
  }
 });
+
+test("every safety-and-support page that batch X extended shows at least three FAQ pairs mirrored by FAQPage, and its new answers state no number the body does not (batch X)",()=>{
+ const receipt=JSON.parse(read("docs/seo-audit/execution/support-faq-x.json")),source=receipt.pages;
+ assert.equal(Object.keys(source).length,227);
+ for(const id of [...Object.keys(source),...receipt.formatted]){
+  const row=published.find(r=>r.id===id),p=packets.find(x=>x.matrix_id===id),faq=faqEntries(p.body_markdown,row.locale);
+  assert.ok(faq.length>=3,id+" visible FAQ");
+  assert.equal(graph(page(row.url)).find(n=>n["@type"]==="FAQPage")?.mainEntity.length,faq.length,id+" FAQPage mirrors the visible FAQ");
+  for(const {q,a} of source[id]?.faq??[]){
+   const pair="**"+q+"** "+a;
+   assert.ok(p.body_markdown.includes(pair),id+" pair is in the body");
+   const stated=new Set(p.body_markdown.replace(pair,"").match(/\d+/g)||[]);
+   for(const n of (q+" "+a).match(/\d+/g)||[])assert.ok(stated.has(n),id+" FAQ number "+n+" is stated elsewhere in the body");
+  }
+ }
+});

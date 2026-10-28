@@ -20,7 +20,7 @@ Tasks: 95 — BLOCKED 1, DONE 51, NOT_APPLICABLE 36, OWNER_DECISION 7.
 
 ## Before / after (same analyzer, measured rules)
 
-Findings: **933 → 729** reported by the re-audit; 0 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
+Findings: **933 → 728** reported by the re-audit; 0 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
 
 | Rule | Baseline | Re-audit | Outcomes |
 |---|---:|---:|---|
@@ -30,7 +30,7 @@ Findings: **933 → 729** reported by the re-audit; 0 new. A finding that is sti
 | S-CHECKLIST-NO-REFS | 10 | 0 | FIXED_VERIFIED 10 |
 | S-CWV-FIELD | 1 | 1 | EXTERNAL_DEPENDENCY 1 |
 | S-DE-TOPIC-DRIFT | 32 | 32 | VALIDATED_NO_FIX 32 |
-| S-FAQ-SCHEMA | 1 | 1 | FIXED_VERIFIED 1 |
+| S-FAQ-SCHEMA | 1 | 0 | FIXED_VERIFIED 1 |
 | S-GA4-NOT-CONNECTED | 1 | 1 | EXTERNAL_DEPENDENCY 1 |
 | S-GSC-NOT-CONNECTED | 1 | 1 | EXTERNAL_DEPENDENCY 1 |
 | S-INTENT-LABEL | 10 | 0 | FIXED_VERIFIED 10 |
@@ -103,7 +103,8 @@ Site-wide findings (locale ALL/global) are counted in the totals above, not per 
 | T | AEO on commercial Supporting pages: visible FAQ (3 Q&A) on the 57 price/deposit (rental-costs) articles that had none, in 10 languages, built only from facts and source links already in each body; FAQPage mirrors it (selective re-freeze --schema-add=FAQPage); dateModified and <lastmod> from page-updates entries | [#140](https://github.com/thuexemayhanoi/global/pull/140) | 8948542 | [40749170321](https://github.com/thuexemayhanoi/global/actions/runs/40749170321) | [40749400238](https://github.com/thuexemayhanoi/global/actions/runs/40749400238) [40749405263](https://github.com/thuexemayhanoi/global/actions/runs/40749405263) |
 | U | AEO on commercial Supporting pages: visible FAQ (3 Q&A) on the 114 documents/licence/contract (documents-contracts) articles that had none, in 10 languages, built only from facts and source links already in each body; FAQPage mirrors it (selective re-freeze --schema-add=FAQPage); dateModified and <lastmod> from page-updates entries | [#141](https://github.com/thuexemayhanoi/global/pull/141) | d7ab895 | [40754186898](https://github.com/thuexemayhanoi/global/actions/runs/40754186898) | [40754426766](https://github.com/thuexemayhanoi/global/actions/runs/40754426766) [40754431691](https://github.com/thuexemayhanoi/global/actions/runs/40754431691) |
 | V | Fact accuracy (E-E-A-T): 13 licence pages in 9 languages still presented Circular 12/2025/TT-BCA as current; they now state that Circular 108/2026/TT-BCA replaced it on 1 July 2026 and give its Art. 24 conversion condition (visa or temporary residence card valid at least 90 days, or permanent residence card), online filing and the 1-day e-licence / 2.5-working-day card timing, citing the 108/2026 text already used on sibling pages | [#142](https://github.com/thuexemayhanoi/global/pull/142) | c25056c | [40755880224](https://github.com/thuexemayhanoi/global/actions/runs/40755880224) | [40756053008](https://github.com/thuexemayhanoi/global/actions/runs/40756053008) [40756056808](https://github.com/thuexemayhanoi/global/actions/runs/40756056808) |
-| W | AEO on commercial Supporting pages: visible FAQ (3 Q&A) on the 114 vehicle-choice articles without a usable FAQ, in 10 languages, from facts and source links already in each body; one-question sections keep their frozen heading and gain the pairs (faqEntries now reads the singular heading); FAQPage mirrors it; dateModified and <lastmod> from page-updates | — | pending | pending | pending |
+| W | AEO on commercial Supporting pages: visible FAQ (3 Q&A) on the 114 vehicle-choice articles without a usable FAQ, in 10 languages, from facts and source links already in each body; one-question sections keep their frozen heading and gain the pairs (faqEntries now reads the singular heading); FAQPage mirrors it; dateModified and <lastmod> from page-updates | [#143](https://github.com/thuexemayhanoi/global/pull/143) | 65b3451 | [40759650652](https://github.com/thuexemayhanoi/global/actions/runs/40759650652) | [40759827565](https://github.com/thuexemayhanoi/global/actions/runs/40759827565) [40759832625](https://github.com/thuexemayhanoi/global/actions/runs/40759832625) |
+| X1 | AEO on safety-and-support Supporting pages, wave 1: visible FAQ (3 Q&A) on the 227 articles in vi, en, fr, es, nl, zh, pt, ko, ja without a usable FAQ, from facts and source links already in each body; one-question sections (incl. 'A common question', 'Een veelgestelde vraag', 'Uma pergunta frequente') keep their frozen heading and gain the pairs; KO-S66's three plain-paragraph questions marked up as Q&A; FAQPage mirrors it; dateModified and <lastmod> from page-updates | — | pending | pending | pending |
 
 ## Verification limits
 
