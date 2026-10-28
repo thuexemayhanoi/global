@@ -1,7 +1,7 @@
 ﻿task_id,rule_id,severity,locale,title,findings,FIXED_VERIFIED,FIXED_PENDING_LIVE,VALIDATED_NO_FIX,DUPLICATE,EXTERNAL_DEPENDENCY,BLOCKED,work_status,batches,prs,owner_action
 T-S-GSC-NOT-CONNECTED,S-GSC-NOT-CONNECTED,P1,ALL,"No Search Console property is connected for global.rentbikehanoi.com; indexation, queries and coverage are unknown",1,0,0,0,0,1,0,OWNER_DECISION,,,"Connect Google Search Console for https://global.rentbikehanoi.com/ (a google-site-verification meta tag is already on /), submit /sitemap.xml and share access with the SEO tooling (OpenSEO)."
-T-S-PILLAR-HEAD-TERM,S-PILLAR-HEAD-TERM,P1,"de,en,es,fr,ja,ko,nl,pt,vi,zh","Locale Pillar does not yet target its market's researched commercial head term (e.g. 'thuê xe máy Hà Nội') in primary_query, title and H1",10,0,10,0,0,0,0,IN_PROGRESS,G,,
-T-S-LOW-VISIBILITY,S-LOW-VISIBILITY,P1,ALL,"Third-party index shows 0 ranking keywords, Domain Authority 2, 37 backlinks from 32 domains",1,0,0,0,0,1,0,OWNER_DECISION,,,"Approve an off-page plan (citations from travel communities, partner links, digital PR); re-measure visibility in 4–8 weeks."
+T-S-PILLAR-HEAD-TERM,S-PILLAR-HEAD-TERM,P1,"de,en,es,fr,ja,ko,nl,pt,vi,zh","Locale Pillar does not yet target its market's researched commercial head term (e.g. 'thuê xe máy Hà Nội') in primary_query, title and H1",10,10,0,0,0,0,0,DONE,G,#127,
+T-S-LOW-VISIBILITY,S-LOW-VISIBILITY,P1,ALL,"Third-party index shows 0 ranking keywords, Domain Authority 2, 37 backlinks from 32 domains",1,0,0,0,0,1,0,OWNER_DECISION,,,"Run the off-page plan in docs/seo-audit/COMPETITOR-GAP-AND-OFFPAGE-PLAN.md with real accounts (editorial outreach to ranking travel blogs, genuine forum answers, resource pages; no paid/PBN links); approve rank-tracking credits for the 10 head terms; re-measure referring domains (32 on 2026-10-28) monthly."
 T-U-PRICE-REVIEW-EN,U-PRICE-REVIEW,P2,en,fact-guard: sourced third-party prices need a dated re-check,24,1,0,23,0,0,0,DONE,D3,#125,
 T-U-PRICE-REVIEW-ES,U-PRICE-REVIEW,P2,es,fact-guard: sourced third-party prices need a dated re-check,12,0,0,12,0,0,0,NOT_APPLICABLE,D3,#125,
 T-S-RAIL-ANCHOR,S-RAIL-ANCHOR,P2,"de,en,es,fr,ja,ko,nl,pt,vi,zh",Every article's 'Related guides' rail links the locale home with the same exact-match transactional anchor,10,10,0,0,0,0,0,DONE,B,#121,
@@ -76,14 +76,14 @@ T-U-PQ-WEAK-JA,U-PQ-WEAK,P3,ja,Primary query terms weakly present in title and H
 T-U-PQ-WEAK-ZH,U-PQ-WEAK,P3,zh,Primary query terms weakly present in title and H1 (< 50% token overlap),4,1,0,3,0,0,0,DONE,D2,#124,
 T-U-TITLE-LONG-ZH,U-TITLE-LONG,P3,zh,Title likely truncated in SERPs (display width > 65; CJK/Hangul counted double),4,4,0,0,0,0,0,DONE,C,#122,
 T-U-NO-OFFICIAL-SOURCE-JA,U-NO-OFFICIAL-SOURCE,P3,ja,No reference on an official (government) domain detected by the audit heuristic,3,0,0,3,0,0,0,NOT_APPLICABLE,,,
-T-U-DESC-SHORT-EN,U-DESC-SHORT,P3,en,Meta description short (display width < 100),2,0,2,0,0,0,0,IN_PROGRESS,E2,,
+T-U-DESC-SHORT-EN,U-DESC-SHORT,P3,en,Meta description short (display width < 100),2,2,0,0,0,0,0,DONE,E2,#127,
 T-U-DESC-SHORT-JA,U-DESC-SHORT,P3,ja,Meta description short (display width < 100),2,2,0,0,0,0,0,DONE,C,#122,
 T-U-DESC-SHORT-KO,U-DESC-SHORT,P3,ko,Meta description short (display width < 100),2,2,0,0,0,0,0,DONE,C,#122,
 T-U-DESC-SHORT-ZH,U-DESC-SHORT,P3,zh,Meta description short (display width < 100),2,2,0,0,0,0,0,DONE,C,#122,
 T-U-NO-OFFICIAL-SOURCE-PT,U-NO-OFFICIAL-SOURCE,P3,pt,No reference on an official (government) domain detected by the audit heuristic,2,0,0,2,0,0,0,NOT_APPLICABLE,,,
 T-U-TITLE-SIMILAR-DE,U-TITLE-SIMILAR,P3,de,H1/title trigram similarity ≥ 0.5 with another Supporting page in the same locale,2,0,0,2,0,0,0,NOT_APPLICABLE,,,
 T-U-TITLE-SIMILAR-VI,U-TITLE-SIMILAR,P3,vi,H1/title trigram similarity ≥ 0.5 with another Supporting page in the same locale,2,0,0,2,0,0,0,NOT_APPLICABLE,,,
-T-S-ARTICLE-NO-IMAGE,S-ARTICLE-NO-IMAGE,P3,ALL,Article JSON-LD has no image property (only the publisher logo),1,0,1,0,0,0,0,IN_PROGRESS,B+E1,#121,
+T-S-ARTICLE-NO-IMAGE,S-ARTICLE-NO-IMAGE,P3,ALL,Article JSON-LD has no image property (only the publisher logo),1,1,0,0,0,0,0,DONE,B+E1,#121 #127,
 T-S-BUSINESS-CONFLICTS,S-BUSINESS-CONFLICTS,P3,ALL,"Business reference has open owner conflicts (C1 hours, C2 delivery threshold, C3 GBP title)",1,0,0,0,0,0,1,BLOCKED,,,"Resolve C1 (hours 08:00–21:30 vs 09:00–21:00), C2 (delivery threshold) and C3 (GBP name) in data/business/reference.json via a reviewed PR with dated evidence."
 T-S-CWV-FIELD,S-CWV-FIELD,P3,ALL,No field Core Web Vitals (CrUX) or INP data available,1,0,0,0,0,1,0,OWNER_DECISION,,,"Connect Google Search Console for https://global.rentbikehanoi.com/ (a google-site-verification meta tag is already on /), submit /sitemap.xml and share access with the SEO tooling (OpenSEO)."
 T-S-OG-IMAGE-SINGLE,S-OG-IMAGE-SINGLE,P3,ALL,All published pages share the same og:image,1,1,0,0,0,0,0,DONE,B,#121,
