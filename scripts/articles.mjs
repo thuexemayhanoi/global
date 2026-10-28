@@ -7,6 +7,15 @@ const SITE="https://global.rentbikehanoi.com";
 export const BRAND="Vietnam Two-Wheel Guide";
 // Site-wide social preview image (the root hero illustration); article packets carry no cover images yet.
 export const SOCIAL_IMAGE={path:"/hero-hanoi.webp",width:1600,height:900};
+// One existing root illustration per Hub cluster (960×720 WebP, already served): a guide previews with its topic's
+// picture and names it as the Article image; rows outside these clusters keep the site hero.
+export const TOPIC_IMAGES={
+ "vehicle-choice":{path:"/topic-choose-bike.webp",width:960,height:720},
+ "documents-contracts":{path:"/topic-documents.webp",width:960,height:720},
+ "rental-costs":{path:"/topic-prices-deposits.webp",width:960,height:720},
+ "safety-support":{path:"/topic-safety.webp",width:960,height:720}
+};
+export const socialImageFor=row=>TOPIC_IMAGES[row?.cluster]||SOCIAL_IMAGE;
 const esc=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const localeCodes=new Set(["vi","en","de","fr","es","nl","zh","pt","ko","ja"]);
 const topicStatus=new Set(["IDEA","RESEARCHED","DRAFT","QA_APPROVED","PUBLISHED"]);
@@ -134,6 +143,31 @@ export function checkArticle(packet,matrix,locales,{minimumWords=550,allowPublis
  if(!packet?.editorial_notes)warnings.push("Add editorial methodology or verification notes");
  return {passed:errors.length===0,words,errors,warnings,row_id:row?.id??null};
 }
+// The locale's visible FAQ H2 in an article body. Under it, each "**Question?** answer" paragraph or "### Question?"
+// block is one pair; continuation paragraphs belong to the open answer. FAQPage markup repeats exactly that visible
+// text (links reduced to their anchor text) and is emitted only for at least two complete pairs.
+export const FAQ_HEADINGS={vi:"Câu hỏi thường gặp",en:"Frequently asked questions",de:"Häufige Fragen",fr:"Questions fréquentes",es:"Preguntas frecuentes",nl:"Veelgestelde vragen",zh:"常见问题",pt:"Perguntas frequentes",ko:"자주 묻는 질문",ja:"よくある質問"};
+const plainText=s=>String(s).replace(/\[([^\]]+)\]\([^)]+\)/g,"$1").replace(/\*\*([^*]+)\*\*/g,"$1").replace(/^[-*]\s+/gm,"").replace(/\s+/gu," ").trim();
+const isQuestion=s=>/[?？]$/u.test(String(s).trim());
+export function faqEntries(markdown,code){
+ const heading=FAQ_HEADINGS[code];
+ const lines=String(markdown??"").replace(/\r\n/g,"\n").split("\n");
+ const start=heading?lines.findIndex(l=>l.trim()==="## "+heading):-1;
+ if(start<0)return [];
+ const section=[];
+ for(let i=start+1;i<lines.length&&!/^##\s/.test(lines[i].trim());i++)section.push(lines[i]);
+ const pairs=[];let open=null;
+ for(const block of section.join("\n").split(/\n\s*\n/).map(b=>b.trim()).filter(Boolean)){
+  const h3=block.match(/^###\s+(.+?)\s*(?:\n([\s\S]*))?$/),bold=block.match(/^\*\*([^*]+)\*\*\s*([\s\S]*)$/);
+  if(h3&&isQuestion(plainText(h3[1]))){open={q:plainText(h3[1]),a:[h3[2]||""]};pairs.push(open);}
+  else if(bold&&isQuestion(plainText(bold[1]))){open={q:plainText(bold[1]),a:[bold[2]]};pairs.push(open);}
+  else if(/^###\s/.test(block))open=null;
+  else if(open)open.a.push(block);
+ }
+ const out=pairs.map(p=>[p.q,plainText(p.a.join(" "))]).filter(([q,a])=>q&&a);
+ return out.length>=2?out:[];
+}
+export const faqPageNode=pairs=>({"@type":"FAQPage","mainEntity":pairs.map(([q,a])=>({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}}))});
 function inline(text){
  const re=/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g;
  let cursor=0,result="";
@@ -268,14 +302,17 @@ export function renderArticle(packet,locale,row,matrix,topical=null,ix=rowsIndex
  const trail=parentURL===home?[{name:"Global",url:"/"},{name:locale.name,url:home}]:[{name:locale.name,url:home},{name:parentLabel,url:parentURL}];
  const crumbs=trail.map((c,i)=>({"@type":"ListItem","position":i+1,"name":c.name,"item":SITE+c.url})).concat([{"@type":"ListItem","position":trail.length+1,"name":packet.title,"item":url}]);
  const org={"@type":"Organization","name":BRAND,"url":SITE+"/about/"};
- const article={"@type":"Article","headline":packet.title,"description":packet.meta_description,"inLanguage":htmlLang,"mainEntityOfPage":url,"isPartOf":{"@type":"WebSite","name":BRAND,"url":SITE+"/"},"author":org,"publisher":{...org,"logo":{"@type":"ImageObject","url":SITE+"/assets/favicon.svg"}}};
+ const img=socialImageFor(row);
+ const article={"@type":"Article","headline":packet.title,"description":packet.meta_description,"inLanguage":htmlLang,"mainEntityOfPage":url,"image":{"@type":"ImageObject","url":SITE+img.path,"width":img.width,"height":img.height},"isPartOf":{"@type":"WebSite","name":BRAND,"url":SITE+"/"},"author":org,"publisher":{...org,"logo":{"@type":"ImageObject","url":SITE+"/assets/favicon.svg"}}};
  // The publication record's approval timestamp is the only dated event the repository holds for a page; no edit history is invented.
  if(packet.publication?.approved_at){article.datePublished=packet.publication.approved_at;article.dateModified=packet.publication.approved_at;}
  const data={"@context":"https://schema.org","@graph":[article,{"@type":"BreadcrumbList","itemListElement":crumbs}]};
+ const faq=faqEntries(packet.body_markdown,locale.code);
+ if(faq.length)data["@graph"].push(faqPageNode(faq));
  const sources=packet.sources.map(s=>'<li><a href="'+esc(s.url)+'" rel="noopener noreferrer">'+esc(s.title)+'</a></li>').join("");
  const cover=packet.cover_image?'<figure><img src="'+esc(packet.cover_image)+'" alt="'+esc(packet.cover_alt)+'" loading="lazy" decoding="async"><figcaption>'+esc(packet.image_credit)+'</figcaption></figure>':"";
  const json=JSON.stringify(data).replace(/</g,"\\u003c");
- const social='<meta property="og:site_name" content="'+esc(BRAND)+'"><meta property="og:image" content="'+SITE+SOCIAL_IMAGE.path+'"><meta property="og:image:width" content="'+SOCIAL_IMAGE.width+'"><meta property="og:image:height" content="'+SOCIAL_IMAGE.height+'">\n<meta name="twitter:card" content="summary_large_image">';
+ const social='<meta property="og:site_name" content="'+esc(BRAND)+'"><meta property="og:image" content="'+SITE+img.path+'"><meta property="og:image:width" content="'+img.width+'"><meta property="og:image:height" content="'+img.height+'">\n<meta name="twitter:card" content="summary_large_image">';
  const crumbNav=trail.map(c=>'<a href="'+esc(c.url)+'">'+esc(c.name)+'</a>').join(' <span aria-hidden="true">›</span> ');
  return '<!doctype html>\n<html lang="'+esc(htmlLang)+'"><head>\n<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<title>'+esc(packet.title)+'</title>\n<meta name="description" content="'+esc(packet.meta_description)+'">\n<link rel="canonical" href="'+esc(url)+'">\n<meta property="og:type" content="article"><meta property="og:title" content="'+esc(packet.title)+'"><meta property="og:description" content="'+esc(packet.meta_description)+'"><meta property="og:url" content="'+esc(url)+'">\n'+social+'\n<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">\n<script type="application/ld+json">'+json+'</script>\n</head><body><a class="skip" href="#main">Skip to content</a><main id="main"><div class="container"><nav class="crumb" aria-label="Breadcrumb">'+crumbNav+'</nav><article class="article"><h1>'+esc(packet.h1)+'</h1><p class="article-lead">'+esc(displayLead)+'</p>'+cover+'<div class="article-copy">'+renderMarkdown(packet.body_markdown)+'</div>'+topicLinks(row,matrix,topical,locale.code,ix)+'<section class="article-references"><h2>'+esc((ARTICLE_LABELS[locale.code]||ARTICLE_LABELS.en)[2])+'</h2><ol>'+sources+'</ol></section>'+(packet.publication?'<p class="article-provenance">'+esc(AI_DISCLOSURE[locale.code]||AI_DISCLOSURE.en)+'</p>':'')+'<p><a href="'+esc(parentURL)+'">← '+esc(parentLabel)+'</a></p></article></div></main></body></html>\n';
 }

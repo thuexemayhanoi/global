@@ -3,8 +3,8 @@ import path from "node:path";
 import { enhanceNavigation } from "./navigation.mjs";
 import { applyPremium, createSearchPage } from "./premium.mjs";
 import { applyUltra, heroPreloadLink } from "./ultra.mjs";
-import { generateApprovedArticles, SOCIAL_IMAGE } from "./articles.mjs";
-import { generateSitemaps, sitemapFilePattern } from "./sitemaps.mjs";
+import { generateApprovedArticles, SOCIAL_IMAGE, faqPageNode } from "./articles.mjs";
+import { generateSitemaps, sitemapFilePattern, publicationLastmod } from "./sitemaps.mjs";
 const root=process.cwd();
 const data=JSON.parse(fs.readFileSync(path.join(root,"content/locales.json"),"utf8"));
 const siteOutput=function siteOutput(locales,siteInfo){
@@ -42,12 +42,12 @@ ${jsonLd(structured)}
   // between the topic cards and the checklist band so the Pillar carries enough main text of its own.
   const extra=l=>(l.extraSections||[]).map(s=>`<section class="section"><div class="container"><h2>${esc(s.h2)}</h2>${s.paragraphs.map(p=>`<p class="section-intro">${esc(p)}</p>`).join("")}${(s.bullets||[]).length?`<ul class="section-list">${s.bullets.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}</div></section>`).join("");
   function home(l) {
-    const path=href(l,false);const schema={"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":l.h1,"url":site+path,"inLanguage":l.htmlLang,"isPartOf":{"@type":"WebSite","name":"Vietnam Two-Wheel Guide","url":site+"/"},"about":HANOI,"breadcrumb":{"@id":site+path+"#breadcrumb"}},{"@type":"BreadcrumbList","@id":site+path+"#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Global","item":site+"/"},{"@type":"ListItem","position":2,"name":l.name,"item":site+path}]}]};
+    const path=href(l,false);const schema={"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":l.h1,"url":site+path,"inLanguage":l.htmlLang,"isPartOf":{"@type":"WebSite","name":"Vietnam Two-Wheel Guide","url":site+"/"},"about":HANOI,"breadcrumb":{"@id":site+path+"#breadcrumb"}},{"@type":"BreadcrumbList","@id":site+path+"#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Global","item":site+"/"},{"@type":"ListItem","position":2,"name":l.name,"item":site+path}]},...(l.faq.length>=2?[faqPageNode(l.faq)]:[])]};
     return head(l.htmlLang,l.title,l.description,path,"locale",schema)+nav(l,"locale")+`<main id="main"><section class="hero"><div class="container hero-inner"><p class="eyebrow">${esc(l.eyebrow)}</p><h1>${esc(l.h1)}</h1><p class="lead">${esc(l.intro)}</p><div class="actions"><a class="btn" href="${href(l,true)}">${esc(l.navRead)} →</a><a class="btn secondary" href="#topics">${esc(l.navTopics)} ↓</a></div></div></section><div class="container">${crumb(l,false)}</div><section class="section" id="topics"><div class="container"><p class="overline">${esc(l.navTopics)}</p><h2>${esc(l.navTopics)}</h2><div class="topic-grid">${l.topics.map((t,i)=>`<article class="topic"><span class="number">${String(i+1).padStart(2,"0")}</span><h3>${esc(t[0])}</h3><p>${esc(t[1])}</p></article>`).join("")}</div></div></section>${extra(l)}<aside class="info-band"><div class="container info-band-in"><div><h2>${esc(l.guideTitle)}</h2><p>${esc(l.guideDescription)}</p></div><a href="${href(l,true)}" class="btn">${esc(l.navRead)} →</a></div></aside><section class="section"><div class="container"><p class="overline">FAQ</p><h2>FAQ</h2><div class="faq">${l.faq.map(([q,a])=>`<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("")}</div></div></section></main>`+footer(l);
   }
   function guide(l){
     const path=href(l,true);const schema={"@context":"https://schema.org","@graph":[{"@type":"Article","headline":l.guideTitle,"description":l.guideDescription,"inLanguage":l.htmlLang,"mainEntityOfPage":site+path,"isPartOf":{"@type":"WebSite","name":"Vietnam Two-Wheel Guide","url":site+"/"},"author":{"@type":"Organization","name":"Vietnam Two-Wheel Guide","url":site+"/about/"},"publisher":{"@type":"Organization","name":"Vietnam Two-Wheel Guide","url":site+"/about/","logo":{"@type":"ImageObject","url":site+"/assets/favicon.svg"}},"about":HANOI},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Global","item":site+"/"},{"@type":"ListItem","position":2,"name":l.name,"item":site+href(l,false)},{"@type":"ListItem","position":3,"name":l.navGuide,"item":site+path}]}]};
-    return head(l.htmlLang,l.guideTitle,l.guideDescription,path,"guide",schema)+nav(l,"guide")+`<main id="main"><div class="container">${crumb(l,true)}<article class="article"><p class="pill">${esc(l.navGuide)}</p><h1>${esc(l.guideTitle)}</h1><p class="article-lead">${esc(l.guideIntro)}</p>${l.guideSections.map((s,i)=>`<section><p class="overline">0${i+1}</p><h2>${esc(s[0])}</h2><p>${esc(s[1])}</p></section>`).join("")}<p class="quiet">${esc(l.navNote)}</p><a class="btn" href="${href(l,false)}">← ${esc(l.navBack)}</a></article></div></main>`+footer(l);
+    return head(l.htmlLang,l.guideTitle,l.guideDescription,path,"guide",schema)+nav(l,"guide")+`<main id="main"><div class="container">${crumb(l,true)}<article class="article"><p class="pill">${esc(l.navGuide)}</p><h1>${esc(l.guideTitle)}</h1><p class="article-lead">${esc(l.guideIntro)}</p>${l.guideSections.map((s,i)=>`<section><p class="overline">0${i+1}</p><h2>${esc(s[0])}</h2><p>${esc(s[1])}</p></section>`).join("")}${(l.guideReferences||[]).length?`<section class="article-references"><h2>${esc(l.guideReferencesLabel)}</h2><ol>${l.guideReferences.map(r=>`<li><a href="${esc(r.url)}" rel="noopener noreferrer">${esc(r.title)}</a></li>`).join("")}</ol></section>`:""}<p class="quiet">${esc(l.navNote)}</p><a class="btn" href="${href(l,false)}">← ${esc(l.navBack)}</a></article></div></main>`+footer(l);
   }
   for(const l of locales){OUT[`${l.code}/index.html`]=home(l);OUT[`${l.code}/checklist/index.html`]=guide(l)}
   const selector=locales.map(l=>`<a class="language-card" lang="${esc(l.htmlLang)}" href="${href(l,false)}"><span>${esc(l.flag+" "+l.name)}</span><span aria-hidden="true">↗</span></a>`).join("");
@@ -74,9 +74,10 @@ for(const key of Object.keys(articles)) {
 const allPages=applyUltra(applyPremium(enhanceNavigation(basePages,data,menuMatrix),menuMatrix,data),menuMatrix,data);
 // Sitemaps are derived ONLY from actual approved/generated HTML (not IDEA rows).
 // Root sitemap.xml is an index; each locale and global/utility URLs have their own child.
+const lastmod=publicationLastmod(root,menuMatrix);
 Object.assign(allPages,generateSitemaps(
  Object.keys(allPages).filter(p=>p.endsWith("index.html")&&p!=="search/index.html"),
- data.map(l=>l.code),menuMatrix.base_url
+ data.map(l=>l.code),menuMatrix.base_url,lastmod
 ));
 const files=allPages;
 const check=process.argv.includes("--check");
