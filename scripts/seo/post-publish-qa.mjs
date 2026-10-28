@@ -88,15 +88,44 @@ export async function inspectProduction(fetcher=fetch,origin="https://global.ren
  }catch(e){issues.push("404 response unavailable "+e.message)}
  return{scope:"LIVE_HTTP_READ_ONLY",origin,checked_at:new Date().toISOString(),passed:issues.length===0,issues,evidence,limitations:["No Lighthouse/CrUX LCP, INP or CLS data","HTTP checks alone do not prove Google indexation or AI citations","Search page is deliberately noindex and excluded from sitemap"]};
 }
+/**
+ * Read-only probes for the host-level behaviour the repository cannot set itself (GitHub Pages HTTPS enforcement,
+ * trailing-slash redirects, a www host, response headers). Results are advisories with evidence, never a failure:
+ * fixing them is a Pages/DNS setting, not a build change.
+ */
+export async function probeRedirectsAndHeaders(fetcher=fetch,origin="https://global.rentbikehanoi.com"){
+ const host=new URL(origin).host,advisories=[],evidence=[];
+ const probe=async(url,expect)=>{
+  try{
+   const r=await fetcher(url,{redirect:"manual",signal:AbortSignal.timeout(20000)});
+   const location=r.headers.get("location");
+   evidence.push({probe:url,http_status:r.status,location});
+   if(!expect(r.status,location))advisories.push("Unexpected answer for "+url+": HTTP "+r.status+(location?" → "+location:""));
+  }catch(e){evidence.push({probe:url,error:e.cause?.code||e.message});advisories.push("No answer for "+url+": "+(e.cause?.code||e.message));}
+ };
+ await probe("http://"+host+"/",(s,l)=>s===301&&l===origin+"/");
+ await probe(origin+"/vi",(s,l)=>s===301&&(l===origin+"/vi/"||l==="/vi/"||l==="http://"+host+"/vi/"));
+ await probe("https://www."+host+"/",(s,l)=>s>=300&&s<400&&String(l||"").startsWith(origin));
+ try{
+  const r=await fetcher(origin+"/",{signal:AbortSignal.timeout(20000)});
+  const h=k=>r.headers.get(k);
+  const headers={"content-type":h("content-type"),"strict-transport-security":h("strict-transport-security"),"cache-control":h("cache-control"),"x-content-type-options":h("x-content-type-options"),server:h("server")};
+  evidence.push({probe:origin+"/",http_status:r.status,headers});
+  if(!/text\/html;\s*charset=utf-8/i.test(headers["content-type"]||""))advisories.push("Homepage content-type is not text/html; charset=utf-8");
+  if(!headers["strict-transport-security"])advisories.push("No Strict-Transport-Security header (GitHub Pages controls response headers)");
+ }catch(e){advisories.push("Homepage header probe failed: "+e.message);}
+ return {advisories,evidence};
+}
 async function cli(){
  if(!process.argv.includes("--confirm-live"))throw Error("Explicit --confirm-live is required; do not run on PR before approved Pages deployment");
  const matrix=JSON.parse(fs.readFileSync(path.join(ROOT,"data/seo/master-matrix.json"),"utf8"));
  const locales=JSON.parse(fs.readFileSync(path.join(ROOT,"content/locales.json"),"utf8"));
  const registry=JSON.parse(fs.readFileSync(path.join(ROOT,"data/seo/url-freeze.json"),"utf8"));
  const report=await inspectProduction(fetch,"https://global.rentbikehanoi.com",matrix,locales,registry,{cacheBust:"?qa="+Date.now()});
+ report.host_probes=await probeRedirectsAndHeaders(fetch,"https://global.rentbikehanoi.com");
  fs.mkdirSync(path.join(ROOT,"reports"),{recursive:true});
  fs.writeFileSync(path.join(ROOT,"reports/post-publish-qa.json"),JSON.stringify(report,null,2)+"\n");
- console.log(JSON.stringify({passed:report.passed,issues:report.issues,checked:report.evidence.length,report:"reports/post-publish-qa.json"},null,2));
+ console.log(JSON.stringify({passed:report.passed,issues:report.issues,checked:report.evidence.length,host_advisories:report.host_probes.advisories,host_evidence:report.host_probes.evidence,report:"reports/post-publish-qa.json"},null,2));
  if(!report.passed)process.exitCode=1;
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))cli().catch(e=>{console.error("POST_PUBLISH_QA "+e.message);process.exitCode=1});

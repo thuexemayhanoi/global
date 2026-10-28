@@ -4,7 +4,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
-import {renderArticle,topicLinks,SOCIAL_IMAGE} from "../scripts/articles.mjs";
+import {renderArticle,topicLinks,SOCIAL_IMAGE,socialImageFor} from "../scripts/articles.mjs";
 import {sitemapFilePattern,SITEMAP_CHILD} from "../scripts/sitemaps.mjs";
 import {loadTopicalMap} from "../scripts/seo/topical-authority-core.mjs";
 
@@ -44,7 +44,10 @@ test("every Hub and Supporting page carries site name, social image, card type a
  for(const r of articles){
   const html=read(r.url);
   assert.ok(html.includes('<meta property="og:site_name" content="Vietnam Two-Wheel Guide">'),r.id);
-  assert.ok(html.includes('<meta property="og:image" content="'+SITE+SOCIAL_IMAGE.path+'">'),r.id);
+  const img=socialImageFor(r);
+  assert.ok(html.includes('<meta property="og:image" content="'+SITE+img.path+'">'),r.id);
+  assert.notEqual(img,SOCIAL_IMAGE,r.id+" every Hub cluster has its own topic picture");
+  assert.equal(graph(html).find(n=>n["@type"]==="Article").image?.url,SITE+img.path,r.id+" Article names the same image");
   assert.ok(html.includes('<meta name="twitter:card" content="summary_large_image">'),r.id);
   const article=graph(html).find(n=>n["@type"]==="Article");
   assert.equal(article.publisher?.name,"Vietnam Two-Wheel Guide",r.id);

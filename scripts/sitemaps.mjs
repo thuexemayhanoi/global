@@ -20,7 +20,10 @@ const NS="http://www.sitemaps.org/schemas/sitemap/0.9";
 const XML_HEAD='<?xml version="1.0" encoding="UTF-8"?>\n';
 const escapeXML=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const decodeXML=s=>s.replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,'"');
-const urlset=urls=>XML_HEAD+'<urlset xmlns="'+NS+'">\n'+urls.map(url=>"<url><loc>"+escapeXML(url)+"</loc></url>").join("\n")+'\n</urlset>\n';
+// <lastmod> only when the caller knows a real dated event for the URL (W3C date); never invented.
+const LASTMOD=/^\d{4}-\d{2}-\d{2}$/;
+const urlEntry=(url,lastmod)=>"<url><loc>"+escapeXML(url)+"</loc>"+(lastmod?"<lastmod>"+lastmod+"</lastmod>":"")+"</url>";
+const urlset=(urls,lastmod=new Map())=>XML_HEAD+'<urlset xmlns="'+NS+'">\n'+urls.map(url=>urlEntry(url,lastmod.get(url))).join("\n")+'\n</urlset>\n';
 const indexXml=children=>XML_HEAD+'<sitemapindex xmlns="'+NS+'">\n'+children.map(name=>"<sitemap><loc>"+escapeXML(SITEMAP_ORIGIN+"/"+name)+"</loc></sitemap>").join("\n")+'\n</sitemapindex>\n';
 
 export function htmlKeyToURL(key,origin=SITEMAP_ORIGIN){
@@ -28,11 +31,11 @@ export function htmlKeyToURL(key,origin=SITEMAP_ORIGIN){
  return origin+"/"+(key==="index.html"?"":key.slice(0,-10));
 }
 
-function splitShards(urls){
+function splitShards(urls,lastmod=new Map()){
  const shards=[],headBytes=Buffer.byteLength(XML_HEAD+'<urlset xmlns="'+NS+'">\n</urlset>\n');
  let current=[],bytes=headBytes;
  for(const url of urls){
-  const increment=Buffer.byteLength("<url><loc>"+escapeXML(url)+"</loc></url>\n");
+  const increment=Buffer.byteLength(urlEntry(url,lastmod.get(url))+"\n");
   if(increment+headBytes>SITEMAP_MAX_BYTES)throw Error("Individual URL too long for sitemap");
   if(current.length&&(current.length>=SITEMAP_LIMIT||bytes+increment>SITEMAP_MAX_BYTES)){
    shards.push(current);current=[];bytes=headBytes;
@@ -42,8 +45,28 @@ function splitShards(urls){
  if(current.length)shards.push(current);
  return shards;
 }
-export function generateSitemaps(pageKeys,localeCodes,origin=SITEMAP_ORIGIN){
+/**
+ * <lastmod> from real dated events only: an article's recorded publication approval and, for a Hub, the latest
+ * publication among itself and its PUBLISHED children (its "Guides in this topic" list changed then). Pages
+ * without a recorded date (Pillars, checklists, utilities) get no lastmod rather than an invented one.
+ */
+export function publicationLastmod(root,matrix){
+ const lastmod=new Map(),rowById=new Map(matrix.rows.map(r=>[r.id,r]));
+ const bump=(row,date)=>{const u=SITEMAP_ORIGIN+row.url;if(!lastmod.has(u)||lastmod.get(u)<date)lastmod.set(u,date);};
+ const dir=path.join(root,"content/articles");
+ for(const f of fs.existsSync(dir)?fs.readdirSync(dir).filter(n=>n.endsWith(".json")).sort():[]){
+  const p=JSON.parse(fs.readFileSync(path.join(dir,f),"utf8")),row=rowById.get(p.matrix_id);
+  const date=String(p.publication?.approved_at||"").slice(0,10);
+  if(!row||row.status!=="PUBLISHED"||!LASTMOD.test(date))continue;
+  bump(row,date);
+  const parent=rowById.get(row.parent_id);
+  if(row.role==="SUPPORT"&&parent?.role==="HUB"&&parent.status==="PUBLISHED")bump(parent,date);
+ }
+ return lastmod;
+}
+export function generateSitemaps(pageKeys,localeCodes,origin=SITEMAP_ORIGIN,lastmod=new Map()){
  if(origin!==SITEMAP_ORIGIN)throw Error("Unexpected sitemap origin");
+ for(const [url,date]of lastmod)if(!LASTMOD.test(String(date)))throw Error("Invalid lastmod "+date+" for "+url);
  if(!Array.isArray(localeCodes)||new Set(localeCodes).size!==localeCodes.length||localeCodes.some(code=>!/^[a-z]{2}$/.test(code)))throw Error("Invalid locale codes");
  const groups=new Map([["main",[]],...localeCodes.map(code=>[code,[]])]);
  const seen=new Set();
@@ -59,9 +82,9 @@ export function generateSitemaps(pageKeys,localeCodes,origin=SITEMAP_ORIGIN){
  }
  const files={},children=[];
  for(const [group,items]of groups){
-  for(const [index,urls]of splitShards(items.sort()).entries()){
+  for(const [index,urls]of splitShards(items.sort(),lastmod).entries()){
    const name="sitemap-"+group+(index?"-"+(index+1):"")+".xml";
-   files[name]=urlset(urls);
+   files[name]=urlset(urls,lastmod);
    children.push(name);
   }
  }
@@ -144,7 +167,7 @@ export async function fetchSitemapInventory(get,{origin=SITEMAP_ORIGIN,localeCod
 }
 export function parseSitemapUrlset(xml,origin=SITEMAP_ORIGIN){
  if(!xml.includes('<urlset xmlns="'+NS+'">')||xml.includes("<sitemapindex"))throw Error("Not a URL sitemap");
- const matches=[...xml.matchAll(/<url>\s*<loc>([^<]+)<\/loc>\s*<\/url>/g)];
+ const matches=[...xml.matchAll(/<url>\s*<loc>([^<]+)<\/loc>(?:\s*<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>)?\s*<\/url>/g)];
  if(!matches.length||matches.length!==(xml.match(/<url>/g)||[]).length)throw Error("Invalid or empty URL sitemap");
  const seen=new Set();
  return matches.map(m=>{

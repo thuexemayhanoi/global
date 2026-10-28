@@ -26,6 +26,8 @@
    else menu.setAttribute("open","");
   };
   sync();
+  // From here the open attribute alone decides; until now CSS kept the phone drawer collapsed (no layout shift).
+  menu.setAttribute("data-nav-ready","");
   if(narrow.addEventListener)narrow.addEventListener("change",sync);
   else narrow.addListener(sync);
   menu.querySelectorAll("a[href]").forEach(a=>a.addEventListener("click",()=>{if(narrow.matches)menu.removeAttribute("open")}));

@@ -27,6 +27,13 @@ const readingLabels={
  ko:["주제 허브","실용 가이드","읽기 →","문의 / 정정"],
  ja:["トピック","実用ガイド","読む →","お問い合わせ / 訂正"]
 };
+// The rail's link to the locale home names the guide (as its <title> does) instead of repeating the bare
+// head keyword on every article.
+const pillarRailLabel={
+ vi:"Cẩm nang thuê xe máy Hà Nội",en:"Hanoi motorbike rental guide",de:"Ratgeber: Motorrad mieten in Hanoi",
+ fr:"Guide de la location de moto à Hanoï",es:"Guía de alquiler de motos en Hanói",nl:"Gids: motor huren in Hanoi",
+ zh:"河内摩托车租赁指南",pt:"Guia de aluguel de motos em Hanói",ko:"하노이 오토바이 렌트 가이드",ja:"ハノイのバイクレンタルガイド"
+};
 export function createSearchPage(locales){
  const opts=locales.map(l=>'<option value="'+safe(l.code)+'">'+safe(l.flag+" "+l.name)+'</option>').join("");
  const ld={"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"Vietnam Two-Wheel Guide","url":HOST+"/"},{"@type":"WebPage","name":"Search published guides","url":HOST+"/search/","isPartOf":{"@id":HOST+"/"}}]};
@@ -100,7 +107,7 @@ function enhanceArticle(html,route,idx){
   if(r.role!=="PILLAR"&&r.url!==pRow?.url&&(r.parent_id===pRow?.parent_id||r.parent_id===pRow?.id))related.push(r);
  }
  const menu=headings.length>=2?'<nav class="premium-toc" aria-label="'+safe(tr[2])+'"><strong>'+safe(tr[2])+'</strong><ol>'+headings.map(h=>'<li><a href="#'+h.id+'">'+safe(h.title)+'</a></li>').join("")+'</ol></nav>':"";
- const relatedNav=related.length?'<nav class="premium-related" aria-label="'+safe(tr[3])+'"><strong>'+safe(tr[3])+'</strong>'+related.map(r=>'<a href="'+safe(r.url)+'">'+safe(r.working_title)+'</a>').join("")+'</nav>':"";
+ const relatedNav=related.length?'<nav class="premium-related" aria-label="'+safe(tr[3])+'"><strong>'+safe(tr[3])+'</strong>'+related.map(r=>'<a href="'+safe(r.url)+'">'+safe(r.role==="PILLAR"?pillarRailLabel[code]||r.working_title:r.working_title)+'</a>').join("")+'</nav>':"";
  const signature='<p class="premium-author">'+safe(tr[5])+': <a href="/about/">Vietnam Two-Wheel Guide</a> · <a href="/contact/">'+safe(copy[3])+'</a></p>';
  const rebuilt='<article class="article premium-article-grid"><div class="premium-reading-content">'+contents+signature+'</div><aside class="premium-rail">'+menu+relatedNav+'</aside></article>';
  return html.replace(articleMatch[0],rebuilt);

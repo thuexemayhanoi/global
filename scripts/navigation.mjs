@@ -3,6 +3,7 @@
 // Hub gains more Supporting rows (topical-map promotion), PUBLISHED rows win,
 // then lowest priority; the rest are reached from the Hub page itself.
 export const MENU_CHILDREN_PER_HUB=2;
+export const JS_FLAG='<script>document.documentElement.classList.add("js")</script>';
 export function menuChildren(matrix,hubId){
   return matrix.rows.filter(r=>r.parent_id===hubId&&r.role==="SUPPORT"&&r.status!=="BLOCKED")
     .sort((a,b)=>(a.status==="PUBLISHED"?0:1)-(b.status==="PUBLISHED"?0:1)||a.priority-b.priority||a.id.localeCompare(b.id))
@@ -68,6 +69,9 @@ export function enhanceNavigation(files, locales, matrix) {
     html=html.replace('<a href="/privacy/">Privacy</a>','<a href="/privacy/">'+esc(privacyLabel)+'</a>').replace('<a href="/terms/">Terms</a>','<a href="/terms/">'+esc(termsLabel)+'</a>');
 
     if(!html.includes('/assets/navigation.css'))html=html.replace('<link rel="stylesheet" href="/assets/styles.css">','<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">');
+    // Marks <html class="js"> before first paint so the phone drawer can start collapsed exactly as premium.js will
+    // leave it (no layout shift); without JavaScript the class is never set and the drawer stays open and usable.
+    if(html.includes('class="nav2-drawer"')&&!html.includes(JS_FLAG))html=html.replace('</head>',JS_FLAG+'</head>');
     if(p==='index.html')html=html.replace('<div class="language-grid">','<div class="language-grid" id="languages">');
     files[p]=html;
   }
