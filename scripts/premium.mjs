@@ -32,7 +32,7 @@ const readingLabels={
 const pillarRailLabel={
  vi:"Cẩm nang thuê xe máy Hà Nội",en:"Hanoi motorbike rental guide",de:"Ratgeber: Motorrad mieten in Hanoi",
  fr:"Guide de la location de moto à Hanoï",es:"Guía de alquiler de motos en Hanói",nl:"Gids: motor huren in Hanoi",
- zh:"河内摩托车租赁指南",pt:"Guia de aluguel de motos em Hanói",ko:"하노이 오토바이 렌트 가이드",ja:"ハノイのバイクレンタルガイド"
+ zh:"河内摩托车租赁指南",pt:"Guia para alugar moto em Hanói",ko:"하노이 오토바이 렌트 가이드",ja:"ハノイのバイクレンタルガイド"
 };
 export function createSearchPage(locales){
  const opts=locales.map(l=>'<option value="'+safe(l.code)+'">'+safe(l.flag+" "+l.name)+'</option>').join("");

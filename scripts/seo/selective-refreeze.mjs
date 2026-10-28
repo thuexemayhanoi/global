@@ -41,6 +41,7 @@ export function selectiveRefreeze(previous,files,{schemaAdd=[],changes=[]}={}){
   for(const field of FINGERPRINT_FIELDS){
    const was=item.fingerprint[field],now=fp[field],c=byUrl.get(item.url+"|"+field);
    if(c){
+    if(was===c.after&&now===c.after)continue; // already re-frozen by an earlier run of the same change set
     if(was!==c.before)errors.push(item.url+": frozen "+field+" is not the reviewed before-value");
     else if(now!==c.after)errors.push(item.url+": rendered "+field+" is not the reviewed after-value");
     else{item.fingerprint[field]=c.after;changed.push({url:item.url,field});}
