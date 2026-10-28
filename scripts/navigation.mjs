@@ -35,7 +35,9 @@ export function enhanceNavigation(files, locales, matrix) {
   function topicMenu(l,hub,index){
     const label=esc(translations[l.code][index+1]);
     const link=available(hub)?hub.url:'/'+l.code+'/#topics';
-    return '<details class="nav2-topic" data-topic="'+esc(hub.id)+'"><summary>'+label+' <span aria-hidden="true">⌄</span></summary><div class="nav2-panel"><strong>'+label+'</strong><a class="nav2-parent-link" href="'+esc(link)+'">'+esc(translations[l.code][8])+' →</a>'+children(hub.id).map(r=>childItem(r,l.code)).join('')+'</div></details>';
+    // A published Hub is named by its Matrix title, like the child links, so each site-wide link to a Hub describes its target.
+    const linkText=available(hub)?hub.working_title:translations[l.code][8];
+    return '<details class="nav2-topic" data-topic="'+esc(hub.id)+'"><summary>'+label+' <span aria-hidden="true">⌄</span></summary><div class="nav2-panel"><strong>'+label+'</strong><a class="nav2-parent-link" href="'+esc(link)+'">'+esc(linkText)+' <span aria-hidden="true">→</span></a>'+children(hub.id).map(r=>childItem(r,l.code)).join('')+'</div></details>';
   }
   function languages(l,isChecklist){
     // The accessible name starts with the visible language name (WCAG 2.5.3 Label in Name); icons are hidden from AT.
