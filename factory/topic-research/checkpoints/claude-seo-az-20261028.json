@@ -7,19 +7,19 @@
   "branch": "research/claude-seo-az-20261028",
   "batch_session": "research-claude-seo-az-20261028",
   "created_at": "2026-10-28T12:29:58.688Z",
-  "updated_at": "2026-10-28T12:50:40.931Z",
+  "updated_at": "2026-10-28T12:51:40.578Z",
   "base_main_sha": "c1b8099f702fc540c77d4293780cc0099ab82564",
-  "last_commit_sha": "aa472c1f26a4023fd70937c9369abf27bc5deed7",
+  "last_commit_sha": "92c7a5a8c09cdb2886c3c610bf4c420e37c37c37",
   "contract": {
     "agents_md_sha256": "754a12f9f56248ff18882c8cee12fbd7e5fb16e07ad66d8bb078deefa0ebb321",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 80,
-    "qa_pass": 80,
+    "researched": 90,
+    "qa_pass": 90,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 70,
+    "pushed": 80,
     "pending_push": 10
   },
   "coverage": {
@@ -30,17 +30,18 @@
       "fr": 10,
       "es": 10,
       "nl": 10,
-      "zh": 10
+      "zh": 10,
+      "pt": 10
     },
     "domains": {
-      "motorbike-rental": 60,
-      "traffic-law-safety": 20
+      "motorbike-rental": 68,
+      "traffic-law-safety": 22
     }
   },
   "last_batch": {
-    "seq": 8,
-    "file": "factory/topic-research/batches/claude-seo-az-20261028-0008.json",
-    "sha256": "709b827918b8b5b72fd22de2e942bf161387335331acb84edae298d53b75f44a",
+    "seq": 9,
+    "file": "factory/topic-research/batches/claude-seo-az-20261028-0009.json",
+    "sha256": "8b3765fb5986a884b77ca8e05c6b229e1e625119abfdf4d1b2306f34e6485240",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -827,8 +828,8 @@
       "file": "factory/topic-research/batches/claude-seo-az-20261028-0008.json",
       "sha256": "709b827918b8b5b72fd22de2e942bf161387335331acb84edae298d53b75f44a",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "92c7a5a8c09cdb2886c3c610bf4c420e37c37c37",
       "researched_on": "2026-10-28",
       "topics": [
         {
@@ -932,11 +933,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 9,
+      "file": "factory/topic-research/batches/claude-seo-az-20261028-0009.json",
+      "sha256": "8b3765fb5986a884b77ca8e05c6b229e1e625119abfdf4d1b2306f34e6485240",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-28",
+      "topics": [
+        {
+          "ref": "pt:alugar-moto-hanoi-devolver-ho-chi-minh",
+          "locale": "pt",
+          "slug": "alugar-moto-hanoi-devolver-ho-chi-minh",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H02",
+          "subcluster": "rc-extras",
+          "key": "pt::alugar moto em hanoi e devolver em ho chi minh",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:alugar-moto-hanoi-com-entrega-no-hotel",
+          "locale": "pt",
+          "slug": "alugar-moto-hanoi-com-entrega-no-hotel",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H02",
+          "subcluster": "rc-extras",
+          "key": "pt::alugar moto em hanoi com entrega no hotel",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:alugar-ou-comprar-moto-para-viajar-no-vietname",
+          "locale": "pt",
+          "slug": "alugar-ou-comprar-moto-para-viajar-no-vietname",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H02",
+          "subcluster": "rc-period",
+          "key": "pt::alugar ou comprar moto para viajar no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:easy-rider-ou-conduzir-sozinho-desde-hanoi",
+          "locale": "pt",
+          "slug": "easy-rider-ou-conduzir-sozinho-desde-hanoi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "pt::viagem de moto a partir de hanoi com easy rider ou a conduzir sozinho",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:reservar-moto-hanoi-plataforma-ou-loja-direta",
+          "locale": "pt",
+          "slug": "reservar-moto-hanoi-plataforma-ou-loja-direta",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H03",
+          "subcluster": "dc-contract",
+          "key": "pt::reservar moto em hanoi numa plataforma ou diretamente na loja",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:o-que-inclui-o-aluguer-de-moto-em-hanoi",
+          "locale": "pt",
+          "slug": "o-que-inclui-o-aluguer-de-moto-em-hanoi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H02",
+          "subcluster": "rc-extras",
+          "key": "pt::o que inclui o preco do aluguer de moto em hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:manutencao-mudanca-oleo-aluguer-mensal-hanoi",
+          "locale": "pt",
+          "slug": "manutencao-mudanca-oleo-aluguer-mensal-hanoi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H02",
+          "subcluster": "rc-period",
+          "key": "pt::quem paga a mudanca de oleo e a manutencao no aluguer mensal de moto em hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:devolver-moto-alugada-atrasado-hanoi",
+          "locale": "pt",
+          "slug": "devolver-moto-alugada-atrasado-hanoi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H02",
+          "subcluster": "rc-extras",
+          "key": "pt::devolver moto alugada atrasado em hanoi quanto custa um dia a mais",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:loja-reclama-dano-ao-devolver-moto-vietname",
+          "locale": "pt",
+          "slug": "loja-reclama-dano-ao-devolver-moto-vietname",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "PT-H03",
+          "subcluster": "dc-contract",
+          "key": "pt::a loja reclama um dano ao devolver a moto no vietname",
+          "ta_id": null
+        },
+        {
+          "ref": "pt:experimentar-moto-antes-de-alugar-hanoi",
+          "locale": "pt",
+          "slug": "experimentar-moto-antes-de-alugar-hanoi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "PT-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "pt::experimentar a moto antes de alugar em hanoi o que verificar",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 9,
-    "file": "factory/topic-research/batches/claude-seo-az-20261028-0009.json",
+    "seq": 10,
+    "file": "factory/topic-research/batches/claude-seo-az-20261028-0010.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -997,6 +1109,13 @@
       "seq": 8,
       "topics": 10,
       "sha256": "709b827918b8b5b72fd22de2e942bf161387335331acb84edae298d53b75f44a"
+    },
+    {
+      "at": "2026-10-28T12:51:40.578Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 9,
+      "topics": 10,
+      "sha256": "8b3765fb5986a884b77ca8e05c6b229e1e625119abfdf4d1b2306f34e6485240"
     }
   ]
 }
