@@ -81,8 +81,16 @@ for f in after:
     after_by_key[key(f)].append(f["finding_id"])
 
 
+# Baseline findings that outlived their rule's batch and were resolved by a later batch: (rule, matrix_id) -> (batch, reason).
+later_fix = {
+    ("U-GRAPH-UPGRADE", "KO-CHECKLIST"): ("Y", "Korean checklist reached the depth target with the visible checklist FAQ (batch Y); content graph KEEP."),
+}
+
+
 def batch_for(f, rule):
     mid = f.get("matrix_id") or ""
+    if (rule, mid) in later_fix:
+        return [later_fix[(rule, mid)][0]]
     if rule == "U-DESC-SHORT" and mid in ("PRIVACY", "TERMS"):
         return ["E2"]
     if rule == "S-ARTICLE-NO-IMAGE":
@@ -113,6 +121,8 @@ for f in base:
     owner = rc.get("owner_action", "")
     if not present:
         outcome, reason = rc["resolved_outcome"], rc["why_resolved"]
+        if (rule, mid) in later_fix:
+            reason = later_fix[(rule, mid)][1]
         if rule == "U-PQ-WEAK" and mid in hub_rounds:
             reason = f"Title now carries the primary-query / commercial head-term wording in reviewed Hub round {hub_rounds[mid]} (metadata-reviews-{hub_rounds[mid].lower()}.json)."
         if outcome == "FIXED_VERIFIED" and not verified(bs):
