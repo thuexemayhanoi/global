@@ -231,3 +231,23 @@ test("execution ledger gives every baseline finding exactly one final outcome",(
  for(const k of Object.keys(summary.outcomes))assert.ok(allowed.has(k),k);
  assert.equal(summary.complete,summary.outcomes.FIXED_PENDING_LIVE===0,"complete only when nothing waits for production");
 });
+
+test("each locale Pillar targets its researched commercial head term in title and H1 (S-PILLAR-HEAD-TERM, owner directive 2026-10-28)",()=>{
+ const terms=JSON.parse(fs.readFileSync(path.join(root,"data/seo/commercial-head-terms.json"),"utf8")).locales;
+ const locales=JSON.parse(fs.readFileSync(path.join(root,"content/locales.json"),"utf8"));
+ const matrix=JSON.parse(fs.readFileSync(path.join(root,"data/seo/master-matrix.json"),"utf8")).rows;
+ const fold=(s,loc)=>{const t=String(s||"").toLowerCase().replace(/đ/g,"d").replace(/\s+/g," ").trim();return loc==="zh"||loc==="ja"?t.replace(/ /g,""):t;};
+ assert.equal(locales.length,10);
+ for(const l of locales){
+  const ht=terms[l.code];
+  assert.ok(ht?.head_term,"head term for "+l.code);
+  assert.ok(ht.evidence.length&&ht.evidence.every(e=>e.keyword&&e.source),"evidence with a source for "+l.code);
+  const variants=[ht.head_term,...ht.title_variants].map(v=>fold(v,l.code));
+  const pillar=matrix.find(r=>r.role==="PILLAR"&&r.locale===l.code);
+  assert.match(pillar.search_intent,/^commercial/);
+  for(const [field,value] of [["primary_query",pillar.primary_query],["title",l.title],["h1",l.h1]])
+   assert.ok(variants.some(v=>fold(value,l.code).includes(v)),`${l.code} ${field} "${value}" lacks the head term`);
+  const html=fs.readFileSync(path.join(root,l.code,"index.html"),"utf8");
+  assert.ok(html.includes(">"+l.h1.replace(/&/g,"&amp;").replace(/'/g,"&#39;")+"<")||html.includes(l.h1),l.code+" H1 rendered");
+ }
+});
