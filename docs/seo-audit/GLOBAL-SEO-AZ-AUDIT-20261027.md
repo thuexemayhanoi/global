@@ -1,6 +1,6 @@
 # Global SEO A–Z: báo cáo kiểm toán toàn website, 27/10/2026
 
-> **LƯU Ý CHIẾN LƯỢC — cập nhật 28/10/2026:** Đây là báo cáo kiểm toán *lịch sử* tại commit `5adb7cd`, không phải kế hoạch tác nghiệp hiện hành. Khuyến nghị bên dưới về việc để `global.rentbikehanoi.com` nhường từ khóa thương mại cho `thuexemaynguyentu.com` hoặc `rentbikehanoi.com` **đã bị chủ sở hữu bác bỏ và thay thế** bằng [PR #120](https://github.com/thuexemayhanoi/global/pull/120). Global SEO độc lập, cạnh tranh toàn bộ từ khóa thuê xe máy thương mại trong 10 ngôn ngữ. Không sử dụng các khuyến nghị nhường từ khóa trong tài liệu lịch sử này. **Master Excel và CSV đồng bộ sau 28/10 mới là bảng công việc hiện hành.**
+> **LƯU Ý CHIẾN LƯỢC — cập nhật 28/10/2026:** Đây là báo cáo kiểm toán tại commit `5adb7cd`. Theo chỉ thị chủ sở hữu ([PR #120](https://github.com/thuexemayhanoi/global/pull/120)), Global SEO độc lập và cạnh tranh toàn bộ từ khóa thuê xe máy thương mại trong 10 ngôn ngữ; các mục liên quan trong báo cáo này đã được viết lại theo chiến lược đó (nhiệm vụ `T-S-PILLAR-HEAD-TERM`). **Master Excel và CSV đồng bộ sau 28/10 mới là bảng công việc hiện hành.**
 
 **Website:** https://global.rentbikehanoi.com · **Repo:** thuexemayhanoi/global · **Phạm vi:** toàn site, 10 ngôn ngữ (vi, en, de, fr, es, nl, zh, pt, ko, ja)
 **Trạng thái site được kiểm toán:** `main` @ `5adb7cd` · **Branch kiểm toán:** `audit/seo-az-20261027` · **Ngày dữ liệu:** 27/10/2026 (UTC)
@@ -24,7 +24,7 @@
 
 **Vấn đề nằm ở chiến lược, đo lường và độ hiển thị, không nằm ở kỹ thuật:**
 
-1. **(P1) Trang Pillar của từng ngôn ngữ đang nhắm từ khóa thuê xe giao dịch.** Pillar `/vi/` có primary query là "thuê xe máy Hà Nội": 8.100 lượt tìm/tháng tại Việt Nam, intent *commercial*. Pillar `/en/` nhắm "motorbike rental hanoi" (110/tháng tại Mỹ, intent *transactional*). Theo `AGENTS.md`, các từ khóa này thuộc về thuexemaynguyentu.com (vi) và rentbikehanoi.com (en). /global đang cạnh tranh với chính các site cùng hệ thống.
+1. **(P1) Trang Pillar của từng ngôn ngữ chưa được xác nhận là trang mạnh nhất cho từ khóa thương mại chính của thị trường đó.** Pillar `/vi/` có primary query "thuê xe máy Hà Nội": 8.100 lượt tìm/tháng tại Việt Nam, intent *commercial*. Pillar `/en/` nhắm "motorbike rental hanoi" (110/tháng tại Mỹ, intent *transactional*). Theo chỉ thị chủ sở hữu 28/10/2026, /global cạnh tranh độc lập cho các từ khóa này và không nhường từ khóa cho bất kỳ tên miền nào. Việc cần làm: nghiên cứu từ khóa chính cho từng thị trường, đưa nó vào primary_query, title và H1 một cách tự nhiên (task `T-S-PILLAR-HEAD-TERM`).
 2. **(P2) Anchor thương mại lặp lại trên toàn site.** Khối "Related guides" của 1.054 bài viết đều trỏ về trang chủ ngôn ngữ bằng cùng một anchor giao dịch, ví dụ "thuê xe máy Hà Nội" hay "Motorrad mieten Hanoi". Điều này củng cố vấn đề 1 và đúng là kiểu anchor exact-match bị coi là tối ưu quá mức.
 3. **(P1) Không đo được gì từ Google.** Chưa kết nối Search Console và GA4, nên không biết bao nhiêu URL đã được index.
 4. **(P1) Độ hiển thị gần như bằng 0 theo dữ liệu bên thứ ba.** Ubersuggest ghi nhận 0 từ khóa xếp hạng, Domain Authority 2, 37 backlink từ 32 domain. Đây là ước tính (INFERRED), cần GSC để xác nhận.
@@ -191,7 +191,7 @@ Thứ tự ưu tiên: P0 → P1 → P2 → P3, sau đó theo công sức (S → 
 | # | Nhiệm vụ | Phụ trách | Hoàn thành khi |
 |---|---|---|---|
 | 1 | **Kết nối Google Search Console** (Domain property `global.rentbikehanoi.com`), submit `sitemap.xml`, kết nối vào OpenSEO | Chủ site | Property đã xác minh, sitemap xử lý không lỗi, lưu báo cáo coverage đầu tiên vào workbook |
-| 2 | **Quyết định phân vai giữa các domain cho 10 Pillar** (cùng các Hub chọn xe): chuyển Pillar sang intent thông tin ("cẩm nang/hướng dẫn thuê và đi xe máy"), giữ từ khóa giao dịch cho thuexemaynguyentu.com / rentbikehanoi.com và link sang đó | Chủ site → PR đã review (Matrix + `seo-guard --write`) | Mỗi Pillar nhắm một query thông tin; fingerprint đóng băng được cập nhật trong PR đã review; `seo-guard` PASS |
+| 2 | **Nhắm từ khóa thương mại chính cho 10 Pillar**: ghi từ khóa đã nghiên cứu cho từng thị trường vào `data/seo/commercial-head-terms.json`, đưa vào primary_query, title và H1, giữ intent commercial_investigation | PR đã review (Matrix + `content/locales.json` + `selective-refreeze`) | Mỗi Pillar chứa từ khóa chính của thị trường; chỉ các trường thay đổi được đóng băng lại; `seo-guard` PASS |
 | 3 | **Lấy baseline độ hiển thị và lên kế hoạch off-page** khi đã có GSC | Chủ site | Baseline GSC được lưu; số referring domain được theo dõi hằng tháng trong AUDIT CHANGELOG |
 
 ### 8.2 Tối ưu theo từng URL

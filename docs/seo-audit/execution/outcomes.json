@@ -8,12 +8,12 @@
   "BLOCKED": "Not allowed without an owner decision (protected data/process)"
  },
  "rules": {
-  "S-PILLAR-TRANSACTIONAL": {
-   "batch": "A",
-   "resolved_outcome": "VALIDATED_NO_FIX",
-   "remaining_outcome": "VALIDATED_NO_FIX",
-   "why_resolved": "Owner directive 2026-10-28 (approvals/owner-directive-20261028-independent-seo.json): /global targets commercial head terms on its merits; Pillar intent labels (A) and Pillar descriptions (C) follow it.",
-   "why_remaining": "Owner directive authorises the target; no fix needed."
+  "S-PILLAR-HEAD-TERM": {
+   "batch": "G",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "BLOCKED",
+   "why_resolved": "Owner directive 2026-10-28: /global competes for each market's commercial head term. Head terms researched with evidence (data/seo/commercial-head-terms.json); each Pillar's primary_query, title and H1 now contain the term or a natural variant; intent commercial_investigation (A); Pillar descriptions aligned (C/G).",
+   "why_remaining": "Pillar primary_query/title/H1 still miss the researched head term."
   },
   "S-INTENT-LABEL": {
    "batch": "A",

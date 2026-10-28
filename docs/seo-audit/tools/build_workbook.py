@@ -376,14 +376,17 @@ table_sheet("CONTENT AUDIT", "tblContent", C_HEAD, crows, widths={"url": 55, "ti
 # ---------------- KEYWORD MATRIX ----------------
 K_HEAD = ["matrix_id", "locale", "url", "role", "matrix_status", "pipeline_status", "cluster", "subcluster", "primary_query", "secondary_queries",
           "search_intent", "pq_intent_market", "pq_volume", "pq_kd", "keyword_evidence", "serp_evidence", "pq_cov_title", "pq_cov_h1", "pq_cov_desc",
-          "distinct_from", "word_target", "intent_rationale", "keyword_findings"]
-kw_rules = {"U-PQ-WEAK", "S-PILLAR-TRANSACTIONAL", "S-INTENT-LABEL", "S-DE-TOPIC-DRIFT"}
+          "distinct_from", "word_target", "intent_rationale", "commercial_head_term", "keyword_findings"]
+kw_rules = {"U-PQ-WEAK", "S-PILLAR-HEAD-TERM", "S-INTENT-LABEL", "S-DE-TOPIC-DRIFT"}
+HEAD_TERMS = json.load(open(os.path.join(ROOT, "data", "seo", "commercial-head-terms.json"), encoding="utf-8"))["locales"]
 krows = []
 for m in a["master"]:
     if not m.get("matrix_id"):
         continue
     x = {h: m.get(h) for h in K_HEAD}
     x["url"] = ORIGIN + m["url"] if m["matrix_status"] == "PUBLISHED" else m["url"]
+    if m.get("role") == "PILLAR":
+        x["commercial_head_term"] = HEAD_TERMS.get(m.get("locale"), {}).get("head_term")
     x["keyword_findings"] = " ".join(f["finding_id"] for f in fx.get(m["matrix_id"], []) if f["rule_id"] in kw_rules)
     if m["matrix_status"] != "PUBLISHED" and x["keyword_evidence"] != "VERIFIED":
         x["keyword_evidence"] = "NOT_CHECKED"
@@ -393,7 +396,8 @@ table_sheet("KEYWORD MATRIX", "tblKeywords", K_HEAD, krows,
             link_cols=("url",), evi_cols=("keyword_evidence",),
             notes=["KEYWORD MATRIX — every Matrix row (published + IDEA). pq_volume/intent/KD are real market data (OpenSEO/DataForSEO, 2026-10-27).",
                    "VERIFIED = market data returned · VERIFIED_NO_VOLUME = queried, no measurable volume in that market · NOT_CHECKED = not queried (credits exhausted, IDEA rows, zh). Volumes are monthly Google estimates, not traffic.",
-                   "Markets: vi=Vietnam, en=United States, de=Germany, fr=France, es=Spain, ko=South Korea, ja=Japan. The raw market data (every keyword the tool returned, per market) is the second table to the right of this one: 'KEYWORD MARKET DATA'."])
+                   "Markets: vi=Vietnam, en=United States, de=Germany, fr=France, es=Spain, ko=South Korea, ja=Japan. The raw market data (every keyword the tool returned, per market) is the second table to the right of this one: 'KEYWORD MARKET DATA'.",
+                   "commercial_head_term (Pillar rows): the market's researched commercial head term, data/seo/commercial-head-terms.json (OpenSEO + Ubersuggest volumes and Google autocomplete, 2026-10-27/28). Owner directive 2026-10-28: /global competes for it independently; no keyword is yielded to any domain."])
 
 # market data on its own sheet section (kept in KEYWORD MATRIX via a second table further right)
 mk_rows = []

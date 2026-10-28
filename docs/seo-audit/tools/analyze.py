@@ -199,6 +199,7 @@ en_hit = {x["keyword"]: x for x in kwm["en"]["returned"]}
 HEAD_TERMS_FILE = os.path.join(ROOT, "data", "seo", "commercial-head-terms.json")
 head_terms = json.load(open(HEAD_TERMS_FILE, encoding="utf-8"))["locales"] if os.path.exists(HEAD_TERMS_FILE) else {}
 fold = lambda t: re.sub(r"\s+", " ", (t or "").casefold().replace("\u0111", "d")).strip()
+fold_loc = lambda t, loc: re.sub(r"\s+", "", fold(t)) if loc in ("zh", "ja") else fold(t)  # CJK queries are typed with or without spaces
 for r in pub:
     if r["role"] != "PILLAR":
         continue
@@ -208,8 +209,8 @@ for r in pub:
     if not term:
         add("S-PILLAR-HEAD-TERM", "URL", r["locale"], r["url"], r["matrix_id"], f"No researched commercial head term recorded for {r['locale']} (primary_query '{q}')", blob("data/seo/commercial-head-terms.json"))
     else:
-        variants = [fold(v) for v in [term] + ht.get("title_variants", [])]
-        gaps = [k for k, v in (("primary_query", q), ("title", r.get("title")), ("h1", r.get("h1"))) if not any(x in fold(v) for x in variants)]
+        variants = [fold_loc(v, r["locale"]) for v in [term] + ht.get("title_variants", [])]
+        gaps = [k for k, v in (("primary_query", q), ("title", r.get("title")), ("h1", r.get("h1"))) if not any(x in fold_loc(v, r["locale"]) for x in variants)]
         if gaps:
             add("S-PILLAR-HEAD-TERM", "URL", r["locale"], r["url"], r["matrix_id"], f"Head term '{term}' missing from: {', '.join(gaps)}", blob("data/seo/commercial-head-terms.json"))
     if r.get("search_intent") not in ("commercial", "commercial_investigation", "transactional"):

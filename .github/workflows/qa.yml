@@ -47,6 +47,8 @@ jobs:
           grep -q '<html lang="de"' de/index.html
           grep -q '<html lang="ko"' ko/index.html
           grep -q '<html lang="ja"' ja/index.html
+      - name: SEO audit exports follow the owner's independent strategy (owner directive 2026-10-28, read only)
+        run: python3 docs/seo-audit/tools/check_owner_strategy.py
       - name: Validate SEO matrix and live URL inventory
         run: node scripts/seo/validate-plan.mjs
       - name: SEO protection guard (frozen live URLs, fingerprints, hreflang, planned-URL leaks)
