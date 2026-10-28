@@ -4,6 +4,7 @@ Read-only tooling that produces the Global SEO A–Z Master Matrix. It never wri
 
 - Report: [`GLOBAL-SEO-AZ-AUDIT-20261027.md`](GLOBAL-SEO-AZ-AUDIT-20261027.md) · execution dashboard: [`EXECUTION-LEDGER.md`](EXECUTION-LEDGER.md)
 - Commercial head terms (owner directive 2026-10-28): [`data/seo/commercial-head-terms.json`](../../data/seo/commercial-head-terms.json) · competitors, content gaps and off-page plan: [`COMPETITOR-GAP-AND-OFFPAGE-PLAN.md`](COMPETITOR-GAP-AND-OFFPAGE-PLAN.md) (SERP evidence `reports/seo/data/raw/serp-head-terms-20261028.json`) · new-Hub architecture proposal awaiting the owner: [`HUB-ARCHITECTURE-PROPOSAL-20261028.md`](HUB-ARCHITECTURE-PROPOSAL-20261028.md)
+- Owner actions waiting for the site owner (plain list): [`OWNER-ACTIONS.md`](OWNER-ACTIONS.md)
 - Workbook: [`reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx`](../../reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx)
 - Data: `reports/seo/data/` (`audit-data.json`, `analysis.json`, CSV exports, `raw/` evidence)
 

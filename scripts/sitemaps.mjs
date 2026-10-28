@@ -64,6 +64,28 @@ export function publicationLastmod(root,matrix){
  }
  return lastmod;
 }
+/**
+ * Reviewed content updates of pages without an article packet (locale Pillars, checklists), recorded with their real
+ * date and evidence in data/seo/page-updates.json. Returns url -> {published, modified}; refuses malformed entries.
+ */
+export function reviewedPageDates(root){
+ const file=path.join(root,"data/seo/page-updates.json");
+ if(!fs.existsSync(file))return new Map();
+ const out=new Map();
+ for(const [url,e] of Object.entries(JSON.parse(fs.readFileSync(file,"utf8")).pages||{})){
+  const dates=[e.published,...(e.updates||[]).map(u=>u.date)];
+  if(!/^\/[a-z0-9\/-]*\/$/.test(url)||dates.some(d=>!LASTMOD.test(String(d)))||!String(e.published_evidence||"").trim()||(e.updates||[]).some(u=>String(u.evidence||"").trim().length<10))
+   throw Error("Invalid page-updates entry for "+url);
+  out.set(url,{published:e.published,modified:dates.slice().sort().pop()});
+ }
+ return out;
+}
+/** Every real <lastmod>: article publications (and their Hubs) plus reviewed Pillar/checklist changes. */
+export function siteLastmod(root,matrix){
+ const lastmod=publicationLastmod(root,matrix);
+ for(const [p,d] of reviewedPageDates(root)){const u=SITEMAP_ORIGIN+p;if(!lastmod.has(u)||lastmod.get(u)<d.modified)lastmod.set(u,d.modified);}
+ return lastmod;
+}
 export function generateSitemaps(pageKeys,localeCodes,origin=SITEMAP_ORIGIN,lastmod=new Map()){
  if(origin!==SITEMAP_ORIGIN)throw Error("Unexpected sitemap origin");
  for(const [url,date]of lastmod)if(!LASTMOD.test(String(date)))throw Error("Invalid lastmod "+date+" for "+url);

@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import {generateSitemaps,parseSitemapIndex,parseSitemapUrlset,readLocalSitemapInventory,publicationLastmod,SITEMAP_ORIGIN,SITEMAP_LIMIT} from "../scripts/sitemaps.mjs";
+import {generateSitemaps,parseSitemapIndex,parseSitemapUrlset,readLocalSitemapInventory,siteLastmod,SITEMAP_ORIGIN,SITEMAP_LIMIT} from "../scripts/sitemaps.mjs";
 
 const langs=JSON.parse(fs.readFileSync("content/locales.json","utf8")).map(x=>x.code);
 const matrix=JSON.parse(fs.readFileSync("data/seo/master-matrix.json","utf8"));
@@ -20,7 +20,7 @@ test("one sitemap index contains ten language shards and global pages, no IDEA o
 });
 
 test("sitemap bytes are deterministic derived state of only published generated pages",()=>{
- const expected=generateSitemaps(published.map(toHtml),langs,SITEMAP_ORIGIN,publicationLastmod(process.cwd(),matrix));
+ const expected=generateSitemaps(published.map(toHtml),langs,SITEMAP_ORIGIN,siteLastmod(process.cwd(),matrix));
  const actualIndex=fs.readFileSync("sitemap.xml","utf8");
  assert.equal(expected["sitemap.xml"],actualIndex);
  for(const [name,xml]of Object.entries(expected))assert.equal(fs.readFileSync(name,"utf8"),xml,name);

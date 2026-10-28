@@ -52,7 +52,7 @@ test("FAQPage markup exists exactly where the page shows at least two FAQ pairs,
  }
 });
 
-test("sitemap <lastmod> is a real W3C date: each article's approval date, Hubs no older than their newest child",()=>{
+test("sitemap <lastmod> is a real W3C date: each article's approval date, Hubs no older than their newest child, Pillars/checklists their last reviewed change",()=>{
  const files=generateSitemaps(["index.html","en/index.html","en/guides/a/index.html"],["en"],SITE,new Map([[SITE+"/en/guides/a/","2026-10-15"]]));
  assert.match(files["sitemap-en.xml"],/<url><loc>https:\/\/global\.rentbikehanoi\.com\/en\/guides\/a\/<\/loc><lastmod>2026-10-15<\/lastmod><\/url>/);
  assert.match(files["sitemap-en.xml"],/<url><loc>https:\/\/global\.rentbikehanoi\.com\/en\/<\/loc><\/url>/,"no invented date");
@@ -67,7 +67,13 @@ test("sitemap <lastmod> is a real W3C date: each article's approval date, Hubs n
   if(row.role==="SUPPORT")assert.equal(date,p.publication.approved_at.slice(0,10),row.id);
   else assert.ok(date>=p.publication.approved_at.slice(0,10),row.id);
  }
- for(const l of locales)assert.equal(live.get(SITE+"/"+l.code+"/"),null,l.code+" Pillar has no recorded date, so no lastmod");
+ const updates=JSON.parse(read("data/seo/page-updates.json")).pages;
+ for(const l of locales)for(const p of ["/"+l.code+"/","/"+l.code+"/checklist/"]){
+  const e=updates[p],modified=[e.published,...e.updates.map(u=>u.date)].sort().pop();
+  assert.equal(live.get(SITE+p),modified,p+" lastmod is its last reviewed content change (data/seo/page-updates.json)");
+  const html=read(p.slice(1)+"index.html");
+  assert.ok(html.includes('"datePublished":"'+e.published+'"')&&html.includes('"dateModified":"'+modified+'"'),p+" JSON-LD carries the recorded dates");
+ }
 });
 
 test("selective re-freeze accepts only the reviewed additions and exact before/after pairs",()=>{
