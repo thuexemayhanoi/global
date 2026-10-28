@@ -1,6 +1,6 @@
 {
  "version": 1,
- "note": "Reviewed content changes of pages that have no article packet (locale Pillars, checklists). Dates are real merge dates of reviewed PRs or the launch commit; they feed sitemap <lastmod> and JSON-LD datePublished/dateModified. Add an entry only in the PR that changes the page's content; never invent or bump a date without a content change.",
+ "note": "Reviewed content changes of pages without an article packet (locale Pillars, checklists) and reviewed body changes of published article pages after their publication (e.g. Hub FAQ, batch S). Dates are real merge dates of reviewed PRs, the launch commit or the article's publication approval; they feed sitemap <lastmod> and JSON-LD datePublished/dateModified. Add an entry only in the PR that changes the page's content; never invent or bump a date without a content change.",
  "pages": {
   "/vi/": {
    "published": "2026-10-13",
@@ -279,6 +279,406 @@
     {
      "date": "2026-10-28",
      "evidence": "PR #123: two native sections per locale (batch D1)"
+    }
+   ]
+  },
+  "/vi/topics/chon-loai-xe/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T13:19:36.319Z in content/articles/VI-H01.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/vi/topics/chi-phi-thue-xe/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T07:54:04.610Z in content/articles/VI-H02.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/vi/topics/giay-to-hop-dong/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T09:22:50.449Z in content/articles/VI-H03.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/vi/topics/an-toan-hanh-trinh/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T13:24:39.602Z in content/articles/VI-H04.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/en/topics/choosing-a-rental-bike/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T12:16:40.326Z in content/articles/EN-H01.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/en/topics/rental-costs-and-fees/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T05:34:42.542Z in content/articles/EN-H02.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/en/topics/documents-and-contracts/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T13:21:05.334Z in content/articles/EN-H03.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/en/topics/riding-safety-and-support/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T09:24:15.155Z in content/articles/EN-H04.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/de/topics/motorroller-und-motorrad-waehlen/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T10:29:56.537Z in content/articles/DE-H01.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/de/topics/mietpreise-und-kaution/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T09:54:06.658Z in content/articles/DE-H02.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/de/topics/fuehrerschein-und-vertrag/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T07:55:29.690Z in content/articles/DE-H03.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/de/topics/sicher-unterwegs/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T09:24:15.155Z in content/articles/DE-H04.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/fr/topics/choisir-moto-scooter/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T13:18:03.660Z in content/articles/FR-H01.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/fr/topics/tarifs-caution/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T05:34:42.542Z in content/articles/FR-H02.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/fr/topics/documents-contrat/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T09:13:30.487Z in content/articles/FR-H03.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/fr/topics/securite-assistance/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T13:22:29.544Z in content/articles/FR-H04.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/es/topics/elegir-moto/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T05:12:18.241Z in content/articles/ES-H01.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/es/topics/precios-y-deposito/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T07:54:04.610Z in content/articles/ES-H02.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/es/topics/documentos-y-contrato/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T13:21:05.334Z in content/articles/ES-H03.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/es/topics/seguridad-en-ruta/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T09:26:03.344Z in content/articles/ES-H04.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/nl/topics/motor-of-scooter-kiezen/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T04:15:52.071Z in content/articles/NL-H01.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/nl/topics/huurprijs-en-borg/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T09:55:31.140Z in content/articles/NL-H02.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/nl/topics/rijbewijs-en-contract/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T09:21:02.105Z in content/articles/NL-H03.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/nl/topics/veilig-rijden/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T09:26:03.344Z in content/articles/NL-H04.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/zh/topics/chexing-xuanze/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T13:19:36.319Z in content/articles/ZH-H01.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/zh/topics/jiage-yajin/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T06:28:04.637Z in content/articles/ZH-H02.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/zh/topics/zhengjian-hetong/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T09:22:50.449Z in content/articles/ZH-H03.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/zh/topics/anquan-yingji/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T16:39:42.059Z in content/articles/ZH-H04.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/pt/topics/escolher-moto/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T04:15:52.071Z in content/articles/PT-H01.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/pt/topics/precos-e-caucao/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T06:26:39.346Z in content/articles/PT-H02.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/pt/topics/documentos-contrato/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T13:22:29.544Z in content/articles/PT-H03.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/pt/topics/seguranca-e-ajuda/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T09:27:28.016Z in content/articles/PT-H04.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/ko/topics/chajong-seontaek/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T05:12:18.241Z in content/articles/KO-H01.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/ko/topics/yogeum-bojeunggeum/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T09:54:06.658Z in content/articles/KO-H02.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/ko/topics/myeonheo-gyeyak/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T09:21:02.105Z in content/articles/KO-H03.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/ko/topics/anjuen-juhang/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T06:28:04.637Z in content/articles/KO-H04.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/ja/topics/sharyou-erabi/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T13:18:03.660Z in content/articles/JA-H01.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/ja/topics/ryoukin-hoshoukin/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T06:26:39.346Z in content/articles/JA-H02.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/ja/topics/menkyo-keiyaku/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T09:13:30.487Z in content/articles/JA-H03.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
+    }
+   ]
+  },
+  "/ja/topics/anzen-trouble/": {
+   "published": "2026-10-15",
+   "published_evidence": "publication.approved_at 2026-10-15T13:24:39.602Z in content/articles/JA-H04.json",
+   "updates": [
+    {
+     "date": "2026-10-28",
+     "evidence": "Batch S: visible FAQ section (3 Q&A built only from facts and sources already in the Hub body) with FAQPage"
     }
    ]
   }

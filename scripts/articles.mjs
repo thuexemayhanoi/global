@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import {scanPacket,scanText} from "./seo/fact-guard-core.mjs";
 import {loadTopicalMap} from "./seo/topical-authority-core.mjs";
+import {reviewedPageDates} from "./sitemaps.mjs";
 
 const SITE="https://global.rentbikehanoi.com";
 export const BRAND="Vietnam Two-Wheel Guide";
@@ -292,7 +293,7 @@ export function topicLinks(row,matrix,topical,code,ix=rowsIndex(matrix)){
  }
  return "";
 }
-export function renderArticle(packet,locale,row,matrix,topical=null,ix=rowsIndex(matrix),displayLead=packet.meta_description){
+export function renderArticle(packet,locale,row,matrix,topical=null,ix=rowsIndex(matrix),displayLead=packet.meta_description,reviewedUpdate=null){
  const htmlLang=locale.htmlLang||locale.code,url=SITE+row.url;
  const parent=ix.byId.get(row.parent_id);
  const home="/"+locale.code+"/";
@@ -307,6 +308,8 @@ export function renderArticle(packet,locale,row,matrix,topical=null,ix=rowsIndex
  const article={"@type":"Article","headline":packet.title,"description":packet.meta_description,"inLanguage":htmlLang,"mainEntityOfPage":url,"image":{"@type":"ImageObject","url":SITE+img.path,"width":img.width,"height":img.height},"isPartOf":{"@type":"WebSite","name":BRAND,"url":SITE+"/"},"author":org,"publisher":{...org,"logo":{"@type":"ImageObject","url":SITE+"/assets/favicon.svg"}}};
  // The publication record's approval timestamp is the only dated event the repository holds for a page; no edit history is invented.
  if(packet.publication?.approved_at){article.datePublished=packet.publication.approved_at;article.dateModified=packet.publication.approved_at;}
+ // A reviewed body change after publication (data/seo/page-updates.json) is the page's real modification date.
+ if(article.datePublished&&reviewedUpdate&&reviewedUpdate>article.datePublished.slice(0,10))article.dateModified=reviewedUpdate;
  const data={"@context":"https://schema.org","@graph":[article,{"@type":"BreadcrumbList","itemListElement":crumbs}]};
  const faq=faqEntries(packet.body_markdown,locale.code);
  if(faq.length)data["@graph"].push(faqPageNode(faq));
@@ -325,7 +328,7 @@ export function generateApprovedArticles(root,matrix,locales){
  const leadFile=path.join(root,"content/article-leads.json");
  const leads=fs.existsSync(leadFile)?JSON.parse(fs.readFileSync(leadFile,"utf8")).leads:{};
  if(!leads||typeof leads!=="object"||Array.isArray(leads))throw Error("Invalid published article leads");
- const topical=loadTopicalMap(root),ix=rowsIndex(matrix);
+ const topical=loadTopicalMap(root),ix=rowsIndex(matrix),pageDates=reviewedPageDates(root);
  for(const file of fs.readdirSync(dir).sort()){
   if(!file.endsWith(".json"))continue;
   if(!/^[A-Z]{2}-[HS]\d{2,4}\.json$/.test(file))throw Error("Unexpected article filename: "+file);
@@ -338,7 +341,7 @@ export function generateApprovedArticles(root,matrix,locales){
   const generated=htmlPagePath(row.url);
   if(pages[generated])throw Error("Article URL collision "+generated);
   if(Object.hasOwn(leads,packet.matrix_id)&&(typeof leads[packet.matrix_id]!=="string"||!leads[packet.matrix_id].trim()))throw Error("Invalid published lead: "+packet.matrix_id);
-  pages[generated]=renderArticle(packet,locale,row,matrix,topical,ix,leads[packet.matrix_id]??packet.meta_description);
+  pages[generated]=renderArticle(packet,locale,row,matrix,topical,ix,leads[packet.matrix_id]??packet.meta_description,pageDates.get(row.url)?.modified??null);
  }
  return pages;
 }
