@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "scope": "AZ_REVIEWED_METADATA_ONLY",
+  "base_commit": "13d77cec8de10c8c1edc1c557cd0345c83d5ed3f",
+  "batch_size": 50,
+  "reviewed": 5,
+  "optimized": 5,
+  "batches": [
+    {
+      "batch": 1,
+      "ids": [
+        "VI-H02",
+        "DE-H02",
+        "FR-H02",
+        "ES-H02",
+        "NL-H02"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "VI-H02",
+      "url": "/vi/topics/chi-phi-thue-xe/",
+      "locale": "vi",
+      "before_title": "Chi phí thuê xe máy Hà Nội: giá, tiền cọc và phụ phí",
+      "before_description": "Giá thuê xe máy ở Hà Nội theo ngày, tuần, tháng; cách tính ngày thuê, hình thức đặt cọc và các khoản xăng, gửi xe, phạt nguội, bảo hiểm cần dự trù.",
+      "after_title": "Giá thuê xe máy Hà Nội: chi phí, tiền cọc và phụ phí",
+      "after_description": "Giá thuê xe máy ở Hà Nội theo ngày, tuần, tháng; cách tính ngày thuê, hình thức đặt cọc và các khoản xăng, gửi xe, phạt nguội, bảo hiểm cần dự trù.",
+      "decision": "OPTIMIZE",
+      "reason": "SEO-only Hub round P (commercial price intent): Google autocomplete (vi, 2026-10-28) returns 14 variants for 'giá thuê xe máy hà nội' versus 6 for 'chi phí thuê xe máy hà nội'; the Hub H1 and description already open with 'Giá thuê xe máy Hà Nội'. Leading with the price phrasing also separates the Hub from Supporting VI-S17 ('Chi phí phát sinh thuê xe máy Hà Nội…'), whose title started with the same 'Chi phí … thuê xe máy Hà Nội' phrase (cannibalization risk). The Matrix primary query 'chi phí thuê xe máy Hà Nội' stays fully covered.",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, full H2 outline and body vocabulary, Matrix primary_query, commercial head term and sibling titles in the same locale reviewed; no fact, number or claim added; description and H1 unchanged.",
+      "width_review": "Characters: title 52→52; description unchanged. No browser/SERP pixel measurement.",
+      "primary_query": "chi phí thuê xe máy Hà Nội",
+      "search_intent": "commercial_investigation",
+      "protected_packet_sha256": "144a5e66e3a9e09758cdefd2199c6ef16aa3f4ebbdc5eca3af3668b2f96e6ff8"
+    },
+    {
+      "id": "DE-H02",
+      "url": "/de/topics/mietpreise-und-kaution/",
+      "locale": "de",
+      "before_title": "Mietpreise, Kaution und Nebenkosten: Motorroller in Hanoi",
+      "before_description": "Mietkosten für Roller in Hanoi vergleichen: Fahrzeugklasse, Mietdauer, Kaution, Kraftstoff und mögliche Nebenkosten vor dem Vertragsabschluss prüfen.",
+      "after_title": "Motorrad mieten in Hanoi: Preise, Kaution und Nebenkosten",
+      "after_description": "Mietkosten für Roller in Hanoi vergleichen: Fahrzeugklasse, Mietdauer, Kaution, Kraftstoff und mögliche Nebenkosten vor dem Vertragsabschluss prüfen.",
+      "decision": "OPTIMIZE",
+      "reason": "SEO-only Hub round P (commercial price intent): Title did not contain 'Motorrad' or 'mieten' from the Matrix primary query 'Motorrad mieten Hanoi Preise Kaution' nor the DE commercial head term 'Motorrad mieten Hanoi' (data/seo/commercial-head-terms.json). Google autocomplete (de, 2026-10-28) shows price phrasing ('motorrad mieten vietnam kosten', 'roller mieten vietnam preise'). The body opens with 'Wer in Hanoi einen Motorroller oder ein Motorrad mieten möchte' and covers scooters and manual motorcycles, so the title stays accurate; H1 keeps the 'Mietpreise … Motorroller' variant.",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, full H2 outline and body vocabulary, Matrix primary_query, commercial head term and sibling titles in the same locale reviewed; no fact, number or claim added; description and H1 unchanged.",
+      "width_review": "Characters: title 57→57; description unchanged. No browser/SERP pixel measurement.",
+      "primary_query": "Motorrad mieten Hanoi Preise Kaution",
+      "search_intent": "commercial_investigation",
+      "protected_packet_sha256": "248152b6ae4f87215b691d67418511c7aa5fdda2d2bab0acbff2113975af3c68"
+    },
+    {
+      "id": "FR-H02",
+      "url": "/fr/topics/tarifs-caution/",
+      "locale": "fr",
+      "before_title": "Location de moto à Hanoï : tarifs, caution et frais à prévoir",
+      "before_description": "Combien coûte vraiment une moto de location à Hanoï : tarifs à la journée et au mois, caution, retards, carburant, assurance et restrictions.",
+      "after_title": "Location de moto à Hanoï : prix, caution et frais à prévoir",
+      "after_description": "Combien coûte vraiment une moto de location à Hanoï : tarifs à la journée et au mois, caution, retards, carburant, assurance et restrictions.",
+      "decision": "OPTIMIZE",
+      "reason": "SEO-only Hub round P (commercial price intent): Title lacked 'prix' from the Matrix primary query 'prix location moto Hanoï caution'. Google autocomplete (fr, 2026-10-28) returns 'prix location moto hanoi', 'location scooter hanoi prix' and 'prix scooter hanoi'. The body's first H2 is 'Le prix à la journée'; H1 keeps the 'Tarifs et caution' variant, so both wordings stay on the page.",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, full H2 outline and body vocabulary, Matrix primary_query, commercial head term and sibling titles in the same locale reviewed; no fact, number or claim added; description and H1 unchanged.",
+      "width_review": "Characters: title 61→59; description unchanged. No browser/SERP pixel measurement.",
+      "primary_query": "prix location moto Hanoï caution",
+      "search_intent": "commercial_investigation",
+      "protected_packet_sha256": "e871a138087d46ef9f1274189e9b230c76bf7c3255e42094536fee108ece9a5d"
+    },
+    {
+      "id": "ES-H02",
+      "url": "/es/topics/precios-y-deposito/",
+      "locale": "es",
+      "before_title": "Alquilar moto en Hanói: precios, depósito y costes reales",
+      "before_description": "Compara el coste de alquilar moto en Hanói: tarifa, depósito, gasolina, aparcamiento, daños, seguro y documentos que conviene revisar antes de pagar.",
+      "after_title": "Precio del alquiler de moto en Hanói: depósito y costes",
+      "after_description": "Compara el coste de alquilar moto en Hanói: tarifa, depósito, gasolina, aparcamiento, daños, seguro y documentos que conviene revisar antes de pagar.",
+      "decision": "OPTIMIZE",
+      "reason": "SEO-only Hub round P (commercial price intent): Title used the verb 'Alquilar' and so lacked 'alquiler' from the Matrix primary query 'precio alquiler moto Hanói depósito' and from the ES commercial head term 'alquiler de motos en Hanói' (variant 'alquiler de moto en hanói'). Google autocomplete (es, 2026-10-28) returns 'precio alquiler moto hanoi' and 'cuanto cuesta alquilar moto en vietnam'. Leading with 'Precio del alquiler' keeps the Hub distinct from the Pillar ('Alquiler de motos en Hanói: guía…') and Supporting ES-S03 ('Alquiler de moto en Hanói: día, semana o mes'). The body opens with 'el precio de alquiler de una moto en Hanói' and covers deposit and costs; H1 is unchanged.",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, full H2 outline and body vocabulary, Matrix primary_query, commercial head term and sibling titles in the same locale reviewed; no fact, number or claim added; description and H1 unchanged.",
+      "width_review": "Characters: title 57→55; description unchanged. No browser/SERP pixel measurement.",
+      "primary_query": "precio alquiler moto Hanói depósito",
+      "search_intent": "commercial_investigation",
+      "protected_packet_sha256": "37af1fa06c314f9eff1d9025a6f86b779827510a6dfaafde86c7def9091da1a0"
+    },
+    {
+      "id": "NL-H02",
+      "url": "/nl/topics/huurprijs-en-borg/",
+      "locale": "nl",
+      "before_title": "Huurprijzen, borg en bijkomende kosten van motoren in Hanoi",
+      "before_description": "Wat een huurmotor in Hanoi echt kost: prijsopbouw per klasse, dag- en maandtarieven, borg, brandstof, bijkomende kosten en hoe je aanbieders vergelijkt.",
+      "after_title": "Motor huren in Hanoi: prijs, borg en bijkomende kosten",
+      "after_description": "Wat een huurmotor in Hanoi echt kost: prijsopbouw per klasse, dag- en maandtarieven, borg, brandstof, bijkomende kosten en hoe je aanbieders vergelijkt.",
+      "decision": "OPTIMIZE",
+      "reason": "SEO-only Hub round P (commercial price intent): Title lacked 'huren' and the exact 'prijs' from the Matrix primary query 'motor huren Hanoi prijs borg' and the NL commercial head term 'motor huren Hanoi'. Google autocomplete (nl, 2026-10-28) shows 'kosten motor huren vietnam' and 'scooter huren vietnam prijs'. The body explains price build-up, deposit and extra costs for rental motorbikes in Hanoi; H1 keeps the 'Huurprijzen, borg en bijkomende kosten' variant.",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, full H2 outline and body vocabulary, Matrix primary_query, commercial head term and sibling titles in the same locale reviewed; no fact, number or claim added; description and H1 unchanged.",
+      "width_review": "Characters: title 59→54; description unchanged. No browser/SERP pixel measurement.",
+      "primary_query": "motor huren Hanoi prijs borg",
+      "search_intent": "commercial_investigation",
+      "protected_packet_sha256": "9ceaf34055df5ee4626b61c1e796c0785434af09687f92b6e514a7e97d3a8d78"
+    }
+  ]
+}

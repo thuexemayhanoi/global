@@ -57,6 +57,8 @@ round_d2 = reviewed("metadata-reviews-d2.json")
 desc_changed_c = {i for i, r in round_c.items() if r["before_description"] != r["after_description"]}
 title_changed_c = {i for i, r in round_c.items() if r["before_title"] != r["after_title"]}
 title_changed_d2 = set(round_d2)
+round_p = reviewed("metadata-reviews-p.json")
+title_changed_p = {i for i, r in round_p.items() if r["before_title"] != r["after_title"]}
 price_fixed = set(cfg["overrides"]["U-PRICE-REVIEW"]["fixed_ids"])
 
 remaining = collections.Counter(key(f) for f in after)
@@ -72,6 +74,8 @@ def batch_for(f, rule):
     if rule == "S-ARTICLE-NO-IMAGE":
         return ["B", "E1"]
     if rule == "U-PQ-WEAK":
+        if mid in title_changed_p:
+            return ["P"]
         return ["D2"] if mid in title_changed_d2 else (["C"] if mid in title_changed_c else [])
     if rule in ("U-DESC-LONG", "U-TITLE-LONG", "U-DESC-SHORT", "U-TITLE-SIMILAR"):
         return ["C"] if (mid in round_c) else (["D2"] if mid in round_d2 else [cfg["rules"][rule]["batch"]])
@@ -95,6 +99,8 @@ for f in base:
     owner = rc.get("owner_action", "")
     if not present:
         outcome, reason = rc["resolved_outcome"], rc["why_resolved"]
+        if rule == "U-PQ-WEAK" and bs == ["P"]:
+            reason = "Title now leads with the primary-query / commercial head-term wording in reviewed Hub round P (metadata-reviews-p.json)."
         if outcome == "FIXED_VERIFIED" and not verified(bs):
             outcome = "FIXED_PENDING_LIVE"
         if rule == "U-PQ-WEAK" and not bs:

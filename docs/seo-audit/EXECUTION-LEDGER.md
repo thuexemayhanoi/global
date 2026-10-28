@@ -1,6 +1,6 @@
 # Global SEO A–Z — execution ledger and dashboard
 
-Status: **SEO_AZ_MATRIX_COMPLETE** · generated 2026-10-28 · baseline audit 2026-10-27 (PR #119) · re-audit 2026-10-28 at the merged state of every batch below.
+Status: **IN_PROGRESS (fixes awaiting production verification)** · generated 2026-10-28 · baseline audit 2026-10-27 (PR #119) · re-audit 2026-10-28 at the merged state of every batch below.
 
 Outcome per finding is computed by `docs/seo-audit/tools/ledger.py` from the baseline findings, the re-audit, `execution/batches.json` and `execution/outcomes.json`. Full rows: [`execution/execution-ledger.csv`](execution/execution-ledger.csv) (933 findings) and [`execution/task-ledger.csv`](execution/task-ledger.csv) (95 tasks). Workbook: [`reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx`](../../reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx) (sheets EXECUTION LEDGER, OWNER ACTIONS, BEFORE vs AFTER).
 
@@ -9,18 +9,18 @@ Outcome per finding is computed by `docs/seo-audit/tools/ledger.py` from the bas
 | Outcome | Findings |
 |---|---:|
 | FIXED_VERIFIED | 235 |
-| FIXED_PENDING_LIVE | 0 |
-| VALIDATED_NO_FIX | 686 |
+| FIXED_PENDING_LIVE | 2 |
+| VALIDATED_NO_FIX | 684 |
 | DUPLICATE | 0 |
 | EXTERNAL_DEPENDENCY | 11 |
 | BLOCKED | 1 |
 | **Total** | **933** |
 
-Tasks: 95 — BLOCKED 1, DONE 51, NOT_APPLICABLE 36, OWNER_DECISION 7.
+Tasks: 95 — BLOCKED 1, DONE 49, IN_PROGRESS 2, NOT_APPLICABLE 36, OWNER_DECISION 7.
 
 ## Before / after (same analyzer, measured rules)
 
-Findings: **933 → 733** reported by the re-audit; 0 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
+Findings: **933 → 731** reported by the re-audit; 0 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
 
 | Rule | Baseline | Re-audit | Outcomes |
 |---|---:|---:|---|
@@ -52,7 +52,7 @@ Findings: **933 → 733** reported by the re-audit; 0 new. A finding that is sti
 | U-GRAPH-REVIEW | 13 | 0 | FIXED_VERIFIED 13 |
 | U-GRAPH-UPGRADE | 9 | 1 | FIXED_VERIFIED 8, VALIDATED_NO_FIX 1 |
 | U-NO-OFFICIAL-SOURCE | 66 | 63 | VALIDATED_NO_FIX 66 |
-| U-PQ-WEAK | 123 | 103 | VALIDATED_NO_FIX 100, FIXED_VERIFIED 23 |
+| U-PQ-WEAK | 123 | 101 | VALIDATED_NO_FIX 98, FIXED_VERIFIED 23, FIXED_PENDING_LIVE 2 |
 | U-PRICE-REVIEW | 95 | 95 | VALIDATED_NO_FIX 86, FIXED_VERIFIED 9 |
 | U-TITLE-LONG | 55 | 0 | FIXED_VERIFIED 55 |
 | U-TITLE-SIMILAR | 33 | 33 | VALIDATED_NO_FIX 33 |
@@ -63,10 +63,10 @@ Findings: **933 → 733** reported by the re-audit; 0 new. A finding that is sti
 |---|---:|---:|---:|---:|---:|---:|---:|
 | vi | 45 | 7 | 0 | 37 | 1 | 0 | 40 |
 | en | 77 | 14 | 0 | 62 | 1 | 0 | 64 |
-| de | 194 | 24 | 0 | 168 | 2 | 0 | 172 |
+| de | 194 | 24 | 1 | 167 | 2 | 0 | 171 |
 | fr | 44 | 8 | 0 | 35 | 1 | 0 | 36 |
 | es | 48 | 10 | 0 | 38 | 0 | 0 | 36 |
-| nl | 53 | 9 | 0 | 44 | 0 | 0 | 46 |
+| nl | 53 | 9 | 1 | 43 | 0 | 0 | 45 |
 | zh | 114 | 17 | 0 | 97 | 0 | 0 | 101 |
 | pt | 42 | 8 | 0 | 34 | 0 | 0 | 34 |
 | ko | 152 | 70 | 0 | 81 | 1 | 0 | 91 |
@@ -93,17 +93,20 @@ Site-wide findings (locale ALL/global) are counted in the totals above, not per 
 | H | Production verification of E/F/G; competitor gaps and legitimate off-page plan; final ledger and Excel | [#129](https://github.com/thuexemayhanoi/global/pull/129) | ae9affc | [40686813932](https://github.com/thuexemayhanoi/global/actions/runs/40686813932) | pending |
 | I | Pillar commercial-investigation depth in 10 locales: 7-step rental process (ordered list), provider-selection criteria, FAQ 3→5 (FAQPage mirrors it) | [#130](https://github.com/thuexemayhanoi/global/pull/130) | 6b9630a | [40688074681](https://github.com/thuexemayhanoi/global/actions/runs/40688074681) | [40688268258](https://github.com/thuexemayhanoi/global/actions/runs/40688268258) [40688272992](https://github.com/thuexemayhanoi/global/actions/runs/40688272992) |
 | J | DE research refill (READY 87 < 100): 20 commercial-investigation topics with verified sources (batches 0001-0002) | — | e363a8a | pending | pending |
-| L | Commercial-investigation research in vi, en, fr, es, nl, zh, pt, ko, ja: 90 topics (batches 0003-0011; one-way, hotel/airport delivery, rent vs buy, Easy Rider vs self-ride, platform vs shop, what the price includes, monthly maintenance, late return, damage disputes, test ride) | — | d8d1262 | pending | pending |
+| L | Commercial-investigation research in vi, en, fr, es, nl, zh, pt, ko, ja: 90 topics (batches 0003-0011; one-way, hotel/airport delivery, rent vs buy, Easy Rider vs self-ride, platform vs shop, what the price includes, monthly maintenance, late return, damage disputes, test ride) — research data only; under the owner's SEO-only directive (2026-10-28) it is not promoted for publication | — | d8d1262 | pending | pending |
+| N | Real dates for locale Pillars and checklists: sitemap <lastmod> and JSON-LD datePublished/dateModified from data/seo/page-updates.json (launch commit ece23a28, PRs #82/#123/#127/#130) | [#133](https://github.com/thuexemayhanoi/global/pull/133) | 5312eaa | [40707292176](https://github.com/thuexemayhanoi/global/actions/runs/40707292176) | [40707742441](https://github.com/thuexemayhanoi/global/actions/runs/40707742441) [40707747550](https://github.com/thuexemayhanoi/global/actions/runs/40707747550) |
+| O | Accessibility: language-menu accessible name starts with the visible language name (WCAG 2.5.3 Label in Name) on all pages; owner backlog rewritten as OWNER_ACTIONS_LAST (SEO-only directive) | [#135](https://github.com/thuexemayhanoi/global/pull/135) | 13d77ce | [40708511676](https://github.com/thuexemayhanoi/global/actions/runs/40708511676) | [40709295964](https://github.com/thuexemayhanoi/global/actions/runs/40709295964) [40709301983](https://github.com/thuexemayhanoi/global/actions/runs/40709301983) |
+| P | Price Hubs (rental-costs) in vi, de, nl, fr, es: titles lead with the commercial head term + price modifier from the Matrix primary query and dated autocomplete evidence; H1 and descriptions unchanged; separates VI-H02 from VI-S17 and ES-H02 from ES-S03 (reviewed set metadata-reviews-p.json) | — | pending | pending | pending |
 
 ## OWNER_ACTION_REQUIRED
 
-1. Connect Google Search Console for https://global.rentbikehanoi.com/ (a google-site-verification meta tag is already on /), submit /sitemap.xml and share access with the SEO tooling (OpenSEO). _(rules: S-CWV-FIELD, S-GSC-NOT-CONNECTED)_
-2. Decide on analytics (GA4 or a privacy-light alternative); if yes, provide the measurement ID and approve the privacy-policy update. _(rules: S-GA4-NOT-CONNECTED)_
-3. Run the off-page plan in docs/seo-audit/COMPETITOR-GAP-AND-OFFPAGE-PLAN.md with real accounts (editorial outreach to ranking travel blogs, genuine forum answers, resource pages; no paid/PBN links); approve rank-tracking credits for the 10 head terms; re-measure referring domains (32 on 2026-10-28) monthly. _(rules: S-LOW-VISIBILITY)_
-4. Provide keyword-tool credits (nl, pt, zh and the remaining markets) or GSC data so long-tail queries can be validated. _(rules: S-KW-NO-DEMAND, S-PQ-SENTENCE)_
-5. Optional: name a human editor/reviewer if one will actually review guides; only then can bylines be added. _(rules: S-AUTHOR-ORG-ONLY)_
-6. Run Writer sessions (W1–W3) for es/nl/pt/ko/ja/zh/vi to bring them toward the DE count. _(rules: S-LOCALE-IMBALANCE)_
-7. Resolve C1 (hours 08:00–21:30 vs 09:00–21:00), C2 (delivery threshold) and C3 (GBP name) in data/business/reference.json via a reviewed PR with dated evidence. _(rules: S-BUSINESS-CONFLICTS)_
+1. Search Console data for global.rentbikehanoi.com (backlog item 1, OWNER-ACTIONS.md). _(rules: S-CWV-FIELD, S-GSC-NOT-CONNECTED)_
+2. Analytics decision (backlog item 2, OWNER-ACTIONS.md). _(rules: S-GA4-NOT-CONNECTED)_
+3. Off-page links from real accounts per COMPETITOR-GAP-AND-OFFPAGE-PLAN.md; rank tracking (backlog items 3-4, OWNER-ACTIONS.md). _(rules: S-LOW-VISIBILITY)_
+4. Keyword volumes for es, zh, pt, nl and exact ko/ja variants (backlog item 4, OWNER-ACTIONS.md). _(rules: S-KW-NO-DEMAND, S-PQ-SENTENCE)_
+5. Optional named human editor (backlog item 6, OWNER-ACTIONS.md). _(rules: S-AUTHOR-ORG-ONLY)_
+6. Deferred by the owner's SEO-only directive of 2026-10-28: no new articles, so the locale imbalance stays until article production resumes. _(rules: S-LOCALE-IMBALANCE)_
+7. Business data conflicts C1-C3 in data/business/reference.json (backlog item 5, OWNER-ACTIONS.md). _(rules: S-BUSINESS-CONFLICTS)_
 
 ## Verification limits
 
