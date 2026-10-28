@@ -377,3 +377,18 @@ test("no Latin-script article carries stray Chinese, Japanese or Korean characte
  const stray=packets.filter(p=>latin.has(p.locale)).filter(p=>[p.title,p.meta_description,p.h1,p.body_markdown.replace(/\]\([^)]*\)/g,"]")].some(t=>cjk.test(t||""))).map(p=>p.matrix_id);
  assert.deepEqual(stray,[]);
 });
+
+test("each locale checklist shows a visible FAQ mirrored by FAQPage, built only from the checklist's own text (batch Y)",()=>{
+ for(const l of locales){
+  const html=page("/"+l.code+"/checklist/"),faq=l.guideFaq||[];
+  assert.equal(faq.length,3,l.code+" checklist FAQ pairs");
+  const node=graph(html).find(n=>n["@type"]==="FAQPage");
+  assert.deepEqual(node?.mainEntity.map(e=>[e.name,e.acceptedAnswer.text]),faq,l.code+" FAQPage mirrors the visible FAQ");
+  const text=[l.guideIntro,...l.guideSections.flat()].join(" "),stated=new Set(text.match(/\d+/g)||[]);
+  for(const [q,a] of faq){
+   assert.ok(html.includes("<h3>"+q.replace(/&/g,"&amp;")+"</h3>"),l.code+" question is visible as H3");
+   assert.doesNotMatch(q+a,/[\[\]*]|https?:/,l.code+" plain-text pair");
+   for(const n of (q+" "+a).match(/\d+/g)||[])assert.ok(stated.has(n),l.code+" FAQ number "+n+" is stated in the checklist");
+  }
+ }
+});
