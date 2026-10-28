@@ -92,7 +92,8 @@ Site-wide findings (locale ALL/global) are counted in the totals above, not per 
 | G | Commercial head terms per locale (data/seo/commercial-head-terms.json); Pillar H1/description alignment (owner directive 2026-10-28) | [#127](https://github.com/thuexemayhanoi/global/pull/127) | 752edfc | [40685336542](https://github.com/thuexemayhanoi/global/actions/runs/40685336542) | [40685529787](https://github.com/thuexemayhanoi/global/actions/runs/40685529787) [40685533504](https://github.com/thuexemayhanoi/global/actions/runs/40685533504) |
 | H | Production verification of E/F/G; competitor gaps and legitimate off-page plan; final ledger and Excel | [#129](https://github.com/thuexemayhanoi/global/pull/129) | ae9affc | [40686813932](https://github.com/thuexemayhanoi/global/actions/runs/40686813932) | pending |
 | I | Pillar commercial-investigation depth in 10 locales: 7-step rental process (ordered list), provider-selection criteria, FAQ 3→5 (FAQPage mirrors it) | [#130](https://github.com/thuexemayhanoi/global/pull/130) | 6b9630a | [40688074681](https://github.com/thuexemayhanoi/global/actions/runs/40688074681) | [40688268258](https://github.com/thuexemayhanoi/global/actions/runs/40688268258) [40688272992](https://github.com/thuexemayhanoi/global/actions/runs/40688272992) |
-| J | DE research refill (READY 87 < 100): 20 commercial-investigation topics with verified sources on research/claude-seo-az-20261028 | — | e363a8a | pending | pending |
+| J | DE research refill (READY 87 < 100): 20 commercial-investigation topics with verified sources (batches 0001-0002) | — | e363a8a | pending | pending |
+| L | Commercial-investigation research in vi, en, fr, es, nl, zh, pt, ko, ja: 90 topics (batches 0003-0011; one-way, hotel/airport delivery, rent vs buy, Easy Rider vs self-ride, platform vs shop, what the price includes, monthly maintenance, late return, damage disputes, test ride) | — | d8d1262 | pending | pending |
 
 ## OWNER_ACTION_REQUIRED
 
