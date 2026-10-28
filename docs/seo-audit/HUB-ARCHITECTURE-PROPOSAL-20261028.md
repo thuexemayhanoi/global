@@ -1,5 +1,7 @@
 # Đề xuất kiến trúc Hub mới — chờ chủ sở hữu quyết định
 
+> **Hoãn**: theo chỉ thị SEO-only ngày 28/10/2026 (`approvals/owner-directive-20261028-seo-only.json`), không tạo Hub hay URL mới cho tới khi có chỉ thị khác. Tài liệu được giữ để tham khảo.
+
 Ngày 28/10/2026. Tài liệu chỉ để quyết định: không thay đổi Matrix, URL, điều hướng hay sitemap. Số liệu sinh từ `data/seo/topical-authority/architecture.json` và các map `data/seo/topical-authority/<locale>.json`.
 
 ## Vì sao cần quyết định của chủ sở hữu

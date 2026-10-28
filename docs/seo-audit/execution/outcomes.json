@@ -35,7 +35,7 @@
    "remaining_outcome": "EXTERNAL_DEPENDENCY",
    "why_resolved": "",
    "why_remaining": "No Search Console property is connected to the tools; only the owner can verify/connect it.",
-   "owner_action": "Connect Google Search Console for https://global.rentbikehanoi.com/ (a google-site-verification meta tag is already on /), submit /sitemap.xml and share access with the SEO tooling (OpenSEO)."
+   "owner_action": "Search Console data for global.rentbikehanoi.com (backlog item 1, OWNER-ACTIONS.md)."
   },
   "S-GA4-NOT-CONNECTED": {
    "batch": "-",
@@ -43,7 +43,7 @@
    "remaining_outcome": "EXTERNAL_DEPENDENCY",
    "why_resolved": "",
    "why_remaining": "No analytics property; installing one changes privacy policy and needs an owner decision.",
-   "owner_action": "Decide on analytics (GA4 or a privacy-light alternative); if yes, provide the measurement ID and approve the privacy-policy update."
+   "owner_action": "Analytics decision (backlog item 2, OWNER-ACTIONS.md)."
   },
   "S-LOW-VISIBILITY": {
    "batch": "-",
@@ -51,7 +51,7 @@
    "remaining_outcome": "EXTERNAL_DEPENDENCY",
    "why_resolved": "",
    "why_remaining": "Rankings and authority come from indexing time, links and demand. On-site work and the written off-page plan are done (docs/seo-audit/COMPETITOR-GAP-AND-OFFPAGE-PLAN.md: SERP evidence for 9 markets, gaps G1–G7, legitimate outreach channels, KPIs); executing outreach needs real accounts and time outside the repo.",
-   "owner_action": "Run the off-page plan in docs/seo-audit/COMPETITOR-GAP-AND-OFFPAGE-PLAN.md with real accounts (editorial outreach to ranking travel blogs, genuine forum answers, resource pages; no paid/PBN links); approve rank-tracking credits for the 10 head terms; re-measure referring domains (32 on 2026-10-28) monthly."
+   "owner_action": "Off-page links from real accounts per COMPETITOR-GAP-AND-OFFPAGE-PLAN.md; rank tracking (backlog items 3-4, OWNER-ACTIONS.md)."
   },
   "S-KW-NO-DEMAND": {
    "batch": "-",
@@ -59,7 +59,7 @@
    "remaining_outcome": "EXTERNAL_DEPENDENCY",
    "why_resolved": "",
    "why_remaining": "Long-tail primary queries stay NOT_VALIDATED hypotheses; measuring them needs GSC impressions or more keyword-tool credits.",
-   "owner_action": "Provide keyword-tool credits (nl, pt, zh and the remaining markets) or GSC data so long-tail queries can be validated."
+   "owner_action": "Keyword volumes for es, zh, pt, nl and exact ko/ja variants (backlog item 4, OWNER-ACTIONS.md)."
   },
   "S-SITEMAP-LASTMOD": {
    "batch": "B",
@@ -88,15 +88,15 @@
    "remaining_outcome": "VALIDATED_NO_FIX",
    "why_resolved": "",
    "why_remaining": "Organization author is the accurate attribution: no human editor reviews guides (facts_reviewed_by_human:false). Every guide shows the AI-provenance note and /about/ now explains drafting, checks and corrections (PR #123). Adding a person would be a fabricated byline.",
-   "owner_action": "Optional: name a human editor/reviewer if one will actually review guides; only then can bylines be added."
+   "owner_action": "Optional named human editor (backlog item 6, OWNER-ACTIONS.md)."
   },
   "S-LOCALE-IMBALANCE": {
    "batch": "-",
    "resolved_outcome": "FIXED_VERIFIED",
    "remaining_outcome": "EXTERNAL_DEPENDENCY",
    "why_resolved": "",
-   "why_remaining": "DE has ~2.7x the median guide count. Balancing needs active Writer sessions on the other locales; GitHub Actions cannot write (contract).",
-   "owner_action": "Run Writer sessions (W1–W3) for es/nl/pt/ko/ja/zh/vi to bring them toward the DE count."
+   "why_remaining": "Fixing the imbalance needs new articles in nine locales; the owner's SEO-only directive of 2026-10-28 stops new article production, so it remains an owner decision.",
+   "owner_action": "Deferred by the owner's SEO-only directive of 2026-10-28: no new articles, so the locale imbalance stays until article production resumes."
   },
   "S-PT-VARIANT": {
    "batch": "D2",
@@ -111,7 +111,7 @@
    "remaining_outcome": "VALIDATED_NO_FIX",
    "why_resolved": "",
    "why_remaining": "All 32 DE model comparisons are Vietnam-anchored (Vietnamese model pages, licence class A in Vietnam; 7–35 Vietnam mentions each) and sit in the vehicle-choice silo.",
-   "owner_action": "Optional (Topic Factory): favour other locales over more DE big-bike comparisons until locale balance improves."
+   "owner_action": ""
   },
   "S-PQ-SENTENCE": {
    "batch": "-",
@@ -119,7 +119,7 @@
    "remaining_outcome": "EXTERNAL_DEPENDENCY",
    "why_resolved": "",
    "why_remaining": "80 DE primary queries are full questions. Replacing them with head terms needs keyword data (no credits for DE long-tail); question-form queries remain useful as the question each guide answers.",
-   "owner_action": "Provide keyword-tool credits (nl, pt, zh and the remaining markets) or GSC data so long-tail queries can be validated."
+   "owner_action": "Keyword volumes for es, zh, pt, nl and exact ko/ja variants (backlog item 4, OWNER-ACTIONS.md)."
   },
   "S-PRICE-FRESHNESS": {
    "batch": "D3",
@@ -142,7 +142,7 @@
    "remaining_outcome": "EXTERNAL_DEPENDENCY",
    "why_resolved": "",
    "why_remaining": "Field Core Web Vitals (CrUX) need real Chrome traffic and GSC; lab data is good (CLS 0, TBT 0).",
-   "owner_action": "Connect Google Search Console for https://global.rentbikehanoi.com/ (a google-site-verification meta tag is already on /), submit /sitemap.xml and share access with the SEO tooling (OpenSEO)."
+   "owner_action": "Search Console data for global.rentbikehanoi.com (backlog item 1, OWNER-ACTIONS.md)."
   },
   "S-REDIRECT-HEADERS": {
    "batch": "B",
@@ -157,7 +157,7 @@
    "remaining_outcome": "BLOCKED",
    "why_resolved": "",
    "why_remaining": "Protected business data (NAP, hours, delivery threshold, GBP title). Changing it without dated evidence and owner approval is forbidden.",
-   "owner_action": "Resolve C1 (hours 08:00–21:30 vs 09:00–21:00), C2 (delivery threshold) and C3 (GBP name) in data/business/reference.json via a reviewed PR with dated evidence."
+   "owner_action": "Business data conflicts C1-C3 in data/business/reference.json (backlog item 5, OWNER-ACTIONS.md)."
   },
   "S-FAQ-SCHEMA": {
    "batch": "B",

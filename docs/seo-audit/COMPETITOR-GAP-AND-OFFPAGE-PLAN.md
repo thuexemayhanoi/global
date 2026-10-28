@@ -53,9 +53,9 @@ Mọi con số dưới đây đều do công cụ trả về. Không có số n�
 | G1 | Từ khóa chính chưa nằm trong H1 và mô tả của một số Pillar | — | Batch G (PR #127): H1 de, fr, es, pt, ja mở đầu bằng từ khóa chính; mô tả vi, de, fr, es, pt, ja chứa từ khóa | ĐÃ SỬA, chờ live QA |
 | G2 | "Kinh nghiệm, thủ tục, giá" (vi), "guide complet" (fr), "price & tips" (en) | Pillar 10 ngôn ngữ đều có 11 mục hướng dẫn, 4 chủ đề, FAQ, Hub giá/đặt cọc, giấy tờ, an toàn, chọn xe | Giữ nguyên. Không thêm giá hay mức cọc khi chưa có nguồn có ngày (fact-guard) | ĐÃ ĐỦ, không cần sửa |
 | G3 | Danh sách "N địa chỉ uy tín", so sánh đơn vị cho thuê (vi, pt, ko) | Tiêu chí đánh giá và so sánh báo giá ("So sánh báo giá trên cùng một danh sách") | Không lập danh sách cửa hàng: cần dữ liệu doanh nghiệp đã xác minh và có ngày; không bịa tên, giá, đánh giá | CHẶN THEO CHÍNH SÁCH (cần dữ liệu thật) |
-| G4 | So sánh ứng dụng/nền tảng thuê xe (ja) | DE: DE-S365 (đặt qua nền tảng hay thuê trực tiếp), DE-S376 (giao xe tại sân bay qua app) | DE: đã vào Matrix (batch J). 9 ngôn ngữ còn lại: đã nghiên cứu, ở trạng thái PROPOSED (batch L), tự động lên IDEA khi READY < 100 | DE: IDEA, CHỜ WRITER; 9 NGÔN NGỮ: PROPOSED |
-| G5 | Tự thuê xe hay đi tour có hướng dẫn hoặc easy rider (de) | DE-S168; mới: DE-S364 (Easy Rider hay tự lái), DE-S368 (chọn xe thuê cho Ha Giang Loop) | DE: đã vào Matrix (batch J). 9 ngôn ngữ còn lại: đã nghiên cứu, ở trạng thái PROPOSED (batch L), tự động lên IDEA khi READY < 100 | DE: IDEA, CHỜ WRITER; 9 NGÔN NGỮ: PROPOSED |
-| G6 | Ha Giang trong SERP fr, ko, pt | DE-S114, DE-S168; 90 ứng viên `routes-trips` (9 mỗi ngôn ngữ) | Đã đủ điều kiện ≥8 ứng viên ở 10 ngôn ngữ; cần chủ sở hữu duyệt Hub thứ 5: [`HUB-ARCHITECTURE-PROPOSAL-20261028.md`](HUB-ARCHITECTURE-PROPOSAL-20261028.md) | CHỜ CHỦ SỞ HỮU |
+| G4 | So sánh ứng dụng/nền tảng thuê xe (ja) | DE: DE-S365 (đặt qua nền tảng hay thuê trực tiếp), DE-S376 (giao xe tại sân bay qua app) | DE: đã vào Matrix (batch J). 9 ngôn ngữ còn lại: đã nghiên cứu, ở trạng thái PROPOSED (batch L), tự động lên IDEA khi READY < 100 | HOÃN: chỉ thị SEO-only 28/10/2026 dừng viết bài mới (dữ liệu nghiên cứu được giữ nguyên) |
+| G5 | Tự thuê xe hay đi tour có hướng dẫn hoặc easy rider (de) | DE-S168; mới: DE-S364 (Easy Rider hay tự lái), DE-S368 (chọn xe thuê cho Ha Giang Loop) | DE: đã vào Matrix (batch J). 9 ngôn ngữ còn lại: đã nghiên cứu, ở trạng thái PROPOSED (batch L), tự động lên IDEA khi READY < 100 | HOÃN: chỉ thị SEO-only 28/10/2026 dừng viết bài mới (dữ liệu nghiên cứu được giữ nguyên) |
+| G6 | Ha Giang trong SERP fr, ko, pt | DE-S114, DE-S168; 90 ứng viên `routes-trips` (9 mỗi ngôn ngữ) | Đã đủ điều kiện ≥8 ứng viên ở 10 ngôn ngữ; cần chủ sở hữu duyệt Hub thứ 5: [`HUB-ARCHITECTURE-PROPOSAL-20261028.md`](HUB-ARCHITECTURE-PROPOSAL-20261028.md) | HOÃN: chỉ thị SEO-only (không tạo Hub/URL mới) |
 | G7 | Câu hỏi về bằng lái (ja #1) | JA-H03, JA-S05, JA-S09, JA-S29 | Pillar đã liên kết Hub giấy tờ; theo dõi thứ hạng sau khi có GSC | ĐÃ CÓ NỘI DUNG |
 
 ## 4. Kế hoạch off-page hợp lệ (không mua link, không PBN, không backlink giả)
@@ -68,11 +68,9 @@ Mọi con số dưới đây đều do công cụ trả về. Không có số n�
 - Không chép nội dung của site khác, không chỉnh sửa tên miền khác.
 - Không chuyển hướng traffic hay thứ hạng sang tên miền khác.
 
-### Giai đoạn 0 · Đo lường (chủ sở hữu, tuần 0–1)
+### Giai đoạn 0 · Đo lường
 
-1. Xác minh Search Console (Domain property `global.rentbikehanoi.com`) và gửi `https://global.rentbikehanoi.com/sitemap.xml`. Thẻ `google-site-verification` đã có trong `index.html`.
-2. Quyết định GA4 hoặc không dùng analytics. Hiện site chưa có mã analytics (không có gtag).
-3. Theo dõi thứ hạng cho 10 từ khóa chính (OpenSEO hoặc Ubersuggest). Việc này tốn credit nên cần chủ sở hữu duyệt.
+Cần dữ liệu Search Console, analytics và theo dõi thứ hạng: xem `OWNER-ACTIONS.md` (mục 1, 2, 4). Khi chưa có các dữ liệu này, thứ hạng chưa được đo.
 
 ### Giai đoạn 1 · Tài sản đáng được liên kết (nội bộ, đã có)
 
@@ -106,9 +104,6 @@ Mọi con số dưới đây đều do công cụ trả về. Không có số n�
 | Referring domains (mốc 32 ngày 28/10/2026) | Ubersuggest backlinks | Hằng tháng |
 | Trang được lập chỉ mục / số URL trong sitemap | Search Console | Hằng tháng |
 
-## 5. Việc cần chủ sở hữu (OWNER_ACTION_REQUIRED)
+## 5. OWNER_ACTIONS_LAST
 
-1. Kết nối Search Console và gửi sitemap. Mọi KPI thứ hạng phụ thuộc bước này.
-2. Duyệt credit cho rank tracking, AI visibility và đo volume còn thiếu (es, pt, zh và dạng chính xác của ko/ja).
-3. Chỉ định người thực hiện outreach bằng tài khoản thật. Agent không đăng bài lên diễn đàn hay gửi email thay chủ sở hữu.
-4. Duyệt kiến trúc Hub mới: khuyến nghị phương án A, `routes-trips` ([đề xuất](HUB-ARCHITECTURE-PROPOSAL-20261028.md)). Giữ phiên Writer W1–W3 hoạt động để viết DE-S361…S380 và các chủ đề READY khác.
+Các việc cần tài khoản bên ngoài hoặc dữ liệu đo lường được ghi chung một chỗ: [`OWNER-ACTIONS.md`](OWNER-ACTIONS.md). Theo chỉ thị SEO-only ngày 28/10/2026, các việc này không làm gián đoạn SEO trên các trang đã xuất bản.
