@@ -131,3 +131,25 @@ test("host probes report advisories and never throw",async()=>{
  assert.ok(!out.advisories.some(a=>a.includes("http://global")),"HTTPS redirect accepted");
  assert.equal(out.evidence.length,4);
 });
+
+test("A–Z reviewed metadata rows are applied, within width limits, frozen and keep the visible lead",()=>{
+ const width=s=>[...s].reduce((n,c)=>n+(/[ᄀ-ᅟ⺀-꓏가-힣豈-﫿︰-﹏＀-｠￠-￦]/u.test(c)?2:1),0);
+ const reviews=JSON.parse(read("docs/seo-audit/execution/metadata-reviews.json"));
+ const freeze=new Map(JSON.parse(read("data/seo/url-freeze.json")).urls.map(u=>[u.url,u.fingerprint]));
+ const leads=JSON.parse(read("content/article-leads.json")).leads;
+ assert.ok(reviews.length>=100);
+ for(const r of reviews){
+  const p=JSON.parse(read("content/articles/"+r.id+".json"));
+  assert.equal(p.title,r.after_title,r.id);
+  assert.equal(p.meta_description,r.after_description,r.id);
+  if(r.after_title!==r.before_title)assert.ok(width(r.after_title)<=60,r.id+" title width");
+  if(r.after_description!==r.before_description){
+   assert.ok(width(r.after_description)<=200&&r.after_description.length>=80,r.id+" description bounds");
+   assert.ok(typeof leads[r.id]==="string"&&leads[r.id].trim(),r.id+" visible lead kept in the sidecar");
+   const lead=page(r.url).match(/<p class="article-lead">([^<]*)<\/p>/)[1].replace(/&amp;/g,"&").replace(/&quot;/g,'"');
+   assert.equal(lead,leads[r.id],r.id+" page shows the preserved lead, not the new description");
+  }
+  assert.equal(freeze.get(r.url).title,r.after_title,r.id+" frozen title");
+  assert.equal(freeze.get(r.url).description,r.after_description,r.id+" frozen description");
+ }
+});
