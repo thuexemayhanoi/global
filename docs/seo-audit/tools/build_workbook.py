@@ -429,7 +429,7 @@ for r in pub:
 table_sheet("INTERNAL LINK MATRIX", "tblLinks", I_HEAD, irows, widths={"url": 55, "link_findings": 34}, link_cols=("url",),
             notes=["INTERNAL LINK MATRIX — every published URL",
                    "Verified: 0 broken internal links, 0 links to unpublished URLs, all 1,064 Hub/Supporting pages link to their parent and are linked back (two-way). Contextual = links inside the article body + related rail (navigation/footer excluded).",
-                   "Sitewide issue: the 'Related guides' rail links each locale home with an exact-match transactional anchor (finding S-RAIL-ANCHOR)."])
+                   "Owner directive 2026-10-28: /global competes independently for rental head terms; exact-match anchor repetition is audited only if present in rendered HTML."])
 
 # ---------------- SCHEMA & AEO GEO ----------------
 G_HEAD = ["url", "locale", "matrix_id", "role", "schema_types", "schema_valid_json", "schema_inlanguage", "breadcrumb_items", "author_types",
@@ -442,7 +442,7 @@ for r in pub:
     x["url"] = ORIGIN + r["url"]
     for k in ("schema_valid_json", "faq_visible", "faq_schema", "provenance_note", "visual_breadcrumb"):
         x[k] = {True: "YES", False: "NO"}.get(r.get(k), r.get(k))
-    x["article_image_in_schema"] = "NO" if "Article" in (r.get("schema_types") or []) else "N/A"
+    x["article_image_in_schema"] = ("YES" if r.get("article_image_in_schema") else "NO") if "Article" in (r.get("schema_types") or []) else "N/A"
     x["ai_visibility"] = "NOT_CONNECTED"
     grows.append(x)
 table_sheet("SCHEMA & AEO GEO", "tblSchema", G_HEAD, grows, widths={"url": 55, "schema_types": 40}, link_cols=("url",), evi_cols=("ai_visibility",),
@@ -471,7 +471,7 @@ for m in a["master"]:
     xrows.append(x)
 table_sheet("INDEXING & SITEMAPS", "tblIndexing", X_HEAD, xrows, widths={"url": 55, "check": 30, "sitemap_shard": 18}, link_cols=("url",), evi_cols=("gsc_coverage",),
             notes=["INDEXING & SITEMAPS — every Matrix row + noindex utilities",
-                   f"sitemap.xml is an index of {len(d['sitemap']['index_shards'])} shards with {d['sitemap']['urls']} URLs, 0 duplicates, 0 unpublished. robots.txt: Allow all + sitemap. No <lastmod> anywhere (finding S-SITEMAP-LASTMOD).",
+                   f"sitemap.xml has {len(d['sitemap']['index_shards'])} shards, {d['sitemap']['urls']} URLs, and {d['sitemap']['lastmod_missing']} missing lastmod values (current committed build); Google indexing is separate from on-site signals.",
                    "Google indexation is NOT_CONNECTED (no Search Console property). 'check' only proves the on-site signals, not that Google indexed the URL."])
 
 # ---------------- AUDIT CHANGELOG ----------------
@@ -511,6 +511,20 @@ ch += [
 table_sheet("AUDIT CHANGELOG", "tblChangelog", CH_HEAD, ch, widths={"item": 45, "commit_or_run": 30, "result": 70, "evidence_url": 50, "notes": 40},
             link_cols=("evidence_url",), input_cols=(), notes=["AUDIT CHANGELOG — audits, QA runs, commits and verification results", "Append a row for every re-audit or verified fix."])
 
+# Owner-approved independent SEO strategy and already merged implementation batches.
+# These are historical PR merge records, not proof of a fresh live Google ranking.
+for pr, label in ((120, "Owner directive: Global competes for rental head terms in all 10 locales"),
+                  (121, "Technical: CLS, FAQPage, lastmod, images, checklist sources"),
+                  (122, "Metadata: 55 titles, 78 descriptions"),
+                  (123, "Content: checklist depth, overlap review, E-E-A-T"),
+                  (124, "Keywords: 21 titles, PT lexical consistency"),
+                  (125, "Sourced prices: 9 articles corrected, 86 validated"),
+                  (126, "Performance: responsive WebP srcset/sizes")):
+    ch.append({"date": "2026-10-28", "type": "MERGED_PR", "item": label,
+               "commit_or_run": f"PR #{pr}", "result": "MERGED into main (repository history)",
+               "evidence_url": f"{GH}/pull/{pr}",
+               "notes": "Audit baseline issues may disappear after this change; rerun live QA separately for production equivalence."})
+
 # ---------------- README & LEGEND ----------------
 ws = wb.create_sheet("README & LEGEND")
 lines = [
@@ -527,6 +541,7 @@ lines = [
     ("Editing", F_SUB),
     ("Yellow cells are inputs: work_status (drop-down), assignee, start, due, notes. Do not edit other columns; they are regenerated on the next audit.", F_BASE),
     ("Re-audit: python3 docs/seo-audit/tools/collect.py && python3 docs/seo-audit/tools/analyze.py && python3 docs/seo-audit/tools/build_workbook.py --carry <this file>", F_BASE),
+    ("OWNER DIRECTIVE 2026-10-28: Global SEO is independent and competes for commercial rental head terms in all 10 languages; never yield terms to other domains. Historical 2026-10-27 audit notes are superseded for this decision.", F_BASE),
     ("", F_BASE),
     ("Severity", F_SUB),
     ("P0 breaks serving/indexing (none found) · P1 high impact on visibility, measurement or strategy · P2 significant · P3 optimisation", F_BASE),

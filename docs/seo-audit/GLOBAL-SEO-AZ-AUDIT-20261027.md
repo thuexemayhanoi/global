@@ -1,5 +1,7 @@
 # Global SEO A–Z: báo cáo kiểm toán toàn website, 27/10/2026
 
+> **LƯU Ý CHIẾN LƯỢC — cập nhật 28/10/2026:** Đây là báo cáo kiểm toán *lịch sử* tại commit `5adb7cd`, không phải kế hoạch tác nghiệp hiện hành. Khuyến nghị bên dưới về việc để `global.rentbikehanoi.com` nhường từ khóa thương mại cho `thuexemaynguyentu.com` hoặc `rentbikehanoi.com` **đã bị chủ sở hữu bác bỏ và thay thế** bằng [PR #120](https://github.com/thuexemayhanoi/global/pull/120). Global SEO độc lập, cạnh tranh toàn bộ từ khóa thuê xe máy thương mại trong 10 ngôn ngữ. Không sử dụng các khuyến nghị nhường từ khóa trong tài liệu lịch sử này. **Master Excel và CSV đồng bộ sau 28/10 mới là bảng công việc hiện hành.**
+
 **Website:** https://global.rentbikehanoi.com · **Repo:** thuexemayhanoi/global · **Phạm vi:** toàn site, 10 ngôn ngữ (vi, en, de, fr, es, nl, zh, pt, ko, ja)
 **Trạng thái site được kiểm toán:** `main` @ `5adb7cd` · **Branch kiểm toán:** `audit/seo-az-20261027` · **Ngày dữ liệu:** 27/10/2026 (UTC)
 
