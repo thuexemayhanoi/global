@@ -4,6 +4,22 @@
  "github_actions": [
   {
    "workflow": "live-markup-qa.yml",
+   "run_id": 40685529787,
+   "url": "https://github.com/thuexemayhanoi/global/actions/runs/40685529787",
+   "head_sha": "752edfcc76a02a170f0c34dcf238893f37bb857e",
+   "conclusion": "success",
+   "scope": "after all batches A–G (PR #127): 1081 of 1081 routes (every PUBLISHED URL + /search/ + /404.html) HTTP 200 and byte-identical to the committed build"
+  },
+  {
+   "workflow": "post-publish-qa.yml",
+   "run_id": 40685533504,
+   "url": "https://github.com/thuexemayhanoi/global/actions/runs/40685533504",
+   "head_sha": "752edfcc76a02a170f0c34dcf238893f37bb857e",
+   "conclusion": "success",
+   "scope": "after all batches A–G (PR #127): status, lang, canonical, sitemap, robots, 404, frozen SEO fingerprints (incl. the 11 re-frozen Pillar fields), NAP/business-schema guard, host probes; 1094 checks, 0 issues"
+  },
+  {
+   "workflow": "live-markup-qa.yml",
    "run_id": 40640026971,
    "url": "https://github.com/thuexemayhanoi/global/actions/runs/40640026971",
    "head_sha": "eac8fe216af20e78d73c4b31f10d0f3a4ca391a7",
@@ -92,22 +108,22 @@
  },
  "pagespeed_ubersuggest": {
   "target": "global.rentbikehanoi.com (homepage, lab data, Lighthouse via Ubersuggest, forceUpdate)",
-  "measured_at": "2026-10-28 after D4 deploy (run 40639921194)",
+  "measured_at": "2026-10-28 after the E/F/G deploy (run 40685336542)",
   "DESKTOP": {
-   "FCP": "378 ms",
-   "LCP": "458 ms",
+   "FCP": "384 ms",
+   "LCP": "464 ms",
    "CLS": "0",
    "TBT": "0 ms",
-   "SpeedIndex": "448 ms",
-   "TTI": "458 ms",
+   "SpeedIndex": "434 ms",
+   "TTI": "464 ms",
    "opportunity": "Redirects, est. 190 ms"
   },
   "MOBILE": {
-   "FCP": "1.3 s",
+   "FCP": "1.2 s",
    "LCP": "1.7 s",
    "CLS": "0",
-   "TBT": "38 ms",
-   "SpeedIndex": "2.4 s",
+   "TBT": "0 ms",
+   "SpeedIndex": "1.2 s",
    "TTI": "1.7 s",
    "opportunity": "Redirects, est. 630 ms (http->https hop on GitHub Pages)"
   },
@@ -127,6 +143,19 @@
     },
     "DESKTOP": {
      "LCP": "475 ms"
+    }
+   },
+   {
+    "measured_at": "2026-10-28 after D4 deploy (run 40639921194)",
+    "MOBILE": {
+     "FCP": "1.3 s",
+     "LCP": "1.7 s",
+     "CLS": "0",
+     "TBT": "38 ms",
+     "SpeedIndex": "2.4 s"
+    },
+    "DESKTOP": {
+     "LCP": "458 ms"
     }
    }
   ]
@@ -207,5 +236,12 @@
     "score": 1.0
    }
   }
+ },
+ "serp_head_terms": {
+  "file": "reports/seo/data/raw/serp-head-terms-20261028.json",
+  "source": "Ubersuggest serp_analysis",
+  "collected": "2026-10-28",
+  "markets": 9,
+  "global_in_results": false
  }
 }

@@ -1,6 +1,6 @@
 # Global SEO A–Z — execution ledger and dashboard
 
-Status: **IN_PROGRESS (fixes awaiting production verification)** · generated 2026-10-28 · baseline audit 2026-10-27 (PR #119) · re-audit 2026-10-28 at the merged state of every batch below.
+Status: **SEO_AZ_MATRIX_COMPLETE** · generated 2026-10-28 · baseline audit 2026-10-27 (PR #119) · re-audit 2026-10-28 at the merged state of every batch below.
 
 Outcome per finding is computed by `docs/seo-audit/tools/ledger.py` from the baseline findings, the re-audit, `execution/batches.json` and `execution/outcomes.json`. Full rows: [`execution/execution-ledger.csv`](execution/execution-ledger.csv) (933 findings) and [`execution/task-ledger.csv`](execution/task-ledger.csv) (95 tasks). Workbook: [`reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx`](../../reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx) (sheets EXECUTION LEDGER, OWNER ACTIONS, BEFORE vs AFTER).
 
@@ -8,15 +8,15 @@ Outcome per finding is computed by `docs/seo-audit/tools/ledger.py` from the bas
 
 | Outcome | Findings |
 |---|---:|
-| FIXED_VERIFIED | 222 |
-| FIXED_PENDING_LIVE | 13 |
+| FIXED_VERIFIED | 235 |
+| FIXED_PENDING_LIVE | 0 |
 | VALIDATED_NO_FIX | 686 |
 | DUPLICATE | 0 |
 | EXTERNAL_DEPENDENCY | 11 |
 | BLOCKED | 1 |
 | **Total** | **933** |
 
-Tasks: 95 — BLOCKED 1, DONE 48, IN_PROGRESS 3, NOT_APPLICABLE 36, OWNER_DECISION 7.
+Tasks: 95 — BLOCKED 1, DONE 51, NOT_APPLICABLE 36, OWNER_DECISION 7.
 
 ## Before / after (same analyzer, measured rules)
 
@@ -24,7 +24,7 @@ Findings: **933 → 733** reported by the re-audit; 0 new. A finding that is sti
 
 | Rule | Baseline | Re-audit | Outcomes |
 |---|---:|---:|---|
-| S-ARTICLE-NO-IMAGE | 1 | 0 | FIXED_PENDING_LIVE 1 |
+| S-ARTICLE-NO-IMAGE | 1 | 0 | FIXED_VERIFIED 1 |
 | S-AUTHOR-ORG-ONLY | 1 | 1 | VALIDATED_NO_FIX 1 |
 | S-BUSINESS-CONFLICTS | 1 | 1 | BLOCKED 1 |
 | S-CHECKLIST-NO-REFS | 10 | 0 | FIXED_VERIFIED 10 |
@@ -38,7 +38,7 @@ Findings: **933 → 733** reported by the re-audit; 0 new. A finding that is sti
 | S-LOCALE-IMBALANCE | 1 | 1 | EXTERNAL_DEPENDENCY 1 |
 | S-LOW-VISIBILITY | 1 | 1 | EXTERNAL_DEPENDENCY 1 |
 | S-OG-IMAGE-SINGLE | 1 | 0 | FIXED_VERIFIED 1 |
-| S-PILLAR-HEAD-TERM | 10 | 0 | FIXED_PENDING_LIVE 10 |
+| S-PILLAR-HEAD-TERM | 10 | 0 | FIXED_VERIFIED 10 |
 | S-PQ-SENTENCE | 1 | 1 | EXTERNAL_DEPENDENCY 1 |
 | S-PRICE-FRESHNESS | 1 | 1 | FIXED_VERIFIED 1 |
 | S-PSI-MOBILE | 1 | 0 | FIXED_VERIFIED 1 |
@@ -48,7 +48,7 @@ Findings: **933 → 733** reported by the re-audit; 0 new. A finding that is sti
 | S-SITEMAP-LASTMOD | 1 | 0 | FIXED_VERIFIED 1 |
 | U-ANCHOR-DIVERSITY | 197 | 197 | VALIDATED_NO_FIX 197 |
 | U-DESC-LONG | 241 | 194 | VALIDATED_NO_FIX 169, FIXED_VERIFIED 72 |
-| U-DESC-SHORT | 8 | 0 | FIXED_VERIFIED 6, FIXED_PENDING_LIVE 2 |
+| U-DESC-SHORT | 8 | 0 | FIXED_VERIFIED 8 |
 | U-GRAPH-REVIEW | 13 | 0 | FIXED_VERIFIED 13 |
 | U-GRAPH-UPGRADE | 9 | 1 | FIXED_VERIFIED 8, VALIDATED_NO_FIX 1 |
 | U-NO-OFFICIAL-SOURCE | 66 | 63 | VALIDATED_NO_FIX 66 |
@@ -61,16 +61,16 @@ Findings: **933 → 733** reported by the re-audit; 0 new. A finding that is sti
 
 | Locale | Baseline findings | Fixed (verified) | Fixed (pending live) | Validated | External | Blocked | Re-audit remaining |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| vi | 45 | 6 | 1 | 37 | 1 | 0 | 40 |
-| en | 77 | 11 | 3 | 62 | 1 | 0 | 64 |
-| de | 194 | 23 | 1 | 168 | 2 | 0 | 172 |
-| fr | 44 | 7 | 1 | 35 | 1 | 0 | 36 |
-| es | 48 | 9 | 1 | 38 | 0 | 0 | 36 |
-| nl | 53 | 8 | 1 | 44 | 0 | 0 | 46 |
-| zh | 114 | 16 | 1 | 97 | 0 | 0 | 101 |
-| pt | 42 | 7 | 1 | 34 | 0 | 0 | 34 |
-| ko | 152 | 69 | 1 | 81 | 1 | 0 | 91 |
-| ja | 151 | 61 | 1 | 88 | 1 | 0 | 105 |
+| vi | 45 | 7 | 0 | 37 | 1 | 0 | 40 |
+| en | 77 | 14 | 0 | 62 | 1 | 0 | 64 |
+| de | 194 | 24 | 0 | 168 | 2 | 0 | 172 |
+| fr | 44 | 8 | 0 | 35 | 1 | 0 | 36 |
+| es | 48 | 10 | 0 | 38 | 0 | 0 | 36 |
+| nl | 53 | 9 | 0 | 44 | 0 | 0 | 46 |
+| zh | 114 | 17 | 0 | 97 | 0 | 0 | 101 |
+| pt | 42 | 8 | 0 | 34 | 0 | 0 | 34 |
+| ko | 152 | 70 | 0 | 81 | 1 | 0 | 91 |
+| ja | 151 | 62 | 0 | 88 | 1 | 0 | 105 |
 
 Site-wide findings (locale ALL/global) are counted in the totals above, not per language.
 
@@ -86,16 +86,16 @@ Site-wide findings (locale ALL/global) are counted in the totals above, not per 
 | D2 | 21 query-aligned titles, one Portuguese variant on PT pages | [#124](https://github.com/thuexemayhanoi/global/pull/124) | c43d661 | [40638328327](https://github.com/thuexemayhanoi/global/actions/runs/40638328327) | [40638975548](https://github.com/thuexemayhanoi/global/actions/runs/40638975548) [40638978172](https://github.com/thuexemayhanoi/global/actions/runs/40638978172) |
 | D3 | Sourced-price re-check: 9 articles corrected, 86 verified | [#125](https://github.com/thuexemayhanoi/global/pull/125) | a34800a | [40639567249](https://github.com/thuexemayhanoi/global/actions/runs/40639567249) | [40640026971](https://github.com/thuexemayhanoi/global/actions/runs/40640026971) [40640030263](https://github.com/thuexemayhanoi/global/actions/runs/40640030263) |
 | D4 | Responsive topic photos (480w/720w srcset) | [#126](https://github.com/thuexemayhanoi/global/pull/126) | eac8fe2 | [40639921194](https://github.com/thuexemayhanoi/global/actions/runs/40639921194) | [40640026971](https://github.com/thuexemayhanoi/global/actions/runs/40640026971) [40640030263](https://github.com/thuexemayhanoi/global/actions/runs/40640030263) |
-| E1 | Re-audit gaps: checklist Article image, Japanese FAQ questions | — | pending | pending | pending |
-| E2 | Privacy and terms meta descriptions | — | pending | pending | pending |
-| E3 | Re-audit regression fixes: 3 query-aligned titles, KO Pillar description | — | pending | pending | pending |
-| G | Commercial head terms per locale; Pillar H1/description alignment (owner directive 2026-10-28) | — | pending | pending | pending |
+| E1 | Re-audit gaps: checklist Article image, Japanese FAQ questions | [#127](https://github.com/thuexemayhanoi/global/pull/127) | 752edfc | [40685336542](https://github.com/thuexemayhanoi/global/actions/runs/40685336542) | [40685529787](https://github.com/thuexemayhanoi/global/actions/runs/40685529787) [40685533504](https://github.com/thuexemayhanoi/global/actions/runs/40685533504) |
+| E2 | Privacy and terms meta descriptions | [#127](https://github.com/thuexemayhanoi/global/pull/127) | 752edfc | [40685336542](https://github.com/thuexemayhanoi/global/actions/runs/40685336542) | [40685529787](https://github.com/thuexemayhanoi/global/actions/runs/40685529787) [40685533504](https://github.com/thuexemayhanoi/global/actions/runs/40685533504) |
+| E3 | Re-audit regression fixes: 3 query-aligned titles, KO Pillar description | [#127](https://github.com/thuexemayhanoi/global/pull/127) | 752edfc | [40685336542](https://github.com/thuexemayhanoi/global/actions/runs/40685336542) | [40685529787](https://github.com/thuexemayhanoi/global/actions/runs/40685529787) [40685533504](https://github.com/thuexemayhanoi/global/actions/runs/40685533504) |
+| G | Commercial head terms per locale (data/seo/commercial-head-terms.json); Pillar H1/description alignment (owner directive 2026-10-28) | [#127](https://github.com/thuexemayhanoi/global/pull/127) | 752edfc | [40685336542](https://github.com/thuexemayhanoi/global/actions/runs/40685336542) | [40685529787](https://github.com/thuexemayhanoi/global/actions/runs/40685529787) [40685533504](https://github.com/thuexemayhanoi/global/actions/runs/40685533504) |
 
 ## OWNER_ACTION_REQUIRED
 
 1. Connect Google Search Console for https://global.rentbikehanoi.com/ (a google-site-verification meta tag is already on /), submit /sitemap.xml and share access with the SEO tooling (OpenSEO). _(rules: S-CWV-FIELD, S-GSC-NOT-CONNECTED)_
 2. Decide on analytics (GA4 or a privacy-light alternative); if yes, provide the measurement ID and approve the privacy-policy update. _(rules: S-GA4-NOT-CONNECTED)_
-3. Approve an off-page plan (citations from travel communities, partner links, digital PR); re-measure visibility in 4–8 weeks. _(rules: S-LOW-VISIBILITY)_
+3. Run the off-page plan in docs/seo-audit/COMPETITOR-GAP-AND-OFFPAGE-PLAN.md with real accounts (editorial outreach to ranking travel blogs, genuine forum answers, resource pages; no paid/PBN links); approve rank-tracking credits for the 10 head terms; re-measure referring domains (32 on 2026-10-28) monthly. _(rules: S-LOW-VISIBILITY)_
 4. Provide keyword-tool credits (nl, pt, zh and the remaining markets) or GSC data so long-tail queries can be validated. _(rules: S-KW-NO-DEMAND, S-PQ-SENTENCE)_
 5. Optional: name a human editor/reviewer if one will actually review guides; only then can bylines be added. _(rules: S-AUTHOR-ORG-ONLY)_
 6. Run Writer sessions (W1–W3) for es/nl/pt/ko/ja/zh/vi to bring them toward the DE count. _(rules: S-LOCALE-IMBALANCE)_
