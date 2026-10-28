@@ -33,6 +33,7 @@ const htmlText=html=>String(html).replace(/<script\b[\s\S]*?<\/script>/gi," ").r
  .replace(/&nbsp;/g," ").replace(/&amp;/g,"&").replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(+n)).replace(/\s+/g," ");
 /** Amount values found on a source page, parsed for Vietnamese and the article's locale. */
 export function sourceAmounts(text,locale){
+ text=String(text).replace(/VN[Đđ]/gi,"VND "); // "VNĐ200,000" (Việt Nam News style) reads as VND 200,000
  return new Set([...extractAmounts(text,"vi"),...extractAmounts(text,locale)].flatMap(a=>a.values));
 }
 export async function recheck(packets,fetcher=fetch,{concurrency=4}={}){

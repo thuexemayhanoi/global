@@ -167,6 +167,9 @@ test("source re-check finds the priced paragraphs and classifies each against th
  assert.equal(partial.results[0].paragraphs[0].outcome,"PARTIAL");
  const all=await recheck([packet],async()=>html("<p>150.000đ/ngày, đặt cọc 2.000.000đ</p>"));
  assert.equal(all.results[0].paragraphs[0].outcome,"VERIFIED");
+ const {sourceAmounts}=await import("../scripts/seo/source-recheck.mjs");
+ assert.ok(sourceAmounts("Battery rental is set at VNĐ200,000 per month; swaps VNĐ9,000","en").has(200000),"VNĐ prefix is read");
+ assert.ok(sourceAmounts("Phạt tiền từ 8 triệu đồng đến 10 triệu đồng","vi").has(10000000),"triệu amounts are read");
  const down=await recheck([packet],async()=>{throw Object.assign(Error("fetch failed"),{cause:{code:"ECONNRESET"}});});
  assert.equal(down.results[0].paragraphs[0].outcome,"UNREACHABLE");
  assert.ok(read(".github/workflows/source-recheck.yml").includes("contents: read"),"read-only workflow");
