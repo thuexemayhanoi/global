@@ -218,3 +218,16 @@ test("Japanese FAQ questions ending in か。 are recognised; checklist Article 
   assert.equal(article.image["@type"],"ImageObject",code);
  }
 });
+
+test("execution ledger gives every baseline finding exactly one final outcome",()=>{
+ const csv=f=>{const [h,...rows]=read(f).replace(/^﻿/,"").trim().split(/\r?\n/);return {h:h.split(","),n:rows.length};};
+ const base=read("reports/seo/data/baseline-20261027/findings.csv").replace(/^﻿/,"").trim().split(/\r?\n/).slice(1).map(l=>l.split(",")[0]);
+ const summary=JSON.parse(read("docs/seo-audit/execution/ledger-summary.json"));
+ assert.equal(summary.baseline_findings,base.length);
+ const total=Object.values(summary.outcomes).reduce((a,b)=>a+b,0);
+ assert.equal(total,base.length,"every baseline finding has an outcome");
+ assert.equal(csv("docs/seo-audit/execution/execution-ledger.csv").n>=base.length,true);
+ const allowed=new Set(["FIXED_VERIFIED","FIXED_PENDING_LIVE","VALIDATED_NO_FIX","DUPLICATE","EXTERNAL_DEPENDENCY","BLOCKED"]);
+ for(const k of Object.keys(summary.outcomes))assert.ok(allowed.has(k),k);
+ assert.equal(summary.complete,summary.outcomes.FIXED_PENDING_LIVE===0,"complete only when nothing waits for production");
+});

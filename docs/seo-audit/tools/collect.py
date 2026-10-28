@@ -16,13 +16,13 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")
 ORIGIN = "https://global.rentbikehanoi.com"
 LOCALES = ["vi", "en", "de", "fr", "es", "nl", "zh", "pt", "ko", "ja"]
 CJK = re.compile(r"[぀-ヿ㐀-鿿豈-﫿]")
-AUDIT_DATE = "2026-10-27"
+AUDIT_DATE = os.environ.get("AUDIT_DATE", "2026-10-27")  # re-audits pass the run date
 
 OFFICIAL = re.compile(r"(\.gov(\.[a-z]{2})?$|gov\.vn$|chinhphu\.vn$|quochoi\.vn$|vbpl\.vn$|\.gouv\.fr$|"
                       r"auswaertiges-amt\.de$|bundesregierung\.de$|admin\.ch$|\.int$|europa\.eu$|gov\.uk$|"
                       r"rijksoverheid\.nl$|nederlandwereldwijd\.nl$|\.go\.jp$|\.go\.kr$|\.gov\.cn$|gc\.ca$|"
                       r"smartraveller\.gov\.au$|diplomatie\.gouv\.fr$|portaldiplomatico\.mne\.gov\.pt$|"
-                      r"exteriores\.gob\.es$|\.gob\.[a-z]{2}$|\.gob$|vietnamtourism\.gov\.vn$|hanoi\.gov\.vn$)")
+                      r"exteriores\.gob\.es$|\.gob\.[a-z]{2}$|\.gob$|vietnamtourism\.gov\.vn$|hanoi\.gov\.vn$|\.govt\.[a-z]{2}$|dgt\.es$)")
 LEGAL_DB = re.compile(r"(thuvienphapluat\.vn|luatvietnam\.vn|vanban\.chinhphu\.vn|congbao\.chinhphu\.vn)$")
 
 
@@ -132,6 +132,7 @@ def parse_page(path, loc):
     d["h2_outline"] = [t for l, t in hs if l == 2][:30]
     # schema
     types, ok, inlang, dates, faq, crumbs, author_types = [], True, set(), {}, False, 0, set()
+    article_image = False
     for s in soup.select('script[type="application/ld+json"]'):
         try:
             data = json.loads(s.string or "")
@@ -156,6 +157,8 @@ def parse_page(path, loc):
                     faq = True
                 if t == "BreadcrumbList":
                     crumbs = len(n.get("itemListElement") or [])
+                if (t == "Article" or (isinstance(t, list) and "Article" in t)) and n.get("image"):
+                    article_image = True
                 if isinstance(n.get("author"), dict):
                     author_types.add(n["author"].get("@type"))
                 stack.extend(v for v in n.values() if isinstance(v, (dict, list)))
@@ -166,10 +169,18 @@ def parse_page(path, loc):
     d["date_published"] = dates.get("datePublished")
     d["date_modified"] = dates.get("dateModified")
     d["faq_schema"] = faq
+    d["article_image"] = article_image
+    # related-guides rail link back to the locale home (S-RAIL-ANCHOR) and pt-BR noun next to pt-PT text (S-PT-VARIANT)
+    rail_home = soup.select_one('nav.premium-related a[href="/' + loc + '/"]')
+    d["rail_home_anchor"] = rail_home.get_text(" ", strip=True) if rail_home else None
+    d["pt_br_aluguel"] = len(re.findall(r"\baluguel\b", html, re.I)) if loc == "pt" else 0
     d["breadcrumb_items"] = crumbs
     d["author_types"] = sorted(a for a in author_types if a)
     # visible faq / provenance / sources
-    d["faq_visible"] = any(re.search(r"\b(faq|fragen|questions|preguntas|perguntas|vragen|câu hỏi|よくある|자주|常见问题)\b", t, re.I) for _, t in hs)
+    # an FAQ section heading in the page language (2026-10-28: the first audit matched any heading containing
+    # "questions"/"Fragen", e.g. "The decision in five questions", which is not an FAQ block)
+    d["faq_visible"] = any(re.search(r"\bFAQ\b|frequently asked|häufige fragen|questions fréquentes|preguntas frecuentes|perguntas frequentes|"
+                                     r"veelgestelde vragen|câu hỏi thường gặp|よくある質問|자주 묻는 질문|常见问题", t, re.I) for _, t in hs)
     d["provenance_note"] = bool(soup.select_one(".article-provenance"))
     d["visual_breadcrumb"] = bool(soup.select_one("nav.crumb"))
     # links
@@ -387,6 +398,7 @@ def main():
             rec.update({k: p[k] for k in ("title", "description", "h1", "h1_count", "h2_count", "h3_count", "h4_count", "h5_count", "h6_count", "heading_skips",
                                          "canonical", "canonical_count", "robots", "html_lang", "og_url", "og_image", "twitter_card", "schema_types", "schema_valid_json",
                                          "schema_inlanguage", "date_published", "date_modified", "faq_schema", "faq_visible", "breadcrumb_items", "author_types",
+                                         "article_image", "rail_home_anchor", "pt_br_aluguel",
                                          "content_units", "unit_kind", "main_text_chars", "links_total", "internal_links_unique", "external_links", "references",
                                          "ref_official", "ref_legal_db", "ref_third_party", "img_count", "img_missing_alt_attr", "img_empty_alt", "img_no_dimensions",
                                          "img_lazy", "bytes", "css_files", "js_files", "head_blocking_js", "duplicate_ids", "empty_anchors", "provenance_note",

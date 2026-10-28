@@ -1,0 +1,267 @@
+{
+ "outcomes": {
+  "FIXED_VERIFIED": "Fixed in a merged PR, deployed, and verified by live QA on production",
+  "FIXED_PENDING_LIVE": "Fixed and merged; production verification pending",
+  "VALIDATED_NO_FIX": "Checked; no change needed (reason recorded)",
+  "DUPLICATE": "Same issue as another finding",
+  "EXTERNAL_DEPENDENCY": "Needs the owner, a third-party account or time",
+  "BLOCKED": "Not allowed without an owner decision (protected data/process)"
+ },
+ "rules": {
+  "S-PILLAR-TRANSACTIONAL": {
+   "batch": "A",
+   "resolved_outcome": "VALIDATED_NO_FIX",
+   "remaining_outcome": "VALIDATED_NO_FIX",
+   "why_resolved": "Owner directive 2026-10-28 (approvals/owner-directive-20261028-independent-seo.json): /global targets commercial head terms on its merits; Pillar intent labels (A) and Pillar descriptions (C) follow it.",
+   "why_remaining": "Owner directive authorises the target; no fix needed."
+  },
+  "S-INTENT-LABEL": {
+   "batch": "A",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "BLOCKED",
+   "why_resolved": "10 Pillar rows search_intent informational -> commercial_investigation (Matrix, PR #120).",
+   "why_remaining": "Label still informational."
+  },
+  "S-RAIL-ANCHOR": {
+   "batch": "B",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "BLOCKED",
+   "why_resolved": "Related-guides rail links each Pillar with a descriptive label (pillarRailLabel) instead of the bare query (PR #121).",
+   "why_remaining": "Rail still uses the bare query."
+  },
+  "S-GSC-NOT-CONNECTED": {
+   "batch": "-",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "EXTERNAL_DEPENDENCY",
+   "why_resolved": "",
+   "why_remaining": "No Search Console property is connected to the tools; only the owner can verify/connect it.",
+   "owner_action": "Connect Google Search Console for https://global.rentbikehanoi.com/ (a google-site-verification meta tag is already on /), submit /sitemap.xml and share access with the SEO tooling (OpenSEO)."
+  },
+  "S-GA4-NOT-CONNECTED": {
+   "batch": "-",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "EXTERNAL_DEPENDENCY",
+   "why_resolved": "",
+   "why_remaining": "No analytics property; installing one changes privacy policy and needs an owner decision.",
+   "owner_action": "Decide on analytics (GA4 or a privacy-light alternative); if yes, provide the measurement ID and approve the privacy-policy update."
+  },
+  "S-LOW-VISIBILITY": {
+   "batch": "-",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "EXTERNAL_DEPENDENCY",
+   "why_resolved": "",
+   "why_remaining": "Rankings and authority come from indexing time, links and demand; on-site work is done, off-page work and time are outside the repo.",
+   "owner_action": "Approve an off-page plan (citations from travel communities, partner links, digital PR); re-measure visibility in 4–8 weeks."
+  },
+  "S-KW-NO-DEMAND": {
+   "batch": "-",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "EXTERNAL_DEPENDENCY",
+   "why_resolved": "",
+   "why_remaining": "Long-tail primary queries stay NOT_VALIDATED hypotheses; measuring them needs GSC impressions or more keyword-tool credits.",
+   "owner_action": "Provide keyword-tool credits (nl, pt, zh and the remaining markets) or GSC data so long-tail queries can be validated."
+  },
+  "S-SITEMAP-LASTMOD": {
+   "batch": "B",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "BLOCKED",
+   "why_resolved": "All 1,054 Hub/Supporting sitemap entries carry <lastmod> from publication.approved_at (PR #121); the 25 Pillar, checklist and legal pages have no recorded modification date and omit it (lastmod is optional in the sitemap protocol).",
+   "why_remaining": "lastmod missing."
+  },
+  "S-ARTICLE-NO-IMAGE": {
+   "batch": "B",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "BLOCKED",
+   "why_resolved": "Every Article graph carries an ImageObject: guides per topic cluster (B, PR #121), checklists the hero image (E1).",
+   "why_remaining": "Article graphs without image."
+  },
+  "S-OG-IMAGE-SINGLE": {
+   "batch": "B",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "BLOCKED",
+   "why_resolved": "og:image varies by topic cluster (4 topic images + hero) (PR #121).",
+   "why_remaining": "Single og:image."
+  },
+  "S-AUTHOR-ORG-ONLY": {
+   "batch": "D1",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "VALIDATED_NO_FIX",
+   "why_resolved": "",
+   "why_remaining": "Organization author is the accurate attribution: no human editor reviews guides (facts_reviewed_by_human:false). Every guide shows the AI-provenance note and /about/ now explains drafting, checks and corrections (PR #123). Adding a person would be a fabricated byline.",
+   "owner_action": "Optional: name a human editor/reviewer if one will actually review guides; only then can bylines be added."
+  },
+  "S-LOCALE-IMBALANCE": {
+   "batch": "-",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "EXTERNAL_DEPENDENCY",
+   "why_resolved": "",
+   "why_remaining": "DE has ~2.7x the median guide count. Balancing needs active Writer sessions on the other locales; GitHub Actions cannot write (contract).",
+   "owner_action": "Run Writer sessions (W1–W3) for es/nl/pt/ko/ja/zh/vi to bring them toward the DE count."
+  },
+  "S-PT-VARIANT": {
+   "batch": "D2",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "BLOCKED",
+   "why_resolved": "No pt-BR 'aluguel' left on PT pages: Pillar title, rail anchor, checklist links and PT-S03 H1 use pt-PT/neutral wording (PR #124).",
+   "why_remaining": "pt-BR wording still visible."
+  },
+  "S-DE-TOPIC-DRIFT": {
+   "batch": "-",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "VALIDATED_NO_FIX",
+   "why_resolved": "",
+   "why_remaining": "All 32 DE model comparisons are Vietnam-anchored (Vietnamese model pages, licence class A in Vietnam; 7–35 Vietnam mentions each) and sit in the vehicle-choice silo.",
+   "owner_action": "Optional (Topic Factory): favour other locales over more DE big-bike comparisons until locale balance improves."
+  },
+  "S-PQ-SENTENCE": {
+   "batch": "-",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "EXTERNAL_DEPENDENCY",
+   "why_resolved": "",
+   "why_remaining": "80 DE primary queries are full questions. Replacing them with head terms needs keyword data (no credits for DE long-tail); question-form queries remain useful as the question each guide answers.",
+   "owner_action": "Provide keyword-tool credits (nl, pt, zh and the remaining markets) or GSC data so long-tail queries can be validated."
+  },
+  "S-PRICE-FRESHNESS": {
+   "batch": "D3",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "FIXED_VERIFIED",
+   "why_resolved": "Dated re-check 2026-10-28 of all 95 priced articles: 84 verified on the cited page, 2 on another official source, 9 corrected (PR #125). fact-guard keeps THIRD_PARTY_PRICE_REVIEW as a standing warning by design.",
+   "why_remaining": "Re-check done and recorded; the WARN is a permanent reminder (fact-guard design). Next re-check due 2026-11-28 (source-recheck.yml)."
+  },
+  "S-PSI-MOBILE": {
+   "batch": "D4",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "EXTERNAL_DEPENDENCY",
+   "why_resolved": "Mobile Speed Index within 3.4 s after responsive topic photos (PR #126).",
+   "why_remaining": "Lab mobile Speed Index above 3.4 s; the remaining PSI opportunity is GitHub Pages' http->https redirect, host-level.",
+   "owner_action": "Optional: none required; field CWV needs traffic (CrUX)."
+  },
+  "S-CWV-FIELD": {
+   "batch": "-",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "EXTERNAL_DEPENDENCY",
+   "why_resolved": "",
+   "why_remaining": "Field Core Web Vitals (CrUX) need real Chrome traffic and GSC; lab data is good (CLS 0, TBT 0).",
+   "owner_action": "Connect Google Search Console for https://global.rentbikehanoi.com/ (a google-site-verification meta tag is already on /), submit /sitemap.xml and share access with the SEO tooling (OpenSEO)."
+  },
+  "S-REDIRECT-HEADERS": {
+   "batch": "B",
+   "resolved_outcome": "VALIDATED_NO_FIX",
+   "remaining_outcome": "EXTERNAL_DEPENDENCY",
+   "why_resolved": "Measured live (post-publish QA host probes, job 122640936773): http->https 301, /vi -> /vi/ 301, HSTS max-age=31556952, UTF-8 content type; www host does not resolve (no duplicate). x-content-type-options cannot be set on GitHub Pages.",
+   "why_remaining": "Not measured."
+  },
+  "S-BUSINESS-CONFLICTS": {
+   "batch": "-",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "BLOCKED",
+   "why_resolved": "",
+   "why_remaining": "Protected business data (NAP, hours, delivery threshold, GBP title). Changing it without dated evidence and owner approval is forbidden.",
+   "owner_action": "Resolve C1 (hours 08:00–21:30 vs 09:00–21:00), C2 (delivery threshold) and C3 (GBP name) in data/business/reference.json via a reviewed PR with dated evidence."
+  },
+  "S-FAQ-SCHEMA": {
+   "batch": "B",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "FIXED_VERIFIED",
+   "why_resolved": "FAQPage JSON-LD on every page whose visible FAQ parses into at least two question/answer pairs (403 URLs re-frozen with the added type) (PR #121).",
+   "why_remaining": "410 of 425 pages with an FAQ heading carry FAQPage (B: 403 + E1: 7 Japanese guides). The other 15 hold a single question or unformatted prose and stay unmarked on purpose."
+  },
+  "S-CHECKLIST-NO-REFS": {
+   "batch": "B",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "BLOCKED",
+   "why_resolved": "Each checklist renders a dated reference list (Law 36/2024, Decree 67/2023, Civil Code, a national official page) (PR #121).",
+   "why_remaining": "Checklist without references."
+  },
+  "U-ANCHOR-DIVERSITY": {
+   "batch": "-",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "VALIDATED_NO_FIX",
+   "why_resolved": "",
+   "why_remaining": "Identical anchors are the target's own descriptive title repeated by Hub lists and sibling rails; descriptive, accurate and consistent internal anchors are not a ranking problem. seo-guard keeps it as WARN."
+  },
+  "U-DESC-LONG": {
+   "batch": "C",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "VALIDATED_NO_FIX",
+   "why_resolved": "Description shortened in a reviewed metadata batch (PR #122).",
+   "why_remaining": "CJK description at 166–200 half-width units (83–100 characters): within the packet bounds and about two snippet lines; kept with recorded width reviews (V11 + A–Z round C)."
+  },
+  "U-DESC-SHORT": {
+   "batch": "C",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "VALIDATED_NO_FIX",
+   "why_resolved": "Description extended in a reviewed batch (round C, PR #122; privacy/terms in E2).",
+   "why_remaining": "Kept after review."
+  },
+  "U-GRAPH-REVIEW": {
+   "batch": "D1",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "VALIDATED_NO_FIX",
+   "why_resolved": "distinct_from reason (≥40 chars) recorded in the Matrix; the content graph now marks the URL KEEP (PR #123).",
+   "why_remaining": "Remaining pair involves IDEA rows only."
+  },
+  "U-GRAPH-UPGRADE": {
+   "batch": "D1",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "VALIDATED_NO_FIX",
+   "why_resolved": "Checklist deepened with two native sections per locale; content graph KEEP (PR #123).",
+   "why_remaining": "KO-CHECKLIST: content matches the other locales section for section; the word-count heuristic undercounts Korean (space-separated eojeol carry particles), so 744 'words' equal ~1,000 in the other languages."
+  },
+  "U-NO-OFFICIAL-SOURCE": {
+   "batch": "-",
+   "resolved_outcome": "VALIDATED_NO_FIX",
+   "remaining_outcome": "VALIDATED_NO_FIX",
+   "why_resolved": "Audit heuristic gap: the cited source is a government domain the first regex missed (e.g. govt.nz, dgt.es).",
+   "why_remaining": "No legal assertion without an official-text citation: legal statements cite the statute text via thuvienphapluat.vn (accepted by the G3 publisher gate); the rest are product specs (manufacturer pages), shop prices or riding technique."
+  },
+  "U-PQ-WEAK": {
+   "batch": "D2",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "VALIDATED_NO_FIX",
+   "why_resolved": "Title aligned with the primary query in reviewed round D2 (PR #124).",
+   "why_remaining": "Re-scored with diacritic folding, stop words and stems: either a tokenizer artefact, a synonym the language uses (e.g. Kontrollleuchten/Warnleuchten, バイク/スクーター), a V11-protected title, or a DE question-style query whose title already carries the key entities."
+  },
+  "U-PRICE-REVIEW": {
+   "batch": "D3",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "VALIDATED_NO_FIX",
+   "why_resolved": "Corrected after the 2026-10-28 source re-check (PR #125).",
+   "why_remaining": "Every cited amount verified on the cited page (or another official source) on 2026-10-28; docs/seo-audit/execution/source-recheck-manual-20261028.json."
+  },
+  "U-TITLE-LONG": {
+   "batch": "C",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "VALIDATED_NO_FIX",
+   "why_resolved": "Title shortened to ≤60 half-width units in a reviewed metadata batch (PR #122).",
+   "why_remaining": "Kept after review."
+  },
+  "U-TITLE-SIMILAR": {
+   "batch": "C",
+   "resolved_outcome": "FIXED_VERIFIED",
+   "remaining_outcome": "VALIDATED_NO_FIX",
+   "why_resolved": "Pair no longer similar after the reviewed title changes.",
+   "why_remaining": "Different topics that share the locale's frame ('… on a motorbike in Vietnam'); intents are distinct (e.g. yielding to pedestrians vs priority vehicles) and the content graph finds no overlap."
+  }
+ },
+ "overrides": {
+  "U-PRICE-REVIEW": {
+   "fixed_ids": [
+    "DE-H02",
+    "KO-H02",
+    "NL-H02",
+    "DE-S04",
+    "EN-S04",
+    "VI-S03",
+    "ZH-S03",
+    "VI-S06",
+    "ZH-S06"
+   ]
+  },
+  "U-GRAPH-UPGRADE": {
+   "validated_ids": [
+    "KO-CHECKLIST"
+   ]
+  }
+ }
+}

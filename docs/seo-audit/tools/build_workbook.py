@@ -54,6 +54,28 @@ ext = json.load(open(os.path.join(DATA, "raw", "external-evidence.json"), encodi
 kw = json.load(open(os.path.join(DATA, "raw", "keyword-metrics.json"), encoding="utf-8"))
 graph = json.load(open(os.path.join(ROOT, "data", "seo", "content-graph.json"), encoding="utf-8"))
 SHA = a["commit"]
+EXE = os.path.join(ROOT, "docs", "seo-audit", "execution")
+
+
+def read_csv(path):
+    import csv
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8-sig") as fh:
+        return list(csv.DictReader(fh))
+
+
+# Execution ledger (docs/seo-audit/tools/ledger.py): when present, it is the source of work_status for findings and tasks.
+LEDGER = read_csv(os.path.join(EXE, "execution-ledger.csv"))
+TASK_LEDGER = {t["task_id"]: t for t in read_csv(os.path.join(EXE, "task-ledger.csv"))}
+LSUM = json.load(open(os.path.join(EXE, "ledger-summary.json"), encoding="utf-8")) if os.path.exists(os.path.join(EXE, "ledger-summary.json")) else None
+BATCHES = json.load(open(os.path.join(EXE, "batches.json"), encoding="utf-8"))["batches"] if os.path.exists(os.path.join(EXE, "batches.json")) else []
+BASE_DIR = os.path.join(DATA, "baseline-20261027")
+BASE_F, BASE_T = read_csv(os.path.join(BASE_DIR, "findings.csv")), read_csv(os.path.join(BASE_DIR, "tasks.csv"))
+OUT_STATUS = {"FIXED_VERIFIED": "DONE", "FIXED_PENDING_LIVE": "IN_PROGRESS", "VALIDATED_NO_FIX": "NOT_APPLICABLE", "DUPLICATE": "NOT_APPLICABLE",
+              "EXTERNAL_DEPENDENCY": "OWNER_DECISION", "BLOCKED": "BLOCKED"}
+by_reaudit = {x["reaudit_finding_id"]: x for x in LEDGER if x.get("reaudit_finding_id")}
+RUN = lambda rid: f"{GH}/actions/runs/{rid}"
 inv = {r["matrix_id"]: r for r in d["inventory"]}
 pub = [r for r in d["inventory"] if r["matrix_status"] == "PUBLISHED"]
 by_url = {r["url"]: r for r in d["inventory"]}
@@ -190,11 +212,16 @@ E_HEAD = ["finding_id", "severity", "rule_id", "category", "evidence_status", "s
 erows = []
 for f in sorted(a["findings"], key=lambda f: ({"P0": 0, "P1": 1, "P2": 2, "P3": 3}[f["severity"]], f["rule_id"], f["finding_id"])):
     r = dict(f)
-    c = carry.get(("ERRORS & BLOCKERS", f["finding_id"]))
-    if c:
-        for k in ("work_status", "assignee", "notes"):
-            if c.get(k):
-                r[k] = c[k]
+    x = by_reaudit.get(f["finding_id"])
+    if x:  # the ledger decides; finding IDs are renumbered by every audit, so --carry cannot be trusted here
+        r["work_status"] = OUT_STATUS[x["outcome"]]
+        r["notes"] = f"{x['outcome']} ({x['batch'] or 'no change'}) — {x['reason']}"[:500]
+    else:
+        c = carry.get(("ERRORS & BLOCKERS", f["finding_id"]))
+        if c:
+            for k in ("work_status", "assignee", "notes"):
+                if c.get(k):
+                    r[k] = c[k]
     erows.append(r)
 table_sheet("ERRORS & BLOCKERS", "tblFindings", E_HEAD, erows,
             widths={"title": 55, "detail": 60, "url": 50, "evidence_url": 40, "owner": 26, "task_id": 30, "rule_id": 24, "category": 24, "notes": 30},
@@ -211,7 +238,12 @@ prow = []
 for t in a["tasks"]:
     r = dict(t)
     r["open_findings"] = None
-    c = carry.get(("SEO ACTION PLAN", t["task_id"]))
+    tl = TASK_LEDGER.get(t["task_id"])
+    if tl:
+        r["work_status"] = tl["work_status"]
+        r["notes"] = (f"Baseline {tl['findings']} findings: " + ", ".join(f"{o} {tl[o]}" for o in OUT_STATUS if tl.get(o) not in (None, "", "0"))
+                      + (f" · {tl['prs']}" if tl.get("prs") else "") + (f" · OWNER: {tl['owner_action']}" if tl.get("owner_action") else ""))[:500]
+    c = None if tl else carry.get(("SEO ACTION PLAN", t["task_id"]))
     if c:
         for k in ("work_status", "assignee", "start", "due", "notes"):
             if c.get(k):
@@ -485,12 +517,13 @@ def qa_line(name):
 
 CH_HEAD = ["date", "type", "item", "commit_or_run", "result", "evidence_url", "notes"]
 ch = [
-    {"date": "2026-10-27", "type": "AUDIT", "item": "Global SEO A–Z audit (this workbook)", "commit_or_run": SHA, "result": f"{a['summary']['findings']} findings, {a['summary']['tasks']} tasks, 0 P0",
-     "evidence_url": f"{GH}/tree/audit/seo-az-20261027/docs/seo-audit", "notes": "Branch audit/seo-az-20261027; read-only, no production change"},
+    {"date": "2026-10-27", "type": "AUDIT", "item": "Global SEO A–Z baseline audit", "commit_or_run": "d369bf2 (PR #119)",
+     "result": f"{len(BASE_F) or a['summary']['findings']} findings, {len(BASE_T) or a['summary']['tasks']} tasks, 0 P0",
+     "evidence_url": f"{GH}/pull/119", "notes": "read-only; baseline kept in reports/seo/data/baseline-20261027/"},
     {"date": "2026-10-27", "type": "LIVE_QA", "item": "Live Markup QA (all 1,079 URLs + /search/ + /404.html)", "commit_or_run": "run 40604722403 @ 5adb7cd2",
-     "result": "success — HTTP 200 and byte-identical HTML on every route", "evidence_url": ext["github_actions"][0]["url"], "notes": "dispatched by this audit"},
+     "result": "success — HTTP 200 and byte-identical HTML on every route", "evidence_url": RUN(40604722403), "notes": "baseline"},
     {"date": "2026-10-27", "type": "LIVE_QA", "item": "Post-Publish Live HTTP QA", "commit_or_run": "run 40604724823 @ 5adb7cd2",
-     "result": "success — status/lang/canonical, sitemap vs Matrix, robots, 404, /search/ noindex, fingerprints, NAP guard", "evidence_url": ext["github_actions"][1]["url"], "notes": "dispatched by this audit"},
+     "result": "success — status/lang/canonical, sitemap vs Matrix, robots, 404, /search/ noindex, fingerprints, NAP guard", "evidence_url": RUN(40604724823), "notes": "baseline"},
     {"date": "2026-10-27", "type": "EXTERNAL_CRAWL", "item": "OpenSEO site audit (plan cap 50 pages)", "commit_or_run": ext["openseo_site_audit"]["audit_id"],
      "result": "50/50 HTTP 200, indexable, in sitemap; 2 info issues; Lighthouse 0/8", "evidence_url": ext["openseo_site_audit"]["url"], "notes": "sample only"},
     {"date": "2026-10-27", "type": "PAGESPEED", "item": "PageSpeed lab (Ubersuggest) homepage", "commit_or_run": "—", "result": "Mobile LCP 1.7 s, SI 4.3 s, CLS 0; Desktop LCP 0.53 s", "evidence_url": None, "notes": "lab data only"},
@@ -499,17 +532,68 @@ ch = [
 for name, label in (("build.txt", "build.mjs --check"), ("seo-guard.txt", "seo-guard.mjs"), ("fact-guard.txt", "fact-guard.mjs"), ("navqa.txt", "nav-qa.mjs"),
                     ("validate.txt", "validate-plan.mjs"), ("auditstatic.txt", "audit-static.mjs"), ("aisearch.txt", "audit-ai-search.mjs"),
                     ("lang.txt", "language-audit.mjs"), ("ta.txt", "topical-authority.mjs validate"), ("graph.txt", "content-graph.mjs --check")):
-    ch.append({"date": "2026-10-27", "type": "REPO_QA", "item": label, "commit_or_run": SHA[:8], "result": qa_line(name),
-               "evidence_url": f"{GH}/blob/audit/seo-az-20261027/reports/seo/data/raw/{name}", "notes": ""})
+    ch.append({"date": a["audit_date"], "type": "REPO_QA", "item": label, "commit_or_run": SHA[:8], "result": qa_line(name),
+               "evidence_url": f"{GH}/blob/main/reports/seo/data/raw/{name}", "notes": "re-audit" if LEDGER else ""})
+for b in BATCHES:
+    if b["id"] == "AUDIT":
+        continue
+    ch.append({"date": b.get("date"), "type": "FIX_BATCH", "item": f"Batch {b['id']}: {b['title']}", "commit_or_run": (f"PR #{b['pr']} · " if b.get("pr") else "") + (b.get("merge_commit") or "pending")[:7],
+               "result": ("deployed (Pages run " + str(b["deploy_run"]) + ")" if b.get("deploy_run") else "deploy pending") + (" · live QA " + " / ".join(str(x) for x in b["live_qa"]) + " success" if b.get("live_qa") else " · live QA pending"),
+               "evidence_url": f"{GH}/pull/{b['pr']}" if b.get("pr") else None, "notes": b.get("pagespeed") or b.get("live_qa_note") or ""})
+if LSUM:
+    o = LSUM["outcomes"]
+    ch.append({"date": a["audit_date"], "type": "RE_AUDIT", "item": "Re-audit after all batches (same analyzer, measured site-level rules)", "commit_or_run": SHA[:8],
+               "result": f"{LSUM['baseline_findings']} → {LSUM['reaudit_findings']} findings reported; outcomes: FIXED_VERIFIED {o['FIXED_VERIFIED']}, FIXED_PENDING_LIVE {o['FIXED_PENDING_LIVE']}, VALIDATED {o['VALIDATED_NO_FIX']}, EXTERNAL {o['EXTERNAL_DEPENDENCY']}, BLOCKED {o['BLOCKED']}",
+               "evidence_url": f"{GH}/blob/main/docs/seo-audit/EXECUTION-LEDGER.md", "notes": LSUM["status"]})
+    psi = ext["pagespeed_ubersuggest"]
+    ch.append({"date": a["audit_date"], "type": "PAGESPEED", "item": "PageSpeed lab (Ubersuggest, forced) homepage", "commit_or_run": psi.get("measured_at", ""),
+               "result": f"Mobile SI {psi['MOBILE']['SpeedIndex']}, LCP {psi['MOBILE']['LCP']}, CLS {psi['MOBILE']['CLS']}; Desktop LCP {psi['DESKTOP']['LCP']}", "evidence_url": None, "notes": "lab data only"})
 ch += [
     {"date": "2026-10-27", "type": "PRIOR_AUDIT", "item": "Multilingual SEO audit", "commit_or_run": "f70d2e04 / b8a0115d", "result": "PASS; language-audit added", "evidence_url": f"{GH}/blob/main/docs/MULTILINGUAL-SEO-AUDIT-20261027.md", "notes": "1,068 URLs at the time"},
     {"date": "2026-10-26", "type": "PRIOR_AUDIT", "item": "Production checkpoint", "commit_or_run": "—", "result": "see document", "evidence_url": f"{GH}/blob/main/docs/PRODUCTION-CHECKPOINT-20261026.md", "notes": ""},
     {"date": "2026-10-25", "type": "PRIOR_AUDIT", "item": "Branch audit", "commit_or_run": "—", "result": "see document", "evidence_url": f"{GH}/blob/main/docs/BRANCH-AUDIT-20261025.md", "notes": ""},
     {"date": "2026-10-20", "type": "PRIOR_AUDIT", "item": "OpenSEO crawl (50 pages, Lighthouse)", "commit_or_run": "1dba2554", "result": "47 desc-too-long, 43 title-too-long (info) — before V10/V11 metadata", "evidence_url": None, "notes": "superseded by 2026-10-27 crawl"},
-    {"date": "2026-11-10", "type": "NEXT_AUDIT", "item": "Re-audit (planned)", "commit_or_run": "", "result": "", "evidence_url": None, "notes": "Re-run tools per docs/seo-audit/README.md; use --carry"},
+    {"date": a["recheck_date"] if a.get("recheck_date") else "2026-11-11", "type": "NEXT_AUDIT", "item": "Re-audit and price re-check (planned)", "commit_or_run": "", "result": "", "evidence_url": None, "notes": "Re-run tools per docs/seo-audit/README.md, then ledger.py; dispatch source-recheck.yml"},
 ]
 table_sheet("AUDIT CHANGELOG", "tblChangelog", CH_HEAD, ch, widths={"item": 45, "commit_or_run": 30, "result": 70, "evidence_url": 50, "notes": 40},
             link_cols=("evidence_url",), input_cols=(), notes=["AUDIT CHANGELOG — audits, QA runs, commits and verification results", "Append a row for every re-audit or verified fix."])
+
+# ---------------- EXECUTION LEDGER / TASK LEDGER / OWNER ACTIONS / BEFORE vs AFTER ----------------
+if LEDGER:
+    X_COLS = ["finding_id", "rule_id", "severity", "locale", "url", "matrix_id", "task_id", "reaudit", "reaudit_finding_id", "outcome", "batch", "pr",
+              "merge_commit", "live_qa_runs", "reason", "owner_action", "outcome_date"]
+    xr = [{**x, "url": x.get("url") or None} for x in LEDGER]
+    ws = table_sheet("EXECUTION LEDGER", "tblLedger", X_COLS, xr,
+                     widths={"url": 50, "reason": 80, "owner_action": 50, "task_id": 28, "rule_id": 24, "outcome": 22, "live_qa_runs": 24, "merge_commit": 18},
+                     link_cols=("url",), sev_col="severity",
+                     notes=["EXECUTION LEDGER — final outcome of every baseline finding (2026-10-27 audit, 933 rows)",
+                            "FIXED_VERIFIED: merged, deployed and verified by live QA · FIXED_PENDING_LIVE: merged, production check pending · VALIDATED_NO_FIX: checked, no change needed (reason) · EXTERNAL_DEPENDENCY: owner/third party · BLOCKED: protected data needs an owner decision.",
+                            "Generated by docs/seo-audit/tools/ledger.py from the baseline, the re-audit, execution/batches.json and execution/outcomes.json."])
+    for oc_, fill in (("FIXED_VERIFIED", "C6EFCE"), ("FIXED_PENDING_LIVE", "FFEB9C"), ("VALIDATED_NO_FIX", "DDEBF7"), ("EXTERNAL_DEPENDENCY", "F8CBAD"), ("BLOCKED", "FF7C80")):
+        col_, f0, l0 = TABLE_COLS["EXECUTION LEDGER"]
+        ws.conditional_formatting.add(f"{col_['outcome']}{f0}:{col_['outcome']}{l0}", CellIsRule(operator="equal", formula=[f'"{oc_}"'], fill=PatternFill("solid", fgColor=fill)))
+    T_COLS = ["task_id", "rule_id", "severity", "locale", "title", "findings", "FIXED_VERIFIED", "FIXED_PENDING_LIVE", "VALIDATED_NO_FIX", "DUPLICATE",
+              "EXTERNAL_DEPENDENCY", "BLOCKED", "work_status", "batches", "prs", "owner_action"]
+    table_sheet("TASK LEDGER", "tblTaskLedger", T_COLS, [{**t, **{k: int(t[k]) for k in ("findings", "FIXED_VERIFIED", "FIXED_PENDING_LIVE", "VALIDATED_NO_FIX", "DUPLICATE", "EXTERNAL_DEPENDENCY", "BLOCKED")}} for t in TASK_LEDGER.values()],
+                widths={"task_id": 30, "title": 55, "owner_action": 60, "rule_id": 24}, sev_col="severity", status_col="work_status",
+                notes=["TASK LEDGER — the 95 baseline tasks with outcome counts of their findings",
+                       "DONE: fixed and verified · NOT_APPLICABLE: every finding validated · OWNER_DECISION: needs the owner or a third party · BLOCKED: protected data · IN_PROGRESS: fix merged, production check pending."])
+    OA = [{"no": i, "owner_action": a_["action"], "rules": ", ".join(a_["rules"]),
+           "findings": sum(1 for x in LEDGER if x["owner_action"] == a_["action"])} for i, a_ in enumerate(LSUM["owner_actions"], 1)] if LSUM else []
+    table_sheet("OWNER ACTIONS", "tblOwner", ["no", "owner_action", "rules", "findings"], OA, widths={"owner_action": 110, "rules": 40},
+                notes=["OWNER_ACTION_REQUIRED — work only the owner (or a third-party account) can do", "Everything else in the ledger is fixed or validated."])
+    base_c = collections.Counter(f["rule_id"] for f in BASE_F)
+    aft_c = collections.Counter(f["rule_id"] for f in a["findings"])
+    BA = []
+    for rule in sorted(base_c):
+        oc_ = collections.Counter(x["outcome"] for x in LEDGER if x["rule_id"] == rule)
+        BA.append({"rule_id": rule, "baseline": base_c[rule], "reaudit": aft_c.get(rule, 0), "delta": aft_c.get(rule, 0) - base_c[rule], **{k: oc_[k] for k in OUT_STATUS}})
+    BA.append({"rule_id": "TOTAL", "baseline": len(BASE_F), "reaudit": len(a["findings"]), "delta": len(a["findings"]) - len(BASE_F),
+               **{k: sum(r_[k] for r_ in BA) for k in OUT_STATUS}})
+    table_sheet("BEFORE vs AFTER", "tblBeforeAfter", ["rule_id", "baseline", "reaudit", "delta"] + list(OUT_STATUS), BA, widths={"rule_id": 26},
+                notes=["BEFORE vs AFTER — findings per rule: baseline 2026-10-27 vs re-audit " + a["audit_date"],
+                       "A finding still reported can be FIXED (e.g. a CJK description shortened into the accepted band) or VALIDATED; the outcome columns decide.",
+                       "Site-level rules are measured in the re-audit (sitemap lastmod, Article image, og:image variety, FAQPage, rail anchor, PT variant, PSI); the baseline analyzer reported some of them unconditionally."])
 
 # ---------------- README & LEGEND ----------------
 ws = wb.create_sheet("README & LEGEND")
@@ -551,7 +635,7 @@ ws = wb.create_sheet("EXECUTIVE DASHBOARD", 0)
 ws.sheet_view.showGridLines = False
 ws["A1"] = "GLOBAL SEO A–Z — EXECUTIVE DASHBOARD"
 ws["A1"].font = F_TITLE
-ws["A2"] = f"{ORIGIN} · 10 locales · audit {a['audit_date']} (UTC) · commit {SHA[:12]} · all KPI cells are formulas over the tables"
+ws["A2"] = f"{ORIGIN} · 10 locales · {'re-audit' if LEDGER else 'audit'} {a['audit_date']} (UTC) · commit {SHA[:12]} · " + (f"{LSUM['status']} · " if LSUM else "") + "all KPI cells are formulas over the tables"
 ws["A2"].font = F_NOTE
 INV = lambda h: colref("MASTER URL INVENTORY", h)
 ERR = lambda h: colref("ERRORS & BLOCKERS", h)
@@ -580,6 +664,15 @@ kpis = [
     ("Tasks remaining (not DONE)", f"=COUNTA({PLN('task_id')})-COUNTIFS({PLN('work_status')},\"DONE\")", None),
     ("P1 tasks remaining", f"=COUNTIFS({PLN('severity')},\"P1\",{PLN('work_status')},\"<>DONE\")", None),
     ("Tasks done %", f"=IFERROR(COUNTIFS({PLN('work_status')},\"DONE\")/COUNTA({PLN('task_id')}),0)", None),
+    *([("Execution (baseline 933 findings, ledger)", None, None),
+       ("FIXED_VERIFIED", f"=COUNTIFS({colref('EXECUTION LEDGER', 'outcome')},\"FIXED_VERIFIED\")", None),
+       ("FIXED_PENDING_LIVE", f"=COUNTIFS({colref('EXECUTION LEDGER', 'outcome')},\"FIXED_PENDING_LIVE\")", None),
+       ("VALIDATED_NO_FIX", f"=COUNTIFS({colref('EXECUTION LEDGER', 'outcome')},\"VALIDATED_NO_FIX\")", None),
+       ("EXTERNAL_DEPENDENCY", f"=COUNTIFS({colref('EXECUTION LEDGER', 'outcome')},\"EXTERNAL_DEPENDENCY\")", None),
+       ("BLOCKED", f"=COUNTIFS({colref('EXECUTION LEDGER', 'outcome')},\"BLOCKED\")", None),
+       ("Baseline findings with a final outcome %", f"=IFERROR((COUNTA({colref('EXECUTION LEDGER', 'finding_id')})-COUNTIFS({colref('EXECUTION LEDGER', 'outcome')},\"FIXED_PENDING_LIVE\"))/COUNTA({colref('EXECUTION LEDGER', 'finding_id')}),0)", None),
+       ("Baseline tasks DONE or NOT_APPLICABLE", f"=COUNTIFS({colref('TASK LEDGER', 'work_status')},\"DONE\")+COUNTIFS({colref('TASK LEDGER', 'work_status')},\"NOT_APPLICABLE\")", None),
+       ("Baseline tasks with owner action / blocked", f"=COUNTIFS({colref('TASK LEDGER', 'work_status')},\"OWNER_DECISION\")+COUNTIFS({colref('TASK LEDGER', 'work_status')},\"BLOCKED\")", None)] if LEDGER else []),
     ("Evidence mix (findings)", None, None),
     ("VERIFIED", f"=COUNTIFS({ERR('evidence_status')},\"VERIFIED\")", None),
     ("INFERRED", f"=COUNTIFS({ERR('evidence_status')},\"INFERRED\")", None),
@@ -631,10 +724,10 @@ for ci, s in enumerate(("P1", "P2", "P3")):
 ws["E19"] = "Data sources"
 ws["E19"].font = F_SUB
 srcs = [("Committed build + repo QA (10 tools)", "VERIFIED", "all PASS, 0 FAIL"),
-        ("Live markup QA / post-publish QA (GitHub Actions)", "VERIFIED", "runs 40604722403 / 40604724823 success"),
+        ("Live markup QA / post-publish QA (GitHub Actions)", "VERIFIED", " / ".join(f"{g['run_id']} {g['conclusion']}" for g in ext["github_actions"][:2]) + " (latest); baseline 40604722403 / 40604724823"),
         ("Direct crawl from audit container", "NOT_CHECKED", "egress policy 403 on global.rentbikehanoi.com"),
         ("OpenSEO crawl (50-page cap)", "VERIFIED", "50/50 OK; Lighthouse failed"),
-        ("PageSpeed lab (homepage)", "VERIFIED", "mobile LCP 1.7 s, SI 4.3 s, CLS 0"),
+        ("PageSpeed lab (homepage)", "VERIFIED", f"mobile LCP {ext['pagespeed_ubersuggest']['MOBILE']['LCP']}, SI {ext['pagespeed_ubersuggest']['MOBILE']['SpeedIndex']}, CLS {ext['pagespeed_ubersuggest']['MOBILE']['CLS']} (baseline SI 4.3 s)"),
         ("Keyword volumes (DataForSEO)", "VERIFIED", "vi/en/fr/ko/ja full; de/es partial; nl/pt/zh not checked"),
         ("Backlinks / DA (Ubersuggest)", "INFERRED", "DA 2, 37 backlinks, 32 RD, 0 ranking keywords"),
         ("Google Search Console", "NOT_CONNECTED", "no property connected"),
@@ -651,8 +744,9 @@ for ri, (s, st, n) in enumerate(srcs, 21):
 # lab CWV
 ws["E32"] = "Core Web Vitals (lab, homepage, Lighthouse via Ubersuggest)"
 ws["E32"].font = F_SUB
-cwv = [("metric", "mobile", "desktop", "good threshold"), ("LCP", "1.7 s", "0.53 s", "≤ 2.5 s"), ("CLS", "0", "0", "≤ 0.1"),
-       ("TBT (INP proxy)", "14 ms", "30 ms", "≤ 200 ms"), ("FCP", "1.3 s", "0.45 s", "≤ 1.8 s"), ("Speed Index", "4.3 s", "0.74 s", "≤ 3.4 s"),
+PM, PD = ext["pagespeed_ubersuggest"]["MOBILE"], ext["pagespeed_ubersuggest"]["DESKTOP"]
+cwv = [("metric", "mobile", "desktop", "good threshold"), ("LCP", PM["LCP"], PD["LCP"], "≤ 2.5 s"), ("CLS", PM["CLS"], PD["CLS"], "≤ 0.1"),
+       ("TBT (INP proxy)", PM["TBT"], PD["TBT"], "≤ 200 ms"), ("FCP", PM["FCP"], PD["FCP"], "≤ 1.8 s"), ("Speed Index", PM["SpeedIndex"], PD["SpeedIndex"], "≤ 3.4 s"),
        ("INP field", "NOT_CONNECTED", "NOT_CONNECTED", "≤ 200 ms")]
 for ri, row in enumerate(cwv, 33):
     for ci, v in enumerate(row):
@@ -696,10 +790,11 @@ ws.add_chart(ch3, "M38")
 # sheet order
 order = ["EXECUTIVE DASHBOARD", "MASTER URL INVENTORY", "10 LANGUAGE MATRIX", "TECHNICAL SEO", "HREFLANG & CANONICAL", "CONTENT AUDIT",
          "KEYWORD MATRIX", "TOPICAL AUTHORITY", "INTERNAL LINK MATRIX", "SCHEMA & AEO GEO", "INDEXING & SITEMAPS", "ERRORS & BLOCKERS",
-         "SEO ACTION PLAN", "AUDIT CHANGELOG", "README & LEGEND", "LISTS"]
+         "SEO ACTION PLAN"] + (["EXECUTION LEDGER", "TASK LEDGER", "OWNER ACTIONS", "BEFORE vs AFTER"] if LEDGER else []) + ["AUDIT CHANGELOG", "README & LEGEND", "LISTS"]
 wb._sheets = [wb[n] for n in order]
 wb.active = 0
-tabcolor = {"EXECUTIVE DASHBOARD": "1F3864", "ERRORS & BLOCKERS": "C00000", "SEO ACTION PLAN": "FFC000", "README & LEGEND": "70AD47", "LISTS": "A6A6A6"}
+tabcolor = {"EXECUTIVE DASHBOARD": "1F3864", "ERRORS & BLOCKERS": "C00000", "SEO ACTION PLAN": "FFC000", "README & LEGEND": "70AD47", "LISTS": "A6A6A6",
+            **({"EXECUTION LEDGER": "00B050", "TASK LEDGER": "00B050", "OWNER ACTIONS": "FF0000", "BEFORE vs AFTER": "5B9BD5"} if LEDGER else {})}
 for n, c in tabcolor.items():
     wb[n].sheet_properties.tabColor = c
 wb.properties.title = "Global SEO A-Z Master Matrix"
