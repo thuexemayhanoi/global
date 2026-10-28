@@ -2,25 +2,26 @@
  "generated": "2026-10-28",
  "baseline_findings": 933,
  "baseline_tasks": 95,
- "reaudit_findings": 733,
+ "reaudit_findings": 731,
  "new_in_reaudit": 0,
  "outcomes": {
   "FIXED_VERIFIED": 235,
-  "FIXED_PENDING_LIVE": 0,
-  "VALIDATED_NO_FIX": 686,
+  "FIXED_PENDING_LIVE": 2,
+  "VALIDATED_NO_FIX": 684,
   "DUPLICATE": 0,
   "EXTERNAL_DEPENDENCY": 11,
   "BLOCKED": 1
  },
  "tasks": {
   "OWNER_DECISION": 7,
-  "DONE": 51,
+  "DONE": 49,
   "NOT_APPLICABLE": 36,
+  "IN_PROGRESS": 2,
   "BLOCKED": 1
  },
- "fixed_total": 235,
- "complete": true,
- "status": "SEO_AZ_MATRIX_COMPLETE",
+ "fixed_total": 237,
+ "complete": false,
+ "status": "IN_PROGRESS (fixes awaiting production verification)",
  "by_rule": {
   "S-ARTICLE-NO-IMAGE": {
    "FIXED_VERIFIED": 1
@@ -109,7 +110,8 @@
    "VALIDATED_NO_FIX": 66
   },
   "U-PQ-WEAK": {
-   "VALIDATED_NO_FIX": 100,
+   "VALIDATED_NO_FIX": 98,
+   "FIXED_PENDING_LIVE": 2,
    "FIXED_VERIFIED": 23
   },
   "U-PRICE-REVIEW": {
@@ -150,12 +152,12 @@
    "locale": "de",
    "baseline": 194,
    "FIXED_VERIFIED": 24,
-   "FIXED_PENDING_LIVE": 0,
-   "VALIDATED_NO_FIX": 168,
+   "FIXED_PENDING_LIVE": 1,
+   "VALIDATED_NO_FIX": 167,
    "DUPLICATE": 0,
    "EXTERNAL_DEPENDENCY": 2,
    "BLOCKED": 0,
-   "reaudit_remaining": 172
+   "reaudit_remaining": 171
   },
   {
    "locale": "fr",
@@ -183,12 +185,12 @@
    "locale": "nl",
    "baseline": 53,
    "FIXED_VERIFIED": 9,
-   "FIXED_PENDING_LIVE": 0,
-   "VALIDATED_NO_FIX": 44,
+   "FIXED_PENDING_LIVE": 1,
+   "VALIDATED_NO_FIX": 43,
    "DUPLICATE": 0,
    "EXTERNAL_DEPENDENCY": 0,
    "BLOCKED": 0,
-   "reaudit_remaining": 46
+   "reaudit_remaining": 45
   },
   {
    "locale": "zh",
@@ -237,45 +239,45 @@
  ],
  "owner_actions": [
   {
-   "action": "Connect Google Search Console for https://global.rentbikehanoi.com/ (a google-site-verification meta tag is already on /), submit /sitemap.xml and share access with the SEO tooling (OpenSEO).",
+   "action": "Search Console data for global.rentbikehanoi.com (backlog item 1, OWNER-ACTIONS.md).",
    "rules": [
     "S-CWV-FIELD",
     "S-GSC-NOT-CONNECTED"
    ]
   },
   {
-   "action": "Decide on analytics (GA4 or a privacy-light alternative); if yes, provide the measurement ID and approve the privacy-policy update.",
+   "action": "Analytics decision (backlog item 2, OWNER-ACTIONS.md).",
    "rules": [
     "S-GA4-NOT-CONNECTED"
    ]
   },
   {
-   "action": "Run the off-page plan in docs/seo-audit/COMPETITOR-GAP-AND-OFFPAGE-PLAN.md with real accounts (editorial outreach to ranking travel blogs, genuine forum answers, resource pages; no paid/PBN links); approve rank-tracking credits for the 10 head terms; re-measure referring domains (32 on 2026-10-28) monthly.",
+   "action": "Off-page links from real accounts per COMPETITOR-GAP-AND-OFFPAGE-PLAN.md; rank tracking (backlog items 3-4, OWNER-ACTIONS.md).",
    "rules": [
     "S-LOW-VISIBILITY"
    ]
   },
   {
-   "action": "Provide keyword-tool credits (nl, pt, zh and the remaining markets) or GSC data so long-tail queries can be validated.",
+   "action": "Keyword volumes for es, zh, pt, nl and exact ko/ja variants (backlog item 4, OWNER-ACTIONS.md).",
    "rules": [
     "S-KW-NO-DEMAND",
     "S-PQ-SENTENCE"
    ]
   },
   {
-   "action": "Optional: name a human editor/reviewer if one will actually review guides; only then can bylines be added.",
+   "action": "Optional named human editor (backlog item 6, OWNER-ACTIONS.md).",
    "rules": [
     "S-AUTHOR-ORG-ONLY"
    ]
   },
   {
-   "action": "Run Writer sessions (W1–W3) for es/nl/pt/ko/ja/zh/vi to bring them toward the DE count.",
+   "action": "Deferred by the owner's SEO-only directive of 2026-10-28: no new articles, so the locale imbalance stays until article production resumes.",
    "rules": [
     "S-LOCALE-IMBALANCE"
    ]
   },
   {
-   "action": "Resolve C1 (hours 08:00–21:30 vs 09:00–21:00), C2 (delivery threshold) and C3 (GBP name) in data/business/reference.json via a reviewed PR with dated evidence.",
+   "action": "Business data conflicts C1-C3 in data/business/reference.json (backlog item 5, OWNER-ACTIONS.md).",
    "rules": [
     "S-BUSINESS-CONFLICTS"
    ]

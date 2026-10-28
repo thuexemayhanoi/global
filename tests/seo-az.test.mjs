@@ -270,3 +270,16 @@ test("each locale Pillar answers the commercial-investigation questions: ordered
   assert.equal((html.match(/"@type":"Question"/g)||[]).length,l.faq.length,l.code+" FAQPage mirrors the visible FAQ");
  }
 });
+
+test("each locale price Hub (rental-costs) names its commercial head term in the title, distinct from the Pillar title (batch P)",()=>{
+ const terms=JSON.parse(read("data/seo/commercial-head-terms.json")).locales;
+ const fold=(s,loc)=>{const t=String(s||"").toLowerCase().replace(/đ/g,"d").replace(/\s+/g," ").trim();return loc==="zh"||loc==="ja"?t.replace(/ /g,""):t;};
+ for(const l of locales){
+  const hub=matrix.rows.find(r=>r.role==="HUB"&&r.locale===l.code&&r.cluster==="rental-costs");
+  const p=packets.find(x=>x.matrix_id===hub.id),ht=terms[l.code];
+  const variants=[ht.head_term,...ht.title_variants].map(v=>fold(v,l.code));
+  assert.ok(variants.some(v=>fold(p.title,l.code).includes(v)),`${hub.id} title "${p.title}" lacks the head term`);
+  assert.notEqual(fold(p.title,l.code),fold(l.title,l.code),hub.id+" title differs from the Pillar title");
+  assert.ok(page(hub.url).includes("<title>"+p.title.replace(/&/g,"&amp;").replace(/'/g,"&#39;")),hub.id+" title rendered");
+ }
+});

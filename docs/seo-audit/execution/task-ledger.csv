@@ -1,7 +1,7 @@
 ﻿task_id,rule_id,severity,locale,title,findings,FIXED_VERIFIED,FIXED_PENDING_LIVE,VALIDATED_NO_FIX,DUPLICATE,EXTERNAL_DEPENDENCY,BLOCKED,work_status,batches,prs,owner_action
-T-S-GSC-NOT-CONNECTED,S-GSC-NOT-CONNECTED,P1,ALL,"No Search Console property is connected for global.rentbikehanoi.com; indexation, queries and coverage are unknown",1,0,0,0,0,1,0,OWNER_DECISION,,,"Connect Google Search Console for https://global.rentbikehanoi.com/ (a google-site-verification meta tag is already on /), submit /sitemap.xml and share access with the SEO tooling (OpenSEO)."
+T-S-GSC-NOT-CONNECTED,S-GSC-NOT-CONNECTED,P1,ALL,"No Search Console property is connected for global.rentbikehanoi.com; indexation, queries and coverage are unknown",1,0,0,0,0,1,0,OWNER_DECISION,,,"Search Console data for global.rentbikehanoi.com (backlog item 1, OWNER-ACTIONS.md)."
 T-S-PILLAR-HEAD-TERM,S-PILLAR-HEAD-TERM,P1,"de,en,es,fr,ja,ko,nl,pt,vi,zh","Locale Pillar does not yet target its market's researched commercial head term (e.g. 'thuê xe máy Hà Nội') in primary_query, title and H1",10,10,0,0,0,0,0,DONE,G,#127,
-T-S-LOW-VISIBILITY,S-LOW-VISIBILITY,P1,ALL,"Third-party index shows 0 ranking keywords, Domain Authority 2, 37 backlinks from 32 domains",1,0,0,0,0,1,0,OWNER_DECISION,,,"Run the off-page plan in docs/seo-audit/COMPETITOR-GAP-AND-OFFPAGE-PLAN.md with real accounts (editorial outreach to ranking travel blogs, genuine forum answers, resource pages; no paid/PBN links); approve rank-tracking credits for the 10 head terms; re-measure referring domains (32 on 2026-10-28) monthly."
+T-S-LOW-VISIBILITY,S-LOW-VISIBILITY,P1,ALL,"Third-party index shows 0 ranking keywords, Domain Authority 2, 37 backlinks from 32 domains",1,0,0,0,0,1,0,OWNER_DECISION,,,"Off-page links from real accounts per COMPETITOR-GAP-AND-OFFPAGE-PLAN.md; rank tracking (backlog items 3-4, OWNER-ACTIONS.md)."
 T-U-PRICE-REVIEW-EN,U-PRICE-REVIEW,P2,en,fact-guard: sourced third-party prices need a dated re-check,24,1,0,23,0,0,0,DONE,D3,#125,
 T-U-PRICE-REVIEW-ES,U-PRICE-REVIEW,P2,es,fact-guard: sourced third-party prices need a dated re-check,12,0,0,12,0,0,0,NOT_APPLICABLE,D3,#125,
 T-S-RAIL-ANCHOR,S-RAIL-ANCHOR,P2,"de,en,es,fr,ja,ko,nl,pt,vi,zh",Every article's 'Related guides' rail links the locale home with the same exact-match transactional anchor,10,10,0,0,0,0,0,DONE,B,#121,
@@ -17,7 +17,7 @@ T-U-PRICE-REVIEW-PT,U-PRICE-REVIEW,P2,pt,fact-guard: sourced third-party prices 
 T-U-GRAPH-REVIEW-EN,U-GRAPH-REVIEW,P2,en,Content graph flags REVIEW (overlap with another URL),2,2,0,0,0,0,0,DONE,D1,#123,
 T-U-GRAPH-REVIEW-ES,U-GRAPH-REVIEW,P2,es,Content graph flags REVIEW (overlap with another URL),2,2,0,0,0,0,0,DONE,D1,#123,
 T-U-GRAPH-REVIEW-NL,U-GRAPH-REVIEW,P2,nl,Content graph flags REVIEW (overlap with another URL),2,2,0,0,0,0,0,DONE,D1,#123,
-T-S-GA4-NOT-CONNECTED,S-GA4-NOT-CONNECTED,P2,ALL,No analytics source is connected; organic traffic and engagement are unknown,1,0,0,0,0,1,0,OWNER_DECISION,,,"Decide on analytics (GA4 or a privacy-light alternative); if yes, provide the measurement ID and approve the privacy-policy update."
+T-S-GA4-NOT-CONNECTED,S-GA4-NOT-CONNECTED,P2,ALL,No analytics source is connected; organic traffic and engagement are unknown,1,0,0,0,0,1,0,OWNER_DECISION,,,"Analytics decision (backlog item 2, OWNER-ACTIONS.md)."
 T-S-SITEMAP-LASTMOD,S-SITEMAP-LASTMOD,P2,ALL,No <lastmod> on any of the sitemap URLs,1,1,0,0,0,0,0,DONE,B,#121,
 T-U-GRAPH-REVIEW-JA,U-GRAPH-REVIEW,P2,ja,Content graph flags REVIEW (overlap with another URL),1,1,0,0,0,0,0,DONE,D1,#123,
 T-U-GRAPH-REVIEW-VI,U-GRAPH-REVIEW,P2,vi,Content graph flags REVIEW (overlap with another URL),1,1,0,0,0,0,0,DONE,D1,#123,
@@ -31,14 +31,14 @@ T-U-GRAPH-UPGRADE-NL,U-GRAPH-UPGRADE,P2,nl,Content graph recommends UPGRADE,1,1,
 T-U-GRAPH-UPGRADE-PT,U-GRAPH-UPGRADE,P2,pt,Content graph recommends UPGRADE,1,1,0,0,0,0,0,DONE,D1,#123,
 T-U-GRAPH-UPGRADE-ZH,U-GRAPH-UPGRADE,P2,zh,Content graph recommends UPGRADE,1,1,0,0,0,0,0,DONE,D1,#123,
 T-S-DE-TOPIC-DRIFT,S-DE-TOPIC-DRIFT,P2,de,"32 DE guides compare big-bike model ranges (BMW, Triumph, Harley, Kawasaki…) with weak relation to Hanoi rental/mobility intent and no measured demand",32,0,0,32,0,0,0,NOT_APPLICABLE,,,
-T-S-KW-NO-DEMAND,S-KW-NO-DEMAND,P2,"en,fr,ja,ko,vi",Most Matrix primary queries are long-tail hypotheses with no measurable search volume (serp_evidence NOT_VALIDATED),5,0,0,0,0,5,0,OWNER_DECISION,,,"Provide keyword-tool credits (nl, pt, zh and the remaining markets) or GSC data so long-tail queries can be validated."
-T-S-AUTHOR-ORG-ONLY,S-AUTHOR-ORG-ONLY,P2,ALL,Every article's author is the Organization; no human review (facts_reviewed_by_human=false) — correctly disclosed by the AI-provenance note,1,0,0,1,0,0,0,NOT_APPLICABLE,,,Optional: name a human editor/reviewer if one will actually review guides; only then can bylines be added.
-T-S-LOCALE-IMBALANCE,S-LOCALE-IMBALANCE,P2,de,Coverage is uneven: DE has ~2.7× the published guides of other locales; ES has the fewest,1,0,0,0,0,1,0,OWNER_DECISION,,,Run Writer sessions (W1–W3) for es/nl/pt/ko/ja/zh/vi to bring them toward the DE count.
+T-S-KW-NO-DEMAND,S-KW-NO-DEMAND,P2,"en,fr,ja,ko,vi",Most Matrix primary queries are long-tail hypotheses with no measurable search volume (serp_evidence NOT_VALIDATED),5,0,0,0,0,5,0,OWNER_DECISION,,,"Keyword volumes for es, zh, pt, nl and exact ko/ja variants (backlog item 4, OWNER-ACTIONS.md)."
+T-S-AUTHOR-ORG-ONLY,S-AUTHOR-ORG-ONLY,P2,ALL,Every article's author is the Organization; no human review (facts_reviewed_by_human=false) — correctly disclosed by the AI-provenance note,1,0,0,1,0,0,0,NOT_APPLICABLE,,,"Optional named human editor (backlog item 6, OWNER-ACTIONS.md)."
+T-S-LOCALE-IMBALANCE,S-LOCALE-IMBALANCE,P2,de,Coverage is uneven: DE has ~2.7× the published guides of other locales; ES has the fewest,1,0,0,0,0,1,0,OWNER_DECISION,,,"Deferred by the owner's SEO-only directive of 2026-10-28: no new articles, so the locale imbalance stays until article production resumes."
 T-S-PRICE-FRESHNESS,S-PRICE-FRESHNESS,P2,ALL,fact-guard flags sourced third-party prices that need a dated re-check,1,1,0,0,0,0,0,DONE,D3,#125,
 T-U-DESC-LONG-JA,U-DESC-LONG,P3,ja,Meta description likely truncated (display width > 165),87,28,0,59,0,0,0,DONE,C,#122,
 T-U-DESC-LONG-KO,U-DESC-LONG,P3,ko,Meta description likely truncated (display width > 165),85,41,0,44,0,0,0,DONE,C,#122,
 T-U-DESC-LONG-ZH,U-DESC-LONG,P3,zh,Meta description likely truncated (display width > 165),68,3,0,65,0,0,0,DONE,C,#122,
-T-U-PQ-WEAK-DE,U-PQ-WEAK,P3,de,Primary query terms weakly present in title and H1 (< 50% token overlap),60,4,0,56,0,0,0,DONE,D2,#124,
+T-U-PQ-WEAK-DE,U-PQ-WEAK,P3,de,Primary query terms weakly present in title and H1 (< 50% token overlap),60,4,1,55,0,0,0,IN_PROGRESS,D2 P,#124,
 T-U-ANCHOR-DIVERSITY-DE,U-ANCHOR-DIVERSITY,P3,de,seo-guard: many pages link here with the identical anchor,55,0,0,55,0,0,0,NOT_APPLICABLE,,,
 T-U-TITLE-LONG-JA,U-TITLE-LONG,P3,ja,Title likely truncated in SERPs (display width > 65; CJK/Hangul counted double),24,24,0,0,0,0,0,DONE,C,#122,
 T-U-ANCHOR-DIVERSITY-VI,U-ANCHOR-DIVERSITY,P3,vi,seo-guard: many pages link here with the identical anchor,19,0,0,19,0,0,0,NOT_APPLICABLE,,,
@@ -59,7 +59,7 @@ T-U-PQ-WEAK-KO,U-PQ-WEAK,P3,ko,Primary query terms weakly present in title and H
 T-U-PQ-WEAK-PT,U-PQ-WEAK,P3,pt,Primary query terms weakly present in title and H1 (< 50% token overlap),10,2,0,8,0,0,0,DONE,D2,#124,
 T-U-NO-OFFICIAL-SOURCE-VI,U-NO-OFFICIAL-SOURCE,P3,vi,No reference on an official (government) domain detected by the audit heuristic,9,0,0,9,0,0,0,NOT_APPLICABLE,,,
 T-U-PQ-WEAK-FR,U-PQ-WEAK,P3,fr,Primary query terms weakly present in title and H1 (< 50% token overlap),9,3,0,6,0,0,0,DONE,D2,#124,
-T-U-PQ-WEAK-NL,U-PQ-WEAK,P3,nl,Primary query terms weakly present in title and H1 (< 50% token overlap),9,1,0,8,0,0,0,DONE,D2,#124,
+T-U-PQ-WEAK-NL,U-PQ-WEAK,P3,nl,Primary query terms weakly present in title and H1 (< 50% token overlap),9,1,1,7,0,0,0,IN_PROGRESS,D2 P,#124,
 T-U-TITLE-SIMILAR-NL,U-TITLE-SIMILAR,P3,nl,H1/title trigram similarity ≥ 0.5 with another Supporting page in the same locale,9,0,0,9,0,0,0,NOT_APPLICABLE,,,
 T-U-NO-OFFICIAL-SOURCE-ZH,U-NO-OFFICIAL-SOURCE,P3,zh,No reference on an official (government) domain detected by the audit heuristic,8,0,0,8,0,0,0,NOT_APPLICABLE,,,
 T-U-TITLE-LONG-DE,U-TITLE-LONG,P3,de,Title likely truncated in SERPs (display width > 65; CJK/Hangul counted double),8,8,0,0,0,0,0,DONE,C,#122,
@@ -84,10 +84,10 @@ T-U-NO-OFFICIAL-SOURCE-PT,U-NO-OFFICIAL-SOURCE,P3,pt,No reference on an official
 T-U-TITLE-SIMILAR-DE,U-TITLE-SIMILAR,P3,de,H1/title trigram similarity ≥ 0.5 with another Supporting page in the same locale,2,0,0,2,0,0,0,NOT_APPLICABLE,,,
 T-U-TITLE-SIMILAR-VI,U-TITLE-SIMILAR,P3,vi,H1/title trigram similarity ≥ 0.5 with another Supporting page in the same locale,2,0,0,2,0,0,0,NOT_APPLICABLE,,,
 T-S-ARTICLE-NO-IMAGE,S-ARTICLE-NO-IMAGE,P3,ALL,Article JSON-LD has no image property (only the publisher logo),1,1,0,0,0,0,0,DONE,B+E1,#121 #127,
-T-S-BUSINESS-CONFLICTS,S-BUSINESS-CONFLICTS,P3,ALL,"Business reference has open owner conflicts (C1 hours, C2 delivery threshold, C3 GBP title)",1,0,0,0,0,0,1,BLOCKED,,,"Resolve C1 (hours 08:00–21:30 vs 09:00–21:00), C2 (delivery threshold) and C3 (GBP name) in data/business/reference.json via a reviewed PR with dated evidence."
-T-S-CWV-FIELD,S-CWV-FIELD,P3,ALL,No field Core Web Vitals (CrUX) or INP data available,1,0,0,0,0,1,0,OWNER_DECISION,,,"Connect Google Search Console for https://global.rentbikehanoi.com/ (a google-site-verification meta tag is already on /), submit /sitemap.xml and share access with the SEO tooling (OpenSEO)."
+T-S-BUSINESS-CONFLICTS,S-BUSINESS-CONFLICTS,P3,ALL,"Business reference has open owner conflicts (C1 hours, C2 delivery threshold, C3 GBP title)",1,0,0,0,0,0,1,BLOCKED,,,"Business data conflicts C1-C3 in data/business/reference.json (backlog item 5, OWNER-ACTIONS.md)."
+T-S-CWV-FIELD,S-CWV-FIELD,P3,ALL,No field Core Web Vitals (CrUX) or INP data available,1,0,0,0,0,1,0,OWNER_DECISION,,,"Search Console data for global.rentbikehanoi.com (backlog item 1, OWNER-ACTIONS.md)."
 T-S-OG-IMAGE-SINGLE,S-OG-IMAGE-SINGLE,P3,ALL,All published pages share the same og:image,1,1,0,0,0,0,0,DONE,B,#121,
-T-S-PQ-SENTENCE,S-PQ-SENTENCE,P3,de,"80 DE primary queries are full natural-language questions over 80 characters, not keywords",1,0,0,0,0,1,0,OWNER_DECISION,,,"Provide keyword-tool credits (nl, pt, zh and the remaining markets) or GSC data so long-tail queries can be validated."
+T-S-PQ-SENTENCE,S-PQ-SENTENCE,P3,de,"80 DE primary queries are full natural-language questions over 80 characters, not keywords",1,0,0,0,0,1,0,OWNER_DECISION,,,"Keyword volumes for es, zh, pt, nl and exact ko/ja variants (backlog item 4, OWNER-ACTIONS.md)."
 T-S-PT-VARIANT,S-PT-VARIANT,P3,pt,"Portuguese bodies are European Portuguese, but the PT Pillar query, rail anchor and some titles use Brazilian forms (aluguel, Vietnã)",1,1,0,0,0,0,0,DONE,D2,#124,
 T-S-REDIRECT-HEADERS,S-REDIRECT-HEADERS,P3,ALL,"http→https, www, non-slash redirects and response headers were not measurable from this audit environment",1,0,0,1,0,0,0,NOT_APPLICABLE,B,#121,
 T-U-DESC-LONG-DE,U-DESC-LONG,P3,de,Meta description likely truncated (display width > 165),1,0,0,1,0,0,0,NOT_APPLICABLE,,,
