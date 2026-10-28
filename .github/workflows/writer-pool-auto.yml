@@ -16,13 +16,17 @@ concurrency:
 jobs:
   coordinate:
     # Only same-repo successful PUSH QA is trusted. PR QA doesn't reserve IDs.
+    # OWNER SEO-ONLY 2026-10-28: PAUSE content writing/refill; preserve workflow for later.
+    # Do not run the factory/writer coordination until an explicit new owner directive.
     if: >-
-      github.event.workflow_run.event == 'push' &&
-      github.event.workflow_run.conclusion == 'success' &&
-      github.event.workflow_run.head_repository.full_name == github.repository &&
-      (startsWith(github.event.workflow_run.head_branch, 'writer/w1-') ||
-       startsWith(github.event.workflow_run.head_branch, 'writer/w2-') ||
-       startsWith(github.event.workflow_run.head_branch, 'writer/w3-'))
+      false && (
+        github.event.workflow_run.event == 'push' &&
+        github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.head_repository.full_name == github.repository &&
+        (startsWith(github.event.workflow_run.head_branch, 'writer/w1-') ||
+         startsWith(github.event.workflow_run.head_branch, 'writer/w2-') ||
+         startsWith(github.event.workflow_run.head_branch, 'writer/w3-'))
+      )
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
