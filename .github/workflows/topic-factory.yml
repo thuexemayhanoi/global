@@ -22,12 +22,16 @@ concurrency:
 jobs:
   factory:
     # Research branches are trusted only after their own green push QA; code always comes from main.
+    # OWNER SEO-ONLY 2026-10-28: PAUSE content writing/refill; preserve workflow for later.
+    # Do not run the factory/writer coordination until an explicit new owner directive.
     if: >-
-      github.event_name != 'workflow_run' ||
-      (github.event.workflow_run.event == 'push' &&
-       github.event.workflow_run.conclusion == 'success' &&
-       github.event.workflow_run.head_repository.full_name == github.repository &&
-       startsWith(github.event.workflow_run.head_branch, 'research/'))
+      false && (
+        github.event_name != 'workflow_run' ||
+        (github.event.workflow_run.event == 'push' &&
+         github.event.workflow_run.conclusion == 'success' &&
+         github.event.workflow_run.head_repository.full_name == github.repository &&
+         startsWith(github.event.workflow_run.head_branch, 'research/'))
+      )
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
