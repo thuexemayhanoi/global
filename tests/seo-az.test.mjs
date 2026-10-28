@@ -64,7 +64,10 @@ test("sitemap <lastmod> is a real W3C date: each article's approval date, Hubs n
  const byId=new Map(published.map(r=>[r.id,r]));
  for(const p of packets){
   const row=byId.get(p.matrix_id),date=live.get(SITE+row.url);
-  if(row.role==="SUPPORT")assert.equal(date,p.publication.approved_at.slice(0,10),row.id);
+  const reviewed=JSON.parse(read("data/seo/page-updates.json")).pages[row.url];
+  const approved=p.publication.approved_at.slice(0,10),modified=reviewed?[approved,...reviewed.updates.map(u=>u.date)].sort().pop():approved;
+  // A Supporting page's lastmod is its approval date, or its last reviewed body change recorded in page-updates.json.
+  if(row.role==="SUPPORT")assert.equal(date,modified,row.id);
   else assert.ok(date>=p.publication.approved_at.slice(0,10),row.id);
  }
  const updates=JSON.parse(read("data/seo/page-updates.json")).pages;
@@ -313,5 +316,18 @@ test("every Hub answers three or more visible FAQ questions, mirrored by FAQPage
   const rest=p.body_markdown.slice(0,start)+(after<0?"":p.body_markdown.slice(after));
   const stated=new Set(rest.match(/\d+/g)||[]);
   for(const [q,a] of faq)for(const n of (q+" "+a).match(/\d+/g)||[])assert.ok(stated.has(n),hub.id+" FAQ number "+n+" is stated elsewhere in the body");
+ }
+});
+
+test("every price/deposit Supporting page answers visible FAQ questions, mirrored by FAQPage, with no number the body does not state (batch T)",()=>{
+ const pages=published.filter(r=>r.role==="SUPPORT"&&r.cluster==="rental-costs"&&packets.some(x=>x.matrix_id===r.id));
+ assert.ok(pages.length>=59);
+ for(const row of pages){
+  const p=packets.find(x=>x.matrix_id===row.id),faq=faqEntries(p.body_markdown,row.locale);
+  assert.ok(faq.length>=2,row.id+" visible FAQ");
+  assert.equal(graph(page(row.url)).find(n=>n["@type"]==="FAQPage")?.mainEntity.length,faq.length,row.id+" FAQPage mirrors the visible FAQ");
+  const heading="## "+FAQ_HEADINGS[row.locale],start=p.body_markdown.indexOf(heading),after=p.body_markdown.indexOf("\n## ",start+heading.length);
+  const stated=new Set((p.body_markdown.slice(0,start)+(after<0?"":p.body_markdown.slice(after))).match(/\d+/g)||[]);
+  for(const [q,a] of faq)for(const n of (q+" "+a).match(/\d+/g)||[])assert.ok(stated.has(n),row.id+" FAQ number "+n+" is stated elsewhere in the body");
  }
 });
