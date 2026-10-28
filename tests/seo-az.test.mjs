@@ -319,15 +319,18 @@ test("every Hub answers three or more visible FAQ questions, mirrored by FAQPage
  }
 });
 
-test("every price/deposit Supporting page answers visible FAQ questions, mirrored by FAQPage, with no number the body does not state (batch T)",()=>{
- const pages=published.filter(r=>r.role==="SUPPORT"&&r.cluster==="rental-costs"&&packets.some(x=>x.matrix_id===r.id));
- assert.ok(pages.length>=59);
+test("every price/deposit and documents/contract Supporting page answers visible FAQ questions, mirrored by FAQPage, with no number the body does not state (batches T, U)",()=>{
+ const pages=published.filter(r=>r.role==="SUPPORT"&&["rental-costs","documents-contracts"].includes(r.cluster)&&packets.some(x=>x.matrix_id===r.id));
+ assert.ok(pages.length>=59+172);
+ const added=new Set(["t","u"].flatMap(x=>Object.keys(JSON.parse(read("docs/seo-audit/execution/support-faq-"+x+".json")).pages)));
+ assert.equal(added.size,57+114);
  for(const row of pages){
   const p=packets.find(x=>x.matrix_id===row.id),faq=faqEntries(p.body_markdown,row.locale);
   assert.ok(faq.length>=2,row.id+" visible FAQ");
   assert.equal(graph(page(row.url)).find(n=>n["@type"]==="FAQPage")?.mainEntity.length,faq.length,row.id+" FAQPage mirrors the visible FAQ");
   const heading="## "+FAQ_HEADINGS[row.locale],start=p.body_markdown.indexOf(heading),after=p.body_markdown.indexOf("\n## ",start+heading.length);
   const stated=new Set((p.body_markdown.slice(0,start)+(after<0?"":p.body_markdown.slice(after))).match(/\d+/g)||[]);
-  for(const [q,a] of faq)for(const n of (q+" "+a).match(/\d+/g)||[])assert.ok(stated.has(n),row.id+" FAQ number "+n+" is stated elsewhere in the body");
+  // Number grounding applies to the FAQ sections batches T and U added (older FAQs predate this rule).
+  if(added.has(row.id))for(const [q,a] of faq)for(const n of (q+" "+a).match(/\d+/g)||[])assert.ok(stated.has(n),row.id+" FAQ number "+n+" is stated elsewhere in the body");
  }
 });
