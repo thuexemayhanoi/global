@@ -283,3 +283,20 @@ test("each locale price Hub (rental-costs) names its commercial head term in the
   assert.ok(page(hub.url).includes("<title>"+p.title.replace(/&/g,"&amp;").replace(/'/g,"&#39;")),hub.id+" title rendered");
  }
 });
+
+test("the site-wide menu names each published Hub by its Matrix title, never a generic 'current guide' label (batch R)",()=>{
+ const generic=["Xem hướng dẫn","Current guide","Aktueller Ratgeber","Guide disponible","Guía disponible","Bestaande gids","当前指南","Guia disponível","현재 가이드","公開中のガイド"];
+ const enc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+ for(const l of locales){
+  const hubs=matrix.rows.filter(r=>r.locale===l.code&&r.role==="HUB"&&r.status==="PUBLISHED");
+  assert.equal(hubs.length,4,l.code);
+  const supporting=published.find(r=>r.locale===l.code&&r.role==="SUPPORT");
+  for(const html of [page("/"+l.code+"/"),page(supporting.url)]){
+   for(const hub of hubs)
+    assert.ok(html.includes('<a class="nav2-parent-link" href="'+hub.url+'">'+enc(hub.working_title)+' <span aria-hidden="true">→</span></a>'),hub.id+" menu link names the Hub");
+   const links=html.match(/<a class="nav2-parent-link"[^>]*>[^<]*/g)||[];
+   assert.equal(links.length,4,l.code);
+   assert.ok(links.every(a=>!generic.some(g=>a.includes(">"+g))),l.code+" no generic Hub anchor");
+  }
+ }
+});
