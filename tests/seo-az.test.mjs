@@ -358,7 +358,7 @@ test("every vehicle-choice page that batch W extended shows at least three FAQ p
 
 test("every safety-and-support page that batch X extended shows at least three FAQ pairs mirrored by FAQPage, and its new answers state no number the body does not (batch X)",()=>{
  const receipt=JSON.parse(read("docs/seo-audit/execution/support-faq-x.json")),source=receipt.pages;
- assert.equal(Object.keys(source).length,227);
+ assert.equal(Object.keys(source).length,227+101);
  for(const id of [...Object.keys(source),...receipt.formatted]){
   const row=published.find(r=>r.id===id),p=packets.find(x=>x.matrix_id===id),faq=faqEntries(p.body_markdown,row.locale);
   assert.ok(faq.length>=3,id+" visible FAQ");
@@ -370,4 +370,10 @@ test("every safety-and-support page that batch X extended shows at least three F
    for(const n of (q+" "+a).match(/\d+/g)||[])assert.ok(stated.has(n),id+" FAQ number "+n+" is stated elsewhere in the body");
   }
  }
+});
+
+test("no Latin-script article carries stray Chinese, Japanese or Korean characters in its text (DE-S07 drafting leftover, batch X)",()=>{
+ const latin=new Set(["vi","en","de","fr","es","nl","pt"]),cjk=/[぀-ヿ㐀-鿿가-힯]/u;
+ const stray=packets.filter(p=>latin.has(p.locale)).filter(p=>[p.title,p.meta_description,p.h1,p.body_markdown.replace(/\]\([^)]*\)/g,"]")].some(t=>cjk.test(t||""))).map(p=>p.matrix_id);
+ assert.deepEqual(stray,[]);
 });
