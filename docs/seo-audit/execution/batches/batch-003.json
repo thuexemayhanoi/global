@@ -1,0 +1,372 @@
+{
+  "batch": 3,
+  "status": "LOCAL_GATES_PASSED_AWAITING_CI_DEPLOY",
+  "branch": "seo/az-exec-c-metadata",
+  "ids": [
+    "JA-S69",
+    "JA-S70",
+    "JA-S71",
+    "JA-S72",
+    "JA-S73",
+    "JA-S74",
+    "JA-S75",
+    "JA-S76",
+    "JA-S77",
+    "JA-S79",
+    "JA-S81",
+    "JA-S83",
+    "JA-S87"
+  ],
+  "titles_changed": 6,
+  "descriptions_changed": 9,
+  "changed_files": [
+    "assets/search-index/ja-0000.json",
+    "content/article-leads.json",
+    "content/articles/JA-S69.json",
+    "content/articles/JA-S70.json",
+    "content/articles/JA-S71.json",
+    "content/articles/JA-S72.json",
+    "content/articles/JA-S73.json",
+    "content/articles/JA-S74.json",
+    "content/articles/JA-S75.json",
+    "content/articles/JA-S76.json",
+    "content/articles/JA-S77.json",
+    "content/articles/JA-S79.json",
+    "content/articles/JA-S81.json",
+    "content/articles/JA-S83.json",
+    "content/articles/JA-S87.json",
+    "data/seo/url-freeze.json",
+    "ja/guides/bike-dakou-tebanashi-wheelie-vietnam/index.html",
+    "ja/guides/bike-koubu-zaseki-joushasha/index.html",
+    "ja/guides/bike-nimotsu-sekisai-rule-vietnam/index.html",
+    "ja/guides/bike-touring-hirou-kyuukei/index.html",
+    "ja/guides/chuuko-bike-kounyuu-meigi-henkou-vietnam/index.html",
+    "ja/guides/denki-jitensha-rule-vietnam/index.html",
+    "ja/guides/denki-scooter-koukou-kyori-juuden/index.html",
+    "ja/guides/douro-ana-jari-bike/index.html",
+    "ja/guides/hajimete-scooter-renshuu/index.html",
+    "ja/guides/honda-smart-key-tsukaikata/index.html",
+    "ja/guides/koutsuu-jiko-mokugeki-taiou/index.html",
+    "ja/guides/truck-bus-shikaku-bike/index.html",
+    "ja/guides/yamamichi-kyuu-curve-hashirikata/index.html"
+  ],
+  "checks": [
+    {
+      "script": "scripts/build.mjs",
+      "args": [
+        "--check"
+      ],
+      "output_sha256": "45d5fddb881adc4bae5235f00734caec80d6dc7c6653b2d5c29c4a9d462ce374",
+      "last_line": "Verified 1108 static files"
+    },
+    {
+      "script": "scripts/seo/seo-guard.mjs",
+      "args": [
+        "--strict"
+      ],
+      "output_sha256": "74883343295bbe5fdbabcf064f651e669dc4bc8408a15ce466acca980d8d7fa7",
+      "last_line": "SEO_GUARD_PASS ✓ {\"mode\":\"SEO_PROTECTION_GUARD_READ_ONLY\",\"frozen_urls\":1079,\"published_urls\":1079,\"planned_urls_guarded\":3296,\"html_scanned\":1081,\"fail\":0,\"warn\":197}"
+    },
+    {
+      "script": "scripts/build.mjs",
+      "args": [],
+      "output_sha256": "e00426f9f4bebdb5c820181337b89b130687e31a381994ca0947bb6f53160285",
+      "last_line": "Generated 1108 static files"
+    },
+    {
+      "script": "scripts/seo/content-graph.mjs",
+      "args": [
+        "--write"
+      ],
+      "output_sha256": "41d18b560005ac5863b5607a1300ed8c6878b3651a137cdd5c524a4bc62dea3d",
+      "last_line": "CONTENT_GRAPH_WRITTEN {\"rows\":2130,\"published\":1079,\"idea\":1051,\"locales\":10,\"candidates\":1311,\"silos\":330,\"edges\":4496,\"actions\":{\"KEEP\":1058,\"UPGRADE\":8,\"REVIEW\":77,\"CREATE\":2298},\"review_pairs\":43}"
+    },
+    {
+      "script": "scripts/build.mjs",
+      "args": [
+        "--check"
+      ],
+      "output_sha256": "45d5fddb881adc4bae5235f00734caec80d6dc7c6653b2d5c29c4a9d462ce374",
+      "last_line": "Verified 1108 static files"
+    },
+    {
+      "script": "scripts/seo/seo-guard.mjs",
+      "args": [
+        "--strict"
+      ],
+      "output_sha256": "74883343295bbe5fdbabcf064f651e669dc4bc8408a15ce466acca980d8d7fa7",
+      "last_line": "SEO_GUARD_PASS ✓ {\"mode\":\"SEO_PROTECTION_GUARD_READ_ONLY\",\"frozen_urls\":1079,\"published_urls\":1079,\"planned_urls_guarded\":3296,\"html_scanned\":1081,\"fail\":0,\"warn\":197}"
+    },
+    {
+      "script": "scripts/seo/fact-guard.mjs",
+      "args": [],
+      "output_sha256": "151ca38154aa14e96f6c3acbba2fc7667fc7e4f6fe45153edca47baf84fb650c",
+      "last_line": "FACT_GUARD_PASS ✓ {\"fail\":0,\"warn\":723,\"mode\":\"READ_ONLY_ANTI_FABRICATION\"}"
+    },
+    {
+      "script": "scripts/seo/content-graph.mjs",
+      "args": [
+        "--check"
+      ],
+      "output_sha256": "0425111149afe87a58cb8ea4fadbfafafc26dc294e4c37e42ef67bf5016ed304",
+      "last_line": "CONTENT_GRAPH_VALID {\"rows\":2130,\"published\":1079,\"idea\":1051,\"locales\":10,\"candidates\":1311,\"silos\":330,\"edges\":4496,\"actions\":{\"KEEP\":1058,\"UPGRADE\":8,\"REVIEW\":77,\"CREATE\":2298},\"review_pairs\":43}"
+    },
+    {
+      "script": "scripts/seo/validate-plan.mjs",
+      "args": [],
+      "output_sha256": "0fbf03744a581fb5ede8745bcdedb2e6e060df91782277329ba9247d785d06ac",
+      "last_line": "}"
+    },
+    {
+      "script": "scripts/nav-qa.mjs",
+      "args": [],
+      "output_sha256": "31b43377e96d6ca258edbe23caaa9d48f62e0bb7c1d38ec41d72ab217b64d35d",
+      "last_line": "Shared navigation QA PASS — 10 locales, 4 hubs and 8 child labels each, zero IDEA hyperlinks"
+    },
+    {
+      "script": "scripts/seo/audit-static.mjs",
+      "args": [
+        "--fail-p0"
+      ],
+      "output_sha256": "c1d4f65ace68e1c37c5c801ce008dc44bc3277b27dacc9c9a62c8585cf78f6f6",
+      "last_line": "}"
+    }
+  ],
+  "records": [
+    {
+      "id": "JA-S69",
+      "url": "/ja/guides/yamamichi-kyuu-curve-hashirikata/",
+      "locale": "ja",
+      "before_title": "ベトナムの山道の急カーブをバイクで走るコツ：減速、視線、車体の傾け方",
+      "before_description": "ベトナム北部の山道のカーブや連続ヘアピンをスクーターで安全に抜けるコツ。カーブ手前での減速、視線の置き方、車体の傾け方、危険なカーブを知らせる標識W.201・W.202の意味、よくある失敗、そして法律がカーブで求めることをまとめました。",
+      "after_title": "ベトナムの山道の急カーブをバイクで走るコツ",
+      "after_description": "ベトナム北部の山道のカーブや連続ヘアピンを安全に抜けるコツ。手前での減速、視線、車体の傾け方、危険なカーブの標識W.201・W.202、よくある失敗と法律が求めることを解説。",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z audit (PR #119): title width 68→42 (U-TITLE-LONG: over 65 half-width units is likely cut in SERPs; the shorter title keeps the primary-query terms and the H1 topic); description width 226→164 (U-DESC-LONG: over 200 units, more than two snippet lines; tightened to 87 characters with the same topics in the page's order).",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added (numbers reused from the page).",
+      "width_review": "Unicode East-Asian-width: title 68→42; description 226→164 half-width units. No browser/SERP pixel measurement.",
+      "primary_query": "山道 急カーブ バイク 走り方",
+      "search_intent": "informational",
+      "protected_packet_sha256": "25c9a2300371ec6622764ec9d64c9e26f621bd52db57d62e3dd262eed7f5cfcb"
+    },
+    {
+      "id": "JA-S70",
+      "url": "/ja/guides/bike-koubu-zaseki-joushasha/",
+      "locale": "ja",
+      "before_title": "ベトナムでバイクの後ろに乗るとき：同乗者の乗り方と守るべきルール",
+      "before_description": "ベトナムでバイクやバイクタクシーの後ろに乗る人のためのガイド。ヘルメットのあごひも、乗り降りの仕方、つかまる場所、カーブでの体の傾け方、同乗者に禁止されている行為と、同乗者本人と運転者の両方に科される罰金をまとめました。",
+      "after_title": "ベトナムでバイクの後ろに乗るとき：同乗者の乗り方と守るべきルール",
+      "after_description": "バイクやバイクタクシーの後ろに乗る人のためのガイド。ヘルメットのあごひも、乗り降り、つかまる場所、カーブでの体の傾け方、同乗者の禁止行為と同乗者・運転者への罰金をまとめました。",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z audit (PR #119): description width 220→176 (U-DESC-LONG: over 200 units, more than two snippet lines; tightened to 88 characters with the same topics in the page's order).",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added (numbers reused from the page).",
+      "width_review": "Unicode East-Asian-width: title 64→64; description 220→176 half-width units. No browser/SERP pixel measurement.",
+      "primary_query": "バイク 後ろに乗る 注意 マナー",
+      "search_intent": "informational",
+      "protected_packet_sha256": "18cc9d035997a5f794158853dd47573383a1694dd7ccaf90df969388bb9ad6d3"
+    },
+    {
+      "id": "JA-S71",
+      "url": "/ja/guides/koutsuu-jiko-mokugeki-taiou/",
+      "locale": "ja",
+      "before_title": "ベトナムで交通事故を目撃したら：法律が求めることとできること",
+      "before_description": "ベトナムで交通事故の現場に居合わせたときに法律が求めること(負傷者の救護、通報、現場と所持品の保護、情報提供)、通りかかった運転者の義務、救急115と警察113への通報、目撃者として警察に協力する方法をまとめました。",
+      "after_title": "ベトナムで交通事故を目撃したら：法律が求めることとできること",
+      "after_description": "ベトナムで交通事故に居合わせたとき法律が求めること（救護、通報、現場の保護、情報提供）、通りかかった運転者の義務、救急115と警察113への通報、目撃者としての協力方法。",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z audit (PR #119): description width 208→164 (U-DESC-LONG: over 200 units, more than two snippet lines; tightened to 85 characters with the same topics in the page's order).",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added (numbers reused from the page).",
+      "width_review": "Unicode East-Asian-width: title 60→60; description 208→164 half-width units. No browser/SERP pixel measurement.",
+      "primary_query": "ベトナム 交通事故 目撃 どうする",
+      "search_intent": "informational",
+      "protected_packet_sha256": "cde1e71394743683d55dc9c158bc47a4ae9399747004b2140f9e2e02d48a7200"
+    },
+    {
+      "id": "JA-S72",
+      "url": "/ja/guides/bike-touring-hirou-kyuukei/",
+      "locale": "ja",
+      "before_title": "ベトナムのバイク旅は1日何時間が目安か：休憩と疲労への備え",
+      "before_description": "ベトナムのバイク旅で1日に何時間走るのが目安か。英国の道路交通規則(Highway Code)第91条は2時間ごとに少なくとも15分の休憩と、深夜0時から朝6時の長距離運転を避けることを勧めています。距離ではなく時間で計画する方法と、疲労のサインをまとめました。",
+      "after_title": "ベトナムのバイク旅は1日何時間が目安か：休憩と疲労への備え",
+      "after_description": "ベトナムのバイク旅は1日何時間が目安か。英国のHighway Code第91条は2時間ごとに少なくとも15分の休憩を勧めています。距離ではなく時間で計画する方法と疲労のサインを解説。",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z audit (PR #119): description width 240→164 (U-DESC-LONG: over 200 units, more than two snippet lines; tightened to 91 characters with the same topics in the page's order).",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added (numbers reused from the page).",
+      "width_review": "Unicode East-Asian-width: title 57→57; description 240→164 half-width units. No browser/SERP pixel measurement.",
+      "primary_query": "バイク ツーリング 1日 何時間 休憩",
+      "search_intent": "informational",
+      "protected_packet_sha256": "15e460e618496b3a827fb85767e15e8418def6b4d283642cf65ff7c2bf6b4d60"
+    },
+    {
+      "id": "JA-S73",
+      "url": "/ja/guides/hajimete-scooter-renshuu/",
+      "locale": "ja",
+      "before_title": "オートマスクーターに初めて乗る人のための練習プラン",
+      "before_description": "ホンダ・ビジョンのようなオートマスクーターに初めて乗る人のための練習プラン。止まったまま操作を覚える、スタンドと押し歩き、乗車姿勢、発進と低速走行、8の字とUターン、急ブレーキ、後方確認まで、英国の基礎講習と米国オレゴン州の教本をもとに段階的にまとめました。",
+      "after_title": "オートマスクーターに初めて乗る人のための練習プラン",
+      "after_description": "ホンダ・ビジョンのようなオートマスクーターに初めて乗る人の練習プラン。操作の確認、スタンドと押し歩き、発進と低速走行、8の字とUターン、急ブレーキまでを段階的に解説します。",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z audit (PR #119): description width 256→170 (U-DESC-LONG: over 200 units, more than two snippet lines; tightened to 86 characters with the same topics in the page's order).",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added (numbers reused from the page).",
+      "width_review": "Unicode East-Asian-width: title 50→50; description 256→170 half-width units. No browser/SERP pixel measurement.",
+      "primary_query": "スクーター 初めて 乗り方 練習",
+      "search_intent": "informational",
+      "protected_packet_sha256": "79f1f25d24da48b89f3172c35371de73356565d94a9bcd811a974e9e9267a82e"
+    },
+    {
+      "id": "JA-S74",
+      "url": "/ja/guides/denki-scooter-koukou-kyori-juuden/",
+      "locale": "ja",
+      "before_title": "ベトナムの電動スクーター：実際の航続距離と安全な充電",
+      "before_description": "ベトナムで電動スクーターに乗る前に知っておきたいこと。VinFast Evo200の公表値をもとにカタログの航続距離が実際より長い理由と充電時間を解説し、ベトナム公安省が勧める安全な充電方法、宿での充電の注意点、免許が必要かどうかもまとめました。",
+      "after_title": "ベトナムの電動スクーター：実際の航続距離と安全な充電",
+      "after_description": "ベトナムで電動スクーターに乗る前に。VinFast Evo200の公表値でカタログの航続距離が長く出る理由と充電時間、公安省が勧める安全な充電、宿での充電、免許の要否を解説します。",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z audit (PR #119): description width 232→166 (U-DESC-LONG: over 200 units, more than two snippet lines; tightened to 90 characters with the same topics in the page's order).",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added (numbers reused from the page).",
+      "width_review": "Unicode East-Asian-width: title 52→52; description 232→166 half-width units. No browser/SERP pixel measurement.",
+      "primary_query": "ベトナム 電動スクーター 航続距離 充電",
+      "search_intent": "informational",
+      "protected_packet_sha256": "780e1e20ea0373558ed10644ac18bc87315568288f876b6f9dd94e260d3921c7"
+    },
+    {
+      "id": "JA-S75",
+      "url": "/ja/guides/douro-ana-jari-bike/",
+      "locale": "ja",
+      "before_title": "道路の穴、砂利、落石：バイクで安全に通り抜ける方法",
+      "before_description": "ベトナムの地方道や山道で出会う穴、砂利、ぬかるみ、落石をバイクで安全に通り抜ける方法。注意すべき警戒標識W.221・W.222・W.228の意味、法律が求める減速、緩んだ路面での走り方、雨季と冠水路の注意点をまとめました。",
+      "after_title": "道路の穴、砂利、落石：バイクで安全に通り抜ける方法",
+      "after_description": "地方道や山道の穴、砂利、ぬかるみ、落石をバイクで安全に通る方法。警戒標識W.221・W.222・W.228の意味、法律が求める減速、緩んだ路面の走り方、雨季と冠水路の注意点。",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z audit (PR #119): description width 207→159 (U-DESC-LONG: over 200 units, more than two snippet lines; tightened to 87 characters with the same topics in the page's order).",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added (numbers reused from the page).",
+      "width_review": "Unicode East-Asian-width: title 50→50; description 207→159 half-width units. No browser/SERP pixel measurement.",
+      "primary_query": "ベトナム 道路 穴 砂利 バイク",
+      "search_intent": "informational",
+      "protected_packet_sha256": "ef7cb4d48a86b30a0596f302fe9615513151e2597af163ed24d3d564a58498d8"
+    },
+    {
+      "id": "JA-S76",
+      "url": "/ja/guides/truck-bus-shikaku-bike/",
+      "locale": "ja",
+      "before_title": "トラックとバスの死角：ベトナムでバイクを安全に走らせるために",
+      "before_description": "ベトナムの国道でトラックやバスのそばをバイクで走るときに知っておきたいこと。大型車の運転者から見えない位置、後ろを走るときの距離、曲がるトラックや停留所のバスの前でとるべき行動、追い越されるときに法律が求めることをまとめました。",
+      "after_title": "トラックとバスの死角：ベトナムでバイクを安全に走らせるために",
+      "after_description": "ベトナムの国道でトラックやバスのそばを走るときの注意点。大型車から見えない位置、後ろを走るときの距離、曲がるトラックや停留所のバスへの対応、追い越されるときのルールを解説。",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z audit (PR #119): description width 228→172 (U-DESC-LONG: over 200 units, more than two snippet lines; tightened to 86 characters with the same topics in the page's order).",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added (numbers reused from the page).",
+      "width_review": "Unicode East-Asian-width: title 60→60; description 228→172 half-width units. No browser/SERP pixel measurement.",
+      "primary_query": "トラック バス 死角 バイク",
+      "search_intent": "informational",
+      "protected_packet_sha256": "1db00cac2fb337b0f0a98130af0f35160dac319df55a99c0ecbbaeae3719711e"
+    },
+    {
+      "id": "JA-S77",
+      "url": "/ja/guides/honda-smart-key-tsukaikata/",
+      "locale": "ja",
+      "before_title": "レンタルスクーターのホンダ スマートキー：始動、シートの開け方、施錠",
+      "before_description": "ビジョン、LEAD、エアブレードなどホンダのスクーターに付いたスマートキーの使い方。ノブの位置ごとの働き、リモコンのボタン、給油と駐車の手順、リモコンが反応しないときに自分で直そうとせず店に連絡すべき理由をまとめました。",
+      "after_title": "ホンダ スマートキーの使い方：レンタルスクーターの始動と施錠",
+      "after_description": "ビジョン、LEAD、エアブレードなどホンダのスクーターのスマートキーの使い方。ノブの位置ごとの働き、リモコンのボタン、給油と駐車の手順、反応しないときに店へ連絡すべき理由。",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z audit (PR #119): title width 67→59 (U-TITLE-LONG: over 65 half-width units is likely cut in SERPs; the shorter title keeps the primary-query terms and the H1 topic); description width 216→168 (U-DESC-LONG: over 200 units, more than two snippet lines; tightened to 86 characters with the same topics in the page's order).",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added (numbers reused from the page).",
+      "width_review": "Unicode East-Asian-width: title 67→59; description 216→168 half-width units. No browser/SERP pixel measurement.",
+      "primary_query": "ホンダ スマートキー 使い方 スクーター",
+      "search_intent": "informational",
+      "protected_packet_sha256": "bc7a47cabb0e1383437d94cb2e075b5e3d88d907bf5c798fbb799b36d8900fb1"
+    },
+    {
+      "id": "JA-S79",
+      "url": "/ja/guides/denki-jitensha-rule-vietnam/",
+      "locale": "ja",
+      "before_title": "ベトナムの電動自転車：ヘルメット、二人乗り、自転車と見なされない場合",
+      "before_description": "ベトナムの法律で電動自転車がどう扱われるかをまとめました。時速25kmまでのアシスト、原付になる条件、バイク用ヘルメットの義務、二人乗り、夜のライト、高速道路の禁止、政令168/2024の罰金。",
+      "after_title": "ベトナムの電動自転車のルール：ヘルメットと二人乗り",
+      "after_description": "ベトナムの法律で電動自転車がどう扱われるかをまとめました。時速25kmまでのアシスト、原付になる条件、バイク用ヘルメットの義務、二人乗り、夜のライト、高速道路の禁止、政令168/2024の罰金。",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z audit (PR #119): title width 68→50 (U-TITLE-LONG: over 65 half-width units is likely cut in SERPs; the shorter title keeps the primary-query terms and the H1 topic).",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added (numbers reused from the page).",
+      "width_review": "Unicode East-Asian-width: title 68→50; description 182→182 half-width units. No browser/SERP pixel measurement.",
+      "primary_query": "ベトナム 電動自転車 ヘルメット",
+      "search_intent": "informational",
+      "protected_packet_sha256": "a43c70d359f24cf967db12865c3b5fef0b1e6cb94997d8e7ef8949f50df3b614"
+    },
+    {
+      "id": "JA-S81",
+      "url": "/ja/guides/bike-nimotsu-sekisai-rule-vietnam/",
+      "locale": "ja",
+      "before_title": "ベトナムでバイクに積める荷物：荷台からのはみ出し制限と罰金、積み方のコツ",
+      "before_description": "ベトナムのバイクの積載制限を解説します。荷台の左右0.3m・後ろ0.5mまで、路面から高さ2mまで、運転者と同乗者の大きな荷物の禁止と罰金、収納ボックスの5kg制限、バックパックの積み方。",
+      "after_title": "ベトナムでバイクに積める荷物：はみ出し制限と罰金",
+      "after_description": "ベトナムのバイクの積載制限を解説します。荷台の左右0.3m・後ろ0.5mまで、路面から高さ2mまで、運転者と同乗者の大きな荷物の禁止と罰金、収納ボックスの5kg制限、バックパックの積み方。",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z audit (PR #119): title width 72→48 (U-TITLE-LONG: over 65 half-width units is likely cut in SERPs; the shorter title keeps the primary-query terms and the H1 topic).",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added (numbers reused from the page).",
+      "width_review": "Unicode East-Asian-width: title 72→48; description 175→175 half-width units. No browser/SERP pixel measurement.",
+      "primary_query": "ベトナム バイク 荷物 積載 制限",
+      "search_intent": "informational",
+      "protected_packet_sha256": "b6e467e296f1ecd54d5deb8a62cfe328222e1967ef14e0dcdbfe50992aaf1984"
+    },
+    {
+      "id": "JA-S83",
+      "url": "/ja/guides/bike-dakou-tebanashi-wheelie-vietnam/",
+      "locale": "ja",
+      "before_title": "ベトナムでのバイクの蛇行運転・手放し運転・ウィリー：車両が没収される違反",
+      "before_description": "ベトナムの法律が定める蛇行運転、ウィリー、手放し運転、空ぶかしの扱いを解説します。政令168の罰金、運転免許の使用権はく奪、一時押収、バイクが没収される違反まで。",
+      "after_title": "ベトナムのバイクの蛇行・手放し運転・ウィリー：没収される違反",
+      "after_description": "ベトナムの法律が定める蛇行運転、ウィリー、手放し運転、空ぶかしの扱いを解説します。政令168の罰金、運転免許の使用権はく奪、一時押収、バイクが没収される違反まで。",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z audit (PR #119): title width 72→60 (U-TITLE-LONG: over 65 half-width units is likely cut in SERPs; the shorter title keeps the primary-query terms and the H1 topic).",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added (numbers reused from the page).",
+      "width_review": "Unicode East-Asian-width: title 72→60; description 159→159 half-width units. No browser/SERP pixel measurement.",
+      "primary_query": "ベトナム バイク 蛇行運転 手放し 罰金",
+      "search_intent": "informational",
+      "protected_packet_sha256": "be687129d62d3b1f542169bf253f7c9448f154324220cbbf03dd5ea719a33812"
+    },
+    {
+      "id": "JA-S87",
+      "url": "/ja/guides/chuuko-bike-kounyuu-meigi-henkou-vietnam/",
+      "locale": "ja",
+      "before_title": "ベトナムで中古バイクを買うとき：名義変更、ブルーカード、所有者の罰金",
+      "before_description": "ベトナムで中古バイクを買う前に。所有者が変わるときに法律が求める登録の手続き、名義変更をしない所有者と書類やナンバーに不備がある運転者の罰金、没収される場合、買う前の確認点を解説します。",
+      "after_title": "ベトナムで中古バイクを買う：名義変更・ブルーカード・罰金",
+      "after_description": "ベトナムで中古バイクを買う前に。所有者が変わるときに法律が求める登録の手続き、名義変更をしない所有者と書類やナンバーに不備がある運転者の罰金、没収される場合、買う前の確認点を解説します。",
+      "decision": "OPTIMIZE",
+      "reason": "A–Z audit (PR #119): title width 68→56 (U-TITLE-LONG: over 65 half-width units is likely cut in SERPs; the shorter title keeps the primary-query terms and the H1 topic).",
+      "candidate_source": "CURRENT",
+      "body_reviewed": true,
+      "review_basis": "H1, current title and description, H2 outline and Matrix primary_query reviewed; no fact, number or claim added (numbers reused from the page).",
+      "width_review": "Unicode East-Asian-width: title 68→56; description 186→186 half-width units. No browser/SERP pixel measurement.",
+      "primary_query": "ベトナム 中古バイク 購入 名義変更",
+      "search_intent": "informational",
+      "protected_packet_sha256": "835cfa2d063598049ef183a7329068bcb3c81829dbff0dec97281a3c2ec0ef2e"
+    }
+  ],
+  "production_verified": false
+}

@@ -128,13 +128,15 @@ function run(root,script,args=[]){
  const output=execFileSync(process.execPath,[script,...args],{cwd:root,encoding:"utf8",maxBuffer:32*1024*1024});
  return {script,args,output_sha256:sha(output),last_line:output.trim().split("\n").at(-1)};
 }
-export function applyBatch(root,plan,batchNumber){
+/** `scope`/`receiptDir`/`requireCoverage` let a later reviewed metadata programme (A–Z: AZ_REVIEWED_METADATA_ONLY)
+ * reuse the same exact-echo application; V11 defaults are unchanged. */
+export function applyBatch(root,plan,batchNumber,{scope="V11_REVIEWED_METADATA_ONLY",receiptDir="docs/seo-v11/batches",requireCoverage=true}={}){
  const branch=execFileSync("git",["branch","--show-current"],{cwd:root,encoding:"utf8"}).trim();
  if(!branch||branch==="main"||branch==="master")throw Error("apply requires a named feature branch");
- if(plan.version!==1||plan.scope!=="V11_REVIEWED_METADATA_ONLY")throw Error("invalid reviewed plan");
+ if(plan.version!==1||plan.scope!==scope)throw Error("invalid reviewed plan");
  const batch=plan.batches.find(b=>b.batch===batchNumber);if(!batch)throw Error("unknown batch "+batchNumber);
  const packets=readPackets(root),reviews=plan.records.map(({protected_packet_sha256,...r})=>r);
- fail(validateReviews(packets,reviews));
+ fail(validateReviews(packets,reviews,{requireCoverage}));
  for(const r of plan.records)if(sha(stableBody(packets.get(r.id).packet))!==r.protected_packet_sha256)throw Error(r.id+": non-metadata packet content drifted since plan");
  const targets=batch.ids.map(id=>plan.records.find(r=>r.id===id));
  if(targets.some(r=>!r||r.decision!=="OPTIMIZE"))throw Error("invalid batch target");
@@ -147,7 +149,7 @@ export function applyBatch(root,plan,batchNumber){
  const snapshot=new Map([...new Set([...tracked,LEADS])].map(f=>[f,fs.readFileSync(path.join(root,f))]));
  const targetPaths=new Set(targets.map(r=>packets.get(r.id).file)),targetHtml=new Map(targets.map(r=>[pageFile(r.url),r]));
  const allowed=new Set([...targetPaths,...targetHtml.keys(),FREEZE,LEADS,"data/seo/content-graph.json","docs/GLOBAL-SITE-MATRIX.md"]);
- const receipt="docs/seo-v11/batches/batch-"+String(batchNumber).padStart(3,"0")+".json";
+ const receipt=receiptDir+"/batch-"+String(batchNumber).padStart(3,"0")+".json";
  try{
   const leads=JSON.parse(snapshot.get(LEADS).toString("utf8"));
   if(leads.version!==1||!leads.leads||typeof leads.leads!=="object"||Array.isArray(leads.leads))throw Error("invalid article lead preservation sidecar");
