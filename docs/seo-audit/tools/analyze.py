@@ -19,13 +19,15 @@ DATA = os.path.join(ROOT, "reports", "seo", "data")
 LOCALES = ["vi", "en", "de", "fr", "es", "nl", "zh", "pt", "ko", "ja"]
 GH = "https://github.com/thuexemayhanoi/global"
 ORIGIN = "https://global.rentbikehanoi.com"
-AUDIT_DATE = os.environ.get("AUDIT_DATE", "2026-10-27")  # re-audits pass the run date
-RECHECK = os.environ.get("RECHECK_DATE", "2026-11-10")
+AUDIT_DATE = os.environ.get("AUDIT_DATE", "2026-10-28")  # re-audits pass the run date
+RECHECK = os.environ.get("RECHECK_DATE", "2026-11-11")
 
 d = json.load(open(os.path.join(DATA, "audit-data.json"), encoding="utf-8"))
 ext = json.load(open(os.path.join(DATA, "raw", "external-evidence.json"), encoding="utf-8"))
 kw = json.load(open(os.path.join(DATA, "raw", "keyword-metrics.json"), encoding="utf-8"))
 SHA = d["head_commit"]
+LIVE_SHA = ext["github_actions"][0].get("head_sha")
+LIVE_VERIFIED_FOR_SNAPSHOT = bool(SHA == LIVE_SHA and ext["github_actions"][0].get("conclusion") == "success")
 inv = d["inventory"]
 pub = [r for r in inv if r["matrix_status"] == "PUBLISHED"]
 articles = [r for r in pub if r["role"] in ("HUB", "SUPPORT") and not r["matrix_id"].endswith("CHECKLIST")]
@@ -41,12 +43,12 @@ POST_RUN = ext["github_actions"][1]["url"]
 # ---------- rule catalogue ----------
 # id: (severity, category, evidence, owner/subsystem, title, action, expected, verify, done)
 RULES = {
-    "S-PILLAR-TRANSACTIONAL": ("P1", "Keyword / cross-site cannibalization", "VERIFIED", "Owner + Matrix (reviewed PR)",
-        "Locale Pillars and the vehicle-choice Hubs target transactional rental head terms that the policy assigns to the sister rental sites",
-        "Owner decides the domain split. Recommended: re-target each Pillar to an informational 'Hanoi/Vietnam motorbike guide' intent, keep the rental head term on thuexemaynguyentu.com (vi) / rentbikehanoi.com (en) and link to it; change Matrix primary_query/search_intent and the frozen title/H1 only in a reviewed PR with seo-guard --write.",
-        "Each Pillar targets one informational query; no /global page competes for the sister sites' money keywords.",
-        "Matrix diff + keyword data re-run; GSC (once connected) shows /global not ranking for the transactional head term.",
-        "Owner decision recorded; Matrix rows and frozen fingerprints updated in a reviewed PR; seo-guard PASS."),
+    "S-PILLAR-HEAD-TERM": ("P1", "Keyword / commercial targeting", "VERIFIED", "Matrix + content/locales.json (reviewed PR)",
+        "Locale Pillar does not yet target its market's researched commercial head term (e.g. 'thuê xe máy Hà Nội') in primary_query, title and H1",
+        "Owner directive 2026-10-28: /global competes independently for every commercial rental keyword in all 10 languages and yields no keyword to any domain. Research the head term per market (volume, variants, SERP intent); make it the Pillar primary_query; place it naturally in title, H1 and opening copy; give the Pillar commercial-investigation depth (how to choose a shop and a bike, what deposits, documents and checks to expect, links to the price/deposit, documents and safety Hubs); point Hubs/Supporting to the Pillar with descriptive anchors that contain the term; re-freeze only the changed fields.",
+        "Each Pillar is /global's strongest page for its market's commercial head term, with matching title/H1/intent.",
+        "S-PILLAR-HEAD-TERM absent in the re-audit; rank tracking/GSC once connected.",
+        "Head term recorded in data/seo/commercial-head-terms.json with evidence; Pillar primary_query/title/H1 contain it; seo-guard PASS; live QA PASS."),
     "S-RAIL-ANCHOR": ("P2", "Internal linking / anchor text", "VERIFIED", "scripts/premium.mjs (build)",
         "Every article's 'Related guides' rail links the locale home with the same exact-match transactional anchor",
         "In scripts/premium.mjs use a descriptive, non-transactional localized anchor (e.g. the Pillar's guide name) for the home link; regenerate with build.mjs and verify build --check / seo-guard.",
@@ -65,7 +67,7 @@ RULES = {
         "Organic landing-page traffic measurable per locale.", "OpenSEO GA4 tools return data.", "Owner decision recorded; data flowing or NOT_CONNECTED accepted."),
     "S-LOW-VISIBILITY": ("P1", "Off-page / visibility", "INFERRED", "Owner + Off-page",
         "Third-party index shows 0 ranking keywords, Domain Authority 2, 37 backlinks from 32 domains",
-        "After GSC is connected, confirm visibility. Build a real off-page plan: links from the sister sites' relevant guides, travel-forum answers, partner/embassy-style resource pages; no paid or PBN links.",
+        "After GSC is connected, confirm visibility. Earn independent editorial backlinks from relevant travel resources and credible partners; do not route traffic to any sister domain, buy links or build PBN links.",
         "Measured organic impressions and growing referring domains.", "GSC performance + backlink tool re-run monthly.",
         "Baseline captured in GSC; referring domains trend recorded in AUDIT CHANGELOG."),
     "S-KW-NO-DEMAND": ("P2", "Keyword research", "VERIFIED", "Topic Factory / Matrix",
@@ -108,7 +110,7 @@ RULES = {
         "Primary queries usable for rank tracking.", "Matrix length check.", "Future promotions comply."),
     "S-INTENT-LABEL": ("P3", "Keyword / intent", "VERIFIED", "Matrix",
         "Pillar rows are labelled 'informational' although market data classifies their queries as commercial/transactional",
-        "Correct search_intent with the re-targeting decision (S-PILLAR-TRANSACTIONAL).", "Intent labels match SERP/keyword data.", "validate-plan.", "Matrix updated in reviewed PR."),
+        "Match real market intent; commercial and commercial-investigation keywords are valid independent Global targets (owner directive 2026-10-28).", "Intent labels match SERP/keyword data.", "validate-plan.", "Matrix updated in reviewed PR."),
     "S-PRICE-FRESHNESS": ("P2", "Content accuracy", "VERIFIED", "Writers via reviewed PR",
         "fact-guard flags sourced third-party prices that need a dated re-check",
         "Re-check each flagged amount against its source; update date/source or remove the amount in a reviewed content PR (Auto Publisher never edits published pages).",
@@ -173,7 +175,6 @@ RULES = {
 }
 
 findings, seq = [], collections.Counter()
-LIVE_RUN = next((g["run_id"] for g in ext["github_actions"] if g["workflow"] == "live-markup-qa.yml"), "n/a")
 
 
 def add(rule, scope, locale, url=None, matrix_id=None, detail="", evidence_url=None, metric=None):
@@ -191,24 +192,36 @@ def add(rule, scope, locale, url=None, matrix_id=None, detail="", evidence_url=N
 kwm = kw["markets"]
 vi_hit = {x["keyword"]: x for x in kwm["vi"]["returned"]}
 en_hit = {x["keyword"]: x for x in kwm["en"]["returned"]}
-# S-PILLAR-TRANSACTIONAL is an owner decision: it stays open until a committed owner directive authorises
-# /global to target commercial head terms (approvals/owner-directive-20261028-independent-seo.json).
-directive = os.path.join(ROOT, "approvals", "owner-directive-20261028-independent-seo.json")
-commercial_ok = os.path.exists(directive) and json.load(open(directive, encoding="utf-8")).get("seo_execution", {}).get("authorized") is True
+# Owner directive 2026-10-28 (approvals/owner-directive-20261028-independent-seo.json): /global is an independent
+# SEO project and competes for every commercial rental keyword in all 10 languages; no keyword, ranking or traffic is
+# yielded to any other domain. S-PILLAR-HEAD-TERM checks that each locale Pillar actually targets its market's
+# researched commercial head term (data/seo/commercial-head-terms.json): primary_query, title and H1.
+HEAD_TERMS_FILE = os.path.join(ROOT, "data", "seo", "commercial-head-terms.json")
+head_terms = json.load(open(HEAD_TERMS_FILE, encoding="utf-8"))["locales"] if os.path.exists(HEAD_TERMS_FILE) else {}
+fold = lambda t: re.sub(r"\s+", " ", (t or "").casefold().replace("\u0111", "d")).strip()
 for r in pub:
-    if r["role"] == "PILLAR":
-        q = r["primary_query"]
-        data = {"vi": vi_hit.get("thuê xe máy hà nội"), "en": en_hit.get("motorbike rental hanoi")}.get(r["locale"])
-        m = f"{data['search_volume']}/mo, intent {data['main_intent']}" if data else "market data: see KEYWORD MATRIX"
-        if not commercial_ok:
-            add("S-PILLAR-TRANSACTIONAL", "URL", r["locale"], r["url"], r["matrix_id"], f"primary_query '{q}' ({m})", blob("data/seo/master-matrix.json"), m)
-        if r.get("search_intent") == "informational":
-            add("S-INTENT-LABEL", "URL", r["locale"], r["url"], r["matrix_id"], f"search_intent={r['search_intent']} for '{q}'", blob("data/seo/master-matrix.json"))
-pillar_q = {r["locale"]: (r["primary_query"] or "").strip().lower() for r in pub if r["role"] == "PILLAR"}
+    if r["role"] != "PILLAR":
+        continue
+    q = r.get("primary_query") or ""
+    ht = head_terms.get(r["locale"], {})
+    term = ht.get("head_term")
+    if not term:
+        add("S-PILLAR-HEAD-TERM", "URL", r["locale"], r["url"], r["matrix_id"], f"No researched commercial head term recorded for {r['locale']} (primary_query '{q}')", blob("data/seo/commercial-head-terms.json"))
+    else:
+        variants = [fold(v) for v in [term] + ht.get("title_variants", [])]
+        gaps = [k for k, v in (("primary_query", q), ("title", r.get("title")), ("h1", r.get("h1"))) if not any(x in fold(v) for x in variants)]
+        if gaps:
+            add("S-PILLAR-HEAD-TERM", "URL", r["locale"], r["url"], r["matrix_id"], f"Head term '{term}' missing from: {', '.join(gaps)}", blob("data/seo/commercial-head-terms.json"))
+    if r.get("search_intent") not in ("commercial", "commercial_investigation", "transactional"):
+        add("S-INTENT-LABEL", "URL", r["locale"], r["url"], r["matrix_id"],
+            f"Review search_intent={r.get('search_intent')} for commercial Pillar query '{q}'", blob("data/seo/master-matrix.json"))
+# A sitewide identical exact-match anchor to the locale home is over-optimisation; a descriptive label that contains the
+# head term naturally (e.g. "Cẩm nang thuê xe máy Hà Nội") is the intended pattern.
+pillar_q = {r["locale"]: (r["primary_query"] or "").strip().casefold() for r in pub if r["role"] == "PILLAR"}
 for loc in LOCALES:
-    same = [r for r in articles if r["locale"] == loc and (r.get("rail_home_anchor") or "").strip().lower() == pillar_q.get(loc)]
-    if same:
-        add("S-RAIL-ANCHOR", "LOCALE", loc, f"/{loc}/", f"{loc.upper()}-HOME", f"{len(same)} articles link /{loc}/ with the Pillar's primary query as anchor", blob("scripts/premium.mjs"), len(same))
+    same = [r for r in articles if r["locale"] == loc and (r.get("rail_home_anchor") or "").strip().casefold() == pillar_q.get(loc)]
+    if len(same) >= 5:
+        add("S-RAIL-ANCHOR", "LOCALE", loc, f"/{loc}/", f"{loc.upper()}-HOME", f"{len(same)} related-guide rails link /{loc}/ with the identical exact-match anchor", blob("scripts/premium.mjs"), len(same))
 add("S-GSC-NOT-CONNECTED", "SITE", "ALL", detail=ext["search_console"]["evidence"])
 add("S-GA4-NOT-CONNECTED", "SITE", "ALL")
 u = ext["ubersuggest_domain_overview"]
@@ -224,7 +237,7 @@ dated = [r for r in articles if r.get("in_sitemap")]
 undated = [r for r in dated if not r.get("sitemap_lastmod")]
 if undated:
     add("S-SITEMAP-LASTMOD", "SITE", "ALL", "/sitemap.xml", detail=f"{len(undated)} of {len(dated)} Hub/Supporting URL entries without lastmod ({d['sitemap']['lastmod_missing']} of {d['sitemap']['urls']} entries overall)", evidence_url=blob("scripts/sitemaps.mjs"), metric=len(undated))
-no_img = [r for r in pub if "Article" in (r.get("schema_types") or []) and not r.get("article_image")]
+no_img = [r for r in pub if "Article" in (r.get("schema_types") or []) and not r.get("article_image_in_schema")]
 if no_img:
     add("S-ARTICLE-NO-IMAGE", "SITE", "ALL", detail=f"{len(no_img)} Article graphs without image", evidence_url=blob("scripts/articles.mjs"), metric=len(no_img))
 og = collections.Counter(r.get("og_image") for r in pub)
@@ -245,7 +258,8 @@ for r in pub:
 long_pq = [r for r in pub if len(r["primary_query"] or "") > 80]
 add("S-PQ-SENTENCE", "LOCALE", "de", detail=f"{len(long_pq)} published rows with primary_query > 80 characters", evidence_url=blob("data/seo/master-matrix.json"), metric=len(long_pq))
 fw = sum(r["fact_guard_warns"] for r in pub)
-add("S-PRICE-FRESHNESS", "SITE", "ALL", detail=f"{fw} WARN on {sum(1 for r in pub if r['fact_guard_warns'])} published articles", evidence_url=blob("scripts/seo/fact-guard.mjs"), metric=fw)
+if fw:
+    add("S-PRICE-FRESHNESS", "SITE", "ALL", detail=f"{fw} WARN on {sum(1 for r in pub if r['fact_guard_warns'])} published articles", evidence_url=blob("scripts/seo/fact-guard.mjs"), metric=fw)
 def seconds(v):
     n = float(re.sub(r"[^\d.]", "", v or "0") or 0)
     return n / 1000 if "ms" in (v or "") else n
@@ -298,7 +312,7 @@ for p in d["title_similarity_pairs"]:
 # ---------- tasks ----------
 tasks = {}
 prio_rank = {"P0": 0, "P1": 1, "P2": 2, "P3": 3}
-effort = {"S-PILLAR-TRANSACTIONAL": "M", "S-RAIL-ANCHOR": "S", "S-GSC-NOT-CONNECTED": "S", "S-GA4-NOT-CONNECTED": "S", "S-LOW-VISIBILITY": "L",
+effort = {"S-PILLAR-HEAD-TERM": "M", "S-RAIL-ANCHOR": "S", "S-GSC-NOT-CONNECTED": "S", "S-GA4-NOT-CONNECTED": "S", "S-LOW-VISIBILITY": "L",
           "S-KW-NO-DEMAND": "M", "S-SITEMAP-LASTMOD": "S", "S-ARTICLE-NO-IMAGE": "S", "S-OG-IMAGE-SINGLE": "S", "S-AUTHOR-ORG-ONLY": "M",
           "S-LOCALE-IMBALANCE": "L", "S-PT-VARIANT": "S", "S-DE-TOPIC-DRIFT": "M", "S-PQ-SENTENCE": "S", "S-INTENT-LABEL": "S", "S-PRICE-FRESHNESS": "L",
           "S-PSI-MOBILE": "M", "S-CWV-FIELD": "S", "S-REDIRECT-HEADERS": "S", "S-BUSINESS-CONFLICTS": "S", "S-FAQ-SCHEMA": "M", "S-CHECKLIST-NO-REFS": "S"}
@@ -369,8 +383,8 @@ for r in inv + [{"matrix_id": None, "url": x["url"], "locale": "global", "role":
     published = r["matrix_status"] == "PUBLISHED"
     master.append({**{k2: v for k2, v in r.items() if k2 not in ("h2_outline", "hreflang", "review_pairs", "seo_guard_warns", "sha256")},
                    "audit_id": f"A-{r.get('matrix_id') or r['url'].strip('/').replace('/', '-').upper() or 'ROOT'}",
-                   "http_status_live": 200 if published or r["matrix_status"] == "NOT_IN_MATRIX" else None,
-                   "live_evidence": f"VERIFIED (live markup QA run {LIVE_RUN})" if published or r["matrix_status"] == "NOT_IN_MATRIX" else "N/A (not a URL yet)",
+                   "http_status_live": 200 if LIVE_VERIFIED_FOR_SNAPSHOT and (published or r["matrix_status"] == "NOT_IN_MATRIX") else None,
+                   "live_evidence": (f"VERIFIED (live markup QA run {ext['github_actions'][0]['run_id']})" if LIVE_VERIFIED_FOR_SNAPSHOT else "NOT_REVERIFIED (latest live run covers a different commit)") if published or r["matrix_status"] == "NOT_IN_MATRIX" else "N/A (not a URL yet)",
                    "pq_volume": k.get("search_volume") if k else None, "pq_intent_market": k.get("main_intent") if k else None,
                    "pq_kd": k.get("keyword_difficulty") if k else None,
                    "keyword_evidence": ("VERIFIED" if k else ("VERIFIED_NO_VOLUME" if kwm.get(r["locale"], {}).get("queried", 0) >= 50 and published else "NOT_CHECKED")),

@@ -132,7 +132,7 @@ def parse_page(path, loc):
     d["h2_outline"] = [t for l, t in hs if l == 2][:30]
     # schema
     types, ok, inlang, dates, faq, crumbs, author_types = [], True, set(), {}, False, 0, set()
-    article_image = False
+    article_with_image = False
     for s in soup.select('script[type="application/ld+json"]'):
         try:
             data = json.loads(s.string or "")
@@ -153,23 +153,23 @@ def parse_page(path, loc):
                 for k in ("datePublished", "dateModified"):
                     if n.get(k):
                         dates[k] = n[k]
+                if (t == "Article" or isinstance(t, list) and "Article" in t) and n.get("image"):
+                    article_with_image = True
                 if t == "FAQPage":
                     faq = True
                 if t == "BreadcrumbList":
                     crumbs = len(n.get("itemListElement") or [])
-                if (t == "Article" or (isinstance(t, list) and "Article" in t)) and n.get("image"):
-                    article_image = True
                 if isinstance(n.get("author"), dict):
                     author_types.add(n["author"].get("@type"))
                 stack.extend(v for v in n.values() if isinstance(v, (dict, list)))
     d["schema_types"] = sorted(set(types))
+    d["article_image_in_schema"] = article_with_image
     d["schema_valid_json"] = ok
     d["schema_blocks"] = len(soup.select('script[type="application/ld+json"]'))
     d["schema_inlanguage"] = sorted(inlang)
     d["date_published"] = dates.get("datePublished")
     d["date_modified"] = dates.get("dateModified")
     d["faq_schema"] = faq
-    d["article_image"] = article_image
     # related-guides rail link back to the locale home (S-RAIL-ANCHOR) and pt-BR noun next to pt-PT text (S-PT-VARIANT)
     rail_home = soup.select_one('nav.premium-related a[href="/' + loc + '/"]')
     d["rail_home_anchor"] = rail_home.get_text(" ", strip=True) if rail_home else None
@@ -398,7 +398,7 @@ def main():
             rec.update({k: p[k] for k in ("title", "description", "h1", "h1_count", "h2_count", "h3_count", "h4_count", "h5_count", "h6_count", "heading_skips",
                                          "canonical", "canonical_count", "robots", "html_lang", "og_url", "og_image", "twitter_card", "schema_types", "schema_valid_json",
                                          "schema_inlanguage", "date_published", "date_modified", "faq_schema", "faq_visible", "breadcrumb_items", "author_types",
-                                         "article_image", "rail_home_anchor", "pt_br_aluguel",
+                                         "article_image_in_schema", "rail_home_anchor", "pt_br_aluguel",
                                          "content_units", "unit_kind", "main_text_chars", "links_total", "internal_links_unique", "external_links", "references",
                                          "ref_official", "ref_legal_db", "ref_third_party", "img_count", "img_missing_alt_attr", "img_empty_alt", "img_no_dimensions",
                                          "img_lazy", "bytes", "css_files", "js_files", "head_blocking_js", "duplicate_ids", "empty_anchors", "provenance_note",
