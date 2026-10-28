@@ -7,34 +7,35 @@
   "branch": "research/claude-seo-az-20261028",
   "batch_session": "research-claude-seo-az-20261028",
   "created_at": "2026-10-28T12:29:58.688Z",
-  "updated_at": "2026-10-28T12:34:51.186Z",
-  "base_main_sha": "620b71129726ea941ad0ceaf705d841b92431401",
-  "last_commit_sha": "7df88858b4ae042c5a1bb4db9ef513c10272ef85",
+  "updated_at": "2026-10-28T12:43:22.453Z",
+  "base_main_sha": "e363a8aed9c361e259526d16ca7086963e4fef51",
+  "last_commit_sha": "d26296ae18efbcb0bb1bbfe3ffb51ad6a8e09c56",
   "contract": {
     "agents_md_sha256": "754a12f9f56248ff18882c8cee12fbd7e5fb16e07ad66d8bb078deefa0ebb321",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 20,
-    "qa_pass": 20,
+    "researched": 30,
+    "qa_pass": 30,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 10,
+    "pushed": 20,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
-      "de": 20
+      "de": 20,
+      "vi": 10
     },
     "domains": {
-      "motorbike-rental": 12,
-      "traffic-law-safety": 8
+      "motorbike-rental": 20,
+      "traffic-law-safety": 10
     }
   },
   "last_batch": {
-    "seq": 2,
-    "file": "factory/topic-research/batches/claude-seo-az-20261028-0002.json",
-    "sha256": "a6d0fc152b6d14eac445e56a8abe5e3691b623ae544200198f4a6baa173f740f",
+    "seq": 3,
+    "file": "factory/topic-research/batches/claude-seo-az-20261028-0003.json",
+    "sha256": "a5a62cb625c7f5e306e5e8303cd924d0f229b4adeaf82b2d93c39171ebafc43c",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -155,8 +156,8 @@
       "file": "factory/topic-research/batches/claude-seo-az-20261028-0002.json",
       "sha256": "a6d0fc152b6d14eac445e56a8abe5e3691b623ae544200198f4a6baa173f740f",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "d26296ae18efbcb0bb1bbfe3ffb51ad6a8e09c56",
       "researched_on": "2026-10-28",
       "topics": [
         {
@@ -167,7 +168,7 @@
           "parent_id": "DE-H03",
           "subcluster": "dc-contract",
           "key": "de::bewertungen von rollerverleihen in hanoi richtig prufen",
-          "ta_id": null
+          "ta_id": "TA-DE-0432"
         },
         {
           "ref": "de:probefahrt-vor-der-motorradmiete-hanoi",
@@ -177,7 +178,7 @@
           "parent_id": "DE-H01",
           "subcluster": "vc-trip-fit",
           "key": "de::probefahrt vor der motorradmiete in hanoi worauf achten",
-          "ta_id": null
+          "ta_id": "TA-DE-0433"
         },
         {
           "ref": "de:allein-als-frau-roller-mieten-hanoi",
@@ -187,7 +188,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-city",
           "key": "de::allein als frau in hanoi einen roller mieten und fahren",
-          "ta_id": null
+          "ta_id": "TA-DE-0434"
         },
         {
           "ref": "de:spritkosten-pro-tag-mietroller-vietnam",
@@ -197,7 +198,7 @@
           "parent_id": "DE-H02",
           "subcluster": "rc-extras",
           "key": "de::spritkosten pro tag mit dem mietroller in vietnam berechnen",
-          "ta_id": null
+          "ta_id": "TA-DE-0435"
         },
         {
           "ref": "de:mietvertrag-roller-nur-auf-vietnamesisch",
@@ -207,7 +208,7 @@
           "parent_id": "DE-H03",
           "subcluster": "dc-contract",
           "key": "de::mietvertrag fur den roller in vietnam nur auf vietnamesisch was tun",
-          "ta_id": null
+          "ta_id": "TA-DE-0436"
         },
         {
           "ref": "de:mietroller-flughafen-noi-bai-uebernehmen",
@@ -217,7 +218,7 @@
           "parent_id": "DE-H02",
           "subcluster": "rc-extras",
           "key": "de::mietroller am flughafen noi bai ubernehmen und zuruckgeben",
-          "ta_id": null
+          "ta_id": "TA-DE-0437"
         },
         {
           "ref": "de:tankregel-rueckgabe-mietroller-hanoi",
@@ -227,7 +228,7 @@
           "parent_id": "DE-H02",
           "subcluster": "rc-extras",
           "key": "de::mietroller mit leerem tank bekommen wie voll muss ich ihn zuruckgeben",
-          "ta_id": null
+          "ta_id": "TA-DE-0438"
         },
         {
           "ref": "de:schloss-diebstahlschutz-mietroller-hanoi",
@@ -237,7 +238,7 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-incidents",
           "key": "de::welches schloss schutzt einen mietroller in hanoi vor diebstahl",
-          "ta_id": null
+          "ta_id": "TA-DE-0439"
         },
         {
           "ref": "de:vermieter-behauptet-schaden-bei-rueckgabe",
@@ -247,7 +248,7 @@
           "parent_id": "DE-H03",
           "subcluster": "dc-contract",
           "key": "de::vermieter behauptet bei der ruckgabe einen schaden am roller in vietnam",
-          "ta_id": null
+          "ta_id": "TA-DE-0440"
         },
         {
           "ref": "de:offline-karten-rollertour-vietnam",
@@ -257,14 +258,125 @@
           "parent_id": "DE-H04",
           "subcluster": "ss-gear",
           "key": "de::offline-karten fur die rollertour in vietnam einrichten",
+          "ta_id": "TA-DE-0441"
+        }
+      ]
+    },
+    {
+      "seq": 3,
+      "file": "factory/topic-research/batches/claude-seo-az-20261028-0003.json",
+      "sha256": "a5a62cb625c7f5e306e5e8303cd924d0f229b4adeaf82b2d93c39171ebafc43c",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-28",
+      "topics": [
+        {
+          "ref": "vi:giao-xe-may-thue-den-khach-san-ha-noi",
+          "locale": "vi",
+          "slug": "giao-xe-may-thue-den-khach-san-ha-noi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H02",
+          "subcluster": "rc-extras",
+          "key": "vi::dich vu giao xe may thue den khach san o ha noi",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:thue-xe-may-qua-ung-dung-hay-cua-hang-ha-noi",
+          "locale": "vi",
+          "slug": "thue-xe-may-qua-ung-dung-hay-cua-hang-ha-noi",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-contract",
+          "key": "vi::thue xe may qua ung dung hay tai cua hang o ha noi",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:thue-xe-may-theo-gio-ha-noi",
+          "locale": "vi",
+          "slug": "thue-xe-may-theo-gio-ha-noi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H02",
+          "subcluster": "rc-period",
+          "key": "vi::thue xe may theo gio o ha noi",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:thue-xe-may-san-bay-noi-bai",
+          "locale": "vi",
+          "slug": "thue-xe-may-san-bay-noi-bai",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H02",
+          "subcluster": "rc-extras",
+          "key": "vi::thue xe may o san bay noi bai",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:chon-xe-thue-di-ha-giang-tu-ha-noi",
+          "locale": "vi",
+          "slug": "chon-xe-thue-di-ha-giang-tu-ha-noi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "vi::thue xe may o ha noi di ha giang nen chon xe gi",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:thue-xe-may-ha-noi-tra-o-tp-hcm",
+          "locale": "vi",
+          "slug": "thue-xe-may-ha-noi-tra-o-tp-hcm",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H02",
+          "subcluster": "rc-extras",
+          "key": "vi::thue xe may o ha noi tra xe o tp.hcm",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:thue-hay-mua-xe-may-cu-khi-o-ha-noi",
+          "locale": "vi",
+          "slug": "thue-hay-mua-xe-may-cu-khi-o-ha-noi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H02",
+          "subcluster": "rc-period",
+          "key": "vi::o ha noi vai thang nen thue xe may hay mua xe cu",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:cach-doc-danh-gia-cua-hang-cho-thue-xe-may",
+          "locale": "vi",
+          "slug": "cach-doc-danh-gia-cua-hang-cho-thue-xe-may",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "VI-H03",
+          "subcluster": "dc-contract",
+          "key": "vi::cach doc danh gia cua hang cho thue xe may tren google maps",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:tra-xe-may-thue-muon-tinh-phi-the-nao",
+          "locale": "vi",
+          "slug": "tra-xe-may-thue-muon-tinh-phi-the-nao",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H02",
+          "subcluster": "rc-extras",
+          "key": "vi::tra xe may thue muon bi tinh phi the nao",
+          "ta_id": null
+        },
+        {
+          "ref": "vi:xe-may-thue-bao-nhieu-xang-khi-tra",
+          "locale": "vi",
+          "slug": "xe-may-thue-bao-nhieu-xang-khi-tra",
+          "domain_id": "motorbike-rental",
+          "parent_id": "VI-H02",
+          "subcluster": "rc-extras",
+          "key": "vi::xe may thue sap het xang khi tra can do bao nhieu",
           "ta_id": null
         }
       ]
     }
   ],
   "next_batch": {
-    "seq": 3,
-    "file": "factory/topic-research/batches/claude-seo-az-20261028-0003.json",
+    "seq": 4,
+    "file": "factory/topic-research/batches/claude-seo-az-20261028-0004.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -283,6 +395,13 @@
       "seq": 2,
       "topics": 10,
       "sha256": "a6d0fc152b6d14eac445e56a8abe5e3691b623ae544200198f4a6baa173f740f"
+    },
+    {
+      "at": "2026-10-28T12:43:22.453Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 3,
+      "topics": 10,
+      "sha256": "a5a62cb625c7f5e306e5e8303cd924d0f229b4adeaf82b2d93c39171ebafc43c"
     }
   ]
 }
