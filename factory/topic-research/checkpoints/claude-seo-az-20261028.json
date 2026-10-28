@@ -7,9 +7,9 @@
   "branch": "research/claude-seo-az-20261028",
   "batch_session": "research-claude-seo-az-20261028",
   "created_at": "2026-10-28T12:29:58.688Z",
-  "updated_at": "2026-10-28T12:54:05.535Z",
+  "updated_at": "2026-10-28T12:54:19.783Z",
   "base_main_sha": "c1b8099f702fc540c77d4293780cc0099ab82564",
-  "last_commit_sha": "1a20387083b413ba6dd91898e75081e931486e79",
+  "last_commit_sha": "bb418f6210bdf7c3703f87c6c3d874d4cd45b32b",
   "contract": {
     "agents_md_sha256": "754a12f9f56248ff18882c8cee12fbd7e5fb16e07ad66d8bb078deefa0ebb321",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
@@ -19,8 +19,8 @@
     "qa_pass": 110,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 100,
-    "pending_push": 10
+    "pushed": 110,
+    "pending_push": 0
   },
   "coverage": {
     "locales": {
@@ -1163,8 +1163,8 @@
       "file": "factory/topic-research/batches/claude-seo-az-20261028-0011.json",
       "sha256": "cd3c9634a261124cded6d65c12b00c66c8b9825bee6c5104455bee7d91dd4ffd",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "bb418f6210bdf7c3703f87c6c3d874d4cd45b32b",
       "researched_on": "2026-10-28",
       "topics": [
         {
@@ -1276,7 +1276,14 @@
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
-  "unresolved": [],
+  "unresolved": [
+    {
+      "id": "note-fda2aec0",
+      "kind": "NOTE",
+      "message": "11 batches: DE x2, VI, EN, FR, ES, NL, ZH, PT, KO, JA commercial-investigation topics",
+      "at": "2026-10-28T12:54:19.783Z"
+    }
+  ],
   "history": [
     {
       "at": "2026-10-28T12:29:58.688Z",
@@ -1354,6 +1361,10 @@
       "seq": 11,
       "topics": 10,
       "sha256": "cd3c9634a261124cded6d65c12b00c66c8b9825bee6c5104455bee7d91dd4ffd"
+    },
+    {
+      "at": "2026-10-28T12:54:19.783Z",
+      "event": "CHECKPOINT_UPDATED"
     }
   ]
 }
