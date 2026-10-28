@@ -9,14 +9,14 @@ Outcome per finding is computed by `docs/seo-audit/tools/ledger.py` from the bas
 | Outcome | Findings |
 |---|---:|
 | FIXED_VERIFIED | 222 |
-| FIXED_PENDING_LIVE | 3 |
-| VALIDATED_NO_FIX | 696 |
+| FIXED_PENDING_LIVE | 13 |
+| VALIDATED_NO_FIX | 686 |
 | DUPLICATE | 0 |
 | EXTERNAL_DEPENDENCY | 11 |
 | BLOCKED | 1 |
 | **Total** | **933** |
 
-Tasks: 95 — BLOCKED 1, DONE 48, IN_PROGRESS 2, NOT_APPLICABLE 37, OWNER_DECISION 7.
+Tasks: 95 — BLOCKED 1, DONE 48, IN_PROGRESS 3, NOT_APPLICABLE 36, OWNER_DECISION 7.
 
 ## Before / after (same analyzer, measured rules)
 
@@ -38,7 +38,7 @@ Findings: **933 → 733** reported by the re-audit; 0 new. A finding that is sti
 | S-LOCALE-IMBALANCE | 1 | 1 | EXTERNAL_DEPENDENCY 1 |
 | S-LOW-VISIBILITY | 1 | 1 | EXTERNAL_DEPENDENCY 1 |
 | S-OG-IMAGE-SINGLE | 1 | 0 | FIXED_VERIFIED 1 |
-| S-PILLAR-TRANSACTIONAL | 10 | 0 | VALIDATED_NO_FIX 10 |
+| S-PILLAR-HEAD-TERM | 10 | 0 | FIXED_PENDING_LIVE 10 |
 | S-PQ-SENTENCE | 1 | 1 | EXTERNAL_DEPENDENCY 1 |
 | S-PRICE-FRESHNESS | 1 | 1 | FIXED_VERIFIED 1 |
 | S-PSI-MOBILE | 1 | 0 | FIXED_VERIFIED 1 |
@@ -61,16 +61,16 @@ Findings: **933 → 733** reported by the re-audit; 0 new. A finding that is sti
 
 | Locale | Baseline findings | Fixed (verified) | Fixed (pending live) | Validated | External | Blocked | Re-audit remaining |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| vi | 45 | 6 | 0 | 38 | 1 | 0 | 40 |
-| en | 77 | 11 | 2 | 63 | 1 | 0 | 64 |
-| de | 194 | 23 | 0 | 169 | 2 | 0 | 172 |
-| fr | 44 | 7 | 0 | 36 | 1 | 0 | 36 |
-| es | 48 | 9 | 0 | 39 | 0 | 0 | 36 |
-| nl | 53 | 8 | 0 | 45 | 0 | 0 | 46 |
-| zh | 114 | 16 | 0 | 98 | 0 | 0 | 101 |
-| pt | 42 | 7 | 0 | 35 | 0 | 0 | 34 |
-| ko | 152 | 69 | 0 | 82 | 1 | 0 | 91 |
-| ja | 151 | 61 | 0 | 89 | 1 | 0 | 105 |
+| vi | 45 | 6 | 1 | 37 | 1 | 0 | 40 |
+| en | 77 | 11 | 3 | 62 | 1 | 0 | 64 |
+| de | 194 | 23 | 1 | 168 | 2 | 0 | 172 |
+| fr | 44 | 7 | 1 | 35 | 1 | 0 | 36 |
+| es | 48 | 9 | 1 | 38 | 0 | 0 | 36 |
+| nl | 53 | 8 | 1 | 44 | 0 | 0 | 46 |
+| zh | 114 | 16 | 1 | 97 | 0 | 0 | 101 |
+| pt | 42 | 7 | 1 | 34 | 0 | 0 | 34 |
+| ko | 152 | 69 | 1 | 81 | 1 | 0 | 91 |
+| ja | 151 | 61 | 1 | 88 | 1 | 0 | 105 |
 
 Site-wide findings (locale ALL/global) are counted in the totals above, not per language.
 
@@ -89,6 +89,7 @@ Site-wide findings (locale ALL/global) are counted in the totals above, not per 
 | E1 | Re-audit gaps: checklist Article image, Japanese FAQ questions | — | pending | pending | pending |
 | E2 | Privacy and terms meta descriptions | — | pending | pending | pending |
 | E3 | Re-audit regression fixes: 3 query-aligned titles, KO Pillar description | — | pending | pending | pending |
+| G | Commercial head terms per locale; Pillar H1/description alignment (owner directive 2026-10-28) | — | pending | pending | pending |
 
 ## OWNER_ACTION_REQUIRED
 
