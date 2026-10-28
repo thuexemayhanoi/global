@@ -7,35 +7,36 @@
   "branch": "research/claude-seo-az-20261028",
   "batch_session": "research-claude-seo-az-20261028",
   "created_at": "2026-10-28T12:29:58.688Z",
-  "updated_at": "2026-10-28T12:43:22.453Z",
+  "updated_at": "2026-10-28T12:45:01.726Z",
   "base_main_sha": "e363a8aed9c361e259526d16ca7086963e4fef51",
-  "last_commit_sha": "d26296ae18efbcb0bb1bbfe3ffb51ad6a8e09c56",
+  "last_commit_sha": "a58d97f780ad17fc315e4f4561cad5da8aeaef04",
   "contract": {
     "agents_md_sha256": "754a12f9f56248ff18882c8cee12fbd7e5fb16e07ad66d8bb078deefa0ebb321",
     "topic_factory_md_sha256": "840f1379ca3925a8171b9f58fbb5d84cba1b2e8b0af3a338d85e1de3dfad128f"
   },
   "totals": {
-    "researched": 30,
-    "qa_pass": 30,
+    "researched": 40,
+    "qa_pass": 40,
     "qa_fail": 0,
     "qa_fail_open": 0,
-    "pushed": 20,
+    "pushed": 30,
     "pending_push": 10
   },
   "coverage": {
     "locales": {
       "de": 20,
-      "vi": 10
+      "vi": 10,
+      "en": 10
     },
     "domains": {
-      "motorbike-rental": 20,
-      "traffic-law-safety": 10
+      "motorbike-rental": 28,
+      "traffic-law-safety": 12
     }
   },
   "last_batch": {
-    "seq": 3,
-    "file": "factory/topic-research/batches/claude-seo-az-20261028-0003.json",
-    "sha256": "a5a62cb625c7f5e306e5e8303cd924d0f229b4adeaf82b2d93c39171ebafc43c",
+    "seq": 4,
+    "file": "factory/topic-research/batches/claude-seo-az-20261028-0004.json",
+    "sha256": "d38312fdbd0fd804dc76ac8b00919c8f97de6e32c879898ad8cd2a8ab55f41bd",
     "topics": 10,
     "state": "COMMITTED"
   },
@@ -267,8 +268,8 @@
       "file": "factory/topic-research/batches/claude-seo-az-20261028-0003.json",
       "sha256": "a5a62cb625c7f5e306e5e8303cd924d0f229b4adeaf82b2d93c39171ebafc43c",
       "candidates": 10,
-      "state": "COMMITTED",
-      "commit_sha": null,
+      "state": "PUSHED",
+      "commit_sha": "a58d97f780ad17fc315e4f4561cad5da8aeaef04",
       "researched_on": "2026-10-28",
       "topics": [
         {
@@ -372,11 +373,122 @@
           "ta_id": null
         }
       ]
+    },
+    {
+      "seq": 4,
+      "file": "factory/topic-research/batches/claude-seo-az-20261028-0004.json",
+      "sha256": "d38312fdbd0fd804dc76ac8b00919c8f97de6e32c879898ad8cd2a8ab55f41bd",
+      "candidates": 10,
+      "state": "COMMITTED",
+      "commit_sha": null,
+      "researched_on": "2026-10-28",
+      "topics": [
+        {
+          "ref": "en:one-way-motorbike-rental-hanoi-to-ho-chi-minh-city",
+          "locale": "en",
+          "slug": "one-way-motorbike-rental-hanoi-to-ho-chi-minh-city",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H02",
+          "subcluster": "rc-extras",
+          "key": "en::rent a motorbike in hanoi and drop it off in ho chi minh city",
+          "ta_id": null
+        },
+        {
+          "ref": "en:motorbike-rental-hanoi-delivered-to-your-hotel",
+          "locale": "en",
+          "slug": "motorbike-rental-hanoi-delivered-to-your-hotel",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H02",
+          "subcluster": "rc-extras",
+          "key": "en::hanoi motorbike rental delivered to your hotel",
+          "ta_id": null
+        },
+        {
+          "ref": "en:rent-or-buy-a-motorbike-for-a-vietnam-trip",
+          "locale": "en",
+          "slug": "rent-or-buy-a-motorbike-for-a-vietnam-trip",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H02",
+          "subcluster": "rc-period",
+          "key": "en::rent or buy a motorbike for a vietnam trip",
+          "ta_id": null
+        },
+        {
+          "ref": "en:easy-rider-or-ride-yourself-from-hanoi",
+          "locale": "en",
+          "slug": "easy-rider-or-ride-yourself-from-hanoi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "en::easy rider or ride yourself on a motorbike trip from hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:book-motorbike-rental-online-or-at-a-hanoi-shop",
+          "locale": "en",
+          "slug": "book-motorbike-rental-online-or-at-a-hanoi-shop",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H03",
+          "subcluster": "dc-contract",
+          "key": "en::book a hanoi motorbike rental online or directly at a shop",
+          "ta_id": null
+        },
+        {
+          "ref": "en:what-is-included-in-a-hanoi-motorbike-rental",
+          "locale": "en",
+          "slug": "what-is-included-in-a-hanoi-motorbike-rental",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H02",
+          "subcluster": "rc-extras",
+          "key": "en::what is included in a hanoi motorbike rental price",
+          "ta_id": null
+        },
+        {
+          "ref": "en:who-pays-maintenance-monthly-motorbike-rental-hanoi",
+          "locale": "en",
+          "slug": "who-pays-maintenance-monthly-motorbike-rental-hanoi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H02",
+          "subcluster": "rc-period",
+          "key": "en::who pays for oil changes on a monthly motorbike rental in hanoi",
+          "ta_id": null
+        },
+        {
+          "ref": "en:returning-a-rental-motorbike-late-in-hanoi",
+          "locale": "en",
+          "slug": "returning-a-rental-motorbike-late-in-hanoi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H02",
+          "subcluster": "rc-extras",
+          "key": "en::returning a rental motorbike late in hanoi how extra days are charged",
+          "ta_id": null
+        },
+        {
+          "ref": "en:rental-shop-claims-damage-when-you-return-the-motorbike",
+          "locale": "en",
+          "slug": "rental-shop-claims-damage-when-you-return-the-motorbike",
+          "domain_id": "traffic-law-safety",
+          "parent_id": "EN-H03",
+          "subcluster": "dc-contract",
+          "key": "en::rental shop claims damage when you return the motorbike in vietnam",
+          "ta_id": null
+        },
+        {
+          "ref": "en:test-ride-before-renting-a-motorbike-in-hanoi",
+          "locale": "en",
+          "slug": "test-ride-before-renting-a-motorbike-in-hanoi",
+          "domain_id": "motorbike-rental",
+          "parent_id": "EN-H01",
+          "subcluster": "vc-trip-fit",
+          "key": "en::test ride before renting a motorbike in hanoi what to check",
+          "ta_id": null
+        }
+      ]
     }
   ],
   "next_batch": {
-    "seq": 4,
-    "file": "factory/topic-research/batches/claude-seo-az-20261028-0004.json",
+    "seq": 5,
+    "file": "factory/topic-research/batches/claude-seo-az-20261028-0005.json",
     "size": 10,
     "partial_allowed": "1-9 topics are allowed only when the session is ending (--final); never pad a batch"
   },
@@ -402,6 +514,13 @@
       "seq": 3,
       "topics": 10,
       "sha256": "a5a62cb625c7f5e306e5e8303cd924d0f229b4adeaf82b2d93c39171ebafc43c"
+    },
+    {
+      "at": "2026-10-28T12:45:01.726Z",
+      "event": "BATCH_COMMITTED",
+      "seq": 4,
+      "topics": 10,
+      "sha256": "d38312fdbd0fd804dc76ac8b00919c8f97de6e32c879898ad8cd2a8ab55f41bd"
     }
   ]
 }
