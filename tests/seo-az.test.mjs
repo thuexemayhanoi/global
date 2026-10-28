@@ -135,8 +135,10 @@ test("host probes report advisories and never throw",async()=>{
 test("A–Z reviewed metadata rows are applied, within width limits, frozen and keep the visible lead",()=>{
  const width=s=>[...s].reduce((n,c)=>n+(/[ᄀ-ᅟ⺀-꓏가-힣豈-﫿︰-﹏＀-｠￠-￦]/u.test(c)?2:1),0);
  const dir="docs/seo-audit/execution/",sets=fs.readdirSync(path.join(root,dir)).filter(f=>/^metadata-reviews(-[a-z0-9-]+)?\.json$/.test(f));
- const reviews=sets.flatMap(f=>JSON.parse(read(dir+f)));
- assert.equal(new Set(reviews.map(r=>r.id)).size,reviews.length,"a URL belongs to one A–Z review round");
+ // A later round (metadata-reviews-<name>.json, applied after the unnamed first round) supersedes an earlier row for the same URL.
+ const latest=new Map();
+ for(const f of sets.sort((a,b)=>(a==="metadata-reviews.json"?-1:b==="metadata-reviews.json"?1:a.localeCompare(b))))for(const r of JSON.parse(read(dir+f)))latest.set(r.id,r);
+ const reviews=[...latest.values()];
  const freeze=new Map(JSON.parse(read("data/seo/url-freeze.json")).urls.map(u=>[u.url,u.fingerprint]));
  const leads=JSON.parse(read("content/article-leads.json")).leads;
  assert.ok(reviews.length>=100);
