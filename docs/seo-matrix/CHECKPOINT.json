@@ -2,19 +2,8 @@
  "generated": "2026-10-29",
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
- "current_task": {
-  "id": "TECH-05",
-  "phase": "TECH",
-  "title": "Outbound reference links: every external source cited on published pages answers (no 404/410, no dead host, no deep link redirected to a home page)",
-  "status": "FIXED",
-  "branch": "seo/az-tech-05-fix",
-  "commit": null,
-  "pr": null,
-  "deploy_run": null,
-  "live_qa": [],
-  "next_action": "Merge after CI, deploy, live QA, then re-run reference-link-check.yml on main (expect 0 BROKEN); record runs in the next PR"
- },
- "next_action": "Merge after CI, deploy, live QA, then re-run reference-link-check.yml on main (expect 0 BROKEN); record runs in the next PR",
+ "current_task": null,
+ "next_action": "Re-run the audit pipeline (collect → analyze → ledger → az_matrix → workbook) and docs/seo-audit/tools/tech_reaudit.py on current main; add a task to TASKS.json only for a verified new finding on an existing URL; otherwise monitor (indexing and rankings stay unmeasured without Search Console)",
  "next_todo": [],
  "blocked": [],
  "owner_actions": "docs/seo-audit/OWNER-ACTIONS.md (OWNER_ACTIONS_LAST)",
@@ -28,8 +17,7 @@
    "LIVE_VERIFIED": 1
   },
   "TECH": {
-   "LIVE_VERIFIED": 4,
-   "FIXED": 2
+   "LIVE_VERIFIED": 6
   },
   "IMG": {
    "LIVE_VERIFIED": 12
