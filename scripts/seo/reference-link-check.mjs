@@ -6,6 +6,7 @@
  * and never fails the build; it writes evidence for a reviewed fix PR:
  *   node scripts/seo/reference-link-check.mjs --confirm-live      (GitHub Actions: reference-link-check.yml)
  *   node scripts/seo/reference-link-check.mjs                     (offline: inventory only)
+ *   node scripts/seo/reference-link-check.mjs --candidates=FILE   (proposed replacements: status and cited facts found)
  * Only BROKEN (404/410 or a host that no longer resolves) is a defect to fix; BLOCKED (401/403/429/451),
  * SERVER_ERROR and NETWORK answers are often bot protection or geo-blocking and need a manual look first.
  */
@@ -91,7 +92,42 @@ export async function checkAll(cited,fetcher=fetch,{concurrency=8,perHost=2}={})
  return results.sort((a,b)=>a.url.localeCompare(b.url));
 }
 
+/** Which expected phrases ("a|b" = either spelling) occur in a page's visible text, case- and space-insensitive. */
+export function expectedFound(html,expect=[]){
+ const text=String(html).replace(/<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>/gi," ").replace(/<[^>]+>/g," ")
+  .replace(/&nbsp;|&#160;|\u00a0|\u202f/g," ").replace(/&amp;/g,"&").replace(/\s+/g," ").toLowerCase();
+ const found=[],missing=[];
+ for(const e of expect)(String(e).split("|").some(alt=>text.includes(alt.toLowerCase().replace(/\s+/g," ")))?found:missing).push(e);
+ return {found,missing};
+}
+
+/** Check proposed replacement URLs ({url, expect[]} list): status, final URL and which cited facts the page states. */
+export async function checkCandidates(list,fetcher=fetch){
+ const out=[];
+ for(const c of list){
+  let r={url:c.url,expect:c.expect||[]};
+  try{
+   const res=await fetcher(c.url,{redirect:"follow",headers:{"user-agent":UA,"accept":"text/html,application/pdf,*/*"},signal:AbortSignal.timeout(30000)});
+   const type=res.headers?.get?.("content-type")||"";
+   const body=/html|text|json|xml/.test(type)||!type?await res.text():"";
+   if(!body)await res.body?.cancel?.();
+   r={...r,status:res.status,finalUrl:res.url||c.url,type,...(body?expectedFound(body,r.expect):{found:[],missing:r.expect,note:"non-text body ("+type+"): facts not machine-checked"})};
+  }catch(e){r={...r,error:String(e?.cause?.code||e?.name||e).slice(0,80)};}
+  r.class=classify(r);
+  out.push(r);
+ }
+ return out;
+}
+
 async function main(){
+ const cand=process.argv.find(a=>a.startsWith("--candidates="))?.split("=")[1];
+ if(cand){
+  const results=await checkCandidates(JSON.parse(fs.readFileSync(path.join(ROOT,cand),"utf8")));
+  for(const r of results)console.log("CANDIDATE",r.class,r.status||r.error,r.url,"->",r.finalUrl||"","| found:",JSON.stringify(r.found||[]),"| missing:",JSON.stringify(r.missing||[]),r.note||"");
+  fs.mkdirSync(path.join(ROOT,"reports"),{recursive:true});
+  fs.writeFileSync(path.join(ROOT,"reports/reference-candidates.json"),JSON.stringify(results,null,1)+"\n");
+  return;
+ }
  const {pages,cited}=inventory();
  const live=process.argv.includes("--confirm-live");
  const report={generated:new Date().toISOString(),pages,unique_links:cited.size,hosts:new Set([...cited.keys()].map(u=>{try{return new URL(u).host;}catch{return u;}})).size,live};
