@@ -194,3 +194,6 @@ body{max-width:100%;min-width:0;overflow-x:clip}
 @media(prefers-reduced-motion:reduce){
  .ultra-gallery-image img{transition:none}
 }
+
+/* Desktop header (TECH-04): the menu wraps inside its own column instead of spilling over the brand or the language switcher (seen at 1181-1920 px in every locale). */
+@media(min-width:1181px){.nav2-main{flex-wrap:wrap;justify-content:center;row-gap:0}}

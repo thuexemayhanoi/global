@@ -458,3 +458,27 @@ test("topic illustrations on the locale homes and the root page carry alt text i
   for(const tag of imgs)assert.match(tag,/\salt="[^"]{20,}"/,url+" "+tag.slice(0,60));
  }
 });
+
+test("the expanded rental checklists reach the content floor and render every section and reference (CONTENT-01)",()=>{
+ const t=JSON.parse(read("docs/seo-matrix/TASKS.json")).tasks.find(x=>x.id==="CONTENT-01");
+ // Minimal CSV reader (quoted fields may hold commas, doubled quotes and line breaks).
+ const parse=s=>{const out=[];let row=[],f="",q=false;for(let i=0;i<s.length;i++){const c=s[i];
+  if(q){if(c==='"'&&s[i+1]==='"'){f+='"';i++;}else if(c==='"')q=false;else f+=c;}
+  else if(c==='"')q=true;else if(c===","){row.push(f);f="";}else if(c==="\n"){row.push(f);out.push(row);row=[];f="";}else if(c!=="\r")f+=c;}
+  if(f||row.length){row.push(f);out.push(row);}return out;};
+ const [cols,...lines]=parse(read("docs/seo-matrix/CONTENT-SEO-MATRIX.csv"));
+ const rows=new Map(lines.map(v=>[v[0],Object.fromEntries(cols.map((c,i)=>[c,v[i]]))]));
+ assert.equal(t.scope.length,8);
+ for(const id of t.scope){
+  const l=locales.find(x=>x.code===id.split("-")[0].toLowerCase()),html=page("/"+l.code+"/checklist/");
+  assert.equal(rows.get(id).content_check,"OK",id+" meets the floor");
+  const heads=l.guideSections.map(s=>s[0]);
+  assert.equal(new Set(heads).size,heads.length,id+" section headings are unique");
+  for(const h of heads)assert.ok(html.includes(">"+h.replace(/&/g,"&amp;")+"</h2>"),id+" renders "+h);
+  for(const r of l.guideReferences)assert.ok(html.includes('href="'+r.url.replace(/&/g,"&amp;")+'"'),id+" cites "+r.url);
+ }
+});
+
+test("the desktop menu wraps inside its own column instead of overlapping the brand and language switcher (TECH-04)",()=>{
+ assert.match(read("assets/ultra.css"),/@media\(min-width:1181px\)\{\.nav2-main\{flex-wrap:wrap;justify-content:center;row-gap:0\}\}/);
+});
