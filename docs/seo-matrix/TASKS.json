@@ -33,14 +33,17 @@
    "phase": "TECH",
    "title": "Allow large image previews (robots max-image-preview:large) on indexable pages",
    "scope": "1,079 indexable URLs gain <meta name=\"robots\" content=\"max-image-preview:large\">; /search/ and 404 keep noindex,follow",
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-img-02",
-   "commit": null,
-   "pr": null,
-   "deploy_run": null,
-   "live_qa": [],
-   "evidence": "Local QA: build --check, seo-guard (robots re-frozen via selective-refreeze --robots), fact-guard, full node tests",
-   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
+   "commit": "366caae02c48bfc97b0e287ea82388b83e2601c9",
+   "pr": 150,
+   "deploy_run": 40812820001,
+   "live_qa": [
+    40812927954,
+    40812931039
+   ],
+   "evidence": "PR #150 validate passed; Pages deploy 40812820001; live markup QA 40812927954 and post-publish QA 40812931039 passed",
+   "next_action": "Done"
   },
   {
    "id": "IMG-00",
@@ -295,14 +298,17 @@
     "FR-S02",
     "FR-S19"
    ],
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-img-02",
-   "commit": null,
-   "pr": null,
-   "deploy_run": null,
-   "live_qa": [],
-   "evidence": "Local QA: build --check, seo-guard (robots re-frozen via selective-refreeze --robots), fact-guard, full node tests",
-   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
+   "commit": "366caae02c48bfc97b0e287ea82388b83e2601c9",
+   "pr": 150,
+   "deploy_run": 40812820001,
+   "live_qa": [
+    40812927954,
+    40812931039
+   ],
+   "evidence": "PR #150 validate passed; Pages deploy 40812820001; live markup QA 40812927954 and post-publish QA 40812931039 passed",
+   "next_action": "Done"
   },
   {
    "id": "IMG-03",
@@ -410,14 +416,14 @@
     "EN-S90",
     "EN-S25"
    ],
-   "status": "TODO",
-   "branch": null,
+   "status": "FIXED",
+   "branch": "seo/az-img-03",
    "commit": null,
    "pr": null,
    "deploy_run": null,
    "live_qa": [],
-   "evidence": "",
-   "next_action": "Render covers for the 100 URLs, QA (size 100–300 KB target, dims, alt), PR, merge, deploy, live QA"
+   "evidence": "Local QA: build --check, seo-guard, fact-guard, content-graph, full node tests (cover files, sizes, markup, og:image, Article image, alt)",
+   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
   },
   {
    "id": "IMG-04",
