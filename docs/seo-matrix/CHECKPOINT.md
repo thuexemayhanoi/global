@@ -4,9 +4,8 @@ Generated 2026-10-29 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 
 ## Current task
 
-- **TECH-05** (TECH): Outbound reference links: every external source cited on published pages answers (no 404/410, no dead host, no deep link redirected to a home page)
-- Status: **FIXED** · branch `seo/az-tech-05-fix` · PR - · merge `-` · deploy - · live QA -
-- NEXT_ACTION: Merge after CI, deploy, live QA, then re-run reference-link-check.yml on main (expect 0 BROKEN); record runs in the next PR
+- None: every task on the board is LIVE_VERIFIED or BLOCKED.
+- NEXT_ACTION: Re-run the audit pipeline (collect → analyze → ledger → az_matrix → workbook) and docs/seo-audit/tools/tech_reaudit.py on current main; add a task to TASKS.json only for a verified new finding on an existing URL; otherwise monitor (indexing and rankings stay unmeasured without Search Console)
 
 ## Next TODO
 
@@ -28,7 +27,7 @@ Generated 2026-10-29 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 |---|---|---|---|---|---|---|---|
 | HISTORY | 0 | 0 | 0 | 2 | 2 | 25 | 0 |
 | MATRIX | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
-| TECH | 0 | 0 | 2 | 0 | 0 | 4 | 0 |
+| TECH | 0 | 0 | 0 | 0 | 0 | 6 | 0 |
 | IMG | 0 | 0 | 0 | 0 | 0 | 12 | 0 |
 | META | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
 | CONTENT | 0 | 0 | 0 | 0 | 0 | 1 | 0 |

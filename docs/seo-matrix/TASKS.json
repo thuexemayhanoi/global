@@ -1453,28 +1453,34 @@
    "phase": "TECH",
    "title": "Outbound reference links: every external source cited on published pages answers (no 404/410, no dead host, no deep link redirected to a home page)",
    "scope": "1,422 unique external links on 382 hosts inside <main> of the 1,079 published pages (scripts/seo/reference-link-check.mjs)",
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-tech-05-fix",
-   "commit": null,
-   "pr": null,
-   "deploy_run": null,
-   "live_qa": [],
-   "evidence": "Checker PR #163. Full run 40832285076: 1,422 links, 1,151 OK, 13 BROKEN + 1 SOFT_404 (verified dead), 257 inconclusive bot/geo blocks (no change). The 14 dead references on 13 pages (DE-S259, DE-S249, DE-S236, DE-S183, DE-S161, DE-S190, DE-H01, EN-H01, ZH-S76, DE-S123, DE-S124, VI-S60, DE-S149) were replaced by the same document at its current address, by a Wayback Machine copy of the cited page, or removed where another cited source supports the sentence; each replacement was checked from Actions for status and the cited facts (runs 40835672532 … 40836788860; docs/seo-audit/execution/tech05-reference-links-20261029.json). Local QA: build --check, seo-guard, fact-guard, content-graph, full node tests",
-   "next_action": "Merge after CI, deploy, live QA, then re-run reference-link-check.yml on main (expect 0 BROKEN); record runs in the next PR"
+   "commit": "d26d67ff2e33a4230cb1ab9a08f9734119fe953e",
+   "pr": 164,
+   "deploy_run": 40837793320,
+   "live_qa": [
+    40837971837,
+    40837975734
+   ],
+   "evidence": "PR #164 validate passed; Pages deploy 40837793320; live markup QA 40837971837 and post-publish QA 40837975734 passed; reference-link-check on main 40837979493: 0 BROKEN, 0 SOFT_404 (1,160 OK; 260 bot/geo-blocked or timed out, not verified dead). Checker PR #163. Full run 40832285076: 1,422 links, 1,151 OK, 13 BROKEN + 1 SOFT_404 (verified dead), 257 inconclusive bot/geo blocks (no change). The 14 dead references on 13 pages (DE-S259, DE-S249, DE-S236, DE-S183, DE-S161, DE-S190, DE-H01, EN-H01, ZH-S76, DE-S123, DE-S124, VI-S60, DE-S149) were replaced by the same document at its current address, by a Wayback Machine copy of the cited page, or removed where another cited source supports the sentence; each replacement was checked from Actions for status and the cited facts (runs 40835672532 … 40836788860; docs/seo-audit/execution/tech05-reference-links-20261029.json). Local QA: build --check, seo-guard, fact-guard, content-graph, full node tests",
+   "next_action": "Done"
   },
   {
    "id": "TECH-06",
    "phase": "TECH",
    "title": "Full-site accessibility: axe-core WCAG 2.x A/AA on every published page",
    "scope": "1,080 pages at 390 px (all Matrix URLs + /search/)",
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-tech-05-fix",
-   "commit": null,
-   "pr": null,
-   "deploy_run": null,
-   "live_qa": [],
-   "evidence": "axe-core 4.10.3 on all 1,080 pages: 1 violation (link-in-text-block on /privacy/: the '← Languages' back link was told apart by colour only), 0 horizontal overflow. Fixed by underlining .legal>a (styles.css); /privacy/, /terms/, /about/, /contact/ and / re-scanned: 0 violations",
-   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
+   "commit": "d26d67ff2e33a4230cb1ab9a08f9734119fe953e",
+   "pr": 164,
+   "deploy_run": 40837793320,
+   "live_qa": [
+    40837971837,
+    40837975734
+   ],
+   "evidence": "PR #164 validate passed; Pages deploy 40837793320; live markup QA 40837971837 and post-publish QA 40837975734 passed. axe-core 4.10.3 on all 1,080 pages: 1 violation (link-in-text-block on /privacy/: the '← Languages' back link was told apart by colour only), 0 horizontal overflow. Fixed by underlining .legal>a (styles.css); /privacy/, /terms/, /about/, /contact/ and / re-scanned: 0 violations",
+   "next_action": "Done"
   }
  ]
 }
