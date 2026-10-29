@@ -119,7 +119,7 @@ async function main(){
  for(const c of plan){
   const s=sizes[c.id];
   manifest.covers[c.id]={url:c.url,locale:c.locale,src:c.file,src640:c.file.replace(/\.webp$/,"-640.webp"),width:1200,height:675,bytes:s.bytes,bytes640:s.bytes640,quality:s.quality,
-   alt:c.alt,h1:c.h1,points:c.shown_points,label:c.label,source_image:c.source_image,task:task||null};
+   alt:c.alt,h1:c.h1,points:c.shown_points,label:c.label,source_image:c.source_image,task:task||manifest.covers[c.id]?.task||null};
  }
  manifest.covers=Object.fromEntries(Object.entries(manifest.covers).sort(([a],[b])=>a.localeCompare(b)));
  fs.writeFileSync(path.join(root,MANIFEST),JSON.stringify(manifest,null,1)+"\n");

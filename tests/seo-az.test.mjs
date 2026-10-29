@@ -96,6 +96,13 @@ test("selective re-freeze accepts only the reviewed additions and exact before/a
  assert.deepEqual(r.errors,[]);assert.equal(r.registry.urls[0].fingerprint.robots,"max-image-preview:large");
  assert.ok(selectiveRefreeze(reg,{"en/x/index.html":withRobots("noindex")},{robots:"noindex"}).errors.length,"noindex refused");
  assert.ok(selectiveRefreeze(reg,{"en/x/index.html":withRobots("max-snippet:0")},{robots:"max-image-preview:large"}).errors.length,"other robots value refused");
+ // h2: one frozen heading may take the exact reviewed wording (a factual correction); the rest of the outline stays protected.
+ const withH2=(...hs)=>html("Old",["Article"]).replace("<h1>H</h1>","<main><h1>H</h1>"+hs.map(h=>"<h2>"+h+"</h2>").join("")+"</main>");
+ const regH={...reg,urls:[{...reg.urls[0],content:{main_words:1,h2:["12 steps","Keep"]}}]};
+ const h2ok=selectiveRefreeze(regH,{"en/x/index.html":withH2("11 steps","Keep")},{changes:[{url:"/en/x/",field:"h2",before:"12 steps",after:"11 steps"}]});
+ assert.deepEqual(h2ok.errors,[]);assert.deepEqual(h2ok.registry.urls[0].content.h2,["11 steps","Keep"]);
+ assert.ok(selectiveRefreeze(regH,{"en/x/index.html":withH2("Eleven","Keep")},{changes:[{url:"/en/x/",field:"h2",before:"12 steps",after:"11 steps"}]}).errors.length,"rendered H2 must be the reviewed after-value");
+ assert.ok(selectiveRefreeze(regH,{"en/x/index.html":withH2("11 steps","Keep")},{changes:[{url:"/en/x/",field:"h2",before:"13 steps",after:"11 steps"}]}).errors.length,"before-value must be frozen");
 });
 
 test("articles preview their topic picture and name it as the Article image; the rail names the Pillar guide",()=>{

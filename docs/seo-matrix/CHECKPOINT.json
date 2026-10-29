@@ -3,11 +3,11 @@
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
  "current_task": {
-  "id": "IMG-11",
-  "phase": "IMG",
-  "title": "Cover image batch 11: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (64 URLs)",
+  "id": "META-01",
+  "phase": "META",
+  "title": "Titles and meta descriptions outside the display bands (vi, en, de, fr, es, nl, pt): title truncation risk or under 45 characters; description under 140 or over 160 characters",
   "status": "FIXED",
-  "branch": "seo/az-img-11",
+  "branch": "seo/az-meta-01",
   "commit": null,
   "pr": null,
   "deploy_run": null,
@@ -15,16 +15,6 @@
   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
  },
  "next_todo": [
-  {
-   "id": "META-01",
-   "title": "Titles and meta descriptions outside the display bands (vi, en, de, fr, es, nl, pt): title truncation risk or under 45 characters; description under 140 or over 160 characters",
-   "next_action": "After IMG: reviewed metadata round via scripts/seo/metadata-az.mjs (validator: no new numbers, keep primary query); change only titles/descriptions that are truncated or clearly short"
-  },
-  {
-   "id": "META-02",
-   "title": "zh, ja, ko titles and descriptions checked by display width (full-width characters count double)",
-   "next_action": "After META-01"
-  },
   {
    "id": "CONTENT-01",
    "title": "Supporting pages under the 1,000-word equivalent (Latin words < 1000; Korean words < 750; Chinese/Japanese characters < 1500): expand toward 1,600+ words where the topic and reliable sources support it",
@@ -49,14 +39,14 @@
   },
   "TECH": {
    "LIVE_VERIFIED": 1,
+   "FIXED": 1,
    "TODO": 1
   },
   "IMG": {
-   "LIVE_VERIFIED": 11,
-   "FIXED": 1
+   "LIVE_VERIFIED": 12
   },
   "META": {
-   "TODO": 2
+   "FIXED": 2
   },
   "CONTENT": {
    "TODO": 1
@@ -64,14 +54,13 @@
  },
  "url_counts": {
   "img_status": {
-   "LIVE_VERIFIED": 1000,
+   "LIVE_VERIFIED": 1064,
    "OK": 11,
-   "NOT_NEEDED": 4,
-   "FIXED": 64
+   "NOT_NEEDED": 4
   },
   "meta_status": {
-   "OK": 919,
-   "TODO": 155,
+   "OK": 1045,
+   "FIXED": 29,
    "NOT_FORCED": 5
   },
   "content_status": {
@@ -83,10 +72,10 @@
    "OK": 1079
   },
   "status": {
-   "LIVE_VERIFIED": 864,
-   "TODO": 143,
-   "OK": 8,
-   "FIXED": 64
+   "LIVE_VERIFIED": 1030,
+   "OK": 13,
+   "TODO": 7,
+   "FIXED": 29
   }
  },
  "standards": {
