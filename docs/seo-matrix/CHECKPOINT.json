@@ -2,25 +2,9 @@
  "generated": "2026-10-29",
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
- "current_task": {
-  "id": "CONTENT-01",
-  "phase": "CONTENT",
-  "title": "Supporting pages under the 1,000-word equivalent (Latin words < 1000; Korean words < 750; Chinese/Japanese characters < 1500): expand toward 1,600+ words where the topic and reliable sources support it",
-  "status": "FIXED",
-  "branch": "seo/az-content-01",
-  "commit": null,
-  "pr": null,
-  "deploy_run": null,
-  "live_qa": [],
-  "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
- },
- "next_todo": [
-  {
-   "id": "TECH-02",
-   "title": "A–Z technical re-audit: canonical, hreflang, sitemap, schema, lab Core Web Vitals, accessibility, broken links, duplicates and cannibalization in 10 languages",
-   "next_action": "After CONTENT: rerun audit-static, seo-guard, content-graph review pairs, live markup QA; fix verified issues"
-  }
- ],
+ "current_task": null,
+ "next_action": "Re-run the audit pipeline (collect → analyze → ledger → az_matrix → workbook) and docs/seo-audit/tools/tech_reaudit.py on current main; add a task to TASKS.json only for a verified new finding on an existing URL; otherwise monitor (indexing and rankings stay unmeasured without Search Console)",
+ "next_todo": [],
  "blocked": [],
  "owner_actions": "docs/seo-audit/OWNER-ACTIONS.md (OWNER_ACTIONS_LAST)",
  "task_counts": {
@@ -33,9 +17,7 @@
    "LIVE_VERIFIED": 1
   },
   "TECH": {
-   "LIVE_VERIFIED": 2,
-   "FIXED": 1,
-   "TODO": 1
+   "LIVE_VERIFIED": 4
   },
   "IMG": {
    "LIVE_VERIFIED": 12
@@ -44,7 +26,7 @@
    "LIVE_VERIFIED": 2
   },
   "CONTENT": {
-   "FIXED": 1
+   "LIVE_VERIFIED": 1
   }
  },
  "url_counts": {
@@ -61,15 +43,14 @@
   "content_status": {
    "OK": 1056,
    "NOT_FORCED": 15,
-   "FIXED": 8
+   "LIVE_VERIFIED": 8
   },
   "tech_status": {
    "OK": 1079
   },
   "status": {
-   "LIVE_VERIFIED": 1058,
-   "OK": 13,
-   "FIXED": 8
+   "LIVE_VERIFIED": 1066,
+   "OK": 13
   }
  },
  "standards": {

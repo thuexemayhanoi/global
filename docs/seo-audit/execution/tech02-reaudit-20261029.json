@@ -1,0 +1,572 @@
+{
+ "task": "TECH-02",
+ "date": "2026-10-29",
+ "audited_commit": "185763b2ba26dbcc15a2444af1f06fc85439064d",
+ "live_equivalence": "Live markup QA 40827340927 and post-publish HTTP QA 40827344132 on this commit: production HTML equals the audited build",
+ "static_sweep": {
+  "tool": "docs/seo-audit/tools/tech_reaudit.py",
+  "pages": 1080,
+  "indexable": 1079,
+  "sitemap_urls": 1079,
+  "counts": {
+   "HREFLANG_SELF_LANG_MISMATCH": 1,
+   "HREFLANG_NO_XDEFAULT": 10,
+   "HREFLANG_NONE": 1058,
+   "OG_MISSING_LOCALE": 1079
+  },
+  "dispositions": {
+   "HREFLANG_NONE": "NO_EQUIVALENT_BY_DESIGN: Hub/Supporting/utility pages are written separately per language, not translations; hreflang stays on the 21 true equivalents (root x-default, 10 homes, 10 checklists), all reciprocal (AGENTS.md; docs/MULTILINGUAL-SEO-AUDIT-20261027.md)",
+   "OG_MISSING_LOCALE": "Documented decision (no og:locale; html lang, hreflang and JSON-LD inLanguage carry the language) — no change",
+   "HREFLANG_NO_XDEFAULT": "Checklists have no language-neutral equivalent; x-default is optional and kept on the root language selector only — no change",
+   "other_checks": "0 issues: canonical count/self, hreflang targets exist, are canonical, indexable, reciprocal and language-consistent; sitemap URLs exist, are canonical and indexable; every indexable canonical URL is in a sitemap; lastmod format; robots.txt allows all and names the sitemap index; 0 duplicate title/description/H1; 0 broken internal or fragment links; 0 http:// links or mixed content; og:url = canonical; og:title/description/image/type and twitter:card present; og:image files exist; JSON-LD parses; Article headline ≤110, image, dates, author present; every FAQPage question and answer visible; breadcrumb positions and items valid; schema URLs resolve",
+   "HREFLANG_SELF_LANG_MISMATCH": "Root / is the x-default language selector with html lang=en; its 'en' alternate correctly points to /en/ — no change"
+  }
+ },
+ "browser_audit": {
+  "tool": "docs/seo-audit/tools/browser_audit.cjs (axe-core 4.10.3, Playwright Chromium)",
+  "urls": [
+   "/",
+   "/about/",
+   "/contact/",
+   "/vi/",
+   "/vi/checklist/",
+   "/vi/topics/chon-loai-xe/",
+   "/vi/guides/xe-so-hay-xe-ga/",
+   "/vi/guides/duong-deo-hep-nhuong-duong-xe-may/",
+   "/en/",
+   "/en/checklist/",
+   "/en/topics/choosing-a-rental-bike/",
+   "/en/guides/manual-vs-automatic/",
+   "/en/guides/traffic-light-rules-vietnam-motorbike/",
+   "/de/",
+   "/de/checklist/",
+   "/de/topics/motorroller-und-motorrad-waehlen/",
+   "/de/guides/roller-oder-schaltung/",
+   "/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "/fr/",
+   "/fr/checklist/",
+   "/fr/topics/choisir-moto-scooter/",
+   "/fr/guides/moto-ou-scooter/",
+   "/fr/guides/feux-de-circulation-vietnam-scooter/",
+   "/es/",
+   "/es/checklist/",
+   "/es/topics/elegir-moto/",
+   "/es/guides/manual-o-automatica/",
+   "/es/guides/adelantar-moto-vietnam-normas/",
+   "/nl/",
+   "/nl/checklist/",
+   "/nl/topics/motor-of-scooter-kiezen/",
+   "/nl/guides/schakelen-of-automaat/",
+   "/nl/guides/verkeerslichten-vietnam-scooter/",
+   "/zh/",
+   "/zh/checklist/",
+   "/zh/topics/chexing-xuanze/",
+   "/zh/guides/shoudong-zidong/",
+   "/zh/guides/yuenan-jiazhao-jifen-zhidu/",
+   "/pt/",
+   "/pt/checklist/",
+   "/pt/topics/escolher-moto/",
+   "/pt/guides/manual-ou-automatica/",
+   "/pt/guides/pontos-da-carta-de-conducao-vietname/",
+   "/ko/",
+   "/ko/checklist/",
+   "/ko/topics/chajong-seontaek/",
+   "/ko/guides/sudong-jadong/",
+   "/ko/guides/minimum-age-motorbike-vietnam/",
+   "/ja/",
+   "/ja/checklist/",
+   "/ja/topics/sharyou-erabi/",
+   "/ja/guides/manual-auto/",
+   "/ja/guides/minimum-age-rule-vietnam/"
+  ],
+  "axe_wcag2a_aa_21_22_violations": {
+   "mobile_390": 0,
+   "desktop_1366": 0
+  },
+  "horizontal_overflow_pages": {
+   "mobile_390": 0,
+   "desktop_1366": 0
+  },
+  "lab_mobile_4x_cpu_1.6mbps_150ms": {
+   "lcp_ms_median": 880,
+   "lcp_ms_max": 1696,
+   "cls_max": 0,
+   "render_blocking_css": [
+    "/assets/navigation.css",
+    "/assets/styles.css",
+    "/assets/premium.css",
+    "/assets/ultra.css"
+   ],
+   "per_url": [
+    {
+     "url": "/",
+     "lcp_ms": 1008,
+     "lcp_element": "IMG hero-hanoi-800.webp",
+     "cls": 0,
+     "kb": 319,
+     "requests": 12
+    },
+    {
+     "url": "/about/",
+     "lcp_ms": 776,
+     "lcp_element": "P",
+     "cls": 0,
+     "kb": 54,
+     "requests": 7
+    },
+    {
+     "url": "/contact/",
+     "lcp_ms": 792,
+     "lcp_element": "P",
+     "cls": 0,
+     "kb": 53,
+     "requests": 7
+    },
+    {
+     "url": "/vi/",
+     "lcp_ms": 908,
+     "lcp_element": "P.lead",
+     "cls": 0,
+     "kb": 397,
+     "requests": 11
+    },
+    {
+     "url": "/vi/checklist/",
+     "lcp_ms": 880,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 151,
+     "requests": 8
+    },
+    {
+     "url": "/vi/topics/chon-loai-xe/",
+     "lcp_ms": 828,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 165,
+     "requests": 8
+    },
+    {
+     "url": "/vi/guides/xe-so-hay-xe-ga/",
+     "lcp_ms": 828,
+     "lcp_element": "P",
+     "cls": 0,
+     "kb": 162,
+     "requests": 8
+    },
+    {
+     "url": "/vi/guides/duong-deo-hep-nhuong-duong-xe-may/",
+     "lcp_ms": 864,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 160,
+     "requests": 8
+    },
+    {
+     "url": "/en/",
+     "lcp_ms": 892,
+     "lcp_element": "P.lead",
+     "cls": 0,
+     "kb": 394,
+     "requests": 11
+    },
+    {
+     "url": "/en/checklist/",
+     "lcp_ms": 816,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 160,
+     "requests": 8
+    },
+    {
+     "url": "/en/topics/choosing-a-rental-bike/",
+     "lcp_ms": 816,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 167,
+     "requests": 8
+    },
+    {
+     "url": "/en/guides/manual-vs-automatic/",
+     "lcp_ms": 852,
+     "lcp_element": "P",
+     "cls": 0,
+     "kb": 164,
+     "requests": 8
+    },
+    {
+     "url": "/en/guides/traffic-light-rules-vietnam-motorbike/",
+     "lcp_ms": 872,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 150,
+     "requests": 8
+    },
+    {
+     "url": "/de/",
+     "lcp_ms": 900,
+     "lcp_element": "P.lead",
+     "cls": 0,
+     "kb": 396,
+     "requests": 11
+    },
+    {
+     "url": "/de/checklist/",
+     "lcp_ms": 848,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 158,
+     "requests": 8
+    },
+    {
+     "url": "/de/topics/motorroller-und-motorrad-waehlen/",
+     "lcp_ms": 864,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 177,
+     "requests": 8
+    },
+    {
+     "url": "/de/guides/roller-oder-schaltung/",
+     "lcp_ms": 848,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 168,
+     "requests": 8
+    },
+    {
+     "url": "/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+     "lcp_ms": 872,
+     "lcp_element": "H1",
+     "cls": 0,
+     "kb": 175,
+     "requests": 8
+    },
+    {
+     "url": "/fr/",
+     "lcp_ms": 880,
+     "lcp_element": "P.lead",
+     "cls": 0,
+     "kb": 396,
+     "requests": 11
+    },
+    {
+     "url": "/fr/checklist/",
+     "lcp_ms": 820,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 159,
+     "requests": 8
+    },
+    {
+     "url": "/fr/topics/choisir-moto-scooter/",
+     "lcp_ms": 828,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 165,
+     "requests": 8
+    },
+    {
+     "url": "/fr/guides/moto-ou-scooter/",
+     "lcp_ms": 832,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 172,
+     "requests": 8
+    },
+    {
+     "url": "/fr/guides/feux-de-circulation-vietnam-scooter/",
+     "lcp_ms": 832,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 156,
+     "requests": 8
+    },
+    {
+     "url": "/es/",
+     "lcp_ms": 920,
+     "lcp_element": "P.lead",
+     "cls": 0,
+     "kb": 395,
+     "requests": 11
+    },
+    {
+     "url": "/es/checklist/",
+     "lcp_ms": 848,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 155,
+     "requests": 8
+    },
+    {
+     "url": "/es/topics/elegir-moto/",
+     "lcp_ms": 884,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 172,
+     "requests": 8
+    },
+    {
+     "url": "/es/guides/manual-o-automatica/",
+     "lcp_ms": 832,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 166,
+     "requests": 8
+    },
+    {
+     "url": "/es/guides/adelantar-moto-vietnam-normas/",
+     "lcp_ms": 836,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 149,
+     "requests": 8
+    },
+    {
+     "url": "/nl/",
+     "lcp_ms": 932,
+     "lcp_element": "P.lead",
+     "cls": 0,
+     "kb": 395,
+     "requests": 11
+    },
+    {
+     "url": "/nl/checklist/",
+     "lcp_ms": 800,
+     "lcp_element": "H1",
+     "cls": 0,
+     "kb": 153,
+     "requests": 8
+    },
+    {
+     "url": "/nl/topics/motor-of-scooter-kiezen/",
+     "lcp_ms": 808,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 161,
+     "requests": 8
+    },
+    {
+     "url": "/nl/guides/schakelen-of-automaat/",
+     "lcp_ms": 888,
+     "lcp_element": "P",
+     "cls": 0,
+     "kb": 165,
+     "requests": 8
+    },
+    {
+     "url": "/nl/guides/verkeerslichten-vietnam-scooter/",
+     "lcp_ms": 944,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 151,
+     "requests": 8
+    },
+    {
+     "url": "/zh/",
+     "lcp_ms": 1212,
+     "lcp_element": "P.lead",
+     "cls": 0,
+     "kb": 393,
+     "requests": 11
+    },
+    {
+     "url": "/zh/checklist/",
+     "lcp_ms": 1540,
+     "lcp_element": "IMG hanoi-zuche-jiancha-qingdan.webp",
+     "cls": 0,
+     "kb": 153,
+     "requests": 8
+    },
+    {
+     "url": "/zh/topics/chexing-xuanze/",
+     "lcp_ms": 1008,
+     "lcp_element": "P",
+     "cls": 0,
+     "kb": 157,
+     "requests": 8
+    },
+    {
+     "url": "/zh/guides/shoudong-zidong/",
+     "lcp_ms": 944,
+     "lcp_element": "P",
+     "cls": 0,
+     "kb": 159,
+     "requests": 8
+    },
+    {
+     "url": "/zh/guides/yuenan-jiazhao-jifen-zhidu/",
+     "lcp_ms": 972,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 149,
+     "requests": 8
+    },
+    {
+     "url": "/pt/",
+     "lcp_ms": 912,
+     "lcp_element": "P.lead",
+     "cls": 0,
+     "kb": 395,
+     "requests": 11
+    },
+    {
+     "url": "/pt/checklist/",
+     "lcp_ms": 852,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 156,
+     "requests": 8
+    },
+    {
+     "url": "/pt/topics/escolher-moto/",
+     "lcp_ms": 872,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 162,
+     "requests": 8
+    },
+    {
+     "url": "/pt/guides/manual-ou-automatica/",
+     "lcp_ms": 816,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 168,
+     "requests": 8
+    },
+    {
+     "url": "/pt/guides/pontos-da-carta-de-conducao-vietname/",
+     "lcp_ms": 844,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 146,
+     "requests": 8
+    },
+    {
+     "url": "/ko/",
+     "lcp_ms": 1208,
+     "lcp_element": "P.lead",
+     "cls": 0,
+     "kb": 396,
+     "requests": 11
+    },
+    {
+     "url": "/ko/checklist/",
+     "lcp_ms": 1584,
+     "lcp_element": "IMG hanoi-bike-rental-checklist.webp",
+     "cls": 0,
+     "kb": 151,
+     "requests": 8
+    },
+    {
+     "url": "/ko/topics/chajong-seontaek/",
+     "lcp_ms": 1056,
+     "lcp_element": "P",
+     "cls": 0,
+     "kb": 164,
+     "requests": 8
+    },
+    {
+     "url": "/ko/guides/sudong-jadong/",
+     "lcp_ms": 984,
+     "lcp_element": "P",
+     "cls": 0,
+     "kb": 159,
+     "requests": 8
+    },
+    {
+     "url": "/ko/guides/minimum-age-motorbike-vietnam/",
+     "lcp_ms": 1008,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 132,
+     "requests": 8
+    },
+    {
+     "url": "/ja/",
+     "lcp_ms": 1380,
+     "lcp_element": "P.lead",
+     "cls": 0,
+     "kb": 397,
+     "requests": 11
+    },
+    {
+     "url": "/ja/checklist/",
+     "lcp_ms": 1696,
+     "lcp_element": "IMG hanoi-rental-bike-checklist.webp",
+     "cls": 0,
+     "kb": 148,
+     "requests": 8
+    },
+    {
+     "url": "/ja/topics/sharyou-erabi/",
+     "lcp_ms": 1240,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 165,
+     "requests": 8
+    },
+    {
+     "url": "/ja/guides/manual-auto/",
+     "lcp_ms": 1324,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 162,
+     "requests": 8
+    },
+    {
+     "url": "/ja/guides/minimum-age-rule-vietnam/",
+     "lcp_ms": 1140,
+     "lcp_element": "P.article-lead",
+     "cls": 0,
+     "kb": 138,
+     "requests": 8
+    }
+   ]
+  },
+  "note": "Lab measurement on a local static server; field Core Web Vitals (CrUX/Search Console) are unmeasured"
+ },
+ "cannibalization": {
+  "content_graph_review_pairs": 34,
+  "review_pairs_between_published_urls": 0,
+  "primary_query_overlap_pairs_reviewed": [
+   {
+    "a": "DE-HOME",
+    "b": "DE-CHECKLIST",
+    "decision": "distinct intent: head term (rental) vs pickup checklist; checklist links to the Pillar"
+   },
+   {
+    "a": "VI-S28",
+    "b": "VI-S72",
+    "decision": "distinct: learning a manual-clutch bike vs an automatic scooter"
+   },
+   {
+    "a": "DE-H02",
+    "b": "DE-S04",
+    "decision": "Hub (prices and deposit) and its child on deposit refunds; parent/child, not competing"
+   },
+   {
+    "a": "EN-S05",
+    "b": "EN-S10",
+    "decision": "distinct: riding on a foreign licence vs converting it to a Vietnamese licence"
+   },
+   {
+    "a": "JA-H02",
+    "b": "JA-S04",
+    "decision": "Hub (prices and deposit) and its child on deposit refunds; parent/child"
+   },
+   {
+    "a": "ZH-HOME",
+    "b": "ZH-S06",
+    "decision": "distinct: head term (rental) vs cancellation of a booking"
+   }
+  ],
+  "result": "No cannibalizing pair among published URLs"
+ },
+ "other": {
+  "404": "noindex,follow, no canonical",
+  "utility_pages": "/about/ and /contact/ indexable with max-image-preview:large"
+ },
+ "fixed_in_this_phase": "TECH-04 (desktop header overlap at 1181–1920 px), PR #161",
+ "result": "No further verified technical defect; nothing to change"
+}

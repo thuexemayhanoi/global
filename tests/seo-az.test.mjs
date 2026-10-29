@@ -419,7 +419,9 @@ test("the SEO A–Z Matrix on GitHub covers every published URL once, uses only 
  assert.deepEqual([...master.ids].sort(),pub,"one Matrix row per published URL");
  for(const c of ["url","locale","primary_query","search_intent","title","description","h1","content_units","featured_image","og_image","tech_issues","img_status","meta_status","content_status","tech_status","status","branch","commit","pr","actions","qa_evidence","next_action"])assert.ok(master.cols.includes(c),"MASTER column "+c);
  assert.ok(csvRows("IMAGE-SEO-MATRIX.csv").cols.includes("size_check")&&csvRows("CONTENT-SEO-MATRIX.csv").cols.includes("content_check"));
- assert.ok(cp.current_task&&board.tasks.some(t=>t.id===cp.current_task.id),"checkpoint names a board task");
+ // The checkpoint names the open board task, or none (with a resume action) once every task is LIVE_VERIFIED or BLOCKED.
+ if(board.tasks.some(t=>!["LIVE_VERIFIED","BLOCKED"].includes(t.status)))assert.ok(cp.current_task&&board.tasks.some(t=>t.id===cp.current_task.id),"checkpoint names a board task");
+ else assert.ok(cp.current_task===null&&cp.next_action.length>40,"no open task: checkpoint says how to resume");
  // Every Hub/Supporting URL belongs to exactly one image batch of at most 100 URLs.
  const img=board.tasks.filter(t=>/^IMG-\d\d$/.test(t.id)&&t.id!=="IMG-00"),seen=new Map();
  for(const t of img){assert.ok(t.scope.length<=100,t.id+" ≤100 images");for(const id of t.scope){assert.ok(!seen.has(id),id+" in one batch only");seen.set(id,t.id);}}

@@ -4,13 +4,12 @@ Generated 2026-10-29 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 
 ## Current task
 
-- **CONTENT-01** (CONTENT): Supporting pages under the 1,000-word equivalent (Latin words < 1000; Korean words < 750; Chinese/Japanese characters < 1500): expand toward 1,600+ words where the topic and reliable sources support it
-- Status: **FIXED** · branch `seo/az-content-01` · PR - · merge `-` · deploy - · live QA -
-- NEXT_ACTION: Merge after CI, deploy, live QA; record runs in the next PR
+- None: every task on the board is LIVE_VERIFIED or BLOCKED.
+- NEXT_ACTION: Re-run the audit pipeline (collect → analyze → ledger → az_matrix → workbook) and docs/seo-audit/tools/tech_reaudit.py on current main; add a task to TASKS.json only for a verified new finding on an existing URL; otherwise monitor (indexing and rankings stay unmeasured without Search Console)
 
 ## Next TODO
 
-1. **TECH-02**: A–Z technical re-audit: canonical, hreflang, sitemap, schema, lab Core Web Vitals, accessibility, broken links, duplicates and cannibalization in 10 languages
+(none)
 
 ## URL status counts
 
@@ -18,9 +17,9 @@ Generated 2026-10-29 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 |---|---|---|---|---|---|---|---|---|---|---|
 | img_status | 0 | 0 | 0 | 0 | 0 | 1064 | 0 | 11 | 0 | 4 |
 | meta_status | 0 | 0 | 0 | 0 | 0 | 29 | 0 | 1045 | 5 | 0 |
-| content_status | 0 | 0 | 8 | 0 | 0 | 0 | 0 | 1056 | 15 | 0 |
+| content_status | 0 | 0 | 0 | 0 | 0 | 8 | 0 | 1056 | 15 | 0 |
 | tech_status | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1079 | 0 | 0 |
-| status | 0 | 0 | 8 | 0 | 0 | 1058 | 0 | 13 | 0 | 0 |
+| status | 0 | 0 | 0 | 0 | 0 | 1066 | 0 | 13 | 0 | 0 |
 
 ## Task board counts
 
@@ -28,10 +27,10 @@ Generated 2026-10-29 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 |---|---|---|---|---|---|---|---|
 | HISTORY | 0 | 0 | 0 | 2 | 2 | 25 | 0 |
 | MATRIX | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
-| TECH | 1 | 0 | 1 | 0 | 0 | 2 | 0 |
+| TECH | 0 | 0 | 0 | 0 | 0 | 4 | 0 |
 | IMG | 0 | 0 | 0 | 0 | 0 | 12 | 0 |
 | META | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
-| CONTENT | 0 | 0 | 1 | 0 | 0 | 0 | 0 |
+| CONTENT | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
 
 ## Resume rule
 

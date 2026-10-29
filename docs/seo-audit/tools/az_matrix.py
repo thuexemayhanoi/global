@@ -38,6 +38,9 @@ def _default_date():
 AUDIT_DATE = os.environ.get("AUDIT_DATE") or _default_date()
 STATUSES = ["TODO", "IN_PROGRESS", "FIXED", "MERGED", "DEPLOYED", "LIVE_VERIFIED", "BLOCKED"]
 DONE = {"LIVE_VERIFIED"}
+# What 'tiếp tục' does once the board has no open or TODO task.
+NO_OPEN_TASK = ("Re-run the audit pipeline (collect → analyze → ledger → az_matrix → workbook) and docs/seo-audit/tools/tech_reaudit.py on current main; "
+                "add a task to TASKS.json only for a verified new finding on an existing URL; otherwise monitor (indexing and rankings stay unmeasured without Search Console)")
 OPEN = {"IN_PROGRESS", "FIXED", "MERGED", "DEPLOYED"}
 CJK = {"zh", "ja", "ko"}
 LATIN = {"vi", "en", "de", "fr", "es", "nl", "pt"}
@@ -308,6 +311,7 @@ def build():
     checkpoint = {"generated": AUDIT_DATE, "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
                   "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
                   "current_task": {k: current.get(k) for k in ("id", "phase", "title", "status", "branch", "commit", "pr", "deploy_run", "live_qa", "next_action")} if current else None,
+                  "next_action": current["next_action"] if current else NO_OPEN_TASK,
                   "next_todo": [{"id": t["id"], "title": t["title"], "next_action": t["next_action"]} for t in after[:5]],
                   "blocked": [t["id"] for t in tasks if t["status"] == "BLOCKED"], "owner_actions": "docs/seo-audit/OWNER-ACTIONS.md (OWNER_ACTIONS_LAST)",
                   "task_counts": counts, "url_counts": url_counts,
@@ -327,10 +331,14 @@ def to_csv(rows, headers):
 
 
 def checkpoint_md(cp):
-    c = cp["current_task"] or {}
-    lines = ["# SEO A–Z checkpoint", "", f"Generated {cp['generated']} by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. GitHub (main) is the source of truth.", "",
-             "## Current task", "", f"- **{c.get('id')}** ({c.get('phase')}): {c.get('title')}", f"- Status: **{c.get('status')}** · branch `{c.get('branch') or '-'}` · PR {('#' + str(c['pr'])) if c.get('pr') else '-'} · merge `{(c.get('commit') or '-')[:7]}` · deploy {c.get('deploy_run') or '-'} · live QA {' '.join(map(str, c.get('live_qa') or [])) or '-'}",
-             f"- NEXT_ACTION: {c.get('next_action')}", "", "## Next TODO", ""]
+    c = cp["current_task"]
+    lines = ["# SEO A–Z checkpoint", "", f"Generated {cp['generated']} by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. GitHub (main) is the source of truth.", "", "## Current task", ""]
+    if c:
+        lines += [f"- **{c.get('id')}** ({c.get('phase')}): {c.get('title')}", f"- Status: **{c.get('status')}** · branch `{c.get('branch') or '-'}` · PR {('#' + str(c['pr'])) if c.get('pr') else '-'} · merge `{(c.get('commit') or '-')[:7]}` · deploy {c.get('deploy_run') or '-'} · live QA {' '.join(map(str, c.get('live_qa') or [])) or '-'}",
+                  f"- NEXT_ACTION: {c.get('next_action')}"]
+    else:
+        lines += ["- None: every task on the board is LIVE_VERIFIED or BLOCKED.", f"- NEXT_ACTION: {NO_OPEN_TASK}"]
+    lines += ["", "## Next TODO", ""]
     lines += [f"{i}. **{t['id']}**: {t['title']}" for i, t in enumerate(cp["next_todo"], 1)] or ["(none)"]
     lines += ["", "## URL status counts", "", "| Dimension | " + " | ".join(STATUSES + ["OK", "NOT_FORCED", "NOT_NEEDED"]) + " |", "|---|" + "---|" * (len(STATUSES) + 3)]
     for k, v in cp["url_counts"].items():
