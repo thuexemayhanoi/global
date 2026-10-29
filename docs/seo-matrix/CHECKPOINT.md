@@ -4,27 +4,27 @@ Generated 2026-10-29 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 
 ## Current task
 
-- **IMG-04** (IMG): Cover image batch 4: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
-- Status: **FIXED** · branch `seo/az-img-04` · PR - · merge `-` · deploy - · live QA -
+- **IMG-05** (IMG): Cover image batch 5: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
+- Status: **FIXED** · branch `seo/az-img-05` · PR - · merge `-` · deploy - · live QA -
 - NEXT_ACTION: Merge after CI, deploy, live QA; record runs in the next PR
 
 ## Next TODO
 
-1. **IMG-05**: Cover image batch 5: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
-2. **IMG-06**: Cover image batch 6: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
-3. **IMG-07**: Cover image batch 7: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
-4. **IMG-08**: Cover image batch 8: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
-5. **IMG-09**: Cover image batch 9: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
+1. **IMG-06**: Cover image batch 6: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
+2. **IMG-07**: Cover image batch 7: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
+3. **IMG-08**: Cover image batch 8: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
+4. **IMG-09**: Cover image batch 9: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
+5. **IMG-10**: Cover image batch 10: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
 
 ## URL status counts
 
 | Dimension | TODO | IN_PROGRESS | FIXED | MERGED | DEPLOYED | LIVE_VERIFIED | BLOCKED | OK | NOT_FORCED | NOT_NEEDED |
 |---|---|---|---|---|---|---|---|---|---|---|
-| img_status | 664 | 0 | 100 | 0 | 0 | 300 | 0 | 11 | 0 | 4 |
+| img_status | 564 | 0 | 100 | 0 | 0 | 400 | 0 | 11 | 0 | 4 |
 | meta_status | 155 | 0 | 0 | 0 | 0 | 0 | 0 | 919 | 5 | 0 |
 | content_status | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 1056 | 15 | 0 |
 | tech_status | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1079 | 0 | 0 |
-| status | 729 | 0 | 100 | 0 | 0 | 242 | 0 | 8 | 0 | 0 |
+| status | 637 | 0 | 100 | 0 | 0 | 334 | 0 | 8 | 0 | 0 |
 
 ## Task board counts
 
@@ -33,7 +33,7 @@ Generated 2026-10-29 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 | HISTORY | 0 | 0 | 0 | 2 | 2 | 25 | 0 |
 | MATRIX | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
 | TECH | 1 | 0 | 0 | 0 | 0 | 1 | 0 |
-| IMG | 7 | 0 | 1 | 0 | 0 | 4 | 0 |
+| IMG | 6 | 0 | 1 | 0 | 0 | 5 | 0 |
 | META | 2 | 0 | 0 | 0 | 0 | 0 | 0 |
 | CONTENT | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 
