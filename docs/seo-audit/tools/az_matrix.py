@@ -251,7 +251,7 @@ def build():
         # A URL listed in a CONTENT task's scope carries that task's status (FIXED → LIVE_VERIFIED) until the task is done.
         scoped = by_scope.get(("CONTENT", mid))
         ct = scoped or phase_task["CONTENT"]
-        content_status = cc if cc == "NOT_FORCED" else (ct["status"] if scoped and ct["status"] in OPEN | DONE else ("OK" if cc == "OK" else ct["status"]))
+        content_status = ct["status"] if scoped and ct["status"] in OPEN | DONE else (cc if cc == "NOT_FORCED" else ("OK" if cc == "OK" else ct["status"]))
         # ---- technical ----
         issues = []
         if r["canonical_count"] != "1":

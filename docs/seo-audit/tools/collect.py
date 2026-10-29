@@ -204,7 +204,9 @@ def parse_page(path, loc):
     d["empty_anchors"] = empty_anchor
     d["internal_links_unique"] = len(internal_all)
     d["internal_targets"] = sorted(internal_all)
-    art = soup.select_one("main article") or main
+    # The page's own content: the article body on Hub/Supporting/checklist pages, the legal block on utility pages,
+    # otherwise the whole <main> (Pillars list their topics as <article> cards, which are not the page body).
+    art = soup.select_one("main article.article") or soup.select_one("main article.legal") or main
     ctx_targets, ctx_anchor = set(), {}
     content_root = None
     if art:

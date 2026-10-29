@@ -1481,6 +1481,45 @@
    ],
    "evidence": "PR #164 validate passed; Pages deploy 40837793320; live markup QA 40837971837 and post-publish QA 40837975734 passed. axe-core 4.10.3 on all 1,080 pages: 1 violation (link-in-text-block on /privacy/: the '← Languages' back link was told apart by colour only), 0 horizontal overflow. Fixed by underlining .legal>a (styles.css); /privacy/, /terms/, /about/, /contact/ and / re-scanned: 0 violations",
    "next_action": "Done"
+  },
+  {
+   "id": "TECH-07",
+   "phase": "TECH",
+   "title": "Matrix measured each locale Pillar from its first topic card (23–74 words) instead of the page body",
+   "scope": "docs/seo-audit/tools/collect.py: content root = main article.article, else main article.legal, else <main>; affects the 10 Pillars' content_units and contextual-link counts",
+   "status": "FIXED",
+   "branch": "seo/az-tech-07",
+   "commit": null,
+   "pr": null,
+   "deploy_run": null,
+   "live_qa": [],
+   "evidence": "Before: DE-HOME 23 … JA-HOME 74 units. After: de 1,073, en 1,171, es 1,227, fr 1,297, ko 901, nl 1,147, pt 1,190, vi 1,562 words; ja 2,697, zh 1,924 characters. No audit finding changed (Pillar depth is NOT_FORCED)",
+   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
+  },
+  {
+   "id": "CONTENT-02",
+   "phase": "CONTENT",
+   "title": "Locale Pillars cited no source for their advice on riding eligibility, compulsory insurance and the rental agreement/deposit",
+   "scope": [
+    "VI-HOME",
+    "EN-HOME",
+    "DE-HOME",
+    "FR-HOME",
+    "ES-HOME",
+    "NL-HOME",
+    "ZH-HOME",
+    "PT-HOME",
+    "KO-HOME",
+    "JA-HOME"
+   ],
+   "status": "FIXED",
+   "branch": "seo/az-tech-07",
+   "commit": null,
+   "pr": null,
+   "deploy_run": null,
+   "live_qa": [],
+   "evidence": "References section after the FAQ on all 10 Pillars: Law 36/2024/QH15 (chinhphu.vn), Decree 67/2023/ND-CP (vanban.chinhphu.vn), Civil Code 91/2015/QH13 (vbpl.vn), with the localized titles already used on each checklist; all three answered in the reference check 40837979493. axe: 0 violations on the 10 Pillars; screenshots at 390 and 1366 px checked",
+   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
   }
  ]
 }

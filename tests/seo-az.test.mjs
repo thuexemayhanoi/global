@@ -529,3 +529,27 @@ test("the back link on the privacy and terms pages is underlined, not told apart
  assert.match(read("assets/styles.css"),/\.legal>a\{text-decoration:underline/);
  for(const u of ["/privacy/","/terms/"])assert.match(page(u),/<div class="legal"><a href="\/">/);
 });
+
+test("each locale Pillar cites the official texts behind its advice, with localized titles (CONTENT-02)",async()=>{
+ const {PILLAR_SOURCES}=await import("../scripts/build.mjs");
+ assert.equal(PILLAR_SOURCES.length,3);
+ for(const l of locales){
+  const html=page("/"+l.code+"/"),sec=html.match(/<section class="section article-references pillar-sources">([\s\S]*?)<\/section>/)?.[1];
+  assert.ok(sec,l.code+" Pillar references section");
+  assert.ok(sec.includes("<h2>"+l.guideReferencesLabel.replace(/&/g,"&amp;")+"</h2>"),l.code+" label");
+  for(const u of PILLAR_SOURCES){
+   const r=l.guideReferences.find(x=>x.url===u);
+   assert.ok(r&&sec.includes('href="'+u.replace(/&/g,"&amp;")+'"')&&sec.includes(r.title.replace(/&/g,"&amp;").replace(/"/g,"&quot;")),l.code+" cites "+u);
+  }
+  assert.ok(html.indexOf("pillar-sources")>html.indexOf('<div class="faq">'),l.code+" sources follow the FAQ");
+ }
+});
+
+test("the audit measures a Pillar from its whole <main>, not from its first topic card (TECH-07)",()=>{
+ const src=read("docs/seo-audit/tools/collect.py");
+ assert.match(src,/soup\.select_one\("main article\.article"\) or soup\.select_one\("main article\.legal"\) or main/);
+ // Pillar rows of the Content Matrix (quoted CSV fields may contain commas): more than 500 units each.
+ const rows=read("docs/seo-matrix/CONTENT-SEO-MATRIX.csv").trim().split("\n").filter(r=>/^[A-Z]{2}-HOME,/.test(r));
+ assert.equal(rows.length,10);
+ for(const r of rows){const m=r.match(/,(\d+),(?:words|cjk_chars),/);assert.ok(m&&+m[1]>500,r.slice(0,40));}
+});
