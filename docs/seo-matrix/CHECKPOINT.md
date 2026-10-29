@@ -4,9 +4,8 @@ Generated 2026-10-29 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 
 ## Current task
 
-- **TECH-07** (TECH): Matrix measured each locale Pillar from its first topic card (23–74 words) instead of the page body
-- Status: **FIXED** · branch `seo/az-tech-07` · PR - · merge `-` · deploy - · live QA -
-- NEXT_ACTION: Merge after CI, deploy, live QA; record runs in the next PR
+- None: every task on the board is LIVE_VERIFIED or BLOCKED.
+- NEXT_ACTION: Re-run the audit pipeline (collect → analyze → ledger → az_matrix → workbook) and docs/seo-audit/tools/tech_reaudit.py on current main; add a task to TASKS.json only for a verified new finding on an existing URL; otherwise monitor (indexing and rankings stay unmeasured without Search Console)
 
 ## Next TODO
 
@@ -18,9 +17,9 @@ Generated 2026-10-29 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 |---|---|---|---|---|---|---|---|---|---|---|
 | img_status | 0 | 0 | 0 | 0 | 0 | 1064 | 0 | 11 | 0 | 4 |
 | meta_status | 0 | 0 | 0 | 0 | 0 | 29 | 0 | 1045 | 5 | 0 |
-| content_status | 0 | 0 | 10 | 0 | 0 | 8 | 0 | 1056 | 5 | 0 |
+| content_status | 0 | 0 | 0 | 0 | 0 | 18 | 0 | 1056 | 5 | 0 |
 | tech_status | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1079 | 0 | 0 |
-| status | 0 | 0 | 10 | 0 | 0 | 1064 | 0 | 5 | 0 | 0 |
+| status | 0 | 0 | 0 | 0 | 0 | 1074 | 0 | 5 | 0 | 0 |
 
 ## Task board counts
 
@@ -28,10 +27,10 @@ Generated 2026-10-29 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 |---|---|---|---|---|---|---|---|
 | HISTORY | 0 | 0 | 0 | 2 | 2 | 25 | 0 |
 | MATRIX | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
-| TECH | 0 | 0 | 1 | 0 | 0 | 6 | 0 |
+| TECH | 0 | 0 | 0 | 0 | 0 | 7 | 0 |
 | IMG | 0 | 0 | 0 | 0 | 0 | 12 | 0 |
 | META | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
-| CONTENT | 0 | 0 | 1 | 0 | 0 | 1 | 0 |
+| CONTENT | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
 
 ## Resume rule
 
