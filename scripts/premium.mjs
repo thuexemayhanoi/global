@@ -120,6 +120,9 @@ export function applyPremium(files,matrix,locales){
   let h=files[p];
   const l=p.match(/^([a-z]{2})\//)?.[1],tr=langUI[l]||langUI.en;
   if(p==="404.html")h=h.replace('<link rel="canonical" href="'+HOST+'/404.html">','<meta name="robots" content="noindex,follow">');
+  // Indexable pages allow large image previews (Google Discover and Images need max-image-preview:large to show the
+  // 1200 px covers); pages that already carry a robots rule (search, 404: noindex) keep it unchanged.
+  if(!/<meta name="robots"/.test(h))h=h.replace('<meta charset="utf-8">','<meta charset="utf-8"><meta name="robots" content="max-image-preview:large">');
   if(!h.includes('href="/assets/premium.css"'))h=h.replace('</head>','<link rel="stylesheet" href="/assets/premium.css"><script src="/assets/premium.js" defer></script>'+ (p==="search/index.html"?'<script src="/assets/search.js" defer></script>':"")+'</head>');
   h=enhanceArticle(h,p,idx);
   // Truly published locale pages only; do not generate empty Hub category URLs.

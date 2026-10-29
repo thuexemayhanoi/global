@@ -6,6 +6,8 @@
  * --schema-add: a frozen URL's top-level JSON-LD types may only GAIN the listed types.
  * --changes:    a JSON array of {url, field, before, after} (field: title | description | h1); the rendered value must
  *               equal `after` and the frozen value must equal `before`.
+ * --robots:     a frozen URL with the default robots (no meta) may gain exactly this robots value, e.g.
+ *               --robots=max-image-preview:large; a value with noindex, nofollow or none is refused.
  * Every other fingerprint field of every frozen URL must already match the build, otherwise nothing is written.
  * Content snapshots (H2 outline, main-text size), retirements and utilities are never changed.
  * Requires a named feature branch; refuses on main.
@@ -23,8 +25,9 @@ const CHANGE_FIELDS=new Set(["title","description","h1"]);
 const equal=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 
 /** Pure: returns {registry, changed:[{url,field}], errors}. */
-export function selectiveRefreeze(previous,files,{schemaAdd=[],changes=[]}={}){
+export function selectiveRefreeze(previous,files,{schemaAdd=[],changes=[],robots=null}={}){
  const out=structuredClone(previous),errors=[],changed=[];
+ if(robots&&/noindex|nofollow|\bnone\b/i.test(robots))errors.push("robots value may not restrict indexing: "+robots);
  const add=new Set(schemaAdd),byUrl=new Map();
  for(const c of changes){
   if(!CHANGE_FIELDS.has(c?.field)||typeof c.url!=="string"||typeof c.before!=="string"||typeof c.after!=="string"){errors.push("invalid change "+JSON.stringify(c));continue;}
@@ -48,6 +51,7 @@ export function selectiveRefreeze(previous,files,{schemaAdd=[],changes=[]}={}){
     continue;
    }
    if(equal(was,now))continue;
+   if(field==="robots"&&robots&&was==="index,follow (default)"&&now===robots&&!/noindex|nofollow|\bnone\b/i.test(robots)){item.fingerprint[field]=now;changed.push({url:item.url,field});continue;}
    if(field==="schema_types"&&add.size&&Array.isArray(was)&&Array.isArray(now)){
     const gained=now.filter(t=>!was.includes(t)),lost=was.filter(t=>!now.includes(t));
     if(!lost.length&&gained.length&&gained.every(t=>add.has(t))){item.fingerprint[field]=now;changed.push({url:item.url,field,gained});continue;}
@@ -64,13 +68,14 @@ function main(argv){
  const schemaAdd=(argv.find(a=>a.startsWith("--schema-add="))?.slice(13)||"").split(",").filter(Boolean);
  const changesFile=argv.find(a=>a.startsWith("--changes="))?.slice(10);
  const changes=changesFile?JSON.parse(fs.readFileSync(path.join(ROOT,changesFile),"utf8")):[];
- if(!schemaAdd.length&&!changes.length)throw Error("usage: selective-refreeze.mjs [--schema-add=Type,...] [--changes=file.json]");
+ const robots=argv.find(a=>a.startsWith("--robots="))?.slice(9)||null;
+ if(!schemaAdd.length&&!changes.length&&!robots)throw Error("usage: selective-refreeze.mjs [--schema-add=Type,...] [--changes=file.json] [--robots=value]");
  const previous=JSON.parse(fs.readFileSync(path.join(ROOT,REGISTRY),"utf8"));
- const {registry,changed,errors}=selectiveRefreeze(previous,collectHtml(ROOT),{schemaAdd,changes});
+ const {registry,changed,errors}=selectiveRefreeze(previous,collectHtml(ROOT),{schemaAdd,changes,robots});
  if(errors.length)throw Error(errors.slice(0,20).join("\n")+(errors.length>20?"\n… "+(errors.length-20)+" more":""));
  fs.writeFileSync(path.join(ROOT,REGISTRY),JSON.stringify(registry,null,2)+"\n");
  const byField={};for(const c of changed)byField[c.field]=(byField[c.field]||0)+1;
- console.log("SELECTIVE_REFREEZE_WRITTEN "+JSON.stringify({urls:new Set(changed.map(c=>c.url)).size,fields:byField,schema_add:schemaAdd}));
+ console.log("SELECTIVE_REFREEZE_WRITTEN "+JSON.stringify({urls:new Set(changed.map(c=>c.url)).size,fields:byField,schema_add:schemaAdd,robots}));
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  try{main(process.argv.slice(2));}catch(e){console.error("SELECTIVE_REFREEZE_REFUSED "+e.message);process.exitCode=1;}

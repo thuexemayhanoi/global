@@ -129,7 +129,8 @@ test("renderArticle builds a three-level trail for Hubs and guides without repea
  assert.equal(article.datePublished,"2026-10-15T10:29:56.537Z");
  assert.equal(article.publisher.logo.url,SITE+"/assets/favicon.svg");
  assert.equal(graph(hubHtml).find(n=>n["@type"]==="Article").datePublished,undefined,"no publication record, no date");
- assert.ok(guideHtml.includes('<meta property="og:image:width" content="1600">'));
+ // The preview image is whatever socialImageFor picks: the page's own cover once it has one (IMG-*), else the site hero.
+ assert.ok(guideHtml.includes('<meta property="og:image:width" content="'+socialImageFor(guide).width+'">'));
 });
 
 test("the related rail starts at the locale home, never repeats or self-links, and holds at most five links",()=>{
