@@ -6,15 +6,15 @@
   "id": "TECH-05",
   "phase": "TECH",
   "title": "Outbound reference links: every external source cited on published pages answers (no 404/410, no dead host, no deep link redirected to a home page)",
-  "status": "IN_PROGRESS",
-  "branch": "seo/az-tech-05",
+  "status": "FIXED",
+  "branch": "seo/az-tech-05-fix",
   "commit": null,
   "pr": null,
   "deploy_run": null,
   "live_qa": [],
-  "next_action": "Merge the checker, dispatch reference-link-check.yml on main, then replace or remove verified BROKEN/SOFT_404 references with the same document at its current official address in a reviewed content PR"
+  "next_action": "Merge after CI, deploy, live QA, then re-run reference-link-check.yml on main (expect 0 BROKEN); record runs in the next PR"
  },
- "next_action": "Merge the checker, dispatch reference-link-check.yml on main, then replace or remove verified BROKEN/SOFT_404 references with the same document at its current official address in a reviewed content PR",
+ "next_action": "Merge after CI, deploy, live QA, then re-run reference-link-check.yml on main (expect 0 BROKEN); record runs in the next PR",
  "next_todo": [],
  "blocked": [],
  "owner_actions": "docs/seo-audit/OWNER-ACTIONS.md (OWNER_ACTIONS_LAST)",
@@ -29,7 +29,7 @@
   },
   "TECH": {
    "LIVE_VERIFIED": 4,
-   "IN_PROGRESS": 1
+   "FIXED": 2
   },
   "IMG": {
    "LIVE_VERIFIED": 12

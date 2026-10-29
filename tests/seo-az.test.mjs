@@ -504,3 +504,28 @@ test("the reference link check reads only external links inside main and classif
  const wf=read(".github/workflows/reference-link-check.yml");
  assert.match(wf,/workflow_dispatch/);assert.match(wf,/contents: read/);assert.doesNotMatch(wf,/contents: write|secrets\./);
 });
+
+test("references found dead by the TECH-05 link check are no longer linked from any page, and their replacements are listed as sources",()=>{
+ const dead=["https://piaggiogroup.azureedge.net/piaggio/media/zfgpvj2d/piaggio_beverly_s_400.pdf","https://sovhtt.hanoi.gov.vn/en/resolution-on-the-reorganization-of-commune-level-administrative-units-in-hanoi-a-historic-turning-point/",
+  "https://www.cdc.gov/disasters/extremeheat/warning.html","https://www.honda.com.vn/xe-may/san-pham/sh160i125i","https://www.honda.com.vn/xe-may/san-pham/sh160i125i?category=2","https://www.honda.com.vn/xe-may/san-pham/sh160i125i?version=100",
+  "https://www.kawasaki.eu/en/Motorcycles/Adventure/KLE500_2026.html","https://www.triumphmotorcycles.co.uk/motorcycles/adventure/tiger-1200/tiger-1200-gt-explorer-2024",
+  "https://www.triumphmotorcycles.co.uk/motorcycles/adventure/tiger-1200/tiger-1200-rally-explorer-2024","https://www.triumphmotorcycles.co.uk/motorcycles/adventure/tiger-1200/tiger-1200-rally-pro-2024",
+  "https://www.triumphmotorcycles.co.uk/motorcycles/adventure/tiger-sport-660/tiger-sport-660","https://www.triumphmotorcycles.co.uk/motorcycles/sport/daytona-660",
+  "https://znews.vn/o-nhiem-khong-khi-tang-cao-bo-y-te-ban-hanh-huong-dan-moi-post1608395.html","https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=170620"];
+ const esc=u=>u.replace(/&/g,"&amp;");
+ for(const r of published){
+  const html=page(r.url);
+  for(const u of dead)assert.ok(!html.includes('href="'+esc(u)+'"'),r.url+" still links "+u);
+ }
+ for(const p of packets.filter(p=>p.publication&&p.sources))for(const s of p.sources)assert.ok(!dead.includes(s.url),p.matrix_id+" source "+s.url);
+ // Every link in a fixed article body is listed among its sources.
+ for(const id of ["DE-S259","DE-S249","DE-S236","DE-S183","DE-S161","DE-S190","DE-H01","EN-H01","ZH-S76","DE-S123","DE-S124","VI-S60"]){
+  const p=packets.find(x=>x.matrix_id===id),src=new Set(p.sources.map(s=>s.url));
+  for(const m of p.body_markdown.matchAll(/\]\((https:\/\/web\.archive\.org\/web\/\d{14}\/[^)\s]+|https:\/\/triumph-mediakits\.com\/[^)\s]+|https:\/\/www\.cdc\.gov\/extreme-heat\/[^)\s]+)\)/g))assert.ok(src.has(m[1]),id+" lists "+m[1]);
+ }
+});
+
+test("the back link on the privacy and terms pages is underlined, not told apart by colour alone (TECH-06, axe link-in-text-block)",()=>{
+ assert.match(read("assets/styles.css"),/\.legal>a\{text-decoration:underline/);
+ for(const u of ["/privacy/","/terms/"])assert.match(page(u),/<div class="legal"><a href="\/">/);
+});
