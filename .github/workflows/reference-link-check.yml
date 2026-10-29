@@ -1,0 +1,24 @@
+name: Reference Link Check (manual, read-only)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  references:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Fetch every outbound reference cited on published pages and classify the answer
+        run: node scripts/seo/reference-link-check.mjs --confirm-live
+      - name: Store evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: global-reference-links
+          path: reports/reference-links.json
+          if-no-files-found: ignore
+          retention-days: 30

@@ -1447,6 +1447,20 @@
    ],
    "evidence": "Re-audit of main 185763b, which live markup QA 40827340927 shows is byte-identical in production (evidence and tools added by PR #162: docs/seo-audit/execution/tech02-reaudit-20261029.json, tech_reaudit.py, browser_audit.cjs; the audit changes no page). Static sweep of 1,080 pages (tech_reaudit.py): 0 canonical, hreflang-reciprocity, sitemap/robots, duplicate, broken-link, fragment, og/twitter or JSON-LD (Article, visible FAQ, breadcrumb) defects; hreflang-only-on-true-translations and no og:locale are documented decisions. axe-core WCAG 2.x A/AA on 53 sample URLs (10 locales, root, about, contact) at 390 and 1366 px: 0 violations, 0 horizontal overflow. Lab mobile (4× CPU, 1.6 Mbps, 150 ms): LCP median 880 ms, max 1,696 ms; CLS 0. Cannibalization: 0 content-graph review pairs between published URLs; 6 primary-query overlaps reviewed as distinct intents or Hub/child. The only defect found, the desktop header overlap, was fixed as TECH-04 (PR #161). Field Core Web Vitals and indexing stay unmeasured (Search Console not connected)",
    "next_action": "Done"
+  },
+  {
+   "id": "TECH-05",
+   "phase": "TECH",
+   "title": "Outbound reference links: every external source cited on published pages answers (no 404/410, no dead host, no deep link redirected to a home page)",
+   "scope": "1,422 unique external links on 382 hosts inside <main> of the 1,079 published pages (scripts/seo/reference-link-check.mjs)",
+   "status": "IN_PROGRESS",
+   "branch": "seo/az-tech-05",
+   "commit": null,
+   "pr": null,
+   "deploy_run": null,
+   "live_qa": [],
+   "evidence": "Read-only checker and manual workflow reference-link-check.yml added (HEAD then GET, per-host throttling, conservative classes: only BROKEN is a defect; BLOCKED/SERVER_ERROR/NETWORK need a manual look)",
+   "next_action": "Merge the checker, dispatch reference-link-check.yml on main, then replace or remove verified BROKEN/SOFT_404 references with the same document at its current official address in a reviewed content PR"
   }
  ]
 }

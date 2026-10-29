@@ -484,3 +484,23 @@ test("the expanded rental checklists reach the content floor and render every se
 test("the desktop menu wraps inside its own column instead of overlapping the brand and language switcher (TECH-04)",()=>{
  assert.match(read("assets/ultra.css"),/@media\(min-width:1181px\)\{\.nav2-main\{flex-wrap:wrap;justify-content:center;row-gap:0\}\}/);
 });
+
+test("the reference link check reads only external links inside main and classifies answers conservatively (TECH-05)",async()=>{
+ const {externalLinks,classify,checkAll}=await import("../scripts/seo/reference-link-check.mjs");
+ const html='<header><a href="https://nav.example/">x</a></header><main><p><a href="https://a.example/doc#p2">a</a> <a href="/en/guides/x/">in</a> <a href="https://global.rentbikehanoi.com/en/">self</a> <a href="https://b.example/?a=1&amp;b=2">b</a> <a href="https://a.example/doc">dup</a></p></main>';
+ assert.deepEqual(externalLinks(html),["https://a.example/doc","https://b.example/?a=1&b=2"]);
+ assert.equal(classify({url:"https://x.gov/a",status:404}),"BROKEN");
+ assert.equal(classify({url:"https://x.gov/a",error:"ENOTFOUND"}),"BROKEN");
+ assert.equal(classify({url:"https://x.gov/a",status:403}),"BLOCKED");
+ assert.equal(classify({url:"https://x.gov/a",error:"UND_ERR_CONNECT_TIMEOUT"}),"NETWORK");
+ assert.equal(classify({url:"https://x.gov/a/b",status:200,finalUrl:"https://www.x.gov/"}),"SOFT_404_SUSPECT");
+ assert.equal(classify({url:"https://x.gov/a/b",status:200,finalUrl:"https://x.gov/c"}),"OK");
+ // HEAD failures are confirmed with GET before a link is called broken.
+ const calls=[];
+ const fake=async (url,{method})=>{calls.push(method+" "+url);const status=url.includes("gone")?404:method==="HEAD"?405:200;return {status,url,body:{cancel:async()=>{}}};};
+ const res=await checkAll(new Map([["https://a.example/ok",["/en/"]],["https://a.example/gone",["/de/"]]]),fake);
+ assert.deepEqual(res.map(r=>[r.url,r.class]),[["https://a.example/gone","BROKEN"],["https://a.example/ok","OK"]]);
+ assert.ok(calls.includes("GET https://a.example/gone")&&calls.includes("GET https://a.example/ok"));
+ const wf=read(".github/workflows/reference-link-check.yml");
+ assert.match(wf,/workflow_dispatch/);assert.match(wf,/contents: read/);assert.doesNotMatch(wf,/contents: write|secrets\./);
+});
