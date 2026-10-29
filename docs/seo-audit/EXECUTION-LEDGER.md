@@ -10,19 +10,19 @@ Working state of the A–Z programme (per-URL Master, Image and Content SEO Matr
 
 | Outcome | Findings |
 |---|---:|
-| FIXED_VERIFIED | 241 |
+| FIXED_VERIFIED | 242 |
 | FIXED_PENDING_LIVE | 0 |
-| VALIDATED_NO_FIX | 680 |
+| VALIDATED_NO_FIX | 679 |
 | DUPLICATE | 0 |
 | EXTERNAL_DEPENDENCY | 11 |
 | BLOCKED | 1 |
 | **Total** | **933** |
 
-Tasks: 95 — BLOCKED 1, DONE 52, NOT_APPLICABLE 35, OWNER_DECISION 7.
+Tasks: 95 — BLOCKED 1, DONE 53, NOT_APPLICABLE 34, OWNER_DECISION 7.
 
 ## Before / after (same analyzer, measured rules)
 
-Findings: **933 → 727** reported by the re-audit; 0 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
+Findings: **933 → 725** reported by the re-audit; 0 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
 
 | Rule | Baseline | Re-audit | Outcomes |
 |---|---:|---:|---|
@@ -49,12 +49,12 @@ Findings: **933 → 727** reported by the re-audit; 0 new. A finding that is sti
 | S-REDIRECT-HEADERS | 1 | 0 | VALIDATED_NO_FIX 1 |
 | S-SITEMAP-LASTMOD | 1 | 0 | FIXED_VERIFIED 1 |
 | U-ANCHOR-DIVERSITY | 197 | 197 | VALIDATED_NO_FIX 197 |
-| U-DESC-LONG | 241 | 194 | VALIDATED_NO_FIX 169, FIXED_VERIFIED 72 |
+| U-DESC-LONG | 241 | 193 | VALIDATED_NO_FIX 168, FIXED_VERIFIED 73 |
 | U-DESC-SHORT | 8 | 0 | FIXED_VERIFIED 8 |
 | U-GRAPH-REVIEW | 13 | 0 | FIXED_VERIFIED 13 |
 | U-GRAPH-UPGRADE | 9 | 0 | FIXED_VERIFIED 9 |
 | U-NO-OFFICIAL-SOURCE | 66 | 63 | VALIDATED_NO_FIX 66 |
-| U-PQ-WEAK | 123 | 99 | VALIDATED_NO_FIX 95, FIXED_VERIFIED 28 |
+| U-PQ-WEAK | 123 | 98 | VALIDATED_NO_FIX 95, FIXED_VERIFIED 28 |
 | U-PRICE-REVIEW | 95 | 95 | VALIDATED_NO_FIX 86, FIXED_VERIFIED 9 |
 | U-TITLE-LONG | 55 | 0 | FIXED_VERIFIED 55 |
 | U-TITLE-SIMILAR | 33 | 33 | VALIDATED_NO_FIX 33 |
@@ -65,13 +65,13 @@ Findings: **933 → 727** reported by the re-audit; 0 new. A finding that is sti
 |---|---:|---:|---:|---:|---:|---:|---:|
 | vi | 45 | 7 | 0 | 37 | 1 | 0 | 40 |
 | en | 77 | 15 | 0 | 61 | 1 | 0 | 63 |
-| de | 194 | 26 | 0 | 166 | 2 | 0 | 170 |
+| de | 194 | 27 | 0 | 165 | 2 | 0 | 169 |
 | fr | 44 | 8 | 0 | 35 | 1 | 0 | 36 |
 | es | 48 | 10 | 0 | 38 | 0 | 0 | 36 |
 | nl | 53 | 10 | 0 | 43 | 0 | 0 | 45 |
 | zh | 114 | 17 | 0 | 97 | 0 | 0 | 101 |
 | pt | 42 | 8 | 0 | 34 | 0 | 0 | 34 |
-| ko | 152 | 71 | 0 | 80 | 1 | 0 | 90 |
+| ko | 152 | 71 | 0 | 80 | 1 | 0 | 89 |
 | ja | 151 | 63 | 0 | 87 | 1 | 0 | 105 |
 
 Site-wide findings (locale ALL/global) are counted in the totals above, not per language.

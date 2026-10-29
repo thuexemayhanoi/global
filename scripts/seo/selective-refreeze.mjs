@@ -4,12 +4,13 @@
  *   node scripts/seo/selective-refreeze.mjs --schema-add=FAQPage
  *   node scripts/seo/selective-refreeze.mjs --changes=docs/seo-audit/execution/metadata-batch-01.json
  * --schema-add: a frozen URL's top-level JSON-LD types may only GAIN the listed types.
- * --changes:    a JSON array of {url, field, before, after} (field: title | description | h1); the rendered value must
- *               equal `after` and the frozen value must equal `before`.
+ * --changes:    a JSON array of {url, field, before, after} (field: title | description | h1 | h2); the rendered value must
+ *               equal `after` and the frozen value must equal `before`. An h2 change renames exactly one frozen H2 of the
+ *               content snapshot (a reviewed wording correction); every other heading must stay.
  * --robots:     a frozen URL with the default robots (no meta) may gain exactly this robots value, e.g.
  *               --robots=max-image-preview:large; a value with noindex, nofollow or none is refused.
  * Every other fingerprint field of every frozen URL must already match the build, otherwise nothing is written.
- * Content snapshots (H2 outline, main-text size), retirements and utilities are never changed.
+ * Content snapshots (main-text size, H2 outline apart from reviewed h2 renames), retirements and utilities are never changed.
  * Requires a named feature branch; refuses on main.
  */
 import fs from "node:fs";
@@ -17,11 +18,11 @@ import path from "node:path";
 import {execFileSync} from "node:child_process";
 import {fileURLToPath} from "node:url";
 import {collectHtml} from "./seo-guard.mjs";
-import {fingerprint,pageFile,FINGERPRINT_FIELDS} from "./seo-guard-core.mjs";
+import {fingerprint,pageFile,FINGERPRINT_FIELDS,contentSnapshot} from "./seo-guard-core.mjs";
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../..");
 const REGISTRY="data/seo/url-freeze.json";
-const CHANGE_FIELDS=new Set(["title","description","h1"]);
+const CHANGE_FIELDS=new Set(["title","description","h1","h2"]);
 const equal=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 
 /** Pure: returns {registry, changed:[{url,field}], errors}. */
@@ -31,7 +32,7 @@ export function selectiveRefreeze(previous,files,{schemaAdd=[],changes=[],robots
  const add=new Set(schemaAdd),byUrl=new Map();
  for(const c of changes){
   if(!CHANGE_FIELDS.has(c?.field)||typeof c.url!=="string"||typeof c.before!=="string"||typeof c.after!=="string"){errors.push("invalid change "+JSON.stringify(c));continue;}
-  const key=c.url+"|"+c.field;
+  const key=c.url+"|"+c.field+(c.field==="h2"?"|"+c.before:"");
   if(byUrl.has(key))errors.push("duplicate change "+key);
   byUrl.set(key,c);
  }
@@ -41,6 +42,14 @@ export function selectiveRefreeze(previous,files,{schemaAdd=[],changes=[],robots
   const html=files[pageFile(item.url)];
   if(typeof html!=="string"){errors.push("missing frozen HTML "+item.url);continue;}
   const fp=fingerprint(html);
+  for(const c of byUrl.values()){
+   if(c.url!==item.url||c.field!=="h2")continue;
+   const h2=item.content?.h2||[],now=contentSnapshot(html,item.locale).h2;
+   if(h2.includes(c.after)&&!h2.includes(c.before))continue; // already re-frozen by an earlier run
+   if(!h2.includes(c.before))errors.push(item.url+": frozen H2 is not the reviewed before-value");
+   else if(!now.includes(c.after)||now.includes(c.before))errors.push(item.url+": rendered H2 is not the reviewed after-value");
+   else{h2[h2.indexOf(c.before)]=c.after;changed.push({url:item.url,field:"h2"});}
+  }
   for(const field of FINGERPRINT_FIELDS){
    const was=item.fingerprint[field],now=fp[field],c=byUrl.get(item.url+"|"+field);
    if(c){
