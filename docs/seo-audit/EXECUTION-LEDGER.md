@@ -4,6 +4,8 @@ Status: **SEO_AZ_MATRIX_COMPLETE** · generated 2026-10-28 · baseline audit 202
 
 Outcome per finding is computed by `docs/seo-audit/tools/ledger.py` from the baseline findings, the re-audit, `execution/batches.json` and `execution/outcomes.json`. Full rows: [`execution/execution-ledger.csv`](execution/execution-ledger.csv) (933 findings) and [`execution/task-ledger.csv`](execution/task-ledger.csv) (95 tasks). Workbook: [`reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx`](../../reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx) (sheets EXECUTION LEDGER, OWNER ACTIONS, BEFORE vs AFTER).
 
+Working state of the A–Z programme (per-URL Master, Image and Content SEO Matrix, task board with branch/PR/deploy/live-QA runs, and the resume checkpoint with NEXT_ACTION): [`docs/seo-matrix/`](../seo-matrix/README.md) — start at [`CHECKPOINT.md`](../seo-matrix/CHECKPOINT.md).
+
 ## Outcomes
 
 | Outcome | Findings |

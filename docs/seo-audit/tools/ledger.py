@@ -234,6 +234,9 @@ L.append("Outcome per finding is computed by `docs/seo-audit/tools/ledger.py` fr
          "`execution/batches.json` and `execution/outcomes.json`. Full rows: [`execution/execution-ledger.csv`](execution/execution-ledger.csv) "
          "(933 findings) and [`execution/task-ledger.csv`](execution/task-ledger.csv) (95 tasks). Workbook: "
          "[`reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx`](../../reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx) (sheets EXECUTION LEDGER, OWNER ACTIONS, BEFORE vs AFTER).\n")
+L.append("Working state of the A–Z programme (per-URL Master, Image and Content SEO Matrix, task board with branch/PR/deploy/live-QA runs, "
+         "and the resume checkpoint with NEXT_ACTION): [`docs/seo-matrix/`](../seo-matrix/README.md) — start at "
+         "[`CHECKPOINT.md`](../seo-matrix/CHECKPOINT.md).\n")
 L.append("## Outcomes\n")
 L.append("| Outcome | Findings |\n|---|---:|")
 for o in FINAL:

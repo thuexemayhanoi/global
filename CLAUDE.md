@@ -14,6 +14,9 @@ The owner has **stopped new article production for this repo**. Follow `approval
 8. Keep the final report minimal and factual: executed PRs + verified checks + what changed, then **ONLY AT THE VERY END** section `OWNER_ACTIONS_LAST` with unresolved outside-account or administrator tasks as a bare backlog. Do not ask questions or provide setup/how-to instructions.
 9. On the owner's next `tiếp tục`, re-read the current ledger and resume the next unfinished SEO-only task rather than writing articles. Do not erase earlier SEO work.
 
+### A–Z Matrix and resume point (owner directive 2026-10-28, `approvals/owner-directive-20261028-az-matrix.json`)
+State lives on GitHub in `docs/seo-matrix/` (Master, Image and Content SEO Matrix, `TASKS.json` task board, `CHECKPOINT.md`). On **`tiếp tục`**: read `docs/seo-matrix/CHECKPOINT.json` and `TASKS.json` on `main`, check the current task's branch/PR/CI/deploy, finish it, then take the next TODO in the order image SEO → titles/meta → content upgrade → technical SEO. After every batch: QA → PR → merge → deploy → live QA → update `TASKS.json`, run `python3 docs/seo-audit/tools/az_matrix.py` and push. Images: WebP, 100–300 KB per image (smaller accepted when sharp), localized alt, at most 100 images per batch; never present generated images as real photos.
+
 ### Operational note
 The Auto Publisher's `factory/publisher/state.json.paused` flag is a publication safety gate for new URLs. It does **not** mean SEO maintenance and deployment of existing URLs should stop. Do not resume Auto Publisher for SEO work.
 
