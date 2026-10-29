@@ -1,0 +1,131 @@
+{
+ "task": "TECH-05",
+ "date": "2026-10-29",
+ "checker": "scripts/seo/reference-link-check.mjs via .github/workflows/reference-link-check.yml",
+ "full_run": {
+  "run": 40832285076,
+  "commit": "1b855bb",
+  "pages": 1079,
+  "unique_links": 1422,
+  "hosts": 382,
+  "counts": {
+   "OK": 1151,
+   "BLOCKED": 164,
+   "NETWORK": 88,
+   "SERVER_ERROR": 5,
+   "BROKEN": 13,
+   "SOFT_404_SUSPECT": 1
+  },
+  "inconclusive_note": "BLOCKED/NETWORK/SERVER_ERROR answers are bot protection or hosts that do not answer a US runner (thuvienphapluat.vn 101× 403, bmw-motorcycles.vn and gesetze-im-internet.de timeouts, provincial .gov.vn portals, Piaggio/Vespa asset CDN 403); none is a verified dead link, so no change was made for them"
+ },
+ "candidate_runs": [
+  40835672532,
+  40835882785,
+  40836088823,
+  40836266663,
+  40836395934,
+  40836788860
+ ],
+ "fixes": [
+  {
+   "dead": "triumphmotorcycles.co.uk …/tiger-1200-gt-explorer-2024 (404)",
+   "pages": [
+    "DE-S259"
+   ],
+   "now": "https://web.archive.org/web/20260608051829/…",
+   "verified": "radar, heated seats, 256 kg, Tourance, 850/870 mm present"
+  },
+  {
+   "dead": "…/tiger-1200-rally-explorer-2024 (404)",
+   "pages": [
+    "DE-S259"
+   ],
+   "now": "https://web.archive.org/web/20260515053958/…",
+   "verified": "261 kg, 220 mm, 875/895 mm, Karoo Street, 21-inch present"
+  },
+  {
+   "dead": "…/tiger-1200-rally-pro-2024 (404)",
+   "pages": [
+    "DE-S249"
+   ],
+   "now": "https://web.archive.org/web/20260710170458/…",
+   "verified": "100 PS rain mode, 150 PS, 130 Nm present"
+  },
+  {
+   "dead": "…/tiger-sport-660/tiger-sport-660 (404)",
+   "pages": [
+    "DE-S236"
+   ],
+   "now": "81 PS claim → triumph-mediakits.com 2022 Tiger Sport 660; fork claim → triumphmotorcycles.co.uk/motorcycles/adventure/tiger-sport/tiger-sport-660",
+   "verified": "81PS, 10,250, 59.6 (press kit); Showa 41 mm USD fork, 150 mm (UK page)"
+  },
+  {
+   "dead": "…/motorcycles/sport/daytona-660 (404)",
+   "pages": [
+    "DE-S236"
+   ],
+   "now": "https://www.triumphmotorcycles.co.uk/motorcycles/sport/daytona/daytona-660",
+   "verified": "A2, throttle present"
+  },
+  {
+   "dead": "kawasaki.eu …/KLE500_2026.html (404)",
+   "pages": [
+    "DE-S183"
+   ],
+   "now": "https://www.kawasaki.eu/en/Motorcycles/Adventure/KLE500_2027.html",
+   "verified": "194 kg, 870 mm, 30 mm, LCD/TFT, ABS switch at left handle, local-law note present"
+  },
+  {
+   "dead": "honda.com.vn …/sh160i125i (404, also ?category=2, ?version=100)",
+   "pages": [
+    "ZH-S76",
+    "DE-S123",
+    "DE-S124"
+   ],
+   "now": "https://web.archive.org/web/20260517062137/ and 20260220043951/ snapshots",
+   "verified": "SH160i: 134 kg, 799 mm, 156,9, 12,4 kW; Smart Key: locating, remote unlock, anti-theft alarm. SH125i variant not archived: source note records the 25 Oct 2026 live check"
+  },
+  {
+   "dead": "piaggiogroup.azureedge.net Beverly S 400 PDF (host gone)",
+   "pages": [
+    "DE-S161"
+   ],
+   "now": "https://web.archive.org/web/20250815221309/… (same PDF)",
+   "verified": "archived copy of the identical file (PDF, figures not machine-read)"
+  },
+  {
+   "dead": "sovhtt.hanoi.gov.vn reorganisation article (host gone)",
+   "pages": [
+    "DE-S190"
+   ],
+   "now": "https://web.archive.org/web/20260610040743/…",
+   "verified": "126, 51, 75, 526 present"
+  },
+  {
+   "dead": "cdc.gov/disasters/extremeheat/warning.html (404)",
+   "pages": [
+    "VI-S60"
+   ],
+   "now": "https://www.cdc.gov/extreme-heat/signs-symptoms/index.html",
+   "verified": "200; CDC's own redirect target for the old page (CDC_AAref_Val); text not machine-readable from the runner"
+  },
+  {
+   "dead": "vbpl.vn ItemID=170620 (redirects to vbpl.vn home)",
+   "pages": [
+    "DE-H01",
+    "EN-H01"
+   ],
+   "now": "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/3/55-vbhn-vpqh.pdf",
+   "verified": "200; government consolidated text of Law 36/2024/QH15, already cited site-wide"
+  },
+  {
+   "dead": "znews.vn post1608395 (404, not archived)",
+   "pages": [
+    "DE-S149"
+   ],
+   "now": "citation removed where Thư viện pháp luật also supports the sentence; one sentence re-sourced to Thanh Tra and worded to match it",
+   "verified": "Thanh Tra: AQI 151–200 sensitive people indoors; 201–300 all outdoor activity limited as far as possible"
+  }
+ ],
+ "result": "14 verified dead references on 13 pages replaced or removed; every replacement checked from GitHub Actions; page-updates and sources (checked_on 2026-10-29) recorded"
+}
