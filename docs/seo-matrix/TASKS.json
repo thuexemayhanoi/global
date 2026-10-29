@@ -32,15 +32,15 @@
    "id": "TECH-01",
    "phase": "TECH",
    "title": "Allow large image previews (robots max-image-preview:large) on indexable pages",
-   "scope": "all indexable HTML pages; noindex utilities keep noindex",
-   "status": "TODO",
-   "branch": null,
+   "scope": "1,079 indexable URLs gain <meta name=\"robots\" content=\"max-image-preview:large\">; /search/ and 404 keep noindex,follow",
+   "status": "FIXED",
+   "branch": "seo/az-img-02",
    "commit": null,
    "pr": null,
    "deploy_run": null,
    "live_qa": [],
-   "evidence": "",
-   "next_action": "Separate PR right after IMG-01: robots is a frozen fingerprint field, so the reviewed change needs a selective-refreeze robots option (index,follow default → max-image-preview:large) before the meta can ship"
+   "evidence": "Local QA: build --check, seo-guard (robots re-frozen via selective-refreeze --robots), fact-guard, full node tests",
+   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
   },
   {
    "id": "IMG-00",
@@ -59,14 +59,17 @@
     "KO-HOME",
     "JA-HOME"
    ],
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-img-01",
-   "commit": null,
-   "pr": null,
-   "deploy_run": null,
-   "live_qa": [],
-   "evidence": "Local QA: build --check, seo-guard, fact-guard, content-graph, full node tests (cover files, sizes, markup, og:image, Article image, localized alt)",
-   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
+   "commit": "3ebd0ca44cfb949022470824e25e4995cdda89ba",
+   "pr": 149,
+   "deploy_run": 40811713900,
+   "live_qa": [
+    40811824271,
+    40811826986
+   ],
+   "evidence": "PR #149 validate passed; Pages deploy 40811713900; live markup QA 40811824271 and post-publish QA 40811826986 passed",
+   "next_action": "Done"
   },
   {
    "id": "IMG-01",
@@ -174,14 +177,17 @@
     "PT-S23",
     "KO-S03"
    ],
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-img-01",
-   "commit": null,
-   "pr": null,
-   "deploy_run": null,
-   "live_qa": [],
-   "evidence": "Local QA: build --check, seo-guard, fact-guard, content-graph, full node tests (cover files, sizes, markup, og:image, Article image, localized alt)",
-   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
+   "commit": "3ebd0ca44cfb949022470824e25e4995cdda89ba",
+   "pr": 149,
+   "deploy_run": 40811713900,
+   "live_qa": [
+    40811824271,
+    40811826986
+   ],
+   "evidence": "PR #149 validate passed; Pages deploy 40811713900; live markup QA 40811824271 and post-publish QA 40811826986 passed",
+   "next_action": "Done"
   },
   {
    "id": "IMG-02",
@@ -289,14 +295,14 @@
     "FR-S02",
     "FR-S19"
    ],
-   "status": "TODO",
-   "branch": null,
+   "status": "FIXED",
+   "branch": "seo/az-img-02",
    "commit": null,
    "pr": null,
    "deploy_run": null,
    "live_qa": [],
-   "evidence": "",
-   "next_action": "Render covers for the 100 URLs, QA (size 100–300 KB target, dims, alt), PR, merge, deploy, live QA"
+   "evidence": "Local QA: build --check, seo-guard (robots re-frozen via selective-refreeze --robots), fact-guard, full node tests",
+   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
   },
   {
    "id": "IMG-03",

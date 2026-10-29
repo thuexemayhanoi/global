@@ -90,6 +90,12 @@ test("selective re-freeze accepts only the reviewed additions and exact before/a
  assert.ok(selectiveRefreeze(reg,{"en/x/index.html":html("New",["Article"])},{schemaAdd:["FAQPage"]}).errors.length,"unreviewed title change refused");
  assert.ok(selectiveRefreeze(reg,{"en/x/index.html":html("Old",["Article","HowTo"])},{schemaAdd:["FAQPage"]}).errors.length,"unlisted type refused");
  assert.ok(selectiveRefreeze(reg,{"en/x/index.html":html("Old",[])},{schemaAdd:["FAQPage"]}).errors.length,"lost type refused");
+ // --robots: a default-robots URL may gain exactly the reviewed value; anything restricting indexing is refused (TECH-01).
+ const withRobots=v=>html("Old",["Article"]).replace("<head>",'<head><meta name="robots" content="'+v+'">');
+ const r=selectiveRefreeze(reg,{"en/x/index.html":withRobots("max-image-preview:large")},{robots:"max-image-preview:large"});
+ assert.deepEqual(r.errors,[]);assert.equal(r.registry.urls[0].fingerprint.robots,"max-image-preview:large");
+ assert.ok(selectiveRefreeze(reg,{"en/x/index.html":withRobots("noindex")},{robots:"noindex"}).errors.length,"noindex refused");
+ assert.ok(selectiveRefreeze(reg,{"en/x/index.html":withRobots("max-snippet:0")},{robots:"max-image-preview:large"}).errors.length,"other robots value refused");
 });
 
 test("articles preview their topic picture and name it as the Article image; the rail names the Pillar guide",()=>{

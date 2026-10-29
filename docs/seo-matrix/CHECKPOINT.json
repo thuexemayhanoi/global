@@ -3,11 +3,11 @@
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
  "current_task": {
-  "id": "IMG-00",
-  "phase": "IMG",
-  "title": "Localized descriptive alt for the four topic illustrations on the 10 locale Pillars and the root language page (44 images, currently alt=\"\")",
+  "id": "TECH-01",
+  "phase": "TECH",
+  "title": "Allow large image previews (robots max-image-preview:large) on indexable pages",
   "status": "FIXED",
-  "branch": "seo/az-img-01",
+  "branch": "seo/az-img-02",
   "commit": null,
   "pr": null,
   "deploy_run": null,
@@ -15,16 +15,6 @@
   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
  },
  "next_todo": [
-  {
-   "id": "TECH-01",
-   "title": "Allow large image previews (robots max-image-preview:large) on indexable pages",
-   "next_action": "Separate PR right after IMG-01: robots is a frozen fingerprint field, so the reviewed change needs a selective-refreeze robots option (index,follow default → max-image-preview:large) before the meta can ship"
-  },
-  {
-   "id": "IMG-02",
-   "title": "Cover image batch 2: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
-   "next_action": "Render covers for the 100 URLs, QA (size 100–300 KB target, dims, alt), PR, merge, deploy, live QA"
-  },
   {
    "id": "IMG-03",
    "title": "Cover image batch 3: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
@@ -38,6 +28,16 @@
   {
    "id": "IMG-05",
    "title": "Cover image batch 5: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
+   "next_action": "Render covers for the 100 URLs, QA (size 100–300 KB target, dims, alt), PR, merge, deploy, live QA"
+  },
+  {
+   "id": "IMG-06",
+   "title": "Cover image batch 6: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
+   "next_action": "Render covers for the 100 URLs, QA (size 100–300 KB target, dims, alt), PR, merge, deploy, live QA"
+  },
+  {
+   "id": "IMG-07",
+   "title": "Cover image batch 7: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
    "next_action": "Render covers for the 100 URLs, QA (size 100–300 KB target, dims, alt), PR, merge, deploy, live QA"
   }
  ],
@@ -53,11 +53,13 @@
    "LIVE_VERIFIED": 1
   },
   "TECH": {
-   "TODO": 2
+   "FIXED": 1,
+   "TODO": 1
   },
   "IMG": {
-   "FIXED": 2,
-   "TODO": 10
+   "LIVE_VERIFIED": 2,
+   "FIXED": 1,
+   "TODO": 9
   },
   "META": {
    "TODO": 2
@@ -68,8 +70,10 @@
  },
  "url_counts": {
   "img_status": {
-   "FIXED": 111,
-   "TODO": 964,
+   "LIVE_VERIFIED": 100,
+   "OK": 11,
+   "FIXED": 100,
+   "TODO": 864,
    "NOT_NEEDED": 4
   },
   "meta_status": {
@@ -83,11 +87,13 @@
    "TODO": 8
   },
   "tech_status": {
-   "TODO": 1079
+   "OK": 1079
   },
   "status": {
-   "FIXED": 111,
-   "TODO": 968
+   "LIVE_VERIFIED": 71,
+   "TODO": 900,
+   "FIXED": 100,
+   "OK": 8
   }
  },
  "standards": {
