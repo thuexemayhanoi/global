@@ -2,15 +2,8 @@
 // The owner-approved menu shows exactly two Supporting labels per Hub. When a
 // Hub gains more Supporting rows (topical-map promotion), PUBLISHED rows win,
 // then lowest priority; the rest are reached from the Hub page itself.
-export const MENU_CHILDREN_PER_HUB=2;
-export const JS_FLAG='<script>document.documentElement.classList.add("js")</script>';
-export function menuChildren(matrix,hubId){
-  return matrix.rows.filter(r=>r.parent_id===hubId&&r.role==="SUPPORT"&&r.status!=="BLOCKED")
-    .sort((a,b)=>(a.status==="PUBLISHED"?0:1)-(b.status==="PUBLISHED"?0:1)||a.priority-b.priority||a.id.localeCompare(b.id))
-    .slice(0,MENU_CHILDREN_PER_HUB);
-}
-export function enhanceNavigation(files, locales, matrix) {
-  const translations = {
+// Menu labels per locale: home, the four Hub topics (vehicle, prices, documents, safety), checklist, menu, soon, current guide, languages.
+export const NAV_LABELS = {
     vi:["Trang chủ","Chọn loại xe","Giá thuê & cọc","Giấy tờ & hợp đồng","An toàn & hỗ trợ","Kiểm tra xe","Danh mục","Sắp có bài","Xem hướng dẫn","Ngôn ngữ"],
     en:["Home","Choose a vehicle","Prices & deposits","Documents & contracts","Safety & support","Rental checklist","Topics","Coming soon","Current guide","Languages"],
     de:["Startseite","Fahrzeugwahl","Preise & Kaution","Papiere & Vertrag","Sicherheit & Hilfe","Miet-Checkliste","Themen","In Vorbereitung","Aktueller Ratgeber","Sprachen"],
@@ -21,7 +14,16 @@ export function enhanceNavigation(files, locales, matrix) {
     pt:["Início","Escolher veículo","Preços & caução","Documentos & contrato","Segurança & apoio","Checklist de aluguer","Categorias","Em preparação","Guia disponível","Idiomas"],
     ko:["홈","차종 선택","요금과 보증금","서류와 계약","안전과 지원","인수 체크리스트","주제","준비 중","현재 가이드","언어"],
     ja:["ホーム","車種の選び方","料金と保証金","書類と契約","安全とサポート","レンタルチェック","カテゴリー","準備中","公開中のガイド","言語"]
-  };
+};
+export const MENU_CHILDREN_PER_HUB=2;
+export const JS_FLAG='<script>document.documentElement.classList.add("js")</script>';
+export function menuChildren(matrix,hubId){
+  return matrix.rows.filter(r=>r.parent_id===hubId&&r.role==="SUPPORT"&&r.status!=="BLOCKED")
+    .sort((a,b)=>(a.status==="PUBLISHED"?0:1)-(b.status==="PUBLISHED"?0:1)||a.priority-b.priority||a.id.localeCompare(b.id))
+    .slice(0,MENU_CHILDREN_PER_HUB);
+}
+export function enhanceNavigation(files, locales, matrix) {
+  const translations = NAV_LABELS;
   const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
   const localeByCode=Object.fromEntries(locales.map(l=>[l.code,l]));
   const published=new Set(matrix.rows.filter(r=>r.status==="PUBLISHED").map(r=>r.url));

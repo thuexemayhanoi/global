@@ -24,7 +24,18 @@ import unicodedata
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 OUT = os.path.join(ROOT, "docs", "seo-matrix")
-AUDIT_DATE = os.environ.get("AUDIT_DATE", "2026-10-28")
+
+
+def _default_date():
+    """The run date: AUDIT_DATE, else the date of the committed checkpoint (keeps --check reproducible)."""
+    cp = os.path.join(OUT, "CHECKPOINT.json")
+    if os.path.exists(cp):
+        with open(cp, encoding="utf-8") as fh:
+            return json.load(fh).get("generated", "")
+    return ""
+
+
+AUDIT_DATE = os.environ.get("AUDIT_DATE") or _default_date()
 STATUSES = ["TODO", "IN_PROGRESS", "FIXED", "MERGED", "DEPLOYED", "LIVE_VERIFIED", "BLOCKED"]
 DONE = {"LIVE_VERIFIED"}
 OPEN = {"IN_PROGRESS", "FIXED", "MERGED", "DEPLOYED"}

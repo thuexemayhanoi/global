@@ -145,7 +145,7 @@ test("the related rail starts at the locale home, never repeats or self-links, a
  }
 });
 
-test("the hero describes its artwork; gallery and topic-card images stay decorative next to their headings",()=>{
+test("the hero and the gallery/topic-card illustrations describe their artwork without repeating the card heading (IMG-00)",()=>{
  const pages=["/",...locales.map(l=>"/"+l.code+"/")];
  for(const p of pages){
   const html=p==="/"?fs.readFileSync(path.join(root,"index.html"),"utf8"):read(p);
@@ -156,8 +156,10 @@ test("the hero describes its artwork; gallery and topic-card images stay decorat
    assert.ok(alt,p+" every image declares alt: "+img.slice(0,80));
    if(img.includes('src="/hero-hanoi'))assert.ok(alt[1].length>=20,p+" hero alt must describe the artwork");
    else{
-    assert.equal(alt[1],"",p+" decorative illustration must not repeat its heading: "+img.slice(0,80));
-    assert.ok(/<h3>/.test(html.slice(m.index,m.index+img.length+400)),p+" a decorative image must sit next to the heading that names it");
+    // The card heading already names the topic; the alt says what the illustration shows, so nothing is announced twice.
+    const heading=html.slice(m.index,m.index+img.length+400).match(/<h3>([^<]+)<\/h3>/)?.[1];
+    assert.ok(heading,p+" an illustration sits next to the heading that names its topic");
+    assert.ok(alt[1].length>=20&&!alt[1].includes(heading),p+" illustration alt describes the artwork, not the heading: "+img.slice(0,80));
    }
   }
  }

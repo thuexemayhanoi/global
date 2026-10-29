@@ -412,3 +412,36 @@ test("the SEO A–Z Matrix on GitHub covers every published URL once, uses only 
  for(const t of img){assert.ok(t.scope.length<=100,t.id+" ≤100 images");for(const id of t.scope){assert.ok(!seen.has(id),id+" in one batch only");seen.set(id,t.id);}}
  assert.deepEqual([...seen.keys()].sort(),published.filter(r=>r.role==="HUB"||r.role==="SUPPORT").map(r=>r.id).sort());
 });
+
+test("every reviewed cover is a 1200×675 WebP of at most 300 KB with a 640 px variant, shown lazily after the opening paragraph and used as og:image and Article image (IMG-*)",()=>{
+ const covers=JSON.parse(read("data/seo/image-covers.json")).covers;
+ const webpSize=f=>{const b=fs.readFileSync(path.join(root,f.slice(1)));assert.equal(b.toString("ascii",0,4)+b.toString("ascii",8,12),"RIFFWEBP",f);const k=b.toString("ascii",12,16);
+  return k==="VP8X"?[1+b.readUIntLE(24,3),1+b.readUIntLE(27,3)]:k==="VP8 "?[b.readUInt16LE(26)&0x3fff,b.readUInt16LE(28)&0x3fff]:[(b.readUInt32LE(21)&0x3fff)+1,((b.readUInt32LE(21)>>14)&0x3fff)+1];};
+ const attrEsc=s=>s.replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+ assert.ok(Object.keys(covers).length>0);
+ for(const [id,c] of Object.entries(covers)){
+  const row=published.find(r=>r.id===id);
+  assert.ok(row&&row.url===c.url,id+" is a published Matrix row");
+  assert.deepEqual(webpSize(c.src),[1200,675],id);assert.deepEqual(webpSize(c.src640),[640,360],id);
+  const bytes=fs.statSync(path.join(root,c.src.slice(1))).size;
+  assert.ok(bytes<=300*1024&&bytes===c.bytes,id+" main image ≤300 KB and as recorded");
+  assert.ok(c.alt.startsWith(c.h1)&&c.alt.length>c.h1.length+10,id+" alt names the page and describes the illustration");
+  const html=page(row.url),fig=html.match(/<figure class="article-cover"><img [^>]*><\/figure>/)?.[0];
+  assert.ok(fig,id+" shows its cover");
+  assert.ok(fig.includes('src="'+c.src+'"')&&fig.includes(c.src640+" 640w")&&fig.includes('width="1200" height="675"')&&fig.includes('loading="lazy"')&&fig.includes('alt="'+attrEsc(c.alt)+'"'),id+" cover markup");
+  assert.ok(html.indexOf(fig)>html.indexOf('class="article-lead"'),id+" cover follows the lead");
+  assert.ok(html.includes('<meta property="og:image" content="'+SITE+c.src+'">')&&html.includes('<meta property="og:image:width" content="1200">'),id+" og:image");
+  assert.equal(graph(html).find(n=>n["@type"]==="Article").image.url,SITE+c.src,id+" Article image");
+ }
+ // A batch recorded as FIXED or later has a cover for every URL in its scope.
+ for(const t of JSON.parse(read("docs/seo-matrix/TASKS.json")).tasks.filter(t=>/^IMG-(0[1-9]|1\d)$/.test(t.id)&&t.status!=="TODO"&&t.status!=="IN_PROGRESS"))
+  for(const id of t.scope)assert.ok(covers[id],t.id+" covers "+id);
+});
+
+test("topic illustrations on the locale homes and the root page carry alt text in the page language (IMG-00)",()=>{
+ for(const url of ["/",...locales.map(l=>"/"+l.code+"/")]){
+  const imgs=page(url).match(/<img src="\/topic-[^"]+"[^>]*>/g)||[];
+  assert.equal(imgs.length,4,url);
+  for(const tag of imgs)assert.match(tag,/\salt="[^"]{20,}"/,url+" "+tag.slice(0,60));
+ }
+});

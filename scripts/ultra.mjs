@@ -1,5 +1,6 @@
 // Premium Ultra layout: deterministic, indexable HTML enhancements.
 // Only decorative structure and links to already published pages or in-page anchors.
+import {cardAlt} from "./images/scenes.mjs";
 const clean=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const plaintext=s=>String(s||"").replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi," ").replace(/<[^>]+>/g," ").replace(/&[a-z]+;/gi," ").replace(/\s+/g," ").trim();
 const micro={
@@ -20,8 +21,8 @@ const classes=(code)=>micro[code]||micro.en;
 
 const globalPhotoAssets=[{"path":"/topic-choose-bike.webp","title":"Choose your vehicle","desc":"Find a vehicle that fits your experience, route and needs."},{"path":"/topic-prices-deposits.webp","title":"Prices & deposits","desc":"Compare the full rental terms, not just the daily rate."},{"path":"/topic-documents.webp","title":"Documents & contracts","desc":"Know which questions to ask before signing."},{"path":"/topic-safety.webp","title":"Safety & pickup checks","desc":"Check the condition of the bike before riding."}];
 // The hero is content and gets alt text describing the artwork (Hanoi-inspired illustration, not a photo of a shop).
-// Gallery and topic-card images stay decorative (alt=""): the heading right next to each one already names the topic,
-// so repeating it would only make screen readers announce the same words twice.
+// Gallery and topic-card images describe what the artwork shows in the page language (scripts/images/scenes.mjs,
+// Matrix task IMG-00), never the topic name the card heading already gives, so screen readers hear no repetition.
 const HERO_ALT="Illustration of a scooter rider on a lakeside street in Hanoi at sunset";
 // Responsive hero: the LCP candidate of the root page (the only page that renders this photo; locale homes
 // use the CSS artwork). The 1600×900 original stays the social preview image; the 800w and 1200w files are
@@ -40,22 +41,22 @@ export function heroPreloadLink(){
 // topic cards (locale homes) are one column up to 760px and half the container above it (assets/styles.css).
 export const TOPIC_SIZES={gallery:"(max-width: 1023px) calc(50vw - 24px), 280px",card:"(max-width: 760px) calc(100vw - 36px), (max-width: 1186px) calc(50vw - 28px), 565px"};
 const topicSrcset=path=>[480,720].map(w=>path.replace(/\.webp$/,"-"+w+".webp")+" "+w+"w").concat(path+" 960w").join(", ");
-const topicImg=(path,sizes)=>'<img src="'+clean(path)+'" srcset="'+clean(topicSrcset(path))+'" sizes="'+sizes+'" width="960" height="720" loading="lazy" decoding="async" alt="">';
+const topicImg=(path,sizes,code)=>'<img src="'+clean(path)+'" srcset="'+clean(topicSrcset(path))+'" sizes="'+sizes+'" width="960" height="720" loading="lazy" decoding="async" alt="'+clean(cardAlt(code,path))+'">';
 function globalHeroPhoto(){
  return '<figure class="ultra-hero-photo"><img src="'+HERO_SRC+'" srcset="'+HERO_SRCSET+'" sizes="'+HERO_SIZES+'" width="1600" height="900" alt="'+clean(HERO_ALT)+'" fetchpriority="high" loading="eager" decoding="async"><figcaption><span>✳</span> HANOI-INSPIRED • TWO-WHEEL TRAVEL</figcaption></figure>';
 }
 function injectGatewayGallery(html){
  if(html.includes('class="ultra-gateway-gallery"'))return html;
- const gallery='<section class="ultra-gateway-gallery" aria-labelledby="ultra-gallery-heading"><div class="container"><div class="ultra-gallery-heading"><div><p class="ultra-gallery-overline">TRAVEL EDITORIAL</p><h2 id="ultra-gallery-heading">Discover our four guide topics</h2></div><p>Choose a language above to explore guidance on each topic.</p></div><div class="ultra-gallery-grid">'+globalPhotoAssets.map((item,i)=>'<article class="ultra-gallery-card"><div class="ultra-gallery-image">'+topicImg(item.path,TOPIC_SIZES.gallery)+'</div><div class="ultra-gallery-content"><span class="ultra-gallery-count">0'+(i+1)+'</span><h3>'+clean(item.title)+'</h3><p>'+clean(item.desc)+'</p></div></article>').join("")+'</div></div></section>';
+ const gallery='<section class="ultra-gateway-gallery" aria-labelledby="ultra-gallery-heading"><div class="container"><div class="ultra-gallery-heading"><div><p class="ultra-gallery-overline">TRAVEL EDITORIAL</p><h2 id="ultra-gallery-heading">Discover our four guide topics</h2></div><p>Choose a language above to explore guidance on each topic.</p></div><div class="ultra-gallery-grid">'+globalPhotoAssets.map((item,i)=>'<article class="ultra-gallery-card"><div class="ultra-gallery-image">'+topicImg(item.path,TOPIC_SIZES.gallery,"en")+'</div><div class="ultra-gallery-content"><span class="ultra-gallery-count">0'+(i+1)+'</span><h3>'+clean(item.title)+'</h3><p>'+clean(item.desc)+'</p></div></article>').join("")+'</div></div></section>';
  return html.replace('</main>',gallery+'</main>');
 }
-function addTopicPhotos(html){
+function addTopicPhotos(html,code){
  if(html.includes('class="ultra-topic-image"'))return html;
  let idx=0;
  html=html.replace(/(<article class="topic ultra-topic-card" id="ultra-topic-\d+">)/g,head=>{
   const a=globalPhotoAssets[idx++];
   if(!a)throw Error("No image assigned to topic card "+idx);
-  return head+'<div class="ultra-topic-image">'+topicImg(a.path,TOPIC_SIZES.card)+'</div>';
+  return head+'<div class="ultra-topic-image">'+topicImg(a.path,TOPIC_SIZES.card,code)+'</div>';
  });
  if(idx!==4)throw Error("Expected 4 images for all four topic cards, got "+idx);
  return html;
@@ -79,7 +80,7 @@ function injectHome(html,code,matrix,files){
  let i=0;
  html=html.replace(/<article class="topic">/g,()=>'<article class="topic ultra-topic-card" id="ultra-topic-'+(++i)+'">');
  if(i!==4)throw Error("Homepage topic inventory drift: "+code+"="+i);
- html=addTopicPhotos(html);
+ html=addTopicPhotos(html,code);
  const chips='<nav class="ultra-topic-tabs" aria-label="'+clean(tr[4])+'">'+links.map((r,i)=>'<a href="#ultra-topic-'+(i+1)+'"><span>'+String(i+1).padStart(2,"0")+'</span>'+clean(r.working_title)+'</a>').join("")+'</nav>';
  html=html.replace('<div class="topic-grid">',chips+'<div class="topic-grid">');
  // A genuine internal-navigation section only. No IDEA slug becomes a URL.
