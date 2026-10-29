@@ -245,8 +245,10 @@ def build():
         meta_status = "NOT_FORCED" if r["role"] in ("UTILITY", "LANGUAGE_SELECTOR") else ("OK" if meta_ok else mt["status"])
         # ---- content ----
         cc, floor = content_check(r)
-        ct = phase_task["CONTENT"]
-        content_status = cc if cc == "NOT_FORCED" else ("OK" if cc == "OK" else ct["status"])
+        # A URL listed in a CONTENT task's scope carries that task's status (FIXED → LIVE_VERIFIED) until the task is done.
+        scoped = by_scope.get(("CONTENT", mid))
+        ct = scoped or phase_task["CONTENT"]
+        content_status = cc if cc == "NOT_FORCED" else (ct["status"] if scoped and ct["status"] in OPEN | DONE else ("OK" if cc == "OK" else ct["status"]))
         # ---- technical ----
         issues = []
         if r["canonical_count"] != "1":
@@ -289,8 +291,8 @@ def build():
             content.append({"matrix_id": mid, "locale": loc, "url": url, "role": r["role"], "primary_query": r["primary_query"], "search_intent": r["search_intent"], "h1": r["h1"],
                             "content_units": r["content_units"], "unit_kind": r["unit_kind"], "floor": floor, "content_check": cc, "h2_count": r["h2_count"], "h3_count": r["h3_count"],
                             "faq_visible": r["faq_visible"], "references": r["references"], "ref_official": r["ref_official"], "internal_links_unique": r["internal_links_unique"],
-                            "graph_action": r["graph_action"], "task": ct["id"] if cc == "UPGRADE_TODO" else "", "status": content_status,
-                            "next_action": (ct["next_action"] if cc == "UPGRADE_TODO" else ("Pillar depth is judged by the content graph (KEEP), not by a word floor" if cc == "NOT_FORCED" else ""))})
+                            "graph_action": r["graph_action"], "task": ct["id"] if cc == "UPGRADE_TODO" or scoped else "", "status": content_status,
+                            "next_action": (ct["next_action"] if cc == "UPGRADE_TODO" or (scoped and ct["status"] in OPEN) else ("Pillar depth is judged by the content graph (KEEP), not by a word floor" if cc == "NOT_FORCED" else ""))})
     board_rows = history + tasks
     counts = {}
     for t in board_rows:

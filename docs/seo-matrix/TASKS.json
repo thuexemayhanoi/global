@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "note": "Official task board of the SEO A–Z programme. Statuses: TODO, IN_PROGRESS, FIXED (committed on a PR branch with local QA passed), MERGED, DEPLOYED, LIVE_VERIFIED (live markup + post-publish QA passed on the deployed commit), BLOCKED. A PR sets its own task to FIXED; the following PR records merge, deploy and live-QA run ids and moves it on. Earlier batches A–Y are imported from docs/seo-audit/execution/batches.json.",
  "order": [
   "MATRIX",
@@ -1341,62 +1341,95 @@
    "phase": "META",
    "title": "Titles and meta descriptions outside the display bands (vi, en, de, fr, es, nl, pt): title truncation risk or under 45 characters; description under 140 or over 160 characters",
    "scope": "89 article pages in vi, en, de, fr, es, nl, pt (round m1: docs/seo-audit/execution/metadata-reviews-m1.json; 3 kept) + 13 locale Pillar/checklist descriptions and the VI checklist title/H1 correction (12 → 11 steps; receipt metadata-shared-m1.json)",
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-meta-01",
-   "commit": null,
-   "pr": null,
-   "deploy_run": null,
-   "live_qa": [],
-   "evidence": "Local QA: metadata-az check/plan/apply (V11 validator: no new numbers, packet bounds, no duplicate final title/description, re-freeze of changed fields only), seo-guard, fact-guard, full node tests",
-   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
+   "commit": "acc5ca5a0890e3b98d1a45022260fd4d7c7ca65d",
+   "pr": 160,
+   "deploy_run": 40824956958,
+   "live_qa": [
+    40825112630,
+    40825115265
+   ],
+   "evidence": "PR #160 validate passed; Pages deploy 40824956958; live markup QA 40825112630 and post-publish QA 40825115265 passed",
+   "next_action": "Done"
   },
   {
    "id": "META-02",
    "phase": "META",
    "title": "zh, ja, ko titles and descriptions checked by display width (full-width characters count double)",
    "scope": "26 zh/ja/ko pages (round m2: metadata-reviews-m2.json): 24 titles shortened to ≤ ~580 px, 3 descriptions tightened to ≤ 120 characters; ZH-HOME/ZH-CHECKLIST descriptions (55–59 characters) reviewed and kept",
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-meta-01",
-   "commit": null,
-   "pr": null,
-   "deploy_run": null,
-   "live_qa": [],
-   "evidence": "Local QA: metadata-az check/plan/apply (V11 validator: no new numbers, packet bounds, no duplicate final title/description, re-freeze of changed fields only), seo-guard, fact-guard, full node tests",
-   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
+   "commit": "acc5ca5a0890e3b98d1a45022260fd4d7c7ca65d",
+   "pr": 160,
+   "deploy_run": 40824956958,
+   "live_qa": [
+    40825112630,
+    40825115265
+   ],
+   "evidence": "PR #160 validate passed; Pages deploy 40824956958; live markup QA 40825112630 and post-publish QA 40825115265 passed",
+   "next_action": "Done"
   },
   {
    "id": "TECH-03",
    "phase": "TECH",
    "title": "Checklist section counters showed '010', '011' for the 10th and 11th sections",
    "scope": "10 checklist pages (scripts/build.mjs: two-digit counter)",
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-meta-01",
-   "commit": null,
-   "pr": null,
-   "deploy_run": null,
-   "live_qa": [],
-   "evidence": "Local QA: build --check, seo-guard, full node tests",
-   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
+   "commit": "acc5ca5a0890e3b98d1a45022260fd4d7c7ca65d",
+   "pr": 160,
+   "deploy_run": 40824956958,
+   "live_qa": [
+    40825112630,
+    40825115265
+   ],
+   "evidence": "PR #160 validate passed; Pages deploy 40824956958; live markup QA 40825112630 and post-publish QA 40825115265 passed",
+   "next_action": "Done"
   },
   {
    "id": "CONTENT-01",
    "phase": "CONTENT",
    "title": "Supporting pages under the 1,000-word equivalent (Latin words < 1000; Korean words < 750; Chinese/Japanese characters < 1500): expand toward 1,600+ words where the topic and reliable sources support it",
-   "scope": "selector: CONTENT-SEO-MATRIX content_check = UPGRADE_TODO — today the 8 rental-checklist pages (de, en, es, fr, ko, nl, pt, zh; 675–937 words or 1,423 characters)",
-   "status": "TODO",
-   "branch": null,
+   "scope": [
+    "DE-CHECKLIST",
+    "EN-CHECKLIST",
+    "ES-CHECKLIST",
+    "FR-CHECKLIST",
+    "KO-CHECKLIST",
+    "NL-CHECKLIST",
+    "PT-CHECKLIST",
+    "ZH-CHECKLIST"
+   ],
+   "status": "FIXED",
+   "branch": "seo/az-content-01",
    "commit": null,
    "pr": null,
    "deploy_run": null,
    "live_qa": [],
-   "evidence": "",
-   "next_action": "After META: research each page's topic with official/primary sources, add sourced sections, FAQ and internal links; fact-guard and content-graph must pass"
+   "evidence": "Five source-based sections per checklist (papers to carry under Law 36/2024 art. 56 and Decree 67/2023; function check and test ride; fuel, odometer and keys; helmet check under art. 33(2); late return or camera notices), built only from the locale's own published guides and the laws they cite; references added where a section relies on a further source (Decree 168/2024 full text, hatinh.gov.vn camera-notice article, government portal summary of art. 56). Main content now: de 1,642 words, en 1,728 words, es 1,785 words, fr 1,779 words, ko 1,203 words, nl 1,727 words, pt 1,739 words, zh 2,689 characters. Local QA: build --check, seo-guard --strict, fact-guard, content-graph, language audit, nav QA, full node tests",
+   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR",
+   "selector": "CONTENT-SEO-MATRIX content_check = UPGRADE_TODO (on 2026-10-29: these 8 rental-checklist pages, 675–937 words or 1,423 characters before)"
+  },
+  {
+   "id": "TECH-04",
+   "phase": "TECH",
+   "title": "Desktop header: the main menu overflowed onto the brand and the language switcher at 1181–1920 px",
+   "scope": "all pages (assets/ultra.css: menu wraps inside its own column at ≥1181 px; ultra.css cache version responsive-20261029-1)",
+   "status": "FIXED",
+   "branch": "seo/az-content-01",
+   "commit": null,
+   "pr": null,
+   "deploy_run": null,
+   "live_qa": [],
+   "evidence": "Playwright overlap probe on a local build: 36 brand/menu/switcher overlaps across 10 locales × 6 widths (1181, 1280, 1366, 1440, 1536, 1920 px) before, 0 after; header height 83 → 85 px where the menu takes two rows",
+   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
   },
   {
    "id": "TECH-02",
    "phase": "TECH",
    "title": "A–Z technical re-audit: canonical, hreflang, sitemap, schema, lab Core Web Vitals, accessibility, broken links, duplicates and cannibalization in 10 languages",
-   "scope": "all published URLs; known: at 1366 px the header brand 'VIETNAM / WHEELS' overlaps the first menu item 'Home' (seen on /en/topics/riding-safety-and-support/, 2026-10-29)",
+   "scope": "all published URLs (the 1366 px header overlap noted on 2026-10-29 is handled by TECH-04)",
    "status": "TODO",
    "branch": null,
    "commit": null,

@@ -3,11 +3,11 @@
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
  "current_task": {
-  "id": "META-01",
-  "phase": "META",
-  "title": "Titles and meta descriptions outside the display bands (vi, en, de, fr, es, nl, pt): title truncation risk or under 45 characters; description under 140 or over 160 characters",
+  "id": "CONTENT-01",
+  "phase": "CONTENT",
+  "title": "Supporting pages under the 1,000-word equivalent (Latin words < 1000; Korean words < 750; Chinese/Japanese characters < 1500): expand toward 1,600+ words where the topic and reliable sources support it",
   "status": "FIXED",
-  "branch": "seo/az-meta-01",
+  "branch": "seo/az-content-01",
   "commit": null,
   "pr": null,
   "deploy_run": null,
@@ -15,11 +15,6 @@
   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
  },
  "next_todo": [
-  {
-   "id": "CONTENT-01",
-   "title": "Supporting pages under the 1,000-word equivalent (Latin words < 1000; Korean words < 750; Chinese/Japanese characters < 1500): expand toward 1,600+ words where the topic and reliable sources support it",
-   "next_action": "After META: research each page's topic with official/primary sources, add sourced sections, FAQ and internal links; fact-guard and content-graph must pass"
-  },
   {
    "id": "TECH-02",
    "title": "A–Z technical re-audit: canonical, hreflang, sitemap, schema, lab Core Web Vitals, accessibility, broken links, duplicates and cannibalization in 10 languages",
@@ -38,7 +33,7 @@
    "LIVE_VERIFIED": 1
   },
   "TECH": {
-   "LIVE_VERIFIED": 1,
+   "LIVE_VERIFIED": 2,
    "FIXED": 1,
    "TODO": 1
   },
@@ -46,10 +41,10 @@
    "LIVE_VERIFIED": 12
   },
   "META": {
-   "FIXED": 2
+   "LIVE_VERIFIED": 2
   },
   "CONTENT": {
-   "TODO": 1
+   "FIXED": 1
   }
  },
  "url_counts": {
@@ -60,22 +55,21 @@
   },
   "meta_status": {
    "OK": 1045,
-   "FIXED": 29,
+   "LIVE_VERIFIED": 29,
    "NOT_FORCED": 5
   },
   "content_status": {
    "OK": 1056,
    "NOT_FORCED": 15,
-   "TODO": 8
+   "FIXED": 8
   },
   "tech_status": {
    "OK": 1079
   },
   "status": {
-   "LIVE_VERIFIED": 1030,
+   "LIVE_VERIFIED": 1058,
    "OK": 13,
-   "TODO": 7,
-   "FIXED": 29
+   "FIXED": 8
   }
  },
  "standards": {
