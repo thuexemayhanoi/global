@@ -534,14 +534,17 @@
     "ZH-S88",
     "PT-S05"
    ],
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-img-04",
-   "commit": null,
-   "pr": null,
-   "deploy_run": null,
-   "live_qa": [],
-   "evidence": "Local QA: build --check, seo-guard, fact-guard, content-graph, full node tests (cover files, sizes, markup, og:image, Article image, alt)",
-   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
+   "commit": "ef1d16e8746f2e884aa79beeba32018074bbda26",
+   "pr": 152,
+   "deploy_run": 40815073943,
+   "live_qa": [
+    40815171019,
+    40815173724
+   ],
+   "evidence": "PR #152 validate passed; Pages deploy 40815073943; live markup QA 40815171019 and post-publish QA 40815173724 passed",
+   "next_action": "Done"
   },
   {
    "id": "IMG-05",
@@ -649,14 +652,14 @@
     "EN-S12",
     "EN-S13"
    ],
-   "status": "TODO",
-   "branch": null,
+   "status": "FIXED",
+   "branch": "seo/az-img-05",
    "commit": null,
    "pr": null,
    "deploy_run": null,
    "live_qa": [],
-   "evidence": "",
-   "next_action": "Render covers for the 100 URLs, QA (size 100–300 KB target, dims, alt), PR, merge, deploy, live QA"
+   "evidence": "Local QA: build --check, seo-guard, fact-guard, content-graph, full node tests (cover files, sizes, markup, og:image, Article image, alt)",
+   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
   },
   {
    "id": "IMG-06",
