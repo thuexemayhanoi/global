@@ -93,9 +93,12 @@ export async function checkAll(cited,fetcher=fetch,{concurrency=8,perHost=2}={})
 }
 
 /** Which expected phrases ("a|b" = either spelling) occur in a page's visible text, case- and space-insensitive. */
+export function pageText(html){
+ return String(html).replace(/<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>/gi," ").replace(/<[^>]+>/g," ")
+  .replace(/&nbsp;|&#160;|\u00a0|\u202f/g," ").replace(/&amp;/g,"&").replace(/\s+/g," ");
+}
 export function expectedFound(html,expect=[]){
- const text=String(html).replace(/<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>/gi," ").replace(/<[^>]+>/g," ")
-  .replace(/&nbsp;|&#160;|\u00a0|\u202f/g," ").replace(/&amp;/g,"&").replace(/\s+/g," ").toLowerCase();
+ const text=pageText(html).toLowerCase();
  const found=[],missing=[];
  for(const e of expect)(String(e).split("|").some(alt=>text.includes(alt.toLowerCase().replace(/\s+/g," ")))?found:missing).push(e);
  return {found,missing};
@@ -112,6 +115,12 @@ export async function checkCandidates(list,fetcher=fetch){
    const body=/html|text|json|xml/.test(type)||!type?await res.text():"";
    if(!body)await res.body?.cancel?.();
    r={...r,status:res.status,finalUrl:res.url||c.url,type,...(body?expectedFound(body,r.expect):{found:[],missing:r.expect,note:"non-text body ("+type+"): facts not machine-checked"})};
+   // Optional reading aid: the page title and the passage around each requested phrase.
+   if(body&&c.context){
+    const text=pageText(body),low=text.toLowerCase();
+    r.title=(body.match(/<title[^>]*>([^<]*)/i)?.[1]||"").trim().slice(0,160);
+    r.snippets=c.context.map(k=>{const i=low.indexOf(k.toLowerCase());return i<0?k+": (absent)":text.slice(Math.max(0,i-160),i+240);});
+   }
   }catch(e){r={...r,error:String(e?.cause?.code||e?.name||e).slice(0,80)};}
   r.class=classify(r);
   out.push(r);
@@ -123,7 +132,11 @@ async function main(){
  const cand=process.argv.find(a=>a.startsWith("--candidates="))?.split("=")[1];
  if(cand){
   const results=await checkCandidates(JSON.parse(fs.readFileSync(path.join(ROOT,cand),"utf8")));
-  for(const r of results)console.log("CANDIDATE",r.class,r.status||r.error,r.url,"->",r.finalUrl||"","| found:",JSON.stringify(r.found||[]),"| missing:",JSON.stringify(r.missing||[]),r.note||"");
+  for(const r of results){
+   console.log("CANDIDATE",r.class,r.status||r.error,r.url,"->",r.finalUrl||"","| found:",JSON.stringify(r.found||[]),"| missing:",JSON.stringify(r.missing||[]),r.note||"");
+   if(r.title!==undefined)console.log("  TITLE",r.title);
+   for(const x of r.snippets||[])console.log("  SNIPPET",x);
+  }
   fs.mkdirSync(path.join(ROOT,"reports"),{recursive:true});
   fs.writeFileSync(path.join(ROOT,"reports/reference-candidates.json"),JSON.stringify(results,null,1)+"\n");
   return;
