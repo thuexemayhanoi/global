@@ -3,11 +3,11 @@
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
  "current_task": {
-  "id": "IMG-09",
+  "id": "IMG-10",
   "phase": "IMG",
-  "title": "Cover image batch 9: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
+  "title": "Cover image batch 10: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
   "status": "FIXED",
-  "branch": "seo/az-img-09",
+  "branch": "seo/az-img-10",
   "commit": null,
   "pr": null,
   "deploy_run": null,
@@ -15,11 +15,6 @@
   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
  },
  "next_todo": [
-  {
-   "id": "IMG-10",
-   "title": "Cover image batch 10: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
-   "next_action": "Render covers for the 100 URLs, QA (size 100–300 KB target, dims, alt), PR, merge, deploy, live QA"
-  },
   {
    "id": "IMG-11",
    "title": "Cover image batch 11: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (64 URLs)",
@@ -39,6 +34,11 @@
    "id": "CONTENT-01",
    "title": "Supporting pages under the 1,000-word equivalent (Latin words < 1000; Korean words < 750; Chinese/Japanese characters < 1500): expand toward 1,600+ words where the topic and reliable sources support it",
    "next_action": "After META: research each page's topic with official/primary sources, add sourced sections, FAQ and internal links; fact-guard and content-graph must pass"
+  },
+  {
+   "id": "TECH-02",
+   "title": "A–Z technical re-audit: canonical, hreflang, sitemap, schema, lab Core Web Vitals, accessibility, broken links, duplicates and cannibalization in 10 languages",
+   "next_action": "After CONTENT: rerun audit-static, seo-guard, content-graph review pairs, live markup QA; fix verified issues"
   }
  ],
  "blocked": [],
@@ -57,9 +57,9 @@
    "TODO": 1
   },
   "IMG": {
-   "LIVE_VERIFIED": 9,
+   "LIVE_VERIFIED": 10,
    "FIXED": 1,
-   "TODO": 2
+   "TODO": 1
   },
   "META": {
    "TODO": 2
@@ -70,10 +70,10 @@
  },
  "url_counts": {
   "img_status": {
-   "LIVE_VERIFIED": 800,
+   "LIVE_VERIFIED": 900,
    "OK": 11,
    "NOT_NEEDED": 4,
-   "TODO": 164,
+   "TODO": 64,
    "FIXED": 100
   },
   "meta_status": {
@@ -90,8 +90,8 @@
    "OK": 1079
   },
   "status": {
-   "LIVE_VERIFIED": 685,
-   "TODO": 286,
+   "LIVE_VERIFIED": 782,
+   "TODO": 189,
    "OK": 8,
    "FIXED": 100
   }
