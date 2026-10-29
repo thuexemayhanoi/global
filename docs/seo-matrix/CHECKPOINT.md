@@ -4,27 +4,27 @@ Generated 2026-10-29 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 
 ## Current task
 
-- **IMG-08** (IMG): Cover image batch 8: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
-- Status: **FIXED** · branch `seo/az-img-08` · PR - · merge `-` · deploy - · live QA -
+- **IMG-09** (IMG): Cover image batch 9: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
+- Status: **FIXED** · branch `seo/az-img-09` · PR - · merge `-` · deploy - · live QA -
 - NEXT_ACTION: Merge after CI, deploy, live QA; record runs in the next PR
 
 ## Next TODO
 
-1. **IMG-09**: Cover image batch 9: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
-2. **IMG-10**: Cover image batch 10: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
-3. **IMG-11**: Cover image batch 11: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (64 URLs)
-4. **META-01**: Titles and meta descriptions outside the display bands (vi, en, de, fr, es, nl, pt): title truncation risk or under 45 characters; description under 140 or over 160 characters
-5. **META-02**: zh, ja, ko titles and descriptions checked by display width (full-width characters count double)
+1. **IMG-10**: Cover image batch 10: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)
+2. **IMG-11**: Cover image batch 11: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (64 URLs)
+3. **META-01**: Titles and meta descriptions outside the display bands (vi, en, de, fr, es, nl, pt): title truncation risk or under 45 characters; description under 140 or over 160 characters
+4. **META-02**: zh, ja, ko titles and descriptions checked by display width (full-width characters count double)
+5. **CONTENT-01**: Supporting pages under the 1,000-word equivalent (Latin words < 1000; Korean words < 750; Chinese/Japanese characters < 1500): expand toward 1,600+ words where the topic and reliable sources support it
 
 ## URL status counts
 
 | Dimension | TODO | IN_PROGRESS | FIXED | MERGED | DEPLOYED | LIVE_VERIFIED | BLOCKED | OK | NOT_FORCED | NOT_NEEDED |
 |---|---|---|---|---|---|---|---|---|---|---|
-| img_status | 264 | 0 | 100 | 0 | 0 | 700 | 0 | 11 | 0 | 4 |
+| img_status | 164 | 0 | 100 | 0 | 0 | 800 | 0 | 11 | 0 | 4 |
 | meta_status | 155 | 0 | 0 | 0 | 0 | 0 | 0 | 919 | 5 | 0 |
 | content_status | 8 | 0 | 0 | 0 | 0 | 0 | 0 | 1056 | 15 | 0 |
 | tech_status | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1079 | 0 | 0 |
-| status | 374 | 0 | 100 | 0 | 0 | 597 | 0 | 8 | 0 | 0 |
+| status | 286 | 0 | 100 | 0 | 0 | 685 | 0 | 8 | 0 | 0 |
 
 ## Task board counts
 
@@ -33,7 +33,7 @@ Generated 2026-10-29 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 | HISTORY | 0 | 0 | 0 | 2 | 2 | 25 | 0 |
 | MATRIX | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
 | TECH | 1 | 0 | 0 | 0 | 0 | 1 | 0 |
-| IMG | 3 | 0 | 1 | 0 | 0 | 8 | 0 |
+| IMG | 2 | 0 | 1 | 0 | 0 | 9 | 0 |
 | META | 2 | 0 | 0 | 0 | 0 | 0 | 0 |
 | CONTENT | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 
