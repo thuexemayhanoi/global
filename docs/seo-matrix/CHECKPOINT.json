@@ -3,11 +3,11 @@
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
  "current_task": {
-  "id": "IMG-03",
+  "id": "IMG-04",
   "phase": "IMG",
-  "title": "Cover image batch 3: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
+  "title": "Cover image batch 4: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
   "status": "FIXED",
-  "branch": "seo/az-img-03",
+  "branch": "seo/az-img-04",
   "commit": null,
   "pr": null,
   "deploy_run": null,
@@ -15,11 +15,6 @@
   "next_action": "Merge after CI, deploy, live QA; record runs in the next PR"
  },
  "next_todo": [
-  {
-   "id": "IMG-04",
-   "title": "Cover image batch 4: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
-   "next_action": "Render covers for the 100 URLs, QA (size 100–300 KB target, dims, alt), PR, merge, deploy, live QA"
-  },
   {
    "id": "IMG-05",
    "title": "Cover image batch 5: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
@@ -39,6 +34,11 @@
    "id": "IMG-08",
    "title": "Cover image batch 8: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
    "next_action": "Render covers for the 100 URLs, QA (size 100–300 KB target, dims, alt), PR, merge, deploy, live QA"
+  },
+  {
+   "id": "IMG-09",
+   "title": "Cover image batch 9: unique 1200×675 + 640 WebP cover from the page's own H1/H2 over its topic illustration, localized alt, og:image and Article image (100 URLs)",
+   "next_action": "Render covers for the 100 URLs, QA (size 100–300 KB target, dims, alt), PR, merge, deploy, live QA"
   }
  ],
  "blocked": [],
@@ -57,9 +57,9 @@
    "TODO": 1
   },
   "IMG": {
-   "LIVE_VERIFIED": 3,
+   "LIVE_VERIFIED": 4,
    "FIXED": 1,
-   "TODO": 8
+   "TODO": 7
   },
   "META": {
    "TODO": 2
@@ -70,10 +70,10 @@
  },
  "url_counts": {
   "img_status": {
-   "LIVE_VERIFIED": 200,
+   "LIVE_VERIFIED": 300,
    "OK": 11,
-   "TODO": 764,
    "FIXED": 100,
+   "TODO": 664,
    "NOT_NEEDED": 4
   },
   "meta_status": {
@@ -90,8 +90,8 @@
    "OK": 1079
   },
   "status": {
-   "LIVE_VERIFIED": 156,
-   "TODO": 815,
+   "LIVE_VERIFIED": 242,
+   "TODO": 729,
    "FIXED": 100,
    "OK": 8
   }
