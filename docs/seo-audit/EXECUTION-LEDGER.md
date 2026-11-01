@@ -22,7 +22,7 @@ Tasks: 95 — BLOCKED 1, DONE 53, NOT_APPLICABLE 34, OWNER_DECISION 7.
 
 ## Before / after (same analyzer, measured rules)
 
-Findings: **933 → 767** reported by the re-audit; 42 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
+Findings: **933 → 769** reported by the re-audit; 44 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
 
 | Rule | Baseline | Re-audit | Outcomes |
 |---|---:|---:|---|
@@ -70,6 +70,7 @@ Findings with no baseline counterpart (rules added by the re-audit or new on a p
 | S-NO-VISIBLE-DATE | 1 | P2 |
 | S-REF-DATES-HIDDEN | 1 | P2 |
 | S-UI-UNTRANSLATED | 9 | P2 |
+| U-DEAD-REFERENCE | 2 | P2 |
 | S-ARIA-LABEL-SPAN | 1 | P3 |
 | S-COVER-SRCSET | 1 | P3 |
 | S-HERO-ART-TEXT | 1 | P3 |
@@ -85,7 +86,7 @@ Findings with no baseline counterpart (rules added by the re-audit or new on a p
 |---|---:|---:|---:|---:|---:|---:|---:|
 | vi | 45 | 7 | 0 | 37 | 1 | 0 | 42 |
 | en | 77 | 15 | 0 | 61 | 1 | 0 | 65 |
-| de | 194 | 27 | 0 | 165 | 2 | 0 | 172 |
+| de | 194 | 27 | 0 | 165 | 2 | 0 | 174 |
 | fr | 44 | 8 | 0 | 35 | 1 | 0 | 39 |
 | es | 48 | 10 | 0 | 38 | 0 | 0 | 37 |
 | nl | 53 | 10 | 0 | 43 | 0 | 0 | 48 |

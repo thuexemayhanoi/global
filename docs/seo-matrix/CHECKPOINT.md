@@ -14,7 +14,7 @@ Generated 2026-11-01 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 2. **CONTENT-03**: No page prints its own publication or update date: show a localized 'Published · Updated' line with <time> from the dates that already feed JSON-LD and sitemap lastmod
 3. **CONTENT-04**: The About page promises that each guide lists the date its references were checked, but no reference shows it: print each source's checked_on
 4. **CONTENT-05**: Four FAQ questions are repeated word for word on two pages each (de, en, fr, nl): make them self-contained
-5. **TECH-08**: English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label, Pillar hero labels) and aria-label on a <span> without a role
+5. **CONTENT-06**: Dead reference: Hanoi 115 emergency centre page (capcuu115hanoi.com) answers 404 on two German guides
 
 ## URL status counts
 
@@ -35,7 +35,7 @@ Generated 2026-11-01 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 | TECH | 3 | 0 | 0 | 0 | 0 | 7 | 0 |
 | IMG | 2 | 0 | 0 | 0 | 0 | 12 | 0 |
 | META | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
-| CONTENT | 3 | 0 | 0 | 0 | 0 | 2 | 0 |
+| CONTENT | 4 | 0 | 0 | 0 | 0 | 2 | 0 |
 
 ## Resume rule
 

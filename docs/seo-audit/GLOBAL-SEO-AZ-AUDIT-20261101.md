@@ -9,19 +9,19 @@
 
 | Tệp | Nội dung |
 |---|---|
-| [`reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx`](../../reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx) | Master SEO Matrix: 19 sheet (14 sheet bắt buộc, README & LEGEND, LISTS, IMAGE SEO MATRIX, CONTENT SEO MATRIX, SEO TASK BOARD), 17 bảng, 2.152 dòng URL/Matrix, 767 lỗi, 76 nhiệm vụ, 219 công thức (0 lỗi sau khi LibreOffice tính lại), 3 biểu đồ |
+| [`reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx`](../../reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx) | Master SEO Matrix: 19 sheet (14 sheet bắt buộc, README & LEGEND, LISTS, IMAGE SEO MATRIX, CONTENT SEO MATRIX, SEO TASK BOARD), 17 bảng, 2.152 dòng URL/Matrix, 769 lỗi, 77 nhiệm vụ, 221 công thức (0 lỗi sau khi LibreOffice tính lại), 3 biểu đồ |
 | [`reports/seo/data/audit-master-matrix.csv`](../../reports/seo/data/audit-master-matrix.csv) | Master Matrix kiểm toán dạng CSV. Không ghi đè `data/seo/master-matrix.json` |
 | [`reports/seo/data/findings.csv`](../../reports/seo/data/findings.csv), [`tasks.csv`](../../reports/seo/data/tasks.csv), [`locale-matrix.csv`](../../reports/seo/data/locale-matrix.csv) | Lỗi, nhiệm vụ và bảng 10 ngôn ngữ |
 | [`reports/seo/data/deep-audit.json`](../../reports/seo/data/deep-audit.json) | Kết quả kiểm tra sâu từng URL (mới trong lần này) |
 | [`reports/seo/data/raw/`](../../reports/seo/data/raw/) | Bằng chứng gốc: output của 10 công cụ QA, các run live, axe, W3C validator, Lighthouse, tương phản màu, kiểm tra giá, từ khóa |
-| [`docs/seo-matrix/TASKS.json`](../seo-matrix/TASKS.json), [`CHECKPOINT.md`](../seo-matrix/CHECKPOINT.md) | 8 nhiệm vụ TODO mới cho các lỗi đã xác minh; checkpoint chỉ nhiệm vụ tiếp theo |
+| [`docs/seo-matrix/TASKS.json`](../seo-matrix/TASKS.json), [`CHECKPOINT.md`](../seo-matrix/CHECKPOINT.md) | 9 nhiệm vụ TODO mới cho các lỗi đã xác minh; checkpoint chỉ nhiệm vụ tiếp theo |
 | [`docs/seo-audit/tools/`](tools/) | Công cụ chỉ đọc: thêm `deep_audit.py` và `site_browser_audit.cjs`; mở rộng `analyze.py`, `ledger.py`, `build_workbook.py` |
 
 ---
 
 ## 1. Tóm tắt điều hành
 
-**Kỹ thuật: rất tốt, không có lỗi P0.** Production khớp từng byte với bản build đã commit: 1.081/1.081 route (1.079 URL đã xuất bản, `/search/`, `/404.html`) trả HTTP 200 và HTML giống hệt ([live markup QA 41326939112](https://github.com/thuexemayhanoi/global/actions/runs/41326939112)). Post-publish QA chạy 1.094 kiểm tra, 0 lỗi ([run 41326941613](https://github.com/thuexemayhanoi/global/actions/runs/41326941613)). Lần này đã đo thêm bằng trình duyệt trên **toàn bộ 1.081 trang**: 0 vi phạm WCAG A/AA (axe-core), 0 trang tràn ngang ở 390 px, 0 lỗi JavaScript. W3C validator báo 0 lỗi HTML. Lighthouse lab cho trung vị 100 điểm ở cả 4 hạng mục. Mọi trang cách trang chủ tối đa 3 click. Không có link nội bộ hỏng, không có link qua redirect, không có trang trùng lặp. Không trang nào trích dẫn văn bản luật đã hết hiệu lực mà không nêu văn bản thay thế.
+**Kỹ thuật: rất tốt, không có lỗi P0.** Production khớp từng byte với bản build đã commit: 1.081/1.081 route (1.079 URL đã xuất bản, `/search/`, `/404.html`) trả HTTP 200 và HTML giống hệt ([live markup QA 41326939112](https://github.com/thuexemayhanoi/global/actions/runs/41326939112)). Post-publish QA chạy 1.094 kiểm tra, 0 lỗi ([run 41326941613](https://github.com/thuexemayhanoi/global/actions/runs/41326941613)). Lần này đã đo thêm bằng trình duyệt trên **toàn bộ 1.081 trang**: 0 vi phạm WCAG A/AA (axe-core), 0 trang tràn ngang ở 390 px, 0 lỗi JavaScript. W3C validator báo 0 lỗi HTML. Lighthouse lab cho trung vị 100 điểm ở cả 4 hạng mục. Mọi trang cách trang chủ tối đa 3 click. Không có link nội bộ hỏng, không có link qua redirect, không có trang trùng lặp. Trong 1.420 nguồn trích dẫn ra ngoài, chỉ 1 nguồn đã chết (404, trên 2 trang DE). Không trang nào trích dẫn văn bản luật đã hết hiệu lực mà không nêu văn bản thay thế.
 
 **Vấn đề nằm ở độ hiển thị, đo lường và độ tin cậy, không nằm ở kỹ thuật:**
 
@@ -33,7 +33,8 @@
 6. **(P2, mới) Chuỗi giao diện tiếng Anh trên 977 trang không phải tiếng Anh.** Link "Skip to content", `aria-label="Breadcrumb"` và nhãn "Estimated reading time" chưa được dịch (WCAG 2.2 SC 3.1.2). Khung minh họa hero của 10 Pillar cũng có chữ "10 LANGUAGES", "4 TOPIC HUBS".
 7. **(P2, mới) Ảnh bìa nằm trong màn hình đầu nhưng `loading="lazy"`.** Gặp ở 98/127 trang desktop được kiểm tra và ở 10 trang checklist trên mobile. Ở 20 trang desktop và 3 trang mobile, chính ảnh lazy này là phần tử LCP. Lighthouse báo `lcp-lazy-loaded`. LCP mobile lab của trang checklist là 1,95 s, các template khác 1,43–1,50 s.
 8. **(P3, mới) 12 cụm chủ đề có mặt ở cả 10 ngôn ngữ nhưng chưa có hreflang.** Gồm 4 Hub (H01–H04) và 8 bài khởi đầu (S01–S08), tổng 120 URL. Sáu cụm (S01–S04, S06, S08) dùng chung phần lớn nguồn. Đây **không phải lỗi**: chúng giữ trạng thái NO_EQUIVALENT_BY_DESIGN cho tới khi biên tập viên xác nhận là các phiên bản của cùng một trang.
-9. **(P3, mới) Tối ưu nhỏ:** 4 câu hỏi FAQ trùng nguyên văn trên 8 trang (de, en, fr, nl). 4 file CSS chặn render. Ảnh bìa thiếu kích thước trung gian trong `srcset` (phí 47–63 KB/trang trên mobile). `aria-label` đặt trên `<span>` (W3C cảnh báo ở 1.064 trang). Slug zh/ko/ja lẫn tiếng Anh. Thiếu header X-Content-Type-Options/CSP (giới hạn của GitHub Pages).
+9. **(P2, mới) 1 nguồn trích dẫn đã chết.** Trang của Trung tâm Cấp cứu 115 Hà Nội (`capcuu115hanoi.com/cap-cuu-va-van-chuyen-cap-cuu`) trả 404. Nguồn này được dẫn trên 2 bài DE (DE-S108, DE-S196) cho thông tin về số 115 (`U-DEAD-REFERENCE`, nhiệm vụ CONTENT-06).
+10. **(P3, mới) Tối ưu nhỏ:** 4 câu hỏi FAQ trùng nguyên văn trên 8 trang (de, en, fr, nl). 4 file CSS chặn render. Ảnh bìa thiếu kích thước trung gian trong `srcset` (phí 47–63 KB/trang trên mobile). `aria-label` đặt trên `<span>` (W3C cảnh báo ở 1.064 trang). Slug zh/ko/ja lẫn tiếng Anh. Thiếu header X-Content-Type-Options/CSP (giới hạn của GitHub Pages).
 
 | KPI (công thức trong EXECUTIVE DASHBOARD) | Giá trị | Bằng chứng |
 |---|---:|---|
@@ -50,9 +51,9 @@
 | Hàng IDEA: READY / CLAIMED / SUBMITTED chưa xuất bản | 1.041 / 30 / 0 | VERIFIED |
 | Từ khóa xếp hạng / DA / backlink / RD | 0 / 3 / 58 / 53 | INFERRED (Ubersuggest) |
 | Search Console, GA4, CrUX, AI visibility | — | NOT_CONNECTED |
-| Lỗi: P0 / P1 / P2 / P3 (tổng 767) | 0 / 3 / 148 / 616 | — |
-| Lỗi đang mở / chờ chủ sở hữu / bị chặn / đã xong hoặc đã thẩm định | 36 / 17 / 1 / 713 | — |
-| Nhiệm vụ: đang mở / chờ chủ sở hữu / bị chặn / xong hoặc N/A | 13 / 10 / 1 / 52 (tổng 76) | — |
+| Lỗi: P0 / P1 / P2 / P3 (tổng 769) | 0 / 3 / 150 / 616 | — |
+| Lỗi đang mở / chờ chủ sở hữu / bị chặn / đã xong hoặc đã thẩm định | 38 / 17 / 1 / 713 | — |
+| Nhiệm vụ: đang mở / chờ chủ sở hữu / bị chặn / xong hoặc N/A | 14 / 10 / 1 / 52 (tổng 77) | — |
 
 ---
 
@@ -67,11 +68,11 @@
 | Live Markup QA (GitHub Actions) | VERIFIED | [41326939112](https://github.com/thuexemayhanoi/global/actions/runs/41326939112): 1.081/1.081 giống hệt, 0 lệch |
 | Post-Publish QA + host probe | VERIFIED | [41326941613](https://github.com/thuexemayhanoi/global/actions/runs/41326941613): 1.094 kiểm tra, 0 lỗi; http→https 301, `/vi`→`/vi/` 301, `www` không phân giải, HSTS `max-age=31556952`, `cache-control: max-age=600` |
 | Kiểm tra lại giá bên thứ ba | VERIFIED | [41331401025](https://github.com/thuexemayhanoi/global/actions/runs/41331401025): 95 bài, 177 đoạn: 116 VERIFIED, 18 PARTIAL, 2 NOT_FOUND (cả hai đã kiểm tay ngày 28/10 và đúng), 41 UNREACHABLE (thuvienphapluat.vn trả 403) |
-| Kiểm tra liên kết nguồn ngoài | VERIFIED | REFLINK_RESULT |
+| Kiểm tra liên kết nguồn ngoài | VERIFIED | [41331398658](https://github.com/thuexemayhanoi/global/actions/runs/41331398658): 1.420 link trên 1.079 trang (381 host): OK 1.155, BLOCKED 164, NETWORK 95, SERVER_ERROR 5, **BROKEN 1** (29/10: BROKEN 13, đã sửa ở TECH-05). BLOCKED/NETWORK là chặn bot hoặc host không trả lời runner ở Mỹ, không phải link chết đã xác minh |
 | Audit trình duyệt (Playwright Chromium + axe-core 4.10.3) | VERIFIED (lab) | 1.081 trang ở 390 px, 127 trang ở 1366 px |
 | W3C Nu Html Checker | VERIFIED | 1.081 trang: 0 lỗi, 1.064 cảnh báo (cùng một mẫu `aria-label`) |
 | Lighthouse 12.6.1 | VERIFIED (lab) | 15 URL mẫu × mobile/desktop (30 lần chạy) |
-| Đo tương phản màu các nút axe "cần xem xét" | VERIFIED (mẫu) | 6 template × 2 viewport, đo theo computed style và theo pixel |
+| Đo tương phản màu các nút axe "cần xem xét" | VERIFIED (mẫu) | 6 URL đại diện template (nền đặc, theo computed style) và 5 URL (nền ảnh/gradient, theo pixel), mỗi URL ở 390 px và 1366 px |
 | Volume từ khóa | VERIFIED / NOT_CHECKED | DataForSEO 27/10 (vi, en, fr, ko, ja đủ; de, es một phần). Ubersuggest 01/11: "motorbike rental hanoi" toàn cầu 2.900/tháng; "alugar moto hanoi" (Bồ Đào Nha) 0. nl, pt, zh: không đủ dữ liệu |
 | Backlink, DA (Ubersuggest) | INFERRED | DA 3, 58 backlink, 53 RD, 0 từ khóa |
 | GSC, GA4, CrUX, theo dõi thứ hạng, AI visibility | NOT_CONNECTED | OpenSEO: 0 tài khoản Google; OpenRush: chưa kết nối gì |
@@ -117,7 +118,7 @@
 | Indexability, canonical | 1.079 self-canonical, `og:url` = canonical, `max-image-preview:large` trên mọi trang indexable | OK |
 | Title, meta, heading | 0 trùng, H1 = 1 trên mọi trang, 0 nhảy cấp heading, 0 title quá 65 độ rộng. 193 description zh/ko/ja vượt 165 độ rộng nhưng nằm trong khoảng CJK đã chấp nhận (đã thẩm định ở đợt C/M) | OK |
 | Link nội bộ, anchor, trang mồ côi | 0 link hỏng, độ sâu tối đa 3 (932 trang ở độ sâu 3), 0 trang mồ côi. Pillar có PageRank nội bộ cao nhất ở mỗi ngôn ngữ. 197 cảnh báo đa dạng anchor (đã thẩm định) | OK / P3 |
-| Link ngoài | 26.497 link ngoài, tất cả `rel="noopener noreferrer"`, 0 link `http://`. REFLINK_SHORT | OK |
+| Link ngoài | 26.497 link ngoài, tất cả `rel="noopener noreferrer"`, 0 link `http://`. Kiểm tra live 1.420 nguồn: 1 nguồn 404 (`U-DEAD-REFERENCE`, 2 trang DE) | P2 |
 | Dữ liệu có cấu trúc | 1.079 graph hợp lệ. Article trên 1.064 trang, FAQPage trên 1.074 trang (mọi câu hỏi đều hiển thị trên trang). `dateModified` = sitemap lastmod, `mainEntityOfPage` = canonical, file ảnh Article tồn tại, headline ≤ 110 ký tự, BreadcrumbList kết thúc ở chính trang: 0 lỗi | OK |
 | Breadcrumb, điều hướng, phân trang | Breadcrumb hiển thị + JSON-LD trên mọi trang con. Menu dùng chung (nav-qa PASS). Site không có trang phân trang | OK |
 | Mobile | 0 trang tràn ngang ở 390 px. Có viewport meta | OK |
@@ -175,6 +176,7 @@
 ### 6.3 Độ mới và độ chính xác
 
 - **Văn bản pháp luật:** 0 trang trích Nghị định 100/2019, Nghị định 123/2021, Luật Giao thông đường bộ 23/2008 hay Thông tư 12/2017/TT-BGTVT. 51 trang nhắc A1 ≤ 175 cm³ hoặc Thông tư 12/2025/TT-BCA. Đã đọc từng câu: tất cả trình bày đúng là quy định cũ hoặc chuyển tiếp (Điều 89 Luật 36/2024/QH15) và đều nêu văn bản thay thế (Thông tư 108/2026/TT-BCA, hiệu lực từ 01/07/2026). 34 trang nhắc giấy phép quốc tế theo Công ước 1949; đã đọc từng câu: tất cả nhất quán rằng Việt Nam chỉ công nhận giấy phép theo Công ước Vienna 1968, ngoại lệ là Hàn Quốc theo hiệp định song phương 2023.
+- **Nguồn trích dẫn:** 1.420 link nguồn kiểm tra live ngày 01/11: 1.155 OK, 1 chết (Trung tâm Cấp cứu 115 Hà Nội, 404, trên DE-S108 và DE-S196; nhiệm vụ CONTENT-06). 264 link BLOCKED/NETWORK/SERVER_ERROR là chặn bot hoặc host chậm, không phải link chết đã xác minh.
 - **Giá bên thứ ba:** 116/177 đoạn VERIFIED, 18 PARTIAL. 2 đoạn NOT_FOUND là do trình kiểm tra tự động gán nhầm nguồn, đã xác minh tay ngày 28/10. 41 đoạn UNREACHABLE (403 từ thuvienphapluat.vn). `fact-guard` vẫn giữ cảnh báo có chủ đích cho 95 bài có giá.
 
 ### 6.4 E-E-A-T, AEO/GEO và CTR
@@ -201,12 +203,12 @@ DA 3, 58 backlink, 53 referring domain, 0 từ khóa (INFERRED, Ubersuggest 01/1
 | 6 | CONTENT AUDIT | Ngày hiển thị, số nguồn có ngày kiểm tra, trang giống nhất và điểm trùng, độ mới pháp lý, độ phủ query trong mở đầu và H2, số câu FAQ |
 | 7 | KEYWORD MATRIX | Thêm dữ liệu thị trường 01/11 (head term EN toàn cầu, probe PT) |
 | 8–11 | TOPICAL AUTHORITY, INTERNAL LINK MATRIX, SCHEMA & AEO GEO, INDEXING & SITEMAPS | Thêm độ sâu click (toàn bộ link và link trong `<main>`), PageRank và hạng trong ngôn ngữ, độ nhất quán ngày JSON-LD và sitemap, `lastmod = dateModified` |
-| 12 | ERRORS & BLOCKERS | 767 lỗi. Trạng thái lấy từ ledger (baseline) hoặc là OPEN/OWNER_DECISION (lỗi mới) |
-| 13 | SEO ACTION PLAN | 76 nhiệm vụ. Việc còn lại xếp trước (P1 chờ chủ sở hữu, rồi P2/P3 đang mở), việc đã xong xếp cuối |
-| 14 | AUDIT CHANGELOG | Thêm các dòng ngày 01/11: tái kiểm toán, 2 run live, audit sâu, audit trình duyệt, W3C, Lighthouse, độ hiển thị, từ khóa, nguồn dữ liệu |
-| + | README & LEGEND, LISTS, IMAGE SEO MATRIX, CONTENT SEO MATRIX, SEO TASK BOARD | Hướng dẫn, danh sách giá trị và 3 sheet A–Z (task board có 8 nhiệm vụ TODO mới) |
+| 12 | ERRORS & BLOCKERS | 769 lỗi. Trạng thái lấy từ ledger (baseline) hoặc là OPEN/OWNER_DECISION (lỗi mới) |
+| 13 | SEO ACTION PLAN | 77 nhiệm vụ. Việc còn lại xếp trước (P1 chờ chủ sở hữu, rồi P2/P3 đang mở), việc đã xong xếp cuối |
+| 14 | AUDIT CHANGELOG | Thêm các dòng ngày 01/11: tái kiểm toán, 2 run live, kiểm tra giá và liên kết nguồn, audit sâu, audit trình duyệt, W3C, Lighthouse, độ hiển thị, từ khóa, nguồn dữ liệu |
+| + | README & LEGEND, LISTS, IMAGE SEO MATRIX, CONTENT SEO MATRIX, SEO TASK BOARD | Hướng dẫn, danh sách giá trị và 3 sheet A–Z (task board có 9 nhiệm vụ TODO mới) |
 
-Kiểm tra workbook: mở và tính lại bằng LibreOffice, **219 công thức, 0 lỗi**. 0 `finding_id`, `task_id` hay `audit_id` bị trùng. Mọi lỗi đều gắn với một nhiệm vụ và mọi nhiệm vụ đều có lỗi. 17 bảng với tiêu đề cột duy nhất. Freeze pane, bộ lọc, màu theo mức ưu tiên và theo trạng thái bằng chứng, dropdown trạng thái và hyperlink được giữ nguyên sau khi tính lại. `check_owner_strategy.py` (CI) PASS: 16 + 3 sheet, không khuyến nghị nhường từ khóa.
+Kiểm tra workbook: mở và tính lại bằng LibreOffice, **221 công thức, 0 lỗi**. 0 `finding_id`, `task_id` hay `audit_id` bị trùng. Mọi lỗi đều gắn với một nhiệm vụ và mọi nhiệm vụ đều có lỗi. 17 bảng với tiêu đề cột duy nhất. Freeze pane, bộ lọc, màu theo mức ưu tiên và theo trạng thái bằng chứng, dropdown trạng thái và hyperlink được giữ nguyên sau khi tính lại. `check_owner_strategy.py` (CI) PASS: 16 + 3 sheet, không khuyến nghị nhường từ khóa.
 
 ---
 
@@ -225,6 +227,7 @@ Thứ tự: P0 → P1 → P2 → P3, sau đó theo công sức (S → L). Chi ti
 | 5 | Ảnh bìa trong màn hình đầu: `loading="eager"` và `fetchpriority="high"` (IMG-LCP: `T-S-LAZY-LCP`) | P2 | `scripts/articles.mjs` | LCP không còn chờ ảnh lazy | `site_browser_audit.cjs` (`lazy_first_viewport` = 0); Lighthouse `lcp-lazy-loaded` đạt | PR merge; cập nhật test `seo-az` (hiện yêu cầu ảnh bìa lazy); Lighthouse chạy lại |
 | 6 | In ngày đăng/cập nhật bằng `<time>` (CONTENT-03: `T-S-NO-VISIBLE-DATE`) | P2 | Template bài viết | Ngày hiển thị = JSON-LD = sitemap lastmod | `deep_audit.py` (`visible_date`) | PR merge; 1.074 trang có ngày; không ngày nào bị đặt ra hoặc bị đẩy lên |
 | 7 | In ngày kiểm tra của từng nguồn (CONTENT-04: `T-S-REF-DATES-HIDDEN`) | P2 | Danh sách nguồn | Lời hứa trên trang About đúng trên mọi bài | `deep_audit.py` (`refs_checked_on_rendered` = `packet_sources_checked_on`) | PR merge; live QA khớp |
+| 8 | Thay nguồn chết `capcuu115hanoi.com` trên DE-S108 và DE-S196 (CONTENT-06: `T-U-DEAD-REFERENCE-DE`) | P2 | Bài viết (PR đã review) | Mọi nguồn trích dẫn trả lời được | `reference-link-check.yml` (BROKEN = 0) | Có địa chỉ mới, bản lưu trữ còn nêu đúng thông tin, hoặc nguồn chính thức khác; cập nhật `checked_on`; live QA khớp |
 
 ### 8.2 Tối ưu theo từng URL
 
@@ -236,7 +239,7 @@ Lọc MASTER URL INVENTORY theo `top_severity`, `finding_ids` và `task_ids` đ�
 |---|---|---|
 | **Technical** | IMG-LCP; TECH-11 gộp CSS và bỏ rule không dùng (`T-S-RENDER-BLOCKING-CSS`); IMG-SRCSET thêm cỡ ảnh 800w/960w (`T-S-COVER-SRCSET`); header bảo mật cần chủ sở hữu quyết định (`T-S-SECURITY-HEADERS`) | P2 → P3 |
 | **On-page** | Giữ title và description đang đạt chuẩn. Viết lại 4 câu FAQ trùng thành câu tự đủ nghĩa (CONTENT-05: `T-U-FAQ-REPEATED-Q-*`). Khi sửa nội dung, đưa query vào đoạn mở đầu ở những bài độ phủ thấp, nhưng không nhồi từ khóa | P3 |
-| **Nội dung** | CONTENT-03 (ngày), CONTENT-04 (ngày kiểm tra nguồn). Dispatch `source-recheck.yml` mỗi tháng. Cần người kiểm tra sự thật cho bài luật và giá (chủ sở hữu, mục 2) | P2 |
+| **Nội dung** | CONTENT-03 (ngày), CONTENT-04 (ngày kiểm tra nguồn), CONTENT-06 (thay nguồn chết trên 2 bài DE). Dispatch `source-recheck.yml` và `reference-link-check.yml` mỗi tháng. Cần người kiểm tra sự thật cho bài luật và giá (chủ sở hữu, mục 2) | P2 |
 | **Internal linking** | Thêm link ngữ cảnh tới Hub giá/cọc H02 từ các bài về chi phí (tùy chọn). Giữ link hai chiều Hub↔bài con. Không dùng anchor exact-match lặp lại | P3 |
 | **Topical authority** | Giữ nguyên 4 Hub. 6 domain mới và PR #118 chờ chủ sở hữu (không làm khi đang SEO-only). Ứng viên PROPOSED/IDEA giữ ở hàng đợi | Chờ |
 | **Cân bằng 10 ngôn ngữ** | Dịch chuỗi giao diện (TECH-08). Quyết định hreflang cho 12 cụm (TECH-10). Quy ước slug cho URL tương lai (`T-S-URL-LOCALIZATION`). Khi được phép viết bài lại: ưu tiên es, vi, nl, zh, pt, ko, ja (`T-S-LOCALE-IMBALANCE`) | P2 → P3 |
@@ -259,10 +262,10 @@ Lọc MASTER URL INVENTORY theo `top_severity`, `finding_ids` và `task_ids` đ�
 **Đã kiểm chứng (VERIFIED)**
 - 1.079/1.079 URL: HTTP 200 live, HTML giống từng byte, self-canonical, indexable, có trong sitemap, đã đóng băng. Redirect và header ở mức host. Route lạ trả 404. `/search/` noindex.
 - Toàn bộ 1.081 trang: 0 lỗi W3C, 0 vi phạm axe A/AA (390 px), 0 tràn ngang, 0 lỗi console. 127 trang mẫu ở desktop cho kết quả tương tự.
-- Độ sâu click ≤ 3, 0 trang mồ côi, 0 link hỏng hoặc không chuẩn, 26.497 link ngoài có `rel` an toàn. REFLINK_SHORT.
+- Độ sâu click ≤ 3, 0 trang mồ côi, 0 link hỏng hoặc không chuẩn, 26.497 link ngoài có `rel` an toàn. 1.420 nguồn trích dẫn kiểm tra live: 1.155 OK, 1 chết (404).
 - JSON-LD: 1.079 graph hợp lệ, ngày nhất quán, FAQPage khớp nội dung hiển thị.
 - 0 trang trùng lặp gần. 0 cặp primary query trùng ý định. Tham chiếu pháp lý đúng hiện hành (51 câu đã đọc tay). Giá: 116 đoạn VERIFIED.
-- Các lỗi mới: chuỗi EN (977 trang), không hiển thị ngày (1.074), ngày nguồn không in (5.629 nguồn), ảnh bìa lazy làm LCP (mẫu), FAQ trùng (8 trang), slug tiếng Anh hoặc lẫn (64: zh 11, ko 23, ja 29, vi 1), header.
+- Các lỗi mới: chuỗi EN (977 trang), không hiển thị ngày (1.074), ngày nguồn không in (5.629 nguồn), ảnh bìa lazy làm LCP (mẫu), nguồn chết (1 link, 2 trang), FAQ trùng (8 trang), slug tiếng Anh hoặc lẫn (64: zh 11, ko 23, ja 29, vi 1), header.
 - Lighthouse lab (15 URL × 2) và tương phản màu (6 template).
 
 **Suy luận, cần xác nhận (INFERRED)**
@@ -285,7 +288,7 @@ Lọc MASTER URL INVENTORY theo `top_severity`, `finding_ids` và `task_ids` đ�
 
 - **Không sửa production:** diff so với `main` chỉ gồm `docs/seo-audit/`, `docs/seo-matrix/` và `reports/seo/`. Không đụng tới HTML site, Matrix sản xuất, claims, sitemap, canonical, hreflang, CNAME, NAP, giá hay dữ liệu doanh nghiệp.
 - **QA trên branch:** `node --test tests/*.test.mjs`: 352 pass, 0 fail, 1 skip. `build.mjs --check`: 1.108 file khớp. `seo-guard`, `fact-guard`, `content-graph --check`, `nav-qa`, `validate-plan`, `check_owner_strategy.py`, `az_matrix.py --check`: tất cả PASS.
-- **Workflow đã dispatch** (đều chỉ có quyền `contents: read`): `live-markup-qa.yml`, `post-publish-qa.yml`, `source-recheck.yml`, `reference-link-check.yml`.
+- **Workflow đã dispatch** (đều chỉ có quyền `contents: read`): `live-markup-qa.yml`, `post-publish-qa.yml`, `source-recheck.yml`, `reference-link-check.yml`. CI `Static SEO QA` của PR: PASS.
 - PR kiểm toán dùng để lưu lịch sử và đối chiếu. Không tự merge.
 
 ## OWNER_ACTIONS_LAST

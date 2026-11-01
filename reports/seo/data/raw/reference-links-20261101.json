@@ -1,0 +1,55 @@
+{
+ "workflow": "reference-link-check.yml",
+ "run_id": 41331398658,
+ "job_id": 124922092288,
+ "url": "https://github.com/thuexemayhanoi/global/actions/runs/41331398658",
+ "head_sha": "b5b6d260095b9675f99ccbb06faeae927dfc2781",
+ "date": "2026-11-01",
+ "conclusion": "success",
+ "pages": 1079,
+ "unique_links": 1420,
+ "hosts": 381,
+ "counts": {
+  "OK": 1155,
+  "BLOCKED": 164,
+  "NETWORK": 95,
+  "SERVER_ERROR": 5,
+  "BROKEN": 1
+ },
+ "previous": {
+  "run_id": 40832285076,
+  "date": "2026-10-29",
+  "unique_links": 1422,
+  "hosts": 382,
+  "counts": {
+   "OK": 1151,
+   "BLOCKED": 164,
+   "NETWORK": 88,
+   "SERVER_ERROR": 5,
+   "BROKEN": 13,
+   "SOFT_404_SUSPECT": 1
+  },
+  "note": "13 dead + 1 soft-404 fixed by TECH-05 (PR #164)"
+ },
+ "broken": [
+  {
+   "status": 404,
+   "url": "https://capcuu115hanoi.com/cap-cuu-va-van-chuyen-cap-cuu",
+   "pages": [
+    "/de/guides/notaufnahme-hanoi-nach-motorradunfall/",
+    "/de/guides/kopfstoss-nach-rollersturz-warnzeichen-gehirnerschuetterung-und-helm-ersetzen/"
+   ],
+   "matrix_ids": [
+    "DE-S108",
+    "DE-S196"
+   ],
+   "cited_for": "Hanoi 115 emergency centre: free call, telephone first-aid guidance until the ambulance arrives, distance-based fee for the transport",
+   "checked_on_in_packets": [
+    "2026-10-25",
+    "2026-10-26"
+   ]
+  }
+ ],
+ "inconclusive_note": "BLOCKED (401/403/429/451), NETWORK and SERVER_ERROR answers are bot protection or hosts that do not answer a US runner (same pattern as 2026-10-29: thuvienphapluat.vn 403, slow provincial .gov.vn portals); they are not verified dead links",
+ "artifact": "global-reference-links (not downloadable from the audit container); values from the job log"
+}

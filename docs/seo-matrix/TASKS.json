@@ -1603,6 +1603,24 @@
    "next_action": "Rephrase each question with the page's topic (answers unchanged); FAQPage regenerates from the visible text; page-updates entry with the merge date"
   },
   {
+   "id": "CONTENT-06",
+   "phase": "CONTENT",
+   "title": "Dead reference: Hanoi 115 emergency centre page (capcuu115hanoi.com) answers 404 on two German guides",
+   "scope": [
+    "DE-S108",
+    "DE-S196"
+   ],
+   "selector": "reports/seo/data/raw/reference-links-20261101.json broken[]",
+   "status": "TODO",
+   "branch": "",
+   "commit": "",
+   "pr": "",
+   "deploy_run": "",
+   "live_qa": [],
+   "evidence": "Re-audit 2026-11-01: reference-link-check.yml run 41331398658 — https://capcuu115hanoi.com/cap-cuu-va-van-chuyen-cap-cuu → 404 (checked_on 2026-10-25/26 in the packets). Findings F-U-DEAD-REFERENCE-0001, F-U-DEAD-REFERENCE-0002",
+   "next_action": "Find the page's new address on capcuu115hanoi.com or an archived copy that still states the cited facts (free 115 call, phone first-aid guidance, distance-based fee); otherwise cite another official source (Sở Y tế Hà Nội) and adjust the sentence; update checked_on; reviewed PR, build --check, tests, then reference-link-check.yml shows BROKEN 0"
+  },
+  {
    "id": "TECH-08",
    "phase": "TECH",
    "title": "English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label, Pillar hero labels) and aria-label on a <span> without a role",
