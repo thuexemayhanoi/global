@@ -172,9 +172,82 @@ RULES = {
         "Distinguishable titles.", "title_similarity_pairs.", "Reviewed."),
     "U-ANCHOR-DIVERSITY": ("P3", "Internal linking", "VERIFIED", "scripts/premium.mjs",
         "seo-guard: many pages link here with the identical anchor", "Vary related-list anchors (short title variant).", "Diverse anchors.", "seo-guard WARN.", "WARN cleared."),
+    # ---- re-audit 2026-11-01 (deep_audit.py, site_browser_audit.cjs, W3C Nu validator) ----
+    "S-NO-VISIBLE-DATE": ("P2", "E-E-A-T / freshness", "VERIFIED", "scripts/articles.mjs + build.mjs (page template)",
+        "No page shows its own publication or last-updated date; the dates exist only in JSON-LD and sitemap <lastmod>",
+        "Print a localized 'Published … · Updated …' line with <time datetime> beside the byline/reading time, from the same reviewed dates that feed JSON-LD datePublished/dateModified and sitemap lastmod (data/seo/page-updates.json and the article packet). One source for all three; never invent or bump a date without a content change.",
+        "Readers and search engines see the date the structured data declares; legal and price guides show how current they are.",
+        "deep_audit.py: visible_date_pages = Hub/Supporting/Pillar/checklist count; the printed dates equal JSON-LD and lastmod.",
+        "Reviewed PR merged; build --check, seo-guard, fact-guard, tests PASS; live markup QA identical."),
+    "S-REF-DATES-HIDDEN": ("P2", "E-E-A-T / sources", "VERIFIED", "scripts/articles.mjs (references list)",
+        "The About page says every guide lists the date its references were checked, but no reference shows its checked_on date (the date exists in every article packet)",
+        "Render each source's checked_on next to the reference in the page language (e.g. 'checked 15 Oct 2026'); the data is already in content/articles/*.json. If the owner prefers not to print it, correct the About page sentence instead — the page must not promise what the guides do not show.",
+        "The About page statement is true on every guide; readers can judge how fresh each source is.",
+        "deep_audit.py: refs_checked_on_rendered = packet_sources_checked_on.",
+        "Reviewed PR merged; every reference line carries its date; live markup QA identical."),
+    "S-UI-UNTRANSLATED": ("P2", "Multilingual / accessibility", "VERIFIED", "scripts/navigation.mjs, scripts/ultra.mjs (shared template strings)",
+        "Template strings stay in English on non-English pages: the skip link 'Skip to content', the breadcrumb aria-label 'Breadcrumb' and the reading-time aria-label 'Estimated reading time' (WCAG 2.2 SC 3.1.2 Language of Parts)",
+        "Localize the three strings per locale in the shared templates (the language-menu label is already localized, use the same table), regenerate with build.mjs; no Matrix, title or URL change.",
+        "Screen readers announce navigation in the page language; no English chrome on vi/de/fr/es/nl/zh/pt/ko/ja pages.",
+        "deep_audit.py ui_leak_pages = 0; axe and W3C validator clean.",
+        "Reviewed PR merged; build --check, nav-qa, language-audit, tests PASS; live markup QA identical."),
+    "S-ARIA-LABEL-SPAN": ("P3", "Accessibility / HTML", "VERIFIED", "scripts/ultra.mjs (reading-time badge)",
+        "The reading-time badge puts aria-label on a <span> without a role; ARIA forbids naming the generic role, so assistive technology ignores the label (W3C validator warning on every article page; axe 'aria-prohibited-attr' needs review)",
+        "Remove the aria-label and add a visually hidden, localized text (e.g. 'Reading time: 9 min') inside the badge, or give the element a role that allows a name.",
+        "The reading time is announced correctly and the validator reports no warning.",
+        "W3C Nu validator: 0 'Possible misuse of aria-label' warnings.", "Reviewed PR merged; validator and axe clean."),
+    "S-LAZY-LCP": ("P2", "Performance / Core Web Vitals", "VERIFIED", "scripts/articles.mjs (cover image markup)",
+        "The guide cover image is loading=\"lazy\" although it sits in the first viewport and is often the Largest Contentful Paint element (lab, Chromium)",
+        "Give the cover image of Hub/Supporting/checklist pages loading=\"eager\" and fetchpriority=\"high\" (keep width/height, srcset and sizes); keep lazy loading for images further down.",
+        "The LCP image starts downloading with the HTML instead of after layout; lower LCP on article templates.",
+        "site_browser_audit.cjs: 0 pages with a lazy image in the first viewport; Lighthouse 'lcp-lazy-loaded' passes.",
+        "Reviewed PR merged; build --check and tests PASS; Lighthouse re-run on the template sample."),
+    "S-HREFLANG-EQUIV": ("P3", "Multilingual / hreflang", "INFERRED", "Owner/editor decision + selective re-freeze",
+        "A topic slot exists in all 10 languages (same Matrix slot, cluster and silo) but its pages carry no hreflang: possible equivalent versions, currently NO_EQUIVALENT_BY_DESIGN",
+        "Editor decides per cluster whether the 10 pages are versions of the same page (same purpose and scope). If yes, add reciprocal hreflang between them in a reviewed PR (hreflang is a frozen fingerprint: selective re-freeze, seo-guard PASS); if not, keep NO_EQUIVALENT_BY_DESIGN and record the reason. Never pair pages that are not equivalent to raise hreflang counts.",
+        "A documented decision per cluster; where equivalent, Google can show the right language version.",
+        "HREFLANG & CANONICAL sheet: equivalence class per URL; seo-guard hreflang checks.", "Decision recorded per cluster (and PR merged where approved)."),
+    "U-FAQ-REPEATED-Q": ("P3", "AEO / FAQ", "VERIFIED", "Reviewed content PR",
+        "The same FAQ question text is used on two pages of the locale (FAQPage on both); a context-free question is weak for answer extraction",
+        "Make each question self-contained by naming the page's topic (e.g. 'Does the camera-fine rule also apply to electric scooters?'); answers stay as they are.",
+        "Each FAQ question is unique within the locale and understandable out of context.", "deep_audit.py faq_dupes = 0.", "Reviewed PR merged; FAQPage mirrors the new text."),
+    "S-URL-LOCALIZATION": ("P3", "Multilingual / URL", "VERIFIED", "Topic Factory / Matrix (future URLs only)",
+        "Slug language is mixed within the locale (romanized native and English slugs) and the path sections /guides/, /topics/, /checklist/ are English in every locale",
+        "Do not change live URLs (frozen; GitHub Pages cannot send 301s). Fix one slug convention per locale for future URLs in the Topic Factory/promotion rules and record it.",
+        "Consistent, predictable URLs for new pages; no redirect risk for live ones.", "deep_audit.py slug_classes for new URLs.", "Convention documented in TOPIC-FACTORY.md."),
+    "S-SECURITY-HEADERS": ("P3", "Technical / hosting", "VERIFIED", "Hosting (GitHub Pages) — owner decision",
+        "Live responses carry HSTS (max-age 31556952) and cache-control max-age=600, but no X-Content-Type-Options or Content-Security-Policy; GitHub Pages does not allow custom headers",
+        "Accept as a hosting limit (no SEO impact) or, if the owner wants the headers, put the site behind a CDN/proxy that sets them; never change DNS or CNAME from this repository.",
+        "Documented decision on response headers.", "post-publish-qa.yml host probes.", "Owner decision recorded."),
+    "S-SCALED-CONTENT-RISK": ("P1", "Content quality / indexing risk", "INFERRED", "Owner + editor (E-E-A-T)",
+        "Over a thousand AI-drafted guides were published within days on a new, low-authority host without human fact review; Google's scaled-content and helpful-content systems make index coverage the main unmeasured risk",
+        "Publish no further URLs until coverage is measured (the SEO-only directive already pauses production). Once Search Console is available, export indexing per locale and per Hub; where clusters stay 'Crawled/Discovered – currently not indexed', improve them instead of adding pages: human fact review of legal, fine, insurance and price guides with a named reviewer and date, first-hand detail, and consolidation of overlapping guides only through a reviewed redirect plan. Keep the honest AI-provenance note.",
+        "Indexed share known per locale and Hub; quality work aimed at the clusters Google does not index.",
+        "GSC Pages report per locale; third-party visibility trend in AUDIT CHANGELOG.",
+        "Coverage baseline stored; remediation plan approved for every non-indexed cluster."),
+    "S-RENDER-BLOCKING-CSS": ("P3", "Performance", "VERIFIED", "assets/*.css + scripts/build.mjs",
+        "Every page loads four render-blocking stylesheets (styles, navigation, premium, ultra ≈ 44 KB); most of ultra.css is unused on each template (lab, Lighthouse)",
+        "Merge the four files into one versioned stylesheet (or inline the critical above-the-fold rules and load the rest without blocking), and drop rules no template uses; keep the cache-busting query and build --check byte-identical.",
+        "Fewer blocking requests; Lighthouse 'render-blocking resources' and 'unused CSS' pass on the template sample.",
+        "Lighthouse on the template sample (lighthouse-20261101.json method).", "Reviewed PR merged; tests and live markup QA PASS."),
+    "S-COVER-SRCSET": ("P3", "Performance / images", "VERIFIED", "scripts/articles.mjs (cover srcset) + image covers",
+        "Cover images offer only 640w and 1200w: phones with a 1.75–3× screen pick the 1200 px file, so Lighthouse reports 47–63 KB of image waste per guide",
+        "Add an intermediate cover width (e.g. 800w or 960w WebP, same image) to the srcset; keep sizes, width/height and alt unchanged.",
+        "Smaller image transfer on phones without visible quality loss.", "Lighthouse 'properly size images' on the template sample.", "Reviewed PR merged; image matrix regenerated."),
+    "U-A11Y-VIOLATION": ("P2", "Accessibility (WCAG 2.2 AA)", "VERIFIED", "Template / reviewed PR",
+        "axe-core reports a WCAG 2.x A/AA violation on this page", "Fix the element named in the axe rule in the shared template or the page source; regenerate.",
+        "0 axe violations.", "site_browser_audit.cjs (axe-core 4.10.3).", "Re-run shows 0 violations."),
+    "U-MOBILE-OVERFLOW": ("P2", "Mobile usability", "VERIFIED", "Template CSS",
+        "The page scrolls horizontally at 390 px (content wider than the viewport)", "Find the overflowing element (table, code, long word) and let it wrap or scroll inside its own box.",
+        "No horizontal page scroll on phones.", "site_browser_audit.cjs overflow = 0.", "Re-run shows 0 overflow."),
+    "U-CONSOLE-ERROR": ("P3", "Technical / JavaScript", "VERIFIED", "assets/*.js",
+        "The page logs a JavaScript error or requests a missing same-origin file", "Fix the script or the missing asset reference.",
+        "No console errors or 4xx asset requests.", "site_browser_audit.cjs consoleErrors/failed.", "Re-run clean."),
 }
 
 findings, seq = [], collections.Counter()
+# Re-audit rules whose next step is a decision outside the repository (owner, hosting, future URL policy, Search Console data).
+DECISION_RULES = {"S-SECURITY-HEADERS", "S-URL-LOCALIZATION", "S-SCALED-CONTENT-RISK"}
 
 
 def add(rule, scope, locale, url=None, matrix_id=None, detail="", evidence_url=None, metric=None):
@@ -184,7 +257,7 @@ def add(rule, scope, locale, url=None, matrix_id=None, detail="", evidence_url=N
     task = f"T-{rule}" + (f"-{locale.upper()}" if locale and locale not in ("ALL", "global") and rule.startswith("U-") else "")
     findings.append({"finding_id": fid, "rule_id": rule, "severity": sev, "category": cat, "evidence_status": ev, "scope": scope, "locale": locale,
                      "url": (ORIGIN + url) if url else None, "matrix_id": matrix_id, "title": title, "detail": detail, "metric": metric,
-                     "owner": owner, "task_id": task, "work_status": "OPEN" if ev != "NOT_CONNECTED" else "BLOCKED",
+                     "owner": owner, "task_id": task, "work_status": ("OWNER_DECISION" if rule in DECISION_RULES else "OPEN") if ev != "NOT_CONNECTED" else "BLOCKED",
                      "evidence_url": evidence_url, "audit_date": AUDIT_DATE, "recheck_date": RECHECK})
 
 
@@ -310,13 +383,121 @@ byid = {r["matrix_id"]: r for r in inv}
 for p in d["title_similarity_pairs"]:
     add("U-TITLE-SIMILAR", "URL", p["locale"], p["url_a"], p["a"], f"vs {p['b']} {p['url_b']} (Jaccard {p['title_trigram_jaccard']})", metric=p["title_trigram_jaccard"])
 
+# ---------- re-audit 2026-11-01: deep, browser and validator checks ----------
+def optional(name):
+    p = os.path.join(DATA, name)
+    return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else None
+
+
+inv_by_url = {r["url"]: r for r in inv}
+deep = optional("deep-audit.json")
+browser = optional(os.path.join("raw", "browser-audit-20261101.json"))
+vnu = optional(os.path.join("raw", "html-validation-20261101.json"))
+liveqa = optional(os.path.join("raw", "live-qa-20261101.json"))
+if deep:
+    ds, du = deep["summary"], deep["per_url"]
+    content_pages = [u for u, x in du.items() if x["role"] in ("PILLAR", "HUB", "SUPPORT")]
+    if ds["visible_date_pages"] < len(content_pages):
+        add("S-NO-VISIBLE-DATE", "SITE", "ALL", detail=f"{ds['visible_date_pages']} of {len(content_pages)} Pillar/Hub/Supporting pages print their own date ({ds['time_tags']} <time> elements); "
+            f"JSON-LD dateModified on {sum(1 for x in du.values() if x['date_modified'])} pages, sitemap lastmod on {sum(1 for x in du.values() if x['sitemap_lastmod'])}",
+            evidence_url=blob("about/index.html"), metric=len(content_pages) - ds["visible_date_pages"])
+    if ds["packet_sources_checked_on"] and ds["refs_checked_on_rendered"] < 0.5 * ds["packet_sources_checked_on"]:
+        add("S-REF-DATES-HIDDEN", "SITE", "ALL", "/about/", "ABOUT",
+            f"{ds['packet_sources_checked_on']} article sources carry checked_on in content/articles; {ds['refs_checked_on_rendered']} reference lines on "
+            f"{ds['articles_with_refs']} pages show that date (coincidental matches of dates inside source titles). /about/: 'Each guide lists its references with the date they were checked'",
+            blob("scripts/articles.mjs"), ds["packet_sources_checked_on"] - ds["refs_checked_on_rendered"])
+    by_loc = collections.defaultdict(collections.Counter)
+    for u, items in deep["ui_leaks"].items():
+        loc = du.get(u, {}).get("locale") or u.strip("/").split("/")[0]
+        for x in items:
+            by_loc[loc][x["text"]] += 1
+    for loc in LOCALES:
+        if by_loc.get(loc):
+            pages = sum(1 for u in deep["ui_leaks"] if (du.get(u, {}).get("locale") or u.strip("/").split("/")[0]) == loc)
+            add("S-UI-UNTRANSLATED", "LOCALE", loc, f"/{loc}/", f"{loc.upper()}-HOME",
+                f"{pages} {loc} pages: " + "; ".join(f"'{t}' ×{n}" for t, n in by_loc[loc].most_common()), blob("scripts/navigation.mjs"), pages)
+    for e in deep["equivalence_slots"]:
+        if e["equivalence"] == "NOT_EQUIVALENT":
+            continue
+        add("S-HREFLANG-EQUIV", "CLUSTER", "ALL", e["urls"].get("en"), f"{e['slot']} ×{e['locales']}",
+            f"{e['equivalence']}: slot {e['slot']} ({e['cluster']}) published in {e['locales']} locales, cluster/silo agree {e['cluster_agreement']}/{e['subcluster_agreement']}, "
+            f"median shared-reference Jaccard {e['median_shared_refs_jaccard']}; EN '{e['titles'].get('en')}'", blob("data/seo/master-matrix.json"), e["median_shared_refs_jaccard"])
+    for x in deep["faq_dupes"]:
+        for u in sorted(set(x["urls"])):
+            other = [v for v in x["urls"] if v != u]
+            add("U-FAQ-REPEATED-Q", "URL", x["locale"], u, inv_by_url.get(u, {}).get("matrix_id"),
+                f"'{x['question']}' also on {', '.join(other)}", blob("data/seo/master-matrix.json"))
+    for loc in LOCALES:
+        sc = deep["summary"]["slug_classes"].get(loc, {})
+        mixed = sc.get("ENGLISH", 0) + sc.get("MIXED", 0)
+        if mixed:
+            ex = [s["slug"] for u, s in deep["slugs"].items() if u.startswith(f"/{loc}/") and s["class"] in ("ENGLISH", "MIXED")][:3]
+            add("S-URL-LOCALIZATION", "LOCALE", loc, f"/{loc}/", f"{loc.upper()}-HOME",
+                f"{mixed} of {sum(sc.values())} slugs English or mixed ({sc.get('ENGLISH', 0)} English, {sc.get('MIXED', 0)} mixed; e.g. {', '.join(ex)}); path sections "
+                + ", ".join(f"/{k}/ ×{v}" for k, v in deep["summary"]["path_sections"].items()) + " are English in every locale", blob("data/seo/master-matrix.json"), mixed)
+# publication velocity of the article packets (content/articles/*.json → publication.approved_at)
+import glob as _glob
+approved = collections.Counter()
+reviewed_by_human = 0
+for f in _glob.glob(os.path.join(ROOT, "content", "articles", "*.json")):
+    pk = json.load(open(f, encoding="utf-8"))
+    approved[((pk.get("publication") or {}).get("approved_at") or "")[:10]] += 1
+    reviewed_by_human += 1 if pk.get("facts_reviewed_by_human") is True else 0
+if sum(approved.values()) >= 500:
+    top = approved.most_common(2)
+    u = ext["ubersuggest_domain_overview"]
+    add("S-SCALED-CONTENT-RISK", "SITE", "ALL",
+        detail=f"{sum(approved.values())} article packets approved {min(k for k in approved if k)}..{max(approved)}; peak days " + ", ".join(f"{d} {n}" for d, n in top)
+        + f"; facts_reviewed_by_human=true on {reviewed_by_human}; third-party index: {u['organic_keywords']} ranking keywords, DA {u['domain_authority']}, {u['referring_domains']} referring domains ({u.get('rechecked_at')}); Search Console NOT_CONNECTED",
+        evidence_url=blob("factory/publisher/state.json"), metric=sum(approved.values()))
+lh = optional(os.path.join("raw", "lighthouse-20261101.json"))
+if lh:
+    def lh_flag(audit):
+        return [r for r in lh["runs"] if audit in r.get("flags", {})]
+    rb = lh_flag("render-blocking-resources")
+    if rb:
+        add("S-RENDER-BLOCKING-CSS", "SITE", "ALL", detail=f"Lighthouse {lh['lighthouse_version']}: render-blocking resources on {len(rb)} of {len(lh['runs'])} runs, unused CSS on {len(lh_flag('unused-css-rules'))}; "
+            f"median mobile LCP {lh['median']['mobile']['LCP']}, performance score {lh['median_scores']['mobile']['performance']} (lab, local server)", evidence_url=blob("assets/ultra.css"), metric=len(rb))
+    ri = lh_flag("uses-responsive-images")
+    if ri:
+        add("S-COVER-SRCSET", "SITE", "ALL", detail=f"Lighthouse 'properly size images' on {len(ri)} of {len(lh['runs'])} runs (guide covers: srcset 640w/1200w)", evidence_url=blob("scripts/articles.mjs"), metric=len(ri))
+if vnu and vnu.get("aria_label_span_warnings"):
+    add("S-ARIA-LABEL-SPAN", "SITE", "ALL", detail=f"W3C Nu validator ({vnu['validator']}): {vnu['errors']} errors on {vnu['files']} pages; "
+        f"{vnu['aria_label_span_warnings']} 'Possible misuse of aria-label' warnings, all on span.ultra-reading-time", evidence_url=blob("scripts/ultra.mjs"), metric=vnu["aria_label_span_warnings"])
+if liveqa:
+    probe = next((r for r in liveqa["runs"] if r["workflow"] == "post-publish-qa.yml"), {})
+    h = next((e.get("headers") for e in probe.get("host_evidence", []) if e.get("headers")), None)
+    if h and not (h.get("x-content-type-options") and h.get("content-security-policy")):
+        add("S-SECURITY-HEADERS", "SITE", "ALL", "/", "ROOT", "; ".join(f"{k}: {v}" for k, v in h.items()) + f" (post-publish QA run {probe.get('run_id')})", probe.get("url"))
+if browser:
+    bu = browser["per_url"]
+    lazy = [u for u, x in bu.items() if any((x.get(v) or {}).get("lazy_first_viewport") for v in ("m", "d"))]
+    lcp_lazy = [u for u, x in bu.items() if any((x.get(v) or {}).get("lcp_lazy") for v in ("m", "d"))]
+    if lazy:
+        add("S-LAZY-LCP", "SITE", "ALL", detail=f"{len(lazy)} of {len(bu)} pages load a lazy image inside the first viewport (mobile 390 px or desktop 1366 px); on {len(lcp_lazy)} pages that lazy image is the LCP element "
+            f"({browser['tool']})", evidence_url=blob("scripts/articles.mjs"), metric=len(lazy))
+    for u, x in bu.items():
+        r = inv_by_url.get(u, {})
+        loc = r.get("locale") if r.get("locale") in LOCALES else "global"
+        viol = sorted({f"{v[0]} ({v[1]}, {v[2]} nodes, {k})" for k in ("m", "d") for v in (x.get(k) or {}).get("violations", [])})
+        if viol:
+            add("U-A11Y-VIOLATION", "URL", loc, u, r.get("matrix_id"), "; ".join(viol), metric=len(viol))
+        if (x.get("m") or {}).get("overflow", 0) > 0:
+            add("U-MOBILE-OVERFLOW", "URL", loc, u, r.get("matrix_id"), f"{x['m']['overflow']} px wider than the 390 px viewport", metric=x["m"]["overflow"])
+        errs = sum((x.get(k) or {}).get("console", 0) + (x.get(k) or {}).get("failed", 0) for k in ("m", "d"))
+        if errs:
+            add("U-CONSOLE-ERROR", "URL", loc, u, r.get("matrix_id"), "; ".join((x.get("m") or {}).get("console_samples", [])[:2]), metric=errs)
+
 # ---------- tasks ----------
 tasks = {}
 prio_rank = {"P0": 0, "P1": 1, "P2": 2, "P3": 3}
 effort = {"S-PILLAR-HEAD-TERM": "M", "S-RAIL-ANCHOR": "S", "S-GSC-NOT-CONNECTED": "S", "S-GA4-NOT-CONNECTED": "S", "S-LOW-VISIBILITY": "L",
           "S-KW-NO-DEMAND": "M", "S-SITEMAP-LASTMOD": "S", "S-ARTICLE-NO-IMAGE": "S", "S-OG-IMAGE-SINGLE": "S", "S-AUTHOR-ORG-ONLY": "M",
           "S-LOCALE-IMBALANCE": "L", "S-PT-VARIANT": "S", "S-DE-TOPIC-DRIFT": "M", "S-PQ-SENTENCE": "S", "S-INTENT-LABEL": "S", "S-PRICE-FRESHNESS": "L",
-          "S-PSI-MOBILE": "M", "S-CWV-FIELD": "S", "S-REDIRECT-HEADERS": "S", "S-BUSINESS-CONFLICTS": "S", "S-FAQ-SCHEMA": "M", "S-CHECKLIST-NO-REFS": "S"}
+          "S-PSI-MOBILE": "M", "S-CWV-FIELD": "S", "S-REDIRECT-HEADERS": "S", "S-BUSINESS-CONFLICTS": "S", "S-FAQ-SCHEMA": "M", "S-CHECKLIST-NO-REFS": "S",
+          "S-NO-VISIBLE-DATE": "M", "S-REF-DATES-HIDDEN": "S", "S-UI-UNTRANSLATED": "S", "S-ARIA-LABEL-SPAN": "S", "S-LAZY-LCP": "S",
+          "S-HREFLANG-EQUIV": "M", "S-URL-LOCALIZATION": "S", "S-SECURITY-HEADERS": "S", "S-SCALED-CONTENT-RISK": "L",
+          "S-RENDER-BLOCKING-CSS": "M", "S-COVER-SRCSET": "M"}
 impact = {"P1": "High", "P2": "Medium", "P3": "Low"}
 phase = {"P1": "Phase 1 (0–2 weeks)", "P2": "Phase 2 (2–6 weeks)", "P3": "Phase 3 (6–12 weeks)"}
 for f in findings:

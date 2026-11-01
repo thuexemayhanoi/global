@@ -1,7 +1,25 @@
 {
- "collected_at": "2026-10-28T05:55Z",
+ "collected_at": "2026-11-01T17:00Z",
  "note": "Evidence gathered through connected third-party tools. The audit container itself cannot reach global.rentbikehanoi.com (egress policy 403), so live HTTP was verified by the repository's own read-only GitHub Actions QA and by external crawlers.",
  "github_actions": [
+  {
+   "workflow": "live-markup-qa.yml",
+   "run_id": 41326939112,
+   "url": "https://github.com/thuexemayhanoi/global/actions/runs/41326939112",
+   "head_sha": "b5b6d260095b9675f99ccbb06faeae927dfc2781",
+   "conclusion": "success",
+   "completed_at": "2026-11-01T16:34:15Z",
+   "scope": "re-audit 2026-11-01: 1081 of 1081 routes (every PUBLISHED URL + /search/ + /404.html) HTTP 200 and byte-identical to the committed build; mismatched: []"
+  },
+  {
+   "workflow": "post-publish-qa.yml",
+   "run_id": 41326941613,
+   "url": "https://github.com/thuexemayhanoi/global/actions/runs/41326941613",
+   "head_sha": "b5b6d260095b9675f99ccbb06faeae927dfc2781",
+   "conclusion": "success",
+   "completed_at": "2026-11-01T16:34:29Z",
+   "scope": "re-audit 2026-11-01: status, lang, canonical, sitemap vs Matrix, robots, unknown route 404, /search/ noindex, frozen fingerprints, NAP/business-schema guard, host probes; 1094 checks, 0 issues"
+  },
   {
    "workflow": "live-markup-qa.yml",
    "run_id": 40688268258,
@@ -180,44 +198,61 @@
   "domain": "global.rentbikehanoi.com",
   "organic_keywords": 0,
   "est_organic_traffic": 0,
-  "domain_authority": 2,
-  "backlinks": 37,
-  "referring_domains": 32,
-  "follow": 35,
+  "domain_authority": 3,
+  "backlinks": 58,
+  "referring_domains": 53,
+  "follow": 56,
   "nofollow": 2,
-  "months_reported": "2025-10..2026-09",
+  "months_reported": "2025-11..2026-10",
   "caveat": "Third-party index estimate; not Google data",
-  "rechecked_at": "2026-10-28",
-  "recheck_result": "unchanged: organic 0, DA 2, backlinks 37, referring domains 32"
+  "rechecked_at": "2026-11-01",
+  "recheck_result": "organic keywords 0 and search traffic 0 in every month 2025-11..2026-10; DA 2→3, backlinks 37→58, referring domains 32→53 since 2026-10-28",
+  "history": [
+   {
+    "organic_keywords": 0,
+    "domain_authority": 2,
+    "backlinks": 37,
+    "referring_domains": 32,
+    "follow": 35,
+    "nofollow": 2,
+    "months_reported": "2025-10..2026-09",
+    "measured_at": "2026-10-28"
+   }
+  ]
  },
  "search_console": {
   "status": "NOT_CONNECTED",
-  "evidence": "OpenSEO project f8184d9f… list_search_console_sites returned 0 Google accounts"
+  "evidence": "2026-11-01: OpenSEO list_search_console_sites (project f8184d9f…) returned 0 Google accounts; OpenRush list_connections: nothing connected"
  },
  "ga4": {
-  "status": "NOT_CONNECTED"
+  "status": "NOT_CONNECTED",
+  "evidence": "2026-11-01: no analytics property connected in OpenSEO or OpenRush; the site loads no analytics script"
  },
  "firecrawl": {
   "status": "NOT_AVAILABLE",
-  "reason": "connected account out of credits (rechecked 2026-10-28)"
+  "reason": "connected account out of credits (rechecked 2026-11-01)"
  },
  "openrush": {
   "status": "NOT_AVAILABLE",
-  "reason": "402 insufficient credits"
+  "reason": "402 insufficient credits (research_keywords, 2026-11-01)"
  },
  "redirect_and_header_probes": {
   "status": "VERIFIED",
-  "measured_by": "post-publish-qa.yml host probes (probeRedirectsAndHeaders), job 122640936773 (Batch B)",
+  "measured_by": "post-publish-qa.yml host probes (probeRedirectsAndHeaders), run 41326941613 job 124908755926 (2026-11-01)",
   "results": {
    "http_to_https": "301 -> https://global.rentbikehanoi.com/",
    "non_slash": "/vi -> 301 -> /vi/",
-   "hsts": "max-age=31556952",
+   "hsts": "max-age=31556952 (no includeSubDomains, no preload)",
+   "cache_control": "max-age=600",
    "content_type": "text/html; charset=utf-8",
-   "www_host": "does not resolve (no duplicate host)"
+   "server": "GitHub.com",
+   "www_host": "does not resolve (ENOTFOUND, no duplicate host)"
   },
   "advisories": [
-   "x-content-type-options header absent (GitHub Pages does not allow custom headers)"
-  ]
+   "x-content-type-options header absent (GitHub Pages does not allow custom headers)",
+   "no Content-Security-Policy header"
+  ],
+  "previous": "job 122640936773 (Batch B, 2026-10-28): same results"
  },
  "baseline_collected_at": "2026-10-27T23:55Z",
  "nimble_extract": {
@@ -292,5 +327,19 @@
   "added": 110,
   "rejected": 0,
   "result": "DE-S361..DE-S380 promoted to IDEA (DE READY 87 -> 107); +10 PROPOSED in each of vi, en, fr, es, nl, zh, pt, ko, ja"
+ },
+ "previous_collected_at": "2026-10-28T05:55Z",
+ "openseo": {
+  "status": "NOT_AVAILABLE",
+  "reason": "4 credits left (whoami, 2026-11-01); no keyword batch possible"
+ },
+ "pagespeed_api": {
+  "status": "NOT_AVAILABLE",
+  "reason": "PageSpeed Insights API v5 (no key) answered 429: shared anonymous daily quota exhausted (2026-11-01)"
+ },
+ "third_party_web_search_site_operator": {
+  "date": "2026-11-01",
+  "result": "A site:global.rentbikehanoi.com query through the session's web-search tool returned no page of the domain; the provider did not honour the site: operator, so this is no evidence about Google's index",
+  "status": "NOT_VERIFIED"
  }
 }

@@ -177,6 +177,7 @@ for u in pages:
             continue
         graph.extend(d.get("@graph", [d]) if isinstance(d, dict) else d)
     art = next((n for n in graph if n.get("@type") in ("Article", "BlogPosting", "NewsArticle")), None)
+    dated = art or next((n for n in graph if n.get("@type") in ("WebPage", "AboutPage", "ContactPage") and n.get("dateModified")), None)
     crumbs = next((n for n in graph if n.get("@type") == "BreadcrumbList"), None)
     faq = next((n for n in graph if n.get("@type") == "FAQPage"), None)
     canon = (soup.select_one('link[rel="canonical"]') or {}).get("href") if soup.select_one('link[rel="canonical"]') else None
@@ -212,7 +213,7 @@ for u in pages:
     og_file = rel(urlparse(og_url).path.lstrip("/")) if og_url and og_url.startswith(ORIGIN) else None
     og_real = Image.open(og_file).size if og_file and os.path.exists(og_file) else None
     P[u] = {"loc": loc, "row": row, "links_all": links_all, "links_main": links_main, "noncanon": noncanon, "outbound": outbound,
-            "art": art, "crumbs": crumbs, "faq_q": faq_q, "canonical": canon, "visible_date": visible_date, "time_tags": len(soup.find_all("time")),
+            "art": art, "dated": dated, "crumbs": crumbs, "faq_q": faq_q, "canonical": canon, "visible_date": visible_date, "time_tags": len(soup.find_all("time")),
             "refs": len(refs), "refs_dated": ref_dated, "body": body, "lead": lead.get_text(" ", strip=True) if lead else "", "h2s": h2s,
             "tmpl": tmpl, "alts": alts, "faq_visible": any(FAQ_HEAD.search(h) for h in h2s),
             "og_image": og_url, "og_image_meta": og_meta, "og_image_real": og_real}
@@ -248,6 +249,7 @@ inbound_any = collections.Counter(t for u in nodes for t in out_edges[u])
 # ------------------------------------------------------------------ duplication inside a locale
 sh = {u: shingles(P[u]["body"], P[u]["loc"]) for u in pub_urls if u in P and P[u]["row"].get("role") in ("HUB", "SUPPORT", "PILLAR")}
 near = collections.defaultdict(list)
+closest = {}  # url -> (containment, jaccard, other url): the most similar page of the locale, whatever the score
 dup_pairs = []
 for loc in LOCALES:
     us = [u for u in sh if P[u]["loc"] == loc and len(sh[u]) >= 50]
@@ -260,6 +262,9 @@ for loc in LOCALES:
                 continue
             jac = inter / len(A | B)
             con = inter / min(len(A), len(B))
+            for x, y in ((a, b), (b, a)):
+                if con > closest.get(x, (0,))[0]:
+                    closest[x] = (round(con, 3), round(jac, 3), y)
             if jac >= 0.15 or con >= 0.3:
                 rec = {"locale": loc, "a": a, "b": b, "jaccard": round(jac, 3), "containment": round(con, 3), "shared_shingles": inter,
                        "a_id": by_url[a]["id"], "b_id": by_url[b]["id"]}
@@ -447,7 +452,7 @@ for u in pub_urls:
         continue
     p, r = P[u], by_url[u]
     art = p["art"] or {}
-    dp, dm = art.get("datePublished"), art.get("dateModified")
+    dp, dm = (p["dated"] or {}).get("datePublished"), (p["dated"] or {}).get("dateModified")
     lm = sitemap_lastmod.get(u)
     issues = []
     try:
@@ -462,6 +467,8 @@ for u in pub_urls:
         issues.append("dateModified in the future")
     if dm and lm and lm[:10] != dm[:10]:
         issues.append(f"sitemap lastmod {lm} ≠ dateModified {dm[:10]}")
+    if p["dated"] and not dm:
+        issues.append("no dateModified")
     if art and art.get("mainEntityOfPage") not in (p["canonical"], {"@id": p["canonical"]}):
         issues.append("mainEntityOfPage ≠ canonical")
     img = (art.get("image") or {}).get("url") if isinstance(art.get("image"), dict) else art.get("image")
@@ -473,7 +480,7 @@ for u in pub_urls:
     if items and r["role"] in ("HUB", "SUPPORT") and items[-1].get("item") != p["canonical"]:
         issues.append("BreadcrumbList does not end at the page")
     pkt = packets.get(r["id"], {})
-    best = max(near.get(u, []), key=lambda x: x["containment"], default=None)
+    best = closest.get(u)
     ext = p["outbound"]
     per_url[u] = {
         "matrix_id": r["id"], "locale": r["locale"], "role": r["role"],
@@ -485,8 +492,7 @@ for u in pub_urls:
         "visible_date": p["visible_date"], "time_tags": p["time_tags"], "refs_rendered": p["refs"], "refs_checked_on_rendered": p["refs_dated"],
         "packet_sources": len(pkt.get("sources") or []), "packet_sources_checked_on": sum(1 for s in (pkt.get("sources") or []) if s.get("checked_on")),
         "date_published": dp, "date_modified": dm, "sitemap_lastmod": lm, "schema_issues": issues,
-        "dup_best_url": (best["b"] if best and best["a"] == u else best["a"]) if best else None,
-        "dup_best_jaccard": best["jaccard"] if best else 0, "dup_best_containment": best["containment"] if best else 0,
+        "dup_best_url": best[2] if best else None, "dup_best_jaccard": best[1] if best else 0, "dup_best_containment": best[0] if best else 0,
         "lead_pq_cov": coverage(r.get("primary_query"), p["lead"], r["locale"]), "h2_pq_cov": coverage(r.get("primary_query"), " ".join(p["h2s"]), r["locale"]),
         "body_units": len(p["body"].split()) if r["locale"] not in ("zh", "ja") else len(CJK.findall(p["body"])),
         "faq_questions": len(p["faq_q"]), "legal_flags": [h["code"] + ("" if h["replacement_cited"] else "*") for h in legal.get(u, [])],
@@ -513,6 +519,7 @@ summary = {
     "packet_sources": sum(x["packet_sources"] for x in per_url.values()), "packet_sources_checked_on": sum(x["packet_sources_checked_on"] for x in per_url.values()),
     "schema_issue_pages": sum(1 for x in per_url.values() if x["schema_issues"]), "schema_issues": dict(collections.Counter(i.split(" ")[0] if i.startswith("sitemap") else i for x in per_url.values() for i in x["schema_issues"])),
     "dup_pairs": len(dup_pairs), "dup_pairs_containment_ge_0_5": sum(1 for d in dup_pairs if d["containment"] >= 0.5),
+    "dup_max_containment": max((v[0] for v in closest.values()), default=0), "dup_max_jaccard": max((v[1] for v in closest.values()), default=0),
     "query_overlap_pairs": len(q_pairs), "query_overlap_without_distinct_from": sum(1 for q in q_pairs if not (q["distinct_from_a"] or q["distinct_from_b"])),
     "query_distinctive_overlap_ge_0_8": sum(1 for q in q_pairs if q["distinctive_jaccard"] >= 0.8),
     "hreflang_classes": dict(collections.Counter(x["hreflang_class"].split(" (")[0] for x in per_url.values())),

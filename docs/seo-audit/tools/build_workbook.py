@@ -55,6 +55,37 @@ kw = json.load(open(os.path.join(DATA, "raw", "keyword-metrics.json"), encoding=
 graph = json.load(open(os.path.join(ROOT, "data", "seo", "content-graph.json"), encoding="utf-8"))
 SHA = a["commit"]
 EXE = os.path.join(ROOT, "docs", "seo-audit", "execution")
+RECHECK = os.environ.get("RECHECK_DATE", "2026-11-15")
+
+
+def opt(path):
+    return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else None
+
+
+# Re-audit 2026-11-01 evidence (deep_audit.py, site_browser_audit.cjs, W3C Nu validator, local Lighthouse); every sheet works without them.
+DEEP = opt(os.path.join(DATA, "deep-audit.json"))
+DU = DEEP["per_url"] if DEEP else {}
+BRW = opt(os.path.join(DATA, "raw", "browser-audit-20261101.json"))
+BU = BRW["per_url"] if BRW else {}
+VNU = opt(os.path.join(DATA, "raw", "html-validation-20261101.json"))
+LH = opt(os.path.join(DATA, "raw", "lighthouse-20261101.json"))
+LIVE = ext["github_actions"][0]
+NEW_RULES = {"S-NO-VISIBLE-DATE", "S-REF-DATES-HIDDEN", "S-UI-UNTRANSLATED", "S-ARIA-LABEL-SPAN", "S-LAZY-LCP", "S-HREFLANG-EQUIV", "U-FAQ-REPEATED-Q",
+             "S-URL-LOCALIZATION", "S-SECURITY-HEADERS", "U-A11Y-VIOLATION", "U-MOBILE-OVERFLOW", "U-CONSOLE-ERROR", "S-SCALED-CONTENT-RISK", "S-RENDER-BLOCKING-CSS", "S-COVER-SRCSET"}
+YN = lambda v: {True: "YES", False: "NO"}.get(v, v)
+
+
+def lcp_text(x):
+    if not x or not x.get("lcp_tag"):
+        return None
+    return f"{x['lcp_tag']}{'.' + x['lcp_cls'] if x.get('lcp_cls') else ''}{' ' + x['lcp_src'] if x.get('lcp_src') else ''}{' (lazy)' if x.get('lcp_lazy') else ''}"
+
+
+def axe_text(x, key="violations"):
+    items = [v for k in ("m", "d") for v in (x.get(k) or {}).get(key, [])]
+    if key == "violations":
+        return "; ".join(sorted({f"{v[0]} ({v[1]})" for v in items})) or "0"
+    return ", ".join(sorted(set(items))) or "—"
 
 
 def read_csv(path):
@@ -181,6 +212,7 @@ M_HEAD = ["audit_id", "url", "locale", "matrix_id", "content_id", "page_type", "
           "hreflang_count", "in_sitemap", "sitemap_shard", "frozen", "title", "title_width", "description", "desc_width", "h1", "h1_count",
           "primary_query", "secondary_queries", "search_intent", "pq_volume", "pq_intent_market", "keyword_evidence", "serp_evidence",
           "content_units", "unit_kind", "references", "ref_official", "schema_types", "internal_links_unique", "inbound_contextual", "external_links",
+          "click_depth", "internal_pagerank", "visible_date", "hreflang_class", "slug_class", "near_dup_containment", "a11y_violations", "lazy_image_first_viewport",
           "graph_action", "finding_count", "top_severity", "finding_ids", "actions", "task_ids", "owner_subsystem", "priority_rank", "work_status",
           "audit_date", "recheck_date", "source_url", "publication_commit"]
 owner_of = {}
@@ -196,6 +228,13 @@ for m in a["master"]:
     r["indexable"] = {True: "YES", False: "NO", None: None}.get(m.get("indexable"))
     for k in ("canonical_self", "in_sitemap", "frozen"):
         r[k] = {True: "YES", False: "NO"}.get(m.get(k), m.get(k))
+    du, bu = DU.get(m.get("url"), {}), BU.get(m.get("url"), {})
+    if du:
+        r.update({"click_depth": du["click_depth"], "internal_pagerank": du["internal_pagerank"], "visible_date": YN(du["visible_date"]),
+                  "hreflang_class": du["hreflang_class"], "slug_class": du["slug_class"], "near_dup_containment": du["dup_best_containment"]})
+    if bu:
+        r["a11y_violations"] = sum(len((bu.get(k) or {}).get("violations", [])) for k in ("m", "d"))
+        r["lazy_image_first_viewport"] = "YES" if any((bu.get(k) or {}).get("lazy_first_viewport") for k in ("m", "d")) else "NO"
     rows.append(r)
 rows.sort(key=lambda r: (r["matrix_status"] != "PUBLISHED", LOCALES.index(r["locale"]) if r["locale"] in LOCALES else -1, r.get("role") != "PILLAR", r.get("role") != "HUB", r.get("matrix_id") or ""))
 table_sheet("MASTER URL INVENTORY", "tblInventory", M_HEAD, rows,
@@ -203,7 +242,8 @@ table_sheet("MASTER URL INVENTORY", "tblInventory", M_HEAD, rows,
                     "parent_url": 36, "source_url": 40, "live_evidence": 30, "secondary_queries": 36, "schema_types": 30},
             link_cols=("url", "canonical", "source_url"), sev_col="top_severity", evi_cols=("keyword_evidence", "live_evidence"),
             notes=["MASTER URL INVENTORY — every Matrix row + non-Matrix HTML pages",
-                   "PUBLISHED rows are live URLs (HTTP 200 + byte-identical HTML verified by live markup QA run 40604722403 at commit " + SHA[:8] + "). IDEA rows (pipeline READY/CLAIMED/SUBMITTED) are planned URLs only: they have no page, sitemap entry or link.",
+                   f"PUBLISHED rows are live URLs (HTTP 200 + byte-identical HTML verified by live markup QA run {LIVE['run_id']} at commit " + SHA[:8] + "). IDEA rows (pipeline READY/CLAIMED/SUBMITTED) are planned URLs only: they have no page, sitemap entry or link.",
+                   "Re-audit columns (deep_audit.py, site_browser_audit.cjs): click_depth from /, internal_pagerank (×1000), visible_date = page prints its own date, hreflang_class, slug_class, near_dup_containment (max shared 5-word shingles with another page of the locale), a11y_violations (axe), lazy_image_first_viewport.",
                    "Do not edit the production Matrix from here; this is an audit copy for reconciliation."])
 
 # ---------------- ERRORS & BLOCKERS ----------------
@@ -275,16 +315,30 @@ for line in open(os.path.join(ROOT, "docs", "seo-audit", "OWNER-ACTIONS.md"), en
 L_HEAD = ["locale", "published_urls_live", "published_urls", "pillar", "hubs", "supporting", "idea_rows", "ready", "claimed", "submitted_open",
           "topic_factory_proposed", "topic_factory_refill", "candidates_blocked", "in_sitemap", "frozen", "html_lang_ok", "canonical_self", "hreflang_pages",
           "median_units", "unit_kind", "median_refs", "title_long", "desc_long", "thin", "price_review", "open_P1", "open_P2", "open_P3",
-          "share_of_guides", "keyword_data", "language_audit"]
+          "share_of_guides", "keyword_data", "language_audit", "ui_untranslated_pages", "slugs_english_or_mixed", "hreflang_candidate_pages",
+          "a11y_violation_pages", "lazy_image_first_viewport_pages", "max_click_depth"]
 lrows = []
 for r in a["locales"]:
     x = dict(r)
+    loc = r["locale"]
     x["language_audit"] = "PASS (0 FAIL, 0 WARN)"
+    if DEEP:
+        mine = {u: v for u, v in DU.items() if v["locale"] == loc}
+        x["ui_untranslated_pages"] = sum(1 for u in DEEP["ui_leaks"] if u.startswith(f"/{loc}/"))
+        sc = DEEP["summary"]["slug_classes"].get(loc, {})
+        x["slugs_english_or_mixed"] = sc.get("ENGLISH", 0) + sc.get("MIXED", 0)
+        x["hreflang_candidate_pages"] = sum(1 for v in mine.values() if v["hreflang_class"].startswith("EQUIVALENT_CANDIDATE"))
+        x["max_click_depth"] = max((v["click_depth"] or 0) for v in mine.values()) if mine else None
+    if BU:
+        mine_b = {u: v for u, v in BU.items() if u.startswith(f"/{loc}/")}
+        x["a11y_violation_pages"] = sum(1 for v in mine_b.values() if any((v.get(k) or {}).get("violations") for k in ("m", "d")))
+        x["lazy_image_first_viewport_pages"] = sum(1 for v in mine_b.values() if any((v.get(k) or {}).get("lazy_first_viewport") for k in ("m", "d")))
     lrows.append(x)
 ws = table_sheet("10 LANGUAGE MATRIX", "tblLocales", L_HEAD, lrows, widths={"keyword_data": 22, "language_audit": 22, "topic_factory_refill": 20},
                  notes=["10 LANGUAGE MATRIX — coverage, pipeline and quality per locale",
                         "published_urls_live, open_P1..P3 and share_of_guides are formulas over MASTER URL INVENTORY and ERRORS & BLOCKERS; other columns are audit snapshots (" + a["audit_date"] + ").",
-                        "Hreflang is only expected on true translations (locale homes + checklists): 2 pages per locale is correct, not a gap."])
+                        "Hreflang is set on true translations (locale homes + checklists): 2 pages per locale is correct, not a gap. hreflang_candidate_pages = pages in topic slots published in all 10 languages (Hubs H01–H04, Supporting S01–S08): an editor decides whether they are equivalent versions (task T-S-HREFLANG-EQUIV); they are not errors.",
+                        "ui_untranslated_pages = pages with English template strings (skip link, breadcrumb and reading-time labels). slugs_english_or_mixed counts live slugs only (never renamed: frozen URLs)."])
 col, first, last = TABLE_COLS["10 LANGUAGE MATRIX"]
 for rr in range(first, last + 1):
     L = f"{col['locale']}{rr}"
@@ -299,8 +353,11 @@ for rr in range(first, last + 1):
 T_HEAD = ["url", "locale", "matrix_id", "role", "http_status_live", "indexable", "robots", "canonical_self", "html_lang", "title_width", "desc_width",
           "h1_count", "h2_count", "h3_count", "h4_count", "heading_skips", "bytes", "css_files", "js_files", "head_blocking_js", "img_count",
           "img_missing_alt_attr", "img_empty_alt", "img_no_dimensions", "img_lazy", "duplicate_ids", "empty_anchors", "skip_link",
-          "buttons_no_name", "schema_valid_json", "technical_findings", "evidence"]
-tech_rules = {"U-TITLE-LONG", "U-DESC-LONG", "U-DESC-SHORT", "S-PSI-MOBILE"}
+          "buttons_no_name", "schema_valid_json", "click_depth", "noncanonical_internal_links", "outbound_links", "outbound_http", "og_image_check",
+          "lcp_element_mobile", "lcp_element_desktop", "lazy_image_first_viewport", "axe_violations", "axe_needs_review", "overflow_390px",
+          "console_or_4xx", "html_validator", "technical_findings", "evidence"]
+tech_rules = {"U-TITLE-LONG", "U-DESC-LONG", "U-DESC-SHORT", "S-PSI-MOBILE", "U-A11Y-VIOLATION", "U-MOBILE-OVERFLOW", "U-CONSOLE-ERROR"}
+vnu_files = set(VNU.get("files_with_warnings_list", [])) if VNU else set()
 fx = collections.defaultdict(list)
 for f in a["findings"]:
     if f["matrix_id"]:
@@ -314,17 +371,33 @@ for r in pub + [dict(x, matrix_id=None, role="UTILITY_NOINDEX", locale="global")
     for k in ("canonical_self", "skip_link", "schema_valid_json"):
         x[k] = {True: "YES", False: "NO"}.get(r.get(k), r.get(k))
     x["technical_findings"] = " ".join(f["finding_id"] for f in fx.get(r.get("matrix_id"), []) if f["rule_id"] in tech_rules)
-    x["evidence"] = "VERIFIED (committed build = live)"
+    du, bu = DU.get(r["url"], {}), BU.get(r["url"], {})
+    if du:
+        x.update({"click_depth": du["click_depth"], "noncanonical_internal_links": du["noncanonical_internal_links"], "outbound_links": du["outbound_links"],
+                  "outbound_http": du["outbound_http"], "og_image_check": f"{du['og_image_check']} {du['og_image_size'] or ''}".strip()})
+    if bu:
+        x["lcp_element_mobile"] = lcp_text(bu.get("m"))
+        x["lcp_element_desktop"] = lcp_text(bu.get("d")) if bu.get("d") else "not sampled"
+        x["lazy_image_first_viewport"] = "YES" if any((bu.get(k) or {}).get("lazy_first_viewport") for k in ("m", "d")) else "NO"
+        x["axe_violations"] = axe_text(bu)
+        x["axe_needs_review"] = axe_text(bu, "incomplete")
+        x["overflow_390px"] = (bu.get("m") or {}).get("overflow")
+        x["console_or_4xx"] = sum((bu.get(k) or {}).get("console", 0) + (bu.get(k) or {}).get("failed", 0) for k in ("m", "d"))
+    if VNU:
+        x["html_validator"] = "0 errors" + (" · aria-label warning (reading-time span)" if r["url"] in vnu_files else "")
+    x["evidence"] = f"VERIFIED (committed build = live, run {LIVE['run_id']})"
     trows.append(x)
-table_sheet("TECHNICAL SEO", "tblTechnical", T_HEAD, trows, widths={"url": 55, "technical_findings": 34, "evidence": 30, "robots": 22},
+table_sheet("TECHNICAL SEO", "tblTechnical", T_HEAD, trows, widths={"url": 55, "technical_findings": 34, "evidence": 30, "robots": 22, "axe_needs_review": 30, "lcp_element_mobile": 30, "lcp_element_desktop": 30, "html_validator": 30},
             link_cols=("url",), evi_cols=("evidence",),
             notes=["TECHNICAL SEO — per URL (published + noindex utilities)",
-                   "Measured on the committed build, which live markup QA proved byte-identical to production. Not measurable here: response headers, http/www/slash redirects (NOT_CHECKED), field CWV (NOT_CONNECTED). Lab CWV: see EXECUTIVE DASHBOARD.",
-                   "Site checks with 0 issues: broken internal links 0, duplicate titles 0, duplicate descriptions 0, H1≠1 0, heading-level skips 0, duplicate IDs 0, empty anchors 0, render-blocking head scripts 0, images without alt attribute 0."])
+                   "Measured on the committed build, which live markup QA proved byte-identical to production. Host level (post-publish QA host probes): http→https 301, /vi→/vi/ 301, www host does not resolve, HSTS max-age 31556952, cache-control max-age=600, no X-Content-Type-Options/CSP (GitHub Pages). Field CWV: NOT_CONNECTED. Lab CWV: EXECUTIVE DASHBOARD.",
+                   "Browser columns: Playwright Chromium on a local static server serving the same bytes, axe-core 4.10.3 WCAG 2.x A/AA at 390 px for every page and 1366 px for a 127-page sample; html_validator = W3C Nu Html Checker over all pages.",
+                   "Site checks with 0 issues: broken internal links 0, non-canonical internal links 0, http:// links 0, duplicate titles 0, duplicate descriptions 0, H1≠1 0, heading-level skips 0, duplicate IDs 0, empty anchors 0, render-blocking head scripts 0, images without alt attribute 0, HTML validation errors 0, og:image files/dimensions mismatched 0."])
 
 # ---------------- HREFLANG & CANONICAL ----------------
 H_HEAD = ["url", "locale", "matrix_id", "role", "html_lang", "canonical", "canonical_self", "og_url_matches", "hreflang_count", "x_default",
-          "hreflang_targets", "reciprocal", "equivalence_class", "verdict"]
+          "hreflang_targets", "reciprocal", "equivalence_class", "equivalence_evidence", "verdict"]
+EQ_SLOTS = {e["slot"]: e for e in (DEEP or {}).get("equivalence_slots", [])}
 hrows = []
 hl = {r["url"]: r.get("hreflang") or {} for r in pub}
 for r in pub:
@@ -344,24 +417,35 @@ for r in pub:
         eq = "TRUE_TRANSLATION_CLUSTER (checklists)"
     else:
         eq = "NO_EQUIVALENT_BY_DESIGN (native article)"
+    evidence = None
+    hc = DU.get(r["url"], {}).get("hreflang_class", "")
+    if hc.startswith("EQUIVALENT_CANDIDATE"):
+        slot = hc.split("(")[-1].rstrip(")")
+        e = EQ_SLOTS.get(slot, {})
+        eq = hc.replace("EQUIVALENT_CANDIDATE_", "EQUIVALENT_CANDIDATE: ")
+        evidence = f"slot {slot} in {e.get('locales')} locales, same cluster/silo {e.get('cluster_agreement')}/{e.get('subcluster_agreement')}, median shared-reference Jaccard {e.get('median_shared_refs_jaccard')} — editor decision (T-S-HREFLANG-EQUIV)"
     verdict = "PASS" if r.get("canonical_self") and (recip in (None, "YES")) and (bool(targets) == eq.startswith("TRUE")) else "CHECK"
     hrows.append({"url": ORIGIN + r["url"], "locale": r["locale"], "matrix_id": r["matrix_id"], "role": r["role"], "html_lang": r.get("html_lang"),
                   "canonical": r.get("canonical"), "canonical_self": "YES" if r.get("canonical_self") else "NO",
                   "og_url_matches": "YES" if r.get("og_url") == r.get("canonical") else "NO", "hreflang_count": len(targets),
                   "x_default": r.get("x_default"), "hreflang_targets": " ".join(f"{k}" for k in sorted(targets)), "reciprocal": recip or "N/A",
-                  "equivalence_class": eq, "verdict": verdict})
-table_sheet("HREFLANG & CANONICAL", "tblHreflang", H_HEAD, hrows, widths={"url": 55, "canonical": 55, "hreflang_targets": 40, "equivalence_class": 36, "x_default": 36},
+                  "equivalence_class": eq, "equivalence_evidence": evidence, "verdict": verdict})
+table_sheet("HREFLANG & CANONICAL", "tblHreflang", H_HEAD, hrows, widths={"url": 55, "canonical": 55, "hreflang_targets": 40, "equivalence_class": 36, "x_default": 36, "equivalence_evidence": 60},
             link_cols=("url", "canonical"),
             notes=["HREFLANG & CANONICAL — every published URL",
-                   "Hreflang is set only between true translations (/ + 10 locale homes, 10 checklists). Hub/Supporting articles are written natively per locale and correctly carry no hreflang (NO_EQUIVALENT_BY_DESIGN) — this is not an error.",
+                   "Hreflang is set only between true translations (/ + 10 locale homes, 10 checklists), all reciprocal. Hub/Supporting articles are written natively per locale and carry no hreflang (NO_EQUIVALENT_BY_DESIGN) — this is not an error.",
+                   "EQUIVALENT_CANDIDATE (re-audit 2026-11-01): the 4 Hubs and the launch Supporting topics S01–S08 exist in all 10 languages with the same Matrix slot, cluster and silo; STRONG = most references shared. They stay without hreflang until an editor confirms they are versions of the same page (no pairing to raise counts).",
                    "verdict PASS = self-canonical, og:url = canonical, reciprocal annotations, hreflang presence matches the equivalence class."])
 
 # ---------------- CONTENT AUDIT ----------------
 C_HEAD = ["url", "locale", "matrix_id", "role", "parent_id", "cluster", "subcluster", "title", "h1", "content_units", "unit_kind", "locale_role_median_units",
           "depth_ratio", "h2_count", "references", "ref_official", "ref_legal_db", "ref_third_party", "faq_visible", "provenance_note", "date_published",
           "publication_mode", "publication_stage", "writer_session", "facts_reviewed_by_human", "serp_intent_checked", "fact_guard_warns",
-          "graph_action", "review_pairs", "content_findings", "eeat_note"]
-content_rules = {"U-THIN", "U-NO-OFFICIAL-SOURCE", "U-PRICE-REVIEW", "U-GRAPH-UPGRADE", "U-GRAPH-REVIEW", "U-TITLE-SIMILAR", "S-DE-TOPIC-DRIFT", "S-CHECKLIST-NO-REFS"}
+          "graph_action", "review_pairs", "visible_date", "refs_with_checked_date", "packet_sources", "near_dup_url", "near_dup_containment",
+          "legal_freshness", "lead_pq_cov", "h2_pq_cov", "faq_questions", "content_findings", "eeat_note"]
+content_rules = {"U-THIN", "U-NO-OFFICIAL-SOURCE", "U-PRICE-REVIEW", "U-GRAPH-UPGRADE", "U-GRAPH-REVIEW", "U-TITLE-SIMILAR", "S-DE-TOPIC-DRIFT", "S-CHECKLIST-NO-REFS",
+                 "U-FAQ-REPEATED-Q"}
+LEGAL_OK = {"A1_175CC": "A1 ≤175 cm³ stated as the pre-2025 / transitional rule", "CIRCULAR_12_2025": "Circular 12/2025 cited with its 108/2026 replacement"}
 crows = []
 for r in pub:
     if r["role"] not in ("HUB", "SUPPORT"):
@@ -372,15 +456,24 @@ for r in pub:
     x["depth_ratio"] = round(r["content_units"] / m, 2) if m else None
     x["review_pairs"] = ", ".join(f"{p['other']}({p['score']})" for p in r.get("review_pairs", []))
     x["content_findings"] = " ".join(f["finding_id"] for f in fx.get(r["matrix_id"], []) if f["rule_id"] in content_rules)
+    du = DU.get(r["url"], {})
+    if du:
+        x.update({"visible_date": YN(du["visible_date"]), "refs_with_checked_date": du["refs_checked_on_rendered"], "packet_sources": du["packet_sources"],
+                  "near_dup_url": (ORIGIN + du["dup_best_url"]) if du.get("dup_best_url") else None, "near_dup_containment": du["dup_best_containment"],
+                  "lead_pq_cov": du["lead_pq_cov"], "h2_pq_cov": du["h2_pq_cov"], "faq_questions": du["faq_questions"],
+                  "legal_freshness": "; ".join(LEGAL_OK.get(c.rstrip("*"), c) + (" — REPLACEMENT NOT CITED" if c.endswith("*") else " (reviewed: correct)") for c in du["legal_flags"]) or "no superseded instrument cited"})
     x["eeat_note"] = "AI-assisted, automated QA; no human fact review (disclosed)" if r.get("facts_reviewed_by_human") is False else ("Legacy/owner-path page" if r.get("publication_mode") else "Checklist (site template)")
     for k in ("faq_visible", "provenance_note", "facts_reviewed_by_human", "serp_intent_checked"):
         x[k] = {True: "YES", False: "NO"}.get(x[k], x[k])
     crows.append(x)
-table_sheet("CONTENT AUDIT", "tblContent", C_HEAD, crows, widths={"url": 55, "title": 45, "h1": 40, "content_findings": 40, "eeat_note": 40, "review_pairs": 26},
-            link_cols=("url",),
+table_sheet("CONTENT AUDIT", "tblContent", C_HEAD, crows, widths={"url": 55, "title": 45, "h1": 40, "content_findings": 40, "eeat_note": 40, "review_pairs": 26, "near_dup_url": 45, "legal_freshness": 45},
+            link_cols=("url", "near_dup_url"),
             notes=["CONTENT AUDIT — every published Hub and Supporting article",
                    "content_units = words (CJK characters for zh/ja; Korean counted in space-separated words, hence lower). depth_ratio = units ÷ median of the same locale and role (thin flag < 0.5).",
-                   "Source classes are a domain heuristic (official = government/intergovernmental domains; legal_db = thuvienphapluat/luatvietnam). Factual accuracy was NOT re-verified by a human in this audit."])
+                   "Source classes are a domain heuristic (official = government/intergovernmental domains; legal_db = thuvienphapluat/luatvietnam). Factual accuracy was NOT re-verified by a human in this audit.",
+                   "Re-audit 2026-11-01: visible_date = page prints its own date (0 do); refs_with_checked_date vs packet_sources (checked_on is in every packet but not printed); near_dup = highest share of 5-word shingles (8-character for zh/ja) with another page of the locale; "
+                   "legal_freshness = superseded Vietnamese instruments (Decree 100/2019, Law 23/2008, Circulars 12/2017 and 12/2025, A1 ≤175 cm³) — every hit was read and is stated correctly; lead/h2_pq_cov = share of primary-query tokens in the lead paragraph / H2s.",
+                   "near_dup_url links the most similar page of the same locale; containment ≥ 0.5 would mean half of the shorter page repeats the other (none found; highest value in the table)."])
 
 # ---------------- KEYWORD MATRIX ----------------
 K_HEAD = ["matrix_id", "locale", "url", "role", "matrix_status", "pipeline_status", "cluster", "subcluster", "primary_query", "secondary_queries",
@@ -403,7 +496,7 @@ for m in a["master"]:
 table_sheet("KEYWORD MATRIX", "tblKeywords", K_HEAD, krows,
             widths={"primary_query": 40, "secondary_queries": 40, "url": 50, "intent_rationale": 50, "distinct_from": 40, "keyword_findings": 34},
             link_cols=("url",), evi_cols=("keyword_evidence",),
-            notes=["KEYWORD MATRIX — every Matrix row (published + IDEA). pq_volume/intent/KD are real market data (OpenSEO/DataForSEO, 2026-10-27).",
+            notes=["KEYWORD MATRIX — every Matrix row (published + IDEA). pq_volume/intent/KD are real market data (OpenSEO/DataForSEO, 2026-10-27); re-audit 2026-11-01 probes are listed in the market table (Ubersuggest).",
                    "VERIFIED = market data returned · VERIFIED_NO_VOLUME = queried, no measurable volume in that market · NOT_CHECKED = not queried (credits exhausted, IDEA rows, zh). Volumes are monthly Google estimates, not traffic.",
                    "Markets: vi=Vietnam, en=United States, de=Germany, fr=France, es=Spain, ko=South Korea, ja=Japan. The raw market data (every keyword the tool returned, per market) is the second table to the right of this one: 'KEYWORD MARKET DATA'.",
                    "commercial_head_term (Pillar rows): the market's researched commercial head term, data/seo/commercial-head-terms.json (OpenSEO + Ubersuggest volumes and Google autocomplete, 2026-10-27/28). Owner directive 2026-10-28: /global competes for it independently; no keyword is yielded to any domain."])
@@ -421,6 +514,10 @@ for loc, mk in kw["markets"].items():
                         "competition": x.get("competition_level"), "market_evidence": "VERIFIED"})
     mk_rows.append({"market_locale": loc, "market": mk["location"], "keyword": f"({mk['queried'] - len(mk['returned'])} other queried keywords)",
                     "search_volume": None, "main_intent": None, "market_evidence": "VERIFIED_NO_VOLUME", "competition": None, "cpc_usd": None, "keyword_difficulty": None})
+for x in (kw.get("probes_20261101") or {}).get("rows", []):
+    mk_rows.append({"market_locale": x.get("locale"), "market": x["market"], "keyword": x["keyword"], "search_volume": x.get("search_volume"),
+                    "keyword_difficulty": x.get("seo_difficulty"), "main_intent": None, "cpc_usd": x.get("cpc_usd"), "competition": x.get("competition"),
+                    "market_evidence": "VERIFIED (Ubersuggest 2026-11-01" + (f"; monthly {x['monthly']})" if x.get("monthly") else ")")})
 ws = wb["KEYWORD MATRIX"]
 _, kfirst, _ = TABLE_COLS["KEYWORD MATRIX"]
 startc = len(K_HEAD) + 2
@@ -437,7 +534,7 @@ t.tableStyleInfo = TableStyleInfo(name="TableStyleLight11", showRowStripes=True)
 ws.add_table(t)
 for ci, w in enumerate([10, 22, 40, 12, 12, 14, 9, 12, 30]):
     ws.column_dimensions[get_column_letter(startc + ci)].width = w
-ws.cell(row=hr - 1, column=startc, value="KEYWORD MARKET DATA (real tool output, 2026-10-27)").font = F_SUB
+ws.cell(row=hr - 1, column=startc, value="KEYWORD MARKET DATA (real tool output, 2026-10-27; probes 2026-11-01)").font = F_SUB
 
 # ---------------- TOPICAL AUTHORITY ----------------
 A_HEAD = ["silo_id", "locale", "hub", "hub_id", "label", "proposed_hub", "journey_stage", "intent_class", "published", "protected_drafts", "planned",
@@ -461,7 +558,8 @@ table_sheet("TOPICAL AUTHORITY", "tblSilos", A_HEAD, arows, widths={"label": 40,
 
 # ---------------- INTERNAL LINK MATRIX ----------------
 I_HEAD = ["url", "locale", "matrix_id", "role", "parent_id", "links_to_parent", "parent_links_here", "linked_from_pillar", "inbound_internal_all",
-          "inbound_contextual", "inbound_anchor_variants", "contextual_outlinks", "internal_links_unique", "external_links", "anchor_warns", "link_findings"]
+          "inbound_contextual", "inbound_anchor_variants", "contextual_outlinks", "internal_links_unique", "external_links", "anchor_warns",
+          "click_depth_all", "click_depth_main", "inbound_pages_any", "internal_pagerank", "pagerank_rank_in_locale", "link_findings"]
 link_rules = {"U-LOW-INBOUND", "U-ANCHOR-DIVERSITY", "S-RAIL-ANCHOR"}
 irows = []
 for r in pub:
@@ -471,17 +569,22 @@ for r in pub:
         x[k] = {True: "YES", False: "NO", None: "N/A"}.get(r.get(k))
     x["anchor_warns"] = len(r.get("seo_guard_warns", []))
     x["link_findings"] = " ".join(f["finding_id"] for f in fx.get(r["matrix_id"], []) if f["rule_id"] in link_rules)
+    du = DU.get(r["url"], {})
+    if du:
+        x.update({"click_depth_all": du["click_depth"], "click_depth_main": du["click_depth_main"], "inbound_pages_any": du["inbound_pages_any"],
+                  "internal_pagerank": du["internal_pagerank"], "pagerank_rank_in_locale": du["pagerank_rank_in_locale"]})
     irows.append(x)
 table_sheet("INTERNAL LINK MATRIX", "tblLinks", I_HEAD, irows, widths={"url": 55, "link_findings": 34}, link_cols=("url",),
             notes=["INTERNAL LINK MATRIX — every published URL",
                    "Verified: 0 broken internal links, 0 links to unpublished URLs, all 1,064 Hub/Supporting pages link to their parent and are linked back (two-way). Contextual = links inside the article body + related rail (navigation/footer excluded).",
-                   "Owner directive 2026-10-28: /global competes independently for rental head terms; exact-match anchor repetition is audited only if present in rendered HTML."])
+                   "Owner directive 2026-10-28: /global competes independently for rental head terms; exact-match anchor repetition is audited only if present in rendered HTML.",
+                   "Re-audit 2026-11-01 (deep_audit.py): click_depth_all = clicks from / over every link (all pages ≤ 3); click_depth_main = links inside <main> only (/privacy/ and /terms/ are footer-only by design); internal_pagerank = PageRank ×1000 over the internal link graph (damping 0.85), rank within the locale; 0 orphan pages, 0 links to redirecting or non-canonical URL forms."])
 
 # ---------------- SCHEMA & AEO GEO ----------------
 G_HEAD = ["url", "locale", "matrix_id", "role", "schema_types", "schema_valid_json", "schema_inlanguage", "breadcrumb_items", "author_types",
           "date_published", "date_modified", "faq_visible", "faq_schema", "provenance_note", "references", "ref_official", "visual_breadcrumb",
-          "article_image_in_schema", "ai_visibility", "schema_findings"]
-schema_rules = {"S-ARTICLE-NO-IMAGE", "S-FAQ-SCHEMA", "S-AUTHOR-ORG-ONLY"}
+          "article_image_in_schema", "faq_questions", "visible_date", "sitemap_lastmod", "date_consistency", "ai_visibility", "schema_findings"]
+schema_rules = {"S-ARTICLE-NO-IMAGE", "S-FAQ-SCHEMA", "S-AUTHOR-ORG-ONLY", "U-FAQ-REPEATED-Q"}
 grows = []
 for r in pub:
     x = {h: r.get(h) for h in G_HEAD}
@@ -490,15 +593,21 @@ for r in pub:
         x[k] = {True: "YES", False: "NO"}.get(r.get(k), r.get(k))
     x["article_image_in_schema"] = ("YES" if r.get("article_image_in_schema") else "NO") if "Article" in (r.get("schema_types") or []) else "N/A"
     x["ai_visibility"] = "NOT_CONNECTED"
+    x["schema_findings"] = " ".join(f["finding_id"] for f in fx.get(r["matrix_id"], []) if f["rule_id"] in schema_rules)
+    du = DU.get(r["url"], {})
+    if du:
+        x.update({"faq_questions": du["faq_questions"], "visible_date": YN(du["visible_date"]), "sitemap_lastmod": du["sitemap_lastmod"],
+                  "date_consistency": "; ".join(du["schema_issues"]) or ("OK (dateModified = sitemap lastmod)" if du["date_modified"] else "no Article dates")})
     grows.append(x)
 table_sheet("SCHEMA & AEO GEO", "tblSchema", G_HEAD, grows, widths={"url": 55, "schema_types": 40}, link_cols=("url",), evi_cols=("ai_visibility",),
             notes=["SCHEMA & AEO / GEO — structured data and answer-engine readiness per URL",
                    "All JSON-LD parses (audit-ai-search: 1,079 valid graphs). No LocalBusiness/AutoRental schema by design while publication.business_schema_approved=false.",
-                   "AI-citation / AI-visibility tracking is NOT_CONNECTED (no tracker set up; OpenSEO AI visibility needs paid setup and owner approval)."])
+                   "AI-citation / AI-visibility tracking is NOT_CONNECTED (no tracker set up; OpenSEO AI visibility needs paid setup and owner approval).",
+                   "Re-audit 2026-11-01: FAQPage on 1,074 pages and every FAQ question visible (tests/seo-az.test.mjs); dateModified = sitemap lastmod, mainEntityOfPage = canonical, Article image files exist, headline ≤ 110 characters, BreadcrumbList ends at the page on every Hub/Supporting page (deep_audit.py). Gap: the dates are not printed on the page (visible_date)."])
 
 # ---------------- INDEXING & SITEMAPS ----------------
 X_HEAD = ["url", "locale", "matrix_id", "matrix_status", "pipeline_status", "html_exists", "robots", "indexable", "canonical_self", "in_sitemap",
-          "sitemap_shard", "sitemap_lastmod", "frozen", "http_status_live", "gsc_coverage", "check"]
+          "sitemap_shard", "sitemap_lastmod", "lastmod_eq_dateModified", "frozen", "http_status_live", "gsc_coverage", "check"]
 xrows = []
 for m in a["master"]:
     x = {h: m.get(h) for h in X_HEAD}
@@ -508,6 +617,9 @@ for m in a["master"]:
     x["indexable"] = {True: "YES", False: "NO"}.get(m.get("indexable"), m.get("indexable"))
     x["sitemap_lastmod"] = m.get("sitemap_lastmod") or ("MISSING" if m.get("in_sitemap") else None)
     x["gsc_coverage"] = "NOT_CONNECTED"
+    du = DU.get(m["url"], {})
+    if du and du.get("sitemap_lastmod"):
+        x["lastmod_eq_dateModified"] = "YES" if du.get("date_modified") and du["sitemap_lastmod"][:10] == du["date_modified"][:10] else ("N/A (no Article date)" if not du.get("date_modified") else "NO")
     if m["matrix_status"] == "PUBLISHED":
         x["check"] = "PASS" if m.get("html_exists") and m.get("in_sitemap") and m.get("frozen") and m.get("canonical_self") else "FAIL"
     elif m["matrix_status"] == "NOT_IN_MATRIX":
@@ -562,12 +674,51 @@ if LSUM:
     psi = ext["pagespeed_ubersuggest"]
     ch.append({"date": a["audit_date"], "type": "PAGESPEED", "item": "PageSpeed lab (Ubersuggest, forced) homepage", "commit_or_run": psi.get("measured_at", ""),
                "result": f"Mobile SI {psi['MOBILE']['SpeedIndex']}, LCP {psi['MOBILE']['LCP']}, CLS {psi['MOBILE']['CLS']}; Desktop LCP {psi['DESKTOP']['LCP']}", "evidence_url": None, "notes": "lab data only"})
+AZ_TASKS = opt(os.path.join(ROOT, "docs", "seo-matrix", "TASKS.json"))
+if AZ_TASKS:
+    done = [t for t in AZ_TASKS["tasks"] if t.get("status") == "LIVE_VERIFIED" and t.get("pr")]
+    prs = sorted({int(t["pr"]) for t in done})
+    ch.append({"date": "2026-10-29", "type": "FIX_TASKS", "item": f"A–Z tasks {', '.join(t['id'] for t in done)}", "commit_or_run": f"PR #{prs[0]}–#{prs[-1]}" if prs else "",
+               "result": f"{len(done)} tasks LIVE_VERIFIED (image covers, titles/descriptions, checklist depth, desktop menu, max-image-preview, outbound references, axe, Pillar sources)",
+               "evidence_url": f"{GH}/blob/main/docs/seo-matrix/TASKS.json", "notes": "details in SEO TASK BOARD"})
+if DEEP:
+    ds = DEEP["summary"]
+    ch += [
+        {"date": a["audit_date"], "type": "RE_AUDIT", "item": "Global SEO A–Z re-audit (full, read-only): repo QA, live QA, deep audit, browser audit, W3C validation, keyword/visibility refresh",
+         "commit_or_run": SHA[:8], "result": f"{a['summary']['findings']} findings ({', '.join(f'{k} {v}' for k, v in sorted(a['summary']['by_severity'].items()))}), {a['summary']['tasks']} tasks; new rules: "
+         + ", ".join(sorted({f['rule_id'] for f in a['findings'] if f['rule_id'] in NEW_RULES})), "evidence_url": f"{GH}/blob/main/docs/seo-audit/GLOBAL-SEO-AZ-AUDIT-20261101.md", "notes": "audit branch audit/seo-az-20261101"},
+        {"date": a["audit_date"], "type": "LIVE_QA", "item": "Live Markup QA (every PUBLISHED URL + /search/ + /404.html)", "commit_or_run": f"run {ext['github_actions'][0]['run_id']} @ {ext['github_actions'][0]['head_sha'][:8]}",
+         "result": "success — 1,081/1,081 HTTP 200 and byte-identical", "evidence_url": RUN(ext["github_actions"][0]["run_id"]), "notes": "dispatched for this re-audit"},
+        {"date": a["audit_date"], "type": "LIVE_QA", "item": "Post-Publish Live HTTP QA + host probes", "commit_or_run": f"run {ext['github_actions'][1]['run_id']} @ {ext['github_actions'][1]['head_sha'][:8]}",
+         "result": "success — 1,094 checks, 0 issues; http→https 301, /vi→/vi/ 301, www ENOTFOUND, HSTS, cache-control max-age=600", "evidence_url": RUN(ext["github_actions"][1]["run_id"]), "notes": "dispatched for this re-audit"},
+        {"date": a["audit_date"], "type": "DEEP_AUDIT", "item": "deep_audit.py (link graph, dates, duplication, legal freshness, multilingual chrome, slugs, equivalence)", "commit_or_run": DEEP["head_commit"][:8],
+         "result": f"max click depth {max(int(k) for k in ds['click_depth_all'] if k not in ('None', 'null'))}; non-canonical links {ds['noncanonical_links']}; visible page dates {ds['visible_date_pages']}; reference dates printed {ds['refs_checked_on_rendered']}/{ds['packet_sources_checked_on']}; "
+                   f"near-duplicate pairs {ds['dup_pairs']}; legal hits {ds['legal_pages']} (all correct); English template strings on {ds['ui_leak_pages']} pages; equivalence slots {len(ds['equivalence_slots'])}",
+         "evidence_url": f"{GH}/blob/main/reports/seo/data/deep-audit.json", "notes": ""},
+    ]
+if BRW:
+    bs = BRW["summary"]
+    ch.append({"date": a["audit_date"], "type": "BROWSER_AUDIT", "item": "site_browser_audit.cjs: axe-core WCAG 2.x A/AA, overflow, console, LCP element (Chromium, local static server)", "commit_or_run": BRW.get("commit", "")[:8],
+               "result": f"{bs['pages']} pages at 390 px + {bs['desktop_pages']} at 1366 px; axe violations on {bs['pages_with_violations']} pages; overflow {bs['pages_with_overflow']}; console/4xx {bs['pages_with_console_or_4xx']}; lazy image in first viewport on {bs['pages_lazy_first_viewport']} pages (LCP lazy on {bs['pages_lcp_lazy']})",
+               "evidence_url": f"{GH}/blob/main/reports/seo/data/raw/browser-audit-20261101.json", "notes": "lab; same bytes as production"})
+if VNU:
+    ch.append({"date": a["audit_date"], "type": "HTML_VALIDATION", "item": VNU["validator"], "commit_or_run": VNU["commit"][:8],
+               "result": f"{VNU['files']} pages: {VNU['errors']} errors, {VNU['warnings']} warnings (all 'aria-label on span.ultra-reading-time')", "evidence_url": f"{GH}/blob/main/reports/seo/data/raw/html-validation-20261101.json", "notes": ""})
+if LH:
+    ch.append({"date": a["audit_date"], "type": "LIGHTHOUSE", "item": f"Lighthouse {LH['lighthouse_version']} lab, {len(LH['runs'])} runs on template sample (local static server)", "commit_or_run": LH["commit"][:8],
+               "result": LH["summary_text"], "evidence_url": f"{GH}/blob/main/reports/seo/data/raw/lighthouse-20261101.json", "notes": "lab; simulated throttling; not field data"})
+uo = ext["ubersuggest_domain_overview"]
+ch += [
+    {"date": a["audit_date"], "type": "VISIBILITY", "item": "Ubersuggest domain overview", "commit_or_run": "—", "result": f"organic keywords {uo['organic_keywords']}, DA {uo['domain_authority']}, backlinks {uo['backlinks']}, referring domains {uo['referring_domains']}", "evidence_url": None, "notes": "third-party estimate (INFERRED)"},
+    {"date": a["audit_date"], "type": "KEYWORDS", "item": "Keyword probes (Ubersuggest free tier)", "commit_or_run": "—", "result": "; ".join(f"{x['keyword']} [{x['market']}] = {x['search_volume']}" for x in (kw.get("probes_20261101") or {}).get("rows", [])), "evidence_url": None, "notes": "OpenSEO 4 credits, OpenRush 402, Firecrawl no credits"},
+    {"date": a["audit_date"], "type": "DATA_SOURCES", "item": "Search Console / GA4 connection check", "commit_or_run": "—", "result": ext["search_console"]["evidence"], "evidence_url": None, "notes": "NOT_CONNECTED"},
+]
 ch += [
     {"date": "2026-10-27", "type": "PRIOR_AUDIT", "item": "Multilingual SEO audit", "commit_or_run": "f70d2e04 / b8a0115d", "result": "PASS; language-audit added", "evidence_url": f"{GH}/blob/main/docs/MULTILINGUAL-SEO-AUDIT-20261027.md", "notes": "1,068 URLs at the time"},
     {"date": "2026-10-26", "type": "PRIOR_AUDIT", "item": "Production checkpoint", "commit_or_run": "—", "result": "see document", "evidence_url": f"{GH}/blob/main/docs/PRODUCTION-CHECKPOINT-20261026.md", "notes": ""},
     {"date": "2026-10-25", "type": "PRIOR_AUDIT", "item": "Branch audit", "commit_or_run": "—", "result": "see document", "evidence_url": f"{GH}/blob/main/docs/BRANCH-AUDIT-20261025.md", "notes": ""},
     {"date": "2026-10-20", "type": "PRIOR_AUDIT", "item": "OpenSEO crawl (50 pages, Lighthouse)", "commit_or_run": "1dba2554", "result": "47 desc-too-long, 43 title-too-long (info) — before V10/V11 metadata", "evidence_url": None, "notes": "superseded by 2026-10-27 crawl"},
-    {"date": a["recheck_date"] if a.get("recheck_date") else "2026-11-11", "type": "NEXT_AUDIT", "item": "Re-audit and price re-check (planned)", "commit_or_run": "", "result": "", "evidence_url": None, "notes": "Re-run tools per docs/seo-audit/README.md, then ledger.py; dispatch source-recheck.yml"},
+    {"date": RECHECK, "type": "NEXT_AUDIT", "item": "Re-audit and price re-check (planned)", "commit_or_run": "", "result": "", "evidence_url": None, "notes": "Re-run tools per docs/seo-audit/README.md, then ledger.py; dispatch source-recheck.yml"},
 ]
 table_sheet("AUDIT CHANGELOG", "tblChangelog", CH_HEAD, ch, widths={"item": 45, "commit_or_run": 30, "result": 70, "evidence_url": 50, "notes": 40},
             link_cols=("evidence_url",), input_cols=(), notes=["AUDIT CHANGELOG — audits, QA runs, commits and verification results", "Append a row for every re-audit or verified fix."])
@@ -588,7 +739,8 @@ lines = [
     ("", F_BASE),
     ("Editing", F_SUB),
     ("Yellow cells are inputs: work_status (drop-down), assignee, start, due, notes. Do not edit other columns; they are regenerated on the next audit.", F_BASE),
-    ("Re-audit: python3 docs/seo-audit/tools/collect.py && python3 docs/seo-audit/tools/analyze.py && python3 docs/seo-audit/tools/build_workbook.py --carry <this file>", F_BASE),
+    ("Re-audit: python3 docs/seo-audit/tools/collect.py && python3 docs/seo-audit/tools/deep_audit.py && python3 docs/seo-audit/tools/analyze.py && python3 docs/seo-audit/tools/ledger.py && python3 docs/seo-audit/tools/build_workbook.py --carry <this file> (browser and validator evidence: docs/seo-audit/README.md)", F_BASE),
+    (f"This build: re-audit {a['audit_date']} of main {SHA[:8]}. New in this re-audit: page dates, reference dates, English template strings, lazy LCP image, hreflang equivalence candidates, repeated FAQ questions, URL localization, response headers, axe on every page, W3C validation, Lighthouse lab, click depth and internal PageRank.", F_BASE),
     ("OWNER DIRECTIVE 2026-10-28: Global SEO is independent and competes for commercial rental head terms in all 10 languages; never yield terms to other domains. Historical 2026-10-27 audit notes are superseded for this decision.", F_BASE),
     ("", F_BASE),
     ("Severity", F_SUB),
@@ -646,6 +798,14 @@ kpis = [
     *([("Execution ledger (baseline findings → final outcome)", None, None)]
       + [(k, LSUM["outcomes"][k], None) for k in ("FIXED_VERIFIED", "FIXED_PENDING_LIVE", "VALIDATED_NO_FIX", "DUPLICATE", "EXTERNAL_DEPENDENCY", "BLOCKED")]
       + [("Baseline tasks: " + ", ".join(f"{k} {v}" for k, v in sorted(LSUM["tasks"].items())), None, None)] if LSUM else []),
+    *([("Re-audit 2026-11-01 checks", None, None),
+       ("Max click depth from / (published)", f"=MAX({INV('click_depth')})", "VERIFIED"),
+       ("Published pages printing their own date", f"=COUNTIFS({INV('matrix_status')},\"PUBLISHED\",{INV('visible_date')},\"YES\")", "VERIFIED"),
+       ("Hreflang candidate pages (editor decision)", f"=COUNTIF({INV('hreflang_class')},\"EQUIVALENT_CANDIDATE*\")", "INFERRED"),
+       ("Pages with English template strings", DEEP["summary"]["ui_leak_pages"], "VERIFIED")] if DEEP else []),
+    *([("Pages with axe WCAG A/AA violations", f"=COUNTIFS({INV('a11y_violations')},\">0\")", "VERIFIED"),
+       ("Pages with a lazy image in the first viewport", f"=COUNTIFS({INV('lazy_image_first_viewport')},\"YES\")", "VERIFIED")] if BRW else []),
+    *([("W3C HTML errors (all pages)", VNU["errors"], "VERIFIED")] if VNU else []),
     ("Evidence mix (findings)", None, None),
     ("VERIFIED", f"=COUNTIFS({ERR('evidence_status')},\"VERIFIED\")", None),
     ("INFERRED", f"=COUNTIFS({ERR('evidence_status')},\"INFERRED\")", None),
@@ -696,43 +856,53 @@ for ci, s in enumerate(("P1", "P2", "P3")):
 # data sources
 ws["E19"] = "Data sources"
 ws["E19"].font = F_SUB
+uo = ext["ubersuggest_domain_overview"]
 srcs = [("Committed build + repo QA (10 tools)", "VERIFIED", "all PASS, 0 FAIL"),
-        ("Live markup QA / post-publish QA (GitHub Actions)", "VERIFIED", " / ".join(f"{g['run_id']} {g['conclusion']}" for g in ext["github_actions"][:2]) + " (latest); baseline 40604722403 / 40604724823"),
-        ("Direct crawl from audit container", "NOT_CHECKED", "egress policy 403 on global.rentbikehanoi.com"),
-        ("OpenSEO crawl (50-page cap)", "VERIFIED", "50/50 OK; Lighthouse failed"),
-        ("PageSpeed lab (homepage)", "VERIFIED", f"mobile LCP {ext['pagespeed_ubersuggest']['MOBILE']['LCP']}, SI {ext['pagespeed_ubersuggest']['MOBILE']['SpeedIndex']}, CLS {ext['pagespeed_ubersuggest']['MOBILE']['CLS']} (baseline SI 4.3 s)"),
-        ("Keyword volumes (DataForSEO)", "VERIFIED", "vi/en/fr/ko/ja full; de/es partial; nl/pt/zh not checked"),
-        ("Backlinks / DA (Ubersuggest)", "INFERRED", "DA 2, 37 backlinks, 32 RD, 0 ranking keywords"),
-        ("Google Search Console", "NOT_CONNECTED", "no property connected"),
-        ("GA4 / CrUX field CWV / rank tracking / AI visibility", "NOT_CONNECTED", "not set up")]
+        ("Live markup QA / post-publish QA (GitHub Actions)", "VERIFIED", " / ".join(f"{g['run_id']} {g['conclusion']}" for g in ext["github_actions"][:2]) + f" @ {ext['github_actions'][0]['head_sha'][:8]} (latest); baseline 40604722403 / 40604724823"),
+        ("Host probes (http→https, slash, www, headers)", "VERIFIED", ext["redirect_and_header_probes"]["measured_by"][:90]),
+        ("Direct crawl from audit container", "NOT_CHECKED", "egress policy 403 on global.rentbikehanoi.com (live state via the two workflows above)")]
+if BRW:
+    srcs.append(("Browser audit, every page (axe-core, Chromium, local)", "VERIFIED", f"{BRW['summary']['pages']} pages mobile + {BRW['summary']['desktop_pages']} desktop; same bytes as production"))
+if VNU:
+    srcs.append(("W3C Nu HTML validator, every page", "VERIFIED", f"{VNU['errors']} errors, {VNU['warnings']} warnings"))
+if LH:
+    srcs.append(("Lighthouse lab (local, template sample)", "VERIFIED", f"{len(LH['runs'])} runs, Lighthouse {LH['lighthouse_version']}"))
+srcs += [("OpenSEO crawl (50-page cap, 2026-10-27)", "VERIFIED", "50/50 OK; Lighthouse failed"),
+         ("PageSpeed lab (homepage, Ubersuggest 2026-10-28)", "VERIFIED", f"mobile LCP {ext['pagespeed_ubersuggest']['MOBILE']['LCP']}, SI {ext['pagespeed_ubersuggest']['MOBILE']['SpeedIndex']}, CLS {ext['pagespeed_ubersuggest']['MOBILE']['CLS']}; PSI API 429 on 2026-11-01"),
+         ("Keyword volumes (DataForSEO 2026-10-27; Ubersuggest probes 2026-11-01)", "VERIFIED", "vi/en/fr/ko/ja full; de/es partial; nl/pt/zh head-term probes only"),
+         ("Backlinks / DA (Ubersuggest)", "INFERRED", f"DA {uo['domain_authority']}, {uo['backlinks']} backlinks, {uo['referring_domains']} RD, {uo['organic_keywords']} ranking keywords ({uo.get('rechecked_at', '')})"),
+         ("Google Search Console", "NOT_CONNECTED", "no property connected (rechecked 2026-11-01)"),
+         ("GA4 / CrUX field CWV / rank tracking / AI visibility", "NOT_CONNECTED", "not set up")]
 for ci, h in enumerate(("source", "status", "note")):
     c = ws.cell(row=20, column=5 + ci, value=h)
     c.font, c.fill = F_HEAD, FILL_HEAD
-for ri, (s, st, n) in enumerate(srcs, 21):
-    ws.cell(row=ri, column=5, value=s).font = F_BASE
+for ri, (s_, st, n) in enumerate(srcs, 21):
+    ws.cell(row=ri, column=5, value=s_).font = F_BASE
     c = ws.cell(row=ri, column=6, value=st)
     c.font, c.fill = F_BASE, PatternFill("solid", fgColor=EVI[st])
     ws.cell(row=ri, column=7, value=n).font = F_BASE
 
 # lab CWV
-ws["E32"] = "Core Web Vitals (lab, homepage, Lighthouse via Ubersuggest)"
-ws["E32"].font = F_SUB
+cw0 = 21 + len(srcs) + 2
+ws.cell(row=cw0, column=5, value="Core Web Vitals (lab): homepage via Ubersuggest PSI 2026-10-28" + ("; template medians via local Lighthouse 2026-11-01" if LH else "")).font = F_SUB
 PM, PD = ext["pagespeed_ubersuggest"]["MOBILE"], ext["pagespeed_ubersuggest"]["DESKTOP"]
-cwv = [("metric", "mobile", "desktop", "good threshold"), ("LCP", PM["LCP"], PD["LCP"], "≤ 2.5 s"), ("CLS", PM["CLS"], PD["CLS"], "≤ 0.1"),
-       ("TBT (INP proxy)", PM["TBT"], PD["TBT"], "≤ 200 ms"), ("FCP", PM["FCP"], PD["FCP"], "≤ 1.8 s"), ("Speed Index", PM["SpeedIndex"], PD["SpeedIndex"], "≤ 3.4 s"),
-       ("INP field", "NOT_CONNECTED", "NOT_CONNECTED", "≤ 200 ms")]
-for ri, row in enumerate(cwv, 33):
+LM, LD = ((LH or {}).get("median") or {}).get("mobile", {}), ((LH or {}).get("median") or {}).get("desktop", {})
+cwv = [("metric", "PSI mobile", "PSI desktop", "good threshold", "LH mobile (median)", "LH desktop (median)"),
+       ("LCP", PM["LCP"], PD["LCP"], "≤ 2.5 s", LM.get("LCP"), LD.get("LCP")), ("CLS", PM["CLS"], PD["CLS"], "≤ 0.1", LM.get("CLS"), LD.get("CLS")),
+       ("TBT (INP proxy)", PM["TBT"], PD["TBT"], "≤ 200 ms", LM.get("TBT"), LD.get("TBT")), ("FCP", PM["FCP"], PD["FCP"], "≤ 1.8 s", LM.get("FCP"), LD.get("FCP")),
+       ("Speed Index", PM["SpeedIndex"], PD["SpeedIndex"], "≤ 3.4 s", LM.get("SI"), LD.get("SI")), ("INP field", "NOT_CONNECTED", "NOT_CONNECTED", "≤ 200 ms", "NOT_CONNECTED", "NOT_CONNECTED")]
+for ri, row in enumerate(cwv, cw0 + 1):
     for ci, v in enumerate(row):
         c = ws.cell(row=ri, column=5 + ci, value=v)
-        c.font = F_HEAD if ri == 33 else F_BASE
-        if ri == 33:
+        c.font = F_HEAD if ri == cw0 + 1 else F_BASE
+        if ri == cw0 + 1:
             c.fill = FILL_HEAD
 
 if LSUM:
     base_c = collections.Counter(f["rule_id"] for f in BASE_F)
     aft_c = collections.Counter(f["rule_id"] for f in a["findings"])
-    r0 = 42
-    ws.cell(row=r0, column=5, value="Before vs after (baseline 2026-10-27 → re-audit " + a["audit_date"] + "; outcome per baseline finding)").font = F_SUB
+    r0 = cw0 + len(cwv) + 3
+    ws.cell(row=r0, column=5, value="Before vs after (baseline 2026-10-27 → re-audit " + a["audit_date"] + "; outcome per baseline finding; rules new in this re-audit have baseline 0)").font = F_SUB
     hdr = ["rule_id", "baseline", "re-audit", "fixed", "validated", "external", "blocked"]
     for ci, h in enumerate(hdr):
         c = ws.cell(row=r0 + 1, column=5 + ci, value=h)
