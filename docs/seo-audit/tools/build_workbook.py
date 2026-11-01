@@ -71,7 +71,7 @@ VNU = opt(os.path.join(DATA, "raw", "html-validation-20261101.json"))
 LH = opt(os.path.join(DATA, "raw", "lighthouse-20261101.json"))
 LIVE = ext["github_actions"][0]
 NEW_RULES = {"S-NO-VISIBLE-DATE", "S-REF-DATES-HIDDEN", "S-UI-UNTRANSLATED", "S-ARIA-LABEL-SPAN", "S-LAZY-LCP", "S-HREFLANG-EQUIV", "U-FAQ-REPEATED-Q",
-             "S-URL-LOCALIZATION", "S-SECURITY-HEADERS", "U-A11Y-VIOLATION", "U-MOBILE-OVERFLOW", "U-CONSOLE-ERROR", "S-SCALED-CONTENT-RISK", "S-RENDER-BLOCKING-CSS", "S-COVER-SRCSET"}
+             "S-URL-LOCALIZATION", "S-SECURITY-HEADERS", "U-A11Y-VIOLATION", "U-MOBILE-OVERFLOW", "U-CONSOLE-ERROR", "S-SCALED-CONTENT-RISK", "S-RENDER-BLOCKING-CSS", "S-COVER-SRCSET", "S-HERO-ART-TEXT"}
 YN = lambda v: {True: "YES", False: "NO"}.get(v, v)
 
 
@@ -290,10 +290,15 @@ for t in a["tasks"]:
             if c.get(k):
                 r[k] = c[k]
     prow.append(r)
+# Remaining work first (open, owner decision, blocked), then finished tasks; inside each group P0→P3, effort S→L, more findings first.
+_done = {"DONE", "NOT_APPLICABLE", "WONT_FIX"}
+prow.sort(key=lambda r: (r.get("work_status") in _done, {"P0": 0, "P1": 1, "P2": 2, "P3": 3}[r["severity"]], {"S": 0, "M": 1, "L": 2}.get(r.get("effort"), 1), -(r.get("findings") or 0), r["task_id"]))
+for i, r in enumerate(prow, 1):
+    r["order"] = i
 ws = table_sheet("SEO ACTION PLAN", "tblPlan", P_HEAD, prow,
                  widths={"title": 50, "action": 70, "expected_result": 40, "verification": 40, "done_criteria": 40, "task_id": 30, "owner": 26, "locale": 22, "notes": 30, "phase": 20},
                  sev_col="severity", evi_cols=("evidence_status",), input_cols=("work_status", "assignee", "start", "due", "notes"), status_col="work_status",
-                 notes=["SEO ACTION PLAN — ordered P0→P3, then by effort (S→L) and number of findings",
+                 notes=["SEO ACTION PLAN — remaining work first (OPEN, OWNER_DECISION, BLOCKED), then finished tasks; inside each group P0→P3, effort S→L, number of findings",
                         "open_findings is a formula over ERRORS & BLOCKERS (task_id, work_status ≠ DONE/WONT_FIX/NOT_APPLICABLE). Every task states its expected result, how to verify and when it is done."])
 col, first, last = TABLE_COLS["SEO ACTION PLAN"]
 for rr in range(first, last + 1):
@@ -391,7 +396,8 @@ table_sheet("TECHNICAL SEO", "tblTechnical", T_HEAD, trows, widths={"url": 55, "
             link_cols=("url",), evi_cols=("evidence",),
             notes=["TECHNICAL SEO — per URL (published + noindex utilities)",
                    "Measured on the committed build, which live markup QA proved byte-identical to production. Host level (post-publish QA host probes): http→https 301, /vi→/vi/ 301, www host does not resolve, HSTS max-age 31556952, cache-control max-age=600, no X-Content-Type-Options/CSP (GitHub Pages). Field CWV: NOT_CONNECTED. Lab CWV: EXECUTIVE DASHBOARD.",
-                   "Browser columns: Playwright Chromium on a local static server serving the same bytes, axe-core 4.10.3 WCAG 2.x A/AA at 390 px for every page and 1366 px for a 127-page sample; html_validator = W3C Nu Html Checker over all pages.",
+                   "Browser columns: Playwright Chromium on a local static server serving the same bytes, axe-core 4.10.3 WCAG 2.x A/AA at 390 px for every page and 1366 px for a 127-page sample; html_validator = W3C Nu Html Checker over all pages. "
+                   "axe 'needs review' (color-contrast over the translucent header and gradients) was measured separately: solid backgrounds ≥ 5.23:1; on gradients only the decorative Pillar hero labels fall below 4.5:1 (reports/seo/data/raw/contrast-20261101.json, finding S-HERO-ART-TEXT).",
                    "Site checks with 0 issues: broken internal links 0, non-canonical internal links 0, http:// links 0, duplicate titles 0, duplicate descriptions 0, H1≠1 0, heading-level skips 0, duplicate IDs 0, empty anchors 0, render-blocking head scripts 0, images without alt attribute 0, HTML validation errors 0, og:image files/dimensions mismatched 0."])
 
 # ---------------- HREFLANG & CANONICAL ----------------
@@ -766,7 +772,8 @@ ws = wb.create_sheet("EXECUTIVE DASHBOARD", 0)
 ws.sheet_view.showGridLines = False
 ws["A1"] = "GLOBAL SEO A–Z — EXECUTIVE DASHBOARD"
 ws["A1"].font = F_TITLE
-ws["A2"] = f"{ORIGIN} · 10 locales · {'re-audit' if LEDGER else 'audit'} {a['audit_date']} (UTC) · commit {SHA[:12]} · " + (f"{LSUM['status']} · " if LSUM else "") + "all KPI cells are formulas over the tables"
+ws["A2"] = (f"{ORIGIN} · 10 locales · {'re-audit' if LEDGER else 'audit'} {a['audit_date']} (UTC) · commit {SHA[:12]} · "
+            + (f"baseline 2026-10-27 ledger: {LSUM['status']} · " if LSUM else "") + f"re-audit: {a['summary']['findings']} findings, {len(NEW_RULES & {f['rule_id'] for f in a['findings']})} new rules · KPI cells are formulas over the tables")
 ws["A2"].font = F_NOTE
 INV = lambda h: colref("MASTER URL INVENTORY", h)
 ERR = lambda h: colref("ERRORS & BLOCKERS", h)
@@ -788,6 +795,8 @@ kpis = [
     ("P2 open", f"=COUNTIFS({ERR('severity')},\"P2\",{ERR('work_status')},\"OPEN\")", None),
     ("P3 open", f"=COUNTIFS({ERR('severity')},\"P3\",{ERR('work_status')},\"OPEN\")", None),
     ("Blocked (needs data source)", f"=COUNTIFS({ERR('work_status')},\"BLOCKED\")", None),
+    ("Owner decision (findings)", f"=COUNTIFS({ERR('work_status')},\"OWNER_DECISION\")", None),
+    ("P1 waiting on owner or data source", f"=COUNTIFS({ERR('severity')},\"P1\",{ERR('work_status')},\"OWNER_DECISION\")+COUNTIFS({ERR('severity')},\"P1\",{ERR('work_status')},\"BLOCKED\")", None),
     ("Findings DONE", f"=COUNTIFS({ERR('work_status')},\"DONE\")", None),
     ("Findings resolved %", f"=IFERROR((COUNTIFS({ERR('work_status')},\"DONE\")+COUNTIFS({ERR('work_status')},\"WONT_FIX\")+COUNTIFS({ERR('work_status')},\"NOT_APPLICABLE\"))/COUNTA({ERR('finding_id')}),0)", None),
     ("Tasks", None, None),

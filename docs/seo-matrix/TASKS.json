@@ -1528,7 +1528,7 @@
    "next_action": "Done"
   },
   {
-   "id": "IMG-12",
+   "id": "IMG-LCP",
    "phase": "IMG",
    "title": "Guide cover image in the first viewport is lazy-loaded and often the LCP element: load it eagerly with fetchpriority=high on Hub, Supporting and checklist pages",
    "scope": "cover <img> of every Hub/Supporting/checklist page (scripts/articles.mjs); 98 of 127 sampled desktop pages and the 10 checklists on mobile have the lazy cover inside the first viewport",
@@ -1540,10 +1540,10 @@
    "deploy_run": "",
    "live_qa": [],
    "evidence": "Re-audit 2026-11-01 (docs/seo-audit/GLOBAL-SEO-AZ-AUDIT-20261101.md): lazy cover is the LCP on 20 desktop + 3 mobile pages; Lighthouse lab mobile LCP 1.95 s on checklists vs 1.43–1.50 s on other templates. Findings F-S-LAZY-LCP-0001",
-   "next_action": "Set loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" on the cover image only (keep width/height, srcset, sizes, alt); keep lazy for images further down; build --check, tests, then re-run docs/seo-audit/tools/site_browser_audit.cjs on the template sample"
+   "next_action": "Set loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" on the cover image only (keep width/height, srcset, sizes, alt); keep lazy for images further down; build --check; update tests/seo-az.test.mjs, which today asserts loading=\"lazy\" on every cover (IMG-*), to expect eager + fetchpriority on the cover; tests; then re-run docs/seo-audit/tools/site_browser_audit.cjs on the template sample"
   },
   {
-   "id": "IMG-13",
+   "id": "IMG-SRCSET",
    "phase": "IMG",
    "title": "Cover srcset offers only 640w and 1200w: add an intermediate width so phones stop downloading the 1200 px file",
    "scope": "cover images of Hub/Supporting/checklist pages (img/<locale>/…-<w>.webp, scripts/articles.mjs srcset)",
@@ -1555,7 +1555,7 @@
    "deploy_run": "",
    "live_qa": [],
    "evidence": "Re-audit 2026-11-01 Lighthouse lab. Findings F-S-COVER-SRCSET-0001",
-   "next_action": "Generate an 800w (or 960w) WebP from the same cover, add it to srcset, keep sizes/width/height/alt; regenerate the image matrix; max 100 images per batch"
+   "next_action": "Generate an 800w (or 960w) WebP from the same cover, add it to srcset, keep sizes/width/height/alt; regenerate the image matrix; max 100 images per batch; extend the cover checks in tests/seo-az.test.mjs (today: 1200 + 640 variants) to the new width"
   },
   {
    "id": "CONTENT-03",
@@ -1605,8 +1605,8 @@
   {
    "id": "TECH-08",
    "phase": "TECH",
-   "title": "English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label) and aria-label on a <span> without a role",
-   "scope": "shared templates (scripts/navigation.mjs, scripts/ultra.mjs) → all vi/de/fr/es/nl/zh/pt/ko/ja pages; reading-time badge on 1,064 article pages",
+   "title": "English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label, Pillar hero labels) and aria-label on a <span> without a role",
+   "scope": "shared templates (scripts/navigation.mjs, scripts/ultra.mjs) → all vi/de/fr/es/nl/zh/pt/ko/ja pages; reading-time badge on 1,064 article pages; Pillar hero illustration labels '10 LANGUAGES' / '4 TOPIC HUBS' and step numbers (3.9–4.4:1) on the 10 locale homes",
    "selector": "reports/seo/data/deep-audit.json ui_leaks; reports/seo/data/raw/html-validation-20261101.json aria_label_span_warnings",
    "status": "TODO",
    "branch": "",
@@ -1614,7 +1614,7 @@
    "pr": "",
    "deploy_run": "",
    "live_qa": [],
-   "evidence": "Re-audit 2026-11-01: 'Skip to content' ×977, aria-label 'Breadcrumb' ×977, 'Estimated reading time' ×968 (WCAG 2.2 SC 3.1.2); W3C validator 1,064 'Possible misuse of aria-label' warnings. Findings F-S-UI-UNTRANSLATED-0001 F-S-UI-UNTRANSLATED-0002 F-S-UI-UNTRANSLATED-0003 F-S-UI-UNTRANSLATED-0004 F-S-UI-UNTRANSLATED-0005 F-S-UI-UNTRANSLATED-0006 F-S-UI-UNTRANSLATED-0007 F-S-UI-UNTRANSLATED-0008 F-S-UI-UNTRANSLATED-0009 F-S-ARIA-LABEL-SPAN-0001",
+   "evidence": "Re-audit 2026-11-01: 'Skip to content' ×977, aria-label 'Breadcrumb' ×977, 'Estimated reading time' ×968 (WCAG 2.2 SC 3.1.2); W3C validator 1,064 'Possible misuse of aria-label' warnings. Findings F-S-UI-UNTRANSLATED-0001 F-S-UI-UNTRANSLATED-0002 F-S-UI-UNTRANSLATED-0003 F-S-UI-UNTRANSLATED-0004 F-S-UI-UNTRANSLATED-0005 F-S-UI-UNTRANSLATED-0006 F-S-UI-UNTRANSLATED-0007 F-S-UI-UNTRANSLATED-0008 F-S-UI-UNTRANSLATED-0009 F-S-ARIA-LABEL-SPAN-0001 F-S-HERO-ART-TEXT-0001. Contrast: reports/seo/data/raw/contrast-20261101.json.",
    "next_action": "Localize the three strings per locale (reuse the language-menu label table), replace the span's aria-label with visually hidden localized text; build --check, nav-qa, language-audit, tests; re-run deep_audit.py and the W3C validator"
   },
   {

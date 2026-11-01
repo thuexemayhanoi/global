@@ -3,7 +3,7 @@
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
  "current_task": {
-  "id": "IMG-12",
+  "id": "IMG-LCP",
   "phase": "IMG",
   "title": "Guide cover image in the first viewport is lazy-loaded and often the LCP element: load it eagerly with fetchpriority=high on Hub, Supporting and checklist pages",
   "status": "TODO",
@@ -12,14 +12,14 @@
   "pr": "",
   "deploy_run": "",
   "live_qa": [],
-  "next_action": "Set loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" on the cover image only (keep width/height, srcset, sizes, alt); keep lazy for images further down; build --check, tests, then re-run docs/seo-audit/tools/site_browser_audit.cjs on the template sample"
+  "next_action": "Set loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" on the cover image only (keep width/height, srcset, sizes, alt); keep lazy for images further down; build --check; update tests/seo-az.test.mjs, which today asserts loading=\"lazy\" on every cover (IMG-*), to expect eager + fetchpriority on the cover; tests; then re-run docs/seo-audit/tools/site_browser_audit.cjs on the template sample"
  },
- "next_action": "Set loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" on the cover image only (keep width/height, srcset, sizes, alt); keep lazy for images further down; build --check, tests, then re-run docs/seo-audit/tools/site_browser_audit.cjs on the template sample",
+ "next_action": "Set loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" on the cover image only (keep width/height, srcset, sizes, alt); keep lazy for images further down; build --check; update tests/seo-az.test.mjs, which today asserts loading=\"lazy\" on every cover (IMG-*), to expect eager + fetchpriority on the cover; tests; then re-run docs/seo-audit/tools/site_browser_audit.cjs on the template sample",
  "next_todo": [
   {
-   "id": "IMG-13",
+   "id": "IMG-SRCSET",
    "title": "Cover srcset offers only 640w and 1200w: add an intermediate width so phones stop downloading the 1200 px file",
-   "next_action": "Generate an 800w (or 960w) WebP from the same cover, add it to srcset, keep sizes/width/height/alt; regenerate the image matrix; max 100 images per batch"
+   "next_action": "Generate an 800w (or 960w) WebP from the same cover, add it to srcset, keep sizes/width/height/alt; regenerate the image matrix; max 100 images per batch; extend the cover checks in tests/seo-az.test.mjs (today: 1200 + 640 variants) to the new width"
   },
   {
    "id": "CONTENT-03",
@@ -38,7 +38,7 @@
   },
   {
    "id": "TECH-08",
-   "title": "English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label) and aria-label on a <span> without a role",
+   "title": "English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label, Pillar hero labels) and aria-label on a <span> without a role",
    "next_action": "Localize the three strings per locale (reuse the language-menu label table), replace the span's aria-label with visually hidden localized text; build --check, nav-qa, language-audit, tests; re-run deep_audit.py and the W3C validator"
   }
  ],

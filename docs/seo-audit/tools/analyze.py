@@ -66,7 +66,7 @@ RULES = {
         "Decide whether to add privacy-compliant analytics (privacy page must be updated first); connect GA4 to OpenSEO if added.",
         "Organic landing-page traffic measurable per locale.", "OpenSEO GA4 tools return data.", "Owner decision recorded; data flowing or NOT_CONNECTED accepted."),
     "S-LOW-VISIBILITY": ("P1", "Off-page / visibility", "INFERRED", "Owner + Off-page",
-        "Third-party index shows 0 ranking keywords, Domain Authority 2, 37 backlinks from 32 domains",
+        "Third-party index shows no ranking keywords, no organic traffic and very low authority (current DA, backlinks and referring domains in the detail)",
         "After GSC is connected, confirm visibility. Earn independent editorial backlinks from relevant travel resources and credible partners; do not route traffic to any sister domain, buy links or build PBN links.",
         "Measured organic impressions and growing referring domains.", "GSC performance + backlink tool re-run monthly.",
         "Baseline captured in GSC; referring domains trend recorded in AUDIT CHANGELOG."),
@@ -234,6 +234,10 @@ RULES = {
         "Cover images offer only 640w and 1200w: phones with a 1.75–3× screen pick the 1200 px file, so Lighthouse reports 47–63 KB of image waste per guide",
         "Add an intermediate cover width (e.g. 800w or 960w WebP, same image) to the srcset; keep sizes, width/height and alt unchanged.",
         "Smaller image transfer on phones without visible quality loss.", "Lighthouse 'properly size images' on the template sample.", "Reviewed PR merged; image matrix regenerated."),
+    "S-HERO-ART-TEXT": ("P3", "Multilingual / accessibility", "VERIFIED", "scripts/ultra.mjs (Pillar hero illustration)",
+        "The decorative hero illustration of every locale Pillar (aria-hidden) prints English labels ('10 LANGUAGES', '4 TOPIC HUBS') and small step numbers at about 3.9–4.4:1 contrast on its gradient",
+        "Localize or drop the two English labels and darken the small labels to ≥ 4.5:1; the panel stays aria-hidden.",
+        "No English text on non-English Pillars; all visible labels ≥ 4.5:1.", "contrast-20261101.json method on the 10 Pillars.", "Reviewed PR merged; re-measured."),
     "U-A11Y-VIOLATION": ("P2", "Accessibility (WCAG 2.2 AA)", "VERIFIED", "Template / reviewed PR",
         "axe-core reports a WCAG 2.x A/AA violation on this page", "Fix the element named in the axe rule in the shared template or the page source; regenerate.",
         "0 axe violations.", "site_browser_audit.cjs (axe-core 4.10.3).", "Re-run shows 0 violations."),
@@ -461,6 +465,11 @@ if lh:
     ri = lh_flag("uses-responsive-images")
     if ri:
         add("S-COVER-SRCSET", "SITE", "ALL", detail=f"Lighthouse 'properly size images' on {len(ri)} of {len(lh['runs'])} runs (guide covers: srcset 640w/1200w)", evidence_url=blob("scripts/articles.mjs"), metric=len(ri))
+contrast = optional(os.path.join("raw", "contrast-20261101.json"))
+if contrast and contrast["image_backgrounds"]["median_below_AA"]:
+    labels = sorted({r[5] for r in contrast["image_backgrounds"]["median_below_AA"]})
+    add("S-HERO-ART-TEXT", "SITE", "ALL", "/de/", "DE-HOME", f"median background contrast below 4.5:1 for {', '.join(labels)} (.ultra-hero-art, aria-hidden, same template on the 10 Pillars); "
+        "'10 LANGUAGES' and '4 TOPIC HUBS' are English on every Pillar", blob("scripts/ultra.mjs"), len(labels))
 if vnu and vnu.get("aria_label_span_warnings"):
     add("S-ARIA-LABEL-SPAN", "SITE", "ALL", detail=f"W3C Nu validator ({vnu['validator']}): {vnu['errors']} errors on {vnu['files']} pages; "
         f"{vnu['aria_label_span_warnings']} 'Possible misuse of aria-label' warnings, all on span.ultra-reading-time", evidence_url=blob("scripts/ultra.mjs"), metric=vnu["aria_label_span_warnings"])
@@ -474,8 +483,12 @@ if browser:
     lazy = [u for u, x in bu.items() if any((x.get(v) or {}).get("lazy_first_viewport") for v in ("m", "d"))]
     lcp_lazy = [u for u, x in bu.items() if any((x.get(v) or {}).get("lcp_lazy") for v in ("m", "d"))]
     if lazy:
-        add("S-LAZY-LCP", "SITE", "ALL", detail=f"{len(lazy)} of {len(bu)} pages load a lazy image inside the first viewport (mobile 390 px or desktop 1366 px); on {len(lcp_lazy)} pages that lazy image is the LCP element "
-            f"({browser['tool']})", evidence_url=blob("scripts/articles.mjs"), metric=len(lazy))
+        bs = browser["summary"]
+        lcp_m = sum(1 for x in bu.values() if (x.get("m") or {}).get("lcp_lazy"))
+        lcp_d = sum(1 for x in bu.values() if (x.get("d") or {}).get("lcp_lazy"))
+        add("S-LAZY-LCP", "SITE", "ALL", detail=f"lazy cover image inside the first viewport on {bs['pages_lazy_first_viewport_desktop']} of {bs['desktop_pages']} sampled desktop pages (1366 px) and on "
+            f"{bs['pages_lazy_first_viewport_mobile']} of {bs['pages']} pages at 390 px (the 10 checklists); the lazy image is the LCP element on {lcp_d} desktop and {lcp_m} mobile pages; "
+            f"Lighthouse 'lcp-lazy-loaded' fails on the checklist and guide samples (lab)", evidence_url=blob("scripts/articles.mjs"), metric=len(lazy))
     for u, x in bu.items():
         r = inv_by_url.get(u, {})
         loc = r.get("locale") if r.get("locale") in LOCALES else "global"
@@ -497,7 +510,7 @@ effort = {"S-PILLAR-HEAD-TERM": "M", "S-RAIL-ANCHOR": "S", "S-GSC-NOT-CONNECTED"
           "S-PSI-MOBILE": "M", "S-CWV-FIELD": "S", "S-REDIRECT-HEADERS": "S", "S-BUSINESS-CONFLICTS": "S", "S-FAQ-SCHEMA": "M", "S-CHECKLIST-NO-REFS": "S",
           "S-NO-VISIBLE-DATE": "M", "S-REF-DATES-HIDDEN": "S", "S-UI-UNTRANSLATED": "S", "S-ARIA-LABEL-SPAN": "S", "S-LAZY-LCP": "S",
           "S-HREFLANG-EQUIV": "M", "S-URL-LOCALIZATION": "S", "S-SECURITY-HEADERS": "S", "S-SCALED-CONTENT-RISK": "L",
-          "S-RENDER-BLOCKING-CSS": "M", "S-COVER-SRCSET": "M"}
+          "S-RENDER-BLOCKING-CSS": "M", "S-COVER-SRCSET": "M", "S-HERO-ART-TEXT": "S"}
 impact = {"P1": "High", "P2": "Medium", "P3": "Low"}
 phase = {"P1": "Phase 1 (0–2 weeks)", "P2": "Phase 2 (2–6 weeks)", "P3": "Phase 3 (6–12 weeks)"}
 for f in findings:

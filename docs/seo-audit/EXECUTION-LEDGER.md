@@ -22,7 +22,7 @@ Tasks: 95 — BLOCKED 1, DONE 53, NOT_APPLICABLE 34, OWNER_DECISION 7.
 
 ## Before / after (same analyzer, measured rules)
 
-Findings: **933 → 766** reported by the re-audit; 41 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
+Findings: **933 → 767** reported by the re-audit; 42 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
 
 | Rule | Baseline | Re-audit | Outcomes |
 |---|---:|---:|---|
@@ -72,6 +72,7 @@ Findings with no baseline counterpart (rules added by the re-audit or new on a p
 | S-UI-UNTRANSLATED | 9 | P2 |
 | S-ARIA-LABEL-SPAN | 1 | P3 |
 | S-COVER-SRCSET | 1 | P3 |
+| S-HERO-ART-TEXT | 1 | P3 |
 | S-HREFLANG-EQUIV | 12 | P3 |
 | S-RENDER-BLOCKING-CSS | 1 | P3 |
 | S-SECURITY-HEADERS | 1 | P3 |

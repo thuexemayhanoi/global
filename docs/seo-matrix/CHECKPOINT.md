@@ -4,17 +4,17 @@ Generated 2026-11-01 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 
 ## Current task
 
-- **IMG-12** (IMG): Guide cover image in the first viewport is lazy-loaded and often the LCP element: load it eagerly with fetchpriority=high on Hub, Supporting and checklist pages
+- **IMG-LCP** (IMG): Guide cover image in the first viewport is lazy-loaded and often the LCP element: load it eagerly with fetchpriority=high on Hub, Supporting and checklist pages
 - Status: **TODO** · branch `-` · PR - · merge `-` · deploy - · live QA -
-- NEXT_ACTION: Set loading="eager" fetchpriority="high" decoding="async" on the cover image only (keep width/height, srcset, sizes, alt); keep lazy for images further down; build --check, tests, then re-run docs/seo-audit/tools/site_browser_audit.cjs on the template sample
+- NEXT_ACTION: Set loading="eager" fetchpriority="high" decoding="async" on the cover image only (keep width/height, srcset, sizes, alt); keep lazy for images further down; build --check; update tests/seo-az.test.mjs, which today asserts loading="lazy" on every cover (IMG-*), to expect eager + fetchpriority on the cover; tests; then re-run docs/seo-audit/tools/site_browser_audit.cjs on the template sample
 
 ## Next TODO
 
-1. **IMG-13**: Cover srcset offers only 640w and 1200w: add an intermediate width so phones stop downloading the 1200 px file
+1. **IMG-SRCSET**: Cover srcset offers only 640w and 1200w: add an intermediate width so phones stop downloading the 1200 px file
 2. **CONTENT-03**: No page prints its own publication or update date: show a localized 'Published · Updated' line with <time> from the dates that already feed JSON-LD and sitemap lastmod
 3. **CONTENT-04**: The About page promises that each guide lists the date its references were checked, but no reference shows it: print each source's checked_on
 4. **CONTENT-05**: Four FAQ questions are repeated word for word on two pages each (de, en, fr, nl): make them self-contained
-5. **TECH-08**: English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label) and aria-label on a <span> without a role
+5. **TECH-08**: English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label, Pillar hero labels) and aria-label on a <span> without a role
 
 ## URL status counts
 
