@@ -145,10 +145,12 @@ Source: [OWNER-ACTIONS.md](OWNER-ACTIONS.md). These never block SEO work on publ
 
 1. Google Search Console data for global.rentbikehanoi.com — Rankings, impressions, indexing and field Core Web Vitals are unmeasured; Top 1–3 stays a target, not a verified result
 2. Analytics (GA4 or none) — No traffic or conversion data
-3. Off-page links from real accounts (plan: `COMPETITOR-GAP-AND-OFFPAGE-PLAN.md`) — Authority stays at DA 2 / 32 referring domains (Ubersuggest, 2026-10-28)
+3. Off-page links from real accounts (plan: `COMPETITOR-GAP-AND-OFFPAGE-PLAN.md`) — Authority stays low: DA 3 / 53 referring domains, 0 ranking keywords (Ubersuggest, 2026-11-01; was DA 2 / 32 on 2026-10-28)
 4. Keyword volumes for es, zh, pt and exact ko/ja variants; rank tracking — Head terms for those markets rest on autocomplete and SERP evidence, not volumes
 5. Business data conflicts C1–C3 (hours, delivery threshold, GBP name) in `data/business/reference.json` — Business schema and NAP stay unpublished (protected)
-6. Named human editor (optional) — Bylines stay organisational
+6. Named human editor or fact reviewer (optional), first for legal, fine, insurance and price guides — Bylines stay organisational; none of the 1,054 AI-drafted guides has a human fact review (re-audit 2026-11-01: S-SCALED-CONTENT-RISK)
 7. New-Hub architecture (`HUB-ARCHITECTURE-PROPOSAL-20261028.md`) and PR #118 — Deferred: SEO-only mode creates no new Hubs or URLs
+8. Response headers beyond GitHub Pages defaults (X-Content-Type-Options, Content-Security-Policy) need a CDN or proxy in front of the site (optional) — Only HSTS and cache-control are sent; no SEO impact (re-audit 2026-11-01: S-SECURITY-HEADERS)
+9. Slug convention per locale for future URLs (when article production resumes) — zh, ko and ja keep a mix of English and romanized slugs; live URLs are never renamed (re-audit 2026-11-01: S-URL-LOCALIZATION)
 
 Ledger rules that wait on these items: Search Console data for global.rentbikehanoi.com (backlog item 1, OWNER-ACTIONS.md). (S-CWV-FIELD, S-GSC-NOT-CONNECTED); Analytics decision (backlog item 2, OWNER-ACTIONS.md). (S-GA4-NOT-CONNECTED); Off-page links from real accounts per COMPETITOR-GAP-AND-OFFPAGE-PLAN.md; rank tracking (backlog items 3-4, OWNER-ACTIONS.md). (S-LOW-VISIBILITY); Keyword volumes for es, zh, pt, nl and exact ko/ja variants (backlog item 4, OWNER-ACTIONS.md). (S-KW-NO-DEMAND, S-PQ-SENTENCE); Optional named human editor (backlog item 6, OWNER-ACTIONS.md). (S-AUTHOR-ORG-ONLY); Deferred by the owner's SEO-only directive of 2026-10-28: no new articles, so the locale imbalance stays until article production resumes. (S-LOCALE-IMBALANCE); Business data conflicts C1-C3 in data/business/reference.json (backlog item 5, OWNER-ACTIONS.md). (S-BUSINESS-CONFLICTS)

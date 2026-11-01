@@ -238,6 +238,10 @@ RULES = {
         "The decorative hero illustration of every locale Pillar (aria-hidden) prints English labels ('10 LANGUAGES', '4 TOPIC HUBS') and small step numbers at about 3.9–4.4:1 contrast on its gradient",
         "Localize or drop the two English labels and darken the small labels to ≥ 4.5:1; the panel stays aria-hidden.",
         "No English text on non-English Pillars; all visible labels ≥ 4.5:1.", "contrast-20261101.json method on the 10 Pillars.", "Reviewed PR merged; re-measured."),
+    "U-DEAD-REFERENCE": ("P2", "E-E-A-T / sources", "VERIFIED", "Reviewed content PR",
+        "A reference cited on the page answers 404/410 or its host no longer resolves (reference-link-check.yml)",
+        "Replace the dead reference with the same document at its new address, an archived copy (web.archive.org) that still shows the cited facts, or another source that states them; never keep a claim without a working source.",
+        "Every cited reference answers.", "reference-link-check.yml: BROKEN = 0.", "Reviewed PR merged; re-run shows the link OK."),
     "U-A11Y-VIOLATION": ("P2", "Accessibility (WCAG 2.2 AA)", "VERIFIED", "Template / reviewed PR",
         "axe-core reports a WCAG 2.x A/AA violation on this page", "Fix the element named in the axe rule in the shared template or the page source; regenerate.",
         "0 axe violations.", "site_browser_audit.cjs (axe-core 4.10.3).", "Re-run shows 0 violations."),
@@ -465,6 +469,13 @@ if lh:
     ri = lh_flag("uses-responsive-images")
     if ri:
         add("S-COVER-SRCSET", "SITE", "ALL", detail=f"Lighthouse 'properly size images' on {len(ri)} of {len(lh['runs'])} runs (guide covers: srcset 640w/1200w)", evidence_url=blob("scripts/articles.mjs"), metric=len(ri))
+reflinks = optional(os.path.join("raw", "reference-links-20261101.json"))
+if reflinks:
+    for b in reflinks.get("broken", []):
+        for u in b.get("pages", []):
+            r = inv_by_url.get(u, {})
+            add("U-DEAD-REFERENCE", "URL", r.get("locale") if r.get("locale") in LOCALES else "global", u, r.get("matrix_id"),
+                f"{b.get('status')} {b['url']} (reference-link-check run {reflinks['run_id']})", reflinks.get("url"))
 contrast = optional(os.path.join("raw", "contrast-20261101.json"))
 if contrast and contrast["image_backgrounds"]["median_below_AA"]:
     labels = sorted({r[5] for r in contrast["image_backgrounds"]["median_below_AA"]})

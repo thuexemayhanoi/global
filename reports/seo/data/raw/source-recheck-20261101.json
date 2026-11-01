@@ -1,0 +1,58 @@
+{
+ "workflow": "source-recheck.yml",
+ "run_id": 41331401025,
+ "job_id": 124922137270,
+ "url": "https://github.com/thuexemayhanoi/global/actions/runs/41331401025",
+ "head_sha": "b5b6d260095b9675f99ccbb06faeae927dfc2781",
+ "date": "2026-11-01",
+ "conclusion": "success",
+ "summary": {
+  "articles": 95,
+  "urls": 39,
+  "paragraphs": {
+   "VERIFIED": 116,
+   "PARTIAL": 18,
+   "NOT_FOUND": 2,
+   "UNREACHABLE": 41
+  }
+ },
+ "previous": {
+  "run_id": 40637453532,
+  "date": "2026-10-28",
+  "paragraphs": {
+   "VERIFIED": 110,
+   "PARTIAL": 20,
+   "NOT_FOUND": 10,
+   "UNREACHABLE": 37
+  }
+ },
+ "not_found_review": [
+  {
+   "id": "NL-S11",
+   "amounts_vnd": [
+    8000000,
+    10000000
+   ],
+   "sources_tested": [
+    "timeout https://pbgdpl.cantho.gov.vn/muc-phat-nong-do-con-tu-01012025",
+    "200 https://www.anwb.nl/vakantie/vietnam/reisvoorbereiding/verkeer"
+   ],
+   "review": "The amounts are the cited Cần Thơ justice-service summary of the alcohol fines since 2025 (top step for motorbikes in Decree 168/2024/NĐ-CP); that source timed out from the runner and the ANWB link belongs to another sentence. Manual re-check 2026-10-28: VERIFIED (docs/seo-audit/execution/source-recheck-manual-20261028.json). No change needed."
+  },
+  {
+   "id": "ZH-S11",
+   "amounts_vnd": [
+    2000000,
+    4000000,
+    6000000,
+    8000000
+   ],
+   "sources_tested": [
+    "200 https://vn.china-embassy.gov.cn/lsyw/ttre/202312/t20231227_11213479.htm"
+   ],
+   "review": "The paragraph attributes the amounts to Article 18 of the same decree (Decree 168/2024/NĐ-CP, linked in the previous sentence); the embassy link supports only the advice not to ride without a Vietnamese licence. Manual re-check 2026-10-28: VERIFIED_CROSS_SOURCE. No change needed."
+  }
+ ],
+ "unreachable_note": "41 paragraphs: mostly thuvienphapluat.vn answering 403 to the runner (bot protection) and one timeout; same pattern as 2026-10-28, covered by the manual re-check file.",
+ "artifact": "global-source-recheck (artifact 13094060120) — not downloadable from the audit container; values from the job log"
+}

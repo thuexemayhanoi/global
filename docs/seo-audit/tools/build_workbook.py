@@ -11,7 +11,7 @@ edits into a new audit, pass --carry <previous.xlsx>: values of those columns ar
 copied by finding_id / task_id.
 Usage: python3 docs/seo-audit/tools/build_workbook.py [--carry OLD.xlsx]
 """
-import argparse, collections, json, os
+import argparse, collections, json, os, re
 from openpyxl import Workbook, load_workbook
 from openpyxl.chart import BarChart, Reference
 from openpyxl.comments import Comment
@@ -71,7 +71,7 @@ VNU = opt(os.path.join(DATA, "raw", "html-validation-20261101.json"))
 LH = opt(os.path.join(DATA, "raw", "lighthouse-20261101.json"))
 LIVE = ext["github_actions"][0]
 NEW_RULES = {"S-NO-VISIBLE-DATE", "S-REF-DATES-HIDDEN", "S-UI-UNTRANSLATED", "S-ARIA-LABEL-SPAN", "S-LAZY-LCP", "S-HREFLANG-EQUIV", "U-FAQ-REPEATED-Q",
-             "S-URL-LOCALIZATION", "S-SECURITY-HEADERS", "U-A11Y-VIOLATION", "U-MOBILE-OVERFLOW", "U-CONSOLE-ERROR", "S-SCALED-CONTENT-RISK", "S-RENDER-BLOCKING-CSS", "S-COVER-SRCSET", "S-HERO-ART-TEXT"}
+             "S-URL-LOCALIZATION", "S-SECURITY-HEADERS", "U-A11Y-VIOLATION", "U-MOBILE-OVERFLOW", "U-CONSOLE-ERROR", "S-SCALED-CONTENT-RISK", "S-RENDER-BLOCKING-CSS", "S-COVER-SRCSET", "S-HERO-ART-TEXT", "U-DEAD-REFERENCE"}
 YN = lambda v: {True: "YES", False: "NO"}.get(v, v)
 
 
@@ -640,11 +640,22 @@ table_sheet("INDEXING & SITEMAPS", "tblIndexing", X_HEAD, xrows, widths={"url": 
 
 # ---------------- AUDIT CHANGELOG ----------------
 def qa_line(name):
+    """The guard's verdict line (…PASS…/Verified…/…VALID…), or a short summary of its JSON report."""
     p = os.path.join(DATA, "raw", name)
     if not os.path.exists(p):
         return ""
-    lines = [l for l in open(p, encoding="utf-8").read().splitlines() if l.strip()]
-    return (lines[-2] if len(lines) > 1 and lines[-1].startswith("EXIT") else lines[-1])[:300] + " | " + (lines[-1] if lines else "")
+    text = open(p, encoding="utf-8").read()
+    lines = [l.strip() for l in text.splitlines() if l.strip()]
+    verdict = [l for l in lines if re.search(r"PASS|VALID|Verified|passed", l) and not l.startswith(("WARN", "\""))]
+    if verdict:
+        return verdict[-1][:300]
+    try:  # first JSON object of the output (some guards print two)
+        js, _ = json.JSONDecoder().raw_decode(text[text.index("{"):])
+        keys = [k for k, v in js.items() if isinstance(v, (bool, int, float, str)) and len(str(v)) < 60][:6]
+        keys += [k for k, v in js.items() if isinstance(v, list) and k in ("issues", "warnings")]
+        return "; ".join(f"{k}: {len(js[k]) if isinstance(js[k], list) else js[k]}" for k in keys)[:300]
+    except ValueError:
+        return lines[-1][:300] if lines else ""
 
 
 CH_HEAD = ["date", "type", "item", "commit_or_run", "result", "evidence_url", "notes"]
@@ -674,11 +685,11 @@ for b in BATCHES:
                "evidence_url": f"{GH}/pull/{b['pr']}" if b.get("pr") else None, "notes": b.get("pagespeed") or b.get("live_qa_note") or ""})
 if LSUM:
     o = LSUM["outcomes"]
-    ch.append({"date": a["audit_date"], "type": "RE_AUDIT", "item": "Re-audit after all batches (same analyzer, measured site-level rules)", "commit_or_run": SHA[:8],
+    ch.append({"date": a["audit_date"], "type": "LEDGER", "item": "Execution ledger re-verified: baseline 2026-10-27 findings → outcomes (same analyzer)", "commit_or_run": SHA[:8],
                "result": f"{LSUM['baseline_findings']} → {LSUM['reaudit_findings']} findings reported; outcomes: FIXED_VERIFIED {o['FIXED_VERIFIED']}, FIXED_PENDING_LIVE {o['FIXED_PENDING_LIVE']}, VALIDATED {o['VALIDATED_NO_FIX']}, EXTERNAL {o['EXTERNAL_DEPENDENCY']}, BLOCKED {o['BLOCKED']}",
                "evidence_url": f"{GH}/blob/main/docs/seo-audit/EXECUTION-LEDGER.md", "notes": LSUM["status"]})
     psi = ext["pagespeed_ubersuggest"]
-    ch.append({"date": a["audit_date"], "type": "PAGESPEED", "item": "PageSpeed lab (Ubersuggest, forced) homepage", "commit_or_run": psi.get("measured_at", ""),
+    ch.append({"date": (psi.get("measured_at") or "")[:10] if re.match(r"\d{4}-\d\d-\d\d", psi.get("measured_at") or "") else a["audit_date"], "type": "PAGESPEED", "item": "PageSpeed lab (Ubersuggest, forced) homepage", "commit_or_run": psi.get("measured_at", ""),
                "result": f"Mobile SI {psi['MOBILE']['SpeedIndex']}, LCP {psi['MOBILE']['LCP']}, CLS {psi['MOBILE']['CLS']}; Desktop LCP {psi['DESKTOP']['LCP']}", "evidence_url": None, "notes": "lab data only"})
 AZ_TASKS = opt(os.path.join(ROOT, "docs", "seo-matrix", "TASKS.json"))
 if AZ_TASKS:
@@ -713,6 +724,13 @@ if VNU:
 if LH:
     ch.append({"date": a["audit_date"], "type": "LIGHTHOUSE", "item": f"Lighthouse {LH['lighthouse_version']} lab, {len(LH['runs'])} runs on template sample (local static server)", "commit_or_run": LH["commit"][:8],
                "result": LH["summary_text"], "evidence_url": f"{GH}/blob/main/reports/seo/data/raw/lighthouse-20261101.json", "notes": "lab; simulated throttling; not field data"})
+for name, label in (("source-recheck-20261101.json", "Source price re-check (source-recheck.yml)"), ("reference-links-20261101.json", "Reference link check (reference-link-check.yml)")):
+    x = opt(os.path.join(DATA, "raw", name))
+    if x:
+        res = (", ".join(f"{k} {v}" for k, v in x["summary"]["paragraphs"].items()) + f" on {x['summary']['articles']} articles") if "paragraphs" in x.get("summary", {}) else \
+              (", ".join(f"{k} {v}" for k, v in (x.get("counts") or {}).items()) + f" — {x.get('unique_links')} unique links on {x.get('pages')} pages")
+        ch.append({"date": a["audit_date"], "type": "LIVE_SOURCES", "item": label, "commit_or_run": f"run {x['run_id']}", "result": res,
+                   "evidence_url": f"{GH}/blob/main/reports/seo/data/raw/{name}", "notes": "read-only workflow dispatched for this re-audit"})
 uo = ext["ubersuggest_domain_overview"]
 ch += [
     {"date": a["audit_date"], "type": "VISIBILITY", "item": "Ubersuggest domain overview", "commit_or_run": "—", "result": f"organic keywords {uo['organic_keywords']}, DA {uo['domain_authority']}, backlinks {uo['backlinks']}, referring domains {uo['referring_domains']}", "evidence_url": None, "notes": "third-party estimate (INFERRED)"},
