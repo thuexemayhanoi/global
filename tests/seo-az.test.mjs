@@ -555,3 +555,21 @@ test("the audit measures a Pillar from its whole <main>, not from its first topi
  assert.equal(rows.length,10);
  for(const r of rows){const m=r.match(/,(\d+),(?:words|cjk_chars),/);assert.ok(m&&+m[1]>500,r.slice(0,40));}
 });
+
+test("only article versions listed as translations of one another carry hreflang, reciprocally and without x-default (TECH-10)",()=>{
+ const eq=JSON.parse(read("data/seo/hreflang-equivalents.json")),listed=new Map();
+ for(const g of eq.groups){
+  assert.ok(g.ids.length>=2&&g.evidence,g.slot+" group needs two pages and evidence");
+  assert.equal(new Set(g.ids.map(i=>i.split("-")[0])).size,g.ids.length,g.slot+" one page per language");
+  for(const id of g.ids){assert.ok(!listed.has(id),id+" in one group only");assert.ok(id.endsWith("-"+g.slot),id+" belongs to slot "+g.slot);listed.set(id,g.ids);}
+ }
+ // Checklists are translated pages with their own hreflang cluster (build.mjs langLinks); only Hub/Supporting articles here.
+ for(const row of published.filter(r=>(r.role==="HUB"||r.role==="SUPPORT")&&!r.id.endsWith("-CHECKLIST"))){
+  const links=[...page(row.url).matchAll(/<link rel="alternate" hreflang="([^"]+)" href="([^"]+)">/g)].map(m=>m[2]);
+  const group=listed.get(row.id);
+  if(!group){assert.deepEqual(links,[],row.id+" is not a listed translation and must not claim hreflang");continue;}
+  const expected=group.map(id=>SITE+published.find(r=>r.id===id).url).sort();
+  assert.deepEqual([...links].sort(),expected,row.id+" links every member of its group, itself included");
+  assert.ok(!page(row.url).includes('hreflang="x-default"'),row.id+" has no x-default");
+ }
+});
