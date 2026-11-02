@@ -2831,14 +2831,14 @@
    "title": "No page prints its own publication or update date: show a localized 'Published · Updated' line with <time> from the dates that already feed JSON-LD and sitemap lastmod",
    "scope": "all Pillar, Hub, Supporting and checklist pages (template: scripts/articles.mjs, scripts/build.mjs; dates: article packets + data/seo/page-updates.json)",
    "selector": "reports/seo/data/deep-audit.json visible_date = false (1,074 of 1,074 content pages)",
-   "status": "TODO",
-   "branch": "",
+   "status": "FIXED",
+   "branch": "seo/az-content-04",
    "commit": "",
    "pr": "",
    "deploy_run": "",
    "live_qa": [],
-   "evidence": "Re-audit 2026-11-01: 0 <time> elements and no dated byline on any page, while JSON-LD datePublished/dateModified and sitemap lastmod exist. Findings F-S-NO-VISIBLE-DATE-0001",
-   "next_action": "Render the dates beside the byline/reading time from the same source as JSON-LD (never a new or bumped date); verify printed date = JSON-LD dateModified = sitemap lastmod with deep_audit.py; build --check, seo-guard, fact-guard, tests"
+   "evidence": "Re-audit 2026-11-01: 0 <time> elements and no dated byline on any page, while JSON-LD datePublished/dateModified and sitemap lastmod exist. Findings F-S-NO-VISIBLE-DATE-0001; 1,064 Hub, Supporting and checklist pages show 'Published <date> · Updated <date>' in the reading bar from their own JSON-LD; printed dates equal JSON-LD and sitemap lastmod on all 1,064 pages; 50 pages (5 per language) at 390 and 1366 px: 0 overflow, 0 axe violations, 0 console errors; Pillars (language homes) not in scope",
+   "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
   },
   {
    "id": "CONTENT-04",
@@ -2846,14 +2846,14 @@
    "title": "The About page promises that each guide lists the date its references were checked, but no reference shows it: print each source's checked_on",
    "scope": "references list of every guide (5,629 sources in content/articles/*.json carry checked_on); /about/ sentence 'Each guide lists its references with the date they were checked'",
    "selector": "reports/seo/data/deep-audit.json refs_checked_on_rendered vs packet_sources_checked_on",
-   "status": "TODO",
-   "branch": "",
+   "status": "FIXED",
+   "branch": "seo/az-content-04",
    "commit": "",
    "pr": "",
    "deploy_run": "",
    "live_qa": [],
-   "evidence": "Re-audit 2026-11-01: 23 of 5,629 checked_on dates appear on pages (coincidental matches inside source titles). Findings F-S-REF-DATES-HIDDEN-0001",
-   "next_action": "Print the localized checked date after each reference title (or, if the owner prefers, correct the About page wording); no source or claim changes"
+   "evidence": "Re-audit 2026-11-01: 23 of 5,629 checked_on dates appear on pages (coincidental matches inside source titles). Findings F-S-REF-DATES-HIDDEN-0001; each reference of the 1,054 Hub and Supporting guides prints its checked_on date; checklist and Pillar references carry no recorded check date, so the About page now says exactly which pages list them; notes excluded from the reading-time estimate",
+   "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
   },
   {
    "id": "CONTENT-05",
@@ -2879,14 +2879,17 @@
     "DE-S196"
    ],
    "selector": "reports/seo/data/raw/reference-links-20261101.json broken[]",
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-content-06",
-   "commit": "",
-   "pr": "",
-   "deploy_run": "",
-   "live_qa": [],
-   "evidence": "Re-audit 2026-11-01: reference-link-check.yml run 41331398658 — https://capcuu115hanoi.com/cap-cuu-va-van-chuyen-cap-cuu → 404 (checked_on 2026-10-25/26 in the packets). Findings F-U-DEAD-REFERENCE-0001, F-U-DEAD-REFERENCE-0002; dead capcuu115hanoi.com page replaced on DE-S108 and DE-S196 by its Wayback Machine copy of 15 February 2026 (reference check run 41386967308 found every cited fact); DE-S108's fee sentence dated 'Stand Februar 2026'; page-updates 2026-11-02 for both pages",
-   "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
+   "commit": "7078d937d00fd47041a849c4d6678ab29bcfe99e",
+   "pr": 181,
+   "deploy_run": 41395137211,
+   "live_qa": [
+    41395300773,
+    41395303387
+   ],
+   "evidence": "Re-audit 2026-11-01: reference-link-check.yml run 41331398658 — https://capcuu115hanoi.com/cap-cuu-va-van-chuyen-cap-cuu → 404 (checked_on 2026-10-25/26 in the packets). Findings F-U-DEAD-REFERENCE-0001, F-U-DEAD-REFERENCE-0002; dead capcuu115hanoi.com page replaced on DE-S108 and DE-S196 by its Wayback Machine copy of 15 February 2026 (reference check run 41386967308 found every cited fact); DE-S108's fee sentence dated 'Stand Februar 2026'; page-updates 2026-11-02 for both pages; PR #181 validate passed; Pages deploy 41395137211; live markup QA 41395300773 (1,081/1,081 identical) and post-publish QA 41395303387 passed",
+   "next_action": "Done"
   },
   {
    "id": "TECH-08",
