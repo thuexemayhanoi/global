@@ -3,6 +3,7 @@ import path from "node:path";
 import {scanPacket,scanText} from "./seo/fact-guard-core.mjs";
 import {loadTopicalMap} from "./seo/topical-authority-core.mjs";
 import {reviewedPageDates} from "./sitemaps.mjs";
+import {localDate} from "./dates.mjs";
 
 const SITE="https://global.rentbikehanoi.com";
 export const BRAND="Vietnam Two-Wheel Guide";
@@ -27,6 +28,8 @@ export const COVER_SIZES="(max-width: 900px) calc(100vw - 36px), 760px";
 // Checklist covers sit in the first viewport on phones and desktops: load them eagerly with high priority. Hub/Supporting
 // covers follow a longer lead and are below the fold on phones, where an eager cover delayed the text LCP by ~0.45 s in
 // Lighthouse (task IMG-LCP, 2026-11-02), so they stay lazy.
+const CHECKED={vi:["(kiểm tra ngày ",")"],en:["(checked ",")"],de:["(geprüft am ",")"],fr:["(consulté le ",")"],es:["(consultado el ",")"],nl:["(geraadpleegd op ",")"],zh:["（核查日期：","）"],pt:["(consultado em ",")"],ko:["(확인일: ",")"],ja:["（確認日：","）"]};
+export const checkedNote=(iso,code)=>{const [a,b]=CHECKED[code]||CHECKED.en;return '<span class="ref-checked">'+a+'<time datetime="'+iso+'">'+localDate(iso,code)+'</time>'+b+'</span>';};
 export const coverFigure=(c,eager=false)=>'<figure class="article-cover"><img src="'+esc(c.src)+'" srcset="'+esc(c.src640)+' 640w, '+(c.src800?esc(c.src800)+' 800w, ':'')+esc(c.src)+' 1200w" sizes="'+COVER_SIZES+'" width="'+c.width+'" height="'+c.height+'" '+(eager?'loading="eager" fetchpriority="high"':'loading="lazy"')+' decoding="async" alt="'+esc(c.alt)+'"></figure>';
 const withCover=(html,c)=>{if(!c)return html;const at=html.indexOf("</p>");return at<0?coverFigure(c)+html:html.slice(0,at+4)+coverFigure(c)+html.slice(at+4);};
 const esc=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
@@ -328,7 +331,8 @@ export function renderArticle(packet,locale,row,matrix,topical=null,ix=rowsIndex
  const data={"@context":"https://schema.org","@graph":[article,{"@type":"BreadcrumbList","itemListElement":crumbs}]};
  const faq=faqEntries(packet.body_markdown,locale.code);
  if(faq.length)data["@graph"].push(faqPageNode(faq));
- const sources=packet.sources.map(s=>'<li><a href="'+esc(s.url)+'" rel="noopener noreferrer">'+esc(s.title)+'</a></li>').join("");
+ // Each reference shows the date it was checked (packet sources[].checked_on), as the About page promises (CONTENT-04).
+ const sources=packet.sources.map(s=>'<li><a href="'+esc(s.url)+'" rel="noopener noreferrer">'+esc(s.title)+'</a> '+checkedNote(s.checked_on,locale.code)+'</li>').join("");
  const cover=packet.cover_image?'<figure><img src="'+esc(packet.cover_image)+'" alt="'+esc(packet.cover_alt)+'" loading="lazy" decoding="async"><figcaption>'+esc(packet.image_credit)+'</figcaption></figure>':"";
  const json=JSON.stringify(data).replace(/</g,"\\u003c");
  const social='<meta property="og:site_name" content="'+esc(BRAND)+'"><meta property="og:image" content="'+SITE+img.path+'"><meta property="og:image:width" content="'+img.width+'"><meta property="og:image:height" content="'+img.height+'">\n<meta name="twitter:card" content="summary_large_image">';

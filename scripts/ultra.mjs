@@ -1,6 +1,7 @@
 // Premium Ultra layout: deterministic, indexable HTML enhancements.
 // Only decorative structure and links to already published pages or in-page anchors.
 import {cardAlt} from "./images/scenes.mjs";
+import {localDate} from "./dates.mjs";
 const clean=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const plaintext=s=>String(s||"").replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi," ").replace(/<[^>]+>/g," ").replace(/&[a-z]+;/gi," ").replace(/\s+/g," ").trim();
 const micro={
@@ -93,24 +94,8 @@ function injectHome(html,code,matrix,files){
 }
 // Visible publication and update dates (Matrix task CONTENT-03). They are read from the page's own JSON-LD
 // (datePublished/dateModified), the same source as sitemap <lastmod>, so the printed date never differs from them.
-const MONTHS={en:["January","February","March","April","May","June","July","August","September","October","November","December"],
- de:["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],
- fr:["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],
- es:["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],
- nl:["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"],
- pt:["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"]};
 const DATE_LABELS={vi:["Đăng ngày","Cập nhật"],en:["Published","Updated"],de:["Veröffentlicht am","aktualisiert am"],fr:["Publié le","mis à jour le"],
  es:["Publicado el","actualizado el"],nl:["Gepubliceerd op","bijgewerkt op"],zh:["发布于","更新于"],pt:["Publicado em","atualizado em"],ko:["게시일","업데이트"],ja:["公開日","更新日"]};
-export function localDate(iso,code){
- const [y,m,d]=String(iso).slice(0,10).split("-").map(Number),p=n=>String(n).padStart(2,"0");
- if(code==="vi")return p(d)+"/"+p(m)+"/"+y;
- if(code==="zh"||code==="ja")return y+"年"+m+"月"+d+"日";
- if(code==="ko")return y+"년 "+m+"월 "+d+"일";
- if(code==="de")return d+". "+MONTHS.de[m-1]+" "+y;
- if(code==="fr")return (d===1?"1er":d)+" "+MONTHS.fr[m-1]+" "+y;
- if(code==="es"||code==="pt")return d+" de "+MONTHS[code][m-1]+" de "+y;
- return d+" "+(MONTHS[code]||MONTHS.en)[m-1]+" "+y;
-}
 export function pageDates(html,code){
  const m=html.match(/"datePublished":"([^"]+)","dateModified":"([^"]+)"/);
  if(!m)return "";
