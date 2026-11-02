@@ -2,19 +2,8 @@
  "generated": "2026-11-01",
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
- "current_task": {
-  "id": "TECH-11",
-  "phase": "TECH",
-  "title": "Four render-blocking stylesheets on every page; most of ultra.css unused per template",
-  "status": "FIXED",
-  "branch": "seo/az-tech-11",
-  "commit": "",
-  "pr": "",
-  "deploy_run": "",
-  "live_qa": [],
-  "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
- },
- "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED",
+ "current_task": null,
+ "next_action": "Re-run the audit pipeline (collect → analyze → ledger → az_matrix → workbook) and docs/seo-audit/tools/tech_reaudit.py on current main; add a task to TASKS.json only for a verified new finding on an existing URL; otherwise monitor (indexing and rankings stay unmeasured without Search Console)",
  "next_todo": [],
  "blocked": [],
  "owner_actions": "docs/seo-audit/OWNER-ACTIONS.md (OWNER_ACTIONS_LAST)",
@@ -28,8 +17,7 @@
    "LIVE_VERIFIED": 1
   },
   "TECH": {
-   "LIVE_VERIFIED": 9,
-   "FIXED": 1
+   "LIVE_VERIFIED": 10
   },
   "IMG": {
    "LIVE_VERIFIED": 25
