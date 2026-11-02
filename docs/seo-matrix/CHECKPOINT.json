@@ -3,11 +3,11 @@
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
  "current_task": {
-  "id": "CONTENT-03",
+  "id": "CONTENT-05",
   "phase": "CONTENT",
-  "title": "No page prints its own publication or update date: show a localized 'Published · Updated' line with <time> from the dates that already feed JSON-LD and sitemap lastmod",
+  "title": "Four FAQ questions are repeated word for word on two pages each (de, en, fr, nl): make them self-contained",
   "status": "FIXED",
-  "branch": "seo/az-content-04",
+  "branch": "seo/az-content-05",
   "commit": "",
   "pr": "",
   "deploy_run": "",
@@ -16,11 +16,6 @@
  },
  "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED",
  "next_todo": [
-  {
-   "id": "CONTENT-05",
-   "title": "Four FAQ questions are repeated word for word on two pages each (de, en, fr, nl): make them self-contained",
-   "next_action": "Rephrase each question with the page's topic (answers unchanged); FAQPage regenerates from the visible text; page-updates entry with the merge date"
-  },
   {
    "id": "TECH-08",
    "title": "English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label, Pillar hero labels) and aria-label on a <span> without a role",
@@ -59,9 +54,8 @@
    "LIVE_VERIFIED": 2
   },
   "CONTENT": {
-   "LIVE_VERIFIED": 3,
-   "FIXED": 2,
-   "TODO": 1
+   "LIVE_VERIFIED": 5,
+   "FIXED": 1
   }
  },
  "url_counts": {
