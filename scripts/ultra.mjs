@@ -91,6 +91,33 @@ function injectHome(html,code,matrix,files){
  }
  return html;
 }
+// Visible publication and update dates (Matrix task CONTENT-03). They are read from the page's own JSON-LD
+// (datePublished/dateModified), the same source as sitemap <lastmod>, so the printed date never differs from them.
+const MONTHS={en:["January","February","March","April","May","June","July","August","September","October","November","December"],
+ de:["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],
+ fr:["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],
+ es:["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],
+ nl:["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"],
+ pt:["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"]};
+const DATE_LABELS={vi:["Đăng ngày","Cập nhật"],en:["Published","Updated"],de:["Veröffentlicht am","aktualisiert am"],fr:["Publié le","mis à jour le"],
+ es:["Publicado el","actualizado el"],nl:["Gepubliceerd op","bijgewerkt op"],zh:["发布于","更新于"],pt:["Publicado em","atualizado em"],ko:["게시일","업데이트"],ja:["公開日","更新日"]};
+export function localDate(iso,code){
+ const [y,m,d]=String(iso).slice(0,10).split("-").map(Number),p=n=>String(n).padStart(2,"0");
+ if(code==="vi")return p(d)+"/"+p(m)+"/"+y;
+ if(code==="zh"||code==="ja")return y+"年"+m+"月"+d+"日";
+ if(code==="ko")return y+"년 "+m+"월 "+d+"일";
+ if(code==="de")return d+". "+MONTHS.de[m-1]+" "+y;
+ if(code==="fr")return (d===1?"1er":d)+" "+MONTHS.fr[m-1]+" "+y;
+ if(code==="es"||code==="pt")return d+" de "+MONTHS[code][m-1]+" de "+y;
+ return d+" "+(MONTHS[code]||MONTHS.en)[m-1]+" "+y;
+}
+export function pageDates(html,code){
+ const m=html.match(/"datePublished":"([^"]+)","dateModified":"([^"]+)"/);
+ if(!m)return "";
+ const [pub,mod]=[m[1],m[2]],[lp,lu]=DATE_LABELS[code]||DATE_LABELS.en;
+ const t=v=>'<time datetime="'+clean(v)+'">'+localDate(v,code)+'</time>';
+ return '<span class="ultra-reading-dates"><span>'+lp+' '+t(pub)+'</span>'+(mod.slice(0,10)>pub.slice(0,10)?' <span>· '+lu+' '+t(mod)+'</span>':'')+'</span>';
+}
 function articleDecor(html,code){
  if(html.includes('class="ultra-reading-tools"'))return html;
  if(!html.includes('premium-article-grid'))return html;
@@ -98,7 +125,7 @@ function articleDecor(html,code){
  const article=html.match(/<div class="premium-reading-content">([\s\S]*?)<\/div><aside class="premium-rail">/);
  if(!article)return html;
  const estimated=Math.max(1,Math.ceil(plaintext(article[1]).split(/\s+/).filter(Boolean).length/210));
- const top='<div class="ultra-reading-tools"><span class="ultra-reading-time" aria-label="Estimated reading time">◷ ≈'+estimated+' min</span><div class="ultra-reading-buttons"><button type="button" data-ultra-copy hidden>'+clean(tr[7])+'</button><button type="button" data-ultra-focus hidden aria-pressed="false">'+clean(tr[8])+'</button></div><span class="ultra-copy-feedback" aria-live="polite"></span></div>';
+ const top='<div class="ultra-reading-tools"><span class="ultra-reading-time" aria-label="Estimated reading time">◷ ≈'+estimated+' min</span>'+pageDates(html,code)+'<div class="ultra-reading-buttons"><button type="button" data-ultra-copy hidden>'+clean(tr[7])+'</button><button type="button" data-ultra-focus hidden aria-pressed="false">'+clean(tr[8])+'</button></div><span class="ultra-copy-feedback" aria-live="polite"></span></div>';
  const mobile=match?'<details class="ultra-mobile-toc"><summary>☷ '+clean(tr[9])+' <span aria-hidden="true">⌄</span></summary><nav aria-label="'+clean(match[1])+'"><ol>'+match[2]+'</ol></nav></details>':"";
  // Reading tools and mobile contents appear AFTER the meaningful article intro.
  if(html.includes('class="article-lead"'))html=html.replace(/(<p class="article-lead">[\s\S]*?<\/p>)/,'$1'+top+mobile);
