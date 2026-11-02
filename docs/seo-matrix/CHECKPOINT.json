@@ -3,11 +3,11 @@
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
  "current_task": {
-  "id": "TECH-08",
+  "id": "TECH-10",
   "phase": "TECH",
-  "title": "English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label, Pillar hero labels) and aria-label on a <span> without a role",
+  "title": "Hreflang equivalence review for the topic slots published in all 10 languages (Hubs H01–H04, Supporting S01–S08)",
   "status": "FIXED",
-  "branch": "seo/az-tech-08",
+  "branch": "seo/az-tech-10",
   "commit": "",
   "pr": "",
   "deploy_run": "",
@@ -16,11 +16,6 @@
  },
  "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED",
  "next_todo": [
-  {
-   "id": "TECH-10",
-   "title": "Hreflang equivalence review for the topic slots published in all 10 languages (Hubs H01–H04, Supporting S01–S08)",
-   "next_action": "Compare each cluster's 10 pages (intent, scope, sections). Only where they are versions of the same page: add reciprocal hreflang (no x-default without a neutral page) with selective re-freeze and seo-guard PASS; record the decision per cluster either way"
-  },
   {
    "id": "TECH-11",
    "title": "Four render-blocking stylesheets on every page; most of ultra.css unused per template",
@@ -39,9 +34,9 @@
    "LIVE_VERIFIED": 1
   },
   "TECH": {
-   "LIVE_VERIFIED": 7,
+   "LIVE_VERIFIED": 8,
    "FIXED": 1,
-   "TODO": 2
+   "TODO": 1
   },
   "IMG": {
    "LIVE_VERIFIED": 25
