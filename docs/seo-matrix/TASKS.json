@@ -2867,14 +2867,17 @@
    "title": "Four FAQ questions are repeated word for word on two pages each (de, en, fr, nl): make them self-contained",
    "scope": "the 8 pages listed in findings U-FAQ-REPEATED-Q (traffic-camera fine and bike-defect guides)",
    "selector": "reports/seo/data/deep-audit.json faq_dupes",
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-content-05",
-   "commit": "",
-   "pr": "",
-   "deploy_run": "",
-   "live_qa": [],
-   "evidence": "Re-audit 2026-11-01. Findings F-U-FAQ-REPEATED-Q-0001 F-U-FAQ-REPEATED-Q-0002 F-U-FAQ-REPEATED-Q-0003 F-U-FAQ-REPEATED-Q-0004 F-U-FAQ-REPEATED-Q-0005 F-U-FAQ-REPEATED-Q-0006 F-U-FAQ-REPEATED-Q-0007 F-U-FAQ-REPEATED-Q-0008; the 4 questions repeated on two guides each (de, en, fr, nl) now name their page's topic; answers unchanged; FAQPage follows; page-updates 2026-11-02 for the 8 pages",
-   "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
+   "commit": "5f80a29cdd25179a5af697831e5ffe4de691da63",
+   "pr": 183,
+   "deploy_run": 41397302239,
+   "live_qa": [
+    41397505685,
+    41397508226
+   ],
+   "evidence": "Re-audit 2026-11-01. Findings F-U-FAQ-REPEATED-Q-0001 F-U-FAQ-REPEATED-Q-0002 F-U-FAQ-REPEATED-Q-0003 F-U-FAQ-REPEATED-Q-0004 F-U-FAQ-REPEATED-Q-0005 F-U-FAQ-REPEATED-Q-0006 F-U-FAQ-REPEATED-Q-0007 F-U-FAQ-REPEATED-Q-0008; the 4 questions repeated on two guides each (de, en, fr, nl) now name their page's topic; answers unchanged; FAQPage follows; page-updates 2026-11-02 for the 8 pages; PR #183 validate passed; Pages deploy 41397302239; live markup QA 41397505685 (1,081/1,081 identical) and post-publish QA 41397508226 passed",
+   "next_action": "Done"
   },
   {
    "id": "CONTENT-06",
@@ -2903,14 +2906,14 @@
    "title": "English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label, Pillar hero labels) and aria-label on a <span> without a role",
    "scope": "shared templates (scripts/navigation.mjs, scripts/ultra.mjs) → all vi/de/fr/es/nl/zh/pt/ko/ja pages; reading-time badge on 1,064 article pages; Pillar hero illustration labels '10 LANGUAGES' / '4 TOPIC HUBS' and step numbers (3.9–4.4:1) on the 10 locale homes",
    "selector": "reports/seo/data/deep-audit.json ui_leaks; reports/seo/data/raw/html-validation-20261101.json aria_label_span_warnings",
-   "status": "TODO",
-   "branch": "",
+   "status": "FIXED",
+   "branch": "seo/az-tech-08",
    "commit": "",
    "pr": "",
    "deploy_run": "",
    "live_qa": [],
-   "evidence": "Re-audit 2026-11-01: 'Skip to content' ×977, aria-label 'Breadcrumb' ×977, 'Estimated reading time' ×968 (WCAG 2.2 SC 3.1.2); W3C validator 1,064 'Possible misuse of aria-label' warnings. Findings F-S-UI-UNTRANSLATED-0001 F-S-UI-UNTRANSLATED-0002 F-S-UI-UNTRANSLATED-0003 F-S-UI-UNTRANSLATED-0004 F-S-UI-UNTRANSLATED-0005 F-S-UI-UNTRANSLATED-0006 F-S-UI-UNTRANSLATED-0007 F-S-UI-UNTRANSLATED-0008 F-S-UI-UNTRANSLATED-0009 F-S-ARIA-LABEL-SPAN-0001 F-S-HERO-ART-TEXT-0001. Contrast: reports/seo/data/raw/contrast-20261101.json.",
-   "next_action": "Localize the three strings per locale (reuse the language-menu label table), replace the span's aria-label with visually hidden localized text; build --check, nav-qa, language-audit, tests; re-run deep_audit.py and the W3C validator"
+   "evidence": "Re-audit 2026-11-01: 'Skip to content' ×977, aria-label 'Breadcrumb' ×977, 'Estimated reading time' ×968 (WCAG 2.2 SC 3.1.2); W3C validator 1,064 'Possible misuse of aria-label' warnings. Findings F-S-UI-UNTRANSLATED-0001 F-S-UI-UNTRANSLATED-0002 F-S-UI-UNTRANSLATED-0003 F-S-UI-UNTRANSLATED-0004 F-S-UI-UNTRANSLATED-0005 F-S-UI-UNTRANSLATED-0006 F-S-UI-UNTRANSLATED-0007 F-S-UI-UNTRANSLATED-0008 F-S-UI-UNTRANSLATED-0009 F-S-ARIA-LABEL-SPAN-0001 F-S-HERO-ART-TEXT-0001. Contrast: reports/seo/data/raw/contrast-20261101.json.; scripts/ui-strings.mjs localizes the skip link, breadcrumb label, reading-time badge and Pillar hero labels in 10 languages; 0 'Skip to content' / 'Breadcrumb' / 'Estimated reading time' / '10 LANGUAGES' left on non-English pages; reading-time badge without aria-label (W3C warning on 1,064 pages); browser check 30 pages at 390 and 1366 px: 0 overflow, 0 axe violations",
+   "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
   },
   {
    "id": "TECH-10",
