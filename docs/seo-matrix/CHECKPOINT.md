@@ -4,13 +4,13 @@ Generated 2026-11-01 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 
 ## Current task
 
-- **TECH-10** (TECH): Hreflang equivalence review for the topic slots published in all 10 languages (Hubs H01–H04, Supporting S01–S08)
-- Status: **FIXED** · branch `seo/az-tech-10` · PR - · merge `-` · deploy - · live QA -
+- **TECH-11** (TECH): Four render-blocking stylesheets on every page; most of ultra.css unused per template
+- Status: **FIXED** · branch `seo/az-tech-11` · PR - · merge `-` · deploy - · live QA -
 - NEXT_ACTION: Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED
 
 ## Next TODO
 
-1. **TECH-11**: Four render-blocking stylesheets on every page; most of ultra.css unused per template
+(none)
 
 ## URL status counts
 
@@ -28,7 +28,7 @@ Generated 2026-11-01 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 |---|---|---|---|---|---|---|---|
 | HISTORY | 0 | 0 | 0 | 2 | 2 | 25 | 0 |
 | MATRIX | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
-| TECH | 1 | 0 | 1 | 0 | 0 | 8 | 0 |
+| TECH | 0 | 0 | 1 | 0 | 0 | 9 | 0 |
 | IMG | 0 | 0 | 0 | 0 | 0 | 25 | 0 |
 | META | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
 | CONTENT | 0 | 0 | 0 | 0 | 0 | 6 | 0 |
