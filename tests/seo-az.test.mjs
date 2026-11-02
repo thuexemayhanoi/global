@@ -428,7 +428,7 @@ test("the SEO A–Z Matrix on GitHub covers every published URL once, uses only 
  assert.deepEqual([...seen.keys()].sort(),published.filter(r=>r.role==="HUB"||r.role==="SUPPORT").map(r=>r.id).sort());
 });
 
-test("every reviewed cover is a 1200×675 WebP of at most 300 KB with a 640 px variant, shown lazily after the opening paragraph and used as og:image and Article image (IMG-*)",()=>{
+test("every reviewed cover is a 1200×675 WebP of at most 300 KB with a 640 px variant, right after the opening paragraph (eager with high fetch priority on the checklists, lazy below the longer article leads: IMG-LCP) and used as og:image and Article image (IMG-*)",()=>{
  const covers=JSON.parse(read("data/seo/image-covers.json")).covers;
  const webpSize=f=>{const b=fs.readFileSync(path.join(root,f.slice(1)));assert.equal(b.toString("ascii",0,4)+b.toString("ascii",8,12),"RIFFWEBP",f);const k=b.toString("ascii",12,16);
   return k==="VP8X"?[1+b.readUIntLE(24,3),1+b.readUIntLE(27,3)]:k==="VP8 "?[b.readUInt16LE(26)&0x3fff,b.readUInt16LE(28)&0x3fff]:[(b.readUInt32LE(21)&0x3fff)+1,((b.readUInt32LE(21)>>14)&0x3fff)+1];};
@@ -443,7 +443,7 @@ test("every reviewed cover is a 1200×675 WebP of at most 300 KB with a 640 px v
   assert.ok(c.alt.startsWith(c.h1)&&c.alt.length>c.h1.length+10,id+" alt names the page and describes the illustration");
   const html=page(row.url),fig=html.match(/<figure class="article-cover"><img [^>]*><\/figure>/)?.[0];
   assert.ok(fig,id+" shows its cover");
-  assert.ok(fig.includes('src="'+c.src+'"')&&fig.includes(c.src640+" 640w")&&fig.includes('width="1200" height="675"')&&fig.includes('loading="lazy"')&&fig.includes('alt="'+attrEsc(c.alt)+'"'),id+" cover markup");
+  assert.ok(fig.includes('src="'+c.src+'"')&&fig.includes(c.src640+" 640w")&&fig.includes('width="1200" height="675"')&&fig.includes(id.endsWith("-CHECKLIST")?'loading="eager" fetchpriority="high" decoding="async"':'loading="lazy" decoding="async"')&&fig.includes('alt="'+attrEsc(c.alt)+'"'),id+" cover markup");
   assert.ok(html.indexOf(fig)>html.indexOf('class="article-lead"'),id+" cover follows the lead");
   assert.ok(html.includes('<meta property="og:image" content="'+SITE+c.src+'">')&&html.includes('<meta property="og:image:width" content="1200">'),id+" og:image");
   assert.equal(graph(html).find(n=>n["@type"]==="Article").image.url,SITE+c.src,id+" Article image");
