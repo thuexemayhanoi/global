@@ -438,12 +438,14 @@ test("every reviewed cover is a 1200×675 WebP of at most 300 KB with a 640 px v
   const row=published.find(r=>r.id===id);
   assert.ok(row&&row.url===c.url,id+" is a published Matrix row");
   assert.deepEqual(webpSize(c.src),[1200,675],id);assert.deepEqual(webpSize(c.src640),[640,360],id);
+  // IMG-SRCSET: an 800 px variant, where present, is the same cover downsized, recorded with its size and offered in srcset.
+  if(c.src800){assert.deepEqual(webpSize(c.src800),[800,450],id);assert.equal(fs.statSync(path.join(root,c.src800.slice(1))).size,c.bytes800,id+" 800 px size as recorded");assert.equal(c.src800,c.src.replace(/\.webp$/,"-800.webp"),id);}
   const bytes=fs.statSync(path.join(root,c.src.slice(1))).size;
   assert.ok(bytes<=300*1024&&bytes===c.bytes,id+" main image ≤300 KB and as recorded");
   assert.ok(c.alt.startsWith(c.h1)&&c.alt.length>c.h1.length+10,id+" alt names the page and describes the illustration");
   const html=page(row.url),fig=html.match(/<figure class="article-cover"><img [^>]*><\/figure>/)?.[0];
   assert.ok(fig,id+" shows its cover");
-  assert.ok(fig.includes('src="'+c.src+'"')&&fig.includes(c.src640+" 640w")&&fig.includes('width="1200" height="675"')&&fig.includes(id.endsWith("-CHECKLIST")?'loading="eager" fetchpriority="high" decoding="async"':'loading="lazy" decoding="async"')&&fig.includes('alt="'+attrEsc(c.alt)+'"'),id+" cover markup");
+  assert.ok(fig.includes('src="'+c.src+'"')&&fig.includes(c.src640+" 640w")&&(!c.src800||fig.includes(c.src800+" 800w"))&&fig.includes('width="1200" height="675"')&&fig.includes(id.endsWith("-CHECKLIST")?'loading="eager" fetchpriority="high" decoding="async"':'loading="lazy" decoding="async"')&&fig.includes('alt="'+attrEsc(c.alt)+'"'),id+" cover markup");
   assert.ok(html.indexOf(fig)>html.indexOf('class="article-lead"'),id+" cover follows the lead");
   assert.ok(html.includes('<meta property="og:image" content="'+SITE+c.src+'">')&&html.includes('<meta property="og:image:width" content="1200">'),id+" og:image");
   assert.equal(graph(html).find(n=>n["@type"]==="Article").image.url,SITE+c.src,id+" Article image");

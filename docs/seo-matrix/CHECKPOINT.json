@@ -3,43 +3,43 @@
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
  "current_task": {
-  "id": "IMG-LCP",
+  "id": "IMG-SRCSET",
   "phase": "IMG",
-  "title": "Guide cover image in the first viewport is lazy-loaded and often the LCP element: load it eagerly with fetchpriority=high on Hub, Supporting and checklist pages",
-  "status": "TODO",
+  "title": "Cover srcset offers only 640w and 1200w: add an intermediate width so phones stop downloading the 1200 px file",
+  "status": "IN_PROGRESS",
   "branch": "",
   "commit": "",
   "pr": "",
   "deploy_run": "",
   "live_qa": [],
-  "next_action": "Set loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" on the cover image only (keep width/height, srcset, sizes, alt); keep lazy for images further down; build --check; update tests/seo-az.test.mjs, which today asserts loading=\"lazy\" on every cover (IMG-*), to expect eager + fetchpriority on the cover; tests; then re-run docs/seo-audit/tools/site_browser_audit.cjs on the template sample"
+  "next_action": "Work the open IMG-SRCSET-nn batch: python3 scripts/images/cover_widths.py --batch=IMG-nn; node scripts/build.mjs; QA; PR; merge; deploy; live QA"
  },
- "next_action": "Set loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" on the cover image only (keep width/height, srcset, sizes, alt); keep lazy for images further down; build --check; update tests/seo-az.test.mjs, which today asserts loading=\"lazy\" on every cover (IMG-*), to expect eager + fetchpriority on the cover; tests; then re-run docs/seo-audit/tools/site_browser_audit.cjs on the template sample",
+ "next_action": "Work the open IMG-SRCSET-nn batch: python3 scripts/images/cover_widths.py --batch=IMG-nn; node scripts/build.mjs; QA; PR; merge; deploy; live QA",
  "next_todo": [
   {
-   "id": "IMG-SRCSET",
-   "title": "Cover srcset offers only 640w and 1200w: add an intermediate width so phones stop downloading the 1200 px file",
-   "next_action": "Generate an 800w (or 960w) WebP from the same cover, add it to srcset, keep sizes/width/height/alt; regenerate the image matrix; max 100 images per batch; extend the cover checks in tests/seo-az.test.mjs (today: 1200 + 640 variants) to the new width"
+   "id": "IMG-SRCSET-02",
+   "title": "800 px cover variant in srcset, batch 2 (the 100 URLs of IMG-02)",
+   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-02; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
   },
   {
-   "id": "CONTENT-03",
-   "title": "No page prints its own publication or update date: show a localized 'Published · Updated' line with <time> from the dates that already feed JSON-LD and sitemap lastmod",
-   "next_action": "Render the dates beside the byline/reading time from the same source as JSON-LD (never a new or bumped date); verify printed date = JSON-LD dateModified = sitemap lastmod with deep_audit.py; build --check, seo-guard, fact-guard, tests"
+   "id": "IMG-SRCSET-03",
+   "title": "800 px cover variant in srcset, batch 3 (the 100 URLs of IMG-03)",
+   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-03; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
   },
   {
-   "id": "CONTENT-04",
-   "title": "The About page promises that each guide lists the date its references were checked, but no reference shows it: print each source's checked_on",
-   "next_action": "Print the localized checked date after each reference title (or, if the owner prefers, correct the About page wording); no source or claim changes"
+   "id": "IMG-SRCSET-04",
+   "title": "800 px cover variant in srcset, batch 4 (the 100 URLs of IMG-04)",
+   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-04; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
   },
   {
-   "id": "CONTENT-05",
-   "title": "Four FAQ questions are repeated word for word on two pages each (de, en, fr, nl): make them self-contained",
-   "next_action": "Rephrase each question with the page's topic (answers unchanged); FAQPage regenerates from the visible text; page-updates entry with the merge date"
+   "id": "IMG-SRCSET-05",
+   "title": "800 px cover variant in srcset, batch 5 (the 100 URLs of IMG-05)",
+   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-05; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
   },
   {
-   "id": "CONTENT-06",
-   "title": "Dead reference: Hanoi 115 emergency centre page (capcuu115hanoi.com) answers 404 on two German guides",
-   "next_action": "Find the page's new address on capcuu115hanoi.com or an archived copy that still states the cited facts (free 115 call, phone first-aid guidance, distance-based fee); otherwise cite another official source (Sở Y tế Hà Nội) and adjust the sentence; update checked_on; reviewed PR, build --check, tests, then reference-link-check.yml shows BROKEN 0"
+   "id": "IMG-SRCSET-06",
+   "title": "800 px cover variant in srcset, batch 6 (the 100 URLs of IMG-06)",
+   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-06; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
   }
  ],
  "blocked": [],
@@ -58,8 +58,10 @@
    "TODO": 3
   },
   "IMG": {
-   "LIVE_VERIFIED": 12,
-   "TODO": 2
+   "LIVE_VERIFIED": 13,
+   "IN_PROGRESS": 1,
+   "FIXED": 1,
+   "TODO": 10
   },
   "META": {
    "LIVE_VERIFIED": 2
