@@ -17,7 +17,7 @@ export function inspectHTML(html,url,expectedLang=null){
  if(!html.includes('<link rel="canonical" href="https://global.rentbikehanoi.com'+url+'">'))errors.push("Canonical mismatch "+url);
  if(expectedLang&&!html.includes('<html lang="'+expectedLang+'"'))errors.push("Wrong language "+url);
  if(!html.includes('data-nav-version="2"')||!html.includes('data-footer-version="2"'))errors.push("Shared navigation/footer missing "+url);
- if(!html.includes('href="/assets/premium.css"'))errors.push("Premium CSS missing "+url);
+ if(!html.includes('href="/assets/premium.css"')&&!html.includes('href="/assets/site.css?v='))errors.push("Premium CSS missing "+url);
  if(url!=="/"&&!/<main\b[^>]*>[\s\S]*?<p\b/i.test(html))errors.push("No crawlable visible description "+url);
  return errors;
 }

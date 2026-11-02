@@ -23,7 +23,7 @@ test("every frozen live URL (25 at baseline) stays indexed and canonical",()=>{
   assert.equal((h.match(/<h1[\s>]/g)||[]).length,1,f);
   const lang=langs.find(x=>x.code===r.locale);
   if(lang)assert.ok(h.includes('<html lang="'+lang.htmlLang+'"'),f);
-  assert.ok(h.includes('href="/assets/premium.css"'),f);
+  assert.ok(/href="\/assets\/site\.css\?v=[0-9a-f]{10}"/.test(h)&&read("assets/site.css").includes(read("assets/premium.css").trim()),f);
   assert.ok(h.includes('href="/search/"'),f);
  }
 });

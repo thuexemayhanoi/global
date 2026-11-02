@@ -73,7 +73,7 @@ export function enhanceNavigation(files, locales, matrix) {
     html=html.replace('<div class="nav2-legal">','<div class="nav2-legal"><a href="/about/">'+esc(aboutLabel)+'</a><a href="/contact/">'+esc(contactLabel)+'</a>');
     html=html.replace('<a href="/privacy/">Privacy</a>','<a href="/privacy/">'+esc(privacyLabel)+'</a>').replace('<a href="/terms/">Terms</a>','<a href="/terms/">'+esc(termsLabel)+'</a>');
 
-    if(!html.includes('/assets/navigation.css'))html=html.replace('<link rel="stylesheet" href="/assets/styles.css">','<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">');
+    if(!html.includes('/assets/navigation.css')&&!html.includes('href="/assets/site.css?v='))html=html.replace('<link rel="stylesheet" href="/assets/styles.css">','<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">');
     // Marks <html class="js"> before first paint so the phone drawer can start collapsed exactly as premium.js will
     // leave it (no layout shift); without JavaScript the class is never set and the drawer stays open and usable.
     if(html.includes('class="nav2-drawer"')&&!html.includes(JS_FLAG))html=html.replace('</head>',JS_FLAG+'</head>');
