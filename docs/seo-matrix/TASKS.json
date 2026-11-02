@@ -1666,14 +1666,17 @@
     "PT-S23",
     "KO-S03"
    ],
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-img-srcset-01",
-   "commit": "",
-   "pr": "",
-   "deploy_run": "",
-   "live_qa": [],
-   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover; 100 files of 35,840-51,980 bytes (1200 px files: about 77-87 KB); build changes only the srcset of the 100 pages",
-   "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
+   "commit": "8d368d56735cc805cb055ae3ca64dac6cf76af22",
+   "pr": 170,
+   "deploy_run": 41387382544,
+   "live_qa": [
+    41387552854,
+    41387555372
+   ],
+   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover; 100 files of 35,840-51,980 bytes (1200 px files: about 77-87 KB); build changes only the srcset of the 100 pages; PR #170 validate passed; Pages deploy 41387382544; live markup QA 41387552854 (1,081/1,081 identical) and post-publish QA 41387555372 passed",
+   "next_action": "Done"
   },
   {
    "id": "IMG-SRCSET-02",
@@ -1781,14 +1784,17 @@
     "FR-S02",
     "FR-S19"
    ],
-   "status": "TODO",
-   "branch": "",
-   "commit": "",
-   "pr": "",
-   "deploy_run": "",
-   "live_qa": [],
-   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover",
-   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-02; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
+   "status": "LIVE_VERIFIED",
+   "branch": "seo/az-img-srcset-02",
+   "commit": "b5d754b7e786a438f7db547890d2893cf277b39a",
+   "pr": 171,
+   "deploy_run": 41388252953,
+   "live_qa": [
+    41388349155,
+    41388352012
+   ],
+   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover; 100 files of 37,792-60,960 bytes; the build changes only the srcset of the 100 pages; PR #171 validate passed; Pages deploy 41388252953; live markup QA 41388349155 (1,081/1,081 identical) and post-publish QA 41388352012 passed",
+   "next_action": "Done"
   },
   {
    "id": "IMG-SRCSET-03",
@@ -1896,14 +1902,17 @@
     "EN-S90",
     "EN-S25"
    ],
-   "status": "TODO",
-   "branch": "",
-   "commit": "",
-   "pr": "",
-   "deploy_run": "",
-   "live_qa": [],
-   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover",
-   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-03; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
+   "status": "LIVE_VERIFIED",
+   "branch": "seo/az-img-srcset-03",
+   "commit": "bc935bd394f36b8fb317272c1bf676c67336fcf7",
+   "pr": 172,
+   "deploy_run": 41388718502,
+   "live_qa": [
+    41388833959,
+    41388837119
+   ],
+   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover; 100 files of 34,608-58,146 bytes; the build changes only the srcset of these pages; PR #172 validate passed; Pages deploy 41388718502; live markup QA 41388833959 (1,081/1,081 identical) and post-publish QA 41388837119 passed",
+   "next_action": "Done"
   },
   {
    "id": "IMG-SRCSET-04",
@@ -2011,14 +2020,14 @@
     "ZH-S88",
     "PT-S05"
    ],
-   "status": "TODO",
-   "branch": "",
+   "status": "FIXED",
+   "branch": "seo/az-img-srcset-04",
    "commit": "",
    "pr": "",
    "deploy_run": "",
    "live_qa": [],
-   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover",
-   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-04; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
+   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover; 100 files of 34,124-50,038 bytes; the build changes only the srcset of these pages",
+   "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
   },
   {
    "id": "IMG-SRCSET-05",
