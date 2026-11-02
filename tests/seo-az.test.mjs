@@ -533,7 +533,7 @@ test("the back link on the privacy and terms pages is underlined, not told apart
 });
 
 test("each locale Pillar cites the official texts behind its advice, with localized titles (CONTENT-02)",async()=>{
- const {PILLAR_SOURCES}=await import("../scripts/build.mjs");
+ const {PILLAR_SOURCES}=await import("../scripts/pillar-sources.mjs");
  assert.equal(PILLAR_SOURCES.length,3);
  for(const l of locales){
   const html=page("/"+l.code+"/"),sec=html.match(/<section class="section article-references pillar-sources">([\s\S]*?)<\/section>/)?.[1];
