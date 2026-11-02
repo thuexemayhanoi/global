@@ -17,11 +17,6 @@
  "next_action": "Work the open IMG-SRCSET-nn batch: python3 scripts/images/cover_widths.py --batch=IMG-nn; node scripts/build.mjs; QA; PR; merge; deploy; live QA",
  "next_todo": [
   {
-   "id": "IMG-SRCSET-02",
-   "title": "800 px cover variant in srcset, batch 2 (the 100 URLs of IMG-02)",
-   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-02; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
-  },
-  {
    "id": "IMG-SRCSET-03",
    "title": "800 px cover variant in srcset, batch 3 (the 100 URLs of IMG-03)",
    "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-03; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
@@ -40,6 +35,11 @@
    "id": "IMG-SRCSET-06",
    "title": "800 px cover variant in srcset, batch 6 (the 100 URLs of IMG-06)",
    "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-06; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
+  },
+  {
+   "id": "IMG-SRCSET-07",
+   "title": "800 px cover variant in srcset, batch 7 (the 100 URLs of IMG-07)",
+   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-07; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
   }
  ],
  "blocked": [],
@@ -58,10 +58,10 @@
    "TODO": 3
   },
   "IMG": {
-   "LIVE_VERIFIED": 13,
+   "LIVE_VERIFIED": 14,
    "IN_PROGRESS": 1,
    "FIXED": 1,
-   "TODO": 10
+   "TODO": 9
   },
   "META": {
    "LIVE_VERIFIED": 2
