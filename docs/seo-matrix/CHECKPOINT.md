@@ -10,11 +10,11 @@ Generated 2026-11-01 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 
 ## Next TODO
 
-1. **IMG-SRCSET-11**: 800 px cover variant in srcset, batch 11 (the 64 URLs of IMG-11)
-2. **CONTENT-03**: No page prints its own publication or update date: show a localized 'Published · Updated' line with <time> from the dates that already feed JSON-LD and sitemap lastmod
-3. **CONTENT-04**: The About page promises that each guide lists the date its references were checked, but no reference shows it: print each source's checked_on
-4. **CONTENT-05**: Four FAQ questions are repeated word for word on two pages each (de, en, fr, nl): make them self-contained
-5. **CONTENT-06**: Dead reference: Hanoi 115 emergency centre page (capcuu115hanoi.com) answers 404 on two German guides
+1. **CONTENT-03**: No page prints its own publication or update date: show a localized 'Published · Updated' line with <time> from the dates that already feed JSON-LD and sitemap lastmod
+2. **CONTENT-04**: The About page promises that each guide lists the date its references were checked, but no reference shows it: print each source's checked_on
+3. **CONTENT-05**: Four FAQ questions are repeated word for word on two pages each (de, en, fr, nl): make them self-contained
+4. **CONTENT-06**: Dead reference: Hanoi 115 emergency centre page (capcuu115hanoi.com) answers 404 on two German guides
+5. **TECH-08**: English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label, Pillar hero labels) and aria-label on a <span> without a role
 
 ## URL status counts
 
@@ -33,7 +33,7 @@ Generated 2026-11-01 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 | HISTORY | 0 | 0 | 0 | 2 | 2 | 25 | 0 |
 | MATRIX | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
 | TECH | 3 | 0 | 0 | 0 | 0 | 7 | 0 |
-| IMG | 1 | 1 | 1 | 0 | 0 | 22 | 0 |
+| IMG | 0 | 1 | 1 | 0 | 0 | 23 | 0 |
 | META | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
 | CONTENT | 4 | 0 | 0 | 0 | 0 | 2 | 0 |
 
