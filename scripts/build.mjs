@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { createHash } from "node:crypto";
 import { enhanceNavigation } from "./navigation.mjs";
 import { applyPremium, createSearchPage } from "./premium.mjs";
 import { applyUltra, heroPreloadLink } from "./ultra.mjs";
@@ -83,6 +84,19 @@ for(const key of Object.keys(articles)) {
  basePages[key]=articles[key];
 }
 const allPages=applyUltra(applyPremium(enhanceNavigation(basePages,data,menuMatrix),menuMatrix,data),menuMatrix,data);
+// One stylesheet request per page instead of four render-blocking ones (Matrix task TECH-11). assets/site.css is the
+// four stylesheets concatenated in the order every page loaded them (styles, navigation, premium, ultra), so the
+// cascade is unchanged; the version is the content hash. The four source files stay as the editable parts.
+const CSS_PARTS=["assets/styles.css","assets/navigation.css","assets/premium.css","assets/ultra.css"];
+const siteCss=CSS_PARTS.map(f=>String(allPages[f]??fs.readFileSync(path.join(root,f),"utf8")).replace(/\s+$/,"")).join("\n")+"\n";
+allPages["assets/site.css"]=siteCss;
+const siteCssHref="/assets/site.css?v="+createHash("sha256").update(siteCss).digest("hex").slice(0,10);
+for(const [f,h] of Object.entries(allPages)){
+ if(!f.endsWith(".html")||!h.includes('<link rel="stylesheet" href="/assets/styles.css">'))continue;
+ allPages[f]=h.replace('<link rel="stylesheet" href="/assets/styles.css">','<link rel="stylesheet" href="'+siteCssHref+'">')
+  .replace('<link rel="stylesheet" href="/assets/navigation.css">',"").replace('<link rel="stylesheet" href="/assets/premium.css">',"")
+  .replace(/<link rel="stylesheet" href="\/assets\/ultra\.css\?v=[^"]+">/,"");
+}
 // Sitemaps are derived ONLY from actual approved/generated HTML (not IDEA rows).
 // Root sitemap.xml is an index; each locale and global/utility URLs have their own child.
 const lastmod=siteLastmod(root,menuMatrix);

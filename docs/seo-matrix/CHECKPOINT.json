@@ -3,11 +3,11 @@
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
  "current_task": {
-  "id": "TECH-10",
+  "id": "TECH-11",
   "phase": "TECH",
-  "title": "Hreflang equivalence review for the topic slots published in all 10 languages (Hubs H01–H04, Supporting S01–S08)",
+  "title": "Four render-blocking stylesheets on every page; most of ultra.css unused per template",
   "status": "FIXED",
-  "branch": "seo/az-tech-10",
+  "branch": "seo/az-tech-11",
   "commit": "",
   "pr": "",
   "deploy_run": "",
@@ -15,13 +15,7 @@
   "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
  },
  "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED",
- "next_todo": [
-  {
-   "id": "TECH-11",
-   "title": "Four render-blocking stylesheets on every page; most of ultra.css unused per template",
-   "next_action": "Merge into one versioned stylesheet (or inline critical CSS), remove unused rules; keep build --check deterministic; Lighthouse re-run on the template sample"
-  }
- ],
+ "next_todo": [],
  "blocked": [],
  "owner_actions": "docs/seo-audit/OWNER-ACTIONS.md (OWNER_ACTIONS_LAST)",
  "task_counts": {
@@ -34,9 +28,8 @@
    "LIVE_VERIFIED": 1
   },
   "TECH": {
-   "LIVE_VERIFIED": 8,
-   "FIXED": 1,
-   "TODO": 1
+   "LIVE_VERIFIED": 9,
+   "FIXED": 1
   },
   "IMG": {
    "LIVE_VERIFIED": 25

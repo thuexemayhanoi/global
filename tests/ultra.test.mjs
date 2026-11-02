@@ -12,7 +12,7 @@ test("all generated pages have offline Ultra assets, one H1 and intact canonical
  assert.ok(read("assets/ultra.js").length<8000);
  for(const p of files){
   const h=read(p);
-  assert.ok(h.includes('href="/assets/ultra.css?v=responsive-20261029-1"'),p);
+  assert.ok(/href="\/assets\/site\.css\?v=[0-9a-f]{10}"/.test(h)&&!h.includes('href="/assets/ultra.css'),p);
   assert.ok(h.includes('src="/assets/ultra.js"'),p);
   assert.equal(h.split("<h1").length-1,1,p);
   if(p!=="404.html")assert.ok(h.includes('rel="canonical"'),p);
@@ -110,7 +110,8 @@ test("responsive photo CSS prevents Safari shrink-to-fit and keeps galleries wit
  assert.ok(css.length<24000,"CSS budget exceeded");
  for(const route of ["index.html",...locales.map(x=>x.code+"/index.html")]){
   const html=read(route);
-  assert.ok(html.includes('href="/assets/ultra.css?v=responsive-20261029-1"'),route);
+  // The responsive hotfix ships inside the one bundled stylesheet (TECH-11).
+  assert.ok(/href="\/assets\/site\.css\?v=[0-9a-f]{10}"/.test(html)&&read("assets/site.css").includes(rules.slice(0,200)),route);
   assert.ok(html.includes('name="viewport" content="width=device-width, initial-scale=1"'),route);
  }
 });
