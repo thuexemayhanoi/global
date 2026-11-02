@@ -2942,14 +2942,17 @@
    "title": "Four render-blocking stylesheets on every page; most of ultra.css unused per template",
    "scope": "assets/styles.css, navigation.css, premium.css, ultra.css; <head> of every page (scripts/build.mjs, premium.mjs, ultra.mjs)",
    "selector": "Lighthouse render-blocking-resources and unused-css-rules on 30 of 30 runs (reports/seo/data/raw/lighthouse-20261101.json)",
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-tech-11",
-   "commit": "",
-   "pr": "",
-   "deploy_run": "",
-   "live_qa": [],
-   "evidence": "Re-audit 2026-11-01: Lighthouse estimates 0.3–0.5 s mobile savings; lab LCP already ≤ 2.33 s and performance score 100, so low priority. Findings F-S-RENDER-BLOCKING-CSS-0001; assets/site.css bundles the four stylesheets in their load order; one stylesheet link per page (content-hash version); 12 pages x 2 widths pixel-identical; Lighthouse mobile lab on a local HTTP/1.0 server: FCP -240 to -300 ms on all three pages, LCP -75 ms (guide), -244 ms (checklist), +225 ms (Pillar /de/, repeated twice); production serves HTTP/2, so field effect to be read from CrUX once connected",
-   "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
+   "commit": "80712279f866ed4efd9e60b2385f8c1662b840af",
+   "pr": 186,
+   "deploy_run": 41401465167,
+   "live_qa": [
+    41401595383,
+    41401598179
+   ],
+   "evidence": "Re-audit 2026-11-01: Lighthouse estimates 0.3–0.5 s mobile savings; lab LCP already ≤ 2.33 s and performance score 100, so low priority. Findings F-S-RENDER-BLOCKING-CSS-0001; assets/site.css bundles the four stylesheets in their load order; one stylesheet link per page (content-hash version); 12 pages x 2 widths pixel-identical; Lighthouse mobile lab on a local HTTP/1.0 server: FCP -240 to -300 ms on all three pages, LCP -75 ms (guide), -244 ms (checklist), +225 ms (Pillar /de/, repeated twice); production serves HTTP/2, so field effect to be read from CrUX once connected; PR #186 validate passed; Pages deploy 41401465167; live markup QA 41401595383 (1,081/1,081 identical) and post-publish QA 41401598179 passed",
+   "next_action": "Done"
   }
  ]
 }

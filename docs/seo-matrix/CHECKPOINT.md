@@ -4,9 +4,8 @@ Generated 2026-11-01 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 
 ## Current task
 
-- **TECH-11** (TECH): Four render-blocking stylesheets on every page; most of ultra.css unused per template
-- Status: **FIXED** · branch `seo/az-tech-11` · PR - · merge `-` · deploy - · live QA -
-- NEXT_ACTION: Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED
+- None: every task on the board is LIVE_VERIFIED or BLOCKED.
+- NEXT_ACTION: Re-run the audit pipeline (collect → analyze → ledger → az_matrix → workbook) and docs/seo-audit/tools/tech_reaudit.py on current main; add a task to TASKS.json only for a verified new finding on an existing URL; otherwise monitor (indexing and rankings stay unmeasured without Search Console)
 
 ## Next TODO
 
@@ -28,7 +27,7 @@ Generated 2026-11-01 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 |---|---|---|---|---|---|---|---|
 | HISTORY | 0 | 0 | 0 | 2 | 2 | 25 | 0 |
 | MATRIX | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
-| TECH | 0 | 0 | 1 | 0 | 0 | 9 | 0 |
+| TECH | 0 | 0 | 0 | 0 | 0 | 10 | 0 |
 | IMG | 0 | 0 | 0 | 0 | 0 | 25 | 0 |
 | META | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
 | CONTENT | 0 | 0 | 0 | 0 | 0 | 6 | 0 |
