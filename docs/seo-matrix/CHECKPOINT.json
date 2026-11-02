@@ -3,23 +3,23 @@
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
  "current_task": {
-  "id": "IMG-LCP",
+  "id": "IMG-SRCSET",
   "phase": "IMG",
-  "title": "Guide cover image in the first viewport is lazy-loaded and often the LCP element: load it eagerly with fetchpriority=high on Hub, Supporting and checklist pages",
-  "status": "TODO",
+  "title": "Cover srcset offers only 640w and 1200w: add an intermediate width so phones stop downloading the 1200 px file",
+  "status": "IN_PROGRESS",
   "branch": "",
   "commit": "",
   "pr": "",
   "deploy_run": "",
   "live_qa": [],
-  "next_action": "Set loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" on the cover image only (keep width/height, srcset, sizes, alt); keep lazy for images further down; build --check; update tests/seo-az.test.mjs, which today asserts loading=\"lazy\" on every cover (IMG-*), to expect eager + fetchpriority on the cover; tests; then re-run docs/seo-audit/tools/site_browser_audit.cjs on the template sample"
+  "next_action": "Work the open IMG-SRCSET-nn batch: python3 scripts/images/cover_widths.py --batch=IMG-nn; node scripts/build.mjs; QA; PR; merge; deploy; live QA"
  },
- "next_action": "Set loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" on the cover image only (keep width/height, srcset, sizes, alt); keep lazy for images further down; build --check; update tests/seo-az.test.mjs, which today asserts loading=\"lazy\" on every cover (IMG-*), to expect eager + fetchpriority on the cover; tests; then re-run docs/seo-audit/tools/site_browser_audit.cjs on the template sample",
+ "next_action": "Work the open IMG-SRCSET-nn batch: python3 scripts/images/cover_widths.py --batch=IMG-nn; node scripts/build.mjs; QA; PR; merge; deploy; live QA",
  "next_todo": [
   {
-   "id": "IMG-SRCSET",
-   "title": "Cover srcset offers only 640w and 1200w: add an intermediate width so phones stop downloading the 1200 px file",
-   "next_action": "Generate an 800w (or 960w) WebP from the same cover, add it to srcset, keep sizes/width/height/alt; regenerate the image matrix; max 100 images per batch; extend the cover checks in tests/seo-az.test.mjs (today: 1200 + 640 variants) to the new width"
+   "id": "IMG-SRCSET-11",
+   "title": "800 px cover variant in srcset, batch 11 (the 64 URLs of IMG-11)",
+   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-11; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
   },
   {
    "id": "CONTENT-03",
@@ -58,8 +58,10 @@
    "TODO": 3
   },
   "IMG": {
-   "LIVE_VERIFIED": 12,
-   "TODO": 2
+   "LIVE_VERIFIED": 22,
+   "IN_PROGRESS": 1,
+   "FIXED": 1,
+   "TODO": 1
   },
   "META": {
    "LIVE_VERIFIED": 2

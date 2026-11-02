@@ -27,7 +27,7 @@ export const COVER_SIZES="(max-width: 900px) calc(100vw - 36px), 760px";
 // Checklist covers sit in the first viewport on phones and desktops: load them eagerly with high priority. Hub/Supporting
 // covers follow a longer lead and are below the fold on phones, where an eager cover delayed the text LCP by ~0.45 s in
 // Lighthouse (task IMG-LCP, 2026-11-02), so they stay lazy.
-export const coverFigure=(c,eager=false)=>'<figure class="article-cover"><img src="'+esc(c.src)+'" srcset="'+esc(c.src640)+' 640w, '+esc(c.src)+' 1200w" sizes="'+COVER_SIZES+'" width="'+c.width+'" height="'+c.height+'" '+(eager?'loading="eager" fetchpriority="high"':'loading="lazy"')+' decoding="async" alt="'+esc(c.alt)+'"></figure>';
+export const coverFigure=(c,eager=false)=>'<figure class="article-cover"><img src="'+esc(c.src)+'" srcset="'+esc(c.src640)+' 640w, '+(c.src800?esc(c.src800)+' 800w, ':'')+esc(c.src)+' 1200w" sizes="'+COVER_SIZES+'" width="'+c.width+'" height="'+c.height+'" '+(eager?'loading="eager" fetchpriority="high"':'loading="lazy"')+' decoding="async" alt="'+esc(c.alt)+'"></figure>';
 const withCover=(html,c)=>{if(!c)return html;const at=html.indexOf("</p>");return at<0?coverFigure(c)+html:html.slice(0,at+4)+coverFigure(c)+html.slice(at+4);};
 const esc=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const localeCodes=new Set(["vi","en","de","fr","es","nl","zh","pt","ko","ja"]);
