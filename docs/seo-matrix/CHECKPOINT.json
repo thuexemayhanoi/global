@@ -17,11 +17,6 @@
  "next_action": "Work the open IMG-SRCSET-nn batch: python3 scripts/images/cover_widths.py --batch=IMG-nn; node scripts/build.mjs; QA; PR; merge; deploy; live QA",
  "next_todo": [
   {
-   "id": "IMG-SRCSET-09",
-   "title": "800 px cover variant in srcset, batch 9 (the 100 URLs of IMG-09)",
-   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-09; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
-  },
-  {
    "id": "IMG-SRCSET-10",
    "title": "800 px cover variant in srcset, batch 10 (the 100 URLs of IMG-10)",
    "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-10; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
@@ -40,6 +35,11 @@
    "id": "CONTENT-04",
    "title": "The About page promises that each guide lists the date its references were checked, but no reference shows it: print each source's checked_on",
    "next_action": "Print the localized checked date after each reference title (or, if the owner prefers, correct the About page wording); no source or claim changes"
+  },
+  {
+   "id": "CONTENT-05",
+   "title": "Four FAQ questions are repeated word for word on two pages each (de, en, fr, nl): make them self-contained",
+   "next_action": "Rephrase each question with the page's topic (answers unchanged); FAQPage regenerates from the visible text; page-updates entry with the merge date"
   }
  ],
  "blocked": [],
@@ -58,10 +58,10 @@
    "TODO": 3
   },
   "IMG": {
-   "LIVE_VERIFIED": 20,
+   "LIVE_VERIFIED": 21,
    "IN_PROGRESS": 1,
    "FIXED": 1,
-   "TODO": 3
+   "TODO": 2
   },
   "META": {
    "LIVE_VERIFIED": 2
