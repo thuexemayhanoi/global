@@ -3,18 +3,18 @@
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
  "current_task": {
-  "id": "IMG-SRCSET",
-  "phase": "IMG",
-  "title": "Cover srcset offers only 640w and 1200w: add an intermediate width so phones stop downloading the 1200 px file",
-  "status": "IN_PROGRESS",
-  "branch": "",
+  "id": "CONTENT-06",
+  "phase": "CONTENT",
+  "title": "Dead reference: Hanoi 115 emergency centre page (capcuu115hanoi.com) answers 404 on two German guides",
+  "status": "FIXED",
+  "branch": "seo/az-content-06",
   "commit": "",
   "pr": "",
   "deploy_run": "",
   "live_qa": [],
-  "next_action": "Work the open IMG-SRCSET-nn batch: python3 scripts/images/cover_widths.py --batch=IMG-nn; node scripts/build.mjs; QA; PR; merge; deploy; live QA"
+  "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
  },
- "next_action": "Work the open IMG-SRCSET-nn batch: python3 scripts/images/cover_widths.py --batch=IMG-nn; node scripts/build.mjs; QA; PR; merge; deploy; live QA",
+ "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED",
  "next_todo": [
   {
    "id": "CONTENT-03",
@@ -32,14 +32,14 @@
    "next_action": "Rephrase each question with the page's topic (answers unchanged); FAQPage regenerates from the visible text; page-updates entry with the merge date"
   },
   {
-   "id": "CONTENT-06",
-   "title": "Dead reference: Hanoi 115 emergency centre page (capcuu115hanoi.com) answers 404 on two German guides",
-   "next_action": "Find the page's new address on capcuu115hanoi.com or an archived copy that still states the cited facts (free 115 call, phone first-aid guidance, distance-based fee); otherwise cite another official source (Sở Y tế Hà Nội) and adjust the sentence; update checked_on; reviewed PR, build --check, tests, then reference-link-check.yml shows BROKEN 0"
-  },
-  {
    "id": "TECH-08",
    "title": "English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label, Pillar hero labels) and aria-label on a <span> without a role",
    "next_action": "Localize the three strings per locale (reuse the language-menu label table), replace the span's aria-label with visually hidden localized text; build --check, nav-qa, language-audit, tests; re-run deep_audit.py and the W3C validator"
+  },
+  {
+   "id": "TECH-10",
+   "title": "Hreflang equivalence review for the topic slots published in all 10 languages (Hubs H01–H04, Supporting S01–S08)",
+   "next_action": "Compare each cluster's 10 pages (intent, scope, sections). Only where they are versions of the same page: add reciprocal hreflang (no x-default without a neutral page) with selective re-freeze and seo-guard PASS; record the decision per cluster either way"
   }
  ],
  "blocked": [],
@@ -58,16 +58,15 @@
    "TODO": 3
   },
   "IMG": {
-   "LIVE_VERIFIED": 23,
-   "IN_PROGRESS": 1,
-   "FIXED": 1
+   "LIVE_VERIFIED": 25
   },
   "META": {
    "LIVE_VERIFIED": 2
   },
   "CONTENT": {
    "LIVE_VERIFIED": 2,
-   "TODO": 4
+   "TODO": 3,
+   "FIXED": 1
   }
  },
  "url_counts": {
@@ -82,15 +81,17 @@
    "NOT_FORCED": 5
   },
   "content_status": {
-   "OK": 1056,
+   "OK": 1054,
    "LIVE_VERIFIED": 18,
+   "FIXED": 2,
    "NOT_FORCED": 5
   },
   "tech_status": {
    "OK": 1079
   },
   "status": {
-   "LIVE_VERIFIED": 1074,
+   "LIVE_VERIFIED": 1072,
+   "FIXED": 2,
    "OK": 5
   }
  },
