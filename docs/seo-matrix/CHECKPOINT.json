@@ -3,11 +3,11 @@
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
  "current_task": {
-  "id": "CONTENT-06",
+  "id": "CONTENT-03",
   "phase": "CONTENT",
-  "title": "Dead reference: Hanoi 115 emergency centre page (capcuu115hanoi.com) answers 404 on two German guides",
+  "title": "No page prints its own publication or update date: show a localized 'Published · Updated' line with <time> from the dates that already feed JSON-LD and sitemap lastmod",
   "status": "FIXED",
-  "branch": "seo/az-content-06",
+  "branch": "seo/az-content-04",
   "commit": "",
   "pr": "",
   "deploy_run": "",
@@ -16,16 +16,6 @@
  },
  "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED",
  "next_todo": [
-  {
-   "id": "CONTENT-03",
-   "title": "No page prints its own publication or update date: show a localized 'Published · Updated' line with <time> from the dates that already feed JSON-LD and sitemap lastmod",
-   "next_action": "Render the dates beside the byline/reading time from the same source as JSON-LD (never a new or bumped date); verify printed date = JSON-LD dateModified = sitemap lastmod with deep_audit.py; build --check, seo-guard, fact-guard, tests"
-  },
-  {
-   "id": "CONTENT-04",
-   "title": "The About page promises that each guide lists the date its references were checked, but no reference shows it: print each source's checked_on",
-   "next_action": "Print the localized checked date after each reference title (or, if the owner prefers, correct the About page wording); no source or claim changes"
-  },
   {
    "id": "CONTENT-05",
    "title": "Four FAQ questions are repeated word for word on two pages each (de, en, fr, nl): make them self-contained",
@@ -40,6 +30,11 @@
    "id": "TECH-10",
    "title": "Hreflang equivalence review for the topic slots published in all 10 languages (Hubs H01–H04, Supporting S01–S08)",
    "next_action": "Compare each cluster's 10 pages (intent, scope, sections). Only where they are versions of the same page: add reciprocal hreflang (no x-default without a neutral page) with selective re-freeze and seo-guard PASS; record the decision per cluster either way"
+  },
+  {
+   "id": "TECH-11",
+   "title": "Four render-blocking stylesheets on every page; most of ultra.css unused per template",
+   "next_action": "Merge into one versioned stylesheet (or inline critical CSS), remove unused rules; keep build --check deterministic; Lighthouse re-run on the template sample"
   }
  ],
  "blocked": [],
@@ -64,9 +59,9 @@
    "LIVE_VERIFIED": 2
   },
   "CONTENT": {
-   "LIVE_VERIFIED": 2,
-   "TODO": 3,
-   "FIXED": 1
+   "LIVE_VERIFIED": 3,
+   "FIXED": 2,
+   "TODO": 1
   }
  },
  "url_counts": {
@@ -82,16 +77,14 @@
   },
   "content_status": {
    "OK": 1054,
-   "LIVE_VERIFIED": 18,
-   "FIXED": 2,
+   "LIVE_VERIFIED": 20,
    "NOT_FORCED": 5
   },
   "tech_status": {
    "OK": 1079
   },
   "status": {
-   "LIVE_VERIFIED": 1072,
-   "FIXED": 2,
+   "LIVE_VERIFIED": 1074,
    "OK": 5
   }
  },
