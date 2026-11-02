@@ -109,7 +109,8 @@ function articleDecor(html,code){
  const tr=classes(code),match=html.match(/<nav class="premium-toc" aria-label="([^"]+)"><strong>[^<]+<\/strong><ol>([\s\S]*?)<\/ol><\/nav>/);
  const article=html.match(/<div class="premium-reading-content">([\s\S]*?)<\/div><aside class="premium-rail">/);
  if(!article)return html;
- const estimated=Math.max(1,Math.ceil(plaintext(article[1]).split(/\s+/).filter(Boolean).length/210));
+ // Reference check-date notes (CONTENT-04) are not reading matter: leave them out of the estimate.
+ const estimated=Math.max(1,Math.ceil(plaintext(article[1].replace(/ <span class="ref-checked">[\s\S]*?<\/span>/g,"")).split(/\s+/).filter(Boolean).length/210));
  const top='<div class="ultra-reading-tools"><span class="ultra-reading-time" aria-label="Estimated reading time">◷ ≈'+estimated+' min</span>'+pageDates(html,code)+'<div class="ultra-reading-buttons"><button type="button" data-ultra-copy hidden>'+clean(tr[7])+'</button><button type="button" data-ultra-focus hidden aria-pressed="false">'+clean(tr[8])+'</button></div><span class="ultra-copy-feedback" aria-live="polite"></span></div>';
  const mobile=match?'<details class="ultra-mobile-toc"><summary>☷ '+clean(tr[9])+' <span aria-hidden="true">⌄</span></summary><nav aria-label="'+clean(match[1])+'"><ol>'+match[2]+'</ol></nav></details>':"";
  // Reading tools and mobile contents appear AFTER the meaningful article intro.
