@@ -3,43 +3,43 @@
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
  "current_task": {
-  "id": "IMG-SRCSET",
-  "phase": "IMG",
-  "title": "Cover srcset offers only 640w and 1200w: add an intermediate width so phones stop downloading the 1200 px file",
-  "status": "IN_PROGRESS",
-  "branch": "",
+  "id": "CONTENT-06",
+  "phase": "CONTENT",
+  "title": "Dead reference: Hanoi 115 emergency centre page (capcuu115hanoi.com) answers 404 on two German guides",
+  "status": "FIXED",
+  "branch": "seo/az-content-06",
   "commit": "",
   "pr": "",
   "deploy_run": "",
   "live_qa": [],
-  "next_action": "Work the open IMG-SRCSET-nn batch: python3 scripts/images/cover_widths.py --batch=IMG-nn; node scripts/build.mjs; QA; PR; merge; deploy; live QA"
+  "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
  },
- "next_action": "Work the open IMG-SRCSET-nn batch: python3 scripts/images/cover_widths.py --batch=IMG-nn; node scripts/build.mjs; QA; PR; merge; deploy; live QA",
+ "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED",
  "next_todo": [
   {
-   "id": "IMG-SRCSET-02",
-   "title": "800 px cover variant in srcset, batch 2 (the 100 URLs of IMG-02)",
-   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-02; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
+   "id": "CONTENT-03",
+   "title": "No page prints its own publication or update date: show a localized 'Published · Updated' line with <time> from the dates that already feed JSON-LD and sitemap lastmod",
+   "next_action": "Render the dates beside the byline/reading time from the same source as JSON-LD (never a new or bumped date); verify printed date = JSON-LD dateModified = sitemap lastmod with deep_audit.py; build --check, seo-guard, fact-guard, tests"
   },
   {
-   "id": "IMG-SRCSET-03",
-   "title": "800 px cover variant in srcset, batch 3 (the 100 URLs of IMG-03)",
-   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-03; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
+   "id": "CONTENT-04",
+   "title": "The About page promises that each guide lists the date its references were checked, but no reference shows it: print each source's checked_on",
+   "next_action": "Print the localized checked date after each reference title (or, if the owner prefers, correct the About page wording); no source or claim changes"
   },
   {
-   "id": "IMG-SRCSET-04",
-   "title": "800 px cover variant in srcset, batch 4 (the 100 URLs of IMG-04)",
-   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-04; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
+   "id": "CONTENT-05",
+   "title": "Four FAQ questions are repeated word for word on two pages each (de, en, fr, nl): make them self-contained",
+   "next_action": "Rephrase each question with the page's topic (answers unchanged); FAQPage regenerates from the visible text; page-updates entry with the merge date"
   },
   {
-   "id": "IMG-SRCSET-05",
-   "title": "800 px cover variant in srcset, batch 5 (the 100 URLs of IMG-05)",
-   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-05; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
+   "id": "TECH-08",
+   "title": "English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label, Pillar hero labels) and aria-label on a <span> without a role",
+   "next_action": "Localize the three strings per locale (reuse the language-menu label table), replace the span's aria-label with visually hidden localized text; build --check, nav-qa, language-audit, tests; re-run deep_audit.py and the W3C validator"
   },
   {
-   "id": "IMG-SRCSET-06",
-   "title": "800 px cover variant in srcset, batch 6 (the 100 URLs of IMG-06)",
-   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-06; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
+   "id": "TECH-10",
+   "title": "Hreflang equivalence review for the topic slots published in all 10 languages (Hubs H01–H04, Supporting S01–S08)",
+   "next_action": "Compare each cluster's 10 pages (intent, scope, sections). Only where they are versions of the same page: add reciprocal hreflang (no x-default without a neutral page) with selective re-freeze and seo-guard PASS; record the decision per cluster either way"
   }
  ],
  "blocked": [],
@@ -58,17 +58,15 @@
    "TODO": 3
   },
   "IMG": {
-   "LIVE_VERIFIED": 13,
-   "IN_PROGRESS": 1,
-   "FIXED": 1,
-   "TODO": 10
+   "LIVE_VERIFIED": 25
   },
   "META": {
    "LIVE_VERIFIED": 2
   },
   "CONTENT": {
    "LIVE_VERIFIED": 2,
-   "TODO": 4
+   "TODO": 3,
+   "FIXED": 1
   }
  },
  "url_counts": {
@@ -83,15 +81,17 @@
    "NOT_FORCED": 5
   },
   "content_status": {
-   "OK": 1056,
+   "OK": 1054,
    "LIVE_VERIFIED": 18,
+   "FIXED": 2,
    "NOT_FORCED": 5
   },
   "tech_status": {
    "OK": 1079
   },
   "status": {
-   "LIVE_VERIFIED": 1074,
+   "LIVE_VERIFIED": 1072,
+   "FIXED": 2,
    "OK": 5
   }
  },
