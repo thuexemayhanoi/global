@@ -13,7 +13,8 @@ const data=JSON.parse(fs.readFileSync(path.join(root,"content/locales.json"),"ut
 const pageDates=reviewedPageDates(root);
 const dated=p=>{const d=pageDates.get(p);return d?{datePublished:d.published,dateModified:d.modified}:{};};
 // Law 36/2024/QH15 (licence classes, documents to carry), Decree 67/2023/ND-CP (compulsory insurance), Civil Code 91/2015/QH13 (lease, deposit).
-export const PILLAR_SOURCES=["https://chinhphu.vn/?pageid=27160&docid=211194&classid=1&orggroupid=1","https://vanban.chinhphu.vn/?pageid=27160&docid=208599","https://vbpl.vn/van-ban/chi-tiet/bo-luat-dan-su-so-91-2015-qh13--95942"];
+import { PILLAR_SOURCES } from "./pillar-sources.mjs";
+export { PILLAR_SOURCES };
 const siteOutput=function siteOutput(locales,siteInfo){
   const OUT={}; const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
   // Pillar (locale home) sources, task CONTENT-02: the official texts behind its advice on riding eligibility, compulsory
