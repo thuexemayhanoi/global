@@ -312,6 +312,23 @@ export function topicLinks(row,matrix,topical,code,ix=rowsIndex(matrix)){
  }
  return "";
 }
+// Reciprocal hreflang only between article versions that are translations of one another (TECH-10,
+// data/seo/hreflang-equivalents.json); every other Hub/Supporting article keeps none.
+let EQUIV=null;
+function equivalents(){
+ if(EQUIV)return EQUIV;
+ EQUIV=new Map();
+ const f=path.join(process.cwd(),"data/seo/hreflang-equivalents.json");
+ if(fs.existsSync(f))for(const g of JSON.parse(fs.readFileSync(f,"utf8")).groups)for(const id of g.ids)EQUIV.set(id,g.ids);
+ return EQUIV;
+}
+const HTML_LANG={zh:"zh-CN"};
+function hreflangLinks(row,matrix){
+ const ids=equivalents().get(row?.id);
+ if(!ids)return "";
+ const byId=new Map(matrix.rows.map(r=>[r.id,r]));
+ return ids.map(id=>byId.get(id)).filter(r=>r&&r.status==="PUBLISHED").map(r=>'<link rel="alternate" hreflang="'+(HTML_LANG[r.locale]||r.locale)+'" href="'+SITE+r.url+'">').join("\n")+"\n";
+}
 export function renderArticle(packet,locale,row,matrix,topical=null,ix=rowsIndex(matrix),displayLead=packet.meta_description,reviewedUpdate=null){
  const htmlLang=locale.htmlLang||locale.code,url=SITE+row.url;
  const parent=ix.byId.get(row.parent_id);
@@ -338,7 +355,7 @@ export function renderArticle(packet,locale,row,matrix,topical=null,ix=rowsIndex
  const json=JSON.stringify(data).replace(/</g,"\\u003c");
  const social='<meta property="og:site_name" content="'+esc(BRAND)+'"><meta property="og:image" content="'+SITE+img.path+'"><meta property="og:image:width" content="'+img.width+'"><meta property="og:image:height" content="'+img.height+'">\n<meta name="twitter:card" content="summary_large_image">';
  const crumbNav=trail.map(c=>'<a href="'+esc(c.url)+'">'+esc(c.name)+'</a>').join(' <span aria-hidden="true">›</span> ');
- return '<!doctype html>\n<html lang="'+esc(htmlLang)+'"><head>\n<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<title>'+esc(packet.title)+'</title>\n<meta name="description" content="'+esc(packet.meta_description)+'">\n<link rel="canonical" href="'+esc(url)+'">\n<meta property="og:type" content="article"><meta property="og:title" content="'+esc(packet.title)+'"><meta property="og:description" content="'+esc(packet.meta_description)+'"><meta property="og:url" content="'+esc(url)+'">\n'+social+'\n<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">\n<script type="application/ld+json">'+json+'</script>\n</head><body><a class="skip" href="#main">'+esc(ui(locale.code).skip)+'</a><main id="main"><div class="container"><nav class="crumb" aria-label="'+esc(ui(locale.code).crumb)+'">'+crumbNav+'</nav><article class="article"><h1>'+esc(packet.h1)+'</h1><p class="article-lead">'+esc(displayLead)+'</p>'+cover+'<div class="article-copy">'+withCover(renderMarkdown(packet.body_markdown),coverFor(row.id))+'</div>'+topicLinks(row,matrix,topical,locale.code,ix)+'<section class="article-references"><h2>'+esc((ARTICLE_LABELS[locale.code]||ARTICLE_LABELS.en)[2])+'</h2><ol>'+sources+'</ol></section>'+(packet.publication?'<p class="article-provenance">'+esc(AI_DISCLOSURE[locale.code]||AI_DISCLOSURE.en)+'</p>':'')+'<p><a href="'+esc(parentURL)+'">← '+esc(parentLabel)+'</a></p></article></div></main></body></html>\n';
+ return '<!doctype html>\n<html lang="'+esc(htmlLang)+'"><head>\n<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">\n<title>'+esc(packet.title)+'</title>\n<meta name="description" content="'+esc(packet.meta_description)+'">\n<link rel="canonical" href="'+esc(url)+'">\n'+hreflangLinks(row,matrix)+'<meta property="og:type" content="article"><meta property="og:title" content="'+esc(packet.title)+'"><meta property="og:description" content="'+esc(packet.meta_description)+'"><meta property="og:url" content="'+esc(url)+'">\n'+social+'\n<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">\n<link rel="stylesheet" href="/assets/styles.css">\n<link rel="stylesheet" href="/assets/navigation.css">\n<script type="application/ld+json">'+json+'</script>\n</head><body><a class="skip" href="#main">'+esc(ui(locale.code).skip)+'</a><main id="main"><div class="container"><nav class="crumb" aria-label="'+esc(ui(locale.code).crumb)+'">'+crumbNav+'</nav><article class="article"><h1>'+esc(packet.h1)+'</h1><p class="article-lead">'+esc(displayLead)+'</p>'+cover+'<div class="article-copy">'+withCover(renderMarkdown(packet.body_markdown),coverFor(row.id))+'</div>'+topicLinks(row,matrix,topical,locale.code,ix)+'<section class="article-references"><h2>'+esc((ARTICLE_LABELS[locale.code]||ARTICLE_LABELS.en)[2])+'</h2><ol>'+sources+'</ol></section>'+(packet.publication?'<p class="article-provenance">'+esc(AI_DISCLOSURE[locale.code]||AI_DISCLOSURE.en)+'</p>':'')+'<p><a href="'+esc(parentURL)+'">← '+esc(parentLabel)+'</a></p></article></div></main></body></html>\n';
 }
 export function generateApprovedArticles(root,matrix,locales){
  const dir=path.join(root,"content/articles");
