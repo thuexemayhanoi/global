@@ -10,11 +10,11 @@ Generated 2026-11-01 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 
 ## Next TODO
 
-1. **IMG-SRCSET-06**: 800 px cover variant in srcset, batch 6 (the 100 URLs of IMG-06)
-2. **IMG-SRCSET-07**: 800 px cover variant in srcset, batch 7 (the 100 URLs of IMG-07)
-3. **IMG-SRCSET-08**: 800 px cover variant in srcset, batch 8 (the 100 URLs of IMG-08)
-4. **IMG-SRCSET-09**: 800 px cover variant in srcset, batch 9 (the 100 URLs of IMG-09)
-5. **IMG-SRCSET-10**: 800 px cover variant in srcset, batch 10 (the 100 URLs of IMG-10)
+1. **IMG-SRCSET-07**: 800 px cover variant in srcset, batch 7 (the 100 URLs of IMG-07)
+2. **IMG-SRCSET-08**: 800 px cover variant in srcset, batch 8 (the 100 URLs of IMG-08)
+3. **IMG-SRCSET-09**: 800 px cover variant in srcset, batch 9 (the 100 URLs of IMG-09)
+4. **IMG-SRCSET-10**: 800 px cover variant in srcset, batch 10 (the 100 URLs of IMG-10)
+5. **IMG-SRCSET-11**: 800 px cover variant in srcset, batch 11 (the 64 URLs of IMG-11)
 
 ## URL status counts
 
@@ -33,7 +33,7 @@ Generated 2026-11-01 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 | HISTORY | 0 | 0 | 0 | 2 | 2 | 25 | 0 |
 | MATRIX | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
 | TECH | 3 | 0 | 0 | 0 | 0 | 7 | 0 |
-| IMG | 6 | 1 | 1 | 0 | 0 | 17 | 0 |
+| IMG | 5 | 1 | 1 | 0 | 0 | 18 | 0 |
 | META | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
 | CONTENT | 4 | 0 | 0 | 0 | 0 | 2 | 0 |
 
