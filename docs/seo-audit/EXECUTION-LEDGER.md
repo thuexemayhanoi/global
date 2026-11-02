@@ -1,8 +1,8 @@
 # Global SEO A–Z — execution ledger and dashboard
 
-Status: **SEO_AZ_MATRIX_COMPLETE** · generated 2026-10-28 · baseline audit 2026-10-27 (PR #119) · re-audit 2026-10-28 at the merged state of every batch below.
+Status: **SEO_AZ_MATRIX_COMPLETE** · generated 2026-11-01 · baseline audit 2026-10-27 (PR #119) · re-audit 2026-11-01 at the merged state of every batch below.
 
-Outcome per finding is computed by `docs/seo-audit/tools/ledger.py` from the baseline findings, the re-audit, `execution/batches.json` and `execution/outcomes.json`. Full rows: [`execution/execution-ledger.csv`](execution/execution-ledger.csv) (933 findings) and [`execution/task-ledger.csv`](execution/task-ledger.csv) (95 tasks). Workbook: [`reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx`](../../reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx) (sheets EXECUTION LEDGER, OWNER ACTIONS, BEFORE vs AFTER).
+Outcome per finding is computed by `docs/seo-audit/tools/ledger.py` from the baseline findings, the re-audit, `execution/batches.json` and `execution/outcomes.json`. Full rows: [`execution/execution-ledger.csv`](execution/execution-ledger.csv) (933 findings) and [`execution/task-ledger.csv`](execution/task-ledger.csv) (95 tasks). Workbook: [`reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx`](../../reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx) (outcomes in the ERRORS & BLOCKERS and SEO ACTION PLAN sheets; before/after and owner actions on EXECUTIVE DASHBOARD).
 
 Working state of the A–Z programme (per-URL Master, Image and Content SEO Matrix, task board with branch/PR/deploy/live-QA runs, and the resume checkpoint with NEXT_ACTION): [`docs/seo-matrix/`](../seo-matrix/README.md) — start at [`CHECKPOINT.md`](../seo-matrix/CHECKPOINT.md).
 
@@ -22,7 +22,7 @@ Tasks: 95 — BLOCKED 1, DONE 53, NOT_APPLICABLE 34, OWNER_DECISION 7.
 
 ## Before / after (same analyzer, measured rules)
 
-Findings: **933 → 725** reported by the re-audit; 0 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
+Findings: **933 → 769** reported by the re-audit; 44 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
 
 | Rule | Baseline | Re-audit | Outcomes |
 |---|---:|---:|---|
@@ -59,20 +59,41 @@ Findings: **933 → 725** reported by the re-audit; 0 new. A finding that is sti
 | U-TITLE-LONG | 55 | 0 | FIXED_VERIFIED 55 |
 | U-TITLE-SIMILAR | 33 | 33 | VALIDATED_NO_FIX 33 |
 
+### New in the re-audit of 2026-11-01
+
+Findings with no baseline counterpart (rules added by the re-audit or new on a page). They are open work in the workbook, not outcomes of the baseline: see the re-audit report and the SEO ACTION PLAN sheet.
+
+| Rule | Findings | Severity |
+|---|---:|---|
+| S-SCALED-CONTENT-RISK | 1 | P1 |
+| S-LAZY-LCP | 1 | P2 |
+| S-NO-VISIBLE-DATE | 1 | P2 |
+| S-REF-DATES-HIDDEN | 1 | P2 |
+| S-UI-UNTRANSLATED | 9 | P2 |
+| U-DEAD-REFERENCE | 2 | P2 |
+| S-ARIA-LABEL-SPAN | 1 | P3 |
+| S-COVER-SRCSET | 1 | P3 |
+| S-HERO-ART-TEXT | 1 | P3 |
+| S-HREFLANG-EQUIV | 12 | P3 |
+| S-RENDER-BLOCKING-CSS | 1 | P3 |
+| S-SECURITY-HEADERS | 1 | P3 |
+| S-URL-LOCALIZATION | 4 | P3 |
+| U-FAQ-REPEATED-Q | 8 | P3 |
+
 ## Progress by language
 
 | Locale | Baseline findings | Fixed (verified) | Fixed (pending live) | Validated | External | Blocked | Re-audit remaining |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| vi | 45 | 7 | 0 | 37 | 1 | 0 | 40 |
-| en | 77 | 15 | 0 | 61 | 1 | 0 | 63 |
-| de | 194 | 27 | 0 | 165 | 2 | 0 | 169 |
-| fr | 44 | 8 | 0 | 35 | 1 | 0 | 36 |
-| es | 48 | 10 | 0 | 38 | 0 | 0 | 36 |
-| nl | 53 | 10 | 0 | 43 | 0 | 0 | 45 |
-| zh | 114 | 17 | 0 | 97 | 0 | 0 | 101 |
-| pt | 42 | 8 | 0 | 34 | 0 | 0 | 34 |
-| ko | 152 | 71 | 0 | 80 | 1 | 0 | 89 |
-| ja | 151 | 63 | 0 | 87 | 1 | 0 | 105 |
+| vi | 45 | 7 | 0 | 37 | 1 | 0 | 42 |
+| en | 77 | 15 | 0 | 61 | 1 | 0 | 65 |
+| de | 194 | 27 | 0 | 165 | 2 | 0 | 174 |
+| fr | 44 | 8 | 0 | 35 | 1 | 0 | 39 |
+| es | 48 | 10 | 0 | 38 | 0 | 0 | 37 |
+| nl | 53 | 10 | 0 | 43 | 0 | 0 | 48 |
+| zh | 114 | 17 | 0 | 97 | 0 | 0 | 103 |
+| pt | 42 | 8 | 0 | 34 | 0 | 0 | 35 |
+| ko | 152 | 71 | 0 | 80 | 1 | 0 | 91 |
+| ja | 151 | 63 | 0 | 87 | 1 | 0 | 107 |
 
 Site-wide findings (locale ALL/global) are counted in the totals above, not per language.
 
@@ -114,8 +135,9 @@ Site-wide findings (locale ALL/global) are counted in the totals above, not per 
 
 - The audit container cannot reach global.rentbikehanoi.com (egress 403); production is verified by the repository's read-only GitHub Actions (live-markup-qa: every PUBLISHED URL byte-identical to the build; post-publish-qa: status, canonical, sitemap, fingerprints, NAP guard, host probes).
 - No Google Search Console, GA4 or CrUX data is connected: indexation, impressions, rankings and field Core Web Vitals are NOT_CONNECTED. PageSpeed figures are lab data (Ubersuggest/Lighthouse).
-- Keyword volumes exist only for the markets the tools returned (vi, en, fr, ko, ja full; de, es head terms); nl, pt and zh demand is NOT_CHECKED.
+- Keyword volumes exist only for the markets the tools returned (vi, en, fr, ko, ja full; de, es head terms; 2026-11-01 probes: global EN head term, Portugal); nl, pt and zh demand is otherwise NOT_CHECKED.
 - Third-party prices were verified on 2026-10-28; shops change them. source-recheck.yml re-runs the check; fact-guard keeps a standing WARN.
+- The re-audit of 2026-11-01 adds browser (axe-core, Chromium), W3C validator and Lighthouse lab evidence measured on a local server that serves the committed build, which live markup QA proved byte-identical to production.
 - Authority/backlink figures are a third-party index estimate (Ubersuggest), not Google data; visibility changes need weeks after indexing.
 
 ## OWNER_ACTIONS_LAST
@@ -124,10 +146,12 @@ Source: [OWNER-ACTIONS.md](OWNER-ACTIONS.md). These never block SEO work on publ
 
 1. Google Search Console data for global.rentbikehanoi.com — Rankings, impressions, indexing and field Core Web Vitals are unmeasured; Top 1–3 stays a target, not a verified result
 2. Analytics (GA4 or none) — No traffic or conversion data
-3. Off-page links from real accounts (plan: `COMPETITOR-GAP-AND-OFFPAGE-PLAN.md`) — Authority stays at DA 2 / 32 referring domains (Ubersuggest, 2026-10-28)
+3. Off-page links from real accounts (plan: `COMPETITOR-GAP-AND-OFFPAGE-PLAN.md`) — Authority stays low: DA 3 / 53 referring domains, 0 ranking keywords (Ubersuggest, 2026-11-01; was DA 2 / 32 on 2026-10-28)
 4. Keyword volumes for es, zh, pt and exact ko/ja variants; rank tracking — Head terms for those markets rest on autocomplete and SERP evidence, not volumes
 5. Business data conflicts C1–C3 (hours, delivery threshold, GBP name) in `data/business/reference.json` — Business schema and NAP stay unpublished (protected)
-6. Named human editor (optional) — Bylines stay organisational
+6. Named human editor or fact reviewer (optional), first for legal, fine, insurance and price guides — Bylines stay organisational; none of the 1,054 AI-drafted guides has a human fact review (re-audit 2026-11-01: S-SCALED-CONTENT-RISK)
 7. New-Hub architecture (`HUB-ARCHITECTURE-PROPOSAL-20261028.md`) and PR #118 — Deferred: SEO-only mode creates no new Hubs or URLs
+8. Response headers beyond GitHub Pages defaults (X-Content-Type-Options, Content-Security-Policy) need a CDN or proxy in front of the site (optional) — Only HSTS and cache-control are sent; no SEO impact (re-audit 2026-11-01: S-SECURITY-HEADERS)
+9. Slug convention per locale for future URLs (when article production resumes) — zh, ko and ja keep a mix of English and romanized slugs; live URLs are never renamed (re-audit 2026-11-01: S-URL-LOCALIZATION)
 
 Ledger rules that wait on these items: Search Console data for global.rentbikehanoi.com (backlog item 1, OWNER-ACTIONS.md). (S-CWV-FIELD, S-GSC-NOT-CONNECTED); Analytics decision (backlog item 2, OWNER-ACTIONS.md). (S-GA4-NOT-CONNECTED); Off-page links from real accounts per COMPETITOR-GAP-AND-OFFPAGE-PLAN.md; rank tracking (backlog items 3-4, OWNER-ACTIONS.md). (S-LOW-VISIBILITY); Keyword volumes for es, zh, pt, nl and exact ko/ja variants (backlog item 4, OWNER-ACTIONS.md). (S-KW-NO-DEMAND, S-PQ-SENTENCE); Optional named human editor (backlog item 6, OWNER-ACTIONS.md). (S-AUTHOR-ORG-ONLY); Deferred by the owner's SEO-only directive of 2026-10-28: no new articles, so the locale imbalance stays until article production resumes. (S-LOCALE-IMBALANCE); Business data conflicts C1-C3 in data/business/reference.json (backlog item 5, OWNER-ACTIONS.md). (S-BUSINESS-CONFLICTS)

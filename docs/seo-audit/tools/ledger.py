@@ -22,6 +22,7 @@ EXE = os.path.join(ROOT, "docs", "seo-audit", "execution")
 GH = "https://github.com/thuexemayhanoi/global"
 LOCALES = ["vi", "en", "de", "fr", "es", "nl", "zh", "pt", "ko", "ja"]
 FINAL = ["FIXED_VERIFIED", "FIXED_PENDING_LIVE", "VALIDATED_NO_FIX", "DUPLICATE", "EXTERNAL_DEPENDENCY", "BLOCKED"]
+AUDIT_DATE = os.environ.get("AUDIT_DATE", "2026-10-28")  # date of the re-audit that reports.findings.csv comes from
 
 
 def owner_backlog():
@@ -158,7 +159,7 @@ for f in base:
         "outcome": outcome, "batch": "+".join(bs), "pr": " ".join(f"#{p}" for p in prs),
         "merge_commit": " ".join(batches[b]["merge_commit"][:7] for b in bs if b in batches and batches[b].get("merge_commit")),
         "live_qa_runs": " ".join(str(r) for r in qa), "reason": reason, "owner_action": owner if outcome in ("EXTERNAL_DEPENDENCY", "BLOCKED") or (owner and rule == "S-AUTHOR-ORG-ONLY") else "",
-        "outcome_date": "2026-10-28"})
+        "outcome_date": "2026-10-28", "reverified_on": AUDIT_DATE})
 
 new_after = []  # re-audit findings left unmatched by any baseline finding
 for f in after:
@@ -218,7 +219,7 @@ for x in ledger:
         owner_actions.setdefault(x["owner_action"], set()).add(x["rule_id"])
 pending = oc["FIXED_PENDING_LIVE"]
 complete = pending == 0 and all(x["outcome"] in FINAL for x in ledger)
-summary = {"generated": "2026-10-28", "baseline_findings": len(base), "baseline_tasks": len(base_tasks), "reaudit_findings": len(after),
+summary = {"generated": AUDIT_DATE, "baseline_findings": len(base), "baseline_tasks": len(base_tasks), "reaudit_findings": len(after),
            "new_in_reaudit": len(new_after), "outcomes": {o: oc[o] for o in FINAL}, "tasks": dict(tc),
            "fixed_total": oc["FIXED_VERIFIED"] + oc["FIXED_PENDING_LIVE"], "complete": complete,
            "status": "SEO_AZ_MATRIX_COMPLETE" if complete else "IN_PROGRESS (fixes awaiting production verification)",
@@ -229,11 +230,11 @@ json.dump(summary, open(os.path.join(EXE, "ledger-summary.json"), "w", encoding=
 # Markdown dashboard
 L = []
 L.append("# Global SEO A–Z — execution ledger and dashboard\n")
-L.append(f"Status: **{summary['status']}** · generated {summary['generated']} · baseline audit 2026-10-27 (PR #119) · re-audit 2026-10-28 at the merged state of every batch below.\n")
+L.append(f"Status: **{summary['status']}** · generated {summary['generated']} · baseline audit 2026-10-27 (PR #119) · re-audit {AUDIT_DATE} at the merged state of every batch below.\n")
 L.append("Outcome per finding is computed by `docs/seo-audit/tools/ledger.py` from the baseline findings, the re-audit, "
          "`execution/batches.json` and `execution/outcomes.json`. Full rows: [`execution/execution-ledger.csv`](execution/execution-ledger.csv) "
          "(933 findings) and [`execution/task-ledger.csv`](execution/task-ledger.csv) (95 tasks). Workbook: "
-         "[`reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx`](../../reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx) (sheets EXECUTION LEDGER, OWNER ACTIONS, BEFORE vs AFTER).\n")
+         "[`reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx`](../../reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx) (outcomes in the ERRORS & BLOCKERS and SEO ACTION PLAN sheets; before/after and owner actions on EXECUTIVE DASHBOARD).\n")
 L.append("Working state of the A–Z programme (per-URL Master, Image and Content SEO Matrix, task board with branch/PR/deploy/live-QA runs, "
          "and the resume checkpoint with NEXT_ACTION): [`docs/seo-matrix/`](../seo-matrix/README.md) — start at "
          "[`CHECKPOINT.md`](../seo-matrix/CHECKPOINT.md).\n")
@@ -251,6 +252,15 @@ base_c = collections.Counter(f["rule_id"] for f in base)
 aft_c = collections.Counter(f["rule_id"] for f in after)
 for r in sorted(base_c):
     L.append(f"| {r} | {base_c[r]} | {aft_c.get(r, 0)} | " + ", ".join(f"{o} {n}" for o, n in by_rule[r].most_common()) + " |")
+new_c = collections.Counter(f["rule_id"] for f in new_after)
+if new_c:
+    L.append(f"\n### New in the re-audit of {AUDIT_DATE}\n")
+    L.append("Findings with no baseline counterpart (rules added by the re-audit or new on a page). They are open work in the workbook, not outcomes of the baseline: "
+             "see the re-audit report and the SEO ACTION PLAN sheet.\n")
+    L.append("| Rule | Findings | Severity |\n|---|---:|---|")
+    sev_of = {f["rule_id"]: f["severity"] for f in new_after}
+    for r, n in sorted(new_c.items(), key=lambda kv: (sev_of[kv[0]], kv[0])):
+        L.append(f"| {r} | {n} | {sev_of[r]} |")
 L.append("\n## Progress by language\n")
 L.append("| Locale | Baseline findings | Fixed (verified) | Fixed (pending live) | Validated | External | Blocked | Re-audit remaining |\n|---|---:|---:|---:|---:|---:|---:|---:|")
 for r in loc_rows:
@@ -267,8 +277,9 @@ L.append("\n## Verification limits\n")
 for line in [
     "The audit container cannot reach global.rentbikehanoi.com (egress 403); production is verified by the repository's read-only GitHub Actions (live-markup-qa: every PUBLISHED URL byte-identical to the build; post-publish-qa: status, canonical, sitemap, fingerprints, NAP guard, host probes).",
     "No Google Search Console, GA4 or CrUX data is connected: indexation, impressions, rankings and field Core Web Vitals are NOT_CONNECTED. PageSpeed figures are lab data (Ubersuggest/Lighthouse).",
-    "Keyword volumes exist only for the markets the tools returned (vi, en, fr, ko, ja full; de, es head terms); nl, pt and zh demand is NOT_CHECKED.",
+    "Keyword volumes exist only for the markets the tools returned (vi, en, fr, ko, ja full; de, es head terms; 2026-11-01 probes: global EN head term, Portugal); nl, pt and zh demand is otherwise NOT_CHECKED.",
     "Third-party prices were verified on 2026-10-28; shops change them. source-recheck.yml re-runs the check; fact-guard keeps a standing WARN.",
+    "The re-audit of 2026-11-01 adds browser (axe-core, Chromium), W3C validator and Lighthouse lab evidence measured on a local server that serves the committed build, which live markup QA proved byte-identical to production.",
     "Authority/backlink figures are a third-party index estimate (Ubersuggest), not Google data; visibility changes need weeks after indexing.",
 ]:
     L.append(f"- {line}")

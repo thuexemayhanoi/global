@@ -1,0 +1,37 @@
+{
+ "collected_at": "2026-11-01T16:35Z",
+ "audited_commit": "b5b6d260095b9675f99ccbb06faeae927dfc2781",
+ "note": "The audit container cannot open global.rentbikehanoi.com (egress proxy answers 403 to CONNECT). Production was checked by the repository's read-only GitHub Actions, dispatched for this re-audit on main; values below are copied from the job logs. The uploaded artifacts could not be downloaded from this container (blob storage host also blocked), so only the logged summaries are kept.",
+ "runs": [
+  {
+   "workflow": "live-markup-qa.yml",
+   "run_id": 41326939112,
+   "job_id": 124908749973,
+   "url": "https://github.com/thuexemayhanoi/global/actions/runs/41326939112",
+   "head_sha": "b5b6d260095b9675f99ccbb06faeae927dfc2781",
+   "conclusion": "success",
+   "completed_at": "2026-11-01T16:34:15Z",
+   "result": {"passed": true, "checked": 1081, "identical": 1081, "mismatched": []},
+   "scope": "every PUBLISHED URL + /search/ + /404.html fetched live (cache-busted): HTTP 200 and HTML byte-identical to the committed build"
+  },
+  {
+   "workflow": "post-publish-qa.yml",
+   "run_id": 41326941613,
+   "job_id": 124908755926,
+   "url": "https://github.com/thuexemayhanoi/global/actions/runs/41326941613",
+   "head_sha": "b5b6d260095b9675f99ccbb06faeae927dfc2781",
+   "conclusion": "success",
+   "completed_at": "2026-11-01T16:34:29Z",
+   "result": {"passed": true, "issues": [], "checked": 1094},
+   "scope": "status, lang and canonical of every PUBLISHED URL, sitemap index + shards vs Matrix, robots.txt, unknown route = 404, /search/ noindex, frozen SEO fingerprints, NAP/business-schema guard, host probes",
+   "host_advisories": ["No answer for https://www.global.rentbikehanoi.com/: ENOTFOUND"],
+   "host_evidence": [
+    {"probe": "http://global.rentbikehanoi.com/", "http_status": 301, "location": "https://global.rentbikehanoi.com/"},
+    {"probe": "https://global.rentbikehanoi.com/vi", "http_status": 301, "location": "https://global.rentbikehanoi.com/vi/"},
+    {"probe": "https://www.global.rentbikehanoi.com/", "error": "ENOTFOUND"},
+    {"probe": "https://global.rentbikehanoi.com/", "http_status": 200, "headers": {"content-type": "text/html; charset=utf-8", "strict-transport-security": "max-age=31556952", "cache-control": "max-age=600", "x-content-type-options": null, "server": "GitHub.com"}}
+   ]
+  }
+ ],
+ "pagespeed_api": {"status": "NOT_AVAILABLE", "reason": "PageSpeed Insights API v5 without key answered HTTP 429 (shared anonymous daily quota exhausted) on 2026-11-01"}
+}
