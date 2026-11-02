@@ -10,11 +10,11 @@ Generated 2026-11-01 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 
 ## Next TODO
 
-1. **IMG-SRCSET-02**: 800 px cover variant in srcset, batch 2 (the 100 URLs of IMG-02)
-2. **IMG-SRCSET-03**: 800 px cover variant in srcset, batch 3 (the 100 URLs of IMG-03)
-3. **IMG-SRCSET-04**: 800 px cover variant in srcset, batch 4 (the 100 URLs of IMG-04)
-4. **IMG-SRCSET-05**: 800 px cover variant in srcset, batch 5 (the 100 URLs of IMG-05)
-5. **IMG-SRCSET-06**: 800 px cover variant in srcset, batch 6 (the 100 URLs of IMG-06)
+1. **IMG-SRCSET-10**: 800 px cover variant in srcset, batch 10 (the 100 URLs of IMG-10)
+2. **IMG-SRCSET-11**: 800 px cover variant in srcset, batch 11 (the 64 URLs of IMG-11)
+3. **CONTENT-03**: No page prints its own publication or update date: show a localized 'Published · Updated' line with <time> from the dates that already feed JSON-LD and sitemap lastmod
+4. **CONTENT-04**: The About page promises that each guide lists the date its references were checked, but no reference shows it: print each source's checked_on
+5. **CONTENT-05**: Four FAQ questions are repeated word for word on two pages each (de, en, fr, nl): make them self-contained
 
 ## URL status counts
 
@@ -33,7 +33,7 @@ Generated 2026-11-01 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 | HISTORY | 0 | 0 | 0 | 2 | 2 | 25 | 0 |
 | MATRIX | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
 | TECH | 3 | 0 | 0 | 0 | 0 | 7 | 0 |
-| IMG | 10 | 1 | 1 | 0 | 0 | 13 | 0 |
+| IMG | 2 | 1 | 1 | 0 | 0 | 21 | 0 |
 | META | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
 | CONTENT | 4 | 0 | 0 | 0 | 0 | 2 | 0 |
 
