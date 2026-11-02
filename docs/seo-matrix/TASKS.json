@@ -2492,14 +2492,17 @@
     "NL-S32",
     "NL-S33"
    ],
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-img-srcset-08",
-   "commit": "",
-   "pr": "",
-   "deploy_run": "",
-   "live_qa": [],
-   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover; 100 files of 37,968-50,510 bytes; the build changes only the srcset of these pages",
-   "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
+   "commit": "9cf0cffa8c4abe606cf2382fb28539f840023c68",
+   "pr": 177,
+   "deploy_run": 41392218813,
+   "live_qa": [
+    41392347725,
+    41392351051
+   ],
+   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover; 100 files of 37,968-50,510 bytes; the build changes only the srcset of these pages; PR #177 validate passed; Pages deploy 41392218813; live markup QA 41392347725 (1,081/1,081 identical) and post-publish QA 41392351051 passed",
+   "next_action": "Done"
   },
   {
    "id": "IMG-SRCSET-09",
@@ -2607,14 +2610,14 @@
     "ZH-S87",
     "PT-S07"
    ],
-   "status": "TODO",
-   "branch": "",
+   "status": "FIXED",
+   "branch": "seo/az-img-srcset-09",
    "commit": "",
    "pr": "",
    "deploy_run": "",
    "live_qa": [],
-   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover",
-   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-09; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
+   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover; 100 files of 39,354-51,758 bytes; the build changes only the srcset of these pages",
+   "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
   },
   {
    "id": "IMG-SRCSET-10",
