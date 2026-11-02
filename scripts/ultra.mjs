@@ -2,6 +2,7 @@
 // Only decorative structure and links to already published pages or in-page anchors.
 import {cardAlt} from "./images/scenes.mjs";
 import {localDate} from "./dates.mjs";
+import {ui} from "./ui-strings.mjs";
 const clean=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const plaintext=s=>String(s||"").replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi," ").replace(/<[^>]+>/g," ").replace(/&[a-z]+;/gi," ").replace(/\s+/g," ").trim();
 const micro={
@@ -65,7 +66,7 @@ function addTopicPhotos(html,code){
 
 function heroArtwork(code){
  const tr=classes(code);
- return '<div class="ultra-hero-art" aria-hidden="true"><div class="ultra-art-glow"></div><div class="ultra-art-card"><div class="ultra-art-top"><span class="ultra-art-monogram">VW<span>✳</span></span><span class="ultra-art-pill">VIETNAM / WHEELS</span></div><p class="ultra-art-eyebrow">'+clean(tr[0])+'</p><div class="ultra-art-steps">'+[tr[1],tr[2],tr[3]].map((x,i)=>'<div class="ultra-art-step"><span>'+String(i+1).padStart(2,"0")+'</span><strong>'+clean(x)+'</strong><span class="ultra-art-check">↗</span></div>').join("")+'</div><div class="ultra-art-line"></div><div class="ultra-art-bottom"><span>10 LANGUAGES</span><span>4 TOPIC HUBS</span></div></div><div class="ultra-art-satellite ultra-art-satellite--one">✦</div><div class="ultra-art-satellite ultra-art-satellite--two">◉</div></div>';
+ return '<div class="ultra-hero-art" aria-hidden="true"><div class="ultra-art-glow"></div><div class="ultra-art-card"><div class="ultra-art-top"><span class="ultra-art-monogram">VW<span>✳</span></span><span class="ultra-art-pill">VIETNAM / WHEELS</span></div><p class="ultra-art-eyebrow">'+clean(tr[0])+'</p><div class="ultra-art-steps">'+[tr[1],tr[2],tr[3]].map((x,i)=>'<div class="ultra-art-step"><span>'+String(i+1).padStart(2,"0")+'</span><strong>'+clean(x)+'</strong><span class="ultra-art-check">↗</span></div>').join("")+'</div><div class="ultra-art-line"></div><div class="ultra-art-bottom"><span>'+clean(ui(code).langs)+'</span><span>'+clean(ui(code).hubs)+'</span></div></div><div class="ultra-art-satellite ultra-art-satellite--one">✦</div><div class="ultra-art-satellite ultra-art-satellite--two">◉</div></div>';
 }
 function heroMarkup(html,code){
  return html.replace(/<section class="hero"><div class="container hero-inner">([\s\S]*?)<\/div><\/section>/,(whole,inside)=>{
@@ -111,7 +112,7 @@ function articleDecor(html,code){
  if(!article)return html;
  // Reference check-date notes (CONTENT-04) are not reading matter: leave them out of the estimate.
  const estimated=Math.max(1,Math.ceil(plaintext(article[1].replace(/ <span class="ref-checked">[\s\S]*?<\/span>/g,"")).split(/\s+/).filter(Boolean).length/210));
- const top='<div class="ultra-reading-tools"><span class="ultra-reading-time" aria-label="Estimated reading time">◷ ≈'+estimated+' min</span>'+pageDates(html,code)+'<div class="ultra-reading-buttons"><button type="button" data-ultra-copy hidden>'+clean(tr[7])+'</button><button type="button" data-ultra-focus hidden aria-pressed="false">'+clean(tr[8])+'</button></div><span class="ultra-copy-feedback" aria-live="polite"></span></div>';
+ const top='<div class="ultra-reading-tools"><span class="ultra-reading-time"><span aria-hidden="true">◷ </span>'+clean(ui(code).read(estimated))+'</span>'+pageDates(html,code)+'<div class="ultra-reading-buttons"><button type="button" data-ultra-copy hidden>'+clean(tr[7])+'</button><button type="button" data-ultra-focus hidden aria-pressed="false">'+clean(tr[8])+'</button></div><span class="ultra-copy-feedback" aria-live="polite"></span></div>';
  const mobile=match?'<details class="ultra-mobile-toc"><summary>☷ '+clean(tr[9])+' <span aria-hidden="true">⌄</span></summary><nav aria-label="'+clean(match[1])+'"><ol>'+match[2]+'</ol></nav></details>':"";
  // Reading tools and mobile contents appear AFTER the meaningful article intro.
  if(html.includes('class="article-lead"'))html=html.replace(/(<p class="article-lead">[\s\S]*?<\/p>)/,'$1'+top+mobile);

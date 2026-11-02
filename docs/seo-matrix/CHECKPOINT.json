@@ -3,11 +3,11 @@
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
  "current_task": {
-  "id": "CONTENT-05",
-  "phase": "CONTENT",
-  "title": "Four FAQ questions are repeated word for word on two pages each (de, en, fr, nl): make them self-contained",
+  "id": "TECH-08",
+  "phase": "TECH",
+  "title": "English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label, Pillar hero labels) and aria-label on a <span> without a role",
   "status": "FIXED",
-  "branch": "seo/az-content-05",
+  "branch": "seo/az-tech-08",
   "commit": "",
   "pr": "",
   "deploy_run": "",
@@ -16,11 +16,6 @@
  },
  "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED",
  "next_todo": [
-  {
-   "id": "TECH-08",
-   "title": "English template strings on 977 non-English pages (skip link, breadcrumb aria-label, reading-time label, Pillar hero labels) and aria-label on a <span> without a role",
-   "next_action": "Localize the three strings per locale (reuse the language-menu label table), replace the span's aria-label with visually hidden localized text; build --check, nav-qa, language-audit, tests; re-run deep_audit.py and the W3C validator"
-  },
   {
    "id": "TECH-10",
    "title": "Hreflang equivalence review for the topic slots published in all 10 languages (Hubs H01–H04, Supporting S01–S08)",
@@ -45,7 +40,8 @@
   },
   "TECH": {
    "LIVE_VERIFIED": 7,
-   "TODO": 3
+   "FIXED": 1,
+   "TODO": 2
   },
   "IMG": {
    "LIVE_VERIFIED": 25
@@ -54,8 +50,7 @@
    "LIVE_VERIFIED": 2
   },
   "CONTENT": {
-   "LIVE_VERIFIED": 5,
-   "FIXED": 1
+   "LIVE_VERIFIED": 6
   }
  },
  "url_counts": {

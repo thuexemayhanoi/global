@@ -1,5 +1,6 @@
 // SEO V10 regression tests: breadcrumb integrity, social/schema metadata, spread of internal links,
 // image alt text and the sitemap file grammar. They read the committed generated HTML like the other site tests.
+import {ui} from "../scripts/ui-strings.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -27,7 +28,7 @@ test("Hub breadcrumbs run Global › Language › Hub and never list one URL twi
   assert.equal(items[0],SITE+"/",hub.id);
   assert.equal(items[1],SITE+"/"+hub.locale+"/",hub.id);
   assert.equal(items[2],SITE+hub.url,hub.id);
-  assert.match(html,/<nav class="crumb" aria-label="Breadcrumb"><a href="\/">Global<\/a>/,hub.id);
+  assert.ok(html.includes('<nav class="crumb" aria-label="'+ui(hub.locale).crumb+'"><a href="/">Global</a>'),hub.id);
  }
 });
 
@@ -121,7 +122,7 @@ test("renderArticle builds a three-level trail for Hubs and guides without repea
  const hubCrumb=graph(hubHtml).find(n=>n["@type"]==="BreadcrumbList").itemListElement;
  assert.deepEqual(hubCrumb.map(i=>i.item),[SITE+"/",SITE+"/de/",SITE+"/de/topics/x/"]);
  assert.deepEqual(hubCrumb.map(i=>i.name),["Global","Deutsch","Hub X Titel für den Test"]);
- assert.ok(hubHtml.includes('<nav class="crumb" aria-label="Breadcrumb"><a href="/">Global</a> <span aria-hidden="true">›</span> <a href="/de/">Deutsch</a></nav>'));
+ assert.ok(hubHtml.includes('<nav class="crumb" aria-label="Brotkrumennavigation"><a href="/">Global</a> <span aria-hidden="true">›</span> <a href="/de/">Deutsch</a></nav>'));
  const guideHtml=renderArticle({...packet("Guide Y Titel für den Test"),publication:{approved_at:"2026-10-15T10:29:56.537Z"}},locale,guide,m,null);
  const g=graph(guideHtml);
  assert.deepEqual(g.find(n=>n["@type"]==="BreadcrumbList").itemListElement.map(i=>i.item),[SITE+"/de/",SITE+"/de/topics/x/",SITE+"/de/guides/y/"]);
