@@ -2728,14 +2728,17 @@
     "KO-S71",
     "KO-S74"
    ],
-   "status": "FIXED",
+   "status": "LIVE_VERIFIED",
    "branch": "seo/az-img-srcset-10",
-   "commit": "",
-   "pr": "",
-   "deploy_run": "",
-   "live_qa": [],
-   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover; 100 files of 36,700-50,014 bytes; the build changes only the srcset of these pages",
-   "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
+   "commit": "e9973819f48270b3f71377bfdba49071e624659b",
+   "pr": 179,
+   "deploy_run": 41393412539,
+   "live_qa": [
+    41393557904,
+    41393560863
+   ],
+   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover; 100 files of 36,700-50,014 bytes; the build changes only the srcset of these pages; PR #179 validate passed; Pages deploy 41393412539; live markup QA 41393557904 (1,081/1,081 identical) and post-publish QA 41393560863 passed",
+   "next_action": "Done"
   },
   {
    "id": "IMG-SRCSET-11",
@@ -2807,14 +2810,14 @@
     "JA-S86",
     "JA-S21"
    ],
-   "status": "TODO",
-   "branch": "",
+   "status": "FIXED",
+   "branch": "seo/az-img-srcset-11",
    "commit": "",
    "pr": "",
    "deploy_run": "",
    "live_qa": [],
-   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover",
-   "next_action": "python3 scripts/images/cover_widths.py --batch=IMG-11; node scripts/build.mjs; build --check; seo-guard; fact-guard; tests; PR; merge; deploy; live QA"
+   "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover; 64 files of 37,810-47,340 bytes; the build changes only the srcset of these pages",
+   "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
   },
   {
    "id": "CONTENT-03",
