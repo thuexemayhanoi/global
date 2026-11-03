@@ -38,11 +38,14 @@ export const HERO_SIZES="(max-width: 767px) calc(100vw - 36px), (max-width: 880p
 export function heroPreloadLink(){
  return '<link rel="preload" as="image" href="'+HERO_SRC+'" imagesrcset="'+HERO_SRCSET+'" imagesizes="'+HERO_SIZES+'" fetchpriority="high">';
 }
-// Topic photos: 960×720 originals stay the social/Article images; the 480w and 720w files are resizes for smaller slots.
-// Gallery cards (root page) are a quarter of the ≤1150px container from 1024px, half the viewport below it;
-// topic cards (locale homes) are one column up to 760px and half the container above it (assets/styles.css).
-export const TOPIC_SIZES={gallery:"(max-width: 1023px) calc(50vw - 24px), 280px",card:"(max-width: 760px) calc(100vw - 36px), (max-width: 1186px) calc(50vw - 28px), 565px"};
-const topicSrcset=path=>[480,720].map(w=>path.replace(/\.webp$/,"-"+w+".webp")+" "+w+"w").concat(path+" 960w").join(", ");
+// Topic photos: 960×720 originals stay the social/Article images; the 320w, 480w, 600w and 720w files are resizes for smaller slots.
+// Rendered widths measured in Chromium at 320–1920 px (task IMG-TOPIC-SIZES, 2026-11-03), card padding included:
+// root gallery cards are the viewport minus the margins up to 575px, capped at 538px up to 760px, then two columns
+// up to 1023px, four from 1024px and 272px from 1187px; locale-home topic cards are one column up to 760px
+// (viewport − 74px), two columns up to 1186px (half the viewport − 84px), then 509px.
+export const TOPIC_SIZES={gallery:"(max-width: 575px) calc(100vw - 30px), (max-width: 760px) 538px, (max-width: 1023px) calc(50vw - 28px), (max-width: 1186px) calc(25vw - 24px), 272px",card:"(max-width: 760px) calc(100vw - 74px), (max-width: 1186px) calc(50vw - 84px), 509px"};
+// 320w and 600w (Lanczos, WebP q80 like the 480w and 720w files) leave a file close to every slot on 1× to 3× screens.
+const topicSrcset=path=>[320,480,600,720].map(w=>path.replace(/\.webp$/,"-"+w+".webp")+" "+w+"w").concat(path+" 960w").join(", ");
 const topicImg=(path,sizes,code)=>'<img src="'+clean(path)+'" srcset="'+clean(topicSrcset(path))+'" sizes="'+sizes+'" width="960" height="720" loading="lazy" decoding="async" alt="'+clean(cardAlt(code,path))+'">';
 function globalHeroPhoto(){
  return '<figure class="ultra-hero-photo"><img src="'+HERO_SRC+'" srcset="'+HERO_SRCSET+'" sizes="'+HERO_SIZES+'" width="1600" height="900" alt="'+clean(HERO_ALT)+'" fetchpriority="high" loading="eager" decoding="async"><figcaption><span>✳</span> HANOI-INSPIRED • TWO-WHEEL TRAVEL</figcaption></figure>';
