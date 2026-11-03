@@ -217,14 +217,14 @@ test("selective re-freeze is idempotent for an already applied reviewed change",
  assert.ok(!once.changed.some(c=>c.field==="title"),"and is not counted as a new change");
 });
 
-test("topic photos ship 320w, 480w, 600w and 720w variants with srcset and measured sizes on the root gallery and the locale topic cards (S-PSI-MOBILE, IMG-TOPIC-SIZES)",async()=>{
+test("topic photos ship 320w, 480w, 520w, 600w and 720w variants with srcset and measured sizes on the root gallery and the locale topic cards (S-PSI-MOBILE, IMG-TOPIC-SIZES)",async()=>{
  const {TOPIC_SIZES}=await import("../scripts/ultra.mjs");
  for(const n of ["topic-choose-bike","topic-prices-deposits","topic-documents","topic-safety"]){
   const small=fs.readFileSync(path.join(root,n+"-480.webp")),big=fs.readFileSync(path.join(root,n+".webp"));
   assert.equal(small.toString("ascii",8,12),"WEBP",n);
   assert.ok(small.length<big.length/2,n+" variant is at least half the size");
-  for(const w of [320,600,720])assert.equal(fs.readFileSync(path.join(root,n+"-"+w+".webp")).toString("ascii",8,12),"WEBP",n+" "+w+"w");
-  const srcset='srcset="/'+n+'-320.webp 320w, /'+n+'-480.webp 480w, /'+n+'-600.webp 600w, /'+n+'-720.webp 720w, /'+n+'.webp 960w"';
+  for(const w of [320,520,600,720])assert.equal(fs.readFileSync(path.join(root,n+"-"+w+".webp")).toString("ascii",8,12),"WEBP",n+" "+w+"w");
+  const srcset='srcset="/'+n+'-320.webp 320w, /'+n+'-480.webp 480w, /'+n+'-520.webp 520w, /'+n+'-600.webp 600w, /'+n+'-720.webp 720w, /'+n+'.webp 960w"';
   assert.ok(read("index.html").includes(srcset+' sizes="'+TOPIC_SIZES.gallery+'"'),n+" root gallery");
   for(const code of ["vi","en","de","fr","es","nl","zh","pt","ko","ja"])assert.ok(read(code+"/index.html").includes(srcset+' sizes="'+TOPIC_SIZES.card+'"'),n+" "+code+" topic card");
  }

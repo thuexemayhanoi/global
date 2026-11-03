@@ -5,7 +5,7 @@ Generated 2026-11-03 by `docs/seo-audit/tools/az_matrix.py` from `TASKS.json`. G
 ## Current task
 
 - **IMG-TOPIC-SIZES** (IMG): Topic illustrations on the locale Pillars and the root page: sizes does not match the rendered width and no file is close to the slot, so pages load larger (desktop, Moto G) or smaller (root gallery on high-DPR phones) images than they show
-- Status: **FIXED** · branch `seo/az-img-topic-sizes` · PR - · merge `-` · deploy - · live QA -
+- Status: **FIXED** · branch `seo/az-img-topic-sizes-2` · PR - · merge `-` · deploy - · live QA -
 - NEXT_ACTION: Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED
 
 ## Next TODO
