@@ -26,8 +26,14 @@ d = json.load(open(os.path.join(DATA, "audit-data.json"), encoding="utf-8"))
 ext = json.load(open(os.path.join(DATA, "raw", "external-evidence.json"), encoding="utf-8"))
 kw = json.load(open(os.path.join(DATA, "raw", "keyword-metrics.json"), encoding="utf-8"))
 SHA = d["head_commit"]
-LIVE_SHA = ext["github_actions"][0].get("head_sha")
-LIVE_VERIFIED_FOR_SNAPSHOT = bool(SHA == LIVE_SHA and ext["github_actions"][0].get("conclusion") == "success")
+# Live QA of the audited commit: the runs recorded in the newest raw/live-qa-*.json (each re-audit dispatches both
+# workflows), else the first two runs of external-evidence.json.
+_LIVE_FILES = sorted(glob.glob(os.path.join(DATA, "raw", "live-qa-2*.json")))
+_LIVE_RUNS = json.load(open(_LIVE_FILES[-1], encoding="utf-8"))["runs"] if _LIVE_FILES else ext["github_actions"]
+LIVE_QA = next(g for g in _LIVE_RUNS if g["workflow"] == "live-markup-qa.yml")
+POST_QA = next(g for g in _LIVE_RUNS if g["workflow"] == "post-publish-qa.yml")
+LIVE_SHA = LIVE_QA.get("head_sha")
+LIVE_VERIFIED_FOR_SNAPSHOT = bool(SHA == LIVE_SHA and LIVE_QA.get("conclusion") == "success")
 inv = d["inventory"]
 pub = [r for r in inv if r["matrix_status"] == "PUBLISHED"]
 articles = [r for r in pub if r["role"] in ("HUB", "SUPPORT") and not r["matrix_id"].endswith("CHECKLIST")]
@@ -37,8 +43,8 @@ def blob(path):
     return f"{GH}/blob/{SHA}/{path}"
 
 
-LIVE_RUN = ext["github_actions"][0]["url"]
-POST_RUN = ext["github_actions"][1]["url"]
+LIVE_RUN = LIVE_QA["url"]
+POST_RUN = POST_QA["url"]
 
 # ---------- rule catalogue ----------
 # id: (severity, category, evidence, owner/subsystem, title, action, expected, verify, done)
@@ -497,9 +503,22 @@ if lh:
         per_page = collections.defaultdict(int)
         for o in topic:
             per_page[(o["url"], o["form_factor"])] += o["wasted_kib"]
-        add("S-TOPIC-IMG-SIZES", "SITE", "ALL", "/de/", "DE-HOME", f"Lighthouse 'properly size images' on {len(per_page)} Pillar/root runs: up to {max(per_page.values())} KiB of topic-illustration waste per page "
-            f"({', '.join(sorted({o['file'] for o in topic})[:4])}…); rendered card width measured in Chromium: Pillar 509 px at ≥1187 px (sizes says 565 px), root gallery 272 px (480w file)",
-            blob("scripts/ultra.mjs"), len(per_page))
+        # After the fix (IMG-TOPIC-SIZES LIVE_VERIFIED, and this Lighthouse file measured on a build that contains it),
+        # what Lighthouse still reports is recorded as a measured decision instead of open work.
+        az = json.load(open(os.path.join(ROOT, "docs", "seo-matrix", "TASKS.json"), encoding="utf-8"))
+        fix = next((t for t in az["tasks"] if t["id"] == "IMG-TOPIC-SIZES"), {})
+        after_fix = fix.get("status") == "LIVE_VERIFIED" and bool(fix.get("commit")) and \
+            os.system(f"git -C {ROOT} merge-base --is-ancestor {fix['commit']} {lh.get('commit', 'HEAD')} 2>/dev/null") == 0
+        if after_fix:
+            runs = ", ".join(f"{u} {ff} {kib} KiB" for (u, ff), kib in sorted(per_page.items(), key=lambda x: -x[1]))
+            add("S-TOPIC-IMG-SIZES", "SITE", "ALL", "/de/", "DE-HOME", f"sizes match the rendered width since IMG-TOPIC-SIZES (PRs #190 and #191: 0 of 3,242 viewport widths differ, and every slot "
+                f"loads the smallest file that covers it); Lighthouse {lh['lighthouse_version']} on {lh['commit'][:8]} still estimates {runs} (topic and root-hero images). "
+                "That residue is the object-fit crop (1.6:1 phone boxes; the 16:9 hero in a 4:3 desktop box) and the 600w to 720w step on the 412 px Moto G emulation, "
+                "so no further width or crop variant is planned", blob("scripts/ultra.mjs"), len(per_page), status="WONT_FIX")
+        else:
+            add("S-TOPIC-IMG-SIZES", "SITE", "ALL", "/de/", "DE-HOME", f"Lighthouse 'properly size images' on {len(per_page)} Pillar/root runs: up to {max(per_page.values())} KiB of topic-illustration waste per page "
+                f"({', '.join(sorted({o['file'] for o in topic})[:4])}…); rendered card width measured in Chromium: Pillar 509 px at ≥1187 px (sizes says 565 px), root gallery 272 px (480w file)",
+                blob("scripts/ultra.mjs"), len(per_page))
     if ri and over and not covers:
         pass
     elif ri and over and max(o["wasted_kib"] for o in covers) <= 20:
@@ -639,7 +658,7 @@ for r in inv + [{"matrix_id": None, "url": x["url"], "locale": "global", "role":
     master.append({**{k2: v for k2, v in r.items() if k2 not in ("h2_outline", "hreflang", "review_pairs", "seo_guard_warns", "sha256")},
                    "audit_id": f"A-{r.get('matrix_id') or r['url'].strip('/').replace('/', '-').upper() or 'ROOT'}",
                    "http_status_live": 200 if LIVE_VERIFIED_FOR_SNAPSHOT and (published or r["matrix_status"] == "NOT_IN_MATRIX") else None,
-                   "live_evidence": (f"VERIFIED (live markup QA run {ext['github_actions'][0]['run_id']})" if LIVE_VERIFIED_FOR_SNAPSHOT else "NOT_REVERIFIED (latest live run covers a different commit)") if published or r["matrix_status"] == "NOT_IN_MATRIX" else "N/A (not a URL yet)",
+                   "live_evidence": (f"VERIFIED (live markup QA run {LIVE_QA['run_id']})" if LIVE_VERIFIED_FOR_SNAPSHOT else "NOT_REVERIFIED (latest live run covers a different commit)") if published or r["matrix_status"] == "NOT_IN_MATRIX" else "N/A (not a URL yet)",
                    "pq_volume": k.get("search_volume") if k else None, "pq_intent_market": k.get("main_intent") if k else None,
                    "pq_kd": k.get("keyword_difficulty") if k else None,
                    "keyword_evidence": ("VERIFIED" if k else ("VERIFIED_NO_VOLUME" if kwm.get(r["locale"], {}).get("queried", 0) >= 50 and published else "NOT_CHECKED")),

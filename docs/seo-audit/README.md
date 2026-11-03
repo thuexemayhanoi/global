@@ -2,7 +2,7 @@
 
 Read-only tooling that produces the Global SEO A–Z Master Matrix. It never writes site HTML, the production Matrix (`data/seo/master-matrix.json`), claims, sitemaps or production settings.
 
-- Reports: re-audit [`GLOBAL-SEO-AZ-AUDIT-20261101.md`](GLOBAL-SEO-AZ-AUDIT-20261101.md) (current) · baseline [`GLOBAL-SEO-AZ-AUDIT-20261027.md`](GLOBAL-SEO-AZ-AUDIT-20261027.md) · execution dashboard: [`EXECUTION-LEDGER.md`](EXECUTION-LEDGER.md)
+- Reports: re-audit [`GLOBAL-SEO-AZ-REAUDIT-20261103.md`](GLOBAL-SEO-AZ-REAUDIT-20261103.md) (current) · re-audit [`GLOBAL-SEO-AZ-AUDIT-20261101.md`](GLOBAL-SEO-AZ-AUDIT-20261101.md) · baseline [`GLOBAL-SEO-AZ-AUDIT-20261027.md`](GLOBAL-SEO-AZ-AUDIT-20261027.md) · execution dashboard: [`EXECUTION-LEDGER.md`](EXECUTION-LEDGER.md)
 - Commercial head terms (owner directive 2026-10-28): [`data/seo/commercial-head-terms.json`](../../data/seo/commercial-head-terms.json) · competitors, content gaps and off-page plan: [`COMPETITOR-GAP-AND-OFFPAGE-PLAN.md`](COMPETITOR-GAP-AND-OFFPAGE-PLAN.md) (SERP evidence `reports/seo/data/raw/serp-head-terms-20261028.json`) · new-Hub architecture proposal awaiting the owner: [`HUB-ARCHITECTURE-PROPOSAL-20261028.md`](HUB-ARCHITECTURE-PROPOSAL-20261028.md)
 - Owner actions waiting for the site owner (plain list): [`OWNER-ACTIONS.md`](OWNER-ACTIONS.md)
 - Workbook: [`reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx`](../../reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx)
@@ -45,6 +45,6 @@ The audit container may be unable to reach the production host. Live state is ve
 - `post-publish-qa.yml`: status, lang, canonical, sitemap, robots, 404, fingerprints, the NAP guard and host probes (http→https, trailing slash, www, response headers).
 - `reference-link-check.yml`: every outbound reference cited on published pages; `source-recheck.yml`: sourced third-party prices against their sources.
 
-Record their run IDs in `raw/external-evidence.json` (and the re-audit's runs in `raw/live-qa-<date>.json`). Their artifacts cannot be downloaded from the audit container (blob host blocked), so copy the logged summary from the job log.
+Record the re-audit's runs in `raw/live-qa-<date>.json` (a second snapshot on the same day adds a letter: `live-qa-<date>b.json`). `analyze.py` and `build_workbook.py` take the live markup and post-publish runs from the newest such file and mark a URL live-verified only when that run covers the audited commit; `raw/external-evidence.json` keeps the earlier runs. Their artifacts cannot be downloaded from the audit container (blob host blocked), so copy the logged summary from the job log.
 
 Browser and Lighthouse measurements run on a local static server that serves the committed build. They describe production only because live markup QA proves the deployed HTML byte-identical; network-dependent audits (text compression, cache TTL, server latency) reflect the local server and are ignored.

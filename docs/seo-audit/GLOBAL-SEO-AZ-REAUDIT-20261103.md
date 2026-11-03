@@ -47,3 +47,54 @@ Kiểm toán lại `main` @ `b983d68` sau vòng thực thi A–Z (PR #169–#188
 ## Chưa kiểm chứng
 
 Index, thứ hạng, CTR và Core Web Vitals thực tế (Search Console, GA4, CrUX chưa kết nối); số đo Lighthouse là lab trên server local HTTP/1.0, không phải dữ liệu người dùng.
+
+## Cập nhật chiều 03/11: snapshot `be44224` sau IMG-TOPIC-SIZES
+
+### IMG-TOPIC-SIZES: LIVE_VERIFIED
+Nhiệm vụ làm qua hai PR:
+- **#190:** `sizes` theo bề rộng đo thực tế; thêm bản 320w và 600w.
+- **#191:** breakpoint chính xác (đo theo bước 1 px) và thêm bản 520w cho thẻ Pillar 509 px trên desktop.
+
+Ảnh mới là bản thu nhỏ của chính ảnh cũ, cùng cách nén. Cách nén này tạo lại bản 480w trùng từng byte.
+
+Kiểm chứng:
+- Chromium: 0 trên 3.242 bề rộng (300–1920 px, cả hai template) có `sizes` lệch kích thước hiển thị. Chạy cùng script trên bản build trước #190 thì lệch 3.242/3.242.
+- Chọn file: 176/176 trường hợp (22 bề rộng biên × DPR 1/1,75/2/3 × 2 template) tải file nhỏ nhất đủ phủ kích thước hiển thị.
+- Production:
+  - 24/24 file mà srcset có thể chọn trả về 200 `image/webp` (reference-link-check run 41626256034);
+  - live markup QA 41625548441: 1.081/1.081 trang khớp bản build;
+  - post-publish QA 41625530908: 1.094 mục, 0 lỗi.
+
+### Bằng chứng của snapshot `be44224`
+
+| Kiểm tra | Kết quả | File |
+|---|---|---|
+| `collect.py`, `deep_audit.py`, `tech_reaudit.py` | chạy lại trên `be44224`; `tech_reaudit` giống hệt buổi sáng | `audit-data.json`, `deep-audit.json` |
+| 10 cổng QA của repo | chạy lại trên `be44224`, kết quả giống hệt các file `raw/*.txt` | `raw/*.txt` |
+| Live QA | run 41625548441 và 41625530908 | `live-qa-20261103b.json` |
+| Lighthouse 15 URL × 2 | LCP mobile trung vị 1,43 s (sáng: 1,50 s); desktop 0,40 s; điểm hiệu năng 100/100 | `lighthouse-20261103b.json` |
+| Browser audit, W3C, link nguồn | giữ từ buổi sáng (đo trên `b983d68`; `be44224` chỉ khác `srcset`/`sizes` của 11 trang). W3C chạy lại trên 11 trang đó: 0 lỗi | `*-20261103.json` |
+
+Dung lượng thừa của ảnh minh họa theo Lighthouse (KiB, từ buổi sáng → snapshot này):
+
+| Trang | Desktop | Mobile |
+|---|---|---|
+| 4 Pillar trong mẫu | 160 → 0 | 140 → 29 |
+| Trang gốc, ảnh chủ đề | 123 → 0 | 0 → 100 |
+| Trang gốc, ảnh hero (không đổi) | 49 | 20 |
+
+Về các dòng còn lại:
+- Trang gốc trên mobile nay tải bản 720w cho ô cần 654 px thiết bị. Trước đây trang tải bản 480w và phóng to lên.
+- Phần thừa còn lại là phần ảnh bị cắt bởi `object-fit` (khung 1,6:1 trên điện thoại; ảnh hero 16:9 trong khung 4:3 trên desktop), cộng bước nhảy 600w → 720w ở màn hình giả lập Moto G.
+- `S-TOPIC-IMG-SIZES` vì vậy ghi `WONT_FIX` kèm lý do.
+- Workbook: OPEN 1 → 0; WONT_FIX 5 → 6; tổng số lỗi vẫn là 737.
+
+### Sửa lỗi công cụ
+Workbook buổi sáng có hai chỗ sai. Cột `live_evidence` của Master Matrix ghi `NOT_REVERIFIED` cho 1.081 URL, và AUDIT CHANGELOG cùng phần Data sources dẫn tới run live QA ngày 01/11. Lý do: `analyze.py` và `build_workbook.py` đọc `raw/external-evidence.json`, nơi chưa ghi run của buổi tái kiểm toán.
+
+Đã sửa:
+- Hai công cụ nay lấy run live markup QA và post-publish QA từ file `raw/live-qa-*.json` mới nhất. Mỗi URL được ghi `VERIFIED` chỉ khi run đó đúng commit được kiểm toán.
+- Dòng RE_AUDIT trỏ tới báo cáo mới nhất.
+- Dòng FIX_TASKS đếm theo `TASKS.json`.
+
+Bảng A–Z không còn nhiệm vụ mở. Checkpoint trở về bước theo dõi; index và thứ hạng vẫn chưa đo được khi chưa có Search Console.

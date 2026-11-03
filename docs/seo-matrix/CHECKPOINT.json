@@ -2,19 +2,8 @@
  "generated": "2026-11-03",
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
- "current_task": {
-  "id": "IMG-TOPIC-SIZES",
-  "phase": "IMG",
-  "title": "Topic illustrations on the locale Pillars and the root page: sizes does not match the rendered width and no file is close to the slot, so pages load larger (desktop, Moto G) or smaller (root gallery on high-DPR phones) images than they show",
-  "status": "FIXED",
-  "branch": "seo/az-img-topic-sizes-2",
-  "commit": "",
-  "pr": "",
-  "deploy_run": "",
-  "live_qa": [],
-  "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED"
- },
- "next_action": "Merge, Pages deploy, live markup QA and post-publish QA; then record LIVE_VERIFIED",
+ "current_task": null,
+ "next_action": "Re-run the audit pipeline (collect → analyze → ledger → az_matrix → workbook) and docs/seo-audit/tools/tech_reaudit.py on current main; add a task to TASKS.json only for a verified new finding on an existing URL; otherwise monitor (indexing and rankings stay unmeasured without Search Console)",
  "next_todo": [],
  "blocked": [],
  "owner_actions": "docs/seo-audit/OWNER-ACTIONS.md (OWNER_ACTIONS_LAST)",
@@ -31,8 +20,7 @@
    "LIVE_VERIFIED": 10
   },
   "IMG": {
-   "LIVE_VERIFIED": 25,
-   "FIXED": 1
+   "LIVE_VERIFIED": 26
   },
   "META": {
    "LIVE_VERIFIED": 2
