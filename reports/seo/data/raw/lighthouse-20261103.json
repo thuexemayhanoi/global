@@ -1,0 +1,2972 @@
+{
+ "tool": "Lighthouse CLI against http://127.0.0.1:8771 (local static server serving the committed build; Chromium 1243 headless; default mobile emulation with simulated throttling, and --preset=desktop)",
+ "date": "2026-11-03",
+ "commit": "b983d685beaa298d89ab96a94a2282ec26aeb4e4",
+ "lighthouse_version": "12.6.1",
+ "caveat": "Lab data on localhost: no real network, CDN or TLS; Lighthouse simulates a slow 4G/CPU for mobile. Not field data (CrUX/INP NOT_CONNECTED).",
+ "median": {
+  "mobile": {
+   "LCP": "1.50 s",
+   "CLS": 0.005,
+   "TBT": "0 ms",
+   "FCP": "1.05 s",
+   "SI": "1.05 s"
+  },
+  "desktop": {
+   "LCP": "0.38 s",
+   "CLS": 0.003,
+   "TBT": "0 ms",
+   "FCP": "0.28 s",
+   "SI": "0.28 s"
+  }
+ },
+ "median_scores": {
+  "mobile": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "desktop": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  }
+ },
+ "flagged_audits": {
+  "render-blocking-resources": [
+   "desktop:/",
+   "desktop:/about/",
+   "desktop:/de/",
+   "desktop:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "desktop:/de/topics/mietpreise-und-kaution/",
+   "desktop:/en/",
+   "desktop:/en/guides/manual-vs-automatic/",
+   "desktop:/fr/checklist/",
+   "desktop:/ja/",
+   "desktop:/ko/guides/sudong-jadong/",
+   "desktop:/search/",
+   "desktop:/vi/",
+   "desktop:/vi/checklist/",
+   "desktop:/vi/topics/chi-phi-thue-xe/",
+   "desktop:/zh/guides/yuenan-jiazhao-jifen-zhidu/",
+   "mobile:/",
+   "mobile:/about/",
+   "mobile:/de/",
+   "mobile:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "mobile:/de/topics/mietpreise-und-kaution/",
+   "mobile:/en/",
+   "mobile:/en/guides/manual-vs-automatic/",
+   "mobile:/fr/checklist/",
+   "mobile:/ja/",
+   "mobile:/ko/guides/sudong-jadong/",
+   "mobile:/search/",
+   "mobile:/vi/",
+   "mobile:/vi/checklist/",
+   "mobile:/vi/topics/chi-phi-thue-xe/",
+   "mobile:/zh/guides/yuenan-jiazhao-jifen-zhidu/"
+  ],
+  "render-blocking-insight": [
+   "desktop:/",
+   "desktop:/about/",
+   "desktop:/de/",
+   "desktop:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "desktop:/de/topics/mietpreise-und-kaution/",
+   "desktop:/en/",
+   "desktop:/en/guides/manual-vs-automatic/",
+   "desktop:/fr/checklist/",
+   "desktop:/ja/",
+   "desktop:/ko/guides/sudong-jadong/",
+   "desktop:/search/",
+   "desktop:/vi/",
+   "desktop:/vi/checklist/",
+   "desktop:/vi/topics/chi-phi-thue-xe/",
+   "desktop:/zh/guides/yuenan-jiazhao-jifen-zhidu/",
+   "mobile:/",
+   "mobile:/about/",
+   "mobile:/de/",
+   "mobile:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "mobile:/de/topics/mietpreise-und-kaution/",
+   "mobile:/en/",
+   "mobile:/en/guides/manual-vs-automatic/",
+   "mobile:/fr/checklist/",
+   "mobile:/ja/",
+   "mobile:/ko/guides/sudong-jadong/",
+   "mobile:/search/",
+   "mobile:/vi/",
+   "mobile:/vi/checklist/",
+   "mobile:/vi/topics/chi-phi-thue-xe/",
+   "mobile:/zh/guides/yuenan-jiazhao-jifen-zhidu/"
+  ],
+  "unused-css-rules": [
+   "desktop:/",
+   "desktop:/about/",
+   "desktop:/de/",
+   "desktop:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "desktop:/de/topics/mietpreise-und-kaution/",
+   "desktop:/en/",
+   "desktop:/en/guides/manual-vs-automatic/",
+   "desktop:/fr/checklist/",
+   "desktop:/ja/",
+   "desktop:/ko/guides/sudong-jadong/",
+   "desktop:/search/",
+   "desktop:/vi/",
+   "desktop:/vi/checklist/",
+   "desktop:/vi/topics/chi-phi-thue-xe/",
+   "desktop:/zh/guides/yuenan-jiazhao-jifen-zhidu/",
+   "mobile:/",
+   "mobile:/about/",
+   "mobile:/de/",
+   "mobile:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "mobile:/de/topics/mietpreise-und-kaution/",
+   "mobile:/en/",
+   "mobile:/en/guides/manual-vs-automatic/",
+   "mobile:/fr/checklist/",
+   "mobile:/ja/",
+   "mobile:/ko/guides/sudong-jadong/",
+   "mobile:/search/",
+   "mobile:/vi/",
+   "mobile:/vi/checklist/",
+   "mobile:/vi/topics/chi-phi-thue-xe/",
+   "mobile:/zh/guides/yuenan-jiazhao-jifen-zhidu/"
+  ],
+  "uses-text-compression": [
+   "desktop:/",
+   "desktop:/about/",
+   "desktop:/de/",
+   "desktop:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "desktop:/de/topics/mietpreise-und-kaution/",
+   "desktop:/en/",
+   "desktop:/en/guides/manual-vs-automatic/",
+   "desktop:/fr/checklist/",
+   "desktop:/ja/",
+   "desktop:/ko/guides/sudong-jadong/",
+   "desktop:/search/",
+   "desktop:/vi/",
+   "desktop:/vi/checklist/",
+   "desktop:/vi/topics/chi-phi-thue-xe/",
+   "desktop:/zh/guides/yuenan-jiazhao-jifen-zhidu/",
+   "mobile:/",
+   "mobile:/about/",
+   "mobile:/de/",
+   "mobile:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "mobile:/de/topics/mietpreise-und-kaution/",
+   "mobile:/en/",
+   "mobile:/en/guides/manual-vs-automatic/",
+   "mobile:/fr/checklist/",
+   "mobile:/ja/",
+   "mobile:/ko/guides/sudong-jadong/",
+   "mobile:/search/",
+   "mobile:/vi/",
+   "mobile:/vi/checklist/",
+   "mobile:/vi/topics/chi-phi-thue-xe/",
+   "mobile:/zh/guides/yuenan-jiazhao-jifen-zhidu/"
+  ],
+  "uses-long-cache-ttl": [
+   "desktop:/",
+   "desktop:/about/",
+   "desktop:/de/",
+   "desktop:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "desktop:/de/topics/mietpreise-und-kaution/",
+   "desktop:/en/",
+   "desktop:/en/guides/manual-vs-automatic/",
+   "desktop:/fr/checklist/",
+   "desktop:/ja/",
+   "desktop:/ko/guides/sudong-jadong/",
+   "desktop:/search/",
+   "desktop:/vi/",
+   "desktop:/vi/checklist/",
+   "desktop:/vi/topics/chi-phi-thue-xe/",
+   "desktop:/zh/guides/yuenan-jiazhao-jifen-zhidu/",
+   "mobile:/",
+   "mobile:/about/",
+   "mobile:/de/",
+   "mobile:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "mobile:/de/topics/mietpreise-und-kaution/",
+   "mobile:/en/",
+   "mobile:/en/guides/manual-vs-automatic/",
+   "mobile:/fr/checklist/",
+   "mobile:/ja/",
+   "mobile:/ko/guides/sudong-jadong/",
+   "mobile:/search/",
+   "mobile:/vi/",
+   "mobile:/vi/checklist/",
+   "mobile:/vi/topics/chi-phi-thue-xe/",
+   "mobile:/zh/guides/yuenan-jiazhao-jifen-zhidu/"
+  ],
+  "document-latency-insight": [
+   "desktop:/",
+   "desktop:/about/",
+   "desktop:/de/",
+   "desktop:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "desktop:/de/topics/mietpreise-und-kaution/",
+   "desktop:/en/",
+   "desktop:/en/guides/manual-vs-automatic/",
+   "desktop:/fr/checklist/",
+   "desktop:/ja/",
+   "desktop:/ko/guides/sudong-jadong/",
+   "desktop:/search/",
+   "desktop:/vi/",
+   "desktop:/vi/checklist/",
+   "desktop:/vi/topics/chi-phi-thue-xe/",
+   "desktop:/zh/guides/yuenan-jiazhao-jifen-zhidu/",
+   "mobile:/",
+   "mobile:/about/",
+   "mobile:/de/",
+   "mobile:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "mobile:/de/topics/mietpreise-und-kaution/",
+   "mobile:/en/",
+   "mobile:/en/guides/manual-vs-automatic/",
+   "mobile:/fr/checklist/",
+   "mobile:/ja/",
+   "mobile:/ko/guides/sudong-jadong/",
+   "mobile:/search/",
+   "mobile:/vi/",
+   "mobile:/vi/checklist/",
+   "mobile:/vi/topics/chi-phi-thue-xe/",
+   "mobile:/zh/guides/yuenan-jiazhao-jifen-zhidu/"
+  ],
+  "cache-insight": [
+   "desktop:/",
+   "desktop:/about/",
+   "desktop:/de/",
+   "desktop:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "desktop:/de/topics/mietpreise-und-kaution/",
+   "desktop:/en/",
+   "desktop:/en/guides/manual-vs-automatic/",
+   "desktop:/fr/checklist/",
+   "desktop:/ja/",
+   "desktop:/ko/guides/sudong-jadong/",
+   "desktop:/search/",
+   "desktop:/vi/",
+   "desktop:/vi/checklist/",
+   "desktop:/vi/topics/chi-phi-thue-xe/",
+   "desktop:/zh/guides/yuenan-jiazhao-jifen-zhidu/",
+   "mobile:/",
+   "mobile:/about/",
+   "mobile:/de/",
+   "mobile:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "mobile:/de/topics/mietpreise-und-kaution/",
+   "mobile:/en/",
+   "mobile:/en/guides/manual-vs-automatic/",
+   "mobile:/fr/checklist/",
+   "mobile:/ja/",
+   "mobile:/ko/guides/sudong-jadong/",
+   "mobile:/search/",
+   "mobile:/vi/",
+   "mobile:/vi/checklist/",
+   "mobile:/vi/topics/chi-phi-thue-xe/",
+   "mobile:/zh/guides/yuenan-jiazhao-jifen-zhidu/"
+  ],
+  "network-dependency-tree-insight": [
+   "desktop:/",
+   "desktop:/about/",
+   "desktop:/de/",
+   "desktop:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "desktop:/de/topics/mietpreise-und-kaution/",
+   "desktop:/en/",
+   "desktop:/en/guides/manual-vs-automatic/",
+   "desktop:/fr/checklist/",
+   "desktop:/ja/",
+   "desktop:/ko/guides/sudong-jadong/",
+   "desktop:/search/",
+   "desktop:/vi/",
+   "desktop:/vi/checklist/",
+   "desktop:/vi/topics/chi-phi-thue-xe/",
+   "desktop:/zh/guides/yuenan-jiazhao-jifen-zhidu/",
+   "mobile:/",
+   "mobile:/about/",
+   "mobile:/de/",
+   "mobile:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "mobile:/de/topics/mietpreise-und-kaution/",
+   "mobile:/en/",
+   "mobile:/en/guides/manual-vs-automatic/",
+   "mobile:/fr/checklist/",
+   "mobile:/ja/",
+   "mobile:/ko/guides/sudong-jadong/",
+   "mobile:/search/",
+   "mobile:/vi/",
+   "mobile:/vi/checklist/",
+   "mobile:/vi/topics/chi-phi-thue-xe/",
+   "mobile:/zh/guides/yuenan-jiazhao-jifen-zhidu/"
+  ],
+  "uses-responsive-images": [
+   "desktop:/",
+   "desktop:/de/",
+   "desktop:/en/",
+   "desktop:/ja/",
+   "desktop:/vi/",
+   "mobile:/",
+   "mobile:/de/",
+   "mobile:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "mobile:/de/topics/mietpreise-und-kaution/",
+   "mobile:/en/",
+   "mobile:/en/guides/manual-vs-automatic/",
+   "mobile:/fr/checklist/",
+   "mobile:/ja/",
+   "mobile:/ko/guides/sudong-jadong/",
+   "mobile:/vi/",
+   "mobile:/vi/checklist/",
+   "mobile:/vi/topics/chi-phi-thue-xe/",
+   "mobile:/zh/guides/yuenan-jiazhao-jifen-zhidu/"
+  ],
+  "image-delivery-insight": [
+   "desktop:/",
+   "desktop:/de/",
+   "desktop:/en/",
+   "desktop:/ja/",
+   "desktop:/vi/",
+   "mobile:/",
+   "mobile:/de/",
+   "mobile:/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "mobile:/de/topics/mietpreise-und-kaution/",
+   "mobile:/en/",
+   "mobile:/en/guides/manual-vs-automatic/",
+   "mobile:/fr/checklist/",
+   "mobile:/ja/",
+   "mobile:/ko/guides/sudong-jadong/",
+   "mobile:/vi/",
+   "mobile:/vi/checklist/",
+   "mobile:/vi/topics/chi-phi-thue-xe/",
+   "mobile:/zh/guides/yuenan-jiazhao-jifen-zhidu/"
+  ],
+  "lcp-lazy-loaded": [
+   "desktop:/en/guides/manual-vs-automatic/"
+  ],
+  "lcp-discovery-insight": [
+   "desktop:/en/guides/manual-vs-automatic/"
+  ],
+  "is-crawlable": [
+   "desktop:/search/",
+   "mobile:/search/"
+  ]
+ },
+ "summary_text": "median mobile LCP 1.50 s, CLS 0.005, TBT 0 ms, SI 1.05 s; desktop LCP 0.38 s; median scores mobile perf 100/a11y 100/BP 100/SEO 100; worst mobile LCP 2.25 s on /",
+ "runs": [
+  {
+   "url": "/about/",
+   "form_factor": "desktop",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 322.1249,
+    "cumulative-layout-shift": 0,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 242.12490000000003,
+    "speed-index": 242.12490000000003,
+    "interactive": 322.1249
+   },
+   "display": {
+    "largest-contentful-paint": "0.3 s",
+    "cumulative-layout-shift": "0",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.2 s",
+    "speed-index": "0.2 s",
+    "interactive": "0.3 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 60 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 37 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 37 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "3 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 4 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 47 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p>",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/de/",
+   "form_factor": "desktop",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 402.98601687991606,
+    "cumulative-layout-shift": 0,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 282.98601687991606,
+    "speed-index": 282.98601687991606,
+    "interactive": 406.98601687991606
+   },
+   "display": {
+    "largest-contentful-paint": "0.4 s",
+    "cumulative-layout-shift": "0",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.3 s",
+    "speed-index": "0.3 s",
+    "interactive": "0.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0.5,
+     "display": "Est savings of 10 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 26 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0.5,
+     "display": "Est savings of 160 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 52 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "7 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0.5,
+     "display": "Est savings of 197 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 18 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 368 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<h1>",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "form_factor": "desktop",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 361.30067548837735,
+    "cumulative-layout-shift": 0.007208051348824965,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 281.30067548837735,
+    "speed-index": 281.30067548837735,
+    "interactive": 361.30067548837735
+   },
+   "display": {
+    "largest-contentful-paint": "0.4 s",
+    "cumulative-layout-shift": "0.007",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.3 s",
+    "speed-index": "0.3 s",
+    "interactive": "0.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0.5,
+     "display": "Est savings of 10 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 33 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 61 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 26 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 98 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p>",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/de/topics/mietpreise-und-kaution/",
+   "form_factor": "desktop",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 400.6486973171903,
+    "cumulative-layout-shift": 0.004761129630276283,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 303.6486973171903,
+    "speed-index": 303.6486973171903,
+    "interactive": 400.64869731719034
+   },
+   "display": {
+    "largest-contentful-paint": "0.4 s",
+    "cumulative-layout-shift": "0.005",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.3 s",
+    "speed-index": "0.3 s",
+    "interactive": "0.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 40 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 33 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 53 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 18 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 90 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p>",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/en/",
+   "form_factor": "desktop",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 360.931,
+    "cumulative-layout-shift": 0,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 280.931,
+    "speed-index": 280.931,
+    "interactive": 364.93100000000004
+   },
+   "display": {
+    "largest-contentful-paint": "0.4 s",
+    "cumulative-layout-shift": "0",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.3 s",
+    "speed-index": "0.3 s",
+    "interactive": "0.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 50 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 26 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0.5,
+     "display": "Est savings of 160 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 52 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "7 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0.5,
+     "display": "Est savings of 197 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 17 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 368 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<h1>",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/en/guides/manual-vs-automatic/",
+   "form_factor": "desktop",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 402.1133,
+    "cumulative-layout-shift": 0.003584041344446623,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 303.1133,
+    "speed-index": 303.1133,
+    "interactive": 402.1133
+   },
+   "display": {
+    "largest-contentful-paint": "0.4 s",
+    "cumulative-layout-shift": "0.004",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.3 s",
+    "speed-index": "0.3 s",
+    "interactive": "0.4 s"
+   },
+   "flags": {
+    "lcp-lazy-loaded": {
+     "score": 0,
+     "display": null,
+     "title": "Largest Contentful Paint image was lazily loaded"
+    },
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 40 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0.5,
+     "display": "Est savings of 33 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 54 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "lcp-discovery-insight": {
+     "score": 0,
+     "display": null,
+     "title": "LCP request discovery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 19 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 96 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<img src=\"http://127.0.0.1:8771/img/en/guides/manual-vs-automatic-800.webp\" srcset=\"/img/en/guides/manual-vs-automatic-640.webp 640w, /img/en/guides/manual-vs…\"",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/fr/checklist/",
+   "form_factor": "desktop",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 400.904,
+    "cumulative-layout-shift": 0.003126695264674834,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 283.904,
+    "speed-index": 283.904,
+    "interactive": 400.904
+   },
+   "display": {
+    "largest-contentful-paint": "0.4 s",
+    "cumulative-layout-shift": "0.003",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.3 s",
+    "speed-index": "0.3 s",
+    "interactive": "0.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 60 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 32 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 56 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 21 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 93 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<img src=\"http://127.0.0.1:8771/img/fr/checklist/checklist-location-scooter-hanoi-80…\" srcset=\"/img/fr/checklist/checklist-location-scooter-hanoi-640.webp 640w,",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/ja/",
+   "form_factor": "desktop",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 381.8038,
+    "cumulative-layout-shift": 0,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 281.8038,
+    "speed-index": 281.8038,
+    "interactive": 387.8038
+   },
+   "display": {
+    "largest-contentful-paint": "0.4 s",
+    "cumulative-layout-shift": "0",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.3 s",
+    "speed-index": "0.3 s",
+    "interactive": "0.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0.5,
+     "display": "Est savings of 0 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 26 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0.5,
+     "display": "Est savings of 160 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 53 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "7 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0.5,
+     "display": "Est savings of 197 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 18 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 368 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<h1>",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/ko/guides/sudong-jadong/",
+   "form_factor": "desktop",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 365.37519999999995,
+    "cumulative-layout-shift": 0.003318998514586865,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 285.3752,
+    "speed-index": 285.3752,
+    "interactive": 365.37519999999995
+   },
+   "display": {
+    "largest-contentful-paint": "0.4 s",
+    "cumulative-layout-shift": "0.003",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.3 s",
+    "speed-index": "0.3 s",
+    "interactive": "0.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 40 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 33 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 55 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 21 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 91 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p>",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/",
+   "form_factor": "desktop",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 483.558,
+    "cumulative-layout-shift": 0,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 245.558,
+    "speed-index": 266.5119069377403,
+    "interactive": 491.558
+   },
+   "display": {
+    "largest-contentful-paint": "0.5 s",
+    "cumulative-layout-shift": "0",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.2 s",
+    "speed-index": "0.3 s",
+    "interactive": "0.5 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0.5,
+     "display": "Est savings of 10 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 31 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0,
+     "display": "Est savings of 172 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 41 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "8 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0,
+     "display": "Est savings of 194 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 7 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 307 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<img src=\"http://127.0.0.1:8771/hero-hanoi-800.webp\" srcset=\"/hero-hanoi-800.webp 800w, /hero-hanoi-1200.webp 1200w, /hero-hanoi.webp 1…\" sizes=\"(max-width: 767",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/search/",
+   "form_factor": "desktop",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.66
+   },
+   "metrics": {
+    "largest-contentful-paint": 322.9721,
+    "cumulative-layout-shift": 0,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 242.9721,
+    "speed-index": 242.9721,
+    "interactive": 322.9721
+   },
+   "display": {
+    "largest-contentful-paint": "0.3 s",
+    "cumulative-layout-shift": "0",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.2 s",
+    "speed-index": "0.2 s",
+    "interactive": "0.3 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 60 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 36 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 38 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 3 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 51 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    },
+    "is-crawlable": {
+     "score": 0,
+     "display": null,
+     "title": "Page is blocked from indexing"
+    }
+   },
+   "lcp_element": "<h1>",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/vi/",
+   "form_factor": "desktop",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 383.273,
+    "cumulative-layout-shift": 0,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 283.273,
+    "speed-index": 283.273,
+    "interactive": 389.273
+   },
+   "display": {
+    "largest-contentful-paint": "0.4 s",
+    "cumulative-layout-shift": "0",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.3 s",
+    "speed-index": "0.3 s",
+    "interactive": "0.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0.5,
+     "display": "Est savings of 20 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 26 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0.5,
+     "display": "Est savings of 160 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 54 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "7 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0.5,
+     "display": "Est savings of 197 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 19 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 368 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<h1>",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/vi/checklist/",
+   "form_factor": "desktop",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 401.0623,
+    "cumulative-layout-shift": 0.003094053781088246,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 281.0623,
+    "speed-index": 281.0623,
+    "interactive": 401.06230000000005
+   },
+   "display": {
+    "largest-contentful-paint": "0.4 s",
+    "cumulative-layout-shift": "0.003",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.3 s",
+    "speed-index": "0.3 s",
+    "interactive": "0.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 60 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 32 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 52 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 17 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 91 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<img src=\"http://127.0.0.1:8771/img/vi/checklist/checklist-thue-xe-may-ha-noi-800.we…\" srcset=\"/img/vi/checklist/checklist-thue-xe-may-ha-noi-640.webp 640w, /im",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/vi/topics/chi-phi-thue-xe/",
+   "form_factor": "desktop",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 400.8777,
+    "cumulative-layout-shift": 0.003288710054339797,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 280.8777,
+    "speed-index": 280.8777,
+    "interactive": 400.8777
+   },
+   "display": {
+    "largest-contentful-paint": "0.4 s",
+    "cumulative-layout-shift": "0.003",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.3 s",
+    "speed-index": "0.3 s",
+    "interactive": "0.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 50 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 33 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 58 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 22 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 88 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p>",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/zh/guides/yuenan-jiazhao-jifen-zhidu/",
+   "form_factor": "desktop",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 363.7558554287843,
+    "cumulative-layout-shift": 0.002771882982752554,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 335.7558554287843,
+    "speed-index": 335.7558554287843,
+    "interactive": 363.75585542878434
+   },
+   "display": {
+    "largest-contentful-paint": "0.4 s",
+    "cumulative-layout-shift": "0.003",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.3 s",
+    "speed-index": "0.3 s",
+    "interactive": "0.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 40 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0.5,
+     "display": "Est savings of 33 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 53 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 18 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 90 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p>",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/about/",
+   "form_factor": "mobile",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 1351.4448,
+    "cumulative-layout-shift": 0,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 1051.4448,
+    "speed-index": 1051.4448,
+    "interactive": 1351.4448000000002
+   },
+   "display": {
+    "largest-contentful-paint": "1.4 s",
+    "cumulative-layout-shift": "0",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "1.1 s",
+    "speed-index": "1.1 s",
+    "interactive": "1.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 230 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 36 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 37 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "3 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 4 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 47 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p>",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/de/",
+   "form_factor": "mobile",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 1652.4739,
+    "cumulative-layout-shift": 0,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 1202.4739,
+    "speed-index": 1202.4739,
+    "interactive": 1682.4739
+   },
+   "display": {
+    "largest-contentful-paint": "1.7 s",
+    "cumulative-layout-shift": "0",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "1.2 s",
+    "speed-index": "1.2 s",
+    "interactive": "1.7 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 30 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 22 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0.5,
+     "display": "Est savings of 140 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 52 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "7 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0.5,
+     "display": "Est savings of 265 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 18 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 368 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p class=\"lead\">",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "form_factor": "mobile",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 1276.5073485340204,
+    "cumulative-layout-shift": 0.006695307666914159,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 1051.5073485340204,
+    "speed-index": 1051.5073485340204,
+    "interactive": 1284.0073485340204
+   },
+   "display": {
+    "largest-contentful-paint": "1.3 s",
+    "cumulative-layout-shift": "0.007",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "1.1 s",
+    "speed-index": "1.1 s",
+    "interactive": "1.3 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0.5,
+     "display": "Est savings of 20 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 31 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0.5,
+     "display": "Est savings of 16 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 61 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0.5,
+     "display": "Est savings of 39 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 26 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 98 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<h1>",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/de/topics/mietpreise-und-kaution/",
+   "form_factor": "mobile",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 1426.2259174460337,
+    "cumulative-layout-shift": 0.005091085433851558,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 1051.2259174460337,
+    "speed-index": 1051.2259174460337,
+    "interactive": 1433.7259174460337
+   },
+   "display": {
+    "largest-contentful-paint": "1.4 s",
+    "cumulative-layout-shift": "0.005",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "1.1 s",
+    "speed-index": "1.1 s",
+    "interactive": "1.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 190 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 31 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0.5,
+     "display": "Est savings of 14 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 53 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0.5,
+     "display": "Est savings of 34 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 18 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 90 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p class=\"article-lead\">",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/en/",
+   "form_factor": "mobile",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 1652.2575,
+    "cumulative-layout-shift": 0,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 1202.2575,
+    "speed-index": 1202.2575,
+    "interactive": 1682.2575000000002
+   },
+   "display": {
+    "largest-contentful-paint": "1.7 s",
+    "cumulative-layout-shift": "0",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "1.2 s",
+    "speed-index": "1.2 s",
+    "interactive": "1.7 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 40 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 22 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0.5,
+     "display": "Est savings of 140 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 52 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "7 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0.5,
+     "display": "Est savings of 265 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 17 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 368 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p class=\"lead\">",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/en/guides/manual-vs-automatic/",
+   "form_factor": "mobile",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 1425.9856,
+    "cumulative-layout-shift": 0.01601334386164777,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 1050.9856,
+    "speed-index": 1050.9856,
+    "interactive": 1433.4856
+   },
+   "display": {
+    "largest-contentful-paint": "1.4 s",
+    "cumulative-layout-shift": "0.016",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "1.1 s",
+    "speed-index": "1.1 s",
+    "interactive": "1.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 200 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 31 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0.5,
+     "display": "Est savings of 15 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 54 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0.5,
+     "display": "Est savings of 37 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 19 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 96 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p>",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/fr/checklist/",
+   "form_factor": "mobile",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 1652.0865723588888,
+    "cumulative-layout-shift": 0.01183332517617351,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 1202.0865723588888,
+    "speed-index": 1202.0865723588888,
+    "interactive": 1652.0865723588888
+   },
+   "display": {
+    "largest-contentful-paint": "1.7 s",
+    "cumulative-layout-shift": "0.012",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "1.2 s",
+    "speed-index": "1.2 s",
+    "interactive": "1.7 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0.5,
+     "display": "Est savings of 20 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 30 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0,
+     "display": "Est savings of 15 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 56 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0,
+     "display": "Est savings of 35 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 21 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 93 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<img src=\"http://127.0.0.1:8771/img/fr/checklist/checklist-location-scooter-hanoi-80…\" srcset=\"/img/fr/checklist/checklist-location-scooter-hanoi-640.webp 640w,",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/ja/",
+   "form_factor": "mobile",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 1725.8001,
+    "cumulative-layout-shift": 0,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 1216.40005,
+    "speed-index": 1216.40005,
+    "interactive": 1763.3001
+   },
+   "display": {
+    "largest-contentful-paint": "1.7 s",
+    "cumulative-layout-shift": "0",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "1.2 s",
+    "speed-index": "1.2 s",
+    "interactive": "1.8 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0.5,
+     "display": "Est savings of 0 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0.5,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 22 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0.5,
+     "display": "Est savings of 140 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 53 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "7 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0.5,
+     "display": "Est savings of 265 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 18 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 368 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p class=\"lead\">",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/ko/guides/sudong-jadong/",
+   "form_factor": "mobile",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 1425.3781,
+    "cumulative-layout-shift": 0.01372364623634021,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 1276.3781,
+    "speed-index": 1276.3781,
+    "interactive": 1432.8781
+   },
+   "display": {
+    "largest-contentful-paint": "1.4 s",
+    "cumulative-layout-shift": "0.014",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "1.3 s",
+    "speed-index": "1.3 s",
+    "interactive": "1.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0.5,
+     "display": "Est savings of 0 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 31 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0.5,
+     "display": "Est savings of 14 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 55 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0.5,
+     "display": "Est savings of 34 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 21 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 91 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p class=\"article-lead\">",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/",
+   "form_factor": "mobile",
+   "scores": {
+    "performance": 0.99,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 2254.3257,
+    "cumulative-layout-shift": 0,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 904.3257000000001,
+    "speed-index": 904.3257000000001,
+    "interactive": 2314.3257000000003
+   },
+   "display": {
+    "largest-contentful-paint": "2.3 s",
+    "cumulative-layout-shift": "0",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "0.9 s",
+    "speed-index": "0.9 s",
+    "interactive": "2.3 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0.5,
+     "display": "Est savings of 0 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 26 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0,
+     "display": "Est savings of 20 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 41 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "8 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0,
+     "display": "Est savings of 162 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 7 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 307 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<img src=\"http://127.0.0.1:8771/hero-hanoi-800.webp\" srcset=\"/hero-hanoi-800.webp 800w, /hero-hanoi-1200.webp 1200w, /hero-hanoi.webp 1…\" sizes=\"(max-width: 767",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/search/",
+   "form_factor": "mobile",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 0.66
+   },
+   "metrics": {
+    "largest-contentful-paint": 1353.4664,
+    "cumulative-layout-shift": 0,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 1053.4664,
+    "speed-index": 1053.4664,
+    "interactive": 1353.4664000000002
+   },
+   "display": {
+    "largest-contentful-paint": "1.4 s",
+    "cumulative-layout-shift": "0",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "1.1 s",
+    "speed-index": "1.1 s",
+    "interactive": "1.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 220 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 34 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 38 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 3 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 51 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    },
+    "is-crawlable": {
+     "score": 0,
+     "display": null,
+     "title": "Page is blocked from indexing"
+    }
+   },
+   "lcp_element": "<p>",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/vi/",
+   "form_factor": "mobile",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 1801.9643,
+    "cumulative-layout-shift": 0,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 1051.9643,
+    "speed-index": 1051.9643,
+    "interactive": 1831.9643000000003
+   },
+   "display": {
+    "largest-contentful-paint": "1.8 s",
+    "cumulative-layout-shift": "0",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "1.1 s",
+    "speed-index": "1.1 s",
+    "interactive": "1.8 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0.5,
+     "display": "Est savings of 20 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 22 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0.5,
+     "display": "Est savings of 140 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 54 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "7 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0.5,
+     "display": "Est savings of 265 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 19 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 368 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p class=\"lead\">",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/vi/checklist/",
+   "form_factor": "mobile",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 1651.8691,
+    "cumulative-layout-shift": 0.01183332517617351,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 1051.8691,
+    "speed-index": 1051.8691,
+    "interactive": 1651.8691
+   },
+   "display": {
+    "largest-contentful-paint": "1.7 s",
+    "cumulative-layout-shift": "0.012",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "1.1 s",
+    "speed-index": "1.1 s",
+    "interactive": "1.7 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 190 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 30 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0,
+     "display": "Est savings of 14 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 52 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0,
+     "display": "Est savings of 34 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 17 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 91 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p class=\"article-lead\">",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/vi/topics/chi-phi-thue-xe/",
+   "form_factor": "mobile",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 1351.1723,
+    "cumulative-layout-shift": 0.01166707078590982,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 1201.1723,
+    "speed-index": 1201.1723,
+    "interactive": 1351.1723
+   },
+   "display": {
+    "largest-contentful-paint": "1.4 s",
+    "cumulative-layout-shift": "0.012",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "1.2 s",
+    "speed-index": "1.2 s",
+    "interactive": "1.4 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 50 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 31 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0.5,
+     "display": "Est savings of 13 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 58 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0.5,
+     "display": "Est savings of 32 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 22 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 88 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p class=\"article-lead\">",
+   "lighthouse_version": "12.6.1"
+  },
+  {
+   "url": "/zh/guides/yuenan-jiazhao-jifen-zhidu/",
+   "form_factor": "mobile",
+   "scores": {
+    "performance": 1,
+    "accessibility": 1,
+    "best-practices": 1,
+    "seo": 1
+   },
+   "metrics": {
+    "largest-contentful-paint": 1500.8835,
+    "cumulative-layout-shift": 0.01358487668329127,
+    "total-blocking-time": 0,
+    "first-contentful-paint": 1222.8835,
+    "speed-index": 1222.8835,
+    "interactive": 1500.8835
+   },
+   "display": {
+    "largest-contentful-paint": "1.5 s",
+    "cumulative-layout-shift": "0.014",
+    "total-blocking-time": "0 ms",
+    "first-contentful-paint": "1.2 s",
+    "speed-index": "1.2 s",
+    "interactive": "1.5 s"
+   },
+   "flags": {
+    "render-blocking-resources": {
+     "score": 0,
+     "display": "Est savings of 150 ms",
+     "title": "Eliminate render-blocking resources"
+    },
+    "render-blocking-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Render blocking requests"
+    },
+    "unused-css-rules": {
+     "score": 0,
+     "display": "Est savings of 31 KiB",
+     "title": "Reduce unused CSS"
+    },
+    "uses-responsive-images": {
+     "score": 0.5,
+     "display": "Est savings of 14 KiB",
+     "title": "Properly size images"
+    },
+    "uses-text-compression": {
+     "score": 0,
+     "display": "Est savings of 53 KiB",
+     "title": "Enable text compression"
+    },
+    "uses-long-cache-ttl": {
+     "score": 0.5,
+     "display": "4 resources found",
+     "title": "Serve static assets with an efficient cache policy"
+    },
+    "image-delivery-insight": {
+     "score": 0.5,
+     "display": "Est savings of 33 KiB",
+     "title": "Improve image delivery"
+    },
+    "document-latency-insight": {
+     "score": 0.5,
+     "display": "Est savings of 18 KiB",
+     "title": "Document request latency"
+    },
+    "cache-insight": {
+     "score": 0,
+     "display": "Est savings of 90 KiB",
+     "title": "Use efficient cache lifetimes"
+    },
+    "network-dependency-tree-insight": {
+     "score": 0,
+     "display": null,
+     "title": "Network dependency tree"
+    }
+   },
+   "lcp_element": "<p class=\"article-lead\">",
+   "lighthouse_version": "12.6.1"
+  }
+ ],
+ "oversized_images": [
+  {
+   "url": "/de/",
+   "form_factor": "desktop",
+   "file": "topic-choose-bike-720.webp",
+   "wasted_kib": 50,
+   "total_kib": 100
+  },
+  {
+   "url": "/de/",
+   "form_factor": "desktop",
+   "file": "topic-safety-720.webp",
+   "wasted_kib": 44,
+   "total_kib": 89
+  },
+  {
+   "url": "/de/",
+   "form_factor": "desktop",
+   "file": "topic-prices-deposits-720.webp",
+   "wasted_kib": 37,
+   "total_kib": 74
+  },
+  {
+   "url": "/de/",
+   "form_factor": "desktop",
+   "file": "topic-documents-720.webp",
+   "wasted_kib": 29,
+   "total_kib": 57
+  },
+  {
+   "url": "/en/",
+   "form_factor": "desktop",
+   "file": "topic-choose-bike-720.webp",
+   "wasted_kib": 50,
+   "total_kib": 100
+  },
+  {
+   "url": "/en/",
+   "form_factor": "desktop",
+   "file": "topic-safety-720.webp",
+   "wasted_kib": 44,
+   "total_kib": 89
+  },
+  {
+   "url": "/en/",
+   "form_factor": "desktop",
+   "file": "topic-prices-deposits-720.webp",
+   "wasted_kib": 37,
+   "total_kib": 74
+  },
+  {
+   "url": "/en/",
+   "form_factor": "desktop",
+   "file": "topic-documents-720.webp",
+   "wasted_kib": 29,
+   "total_kib": 57
+  },
+  {
+   "url": "/ja/",
+   "form_factor": "desktop",
+   "file": "topic-choose-bike-720.webp",
+   "wasted_kib": 50,
+   "total_kib": 100
+  },
+  {
+   "url": "/ja/",
+   "form_factor": "desktop",
+   "file": "topic-safety-720.webp",
+   "wasted_kib": 44,
+   "total_kib": 89
+  },
+  {
+   "url": "/ja/",
+   "form_factor": "desktop",
+   "file": "topic-prices-deposits-720.webp",
+   "wasted_kib": 37,
+   "total_kib": 74
+  },
+  {
+   "url": "/ja/",
+   "form_factor": "desktop",
+   "file": "topic-documents-720.webp",
+   "wasted_kib": 29,
+   "total_kib": 57
+  },
+  {
+   "url": "/",
+   "form_factor": "desktop",
+   "file": "hero-hanoi-800.webp",
+   "wasted_kib": 49,
+   "total_kib": 77
+  },
+  {
+   "url": "/",
+   "form_factor": "desktop",
+   "file": "topic-choose-bike-480.webp",
+   "wasted_kib": 37,
+   "total_kib": 54
+  },
+  {
+   "url": "/",
+   "form_factor": "desktop",
+   "file": "topic-safety-480.webp",
+   "wasted_kib": 34,
+   "total_kib": 51
+  },
+  {
+   "url": "/",
+   "form_factor": "desktop",
+   "file": "topic-prices-deposits-480.webp",
+   "wasted_kib": 29,
+   "total_kib": 43
+  },
+  {
+   "url": "/",
+   "form_factor": "desktop",
+   "file": "topic-documents-480.webp",
+   "wasted_kib": 23,
+   "total_kib": 34
+  },
+  {
+   "url": "/vi/",
+   "form_factor": "desktop",
+   "file": "topic-choose-bike-720.webp",
+   "wasted_kib": 50,
+   "total_kib": 100
+  },
+  {
+   "url": "/vi/",
+   "form_factor": "desktop",
+   "file": "topic-safety-720.webp",
+   "wasted_kib": 44,
+   "total_kib": 89
+  },
+  {
+   "url": "/vi/",
+   "form_factor": "desktop",
+   "file": "topic-prices-deposits-720.webp",
+   "wasted_kib": 37,
+   "total_kib": 74
+  },
+  {
+   "url": "/vi/",
+   "form_factor": "desktop",
+   "file": "topic-documents-720.webp",
+   "wasted_kib": 29,
+   "total_kib": 57
+  },
+  {
+   "url": "/de/",
+   "form_factor": "mobile",
+   "file": "topic-choose-bike-720.webp",
+   "wasted_kib": 44,
+   "total_kib": 100
+  },
+  {
+   "url": "/de/",
+   "form_factor": "mobile",
+   "file": "topic-safety-720.webp",
+   "wasted_kib": 39,
+   "total_kib": 89
+  },
+  {
+   "url": "/de/",
+   "form_factor": "mobile",
+   "file": "topic-prices-deposits-720.webp",
+   "wasted_kib": 32,
+   "total_kib": 74
+  },
+  {
+   "url": "/de/",
+   "form_factor": "mobile",
+   "file": "topic-documents-720.webp",
+   "wasted_kib": 25,
+   "total_kib": 57
+  },
+  {
+   "url": "/de/guides/motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen/",
+   "form_factor": "mobile",
+   "file": "motorrad-verschwunden-vietnam-von-polizei-umgesetzt-verwahrt-oder-gestohlen-800.webp",
+   "wasted_kib": 16,
+   "total_kib": 51
+  },
+  {
+   "url": "/de/topics/mietpreise-und-kaution/",
+   "form_factor": "mobile",
+   "file": "mietpreise-und-kaution-800.webp",
+   "wasted_kib": 14,
+   "total_kib": 43
+  },
+  {
+   "url": "/en/",
+   "form_factor": "mobile",
+   "file": "topic-choose-bike-720.webp",
+   "wasted_kib": 44,
+   "total_kib": 100
+  },
+  {
+   "url": "/en/",
+   "form_factor": "mobile",
+   "file": "topic-safety-720.webp",
+   "wasted_kib": 39,
+   "total_kib": 89
+  },
+  {
+   "url": "/en/",
+   "form_factor": "mobile",
+   "file": "topic-prices-deposits-720.webp",
+   "wasted_kib": 32,
+   "total_kib": 74
+  },
+  {
+   "url": "/en/",
+   "form_factor": "mobile",
+   "file": "topic-documents-720.webp",
+   "wasted_kib": 25,
+   "total_kib": 57
+  },
+  {
+   "url": "/en/guides/manual-vs-automatic/",
+   "form_factor": "mobile",
+   "file": "manual-vs-automatic-800.webp",
+   "wasted_kib": 15,
+   "total_kib": 48
+  },
+  {
+   "url": "/fr/checklist/",
+   "form_factor": "mobile",
+   "file": "checklist-location-scooter-hanoi-800.webp",
+   "wasted_kib": 14,
+   "total_kib": 45
+  },
+  {
+   "url": "/ja/",
+   "form_factor": "mobile",
+   "file": "topic-choose-bike-720.webp",
+   "wasted_kib": 44,
+   "total_kib": 100
+  },
+  {
+   "url": "/ja/",
+   "form_factor": "mobile",
+   "file": "topic-safety-720.webp",
+   "wasted_kib": 39,
+   "total_kib": 89
+  },
+  {
+   "url": "/ja/",
+   "form_factor": "mobile",
+   "file": "topic-prices-deposits-720.webp",
+   "wasted_kib": 32,
+   "total_kib": 74
+  },
+  {
+   "url": "/ja/",
+   "form_factor": "mobile",
+   "file": "topic-documents-720.webp",
+   "wasted_kib": 25,
+   "total_kib": 57
+  },
+  {
+   "url": "/ko/guides/sudong-jadong/",
+   "form_factor": "mobile",
+   "file": "sudong-jadong-800.webp",
+   "wasted_kib": 14,
+   "total_kib": 44
+  },
+  {
+   "url": "/",
+   "form_factor": "mobile",
+   "file": "hero-hanoi-800.webp",
+   "wasted_kib": 20,
+   "total_kib": 77
+  },
+  {
+   "url": "/vi/",
+   "form_factor": "mobile",
+   "file": "topic-choose-bike-720.webp",
+   "wasted_kib": 44,
+   "total_kib": 100
+  },
+  {
+   "url": "/vi/",
+   "form_factor": "mobile",
+   "file": "topic-safety-720.webp",
+   "wasted_kib": 39,
+   "total_kib": 89
+  },
+  {
+   "url": "/vi/",
+   "form_factor": "mobile",
+   "file": "topic-prices-deposits-720.webp",
+   "wasted_kib": 32,
+   "total_kib": 74
+  },
+  {
+   "url": "/vi/",
+   "form_factor": "mobile",
+   "file": "topic-documents-720.webp",
+   "wasted_kib": 25,
+   "total_kib": 57
+  },
+  {
+   "url": "/vi/checklist/",
+   "form_factor": "mobile",
+   "file": "checklist-thue-xe-may-ha-noi-800.webp",
+   "wasted_kib": 14,
+   "total_kib": 44
+  },
+  {
+   "url": "/vi/topics/chi-phi-thue-xe/",
+   "form_factor": "mobile",
+   "file": "chi-phi-thue-xe-800.webp",
+   "wasted_kib": 13,
+   "total_kib": 41
+  },
+  {
+   "url": "/zh/guides/yuenan-jiazhao-jifen-zhidu/",
+   "form_factor": "mobile",
+   "file": "yuenan-jiazhao-jifen-zhidu-800.webp",
+   "wasted_kib": 14,
+   "total_kib": 42
+  }
+ ]
+}

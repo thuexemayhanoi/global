@@ -12,7 +12,7 @@ Every finding carries an evidence status:
   NOT_CONNECTED needs a data source that is not connected (GSC, GA4, CrUX, ranks)
 Usage: python3 docs/seo-audit/tools/analyze.py
 """
-import collections, csv, json, os, re
+import collections, csv, glob, json, os, re
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 DATA = os.path.join(ROOT, "reports", "seo", "data")
@@ -230,6 +230,10 @@ RULES = {
         "Merge the four files into one versioned stylesheet (or inline the critical above-the-fold rules and load the rest without blocking), and drop rules no template uses; keep the cache-busting query and build --check byte-identical.",
         "Fewer blocking requests; Lighthouse 'render-blocking resources' and 'unused CSS' pass on the template sample.",
         "Lighthouse on the template sample (lighthouse-20261101.json method).", "Reviewed PR merged; tests and live markup QA PASS."),
+    "S-TOPIC-IMG-SIZES": ("P3", "Performance / images", "VERIFIED", "scripts/ultra.mjs (TOPIC_SIZES, topic srcset)",
+        "The topic illustrations on the locale Pillars and the root page declare sizes that do not match their rendered width, and the 480/720/960 files leave no width close to the slot, so phones and desktops download a larger file than they show (and the root gallery a smaller one on high-DPR phones)",
+        "Set TOPIC_SIZES to the measured card widths (Pillar cards: card padding excluded; root gallery: one column up to the 538 px cap, then 2 and 4 columns) and add the missing intermediate widths of the same four illustrations.",
+        "Lighthouse no longer reports oversized topic images on the Pillars and the root page; the root gallery is sharp on high-DPR phones.", "Lighthouse 'properly size images' on the Pillar and root sample; rendered width vs chosen file in Chromium at 360–1920 px.", "Reviewed PR merged; deploy and live QA PASS."),
     "S-COVER-SRCSET": ("P3", "Performance / images", "VERIFIED", "scripts/articles.mjs (cover srcset) + image covers",
         "Cover images offer only 640w and 1200w: phones with a 1.75–3× screen pick the 1200 px file, so Lighthouse reports 47–63 KB of image waste per guide",
         "Add an intermediate cover width (e.g. 800w or 960w WebP, same image) to the srcset; keep sizes, width/height and alt unchanged.",
@@ -258,14 +262,15 @@ findings, seq = [], collections.Counter()
 DECISION_RULES = {"S-SECURITY-HEADERS", "S-URL-LOCALIZATION", "S-SCALED-CONTENT-RISK"}
 
 
-def add(rule, scope, locale, url=None, matrix_id=None, detail="", evidence_url=None, metric=None):
+def add(rule, scope, locale, url=None, matrix_id=None, detail="", evidence_url=None, metric=None, status=None):
+    """status: WONT_FIX / NOT_APPLICABLE for a measured or documented decision recorded in TASKS.json (reason in detail)."""
     sev, cat, ev, owner, title, action, expected, verify, done = RULES[rule]
     seq[rule] += 1
     fid = f"F-{rule}-{seq[rule]:04d}"
     task = f"T-{rule}" + (f"-{locale.upper()}" if locale and locale not in ("ALL", "global") and rule.startswith("U-") else "")
     findings.append({"finding_id": fid, "rule_id": rule, "severity": sev, "category": cat, "evidence_status": ev, "scope": scope, "locale": locale,
                      "url": (ORIGIN + url) if url else None, "matrix_id": matrix_id, "title": title, "detail": detail, "metric": metric,
-                     "owner": owner, "task_id": task, "work_status": ("OWNER_DECISION" if rule in DECISION_RULES else "OPEN") if ev != "NOT_CONNECTED" else "BLOCKED",
+                     "owner": owner, "task_id": task, "work_status": status or (("OWNER_DECISION" if rule in DECISION_RULES else "OPEN") if ev != "NOT_CONNECTED" else "BLOCKED"),
                      "evidence_url": evidence_url, "audit_date": AUDIT_DATE, "recheck_date": RECHECK})
 
 
@@ -392,6 +397,12 @@ for p in d["title_similarity_pairs"]:
     add("U-TITLE-SIMILAR", "URL", p["locale"], p["url_a"], p["a"], f"vs {p['b']} {p['url_b']} (Jaccard {p['title_trigram_jaccard']})", metric=p["title_trigram_jaccard"])
 
 # ---------- re-audit 2026-11-01: deep, browser and validator checks ----------
+def latest(prefix):
+    """Newest dated evidence file raw/<prefix>-YYYYMMDD.json; re-audits add a new date and keep the older files as history."""
+    found = sorted(glob.glob(os.path.join(DATA, "raw", prefix + "-2*.json")))
+    return os.path.relpath(found[-1], DATA) if found else os.path.join("raw", prefix + "-none.json")
+
+
 def optional(name):
     p = os.path.join(DATA, name)
     return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else None
@@ -399,16 +410,21 @@ def optional(name):
 
 inv_by_url = {r["url"]: r for r in inv}
 deep = optional("deep-audit.json")
-browser = optional(os.path.join("raw", "browser-audit-20261101.json"))
-vnu = optional(os.path.join("raw", "html-validation-20261101.json"))
-liveqa = optional(os.path.join("raw", "live-qa-20261101.json"))
+browser = optional(latest("browser-audit"))
+vnu = optional(latest("html-validation"))
+liveqa = optional(latest("live-qa"))
 if deep:
     ds, du = deep["summary"], deep["per_url"]
     content_pages = [u for u, x in du.items() if x["role"] in ("PILLAR", "HUB", "SUPPORT")]
-    if ds["visible_date_pages"] < len(content_pages):
-        add("S-NO-VISIBLE-DATE", "SITE", "ALL", detail=f"{ds['visible_date_pages']} of {len(content_pages)} Pillar/Hub/Supporting pages print their own date ({ds['time_tags']} <time> elements); "
+    undated = [u for u in content_pages if not du[u].get("visible_date")]
+    undated_guides = [u for u in undated if du[u]["role"] != "PILLAR"]
+    if undated_guides:
+        add("S-NO-VISIBLE-DATE", "SITE", "ALL", detail=f"{len(undated_guides)} Hub/Supporting/checklist pages print no date of their own ({ds['time_tags']} <time> elements site-wide); "
             f"JSON-LD dateModified on {sum(1 for x in du.values() if x['date_modified'])} pages, sitemap lastmod on {sum(1 for x in du.values() if x['sitemap_lastmod'])}",
-            evidence_url=blob("about/index.html"), metric=len(content_pages) - ds["visible_date_pages"])
+            evidence_url=blob("about/index.html"), metric=len(undated_guides))
+    elif undated:
+        add("S-NO-VISIBLE-DATE", "SITE", "ALL", detail=f"only the {len(undated)} locale Pillars (language home pages) print no date; every guide and checklist does ({ds['visible_date_pages']} pages). "
+            "Decision CONTENT-03 (PR #182): landing pages keep their dates in JSON-LD and sitemap lastmod only", evidence_url=blob("scripts/ultra.mjs"), metric=len(undated), status="WONT_FIX")
     if ds["packet_sources_checked_on"] and ds["refs_checked_on_rendered"] < 0.5 * ds["packet_sources_checked_on"]:
         add("S-REF-DATES-HIDDEN", "SITE", "ALL", "/about/", "ABOUT",
             f"{ds['packet_sources_checked_on']} article sources carry checked_on in content/articles; {ds['refs_checked_on_rendered']} reference lines on "
@@ -425,7 +441,8 @@ if deep:
             add("S-UI-UNTRANSLATED", "LOCALE", loc, f"/{loc}/", f"{loc.upper()}-HOME",
                 f"{pages} {loc} pages: " + "; ".join(f"'{t}' ×{n}" for t, n in by_loc[loc].most_common()), blob("scripts/navigation.mjs"), pages)
     for e in deep["equivalence_slots"]:
-        if e["equivalence"] == "NOT_EQUIVALENT":
+        # a slot reviewed in TECH-10 has its decision recorded (data/seo/hreflang-equivalents.json): not an open finding
+        if e["equivalence"] == "NOT_EQUIVALENT" or e.get("reviewed"):
             continue
         add("S-HREFLANG-EQUIV", "CLUSTER", "ALL", e["urls"].get("en"), f"{e['slot']} ×{e['locales']}",
             f"{e['equivalence']}: slot {e['slot']} ({e['cluster']}) published in {e['locales']} locales, cluster/silo agree {e['cluster_agreement']}/{e['subcluster_agreement']}, "
@@ -458,29 +475,55 @@ if sum(approved.values()) >= 500:
         detail=f"{sum(approved.values())} article packets approved {min(k for k in approved if k)}..{max(approved)}; peak days " + ", ".join(f"{d} {n}" for d, n in top)
         + f"; facts_reviewed_by_human=true on {reviewed_by_human}; third-party index: {u['organic_keywords']} ranking keywords, DA {u['domain_authority']}, {u['referring_domains']} referring domains ({u.get('rechecked_at')}); Search Console NOT_CONNECTED",
         evidence_url=blob("factory/publisher/state.json"), metric=sum(approved.values()))
-lh = optional(os.path.join("raw", "lighthouse-20261101.json"))
+lh = optional(latest("lighthouse"))
 if lh:
     def lh_flag(audit):
         return [r for r in lh["runs"] if audit in r.get("flags", {})]
     rb = lh_flag("render-blocking-resources")
-    if rb:
+    sheets = len(re.findall(r'<link rel="stylesheet"', open(os.path.join(ROOT, "de", "index.html"), encoding="utf-8").read()))
+    if rb and sheets == 1:
+        ms = [int(m.group(1)) for r in rb for m in [re.search(r"(\d+)\D*ms", r["flags"]["render-blocking-resources"].get("display") or "")] if m]
+        add("S-RENDER-BLOCKING-CSS", "SITE", "ALL", detail=f"one stylesheet per page since TECH-11 (assets/site.css, PR #186); Lighthouse {lh['lighthouse_version']} still lists it as render-blocking on {len(rb)} of "
+            f"{len(lh['runs'])} runs with estimated savings of {min(ms) if ms else 0}–{max(ms) if ms else 0} ms (lab, local HTTP/1.0 server); inlining critical CSS is not planned for that gain",
+            evidence_url=blob("scripts/build.mjs"), metric=len(rb), status="WONT_FIX")
+    elif rb:
         add("S-RENDER-BLOCKING-CSS", "SITE", "ALL", detail=f"Lighthouse {lh['lighthouse_version']}: render-blocking resources on {len(rb)} of {len(lh['runs'])} runs, unused CSS on {len(lh_flag('unused-css-rules'))}; "
             f"median mobile LCP {lh['median']['mobile']['LCP']}, performance score {lh['median_scores']['mobile']['performance']} (lab, local server)", evidence_url=blob("assets/ultra.css"), metric=len(rb))
     ri = lh_flag("uses-responsive-images")
-    if ri:
+    over = lh.get("oversized_images") or []
+    topic = [o for o in over if o["file"].startswith(("topic-", "hero-hanoi"))]
+    covers = [o for o in over if not o["file"].startswith(("topic-", "hero-hanoi"))]
+    if topic:
+        per_page = collections.defaultdict(int)
+        for o in topic:
+            per_page[(o["url"], o["form_factor"])] += o["wasted_kib"]
+        add("S-TOPIC-IMG-SIZES", "SITE", "ALL", "/de/", "DE-HOME", f"Lighthouse 'properly size images' on {len(per_page)} Pillar/root runs: up to {max(per_page.values())} KiB of topic-illustration waste per page "
+            f"({', '.join(sorted({o['file'] for o in topic})[:4])}…); rendered card width measured in Chromium: Pillar 509 px at ≥1187 px (sizes says 565 px), root gallery 272 px (480w file)",
+            blob("scripts/ultra.mjs"), len(per_page))
+    if ri and over and not covers:
+        pass
+    elif ri and over and max(o["wasted_kib"] for o in covers) <= 20:
+        add("S-COVER-SRCSET", "SITE", "ALL", detail=f"guide covers carry an 800w variant since IMG-SRCSET (PRs #170–#180); Lighthouse still estimates {min(o['wasted_kib'] for o in covers)}–{max(o['wasted_kib'] for o in covers)} KiB "
+            f"on {len(covers)} mobile cover runs (Moto G emulation picks the 800w file for a 592 px slot); another width is not worth it", evidence_url=blob("scripts/articles.mjs"), metric=len(covers), status="WONT_FIX")
+    elif ri:
         add("S-COVER-SRCSET", "SITE", "ALL", detail=f"Lighthouse 'properly size images' on {len(ri)} of {len(lh['runs'])} runs (guide covers: srcset 640w/1200w)", evidence_url=blob("scripts/articles.mjs"), metric=len(ri))
-reflinks = optional(os.path.join("raw", "reference-links-20261101.json"))
+reflinks = optional(latest("reference-links"))
 if reflinks:
     for b in reflinks.get("broken", []):
         for u in b.get("pages", []):
             r = inv_by_url.get(u, {})
             add("U-DEAD-REFERENCE", "URL", r.get("locale") if r.get("locale") in LOCALES else "global", u, r.get("matrix_id"),
                 f"{b.get('status')} {b['url']} (reference-link-check run {reflinks['run_id']})", reflinks.get("url"))
-contrast = optional(os.path.join("raw", "contrast-20261101.json"))
+contrast = optional(latest("contrast"))
 if contrast and contrast["image_backgrounds"]["median_below_AA"]:
     labels = sorted({r[5] for r in contrast["image_backgrounds"]["median_below_AA"]})
-    add("S-HERO-ART-TEXT", "SITE", "ALL", "/de/", "DE-HOME", f"median background contrast below 4.5:1 for {', '.join(labels)} (.ultra-hero-art, aria-hidden, same template on the 10 Pillars); "
-        "'10 LANGUAGES' and '4 TOPIC HUBS' are English on every Pillar", blob("scripts/ultra.mjs"), len(labels))
+    english = sum(1 for f in glob.glob(os.path.join(ROOT, "*", "index.html")) if "10 LANGUAGES" in open(f, encoding="utf-8").read() and "/en/" not in f.replace(ROOT, ""))
+    if english:
+        add("S-HERO-ART-TEXT", "SITE", "ALL", "/de/", "DE-HOME", f"median background contrast below 4.5:1 for {', '.join(labels)} (.ultra-hero-art, aria-hidden, same template on the 10 Pillars); "
+            f"'10 LANGUAGES' and '4 TOPIC HUBS' are English on {english} non-English Pillars", blob("scripts/ultra.mjs"), len(labels))
+    else:
+        add("S-HERO-ART-TEXT", "SITE", "ALL", "/de/", "DE-HOME", f"median background contrast below 4.5:1 for {', '.join(labels)} in the hero illustration of the 10 Pillars; the illustration is "
+            "aria-hidden decoration (WCAG 1.4.3 does not apply to incidental text) and its labels are localized since TECH-08 (PR #184)", blob("scripts/ultra.mjs"), len(labels), status="WONT_FIX")
 if vnu and vnu.get("aria_label_span_warnings"):
     add("S-ARIA-LABEL-SPAN", "SITE", "ALL", detail=f"W3C Nu validator ({vnu['validator']}): {vnu['errors']} errors on {vnu['files']} pages; "
         f"{vnu['aria_label_span_warnings']} 'Possible misuse of aria-label' warnings, all on span.ultra-reading-time", evidence_url=blob("scripts/ultra.mjs"), metric=vnu["aria_label_span_warnings"])
@@ -493,7 +536,13 @@ if browser:
     bu = browser["per_url"]
     lazy = [u for u, x in bu.items() if any((x.get(v) or {}).get("lazy_first_viewport") for v in ("m", "d"))]
     lcp_lazy = [u for u, x in bu.items() if any((x.get(v) or {}).get("lcp_lazy") for v in ("m", "d"))]
-    if lazy:
+    lazy_checklists = [u for u in lazy if u.endswith("/checklist/")]
+    if lazy and not lazy_checklists:
+        bs = browser["summary"]
+        add("S-LAZY-LCP", "SITE", "ALL", detail=f"lazy cover inside the first viewport only on Hub/Supporting guides ({bs['pages_lazy_first_viewport_desktop']} of {bs['desktop_pages']} sampled desktop pages, "
+            f"{bs['pages_lazy_first_viewport_mobile']} of {bs['pages']} at 390 px); checklists load theirs eagerly. Decision IMG-LCP (PR #169): an eager guide cover delayed mobile LCP "
+            "by about 0.45 s in Lighthouse with no desktop gain, so guide covers stay lazy", evidence_url=blob("scripts/articles.mjs"), metric=len(lazy), status="WONT_FIX")
+    elif lazy:
         bs = browser["summary"]
         lcp_m = sum(1 for x in bu.values() if (x.get("m") or {}).get("lcp_lazy"))
         lcp_d = sum(1 for x in bu.values() if (x.get("d") or {}).get("lcp_lazy"))
@@ -521,7 +570,7 @@ effort = {"S-PILLAR-HEAD-TERM": "M", "S-RAIL-ANCHOR": "S", "S-GSC-NOT-CONNECTED"
           "S-PSI-MOBILE": "M", "S-CWV-FIELD": "S", "S-REDIRECT-HEADERS": "S", "S-BUSINESS-CONFLICTS": "S", "S-FAQ-SCHEMA": "M", "S-CHECKLIST-NO-REFS": "S",
           "S-NO-VISIBLE-DATE": "M", "S-REF-DATES-HIDDEN": "S", "S-UI-UNTRANSLATED": "S", "S-ARIA-LABEL-SPAN": "S", "S-LAZY-LCP": "S",
           "S-HREFLANG-EQUIV": "M", "S-URL-LOCALIZATION": "S", "S-SECURITY-HEADERS": "S", "S-SCALED-CONTENT-RISK": "L",
-          "S-RENDER-BLOCKING-CSS": "M", "S-COVER-SRCSET": "M", "S-HERO-ART-TEXT": "S"}
+          "S-RENDER-BLOCKING-CSS": "M", "S-COVER-SRCSET": "M", "S-TOPIC-IMG-SIZES": "S", "S-HERO-ART-TEXT": "S"}
 impact = {"P1": "High", "P2": "Medium", "P3": "Low"}
 phase = {"P1": "Phase 1 (0–2 weeks)", "P2": "Phase 2 (2–6 weeks)", "P3": "Phase 3 (6–12 weeks)"}
 for f in findings:

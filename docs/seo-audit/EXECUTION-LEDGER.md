@@ -1,6 +1,6 @@
 # Global SEO A–Z — execution ledger and dashboard
 
-Status: **SEO_AZ_MATRIX_COMPLETE** · generated 2026-11-01 · baseline audit 2026-10-27 (PR #119) · re-audit 2026-11-01 at the merged state of every batch below.
+Status: **SEO_AZ_MATRIX_COMPLETE** · generated 2026-11-03 · baseline audit 2026-10-27 (PR #119) · re-audit 2026-11-03 at the merged state of every batch below.
 
 Outcome per finding is computed by `docs/seo-audit/tools/ledger.py` from the baseline findings, the re-audit, `execution/batches.json` and `execution/outcomes.json`. Full rows: [`execution/execution-ledger.csv`](execution/execution-ledger.csv) (933 findings) and [`execution/task-ledger.csv`](execution/task-ledger.csv) (95 tasks). Workbook: [`reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx`](../../reports/seo/GLOBAL-SEO-AZ-MASTER-MATRIX.xlsx) (outcomes in the ERRORS & BLOCKERS and SEO ACTION PLAN sheets; before/after and owner actions on EXECUTIVE DASHBOARD).
 
@@ -22,7 +22,7 @@ Tasks: 95 — BLOCKED 1, DONE 53, NOT_APPLICABLE 34, OWNER_DECISION 7.
 
 ## Before / after (same analyzer, measured rules)
 
-Findings: **933 → 769** reported by the re-audit; 44 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
+Findings: **933 → 737** reported by the re-audit; 12 new. A finding that is still reported can be fixed (e.g. a description brought to the accepted CJK band) or validated; the outcome column decides, not the count.
 
 | Rule | Baseline | Re-audit | Outcomes |
 |---|---:|---:|---|
@@ -59,7 +59,7 @@ Findings: **933 → 769** reported by the re-audit; 44 new. A finding that is st
 | U-TITLE-LONG | 55 | 0 | FIXED_VERIFIED 55 |
 | U-TITLE-SIMILAR | 33 | 33 | VALIDATED_NO_FIX 33 |
 
-### New in the re-audit of 2026-11-01
+### New in the re-audit of 2026-11-03
 
 Findings with no baseline counterpart (rules added by the re-audit or new on a page). They are open work in the workbook, not outcomes of the baseline: see the re-audit report and the SEO ACTION PLAN sheet.
 
@@ -68,32 +68,27 @@ Findings with no baseline counterpart (rules added by the re-audit or new on a p
 | S-SCALED-CONTENT-RISK | 1 | P1 |
 | S-LAZY-LCP | 1 | P2 |
 | S-NO-VISIBLE-DATE | 1 | P2 |
-| S-REF-DATES-HIDDEN | 1 | P2 |
-| S-UI-UNTRANSLATED | 9 | P2 |
-| U-DEAD-REFERENCE | 2 | P2 |
-| S-ARIA-LABEL-SPAN | 1 | P3 |
 | S-COVER-SRCSET | 1 | P3 |
 | S-HERO-ART-TEXT | 1 | P3 |
-| S-HREFLANG-EQUIV | 12 | P3 |
 | S-RENDER-BLOCKING-CSS | 1 | P3 |
 | S-SECURITY-HEADERS | 1 | P3 |
+| S-TOPIC-IMG-SIZES | 1 | P3 |
 | S-URL-LOCALIZATION | 4 | P3 |
-| U-FAQ-REPEATED-Q | 8 | P3 |
 
 ## Progress by language
 
 | Locale | Baseline findings | Fixed (verified) | Fixed (pending live) | Validated | External | Blocked | Re-audit remaining |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| vi | 45 | 7 | 0 | 37 | 1 | 0 | 42 |
-| en | 77 | 15 | 0 | 61 | 1 | 0 | 65 |
-| de | 194 | 27 | 0 | 165 | 2 | 0 | 174 |
-| fr | 44 | 8 | 0 | 35 | 1 | 0 | 39 |
-| es | 48 | 10 | 0 | 38 | 0 | 0 | 37 |
-| nl | 53 | 10 | 0 | 43 | 0 | 0 | 48 |
-| zh | 114 | 17 | 0 | 97 | 0 | 0 | 103 |
-| pt | 42 | 8 | 0 | 34 | 0 | 0 | 35 |
-| ko | 152 | 71 | 0 | 80 | 1 | 0 | 91 |
-| ja | 151 | 63 | 0 | 87 | 1 | 0 | 107 |
+| vi | 45 | 7 | 0 | 37 | 1 | 0 | 41 |
+| en | 77 | 15 | 0 | 61 | 1 | 0 | 63 |
+| de | 194 | 27 | 0 | 165 | 2 | 0 | 169 |
+| fr | 44 | 8 | 0 | 35 | 1 | 0 | 36 |
+| es | 48 | 10 | 0 | 38 | 0 | 0 | 36 |
+| nl | 53 | 10 | 0 | 43 | 0 | 0 | 45 |
+| zh | 114 | 17 | 0 | 97 | 0 | 0 | 102 |
+| pt | 42 | 8 | 0 | 34 | 0 | 0 | 34 |
+| ko | 152 | 71 | 0 | 80 | 1 | 0 | 90 |
+| ja | 151 | 63 | 0 | 87 | 1 | 0 | 106 |
 
 Site-wide findings (locale ALL/global) are counted in the totals above, not per language.
 

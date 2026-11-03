@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-02",
+ "updated": "2026-11-03",
  "note": "Official task board of the SEO A–Z programme. Statuses: TODO, IN_PROGRESS, FIXED (committed on a PR branch with local QA passed), MERGED, DEPLOYED, LIVE_VERIFIED (live markup + post-publish QA passed on the deployed commit), BLOCKED. A PR sets its own task to FIXED; the following PR records merge, deploy and live-QA run ids and moves it on. Earlier batches A–Y are imported from docs/seo-audit/execution/batches.json.",
  "order": [
   "MATRIX",
@@ -2824,6 +2824,21 @@
    ],
    "evidence": "Re-audit 2026-11-01 Lighthouse 'properly size images' (F-S-COVER-SRCSET-0001); 800x450 WebP q82 downsized from the reviewed 1200 px cover; 64 files of 37,810-47,340 bytes; the build changes only the srcset of these pages; PR #180 validate passed; Pages deploy 41394088479; live markup QA 41394227157 (1,081/1,081 identical) and post-publish QA 41394229895 passed",
    "next_action": "Done"
+  },
+  {
+   "id": "IMG-TOPIC-SIZES",
+   "phase": "IMG",
+   "title": "Topic illustrations on the locale Pillars and the root page: sizes does not match the rendered width and no file is close to the slot, so pages load larger (desktop, Moto G) or smaller (root gallery on high-DPR phones) images than they show",
+   "scope": "scripts/ultra.mjs TOPIC_SIZES and topic srcset; the four topic illustrations (topic-choose-bike, topic-prices-deposits, topic-documents, topic-safety) on the 10 Pillars and the root page",
+   "selector": "reports/seo/data/raw/lighthouse-20261103.json oversized_images (topic-*, hero-hanoi-*); rendered width vs currentSrc in Chromium at 360-1920 px",
+   "status": "TODO",
+   "branch": "",
+   "commit": "",
+   "pr": "",
+   "deploy_run": "",
+   "live_qa": [],
+   "evidence": "Re-audit 2026-11-03: Lighthouse 'properly size images' on every Pillar and root run (up to 160 KiB of topic-image waste per desktop Pillar view, 140 KiB on mobile). Measured: Pillar cards render 100vw-74 px up to 760 px, 50vw-84 px up to 1186 px, then 509 px, while sizes declares 100vw-36 / 50vw-28 / 565 px; with 480/720/960 files a 509 px slot loads 720w. Root gallery cards render 100vw-38 px (max 538) on phones and 272 px at >=1187 px, while sizes declares 50vw-24 px / 280 px, so a 390 px phone at DPR 2 loads the 480w file for a 704 px need. Finding F-S-TOPIC-IMG-SIZES-0001",
+   "next_action": "Set TOPIC_SIZES to the measured widths; add 320w and 600w WebP variants of the four illustrations (same image, Lanczos) to the srcset; build --check; test the chosen file at 360-1920 px and DPR 1-3; Lighthouse on the Pillar/root sample; PR, merge, deploy, live QA"
   },
   {
    "id": "CONTENT-03",

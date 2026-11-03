@@ -189,6 +189,9 @@ for u in pages:
     refs_text = " ".join(li.get_text(" ", strip=True) for li in refs)
     pkt_sources = (packets.get(row.get("id"), {}).get("sources") or []) if row else []
     ref_dated = sum(1 for s in pkt_sources if s.get("checked_on") and any(f in refs_text for f in date_forms(s["checked_on"])))
+    # since CONTENT-04 each reference prints its check date in a <time datetime> element (localized text, ISO attribute)
+    checked = {s["checked_on"] for s in pkt_sources if s.get("checked_on")}
+    ref_dated = max(ref_dated, sum(1 for li in refs if any(t.get("datetime", "")[:10] in checked for t in li.select("time"))))
     # body text
     br = body_root(soup)
     body = br.get_text(" ", strip=True) if br else ""
@@ -427,6 +430,15 @@ for sid, locs in sorted(slot.items(), key=lambda kv: (kv[0][0], int(kv[0][1:])))
                "subcluster_agreement": subs.most_common(1)[0][1], "median_shared_refs_jaccard": med_j, "equivalence": level,
                "urls": {l: r["url"] for l, r in locs.items()}, "titles": {l: r["working_title"] for l, r in locs.items()}})
 eq_by_url = {u: (e["slot"], e["equivalence"]) for e in eq for u in e["urls"].values() if e["equivalence"] != "NOT_EQUIVALENT"}
+# TECH-10 decision (data/seo/hreflang-equivalents.json): translation groups carry reciprocal hreflang; the other
+# versions of a reviewed slot are independent articles. Reviewed slots are no longer open candidates.
+_eqf = os.path.join(ROOT, "data", "seo", "hreflang-equivalents.json")
+eq_groups = json.load(open(_eqf, encoding="utf-8"))["groups"] if os.path.exists(_eqf) else []
+grouped_ids = {i for g in eq_groups for i in g["ids"]}
+reviewed_slots = {g["slot"] for g in eq_groups} | ({e["slot"] for e in eq} if eq_groups else set())
+for e in eq:
+    e["reviewed"] = e["slot"] in reviewed_slots
+    e["hreflang_groups"] = [g["ids"] for g in eq_groups if g["slot"] == e["slot"]]
 
 # ------------------------------------------------------------------ silo coverage per locale
 silo_cov = collections.defaultdict(lambda: collections.Counter())
@@ -500,8 +512,9 @@ for u in pub_urls:
         "og_image_check": ("MISSING_FILE" if p["og_image"] and not p["og_image_real"] else
                            ("DIMENSION_MISMATCH" if p["og_image_real"] and p["og_image_meta"] != (0, 0) and tuple(p["og_image_real"]) != p["og_image_meta"] else "OK")),
         "og_image_size": "x".join(map(str, p["og_image_real"])) if p["og_image_real"] else None,
-        "hreflang_class": ("TRUE_EQUIVALENT (hreflang)" if r["role"] in ("PILLAR", "LANGUAGE_SELECTOR") or r["id"].endswith("-CHECKLIST")
-                           else (f"EQUIVALENT_CANDIDATE_{eq_by_url[u][1]} ({eq_by_url[u][0]})" if u in eq_by_url else "NO_EQUIVALENT_BY_DESIGN")),
+        "hreflang_class": ("TRUE_EQUIVALENT (hreflang)" if r["role"] in ("PILLAR", "LANGUAGE_SELECTOR") or r["id"].endswith("-CHECKLIST") or r["id"] in grouped_ids
+                           else (f"REVIEWED_INDEPENDENT ({eq_by_url[u][0]})" if u in eq_by_url and eq_by_url[u][0] in reviewed_slots
+                                 else (f"EQUIVALENT_CANDIDATE_{eq_by_url[u][1]} ({eq_by_url[u][0]})" if u in eq_by_url else "NO_EQUIVALENT_BY_DESIGN"))),
     }
 
 summary = {
