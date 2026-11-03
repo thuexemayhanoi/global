@@ -11,7 +11,7 @@ edits into a new audit, pass --carry <previous.xlsx>: values of those columns ar
 copied by finding_id / task_id.
 Usage: python3 docs/seo-audit/tools/build_workbook.py [--carry OLD.xlsx]
 """
-import argparse, collections, json, os, re
+import glob, argparse, collections, json, os, re
 from openpyxl import Workbook, load_workbook
 from openpyxl.chart import BarChart, Reference
 from openpyxl.comments import Comment
@@ -58,6 +58,12 @@ EXE = os.path.join(ROOT, "docs", "seo-audit", "execution")
 RECHECK = os.environ.get("RECHECK_DATE", "2026-11-15")
 
 
+def latest(prefix):
+    """Newest dated evidence file in reports/seo/data/raw (re-audits add a new date; older files stay as history)."""
+    found = sorted(glob.glob(os.path.join(DATA, "raw", prefix + "-2*.json")))
+    return found[-1] if found else os.path.join(DATA, "raw", prefix + "-none.json")
+
+
 def opt(path):
     return json.load(open(path, encoding="utf-8")) if os.path.exists(path) else None
 
@@ -65,10 +71,10 @@ def opt(path):
 # Re-audit 2026-11-01 evidence (deep_audit.py, site_browser_audit.cjs, W3C Nu validator, local Lighthouse); every sheet works without them.
 DEEP = opt(os.path.join(DATA, "deep-audit.json"))
 DU = DEEP["per_url"] if DEEP else {}
-BRW = opt(os.path.join(DATA, "raw", "browser-audit-20261101.json"))
+BRW = opt(latest("browser-audit"))
 BU = BRW["per_url"] if BRW else {}
-VNU = opt(os.path.join(DATA, "raw", "html-validation-20261101.json"))
-LH = opt(os.path.join(DATA, "raw", "lighthouse-20261101.json"))
+VNU = opt(latest("html-validation"))
+LH = opt(latest("lighthouse"))
 LIVE = ext["github_actions"][0]
 NEW_RULES = {"S-NO-VISIBLE-DATE", "S-REF-DATES-HIDDEN", "S-UI-UNTRANSLATED", "S-ARIA-LABEL-SPAN", "S-LAZY-LCP", "S-HREFLANG-EQUIV", "U-FAQ-REPEATED-Q",
              "S-URL-LOCALIZATION", "S-SECURITY-HEADERS", "U-A11Y-VIOLATION", "U-MOBILE-OVERFLOW", "U-CONSOLE-ERROR", "S-SCALED-CONTENT-RISK", "S-RENDER-BLOCKING-CSS", "S-COVER-SRCSET", "S-HERO-ART-TEXT", "U-DEAD-REFERENCE"}
@@ -717,15 +723,16 @@ if BRW:
     bs = BRW["summary"]
     ch.append({"date": a["audit_date"], "type": "BROWSER_AUDIT", "item": "site_browser_audit.cjs: axe-core WCAG 2.x A/AA, overflow, console, LCP element (Chromium, local static server)", "commit_or_run": BRW.get("commit", "")[:8],
                "result": f"{bs['pages']} pages at 390 px + {bs['desktop_pages']} at 1366 px; axe violations on {bs['pages_with_violations']} pages; overflow {bs['pages_with_overflow']}; console/4xx {bs['pages_with_console_or_4xx']}; lazy image in first viewport on {bs['pages_lazy_first_viewport']} pages (LCP lazy on {bs['pages_lcp_lazy']})",
-               "evidence_url": f"{GH}/blob/main/reports/seo/data/raw/browser-audit-20261101.json", "notes": "lab; same bytes as production"})
+               "evidence_url": f"{GH}/blob/main/reports/seo/data/raw/{os.path.basename(latest("browser-audit"))}", "notes": "lab; same bytes as production"})
 if VNU:
     ch.append({"date": a["audit_date"], "type": "HTML_VALIDATION", "item": VNU["validator"], "commit_or_run": VNU["commit"][:8],
-               "result": f"{VNU['files']} pages: {VNU['errors']} errors, {VNU['warnings']} warnings (all 'aria-label on span.ultra-reading-time')", "evidence_url": f"{GH}/blob/main/reports/seo/data/raw/html-validation-20261101.json", "notes": ""})
+               "result": f"{VNU['files']} pages: {VNU['errors']} errors, {VNU['warnings']} warnings" + (f" (most frequent: {VNU['messages_by_kind'][0][0][:80]})" if VNU.get('messages_by_kind') else ""), "evidence_url": f"{GH}/blob/main/reports/seo/data/raw/{os.path.basename(latest("html-validation"))}", "notes": ""})
 if LH:
     ch.append({"date": a["audit_date"], "type": "LIGHTHOUSE", "item": f"Lighthouse {LH['lighthouse_version']} lab, {len(LH['runs'])} runs on template sample (local static server)", "commit_or_run": LH["commit"][:8],
-               "result": LH["summary_text"], "evidence_url": f"{GH}/blob/main/reports/seo/data/raw/lighthouse-20261101.json", "notes": "lab; simulated throttling; not field data"})
-for name, label in (("source-recheck-20261101.json", "Source price re-check (source-recheck.yml)"), ("reference-links-20261101.json", "Reference link check (reference-link-check.yml)")):
-    x = opt(os.path.join(DATA, "raw", name))
+               "result": LH["summary_text"], "evidence_url": f"{GH}/blob/main/reports/seo/data/raw/{os.path.basename(latest("lighthouse"))}", "notes": "lab; simulated throttling; not field data"})
+for prefix, label in (("source-recheck", "Source price re-check (source-recheck.yml)"), ("reference-links", "Reference link check (reference-link-check.yml)")):
+    name = os.path.basename(latest(prefix))
+    x = opt(latest(prefix))
     if x:
         res = (", ".join(f"{k} {v}" for k, v in x["summary"]["paragraphs"].items()) + f" on {x['summary']['articles']} articles") if "paragraphs" in x.get("summary", {}) else \
               (", ".join(f"{k} {v}" for k, v in (x.get("counts") or {}).items()) + f" — {x.get('unique_links')} unique links on {x.get('pages')} pages")

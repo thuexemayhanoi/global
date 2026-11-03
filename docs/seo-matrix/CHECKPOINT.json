@@ -1,9 +1,20 @@
 {
- "generated": "2026-11-01",
+ "generated": "2026-11-03",
  "programme": "Finish open work → push Matrix → image SEO → title/meta → content upgrade → technical SEO; QA → merge → deploy → live verification → Matrix sync",
  "resume_rule": "On 'tiếp tục': read docs/seo-matrix/CHECKPOINT.json and TASKS.json on main, check the current task's branch/PR/CI/deploy, finish it, then take next_todo. Never redo LIVE_VERIFIED tasks.",
- "current_task": null,
- "next_action": "Re-run the audit pipeline (collect → analyze → ledger → az_matrix → workbook) and docs/seo-audit/tools/tech_reaudit.py on current main; add a task to TASKS.json only for a verified new finding on an existing URL; otherwise monitor (indexing and rankings stay unmeasured without Search Console)",
+ "current_task": {
+  "id": "IMG-TOPIC-SIZES",
+  "phase": "IMG",
+  "title": "Topic illustrations on the locale Pillars and the root page: sizes does not match the rendered width and no file is close to the slot, so pages load larger (desktop, Moto G) or smaller (root gallery on high-DPR phones) images than they show",
+  "status": "TODO",
+  "branch": "",
+  "commit": "",
+  "pr": "",
+  "deploy_run": "",
+  "live_qa": [],
+  "next_action": "Set TOPIC_SIZES to the measured widths; add 320w and 600w WebP variants of the four illustrations (same image, Lanczos) to the srcset; build --check; test the chosen file at 360-1920 px and DPR 1-3; Lighthouse on the Pillar/root sample; PR, merge, deploy, live QA"
+ },
+ "next_action": "Set TOPIC_SIZES to the measured widths; add 320w and 600w WebP variants of the four illustrations (same image, Lanczos) to the srcset; build --check; test the chosen file at 360-1920 px and DPR 1-3; Lighthouse on the Pillar/root sample; PR, merge, deploy, live QA",
  "next_todo": [],
  "blocked": [],
  "owner_actions": "docs/seo-audit/OWNER-ACTIONS.md (OWNER_ACTIONS_LAST)",
@@ -20,7 +31,8 @@
    "LIVE_VERIFIED": 10
   },
   "IMG": {
-   "LIVE_VERIFIED": 25
+   "LIVE_VERIFIED": 25,
+   "TODO": 1
   },
   "META": {
    "LIVE_VERIFIED": 2
