@@ -75,7 +75,14 @@ BRW = opt(latest("browser-audit"))
 BU = BRW["per_url"] if BRW else {}
 VNU = opt(latest("html-validation"))
 LH = opt(latest("lighthouse"))
-LIVE = ext["github_actions"][0]
+# Live QA of the audited commit: the runs in the newest raw/live-qa-*.json (each re-audit dispatches both workflows),
+# else the first two runs of external-evidence.json.
+_LIVE_RUNS = (opt(latest("live-qa")) or {}).get("runs") or ext["github_actions"]
+LIVE = next(g for g in _LIVE_RUNS if g["workflow"] == "live-markup-qa.yml")
+POST = next(g for g in _LIVE_RUNS if g["workflow"] == "post-publish-qa.yml")
+# Newest audit report (GLOBAL-SEO-AZ-AUDIT-YYYYMMDD.md or GLOBAL-SEO-AZ-REAUDIT-YYYYMMDD.md).
+_REPORTS = sorted(glob.glob(os.path.join(ROOT, "docs", "seo-audit", "GLOBAL-SEO-AZ-*AUDIT-2*.md")), key=lambda p: re.search(r"(\d{8})", os.path.basename(p)).group(1))
+REPORT = os.path.basename(_REPORTS[-1]) if _REPORTS else "GLOBAL-SEO-AZ-AUDIT-20261101.md"
 NEW_RULES = {"S-NO-VISIBLE-DATE", "S-REF-DATES-HIDDEN", "S-UI-UNTRANSLATED", "S-ARIA-LABEL-SPAN", "S-LAZY-LCP", "S-HREFLANG-EQUIV", "U-FAQ-REPEATED-Q",
              "S-URL-LOCALIZATION", "S-SECURITY-HEADERS", "U-A11Y-VIOLATION", "U-MOBILE-OVERFLOW", "U-CONSOLE-ERROR", "S-SCALED-CONTENT-RISK", "S-RENDER-BLOCKING-CSS", "S-COVER-SRCSET", "S-HERO-ART-TEXT", "U-DEAD-REFERENCE"}
 YN = lambda v: {True: "YES", False: "NO"}.get(v, v)
@@ -701,19 +708,22 @@ AZ_TASKS = opt(os.path.join(ROOT, "docs", "seo-matrix", "TASKS.json"))
 if AZ_TASKS:
     done = [t for t in AZ_TASKS["tasks"] if t.get("status") == "LIVE_VERIFIED" and t.get("pr")]
     prs = sorted({int(t["pr"]) for t in done})
-    ch.append({"date": "2026-10-29", "type": "FIX_TASKS", "item": f"A–Z tasks {', '.join(t['id'] for t in done)}", "commit_or_run": f"PR #{prs[0]}–#{prs[-1]}" if prs else "",
-               "result": f"{len(done)} tasks LIVE_VERIFIED (image covers, titles/descriptions, checklist depth, desktop menu, max-image-preview, outbound references, axe, Pillar sources)",
+    phases = collections.Counter(t.get("phase") or "OTHER" for t in done)
+    ch.append({"date": AZ_TASKS.get("updated") or a["audit_date"], "type": "FIX_TASKS", "item": f"A–Z tasks {', '.join(t['id'] for t in done)}", "commit_or_run": f"PR #{prs[0]}–#{prs[-1]}" if prs else "",
+               "result": f"{len(done)} tasks LIVE_VERIFIED (" + ", ".join(f"{k} {v}" for k, v in sorted(phases.items())) + ")",
                "evidence_url": f"{GH}/blob/main/docs/seo-matrix/TASKS.json", "notes": "details in SEO TASK BOARD"})
 if DEEP:
     ds = DEEP["summary"]
     ch += [
-        {"date": a["audit_date"], "type": "RE_AUDIT", "item": "Global SEO A–Z re-audit (full, read-only): repo QA, live QA, deep audit, browser audit, W3C validation, keyword/visibility refresh",
+        {"date": a["audit_date"], "type": "RE_AUDIT", "item": "Global SEO A–Z re-audit (read-only): repo QA, live QA, deep audit and the evidence rows below (each names the commit or run it measured)",
          "commit_or_run": SHA[:8], "result": f"{a['summary']['findings']} findings ({', '.join(f'{k} {v}' for k, v in sorted(a['summary']['by_severity'].items()))}), {a['summary']['tasks']} tasks; new rules: "
-         + ", ".join(sorted({f['rule_id'] for f in a['findings'] if f['rule_id'] in NEW_RULES})), "evidence_url": f"{GH}/blob/main/docs/seo-audit/GLOBAL-SEO-AZ-AUDIT-20261101.md", "notes": "audit branch audit/seo-az-20261101"},
-        {"date": a["audit_date"], "type": "LIVE_QA", "item": "Live Markup QA (every PUBLISHED URL + /search/ + /404.html)", "commit_or_run": f"run {ext['github_actions'][0]['run_id']} @ {ext['github_actions'][0]['head_sha'][:8]}",
-         "result": "success — 1,081/1,081 HTTP 200 and byte-identical", "evidence_url": RUN(ext["github_actions"][0]["run_id"]), "notes": "dispatched for this re-audit"},
-        {"date": a["audit_date"], "type": "LIVE_QA", "item": "Post-Publish Live HTTP QA + host probes", "commit_or_run": f"run {ext['github_actions'][1]['run_id']} @ {ext['github_actions'][1]['head_sha'][:8]}",
-         "result": "success — 1,094 checks, 0 issues; http→https 301, /vi→/vi/ 301, www ENOTFOUND, HSTS, cache-control max-age=600", "evidence_url": RUN(ext["github_actions"][1]["run_id"]), "notes": "dispatched for this re-audit"},
+         + ", ".join(sorted({f['rule_id'] for f in a['findings'] if f['rule_id'] in NEW_RULES})), "evidence_url": f"{GH}/blob/main/docs/seo-audit/{REPORT}", "notes": "report " + REPORT},
+        {"date": a["audit_date"], "type": "LIVE_QA", "item": "Live Markup QA (every PUBLISHED URL + /search/ + /404.html)", "commit_or_run": f"run {LIVE['run_id']} @ {LIVE['head_sha'][:8]}",
+         "result": f"{LIVE['conclusion']} — " + (f"{LIVE['result']['identical']:,}/{LIVE['result']['checked']:,} HTTP 200 and byte-identical" if LIVE.get("result") else "1,081/1,081 HTTP 200 and byte-identical"),
+         "evidence_url": RUN(LIVE["run_id"]), "notes": "dispatched for this re-audit" if LIVE["head_sha"] == SHA else "latest live run (different commit)"},
+        {"date": a["audit_date"], "type": "LIVE_QA", "item": "Post-Publish Live HTTP QA + host probes", "commit_or_run": f"run {POST['run_id']} @ {POST['head_sha'][:8]}",
+         "result": (f"{POST['conclusion']} — {POST['result']['checked']:,} checks, {len(POST['result']['issues'])} issues" if POST.get("result") else "success — 1,094 checks, 0 issues")
+         + "; host probes: http→https 301, /vi→/vi/ 301, www ENOTFOUND, HSTS, cache-control max-age=600", "evidence_url": RUN(POST["run_id"]), "notes": "dispatched for this re-audit" if POST["head_sha"] == SHA else "latest live run (different commit)"},
         {"date": a["audit_date"], "type": "DEEP_AUDIT", "item": "deep_audit.py (link graph, dates, duplication, legal freshness, multilingual chrome, slugs, equivalence)", "commit_or_run": DEEP["head_commit"][:8],
          "result": f"max click depth {max(int(k) for k in ds['click_depth_all'] if k not in ('None', 'null'))}; non-canonical links {ds['noncanonical_links']}; visible page dates {ds['visible_date_pages']}; reference dates printed {ds['refs_checked_on_rendered']}/{ds['packet_sources_checked_on']}; "
                    f"near-duplicate pairs {ds['dup_pairs']}; legal hits {ds['legal_pages']} (all correct); English template strings on {ds['ui_leak_pages']} pages; equivalence slots {len(ds['equivalence_slots'])}",
@@ -892,7 +902,7 @@ ws["E19"] = "Data sources"
 ws["E19"].font = F_SUB
 uo = ext["ubersuggest_domain_overview"]
 srcs = [("Committed build + repo QA (10 tools)", "VERIFIED", "all PASS, 0 FAIL"),
-        ("Live markup QA / post-publish QA (GitHub Actions)", "VERIFIED", " / ".join(f"{g['run_id']} {g['conclusion']}" for g in ext["github_actions"][:2]) + f" @ {ext['github_actions'][0]['head_sha'][:8]} (latest); baseline 40604722403 / 40604724823"),
+        ("Live markup QA / post-publish QA (GitHub Actions)", "VERIFIED", f"{LIVE['run_id']} {LIVE['conclusion']} / {POST['run_id']} {POST['conclusion']} @ {LIVE['head_sha'][:8]} (latest); baseline 40604722403 / 40604724823"),
         ("Host probes (http→https, slash, www, headers)", "VERIFIED", ext["redirect_and_header_probes"]["measured_by"][:90]),
         ("Direct crawl from audit container", "NOT_CHECKED", "egress policy 403 on global.rentbikehanoi.com (live state via the two workflows above)")]
 if BRW:

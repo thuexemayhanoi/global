@@ -1,0 +1,68 @@
+{
+ "collected_at": "2026-11-03T11:13Z",
+ "audited_commit": "be44224470decbd2a8a6a68be0a8619194d4fed9",
+ "note": "Second snapshot of 2026-11-03, after IMG-TOPIC-SIZES (PRs #190 and #191). The audit container cannot open global.rentbikehanoi.com; production was checked by the repository's read-only GitHub Actions, dispatched on main after the Pages deploy of #191 (run 41625188882). Values are copied from the job logs (the artifacts cannot be downloaded from this container).",
+ "runs": [
+  {
+   "workflow": "live-markup-qa.yml",
+   "run_id": 41625548441,
+   "job_id": 125881864450,
+   "url": "https://github.com/thuexemayhanoi/global/actions/runs/41625548441",
+   "head_sha": "be44224470decbd2a8a6a68be0a8619194d4fed9",
+   "conclusion": "success",
+   "completed_at": "2026-11-03T11:12:19Z",
+   "result": {
+    "passed": true,
+    "checked": 1081,
+    "identical": 1081,
+    "mismatched": []
+   },
+   "scope": "every PUBLISHED URL + /search/ + /404.html fetched live (cache-busted): HTTP 200 and HTML byte-identical to the committed build"
+  },
+  {
+   "workflow": "post-publish-qa.yml",
+   "run_id": 41625530908,
+   "job_id": 125881800850,
+   "url": "https://github.com/thuexemayhanoi/global/actions/runs/41625530908",
+   "head_sha": "be44224470decbd2a8a6a68be0a8619194d4fed9",
+   "conclusion": "success",
+   "completed_at": "2026-11-03T11:12:24Z",
+   "result": {
+    "passed": true,
+    "issues": [],
+    "checked": 1094
+   },
+   "scope": "status, lang and canonical of every PUBLISHED URL, sitemap index + shards vs Matrix, robots.txt, unknown route 404, /search/ noindex, frozen fingerprints, NAP/business-schema guard, host probes",
+   "host_advisories": [
+    "No answer for https://www.global.rentbikehanoi.com/: ENOTFOUND"
+   ],
+   "host_evidence": [
+    {
+     "probe": "http://global.rentbikehanoi.com/",
+     "http_status": 301,
+     "location": "https://global.rentbikehanoi.com/"
+    },
+    {
+     "probe": "https://global.rentbikehanoi.com/vi",
+     "http_status": 301,
+     "location": "https://global.rentbikehanoi.com/vi/"
+    },
+    {
+     "probe": "https://www.global.rentbikehanoi.com/",
+     "error": "ENOTFOUND"
+    },
+    {
+     "probe": "https://global.rentbikehanoi.com/",
+     "http_status": 200,
+     "headers": {
+      "content-type": "text/html; charset=utf-8",
+      "strict-transport-security": "max-age=31556952",
+      "cache-control": "max-age=600",
+      "x-content-type-options": null,
+      "server": "GitHub.com"
+     }
+    }
+   ]
+  }
+ ]
+}
